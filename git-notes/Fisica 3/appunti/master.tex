@@ -1,0 +1,2095 @@
+\documentclass[10pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{tensor}	
+\usepackage[linktocpage]{hyperref}
+\usepackage{mhchem}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[italian]{babel}
+\usepackage[perpage]{footmisc}
+
+\definecolor{asdf}{HTML}{4a7aa4}
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{asdf}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+
+\newcommand\vertarrowbox[3][6ex]{%
+  \begin{array}[t]{@{}c@{}} #2 \
+  \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\
+  \makebox[0pt]{\scriptsize#3}
+  \end{array}%
+}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{11}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+% Titles 
+\title{Note di Fisica 3}
+\author{Manuel Deodato}
+\date{}
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage{helvet} % PSNFSS Font, in every TeX distribution
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[euler-digits,euler-hat-accent]{eulervm}
+% Ambienti
+\newtheoremstyle{style1}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.}
+
+
+
+
+\theoremstyle{style1}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\spadesuit$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\vspace{15em}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{wallp.jpg}
+\end{figure}
+\newpage
+\tableofcontents 
+\newpage
+\section{Elettromagnetismo avanzato}
+\subsection{Introduzione}
+Si usano
+\begin{equation}
+	\begin{split}
+		&J^\mu  = (\rho c , \vec{j}); \ J_\mu  = (\rho  c, - \vec{j})\\
+		&A^\mu   (\varphi , \vec{A}); \ A_\mu  = (\varphi , - \vec{A})\\
+		&\partial _\mu = \frac{d }{d x^\mu } = \left(\frac{1}{c}\frac{\partial }{\partial t} , \vec{\nabla }\right) ; \ \partial ^\mu  = \left(\frac{1}{c}\frac{\partial }{\partial t} , - \vec{\nabla }\right) 
+	\end{split}
+\end{equation}
+Eq. di continuit\`a per la corrente \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\partial _\mu  J^\mu  = 0
+\end{equation}
+\end{boxenv}
+\noindent Le eq. per i potenziali si compattano in:
+\begin{boxenv}[]
+\begin{equation}
+	\partial _\mu  \left[ \partial ^\mu  A^\nu - \partial ^\nu A^\mu  \right] = \frac{4\pi}{c}J^\nu
+\end{equation}
+\end{boxenv}
+\noindent Infatti, per esempio, se $\nu = 0$:
+\begin{equation*}
+	\partial _\mu  \partial ^\mu  A^0 - \partial _\mu  \partial ^0 A^\mu  = 4\pi \rho \Rightarrow - \Delta  \varphi  - \frac{1}{c}\frac{\partial }{\partial t} (\vec{\nabla }\cdot \vec{A})= 4\pi \rho 
+\end{equation*}
+\subsubsection{Tensore dei campi}
+Definito come:
+\begin{boxenv}[]
+\begin{equation}
+F^{\mu \nu} = \partial ^\mu  A^\nu - \partial ^\nu A^\mu  
+\end{equation}
+\end{boxenv}
+\noindent Si pu\`o scrivere $\partial _\mu F^{\mu \nu} = \frac{4\pi }{c}J^\nu$. Le sue componenti sono\footnote{Per $F^{ij} $ si \`e usato $\partial ^m = (-\vec{\nabla })_m$, essendo $\partial ^\mu =(c^{-1} \partial _t,- \vec{\nabla })$.}:
+\begin{equation*}
+	\begin{split}
+		&F^{0i} = \partial ^0 A^i - \partial ^i A^0 = \frac{1}{c}\frac{\partial A^i}{\partial t} + (\vec{\nabla }\varphi ) ^i = - E_i \\
+		& F^{ij} = \partial ^i A^j - \partial ^j A^i = (\delta ^i_m \delta ^j_n - \delta ^j_m \delta ^i_n) \partial ^m A^n = \epsilon ^{ijk} \epsilon _{mnk} \partial ^m A^n=-\epsilon ^{ijk} (\vec{\nabla }\times \vec{A})_k = - \epsilon ^{ijk} B_k
+	\end{split}
+\end{equation*}
+Essendo antisimmetrico:
+\begin{equation}
+	F^{\mu \nu} = 
+	\begin{pmatrix} 
+		0 & - E_x & - E_y & - E_z\\
+		E_x & 0 & - B_z & B_y\\
+		E_y & B_z & 0 & - B_x\\
+		E_z & - B_y &B_x & 0 
+	\end{pmatrix} 
+\end{equation}
+\begin{osservazione}
+	A tensore di rango $2$, si pu\`o associare un vettore polare e un vettore assiale; in questo caso, rispettivamente campo elettrico e campo magnetico, quindi $F^{\mu \nu} =(-\vec{E},\vec{B})$ e $F_{\mu \nu}  = (\vec{E},\vec{B}) $.
+\end{osservazione}
+\noindent Il \textbf{tensore duale} \`e:
+\begin{equation}
+	\widetilde{F}^{\mu \nu} = \frac{1}{2}\epsilon ^{\mu \nu \rho  \sigma } F_{\rho \sigma } \longrightarrow \widetilde{F}^{\mu \nu} =(-\vec{B},-\vec{E}) \text{ e } \widetilde{F}_{\mu \nu} = (\vec{B},-\vec{E})
+\end{equation}
+Le equazioni omogenee di Maxwell si riscrivono, quindi, come:
+\begin{boxenv}[]
+\begin{equation}
+	\partial _\mu \widetilde{F}^{\mu \nu}  = 0
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	Come le eq. di Maxwell omogenee in 3D permettono di introdurre i potenziali vettore e scalare, l'espressione $\partial _\mu \widetilde{F}^{\mu \nu}=0 $ (per spazio sempl. connesso) permette che $F^{\mu \nu} $ si possa scrivere in termini di $A^\mu $. Infatti\footnote{L'ultima uguaglianza \`e perch\'e, per $\mu \leftrightarrow \rho $, $\partial _\mu  \partial _\rho $ \`e simmetrica mentre $\epsilon ^{\mu \nu \rho \sigma } $ \`e antisimmetrico.}:
+\begin{equation}
+	\frac{1}{2}\partial _\mu  \epsilon ^{\mu  \nu \rho  \sigma } (\partial _\rho A_\sigma  - \partial _\sigma A_\rho )	= \epsilon ^{\mu \nu \rho  \sigma } \partial _\mu  \partial _\rho A_\sigma =0
+\end{equation}
+\end{osservazione}
+\noindent La validit\`a delle eq. omogenee di Maxwell si pu\`o riscrivere come:
+\begin{equation}
+	0 = \partial _\mu  \widetilde{F}^{\mu \nu} = \frac{1}{2} \epsilon ^{\mu \nu \rho \sigma } \partial _\mu  F_{\rho \sigma } = - \frac{1}{6} \epsilon ^{\nu \mu  \rho  \sigma } (\partial _\mu F_{\rho \sigma } + \partial _\rho F_{\sigma \mu } + \partial _\sigma F_{\mu \rho } )
+\end{equation}
+riscrivendo somma sugli indici muti e usando anti-simmetria di $\epsilon $. Essendo antisimmetrica la combinazione nelle parentesi, perch\'e l'espressione sia nulla, deve valere:
+\begin{boxenv}[]
+\begin{equation}
+	\partial _\mu F_{\rho  \sigma } + \partial _\rho F_{\sigma \mu } + \partial _\sigma F_{\mu \rho } =0
+\end{equation}
+\end{boxenv}
+\subsubsection{Invarianza di Gauge}
+Per $A^\mu  \to A'^\mu  = A^\mu  - \partial ^\mu f \Rightarrow F'^{\mu \nu} \equiv F^{\mu \nu} $\footnote{Questo \`e facile da vedere se si scompone la trasformazione in parte temporale e spaziale, visto che coincide con la trasformazione di Gauge nel caso 3D.}. La \textbf{Gauge di Lorenz} \`e data da $\partial _\mu A'^\mu =0$; si ottiene per $\partial _\mu  \partial ^\mu  f = \partial _\nu A^\nu$ e $A'^\mu  = A^\mu - \partial ^\mu  f$. $A^\mu $ ancora non \`e univoco $\to$ la condizione \`e invariante per $\partial _\mu  \partial ^\mu  f = 0$.
+
+In questa Gauge, le equazioni non omogenee sono eq. d'onda:
+\begin{boxenv}[]
+\begin{equation}
+	\partial _\mu  \partial ^\mu  A^\nu = \frac{4\pi }{c} J^\nu
+\end{equation}
+\end{boxenv}
+\noindent Nel vuoto (assenza di sorgenti) $\to \partial _\mu  \partial ^\mu  A^\nu  = 0$, quindi si pu\`o usare libert\`a di Gauge rimasta e porre $A^0 = 0 \Rightarrow \vec{\nabla }\cdot \vec{A}=0$. Si dimostra che \`e possibile:
+\begin{proof}
+	Sia $A^\mu : \partial _\mu A^\mu =0$ e $\partial _\nu \partial ^\nu A^\mu = 0$. Si prende $A'^\mu  = A^\mu - \partial ^\mu g$, con
+	\[
+	g(t,\vec{r}) = c \int_{0} ^t A^0 (t',\vec{r}) \ dt' + h(\vec{r})
+	\] 
+	Cos\`i si ha $A'^0 (t,\vec{r}) = 0$ e 
+	\[
+	\begin{split}
+		\partial _\mu  \partial ^\mu  g &= \frac{1}{c}\frac{\partial A^0 }{\partial  t} - c \int_{0} ^t \nabla ^2 A^0 \ dt' - \nabla ^2 h=\frac{1}{c}\frac{\partial A^0 }{\partial t} - \int_{0} ^t \frac{d ^2}{d t'^2} A^0(t',\vec{r}) \ dt' - \nabla ^2 h\\
+						&= \frac{1}{c}\frac{\partial }{\partial t} A^0(0,\vec{r}) - \nabla ^2 h\\
+	\end{split}
+	\] 
+	con $h$ t.c. $\partial _\mu \partial ^\mu g = 0$, per cui $\partial _\mu A'^\mu = 0 $ e $\partial ^\nu\partial _\nu A'^\mu =0$.
+\end{proof}
+\noindent La condizione $\vec{\nabla }\cdot \vec{A}$ \`e la \textbf{Gauge di Coulomb} e si ottiene combinando $A^\mu $ generico e $f: \nabla ^2 f = - \vec{\nabla }\cdot \vec{A}$. Anche qui c'\`e libert\`a di Gauge residua, modificando $f$ aggiungendo funzione solo del tempo.
+\subsubsection{Trasformazioni dei campi}
+Si ottengono da $F'^{\mu \nu} = \Lambda\indices{^\mu _\rho} \Lambda\indices{^\nu_\sigma} F^{\rho \sigma } $. Si considera boost lungo $\hat{x}$. Per esempio:
+\[
+	F'^{01} = \Lambda \indices{^0_ \rho } \Lambda\indices{^1_\sigma } F^{\rho  \sigma } = \Lambda\indices{^{0}_{0}} \Lambda \indices{^{1}_{1}} F^{01} + \Lambda \indices{^{0}_{1}} \Lambda \indices{^{1}_{0}} F^{10} =(\gamma^2 -\gamma^2 \beta ^2) F^{01} \equiv F^{01}  
+\] 
+Si ricava, in generale, che:
+\begin{equation}
+	\begin{cases}
+		\vec{E}'_{ | |} = \vec{E}_{| |}\\
+		\vec{E}'_{\perp} = \gamma(\vec{E}_\perp + \vec{\beta }\times \vec{B})
+	\end{cases}
+	\begin{cases}
+		\vec{B}'_{ | |} = \vec{B}_{| |}\\
+		\vec{B}'_{\perp} = \gamma(\vec{B}_\perp - \vec{\beta }\times \vec{E})
+	\end{cases}
+\end{equation}
+Usando $\vec{E}_{| |} = \vec{\beta }(\vec{\beta }\cdot \vec{E}) / \beta ^2  $, $ \vec{E}_\perp = \vec{E}-\vec{E}_{| |} $ e $\beta ^2 = (\gamma^2 -1) / \gamma^2$, $(1-\gamma)/\beta ^2 = - \gamma^2 (\gamma+1)$:
+\begin{equation}
+	\begin{split}
+		&\vec{E}' = \gamma(\vec{E}+\beta \times  \vec{B}) - \frac{\gamma^2}{\gamma+1}\vec{\beta }(\vec{\beta }\cdot \vec{E})\\
+		&\vec{B}' = \gamma(\vec{B}-\vec{\beta }\times \vec{E}) - \frac{\gamma^2}{\gamma+1}\vec{\beta }(\vec{\beta }\cdot \vec{B})
+	\end{split}
+\end{equation}
+Quelle inverse sono per $\vec{\beta }\to -\vec{\beta }$. 
+
+Si possono trovare espressioni invarianti, di cui due sono indipendenti: $I_1= F^{\mu \nu } F_{\mu \nu } , \ I_2 = \widetilde{F }^{\mu \nu } F_{\mu \nu } $. In generale, dati due tensori antisimmetrici $A^{\mu \nu } = (\vec{p},\vec{a})$ e $B^{\mu \nu } = (\vec{q},\vec{b})$, si trova\footnote{Visto che $\epsilon ^{ijm}\epsilon _{ijk}a_m b^k =  (3\delta ^m _k - \delta ^j_k\delta ^m_j)  a_mb^k = 2\delta ^m_k a_mb^k$.}:
+\[
+A^{\mu \nu } B_{\mu \nu } = A^{0i} B_{0i} + A^{i 0}B_{i 0} + A^{ij} B_{ij} = - 2 \vec{p} \cdot \vec{q} + \epsilon^{ijm}a_m \epsilon _{ijk} b^k  = 2(\vec{a}\cdot \vec{b}-\vec{p}\cdot \vec{q})
+\] 
+Allora:
+\begin{boxenv}[]
+\begin{equation}
+	I_1= 2 (\vec{B}^2 - \vec{E}^2 ), \ I_2 = -4 \vec{B}\cdot \vec{E}
+\end{equation}
+\end{boxenv}
+\noindent Da questi, si ricava una forma canonica dipendente da $I_1,I_2$ per i campi:
+\begin{equation}
+	F^{\mu \nu } = \begin{pmatrix} 0 & - E & 0 &0 \\ E & 0 & 0 & E \\ 0&0&0&0\\ 0&-E&0 &0 \end{pmatrix} ; \ F^{\mu \nu } = \begin{pmatrix} 0 & - E & 0 &0 \\ E &0 &0 &0 \\ 0&0&0&-B \\ 0&0&B&0 \end{pmatrix} 
+\end{equation}
+Prima valida se $\vec{E}\cdot \vec{B}=0,\ \vec{E}^2- \vec{B}^2 =0$ e l'altra in tutti gli altri casi.
+\subsection{Carica in moto rettilineo uniforme}
+
+In $S$, carica $e$ in moto rettilineo uniforme con $x=\beta ct,\ y=0,\ z=0$; $S'$ SR solidale con $e$.
+
+\subsubsection{Campi per calcolo diretto}
+
+In $S'$, i campi nel punto $\vec{R}'$ sono:
+\begin{equation}
+	\vec{E}' = e \frac{\vec{R}'}{|\vec{R}'|^3}; \ \vec{B}' = 0
+\end{equation}
+Trasformando in $S$, dove $e$ ha velocit\`a $\vec{v}$ (quindi $S$ ha velocit\`a $\vec{V}= -\vec{v}$ rispetto a $S'$): $\vec{E}_{| |} = \vec{E}'_{| |}, \ \vec{E}_\perp = \gamma\vec{E}'_\perp  $ e 
+\begin{equation}
+	\vec{B} = \frac{\vec{v}}{c}\times (\gamma\vec{E}') = \frac{\vec{v}}{c} \times \vec{E}
+\end{equation}
+Per le coordinate, si ha $x' = \gamma(x-vt) , \ y'=y ,\ z' =z$, quindi:
+\[
+R ' = \sqrt{x'^2 + y'^2 + z'^2}=\sqrt{\gamma^2(x-vt)^2 + y^2 + z^2} = \gamma \sqrt{(x-vt)^2 + (1-\beta ^2) (y^2 + z^2)}   
+\] 
+Da qui, per $R' = \gamma R_*$:
+\begin{equation}
+		E_x = \frac{e(x-vt)}{\gamma^2 R_*^3}, \ E_y \frac{ey}{\gamma^2 R_*^3}, \ E_z = \frac{ez}{\gamma^2 R_*^3}\Longrightarrow \vec{E}= \frac{1}{\gamma^2}\frac{e\vec{R}}{R_*^3}
+\end{equation}
+con $\vec{R} = (x-vt, y,z)$ posizione del punto di osservazione rispetto alla particella. Per osservatore in $x=0,\ y=b,\ z=0\Rightarrow \vec{R}=(-vt,b,0)$:
+\begin{equation}
+	E_x = - \frac{e\gamma vt}{(b^2 + \gamma^2 v^2 t^2)^{3 / 2} };\ E_y = \frac{e\gamma b}{(b^2+\gamma^2 v^2 t^2 ) ^{3 / 2} }; \ E_z = 0
+\end{equation}
+Per $\vec{B}= \frac{\vec{v}}{c} \times \vec{E}$, essendo $\vec{v}=(v,0,0)$, si ha:
+\begin{equation}
+	B_x = B_y = 0; \ B_z = \frac{v}{c}E_y = \frac{\gamma \beta  e b}{(b^2 + \gamma^2 v^2 t^2) ^{3 / 2} }
+\end{equation}
+
+\subsubsection{Campi tramite 4-potenziale}
+In $S'$, si sceglie:
+\begin{equation}
+	A'^\mu  = \left(\frac{e}{\sqrt{x'^2 + y'^2 + z'^2} },0,0,0\right) 
+\end{equation}
+In $S$, quindi:
+\begin{equation}
+	A^\mu = \Lambda \indices{^{\mu }_{\nu }} A'^\nu = \left(\frac{\gamma e }{\sqrt{\gamma^2 (x-vt)^2 + y^2 + z^2} }, \frac{\beta  \gamma e}{\sqrt{\gamma^2 (x-vt)^2 + y^2 + z^2} },0,0\right) 
+\end{equation}
+Da questi si ottengono i campi:
+\begin{equation*}
+	\begin{cases}
+		\displaystyle E_x = \frac{e (x-vt) }{\gamma^2 \left[ (x-vt)^2 + (1-\beta ^2) (y^2+z^2) \right] ^{3 / 2} }\\
+		\\
+		\displaystyle E_y = \frac{e y}{\gamma^2 \left[ (x-vt)^2 + (1-\beta ^2) (y^2+z^2) \right] ^{3 / 2} }\\
+		\\
+		\displaystyle E_z = \frac{e z}{\gamma^2 \left[ (x-vt)^2 + (1-\beta ^2) (y^2+z^2) \right] ^{3 / 2} }
+	\end{cases}
+	\begin{cases}
+		B_x = 0\\
+		\\
+		\displaystyle B_y = \frac{-e \beta  z}{\gamma^2 \left[ (x-vt)^2 + (1-\beta ^2) (y^2+z^2) \right] ^{3 / 2} }\\
+		\\
+		\displaystyle B_z = \frac{e \beta  y}{\gamma^2 \left[ (x-vt)^2 + (1-\beta ^2) (y^2+z^2) \right] ^{3 / 2} }\\
+	\end{cases}
+\end{equation*}
+\subsubsection{Impulso trasferito}
+Per $\tau  = \frac{1}{\gamma} \frac{b}{v}$, le espressioni per $\vec{E},\vec{B}$ in $P=(0,b,0)$ diventano:
+\[
+\begin{cases}
+\displaystyle E_x = -\frac{e}{b^2} \frac{t / \tau }{(1+t^2 / \tau ^2) ^{3 / 2} }\\
+\\
+\displaystyle E_y = \frac{e }{b^2} \frac{\gamma}{(1+t^2 / \tau ^2)^{3 / 2} }\\
+\\
+E_z = 0
+\end{cases}
+\begin{cases}
+	B_x = 0\\
+	\\
+	B_y = 0\\
+	\\
+	B_z = \displaystyle \frac{e}{b^2}\frac{\beta \gamma}{(1+t^2 / \tau ^2)^{3 / 2} }
+\end{cases}
+\] 
+Se carica $-e$ posta in $P$, assumendo che contribuisca solo il campo elettrico alla variazione di quantit\`a di moto e che durante il passaggio della carica, $-e$ subisca uno spostamento trascurabile, la variazione \`e solo lungo $y$ perch\'e $E_z= 0 $ e $E_x$ \`e dispari in $t$, quindi:
+\begin{equation}
+	\begin{split}
+		\Delta p_y &= - e \int_{-\infty} ^{+\infty} E_y \ dt= - \frac{e^2 \gamma}{b^2} \int_{-\infty} ^{+\infty} \frac{1}{(1+ t^2 / \tau ^2)^{3 / 2} } dt  = -\frac{e^2 \gamma \tau }{b^2} \int_{-\infty} ^{+\infty} \frac{d\xi }{(1+\xi ^2)^{3 / 2} } \\
+		&=- \frac{2e^2 \gamma \tau }{b^2}= - \frac{2e^2}{bv}= - \frac{2m_e cr_e}{b \beta }
+	\end{split}
+\end{equation}
+dove la primitiva dell'integrando \`e $\xi / \sqrt{1+\xi ^2} $ e $r_e = e^2 / (m_ec^2)$ \`e il raggio classico dell'elettrone. 
+
+Per $b \gg 2r_e / \beta \Rightarrow \left\lvert \Delta p_y \right\rvert / (m_e c) \ll 1 \Rightarrow $ elettrone non relativistico, per cui \`e giustificata l'ipotesi di trascurare il campo magnetico. Lo spostamento dell'elettrone \`e:
+\begin{equation}
+	\left\lvert \Delta y \right\rvert \approx  \frac{\left\lvert \Delta p_y \right\rvert }{m_e } \tau  = \frac{2r_e}{\gamma\beta ^2}
+\end{equation}
+essendo $\tau $ tempo caratteristico dell'``urto''. L'ipotesi di spostamento trascurabile \`e $\left\lvert \Delta  y \right\rvert \ll b$ se $ b\gg 2r_e / (\gamma\beta ^2)$, pi\`u debole di quella per trascurare il campo magnetico.
+\subsubsection{Equazioni del moto per carica in campo em}
+Per carica $e$ di massa $m$: $\frac{d \vec{p}}{d t} = e\vec{E}+ \frac{e}{c}\vec{v}\times \vec{B}$, $\vec{p}=m\gamma\vec{v}$. Si cerca forma covariante, sapendo che il tensore $F^{\mu \nu } $ \`e lineare nei campi, quindi la \textbf{quadriforza} $f^\mu $ dovr\`a essere lineare nella 4-velocit\`a e nel tensore di campo. Visto che $u^\mu  = \gamma(c,\vec{v})$, il tensore $F^{\mu \nu } u_\nu $ ha componenti:
+\begin{equation}
+	\begin{cases}
+	F^{0\nu } u_\nu =F^{0i} u_i = \gamma \vec{E}\cdot \vec{v}\\
+	\\
+\displaystyle F^{i \nu } u_\nu = F^{i 0} u_0 + F^{ij} u_j = \gamma c E_i + \gamma \epsilon ^{ijk} B_k v_j = c \gamma\left(\vec{E}+ \frac{\vec{v}}{c} \times \vec{B}\right) _i
+\end{cases}
+\end{equation}
+Avendo $p^\mu  = (E / c , \vec{p})$ e $dt = \gamma d\tau $, allora:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d p^\mu }{d \tau } = \frac{e}{c}F^{\mu \nu } u_\nu 
+\end{equation}
+\end{boxenv}
+\subsection{Tensore energia-impulso}
+\subsubsection{Tensore densit\`a di forza}
+
+Forza di Lorentz per unit\`a di volume \`e:
+\[
+\frac{d \vec{p}}{d tdV} = \rho  \vec{E}+ \frac{1}{c}\vec{j}\times \vec{B}
+\] 
+Si introduce il 4-vettore
+\begin{equation}
+	G^\mu = \frac{d p^\mu }{d t dV} = \left(\frac{1}{c} \frac{d E}{d t dV} , \frac{d \vec{p}}{d t dV} \right) 
+\end{equation}
+che \`e un 4-vettore perch\'e $dt dV$ \`e uno scalare di Lorentz. A parte fattore $c^{-1} $, la componente temporale \`e lavoro svolto dal campo per unit\`a di tempo e volume. Visto che $dE = \vec{v}\cdot d\vec{p}$, si ha:
+\[
+\frac{1}{c}\frac{d E}{d t dV} = \frac{\vec{v}}{c} \cdot \frac{d \vec{p}}{d t dV} =\frac{1}{c} \rho \vec{E}\cdot \vec{v} = \frac{1}{c}\vec{E}\cdot \vec{j}
+\] 
+Allora, essendo $J^\mu  = (c\rho ,\vec{j})$:
+\begin{boxenv}[]
+\begin{equation}
+	G^\mu  = \left(\frac{1}{c}\vec{E}\cdot \vec{j},\ \rho  \vec{E}+ \frac{1}{c}\vec{j}\times \vec{B}\right)  = \frac{1}{c} F^{\mu \nu } J_\nu 
+\end{equation}
+\end{boxenv}
+\subsubsection{Il tensore energia-impulso}
+A partire da $G^\mu $, usando $\partial _\mu F^{\mu \nu } =\frac{4\pi}{c}J^\nu $:
+\[
+\frac{1}{c}F^{\mu \nu } J_\nu = \frac{1}{4\pi} F^{\mu \nu } \partial ^\rho F_{\rho \nu } = \frac{1}{4\pi} \left[ \partial ^\rho (F^{\mu \nu } F_{\rho \nu }) - (\partial ^\rho F^{\mu \nu }) F_{\rho \nu }    \right] 
+\] 
+Indici contratti sono muti, quindi il secondo termine diventa:
+\[
+	(\partial ^\rho F^{\mu \nu } ) F_{\rho \nu } = \frac{1}{2}(\partial ^\rho F^{\mu \nu } ) F_{\rho  \nu } + \frac{1}{2}(\partial ^\nu F^{\mu \rho } ) F_{\nu \rho } = \frac{1}{2}(\partial ^\rho  F^{\mu \nu } + \partial ^\nu F^{\rho \mu } )F_{\rho \nu } =-\frac{1}{2} (\partial ^\mu F^{\nu \rho } )F_{\rho \nu } 
+\] 
+visto che $F^{\mu \nu } $ \`e antisimmetrico e $\partial _\mu  F_{\rho \sigma } + \partial _\rho F_{\sigma \mu } + \partial _\sigma F_{\mu \rho } =0$. Allora:
+\begin{equation}
+	\begin{split}
+		G^{\mu }& = \frac{1}{4\pi} \left[ \partial ^\rho (F^{\mu \nu } F_{\rho \nu }) +\frac{1}{2} (\partial ^\mu F^{\nu \rho } ) F_{\rho \nu }  \right] = \frac{1}{4\pi} \left[ \partial ^\rho (F^{\mu \nu } F_{\rho \nu } ) - \frac{1}{2} (\partial ^\mu F^{\nu \rho } ) F_{\nu \rho }   \right] \\
+			&= \frac{1}{4\pi }\left[ \partial ^\rho (F^{\mu \nu } F_{\rho \nu } ) - \frac{1}{4} \partial ^\mu (F^{\nu \rho } F_{\nu \rho } )  \right] = \frac{1}{4\pi} \partial ^\rho \left[ F^{\mu \nu } F_{\rho \nu } -\frac{1}{4} \delta ^{\mu } _\rho F^{\nu \alpha } F_{\nu \alpha }  \right] 
+	\end{split}
+\end{equation}
+Si definisce il \textbf{tensore energia-impulso} come:
+\begin{boxenv}[]
+\begin{equation}
+	T^{\mu \rho } = \frac{1}{4\pi} \left[ - F^{\mu \nu } F\indices{^\rho _\nu} + \frac{1}{4} \eta^{\mu \rho } F^{\nu \alpha } F_{\nu \alpha }  \right] = \frac{1}{4\pi}\left[ -F^{\mu \nu } \eta_{\nu \alpha } F^{\rho \alpha } +\frac{1}{4}\eta^{\mu \rho } F^{\nu \alpha } F_{\nu \alpha }     \right] 
+\end{equation}
+\end{boxenv}
+\noindent Allora $\frac{1}{c}F^{\mu \nu } J_\nu  = - \partial ^\rho T\indices{^{\mu }_{\rho }} = - \partial _\rho  T^{\mu \rho } $, quindi:
+\begin{boxenv}[]
+\begin{equation}
+	G^\mu = - \partial _\rho  T^{\mu \rho } 
+\end{equation}
+\end{boxenv}
+\noindent Il tensore $T^{\mu \nu } $ \`e simmetrico e a traccia nulla, quindi $T\indices{^\mu  _\mu } =0$, con componenti date da:
+\begin{equation}
+	\begin{split}
+		&T^{00} = \frac{1}{8\pi} (\vec{E}^2 + \vec{B}^2) \equiv W\\
+		&T^{0i} = \frac{1}{4\pi} (\vec{E}\times \vec{B})_i = \frac{S_i}{c}\\
+		&T^{ij} = \frac{1}{4\pi}\left[ -E_iE_j - B_iB_j + \frac{1}{2}\delta _{ij} (\vec{E}^2 + \vec{B}^2) \right]  = \sigma _{ij} 
+	\end{split}
+\end{equation}
+con $W$ densit\`a di energia em, $\vec{S}= \frac{c}{4\pi} \vec{E}\times \vec{B}$ vettore di Poynting e $\sigma _{ij} $ \textbf{tensore degli sforzi di Maxwell}\footnote{Gli indici sono in basso perch\'e \`e tridimensionale.}. Quindi:
+\begin{equation}
+	\begin{split}
+		&T^{\mu  \rho } = \begin{pmatrix} W & \vec{S / c} \\ \vec{S}/ c & \sigma _{ij}  \end{pmatrix} \ ; \hspace{.3cm} T_{\mu \rho } = \begin{pmatrix} W& - \vec{S}/c \\ - \vec{S}/c & \sigma _{ij}  \end{pmatrix} \\
+		&T\indices{^{\mu }_{\rho }} = \begin{pmatrix} W & - \vec{S}/c \\ \vec{S}/c & -\sigma _{ij} \end{pmatrix} \ ; \hspace{.3cm} T\indices{_{\mu }^{\rho }} \begin{pmatrix} W & \vec{S}/c \\ -\vec{S}/c& - \sigma _{ij}  \end{pmatrix} 
+	\end{split}
+\end{equation}
+\subsubsection{Equazioni di conservazione}
+L'equazione $G^\mu  = - \partial _\rho T^{\mu \rho } $ contiene equazioni per la conservazione dell'energia e dell'impulso:
+\begin{equation*}
+	\begin{split}
+		&G^0=\frac{1}{c}\frac{d E}{d t dV} = - \partial _\rho T^{0\rho } = - \partial _0 T^{00} - \partial _i T^{0i}= -\frac{1}{c}\frac{\partial W}{\partial t} - \frac{1}{c}\vec{\nabla }\cdot \vec{S}\Rightarrow  \frac{d W}{d t} + \vec{\nabla }\cdot \vec{S} + \frac{d E}{d t dV} =0\\
+		& \frac{1}{c^2}\frac{\partial S_i}{\partial t} + \partial _j \sigma _{ij} + \frac{d p_i}{d t d V}  = 0
+	\end{split}
+\end{equation*}
+Nella prima, $dE / (dt dV)$ lavoro svolto da campo em (energia trasferita alle cariche) e $\vec{S}$ vettore flusso di energia $\to$ equazione di conservazione dell'energia; nella seconda, $d\vec{p}/(dt dV)$ forza per unit\`a di volume (impulso trasferito da campo em alle cariche per unit\`a di tempo e di volume) e $\sigma _{ij} $ flusso di impulso $\to $ equazione di conservazione dell'impulso, con $\vec{S}/ c^2 $ densit\`a di impulso.
+
+Per calcolo dell'energia trasferita alle cariche o forza esercitata sulle cariche da campo em, si integrano le equazioni su volume occupato dalle cariche e integrali di volume delle divergenze si riscrivono come flussi (le normali sono uscenti).
+
+\subsubsection{Caso dell'onda piana monocromatica}
+
+Ci si mette in Gauge di Lorenz, quindi $\partial _\mu  A^\mu  =0 $. Valgono le equazioni di Maxwell $\partial _\mu \partial ^\mu  A_\nu  =0 $, alle quali si cerca soluzione del tipo $A_\mu (x) = \overline{A}_\mu  e^{-ik_\alpha  x^\alpha } $, dove $\overline{A}_\mu $ 4-vettore costante complesso e $k_\mu =(\omega / c, \vec{k}) $ 4-vettore costante reale.
+
+Da $\partial _\mu  \partial ^\mu  A_\nu =0$, si ottiene $k_\mu k^\mu  =0 \Rightarrow \vec{k}^2 = \omega^2 / c^2$, mentre $\partial _\mu  A^\mu =0\Rightarrow k_\mu \overline{A}^\mu  =0 \Rightarrow k_\mu A^\mu (x) = k_\mu A^{*\mu}(x)=0 $.
+
+Il tensore del campo \`e:
+\[
+F_{\mu \nu } (x) = \Re \left\{ \partial _\mu  A_\nu  - \partial _\nu  A_\mu  \right\}  = \Re \left\{ - i k_\mu  A_\nu  + i k_\nu  A_\mu  \right\} = \Im \left\{ k_\mu A_\nu -k_\nu A_\mu  \right\} 
+\] 
+Ora si calcola il tensore energia-impulso, pi\`u precisamente la sua media temporale. Usando $k_\mu A^\mu (x) = k_\mu A^{*\mu}(x)=0 $, si ha $F^{\alpha  \beta } F_{\alpha \beta } =0$\footnote{Per farlo, si pu\`o usare che $F^{\mu \nu } = k^\mu \Im\left\{ A^\nu  \right\} - k^\nu \Im\left\{ A^\mu  \right\} $.}, corrispondente a $\lvert \vec{E} \rvert = \lvert \vec{B} \rvert $, quindi si calcola
+\begin{equation}
+	\begin{split}
+		\left\langle F^{\mu \nu } F\indices{^{\rho }_{\nu }}   \right\rangle &= k^\mu k^\rho \left\langle \widetilde{A}^\nu \widetilde{A}_\nu  \right\rangle = k^\mu k^\rho \left\langle \frac{A^\nu - A^{\nu *} }{2i} \frac{A_\nu - A^*_{\nu} }{2i}\right\rangle \\
+										     &= -\frac{k^\mu k^\rho }{4} \left(-2 \left\langle A^\nu A_\nu ^* \right\rangle\right) = \frac{k^\mu k^\rho }{2}\left\langle A^\nu A_\nu ^* \right\rangle
+	\end{split}
+\end{equation}
+con $\widetilde{A }^\mu  = \Im\{A^\mu \}$ e l'ultima uguaglianza \`e giustificata da $\left\langle A_\nu A^\nu  \right\rangle = \left\langle A^*_\nu A^{\nu *}  \right\rangle=0$, a sua volta dato da $\int_{0} ^T e^{-4 \pi i t / T} \ dt = 0$\footnote{Questo si ottiene dal prodotto degli esponenziali dei due 4-vettori, considerando solo l'esponente prodotto da $k_0x^0 = \omega t$, con $\omega = 2\pi/T$.}, che \`e quello che deve essere mediato sul periodo $T$.
+
+Da questo: $\left\langle T^{\mu \rho }  \right\rangle = - \frac{k^\mu  k^\rho }{8 \pi} \left\langle A^\nu A^* _\nu  \right\rangle$. Si nota che da $T^{00} = W$, si ha $\left\langle W \right\rangle=-\frac{\omega^2}{8\pi c^2}\left\langle A^\nu A^*_\nu  \right\rangle$, quindi
+\begin{equation}
+	\left\langle T^{\mu \rho }  \right\rangle = \frac{\left\langle W \right\rangle c^2}{\omega^2}k^\mu  k^\rho 
+\end{equation}
+Se $\hat{n}= c \vec{k} / \omega$ versore della direzione di propagazione dell'onda e $n^\mu =(1,\hat{n})$, si pu\`o scrivere:
+\begin{equation}
+	\left\langle T^{\mu \rho }  \right\rangle = \left\langle W \right\rangle n^\mu  n^\rho 
+\end{equation}
+\subsection{Potenziali ritardati e irraggiamento}
+
+\subsubsection{I potenziali ritardati}
+
+Distribuzione $J^\mu $ nel vuoto. In Guage di Lorenz $\partial _\mu A^\mu =0$, quindi si risolve $\partial _\mu \partial ^\mu A^\nu = \frac{4\pi}{c} J^\nu $. Si usa la funzione di Green $G_R(\vec{r},t)$ che soddisfa:
+\begin{equation}
+	\left(\frac{1}{c^2}\partial _t^2 - \nabla ^2\right) G_R(\vec{r},t) = \delta (\vec{r}) \delta (t)
+\end{equation}
+corrispondente ad un impulso di carica in un punto e tale che $G_R = 0, \ \forall t < 0, \ \forall \vec{r}$. Trasformata solo rispetto a $r$\footnote{Questo consente di imporre pi\`u facilmente le condizioni al contorno pi\`u in avanti.}:
+\begin{equation}
+	\left(\frac{1}{c^2}\partial _t^2 + k^2\right) \widetilde{G}_R(\vec{k},t) = \frac{1}{(2\pi)^3}\delta (t)
+\end{equation}
+Soluzione generale della forma $A(k) \cos(\omega_k t) + B(k) \sin(\omega_k t)$, con $\omega_k = ck$. Usando le condizioni al contorno ($G_R = 0, \ t <0$), si integra l'equazione:
+\begin{equation*}
+		\lim_{\varepsilon  \to 0} \int_{-\varepsilon } ^{+\varepsilon } \left(\frac{1}{c^2}\partial _t^2 + k^2\right) \widetilde{G}_R(\vec{k},t) \ dt = \lim_{\varepsilon  \to 0} \int_{-\varepsilon } ^{+\varepsilon } \frac{1}{(2\pi)^3}\delta (t)\ dt \implies \frac{1}{c^2}\partial _t \widetilde{G}_R (\vec{k},0^+)= \frac{1}{(2\pi)^3}
+\end{equation*}
+dove $\int_{-\varepsilon } ^{+\varepsilon } k^2 \widetilde{G}_R \ dt \to 0$. Integrando nuovamente: $\widetilde{G}_R(\vec{k},0^+)=0$. Allora, da $\frac{1}{c^2}\partial _t \widetilde{G}_R (\vec{k},0^+)= \frac{1}{(2\pi)^3}$ e imponendo la causalit\`a:
+\begin{equation}
+\widetilde{G}_R(\vec{k},t) = \frac{c}{(2\pi)^3} \frac{\sin (\omega_k t)}{k}\Theta(t)
+\end{equation}
+Si anti-trasforma per trovare $G_R$, usando $\int_{-\infty} ^{+\infty}  e^{ikx} \ dk = 2\pi \delta (x)$:
+\begin{equation}
+	\begin{split}
+		G_R(\vec{r},t) &= \frac{c\Theta(t)}{(2\pi)^3} \int_{\mathbb{R}^3} \frac{\sin(ctk)}{k} e^{i\vec{k}\cdot \vec{r}} \ d^3k=\frac{c\Theta(t)}{(2\pi)^3} \int_{\mathbb{R}^3} \frac{\sin(ctk)}{k} e^{ikr \cos\theta } \ d^3k\\
+			       &=2\pi\frac{c\Theta(t)}{(2\pi)^3} \int_{0} ^{+\infty} dk \ k \sin(ctk) \int_{0} ^\pi d\theta  \ e^{ikr \cos \theta } \sin \theta \\
+			       &= \frac{c\Theta(t)}{(2\pi)^2} \int_{0} ^{+\infty} dk \ k \sin(ckt) \int_{-1} ^{+1} e^{ikr\alpha } \ d\alpha \\
+			       &= \frac{c\Theta(t)}{(2\pi)^2} \frac{\cancel{i}}{\cancel{k}r}\int_{0} ^{+\infty} \cancel{k} \frac{e^{i ckt} - e^{-ickt} }{2\cancel{i}} (e^{-ikr} - e^{ikr}  ) \ dk\\
+			       &= \frac{c\Theta(t)}{2(2\pi)^2r} \int_{0} ^{+\infty} (e^{i ckt} - e^{-ickt}) (e^{-ikr} - e^{ikr}  ) \ dk\\
+			       &=\frac{c\Theta(t)}{2(2\pi)^2r} \int_{0} ^{+\infty}\big(e^{i(ct-r)k} + e^{-i(ct-r) k} - e^{i(ct+r)k} -e^{-i(ct+r)k}\big) \ dk \\
+			       &=\frac{c\Theta(t)}{2(2\pi)^2r} \int_{-\infty} ^{+\infty}\big(e^{i(ct-r)k}  - e^{i(ct+r)k} \big) \ dk = \frac{c\Theta(t)}{4\pi r} \left[ \delta (ct-r) - \delta (ct+r) \right] \\
+			       &=\frac{c}{4\pi r} \delta (ct-r)= \frac{1}{4\pi r} \delta (t - r / c)
+	\end{split}
+\end{equation}
+dove:
+\begin{itemize}
+	\item nella terza uguaglianza si passa in coordinate sferiche $(\left\lvert k  \right\rvert, \theta ,\phi )$, dove $\theta $ angolo fra $\vec{k},\vec{r}$, quindi $\det J = k^2 \sin\theta \ dk d \theta  d\phi $;
+	\item nell'ottava disuguaglianza, si includono i termini per $k\to -k$ nell'integrale, estendendolo da $-\infty$ a $+\infty$;
+	\item nell'ultima disuguaglianza, si \`e portato nella delta la $c$ al numeratore del coefficiente, usando $\delta (ax) = \delta (x) / a$ (cambio di variabile della $\delta(x) $).
+\end{itemize}
+Allora la soluzione generale \`e ottenuta tramite convoluzione con $G_R$:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		A^\mu (\vec{r},t)& = \frac{4\pi}{c} \int_{\mathbb{R}^3} d^3 r '\int_{-\infty} ^{+\infty} dt' \ J^\mu (\vec{r}', t') G_R(\vec{r}-\vec{r}', t - t') \\
+				 &= \frac{1}{c}\int_{\mathbb{R}^3} \int_{-\infty } ^{+\infty} \frac{J^\mu (\vec{r}', t')}{\left\lvert \vec{r}-\vec{r}' \right\rvert }\delta (t-t' - \left\lvert \vec{r}-\vec{r}' \right\rvert / c) \ d^3 r' dt'\\
+				 &=\frac{1}{c}\int_{\mathbb{R}^3} \frac{J^\mu (\vec{r}', t- \left\lvert \vec{r}-\vec{r}' \right\rvert /c)}{\left\lvert \vec{r}-\vec{r}' \right\rvert  } \ d^3 r'
+	\end{split} 
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	Dalla prima uguaglianza, visto che $A^\mu , J^\mu $ sono quadrivettori e l'elemento $d^3 r ' dt'$ \`e invariante, allora $G_R$ deve essere un invariante di Lorentz almeno per trasformazioni di Lorentz proprie.
+\end{osservazione}
+\noindent Usando $t' = t - \left\lvert \vec{r}-\vec{r}' \right\rvert /c$, si mostra che $\partial _\mu A^\mu  =0\Rightarrow \partial _t \phi  / c + \vec{\nabla }\cdot \vec{A}=0$. Si vuole usare l'equazione di continuit\`a, quindi a partire dalla soluzione $A^\mu $ appena trovata:
+\[
+\begin{split}
+	& \frac{1}{c}\partial _t \phi (\vec{r},t) = \frac{1}{c} \int_{\mathbb{R}^3} \frac{\partial _t \rho (\vec{r}',t')}{\left\lvert \vec{r}-\vec{r}' \right\rvert }d^3r'\\
+	&\vec{\nabla }\cdot \vec{A} (\vec{r},t) = \frac{1}{c}\int_{\mathbb{R}^3} \vec{j}(\vec{r}',t') \cdot \vec{\nabla } \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert } d^3 r' + \frac{1}{c}\int_{\mathbb{R}^3} \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert } \vec{\nabla }\cdot \vec{j}(\vec{r}',t') \ d^3 r'
+\end{split}
+\] 
+Visto che 
+\[
+	\vec{\nabla }\cdot \vec{j}(\vec{r}',t') = \frac{\partial \vec{j}(\vec{r}',t')}{\partial t'}\cdot  \vec{\nabla }t'=-\frac{1}{c} \frac{\partial \vec{j}(\vec{r}',t')}{\partial t'} \cdot \vec{\nabla } \left\lvert \vec{r}-\vec{r}' \right\rvert = \frac{1}{c}\frac{\partial \vec{j}(\vec{r}',t')}{\partial t'} \cdot \vec{\nabla }' \left\lvert \vec{r}-\vec{r}' \right\rvert 
+\] 
+e che $\vec{\nabla }'\cdot \vec{j}(\vec{r}',t') = \left[ \vec{\nabla }'\cdot \vec{j}(\vec{r}',t') \right]_{t'} - \frac{1}{c}\partial _{t'} \vec{j}(\vec{r'},t') \cdot \vec{\nabla }' \left\lvert \vec{r}-\vec{r}' \right\rvert  $, allora $\vec{\nabla }\cdot \vec{j} = \left[ \vec{\nabla }'\cdot \vec{j} \right] _{t'} - \vec{\nabla }'\cdot \vec{j}$, quindi
+\[
+\vec{\nabla }\cdot \vec{A}(\vec{r},t) = -\frac{1}{c}\int_{\mathbb{R}^3} \vec{\nabla }' \cdot \frac{\vec{j}(\vec{r}',t')}{\left\lvert \vec{r}- \vec{r}'\right\rvert }d^3 r' + \frac{1}{c} \int_{\mathbb{R}^3} \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert } \left[ \vec{\nabla }' \cdot \vec{j}(\vec{r}',t') \right] _{t'}  d^3 r'
+\] 
+Il primo termine si trasforma in un integrale di superficie in $\vec{j}$, quindi si annulla, pertanto:
+\begin{equation}
+	\frac{1}{c} \frac{\partial \phi (\vec{r},t)}{\partial t} +\vec{\nabla }\cdot \vec{A}(\vec{r},t) = \frac{1}{c}\int_{\mathbb{R}^3} \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert } \left(\partial _{t'} \rho (\vec{r',t'}) + \left[ \vec{\nabla }'\cdot \vec{j}(\vec{r'},t') \right] _{t'} \right) d^3 r' = 0
+\end{equation}
+per l'equazione di continuit\`a.
+
+\subsubsection{Dipolo elettrico}
+A partire da $\vec{A}(\vec{r},t) = \frac{1}{c}\int \frac{\vec{j}(\vec{r}', t - \left\lvert \vec{r}- \vec{r}'\right\rvert /c)}{\left\lvert \vec{r}-\vec{r}' \right\rvert }  ' d^3 r'$, si assume $1/\left\lvert \vec{r}-\vec{r}' \right\rvert \simeq 1 / r $: $\vec{A}(\vec{r},t) = \frac{1}{cr} \int \vec{j}(\vec{r}', t - r / c) \ d^3 r'$. Visto che:
+\[
+\begin{split}
+	\int j_i (\vec{r} , t - r/ c) \ d^3 r' &= \int j_k(\vec{r}', t - r / c) (\partial _k' r_i' )\ d^3 r'\\
+	&= \cancel{\int \partial _k' \big(r'_i j_k (\vec{r}', t - r / c)\big) \ d^3 r'} - \int r'_i \partial '_k j_k (\vec{r}', t- r / c) \ d^3 r'\\
+	&=\int r'_i \partial _t \rho (\vec{r}', t - r / c)\ d^3 r' = \frac{d }{d t} \int r'_i \rho (\vec{r}', t - r/c) \ d^3 r' \equiv \dot{p}_i (t - r / c) 
+\end{split}
+\] 
+Si ha:
+\begin{boxenv}[]
+\begin{equation} 
+\vec{A}(\vec{r},t) = \frac{1}{rc} \dot{\vec{p}}(t - r / c) 
+\end{equation}
+\end{boxenv}
+\noindent Facendo uso di $\vec{\nabla }\times \vec{f}(\vec{r}', t- r / c) = -\frac{1}{c} \hat{n}\times \dot{\vec{f}}(\vec{r}', t - r / c)$, con $\hat{n}= \vec{r} / r$, il campo magnetico in zona di radiazione ($kr \gg 1)$ \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{B}_\text{rad}(\vec{r},t)\simeq \frac{1}{rc} \vec{\nabla }\times \dot{\vec{p}}(t - r / c) = -\frac{1}{rc^2} \hat{n} \times \ddot{\vec{p}}(t - r / c )
+\end{equation}
+\end{boxenv}
+\noindent dove si sono trascurati termini $\operatorname{O} (r^{-2} )$. Invece, usando $\vec{\nabla }\times \vec{B} = \frac{1}{c}\partial _t \vec{E}$ (trascurando ancora $\operatorname{O} (r^{-2} )$), si ha $(rc^3)^{-1} \hat{n}\left[ \hat{n}\times \dddot{\vec{p}}(t- r / c)\right] = c^{-1} \partial _t \vec{E}$, quindi:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{E}_\text{rad}(\vec{r},t)= \frac{1}{rc^2 } \hat{n}\times \left[ \hat{n}\times \ddot{\vec{p}}(t-r / c) \right] = - \frac{1}{rc^2}\ddot{\vec{p}}_\perp (t-  r / c) \equiv - \hat{n}\times \vec{B}_\text{rad}(\vec{r},t)
+\end{equation}
+\end{boxenv}
+\noindent con $\vec{p}_\perp = - \hat{n}\times (\hat{n}\times \vec{p})$. Si calcola $\vec{S}_\text{rad} = \frac{c}{4\pi} \vec{E}\times \vec{B}= \frac{c}{4\pi}\lvert \vec{E} \rvert ^2 \hat{n}$; in coordinate polari con $\ddot{\vec{p}} \mid  \mid  \hat{z}$ e $\theta$ angolo tra $\hat{n},\ddot{\vec{p}}$ e $|\hat{n}\times (\hat{n}\times \ddot{\vec{p}})|=\lvert \ddot{\vec{p}} \rvert \sin \theta $:
+\begin{boxenv}[]
+\begin{equation}
+	P_\text{rad} = \int \vec{S}\cdot d\vec{A}= \int \vec{S}\cdot \hat{n} r^2 \ d\cos \theta d \phi = \frac{1}{2c^3} \lvert \ddot{\vec{p} }\rvert ^2 \int_{-1} ^{+1} \sin^2 \theta \ d\cos \theta  = \frac{2}{3c^3}\lvert \ddot{\vec{p}} \rvert ^2
+\end{equation}
+\end{boxenv}
+\noindent Sia $\vec{p}(t) = \vec{p}_0 e^{-i\omega t} $. Per $\vec{S}$, si usa $\vec{E}\to (\vec{E}+\vec{E}^*) / 2$ con $\langle\vec{S}\rangle = \frac{c}{4\pi} \frac{1}{4} \langle\vec{E}\times \vec{B}^* + \vec{E}^* \times \vec{B}\rangle$\footnote{Quelli con stessa frequenza sono a media nulla.}; sostituendo $\vec{B}= \hat{n}\times \vec{E}$, si ha\footnote{Si \`e usato $\vec{E} \times (\hat{n} \times \vec{E}^*) = (\vec{E} \cdot \vec{E}^*) \hat{n} - (\vec{E} \cdot \hat{n}) \vec{E}^*$, insieme al fatto che in campo di radiazione $\vec{E}\cdot \hat{n}=0$. Si nota che $\vec{E}$ \`e ancora quello complesso: la media della parte reale \`e inclusa nell'espressione.} $\langle \vec{S} \rangle=\frac{c}{8\pi} \lvert \vec{E} \rvert ^2 \hat{n}$, quindi:
+\begin{equation}
+	\langle P\rangle= \int \langle \vec{S}\rangle\cdot \hat{n}\ r^2 d\cos\theta  d\phi = \frac{c}{4}k^4 \left\lvert \vec{p}_0 \right\rvert ^2 \int_{-1}^{+1} \sin^2 \theta\ d \cos\theta = \frac{c}{3} k^4 \left\lvert \vec{p}_0 \right\rvert ^2
+\end{equation}
+
+\subsubsection{Quadrupolo elettrico e dipolo magnetico}
+
+In $\vec{A}(\vec{r},t) = \frac{1}{c}\int \frac{j(\vec{r}', t - \left\lvert \vec{r}-\vec{r}' \right\rvert / c)}{\left\lvert \vec{r}-\vec{r}' \right\rvert } d^3 r'$ si usa $\left\lvert \vec{r}-\vec{r}' \right\rvert \simeq r - \hat{n}\cdot \vec{r}'$, con $\hat{n}= \vec{r}/r$. Quindi $\vec{j}(\vec{r}' , t - \left\lvert \vec{r}- \vec{r}'\right\rvert) /c\simeq \vec{j}(\vec{r}', t - r / c)+\frac{\hat{n}\cdot \vec{r}'}{c}\partial _{t'}  \vec{j}(\vec{r}', t') | _{t' = t- r / c} $. Se $\vec{j}$ ha frequenza $\omega$, il secondo termine \`e attenuato di $(a\omega)/c\simeq a / \lambda \simeq v / c$, con $a$ dimensione caratteristica della distribuzione.
+
+Dai calcoli col secondo termine si ottiene:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{A}^{(2)}  (\vec{r},t) = \frac{1}{cr} \vec{\mu }(t- r / c) \times  \hat{n}+ \frac{1}{6c^2 r }\ddot{\vec{Q}}(t- r / c) + \frac{1}{6cr^2} \hat{n} \partial _t^2 \int \left\lvert \vec{r}' \right\rvert ^2 \rho (\vec{r}', t- r / c) d^3r'
+\end{equation}
+\end{boxenv}
+\noindent dove $Q_{ik} (t') = \int \left(3r_i' r_k' - \delta _{in} \left\lvert \vec{r}' \right\rvert ^2 \right) \rho (\vec{r}',t') \ d^3 r'$ \`e il \textbf{momento di quadrupolo elettrico}, mentre $\vec{\mu }(t)= \frac{1}{2c}\int \vec{r}' \times \vec{j}(\vec{r}',t) \ d^3 r'  $ \`e il \textbf{momento di dipolo magnetico}.
+
+In zona di radiazione ($r\gg\lambda $), trascurando le derivate di $1 / r$ e $\hat{n}$ perch\'e si trascurano termini $\operatorname{O} (r^{-2} )$:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{B}^{(2)} (\vec{r}, t) = \frac{1}{c^2 r }\hat{n}\times \left(\hat{n}\times \ddot{\vec{\mu }}(t- r / c)\right) + \frac{1}{6c^3 r}\dddot{\vec{Q}}(t- r / c) \times \hat{n}
+\end{equation}
+\end{boxenv}
+\noindent La potenza irraggiata \`e ottenuta tramite $\vec{S}= \frac{c}{4\pi}|\vec{B}|^2 \hat{n}$ e si ha:
+\begin{boxenv}[]
+\begin{equation}
+	P = \frac{2}{3c^3} |\ddot{d}|^2 + \frac{1}{180 c^5} \sum_{ij}^{} \dddot{Q}_{ij} ^2 + \frac{2}{3c^3}\left\lvert \ddot{\vec{\mu }} \right\rvert ^2
+\end{equation}
+\end{boxenv}
+\noindent con $\vec{d}$ momento di dipolo elettrico ottenuto prima. Nel caso di campi oscillanti, come prima, la potenza media $\langle  P\rangle = \frac{1}{2}P$.
+\subsubsection{Campi di Liendard-Wiechert}
+
+Carica $e$ con legge oraria $\vec{s}(t)$; vale:
+\[
+	\rho (\vec{r},t) = e \delta \big(\vec{r}-\vec{s}(t)\big) \ ; \hspace{.2cm} \vec{j}(\vec{r},t) = e\dot{\vec{s}}(t) \delta \big(\vec{r}-\vec{s}(t)\big)
+\] 
+I campi si ottengono usando l'espressione dei potenziali in termini della convoluzione delle sorgenti con funzione di Green $G_R$:
+\begin{equation*}
+	\begin{split}
+		\phi (\vec{r},t) &= \int \frac{\rho (\vec{r}',t')}{\left\lvert \vec{r}-\vec{r}' \right\rvert } \delta (t-t'-\left\lvert \vec{r} - \vec{r}'\right\rvert /c)\ d^3 r' dt' = \int \frac{e \delta \big(\vec{r}'-\vec{s}(t')\big)}{\left\lvert \vec{r}-\vec{r}' \right\rvert }\delta (t-t'-\left\lvert \vec{r} - \vec{r}'\right\rvert /c)\ d^3 r' dt'\\
+		&=\int \frac{e}{\left\lvert \vec{r}- \vec{s}(t') \right\rvert } \delta (t-t'- \left\lvert \vec{r}-\vec{s}(t') \right\rvert /c ) dt'
+	\end{split}
+\end{equation*}
+Usando $\delta (f(t')) = \sum_{t'_i}^{} \frac{\delta (t'-t'_i)}{\left\lvert f'(t'_i) \right\rvert }$\footnote{Qui, i $t'_i$ sono soluzioni di $f(t') = 0$. In questo caso, se $\dot{s}<c$, $f'(t')>0$, quindi $f(t')=0$ ha un'unica soluzione $t_r$.} e che $t_r = t' + \left\lvert \vec{r}-\vec{s}(t') \right\rvert / c$:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		\phi (\vec{r},t) &= \int \frac{e\delta (t' - t_r)}{\left\lvert \vec{r}-\vec{s}(t') \right\rvert -\frac{1}{c} (\vec{r}-\vec{s}(t'))\cdot \dot{\vec{s}}(t') } dt'= \frac{e}{\left\lvert \vec{r}- \vec{s}(t_r)  \right\rvert - \frac{1}{c}(\vec{r}-\vec{s}(t_r))\cdot \dot{\vec{s}}(t_r)} \\
+				 &= \Eval{\frac{e}{R(1-\hat{n}\cdot \vec{\beta })}}{t_r}{}
+	\end{split}
+\end{equation}
+\end{boxenv}
+\noindent con $\vec{R} = \vec{r}-\vec{s}(t)$ e $\hat{n}= \vec{R} / R$. Per il potenziale vettore:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{A}(\vec{r},t) = \Eval{\frac{e \vec{\beta }}{R ( 1- \hat{n}\cdot \vec{\beta })}}{t_r}{}
+\end{equation}
+\end{boxenv}
+\noindent In notazione quadridimensionale:
+\begin{boxenv}[]
+\begin{equation}
+	A^\mu  (x) = e \frac{u^\mu (\tau _r)}{(x-s(\tau _r))_\nu u^\nu (\tau _r)}
+\end{equation}
+\end{boxenv}
+\noindent con $(x-s(\tau _r))^2 = 0$\footnote{Condizione di causalit\`a tra coordinate e legge oraria $s^\mu (\tau)$. Visto che $u^\mu = (\gamma c, \gamma\vec{v})$, si ha $(x-s(\tau _r))_\nu u^\nu (\tau _r) = \gamma c R (1-\hat{n} \cdot \vec{\beta })| _{t_r} $.}. Per i campi si calcola il tensore di campo, nel quale si trascurano i termini in cui compare l'accelerazione:
+\begin{equation}
+	F^{\mu \nu } = \Eval{ec^2 \frac{(x-s)^\mu  u^\nu  - (x-s)^\nu  u ^\mu }{(u_\alpha (x-s)^\alpha )^3}}{t_r}{}
+\end{equation}
+Visto che $x^0 - s^0 (\tau _r) = \left\lvert \vec{r}-\vec{s}(\tau _r) \right\rvert $, $u^\mu =\gamma(c,\vec{v})$ e $\vec{R}=\vec{r}- \vec{s}(t)$, $\hat{n}= \vec{R} / R$:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{E} = \frac{e}{\gamma^2 R^2} \Eval{\frac{\hat{n}-\vec{\beta }}{(1-\hat{n}\cdot \vec{\beta })^3}}{t_r}{}; \ \vec{B}= \hat{n}\times \vec{E} = - \frac{e}{\gamma^2 R^2} \Eval{\frac{\hat{n}\times \vec{\beta }}{(1-\hat{n}\cdot \vec{\beta })^3}
+}{t_r}{}
+\end{equation}
+\centering\textbf{NOTA:} questi sono validi per $a=0$, quindi \textbf{NON} validi in zona di radiazione. 
+\end{boxenv}
+\noindent Il tensore di campo completo \`e: 
+\begin{equation}
+	F^{\mu \nu } _\text{rad} =e \frac{(x-s)^\mu a^\nu  - (x-s)^\nu a^\mu }{((x-s)_\alpha u^\alpha )^2} -e\frac{(x-s)^\mu  u^\nu  - (x-s)^\nu  u ^\mu }{(u_\alpha (x-s)^\alpha )^3}(x-s)_\rho a^\rho 
+\end{equation}
+con 
+\begin{equation}
+	a^\mu  = \frac{d u^\mu }{d \tau } = \left(\gamma^4 \frac{\vec{v}\cdot \vec{a}}{c}, \gamma^4 \frac{\vec{v}\cdot \vec{a}}{c^2}\vec{v} + \gamma^2 \vec{a}\right) 
+\end{equation}
+I campi sono:
+\begin{boxenv}[]
+\begin{equation}
+	\vec{E}(\vec{r},t) =\frac{e}{\gamma^2 R^2}\Eval{\frac{\hat{n}-\vec{\beta }}{(1-\hat{n}\cdot \vec{\beta })^3}}{t_r}{}+\frac{e}{cR} \Eval{\frac{\hat{n}\times ((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }})}{(1-\hat{n}\cdot \vec{\beta })^3}}{t_r}{} \ ;\hspace{.2cm} \vec{B}(\vec{r},t) = \hat{n}\times \vec{E}|_{t_r} 
+\end{equation}
+\end{boxenv}
+\subsubsection{Potenza irraggiata da una singola particella}
+
+Si considera il sistema di quiete della particella, in cui $\vec{E}_\text{rad} = \frac{e}{cR} \hat{n}\times (\hat{n}\times  \dot{\vec{\beta }}) $. Se $\theta $ angolo tra $\hat{n}, \vec{\beta }$: $\lvert \vec{E}_\text{rad} \rvert = \frac{e a \sin \theta }{c^2 R}$. Visto che $\vec{S} = \frac{c}{4\pi} \vec{E}_{\text{rad}} \times (\hat{n}\times \vec{E}_\text{rad}) = \frac{c}{4\pi} E^2_\text{rad}\hat{n}$ l'energia \`e il flusso del vettore di Poynting attraverso una sfera di raggio $R$:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d \mathcal{E}}{d t} = \frac{e^2 a^2}{4\pi c^3} 2\pi \int_{0} ^\pi \sin^3 \theta  \ d\theta  = \frac{e^2 a^2}{2c^3}\int_{-1} ^{+1}  (1- \cos^2 \theta ) \ d \cos\theta = \frac{2}{3}\frac{e^2 a^2}{c^3}
+\end{equation}
+\end{boxenv}
+\noindent Questa \`e la \textbf{formula di Larmor}. Generalizzazione 4D della formula si ha con $d \mathcal{E } = \frac{2}{3} \frac{e^2a^2}{c^3}dt $ e $ d\vec{\mathcal{P}} = 0$, che sono energia e impulso irraggiati in tempo $dt$. Questa si pu\`o scrivere come:
+\begin{boxenv}[]
+\begin{equation}
+	d \mathcal{P}^\mu  = - \frac{2 e^2}{3c^5} \frac{d u^\nu }{d \tau } \frac{d u_\nu }{d \tau } u^\mu  d\tau 
+\end{equation}
+\end{boxenv}
+\noindent In notazione 3D: $d \mathcal{P}^\mu  = ( d \mathcal{E} / c , d\vec{\mathcal{P}})$. In generico SR, allora:
+\begin{equation}
+	\frac{d \mathcal{E}}{d t}  = - \frac{2e^2}{3c^3}\frac{d u^\nu }{d \tau } \frac{d u_\nu }{d \tau }
+\end{equation}
+Calcolando $a^\mu a_\mu $ e usando $(\vec{v}\times \vec{a})^2 = v^2 a^2 - (\vec{v}\cdot \vec{a})^2$, si ottiene:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d \mathcal{E}}{d t} = \frac{2e^2}{3c^3} \gamma^6 \left(a^2 - \frac{1}{c^2 }(\vec{v}\times \vec{a})^2\right) 
+\end{equation}
+\end{boxenv}
+
+
+
+
+\subsection{Reazione di radiazione}
+
+Carica soggetta a $\vec{F}_\text{ext}$ conservativa accelera e irraggia, perdendo energia. Si corregge l'equazione del moto $\dot{\vec{p}} = \vec{F}_\text{ext}$ con termine $\vec{F}_\text{rad}$ dovuto dalla radiazione emessa.
+
+\subsubsection{Un primo approccio}
+
+Essendo legata a perdita di energia per irraggiamento, $\vec{F}_\text{rad}$ deve essere una forza dissipativa; si impone che il lavoro da essa compiuto sia dato dalla formula di Larmor per la perdita di energia:
+\begin{equation*}
+	\int_{t_1} ^{t_2} \vec{F}_\text{rad} \cdot \vec{v} \ dt = -\frac{2}{3} \frac{e^2}{c^3} \int_{t_1} ^{t_2} \dot{\vec{v}}^2 \ dt
+\end{equation*}
+Visto che $\dot{\vec{v}}^2 = \frac{d }{d t} (\vec{v}\cdot \dot{\vec{v}}) - \vec{v}\cdot \ddot{\vec{v}} $:
+\begin{equation*}
+	\int_{t_1} ^{t_2} \vec{F}_\text{rad}\cdot \vec{v}\ dt = -\Eval{\frac{2}{3}\frac{e^2}{c^3} \vec{v}\cdot \dot{\vec{v}}}{t_2}{t_1} + \frac{2}{3}\frac{e^2}{c^3} \int_{t_1} ^{t_2} \vec{v}\cdot \ddot{\vec{v}}\ dt
+\end{equation*}
+Per un moto periodico, vale:
+\begin{equation*}
+	\int_{t_1} ^{t_2} \left(\vec{F}_\text{rad}- \frac{2}{3}\frac{e^2}{c^3}\ddot{\vec{v}}\right) \cdot \vec{v} \ dt = 0
+\end{equation*}
+Possibile soluzione: 
+\begin{boxenv}[]
+\begin{equation}
+\vec{F}_\text{rad}=\frac{2}{3}\frac{e^2}{c^3} \ddot{\vec{v}}
+\end{equation}
+\end{boxenv}
+\subsubsection{Problemi e limiti della trattazione}
+
+Con $\tau  = \frac{2}{3}\frac{e^2}{mc^3}$, l'equazione del moto \`e $m(\dot{\vec{v}}- \tau \ddot{\vec{v}}) = \vec{F}_\text{ext}$. La presenza di $\ddot{\vec{v}}$ implica il dover specificare un'ulteriore condizione iniziale.
+
+Un problema si presenta prendendo $\displaystyle \lim_{t \to -\infty} \dot{\vec{v}}(t)=0 $, come la ``soluzione di fuga'' per $\vec{F}_\text{ext}=0$: 
+\begin{equation}
+	\dot{\vec{v}} - \tau \ddot{\vec{v}}=0\implies \dot{\vec{v}}_\text{ra} = \vec{a}_0 e^{ t / \tau } 
+\end{equation}
+Si pu\`o provare $\displaystyle \lim_{t \to +\infty} \dot{\vec{v}}(t)=0$, valida quando $\vec{F}_\text{ext}$ agisce per un tempo limitato, ma sorgono dei problemi di causalit\`a. Per evidenziarli, si cerca un modo per imporre tale condizione, che si ottiene riscrivendo l'equazione differenziale come:
+\begin{equation}
+	\begin{split}
+		&-\frac{d }{d t} \left(e^{-t / \tau } m \dot{\vec{v}}(t)\right) = \frac{1}{\tau } e^{- t / \tau } \vec{F}_\text{ext}(t)\\
+		&\Rightarrow m \dot{\vec{v}}(t) = \frac{e^{t / \tau } }{\tau } \int_{t} ^{+\infty} e^{-t' / \tau } \vec{F}_\text{ext}(t') \ dt' = \int_{0} ^{+\infty} e^{-s} \vec{F}_\text{ext}(t+\tau s) \ ds
+	\end{split}
+\end{equation}
+con $\vec{F}_\text{ext}(t) = \vec{F}_\text{ext}\big(\vec{x}(t)\big)$ e $s = (t'-t) / \tau $. Considerando $\vec{F}_{\text{ext}} = \vec{F}_0 \Theta(t)$, con $\vec{F}_0$ costante, si ha:
+\begin{equation}
+	m\dot{\vec{v}}(t) = \vec{F}_0 \int_{0} ^{+\infty} e^{-s} \Theta (t+\tau s) \ ds = \vec{F}_0 \int_{\max(0,-t / \tau )}^{+\infty} e ^{-s}  \ ds= \begin{cases}
+		\vec{F}_0&, \ t>0\\
+		\vec{F}_0 e^{t / \tau } &,\ t<0
+	\end{cases} 
+\end{equation}
+cio\`e la carica accelera prima di sentire la forza.
+
+Sia $\vec{F}_\text{ext} = e\vec{E}+ \frac{e}{c}\vec{v}\times \vec{B}$, con $v \ll c$; si determina limite di applicabilit\`a calcolando accelerazione da eq. del moto senza $\vec{F}_\text{rad}$ e la si usa per stimare $\lvert \vec{F}_\text{rad} \rvert $. Si ha:
+\begin{equation}
+	m\dot{\vec{v}} = e \vec{E} + \frac{e}{c}\vec{v}\times \vec{B} \implies \ddot{\vec{v}} = \frac{e}{m} \dot{\vec{E}}+ \frac{e}{mc}\dot{\vec{v}}\times \vec{B}+ \frac{e}{mc}\vec{v}\times \dot{\vec{B}}\simeq \frac{e}{m}\dot{\vec{E}}+\frac{e^2 }{m^2 c}\vec{E}\times \vec{B}
+\end{equation}
+Nell'ultimo, si \`e sostituito $\dot{\vec{v}}$ dall'equazione del moto e si sono trascurati termini lineari in $\vec{v}$ (assunta piccola).
+
+Sostituendo $\ddot{\vec{v}}$ in $\vec{F}_\text{rad}$, si ha espressione indipendente da $\ddot{\vec{v}}$ e affinch\'e $\lvert \vec{F}_\text{rad} \rvert \ll \lvert \vec{F}_\text{ext} \rvert $, deve valere:
+\[
+	|\tau \dot{\vec{E}}|  \ll |\vec{E}| \hspace{.2cm} \text{ e } \hspace{.2cm} \frac{e^2 \tau }{mc} |\vec{E}\times \vec{B}| \ll e|\vec{E}|
+\] 
+Usando $\dot{E}\sim\omega E$:
+\begin{equation}\label{lnq}
+	\lambda \gg r_e = \frac{e^2 }{mc^2} \hspace{.2cm} \text{ e }\hspace{.2cm} B \ll \frac{m^2 c^4}{e^3}
+\end{equation}
+\begin{osservazione}
+	Trattazione non quantistica fallisce prima dei limiti trovati sopra; per trascurare effetti quantistici, si deve avere $\lambda \gg \lambda _C = \frac{\hbar }{mc}\simeq 137 r_e$. Al contempo, l'energia associata alla frequenza di ciclotrone $\omega _c = \frac{eB}{mc}$ deve essere molto minore di $mc^2$, cio\`e $B \ll \frac{m^2 c^3}{e \hbar }$, che ancora \`e $\simeq 137$ volte maggiore di quello ottenuto in equazione \ref{lnq}.
+\end{osservazione}
+\subsubsection{Forza di Abraham-Lorentz}
+Si parte da particella carica di massa $m$, carica $e$ e inizialmente non puntiforme, con raggio tipico $a$. Si assume la validit\`a di $m\dot{u}^\mu  = F^\mu _\text{ext} + F^\mu  _\text{rad}$ e si cerca espressione per $F^\mu _\text{rad}$.
+
+Si assume che $F^\mu _\text{rad}$ dipenda da $u^\mu $ e tutte le derivate di ordine superiore\footnote{Questo perch\'e sono le uniche variabili che caratterizzano la particella nel limite $a\to 0$.}. Per assicurare trasversalit\`a delle forze\footnote{Perch\'e si continua a lavorare nel caso di moto periodico.}, si definisce:
+\begin{equation}
+	P^{\mu \nu } = \eta^{\mu\nu } - \frac{u^\mu  u^\nu }{c^2}
+\end{equation}
+Questa soddisfa $P^{\mu \nu } u_\nu =0$ e $P^{\mu \nu } \eta_{\nu \rho } P^{\rho \sigma } = P^{\mu \sigma } $; si vede come proiettore sull'iperpiano ortogonale alla 4-velocit\`a, quindi si scrive:
+\begin{boxenv}[]
+\begin{equation}
+	F^\mu _\text{rad}=P^{\mu \nu } G_\nu 
+\end{equation}
+\end{boxenv}
+\noindent dove $G^\mu $ non deve soddisfare trasversalit\`a. Assumendo che $G^\mu $ dipenda da $u^\mu $ e derivate di ordine superiore e che sia analitica, si pu\`o sviluppare come\footnote{La prima serie di punti sottintende la presenza di termini lineari di ordine di derivazione maggiore; la seconda termini contenenti potenze di grado pi\`u elevato di $u^\mu $ e delle sue derivate.}:
+\begin{equation}
+	G_\mu = A \dot{u}_\mu  + B \ddot{u}_\mu + C \dddot{u}_\mu + \ldots+ D \dot{u_\mu }(\dot{u}_\nu \dot{u}^\nu )+ \ldots
+\end{equation}
+dove si sono omessi termini $\propto u^\mu $ perch\'e eliminati da $P^{\mu \nu } $. I coefficienti $A,B,\ldots$ dipendono solo da propriet\`a della particella ($m,e,a$) o costanti fondamentali ($c$) e si ricava tramite analisi dimensionale:
+\begin{itemize}
+	\item $\left[ A \right] =$ massa $\Rightarrow $ si scrive tramite $m$ e $e^2 / (a c^2)$;
+	\item $\left[ B \right] =$ massa $\times $ tempo $\Rightarrow $ si scrive tramite $ma / c$ e $e^2 / c^3$;
+	\item $\left[ C \right] =$ massa $\times $ tempo$^2$ $\Rightarrow $ si scrive tramite $ma^2 / c^2$ e $e ^2 a / c^4$;
+	\item $\left[ D \right] =$ massa $\times $ tempo$^3 / \text{ velocit\`a}^2 \Rightarrow $ si scrive tramite $ma^2 / c^4 $ e $e^2 a / c^6$.
+\end{itemize}
+Per $a\to 0$, sopravvivono solo $A,B$, ma $e^2 / (ac^2)$ diverge. Si assume $a$ finito e piccolo; usando $G_\mu  = A \dot{u_\mu }+ B\ddot{u}_\mu $:
+\begin{equation}
+	\begin{split}
+		&F^\mu _\text{rad}=P^{m\nu } G_\nu = A\dot{u}^\mu + B \left(\ddot{u}^\mu  - \frac{1}{c^2}u^\mu  \ddot{u}_\nu u^\nu \right) = A \dot{u}^\mu + B \left(\ddot{u}^\mu  + \frac{1}{c^2}u^\mu \dot{u}_\nu \dot{u}^\nu  \right) \\
+		&\Rightarrow (m-A) \dot{u}^\mu\equiv m_R \dot{u}^\mu   = F^\mu _\text{ext}+ B \left(\ddot{u}^\mu  + \frac{1}{c^2} u^\mu  \dot{u}_\nu \dot{u}^\nu \right) 
+	\end{split}
+\end{equation}
+con $m_R = m-A$ massa rinormalizzata data da termine non-elettromagnetico $m$ e termine elettromagnetico $A$\footnote{Significa che una carica massiva possiede due tipi di masse, ma risulta importante solo $m_R$ perch\'e \`e quello che si misura sperimentalmente sempre, visto che il campo generato dalla carica non si elimina durante il suo moto (cio\`e $A$ non si pu\`o rimuovere).}. Mantenendo costante $m_R$ per $a\to 0$:
+\begin{boxenv}[]
+\begin{equation}
+	m_R \dot{u}^\mu  = F^\mu _\text{ext} + b \frac{e^2}{c^3}\left(\ddot{u}^\mu  + \frac{1}{c^2} u^\mu  \dot{u}_\nu  \dot{u}^\nu \right) 
+\end{equation}
+\end{boxenv}
+\noindent con $b$ costante adimensionale assunta indipendente dalla forma della particella\footnote{Ci potrebbe dipendere perch\'e per $a\to 0$ si \`e tenuta la forma costante, ma in tale limite \`e ragionevole aspettarsi che sia indipendente.}. Per trovare $b$, si impone che il lavoro compiuto da $F^\mu _\text{rad}$ sia tale da bilanciare energia irraggiata\footnote{Qui si usa che la componente spaziale della reazione di radiazione \`e $b \frac{e^2}{c^3}\ddot{\vec{v}}$ nel limite non-relativistico.}:
+\begin{equation}
+	L_\text{rad}= b \frac{e^2 }{c^3}\int_{-\infty} ^{+\infty} \ddot{\vec{v}}\cdot \vec{v}\ dt = - b \frac{e^2}{c^3}\int_{-\infty} ^{+\infty} \dot{\vec{v}}^2 \ dt \implies b = \frac{2}{3}
+\end{equation}
+valido sotto l'assunzione di $\vec{F}_\text{ext}$ nulla a grandi distanze ($\Rightarrow  \dot{\vec{v}}=0 $ per $ t\to \pm\infty$).
+\newpage
+\section{Indagine della materia con onde elettromagnetiche}
+\subsection{Introduzione}
+
+\subsubsection{Grandezze di interesse}
+
+Si investigano strutture atomiche ($\sim 10^{-10} $ m $\equiv 1$ \r{A}) o subatomiche ($\sim 10^{-15} $ m $\equiv 1$ fm). Si usano fotoni, che hanno quantit\`a di moto  $\left\lvert \vec{p} \right\rvert  = \hbar k = \hbar \omega / c$, dove $\hbar  \simeq 1.0 \cdot 10^{-34} $ J$\cdot $s. Una grandezza comune \`e $\hbar  c = 197$ MeV $\cdot $ fm.
+
+Si invia onda piana contro oggetto da investigare e si vede come diffonde la radiazione a grandi distanze. Se l'oggetto ha grandezza caratteristica $a$, si osservano i campi per $R \gg a$.
+
+\subsubsection{Teoria sul dipolo elettrico}
+
+In zona di radiazione:
+\[
+	\vec{E}_\text{rad} = \Eval{\frac{\hat{n} \times (\hat{n}\times \ddot{\vec{p}})}{rc^2}}{t- r / c}{}
+\] 
+Dato un dipolo oscillante $\vec{p} (t) = \vec{p}_0 e^{-i\omega t} $, usando $\hat{n}\times (\hat{n}\times \ddot{\vec{p}}) = (\hat{n}\cdot \ddot{\vec{p}}) \hat{n}- \ddot{\vec{p}}$ (visto che $\hat{n}\cdot \hat{n}= 1$), definendo $\vec{p}_\perp = \vec{p}-(\hat{n}\cdot \vec{p}) \hat{n}$, si ha:
+\begin{boxenv}[]
+	\begin{equation}\label{Ediposc}
+	\vec{E}_\text{rad} = \frac{\vec{p}_{0\perp} \omega^2}{rc^2} e^{-i(\omega t - \omega r / c)} = \frac{k_0^2}{r} \vec{p}_{0\perp} e^{-i(\omega t - k_0r )} 
+\end{equation}
+\end{boxenv}
+\noindent Poi si ha $\vec{B}_\text{rad} = \hat{n}\times \vec{E}_\text{rad}$. Il vettore di Poynting \`e\footnote{Usando che $\vec{p}_{0\perp} \times (\hat{n}\times \vec{p}_{0\perp}) = p_{0\perp} ^2 \hat{n} - \cancel{(\vec{p}_{0\perp} \cdot \hat{n} )\hat{n}}$.}:
+\begin{equation}
+	\begin{split}
+		\vec{S} &= \frac{c}{4\pi} \Re \{ \vec{E} \} \times \Re \{ \vec{B} \} = \frac{c}{4\pi} \frac{k_0^4}{r^2}\big(\vec{p}_{0\perp} \times (\hat{n}\times \vec{p}_{0\perp} )\big) \cos^2 (\omega t - k_0 r)\\
+			& = \frac{c}{4\pi} \frac{k_0^4}{r^2} \left\lvert \vec{p}_{0\perp}  \right\rvert ^2 \hat{n} \cos^2 (\omega t - k_0r)
+	\end{split}
+\end{equation}
+L'intensit\`a \`e $I = \langle|\vec{S}|\rangle =  \frac{1}{2} \frac{c}{4\pi} \frac{k_0^4}{r^2} |\vec{p}_{0\perp} | ^2 = \frac{c}{8\pi} \frac{k_0^4}{r^2} |\vec{p}_{0\perp} |^2$, quindi, integrando su sfera di raggio $r$:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		\left\langle P \right\rangle &= \int_{-1} ^{+1} \int_{0} ^{2\pi} \langle|\vec{S}|\rangle r^2 \ d\cos\theta  d\varphi = \frac{ck_0^4}{8\pi r^2} r^2 \int_{-1} ^{+1} \int_{0} ^{2\pi} |\vec{p}_{0\perp} |^2 d \cos\theta d\varphi \\
+					     &= \frac{ck_0^4}{8\pi} |\vec{p}_0|^2 \int_{-1} ^{+1 }  \int_{0} ^{2\pi} \sin^2 \theta \ d\cos\theta  d \varphi = \frac{c}{3}k_0^4 |\vec{p}_0|^2
+	\end{split}
+\end{equation}
+\end{boxenv}
+\noindent dove $|\vec{p}_{0\perp} | = |\vec{p}_0| \sin\theta $.
+\subsubsection{Onda incidente su schermo dielettrico e schermo opaco}
+
+Piano $z=0$ \`e uno schermo dielettrico; su di esso incide onda em con $\vec{E}_\text{inc} = \vec{E}_0 e^{-i(\omega t - k_0 z)}  \mid  \mid \hat{y}$. Il dielettrico si polarizza con polarizzazione $\vec{\mathcal{P}} = \vec{\mathcal{P}}_0 e^{-i\omega t} $. Polarizzazione variabile nel tempo $\Rightarrow $ moto di cariche sulla superficie dello schermo, quindi corrente superficiale $\vec{K}_\text{sup} = \frac{d \vec{\mathcal{P}}}{d t} $. Questa genera campo magnetico variabile nel tempo, che genera campo elettrico, quindi il piano emette onda em.
+
+Per distanze piccole dal piano ($z \ll \lambda $), si trova $\vec{B}$ con legge di Amp\`ere, considerando rettangolo di lato $\ell $ sulla direzione $\hat{x}$, per cui $2 B_{x0}  \ell  = \mu_0 K_\text{sup} \ell $. Sostituendo $K_\text{sup}$:
+\begin{equation}
+	B_{x 0} =-\frac{i \omega \mu_0}{2} \mathcal{P}_0 e^{-i\omega t} 
+\end{equation}
+subito vicino lo schermo\footnote{Motivo per cui non si usa il tempo ritardato nell'espressione.}. Allora i campi che si generano in $z>0$ sono, in generale:
+\begin{equation}
+	\vec{B} = - \frac{i\omega \mu_0}{2} \mathcal{P}_0\hat{x} e^{-i(\omega t - k_0 z )}\ ; \hspace{.3cm} \vec{E} = \frac{i\omega \mu_0 c}{2} \mathcal{P}_0 \hat{y} e^{-i(\omega t - k_0z)} 
+\end{equation}
+dove si \`e utilizzata la relazione per onde piane $\lvert \vec{E} \rvert = \lvert \vec{B} \rvert c$. Si usa $\frac{1}{\varepsilon _0 c^2} = \mu_0$ e $k = \omega / c$, quindi si esprime campo elettrico in CGS:
+\begin{equation}
+	E_y = 2\pi i k \mathcal{P}_0 e^{-i(\omega t - kz)} \Rightarrow B_x = 2\pi i k \mathcal{P}_0 e^{-i(\omega t - kz)} 
+\end{equation}
+perch\'e in CGS $\lvert \vec{E} \rvert = |\vec{B}|$. In $z< 0 $, invece:
+\begin{equation}
+	E_y = 2\pi i k \mathcal{P}_0 e^{-i (\omega t + k z)} ; \ B_x = 2\pi i k \mathcal{P}_0 e^{-i (\omega t + k z)} 
+\end{equation}
+Hanno stessa espressione perch\'e direzione di propagazione \`e opposta. In notazione vettoriale:
+\begin{equation}
+	\vec{E} = 2\pi i k \vec{\mathcal{P}}_0 e^{- i (\omega t - k|z|)} , \ \vec{\mathcal{P}}_0  \mid  \mid  \hat{y}
+\end{equation}
+Nel semi-spazio $z>0$ sono presenti, in generale, campo generato dallo schermo e campo incidente, quindi il campo trasmesso \`e:
+\begin{equation}
+	\vec{E}_\text{tot} = \vec{E}_\text{inc} + \vec{E}_\text{gen} = (\vec{E}_0 + 2\pi i k \vec{\mathcal{P}}_0) e^{-i(\omega t - kz)} 
+\end{equation}
+\begin{boxenv}[]
+Per \textbf{schermo opaco}, deve valere $\vec{E}_\text{tot} =0 $, quindi:
+\begin{equation}
+	\vec{\mathcal{P}}_0 =  - \frac{\vec{E}_0}{2\pi i k}
+\end{equation}
+\end{boxenv}
+\noindent In condizione di schermo opaco, in $z<0$ vale $\vec{E}_\text{tot}= \vec{E}_0 e^{-i\omega t}  \left[ e^{ikz} - e^{-ikz}  \right] $.
+
+\subsubsection{Principio di Babinet}
+
+Piano opaco $\Sigma$ in $z=0$ con apertura $\Sigma'$. Il campo incidente \`e $\vec{E}_\text{in} = \vec{E}_0 e^{-i(\omega t - k_0z)} $. In generico punto $P$ per $z>0$:
+\begin{equation}
+	\vec{E}_\text{tot} = \vec{E}_\text{inc} + \vec{E}_s = \underbracket{\vec{E}_\text{inc} + \vec{E}_s + \vec{E}_a}_{=0}  - \vec{E}_a
+\end{equation}
+dove $\vec{E}_\text{s}$ \`e generato dallo schermo e $\vec{E}_a$ dall'apertura\footnote{Cio\`e sarebbe il campo elettrico generato dalla sola $\Sigma'$ se l'apertura fosse piena per effetto di $\vec{E}_\text{inc}$.}, e si sommano a zero perch\'e $\vec{E}_s + \vec{E}_a$ formano schermo opaco pieno. Allora $\vec{E}_\text{tot} = - \vec{E}_a\Rightarrow $ campo trasmesso \`e l'opposto di quello generato dall'apertura.
+\subsection{Teoria della diffrazione}
+\subsubsection{Diffrazione da un ostacolo}\label{diffost}
+Su piano $z=0$ \`e presente ostacolo $\Sigma '$; si cerca $\vec{E}$ nel punto $P$ a distanza $\vec{r}$ dall'origine. Si considera campo generato da $d\Sigma'$ in posizione $\vec{r}'$ rispetto a cui $P$ \`e in posizione $\vec{r}- \vec{r}'$. Da equazione \ref{Ediposc}:
+\[
+d\vec{E} = \frac{k_0^2}{\left\lvert \vec{r}- \vec{r}' \right\rvert } d\vec{p}_{0\perp}  e^{-i(\omega t - k_0\left\lvert \vec{r}-\vec{r}' \right\rvert )} 
+\] 
+Assumendo $\left\lvert \vec{r} \right\rvert \gg \left\lvert \vec{r}' \right\rvert $:
+\[
+\begin{split}
+	& \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert } \simeq \frac{1}{r}\ ; \hspace{0.2cm} \hat{n} \equiv \frac{\vec{r}}{r} \simeq \frac{\vec{r}-\vec{r}' }{\left\lvert \vec{r} - \vec{r}' \right\rvert }\\
+	&\left\lvert \vec{r}- \vec{r}' \right\rvert = \sqrt{r^2 +r'^2 - 2\vec{r}\cdot \vec{r}'} \simeq \sqrt{r^2 - 2 \vec{r}\cdot \vec{r}'} \simeq r - \hat{n}\cdot \vec{r}'
+\end{split}
+\] 
+per $\sqrt{a-b} \simeq \sqrt{a}  - \frac{b}{2\sqrt{a} }$. Definendo $\vec{E}_{0\perp}  = -\hat{n}\times (\hat{n}\times \vec{E}_0) = \vec{E}_0 - \hat{n}(\hat{n}\cdot \vec{E}_0)$ e $\vec{k}= \hat{n}k_0 \Rightarrow |\vec{k}| = k_0$:
+\begin{equation}
+	\begin{split}
+		&d\vec{E} \simeq \frac{k_0^2}{r} \vec{\mathcal{P}}_{0\perp}  d\Sigma' e ^{-i (\omega t- k_0 r)}  e^{-ik_0\hat{n}\cdot \vec{r}'} = \frac{k_0^2}{r}\left(- \frac{\vec{E}_{0\perp} }{2\pi i k_0}\right) d\Sigma' e^{-i(\omega t - k_0 r)} e^{-i\vec{k}\cdot \vec{r}'}\\
+		&\Rightarrow \vec{E}= - \int_{\Sigma '} \frac{k_0}{2\pi i r } \vec{E}_{0\perp} e^{-i(\omega t - k_0r ) }  e^{-i \vec{k}\cdot \vec{r}'} \ d\Sigma'=\frac{ik_0}{2\pi r} \vec{E}_{0\perp} e^{-i(\omega t - k_0r)} \int_{\Sigma'} e^{-i\vec{k}\cdot \vec{r}'} \ d \Sigma '
+	\end{split}
+\end{equation}
+\subsubsection{Ampiezza di scattering per dipolo elettrico}
+Per irraggiamento da dipolo elettrico, \`e definita da:
+\begin{equation}
+	\vec{f}(\vec{k}) = \frac{ik_0\vec{E}_{0\perp} }{2\pi} \int_{\Sigma ' } e ^{-i \vec{k}\cdot \vec{r}'}  \ d\Sigma '
+\end{equation}
+Questa contiene tutta la dipendenza angolare e permette di scrivere:
+\begin{equation}
+	\vec{E} = \frac{e^{-i(\omega t - k_0r)} }{r} \vec{f}(\vec{k})
+\end{equation}
+Quest'ultima forma, invece, \`e valida pi\`u in generale.
+\subsubsection{Fattore di forma 2D}
+Fattore di forma di una fenditura $\Sigma' $ in 2D \`e definito da:
+\begin{boxenv}[]
+\begin{equation}
+	F (\vec{k}) = \int_{\Sigma ' } e^{-i \vec{k}\cdot \vec{r}'}  \ d\Sigma '
+\end{equation}
+\end{boxenv}
+\noindent Per:
+\begin{boxenv}[]
+\begin{equation}
+	\mathbb{L}(x',y') = \begin{cases}
+		1 \ &, \text{ su } \Sigma '\\
+		0 \ & , \text{ altrove } 
+	\end{cases} \Rightarrow F(\vec{k}) = \iint_{\mathbb{R}^2} \mathbb{L} (x',y') e^{-ik_x x'} e^{-ik_y y'}  \ dx' dy' 
+\end{equation}
+\end{boxenv}
+\noindent La funzione $\mathbb{L}(x',y') $ \`e forma della fenditura; il suo fattore di forma \`e la trasformata di Fourier. Questo significa che, ottenuto $F(\vec{k})$, si ricava $\mathbb{L}$ da trasformata inversa.
+
+Trasformata inversa non sempre possibile: fissato $k_0$, $-k_0<k=k_0\sin\theta <k_0$ e non si pu\`o svolgere integrale su tutto $\mathbb{R}$. Questo si approssima bene quando $k_0 \sin \theta \gg 2\pi / a \Rightarrow \frac{2\pi}{\lambda }\sin \theta \gg\frac{2\pi}{a }\Rightarrow \lambda \ll a \sin\theta $ con $a $ ampiezza fenditura. Investigazione con ``particelle ondulatorie'' che hanno impulso $|\vec{p}| = k_0 \hbar $:
+\[
+\hbar k_0 \sin \theta \gg \frac{2\pi \hbar }{a}\Rightarrow c|\vec{p}| \sin \theta \gg \frac{h c}{a}
+\] 
+Se $a\sim 1$ fm, servono onde em con energia $\sim 1$ GeV $\Rightarrow \text{ raggi } \gamma$.
+
+Sperimentalmente, si misura $I=\langle|\vec{S}|\rangle \propto \lvert F(\vec{k}) \rvert ^2$, quindi non si ottiene fase associata a $F(\vec{k})$ $\Rightarrow $ \`e necessario indovinarla.
+\subsubsection{Fattore di forma 3D}
+
+Onda $\vec{E}_\text{inc}$ su oggetto puntiforme in 3D. La direzione seguita dal campo irraggiato da oggetto nel punto $P$ si esprime in termini di angoli $\theta , \varphi $ in coordinate sferiche. Campo in $P$ \`e\footnote{Il campo puntiforme \`e $\vec{E}= \frac{k_0^2}{r} \vec{P}_{0\perp} e^{-i(\omega t - k_0r)} $, con ampiezza di scattering puntiforme $\vec{f}(\vec{k}) = k_0^2 \vec{P}_{0\perp} $.}:
+\begin{equation}
+	\vec{E}_\text{punt} = \frac{\vec{f}_\text{punt}(\vec{k})}{r} e^{-i (\omega t - k_0r)} 
+\end{equation}
+Ora si considera oggetto composto da $N$ punti. Il punto $i$-esimo ha coordinata $\vec{r}'_i$, il punto $P$ rispetto all'origine ha coordinata $\vec{r}$, rispetto al punto $i$-esimo ha coordinata $\vec{r}-\vec{r}'$. Campo incidente \`e $\vec{E}_\text{inc}= \vec{E}_0 e^{-i(\omega  t - k_0 z)} $; quello che incide sul punto $i$-esimo \`e: $\vec{E}_{\text{inc},i} = \vec{E}_0 e^{-i(\omega t - k_0 z'_i)} $.
+
+Contributo di $i$ in $P$ \`e\footnote{Si deve considerare il tempo impiegato dall'onda ad andare da ciascun punto dell'ostacolo al punto $P$.}:
+\begin{equation}
+	\vec{E}_i (\vec{r}) = \frac{\vec{f}_\text{punt}(\vec{k}')}{\left\lvert \vec{r}-\vec{r}' \right\rvert } e^{-i(\omega t - k_0 z'_i - k_0 \left\lvert \vec{r}-\vec{r}' \right\rvert )} 
+\end{equation}
+con $\vec{k}' = k_0\hat{n}'$ e $\hat{n}' = \frac{\vec{r}-\vec{r}'}{\left\lvert \vec{r}-\vec{r}' \right\rvert }$. Si usano le seguenti approssimazioni per $\left\lvert \vec{r} \right\rvert \gg \left\lvert \vec{r}' \right\rvert $:
+\[
+	\hat{n} \simeq \hat{n}'\ ;\hspace{.3cm}  \frac{1}{\left\lvert \vec{r}-\vec{r}' \right\rvert }\simeq \frac{1}{r}\ ;\hspace{.3cm} \left\lvert \vec{r}-\vec{r}' \right\rvert \simeq r - \hat{n}\cdot \vec{r}'
+\] 
+quindi:
+\begin{equation}
+	\vec{E}_i \simeq \frac{\vec{f}_\text{punt}(\vec{k})}{r}e^{-i(\omega t - k_0 r)} e^{-i (k_0\hat{n}\cdot \vec{r}' - k_0 z'_i)} 
+\end{equation}
+Se $\vec{k}_0 = (0,0,k_0),  \ \vec{r}'_i=(x'_i, y'_i,z'_i)\Rightarrow \exp\left(-i(k_0\hat{n}\cdot \vec{r}_i' - k_0z'_i)\right)  = \exp \left(i(\vec{k}\cdot \vec{r}'_i - \vec{k}_0 \cdot \vec{r}'_i)\right) $. Si definisce \textbf{impulso trasferito} 
+\begin{boxenv}[]
+	\begin{equation}
+		\vec{q}= \vec{k}- \vec{k}_0
+	\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	$|\vec{q}|$ ha dimensioni di inverso di una lunghezza, ma $\hbar \vec{q}= \hbar \vec{k} - \hbar \vec{k}_0$ sono impulsi. Inoltre vale:
+	\begin{equation}
+		|\vec{q}| = \sqrt{(\vec{k}-\vec{k}_0)^2} = \sqrt{k^2 + k_0^2 - 2k_0^2 \cos \theta } = \sqrt{2k_0^2 - 2 k_0^2 \cos \theta } \simeq 2k_0 \sin(\theta / 2)
+	\end{equation}
+\end{osservazione}
+\noindent Allora:
+\begin{equation}\label{2.2.11}
+	\begin{split}
+		&\vec{E}_i = \frac{\vec{f}_\text{punt}(\vec{k})}{r} e^{-i(\omega t - k_0r )} e ^{-i \vec{q}\cdot \vec{r}' _i} \equiv \vec{E}_\text{punt}e^{-i\vec{q}\cdot \vec{r}'_i} \\
+		&\Rightarrow  \vec{E}_\text{tot}=\sum_{i}^{} \vec{E}_i = \vec{E}_\text{punt}\sum_{i}^{} e^{-i \vec{q}\cdot \vec{r}'_i} \equiv \vec{E}_\text{punt} F(\vec{q})
+	\end{split}
+\end{equation}
+con $F(\vec{q})$ \textbf{fattore di forma discreto} tridimensionale. 
+
+Per ostacolo continuo con $\rho (\vec{r}') = \frac{d N}{d V'} $:
+\begin{boxenv}[]
+\begin{equation}
+	F(\vec{q})= \int_{V'} \rho (\vec{r}') e^{-i\vec{q}\cdot \vec{r}'}  \ dV'
+\end{equation}
+\end{boxenv}
+\subsection{Sezioni d'urto}
+\subsubsection{Sezione d'urto totale}
+
+Potenza assorbita dall'ostacolo \`e $P_\text{abs} = \frac{c}{4\pi} |\vec{E}_\text{inc}| ^2 A= |\vec{S}_\text{inc}| A$, mentre quella diffusa \`e\footnote{Visto che l'ampiezza di scattering in $z>0$, per Babinet, \`e quella dell'apertura, allora la potenza diffusa \`e quella che attraversa l'apertura (schermo con apertura $\Sigma'$), quindi si trova il risultato corrispondente.} $P_\text{diff} = |\vec{S}_\text{inc}| A$. Ne segue che la potenza totale rimossa dal fascio iniziale \`e: $P_\text{tot}= 2 A |\vec{S}_\text{inc}|$. 
+
+Si definisce, allora, \textbf{sezione d'urto totale}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{tot} \overset{\text{def}}{=} \frac{\left\langle P_\text{tot} \right\rangle}{\langle|\vec{S}_\text{inc}|\rangle} 
+\end{equation}
+\end{boxenv}
+\noindent Nel caso di ostacolo opaco (per cui vale Babinet): $\sigma _\text{tot}= 2A$.
+\subsubsection{Il teorema ottico}
+Da sezione precedente, si calcola ampiezza di scattering per $\vec{k}= \vec{k}_0\Rightarrow \theta =0$\footnote{Si nota che in questo caso sparisce il trasverso $\perp$ come pedice perch\'e per $\theta =0$, il campo \`e completamente trasverso.}:
+\begin{equation}
+	\vec{f}(\vec{k}_0) = \frac{ik_0}{2\pi}\vec{E}_{0} \int_{\Sigma ' }e^{-i \vec{k}_0 \cdot \vec{r}'} \ d\Sigma' = \frac{ik_0\vec{E}_{0} }{2\pi} \int_{\Sigma '} d\Sigma' = \frac{ik_0\vec{E}_{0} A}{2\pi}\equiv \vec{f}(\vec{0})
+\end{equation}
+Da questa si verifica facilmente la validit\`a del teorema ottico in questo caso. Vale il seguente:
+\begin{teorema}
+	[Teorema ottico]
+	Nel caso di onde elettromagnetiche, in cui la funzione d'onda \`e il campo elettrico:
+	\begin{equation}
+		\sigma _\text{tot}= \frac{4\pi}{k_0} \frac{\Im \left\{ \vec{E}_0 ^* \cdot \vec{f}(\vec{0}) \right\} }{|\vec{E}_0|^2}
+	\end{equation}
+\end{teorema}
+
+\subsubsection{Sezioni d'urto di assorbimento, elastica e inelastica}
+
+Onda si propaga lungo $z$ con $\vec{B} \mid  \mid \hat{y}, \vec{E} \mid  \mid \hat{x}$, quindi $\vec{S}_\text{in} \mid  \mid \hat{z}$. L'onda \`e assunta monocromatica con $\omega$, piana, linearmente polarizzata e con $\vec{S}_\text{in}$ noto.
+
+Questa incide su bersaglio ignoto e si misurano radiazioni da esso scatterate ad una distanza $\vec{R}$ tramite rivelatore. 
+
+Una parte dell'onda incidente \`e \textbf{assorbita}, un'altra parte \`e \textbf{scatterata elasticamente} (stessa frequenza onda incidente) e la rimanente \`e \textbf{scatterata inelasticamente} (frequenze diverse).
+
+\begin{osservazione}
+	Per onda monocromatica si deve avere lunghezza di coerenza $L$ infinita; verosimilmente, si assume $L \gg \lambda$.
+\end{osservazione}
+\noindent In MKSA, si ha $\vec{E}_\text{in}= E_0\hat{x}\cos(\omega t -kz)$, $\vec{B}_\text{in}= (E_0 / c) \hat{y}\cos(\omega t- kz)$ e 
+\begin{equation}
+\vec{S}_\text{in}=\frac{1}{\mu_0} (\vec{E}_\text{in}\times \vec{B}_\text{in}) = \frac{E_0^2}{\mu_0 c} \cos^2(\omega t - kz) \hat{z}= \frac{E_0^2}{Z_0} \cos^2 (\omega t- kz) \hat{z}
+\end{equation}
+con $Z_0 = \sqrt{\mu_0 / \varepsilon _0} \simeq 377 \ \Omega $ \textbf{impedenza del vuoto}.
+
+\noindent Si definisce \textbf{sezione d'urto di assorbimento}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{abs}= \frac{\left\langle P_\text{abs} \right\rangle}{\langle|\vec{S}_\text{in}|\rangle}
+\end{equation}
+\end{boxenv}
+\noindent Si definisce \textbf{sezione d'urto elastica}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{el} = \frac{\left\langle P_\text{el} \right\rangle}{\langle|\vec{S}_\text{in}|\rangle}
+\end{equation}
+\end{boxenv}
+\noindent Se $\vec{S}_\text{el}$ attraverso superficie $dA$ individuata da $d\Omega $ con raggio vettore $\vec{R}$, la potenza trasmessa per diffusione elastica \`e $dP_\text{el}=\langle|\vec{S}_\text{el}(\theta ,\varphi )|\rangle R^2 d\Omega $; allora si definisce \textbf{sezione d'urto differenziale elastica}:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d \sigma _\text{el}}{d \Omega}  = R^2 \frac{\langle |\vec{S}_\text{el}(\theta ,\varphi )|\rangle}{\langle|\vec{S}_\text{in}|\rangle}
+\end{equation}
+\end{boxenv}
+\noindent Per verifica:
+\[
+\sigma _\text{el} = \int_{\Omega } \left(\frac{d \sigma _\text{el}}{d \Omega } \right) d\Omega = \frac{1}{\langle|\vec{S}_\text{in}|\rangle} \int_{\Omega }\langle|\vec{S}_\text{el}(\theta ,\varphi )|\rangle R^2 d\Omega \equiv \frac{1}{\langle|\vec{S}_\text{in}|\rangle} \left\langle P_\text{el} \right\rangle
+\] 
+Analogamente, si definisce \textbf{sezione d'urto inelastica}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _{\omega_i} = \frac{\left\langle P_{\omega_i}  \right\rangle}{\langle|\vec{S}_\text{in}|\rangle} \hspace{.1cm} ; \hspace{.4cm} \frac{d \sigma _{\omega_i} }{d \Omega }  = \frac{R^2 \langle|\vec{S}_{\omega_i} (\theta ,\varphi )|\rangle}{\langle|\vec{S}_\text{in}|\rangle}
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	Un sistema che non presenta non-linearit\`a non irraggia inelasticamente; ad esempio, un circuito RLC irraggia solo elasticamente. Per avere scattering inelastico, si pu\`o usare un diodo.
+\end{osservazione}
+\noindent Infine la \textbf{sezione d'urto totale} \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{tot}= \sigma _\text{abs} + \sigma _{\text{el}} +\sum_{i}^{} \sigma _{\omega_i} 
+\end{equation}
+\end{boxenv}
+\noindent Per processo di diffusione $d$, onda emessa \`e\footnote{Si aggiunge fase generica $\phi _d$ perch\'e non \`e detto che l'irraggiamento avvenga in fase con onda incidente.}:
+\begin{equation}
+	\vec{E}_d = \frac{\vec{f}(\theta ,\varphi )}{R}e^{-i(\omega_d t + k_dR + \phi _d)} 
+\end{equation}
+da cui:
+\begin{equation}
+	\frac{d \sigma _{\omega_d} }{d \Omega } = \frac{\langle|\vec{f}(\theta, \varphi )|^2\rangle}{\langle|\vec{E}_\text{in}|\rangle}
+\end{equation}
+
+
+\subsection{Scattering e risonanza}
+
+\subsubsection{Modello dell'elettrone legato elasticamente}
+Elettrone con carica $q$ legato elasticamente a origine $O$ vincolato nel piano $(x,y)$. Onda em ci incide sopra e si studia il suo irraggiamento nel punto $P$ in posizione $\vec{R}$ da $O$. $\vec{R}$ forma angolo $\theta $ con $\hat{y}$ (angolo di scattering) e angolo $\alpha $ con $\hat{x}$. 
+
+L'onda incidente si propaga lungo $\hat{z}$, con $\vec{E}_\text{inc} = E_0 e^{-i\omega t} \hat{x}$\footnote{Non c'\`e termine $kz$ perch\'e l'onda incide il piano $z=0$ su cui \`e vincolato l'elettrone.}. Forze agenti su elettrone:
+\begin{itemize}
+	\item $\vec{F}_C = q \vec{E}_0 e^{-i\omega t} $ forza di Coulomb\footnote{Si trascura contributo della forza magnetica.};
+	\item $\vec{F}_\text{el}= -m\omega_0^2 \vec{x}$, con $\omega_0 = \sqrt{k_\text{el} / m} \sim 10^{-14 } $ Hz;
+	\item $\vec{F}_\text{visc} = -m\Gamma ' \dot{\vec{x}}$, con $\Gamma ' \sim 10^{9} - 10^{11} $ Hz, forza viscosa $\to$ somma forze dissipative tranne reazione di radiazione;
+	\item $\vec{F}_\text{rad}= m\tau \dddot{\vec{x}}$ reazione di radiazione, con $\tau  = 2r_e /(3c)\simeq 6 \cdot 10^{-24} $ s.
+\end{itemize}
+Allora: 
+\begin{equation}\label{ele}
+\frac{q \vec{E}_0}{m} e^{-i\omega t} = - \tau \dddot{\vec{x}} + \ddot{\vec{x}} + \Gamma ' \dot{\vec{x}}+ \omega_0^2 \vec{x}
+\end{equation}
+Cercando soluzione $\vec{x}= \vec{x}_0 e^{-i\omega t}$:
+\begin{equation}
+	\vec{x}_0 = \frac{e\vec{E}_0 / m}{\omega_0^2 - \omega ^2 - i\omega \underbracket{\bigg[ \Gamma ' + \tau \frac{\omega^2}{\omega_0^2} \omega_0^2 \bigg] }_{ \Gamma_\text{tot}}} = \frac{q \vec{E}_0 / m}{\omega_0^2 - \omega^2 - i\omega \Gamma_\text{tot}(\omega)}
+\end{equation}
+dove $\Gamma_\text{tot}(\omega) = \Gamma' + \tau \omega_0^2 \frac{\omega^2}{\omega_0^2}\equiv \Gamma' + \Gamma \frac{\omega^2}{\omega_0^2}$. $\Gamma$ e $\Gamma'$ sono definite \textbf{larghezze parziali} mentre $\Gamma_\text{tot}$ \textbf{larghezza totale}; le prime sono legate alla dissipazione di energia per diffusione elastica, mentre la seconda alla dissipazione di energia per assorbimento. Il valore $\Gamma + \Gamma'$ definisce la larghezza della campana di $\sigma _\text{el}$ attorno alla risonanza.
+\begin{osservazione}
+	Da questa, si possono ricavare $\vec{P}= nq \vec{x}= \chi \varepsilon _0 \vec{E}$ e $\varepsilon _r = 1+ \chi $ vettore di polarizzazione e permittivit\`a elettrica relativa.
+\end{osservazione}
+\subsubsection{Sezione d'urto elastica}
+Quindi, \`e nota:
+\[
+\ddot{\vec{x}} = - \frac{q \vec{E}}{m} \frac{\omega^2}{(\omega_0^2- \omega^2) -i\omega \Gamma _\text{tot}}
+\] 
+In MKS, si ricava $\langle P \rangle= \frac{\langle \lvert \ddot{\vec{p}} \rvert ^2 \rangle}{6\pi \varepsilon _0 c^3}$, perci\`o:
+\begin{equation}
+	\begin{split}
+		&\left\langle P_\text{el} \right\rangle = \frac{q^2 \langle|\vec{a}|^2\rangle}{6 \pi \varepsilon _0 c^3} = \frac{q^4}{6\pi \varepsilon _0 c^3 m^2}\langle|\vec{E}|^2\rangle \frac{\omega^4}{(\omega_0^2 -\omega^2)^2 + \omega^2 \Gamma_\text{tot}^2}	\\
+		&\begin{split}
+			\sigma _\text{el} &= \frac{\left\langle P_\text{el} \right\rangle}{\varepsilon _0 c \langle|\vec{E}|^2 \rangle} = \frac{q^4}{6 \pi \varepsilon _0^2 c^4 m^2} \frac{\omega^4}{(\omega_0^2 - \omega^2 ) ^2 + \omega^2 \Gamma_\text{tot}^2}\\
+			&=\frac{8}{3}\pi \underbracket{\frac{q^4}{16 \pi^2 \varepsilon _0^2 c^4 m^2}}_{= r_e^2}   \frac{\omega^4}{(\omega_0^2 - \omega^2 ) ^2 + \omega^2 \Gamma_\text{tot}^2}
+		\end{split}
+	\end{split}
+\end{equation}
+Quindi si ottiene la \textbf{formula di Breit-Wigner}
+\begin{boxenv}[]
+\begin{equation}
+			\sigma _\text{el} = \frac{8}{3}\pi r_e^2  \frac{\omega^4}{(\omega_0^2 - \omega^2 ) ^2 + \omega^2 \Gamma_\text{tot}^2}
+\end{equation}
+\end{boxenv}
+\noindent dove si definisce \textbf{sezione d'urto Thomson}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{th}= \frac{8}{3}\pi r_e^2 \simeq 0.66 \cdot 10^{-24} \text{ cm}^{2} \equiv 0.66 \text{ barn}
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	[Termine di radiazione]
+	Tutti i termini a parte reazione di radiazione sono validi per qualunque sistema che presenti tali caratteristiche. Quello di radiazione \`e approssimato a dipolo elettrico, quindi non sar\`a valido per irraggiamento d'altro tipo.
+
+	Inoltre, visto che questo rientra direttamente in $\Gamma_\text{tot}$, si ottengono informazioni riguardo la natura dell'oggetto scatterante a partire dalla larghezza di $\sigma _\text{el}$.
+\end{osservazione}
+
+\subsubsection{Limiti di $\sigma_\text{el}$}
+\begin{itemize}
+	\item Per $\omega\ll\omega_0$:
+		\begin{equation}
+			\sigma _{\text{el}} = \sigma _\text{th} \frac{\omega^4}{(\omega^2-\omega_0^2)^2 + \omega^2  \Gamma_\text{tot}^2(\omega)} \simeq\sigma _\text{th} \left(\frac{\omega}{\omega_0}\right) ^4
+		\end{equation}
+	\item Per $\omega \sim \omega_0$:
+		\begin{equation}
+			\begin{split}
+				\sigma _\text{el} &= \sigma _\text{th} \frac{\omega^4}{(\omega_0 -\omega)^2 (\omega_0 +\omega)^2 + \omega^2 \left(\Gamma' + \Gamma \frac{\omega}{\omega_0} ^2\right)^2}\\
+						  &\simeq \sigma _\text{th} \frac{\omega_0^4}{4\omega_0^2 (\omega_0-\omega)^2 + \omega_0^2 (\Gamma+\Gamma')^2} = \sigma _\text{th} \frac{\omega_0^2 / 4}{(\omega-\omega_0)^2 + \left(\frac{\Gamma+\Gamma'}{2}\right) ^2}
+			\end{split}
+		\end{equation}
+		Funzione \textbf{lorentziana} (curva a campana). La larghezza FWHM\footnote{Si trova ponendo $\sigma _\text{max} / 2 = \sigma _\text{th} \frac{\omega_0^4 / 4}{\Delta \omega^2 + (\Gamma+\Gamma')^2 / 4}$, con $\sigma _\text{max}= \sigma _\text{el}(\omega \sim \omega_0) |_{\omega = \omega_0} $, e risolvendo per $\Delta \omega = |\omega-\omega_0|$.} \`e $\Delta \omega = \pm \frac{\Gamma+\Gamma'}{2}$. Si nota che:
+		\begin{equation}
+			\begin{split}
+				&\Gamma = \tau  \omega_0 ^2 \approx 6.2 \cdot 10^{-24} \text{ s } \ (10^{15} )^2 \text{ s}^{-2}  = 6.2 \cdot 10^{6} \text{ s}^{-1} \\
+				&\Gamma' \approx 10^{10} \text{ s}^{-1} 
+			\end{split} \Rightarrow \Gamma' \gg \Gamma
+		\end{equation}
+	\item Per $\omega\gg\omega_0$\footnote{Il termine $2\tau \Gamma' \omega^4$ si trascura perch\'e $\tau  \Gamma' \approx 10^{-24} \cdot 10^{11}  \ll 1$. Il termine $\omega^2 \Gamma'^2$ si approssima perch\'e $\sim \omega^2$.}:
+		\begin{equation}
+			\begin{split}
+				\sigma _\text{el} &=\sigma _\text{th} \frac{\omega^4}{(\omega^2-\omega_0^2)^2 + \omega^2  \Gamma_\text{tot}^2(\omega)} \\
+					     &\simeq \sigma _\text{th} \frac{\omega^4}{\omega^4 + \cancel{\omega^2 \Gamma'^2} + \omega^6 \tau ^2 + \cancel{2 \tau \Gamma' \omega^4}} = \sigma _\text{th} \frac{1}{1 + \tau ^2 \omega^2}
+			\end{split}
+		\end{equation}
+		Per $\omega \sim 1/\tau $ c'\`e una zona non esplorabile: $\tau \approx 6\cdot 10^{-24 }$ s $\Rightarrow  1 / \tau \approx 1.7 \cdot 10^{23} $ Hz. Energia necessaria per fotoni \`e $\hbar  \omega \approx 10^{-34}  \cdot 1.2 \cdot 10^{23} \text{ J } s \approx 100$   MeV.
+\end{itemize}
+\subsubsection{Sezione d'urto totale e d'assorbimento}
+Forza esercitata da onda incidente su elettrone \`e $\vec{F}= -e\vec{E}$; allora, per $\vec{v}= \dot{\vec{x}} = -i\omega \vec{x}_0 e^{-i\omega t} $:
+\begin{equation}
+	\begin{split}
+		\left\langle P_\text{tot} \right\rangle &= q\left\langle \left(\frac{\dot{\vec{x}}+ \dot{\vec{x}}^*}{2}\right) \left(\frac{\vec{E}+\vec{E}^*}{2}\right)  \right\rangle = \frac{q}{2} \Re \left\{ \dot{\vec{x}}\cdot \vec{E}^* \right\} \\
+							&= \frac{q^2 |\vec{E}_0|^2 \omega }{2m} \Re \left\{ \frac{- i \left[ (\omega_0^2 - \omega^2) + i\omega \Gamma_{\text{tot}}  \right] }{(\omega_0^2 - \omega^2)^2 + \omega^2 \Gamma^2_\text{tot}} \right\} = \frac{q^2 \omega^2 |\vec{E}_0|^2 \Gamma_\text{tot}}{2m \underbracket{\left[ (\omega_0^2 - \omega^2)^2 + \omega^2 \Gamma_{\text{tot}}  \right]}_{\equiv D}  }
+	\end{split}
+\end{equation}
+Quindi:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _\text{tot} = \frac{\left\langle P_\text{tot} \right\rangle}{\langle|\vec{S}_\text{in}|\rangle} = \frac{q^2 \omega^2 \cancel{|\vec{E}_0|^2}\Gamma_{\text{tot}} }{2mD} \frac{1}{\frac{\varepsilon _0 c}{2}\cancel{|\vec{E}_0|^2}} = \frac{4\pi c}{4\pi c} \frac{1}{D} \frac{q^2 \omega^2 \Gamma_\text{tot}^2}{\varepsilon _0 m c}= \frac{4\pi cr_e \omega^2 \Gamma_\text{tot}}{D}
+\end{equation}
+\end{boxenv}
+\noindent Si ricava $\sigma _\text{abs}= \sigma _{\text{tot}} - \sigma _\text{el}$. Per $\omega = \omega_0$ si trova:
+\[
+	\sigma _\text{el} (\omega=\omega_0) = \frac{3\lambda _0^2}{2\pi} \left(\frac{\Gamma}{\Gamma+\Gamma'}\right) ^2 \hspace{.1cm} ; \hspace{.3cm} \sigma _\text{abs} (\omega= \omega_0 )= \frac{3 \lambda _0^2}{2\pi} \frac{\Gamma \Gamma'}{(\Gamma + \Gamma')^2}\hspace{.1cm} ; \hspace{.3cm} \sigma _\text{abs} (\omega= \omega_0 )= \frac{3 \lambda _0^2}{2\pi} \frac{\Gamma }{\Gamma + \Gamma'}
+\] 
+Si definiscono:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{\sigma _\text{el}}{\sigma _\text{tot}} = \frac{\Gamma}{\Gamma + \Gamma'} \equiv B_\text{el} \hspace{.1cm} ; \hspace{.3cm} \frac{\sigma _\text{abs}}{\sigma _\text{tot}} = \frac{\Gamma'}{\Gamma+\Gamma'}\equiv B_\text{abs}
+\end{equation}
+\end{boxenv}
+\noindent Queste sono \textbf{branching functions} \textbf{elastica} e \textbf{di assorbimento}; indicano probabilit\`a di decadimento elastico o non-elastico dello stato risonante per $\omega\sim \omega_0$. Valori numerici: $B_\text{el} \approx 10^{-4}, B_\text{abs} \approx 1-10^{-4} = 0.9999 $.
+\subsubsection{Tempo di vita dello stato risonante}
+Da eq. \ref{ele}, si toglie forzante (onda em) e si risolve
+\begin{equation}
+	\begin{cases}
+		-\tau  \dddot{\vec{x}} + \ddot{\vec{x}} + \Gamma' \dot{\vec{x}}+\omega_0^2 \vec{x} = 0 \\
+		\vec{x}(0) = \vec{x}_0
+	\end{cases}
+\end{equation}
+con le assunzioni $\Gamma ' \ll\omega_0 \ll 1 / \tau \Rightarrow \Gamma = \tau  \omega^2_0 \ll \omega_0$. Si cercano soluzioni smorzate del tipo $\vec{x} = \vec{x}_0 e^{-i(\omega_0 t - i \gamma t / 2)} $:
+\begin{equation*}
+	-\tau(-i)^3 \left(\omega_0 - i \frac{\gamma}{2}\right) ^3 \vec{x} + (-i)^2 \left(\omega_0 - i \frac{\gamma}{2}\right) ^2 \vec{x} - i \Gamma' \left(\omega_0 - i \frac{\gamma}{2}\right)  \vec{x}+\omega_0^2 \vec{x}=0
+\end{equation*}
+Si cerca soluzione per $\gamma\ll\omega_0$, quindi si rimuovono tutti i termini che contengono il prodotto di $\gamma, \Gamma, \Gamma'$ (essendo tutti $\ll \omega_0$); si rimane con $\gamma = \Gamma+ \Gamma'$, da cui:
+\begin{equation}
+	\vec{x}= \vec{x}_0 e^{-i\omega_0 t }  e^{-(\Gamma+\Gamma') t / 2} 
+\end{equation}
+Spostamento da equilibrio \`e smorzato con tempo caratteristico $2/(\Gamma+\Gamma')$, mentre energia totale $E = \frac{1}{2} k \vec{x}^2 + \frac{1}{2}m\dot{\vec{x}}^2$ smorzata con tempo $1 / (\Gamma + \Gamma')$.
+\begin{osservazione}
+Si determina larghezza di $\sigma _\text{el}$ dal tempo di decadimento dell'energia e viceversa.	
+\end{osservazione}
+\subsubsection{Caso della radiazione non polarizzata}
+Onda che si propaga lungo $\hat{k}=(0,0,1)$; per $\theta $ angolo di scattering tra $\hat{k}, \hat{k}'$ e $\phi $ angolo azimutale: $\hat{k}' = (\sin\theta \cos \phi , \sin\theta  \sin \phi  , \cos \theta )$. Visto che il vettore di polarizzazione dell'onda deve sempre essere ortogonale alla direzione di propagazione, si parametrizza come: $\hat{x}_0 = (\cos\psi , \sin \psi , 0 )$, quindi:
+\[
+	\begin{split}
+		&\cos \alpha \equiv \hat{x}_0 \cdot \hat{k}' = \sin \theta  \cos \phi  \cos\psi  + \sin \theta  \sin \phi  \sin \psi  = \sin \theta \cos (\psi -\phi )\\
+		&\Rightarrow \sin ^2 \alpha  =  1 - \cos ^2 \alpha  = 1 - \sin^2 \theta \cos^2 (\psi -\phi )
+	\end{split}
+\] 
+Essendo $\langle \vec{S}_\text{in} \rangle = \frac{c}{8\pi} \lvert \vec{E}_0 \rvert^2 \hat{k} $, usando espressione di $\vec{E}$ in campo di radiazione:
+\[
+	\begin{split}
+		&\vec{E}_\text{out} = \frac{-e}{c^2 r } \hat{k}'\times (\hat{k}' \times \vec{a}) =  \frac{e\omega^2}{c^2 r} \hat{k}'\times  (\hat{k}' \times \vec{x}_0) e^{-i\omega t_r} \\
+		&\Rightarrow \langle \vec{S}_\text{out} \rangle = \frac{c}{8\pi} \lvert \vec{E}_\text{out} \rvert^2 \hat{k}' = \frac{c}{8\pi} \frac{e^2 \omega^4}{c^4 r^2} \lvert \vec{x}_0 \rvert ^2 \langle \sin^2 \alpha  \rangle_\psi \hat{k}'
+	\end{split}
+\] 
+dove $\langle \sin^2\alpha  \rangle_\psi $ indica media su $\psi $ perch\'e onda ha polarizzazione generica. Da questi si ha:
+\[
+	\frac{d \sigma _\text{el}}{d \Omega } = \frac{r^2 \langle \lvert \vec{S}_\text{out} \rvert  \rangle}{\langle \lvert \vec{S}_\text{in} \rvert  \rangle} = \frac{e^2 \omega^4}{c^4} \frac{\lvert \vec{x}_0 \rvert }{\lvert \vec{E}_0 \rvert^2 } \langle \sin^2 \alpha  \rangle_\psi  = \frac{r_e^2 \omega^4 }{(\omega_0^2 - \omega^2)^2 + \omega^2 \Gamma_\text{tot}^2} \langle \sin^2 \alpha  \rangle_\psi ,\ r_e = \frac{e^2}{mc^2}
+\] 
+Visto che 
+\[
+\langle \sin^2 \alpha  \rangle_\psi  \equiv \frac{1}{2\pi} \int_{0} ^{2\pi} \sin^2 \alpha \ d \psi = \frac{1}{2\pi} \int_{0} ^{2\pi} \big[1 - \sin^2 \theta  \cos^2 (\psi -\phi )\big] \ d\psi = 1 - \frac{1}{2}\sin^2 \theta = \frac{1+ \cos^2\theta }{2}
+\] 
+si ha:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d \sigma _\text{el}}{d \Omega }  = \frac{r_e^2 \omega^4}{(\omega_0^2 - \omega^2 )^2 + \omega^2 \Gamma_\text{tot}^2} \frac{1+\cos^2\theta }{2}
+\end{equation}
+\end{boxenv}
+\noindent Dove la sezione d'urto elastica \`e indipendente dalla polarizzazione perch\'e si ritrova ancora:
+\[
+\int_{-1} ^{+1}  d\cos\theta  \int_{0} ^{2\pi}  d\phi \ \frac{1 + \cos^2\phi }{2} = \frac{8}{3}\pi
+\] 
+\subsubsection{Scattering Rayleigh}
+Onda incidente su intero atomo $\to$ interferenza onde prodotte da centri diffusori precedenti con successivi. Si considera dapprima caso di $2$ centri diffusori, con scattering elastico $\Rightarrow \lvert \vec{k} \rvert = \lvert \vec{k}' \rvert \equiv k$; per $P_1,P_2$ centri diffusori, la differenza di cammino ottico \`e:
+\[
+\Delta \ell = \vec{r}\cdot \frac{\vec{k}'}{k} - \vec{r} \cdot \frac{\vec{k}}{k} = \frac{\vec{r}\cdot (\vec{k}' - \vec{k})}{k} \equiv \frac{\vec{r}\cdot \vec{q}}{k}
+\] 
+con $\vec{r}$ che unisce $P_1$ con $P_2$. A grandi distanze, lo sfasamento tra $P_1$ e $P_2$ \`e $\Delta \ell k$. Per $Z$ centri diffusori uguali\footnote{Cio\`e che si comportano allo stesso modo.}, lo sfasamento relativo \`e $\phi _i - \phi _j = (\vec{r}_i - \vec{r}_j) \vec{q} $, quindi in zona di radiazione vale, a meno di una fase globale, $*$:
+\[
+\vec{E}_\text{tot}= \vec{E}_1 e^{-i \phi _1} +\vec{E}_2 e^{-i\phi _2}  + \ldots \stackrel{*}{=} \vec{E}_1 \sum_{i}^{} e^{-i \vec{r}_i \cdot \vec{q}} \equiv \vec{E}_1 F(\vec{q})
+\] 
+con $F(\vec{q})$ fattore di forma discreto. La fase globale \`e $e^{- i \phi_1} $ che viene moltiplicata per la differenza di fase rispetto agli altri centri diffusori $\sum_{i=1}^{N} e^{-i \vec{r}_i \cdot \vec{q}} $; questo prodotto restituisce la somma $\sum_{i=1}^{N} e^{- i \phi _i} $, portando alla seconda uguaglianza, dove si \`e compiuta l'approssimazione di trascurare tale fase globale. Il vettore $\vec{r}_i$ rappresenta il raggio vettore che va dal centro diffusore $1$ al centro diffusore $i$-esimo.
+
+Per passaggio al continuo si usa la definizione:
+\[
+F(\vec{q}) = \frac{\int \rho (\vec{r}) e^{-i\vec{q}\cdot \vec{r}} \ d^3 r}{\int \rho (\vec{r}) \ d^3 r} \stackrel{\square}{\equiv} \frac{1}{Q}\int \rho (\vec{r}) e^{-i\vec{q}\cdot \vec{r}} \ d^3 r
+\] 
+con $Q$ carica totale, $\square$ a indicare che vale in caso di particelle cariche e $\rho (\vec{r})$ distribuzione di carica. Allora campo diffuso dal sistema \`e quello diffuso da carica $Q$ puntiforme. Usando eq. \ref{2.2.11}:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d \sigma _\text{el}}{d \Omega } = \Eval{\frac{d \sigma _\text{el}}{d \Omega } }{e}{} \left\lvert Z F(\vec{q}) \right\rvert ^2
+\end{equation}
+\end{boxenv}
+\noindent dove $ \mid _e$ indica che \`e relativa alla singola carica. Si risale a fattore di forma e distribuzione di carica tramite misura di sezione d'urto. 
+\begin{osservazione}
+	Si ha $F(0) = 1$. La motivazione \`e che quando $q\to 0$ (o meglio $qa\ll 1$, con $a$ grandezza caratteristica del sistema), l'onda em non ha energia sufficiente per risolvere il sistema da indagare e lo vede come puntiforme.
+\end{osservazione}
+\noindent Nel caso specifico di $\rho (\vec{r}) = \begin{cases}
+	Q / (\frac{4}{3} \pi a^3)\ &,  |\vec{r}| \le  a\\ 0 \ & , |\vec{r}| > a
+\end{cases}$, in coordinate polari $r, \theta ',\phi '$:
+\[
+\begin{split}
+	F(\vec{q}) &= \frac{1}{Q} \int \rho (r) r^2 e^{-irq \cos \theta '} \sin \theta ' \ d\theta ' d\phi ' dr = \frac{2\pi}{Q} \int \rho (r) r^2 e^{-irq \cos \theta '} d\cos\theta ' dr \\
+		   &= \frac{4\pi}{Q} \int \rho (r) r^2 \frac{\sin(rq)}{rq} \ dr = \frac{3}{a^3 q} \int_{0} ^a r \sin(rq) \ dr = \frac{3}{a^3 q} \left[ -\frac{r}{q} \cos(rq) + \frac{1}{q^2} \sin(rq) \right] _{0} ^a \\
+		   &= 3 \left(\frac{\sin(aq)}{(aq)^3} - \frac{\cos(aq)}{(aq)^2}\right) 
+\end{split}
+\] 
+Assumendo $aq\ll 1 $, per cui $\sin x \simeq x - x^3 / 6$ e $\cos x \simeq 1 - x^2 / 2$:
+\[
+F(q) \simeq 1 - \frac{(aq)^2}{10}
+\] 
+Si studia caso opposto, per $aq \gg 1$, per cui $F(q)\to 0$; ricordando che per scattering elastico
+\[
+ |\vec{q}|^2 = (\vec{k}' - \vec{k})^2 = 2k^2 (1-\cos\theta ) = 4 k^2 \sin^2 \left(\frac{\theta}{2}\right) \Rightarrow q = 2 k \sin\left(\frac{\theta}{2}\right) 
+\] 
+e, quindi, sotto l'assunzione di fotoni energetici ($k a \gg 1$), volendo esprimere $F$ in termini di $\theta $, si pu\`o approssimare come:
+\begin{equation}
+	F(\theta ) = \begin{cases}
+		1 & \ , \text{ se } 0\le \theta \le  1 / (ak)\\
+		0 & \ , \text{ se } 1/(ak) \le  \theta \le  \pi
+	\end{cases}
+\end{equation}
+visto che tende a decrescere velocemente. Da questo:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		\sigma _\text{el}(ak\gg 1) &= \int \Eval{\frac{d \sigma _\text{el}}{d \Omega } }{e}{} \lvert Z F(\theta ) \rvert ^2 \ d\phi  \sin \theta \\
+		&= 2 \pi Z^2 r_e^2 \int_{0} ^\pi \frac{1+ \cos^2 \theta }{2}\lvert F(\theta ) \rvert ^2 \sin^2 \theta  \ d\theta \\
+		&= \pi Z^2 r_e^2  \int_{0} ^{1 / ak} (1+ \cos^2 \theta ) \sin \theta \ d\theta = \frac{\pi Z^2 r_e^2}{(ak)^2}
+	\end{split}
+\end{equation}
+\end{boxenv}
+\subsubsection{Sezione d'urto fotoelettrica}
+Legata all'effetto fotoelettrico e si indica con $\sigma _\text{pe}$. L'effetto si basa sul fatto che un atomo emette elettroni quando incide onda em con fotoni a energia sufficiente. In particolare, quando fotone incidente ha energia esatta per liberare un elettrone di un certo orbitale, $\sigma _\text{pe}$ ha dei picchi, dove gli ultimi picchi sono relativi a orbitali pi\`u interni. 
+
+Si hanno picchi perch\'e il fotone riesce a trasferire tutta la sua energia all'elettrone per liberarlo, ma sono pi\`u bassi degli altri perch\'e:
+\begin{itemize}
+	\item fotone potrebbe essere schermato da elettroni in orbitali pi\`u esterni;
+	\item gli elettroni pi\`u interni sono pi\`u vicini al nucleo e localizzati $\Rightarrow $ pi\`u difficili da colpire;
+	\item gli orbitali pi\`u interni sono meno popolati.
+\end{itemize}
+\subsubsection{Sezione d'urto Compton}
+Fotone incidente su elettrone libero e in quiete che viene diffuso con cambio di frequenza: $\gamma + e^- \to \gamma+e^-$. In unit\`a naturali ($\hbar  =1,\ c = 1$), $P_\gamma = \omega (1 , \hat{n})$. Conservazione quadrimpulso $\Rightarrow P_\gamma - P'_\gamma = P_e ' - P_e$, con $\gamma$ riemesso con frequenza $\omega' < \omega$ per conservazione dell'energia. Essendo $P_e = (m,0)$ e $\theta $ angolo di scattering, quadrato dell'equazione precedente \`e:
+\begin{equation}
+	-2 \omega \omega' ( 1- \cos\theta ) = 2m^2 - 2mE' = 2m^2 - 2m(\omega + m - \omega') = -2m(\omega - \omega')
+\end{equation}
+In unit\`a fisiche:
+\begin{equation}
+	\omega - \omega ' =  \frac{\hbar \omega\omega'}{mc^2}(1-\cos\theta )
+\end{equation}
+La relazione dell'effetto Compton si scrive in termini di $\lambda  = 2\pi c / \omega$:
+\begin{equation}
+	\lambda ' - \lambda  = \lambda _c (1-\cos\theta )
+\end{equation}
+con $\lambda _c = h / mc \approx 2.4 \cdot 10^{-12} $ m \`e la lunghezza d'onda Compton dell'elettrone.
+\begin{osservazione}
+	Tra sezione d'urto Rayleigh e Compton c'\`e un fattore $Z$ di differenza: $\sigma _R \sim Z^2$ e $\sigma _c \sim Z$.
+\end{osservazione}
+\subsubsection{Sezioni d'urto di produzione di coppie}
+Per produzione di coppie su nuclei $\kappa _\text{nuc}$, si considera processo $\gamma + Z \to Z + e^+ + e^-$, con $Z$ nucleo generico. Per nucleo a riposo: $P_\gamma = (E_\gamma, E_\gamma, 0,0)$ e $P_\text{nuc} = (M,0,0,0)$; usando l'invariante\footnote{Dove i 4-vettori energia-impulso finali sono relativi al CM, quindi $\sum_{}^{} \vec{p} = 0$.}
+\[
+	\begin{split}
+		&s = (P_\gamma + P_\text{nuc})^2 = (E_\gamma + M )^2 - E^2 _\gamma = (P'_Z + P'_{e^-}  + P'_{e^+} )^2 = (E'_Z + E'_{e^-} + E'_{e^+})^2 \stackrel{!}{\ge } (M+2m_e)^2\\
+		&\Rightarrow  E^2_\gamma + M^2 +2ME_\gamma - E^2 _\gamma \ge M^2 + 4m_e^2 + 4 Mm_e \Rightarrow E_\gamma \ge  2m_e + \cancel{\frac{2m_e}{M}} \approx 1.02 \text{ MeV}
+	\end{split}
+\] 
+dove $2m_e \approx (0.5 \text{ MeV})^2, \ M \sim \text{ GeV}$, quindi \`e trascurabile.
+\begin{osservazione}
+	Il nucleo non rimane immobile, ma la quantit\`a di moto che acquisisce \`e minima perch\'e $\text{GeV} \le  M \gg E_\gamma \approx 10 \text{ MeV}\Rightarrow K_Z = \frac{P_Z^2}{2M} \le \frac{E_\gamma^2}{2M}\ll 1$.
+\end{osservazione}
+\noindent Analogamente per $\kappa _e$ si ha $\gamma + e^- = e^- + e^+ + e^-$; usando invariante $s$ come sopra, si arriva a:
+\begin{equation*}
+	E_\gamma \ge 4m_e \approx 2.04 \text{ MeV}
+\end{equation*}
+\subsubsection{Esempio di sezioni d'urto per carbonio e piombo}
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{C-Pb.png}
+\end{figure}
+
+\newpage
+
+\section{Indagine della materia con particelle}
+\subsection{Introduzione}
+\subsubsection{Categorie di urti}
+Si classificano:
+\begin{itemize}
+	\item urto elastico: $a+b \to a+b \to  $ non modifica natura delle particelle;
+	\item urto inelastico (o anelastico): $a+b = \sum_{i=1}^{N} p_i\to $ cambia natura e/o numero delle particelle.
+\end{itemize}
+Si definisce \textbf{Q-valore} 
+\begin{boxenv}[]
+\begin{equation}
+Q = \sum_{}^{} m_\text{in } c^2 - \sum_{}^{} m_\text{fin}c^2
+\end{equation}
+\end{boxenv}
+\noindent Gli urti possono essere:
+\begin{itemize}
+	\item esotermici: $Q>0\Rightarrow $ viene liberata energia;
+	\item endotermici: $Q<0 \Rightarrow $ \`e richiesta energia per il processo;
+	\item inclusivi: si misurano solo alcune caratteristiche delle particelle coinvolte nell'urto (per motivi di interesse o impossibilit\`a sperimentali);
+	\item esclusivi: si misurano tutti i valori che caratterizzano l'urto.
+\end{itemize}
+\subsubsection{Notazione chimica}
+La notazione per le \textbf{specie atomiche} \`e \ce{^A_Z X_N} dove:
+\begin{itemize}
+	\item Z \`e il \textbf{numero di protoni};
+	\item N \`e il \textbf{numero di neutroni};
+	\item A = $\text{Z}+\text{N}$ \`e il \textbf{numero di nucleoni};
+	\item X elemento chimico che dipende solo da Z.
+\end{itemize}
+Ad esempio:
+\begin{itemize}
+	\item \ce{^1_1H0} atomo di idrogeno $\rightarrow $ \ce{^1_1 H^+0} $\equiv p$ protone;
+	\item \ce{_1^2 H1} atomo di deuterio $\rightarrow$ \ce{_1^2 H^+2} $\equiv d$ \textbf{deutone};
+	\item \ce{_2^4 He2} atomo di elio $\rightarrow$ \ce{_2^4 He^{++}2} $\equiv \alpha $ \textbf{particella alfa}.
+\end{itemize}
+\subsubsection{Neutrone libero}
+
+Alla massa del neutrone si pu\`o togliere quella del protone e dell'elettrone, da cui avanzano $0.78$ MeV $\Rightarrow Q>0$ e quindi di base il neutrone dovrebbe decadere secondo $n \to  p + e^-$.
+
+Questo non \`e possibile perch\'e non si conserva il \textbf{numero leptonico}, quindi serve particella neutrona con massa $<0.78$ MeV. Si trova essere l'anti-neutrino elettronico $\overline{\nu }_e$, per cui un neutrone libero:
+\begin{equation}
+	n \to p+e^- + \overline{\nu }_e
+\end{equation}
+\subsubsection{Urti elettrone-protone}
+Un urto elastico $e^- + p \to e^- + p$ permette misura del fattore di forma del protone $F(\vec{q})$. Si pu\`o avere un urto inelastico con produzione di fotone: $e^- + p \to e^- + p + \gamma$ se $e^-$ non urta $p$, ma viene deflesso dal suo campo, quindi soggetto ad accelerazione e irraggia $\gamma$.
+
+Un altro \`e: $e^- + p \to e^- + p + \pi_0$, con $\pi_0$ \textbf{pione neutro}. In questo urto, si misura sezione d'urto, da cui si ricava $\Gamma_{\pi_0} $ e suo tempo di vita medio a partire da $1 / \Gamma_{\pi_0}  $. Il $\pi_0$ decade in due fotoni: $\pi_0 \to \gamma+ \gamma$.
+
+\subsubsection{Classificazione delle particelle}
+
+Sono raggruppate a seconda di come interagiscono. Le interazioni fondamentali sono \textbf{gravitazione}, \textbf{elettromagnetismo}, \textbf{forza debole} e \textbf{forza forte}. Elettromagnetismo e forza debole sono collegate e unificate con \textbf{forza elettrodebole}. I tre gruppi di particelle sono:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|l|c|c|c|}
+\hline
+\textbf{Classificazione}        & \textbf{Simbolo}    & \textbf{Nome}            & \textbf{Carica (e)} & \textbf{Massa}         & \textbf{Spin} \\
+\hline
+\multirow{6}{*}{Leptoni}        & $e^-$               & Elettrone                & $-1$               & $0.511$ MeV/c²         & $1 /2 $ \\
+			        & $e^+$               & Positrone                & $+1$               & $0.511$ MeV/c²         & $1 /2 $ \\
+                                & $\mu^-$             & Muone                    & $-1$               & $105.7$ MeV/c²         & $1 / 2$ \\
+                                & $\tau^-$            & Tauone                   & $-1$               & $1776.86$ MeV/c²       & $1 / 2$ \\
+                                & $\nu_e$             & Neutrino elettronico     & $0$                & $<2$ eV/c²             & $1/2$ \\
+                                & $\nu_\mu$           & Neutrino muonico         & $0$                & $<2$ eV/c²             & $1 / 2$ \\
+                                & $\nu_\tau$          & Neutrino tauonico        & $0$                & $<2$ eV/c²             & $1 / 2$ \\
+\hline
+\multirow{5}{*}{Bosoni}         & $\gamma$            & Fotone                   & $0$                & $0$                    & $1$          \\
+                                & $W^+$, $W^-$        & Bosone W                 & $\pm 1$            & $80.379$ GeV/c²        & $1$          \\
+                                & $Z^0$               & Bosone Z                 & $0$                & $91.1876$ GeV/c²       & $1$          \\
+                                & $g$                 & Gluone                   & $0$                & $0$                    & $1$          \\
+                                & $H$                 & Bosone di Higgs          & $0$                & $125.1$ GeV/c²         & $0$          \\
+\hline
+\multirow{7}{*}{Adroni (Barioni)} & $p$               & Protone                  & $+1$               & $938.27$ MeV/c²        & $1 / 2$ \\
+				& $\overline{p}$      & Anti-protone                  & $-1$               & $938.27$ MeV/c²        & $1 / 2$ \\
+                                & $n$                 & Neutrone                 & $0$                & $939.57$ MeV/c²        & $1 / 2$ \\
+                                & $\Lambda$           & Lambda                   & $0$                & $1115.68$ MeV/c²       & $1 /2 $ \\
+                                & $\Sigma^+$          & Sigma positivo           & $+1$               & $1189.37$ MeV/c²       & $1 / 2$ \\
+                                & $\Sigma^0$          & Sigma neutro             & $0$                & $1192.64$ MeV/c²       & $1 / 2$ \\
+                                & $\Sigma^-$          & Sigma negativo           & $-1$               & $1197.45$ MeV/c²       & $1 / 2$ \\
+                                & $\Delta^{++}$       & Delta doppio positivo    & $+2$               & $1232$ MeV/c²          & $3 / 2$ \\
+\hline
+\multirow{3}{*}{Adroni (Mesoni)} & $\pi^+$, $\pi^-$    & Pioni                    & $\pm 1$            & $139.57$ MeV/c²        & $0$          \\
+                                & $\pi^0$             & Pione neutro             & $0$                & $135$ MeV/c²           & $0$          \\
+                                & $K^+$, $K^-$        & Kaoni                    & $\pm 1$            & $493.68$ MeV/c²        & $0$          \\
+\hline
+\end{tabular}
+\end{table}
+\subsubsection{Grandezze conservate negli urti}
+A parte le \textbf{energia}, \textbf{quantit\`a di moto}, \textbf{momento angolare}, \textbf{carica elettrica}, si conservano delle grandezze additive:
+\begin{itemize}
+       \item \textbf{Numero barionico:} ad ogni particella barionica si assegna un numero barionico $+1$, mentre per le rispettive antiparticelle il numero barionico è $-1$.
+
+       \item \textbf{Numero leptonico:} \`e sempre conservato il numero leptonico totale\footnote{Per il fenomeno di \textbf{oscillazione dei neutrini}, si conserva solo il numero leptonico totale.}, dato da  numeri leptonici per ciascuna famiglia di leptoni:
+	       \begin{itemize}
+        \item numero leptonico elettronico: vale $+1$ per $e^-$ e $\nu_e$, $-1$ per le anti-particelle;
+	\item numero leptonico muonico: vale $+1$ per $\mu^-$ e $\nu_\mu$, $-1$ per le rispettive anti-particelle;
+	\item numero leptonico tauonico: vale $+1$ per $\tau^-$ e $\nu_\tau$, $-1$ per le rispettive anti-particelle,
+\end{itemize}
+\end{itemize}
+
+
+
+
+
+\subsection{Sezioni d'urto per processi corpuscolari}
+
+Corpi incidenti saranno punti materiali, mentre i bersagli sono generici. Si definisce una regione che circonda i bersagli come \textbf{regione di interazione}: al di fuori di questa le particelle vanno di moto rettilineo uniforme. Al di fuori di tale regione, si individua un piano $\pi$ ortogonale alla velocit\`a dei proiettili. 
+\subsubsection{Parametro di impatto e sezione d'urto per singolo proiettile}
+
+Si distingue per bersaglio puntiforme e non. Nel primo caso, si ha $A$ incidente su $B$ e il parametro di impatto $b$ \`e la distanza che separa la direzione parallela a $\vec{v}_A$ e la retta parallela a $\vec{v}_A$ e passante per $B$. 
+
+Quando $B$ ha dimensioni, proietta il bersaglio su $\pi$ e si individua la congiungente tra la direzione su cui giace $\vec{v}_A$ e la retta che passa per il CM di $B$ e rimane parallela a $\vec{v}_A$. La congiungente si individua, allora, dandone la lunghezza $b$ e l'angolo rispetto alla verticale $\phi $.
+
+Se $b,\phi $ parametri per cui si realizza lo stato finale $f$, si definisce
+\begin{boxenv}[]
+	\begin{equation}\label{sb}
+d^2\sigma _f = b\ db d\phi \Rightarrow \sigma _f = \int_{f} b\ db d\phi 
+\end{equation}
+\end{boxenv}
+\noindent che \`e l'elemento di superficie su $\pi$ individuato variando $b,\phi $ tali che si realizza ancora $f$.
+\subsubsection{Sezione d'urto per densit\`a di particelle su singolo bersaglio}
+Per densit\`a di particelle $n_A$ uniforme in un certo volume $\Delta V$, con velocit\`a $\vec{v}_A$. Si definisce \textbf{densit\`a di particelle} $\vec{j}_A = n_A \vec{v}_A$.
+
+Per un certo numero di urti, si verifica stato finale $f$ per $\frac{d N_f}{d t} $ volte per unit\`a di tempo; si definisce, allora:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _f = \frac{\frac{d N_f}{d t} }{\lvert \vec{j}_a \rvert }
+\end{equation}
+\end{boxenv}
+\subsubsection{Sezione d'urto per flussi di particelle che si scontrano}
+Ci si mette in S.R. in densit\`a $\vec{j}_B$ in quiete, per cui si considera velocit\`a relativa $\vec{v}_\text{rel}= \vec{v}_A - \vec{v}_B$. Se in un volume $\Delta V$, $n_A,n_B$ sono uniformi e si verifica $\frac{d N_f}{d t} $ volte per unit\`a di tempo lo stato $f$, si deve avere:
+\begin{equation}\label{sd2}
+	\frac{d N_f}{d t}  = |\vec{j}_A| \sigma _f \cdot n_B \Delta V = n_A|\vec{v}_\text{rel}| \sigma _f \cdot n_B\Delta V \Rightarrow \frac{d n_f}{d t} \equiv \frac{d }{d t} \frac{N_f}{\Delta V} = n_A n_B |\vec{v}_\text{rel}| \sigma _f
+\end{equation}
+quindi:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _f(v_\text{rel}) = \frac{1}{n_A n_B v_\text{rel}} \frac{d n_f}{d t} 
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+	[Distribuzione di velocit\`a]
+	Se la velocit\`a $\vec{v}_\text{rel}$ non \`e distribuita uniformemente ma secondo $f(v_\text{rel})$ (tipicamente distribuzione di Boltzmann), con $\int_{0} ^{+\infty} f(v_\text{rel}) \ dv_\text{rel} = 1$, si ha:
+	\begin{equation}
+		\frac{d n_f}{d t} = n_An_B \int_{0} ^{+\infty} v_\text{rel}\sigma _f(v_\text{rel}) f(v_\text{rel}) \ dv_\text{rel}
+	\end{equation}
+\end{osservazione}
+\subsubsection{Sezione d'urto per flusso di particelle su lamina bersaglio}
+Si considera densit\`a di particelle $n_A$ incidente su una lamina di spessore $\Delta x$ e sezione $\Delta S$ che contiene bersagli puntiformi con densit\`a $n_B$.
+
+Fascio di proiettili con $\vec{j}_A = n_A \vec{v}_A$ (con flusso $\Phi_A = |\vec{j}_A| \Delta S$) realizza stato $f$ un numero di volte per unit\`a di tempo dato da eq. \ref{sd2}:
+\begin{equation}\label{eqsd3}
+	\frac{d N_f}{d t} = n_B \Delta V j_a \sigma _f = n_B \Delta S \Delta x j_a \sigma _f = \Phi_A n_s \sigma _f = \Phi_A P_f
+\end{equation}
+con $n_s = n_b \Delta x$ densit\`a superficiale di bersagli e $P_f=n_s \sigma _f$ probabilit\`a di riprodurre $f$ per \underline{singolo} proiettile.
+
+Per certi valori, si ottiene $P_f>1$, non contando che la probabilit\`a complessiva di interazione \`e $P_\text{tot}= \sum_f P_f = \sum_f n_s \sigma _f = n_s \sigma _\text{tot}$. 
+
+Allora eq. \ref{eqsd3} \`e valida solo nel limite di ``lamina sottile''\footnote{Questo perch\'e a circa ogni interazione, le particelle vengono deviate via dal flusso, diminuendo $\Phi_A$ man mano che le particelle avanzano nell'interno della lamina.} per cui $P_\text{tot}=n_b\Delta x \sigma _\text{tot}\ll 1$, ossia $\Delta _x \ll \ell  = 1/(n_b \sigma _\text{tot})$. Questa \`e detta \textbf{lunghezza di estinzione} del fascio di proiettili.
+
+Nel caso di lamina \underline{non-sottile}, per tenere in considerazione la variazione di $\Phi_A(x)$, la si divide in spessori di lunghezza $dx$ e per ciascuno di questi la probabilit\`a di interazione \`e $dP_\text{int} = \frac{dx}{\ell }$. Se $P(x)$ probabilit\`a di non-interazione dopo aver attraversato spessore $x$ (con $P(0) = 1$), si ha:
+\begin{equation}
+	P(x+dx) = P(x) (1-dP_\text{int}) = P(x) \left(1- \frac{dx}{\ell }\right) \Rightarrow \frac{d P}{d x} = - \frac{P}{\ell }
+\end{equation}
+quindi $P(x) = e^{- x / \ell } $. Da questa, numero medio di proiettili che, per unit\`a di tempo, escono da $\Delta x$ senza aver interagito \`e:
+\begin{equation}
+	\frac{d N_0}{d t}  = \Phi_A(0) e^{- \Delta x / \ell } 
+\end{equation}
+Numero di eventi per unit\`a di tempo nello stato $f$ in $\Delta x$ \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d N_f}{d t} = \Phi_A(0) \frac{\sigma _f}{\sigma _\text{tot}} (1- e^{- \Delta x / \ell } )
+\end{equation}
+\end{boxenv}
+\noindent Si distinguono $\sigma _\text{el,in}$ da $\sigma _\text{el,out}$ perch\'e potrebbero esserci urti elastici che, rispettivamente, non modificano o modificano la traiettoria delle particelle, facendole uscire dal flusso; in questo senso:
+\begin{equation}
+	\sigma _\text{tot} \equiv \sigma _\text{ext} = \sigma _\text{el,out}+ \sum_{\text{inelastici}}^{} \sigma _f
+\end{equation}
+con $\sigma _\text{ext}$ \textbf{sezione d'urto d'estinzione} (si rinomina quella totale).
+\begin{osservazione}
+	[Concentrazione sostanza monomolecolare]
+	Per sostanza monomolecolare di massa $M$, in volume $V$, di densit\`a di massa $\rho $, densit\`a di molecole $n$, con molecole di peso atomico $A$ vale:
+	\begin{equation}
+		n = \frac{1}{V}\frac{M}{M_\text{mole}} N_\text{av} =N_\text{av} \frac{\rho }{M_\text{mole}}
+	\end{equation}
+con $N_\text{av}\approx 6 \cdot 10^{23} $ numero di Avogadro e $M_\text{mole}$ massa di una mole di sostanza, dato da $A$ espresso in grammi.
+\end{osservazione}
+\subsubsection{Sezione d'urto per interazione forte}
+Protoni (come altri adroni) interagiscono tramite interazione forte, il cui raggio di azione, o \textbf{raggio di interazione} \`e $\sim 1$ fm. In figura, si osserva $\sigma _\text{tot}$ per processo $p+p$:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.85\columnwidth]{f.png}
+\end{figure}
+
+\noindent Inizialmente, per energie $\lesssim 2 $ GeV, $\sigma _\text{tot}\simeq \sigma _\text{el}$; ad energie pi\`u alte, si iniziano a sviluppare processi inelastici come produzione di particelle come pioni, ad esempio in $p+p \to p+p+ \pi^0$. $\sigma _\text{el}$ non va mai a zero per teorema ottico.
+
+\subsubsection{Sezione d'urto per interazione elettrodebole}
+Si studia sezione d'urto di $e^+ + e^- \to \text{adroni}$, in funzione di energia $\sqrt{s} $ nel CM. In figura, si osservano diversi picchi, relativi a stati risonanti:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.85\columnwidth]{edb.png}
+\end{figure}
+
+\noindent Queste risonanze sono sintomo della propriet\`a ondulatoria delle particelle; in corrispondenza di queste, si pu\`o approssimare la sezione d'urto con una Breit-Wigner.
+
+In questa figura, la componente elettromagnetica \`e responsabile di decrescita $\sim 1 / s$, mentre la componente debole che contribuisce alle risonanze, come alla $Z$.
+
+
+\subsubsection{Sezione d'urto per interazione debole}
+Si considera la sezione d'urto per i processi $\nu _\mu  + N \to \mu ^- +X$ o $\overline{\nu }_\mu  + N \to \mu ^+ + X$, dove $N$ \`e un nucleone (protone o neutrone) mentre $X$ \`e una serie di particelle che non interessa specificare. 
+
+Questo processo \`e detto di corrente debole carica perch\'e numero leptonico \`e invariato, ma cambia la carica del leptone. 
+
+
+Sezioni d'urto per entrambi i processi, sopra un valore di soglia $E_\text{thr}$, hanno andamento lineare; per $\sigma _{\nu _\mu } \simeq (7 \text{ fb})\ E_{\nu _\mu }   \text{ (GeV)} $\footnote{L'unit\`a fb sta per femtobarn.}, mentre $\sigma _{\overline{\nu }_\mu } \simeq (3.5 \text{ fb}) \ E_{\overline{\nu }_\mu }  \text{ (GeV)}$. Incertezze su sezione d'urto diminuiscono con aumento energia perch\'e aumenta la sezione d'urto e ci sono pi\`u interazioni possibili.
+
+\subsubsection{Sezione d'urto Rutherford}
+
+Urto fra particelle $\alpha  \equiv \ce{_2^4He^{++}_2 }$ a vel. $\vec{v}_0$ su nucleo atomico assunto puntiforme e con massa tale da renderlo bersaglio fisso.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{ruth.png}
+	\caption{Da $\infty$ arriva particella $\alpha $ ($ze$); nel punto nero, \`e presente nucleone $Ze$.}
+\end{figure}
+
+\noindent Si assume $|\vec{v}_\infty| = |\vec{v}_f|$, con $\vec{v}_f$ velocit\`a finale, e il processo \`e non-relativistico perch\'e $m_\alpha \approx 4 \text{ GeV}$ e si inviano con $K_\alpha \approx 10 \text{ MeV}$. Se $m_\alpha $ massa part. $\alpha $, la variazione di quantit\`a di moto \`e:
+\[
+\Delta p = \lvert \Delta \vec{p} \rvert = \sqrt{(m\vec{v}_f- m \vec{v}_i)^2} = m \sqrt{2v_0^2 - 2 \vec{v}_0 \cdot \vec{v}_f}  = \sqrt{2v_0^2 - 2 v_0^2 \cos \chi  }  = 2 m v_0 \sin \frac{\chi }{2}
+\] 
+Sezione d'urto in funzione del parametro d'impatto $b$, per eq. \ref{sb}, \`e:
+\[
+d^2 \sigma = bdbd\varphi  \Rightarrow \frac{d \sigma }{d \Omega } = \frac{d^2 \sigma }{d \cos\chi  d \varphi  } = \frac{b db d\varphi  }{d\cos \chi   d \varphi  }= b \frac{d b}{d \cos \chi  } =- \frac{b}{\sin \chi  } \frac{d b}{d \chi  } 
+\] 
+Si cerca relazione tra $b$ e $\chi  $. Su $\alpha $ agisce forza di Coulomb $\vec{F}$ generata da $Ze$, scomponibile in $\vec{F} = \vec{F}_\perp + \vec{F}_{ \mid  \mid }$, ma solo $\vec{F}_\perp$, con $F_\perp = F \cos \beta $, contribuisce a $\Delta p$\footnote{Si \`e assunto che la velocit\`a non cambi in modulo, quindi non ci possono essere forze parallele alla traiettoria di $\alpha $.}. Allora:
+\[
+	\Delta  p = \int_{-\infty} ^{+\infty} \lvert \vec{F}_\perp \rvert  \ dt = \int_{-\infty} ^{+\infty} F \cos \beta  \ dt = \int_{ -\infty } ^{+\infty}  \frac{zZe^2 }{ 4\pi \varepsilon _0 r^2} \cos \beta \ dt
+\] 
+Conservazione momento angolare: $L_{z,i} = mv_0b, \ L_{z,f} = m (\vec{r}\times \vec{v}_f)_z = mr^2 \frac{d \beta }{d t} \Rightarrow v_0 b dt = r ^2 d\beta $:
+\[
+\Delta p = \int_{\beta _\text{min}} ^{\beta _\text{max}} \frac{zZe^2}{4\pi \varepsilon _0 r^2} \cos \beta \frac{r^2 }{v_0 b} \ d\beta = \frac{zZe^2}{4\pi \varepsilon _0 b v_0} \left[ \sin \beta  \right] _{\beta _\text{min}} ^{\beta _\text{max}} 
+\] 
+Dalla figura, si vede che $\beta _\text{max}- (-\beta _\text{max}) + \chi   = \pi\Rightarrow  \beta _\text{max}=\frac{\pi - \chi  }{2}$, quindi
+\[
+\Delta  p = \frac{zZe^2}{4\pi \varepsilon _0bv_0} \left(\cos \frac{\chi }{2} - \left(- \cos \frac{\chi }{2}\right) \right) = \frac{zZe^2 }{2\pi \varepsilon _0 bv_0} \cos \frac{\chi }{2}
+\] 
+All'inizio si \`e trovato $\Delta p = 2m v_0 \sin (\chi  /2)$; eguagliando le due:
+\begin{boxenv}[]
+\begin{equation}
+	b(\chi  ) = \frac{d}{2} \cot \frac{\chi }{2}
+\end{equation}
+\end{boxenv}
+\noindent con 
+\[
+	d = \frac{\hbar c}{\hbar c} \frac{zZe^2}{4\pi \varepsilon _0 (mv_0^2 / 2)}\equiv zZ \frac{\alpha \hbar  c}{T}, \ T = \frac{1}{2} m v_0^2
+\] 
+dove $\alpha  =\frac{e^2}{4\pi \varepsilon _0 \hbar c} \approx 1 / 137$ \`e la \textbf{costante di struttura fine}. La sezione d'urto, allora, \`e:
+\begin{boxenv}[]
+\begin{equation}
+		\frac{d \sigma _\text{ruth}}{d\Omega  }(\chi  ,T)  = -\frac{b}{\sin \chi  } \frac{d b}{d \chi  } = \frac{(zZ \alpha \hbar c)^2}{16} \frac{1}{T^2} \frac{1}{\sin^4 \frac{\chi }{2}}
+\end{equation}
+\end{boxenv}
+\noindent Approssimazione valida per corpi puntiformi e interazione Coulombiana. Aumentando $\chi  ,T$, non \`e pi\`u valida perch\'e prevale la forza nucleare forte; ad esempio per $\ce{^4He^{++} + ^{206} Pb}$\footnote{Qua si intende un nucleo di piombo, che ha $82$ protoni, quindi \`e difficile indicare che \`e ionizzato :).} non vale per $T\simeq 26 \text{ MeV}, \ \chi  \simeq 60 ^\circ$.
+
+L'interazione forte \`e agisce su scala del fm, quindi si pu\`o dire che se il parametro di impatto di $\alpha $ e $N$ \`e maggiore di $R_\alpha + R_N$ (raggi atomici), si pu\`o trascurare. La distanza minima di avvicinamento $x = R_\alpha  + R_N$ \`e ottenibile dalle conservazioni:
+\begin{equation}
+	\begin{split}
+		&\begin{cases}
+		mv_0 b = m x v \Rightarrow v = v_0 \cdot  b / x\\
+		T+0 = \frac{1}{2}m v^2 + \frac{zZ e^2 }{4\pi \varepsilon _0 x}
+	\end{cases}\Rightarrow T = \frac{1}{2}mv_0^2 \frac{b^2}{x^2} + \frac{zZe^2}{4\pi \varepsilon _0 x} \\	
+		&\Rightarrow x^2 - xd - b^2 =0 \Rightarrow x = \frac{d}{2}\left(1+ \frac{1}{\sin \frac{\chi }{2}}\right) 
+	\end{split}
+\end{equation}
+Sezione d'urto Rutherford $\sigma _\text{ruth}$ va a infinito; integrando in $d\Omega $ sez. d'urto differenziale, per $\chi  \ll 1 $ si approssima come $d^2 / \chi  ^4$, quindi diverge. Per risolverlo, si deve limitare $\chi  $ con $\chi  _\text{min}$. 
+
+Questo si pu\`o fare individuando $\chi  _\text{min}$ come l'angolo minore misurabile sperimentalmente per questioni di precisione sulla strumentazione, oppure teoricamente imponendo $\exists b_\text{max}: b< b_\text{max}\equiv r_\text{atomico}\Rightarrow \exists \chi  _\text{min}$ da $b = \frac{d}{2} \cot \frac{\chi 	}{2}$.
+
+\subsection{I nuclei atomici}
+
+\subsubsection{Caratterizzazione}
+
+
+Caratterizzati da:
+\begin{itemize}
+	\item massa;
+	\item carica elettrica;
+	\item spin;
+	\item momento magnetico;
+	\item momento di quadrupolo elettrico.
+\end{itemize}
+Formato da $A = N +Z$, dove $N$ numero neutroni e $Z$ numero protoni. Diversi tipi di nuclei: 
+\begin{itemize}
+	\item \textbf{isobari}: hanno stesso $A$, ma diverso $N,Z$ diversi, come \ce{_1^3H_2} isobaro di \ce{_2^3He_1};
+	\item \textbf{isotopi} hanno stesso $Z$, con $A,N$ diversi, ad esempio \ce{_1^3H_2} isotopo di \ce{_1^2H_1};
+	\item \textbf{isotoni} hanno stesso $N$, ma $A,Z$ diversi, ad esempio \ce{_1^3H_2} isotono di \ce{_2^4He_2}. 
+\end{itemize}
+\subsubsection{Modello a goccia del nucleo}
+
+Per nucleo $A\ge 4$, il raggio \`e dato da:
+\begin{boxenv}[]
+\begin{equation}
+	R_A = r_0 A^{1 / 3}  + r_\text{skin}, \ r_0 \approx 1.25 \text{ fm} , \ r_\text{skin}\approx 2 \text{ fm}
+\end{equation}
+\end{boxenv}
+\noindent Si basa su modello a goccia del nucleo, secondo cui i suoi costituenti si distribuiscono cercando di ottenere una forma sferica approssimativamente piena, cio\`e volume occupato \`e $\frac{4}{3}\pi r^3 = V_\text{nucl}\equiv A V_1$\footnote{$V_1$ \`e il volume del singolo costituente del nucleo.}. Da questo, si ha $r\propto A^{1 / 3} $ con $r_0$ coeff. di proporzionalit\`a. 
+
+Quanto a $r_\text{skin}$, si ottiene da correzione dovuta a impossibilit\`a, per principio di esclusione, di distribuire costituenti in volume sferico e solitamente \`e tenuta in considerazione in nuclei ``pesanti''.
+
+\subsubsection{Forze nucleari}
+
+I nuclei non possono essere tenuti insieme da interazione Coulombiana e per forza nucleare si attende una componente attrattiva. Se esistesse solo componente attrattiva, i nuclei collasserebbero, quindi necessaria parte repulsiva.
+Si pu\`o creare modello approssimato a buca di potenziale come:
+\begin{equation}
+	V(r) = \begin{cases} 
+		\infty&, \ r= 0\\ 
+		-30 &, \ 0<r\lesssim 2.5\\
+		0&,\ r\gtrsim 2,5
+	\end{cases}
+\end{equation}
+Altrimenti un modello pi\`u realistico \`e:
+\begin{equation}
+	V(r) = \frac{A}{r^{12} } - B \frac{e^{-\mu r} }{r}, \ \mu \approx 0.7 \text{ fm}^{-1} 
+\end{equation}
+dove $\mu $ parametro di Yukawa. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{nucpot.pdf}
+\end{figure}
+
+\subsubsection{Masse dei nuclei}
+
+Misurazione tramite spettrometro di massa. Si basa sull'accelerazione di ioni prodotti da una certa sorgente tramite differenza di potenziale $\Delta V$; questi passano attraverso una fenditura per collimare il raggio con velocit\`a data da $\frac{1}{2}m v^2 = q\Delta V$ per entrare in regione in cui sono presenti campo elettrico e magnetico. Questi si posso prendere tali che $\vec{F}_L = q \vec{E}_v + q \vec{v}\times \vec{B}_v = 0\Rightarrow v = E / B$ (selettore di velocit\`a). Dopo un'altra collimazione, si entra in regione con solo campo magnetico dove le cariche sono in moto circolare uniforme $m \frac{v^2}{R} = q vB \Rightarrow  R = \frac{mv}{qB}$, da cui si misura massa noto $R$ (con rivelatore che individua dove arrivano le particelle).
+
+Per massa dei nuclei si riporta spesso massa atomica; per esprimerla, si definiscono:
+\begin{itemize}
+	\item $B_i^e$ energia di legame dell'i-esimo $e^-$ in un atomo, con $i = 1,\ldots,Z$;
+	\item $B_{A,Z} $ energia di legame dei nucleoni nel nucleo;
+	\item $m_u$ unit\`a di massa atomica $\equiv \frac{1}{12} M_{\ce{^12C}}  $.
+\end{itemize}
+Massa atomica \`e\footnote{L'energia di legame \`e energia per separare il legame, data da massa totale del sistema (quindi energia totale del sistema) a cui si toglie la massa dei singoli costituenti, motivo per cui \`e presente. All'ultimo passaggio, si trascurano $13.6$ eV dell'energia di legame dell'atomo di idrogeno.}:
+\begin{equation}
+	\begin{split}
+		M_{A,Z} ^{\text{at}} &= M_{A,Z} ^\text{nuc} + Z m_e - \sum_{i=1}^{Z}  B_i^e \approx M_{A,Z} ^\text{nuc} + Z m_e = Zm_p + Nm_n - B_{A,Z} + Zm_e\\
+				     &\approx Z M_{\ce{H}}^{\text{at}} + Nm_n - B_{A,Z} 
+	\end{split}
+\end{equation}
+perch\'e spesso energie elettroni risultano trascurabili. Alcuni valori numerici:
+\begin{itemize}
+	\item trascurando energia di legame: $M^{\ce{H}}_\text{at} \approx m_e + m_p = 938.783$ MeV/$c^2$;
+	\item $m_p = 938.272$ MeV/$c^2$;
+	\item $m_n = 939.565$ MeV/$c^2$;
+	\item $m_n -m_p = 1.293$ MeV/$c^2$;
+	\item $m_e =0.511$ MeV/$c^2$.
+\end{itemize}
+\subsubsection{Energia di legame dei nucleoni}
+Si cerca andamento $B_{A,Z}/A$ in funzione di $A$ (energia media per nucleone in funzione del numero di nucleoni). Questa curva ha massimo per $A = 56$, che corrisponde al ferro, quindi \`e l'elemento pi\`u stabile.  
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{be.png}
+\end{figure}
+
+\noindent Per la maggior parte degli elementi, $B_{A,Z} / A$ vale $\simeq 8 $ MeV, quindi proporzionale a costante $\Rightarrow B_{A,Z} \propto A$, quindi pi\`u nucleoni, maggiore \`e energia, quindi la forza nucleare \`e una forza a \textbf{corto raggio}. Contrariamente, forza elettromagnetica \`e a lungo raggio $B \sim Z^2$.
+
+\begin{osservazione}
+	Dall'andamento di $B_{A,Z} $ \`e possibile produrre energia da destra verso sinistra (fissione nucleare) o da sinistra verso destra (fusione nucleare).
+\end{osservazione}
+
+\noindent Si definisce \textbf{difetto di massa} 
+\begin{boxenv}[]
+\begin{equation}
+	\Delta _{A,Z}  = M_{A,Z} - A m_u 
+\end{equation}
+\end{boxenv}
+\noindent Rappresenta differenza tra massa del nucleo e massa del nucleo come calcolata se energia media per nucleone fosse quella del carbonio-12.
+
+Da questa definizione, visto che $M_{A,Z} \approx Z M_H^\text{at}+Nm_n - B_{A,Z}=Am_u + \Delta _{A,Z}$, allora:
+\begin{equation}
+	\begin{split}
+		B_{A,Z} &\approx ZM_H^\text{at} + Nm_n-Am_u - \Delta _{A,Z} = Z(m_p + m_e - m_u) + N(m_n - m_u)\\
+					      &\approx (7.29 \text{ MeV}) \cdot Z + (8.07 \text{ MeV}) \cdot N - \Delta _{A,Z} 
+	\end{split}
+\end{equation}
+Dal modello a goccia si ricava \textbf{formula semi-empirica di massa}, composta da diversi termini. Il primo si ottiene per il contributo della forza forte sviluppata tra ogni nucleone che viene a contatto, ciascuno dei quali contribuisce per $2$ MeV; si trova $B_{A,Z} \simeq a_V A$, con $a_V\approx 12$ MeV\footnote{Il risultato va diviso per $2$ per non contare la stessa coppia due volte.} perch\'e in configurazione di massimo impacchettamento, un nucleone viene in contatto con altri $12$. Risulta in accordo con valore sperimentale di $a_V \approx 15.5$ MeV.
+
+La prima correzione \`e dovuta al fatto che nucleoni al bordo non toccano altri nucleoni su ogni lato, quindi si toglie termine proporzionale alla superficie: $B_{A,Z} \simeq a_V A - a_S A^{2 / 3} $; sperimentalmente $a_S \approx 16.8$ MeV. 
+
+Si considera repulsione Coulombiana che porta termine proporzionale a $Z^2$ (carica del nucleo) e inversamente proporzionale al raggio (a sua volta proporzionale a $A^{1 / 3} $: $B_{A,Z} \simeq a_V A - a_S A^{2 / 3}  - a_C \frac{Z^2}{A^{1 / 3} }$. Costante ottenuta da energia di sfera uniformemente carica con carica totale $Ze$ e raggio $R_A \approx r_0A^{1 / 3} $:
+\[
+	\frac{3}{5} \frac{(Ze)^2}{4\pi \varepsilon _0 R_A} = \frac{3}{5} \frac{Z^2}{A^{1 /3 } } \frac{\alpha  \hbar  c}{r_0} \approx -(0.69 \text{ MeV}) \frac{Z^2}{A^{1 /  3} }
+\]
+in accordo con $a_C \approx 0.72 $ MeV. Ci sono {\color{asdf}altre correzioni} dovute a effetti quantistici: un termine di simmetria $\propto a_\text{sym}$ dovuto al fatto che i nucleoni sono fermioni e per questi vale principio di esclusione di Puali, quindi pi\`u pesanti sono nuclei pi\`u stati a maggiore energia sono riempiti $\Rightarrow $ aumento energia del sistema; allora il termine penalizza stati con grandi differenze di numero tra neutroni e protoni perch\'e quelli pi\`u presenti non avrebbero sufficiente controparte con cui interagire tramite interazione forte, cosa che aumenta energia cinetica. Infine \`e presente un termine di pairing che aggiunge stabilit\`a al sistema quando $Z,N$\footnote{Numero di protoni e neutroni rispettivamente.} sono entrambi pari e la rimuove quando sono entrambi dispari, mentre vale $0$ quando $A=Z+N$ \`e dispari (uno pari, l'altro dispari). Questo \`e motivato dal fatto che coppie di nucleoni possono riempire stesso stato energetico (dovendo obbedire al principio di esclusione) e rende configurazione finale pi\`u stabile. Complessivamente:
+\begin{boxenv}[]
+\begin{equation}
+	B_{A,Z} = a_V A - a_S A^{2 / 3}  - a_C \frac{Z^2}{A^{1 / 3} }\ {\color{asdf} -\ a_{\text{sym}}  \frac{(Z-N)^2}{A} + \delta _\text{pair}}
+\end{equation}
+\end{boxenv}
+\noindent con\footnote{Il valore di $a_\delta $ dipende dalla parametrizzazione, non \`e univoco.}
+\begin{equation}
+	\delta _\text{pair}= \begin{cases}
+		\pm a_\delta A^{-3 / 4} &, \ N, Z \text{ pari/dispari}\\
+		0&,\ A \text{ dispari}
+	\end{cases}, \ a_\delta \approx 34 \text{ MeV}
+\end{equation}
+\subsubsection{Energia di separazione}
+Energia necessaria per separare nucleone dal nucleo; definita, rispettivamente per protone e neutrone, come:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		&S_p (\ce{^A_Z X}) = \left[ m\left(\ce{^{A-1}_{Z-1}  X}\right) + m(\ce{^1H}) - m\left(\ce{^A_Z X}\right)  \right] c^2\\
+		&S_n (\ce{^A_Z X}) = \left[ m\left(\ce{^{A-1}_{Z}  X}\right) + m_n- m\left(\ce{^A_Z X}\right)  \right] c^2
+	\end{split}
+\end{equation}
+\end{boxenv}
+
+\begin{osservazione}
+	Non esistono nuclei stabili con $A=5, A=8$: per $A=5$ si ha \ce{^5 Li} e \ce{^5 He} che, rispettivamente, hanno $S_p<0, \ S_n<0$; per $A=8$ si ha \ce{^8Be} con $m(\ce{^8Be}) > 2m(\ce{^4He})$, quindi decade rapidamente in $2\alpha $.
+\end{osservazione}
+\subsection{Decadimenti nucleari}
+\subsubsection{Introduzione}
+Ogni nucleo che decade rispetta la \textbf{legge di decadimento radioattivo}:
+\begin{boxenv}[]
+\begin{equation}
+	-\frac{d N}{d t} = \lambda N
+\end{equation}
+\end{boxenv}
+\noindent con $N$ numero di atomi/nuclei del campione e $\lambda $ \textbf{costante di decadimento}. Si definisce \textbf{larghezza totale di decadimento} $\Lambda = \hbar \lambda $. 
+
+L'\textbf{attivit\`a} di una sorgente \`e il numero di decadimenti per unit\`a di tempo; si misura in Bequerel ($1$ Bq $=$ $1$ decadimento/s).
+
+La legge di decadimento radioattivo restituisce numero di atomi/nuclei nel tempo:
+\begin{equation}
+	N(t) = N_0 e^{-t \lambda } \equiv N_0 e^{- t / \tau } , \ \tau = \frac{1}{\lambda }
+\end{equation}
+con $\tau $ \textbf{vita media}. Si definisce \textbf{tempo di dimezzamento}:
+\begin{equation}
+	\tau _{1 / 2} : N(\tau  1 / 2) = \frac{N_0}{2} \Rightarrow T_{1 / 2}  = \frac{\ln 2}{\lambda } = \tau  \ln 2 \approx 0.693 \tau 
+\end{equation}
+\subsubsection{Tipi di decadimento}
+
+Si distinguono:
+\begin{itemize}
+	\item decadimento $\beta ^-$: nel nucleo $n\to p + e^- + \overline{\nu }_e$, quindi $\ce{^A_ZX}\to \ce{^A_{Z+1} Y^+_{N-1} } + e^- + \overline{\nu }_e$;
+\item decadimento $\beta ^+$: nel nucleo $p \to n+ e^+ + \nu _e$\footnote{Questa reazione pu\`o avvenire solo nel nucleo e non nel vuoto.}, quindi $\ce{^A_ZX}\to\ce{^A_{Z-1} Y^-_{N+1}} +e^+ + \nu _e$;
+\item cattura elettronica: nel nucleo $e^- + p \to n +\nu _e$, quindi $e^- + \ce{^A_Z X}\to \ce{^A_{Z-1}Y _{N+1}} + \nu _e$;
+\item transizione isomerica: nucleo in stato eccitato\footnote{Indicato con $^*$.} decade a energia pi\`u bassa $\ce{^A_ZX^*}\to \ce{_Z^AX}+\gamma$;
+\item n-decay: $\ce{^A_ZX_N}\to\ce{^A_ZY_{N-1} } + n$;
+\item p-decay: $\ce{^A_ZX_N}\to\ce{^A_{Z-1}Y_{N} } + p$;
+\item decadimento $\alpha$: $\ce{^A_ZX_N}\to \ce{^{A-4}_{Z-2}Y_{N-2} }+\alpha $.
+\item fissione nucleare: $\ce{^A_ZX_N}\to \ce{^{A_1}_{Z_1}X_{1N_1} }+\ce{^{A_2}_{Z_2}X_{2N_2} } + N_3$, con $A = A_1 + A_2, \ Z = Z_1+Z_2, \ N = N_1+N_2+N_3$;
+\item doppio decadimento $\beta $: $\ce{^A_ZX_N}\to \ce{^A_{Z+2}Y^{++}_{N-2}} + e^- + e^- + \overline{\nu }_e + \overline{\nu }_e$;
+\item triplo decadimento $\alpha $;
+\item decadimenti $\beta $ seguiti da decadimento $p$, $n$ o $\alpha $.
+\end{itemize}
+\subsubsection{Decadimento $\beta $ e termine di pairing}
+
+Si considera nucleo $M_{A,Z} ^\text{at} = Z M_\text{H}^\text{at} + Nm_n - B_{A,Z} $; sostituendo espressione $B_{A,Z} $ formula semi-empirica di massa ad $A$ costante (si studiano nuclei isobari):
+\[
+M_{A,Z} = \operatorname{cost} (A) +Z (M_\text{H}^\text{at} - m_n) + a_C \frac{Z^2}{A^{1 / 3} } + a_\text{sym} \frac{(N-Z)^2}{A}- \delta _\text{pair}
+\] 
+Se $A$ dispari si ha una sola parabola; se $A $ pari, invece, si possono avere $N,Z$ pari $\Rightarrow  \delta >0$, oppure $N,Z $ dispari $\Rightarrow \delta <0$.
+
+Nel primo caso, gli elementi pi\`u in alto nella parabola tenderanno a decadere, tramite decadimenti $\beta $ ($\beta ^-$ da sinistra e $\beta ^+$ da destra) all'elemento pi\`u vicino al minimo della parabola.
+
+Nel secondo caso, cosa simile ma si possono verificare doppi decadimenti $\beta $ e, sotto alcune condizioni\footnote{La reazione deve risultare conveniente dal punto di vista energetico e possibile dal punto di vista quantistico per il momento angolare del nucleo in cui decadrebbero (visto che questo si deve conservare). Quando salti da una parabola all'altra non sono consentiti, si verificano dei doppi decadimenti $\beta $.}, si possono verificare decadimenti da una parabola all'altra. In questo caso, si verificano doppi decadimenti $\beta $ perch\'e elementi si dispongono alternativamente sulle due parabole e due elementi sulla stessa distano di un $2$ per il termine di pairing.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\columnwidth]{betpair.png}
+\end{figure}
+
+\subsubsection{Effetto M\"ossbauer}
+Consiste nell'emissione di raggi $\gamma$ da un nucleo e dal conseguente assorbimento di questi da parte di un altro nucleo. L'emissione di $\gamma$ da nucleo pu\`o avvenire come $\ce{_Z^AX^*_N} \to \ce{_Z^AX_N} + \gamma $ oppure con
+\[
+	\ce{_Z^AX^{**}_N} \to  \begin{cases}
+		\ce{_Z^AX^*_N} + \gamma\\
+		\ce{_Z^AX_N} + \gamma
+	\end{cases}	
+\] 
+i fotoni emessi in un caso e in un altro hanno energie diverse. La produzione di nuclei eccitati avviene in vari modi, come per decadimento $\beta $ o cattura elettronica:
+\[
+	\ce{_{27}^{57} Co_{30} } \to \ce{_{26}^{57}Fe^{**}_{31}} + \nu _e \hspace{1cm} (e^- + p \to  n + \nu _e)
+\] 
+Un altra possibilit\`a \`e tramite risonanza con $\gamma$ a energia pari a $\Delta M$; nel caso del $\ce{^{57}Fe}$:
+\[
+\begin{split}
+	& \gamma + \ce{^{57}Fe} \to  \ce{^{57}Fe^*} \to \ce{^{57}Fe} + \gamma\\
+	&\Delta M = M(\ce{^{57}Fe^*}) - M(\ce{^{57}Fe}) = 14.4 \text{ keV}
+\end{split}
+\] 
+Si considera in particolare il caso in cui \ldots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Esercizi}
+
+\subsection{Indagine della materia con onde elettromagnetiche}
+\subsubsection{Fattore di forma fenditura 1D}
+In $z=0$ schermo con un certo spessore e apertura che si estendono in tutto $y$. Nel piano $(x,z)$, fenditura ha semi-apertura di $a / 2$ e $\vec{E}_\text{inc} \mid  \mid \hat{y}$. Per definizione:
+\begin{equation}
+	\begin{split}
+		F(\vec{k}) &= \int_{\Sigma'} e^{-i \vec{k}\cdot \vec{r}'} \ d\Sigma ' = \int_{-a / 2}^{+ a / 2}  \int_{-\infty} ^{+\infty} e^{-ik_x x'} e^{-ik_y y'}  \ dx' dy'\\
+			   &= \underbracket{\left(\int_{- a / 2}^{+a / 2}  e^{-i k_x x'} \ dx'\right)}_{\equiv F(k_x)}  \left(\int_{-\infty} ^{+\infty} e^{-ik_y y'}  \ dy'\right) = 2\pi \delta (k_y)F(k_x)
+	\end{split}
+\end{equation}
+La $\delta (k_y) \Rightarrow k_y=0$, quindi non c'\`e diffrazione lungo $y$. Infine:
+\begin{equation}
+	F(k_x) = \left[ \frac{q^{-ik_x x'} }{-ik_x} \right] ^{+ a / 2} _{- a /2}  = -\frac{2i \sin(k_x a / 2)}{- i k_x}= a\frac{\sin\left(\frac{k_x a }{2}\right) }{\frac{k_x a }{2}}
+\end{equation}
+Anti-trasformando questa, si ottiene:
+\begin{equation}
+	\frac{1}{2\pi} \int_{-\infty} ^{+\infty} F(k_x) e^{ik_x x'} \ dk_x= \Theta(x'+ a / 2) - \Theta (x' - a/2)
+\end{equation}
+che \`e proprio la forma della fenditura lungo $x$.
+
+\subsubsection{Fattore di forma guscio sferico}
+
+In coordinate sferiche, con $\rho (\vec{r}') = N / (4\pi a'^2) \delta(r'-a) $ e misura $r'^2 dr'd\cos \beta d\alpha $:
+\begin{equation*}
+	F(\vec{q}) = \int_{0} ^{+\infty} \int_{-1} ^{+1} \int_{0} ^{2\pi} \frac{N}{4\pi a^2}\delta (r' -a) e^{-i\vec{q}\cdot \vec{r}'} \ r'^2 dr' d\cos \beta  d\alpha = N \frac{\sin (qa)}{qa}, q = 2k_0 \sin \theta / 2
+\end{equation*}
+IMPORTANTE: usare angoli diversi da $\theta ,\varphi $ per coordinate sferiche perch\'e si potrebbero confondere con quelli della diffrazione.
+\subsubsection{Scattering su circuito resistivo}
+Spira quadrata con resistenza $R$, lato $\ell $ e normale $\hat{n}$; si assume onda incidente con $\lambda \gg\ell $ per considerare campi uniformi su tutta la spira. L'onda incidente \`e definita da:
+\[
+\vec{E}_\text{in} = E_0 \cos(\omega - kz) \hat{x}; \ \vec{B}_\text{in} = \frac{E_0}{c} \cos(\omega t - kz) \hat{y} ; \ \vec{S}_\text{in} = \frac{E_0^2}{Z_0} \cos^2(\omega t- kz)
+\] 
+Visto che\footnote{Non si inserisce $kz$ perch\'e onda uniforme sulla spira.} $\Phi(\vec{B}) = (E_0 \ell ^2 / c) \cos(\omega t)\Rightarrow \epsilon = (E_0\ell ^2 \omega / c) \sin(\omega t)\equiv \epsilon _0 \sin (\omega t)$. Questa genera $I(t)$ variabile nel tempo che genera dipolo magnetico variabile nel tempo $\vec{\mu }(t) = \ell ^2I(t) \hat{n} \Rightarrow $ irraggiamento di dipolo magnetico:
+\begin{equation}
+	P_\text{irr}= \frac{|\ddot{\vec{\mu }}|^2}{6 \pi \varepsilon _0 c^5} = \frac{\ddot{I}(t) ^2 \ell ^4}{6\pi \varepsilon _0 c^5} = \frac{\left[ -\omega^2 I(t) \right] ^2\ell ^4}{6\pi\varepsilon _0 c^5} = \frac{\omega^4 I^2(t) \ell ^4}{6\pi \varepsilon _0 c^5}
+\end{equation}
+Per trovare $I(t)$:
+\begin{equation}
+	RI^2 + \frac{\omega^4 \ell ^4}{6\pi \varepsilon _0 c^5} I^2 = \epsilon I
+\end{equation}
+dove la prima \`e potenza dissipata da $R$, la seconda potenza irraggiata e terza potenza trasmessa al circuito. Si pu\`o definire \textbf{resistenza di irraggiamento}:
+\begin{equation}
+	R_\text{irr} \equiv \frac{\omega^4 \ell ^4}{6\pi \varepsilon _0 c^5}
+\end{equation}
+Quindi:
+\begin{equation}
+	I(t) = \frac{\epsilon_0 \sin(\omega t)}{R+R_\text{irr}}
+\end{equation}
+Potenza assorbita e diffusa elasticamente sono:
+\begin{equation}
+	P_\text{abs}= RI^2 =\frac{R}{(R+R_\text{irr})^2}\epsilon ^2; \ R_\text{el} = \frac{R_\text{irr}}{(R+R_\text{irr})^2} \epsilon ^2
+\end{equation}
+\begin{osservazione}
+	$R_\text{irr}\neq 0$ sempre a parte per $\omega = 0$, quindi non ci pu\`o essere assorbimento senza diffusione elastica.
+\end{osservazione}
+\noindent Si ottengono le sezioni d'urto\footnote{In quella di assrbimento, $\epsilon_0 / 2$ e $E_0^2 / 2$ si trovano da media temporale.}:
+\begin{equation}
+	\begin{split}
+		&\sigma _\text{abs}=\frac{\frac{R}{(R+R_\text{irr})^2} \frac{\epsilon_0^2}{2}}{\frac{E_0^2}{2Z_0}}= \frac{Z_0 \omega^2 \ell ^2 B_0^2}{c^2 B_0^2} \frac{R}{(R+R_\text{irr})^2} = \frac{4\pi^2 Z_0 \ell ^4}{\lambda ^2} \frac{R}{(R+R_\text{irr})^2}\\
+		& \sigma _\text{el}= \frac{4\pi^2 Z_0\ell ^4}{\lambda ^2} \frac{R_\text{irr}}{(R+R_\text{irr})^2}\\
+		&\Rightarrow \sigma _\text{tot}= \frac{4\pi^2 \ell ^4}{\lambda ^2} \frac{Z_0}{(R+R_\text{irr})^2}
+	\end{split}
+\end{equation}
+
+\newpage
+\subsection{Indagine della materia con particelle}
+\subsubsection{Rilascio di dose in acqua}
+Fascio di fotoni da $E_\gamma = 10$ keV penetrano in acqua; ad una distanza $x$ dalla superficie, si individua un parallelepipedo di lato $\Delta x$ e superficie $\Delta S$. Il flusso di fotoni \`e $\Phi_0 = 10^9 \text{ fotoni}/\text{cm}^2$.
+
+Si cerca la dose rilasciata nel volume $\Delta V = \Delta x \Delta S$, indicata con $D(x)$ e data da energia$/$massa, le cui unit\`a di misura sono $\left[ D \right] = \text{J}/\text{kg} \overset{\text{def}}{=} \text{Gy}=$ Gray.
+
+\begin{svolgimento}
+	Si indica con $\rho $ la densit\`a dell'acqua e con $M$ la sua massa molare.
+
+	Per quanto visto su flusso di particelle incidenti su lamina di spessore $\Delta x$, si ha $\Phi(x) = \Phi_0 e^{- n \sigma _\text{tot} x } \equiv \Phi_0 e^{- x / \ell } $. Usando sito sulle sezioni d'urto, per l'acqua:
+	\[
+	\frac{1}{\ell } = n \sigma _\text{tot} = \frac{\rho N_\text{AV} }{M}\sigma _\text{tot}\equiv \rho \lambda(E_\gamma) \approx 1 \frac{\text{g}}{\text{cm}^3} \cdot 5.3 \frac{\text{cm}^2}{\text{g}}\Rightarrow \ell \approx 1.9 \text{ mm}
+	\] 
+dove $\lambda(E_\gamma) $ \`e \textbf{coefficiente di attenuazione di massa} e dipende da $E_\gamma$ per $\sigma _\text{tot}$. Si cerca $\Delta N / \Delta M$ rapporto tra densit\`a di fotoni e massa in $\Delta V$.
+
+La seconda \`e $\rho \Delta V$, mentre per la prima si sa che $\Phi(x)$ \`e il flusso non assorbito per interazione, pertanto $-\frac{d \Phi}{d x} $ aumenta quando $\Phi$ diminuisce, cio\`e quando si verificano interazioni dei fotoni con l'acqua. Allora, il numero di fotoni interagenti che producono elettroni liberi in $\Delta V$ \`e $(-\frac{d \Phi}{d x} \Delta x) \Delta S$, dove la parentesi \`e il numero di fotoni che hanno interagito in $\Delta x$ e, quindi, moltiplicato per $\Delta S$ rappresenta il numero di fotoni interagenti in $\Delta V$. Sotto l'assunzione che gli elettroni liberati in $\Delta V$ tendano a rimanerci:
+\begin{equation*}
+	\begin{split}
+		&\frac{\Delta N}{\Delta V} = \frac{-\frac{d \Phi}{d x} \Delta x \Delta S}{\rho \Delta V} = \frac{1}{\rho } = \lambda \Phi_0 e^{- x / \ell } \\
+		&\Rightarrow D(x) = (E_\gamma - \cancel{|E_\text{leg}|}) \lambda \Phi_0 e^{-x / \ell }  = E_\gamma \lambda \Phi _0 e^{- x / \ell }  \approx (8.5 \text{ mGy}) e^{-x / \ell } 
+	\end{split}
+\end{equation*}
+dove non tutta l'energia del fotone va in energia dell'elettrone, ma in parte viene utilizzata per rompere il legame. In questo caso, la differenza \`e circa uguale a $E_\gamma$.
+\end{svolgimento}
+\subsubsection{Neutrini in impatto su superficie terrestre}
+Diametro Terra $D\approx 1.3 \cdot 10^9 \text{ km}$. Incidono $1$ GeV su superficie terrestre e si vuole sapere se riescono ad attraversare la Terra.
+
+\begin{svolgimento}
+	La probabilit\`a di interazione, in assunzione di lamina sottile\footnote{Si sa in anticipo che \`e valida, quindi la si usa direttamente, altrimenti si pu\`o verificare a posteriori osservando se il numero di interazioni \`e talmente alto da invalidarla.}, \`e $P_\text{int} = n D\sigma _\text{tot}$\footnote{Si sta considerando flusso di neutrini collimato lungo il diametro.}; sapendo che 
+	\[
+	n = \frac{\langle \rho  \rangle N_\text{AV} \langle A \rangle}{\langle M \rangle}
+	\] 
+	con $\langle \rho  \rangle$ densit\`a media, $\langle A \rangle$ valore medio di nucleoni per atomo e $\langle M \rangle$ valore medio di massa molare (vale per definizione $\langle M \rangle / \langle A \rangle =1 \text{ g}$), si ha:
+	\[
+	P_\text{int} \approx \frac{5.5 \frac{\text{g}}{\text{cm}^3} \ 6 \cdot 10^{23} }{1 \text{ g}} (1.3 \cdot 10^9 \text{ cm}^2) (7 \cdot 10^{-39} \text{ cm}^2) \approx 3 \cdot 10^{-5} 
+	\] 
+Quindi un neutrino vede la Terra come fosse trasparente, cio\`e probabilit\`a di interazione trascurabile.	
+\end{svolgimento}
+\subsubsection{Interazione forte}
+
+Calcolare $T_\text{min}$ per far toccare un protone con $\ce{^12C}$ (si intende nucleo di carbonio) nei casi $\theta = \pi, \ \theta  = \pi / 3, \ \theta = 100$ mrad.
+
+\begin{svolgimento}
+Si ha $x \approx 6$ fm e, al contempo:
+\[
+6 \text{ fm}\approx x = \frac{1}{2}(1.44 \text{ MeV}) \left(1+\frac{1}{\sin\frac{\theta}{2}}\right) 
+\] 
+Allora per $\theta = \pi\Rightarrow 1.44 \text{ MeV};\ \theta = \pi / 3 \Rightarrow 2.1 \text{ MeV}; \ \theta = 0.1 \text{ rad}\Rightarrow 14.7 \text{ MeV}$.
+\end{svolgimento}
+
+\subsubsection{Q-valore per alcune reazioni di decadimento nucleare}
+Per $n\to p + e^- + \overline{\nu }_e$ con $\tau _n \approx 15$ min e $\tau _{n, 1/2} \approx 10$ min. Per il Q-valore\footnote{Si pu\`o utilizzare il difetto di massa per calcolare il Q-valore in modo pi\`u esplicito, ma si pu\`o fare anche direttamente tramite le masse degli elementi.}:
+\[
+	m_n = m_p + m_e + Q \approx m(\ce{^1H}) + Q \Rightarrow  \Delta _n + A m_n = \Delta _{\ce{^1H}} +A m_n
+\] 
+con $A = 1$; allora
+\[
+	Q = \Delta _n - \Delta _{\ce{^1H}} \approx 0.782 \text{ MeV} > 0
+\] 
+quindi la reazione avviene spontaneamente. 
+\begin{osservazione}
+	Processo nel nucleo pu\`o essere inibito da forza nucleare forte.
+\end{osservazione}
+\noindent Si considera decadimento $\beta $ del trizio $\ce{^3_1H_2}\to \ce{^{3}_{2}He^+_{1}}  + e^- + \overline{\nu }_e$, da cui
+\[
+Q = \Delta _{3,1} - \Delta _{3,2}  \approx 19 \text{ keV} > 0
+\] 
+Un altro decadimento \`e $\ce{^{2}_{1}H_{1}} \to \ce{^{1}_{1}H_{0}}  + p + e^- + \overline{\nu }_e$, per cui si ha:
+\[
+Q \approx -1.442 \text{ MeV} < 0
+\] 
+che non avviene spontaneamente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
