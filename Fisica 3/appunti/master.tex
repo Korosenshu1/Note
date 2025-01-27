@@ -2026,13 +2026,98 @@ Perch\'e si osservino fotoni, il valore di soglia della velocit\`a \`e dato da $
 
 \section{Interazione fra particelle cariche e materia}
 \subsection{Effetto \v Cerenkov}
+$\to $ Emissione di onde em da parte di materiale attraversato da particelle cariche a velocit\`a $v$ maggiori di quelle della luce nel mezzo. Per questo, il materiale deve avere $\Re\left\{ n \right\} > 1$. Condizione sulla velocit\`a della particella \`e $v > c / n\Rightarrow  \beta  > 1 / n$. La necessit\`a di questa richiesta \`e perch\'e in questo modo le onde hanno modo di sovrapporsi coerentemente fra loro senza sfuggire prima che il passaggio della particella possa generarne altre.
+\subsubsection{Radiazioni \v Cerenkov}
 
+L'effetto \`e descritto dalla formula per l'angolo di emissione della radiazione:
+\begin{boxenv}[]
+\begin{equation}
+	\cos \theta _c = \frac{1}{ \beta  n(\omega)}
+\end{equation}
+\end{boxenv}
+\noindent con $\theta _c$ \textbf{angolo \v Cerenkov} di emissione della radiazione. La curva di $n(\omega)$ \`e tale che $\exists \omega_1, \omega_2 : n(\omega_1) \beta = n(\omega_2)\beta  = 1$.
+\begin{proof}
+	Si fissa $t=0$ da quando la particella entra nel materiale e la sua posizione a $t=0$ si indica con $O$. Dopo $\Delta t$, ha percorso una distanza $v\Delta t $. La radiazione \v Cerenkov emessa a $t=0$ ha percorso $\Delta c / n$ fino a un punto $H$ su una circonferenza. Se $A$ \`e la posizione della particella dopo $\Delta  t$, il triangolo formato da $OA$-$OH$-$HA$ \`e tale per cui:
+	\[
+	\cos \theta  _c \equiv \frac{OH}{OA} = \frac{\Delta t c / n}{v \Delta  t} = \frac{1}{\beta  n}
+	\] 
+\end{proof}
+Se $\vec{R} = \vec{OH} = \vec{OA}+\vec{AH}= \vec{v}\Delta  t + \vec{\rho }$:
+\[
+	\begin{split}
+		&R^2 = \beta ^2 c^2 \Delta  t ^2 + \rho ^2 + 2c\Delta  t \vec{\beta }\cdot \vec{\rho }  = \beta ^2 c^2 \Delta t^2 + \rho ^2 + 2 \beta  \rho  c \Delta  t \cos \alpha \\
+		&\Rightarrow c^2 \left(\beta ^2 - \frac{1}{n^2}\right) \left(\frac{\Delta  t}{\rho }\right) ^2 + 2 \beta  c \cos \alpha  \left(\frac{\Delta  t}{\rho }\right) +1 = 0
+	\end{split}
+\] 
+Se $\beta  > 1 / n$ e dovendo valere (vedi immagine appunti) $\cos \alpha  < 0$, dalla richiesta
+\[
+\frac{\Delta }{4} = \beta ^2 c^2 \cos^2 \alpha  - c^2 \left(\beta ^2 - \frac{1}{n^2}\right) \ge 0\Rightarrow \beta ^2 (\cos^2 \alpha  -1) + \frac{1}{n^2}>0
+\] 
+si ha:
+\begin{equation}
+	\left\lvert \sin \alpha  \right\rvert \le \frac{1}{n \beta }
+\end{equation}
+Quando $\left\lvert \sin \alpha  \right\rvert < 1 / n\beta $ ci sono due soluzioni; quando vale l'uguaglianza, ce n'\`e una sola ed \`e proprio $\cos \theta _c = 1 / n\beta $. Ne segue che la radiazione \`e emessa nel cono.
 
+\subsubsection{Formula di Frank-Tamm}
 
+Materiale di spessore $dx$ attraversato a velocit\`a costante $\Rightarrow \vec{v}_i = \vec{v}_f$. La formula di Frank-Tamm restituisce distribuzione del numero di fotoni emessi per lunghezza ed energia:
+\begin{boxenv}[]
+\begin{equation}
+	\frac{d^2 N_\gamma}{dxdE_\gamma} = z^2 \frac{\alpha  }{\hbar  c} \sin^2 \theta _c = z^2 \frac{\alpha }{\hbar  c}\left(1 - \frac{1}{\beta ^2 n^2(E_\gamma / \hbar )} \right) 
+\end{equation}
+\end{boxenv}
+\noindent con $n(\omega) \equiv n(E_\gamma / \hbar )$. Da questa:
+\begin{equation}
+	\frac{d N_\gamma}{d x}  = z^2 \frac{\alpha }{\hbar  c}\int_{E_1 = \hbar  \omega_1} ^{E_2 = \hbar \omega_2} 1- \frac{1}{\beta ^2 n^2} \ dE_\gamma  
+\end{equation}
+Si pu\`o anche trovare l'energia persa per effetto \v Cerenkov:
+\begin{equation}
+	\Delta E = \int_{0} ^{\Delta  x} \int_{E_1} ^{E_2} z^2 \frac{\alpha }{\hbar c} \left(1- \frac{1}{\beta ^2 n^2}\right) E_\gamma \ dE_\gamma
+\end{equation}
+che coincide con numero di fotoni per energia del singolo fotone.
+\subsubsection{Rivelatori \v Cerenkov}
 
+Misurano $N_\gamma$ e si dividono in due tipi a seconda se si misura $\theta _c$ o no.
+\begin{itemize}
+	\item \textbf{A soglia.}
 
+		Si basano su tunnel di gas con $n \gtrsim 1$ (tra $1.001$ e $1.010$) con sistema di specchi per deflettere fotoni emessi dal passaggio della carica nel gas e inviarli su un rivelatore di fotoni che conta $N_\gamma$.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=1\columnwidth]{rc-as.png}
+		\end{figure}
+	\item \textbf{Rivelatori RICH (Ring Imaging CHerenkov).}
 
+		Tramite muro di fotomoltiplicatori, si rivela anello \v Cerenkov prodotto da una carica passante nella materia e si misura $\theta _c$.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=.6\columnwidth]{rc-rich.png}
+		\end{figure}
 
+		\noindent Passando da radiatore a un mezzo con $n\sim 1$, l'angolo $\theta _\text{out}$ con cui radiazione incide su rivelatore \`e diverso da $\theta_c$. I vincoli che si hanno sono $\cos \theta _c = 1 / \beta  n$ e legge di Snell $\sin\theta _\text{out} = n \sin \theta _c$; inoltre deve valere $\sin \theta _\text{out}< 1$ per evitare riflessione totale, quindi $n \sin \theta _c < 1 \Rightarrow  n < \sqrt{1 + 1 / \beta ^2} $ e, se $\beta \sim 1$, si ha $n<1.41$.
+	\item \textbf{Rivelatori DIRC (Deflection of Internal Reflected \v Cerenkov light).} 
+
+		Al contrario dei RICH, usano radiatori con $n>1.4$ in modo da riflettere i fotoni \v Cerenkov e trasmetterli, attraverso una serie di riflessioni totali, ad un materiale che aggiusta l'indice di rifrazione e li invia su fotomoltiplicatori.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\columnwidth]{dirc.png}
+		\end{figure}
+\end{itemize}
+\subsubsection{Identificazione di particelle}
+Le particelle si discriminano in base alla massa, quindi si misurano $\beta $ e $p$: il primo tramite rivelatori \v Cerenkov, il secondo tramite spettrometri. Allora la massa \`e data da:
+\begin{equation}
+	m = p \frac{\sqrt{ 1- \beta ^2} }{\beta }
+\end{equation}
+Il grafico \`e in funzione di $p$; usando $1/\beta ^2 = E^2 / p^2 = (m^2 + p^2)/p^2$:
+\begin{equation}
+\sin \theta _c = \sqrt{1- \frac{1}{\beta ^2 n ^2}} = \frac{1}{n} \sqrt{n^2 - \frac{1}{\beta ^2}} = \frac{1}{n} \sqrt{n^2 - 1- \frac{m^2 }{p^2}} 
+\end{equation}
+L'intersezione con asse $x$ si ha per $p = m / \sqrt{n^2 - 1} $. Prima di $\mu $, si ha la distribuzione di $e^{\pm} $.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{pid.png}
+\end{figure}
 
 
 
@@ -2185,6 +2270,28 @@ Q \approx -1.442 \text{ MeV} < 0
 \] 
 che non avviene spontaneamente.
 
+\newpage
+\subsection{Interazione della materia con particelle cariche}
+\subsubsection{Energia persa da elettrone ultrarelativistico in materiale solido}
+Calcolare $N_\gamma$, $\Delta E$ per $e^-$ con velocit\`a $\beta \to 1$ in materiale di spessore $\Delta x = 1$ cm e 
+\[
+n = \begin{cases}
+	1.5 &,\ 0 < E_\gamma < 10 \text{ eV}\\
+	1 & , \ E_\gamma> 10 \text{ eV}
+\end{cases}
+\] 
+Si considera $\beta = 0.9999$.
+\begin{svolgimento}
+	Dalla formula di Frank-Tamm, considerando solo intervallo in cui la radiazione nel materiale non si comporta come nel vuoto, cio\`e solo per $0 < E_\gamma <10$ eV:
+	\[
+	 N_\gamma = \Delta  x	\int_{0 \text{ eV}} ^{10 \text{ eV}}  \frac{\alpha }{\hbar  c}\left(1- \frac{1}{(1.5 \cdot 0.9999)^2}\right)  \ dE_\gamma  \approx 2000
+	\] 
+quindi, si pu\`o scrivere:
+\[
+\Delta E = N_\gamma E_\text{max} = N_\gamma \cdot  10 \text{ eV} \approx 20000 \text{ eV}
+\] 
+
+\end{svolgimento}
 
 
 
