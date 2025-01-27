@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex master.idx"] 1737815315 "master.idx" "master.ind" "master" 1737924103
-  "master.idx" 1737924099 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1737815315 "master.idx" "master.ind" "master" 1737992256
+  "master.idx" 1737992252 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
-["pdflatex"] 1737924099 "master.tex" "master.pdf" "master" 1737924103
+["pdflatex"] 1737992252 "master.tex" "master.pdf" "master" 1737992256
   "/etc/texmf/web2c/texmf.cnf" 1736789023 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -17,6 +17,12 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvrc8t.tfm" 1136768653 16152 ab9d47b69dd04cab59fcf780bd0eed36 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm" 1136768653 4964 f223217e5e1f85fa3742fb0480aba9e8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro8t.tfm" 1136768653 7292 d408122871055bbc541d7280c154e210 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb0500.tfm" 1136768653 3584 da0ae3ab3e80786f11363f38b94e9bd9 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb0600.tfm" 1136768653 3584 fd10bf9641ece8ba21fb88d84ad909ca ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb0700.tfm" 1136768653 3584 2bedb45e38adf31936b6f441277bd215 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb0800.tfm" 1136768653 3584 267032d4dc59b587740b4fc61069b33e ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb1000.tfm" 1136768653 3584 829eec53deda1f46669a7c1074155ac7 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrb1095.tfm" 1136768653 3584 67ad9712354d3ed89e9c15916fb5d736 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm" 1246382020 808 f0482638b09e07d31277eba36400f7dc ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1246382020 1040 b84415f97d114011685943ade933dc71 ""
@@ -316,6 +322,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty" 1585258158 8314 7803f78066c4f9d008405191a4b43073 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1636152094 2971 def0b6c1f0b107b3b936def894055589 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.pfb" 1636152094 142647 e228a2481210f56a2086fd207d0b218c ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736791043 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736791064 2801330 3f01eb60af1a3645571cdb30089bab87 ""
@@ -324,11 +332,11 @@
   "betpair.png" 1737893663 189136 bb7a6eccba15c20f97487491c9455c95 ""
   "edb.png" 1737893663 330639 806fb66ed9a70a735551ffb8e810df06 ""
   "f.png" 1737893663 680903 f4b1d5f932f52524cdf58b7f226f8a44 ""
-  "master.aux" 1737924102 53805 0b16dad2f229a56e8be9b2180008e214 "pdflatex"
+  "master.aux" 1737992256 57101 61a1ce271e34fc0768505e57220755e5 "pdflatex"
   "master.ind" 1737893663 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1737924099 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "master.tex" 1737924097 145689 0c980a69c0b42e221381eca16884cdb0 ""
-  "master.toc" 1737924102 9688 50029cec2f3d76878b616dc962c4416e "pdflatex"
+  "master.out" 1737992253 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "master.tex" 1737992248 150872 4b812a68ada12dd8146f10028cee4119 ""
+  "master.toc" 1737992256 10300 e165418ef44fe86bbb31789672e2cb1e "pdflatex"
   "nucpot.pdf" 1737893663 15036 60b4eda10b0504fc0d50b164688235f4 ""
   "ruth.png" 1737893663 61044 a3610ed8115be4ea025787aa532ff7c3 ""
   "wallp.jpg" 1737893663 146175 b06c37860e49607c29918656099048af ""

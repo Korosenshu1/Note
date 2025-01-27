@@ -1700,6 +1700,91 @@ L'interazione forte \`e agisce su scala del fm, quindi si pu\`o dire che se il p
 Sezione d'urto Rutherford $\sigma _\text{ruth}$ va a infinito; integrando in $d\Omega $ sez. d'urto differenziale, per $\chi  \ll 1 $ si approssima come $d^2 / \chi  ^4$, quindi diverge. Per risolverlo, si deve limitare $\chi  $ con $\chi  _\text{min}$. 
 
 Questo si pu\`o fare individuando $\chi  _\text{min}$ come l'angolo minore misurabile sperimentalmente per questioni di precisione sulla strumentazione, oppure teoricamente imponendo $\exists b_\text{max}: b< b_\text{max}\equiv r_\text{atomico}\Rightarrow \exists \chi  _\text{min}$ da $b = \frac{d}{2} \cot \frac{\chi 	}{2}$.
+\subsubsection{Sezione d'urto Mott}
+Per sezione d'urto Rutherford si \`e assunto: non-relativistica, proiettili puntiformi, solo interazione coulombiana, bersaglio con $M\to \infty$. Per $z=1$ (elettrone come proiettile): $\Eval{\frac{d \sigma }{d \Omega } }{\text{ruth}}{}=  \left(\frac{Z\alpha  \hbar  c}{4T}\right) ^2 \frac{1}{\sin ^4 \theta  /2 }$.
+
+\begin{itemize}
+	\item La correzione per oggetti \textbf{non-puntiformi} si ottiene moltiplicando per fattore di forma.
+
+	\item La correzione \textbf{relativistica} si ha esplicitando $\lvert \vec{p} \rvert \lvert \vec{v} \rvert $ per utilizzare la definizione relativistica $\lvert \vec{p} \rvert = m \gamma \lvert \vec{v} \rvert $:
+		\begin{equation}
+			\Eval{\frac{d \sigma }{d \Omega } }{\text{ruth}}{}= \left(\frac{Z\alpha  \hbar  c}{4T}\right) ^2 \frac{1}{\sin ^4 \theta  /2 } = \left(\frac{Z \alpha  \hbar  c}{4 \frac{1}{2}mv^2}\right) ^2 \frac{1}{\sin^4 \theta / 2} = \left(\frac{Z \alpha  \hbar  c}{2 \lvert \vec{p} \rvert \lvert \vec{v} \rvert }\right) ^2 \frac{1}{\sin^4 \theta / 2} 
+		\end{equation}
+	\item La correzione $\mathbf{M < \infty} $ e \textbf{comprensiva di spin} restituisce la \textbf{sezione d'urto Mott}:
+		\begin{boxenv}[]
+		\begin{equation}
+			\Eval{\frac{d \sigma }{d \Omega } }{\text{mott}}{}= \Eval{\frac{d \sigma }{d \Omega } }{\text{ruth}}{} \frac{1- \beta ^2 \sin^2 \theta /2}{1 + \frac{2E}{M} \sin^2 \theta  / 2} 
+		\end{equation}
+		\end{boxenv}
+	\noindent dove il numeratore \`e la correzione per lo spin e il denominatore per massa finita.	
+\end{itemize}
+\subsubsection{Sezione d'urto Rosenbluth}
+Si ottiene dalla sezione d'urto Mott per \textbf{correzione con momento magnetico}:
+\begin{boxenv}[]
+\begin{equation}
+\Eval{\frac{d \sigma }{d \Omega } }{\text{ros}}{}=\Eval{\frac{d \sigma }{d \Omega } }{\text{mott}}{} \left(A+B \tan \theta^2 / 2\right) 
+\end{equation}
+\end{boxenv}
+
+\subsubsection{Esperimento di Hofstadter}
+
+$\to$ Misura fattore di forma del protone da scattering con elettrone. Sperimentalmente, si misurer\`a:
+\[
+\frac{d \sigma }{d \Omega } =\Eval{\frac{d \sigma }{d \Omega } }{\text{ros}}{} \lvert F(\theta ) \rvert ^2
+\] 
+da cui si ricava $\lvert F(\theta ) \rvert ^2$. In realt\`a, si misura $\frac{d \sigma }{d \lvert t \rvert } $ con $t$ seconda variabile di Mandelstam. 
+
+Per scattering elastico di $e^-$ su $p$, con $\theta $ angolo di scattering di $e^-$, indicando $p_e = (E ,\vec{p})$ prima dell'urto e $p_e' = (E', \vec{p}')$ dopo, si ha $E ' = E$ e $\lvert \vec{p} \rvert  = \lvert  \vec{p}' \rvert $ nel centro di massa, quindi:
+\[
+t \equiv (p-p')^2 = - (\vec{p}- \vec{p}')^2 = - p^2 - p'^2 +  2 \vec{p}\cdot \vec{p}' = - 2 p^2 ( 1 - \cos \theta ) = - 4 p^2 \sin^2 \theta / 2
+\] 
+In unit\`a naturali, in assunzione $M\to \infty$ e $\beta  \to 1$:
+\[
+\frac{d \sigma _\text{mott}}{d \Omega } = \frac{Z^2 \alpha ^2}{4 \lvert \vec{p} \rvert ^2 \lvert \vec{v} \rvert ^2} \frac{1- \beta ^2 \sin^2 \theta  / 2}{\sin ^4 \theta / 2} \simeq \frac{Z^2 \alpha ^2}{4 p^2 v^2} \frac{1- \sin^2 \theta  / 2}{\sin^4 \theta  / 2}
+\] 
+Integrando questa rispetto a $\varphi $\footnote{Questa integrazione \`e responsabile per il fattore $2\pi$.} e riscrivendo i seni usando $\lvert t \rvert  = 4 p^2 \sin^2 \theta / 2$:
+\[
+\frac{d \sigma _\text{mott}}{d \lvert t \rvert } = \frac{4 \pi Z^2 \alpha ^2}{t^2} \left(1 - \frac{\lvert t \rvert }{4p^2}\right)  \sim \frac{1}{t^2}
+\] 
+Per particelle non-puntiformi, si deve moltiplicare la sezione d'urto per modulo quadro del fattore di forma; da questa si ottiene sezione d'urto Rosenbluth moltiplicando per l'apposito fattore.
+\subsubsection{Fattore di forma e raggio quadratico medio}
+
+Se $\vec{q}$ impulso trasferito e $\lvert \vec{q} \rvert a \ll 1$\footnote{Questa ha senso perch\'e si sottintende che $q$ sia dato dalla differenza dei vettori d'onda delle particelle e non direttamente dagli impulsi.}, con $a$ dimensione caratteristica del bersaglio, si approssima il fattore di forma come:
+\[
+\begin{split}
+	F(\vec{q}) &= \frac{\displaystyle \iiint_{V} \rho (\vec{r}) e^{- i \vec{q}\cdot \vec{r}}\ dV}{\displaystyle \iiint_{V}  \rho (\vec{r}) \ dV} = \frac{\displaystyle \iiint \rho (r) e^{- i q r \cos \beta }  \ r^2 dr d (\cos \beta ) d\alpha }{ \displaystyle \iiint \rho (r) \ r^2 d r d(\cos\beta )d\alpha  }\\
+	&\simeq \frac{\displaystyle \iint \rho (r) \left[ 1- i qr \cos \beta  - \frac{q^2}{2} r^2 \cos^2 \beta  + \ldots \right] \ r^2 dr d(\cos \beta ) }{\displaystyle  \iint \rho  (r) \ r^2 dr d(\cos \beta )} = \frac{\displaystyle \int \rho (r) \left[ \cos\beta  - \frac{q^2 r^2}{2} \cos^3 \beta  \right] _{-1} ^{+1} \ r^2 dr}{\displaystyle 2 \int \rho (r) \ r^2 dr}\\
+	&= \frac{\displaystyle \int \rho (r) \left[ 2 - \frac{q^2 r^2}{3} \right] \ r^2 dr}{\displaystyle 2 \int \rho (r) \ r^2 dr} = 1 - \frac{q^2}{6} \frac{\displaystyle \int \rho (r)  r^4 \ dr}{ \displaystyle  \int \rho (r) r^2 \ dr} \equiv 1 - \frac{q^2}{6} \langle r^2 \rangle + \ldots
+\end{split}
+\] 
+dove per lo sviluppo, si \`e usato $qr \ll 1$ e si \`e definito il \textbf{raggio quadratico medio} $\langle r^2 \rangle$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{I nuclei atomici}
 
@@ -1936,6 +2021,12 @@ Fotoni emessi dalla sorgente sono soggetti a effetto Doppler perch\'e la lastra 
 
 La velocit\`a $v$ della lastra \`e solitamente un'onda triangolare, quindi quando $v=0$ e si verifica effetto M\"ossbauer (cio\`e la sorgente emette fotone a $E_0$ e la lastra passiva assorbe e riemette casualmente su tutto l'angolo solido) il rivelatore non osserver\`a niente perch\'e \`e improbabile che il fotone riemesso dalla lastra passiva vada proprio sul rivelatore; contrariamente, quando $v$ supera una certa soglia, per effetto Doppler, l'energia del fotone emesso non \`e tale da eccitare atomi nella lastra passiva e passa al rivelatore\footnote{Vedi immagine appunti.}. 
 Perch\'e si osservino fotoni, il valore di soglia della velocit\`a \`e dato da $\beta  E_0 \gg \Gamma\Rightarrow  \lvert \vec{v} \rvert \gg c\Gamma / E_0\approx 10^{-4} \text{ m}/\text{s}$.
+
+\newpage
+
+\section{Interazione fra particelle cariche e materia}
+\subsection{Effetto \v Cerenkov}
+
 
 
 
