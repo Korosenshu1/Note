@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex master.idx"] 1738164382 "master.idx" "master.ind" "master" 1738164384
-  "master.idx" 1738164384 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1738164382 "master.idx" "master.ind" "master" 1738170896
+  "master.idx" 1738170895 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
-["pdflatex"] 1738164383 "master.tex" "master.pdf" "master" 1738164384
+["pdflatex"] 1738170895 "master.tex" "master.pdf" "master" 1738170896
   "/etc/texmf/web2c/texmf.cnf" 1736789023 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty" 1736802667 651 c15367d9ac0ad9b6bb6487954938dfeb ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc" 1276043435 2452 388b1f44dfda03ab19527677af70e7fb ""
@@ -19,6 +19,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/esint/esint10.tfm" 1569948395 364 55557743e6c24ee44e49bc5e8dbbe3cd ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tosf-t1.tfm" 1640468490 11388 16b8c118de2495495bb0ede2d8be8d43 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tosf-t1.tfm" 1640468490 11908 9200b0967ea3566fc90957ba77edb80e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-sc-t1.tfm" 1640468490 13076 66113d4b5bda4bc5314e7c2ef0576d9b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-t1.tfm" 1640468490 12212 eb24bada7a3ccc1a0349760aa3e1809d ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -40,6 +41,14 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb" 1283981089 144367 bcac71dbb7cd94700e23df9d71f35989 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplb.pfb" 1640468490 292234 cadeea7dd9f65fcf636cb16396846b94 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplr.pfb" 1640468490 235149 595fa8bf6c04f2c8979a1525afa23361 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb" 1640468490 267932 4fd4e7e3cb85be8c9a5437f17677edd3 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb" 1388795362 34312 93d172bb03d56a69a32b53ff723ce40b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb" 1388795362 63697 54c53ee8b8c43f52d0718f669ed6fb5e ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb" 1388795362 26156 d6751631159a7cd0a5d264b2d10a82fe ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb" 1388795362 41474 772656494141d29334d3e80c9a859c10 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb" 1388795362 40662 35fc2ef7e5426524c472184c87cb4d57 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb" 1388795362 49105 9eedb6cab5411e388fea9002bbf95a72 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb" 1388795362 41655 e7591451a427b4270d35622721b08f6a ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf" 1590097648 11390 c338c4a47651f95dee3fc5c3dbc21081 ""
@@ -289,11 +298,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736791043 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736791064 2801330 3f01eb60af1a3645571cdb30089bab87 ""
-  "master.aux" 1738164384 1166 875a764ca65662c0c9e10e920e7e9eee "pdflatex"
+  "master.aux" 1738170895 2439 7639f3b64214858036c73fab584433cc "pdflatex"
   "master.ind" 1738164382 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1738164384 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "master.tex" 1738164379 5835 f73fdfca2bd58657d086848fb04cd71f ""
-  "master.toc" 1738164384 202 1145878b8828111897b8c563238e7316 "pdflatex"
+  "master.out" 1738170895 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "master.tex" 1738170894 8746 8a3c78939588251f62c50cb3b4ea072b ""
+  "master.toc" 1738170895 421 3c82042f473ef8f758cad5ff239e9d0d "pdflatex"
   (generated)
   "master.aux"
   "master.idx"

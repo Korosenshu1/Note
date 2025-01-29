@@ -37,9 +37,14 @@
 \usepackage[italian]{babel}
 
 % Titles 
-\title{ciao}
+\title{Note di Analisi 2}
 \author{Manuel Deodato}
 \date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
 
 %%%%% tcolorbox setup
 
@@ -193,7 +198,65 @@
 \newpage
 \tableofcontents 
 \newpage
-\section{ciao}
+\section{Calcolo differenzialeciao in pi\`u variabili}
+\subsection{Derivate parziali}
+
+Una funzione di pi\`u variabili $f(x,y):\mathbb{R}^2 \to \mathbb{R}$ pu\`o essere derivata mantenendo fissa una variabile e derivando rispetto all'altra. Questo corrisponde al valutare la variazione di $f$ lungo un asse specifico.
+\begin{definizione}
+	{Derivata parziale}{}
+	Sia $f(x_1,\ldots,x_n) :\mathbb{R}^n \to \mathbb{R}$; la sua derivata parziale rispetto a $x_k$ \`e:
+	\begin{equation}
+		\frac{\partial f}{\partial x_k}(x_1,\ldots,x_n) = \lim_{h \to 0} \frac{f(x_1,\ldots,x_k + h, \ldots, x_n)-f(x_1,\ldots,x_k,\ldots,x_n)}{h}
+	\end{equation}
+\end{definizione}
+\noindent Il vettore che ha per componenti le derivate di $f$ rispetto a ciascuna delle sue variabili si chiama \textbf{gradiente} e si indica con $\nabla f$.
+
+\subsubsection{Derivate direzionali}
+
+\`E possibile studiare la variazione di $f$ lungo una particolare direzione individuata dal versore $\hat{n}$. Una retta parallela a $\hat{n}$ e passante per un punto $\vec{x}$ si individua con $\vec{x}+t \hat{n}$; fissando i punti $\vec{x}$ e $\hat{n}$, $g(t) := f(\vec{x}+t\hat{n})$ \`e una funzione di una variabile e $g'(0)$ \`e la derivata direzionale di $f$ lungo $\hat{n}$:
+\begin{equation}
+	\frac{\partial f}{\partial \hat{n}} (\vec{x}) = g'(0) = \lim_{h \to 0} \frac{f(\vec{x}+h\hat{n}) - f(\vec{x})}{h}
+\end{equation}
+Pi\`u in generale:
+\begin{equation}
+	g'(t) \overset{\text{def}}{=} \lim_{h \to 0} \frac{g(t+h) - g(t)}{h} = \lim_{h \to 0} \frac{f(\vec{x}_t+ h \hat{n}) - f(\vec{x}_t)}{h} \equiv \frac{\partial f}{\partial \hat{n}} (\vec{x}_t)
+\end{equation}
+con $\vec{x}_t = \vec{x}+t \hat{n}$. 
+\begin{obs}
+	Conoscendo $\nabla f$, si pu\`o calcolare la derivata direzionale di $f$ come $\nabla f \cdot \hat{n}$.
+\end{obs}
+\begin{esempio}
+	Si calcola la derivata direzionale di $f(x,y) = x^2 y - e^{x+y} $ lungo la direzione $\hat{n} = \left(\frac{1}{2}, \frac{\sqrt{3} }{2}\right) $.
+	\begin{svolgimento}
+		Si ha 
+		\[
+		g(t) = f\left(x + \frac{t}{2}, y + \frac{\sqrt{3} }{2}t\right) = \left(x + \frac{t}{2}\right) ^2 \left(y + \frac{\sqrt{3} }{2}t\right) - \exp \left[ x + y + t\left(\frac{1}{2} + \frac{\sqrt{3} }{2}\right)  \right] 
+		\] 
+		Allora 
+		\[
+		\frac{\partial f}{\partial \hat{n}} (x,y) = g'(0) = xy + \frac{\sqrt{3} }{2}x^2 - \left(\frac{1}{2}+ \frac{\sqrt{3} }{2} \right) e^{x+y} 
+		\] 
+		Alternativamente $\nabla f = \left(2xy - e^{x+y} , x^2 - e^{x+y} \right) $, quindi $\partial _{\hat{n}} f = \nabla f \cdot \hat{n} =xy - \frac{1}{2} e^{x+y} +\frac{\sqrt{3} }{2} x^2 - \frac{\sqrt{3} }{2}e^{x+y} = xy + \frac{\sqrt{3} }{2}x^2 - \left(\frac{1}{2}+\frac{\sqrt{3} }{2}\right) e^{x+y}   $.
+	\end{svolgimento}
+\end{esempio}
+\begin{center}
+\textbf{Riprendere da teorema 11.1} 	
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
