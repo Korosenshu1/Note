@@ -2025,8 +2025,41 @@ Perch\'e si osservino fotoni, il valore di soglia della velocit\`a \`e dato da $
 \newpage
 
 \section{Interazione fra particelle cariche e materia}
+\subsection{Composizione spettrale}\label{compspet}
+
+Sia $\vec{E}_\text{irr}$ campo elettrico irraggiato e $\vec{r}'(t')$ posizione della carica rispetto a SR $O$ generico. Si osserva il campo nel punto $P$, individuato da raggio vettore $\vec{r}$ rispetto all'origine e con $\vec{R}$ rispetto alla carica, cio\`e $\vec{r}= \vec{r}' + \vec{R}$. La carica procede con velocit\`a $\vec{\beta }$.
+
+Sia $\hat{n} = \vec{R}/R$ e si assume $r' \ll R , r$. La trattazione \textbf{sar\`a valida per bremsstrahlung, \v Cerenkov, radiazione di sincrotrone e decadimento $\beta ^-$}. Dall'assunzione si ha:
+\[
+R = \sqrt{(\vec{r}-\vec{r}')^2} \simeq r - \hat{n}\cdot \vec{r}'; \ \hat{n} \simeq \hat{r}, \frac{d \hat{n}}{d t} = 0
+\] 
+Per definizione $\frac{d \vec{r}'}{d t'} = \vec{\beta }c$. Si trasforma $\vec{E}_\text{irr}$ con Fourier:
+\begin{equation}
+	\begin{split}
+		\vec{E}_\text{irr}(\vec{r},\omega)&= \int_{-\infty} ^{+\infty} \vec{E}(\vec{r},t) e^{i\omega t} \ dt =\int_{-\infty} ^{+\infty} \frac{q}{4\pi \varepsilon _0 c R}\frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{ \vec{\beta }}\big)}{(1- \vec{\beta }\cdot \hat{n})^3} dt\\
+						  &=\frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty} \frac{e^{i\omega (t' + R / c)} }{R} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^3} \frac{d t}{d t'} dt'a\\
+						  &\simeq \frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty}  \frac{e^{i\omega(t' + r / c - \hat{n}\cdot \vec{r}' / c} )}{r} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^2}dt'
+	\end{split}
+\end{equation}
+Si pu\`o usare identit\`a di Parseval $\int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},t) \rvert ^2  dt=\frac{1}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2  d\omega$ per calcolare la potenza irraggiata\footnote{L'ultima uguaglianza deriva dalla definizione di energia irraggiata per intervallo di frequenza $I_\omega$.}:
+\begin{equation}
+	\begin{split}
+		&\frac{d I}{d \Omega } = \int_{-\infty} ^{+\infty} r^2 \lvert \vec{S} \rvert \ dt = \int_{-\infty} ^{+\infty} \varepsilon _0 cr^2 \lvert \vec{E}(\vec{r},t) \rvert ^2 dt = \frac{\varepsilon _0 cr^2}{2\pi} \int_{-\infty} ^{+\infty} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2 d\omega \equiv \int_{-\infty} ^{+\infty} \frac{d I_\omega}{d \Omega } \ d\omega\\
+		&\Rightarrow \begin{cases}
+			\displaystyle \frac{d I_\omega}{d \Omega } = \frac{\varepsilon _0 cr^2}{2\pi} \lvert \vec{E}(\vec{r},\omega) \rvert ^2 & ,\ -\infty<\omega <+\infty\\
+			\\
+			\displaystyle \frac{d I_\omega}{d \Omega }  = \frac{\varepsilon _0 cr^2}{\pi} \lvert \vec{E}(\vec{r},\omega) \rvert ^2& \ , 0<\omega < +\infty	
+		\end{cases}
+	\end{split}
+\end{equation}
+dove nel caso $0 < \omega<+\infty$ compare un fattore $2$ riducendo integrale da $0$ a $+\infty$ essendo simmetrico. \textbf{Questo \`e valido in generale, nei casi riportati sopra}.
 \subsection{Effetto \v Cerenkov}
 $\to $ Emissione di onde em da parte di materiale attraversato da particelle cariche a velocit\`a $v$ maggiori di quelle della luce nel mezzo. Per questo, il materiale deve avere $\Re\left\{ n \right\} > 1$. Condizione sulla velocit\`a della particella \`e $v > c / n\Rightarrow  \beta  > 1 / n$. La necessit\`a di questa richiesta \`e perch\'e in questo modo le onde hanno modo di sovrapporsi coerentemente fra loro senza sfuggire prima che il passaggio della particella possa generarne altre.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{c1.png}
+\end{figure}
+
 \subsubsection{Radiazioni \v Cerenkov}
 
 L'effetto \`e descritto dalla formula per l'angolo di emissione della radiazione:
@@ -2042,7 +2075,11 @@ L'effetto \`e descritto dalla formula per l'angolo di emissione della radiazione
 	\cos \theta  _c \equiv \frac{OH}{OA} = \frac{\Delta t c / n}{v \Delta  t} = \frac{1}{\beta  n}
 	\] 
 \end{proof}
-Se $\vec{R} = \vec{OH} = \vec{OA}+\vec{AH}= \vec{v}\Delta  t + \vec{\rho }$:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.4\columnwidth]{c2.png}
+\end{figure}
+\noindent Se $\vec{R} = \vec{OH} = \vec{OA}+\vec{AH}= \vec{v}\Delta  t + \vec{\rho }$:
 \[
 	\begin{split}
 		&R^2 = \beta ^2 c^2 \Delta  t ^2 + \rho ^2 + 2c\Delta  t \vec{\beta }\cdot \vec{\rho }  = \beta ^2 c^2 \Delta t^2 + \rho ^2 + 2 \beta  \rho  c \Delta  t \cos \alpha \\
@@ -2093,6 +2130,7 @@ Misurano $N_\gamma$ e si dividono in due tipi a seconda se si misura $\theta _c$
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=.6\columnwidth]{rc-rich.png}
+			\caption{Schema funzionamento rivelatore RICH.}
 		\end{figure}
 
 		\noindent Passando da radiatore a un mezzo con $n\sim 1$, l'angolo $\theta _\text{out}$ con cui radiazione incide su rivelatore \`e diverso da $\theta_c$. I vincoli che si hanno sono $\cos \theta _c = 1 / \beta  n$ e legge di Snell $\sin\theta _\text{out} = n \sin \theta _c$; inoltre deve valere $\sin \theta _\text{out}< 1$ per evitare riflessione totale, quindi $n \sin \theta _c < 1 \Rightarrow  n < \sqrt{1 + 1 / \beta ^2} $ e, se $\beta \sim 1$, si ha $n<1.41$.
@@ -2102,6 +2140,7 @@ Misurano $N_\gamma$ e si dividono in due tipi a seconda se si misura $\theta _c$
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=\columnwidth]{dirc.png}
+			\caption{Schema funzionamento rilevatore DIRC.}
 		\end{figure}
 \end{itemize}
 \subsubsection{Identificazione di particelle}
@@ -2118,6 +2157,145 @@ L'intersezione con asse $x$ si ha per $p = m / \sqrt{n^2 - 1} $. Prima di $\mu $
 	\centering
 	\includegraphics[width=.8\columnwidth]{pid.png}
 \end{figure}
+\subsection{Radiazione di frenamento (Bremsstrahlung)}
+Emissione di radiazioni dovute alla deflessione di una particella carica da parte di un atomo. Per questo motivo, la bassa inerzia di $e^{\pm} $ li rende preferibili per il fenomeno. L'interazione tra nucleo e carica \`e supposta unicamente coulombiana.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{b1.png}
+\end{figure}
+\subsubsection{Angolo di emissione della radiazione}
+Nel CM, $\gamma$ \`e prodotto con angolo di decadimento $\theta \Rightarrow p^\mu _\gamma = (E_0, E_0 \cos \theta , E_0 \sin \theta ,0)$. Tornando nel LAB con carica a velocit\`a $\vec{v}$: 
+\[
+ p'^\mu _\gamma = \Big(\gamma(E_0 + \beta E_0\cos\theta ), \gamma (\beta  E_0 + E_0 \cos \theta ), E_0 \sin \theta,0 \Big)
+\] 
+Per la formula nota $\tan \theta _\text{lab}= v_y' / v_x ' $, si ha
+\begin{equation}
+	\tan \theta _\text{lab} = \frac{1}{\gamma} \frac{\sin \theta }{\beta  + \cos \theta } \sim \frac{1}{\gamma}
+\end{equation}
+\subsubsection{Sezione d'urto di irraggiamento}
+Dato $b$ parametro di impatto, si calcola energia irraggiata in intervallo di frequenza. Si indica con $I_\omega(b)$ energia irraggiata per unit\`a di frequenza in funzione di $b$, dove
+\begin{equation}
+	\langle I_\omega(b) \rangle = \frac{\displaystyle \int I_\omega(b) \cdot  2\pi  b\ db}{\displaystyle \int 2\pi b \ db}\equiv \frac{2\pi}{\sigma _\text{irr}} \int I_\omega(b) b \ db
+\end{equation}
+Il numero medio di interazioni in spessore $\Delta x$ \`e dato da:
+\begin{equation}
+	\langle N_\text{int} \rangle = n_s \int 2\pi b \ db \equiv n\Delta x \sigma _\text{irr}
+\end{equation}
+con $n_s$ densit\`a superficiale di atomi e $n$ densit\`a volumica. Lenergia irraggiata per intervallo di frequenza \`e:
+\begin{equation}
+	E_\text{irr} = \int_{\omega_\text{min}} ^{\omega_\text{max}} \langle N_\text{int} \rangle \langle I_\omega(b) \rangle \ d\omega = 2\pi n_s \iint I_\omega(b) b \ dbd\omega \equiv n\Delta x \int_{\omega_\text{min}} ^{\omega_\text{max}} \chi _\omega \ d\omega
+\end{equation}
+dove si \`e definita \textbf{sezione d'urto di irraggiamento} $\chi _\omega = \int_{b_\text{min}} ^{b_\text{max}} 2\pi I_\omega (b) b \ db$. Si ha:
+\begin{equation}
+	\begin{cases}
+		\displaystyle \frac{d E_\text{irr}}{d \omega} = n_s \chi _\omega\\
+		\\
+		\displaystyle \frac{d E}{d x} = n \int_{\omega_\text{min}} ^{\omega_\text{max}} \chi _\omega \ d\omega
+	\end{cases}
+\end{equation}
+\subsubsection{Distribuzione spettrale}
+Data da: 
+\begin{equation}
+\frac{d N_\gamma}{d \omega} = \frac{1}{\hbar  \omega} \frac{d E_\text{irr}}{d \omega} = \frac{n}{\hbar  \omega} \chi _\omega
+\end{equation}
+\begin{osservazione}
+Per boost parallelo alla velocit\`a della carica:
+\begin{equation}
+	\chi _\omega = \frac{1}{n_s} \frac{d E_\text{irr}}{d \omega}  = \chi '_{\omega'} 
+\end{equation}
+visto che $n_s$ \`e invariante e $\text{energia} / \text{frequenza}$ comporta un fattore $\gamma / \gamma$.
+\end{osservazione}
+\subsubsection{Composizione spettrale}
+
+Riprendendo \S\ref{compspet}, si cerca $\chi _\omega$ prima nel caso non-relativistico e poi si estende al caso relativistico. 
+
+Per caso non-relativistico si ha $\beta \to 0$, quindi:
+\[
+	\begin{split}
+&\vec{E}\simeq \frac{q e^{i\omega r / c} }{4\pi \varepsilon _0 c r}\int_{-\infty} ^{+\infty} e^{i\omega t'} \hat{n}\times (\hat{n}\times \dot{\vec{\beta }}) dt' \\
+&\Rightarrow \frac{d I_\omega}{d \Omega }  \simeq \frac{\varepsilon _0 r^2 c}{\pi} \frac{q^2}{16 \pi ^2 \varepsilon _0^2c^2 r^2} e^{2i\omega r /c }  \left\lvert \int_{-\infty} ^{+\infty} e^{i\omega t' } \hat{n}\times (\hat{n}\times \dot{\vec{\beta }}) \ dt'  \right\rvert ^2 = \frac{q^2}{16 \pi^3 \varepsilon _0 c} \left\lvert \int_{-\infty} ^{+\infty} e^{i\omega t' } \hat{n}\times (\hat{n}\times \dot{\vec{\beta }}) \ dt' \right\rvert ^2
+	\end{split}
+\] 
+Si ricorda che per carica passante vicino ad altra carica, la durata dell'impulso \`e $\tau  \sim b / v$ per non-relativistico e $\tau  \sim b / (\gamma v)$ per relativistico. Allora l'integrale si calcola tra $- \tau  / 2$ e $ + \tau  / 2$. Nel caso $\omega \tau  \gg 1 $, la funzione \`e rapidamente oscillante e va a $0$ per il teorema di Riemann-Lebesgue.
+
+Se $\omega \tau \ll 1 \Rightarrow e^{i\omega t'} \simeq 1$ e:
+\[
+\frac{d I_\omega}{d \Omega } \simeq \frac{q^2}{16\pi^3 \varepsilon _0 c} \left\lvert \hat{n}\times \hat{n} \times  \int_{-\tau  / 2} ^{+ \tau / 2} \dot{\vec{\beta }} \ dt' \right\rvert ^2 = \frac{q^2}{16\pi^3 \varepsilon _0 c} \sin^2 \theta  \lvert \Delta  \vec{\beta } \rvert ^2
+\] 
+con $\theta $ angolo tra $\Delta \vec{\beta }$ e $\hat{n}$. Quindi:
+\begin{equation}
+	I_\omega = \int \frac{d I_\omega}{d \Omega } \ d\Omega = \begin{cases}
+		0& , \ \omega \gg v / b\\
+		\displaystyle \frac{q^2}{6 \pi ^2 \varepsilon _0 c^3} \lvert \Delta \vec{v} \rvert ^2 & ,\ \omega \ll v / b
+	\end{cases}
+\end{equation}
+Si user\`a il modello approssimato
+\begin{equation}
+	I_\omega = \int \frac{d I_\omega}{d \Omega } \ d\Omega = \begin{cases}
+		0& , \ \omega > v / b\\
+		\displaystyle \frac{q^2}{6 \pi ^2 \varepsilon _0 c^3} \lvert \Delta \vec{v} \rvert ^2 & ,\ \omega < v / b
+	\end{cases}
+\end{equation}
+Visto che $\chi _\omega = \int I_\omega (b)  \ 2\pi b db$ si cerca dipendenza da $b$ in $I_\omega$, quindi in $\lvert \Delta \vec{v} \rvert ^2$. Nel caso di bremsstrahlung, si pu\`o \textbf{approssimare bene la traiettoria della carica come rettilinea}, quindi si considera solo componente del campo generato dal nucleo ortogonale alla traiettoria della carica:
+\[
+\begin{split}
+	\lvert \Delta \vec{v}  \rvert &= \frac{1}{m} \int_{-\infty} ^{+\infty} q \lvert \vec{E}_\perp \rvert  \ dt = \frac{2\pi b v}{2\pi b v} \frac{1}{m} \int_{-\infty} ^{+\infty} q \lvert \vec{E}_\perp \rvert \ dt  = \frac{1}{2 \pi b m v}\int_{-\infty} ^{+\infty} 2\pi b q \lvert \vec{E}_\perp \rvert v dt \\
+				      &=\frac{q}{2\pi bmv} \underbracket{\int_{-\infty} ^{+\infty} 2\pi b \lvert \vec{E}_\perp \rvert dx} _{\blacksquare} = \frac{q}{2\pi bmv} \frac{Ze}{\varepsilon _0}
+\end{split}
+\] 
+dove $\blacksquare$ \`e flusso di $\vec{E}_\perp$ attraverso superficie laterale di un cilindro con circonferenza $2\pi b$ e lunghezza pari all'asse reale. L'ultima uguaglianza \`e assicurata dal teorema di Gauss, con $Z$ numero atomico del nucleo.
+
+Se $q = \pm ze$ (in $\lvert \Delta \vec{v} \rvert$ si sottintende $|q|$), allora $\lvert \Delta \vec{v} \rvert = \frac{zZe^2}{2\pi \varepsilon _0 bmv}$ e, utilizzando le sostituzioni di $e^2$ da $\alpha  = \frac{e^2}{4\pi \varepsilon _0 \hbar  c}$ e di $e^4$ da $r_e = \frac{e^2}{4\pi \varepsilon _0 m_e c^2}$:
+\begin{equation}
+	I_\omega (b) = \frac{z^4 Z^2 e^2 e^4}{24 \pi^4 \varepsilon _0^3 c^3 b^2 m^2 v^2} = \frac{8}{3\pi} z^4 Z^2 (\alpha \hbar c^2) \frac{r_e^2}{v^2} \frac{1}{b^2} \left(\frac{m_e}{m}\right) ^2 , \ \omega < \frac{v}{b}
+\end{equation}
+Quindi:
+\begin{equation}
+	\chi _\omega = \int_{b_\text{min}}^{b_\text{max}} 2\pi b I_\omega(b) \ db = \frac{16}{3} z^4 Z^2 \alpha \hbar c^2 \frac{r_e^2}{v^2} \left(\frac{m_e}{m}\right) ^2 \ln \frac{b_\text{max}}{b_\text{min}} , \ \omega < \frac{v}{b}
+\end{equation}
+Ora si studia \textbf{caso relativistico} con $\vec{p} = m_e \vec{v}\gamma$ solo nel caso dell'elettrone, quindi $m=m_e$ e $z=1$. In $\Sigma'$ SR dell'elettrone, il nucleo si muove con $-\vec{v}$ e $\beta \sim 1$; essendo $\lvert \Delta \vec{v} \rvert  \ll c$:
+\[
+\chi '_{\omega'} = \frac{16}{3} Z^2 \alpha  \hbar  c^2 \frac{r_e^2}{v^2} \ln \frac{b_\text{max}}{b_\text{min}}, \ \omega' < \gamma c / b
+\] 
+essendo $v \sim c$ e quindi $\tau ' = b / c\gamma$. 
+\subsubsection{Curva $\omega'(b)$ e screening attivo}
+Vincolo orizzontale dato da $\hbar \omega ' < m_ec^2$ perch\'e, indicando con $\Sigma$ SR con $e^-$ in moto
+\[
+	\hbar  \omega ' > m_e c^2 \stackrel{\text{in } \Sigma}{\longrightarrow} \langle \omega \rangle \simeq \gamma \langle \omega' \rangle > m_e c^2 \gamma
+\] 
+Questo non \`e possibile perch\'e significherebbe che l'elettrone trasferisce energia maggiore di quella iniziale. Poi si distinguono due regimi:
+\begin{itemize}
+	\item \textbf{screening attivo} per $\gamma c / a > m_e c^2 / \hbar $, cio\`e
+		\[
+		\gamma > \frac{m_e c}{\hbar } a \simeq \frac{192}{Z^{1 / 3} }\equiv \gamma_c \Rightarrow E_c = m_e \gamma_c > \frac{98}{Z^{1 / 3} } \text{ MeV}
+		\] 
+	con $E_c$ energia critica, cio\`e energia sopra cui si verifica una notevole perdita di energia;
+\item \textbf{screening non attivo} per $ \gamma c / a < m_e c^2 / \hbar $ e si ha una perdita di energia irrisoria e dominio di integrazione non \`e rettangolare (vedi appunti).
+\end{itemize}
+Si considera screening attivo e i limiti di integrazione sono dati da $b_\text{min} = \hbar  / m_e c$ \textbf{lunghezza d'onda Compton} e $b_\text{max} = 1.4 \ a\ Z^{1 / 3} $; in questo caso
+\begin{equation}
+	\chi '_{\omega '} \simeq \frac{16}{3} Z^2 \alpha  \hbar  r_e ^2 \ln \frac{192}{Z^{1 / 3} }
+\end{equation}
+ed \`e indipendente da $\omega'$, quindi coincide, in particolare, con $\chi _\omega$ in $\Sigma$. Allora, in $\Sigma$ (cio\`e nel LAB):
+\begin{equation}
+	\frac{d E_\text{irr}}{d x}  = n \int_{0} ^{E / \hbar } \chi _\omega \ d\omega = n \chi _\omega \frac{E}{\hbar }
+\end{equation}
+dove estremo inferiore corrisponde ad assenza di irraggiamento e superiore corrisponde a massima trasmissione di energia. Quindi si ha:
+\begin{equation}
+	\frac{d E_\text{irr}}{d x}  = -\frac{d E}{d x} = n \chi _\omega \frac{E}{\hbar }\equiv \frac{E}{X_0} \Rightarrow E(x) = E_i e^{-x / X_0} 
+\end{equation}
+dove $E$ energia dell'elettrone, $X_0= \hbar  / (n\chi _\omega)$ lunghezza di radiazione. Si \`e usato che aumento di energia irraggiata comporta diminuzione dell'energia dell'elettrone. Infine, si \`e usato $E_i$ energia iniziale dell'elettrone.
+
+\begin{osservazione}
+	Questo \`e valido unicamente per positroni ed elettroni, o per particelle con massa simili. Inoltre, queste devono avere energia maggiore di quella critica del mezzo attraverso cui passano.
+\end{osservazione}
+
+\begin{osservazione}
+	Spesso si riporta $\rho X_0$ per avere grandezza indipendente da stato della materia.
+\end{osservazione}
+
+
+
 
 
 
