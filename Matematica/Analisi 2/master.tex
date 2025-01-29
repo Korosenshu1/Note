@@ -1,0 +1,200 @@
+\documentclass[10pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{stix}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{parskip}
+\usepackage{pythonhighlight}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+
+% Titles 
+\title{ciao}
+\author{Manuel Deodato}
+\date{}
+
+%%%%% tcolorbox setup
+
+% Teorema e proposizione
+\newtcbtheorem[number within=section]{teorema}{Teorema}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
+
+\newtcbtheorem[number within=section]{prop}{Proposizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
+
+
+
+
+
+% Definizione
+\definecolor{greendef}{HTML}{b8d8be}
+
+\newtcbtheorem[number within=section]{definizione}{Definizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
+
+
+% Esempio
+\theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+
+%\definecolor{empurple}{HTML}{6e5e89}
+
+%\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
+
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
+
+\numberwithin{esempio}{section}
+
+
+% Lemma e Corollario
+\definecolor{lemcor}{HTML}{a78d8a}
+
+\newtcbtheorem[number within=section]{lemma}{Lemma}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
+\newtcbtheorem[number within=section]{corollario}{Corollario}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
+
+
+
+% Osservazione
+\theoremstyle{definition}
+\newtheorem{obs}{Osservazione}
+
+\definecolor{coloros}{HTML}{6e5e89}
+
+\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
+
+\numberwithin{obs}{section}
+
+% Nota
+\newtheorem{nota}{Nota}
+
+\definecolor{ncol}{HTML}{f9ebbe}
+
+\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
+
+\numberwithin{nota}{section}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage{sansiwona}
+
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{ciao}
+
+
+
+\end{document}
