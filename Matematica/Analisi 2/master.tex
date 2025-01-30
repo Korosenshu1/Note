@@ -213,15 +213,15 @@ Una funzione di pi\`u variabili $f(x,y):\mathbb{R}^2 \to \mathbb{R}$ pu\`o esser
 
 \subsubsection{Derivate direzionali}
 
-\`E possibile studiare la variazione di $f$ lungo una particolare direzione individuata dal versore $\hat{n}$. Una retta parallela a $\hat{n}$ e passante per un punto $\vec{x}$ si individua con $\vec{x}+t \hat{n}$; fissando i punti $\vec{x}$ e $\hat{n}$, $g(t) := f(\vec{x}+t\hat{n})$ \`e una funzione di una variabile e $g'(0)$ \`e la derivata direzionale di $f$ lungo $\hat{n}$:
+\`E possibile studiare la variazione di $f$ lungo una particolare direzione individuata dal versore $\hat{n}$. Una retta parallela a $\hat{n}$ e passante per un punto $x$ si individua con $x+t \hat{n}$; fissando i punti $x$ e $\hat{n}$, $g(t) := f(x+t\hat{n})$ \`e una funzione di una variabile e $g'(0)$ \`e la derivata direzionale di $f$ lungo $\hat{n}$:
 \begin{equation}
-	\frac{\partial f}{\partial \hat{n}} (\vec{x}) = g'(0) = \lim_{h \to 0} \frac{f(\vec{x}+h\hat{n}) - f(\vec{x})}{h}
+	\frac{\partial f}{\partial \hat{n}} (x) = g'(0) = \lim_{h \to 0} \frac{f(x+h\hat{n}) - f(x)}{h}
 \end{equation}
 Pi\`u in generale:
 \begin{equation}
-	g'(t) \overset{\text{def}}{=} \lim_{h \to 0} \frac{g(t+h) - g(t)}{h} = \lim_{h \to 0} \frac{f(\vec{x}_t+ h \hat{n}) - f(\vec{x}_t)}{h} \equiv \frac{\partial f}{\partial \hat{n}} (\vec{x}_t)
+	g'(t) \overset{\text{def}}{=} \lim_{h \to 0} \frac{g(t+h) - g(t)}{h} = \lim_{h \to 0} \frac{f(x_t+ h \hat{n}) - f(x_t)}{h} \equiv \frac{\partial f}{\partial \hat{n}} (x_t)
 \end{equation}
-con $\vec{x}_t = \vec{x}+t \hat{n}$. 
+con $x_t = x+t \hat{n}$. 
 \begin{obs}
 	Conoscendo $\nabla f$, si pu\`o calcolare la derivata direzionale di $f$ come $\nabla f \cdot \hat{n}$.
 \end{obs}
@@ -239,15 +239,48 @@ con $\vec{x}_t = \vec{x}+t \hat{n}$.
 		Alternativamente $\nabla f = \left(2xy - e^{x+y} , x^2 - e^{x+y} \right) $, quindi $\partial _{\hat{n}} f = \nabla f \cdot \hat{n} =xy - \frac{1}{2} e^{x+y} +\frac{\sqrt{3} }{2} x^2 - \frac{\sqrt{3} }{2}e^{x+y} = xy + \frac{\sqrt{3} }{2}x^2 - \left(\frac{1}{2}+\frac{\sqrt{3} }{2}\right) e^{x+y}   $.
 	\end{svolgimento}
 \end{esempio}
+\begin{teorema}
+	{}{}
+	Se $f:A\subset \mathbb{R}^2 \to  \mathbb{R}$ ha un massimo o minimo relativo in $x_0$ interno ad $A$ e se ammette derivata lungo $\hat{n}$ in $x_0$, allora:
+	\begin{equation}
+		\frac{\partial f}{\partial \hat{n}} (x_0)= 0 
+	\end{equation}
+	\begin{proof}
+		Si prende $g(t) = f(x_0 + t \hat{n})$ che, per costruzione, ha un minimo in $t=0$, quindi $g'(0) = 0$, da cui segue la tesi.
+	\end{proof}
+\end{teorema}
+\noindent In particolare, se $f$ \`e derivabile in $x_0$, tutte le derivate parziali si annullano in quel punto; in questo caso, $x_0$ \`e detto \textbf{punto stazionario}.
+
+\begin{obs}
+	Nel caso a una variabile, i punti di massimo/minimo che cadevano sulla frontiera di un insieme erano, solitamente, un numero finito; qua chiaramente non \`e pi\`u cos\`i.
+\end{obs}
+\begin{esempio}
+	Calcolare massimi e minimi di $f(x,y) = (x^2 + y^2 - 1)e^{x+y} $ nel cerchio chiuso centrato nell'origine e di raggio $1$.
+	\begin{svolgimento}
+		Sul bordo del cerchio $x^2 + y^2 = 1$, quindi $f\equiv 0$. All'interno:
+		\[
+			\begin{split}
+				&f_x = 2x e^{x+y}  + (x^2 + y^2 -1)e^{x+y} \\
+				&f_y = 2y e^{x+y} + (x^2 + y^2 - 1) e^{x+y} 
+			\end{split}
+		\] 
+	che si annullano quando 
+	\[
+	\begin{split}
+		&x^2 + y^2 + 2x - 1 = 0\\
+		&x^2 + y^2 + 2y - 1 = 0
+	\end{split}\Rightarrow 2x - 2y = 0 \Rightarrow x=y
+	\] 
+Sostituendo $x=y$ nella prima equazione, ad esempio, si ottengono due soluzioni, una sola delle quali appartiene al cerchio; questo corrisponder\`a al punto di minimo della funzione:
+\[
+f\left(\frac{\sqrt{3} -1}{2}, \frac{\sqrt{3} -1}{2}\right) = (1-\sqrt{3} ) e^{\sqrt{3} -1}  < 0
+\] 
+\end{svolgimento}
+\end{esempio}
+
 \begin{center}
-\textbf{Riprendere da teorema 11.1} 	
+	\textbf{Riprendere da pagina 7, teorema di Lagrange} 
 \end{center}
-
-
-
-
-
-
 
 
 

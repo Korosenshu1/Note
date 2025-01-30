@@ -31,7 +31,8 @@
 \usepackage{graphicx}
 \usepackage{lipsum}
 \usepackage[italian]{babel}
-
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
 
 %Captions
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
@@ -864,20 +865,63 @@ In rappresentazione degli impulsi, invece:
 \end{equation}
 
 \subsection{L'oscillatore armonico}
-\subsubsection{Oscillatore armonico 1D}
-\begin{boxenv}[]
-	\centering
-Riprendere da lezione 14 - Oscillatore armonico 1D
-\end{boxenv}
+\subsubsection{Operatori di creazione e distruzione}
+Si prende un hamiltoniano analogo al caso classico:
+\begin{equation}
+	\hat{H} = \frac{\hat{P}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2
+\end{equation}
+Tramite costanti del sistema come $m , \omega, \hbar $, si costruiscono altre costanti caratteristiche del sistema in questione: $\ell _\omega = \sqrt{\hbar  / (m\omega)} $ lunghezza caratteristica e $p_\omega = m\omega \ell _\omega $ impulso caratteristico. Da queste, si definisco gli operatori:
+\begin{equation}
+	\begin{cases}
+		\hat{p} = \hat{P} / p_\omega\\
+		\hat{q} = \hat{x} / \ell _\omega
+	\end{cases} \Rightarrow \hat{H} = \frac{\hbar \omega}{2} \left[ \hat{p}^2 + \hat{q}^2 \right] 
+\end{equation}
+Si definisce anche $\hat{a} = (\hat{q}+i \hat{p}) / \sqrt{2} $, che soddisfa $\left[ \hat{a}, \hat{a}^\dagger  \right] = 1$ e $\hat{H} = \frac{\hbar \omega}{2} \left(\hat{a} \hat{a}^\dagger + \hat{a}^\dagger  \hat{a}\right) $. Per $\hat{N} = \hat{a}^\dagger \hat{a}\Rightarrow  \hat{H} = \hbar  \omega (\hat{N} + 1/2)$\footnote{Questo si ottiene aggiungendo e sottraendo $\hat{a}^\dagger \hat{a}$ all'interno della parentesi in $\hat{H}$.}; inoltre:
+\[
+\begin{split}
+	&[ \hat{N},\hat{a} ] = [ \hat{a}^\dagger \hat{a}, \hat{a} ] = \hat{a}^\dagger \hat{a}\hat{a} - \hat{a}\hat{a}^\dagger \hat{a}= [\hat{a}^\dagger , \hat{a}] \hat{a} = -\hat{a}\\
+	&[\hat{N}, \hat{a}^\dagger ] = \hat{a}^\dagger \hat{a}\hat{a}^\dagger - \hat{a}^\dagger \hat{a}^\dagger \hat{a} = \hat{a}^\dagger [ \hat{a},\hat{a}^\dagger  ] = \hat{a}^\dagger 
+\end{split}
+\] 
+Prendendo base di autostati di $\hat{N}$ tali che $\hat{N} \ket{\nu } = \nu  \ket{\nu } $ e definendo $\hat{a}\ket{\nu } = \ket{w} $, si ha\footnote{La seconda uguaglianza \`e assicurata dal commutatore $[\hat{N},\hat{a}] = - \hat{a}$.}:
+\begin{equation}
+\hat{N}\ket{w} =  \hat{N} \hat{a} \ket{\nu } = (\hat{a}\hat{N}- \hat{a}) \ket{\nu } = \hat{a}(\nu -1) \ket{\nu } = (\nu -1) \hat{a} \ket{\nu } = (\nu  -1 ) \ket{w} 
+\end{equation}
+Questo significa che $\ket{w} $ \`e autostato con autovalore diminuito di $1$ rispetto a quello di partenza, che si traduce nel fatto che $\hat{a}$ mappa gli autostati di $\hat{N}$ in autostati con autovalore diminuito di $1$.
 
+Si osserva, poi, che gli autovalori di $\hat{N}$ non sono mai negativi:
+\[
+0 \le \braket{w|w} = \braket{\nu |\hat{a}^\dagger \hat{a}|\nu } = \braket{\nu |\hat{N}|\nu } = \nu \braket{\nu |\nu } = \nu 
+\] 
+che assicura che $\hat{a}\ket{0} = \ket{0} $. In maniera del tutto analoga si vede che $\hat{N} \hat{a}^\dagger \ket{\nu } = (\nu +1) \hat{a}^\dagger \ket{\nu } $, quindi $\hat{a}^\dagger $ aumenta autovalore. Si nota che \textbf{non vi \`e limite superiore} agli autovalori, mentre limite inferiore \`e dato da $\braket{\nu |\nu } \ge 0$. Ci\`o significa che autovalori di $\hat{N}$ vanno da $0$ a $+\infty$.
 
-
-
-
-
-
-
-
+Si nota, infine, che, vale $\hat{a}^\dagger \ket{n} = c_n \ket{n+1}  $\footnote{Visto che $\hat{a}^\dagger $ deve mappare autostato di $\hat{N}$ in quello che ha autovalore aumentato di $1$, allora $\hat{a}^\dagger \ket{n} \propto \ket{n+1} $ con costante di proporzionalit\`a $c_n$. Lo stesso vale per $\hat{a}$.}; per trovare $c_n$, facendo uso della relazione di commutazione $\hat{a}\hat{a}^\dagger  = \hat{N}+1$:
+\[
+\begin{cases}
+	\braket{n|\hat{a}\hat{a}^\dagger |n} = \braket{n|(\hat{N}+1)|n} = (n+1) \braket{n|n} =n+1 \\
+	\braket{n|\hat{a}\hat{a}^\dagger |n} = \lvert c_n \rvert ^2 \braket{n+1|n+1} = \lvert c_n \rvert ^2
+\end{cases} \Rightarrow \lvert c_n \rvert ^2 = n+1
+\] 
+Dovendo avere autostati normalizzati:
+\begin{equation}
+	\ket{n} = \frac{1}{\sqrt{n!} } (\hat{a}^\dagger )^n \ket{0} 
+\end{equation}
+Dagli autovalori di $\hat{N}$, si ricavano quelli dell'energia $\hat{H} = \hbar \omega ( \hat{N} + 1 / 2) \Rightarrow  E_n = \hbar  \omega ( n + 1 / 2)$.
+\subsubsection{Funzione d'onda per l'oscillatore armonico}
+In rappresentazione delle coordinate, l'equazione di Shr\"odinger \`e $\hat{H}\psi (x,t) = i\hbar \partial _t\psi (x,t)$, cio\`e:
+\begin{equation}
+	\left[ - \frac{\hbar ^2 \partial ^2_x}{2m} + \frac{1}{2} m\omega^2 x^2 \right] \psi (x,t) = i \hbar \partial _t \psi (x,t)
+\end{equation}
+Per gli autovalori, invece si ha $\hat{H}\psi _E(x) = E \psi _E(x)$\footnote{Visto che l'evoluzione temporale degli autostati dell'hamiltoniano \`e banale, cio\`e consiste nel prodotto per una fase, si trascura evoluzione temporale nell'equazione agli autovalori.}:
+\begin{equation}
+	\left[ - \frac{\hbar ^2 \partial ^2_x}{2m} + \frac{1}{2} m\omega^2 x^2 \right] \psi_E (x) = E \psi _E (x)
+\end{equation}
+Si definisce $\lambda = E / E_\omega$, dove si \`e preso $E_\omega = \hbar  \omega / 2$. In rappresentazione delle coordinate, $q = x / \ell _\omega$, quindi $\psi (x) = \psi (\ell _\omega q) \equiv u(q)$. Quindi:
+\begin{equation}
+	\frac{d ^2 u}{d q^2} + (\lambda -q^2 ) u =0 \hspace{1cm} \text{\color{red} ??}
+\end{equation}
+{\color{red}Riprendere da riscrittura in unit\`a naturali.}
 
 
 
