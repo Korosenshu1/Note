@@ -919,16 +919,50 @@ Per gli autovalori, invece si ha $\hat{H}\psi _E(x) = E \psi _E(x)$\footnote{Vis
 \end{equation}
 Si definisce $\lambda = E / E_\omega$, dove si \`e preso $E_\omega = \hbar  \omega / 2$. In rappresentazione delle coordinate, $q = x / \ell _\omega$, quindi $\psi (x) = \psi (\ell _\omega q) \equiv u(q)$. Quindi:
 \begin{equation}
-	\frac{d ^2 u}{d q^2} + (\lambda -q^2 ) u =0 \hspace{1cm} \text{\color{red} ??}
+	\frac{d ^2 u}{d q^2} + (\lambda -q^2 ) u =0 
 \end{equation}
-{\color{red}Riprendere da riscrittura in unit\`a naturali.}
+\begin{proof}
+Essendo $q = x / \ell _\omega \Rightarrow \frac{d }{d x} = \frac{d q}{d x} \frac{d }{d q} = \frac{1}{\ell _\omega}\frac{d }{d q} $. Sostituendo nell'equazione agli autovalori:
+\[
+		\left[ - \frac{\hbar ^2}{2m} \frac{1}{\ell _\omega^2} \frac{d ^2 }{dq^2} + \frac{1}{2} m\omega \ell _\omega^2 q^2 \right] \psi _E (x) = \left[ - \frac{\hbar \omega}{2} \frac{d ^2}{d q^2} + \frac{\hbar \omega}{2}q^2  \right]  \psi _E(x) = E\psi _E(x)
+\] 
+Usando $E = \lambda E_\omega = \lambda \frac{\hbar \omega}{2}$ e dividendo tutto per $\frac{\hbar \omega }{2}$, si ottiene il risultato cercato dopo aver sostituito $u(q) = \psi(\ell_\omega q)$.
+\end{proof}
+\noindent Questo si dice \textit{riscrittura in unit\`a naturali}, cio\`e si \`e espresso tutto tramite valori adimensionali. 
 
+Si impone condizione di moto limitato, quindi $\lim_{q \to \pm \infty} u(q) = 0$; sotto questo limite, l'equazione diventa
+\[
+\frac{d ^2 u}{d q^2}  + q^2 u = 0 \Rightarrow u(q) \propto e^{q^2 / 2} , e^{-q^2 /2} 
+\] 
+da cui chiaramente si deve scartare $e^{q^2 / 2} $ perch\'e non rispetta il limite. Si assume soluzione generale della forma:
+\begin{equation}
+	u(q) = \mathscr{H}(q) e^{-q^2 / 2}
+\end{equation}
+Per trovare $\mathscr{H}(q)$ si sostituisce in equazione originale $\Rightarrow \mathscr{H}'' - 2q \mathscr{H}' +(\lambda -1) \mathscr{H} = 0$; matematicamente si dimostra che vi \`e soluzione che non modifica l'andamento di $e^{-q ^2 / 2} $ solo se $(\lambda _n-1) = 2n$ e questa soluzione sono i \textbf{polinomi di Hermite}, della forma
+\begin{equation}
+	\mathscr{H}_n = (-1)^n e^{q^2} \frac{d ^n e^{-q^2} }{d q^n} 
+\end{equation}
+Allora avere una soluzione fisicamente accettabile, cio\`e che rispetti $\lim_{q \to \pm \infty} u(q) = 0$ implica quantizzazione dell'energia perch\'e, dovendo richiedere $\lambda _n = 2n+1 $, si ha $E_n =\lambda _n E_\omega= \hbar  \omega (n + 1 / 2)$.
 
-
-
-
-
-
+Ora si torna a $\psi_n (x)$ e si cerca la costante di normalizzazione $C_n$:
+\begin{equation}
+		\psi _n(x) = C_n \mathscr{H}_n\left(\frac{x}{\ell _\omega}\right) e^{-x^2 /(2 \ell _\omega^2)} 
+\end{equation}
+Per la costante di normalizzazione, si fa uso di $\int_{-\infty}^{+\infty} \mathscr{H}_n^2(q) e^{-q^2} \ dq = 2^n (n!) \sqrt{\pi}  $:
+\[
+\begin{split}
+	1\stackrel{!}{=}\int_{-\infty} ^{+\infty} \lvert \psi _n(x) \rvert ^2 \ dx = \lvert C_n \rvert ^2 \int_{-\infty} ^{+\infty} \mathscr{H}_n^2 \left(\frac{x}{\ell _\omega}\right) e^{x^2 / \ell _\omega^2} \ dx= \lvert C_n \rvert ^2 \ell _\omega \int_{-\infty} ^{+\infty} \mathscr{H}_n^2 (q) e^{-q^2} \ dq
+\end{split}
+\] 
+dove $q = x / \ell _\omega$. Allora si ha $C_n = 1 / \sqrt{2^n \ell _\omega \sqrt{\pi} (n!)} $, da cui:
+\begin{boxenv}[]
+\begin{equation}
+	\psi _n(x) = \frac{1}{\sqrt{2^n \ell _\omega \sqrt{\pi} (n!)} } \mathscr{H}_n\left(\frac{x}{\ell _\omega}\right) e^{-x^2 / (2\ell _\omega^2)} 
+\end{equation}
+\end{boxenv}
+\begin{center}
+	\color{red} Riprendere da lezione 16
+\end{center}
 
 
 
