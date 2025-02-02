@@ -960,9 +960,48 @@ dove $q = x / \ell _\omega$. Allora si ha $C_n = 1 / \sqrt{2^n \ell _\omega \sqr
 	\psi _n(x) = \frac{1}{\sqrt{2^n \ell _\omega \sqrt{\pi} (n!)} } \mathscr{H}_n\left(\frac{x}{\ell _\omega}\right) e^{-x^2 / (2\ell _\omega^2)} 
 \end{equation}
 \end{boxenv}
-\begin{center}
-	\color{red} Riprendere da lezione 16
-\end{center}
+\subsection{Operatore parit\`a e sistemi unidimensionali}
+\subsubsection{Operatore parit\`a}
+Operatore $\hat{P}_a$ definito in modo tale da soddisfare
+\begin{equation}
+	\begin{split}
+		&\hat{P}_a \hat{x}\hat{P}_a^{-1} = - \hat{x} ; \hspace{.2cm} \hat{P}_a \hat{p} \hat{P}_a = - \hat{p}\\
+		& \hat{P}_a ^2 = \operatorname{Id} \Rightarrow \hat{P}_a = \hat{P}_a^{-1} 
+	\end{split}
+\end{equation}
+Da questo deriva che $[\hat{P}_a \hat{x}\hat{P}_a, \hat{P}_a \hat{p}\hat{P}_a] = i\hbar $. Dato un generico stato $\ket{\psi } $, si ha:
+\[
+\hat{P}_a \hat{x} \psi (x) = \hat{P}_a x \psi (x) = x \hat{P}_a \psi (x)\Rightarrow \hat{P}_a \hat{x}\hat{P}_a  \hat{P}_a \psi (x) = -\hat{x} \hat{P}_a \psi (x) = x \hat{P}_a \psi (x)
+\] 
+cambiando segno ad entrambi i membri, si vede che $\hat{P}_a \psi (x) = \psi (-x)$. L'operatore parit\`a pu\`o commutare con $\hat{H}$ quando questo \`e, per esempio, quadratico in $\hat{x},\hat{p}$, infatti:
+\[
+	[ \hat{P}_a , \hat{p}^2 ] = \hat{P}_a \hat{p}^2 - \hat{p}\hat{p}\hat{P}_a = \hat{P}_a \hat{p}^2 + \hat{p}\hat{P}_a \hat{p} = \hat{P}_a \hat{p}^2 - \hat{P}_a \hat{p}^2 =0 
+\] 
+dove si \`e sfruttato solo che $\hat{P}_a \hat{P_a} = \operatorname{Id} $. Quando $\hat{P}_a$ commuta con $\hat{H}$, oltre a valere invarianza temporale, significa anche che hanno stessi autostati. Visto che $\hat{P}_a^2 = \operatorname{Id} $, i suoi autovalori sono $\pm 1$, quindi nei casi in cui $[\hat{H}, \hat{P}_a]=0$, si possono ordinare gli autostati $\ket{n} $ di $\hat{H}$ t.c. $\hat{P}_a \ket{n} = (-1)^n \ket{n} $. Questo implica che:
+\[
+	\begin{split}
+		&\braket{n|\hat{x}|n} = - \braket{n|-\hat{x}|n} = - \braket{n|\hat{P}_a \hat{x}\hat{P}_a|n} = -(-1)^n (-1)^n \braket{n|\hat{x}|n} = - \braket{n|\hat{x}|n} \\
+		&\Rightarrow \braket{n|\hat{x}|n } =0
+	\end{split}
+\] 
+Analogamente si vede che $\braket{n|\hat{p}|n} =0$.
+\subsubsection{Alcuni teoremi per sistemi unidimensionali}
+Si considera hamiltoniano della forma $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})$.
+\begin{teorema}
+	In 1D, $\hat{H}$ ha spettro non-degenere.
+\end{teorema}
+
+\begin{teorema}
+	Gli stati fondamentali dello spettro non hanno zeri.
+\end{teorema}
+
+\begin{teorema}
+Gli stati non-fondamentali dello spettro hanno degli zeri e l'$n$-esimo ne ha $n$.	
+\end{teorema}
+
+\begin{teorema}
+	Uno spettro discreto di $\hat{H}$ corrisponde ad un moto limitato nello spazio.
+\end{teorema}
 
 
 
