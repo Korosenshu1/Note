@@ -586,7 +586,7 @@ Ci sono tre quadri per vedere il problema:
 \begin{enumerate}[(a).]
 	\item \textbf{quadro di Shr\"odinger:} solo gli stati dipendono dal tempo, mentre gli operatori no;
 	\item \textbf{quadro di Heisenberg:} solo gli operatori dipendono dal tempo;
-	\item \textbf{quadro misto (o di interazione):} l'hamiltoniano si divide in $\hat{H} = \hat{H}_0 + \hat{H}_I$, dove il primo evolve gli operatori e il secondo evolve gli stati.
+	\item \textbf{quadro misto (o di interazione):} l'Hamiltoniano si divide in $\hat{H} = \hat{H}_0 + \hat{H}_I$, dove il primo evolve gli operatori e il secondo evolve gli stati.
 \end{enumerate}
 \subsubsection{Il quadro di Shr\"odinger}
 Evoluzione temporale di $\hat{O}$, con $\partial _t \hat{O}=0$, \`e: 
@@ -810,7 +810,7 @@ Usando $\hat{A}, \hat{B}$ come $\hat{X}_i, \hat{p}_i$; visto che $[\hat{R}_i, \h
 \subsection{Alcuni esempi di $\hat{H}$ per sistemi quantistici}
 
 \subsubsection{Sistema di due corpi}
-Il sistema \`e rappresentato dallo spazio di Hilbert totale dato da $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ delle singole particelle in 3D. Per due corpi $1,2$ in 3D, si ha un hamiltoniano:
+Il sistema \`e rappresentato dallo spazio di Hilbert totale dato da $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ delle singole particelle in 3D. Per due corpi $1,2$ in 3D, si ha un Hamiltoniano:
 \begin{equation}\label{h12}
 	\hat{H} = \frac{\hat{\mathbf{p} }_1^2}{2m_1} + \frac{\hat{\mathbf{p} }_2^2}{2m_2} + U (|\hat{\mathbf{r} }_1 - \hat{\mathbf{r} }_2|)
 \end{equation}
@@ -866,7 +866,7 @@ In rappresentazione degli impulsi, invece:
 
 \subsection{L'oscillatore armonico}
 \subsubsection{Operatori di creazione e distruzione}
-Si prende un hamiltoniano analogo al caso classico:
+Si prende un Hamiltoniano analogo al caso classico:
 \begin{equation}
 	\hat{H} = \frac{\hat{P}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2
 \end{equation}
@@ -913,7 +913,7 @@ In rappresentazione delle coordinate, l'equazione di Shr\"odinger \`e $\hat{H}\p
 \begin{equation}
 	\left[ - \frac{\hbar ^2 \partial ^2_x}{2m} + \frac{1}{2} m\omega^2 x^2 \right] \psi (x,t) = i \hbar \partial _t \psi (x,t)
 \end{equation}
-Per gli autovalori, invece si ha $\hat{H}\psi _E(x) = E \psi _E(x)$\footnote{Visto che l'evoluzione temporale degli autostati dell'hamiltoniano \`e banale, cio\`e consiste nel prodotto per una fase, si trascura evoluzione temporale nell'equazione agli autovalori.}:
+Per gli autovalori, invece si ha $\hat{H}\psi _E(x) = E \psi _E(x)$\footnote{Visto che l'evoluzione temporale degli autostati dell'Hamiltoniano \`e banale, cio\`e consiste nel prodotto per una fase, si trascura evoluzione temporale nell'equazione agli autovalori.}:
 \begin{equation}
 	\left[ - \frac{\hbar ^2 \partial ^2_x}{2m} + \frac{1}{2} m\omega^2 x^2 \right] \psi_E (x) = E \psi _E (x)
 \end{equation}
@@ -986,7 +986,7 @@ dove si \`e sfruttato solo che $\hat{P}_a \hat{P_a} = \operatorname{Id} $. Quand
 \] 
 Analogamente si vede che $\braket{n|\hat{p}|n} =0$.
 \subsubsection{Alcuni teoremi per sistemi unidimensionali}
-Si considera hamiltoniano della forma $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})$.
+Si considera Hamiltoniano della forma $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})$.
 \begin{teorema}
 	In 1D, $\hat{H}$ ha spettro non-degenere.
 \end{teorema}
@@ -1012,7 +1012,7 @@ U(x) = \begin{cases}
 	0& , \ x<0
 \end{cases}
 \] 
-Conseguentemente, l'hamiltoniano \`e $\hat{H} = \frac{\hat{p}^2}{2m} + U (\hat{x})$ e l'equazione agli autovalori \`e data da $\hat{H} \psi _E (x) = E \psi _E (x)$.
+Conseguentemente, l'Hamiltoniano \`e $\hat{H} = \frac{\hat{p}^2}{2m} + U (\hat{x})$ e l'equazione agli autovalori \`e data da $\hat{H} \psi _E (x) = E \psi _E (x)$.
 
 Quando una particella arriva da $x<0$ e incontra potenziale $V_0$ si distinguono i casi in cui $E> V_0$ e $E<V_0$. 
 
@@ -1127,15 +1127,67 @@ dove $\rho ^{(1)}  = \operatorname{tr} ^{(2)} \rho \overset{\text{def}}{=} \sum_
 \end{equation}
 e l'uguaglianza vale quando lo stato che descrive \`e puro.
 
-\subsubsection{Hamiltoniano del sistema risultante}
+\subsubsection{Caratterizzazione degli stati misti}
 
-In generale, l'hamiltoniano risultante \`e $\mathcal{H} = \mathcal{H}_1 + \mathcal{H}_2 + \mathcal{H}_{12}$. Se $\ket{\psi } \in \mathcal{H}$, l'evoluzione temporale \`e data da:
+Si considerano due sistemi $1,2$ interagenti e si studia il sistema complessivo, rappresentato da $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$, con Hamiltoniano $\hat{H} = \hat{H}_1 + \hat{H}_2 + \hat{H}_{I} $. L'evoluzione temporale di un $\ket{\psi } \in \mathcal{H}$ \`e data da:
+\[
+\ket{\psi(t) } = e^{-\frac{i}{\hbar }\hat{H}t} \ket{\psi (0)}  
+\] 
+Gli stati che non si possono scrivere come miscela di altri stati sono detti \textbf{puri} e si parla di \textbf{sovrapposizione coerente}. Un esempio \`e $\ket{\psi } = \big(\ket{0}^{(1)} + \ket{1} ^{(1)} \big) \otimes \ket{0} ^{(2)} $ che si separa come prodotto tensore di stati del sistema $1$ e del $2$.
+
+Quando questo non \`e possibile, si parla di \textbf{miscela statistica}, come per lo stato $\ket{\psi } = \ket{0} ^{(1)} \otimes \ket{0} ^{(2)} + \ket{1} ^{(1)}\otimes \ket{1} ^{(2)}  $.
+\subsubsection{Valore di aspettazione per miscele statistiche}
+
+Per $\hat{O}$ osservabile, valore di aspettazione per stati puri \`e $\braket{\psi |\hat{O}|\psi } $. Se $\ket{\phi } $ stato misto, non si calcola allo stesso modo perch\'e il sistema si distribuisce su pi\`u stati con una certa probabilit\`a. Si calcola come:
 \begin{equation}
-	\rho (t) = \ket{\psi (t)} \bra{\psi (t)} = e^{- \frac{i}{\hbar } \hat{H}t} \ket{\psi (0)} \bra{\psi (0)} e^{ \frac{i}{\hbar }\hat{H}t} = e^{-\frac{i}{\hbar }\hat{H}t} \rho (0) e^{\frac{i}{\hbar }\hat{H}t} 
+	\langle \hat{O} \rangle = \sum_{n}^{} \omega_n \braket{\phi _n|\hat{O}|\phi _n} 
 \end{equation}
-L'evoluzione del singolo sottosistema si immagina indipendente da interazione, quindi si fanno evolvere separatamente come $\rho ^{(1)} (t) = e^{-\frac{i}{\hbar }\hat{H}_1t} \rho ^{(1)} (t=0) e^{\frac{i}{\hbar }\hat{H}_1t} $. 
+dove i $\ket{\phi _n} $ sono stati di una base di $\mathcal{H}$ e $\omega_n$ \`e la relativa probabilit\`a, quindi $0\le \omega_n \le 1 $ e $\sum_{n}^{} \omega_n = 1$.
 
-Se $\hat{O}$ \`e un osservabile agente su $\mathcal{H}$, il suo valore di aspettazione su $1$ \`e dato da $\operatorname{tr} ^{(1)} \rho ^{(1)} \hat{O}$.
+Introducendo base ortonormale $\left\{ \ket{i}  \right\} $:
+\begin{boxenv}[]
+\begin{equation}
+\begin{split}
+	& \langle \hat{O} \rangle = \sum_{n,i,j}^{} \omega_n \braket{\phi _n|i} \braket{i|\hat{O}|j} \braket{j|\phi _n} \equiv \sum_{n,i,j}^{} \omega_n O_{ij}  \braket{\phi _n|i} \braket{j|\phi _n} \equiv \sum_{i,j}^{} \rho _{ji} O_{ij} \equiv \operatorname{tr} \rho \hat{O}
+\end{split}
+\end{equation}
+\end{boxenv}
+\noindent dove si \`e definita la matrice densit\`a
+\begin{boxenv}[]
+\begin{equation}
+	\rho _{ij} = \sum_{n}^{} \omega_n \braket{j|\phi _n} \braket{\phi _n|i} \Rightarrow \hat{\rho } = \sum_{n}^{} \omega_n \ket{\phi _n} \bra{\phi _n} 
+\end{equation}
+\end{boxenv}
+\noindent Con questa definizione, la \textbf{matrice di densit\`a} permette descrizione del sistema. Per questa definizione, continuano a valere $\hat{\rho } = \hat{\rho }^\dagger $ e $\operatorname{tr} \rho = 1$, ma \[
+\operatorname{tr} \rho ^2 = \sum_{n}^{} \omega_n^2  \le  \sum_{n}^{} \omega_n = 1
+\] 
+\subsubsection{Evoluzione temporale della matrice densit\`a}
+
+Per proiettore classico (che si ha per $\omega_n = 1$ per generico $n$) $\hat{\rho }= \ket{\psi } \bra{\psi } $ l'evoluzione temporale \`e data da:
+\[
+\hat{\rho }(t) = \ket{\psi (t)} \bra{\psi (t)} = e^{- \frac{i}{\hbar }\hat{H}t}  \ket{\psi (0)} \bra{\psi (0)}  e^{\frac{i}{\hbar }\hat{H}t} 
+\] 
+Per stato misto, in generale:
+\[
+\hat{\rho }(t) = e^{-\frac{i}{\hbar }\hat{H}t} \hat{\rho } (0) e^{\frac{i}{\hbar } \hat{H}t} 
+\] 
+Per $\left\{ \ket{\phi } _n \right\} _n$ base:
+\begin{boxenv}[]
+\begin{equation}
+	\rho (t) = \sum_{n}^{} \omega_n e^{-\frac{i}{\hbar }\hat{H}t} \ket{\phi _n(0)} \bra{\phi _n(0)} e^{\frac{i}{\hbar }\hat{H}t} \equiv \sum_{n}^{} \omega_n \ket{\phi _n(t)} \bra{\phi _n(t)} 
+\end{equation}
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

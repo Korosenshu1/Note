@@ -2037,7 +2037,7 @@ R = \sqrt{(\vec{r}-\vec{r}')^2} \simeq r - \hat{n}\cdot \vec{r}'; \ \hat{n} \sim
 Per definizione $\frac{d \vec{r}'}{d t'} = \vec{\beta }c$. Si trasforma $\vec{E}_\text{irr}$ con Fourier:
 \begin{equation}
 	\begin{split}
-		\vec{E}_\text{irr}(\vec{r},\omega)&= \int_{-\infty} ^{+\infty} \vec{E}(\vec{r},t) e^{i\omega t} \ dt =\int_{-\infty} ^{+\infty} \frac{q}{4\pi \varepsilon _0 c R}\frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{ \vec{\beta }}\big)}{(1- \vec{\beta }\cdot \hat{n})^3} dt\\
+		\vec{E}_\text{irr}(\vec{r},\omega)&= \int_{-\infty} ^{+\infty} \vec{E}_{\text{irr}} (\vec{r},t) e^{i\omega t} \ dt =\int_{-\infty} ^{+\infty} \frac{q}{4\pi \varepsilon _0 c R}\frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{ \vec{\beta }}\big)}{(1- \vec{\beta }\cdot \hat{n})^3} dt\\
 						  &=\frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty} \frac{e^{i\omega (t' + R / c)} }{R} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^3} \frac{d t}{d t'} dt'a\\
 						  &\simeq \frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty}  \frac{e^{i\omega(t' + r / c - \hat{n}\cdot \vec{r}' / c} )}{r} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^2}dt'
 	\end{split}
@@ -2045,11 +2045,11 @@ Per definizione $\frac{d \vec{r}'}{d t'} = \vec{\beta }c$. Si trasforma $\vec{E}
 Si pu\`o usare identit\`a di Parseval $\int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},t) \rvert ^2  dt=\frac{1}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2  d\omega$ per calcolare la potenza irraggiata\footnote{L'ultima uguaglianza deriva dalla definizione di energia irraggiata per intervallo di frequenza $I_\omega$.}:
 \begin{equation}
 	\begin{split}
-		&\frac{d I}{d \Omega } = \int_{-\infty} ^{+\infty} r^2 \lvert \vec{S} \rvert \ dt = \int_{-\infty} ^{+\infty} \varepsilon _0 cr^2 \lvert \vec{E}(\vec{r},t) \rvert ^2 dt = \frac{\varepsilon _0 cr^2}{2\pi} \int_{-\infty} ^{+\infty} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2 d\omega \equiv \int_{-\infty} ^{+\infty} \frac{d I_\omega}{d \Omega } \ d\omega\\
+		&\frac{d I}{d \Omega } = \int_{-\infty} ^{+\infty} r^2 \lvert \vec{S} \rvert \ dt = \int_{-\infty} ^{+\infty} \varepsilon _0 cr^2 \lvert \vec{E}_\text{irr}(\vec{r},t) \rvert ^2 dt = \frac{\varepsilon _0 cr^2}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}_\text{irr}(\vec{r},\omega) \rvert ^2 d\omega \equiv \int_{-\infty} ^{+\infty} \frac{d I_\omega}{d \Omega } \ d\omega\\
 		&\Rightarrow \begin{cases}
-			\displaystyle \frac{d I_\omega}{d \Omega } = \frac{\varepsilon _0 cr^2}{2\pi} \lvert \vec{E}(\vec{r},\omega) \rvert ^2 & ,\ -\infty<\omega <+\infty\\
+			\displaystyle \frac{d I_\omega}{d \Omega } = \frac{\varepsilon _0 cr^2}{2\pi} \lvert \vec{E}_\text{irr}(\vec{r},\omega) \rvert ^2 & ,\ -\infty<\omega <+\infty\\
 			\\
-			\displaystyle \frac{d I_\omega}{d \Omega }  = \frac{\varepsilon _0 cr^2}{\pi} \lvert \vec{E}(\vec{r},\omega) \rvert ^2& \ , 0<\omega < +\infty	
+			\displaystyle \frac{d I_\omega}{d \Omega }  = \frac{\varepsilon _0 cr^2}{\pi} \lvert \vec{E}_\text{irr}(\vec{r},\omega) \rvert ^2& \ , 0<\omega < +\infty	
 		\end{cases}
 	\end{split}
 \end{equation}
