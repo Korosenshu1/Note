@@ -1003,25 +1003,83 @@ Gli stati non-fondamentali dello spettro hanno degli zeri e l'$n$-esimo ne ha $n
 	Uno spettro discreto di $\hat{H}$ corrisponde ad un moto limitato nello spazio.
 \end{teorema}
 
+\subsubsection{Moto di una particella sotto potenziale}
 
+Si considera sistema 1D composto da particella soggetta a
+\[
+U(x) = \begin{cases}
+	V_0 &  ,\ x >0 \\
+	0& , \ x<0
+\end{cases}
+\] 
+Conseguentemente, l'hamiltoniano \`e $\hat{H} = \frac{\hat{p}^2}{2m} + U (\hat{x})$ e l'equazione agli autovalori \`e data da $\hat{H} \psi _E (x) = E \psi _E (x)$.
 
+Quando una particella arriva da $x<0$ e incontra potenziale $V_0$ si distinguono i casi in cui $E> V_0$ e $E<V_0$. 
 
+L'equazione di Shr\"odinger \`e data da:
+\[
+\partial _x^2 \psi  + \frac{2m}{\hbar ^2} \left[ E - U(x) \right] \psi  = 0
+\] 
+\begin{itemize}
+	\item \textbf{Caso $E>V_0$.} 
 
+		Se $x<0$, si ha $\partial _x^2 \psi + k^2 \psi  =0 $ con $k = \sqrt{2mE / \hbar ^2} $\footnote{Essendo che in $x<0$ $U(x) = 0$.}, quindi:
+		\begin{equation}
+		\psi_- (x) = A_1e^{ikx} + A_2 e^{-ikx} 
+		\end{equation}
+		Se $x>0$, invece, si ha, per $q=\sqrt{\frac{2m(E-V_0)}{\hbar ^2}} $, $\partial ^2_x \psi  + q^2 \psi  = 0$, da cui:
+		\begin{equation}
+		\psi _+ (x) = B_1 e^{iqx}  + B_2 e^{-ikx} 
+		\end{equation}
+		Si impone raccordo in $x=0$ tra le soluzioni:
+		\[
+		\begin{cases}
+			A_1 + A_2 = B_1 + B_2 & \text{ continuit\`a di } \psi \\
+			ik(A_1-A_2) = iq(B_1-B_2) & \text{ continuit\`a di } \psi '
+		\end{cases}
+		\] 
+		Per altre condizioni, si usa flusso di probabilit\`a $J = - \frac{i\hbar }{2m} \big(\psi ^* \partial _x \psi  - \psi  \partial _x \psi ^*\big)$; andando a inserire $\psi _-$ nella definizione di $J$, si ha $J = \frac{\hbar k}{m}\big(\lvert A_1 \rvert ^2  - \lvert A_2 \rvert ^2\big)\equiv J_\text{inc} + J_\text{rif}$. Si assume assenza di onda riflessa, per cui $B_2 = 0$\footnote{Si richiede questo perch\'e \`e il coefficiente dell'onda che da $x>0$ va verso $x<0$.}; similmente, si prende anche $A_2=0$ perch\'e non si \`e interessati ad un'onda che si propaga via dalla barriera. 
 
+		Per normalizzazione di $\psi _-$\footnote{\`E comune utilizzare un tipo di normalizzazione alternativa quando si ha a che fare con particelle non confinate in una regione spaziale.}, si prende $|J| = 1$; avendo interpretato $A_1 e^{ikx} $ come onda incidente e $A_2 e^{-ikx} $ come onda riflessa, si deve normalizzare a $1$ $J_\text{inc}$, quindi $A_1 = 1 / \sqrt{\hbar  k / m} \equiv 1 / \sqrt{v} $\footnote{Si identifica $\hbar k / m$ come la velocit\`a di propagazione dell'onda.}. 
 
+		Se $J_\text{tr} = \frac{\hbar q}{m} \lvert B_1 \rvert ^2$ come flusso trasmesso, si possono definire anche
+		\begin{equation}
+			T \overset{\text{def}}{=}\frac{J_\text{tr}}{J_\text{inc}} = \frac{q}{k} \frac{\lvert B_1 \rvert ^2}{\lvert A_1 \rvert ^2} ; \hspace{.2cm} R \overset{\text{def}}{=} \frac{J_\text{rif}}{J_\text{inc}} = \frac{\lvert A_2 \rvert ^2}{\lvert A_1 \rvert ^2}
+		\end{equation}
+		da cui deve risultare anche $T+R = 1$. Risolvendo le condizioni imposte, si trova:
+		\[
+		\begin{cases}
+			\displaystyle R = 1-  \frac{4kq}{(k+q)^2}\\
+			\displaystyle T = \frac{4kq}{(k+q)^2}
+		\end{cases}
+		\] 
+	Per $E / V_0 \to \infty$, deve risultare $T \to 1$, quindi $k\sim q$.
+\item \textbf{Caso} $E<V_0$\textbf{.}
 
+	In $x<0, \ \partial _x^2 \psi  + k^2 \psi =0$ con $k = \sqrt{2mE / \hbar ^2} $ e si ha stessa soluzione di prima. In $x>0$ vale $\partial ^2_x\psi - \beta ^2 \psi = 0 $ con $\beta  = \sqrt{2m(V_0-E) / \hbar ^2} $, quindi
+	\begin{equation}
+		\psi _{+} (x) = B_1 e^{-\beta x} + B_2 e^{\beta x} 
+	\end{equation}
+Per il resto, si richiede ancora $B_2 =0$ e si impongono le stesse condizioni di raccordo.
+\end{itemize}
 
+\subsubsection{Particella contro barriera di potenziale}
+Si considera $V(x) \neq 0$ per $x \in \left[ 0,a \right] $; si cerca di capire se nel caso di $V_0 > E$, si trova qualcosa per $x>a$. 
 
+Se $x< 0 $ si ha $\partial _x^2 \psi  + k^2 \psi  = 0, \ k = \sqrt{ 2mE / \hbar ^2} $ e $\psi _- = A_1 e^{ikx}  + A_2 e^{-ikx} $. Per $0<x<a$, si ha $\psi _a(x) = B_1 e^{-\beta  x}  + B_2 e^{\beta x} $. Se $x>a$, si ha $\psi _+ = C_1 e^{ikx}  + C_2 e^{-ikx} $.
 
-
-
-
-
-
-
-
-
-
+Le condizioni di raccordo sono da scrivere sia in $x=0$ che in $x=a$; rispettivamente:
+\begin{equation*}
+	\begin{split}
+		&\begin{pmatrix} 1 & 1 \\ ik & - ik  \end{pmatrix} \begin{pmatrix} A_1 \\ A_2 \end{pmatrix} = \begin{pmatrix} 1&1 \\ -\beta  & \beta  \end{pmatrix} \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} \ ,\hspace{.2cm} x = 0\\
+		& \begin{pmatrix} e^{-\beta  a } & e^{ \beta a} \\ -\beta e^{-\beta a} & \beta e^{\beta a}  \end{pmatrix}  \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \begin{pmatrix} e^{ika} & e ^{-ika} \\ ik e^{ika} & - ik e^{-ika}  \end{pmatrix} \begin{pmatrix} C_1 \\ C_2 \end{pmatrix} 
+	\end{split}
+\end{equation*}
+Si richiede $C_2=0$ perch\'e si \`e interessati solo all'effetto tunnel e (forse) si prende $B_2=0$ come al solito. Risolvendo il sistema e imponendo $R+T =1$, si trova 
+\begin{equation}
+	T = \frac{4E (V_0-E)}{4E ( V_0-E) + V_0^2 \operatorname{sinh}^2 \left(\sqrt{\frac{V_0-E}{\hbar ^2 / (2ma^2)}} \right)  } \equiv \frac{\lvert C_1 \rvert ^2}{\lvert A_1 \rvert ^2} \simeq \frac{16 E (V_0-E)}{V_0^2} e^{ -2 \sqrt{\frac{V_0-E}{\hbar ^2 / (2ma^2)}} } 
+\end{equation}
+con approssimazione per $V_0-E \gg \hbar ^2 / (2ma^2)$.
 
 
 
