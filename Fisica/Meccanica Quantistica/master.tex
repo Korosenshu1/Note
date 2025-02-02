@@ -1081,9 +1081,61 @@ Si richiede $C_2=0$ perch\'e si \`e interessati solo all'effetto tunnel e (forse
 \end{equation}
 con approssimazione per $V_0-E \gg \hbar ^2 / (2ma^2)$.
 
+\subsection{Descrizione di pi\`u sistemi}
+Si considerano sistemi $1,2$. Se questi non interagiscono $\Rightarrow  \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$; se $\left\{ \ket{a_n} \right\}_n , \{\ket{b_n}\}_n $ basi di $\mathcal{H}_1, \mathcal{H}_2$ rispettivamente, si avrebbe base di $\mathcal{H}$ data da $\ket{a_n,b_m} = \ket{a_n} \otimes \ket{b_m}  $, quindi $\ket{\psi } \in \mathcal{H}$ significa che:
+\[
+\ket{\psi } = \sum_{n,m}^{} c_{n,m} \ket{a_n} \otimes \ket{b_m} \equiv \left[ \sum_{n}^{} c_n \ket{a_n}  \right] \otimes \left[ \sum_{m}^{} d_m \ket{b_m} \right] 
+\] 
+dove $c_{n,m}  = c_n b_m$.
+\subsubsection{Operatori per sistemi non-interagenti}
+Se $\hat{A}, \hat{B}$ operatori di $1,2$ rispettivamente, allora per $\left\{ \ket{a_n}  \right\} $ base di autostati di $\hat{A}$ e $\left\{ \ket{b_m}  \right\} $ base di autostati di $\hat{B}$:
+\[
+\begin{split}
+	&\hat{A} \ket{a_n} \otimes \ket{b_m} = a_n \ket{a_n} \otimes \ket{b_m} \\
+	&\hat{B} \ket{a_n} \otimes \ket{b_m}  = b_m \ket{a_n} \otimes \ket{b_m} 
+\end{split}
+\] 
+Da questo, risulta
+\[
+	(\hat{A} \otimes \hat{B}) \ket{a_n} \otimes \ket{b_m} = a_n b_m \ket{a_n} \otimes \ket{b_m} 
+\] 
+Per questa caratterizzazione, deve risultare $[\hat{A}, \hat{B}]=0$\footnote{Questo, in realt\`a, vale anche quando i sistemi sono interagenti.}. Infine, se $\ket{\psi } = \sum_{n,m}^{} c_{n,m} \ket{a_n} \otimes \ket{b_m} $:
+\[
+	\begin{split}
+		&\hat{A} \ket{\psi } =\sum_{n,m}^{} c_{n,m} \big(\hat{A} \ket{a_n} \big) \otimes \ket{b_m} = a_n \ket{\psi } \\
+		&(\hat{A}\otimes \hat{B}) \ket{\psi } = \sum_{n,m}^{} c_{n,m} \big(\hat{A}\ket{a_n} \big)\otimes\big(\hat{B}\ket{b_m} \big) = a_nb_m \ket{\psi } 
+	\end{split}
+\] 
+\subsubsection{La matrice densit\`a}
 
+Se $\mathcal{H}$ spazio del sistema complessivo, con base $\ket{a_nb_m} $, e $\ket{\psi } \in \mathcal{H} $, si scrive matrice densit\`a o come $\rho  = \ket{\psi } \bra{\psi } $, o con elementi di matrice $\braket{a_nb_m|\rho |a_j b_k} $ della \textbf{matrice densit\`a}.
 
+Se $\hat{R}$ operatore in $\mathcal{H}$, inserendo base completa tra $\rho $ e $\hat{R}$:
+\[
+\braket{\psi |\hat{R}|\psi } = \operatorname{tr} (\rho \hat{R}) = \sum_{n,m}^{} \braket{a_nb_m|\rho \hat{R}|a_n b_m} = \sum_{n,m,j,k}^{} \braket{a_nb_m|\rho |a_jb_k} \braket{a_jb_k|\hat{R}|a_nb_m} 
+\] 
+Si considera caso particolare $\hat{R}=\hat{R}^{(1)} \otimes \operatorname{Id} ^{(2)} $ (cio\`e $\hat{R}$ agisce solo su $\mathcal{H}_1$) e si ha:
+\[
+\begin{split}
+	\operatorname{tr} (\rho \hat{R}) &= \sum_{n,m,j,k}^{} \braket{a_nb_m|\rho |a_jb_k} \braket{a_jb_k|\hat{R}|a_nb_m} = \sum_{n,m,j,k}^{} \braket{a_nb_m|\rho |a_jb_k} \braket{a_j|\hat{R}^{(1)} |a_n} \overbracket{\braket{b_k|\operatorname{Id} ^{(2)} |b_m}}^{= \delta mk}  \\
+					 &=\sum_{n,m,j}^{} \braket{a_nb_m|\rho |a_jb_m} \braket{a_j|\hat{R}^{(1)} |a_n} \equiv \operatorname{tr} \left(\rho ^{(1)} \hat{R}^{(1)} \right) 
+\end{split}
+\] 
+dove $\rho ^{(1)}  = \operatorname{tr} ^{(2)} \rho \overset{\text{def}}{=} \sum_{m}^{} \braket{a_nb_m|\rho |a_j b_m} $. Tutte le propriet\`a del proiettore valgono anche per $\rho ^{(1)} $\footnote{Qui si tratter\`a $\rho ^{(1)} $ in particolare, ma il discorso \`e analogo per gli altri.}, cio\`e $\operatorname{tr}^{(1)}  \rho ^{(1)} =1, \ \rho ^{(1) \dagger} = \rho ^{(1)}$, ma \textbf{non \`e vero} che $\operatorname{tr} ^{(1)} \big(\rho ^{(1)}\big)^2 = 1$. In generale:
+\begin{equation}
+	\operatorname{tr} ^{(1)} \big(\rho ^{(1)} \big)^2 \le 1
+\end{equation}
+e l'uguaglianza vale quando lo stato che descrive \`e puro.
 
+\subsubsection{Hamiltoniano del sistema risultante}
+
+In generale, l'hamiltoniano risultante \`e $\mathcal{H} = \mathcal{H}_1 + \mathcal{H}_2 + \mathcal{H}_{12}$. Se $\ket{\psi } \in \mathcal{H}$, l'evoluzione temporale \`e data da:
+\begin{equation}
+	\rho (t) = \ket{\psi (t)} \bra{\psi (t)} = e^{- \frac{i}{\hbar } \hat{H}t} \ket{\psi (0)} \bra{\psi (0)} e^{ \frac{i}{\hbar }\hat{H}t} = e^{-\frac{i}{\hbar }\hat{H}t} \rho (0) e^{\frac{i}{\hbar }\hat{H}t} 
+\end{equation}
+L'evoluzione del singolo sottosistema si immagina indipendente da interazione, quindi si fanno evolvere separatamente come $\rho ^{(1)} (t) = e^{-\frac{i}{\hbar }\hat{H}_1t} \rho ^{(1)} (t=0) e^{\frac{i}{\hbar }\hat{H}_1t} $. 
+
+Se $\hat{O}$ \`e un osservabile agente su $\mathcal{H}$, il suo valore di aspettazione su $1$ \`e dato da $\operatorname{tr} ^{(1)} \rho ^{(1)} \hat{O}$.
 
 
 
