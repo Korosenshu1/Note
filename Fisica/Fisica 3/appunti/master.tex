@@ -2037,7 +2037,7 @@ R = \sqrt{(\vec{r}-\vec{r}')^2} \simeq r - \hat{n}\cdot \vec{r}'; \ \hat{n} \sim
 Per definizione $\frac{d \vec{r}'}{d t'} = \vec{\beta }c$. Si trasforma $\vec{E}_\text{irr}$ con Fourier:
 \begin{equation}
 	\begin{split}
-		\vec{E}_\text{irr}(\vec{r},\omega)&= \int_{-\infty} ^{+\infty} \vec{E}_{\text{irr}} (\vec{r},t) e^{i\omega t} \ dt =\int_{-\infty} ^{+\infty} \frac{q}{4\pi \varepsilon _0 c R}\frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{ \vec{\beta }}\big)}{(1- \vec{\beta }\cdot \hat{n})^3} dt\\
+		\vec{E}_\text{irr}(\vec{r},\omega)&= \int_{-\infty} ^{+\infty} \vec{E}_{\text{irr}} (\vec{r},t) e^{i\omega t} \ dt =\int_{-\infty} ^{+\infty} \frac{qe^{i\omega t} }{4\pi \varepsilon _0 c R}\frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{ \vec{\beta }}\big)}{(1- \vec{\beta }\cdot \hat{n})^3} dt\\
 						  &=\frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty} \frac{e^{i\omega (t' + R / c)} }{R} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^3} \frac{d t}{d t'} dt'a\\
 						  &\simeq \frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty}  \frac{e^{i\omega(t' + r / c - \hat{n}\cdot \vec{r}' / c} )}{r} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^2}dt'
 	\end{split}
@@ -2182,7 +2182,7 @@ Il numero medio di interazioni in spessore $\Delta x$ \`e dato da:
 \begin{equation}
 	\langle N_\text{int} \rangle = n_s \int 2\pi b \ db \equiv n\Delta x \sigma _\text{irr}
 \end{equation}
-con $n_s$ densit\`a superficiale di atomi e $n$ densit\`a volumica. Lenergia irraggiata per intervallo di frequenza \`e:
+con $n_s$ densit\`a superficiale di atomi e $n$ densit\`a volumica. L'energia irraggiata per intervallo di frequenza \`e:
 \begin{equation}
 	E_\text{irr} = \int_{\omega_\text{min}} ^{\omega_\text{max}} \langle N_\text{int} \rangle \langle I_\omega(b) \rangle \ d\omega = 2\pi n_s \iint I_\omega(b) b \ dbd\omega \equiv n\Delta x \int_{\omega_\text{min}} ^{\omega_\text{max}} \chi _\omega \ d\omega
 \end{equation}
@@ -2195,7 +2195,7 @@ dove si \`e definita \textbf{sezione d'urto di irraggiamento} $\chi _\omega = \i
 	\end{cases}
 \end{equation}
 \subsubsection{Distribuzione spettrale}
-Data da: 
+Si prende energia totale irraggiata per unit\`a di frequenza e la si divide per energia del singolo fotone, cos\`i da trovare il numero di fotoni irraggiati per unit\`a di frequenza:
 \begin{equation}
 \frac{d N_\gamma}{d \omega} = \frac{1}{\hbar  \omega} \frac{d E_\text{irr}}{d \omega} = \frac{n}{\hbar  \omega} \chi _\omega
 \end{equation}
