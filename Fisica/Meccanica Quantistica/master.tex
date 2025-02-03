@@ -1081,7 +1081,7 @@ Si richiede $C_2=0$ perch\'e si \`e interessati solo all'effetto tunnel e (forse
 \end{equation}
 con approssimazione per $V_0-E \gg \hbar ^2 / (2ma^2)$.
 
-\subsection{Descrizione di pi\`u sistemi}
+\subsection{Meccanica quantistica dei sistemi interagenti}
 Si considerano sistemi $1,2$. Se questi non interagiscono $\Rightarrow  \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$; se $\left\{ \ket{a_n} \right\}_n , \{\ket{b_n}\}_n $ basi di $\mathcal{H}_1, \mathcal{H}_2$ rispettivamente, si avrebbe base di $\mathcal{H}$ data da $\ket{a_n,b_m} = \ket{a_n} \otimes \ket{b_m}  $, quindi $\ket{\psi } \in \mathcal{H}$ significa che:
 \[
 \ket{\psi } = \sum_{n,m}^{} c_{n,m} \ket{a_n} \otimes \ket{b_m} \equiv \left[ \sum_{n}^{} c_n \ket{a_n}  \right] \otimes \left[ \sum_{m}^{} d_m \ket{b_m} \right] 
@@ -1177,6 +1177,68 @@ Per $\left\{ \ket{\phi } _n \right\} _n$ base:
 	\rho (t) = \sum_{n}^{} \omega_n e^{-\frac{i}{\hbar }\hat{H}t} \ket{\phi _n(0)} \bra{\phi _n(0)} e^{\frac{i}{\hbar }\hat{H}t} \equiv \sum_{n}^{} \omega_n \ket{\phi _n(t)} \bra{\phi _n(t)} 
 \end{equation}
 \end{boxenv}
+
+\subsection{L'operatore momento angolare}
+
+\subsubsection{Rotazioni in 3D}
+Una generica rotazione si scrive come composizione di tre matrici di rotazione
+\[
+	\begin{pmatrix} 1&0&0\\ 0& \cos\theta & - \sin \theta \\ 0&\sin \theta & \cos \theta  \end{pmatrix} ; \ \begin{pmatrix} \cos \phi  & 0 &  \sin \phi  \\ 0 &1 & 0 \\ -\sin \phi  & 0 & \cos \phi   \end{pmatrix} ;  \ \begin{pmatrix} \cos \gamma  & -\sin\gamma  & 0 \\ \sin \gamma  & \cos \gamma  & 0 \\ 0& 0&1 \end{pmatrix} 
+\] 
+Per rotazione infinitesima, sviluppando attorno a $0$ le matrici sopra, si ottiene la forma generica $R_k (\varepsilon ) = \operatorname{Id} -i \varepsilon \Omega _k$, dove $k$ rappresenta l'asse attorno a cui si ruota e:
+\[
+	\Omega _1= \begin{pmatrix} 0&0&0\\ 0&0&-i \\ 0&i&0 \end{pmatrix} ; \ \Omega _2= \begin{pmatrix} 0&0&i\\0&0&0\\-i&0&0 \end{pmatrix} ; \ \Omega _3 = \begin{pmatrix} 0&-i&0 \\ i&0&0 \\0&0&0 \end{pmatrix} 
+\] 
+Vale $(\Omega _k)_{ij} = - i \varepsilon _{kij} $ e $[\Omega _i , \Omega _j] = i \varepsilon _{ijk} \Omega _k$. Componendo le tre matrici, la rotazione infinitesima pi\`u generale, attorno a generico asse $\mathbf{n} $, \`e scritta come $R_\mathbf{n}  = \operatorname{Id} - i \varepsilon _k \Omega _k$\footnote{Si sta assumendo somma su $k$.} (eliminando infinitesimi di ordine superiore al primo). Applicandola a vettore $\mathbf{x} $, si trova $\mathbf{x}' = \mathbf{x}  + \delta \theta \mathbf{n} \times \mathbf{x} $, prendendo $\vec{\varepsilon } = \delta \theta \mathbf{n} $.
+
+
+\subsubsection{Rotazione su funzione d'onda}
+
+Dovendo rimanere la probabilit\`a invariata sotto rotazione, la funzione d'onda non deve cambiare valore dopo rotazione dello spazio. 
+
+Dato operatore $\hat{U}_R:\mathcal{H}\to \mathcal{H}$, con $R$ matrice di rotazione 3D, si richiede che:
+\begin{equation}
+	\psi '(\mathbf{x} )= \hat{U}_R \psi (\mathbf{x} ) = \psi (R^{-1} \mathbf{x} )
+\end{equation}
+dove $\hat{U}(R)$ in equazione sopra \`e definito in $L^{2} $.
+
+\subsubsection{Momento angolare}
+Una trasformazione finita da quella infinitesima \`e data da
+\begin{boxenv}[]
+\begin{equation}
+	\hat{U}_R(\theta ) = e^{-\frac{i}{\hbar }\theta \mathbf{n} \cdot \mathbf{J} } 
+\end{equation}
+\end{boxenv}
+\noindent con $\mathbf{n} $ asse di rotazione, $\theta $ angolo di rotazione e \textbf{J} vettore \textbf{momento angolare} degli operatori Hermitiani dei momenti angolari lungo ciascun asse.
+
+\begin{center}
+	\color{red} Riprendere da relazioni di commutazione
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
