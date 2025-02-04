@@ -1211,24 +1211,91 @@ Una trasformazione finita da quella infinitesima \`e data da
 \end{boxenv}
 \noindent con $\mathbf{n} $ asse di rotazione, $\theta $ angolo di rotazione e \textbf{J} vettore \textbf{momento angolare} degli operatori Hermitiani dei momenti angolari lungo ciascun asse.
 
-Valgono le relazioni di commutazione $[\hat{J}_a, \hat{J}_b] = i\hbar \varepsilon _{abc} \hat{J}_c$.
+Valgono le relazioni di commutazione e si mostra solo la prima:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		&[\hat{J}_a, \hat{J}_b] = i\hbar \varepsilon _{abc} \hat{J}_c\\
+		& [\hat{X}_a , \hat{J}_b] = i \hbar \varepsilon _{abc} \hat{X}_c\\
+		& [\hat{p}_a , \hat{J}_b] = i \hbar \varepsilon _{abc} \hat{p}_c
+	\end{split}
+\end{equation}
+\end{boxenv}
+
 \begin{proof}
-Si considera l'operatore sullo spazio delle funzioni d'onda
+	Si considerano due rotazioni infinitesime attorno a due assi distinti: $R_1(\varepsilon ) = \operatorname{Id}  - i \varepsilon \Omega _1$ e $R_2= \operatorname{Id} - i_\varepsilon \Omega _2$. Si approssima al secondo ordine (primo ordine non-banale):
+	\[
+		R_G = R_2(-\varepsilon ) R_1(-\varepsilon ) R_2(\varepsilon ) R_1(\varepsilon ) \simeq \big(\operatorname{Id} +\varepsilon ^2 [\Omega _1, \Omega _2]\big) = \big(\operatorname{Id} + i\varepsilon^2 \Omega _3 \big) = R_3(-\varepsilon ^2)
+	\] 
+dove si sono usate relazioni di commutazione dele $\Omega _k$. Applicandole a funzione d'onda, si ha contemporaneamente:
 \[
-\hat{U}_R = \hat{U}_{R_1} \hat{U}_{R_2} \hat{U}_{R_3} \hat{U}_{R_4} = e^{ \frac{i}{\hbar }\varepsilon \hat{J}_a} e^{ \frac{i}{\hbar }\varepsilon \hat{J}_b} e^{- \frac{i}{\hbar }\varepsilon \hat{J}_a} e^{- \frac{i}{\hbar }\varepsilon \hat{J}_b} 
+\begin{cases}
+	\psi '(\mathbf{x} ) = \hat{U}_{R_G} \psi (\mathbf{x} ) \simeq \left( \operatorname{Id} + \frac{i}{\hbar } \varepsilon ^2 \hat{J}_3\right)  \psi (\mathbf{x} )\\
+	\psi '(\mathbf{x} ) \simeq \left(\operatorname{Id} + \frac{\varepsilon ^2}{\hbar ^2} [\hat{J}_1, \hat{J}_2]\right) \psi (\mathbf{x} )
+\end{cases}
 \] 
-con $\varepsilon $ parametro della rotazione. Si assume $\varepsilon \simeq 0$ e si sviluppano esponenziali al secondo ordine (primo ordine non-banale), cos\`i si ha:
-\[
-	\hat{U}_R \simeq \operatorname{Id} + \varepsilon ^2 [\hat{J}_a,\hat{J}_b]
-\] 
-
+Confrontando le due, si ottiene la tesi generalizzando relazione. (Forse) alternativamente, si sarebbe potuto procedere direttamente da analisi delle relazioni di commutazione delle $\Omega _k$, considerando che $\hat{J}_k = \Omega _k / \hbar $.
 \end{proof}
-\begin{center}
-	\color{red} Da correggere e terminare
-\end{center}
+\subsubsection{Momento angolare orbitale}
 
+Si definisce $\hat{\mathbf{L} } = \hat{\mathbf{X} } \times \hat{\mathbf{p} } $ parte orbitale di $\hat{\mathbf{J} }$. Si mostra che, in rappresentazione delle coordinate:
+\begin{boxenv}[]
+\begin{equation}
+	\hat{\mathbf{L} }\psi (\mathbf{x}) = - i\hbar \mathbf{x} \times \nabla \psi (\mathbf{x} )
+\end{equation}
+\end{boxenv}
+\begin{proof}
+	Per rotazione $\delta \theta $ della funzione d'onda, da $\hat{U}_R \psi (\mathbf{x} ) = \psi (R^{-1} \mathbf{x} )$, si ha:
+	\begin{equation*}
+		e^{-\frac{i}{\hbar } \delta \theta \hat{\mathbf{n} } \cdot \hat{\mathbf{L} }} \psi (\mathbf{x} )= \psi (\mathbf{x} - \delta \theta \hat{\mathbf{n} } \times \mathbf{x} )
+	\end{equation*}
+	Sviluppando fino al primo ordine entrambi i membri:
+	\[
+	\left[ \operatorname{Id} - \frac{i}{\hbar } \delta \theta \hat{\mathbf{n} } \cdot \hat{\mathbf{L} } \right] \psi (\mathbf{x} ) = \psi (\mathbf{x} ) - \delta  \theta  ( \hat{\mathbf{n} } \times \mathbf{x} ) \cdot \nabla \psi (\mathbf{x} )
+	\] 
+	Utilizzando $(\hat{\mathbf{n} } \times \mathbf{x } ) \cdot \nabla = \hat{\mathbf{n} } \cdot (\mathbf{x} \times \nabla )$ e dovendo valere per generica scelta di $\hat{\mathbf{n} }$, si ritrova la tesi.
+\end{proof}
+\subsubsection{Spettro del momento angolare}
+$\hat{J}_a$ e $\hat{H}$ non commutano, quindi non hanno base comune. Si definisce $\hat{J }^2 = \sum_{a}^{} \hat{J}_a^2 $ e si pu\`o mostrare che $[\hat{J}^2 , \hat{J}_a] = 0$. Si cerca base comune a $\hat{J}^2$ e $\hat{J}_z$ per convenzione; in particolare, si richiede:
+\[
+\hat{J}^2 \ket{\beta m} = \hbar \beta  \ket{\beta m} ; \ \hat{J}_z \ket{\beta  m}  = \hbar m \ket{\beta  m } 
+\] 
+con $\ket{\beta m} $ autostati normalizzabili\footnote{Si usa notazione con due variabili $\beta , m$ perch\'e corrisponderanno ai due numeri quantici che permettono una pi\`u dettagliata descrizione dello stato che rappresentano.}. Si nota che:
+\begin{enumerate}[(a).]
+	\item visto che $\hat{J}^2 = \hat{J}^2_x + \hat{J}^2 _y + \hat{J}^2_z$, vale $\beta = \braket{\beta  m |\hat{J}^2|\beta m} \ge \braket{\beta m|\hat{J}_z^2|\beta  m } = m^2$;
+	\item definendo $\hat{J}_{\pm} = \hat{J}_x \pm i\hat{J}_y$, con $[\hat{J}_z , \hat{J}_{\pm} ]=\pm \hbar \hat{J}_{\pm} $ e $[\hat{J}_+, \hat{J}_-] = 2 \hbar \hat{J}_z$\footnote{Si mostrano a partire da $[\hat{J}_a, \hat{J}_b ]= i\hbar  \varepsilon _{abc} \hat{J}_c$.}, e dovendo valere $\beta \ge m^2\Rightarrow \exists m_\text{max}, m_\text{min}$ tali che:
+		\[
+		\begin{split}
+			&\hat{J}_z \hat{J}_+ \ket{\beta  m } = (\hat{J}_+ \hat{J}_z + \hbar \hat{J}_+) \ket{\beta  m}  = \hbar  (m+1) \hat{J}_+ \ket{\beta  m} \Rightarrow \hat{J}_+ \ket{\beta  m_\text{max}} =0\\
+			& \hat{J}_z \hat{J}_- \ket{\beta  m } = (\hat{J}_- \hat{J}_z - \hbar \hat{J}_-)\ket{\beta m}  = \hbar  (m-1) \hat{J}_- \ket{\beta m} \Rightarrow \hat{J}_- \ket{\beta  m _\text{min}} =0
+		\end{split}
+		\] 
+	\item visto che $\hat{J}_- \hat{J}_+ = \hat{J}^2 - \hat{J}_z^2 - \hbar \hat{J}_z$, si ha:
+		\[
+			 0 = \hat{J}_- \hat{J}_+ \ket{\beta  j}  = (\hat{J}^2 - \hat{J}_z^2 - \hbar  \hat{J}_z) \ket{\beta  j } \Rightarrow \hbar ^2 (\beta  - j^2 -j) = 0 \Rightarrow \beta = j(j+1)
+		\] 
+	con $j= m_\text{max}$. Analogamente $m_\text{min} = - j$. Visto che $\beta  = j(j+1)$, si usa $j$ al posto di $\beta $, per cui vale $-j\le m\le j$.
+\end{enumerate}
+\subsubsection{Introduzione allo spin}
 
+Si usa solo parte orbitale $\hat{\mathbf{L} }$ per sistemi la cui descrizione avviene tramite singola funzione d'onda. 
 
+Si considera sistema descritto da pi\`u funzioni d'onda $\psi _1(\mathbf{x}), \psi _2(\mathbf{x} ) $; sotto rotazione, il sistema deve mantenere intatte le sue simmetrie e si deve anche considerare lo spin, che \`e una propriet\`a intrinseca della particella. Per questo motivo, una generica rotazione \`e data da:
+\begin{equation}
+	\hat{U}_R \begin{pmatrix} \psi _1(\mathbf{x} ) \\ \psi _2 (\mathbf{x} ) \end{pmatrix} = e^{-\frac{i}{\hbar }\theta \hat{\mathbf{n} }\cdot \hat{\mathbf{S} }}  \begin{pmatrix} \psi _1 (R^{-1} \mathbf{x}) \\ \psi _2 (R^{-1} \mathbf{x} )  \end{pmatrix} 
+\end{equation}
+con $\hat{\mathbf{S} }$ operatore momento angolare di spin. Questo si occupa della rotazione intrinseca della particella per mantenere intatta la simmetria di partenza, mentre $\hat{\mathbf{L} }$ si occupa della rotazione spaziale. Si assume che:
+\begin{boxenv}[]
+\begin{equation}
+	[\hat{\mathbf{L} }, \hat{\mathbf{S} }]  =0 
+\end{equation}
+\end{boxenv}
+\noindent e si ha $\hat{\mathbf{J} } = \hat{\mathbf{L} } + \hat{\mathbf{S} }$. Inoltre, visto che $[\hat{J}_a, \hat{J}_b] = i\hbar \varepsilon _{abc} \hat{J}_c$, deve valere:
+\begin{boxenv}[]
+\begin{equation}
+	[\hat{S}_a, \hat{S}_b] = i\hbar \varepsilon _{abc} \hat{S}_c
+\end{equation}
+\end{boxenv}
 
 
 
