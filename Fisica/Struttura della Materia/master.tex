@@ -31,7 +31,8 @@
 \usepackage{graphicx}
 \usepackage{lipsum}
 \usepackage[italian]{babel}
-
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
 
 %Captions
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
@@ -71,7 +72,7 @@
 }
 
 % Titles 
-\title{Note di\\ \vspace{.1in} Struttura della Materia}
+\title{Note di\\\vspace{.1cm} Struttura della Materia}
 \author{Manuel Deodato}
 \date{}
 
@@ -190,8 +191,28 @@ title=#1
 \newpage
 \tableofcontents 
 \newpage
-\section{Introduzione}
+\section{Lezione 1}
 
-Ciao 
+\subsection{Descrizione microscopica}
+
+\subsubsection{Gas di particelle in volume}
+
+Si considera gas di particelle non interagenti e puntiformi. Ciascuna particella soddisfa $\hat{H}\psi (\mathbf{r} ) = E  \psi (\mathbf{r} )$ con $\hat{H} = \frac{\hat{\mathbf{p} }}{2m}$ e $E = \frac{\hbar ^2}{2m} q ^2 $, quindi la soluzione generale \`e:
+\begin{equation}
+	\psi (\mathbf{r} ) = e^{ i \mathbf{q} \cdot \mathbf{r} } 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
