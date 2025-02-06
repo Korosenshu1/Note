@@ -2042,7 +2042,7 @@ Per definizione $\frac{d \vec{r}'}{d t'} = \vec{\beta }c$. Si trasforma $\vec{E}
 						  &\simeq \frac{q}{4\pi \varepsilon _0 c} \int_{-\infty} ^{+\infty}  \frac{e^{i\omega(t' + r / c - \hat{n}\cdot \vec{r}' / c} )}{r} \frac{\hat{n}\times \big((\hat{n}-\vec{\beta }) \times \dot{\vec{\beta }}\big)}{(1-\vec{\beta }\cdot \hat{n})^2}dt'
 	\end{split}
 \end{equation}
-Si pu\`o usare identit\`a di Parseval $\int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},t) \rvert ^2  dt=\frac{1}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2  d\omega$ per calcolare la potenza irraggiata\footnote{L'ultima uguaglianza deriva dalla definizione di energia irraggiata per intervallo di frequenza $I_\omega$.}:
+Si pu\`o usare identit\`a di Parseval $\int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},t) \rvert ^2  dt=\frac{1}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}(\vec{r},\omega) \rvert ^2  d\omega$ per calcolare l'energia irraggiata\footnote{L'ultima uguaglianza deriva dalla definizione di energia irraggiata per intervallo di frequenza $I_\omega$.}:
 \begin{equation}
 	\begin{split}
 		&\frac{d I}{d \Omega } = \int_{-\infty} ^{+\infty} r^2 \lvert \vec{S} \rvert \ dt = \int_{-\infty} ^{+\infty} \varepsilon _0 cr^2 \lvert \vec{E}_\text{irr}(\vec{r},t) \rvert ^2 dt = \frac{\varepsilon _0 cr^2}{2\pi} \int_{-\infty} ^{+\infty} \lvert \vec{E}_\text{irr}(\vec{r},\omega) \rvert ^2 d\omega \equiv \int_{-\infty} ^{+\infty} \frac{d I_\omega}{d \Omega } \ d\omega\\
@@ -2071,9 +2071,9 @@ L'effetto \`e descritto dalla formula per l'angolo di emissione della radiazione
 \end{boxenv}
 \noindent con $\theta _c$ \textbf{angolo \v Cerenkov} di emissione della radiazione. La curva di $n(\omega)$ \`e tale che $\exists \omega_1, \omega_2 : n(\omega_1) \beta = n(\omega_2)\beta  = 1$.
 \begin{proof}
-	Si fissa $t=0$ da quando la particella entra nel materiale e la sua posizione a $t=0$ si indica con $O$. Dopo $\Delta t$, ha percorso una distanza $v\Delta t $. La radiazione \v Cerenkov emessa a $t=0$ ha percorso $\Delta c / n$ fino a un punto $H$ su una circonferenza. Se $A$ \`e la posizione della particella dopo $\Delta  t$, il triangolo formato da $OA$-$OH$-$HA$ \`e tale per cui:
+	Si fissa $t=0$ da quando la particella entra nel materiale e la sua posizione a $t=0$ si indica con $O$. Dopo $\Delta t$, ha percorso una distanza $v\Delta t $. La radiazione \v Cerenkov emessa a $t=0$ ha percorso $\Delta t\ c / n$ fino a un punto $H$ su una circonferenza. Se $A$ \`e la posizione della particella dopo $\Delta  t$, il triangolo formato da $OA$-$OH$-$HA$ \`e tale per cui:
 	\[
-	\cos \theta  _c \equiv \frac{OH}{OA} = \frac{\Delta t c / n}{v \Delta  t} = \frac{1}{\beta  n}
+	\cos \theta  _c \equiv \frac{OH}{OA} = \frac{\Delta t\ c / n}{v \Delta  t} = \frac{1}{\beta  n}
 	\] 
 \end{proof}
 \begin{figure}[h!]
@@ -2087,9 +2087,9 @@ L'effetto \`e descritto dalla formula per l'angolo di emissione della radiazione
 		&\Rightarrow c^2 \left(\beta ^2 - \frac{1}{n^2}\right) \left(\frac{\Delta  t}{\rho }\right) ^2 + 2 \beta  c \cos \alpha  \left(\frac{\Delta  t}{\rho }\right) +1 = 0
 	\end{split}
 \] 
-Se $\beta  > 1 / n$ e dovendo valere (vedi immagine appunti) $\cos \alpha  < 0$, dalla richiesta
+Se $\beta  > 1 / n$ e dovendo valere $\cos \alpha  < 0$, dalla richiesta
 \[
-\frac{\Delta }{4} = \beta ^2 c^2 \cos^2 \alpha  - c^2 \left(\beta ^2 - \frac{1}{n^2}\right) \ge 0\Rightarrow \beta ^2 (\cos^2 \alpha  -1) + \frac{1}{n^2}>0
+\frac{\Delta }{4} = \beta ^2 c^2 \cos^2 \alpha  - c^2 \left(\beta ^2 - \frac{1}{n^2}\right) \ge 0\Rightarrow \beta ^2 (\cos^2 \alpha  -1) + \frac{1}{n^2}\ge 0
 \] 
 si ha:
 \begin{equation}
@@ -2128,21 +2128,23 @@ Misurano $N_\gamma$ e si dividono in due tipi a seconda se si misura $\theta _c$
 	\item \textbf{Rivelatori RICH (Ring Imaging CHerenkov).}
 
 		Tramite muro di fotomoltiplicatori, si rivela anello \v Cerenkov prodotto da una carica passante nella materia e si misura $\theta _c$.
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=.6\columnwidth]{rc-rich.png}
-			\caption{Schema funzionamento rivelatore RICH.}
-		\end{figure}
 
-		\noindent Passando da radiatore a un mezzo con $n\sim 1$, l'angolo $\theta _\text{out}$ con cui radiazione incide su rivelatore \`e diverso da $\theta_c$. I vincoli che si hanno sono $\cos \theta _c = 1 / \beta  n$ e legge di Snell $\sin\theta _\text{out} = n \sin \theta _c$; inoltre deve valere $\sin \theta _\text{out}< 1$ per evitare riflessione totale, quindi $n \sin \theta _c < 1 \Rightarrow  n < \sqrt{1 + 1 / \beta ^2} $ e, se $\beta \sim 1$, si ha $n<1.41$.
 	\item \textbf{Rivelatori DIRC (Deflection of Internal Reflected \v Cerenkov light).} 
 
 		Al contrario dei RICH, usano radiatori con $n>1.4$ in modo da riflettere i fotoni \v Cerenkov e trasmetterli, attraverso una serie di riflessioni totali, ad un materiale che aggiusta l'indice di rifrazione e li invia su fotomoltiplicatori.
-		\begin{figure}[h!]
+		\begin{center}
+		\begin{minipage}{.4\columnwidth}
+			\centering
+			\includegraphics[width=\columnwidth]{rc-rich.png}
+			\captionof{figure}{Schema funzionamento rilevatore RICH.}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.4\columnwidth}
 			\centering
 			\includegraphics[width=\columnwidth]{dirc.png}
-			\caption{Schema funzionamento rilevatore DIRC.}
-		\end{figure}
+			\captionof{figure}{Schema funzionamento rilevatore DIRC.}
+		\end{minipage}
+		\end{center}
 \end{itemize}
 \subsubsection{Identificazione di particelle}
 Le particelle si discriminano in base alla massa, quindi si misurano $\beta $ e $p$: il primo tramite rivelatori \v Cerenkov, il secondo tramite spettrometri. Allora la massa \`e data da:
@@ -2174,7 +2176,7 @@ Per la formula nota $\tan \theta _\text{lab}= v_y' / v_x ' $, si ha
 	\tan \theta _\text{lab} = \frac{1}{\gamma} \frac{\sin \theta }{\beta  + \cos \theta } \sim \frac{1}{\gamma}
 \end{equation}
 \subsubsection{Sezione d'urto di irraggiamento}
-Dato $b$ parametro di impatto, si calcola energia irraggiata in intervallo di frequenza. Si indica con $I_\omega(b)$ energia irraggiata per unit\`a di frequenza in funzione di $b$, dove
+Dato $b$ parametro di impatto, si calcola energia irraggiata in intervallo di frequenza. Si indica con $I_\omega(b)$ energia irraggiata per singola interazione e per unit\`a di frequenza in funzione di $b$, dove:
 \begin{equation}
 	\langle I_\omega(b) \rangle = \frac{\displaystyle \int I_\omega(b) \cdot  2\pi  b\ db}{\displaystyle \int 2\pi b \ db}\equiv \frac{2\pi}{\sigma _\text{irr}} \int I_\omega(b) b \ db
 \end{equation}
@@ -2197,7 +2199,7 @@ dove si \`e definita \textbf{sezione d'urto di irraggiamento} $\chi _\omega = \i
 \subsubsection{Distribuzione spettrale}
 Si prende energia totale irraggiata per unit\`a di frequenza e la si divide per energia del singolo fotone, cos\`i da trovare il numero di fotoni irraggiati per unit\`a di frequenza:
 \begin{equation}
-\frac{d N_\gamma}{d \omega} = \frac{1}{\hbar  \omega} \frac{d E_\text{irr}}{d \omega} = \frac{n}{\hbar  \omega} \chi _\omega
+\frac{d N_\gamma}{d \omega} = \frac{1}{\hbar  \omega} \frac{d E_\text{irr}}{d \omega} = \frac{n_s}{\hbar  \omega} \chi _\omega
 \end{equation}
 \begin{osservazione}
 Per boost parallelo alla velocit\`a della carica:
@@ -2210,7 +2212,7 @@ visto che $n_s$ \`e invariante e $\text{energia} / \text{frequenza}$ comporta un
 
 Riprendendo \S\ref{compspet}, si cerca $\chi _\omega$ prima nel caso non-relativistico e poi si estende al caso relativistico. 
 
-Per caso non-relativistico si ha $\beta \to 0$, quindi:
+Per caso non-relativistico si ha $\beta \to 0$, quindi\footnote{Visto che $\omega r' / c \sim \beta $, si trascura all'esponente.}:
 \[
 	\begin{split}
 &\vec{E}\simeq \frac{q e^{i\omega r / c} }{4\pi \varepsilon _0 c r}\int_{-\infty} ^{+\infty} e^{i\omega t'} \hat{n}\times (\hat{n}\times \dot{\vec{\beta }}) dt' \\
@@ -2259,12 +2261,15 @@ Ora si studia \textbf{caso relativistico} con $\vec{p} = m_e \vec{v}\gamma$ solo
 \chi '_{\omega'} = \frac{16}{3} Z^2 \alpha  \hbar  c^2 \frac{r_e^2}{v^2} \ln \frac{b_\text{max}}{b_\text{min}}, \ \omega' < \gamma c / b
 \] 
 essendo $v \sim c$ e quindi $\tau ' = b / c\gamma$. 
+
 \subsubsection{Curva $\omega'(b)$ e screening attivo}
 Vincolo orizzontale dato da $\hbar \omega ' < m_ec^2$ perch\'e, indicando con $\Sigma$ SR con $e^-$ in moto
 \[
-	\hbar  \omega ' > m_e c^2 \stackrel{\text{in } \Sigma}{\longrightarrow} \langle \omega \rangle \simeq \gamma \langle \omega' \rangle > m_e c^2 \gamma
+	\hbar  \omega ' > m_e c^2 \stackrel{\text{in } \Sigma}{\longrightarrow} \hbar \langle \omega \rangle \simeq \hbar \gamma \langle \omega' \rangle > m_e  \gamma c^2
 \] 
-Questo non \`e possibile perch\'e significherebbe che l'elettrone trasferisce energia maggiore di quella iniziale. Poi si distinguono due regimi:
+Questo non \`e possibile perch\'e significherebbe che l'elettrone trasferisce energia maggiore di quella iniziale. 
+
+Si indica con $a\simeq 1.4 a_0 Z^{1 / 3} $ il raggio atomico e con $a_0 = \hbar ^2 / (m_e e^2)$ il raggio di Bohr; si distinguono due regimi:
 \begin{itemize}
 	\item \textbf{screening attivo} per $\gamma c / a > m_e c^2 / \hbar $, cio\`e
 		\[
@@ -2273,7 +2278,7 @@ Questo non \`e possibile perch\'e significherebbe che l'elettrone trasferisce en
 	con $E_e$ energia dell'elettrone e $E_c$ energia critica, cio\`e energia sopra cui ci si trova in screening attivo e si ha una notevole quantit\`a di energia persa per irraggiamento;
 \item \textbf{screening non attivo} per $ \gamma c / a < m_e c^2 / \hbar $ e si ha una perdita di energia irrisoria e dominio di integrazione non \`e rettangolare (vedi appunti).
 \end{itemize}
-Si considera screening attivo e i limiti di integrazione sono dati da $b_\text{min} = \hbar  / m_e c$ \textbf{lunghezza d'onda Compton} e $b_\text{max} = 1.4 \ a\ Z^{1 / 3} $; in questo caso
+Si considera screening attivo e i limiti di integrazione sono dati da $b_\text{min} = \hbar  / m_e c$ \textbf{lunghezza d'onda Compton} e $b_\text{max} = 1.4 \ a_0\ Z^{1 / 3} $; in questo caso
 \begin{equation}
 	\chi '_{\omega '} \simeq \frac{16}{3} Z^2 \alpha  \hbar  r_e ^2 \ln \frac{192}{Z^{1 / 3} }
 \end{equation}

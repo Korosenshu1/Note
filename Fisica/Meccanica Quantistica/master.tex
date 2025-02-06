@@ -1297,11 +1297,59 @@ con $\hat{\mathbf{S} }$ operatore momento angolare di spin. Questo si occupa del
 \end{equation}
 \end{boxenv}
 
+\subsubsection{Spettro del momento angolare orbitale}
 
+Analogamente a quanto fatto per $\hat{J}$, si usano $\hat{L}^2, \hat{L}_z$ con autostati $\ket{\ell m} $ tali che:
+\[
+\hat{L}^2 \ket{\ell m} = \ell (\ell +1) \ket{\ell m} , \ \hat{L}_z \ket{\ell m}  = m \ket{\ell m} 
+\] 
+Usando coordinate sferiche, $\hat{\mathbf{L}}$ nello spazio delle coordinate diventa:
+\[
+	\hat{\mathbf{L} } = r \hat{r} \times (i\hbar ) \left[ \hat{r} \partial _r + \frac{1}{r} \hat{\theta } \partial _\theta + \frac{1}{r \sin \theta } \partial _\varphi \right] = -i \hbar  \left[ \hat{\varphi } \partial _\theta - \frac{1}{\sin \theta } \hat{\theta } \partial _\varphi  \right] 
+\] 
+Si definiscono\footnote{In $\hat{\ell }_z$ si ha solo componente $\varphi $ perch\'e \`e l'unica che contribuisce alla componente $z$ di $\hat{\mathbf{L} }$, infatti $\hat{z} = \hat{r}\cos \theta   -  \hat{ \theta }\sin \theta  $.}:
+\[
+\begin{split}
+	& \hat{\ell }^2 = \hat{L}^2 / \hbar = - \left[ \frac{1}{\sin^2 \theta } \partial ^2 _\varphi + \frac{1}{\sin \theta } \partial _\theta  \big(\sin \theta \partial _\theta \big) \right] \\
+	& \hat{\ell }_z = \hat{L}_z / \hbar = - i \partial _\varphi 
+\end{split}
+\] 
+Si cerca soluzione con la separazione delle variabili: $\psi (r,\theta ,\varphi ) = R(r) Y(\theta ,\varphi ) = R(r) \Theta(\theta ) \Phi (\varphi )$. Inserendola in una delle due, visto che non hanno parte che agisce su $R(r)$, questa si semplifica e riduce il problema al calcolo di $Y(\theta ,\varphi )$, quindi a risolvere:
+\begin{equation}
+	\begin{cases}
+		\hat{\ell }^2 Y(\theta ,\varphi ) = \ell (\ell +1) Y(\theta ,\varphi )\\
+		\hat{\ell }_z Y(\theta ,\varphi ) = m Y(\theta ,\varphi )
+	\end{cases}
+\end{equation}
+\begin{itemize}
+	\item \textbf{Soluzione della seconda equazione.} 
 
+		Si risolve 
+		\[
+		-i \frac{\partial }{\partial \varphi } \left[ \Theta(\theta ) \Phi(\varphi ) \right] = m \Theta(\theta ) \Phi(\varphi ) \implies \frac{\partial \Phi}{\partial \varphi } = im \Phi (\varphi )
+		\] 
+		Questo significa che $\Phi(\varphi ) \propto e^{-im\varphi } $ con costante di normalizzazione data da $\int_{0} ^{2\pi} \Phi_m^*(\varphi ) \Phi_{m'} (\varphi ) \ d\varphi = \delta _{m m '} $ dove si \`e esplicitata dipendenza dal parametro $-\ell <m <\ell $. La soluzione completa \`e:
+		\begin{equation}
+			\Phi_m(\varphi ) = \frac{e^{im\varphi } }{\sqrt{2\pi} }
+		\end{equation}
+		Infine, dovendo risultare $\varphi  +2\pi = \varphi $, si richiede che $\Phi (\varphi + 2\pi ) = \Phi(\varphi ) \Rightarrow e^{im (2\pi + \varphi ) } = e^{im\varphi } \iff e^{i 2\pi m} = 1 \iff m \in \mathbb{Z}$. Allora $\hat{L}_z$ pu\`o avere solo autovalori del tipo $0, \pm\hbar , \pm 2 \hbar , \ldots$.
+	\item \textbf{Soluzione della prima equazione.} 
 
-
-
+		Si inserisce $\Phi_m(\varphi )$ e si usa $\partial^2 \Phi_m(\varphi ) =-m^2 \Phi_m(\varphi) $, ottenendo:
+		\[
+		- \left[ - \frac{m^2}{\sin^ 2 \theta } + \frac{1}{\sin\theta } \frac{\partial }{\partial \theta } \left(\sin \theta \frac{\partial }{\partial \theta } \right)  \right] \Theta(\theta ) = \ell (\ell +1) \Theta(\theta )
+		\] 
+		La soluzione di questa sono i \textbf{polinomi di Legendre} $\Theta_{\ell m} (\theta ) \propto P^m_\ell (\cos \theta ) $.
+\end{itemize}
+Complessivamente, si ha:
+\begin{equation}
+	Y^m_\ell (\theta ,\varphi ) = C_{\ell m}  e^{im \varphi } P^m_\ell (\cos \theta ), \ C_{\ell m} = \sqrt{\frac{(2\ell +1)}{4\pi} \frac{(\ell -m)!}{(\ell +m)!}} 
+\end{equation}
+In questo modo:
+\[
+\int (Y^{m'} _{\ell '} )^* Y^m_\ell  d \Omega  = \delta _{\ell \ell '} \delta _{m m'} 
+\] 
+e formano base ortonormale per lo spazio di Hilbert $L^2$.
 
 
 

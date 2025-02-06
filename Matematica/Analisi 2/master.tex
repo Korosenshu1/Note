@@ -286,6 +286,105 @@ f\left(\frac{\sqrt{3} -1}{2}, \frac{\sqrt{3} -1}{2}\right) = (1-\sqrt{3} ) e^{\s
 	\end{equation}
 \end{teorema}
 
+\subsubsection{Funzioni differenziabili}
+
+Una funzione derivabile, anche in ogni direzione, non \`e necessariamente continua in pi\`u variabili.
+\begin{esempio}
+	La funzione $f(x,y) = \begin{cases}
+		\frac{xy^2}{x^2 + y^2}& , \ (x,y)\neq 0\\
+		0 & , \ (x,y) =0 
+	\end{cases}$ ha derivate in ogni direzione nel punto $(0,0)$, ma non \`e continua; prendendo $x_k = (1 / k , 1/k^2)$ per $k\to \infty$, si ha $x_k\to (0,0)$, ma $f(x_k) = \frac{1/k^4}{2 / k^4} \to \frac{1}{2}$.
+\end{esempio}
+
+\begin{definizione}{Differenziabilit\`a}{}
+	Una funzione $f(x)$ si dice differenziabile in $x_0$ se \`e derivabile in $x_0 $ e se:
+	\begin{equation}
+		\lim_{x \to x_0} \frac{f(x) - f(x_0) - \langle \nabla f(x_0) , x -x_0 \rangle}{\left\lVert x - x_0 \right\rVert } = 0
+	\end{equation}
+\end{definizione}
+\noindent Questa definizione impone che una funzione sia differenziabile in punto se esiste un piano tangente che la approssima precisamente nel punto stesso.
+
+\begin{teorema}
+	{}{}
+	Una funzione $f(x)$ differenziabile in $x_0$ \`e continua in $x_0$ ed \`e derivabile in ogni direzione.
+	\begin{proof}
+		Si mostra che \`e continua:
+		\[
+		f(x) - f(x_0)  = \frac{f(x) - f(x_0) - \langle \nabla f(x_0) , x-x_0 \rangle}{\left\lVert x-x_0 \right\rVert } \left\lVert x-x_0 \right\rVert + \langle \nabla f(x_0) , x-x_0 \rangle
+		\] 
+		Per $x\to x_0$ il primo termine di destra va a $0$ per assunzione di differenziabilit\`a e l'altro anche perch\'e diventa un prodotto scalare per $0$, quindi si verifica $\lim_{x \to x_0} f(x) = f(x_0)$.
+
+		Data generica direzione $\hat{v}$ con $x = x_0 + t \hat{v}$, usando ancora definizione di differenziabilit\`a:
+		\[
+		\lim_{t \to 0} \frac{f(x_0 + t \hat{v})- f(x_0) - \langle \nabla f(x_0), t \hat{v} \rangle}{t} = 0 
+		\] 
+Visto che $\langle \nabla f(x_0 ) , t \hat{v} \rangle = t \langle \nabla f(x_0) ,\hat{v} \rangle$, si ottiene la tesi.
+	\end{proof}
+\end{teorema}
+\noindent La direzione di massimo incremento di una funzione \`e quella del gradiente. Per mostrarlo, si parte da $x_0$, assumendo che non sia un punto stazionario; si definisce, allora, $\hat{n} = \frac{\nabla f(x_0)}{\left\lVert \nabla f(x_0) \right\rVert} $, da cui:
+\[
+\frac{\partial f}{\partial \hat{n}} (x_0) = \langle \nabla f(x_0), \hat{n} \rangle = \left\lVert \nabla f(x_0) \right\rVert 
+\] 
+Prendendo altra direzione generica $\hat{v}$, si ha:
+\[
+\frac{\partial f}{\partial \hat{v}} (x_0) = \langle \nabla f(x_0) , \hat{v}  \rangle \le  \left\lVert \nabla f(x_0) \right\rVert \left\lVert \hat{v} \right\rVert = \left\lVert \nabla f(x_0) \right\rVert \equiv \frac{\partial f}{\partial \hat{n}} (x_0)
+\] 
+Dalla definizione di funzione differenziabile il piano $z = f(x_0,y_0) +f_x(x_0,y_0) (x-x_0) + f_y(x_0,y_0) (y-y_0)$ \`e quello che meglio approssima la funzione in $(x_0,y_0)$.
+
+Si \`e concluso che una funzione differenziabile \`e derivabile in ogni direzione, ma una funzione derivabile non \`e differenziabile in generale. Vale, per\`o, il seguente.
+\begin{teorema}
+	{Teorema del differenziale totale}{}
+	Sia $f(x)$ derivabile in $x_0$ e siano le sue derivate continue nello stesso punto; allora $f$ \`e differenziabile in $x_0$.
+	\begin{proof}
+		Si vuole dimostrare che
+		\[
+		\lim_{(x,y) \to (x_0,y_0)} \frac{f(x,y) - f(x_0,y_0) - f_x(x_0,y_0) (x-x_0) - f_y(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y-y_0)^2} } = 0
+		\] 
+		Si usa il teorema di Lagrange per riscrivere $f(x,y) - f(x_0,y_0)$:
+		\[
+		\begin{split}
+			&f(x,y_0) - f(x_0,y_0) = f_x(\xi ,y_0) (x-x_0),\ x_0<\xi <x\\
+			&f(x,y) - f(x,y_0) = f_y(x ,\eta) (y-y_0), \ y_0 < \eta < y\\
+			&\Rightarrow f(x,y) - f(x_0,y_0) = f_x(\xi ,y_0) (x-x_0) + f_y(x,\eta) (y-y_0)
+		\end{split}
+		\] 
+	Il limite scritto sopra si riscrive come:
+	\[
+		\begin{split}
+			\lim_{(x,y) \to (x_0,y_0)} \big[f_x(\xi ,y_0) - f_x(x_0,y_0)\big] &\frac{x-x_0}{\sqrt{(x-x_0)^2 + (y-y_0)^2} } + \\ 
+											  &+\big[f_y(x,\eta) - f_y(x_0,y_0)\big] \frac{y-y_0}{\sqrt{(x-x_0)^2 + (y-y_0)^2} }
+		\end{split}
+	\] 
+	Essendo le frazioni $\le 1$ e visto che le quantit\`a fra parentesi quadre, questo limite si maggiora con la somma delle parentesi quadre, che tende a $0$ per $(x,y) \to (x_0,y_0)$.
+	\end{proof}
+\end{teorema}
+\subsubsection{Derivate successive}
+
+\begin{center}
+	Riprendere da pagina 14
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
