@@ -809,7 +809,7 @@ Usando $\hat{A}, \hat{B}$ come $\hat{X}_i, \hat{p}_i$; visto che $[\hat{R}_i, \h
 \end{boxenv}
 \subsection{Alcuni esempi di $\hat{H}$ per sistemi quantistici}
 
-\subsubsection{Sistema di due corpi}
+\subsubsection{Sistema di due corpi}\label{2c}
 Il sistema \`e rappresentato dallo spazio di Hilbert totale dato da $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ delle singole particelle in 3D. Per due corpi $1,2$ in 3D, si ha un Hamiltoniano:
 \begin{equation}\label{h12}
 	\hat{H} = \frac{\hat{\mathbf{p} }_1^2}{2m_1} + \frac{\hat{\mathbf{p} }_2^2}{2m_2} + U (|\hat{\mathbf{r} }_1 - \hat{\mathbf{r} }_2|)
@@ -1308,12 +1308,12 @@ Usando coordinate sferiche, $\hat{\mathbf{L}}$ nello spazio delle coordinate div
 	\hat{\mathbf{L} } = r \hat{r} \times (i\hbar ) \left[ \hat{r} \partial _r + \frac{1}{r} \hat{\theta } \partial _\theta + \frac{1}{r \sin \theta } \partial _\varphi \right] = -i \hbar  \left[ \hat{\varphi } \partial _\theta - \frac{1}{\sin \theta } \hat{\theta } \partial _\varphi  \right] 
 \] 
 Si definiscono\footnote{In $\hat{\ell }_z$ si ha solo componente $\varphi $ perch\'e \`e l'unica che contribuisce alla componente $z$ di $\hat{\mathbf{L} }$, infatti $\hat{z} = \hat{r}\cos \theta   -  \hat{ \theta }\sin \theta  $.}:
-\[
+\begin{equation}\label{lL}
 \begin{split}
 	& \hat{\ell }^2 = \hat{L}^2 / \hbar = - \left[ \frac{1}{\sin^2 \theta } \partial ^2 _\varphi + \frac{1}{\sin \theta } \partial _\theta  \big(\sin \theta \partial _\theta \big) \right] \\
 	& \hat{\ell }_z = \hat{L}_z / \hbar = - i \partial _\varphi 
 \end{split}
-\] 
+\end{equation}
 Si cerca soluzione con la separazione delle variabili: $\psi (r,\theta ,\varphi ) = R(r) Y(\theta ,\varphi ) = R(r) \Theta(\theta ) \Phi (\varphi )$. Inserendola in una delle due, visto che non hanno parte che agisce su $R(r)$, questa si semplifica e riduce il problema al calcolo di $Y(\theta ,\varphi )$, quindi a risolvere:
 \begin{equation}
 	\begin{cases}
@@ -1351,14 +1351,45 @@ In questo modo:
 \] 
 e formano base ortonormale per lo spazio di Hilbert $L^2$.
 
+\subsection{Atomo di idrogeno}
 
+\subsubsection{Particelle in campo centrale}
+Si studia problema generale di particelle in campo centrale $U(|\hat{x}_1 - \hat{x}_2|)$; volendo applicare, poi, il discorso all'atomo di idrogeno, si assume un moto limitato. Si riprende trattazione affrontata in \S\ref{2c}, con $\psi (X,x) = \phi (X) \kappa (x)$ per assunzione, che deve soddisfare:
+\begin{equation}
+	\begin{cases}
+		\displaystyle - \frac{\hbar ^2}{2M} \nabla^2_X \phi (X) = E_\text{CM} \phi (X)\\ 
+		\\
+		\displaystyle \left(- \frac{\hbar ^2}{2\mu }\nabla ^2_x + U(x)\right) \kappa (x) = E\kappa (x)
+	\end{cases}
+\end{equation}
+Dalla prima, si trova $\phi (\vec{X}) = C e^{i\vec{k}\cdot \vec{X}} $, essendo $E_\text{CM} = \frac{\hbar ^2 k^2}{2M}$. Poi ci si mette nel CM, per cui $E_\text{CM} = 0 $, e si risolve la seconda usando le coordinate sferiche:
+\begin{equation}
+	\hat{H} \psi (r,\theta ,\varphi ) = E \psi (r,\theta ,\varphi ) \Rightarrow  \left[ \frac{1}{r^2} \partial _r (r^2 \partial _r) + \frac{1}{r^2}\hat{\ell }^2 \right] \psi + \frac{2m}{\hbar ^2}\Big(E - U(r)\Big) \psi  = 0
+\end{equation}
+con $\hat{\ell }^2$ dato da eq. \ref{lL}. Allora si assume $\psi (r,\theta ,\varphi ) = R(r) Y_{\ell m} (\theta ,\varphi )$, per cui:
+\[
+\frac{1}{r^2}\partial _r (r^2 \partial _r) R + \frac{\ell (\ell +1)}{r^2}R + \frac{2m}{\hbar ^2}\Big(E - U(r)\Big) R = 0
+\] 
+Usando $\chi (r) = r R(r)$, tale che $\chi (r) \to 0$ per $r\to 0$, e definendo $U_\text{eff}(r) = U(r) + \frac{\hbar ^2}{2m}\frac{\ell (\ell +1)}{r^2}$, si ha:
+\begin{equation}
+	\frac{d ^2}{d r^2} \chi (r) + \frac{2m}{\hbar ^2}\Big(E - U_\text{eff}(r)\Big) \chi (r) = 0
+\end{equation}
+Vista l'equazione differenziale, la soluzione dipender\`a dai parametri $E, \ell $, quindi un autostato si esprime, in generale, come $\ket{E,\ell ,m} $ e costituiscono un sistema ortonormale, che \`e anche non-degenere, conclusione derivante dal fatto che il problema per $R(r)$ \`e unidimensionale e relativo a moto limitato, quindi la coppia di autovalori $E, \ell $, relativi rispettivamente a $\hat{H}, \hat{\ell }^2$, \`e non-degenere. Visto che le autofunzioni dipendono da $m$, lo si include per la descrizione degli stati.
 
+Si assume $R(r) \propto r^a$, con $a$ da determinare; per farlo, si sostituisce nell'equazione differenziale e si manda $r\to 0 $, facendo rimanere l'equazione nel limite asintotico di $r$ piccoli:
+\begin{equation}
+	\frac{d }{d r} \left(r^2 \frac{d R}{d r} \right) - \ell (\ell +1) R = 0 \Rightarrow a = \ell 
+\end{equation}
+quindi $R(r) \propto r^{\ell } $.
+\subsubsection{Introduzione all'atomo di idrogeno}
 
-
-
-
-
-
+\`E il caso particolare della trattazione precedente con $U(\hat{r}) = \frac{e^2}{4 \pi \varepsilon  _0 \hat{r}}$. A partire dalle grandezze $m_e c^2 \simeq 0.5$ MeV e $\alpha = \frac{e^2 }{4\pi \varepsilon _0 \hbar  c} $ costante di struttura fine, si definisco le grandezze caratteristiche del sistema:
+\begin{equation}
+	\begin{split}
+		&\ell _B = \frac{\hbar }{m_e c \alpha }\approx 0.5 \cdot 10^{-10} \text{ m} \hspace{1cm} \text{(raggio di Bohr)} \\
+		&E_B = m_e c^2 \alpha ^2
+	\end{split}
+\end{equation}
 
 
 
