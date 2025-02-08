@@ -1381,19 +1381,45 @@ Si assume $R(r) \propto r^a$, con $a$ da determinare; per farlo, si sostituisce 
 	\frac{d }{d r} \left(r^2 \frac{d R}{d r} \right) - \ell (\ell +1) R = 0 \Rightarrow a = \ell 
 \end{equation}
 quindi $R(r) \propto r^{\ell } $.
-\subsubsection{Introduzione all'atomo di idrogeno}
+\subsubsection{Funzione d'onda per l'atomo di idrogeno}
 
 \`E il caso particolare della trattazione precedente con $U(\hat{r}) = \frac{e^2}{4 \pi \varepsilon  _0 \hat{r}}$. A partire dalle grandezze $m_e c^2 \simeq 0.5$ MeV e $\alpha = \frac{e^2 }{4\pi \varepsilon _0 \hbar  c} $ costante di struttura fine, si definisco le grandezze caratteristiche del sistema:
 \begin{equation}
 	\begin{split}
-		&\ell _B = \frac{\hbar }{m_e c \alpha }\approx 0.5 \cdot 10^{-10} \text{ m} \hspace{1cm} \text{(raggio di Bohr)} \\
-		&E_B = m_e c^2 \alpha ^2
+		\ell _B = \frac{\hbar }{m_e c \alpha }\approx 0.5 \cdot 10^{-10} \text{ m} \hspace{1cm} &\text{(raggio di Bohr)} \\
+		E_B = \frac{1}{2}m_e c^2 \alpha ^2  \hspace{1cm} & \text{(costante di Rydberg)}
 	\end{split}
 \end{equation}
+Nel caso di atomo di idrogeno, si approssima $\mu  \simeq m_e \equiv m$, e l'equazione agli autovalori relativa \`e:
+\begin{equation}
+	\left[ - \frac{\hbar ^2}{2m} \nabla ^2 - \frac{e^2}{4\pi \varepsilon _0 r} \right] \psi (\mathbf{x} ) = E \psi (\mathbf{x} )
+\end{equation}
+Conviene passare in coordinate sferiche e sfruttare invarianza sotto rotazioni, per cui $[\hat{H}, \hat{\mathbf{L} } ] =0$. Usando separazione delle variabili: $\psi_{E\ell m} (\mathbf{x} ) \equiv \braket{\mathbf{x} |E\ell m} = R_{E\ell } (r) Y_{\ell m} (\theta ,\varphi )  $. 
 
+Si sostituiscono in eq. differenziale per $R$ le grandezze $\overline{r} = r / \ell _B$ e $\overline{E} = E / E_B$. Per semplicit\`a, si ometteranno le barre, ma si intendono grandezze riscalate. Definendo, inoltre, $n = 1 / \sqrt{-2E} $\footnote{Qui $n$ non \`e immaginario perch\'e le energie relative al sistema limitato che si sta studiando sono assunte negative.} e $\rho  = 2r / n$:
+\begin{equation}
+	R'' + \frac{2}{\rho }R' + \left[ \frac{n}{\rho } -\frac{1}{4} - \frac{\ell (\ell +1)}{\rho ^2} \right] R =0 
+\end{equation}
+con $R =R(\rho )$. Si \`e visto che $R(\rho ) \propto \rho ^{\ell } $ per $\rho \to 0^+$, mentre per $\rho \to +\infty$ si ha $R '' - \frac{1}{4}R = 0 \Rightarrow  R(\rho ) \propto e^{\pm \rho  / 2} $. Volendo descrivere moto limitato, si elimina soluzione con $+$. Complessivamente, si ha:
+\begin{equation}
+	R(\rho ) = \rho ^\ell e^{ - \rho  / 2} L(\rho )
+\end{equation}
+che, sostituita nell'equazione differenziale, restituisce forma di $L$, che deve essere una \textbf{ipergeometrica confluente}. Imponendo che queste funzioni rispettino la condizione energetica $n \in \mathbb{N}$ e $n \ge  \ell +1$, le soluzioni sono i \textbf{polinomi generalizzati di Laguerre}:
+\begin{equation}
+	L_k^{(s) } (\rho ) = \frac{d ^s}{d \rho ^s} L_k (\rho ), \text{ con } L_k(\rho )= e^\rho  \frac{d ^k}{d \rho ^k} \Big(\rho ^k e^{-\rho } \Big)
+\end{equation}
+Mettendo tutto insieme e aggiungendo la costante di normalizzazione, si trova:
+\begin{boxenv}[]
+\begin{equation}
+	\psi _{n\ell m} (r,\theta ,\varphi ) = - \sqrt{\frac{4 (n - \ell - 1)!}{(n\ell _B)^3 n \left[ (n+\ell )! \right] ^3}} \rho ^{\ell } e^{-\rho  / 2} L_{n+\ell } ^{(2\ell +1)} (\rho ) Y_{\ell m} (\theta ,\varphi ) 
+\end{equation}
+\end{boxenv}
+\noindent dove si \`e sostituito $E$ con $n$ come pedice in quanto sono in corrispondenza per la relazione $E_n = - \frac{m_e \alpha ^2 c^2}{2n^2}$.
 
-
-
+L'energia minima del sistema \`e $E_1 = - m_e \alpha ^2 c^2 / 2$ e, visto che si deve rispettare $n\ge \ell +1$ e $\lvert m \rvert \le  \ell $, associata a:
+\begin{equation}
+	\psi _{100} (r,\theta ,\varphi ) = R_{10} (r) Y_{00} (\theta ,\varphi ) = \frac{1}{\sqrt{\pi r_B^3} } e^{- r / r_B} 
+\end{equation}
 
 
 
