@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.5)  8 FEB 2025 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.5)  9 FEB 2025 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1486,15 +1486,22 @@ LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 222.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 230.
- [3] [4]
-Overfull \hbox (0.6368pt too wide) in paragraph at lines 331--333
+ [3]
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 291.
+ [4] [5]
+Overfull \hbox (0.6368pt too wide) in paragraph at lines 365--367
 \T1/zpltosf/m/n/10 Dalla de-fi-ni-zio-ne di fun-zio-ne dif-fe-ren-zia-bi-le il pia-no $\LS1/stix/m/it/10 z \LS1/stix/m/n/10 = \LS1/stix/m/it/10 f\LS1/stix/m/n/10 .\LS1/stix/m/it/10 x[]; y[]\LS1/stix/m/n/10 / + \LS1/stix/m/it/10 f[]\LS1/stix/m/n/10 .\LS1/stix/m/it/10 x[]; y[]\LS1/stix/m/n/10 /.\LS1/stix/m/it/10 x \LS1/stix/m/n/10 * \LS1/stix/m/it/10 x[]\LS1/stix/m/n/10 / + \LS1/stix/m/it/10 f[]\LS1/stix/m/n/10 .\LS1/stix/m/it/10 x[]; y[]\LS1/stix/m/n/10 /.\LS1/stix/m/it/10 y \LS1/stix/m/n/10 *
  []
 
-[5]
-LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 363.
-
+[6]
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 450.
+ (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
+File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
+)
+LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 450.
+ [7] [8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] [9]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 137.
 See the caption package documentation for explanation.
@@ -1503,7 +1510,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 138.
 See the caption package documentation for explanation.
 
-[6] (./master.aux)
+[10] (./master.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1517,18 +1524,18 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 50076 strings out of 474116
- 1134193 string characters out of 5750250
- 1948187 words of memory out of 5000000
- 71636 multiletter control sequences out of 15000+600000
- 643943 words of font info for 133 fonts, out of 8000000 for 9000
+ 50150 strings out of 474116
+ 1135430 string characters out of 5750250
+ 1951187 words of memory out of 5000000
+ 71677 multiletter control sequences out of 15000+600000
+ 644264 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,21n,107p,10937b,1092s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (6 pages, 185687 bytes).
+</usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (10 pages, 222777 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

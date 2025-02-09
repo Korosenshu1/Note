@@ -198,7 +198,7 @@
 \newpage
 \tableofcontents 
 \newpage
-\section{Calcolo differenzialeciao in pi\`u variabili}
+\section{Calcolo differenziale in pi\`u variabili}
 \subsection{Derivate parziali}
 
 Una funzione di pi\`u variabili $f(x,y):\mathbb{R}^2 \to \mathbb{R}$ pu\`o essere derivata mantenendo fissa una variabile e derivando rispetto all'altra. Questo corrisponde al valutare la variazione di $f$ lungo un asse specifico.
@@ -211,7 +211,7 @@ Una funzione di pi\`u variabili $f(x,y):\mathbb{R}^2 \to \mathbb{R}$ pu\`o esser
 \end{definizione}
 \noindent Il vettore che ha per componenti le derivate di $f$ rispetto a ciascuna delle sue variabili si chiama \textbf{gradiente} e si indica con $\nabla f$.
 
-\subsubsection{Derivate direzionali}
+\subsection{Derivate direzionali}
 
 \`E possibile studiare la variazione di $f$ lungo una particolare direzione individuata dal versore $\hat{n}$. Una retta parallela a $\hat{n}$ e passante per un punto $x$ si individua con $x+t \hat{n}$; fissando i punti $x$ e $\hat{n}$, $g(t) := f(x+t\hat{n})$ \`e una funzione di una variabile e $g'(0)$ \`e la derivata direzionale di $f$ lungo $\hat{n}$:
 \begin{equation}
@@ -286,7 +286,41 @@ f\left(\frac{\sqrt{3} -1}{2}, \frac{\sqrt{3} -1}{2}\right) = (1-\sqrt{3} ) e^{\s
 	\end{equation}
 \end{teorema}
 
-\subsubsection{Funzioni differenziabili}
+\subsection{Derivate successive}
+
+Sia $f$ una funzione per cui esistono le derivate prime e sono anch'esse derivabili; le derivate seconde potranno essere derivate prima rispetto a $x_i$ e poi rispetto a $x_j$ o viceversa. In generale se $f$ \`e una funzione di $m$, si hanno $m^n$ derivate di ordine $n$. Per le derivate seconde miste\footnote{Chiaramente il risultato vale in generale, ma si affronta per funzione di due variabili nel caso delle derivate seconde miste per semplicit\`a.} vale il seguente.
+\begin{teorema}
+	{Teorema di Schwarz}{}
+	Sia $f$ una funzione derivabile in un intervallo $I$ del punto $(x,y)$ e siano queste continue nello stesso intervallo; allora $f_{xy} (x,y) = f_{yx} (x,y)$.
+	\begin{proof}
+		Siano $h,k \in \mathbb{R}:(x+h,y+k) \in I$ e sia
+		\[
+		A(h,k) = f(x+h,y+k) - f(x+h,y) - f(x,y+k) + f(x,y)
+		\] 
+		Prendendo $p(t) = f(t,y+k) - f(t,y)$, si ha $A(h,k) = p(x+h) - p(x)$; per Lagrange:
+		\[
+			A(h,k) = p'(\xi ) h = \big[f_x(\xi ,y+k) - f_x(\xi ,y)\big]h ,\ x< \xi <x+h
+		\] 
+		Applicando nuovamente Lagrange, si ha $A(h,k) = f_{yx} (\xi, \eta) hk, \ y<\eta < y+k$. Ripetendo il discorso con $q(t) = f(x+h,t) - f(x,t)$, si trova $A(h,k) = f_{xy} (\sigma ,\tau ) hk$, quindi $f_{yx}(\xi ,\eta) =f_{xy} (\sigma ,\tau ) $, dove $x<\sigma <x+h$ e $y<\tau <y+k$. Prendendo il limite per $h,k\to 0$, risulta $f_{xy} (x,y) = f_{yx} (x,y)$ per continuit\`a delle derivate seconde.
+		
+	\end{proof}
+\end{teorema}
+\noindent Come per funzioni di una variabile, vale la formula di Taylor.
+\begin{teorema}
+	{Formula di Taylor}{}
+	Sia $f(x)$ di classe $C^2$ in $A \subset \mathbb{R}^n$ e $x_0$ punto interno ad $A$; in un intorno di $x_0$, allora, si ha:
+	\begin{equation}
+		f(x) = f(x_0) + \left\langle \nabla f(x_0), x-x_0 \right\rangle + \frac{1}{2} \left\langle Hf(x_0) (x-x_0), x-x_0 \right\rangle + R_2(x;x_0)
+	\end{equation}
+	con 
+	\[
+	\lim_{x \to x_0} \frac{R_2(x;x_0)}{\left\lVert x-x_0 \right\rVert ^2} = 0
+	\] 
+	
+\end{teorema}
+
+\subsection{Funzioni differenziabili}
+
 
 Una funzione derivabile, anche in ogni direzione, non \`e necessariamente continua in pi\`u variabili.
 \begin{esempio}
@@ -358,27 +392,118 @@ Si \`e concluso che una funzione differenziabile \`e derivabile in ogni direzion
 	Essendo le frazioni $\le 1$ e visto che le quantit\`a fra parentesi quadre, questo limite si maggiora con la somma delle parentesi quadre, che tende a $0$ per $(x,y) \to (x_0,y_0)$.
 	\end{proof}
 \end{teorema}
-\subsubsection{Derivate successive}
-
-Sia $f$ una funzione per cui esistono le derivate prime e sono anch'esse derivabili; le derivate seconde potranno essere derivate prima rispetto a $x_i$ e poi rispetto a $x_j$ o viceversa. In generale se $f$ \`e una funzione di $m$, si hanno $m^n$ derivate di ordine $n$. Per le derivate seconde miste\footnote{Chiaramente il risultato vale in generale, ma si affronta per funzione di due variabili nel caso delle derivate seconde miste per semplicit\`a.} vale il seguente.
+\subsection{Funzioni composte}
+	Data una funzione $x(t) : \mathbb{R}^k \to \mathbb{R}^n$, si definisce, per una generica direzione $v$:
+	\begin{equation}
+		\frac{\partial x}{\partial v} = \left(\frac{\partial x_1}{\partial v}, \ldots , \frac{\partial x_n}{\partial t}  \right) ^\top
+	\end{equation}
+Vale il seguente per la derivata della funzione composta.
 \begin{teorema}
-	{Teorema di Schwarz}{}
-	Sia $f(x,y)$ una funzione derivabile in un intervallo $I$ del punto $(x_0,y_0)$ e siano queste continue nello stesso intervallo; allora $f_{xy} (x_0,y_0) = f_{yx} (x_0,y_0)$.
+	{}{}
+	Siano $E \subset  \mathbb{R}^k , \ F \subset \mathbb{R}^n$ e $x(t) : E \to F , \ f(x) : F \to \mathbb{R}$ funzioni di classe $C^1$. Allora la funzione composta $g(t) = f(x(t)) : E \to\mathbb{R}$ \`e di classe $C^1$ e per ogni direzione $v$:
+	\begin{equation}
+		\frac{\partial g}{\partial v} (t) =\left\langle \nabla f\big(x(t)\big), \frac{\partial x}{\partial v} (t) \right\rangle
+	\end{equation}
+	\begin{proof}
+		Si ha $g(t + h v) -g(t) = f\big(x(t+hv)\big) - f\big(x(t)\big) = f\big(x(t) + [x(t+hv) - x(t)]\big) - f\big(x(t)\big)$. Si prende $s = \lVert x(t+hv) - x(t) \rVert $ e la direzione$w = \frac{x(t+hv) - x(t)}{s}$ e si usa il teorema di Lagrange:
+		\[
+		g(t+hv) - g(t) = f\big(x(t) + s w\big) - f\big(x(t)\big) = s \frac{\partial f}{\partial w} \big(x(t) + \tau w\big) = s \left\langle \nabla f \big(x(t) + \tau  w\big), w \right\rangle
+		\] 
+	con $0<\tau <s$. Dividendo per $h$ e prendendo il limite $h\to 0$, per definizione $s \to 0$ e, quindi, $\tau  \to 0$, mentre $\frac{x(t+hv) - x(t)}{h}\to \frac{\partial x}{\partial v} (t)$ quindi:
+\[
+\lim_{h \to 0} \frac{g(t+ hv) -g(t)}{h} = \lim_{h \to 0} \left\langle \nabla f\big(x(t) + \tau  w\big), \frac{x(t+hv) - x(t)}{h} \right\rangle = \left\langle\nabla f\big(x(t)\big), \frac{\partial x}{\partial v} (t)  \right\rangle
+\] 
+	\end{proof}
 \end{teorema}
+\noindent Nel caso particolare $k=1$, $x(t)$ \`e una curva e $g(t)$ \`e funzione di una sola variabile con
+\[
+g'(t) = \sum_{h=1}^{n} \frac{\partial f}{\partial x_h} \big(x(t)\big) x'_h(t) \equiv \Big\langle \nabla f \big(x(t)\big), x'(t) \Big\rangle
+\] 
+Spesso si prende $x(t) = x + t v $, cio\`e retta passante per $x$ lungo direzione $v$; in questo caso $g'(t) = \nabla f(x+tv) \cdot  v$. Se le derivate seconde sono continue, le derivate prime sono differenziabili e si pu\`o scrivere:
+\begin{equation}
+	g''(t)	= \sum_{i=1}^{n} v_i \frac{d }{d t} D_i f (x+tv) = \sum_{i=1}^{n} v_i \sum_{j=1}^{n} v_j D_{ij} f(x+tv)
+\end{equation}
+Indicando con $Hf = \nabla f \nabla ^\top$ la matrice Hessiana di $f$, allora $\sum_{j}^{} v_j D_{ij} f(x+tv) \equiv \left[ Hf(x+tv) v\right]_i $, cio\`e \`e la componente $i$-esima del vettore tra parentesi quadre, essendo $Hf$ una matrice. Allora:
+\begin{equation}
+	\begin{split}
+		&g'(0) = \nabla f(x) \cdot v \\ 
+		& g''(0) = \langle Hf(x) v , v \rangle
+	\end{split}
+\end{equation}
+ 
+\subsection{Massimi e minimi relativi}
 
+Perch\'e una funzione $f$ di pi\`u variabili abbia un punto di massimo o di minimo in $x_0$, \`e condizione necessaria che per ogni direzione $v$, valga $g'(0) = 0$ e $g''(0) \le 0$ o $g''(0) \ge 0$, cio\`e:
+\begin{equation}
+	\begin{split}
+		&\langle Hf (x_0) v , v \rangle \le 0 \text{ punto di massimo}\\
+		&\langle Hf (x_0) v , v \rangle \ge 0 \text{ punto di minimo}
+	\end{split}
+\end{equation}
+Allora vale il seguente.
+\begin{teorema}
+	{}{}
+	Sia $f(x)$ una funzione con derivate seconde continue; se in $x_0$, $\nabla f (x_0) = 0$ e la matrice Hessiana \`e tale che $Hf(x_0) > 0$ (definita positiva), allora $x_0$ \`e di minimo relativo per $f$. Se fosse $Hf(x_0) < 0$, $x_0$ sarebbe di massimo relativo.
+\end{teorema}
+\noindent Possono verificarsi altri due casi:
+\begin{itemize}
+	\item se $\langle H f(x_0)v ,v \rangle $ assume sia valori positivi che negativi al variare di $v$, si ha un \textbf{punto di sella};
+	\item se la matrice Hessiana \`e semidefinita, ma non definita, non si pu\`o concludere niente e bisogna esaminare cosa accade attorno a $x_0$.
+\end{itemize}
 
+\newpage 
 
+\section{Calcolo integrale in pi\`u variabili}
 
+\subsection{Integrazione in dimensioni superiori}
+Per le definizioni di base, si deve definire cos'\`e un rettangolo.
+\begin{definizione}
+	{}{}
+	Dati due intervalli $[a.b)$ e $[c,d)$, il rettangolo che identificano \`e definito come $R = [a,b) \times  [c,d)$, con $a\le x< b$ e $c\le y<d$.
+\end{definizione}
+\noindent Si suddividono due intervalli in intervalli pi\`u piccoli, cio\`e $[a,b)$ si suddivide in $n$ sotto-intervalli $I_h = [x_{h-1} ,x_h)$, con $x_0 =a , \ldots x_n = b$ e $[c,d)$ in $m$ sotto-intervalli $J_k = [y_{k-1} ,y_k)$. Allora il rettangolo sar\`a suddiviso in $n\times m$ sotto-rettangoli $R_{hk}  = I_h \times J_k$.
 
-
-
-
-
-
-
-
-
-
+Una funzione semplice $\varphi (x)$ \`e una funzione che assume un valore costante su ogni sotto-rettangolo e che vale $0$ fuori da $R$. Indicando con $\lambda _{hk}$ il valore costante che assume in $R_{hk} $:
+\begin{equation}
+	\varphi (x)= \sum_{h=1}^{n} \sum_{k=1}^{m} \lambda _{hk} \chi _{R_{hk} } (x)
+\end{equation}
+con $\chi _D$ funzione caratteristica del dominio $D$. L'integrale di funzioni simili \`e dato da:
+\begin{equation}
+	\int \varphi (x) \ dxdy = \sum_{h=1}^{n} \sum_{k=1}^{m} \lambda _{hk} m(R_{hk} )= \sum_{h=1}^{n} \sum_{k=1}^{m} \lambda _{hk} m(I_h) m(J_k) = \sum_{h=1}^{n} \sum_{k=1}^{m} \lambda _{hk} (x_h -x_{h-1} ) (y_k - y_{k-1} )
+\end{equation}
+\`E necessario dare anche la definizione di supporto di una funzione:
+\begin{definizione}
+	{}{}
+	Il supporto di una funzione $f$ \`e la chiusura dell'insieme in cui $f\neq 0$, cio\`e:
+	\begin{equation}
+		\operatorname{supp} (f) = \overline{\left\{ x : f(x) \neq 0 \right\} }
+	\end{equation}
+\end{definizione}
+\noindent Infine, si indica con $\mathscr{S}^+(D)$ la classe delle funzioni semplici $\varphi $ che maggiorano $f$ in $D$ e $\mathscr{S}^-(D)$ la classe delle funzioni semplici $\psi $ che minorano $f$ in $D$; da questo, si ha la seguente definizione di integrale di Riemann.
+\begin{definizione}
+	{Integrazione di funzioni a supporto compatto}{}
+	Sia $f$ una funzione a supporto compatto, con $\operatorname{supp} (f) \subset K$; $f$ \`e integrabile secondo Riemann se:
+	\begin{equation}
+		\sup_{\psi \in \mathscr{S}^-(K)}  \int \psi  \ dx dy = \inf_{\varphi \in \mathscr{S}^+(K)}  \int \varphi \ dxdy
+	\end{equation}
+	dove
+	\begin{equation}
+		\begin{split}
+			&\int_{*} f(x) \ dx =  \inf_{\varphi \in \mathscr{S}^+(K)}  \int \varphi \ dxdy \ \text{ integrale inferiore} \\
+			&\int^{*} f(x) \ dx =  \sup_{\psi  \in \mathscr{S}^-(K)}  \int \psi  \ dxdy \ \text{ integrale superiore} \\
+		\end{split}
+	\end{equation}
+	La condizione di integrabilit\`a si pu\`o esprimere come:
+	\begin{equation}
+		\int_{*} f(x) \ dx= \int^{*} f(x) \ dx
+	\end{equation}
+\end{definizione}
+\begin{obs}
+	Anche per pi\`u variabili, \`e condizione sufficiente e necessaria perch\'e $f$ a supporto compatto sia integrabile che $\forall \varepsilon >0$, esistono funzioni semplici $\varphi ,\psi $ tali che:
+	\begin{equation}
+		\int \varphi  \ dxdy - \int \psi  \ dxdy < \varepsilon 
+	\end{equation}
+\end{obs}
 
 
 

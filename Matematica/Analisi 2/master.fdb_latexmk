@@ -1,14 +1,15 @@
 # Fdb version 4
-["makeindex master.idx"] 1738796419.17288 "master.idx" "master.ind" "master" 1739025007.89531 0
-  "master.idx" 1739025006.48399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1739116645.25236 "master.idx" "master.ind" "master" 1739124589.50655 0
+  "master.idx" 1739124586.91799 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
   (rewritten before read)
-["pdflatex"] 1739025005.71968 "master.tex" "master.pdf" "master" 1739025007.89555 0
+["pdflatex"] 1739124585.68634 "master.tex" "master.pdf" "master" 1739124589.50673 0
   "/home/manuel/texmf/tex/latex/commonstuff/sansiwona/sansiwona.sty" 1738753047.93231 651 c15367d9ac0ad9b6bb6487954938dfeb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc" 1736268207 2452 388b1f44dfda03ab19527677af70e7fb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc" 1736268207 2027 f8708480c25b8150843bb94b8b39c93f ""
+  "/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc" 1736268207 2688 c4453cc5ea1d5eadb4ed2ca5fa23d7e7 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc" 1736268207 3027 36bb4d467709026a12ff30e62f1842b1 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/nowacki/iwona/ec-iwonar-sc.tfm" 1736268207 10644 62272236f2dcaa6692e0db8fb11446ff ""
@@ -24,6 +25,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tosf-t1.tfm" 1736268207 11908 9200b0967ea3566fc90957ba77edb80e ""
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-sc-t1.tfm" 1736268207 13076 66113d4b5bda4bc5314e7c2ef0576d9b ""
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-t1.tfm" 1736268207 12212 eb24bada7a3ccc1a0349760aa3e1809d ""
+  "/usr/share/texmf-dist/fonts/tfm/public/newpx/zplTOsF-Regular-ts1.tfm" 1736268207 1372 5e6982e90b70db1fe38e80e141150ca4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1736268207 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1736268207 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1736268207 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -41,9 +43,12 @@
   "/usr/share/texmf-dist/fonts/tfm/public/stix/stix-mathtt.tfm" 1736268207 1396 56f228418b8da227ec737e2e8eb165ee ""
   "/usr/share/texmf-dist/fonts/tfm/public/stix/t1-stixgeneral.tfm" 1736268207 11184 42ce9dfc058df87da7094b2e2fab1260 ""
   "/usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb" 1736268207 144367 bcac71dbb7cd94700e23df9d71f35989 ""
+  "/usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb" 1736268207 34421 79309417cbb00a4641f92d2efa583bbd ""
   "/usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb" 1736268207 271024 688cf0c9608db65f7095fefe1399a038 ""
   "/usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb" 1736268207 239385 976473371b00a448b7e9440692daa621 ""
   "/usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb" 1736268207 245657 945cc7c7459640f0290ba13ea7ae223b ""
+  "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1736268207 16077 4737ac34f0fb5608550f3780a0202c22 ""
+  "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb" 1736268207 16298 9554724f0623cd7d7c296a3e720f08a8 ""
   "/usr/share/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb" 1736268207 34312 93d172bb03d56a69a32b53ff723ce40b ""
   "/usr/share/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb" 1736268207 63697 54c53ee8b8c43f52d0718f669ed6fb5e ""
   "/usr/share/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb" 1736268207 26156 d6751631159a7cd0a5d264b2d10a82fe ""
@@ -251,6 +256,7 @@
   "/usr/share/texmf-dist/tex/latex/newpx/t1zplosf.fd" 1736268207 2064 bf0f029107ee8ac5f70df95171aa7937 ""
   "/usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd" 1736268207 2063 0ab9bb3537fdfcb03ee268941f8e57ab ""
   "/usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd" 1736268207 2237 fc8e2e020fb86fd6a58c588e78427dbf ""
+  "/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd" 1736268207 1339 280bc58eb05c4159f197a83b9d94255b ""
   "/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty" 1736268207 381869 8af601f115a28555615f04f61fba0f5a ""
   "/usr/share/texmf-dist/tex/latex/pdfcol/pdfcol.sty" 1736268207 8086 ac143843b6ea88d172677dc3ed532925 ""
   "/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1736268207 1090 bae35ef70b3168089ef166db3e66f5b2 ""
@@ -304,11 +310,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1738796193.62292 5474027 83436c3033d4ad55ae6a50bf6177fba7 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1738796116 8555706 c83df76f3f29a72a01e990948934dbf3 ""
-  "master.aux" 1739025007.74099 2824 4bb9c52f0614ddfe27fb6d96c45cc82d "pdflatex"
-  "master.ind" 1738796419.24092 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1739025007.45999 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "master.tex" 1739025005.16099 15671 3ac3e61501cdfb0bbe3e24a6ebef7c3f ""
-  "master.toc" 1739025007.74299 616 f1c28c6e059f3404783d7625ebd1b1e1 "pdflatex"
+  "master.aux" 1739124589.22899 4775 d0adf3cb66cfbe3883d41c92ffb034fe "pdflatex"
+  "master.ind" 1739116645.442 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
+  "master.out" 1739124588.55699 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "master.tex" 1739124582.09599 23770 9a617b29a5fbf02b2a0fce95aabf2d5c ""
+  "master.toc" 1739124589.23299 950 33a9d6b18d34f544efeeeb7feb47df55 "pdflatex"
   (generated)
   "master.aux"
   "master.idx"
