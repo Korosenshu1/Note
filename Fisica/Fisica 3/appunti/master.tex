@@ -2477,15 +2477,65 @@ quindi, si pu\`o scrivere:
 
 \end{svolgimento}
 
+\newpage
 
+\section{Lezione 09/12/2020}
 
+\subsection{Correzione Bethe-Bloch alla formula di Bohr}
 
+Si \`e trovato 
+\begin{equation}
+	\left\langle \frac{1}{\rho }\frac{d E}{d x}  \right\rangle = z^2 \frac{Z}{A} \frac{K}{\beta ^2}\ln \frac{\beta ^43 \gamma^2  c}{zr_e \omega_e}
+\end{equation}
+Questa \`e corretta da Bethe-Bloch e da Fermi nel seguente modo:
+\begin{equation}
+	\left\langle \frac{1}{\rho } \frac{d E}{d x}  \right\rangle = z^2 \frac{Z}{A} \frac{K}{\beta ^2} \left[ \frac{1}{2} \ln \left(\frac{2 m_e c^2 \beta ^2 \gamma^2 T_\text{max}}{I^2}\right)  - \beta ^2 - \frac{\delta (\gamma)}{2} \right] 
+\end{equation}
+Si discutono i termini della formula corretta.
+\begin{itemize}
+	\item $T_\text{max}$ \`e la massima energia cinetica trasferibile a un elettrone, data da:
+		\begin{equation}
+			T_\text{max} = \frac{2m_e c^2 \beta ^2 \gamma^2}{1 + \frac{2 m_e \gamma}{M} + \left(\frac{m_e}{M}\right) ^2} \to 2 m_e c^2 \beta ^2 \gamma^2 \text{ per } M \to \infty
+		\end{equation}
+	\item $I$ rappresenta energia media di eccitazione dell'atomo; \`e un parametro che si fitta dai dati sperimentali e rappresenta energia minima media che deve essere trasferita ad un elettrone perch\'e venga eccitato (che finisce in scintillazione) o viene ionizzato.
+\item $\delta (\gamma)$ \`e un termine correttivo dovuto a Fermi, approssimabile come $2\ln \gamma - C$ dove $C $ dipende dal materiale; qualitativamente, entra in gioco per materiali densi, solidi o liquidi, ed \`e dovuta al fatto che il passaggio della carica, per assunzione molto rapida cio\`e con $\gamma $ molto alto in modo da rendere $\delta (\gamma)$ non trascurabile, \`e tale da essere pi\`u rapido della risposta del materiale al campo generato dalla particella. Questo crea un limite di saturazione dell'energia che si pu\`o perdere per ionizzazione. Va notato, inoltre, che per effetti relativistici a $\gamma$ molto elevati, il campo generato dalla carica in moto tende ad appiattirsi ({\color{red} da verificare}).
+\end{itemize}
+\begin{boxenv}[]
+\centering	\color{red}Inserire immagine delle curve 
+\end{boxenv}
+\noindent La dipendenza dal materiale maggiore si ha nel parametro $I$, visto che $Z / A \simeq 1 /2 $ per la maggior parte degli elementi. L'andamento di questo parametro deve scalare con il numero atomico: pi\`u aumentano gli orbitali, maggiore sar\`a il numero di elettroni interni che sentono maggiormente l'attrazione del nucleo. Sperimentalmente, si trova che per la maggior parte degli elementi $I / Z \simeq 10 $ eV, mentre raddoppia per piccoli $Z$ (pi\`u precisamente per $Z < 15$).
+\begin{boxenv}[]
+\centering {\color{red} Inserire immagine di varie particelle che attraversano spessore $\Delta x$.} 
 
+Specificare che in questa, la linea centrale \`e relativa alla saturazione dell'elettrone in quanto per le quantit\`a di moto raffigurate, l'elettrone \`e gi\`a ultrarelativistico. La particella D \`e il deutone.
+\end{boxenv}
+\subsubsection{Applicazioni per la Bethe-Bloch -- Discriminazione fra particelle}
 
+Misurando quantit\`a di moto ed energia persa per collisione di una particella, \`e possibile risalire alla sua natura.
 
+Se $\Delta _{12} $ \`e la differenza tra la perdita di energia di una particella di massa $m_1$ e una particella di massa $m_2$, visto che per $\beta \sim 1$ l'espressione\footnote{Qui entrambe le particelle si assumono di carica unitaria; si esplicita il valore approssimato di $T_\text{max}$ e si porta l'$1 / 2 $ davanti al logaritmo come radice del suo argomento, poi si sostituisce $p = m \gamma v$, notando che $\beta ^2 c^2 = v^2$.}
+\[
+\left\langle \frac{1}{\rho } \frac{d E}{d x}  \right\rangle =  \frac{Z}{A} K \left[ \ln \left(\frac{2m _e \lvert \vec{p} \rvert ^2}{I m^2} - 1 - \frac{\delta }{2}\right)  \right] 
+\] 
+si ricava\footnote{Nel grafico della perdita di energia in funzione di $p$, si fa riferimento allo stesso valore di impulso e si calcola la distanza tra le curve relative a particelle di massa diversa, per questo il valore di $p$ \`e uguale.}:
+\begin{equation}
+	\Delta _{12}  =  \frac{Z}{A} K \left[ \ln \left(\frac{2m _e \lvert \vec{p} \rvert ^2}{I m_1^2} - 1 - \frac{\delta }{2}\right)  \right] -  \frac{Z}{A} K \left[ \ln \left(\frac{2m _e \lvert \vec{p} \rvert ^2}{I m_2^2} - 1 - \frac{\delta }{2}\right)  \right] = 2 \frac{Z}{A } K \ln \frac{m_2}{m_1}
+\end{equation}
+\subsubsection{Il percorso residuo (o range)}
+La perdita di energia di una particella dovuta all'attraversamento di un materiale implica che questa si arrester\`a dopo aver percorso un tratto $R$ nel materiale, noto come \textbf{range}. Questo tratto \`e funzione dell'energia iniziale $E_0$ della particella e si calcola numericamente dal seguente integrale:
+\begin{equation}
+	R(E_0)  = \int_{0} ^R dx = \int_{0} ^{E_0} \frac{d x}{d E} dE	= \int_{0} ^{E_0}  \frac{dE}{dE / dx}
+\end{equation}
+L'integrale \`e risolto numericamente perch\'e la perdita di energia, o \textbf{stopping power}, $dE / dx $ dipende dall'energia.
 
+\`E importante studiare il deposito di energia nel materiale dovuto al passaggio della particella al suo interno, che dipende dalla forma di $dE / dx$ in funzione di $E$.
 
+Se una particella entra nel materiale con energia superiore al minimo di ionizzazione, cio\`e $\beta  \gamma > 3.5$, l'energia depositata per unit\`a di lunghezza decresce e decresce l'energia della particella finch\'e non si raggiunge un minimo; proseguendo il moto nel materiale, a particella continua a perdere energia, ma questa perdita ha un andamento come $\beta ^{-2} $, quindi in prossimit\`a del punto di arresto, si ha un massimo chiamato \textbf{picco di Bragg}.
 
+Se la particella entrasse con $\beta \gamma < 3.5$, il minimo dell'energia depositata non sarebbe visibile.
+\begin{boxenv}[]
+	\centering \color{red} Inserire immagine sui picchi di Bragg
+\end{boxenv}
 
 
 
