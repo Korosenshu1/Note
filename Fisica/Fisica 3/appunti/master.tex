@@ -2300,10 +2300,67 @@ dove $E$ energia dell'elettrone, $X_0= \hbar  / (n\chi _\omega)$ lunghezza di ra
 	Spesso si riporta $\rho X_0$ per avere grandezza indipendente da stato della materia.
 \end{osservazione}
 
+\noindent Dalla definizione $X_0 = \hbar  / (n X_0)$, risulta che:
+\begin{equation}
+	\frac{d N_\gamma}{d \omega} = \frac{1}{\hbar \omega} \frac{d E_\text{irr}}{d \omega} =  \frac{1}{\hbar  \omega } n\Delta x \chi _\omega = \frac{1}{\omega} \frac{\Delta x}{X_0}
+\end{equation}
+Dividendo tutto per $\hbar $, si ha:
+\begin{equation}
+	\frac{d N_\gamma}{d E_\gamma}  = \frac{1}{E_\gamma} \frac{\Delta x}{X_0}
+\end{equation}
 
+\subsection{Sciami elettromagnetici}
+$\to $ Produzione di coppie $e^{\pm} $ e $\gamma$ a catena. Si originano da elettroni o positroni che entrano in materia, oppure da un fotone. Questi devono avere energia $E \gg E_c$; in genere, \`e sufficiente $E > 100 $ MeV.
 
+I fotoni con $E_\gamma > 1$ MeV producono tipicamente coppie $e^+ e^-$, mentre quelli con $E_\gamma < 1 $ MeV interagiscono per Compton o fotoelettrico. \
 
+Quando lo sciame \`e iniziato da elettroni o positroni, si ha produzione di fotoni per radiazione di frenamento e altri effetti; i fotoni con energia superiore a $1$ MeV producono altre coppie $e^{\pm}  $ che producono altri fotoni. 
 
+Quando lo sciame \`e iniziato da un fotone, questo percorre una distanza media $\langle \delta x \rangle = \frac{9}{7} X_0$ prima di produrre coppie $e^+ e^-$, che poi finiscono per produrre altri fotoni.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\columnwidth]{sciami.png}
+\end{figure}
+
+\noindent In figura (b), le rotazioni all'indietro sono dovute a campo magnetico di circa $3$ T che influenza moto delle coppie $e^{\pm} $; a seconda del verso di rotazione, si discrimina tra elettroni e positroni.
+\subsection{Perdita di energia per collisioni}
+Si verifica su una carica che attraversa materia; la perdita di energia avviene per interazione con gli elettroni dei nuclei del materiale e pu\`o essere dovuta anche a interazione esclusivamente Coulombiana. La perdita di energia \`e statistica, quindi si parler\`a di $\left\langle \frac{d E}{d x}  \right\rangle$ e pu\`o avvenire per:
+\begin{itemize}
+	\item \textbf{ionizzazione}: la carica incidente trasmette energia sufficiente a ionizzare elettroni degli atomi;
+	\item \textbf{scintillazione}: la carica trasmette energia sufficiente per eccitazione degli elettroni, che la riemettono irraggiando.
+\end{itemize}
+Si studier\`a il fenomeno in \textbf{approssimazione di moto veloce} $\lvert \vec{v}  \rvert \gtrsim 10^{-2} $ c (maggiore della velocit\`a di orbita degli elettroni nell'atomo); in questo caso, si pu\`o assumere \textbf{traiettoria rettilinea}.
+\subsubsection{Formula di Bohr}
+
+Si cerca energia cinetica trasferita $T(b)$; in approssimazione di traiettoria rettilinea:
+\[
+\lvert \Delta \vec{p}_\perp \rvert  = \frac{v}{v}\int_{-\infty} ^{+\infty} e \lvert \vec{E}_\perp \rvert  dt =  \frac{e}{2\pi b v} \int_{-\infty} ^{+\infty} 2\pi b \lvert \vec{E}_\perp \rvert dx = \frac{ze^2}{2 \pi \varepsilon _0 b v}
+\] 
+dove si \`e usato $\int_{-\infty} ^{+\infty} 2 \pi  b  \lvert \vec{E}_\perp\rvert dx = \frac{ze}{\varepsilon _0}$ per Gauss. Allora, usando $r_e = e^2 / (4\pi \varepsilon _0 m_e)$:
+\begin{equation}
+	T(b) = \frac{\lvert \Delta \vec{p}_\perp\rvert ^2}{2 m_e} = \frac{z^2 e^2 }{8 \pi^2 \varepsilon _0^2 m_e  v^2 b^2} = \frac{2 z^2 m_e c^2 r_e^2}{\beta ^2} \frac{1}{b^2}
+\end{equation}
+Similmente a quanto fatto per Bremsstrahlung, se $n_e $ \`e densit\`a di elettroni per volume:
+\begin{equation}
+		\left\langle \Delta E \right\rangle = \langle N_{int} \rangle \langle T(b) \rangle = n_e \Delta X \sigma  \cdot \frac{1}{\sigma } \int 2\pi b T(b) \ db = \frac{4 \pi n_e \Delta x  z^2 m_e c^2 r_e^2}{\beta ^2} \int \frac{1}{b} db 
+\end{equation}
+quindi:
+\begin{equation}
+	\left\langle \frac{d E}{d x}  \right\rangle = \frac{4\pi n_e z^2 m_e c^2 r_e^2}{\beta ^2}\ln \frac{b_\text{max}}{b_\text{min}}
+\end{equation}	
+Ora si determinano $b_\text{max}$ e $b_\text{min}$; per il primo, la durata dell'impulso \`e $\tau  = b / (v\gamma) < 1 / \omega_e$, con $\omega_e$ frequenza angolare di rivoluzione di un elettrone\footnote{$1 / \omega_e> \tau $ \`e una richiesta che si impone per assunzione di moto veloce, dovendo essere velocit\`a della carica maggiore di quella di rivoluzione degli elettroni.}, quindi si prende $b_\text{max}= \frac{\gamma v}{\omega_e}$.
+
+Per $b_\text{min}$, essendo $T \sim 1 / b^2$ si ha la corrispondenza $T_\text{max} \leftrightarrow b_\text{min}$; visto che $T_\text{max} = \frac{2m_e c^2 \beta ^2 \gamma^2}{1 + \frac{2m_e \gamma}{M} + \left(\frac{m_e}{M}\right) ^2} \simeq 2m_e c^2 \beta ^2 \gamma^2$ (per $M \gg m_e$), vale $b_\text{min} = \frac{zr_e }{\beta ^2 \gamma}$. 
+
+Per rendere indipendente dallo stato della materia la perdita di energia (dipendenza contenuta in $n_e$), si divide per densit\`a $\rho $ del materiale, quindi:
+\begin{boxenv}[]
+\begin{equation}
+	\left\langle \frac{1}{\rho }\frac{d E}{d x}  \right\rangle = \frac{4\pi \mathcal{N}_A Z z^2 m_e c^2 r_e^2}{A \beta ^2} \ln \frac{\beta ^3 \gamma^2 c}{zr_e \omega_e} =z^2 \frac{Z}{A} \frac{K}{\beta ^2}\ln \frac{\beta ^2 \gamma^2}{zr_e \omega_e / c}
+\end{equation}
+\end{boxenv}
+\noindent dove si \`e usato che il numero di atomi per volume \`e $n_\text{at} = \rho  N_A / M_A \Rightarrow  n_e = Z \rho  N_A / M_A$, con $M_A = A \cdot  1 $ g. Si ha $K \approx 0.307 \frac{\text{MeV}}{\text{g} / \text{cm}^2}$. 
+
+La minore perdita di energia possibile \`e, per particella ultra-relativistica ($\beta \to 1$) con $z=1$, circa $2 \ \frac{\text{MeV}}{\text{g} / \text{cm}^2}$, con $\beta \gamma\approx 3.5$, $\omega_e \approx 10^{16} \text{ rad} / \text{s}$ e $Z / A \approx 1 / 2$.
 
 
 
@@ -2536,6 +2593,110 @@ Se la particella entrasse con $\beta \gamma < 3.5$, il minimo dell'energia depos
 \begin{boxenv}[]
 	\centering \color{red} Inserire immagine sui picchi di Bragg
 \end{boxenv}
+
+\newpage
+
+\section{Lezione 10/12/2020}
+\subsection{Energia residua dopo attraversamento di un materiale}
+L'ottenimento dell'energia residua di una particella che ha attraversato spessore $\Delta x$ di materiale si ottiene facilmente se \`e nota la forma grafica o tabellare della funzione $R(E)$. 
+
+Se energia iniziale \`e $E_0$ e dopo lo spessore vale $E_\text{out}$, allora (aggiungendo spessore dopo il primo con energia in entrata $E_\text{out}$ e energia finale $0$), si ha $R(E_0) = R(E_\text{out}) + \Delta x$. Per ottenere $E_\text{out}$ si:
+\begin{itemize}
+	\item determina $R(E_0)$ dalla curva/tabella $R(E)$;
+	\item calcola $R(E_\text{out}) = R(E_0) - \Delta x$;
+	\item determina $E_\text{out}$ dalla curva/tabella $R(E)$.
+\end{itemize}
+\subsection{Scoperta del positrone}
+Si usa una camera a bolle per distinguere la carica della particella che si vuole individuare. La camera a nebbia \`e riempita di un materiale vicino ad una temperatura sopra cui produce bolle e una minima quantit\`a di energia persa dalla particella finisce in bolle. 
+
+Essendo la perdita di energia per unit\`a di lunghezza proporzionale al numero di bolle per unit\`a di lunghezza, se la carica \`e unitaria ($q = e$), si osserva un certo numero di bolle, mentre se \`e $q=2e$ si osservano 4 volte il numero di bolle precedente, visto che la perdita di energia \`e proporzionale a $q^2$.
+
+Questo permette di capire la carica della particella, ma non il suo segno. Per ricavarlo, si applica campo magnetico perpendicolare al piano della traiettoria della particella nella camera e il verso di rotazione restituisce il segno della carica, infatti:
+\[
+m\gamma \frac{v^2}{R} = qvB \Rightarrow  \lvert \vec{p} \rvert  = qBR
+\] 
+con $R$ raggio di curvatura.
+
+Il problema \`e che perch\'e questo metodo funzioni, bisognerebbe sapere da dove entra la particella: potrebbe essere di carica positiva che entra dal basso, o di carica negativa che entra dall'altro. Per ottenere questa informazione, si applica uno spessore di piombo pari a una lunghezza di radiazione ($\sim 6$ mm) cosicch\'e percorra una traiettoria circolare con raggio di curvatura inferiore dopo aver attraversato spessore di piombo a seguito della perdita di energia.
+
+
+Nell'esperimento si \`e misurato $q = e$ con $R_A B = 0.21$ Tm e $R_B B = 0.075$ Tm, che risultano in $\lvert \vec{p} _\text{in}\rvert = 63 \text{ MeV} / c$ e $\lvert \vec{p}_\text{out} \rvert = 22.5 \text{ MeV}/c$.
+
+Le possbilit\`a (per le particelle conosciute all'epoca) sono o un protone non-relativistico con $T_P = p^2 / 2m_p = 2.1$ MeV, oppure una nuova particella $e^+$.
+
+Non pu\`o trattarsi di protone perch\'e $\frac{\Delta E}{\Delta x}\ge 1.1 \text{ MeV}/(\text{g} / \text{cm}^2)$, ossia:
+\[
+\Delta E \ge  1.1 \text{ MeV}/(\text{g} / \text{cm}^2)\cdot 0.6 \text{ cm} \cdot 11.3 \text{ g}/ \text{cm}^3 \approx 7 / 8 \text{ MeV}
+\] 
+quindi perderebbe pi\`u energia di quella che ha a disposizione. Si sarebbe potuto arrivare alla stessa conclusione verificando il range nel piombo in rete.
+
+Per verificare che si pu\`o trattare di positrone, questo sarebbe comunque soggetto a perdita di energia nel piombo per collisione pari a $7 / 8$ MeV, in aggiunta alla perdita per Bremsstrahlung data da
+\[
+\frac{d E_\text{rad}}{d x}  = E_\text{out} = E_0 e^{ - \Delta  x / X_0} = \frac{E_0}{e} = \frac{63}{27} \text{ MeV}
+\] 
+Questo rientra entro le incertezze di misura.
+
+\subsection{Scattering Coulombiano multiplo}
+Si considera particella $ze$ che passa attraverso materiale; in generale, questa entrer\`a lungo l'asse $\hat{z}$ e uscir\`a con angolo $\theta $ rispetto a questo, lungo un versore $\hat{n} = (\sin \theta  \cos \varphi , \sin \theta  \sin \varphi , \cos \theta )$.
+\begin{boxenv}[]
+	\centering \color{red} Inserire schema scattering 
+\end{boxenv}
+\noindent Si considera $\theta  \ll 1$; in questo caso si pu\`o approssimare la distribuzione angolare come distribuzione Gaussiana e si ha $\hat{n} = (\theta  \cos \varphi , \theta  \sin \varphi  , 1)\equiv (\theta _x, \theta _y, 1)$.
+
+Chiaramente si ha $\theta _x^2 + \theta _y^2 = \theta ^2$ e 
+\[
+\begin{split}
+	& \frac{d p}{d \theta _x} \simeq \frac{1}{\sqrt{2 \pi }  \theta _0} e^{-\theta _x^2 / (2 \theta _0^2)} \\
+	& \frac{d p}{d \theta _Y} \simeq \frac{1}{\sqrt{2 \pi }  \theta _0} e^{-\theta _y^2 / (2 \theta _0^2)} 
+\end{split}
+\] 
+con $\langle \theta _x  \rangle=0, \ \langle \theta _y \rangle = 0$ e $\langle \theta _x^2 = \theta _0 \rangle, \ \langle \theta _y ^2  \rangle = \theta _0$. Da questo:
+\begin{equation}
+	\begin{split}
+		\int_{-\infty} ^{+\infty} \int_{-\infty} ^{+\infty} \frac{d p}{d \theta _x}  \frac{d p}{d \theta _y} d\theta _x d\theta _y &\stackrel{!}{=} 1 = \iint_{\mathbb{R}^2} \left(\frac{1}{\theta _0 \sqrt{2\pi} } \right) ^2 e^{- \theta _x^2 / (2\theta _0^2)} e^{- \theta _y^2 / (2\theta _0^2)} d\theta _x d\theta _y  \\
+																	   &= \frac{1}{2\pi \theta _0^2}\int_{0} ^{+\infty} \int_{0} ^{2 \pi} e^{- \theta^2 / (2\theta _0^2)} \theta  d\theta d\varphi  \\						&=  \int_{0} ^{+\infty}  \frac{\theta}{\theta _0^2} e^{- \theta ^2 / (2\theta _0^2)}  d\theta = \int_{0} ^{+\infty} \frac{d p}{d \theta } d\theta \equiv \int_{0} ^{+\infty} p(\theta ) \ d\theta 
+	\end{split}
+\end{equation}
+con $0 < \theta < +\infty $\footnote{In realt\`a sarebbe $\pi$, non $+\infty$, ma si pu\`o scrivere in questo modo perch\'e si assume $\theta \ll 1$.} \textbf{angolo di multiplo scattering nello spazio}; contrariamente si dicono $\theta _x , \theta _y$ \textbf{angoli di multiplo scattering nel piano}  e $- \pi / 2 < \theta _{x,y} < \pi / 2$. Questo soddisfa
+\begin{equation}
+	\begin{split}
+		&\langle \theta  \rangle = \int_{0} ^{+\infty} \theta  p(\theta ) \ d\theta = \theta _0 \sqrt{\frac{\pi}{2}} \\
+		& \langle \theta ^2 \rangle = \int_{0} ^{+\infty} \theta ^2 p(\theta ) \ d\theta  =2 \theta _0^2\Rightarrow \sqrt{\langle \theta ^2 \rangle} = \sqrt{\langle \theta _x^2 \rangle + \langle \theta _y^2 \rangle} = \theta _0 \sqrt{2} 
+	\end{split}
+\end{equation}
+Per trovare $p(\theta )$, si cerca $\theta _0$ da $\langle \theta ^2 \rangle$; per farlo, si studia singolo scattering Coulombiano, calcolando $\langle \theta _\text{urto}^2 \rangle$ e ottenendo, poi, $\langle \theta ^2 \rangle= N_\text{urti} \langle \theta _\text{urto}^2 \rangle$. Si ha\footnote{Il $\sin^2 \frac{\theta }{2}$ \`e trascurabile rispetto a $1$, quindi si trascura.}:
+\[
+\frac{d \sigma }{d \Omega }  = \left(\frac{zZ\alpha \hbar  c}{2 p v}\right) ^2 \frac{1- \beta ^2 \sin^2 \frac{\theta}{2}}{\sin ^4 \frac{\theta}{2}} \simeq \left(\frac{zZ \alpha  \hbar  c}{2pv}\right) ^2 \frac{1}{\theta ^4 / 16}\equiv \frac{\ell ^2}{\theta ^4}
+\] 
+Con questa, si pu\`o calcolare, usando sempre $\theta \ll 1 $ come approssimazione per $\sin \theta \simeq \theta $:
+\[
+\begin{split}
+	\langle \theta _\text{urto}^2 \rangle &= \frac{1}{\displaystyle \int_{\theta _\text{min}} ^{\theta _\text{max}} \frac{d \sigma }{d \Omega } d\Omega }\int_{\theta _\text{min}} ^{\theta _\text{max}} \theta ^2 \frac{d \sigma }{d \Omega } d\Omega \equiv \frac{1}{\sigma _{ms} } \int \theta ^2 \frac{\ell ^2}{\theta ^4} 2\pi \sin \theta  d\theta  \simeq \frac{2\pi \ell ^2 }{\sigma _{ms} } \int \frac{d \theta }{ \theta } \\
+					      &= \frac{2\pi \ell ^2}{\sigma _{ms} } \ln \frac{\theta _\text{max}}{\theta _\text{min}} = \frac{2\pi \ell ^2}{\sigma _{ms} } \ln \frac{b_\text{max}}{b_\text{min}}
+\end{split}
+\] 
+dove si \`e usato $\theta \sim \ell  / b$ ({\color{red}Da ricontrollare dagli appunti}). Usando $b_\text{max} = R_\text{atomo} $ e $b_\text{min} = R_\text{nucleo}$ e visto che $A^{1 / 3} Z^{1 / 3} \propto Z^{2 / 3} $:
+\[
+	\begin{split}
+		\langle \theta ^2_\text{urto} \rangle &\simeq \frac{2\pi \ell ^2}{\sigma _{ms} } \ln \frac{1.4 a_0 Z^{-1 /3} }{r_0 A^{1 /3 } } \simeq \frac{2\pi \ell ^2}{\sigma _{ms} } \ln \frac{1.4 \cdot  0.53 \cdot 10^{5} \text{ fm}}{1.2 Z^{2 / 3} } \simeq \frac{2\pi\ell ^2}{\sigma _{ms} } \ln \left(\frac{205}{Z^{1 / 3} }\right) ^2 \\
+						      &\simeq \frac{4\pi \ell ^2}{\sigma _{ms} } \ln \frac{205}{Z^{1 /3}  } 
+	\end{split}
+\] 
+Visto che $N_\text{urti} = nL \sigma _{ms} $, usando la formula di Tsai approssimata ({\color{red}Aggiungere formula di Tsai}):
+\[
+	\langle \theta ^2 \rangle = nL\sigma _{ms} \langle \theta _{\text{urto}} ^2 \rangle = \frac{X_0}{X_0}n L 4 \pi \ell ^2 \ln \frac{205}{Z^{1 / 3} } \simeq \frac{nL}{X_0} \frac{4\pi \ell ^2 \ln \frac{205}{Z^{1 / 3} }}{4Z^2 n \alpha  r_e^2 \ln \frac{184}{Z^{1 / 3} }}\simeq \frac{\pi \ell ^2 L}{X_0 \alpha r_e^2}
+\] 
+dove il rapporto dei due logaritmi \`e circa $1$. Si ottiene, quindi, andando a sostituire $r_e = \frac{1}{4\pi \varepsilon _0 m_e c^2}$ ({\color{red}Vedere perch\'e non si mette $e^2 $ al numeratore}):
+\[
+\begin{split}
+	&\sqrt{\langle \theta ^2 \rangle} = \ell  \sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{\alpha r_e^2 Z^2}} = \sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{\alpha r_e^2 Z^2}} \frac{2zZ \alpha  \hbar  c}{pv}= 2z \sqrt{\frac{L}{X_0}}  \sqrt{\frac{\pi}{\alpha }} \frac{m_e c^2}{pv}= z \sqrt{\frac{2L}{X_0}} = \sqrt{2} \theta _0\\
+	&\Rightarrow \theta _0 \approx z \sqrt{\frac{L}{X_0}} \frac{13.6 \text{ MeV}}{pv}
+\end{split}
+\] 
+
+
+
+
 
 
 
