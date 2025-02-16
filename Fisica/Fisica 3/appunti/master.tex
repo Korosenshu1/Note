@@ -2543,40 +2543,81 @@ dove il rapporto dei due logaritmi \`e circa $1$. Sostituendo $r_e = \frac{e^2}{
 \] 
 
 \subsection{Scoperta dell'antiprotone}
+\subsubsection{Introduzione e stime preliminari}
+
+
 Un fascio di protoni ad alta energia ($\sim 6.2$ GeV) veniva fatto collidere su nuclei di rame fissi. La reazione per la produzione di antiprotoni \`e $p + p \to p+p+ p + \overline{p}$.
 
 Il prodotto della reazione veniva direzionato lungo una regione in cui era presente campo magnetico perpendicolare alla traiettoria per selezionare particelle di carica negativa. Queste venivano direzionate attraverso una serie di apparati per identificare la loro natura. 
-\begin{figure}[h!]
+\begin{center}
+	\begin{minipage}{0.45\columnwidth}
 	\centering
-	\includegraphics[width=.5\columnwidth]{bevatron.png}
-	\caption{Schema dell'apparato per l'individuazione di antiprotoni.}
-\end{figure}
-
-\noindent L'energia di soglia per il processo $p + p \to  p +p+p+\overline{p}$ \`e $(E+m)^2 - (E^2 - m^2 ) \le  (4m)^2\Rightarrow E \ge 7m$, per cui l'energia cinetica minima \`e $T = E - m \ge 6m = 5.6$ GeV.
-\begin{table}[h!]
+	\includegraphics[width=\columnwidth]{bevatron.png}
+	\captionof{figure}{Schema dell'apparato per l'individuazione di antiprotoni.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\columnwidth}
 	\centering
 	\begin{tabular}{l l}
 		\hline\hline	
 
-		\multirow{2}{*}{$S_1,S_2$} &Contatori a scintillazione in materiale plastico\\
-					   & (diametro: $2.25$ in; spessore: $0.62$ in)\\
-\\
-		\multirow{2}{*}{$C_1$} & Contatore \v Cerenkov con \ce{H_8F_16O} \\
-				       & ($\mu _D = 1.276$; $\rho  = 1.76 \ \text{g}\cdot \text{cm}^{-3} $; diametro: $3$ in; spessore $2$ in)\\ 
-\\
-		\multirow{2}{*}{$C_2$} & Contatore \v Cerenkov a quarzo fuso \\
-				       & ($\mu _D = 1.458$; $\rho  = 2.2 \ \text{g}\cdot \text{cm}^{-3} $; diametro: $2.38$ in; lunghezza $2.5$ in)\\
-				       \\
+		\multirow{3}{*}{$S_1,S_2$} &Contatori a scintillazione in materiale\\
+					   & plastico (diametro: $2.25$ in; \\
+					   &spessore: $0.62$ in)\\
+					   \hline
+		\multirow{3}{*}{$C_1$} & Contatore \v Cerenkov con \ce{H_8F_16O} \\
+				       & ($\mu _D = 1.276$; $\rho  = 1.76 \ \text{g}\cdot \text{cm}^{-3} $; \\ 
+				       &diametro: $3$ in; spessore $2$ in)\\
+					   \hline
+		\multirow{3}{*}{$C_2$} & Contatore \v Cerenkov a quarzo fuso \\
+				       & ($\mu _D = 1.458$; $\rho  = 2.2 \ \text{g}\cdot \text{cm}^{-3} $; \\
+				       &diametro: $2.38$ in; lunghezza $2.5$ in)\\
+					   \hline
 		$Q_1,Q_2$ &  Magneti di focalizzazione\\
-		\\
+					   \hline
 		$M_1,M_2$ &  Magneti di deflessione\\
 		\hline\hline
 	\end{tabular}
-	\caption{Descrizione delle componenti dell'apparato.}
-\end{table}
+	\captionof{table}{Descrizione delle componenti dell'apparato.}
+	\label{tmat}
+\end{minipage}	
+\end{center}
+\noindent L'energia di soglia per il processo $p + p \to  p +p+p+\overline{p}$ \`e $(E+m)^2 - (E^2 - m^2 ) \le  (4m)^2\Rightarrow E \ge 7m$, per cui l'energia cinetica minima \`e $T = E - m \ge 6m = 5.6$ GeV.
 
+Se fosse possibile una reazione in cui il protone incide su nucleo che rimane intatto dopo urto $p+A \to  p+A + p +\overline{p}$, la soglia diventerebbe $T\ge 2m + 4m^2 / M_Aa = 1.94$ GeV nel caso di \ce{_{29}^{63}Cu}. Questo non si verifica in pratica perch\'e l'energia trasferita ad un nucleone sarebbe tale da liberarlo dal nucleo, rompendolo: $q^2 = (M_A\gamma- M_A)^2 - M_A^2 \beta ^2\gamma^2 = 2M_A^2 (1-\gamma)$, con $\gamma,\beta $ riferiti al CM. Essendo che alla soglia $\gamma = \frac{E+ M_A }{3m+M_A}= 1 + \frac{4m^3}{M_A (3m + M_A)}$, si ha $q^2 = \frac{-8 M_A m^2}{3m+M_A}\approx -6.7$ GeV$^2$, ossia $p \approx 2.6 \text{ GeV} \gg p_f \sim 200 \text{ MeV}/c$. Quest'ultimo valore si \`e ottenuto dal fatto che, per l'esperimento, \`e stata stimata un'energia di Fermi $T_f = \frac{p^2_f}{2m} = 25$ MeV, quindi $p_f =\sqrt{2mT_f}\approx 216	 $ MeV.
 
+La situazione pi\`u favorevole per il processo \`e quella in cui il nucleone si muove contro protone incidente; il quadrimpulso totale iniziale \`e\footnote{Qui, $T_f, p_f$ sono caratteristici del nucleone; visto che $T = E-m$, l'energia del nucleone sar\`a $E_f = m+T_f$, mentre il suo impulso \`e $p_f$. Inoltre, si sta assumendo che il nucleone di interesse sia un altro protone e non un neutrone.} $P_\text{tot} = (E+m +T_f,  \sqrt{E^2 - m} - p_f,0,0)$; allora:
+\[
+	\begin{split}
+		&s = P_\text{tot}^2 = 2mE + 2ET_f + 2p_f \sqrt{E^2 - m^2 }  + 2m^2 + T_f^2 \approx 2mE + 2ET_f + 2p_f E+ 2m^2\ge (4m)^2\\
+		&\Rightarrow T = E- m \ge \frac{7m^2}{m+ p_f}\approx 4.7 \text{ GeV}
+	\end{split}
+\] 
+in accordo con quanto riportato nell'articolo, dove si \`e stimata una soglia di circa $4.3$ GeV. La determinazione della particella si basa sulla misura della massa delle particelle negative filtrate dal fascio del Bevatron, ottenuta dalla misura simultanea del loro momento e della loro velocit\`a\footnote{Infatti, si ha $m = p \frac{\sqrt{1 - \beta ^2} }{\beta }$ da $p = m \beta  \gamma$.}.
 
+\subsubsection{Funzionamento dell'apparato}
+Il fascio di protoni del Bevatron incide su un bersaglio di rame e le particelle negative, principalmente scatterate in avanti e di quantit\`a di moto pari a $\approx 1.20$ GeV/c, sono deflesse di $21^\circ$ dal campo magnetico del Bevatron e, successivamente, di ulteriori $32^\circ$ dal magnete $M_1$. 
+
+Tramite il magnete $Q_1$ e un'apertura in uno schermo (\textit{shielding}), queste sono collimate e inviate al contatore $S_1$. Dopo il passaggio in $S_1$, sono nuovamente collimate da $Q_2$ e deflesse di $34^\circ$ da $M_2$ verso l'ultimo contatore a scintillazione $S_2$. 
+
+Tutte le particelle che passano per $S_2$ hanno circa lo stesso momento entro il $2\%$, cio\`e con $\Delta p \approx 24$ MeV.
+
+Le particelle con massa protonica che incidono su $S_2$ hanno velocit\`a $\beta  = 0.78$; la perdita di energia per ionizzazione dovuta all'attraversamento di $S_2, C_1 , C_{2}$ la riduce a $\beta  = 0.765$. Per un antiprotone, questo corrisponde a
+\[
+\Delta E_{\overline{p}}  = \sqrt{p_\text{fin}^2 +m^2} - \sqrt{p_\text{in}^2 + m^2} = \sqrt{1190^2 + 938^2} - \sqrt{1115^2 + 938^2} = 58 \text{ MeV}
+\] 
+Trascurando la piccola variazione di quantit\`a di moto, si ha $\beta \gamma_{\overline{p}} = \frac{1190}{938} \approx 1.27 $, quindi si possono calcolare gli stopping power dai database a disposizione, usando i dati sui materiali in tabella \ref{tmat}.
+
+Attraverso $S_2$, si ha una perdita di $2.5 \frac{\text{ MeV}}{\text{g}/\text{cm}^2}$, attraverso $C_1$, si ha $2.5 \frac{\text{ MeV}}{\text{g}/\text{cm}^2}$ e, attraverso $C_2$, si ha $2.21 \frac{\text{ MeV}}{\text{g}/\text{cm}^2}$. Moltiplicando questi valori ciascuno per la densit\`a e spessore del materiale a cui sono relativi e sommandoli tra di loro, si ottiene proprio $\Delta E_{\overline{p}} \approx 58$ MeV.
+
+Il contatore $C_1$ rivela le particelle con $\beta > 0.79$; il rivelatore $C_2$, quelle con $0.75 < \beta < 0.78$. Con questo sistema, si distinguono $\pi$ e $\overline{p}$ nel seguente modo:
+\begin{itemize}
+	\item se scattano $S_2, S_3, C_1$, ma non $C_2$, la particella \`e potenzialmente un pione;
+	\item se scattano $S_2,S_2, C_2$ e non $C_1$, la particella \`e potenzialmente un antiprotone.
+\end{itemize}
+A seguito di scattering nucleare nel radiatore di $C_2$, si rivelavano dei mesoni $\pi^-$ attraverso $C_2$, cosa che non sarebbe dovuta accadere; questo si \`e verificato sul $3\%$ dei $\pi^-$ rivelati. Il rivelatore $C_1$ serviva ad identificare questi pioni anomali e ad escluderli dal conteggio degli antiprotoni.
+\subsubsection{Il tempo di volo}
+La velocit\`a delle particelle \`e misurata anche tramite il \textbf{tempo di volo}, cio\`e osservando il tempo che intercorre tra il segnale in $S_1$ e in $S_2$, separati da $40$ ft. I pioni avranno un $\beta = 0.99$ e gli antiprotoni pari a $\beta  = 0.78$, quindi il tempo di volo \`e, rispettivamente, di $40$ e $51$ nanosecondi.
 
 
 
