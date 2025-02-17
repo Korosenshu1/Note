@@ -145,15 +145,25 @@
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
 
+\newtheoremstyle{style2}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\ }
 
 
+\theoremstyle{style2}
+\newtheorem{osservazione}{Osservazione}[section]
 
 \theoremstyle{style1}
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{corollario}{Corollario}[teorema]
 \newtheorem{lemma}{Lemma}[teorema]
 \newtheorem{definizione}{Definizione}[section]
-\newtheorem{osservazione}{Osservazione}[section]
 \newtheorem{notazione}{Notazione}[section]
 \newtheorem{esempio}{Esempio}[section]
 \newtheorem{esercizio}{Esercizio}[section]
@@ -1415,45 +1425,63 @@ Mettendo tutto insieme e aggiungendo la costante di normalizzazione, si trova:
 \end{equation}
 \end{boxenv}
 \noindent dove si \`e sostituito $E$ con $n$ come pedice in quanto sono in corrispondenza per la relazione $E_n = - \frac{m_e \alpha ^2 c^2}{2n^2}$.
+\subsubsection{Lo stato fondamentale, medie e varianze di posizione e momento}
+
 
 L'energia minima del sistema \`e $E_1 = - m_e \alpha ^2 c^2 / 2$ e, visto che si deve rispettare $n\ge \ell +1$ e $\lvert m \rvert \le  \ell $, associata a:
 \begin{equation}
-	\psi _{100} (r,\theta ,\varphi ) = R_{10} (r) Y_{00} (\theta ,\varphi ) = \frac{1}{\sqrt{\pi r_B^3} } e^{- r / r_B} 
+	\psi _{100} (r,\theta ,\varphi ) = R_{10} (r) Y_{00} (\theta ,\varphi ) = \frac{1}{\sqrt{\pi \ell _B^3} } e^{- r / \ell _B} 
 \end{equation}
+Essendo il sistema nello stato fondamentale invariante per rotazioni, deve anche valere $\braket{0|\hat{\mathbf{X} }|0} = 0$; questo perch\'e se esistesse grandezza vettoriale, sistema non pi\`u invariante per rotazioni $\Rightarrow $ si distingue direzione e verso del vettore. Per lo stesso motivo: $\braket{0|\hat{\mathbf{p} }|0}  =0$\footnote{\`E ragionevole che sia $0$ perch\'e lo stato \`e legato, nel senso che l'elettrone \`e vincolato a un moto limitato ad una certa regione dello spazio. Se non fosse nullo, il sistema andrebbe all'infinito lungo quella particolare direzione.}.
 
+Si pu\`o riscrivere $\psi _{100} $ in termini di $\overline{r} = r / \ell _B$, con normalizzazione $(\sqrt{\pi} )^{-1} \Rightarrow \psi _{100} = \frac{1}{\sqrt{\pi} }e^{ - \overline{r}} $. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Si cerca probabilit\`a di ottenere un certo impulso $\mathbf{p} $ (relativo allo stato fondamentale): $\mathcal{P}(p) = \lvert \widetilde{\psi }_{100} (p) \rvert ^2$. Si ottiene trasformando con Fourier $\psi _{100} $:
+\[
+\widetilde{\psi }_{100}= \frac{1}{(2\pi)^{3 / 2} } \int d^3 x \ e^{-i \mathbf{p} \cdot \mathbf{x} } \psi (\mathbf{x} ) = \frac{2 \sqrt{2} }{\pi} \frac{1}{(1+p^2)^2}
+\] 
+\begin{osservazione}
+	Sistema invariante per rotazione $\Rightarrow  \widetilde{\psi }(p)$ dipende solo da $\lvert \mathbf{p}  \rvert $. 
+\end{osservazione}
+\noindent Si calcola varianza della posizione\footnote{Invarianza per rotazioni $\Rightarrow \psi (\mathbf{x} ) \equiv \psi (x)$, inoltre $\lvert \mathbf{x}  \rvert \equiv x \equiv r$.}:
+\begin{equation}
+	\begin{split}
+		\braket{0|\hat{\mathbf{X} }^2|0} &= \int d^3x\ \braket{0|x} \braket{x|\hat{\mathbf{X} }^2|0} = \int d^3x\ \psi_{100}  ^*(x) \hat{\mathbf{X} }^2\psi_{100} (x) \\
+						 &= \int r^2 dr \sin \theta  d \theta  d\varphi \ \lvert \mathbf{x}  \rvert ^2 \lvert \psi_{100}  (x) \rvert ^2\\
+						 &= \frac{1}{\pi \ell _B^3} \int_{0} ^{+\infty} dr \ r^4 e^{-2 r / \ell _B} \int_{0} ^{\pi} d\theta\ \sin \theta  \int_{0} ^{2\pi} d\varphi \\
+						 &= \frac{4}{\ell _B^3} \int_{0} ^{+\infty} dr \ r^4 e^{-2 r / \ell _B} = \frac{4}{\ell _B^3} \cdot \frac{3\ell _B^5}{4} = 3\ell _B^2
+	\end{split}
+\end{equation}
+dove si \`e usato $\int_{0} ^{+\infty} r^n e^{-\alpha r} \ dr = \frac{n!}{\alpha ^{n+1} }$. Ora si fa il calcolo per $\langle \hat{\mathbf{p} }^ 2 \rangle$. Si ha $\hat{\mathbf{p} } = -i\hbar \nabla $ nelle coordinate, quindi:
+\begin{equation*}
+    \langle \hat{\mathbf{p} }^2 \rangle = -\hbar^2 \int_{\mathbb{R}^3} \psi_{100}^*(\mathbf{x} )\,\nabla^2\psi_{100}(\mathbf{x} )\ d^3x = -\hbar^2 \cdot 4\pi \int_0^\infty \psi_{100}(r) \nabla^2\psi_{100}(r) r^2 \ dr
+\end{equation*}
+Per una funzione radiale $\nabla^2 \psi(r) = \psi''(r) + \frac{2}{r} \psi'(r)$, dove $\psi'(r) = -\frac{1}{l_B} \psi_{100}(r)$ e $\psi''(r) = \frac{1}{l_B^2} \psi_{100}(r)$, perci\`o $\nabla^2 \psi_{100}(r) = \frac{1}{l_B^2} \psi_{100}(r) - \frac{2}{l_B r} \psi_{100}(r)$. Allora:
+\begin{equation}
+	\begin{split}
+		\langle \hat{\mathbf{p} }^2 \rangle &= -\hbar^2 \cdot 4\pi \int_0^\infty \frac{1}{\pi l_B^3} e^{-2r/l_B} \left( \frac{1}{l_B^2} - \frac{2}{l_B r} \right) r^2\ dr\\
+						    &=-\frac{4\hbar^2}{l_B^3} \left[ \frac{1}{l_B^2} \int_0^\infty r^2 e^{-2r/l_B} dr - \frac{2}{l_B} \int_0^\infty r e^{-2r/l_B} dr \right] \\
+						    &= -\frac{4\hbar^2}{l_B^3} \left[ \frac{1}{l_B^2} \cdot \frac{l_B^3}{4} - \frac{2}{l_B} \cdot \frac{l_B^2}{4} \right]= \frac{\hbar^2}{l_B^2}
+	\end{split}
+\end{equation}
+Riassumendo:
+\begin{boxenv}[]
+	\begin{equation}\label{hvar}
+		\braket{0|\hat{\mathbf{X} }|0} = \braket{0|\hat{\mathbf{p} }|0} = 0\ ; \hspace{.2cm}\braket{0|\hat{\mathbf{X} }^2|0} = 3\ell _B^2 \ ; \hspace{.2cm} \braket{0|\hat{\mathbf{p} }^2|0} = \frac{\hbar ^2}{\ell _B^2}
+\end{equation}
+\end{boxenv}
+\subsubsection{Principio di indeterminazione}
+Si \`e visto che, essendo $[\hat{X}_a, \hat{p}_b] = i \hbar  \delta _{ab} $, si ricava:
+\begin{equation}
+	\left\langle \big(\hat{X}_a - \langle \hat{X}_a \rangle\big)^2 \right\rangle \left\langle \big(\hat{p}_b - \langle \hat{p}_b \rangle\big)^2 \right\rangle \ge \delta _{ab} \frac{\hbar ^2}{4}
+\end{equation}
+Applicandolo allo stato fondamentale, per quanto detto sopra, $\langle \hat{X}_a \rangle= \langle \hat{p}_b \rangle=0, \forall a,b$; inoltre, valendo invarianza per rotazioni, sommando su $a,b$, si ha:
+\begin{equation}
+	\langle \hat{\mathbf{X} }^2 \rangle \langle \hat{\mathbf{p} }^2 \rangle\ge \frac{3\hbar ^2}{4}
+\end{equation}
+D'altra parte $\braket{0|\hat{X}_a^2|0} = \frac{1}{3} \braket{0|\hat{\mathbf{X} }^2|0} $ e $\braket{0|\hat{p}_a^2|0} = \frac{1}{3} \braket{0|\hat{\mathbf{p} }^2|0} $ vista l'invarianza per rotazioni, quindi:
+\begin{equation}
+	\frac{\hbar^2}{4}\le \braket{0|\hat{X}_a^2|0} \braket{0|\hat{p}_a^2|0} = \frac{1}{9} \braket{0|\hat{\mathbf{X} }^2|0}  \braket{0|\hat{\mathbf{p} }^2|0} \Rightarrow \langle \hat{\mathbf{X} }^2 \rangle \langle \hat{\mathbf{p} }^2 \rangle \ge \frac{9}{4}\hbar ^2
+\end{equation}
+per cui si ottiene un limite inferiore pi\`u preciso. Tuttavia si possono usare i risultati in eq. \ref{hvar}, per concludere che $\langle \hat{\mathbf{X} }^2 \rangle\langle \hat{\mathbf{p} }^2 \rangle = 3\hbar ^2$, conforme con le stime di sopra.
 \end{document}
