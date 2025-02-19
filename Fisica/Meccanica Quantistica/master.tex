@@ -1484,4 +1484,135 @@ D'altra parte $\braket{0|\hat{X}_a^2|0} = \frac{1}{3} \braket{0|\hat{\mathbf{X} 
 	\frac{\hbar^2}{4}\le \braket{0|\hat{X}_a^2|0} \braket{0|\hat{p}_a^2|0} = \frac{1}{9} \braket{0|\hat{\mathbf{X} }^2|0}  \braket{0|\hat{\mathbf{p} }^2|0} \Rightarrow \langle \hat{\mathbf{X} }^2 \rangle \langle \hat{\mathbf{p} }^2 \rangle \ge \frac{9}{4}\hbar ^2
 \end{equation}
 per cui si ottiene un limite inferiore pi\`u preciso. Tuttavia si possono usare i risultati in eq. \ref{hvar}, per concludere che $\langle \hat{\mathbf{X} }^2 \rangle\langle \hat{\mathbf{p} }^2 \rangle = 3\hbar ^2$, conforme con le stime di sopra.
+
+\newpage
+\section{Esercitazioni}
+\subsection{Sistemi a due livelli}
+\subsubsection{Descrizione generale}
+
+
+Sono sistemi i cui stati appartengono ad $\mathcal{H}$, con $\dim \mathcal{H} = 2$. Possibile base\footnote{Qui si sottintende una base sul campo complesso $\mathbb{C}$.} \`e $\left\{ \ket{0} , \ket{1}  \right\} \equiv \left\{ \ket{\downarrow}, \ket{\uparrow}   \right\} $, dove $\ket{0} = \begin{pmatrix} 0\\ 1 \end{pmatrix} \equiv \ket{\downarrow} $ e $\ket{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \equiv \ket{\uparrow} $.
+
+Dato $\ket{\psi } \in \mathcal{H}$, allora $\ket{\psi } =  \alpha  \ket{0}  + \beta  \ket{1}, \ \alpha ,\beta  \in \mathbb{C} $ e tali che $\lvert \alpha  \rvert ^2 + \lvert \beta  \rvert ^2 = 1$ per normalizzazione $\braket{\psi |\psi } \stackrel{!}{=}1$.
+
+\subsubsection{Matrici di Pauli}
+Dovendo essere autoaggiunto, l'Hamiltoniano per sistemi simili \`e della forma
+\begin{equation}
+	\hat{H} = \begin{pmatrix} a & b \\ b^* & c\end{pmatrix}, \ a,c \in \mathbb{R}, \ b \in \mathbb{C}
+\end{equation}
+Una base per i possibili Hamiltoniani \`e $\mathcal{B} = \left\{ \operatorname{Id} , \sigma_x, \sigma _y, \sigma _z \right\} $, dove $\sigma _i$ sono \textbf{matrici di Pauli}:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma _x = \begin{pmatrix} 0 & 1 \\ 1& 0 \end{pmatrix} \ , \hspace{.2cm} \sigma _y = \begin{pmatrix} 0 & - i \\ i & 0  \end{pmatrix} \ , \hspace{.2cm} \sigma _z = \begin{pmatrix} 1& 0 \\ 0&  -1 \end{pmatrix} 
+\end{equation}
+\end{boxenv}
+\noindent Autovalori e autovettori di, rispettivamente, $\sigma _z, \sigma _x, \sigma _y$ sono:
+\begin{itemize}
+	\item $v_{z,-}\equiv \ket{0} $ relativo a $\lambda =-1$ e $v_{z,+} \equiv\ket{1} $ relativo a $\lambda = 1$;
+	\item $v_{x,-} = \displaystyle \frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\ -1 \end{pmatrix} $ relativo a $\lambda=-1$ e $v_{x,+} = \displaystyle \frac{1}{\sqrt{2} }\begin{pmatrix} 1 \\ 1 \end{pmatrix}  $ relativo a $\lambda = 1$;
+	\item $v_{y,-} = \displaystyle \frac{1}{\sqrt{2} }\begin{pmatrix} i \\ 1 \end{pmatrix} $ relativo a $\lambda  = -1$ e $v_{y,+} = \displaystyle \frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\ i \end{pmatrix} $ relativo a $\lambda  = 1 $.
+\end{itemize}
+Le matrici di Pauli soddisfano le seguenti propriet\`a:
+\begin{equation}
+	\begin{split}
+		&\sigma _\alpha  \sigma _\beta  = \delta _{\alpha  \beta}  + i \varepsilon _{\alpha \beta \gamma} \sigma _\gamma\Rightarrow \begin{cases}
+			[\sigma _\alpha , \sigma _\beta ]\overset{\text{def}}{=} \sigma _\alpha \sigma _\beta  - \sigma _\beta \sigma _\alpha  = 2i \varepsilon _{\alpha  \beta  \gamma} \sigma _\gamma\\
+\left\{ \sigma _\alpha  , \sigma _\beta  \right\} \overset{\text{def}}{=} \sigma _\alpha  \sigma _\beta  + \sigma _\beta  \sigma _\alpha = 2 \delta _{\alpha  \beta } \operatorname{Id}
+		\end{cases}  \\
+		& \operatorname{tr} \sigma _\alpha  = 0 
+	\end{split}
+\end{equation}
+\subsubsection{Studio di un sistema a due livelli}
+
+
+	Si considera $\hat{H} = a \sigma _z + b \sigma _x$, con $a,b \in \mathbb{R}$. Lo spettro \`e dato da:
+	\begin{equation*}
+		0 \stackrel{!}{=} \det ( \hat{H} - \lambda  \operatorname{Id} ) = \begin{pmatrix} a - \lambda & b \\ b & - a - \lambda  \end{pmatrix} = \lambda ^2 - a^2 - b^2
+	\end{equation*}
+	da cui $\lambda _{\pm} = \pm \sqrt{a^2 + b^2} $. Gli autostati normalizzati sono:
+	\[
+	\ket{v_{\pm}}  = \frac{1}{\left[ 2 ( 1+ r^2 \mp r\sqrt{1+r^2} ) \right] ^{ 1/2} } \begin{pmatrix} 1 \\ -r \pm \sqrt{1+ r^2}  \end{pmatrix} \equiv A_{\pm}  \begin{pmatrix} 1 \\ R_{\pm}   \end{pmatrix}, \ r = \frac{a}{b}
+	\] 
+\begin{esercizio}
+	Si assume che il sistema si trovi in $\ket{v_+}  = A_+ \big(\ket{\uparrow} + R_+ \ket{\downarrow} \big)$; calcolare probabilit\`a che stia in $\ket{\uparrow} $.
+	\begin{svolgimento}
+		La probabilit\`a \`e data da $\lvert \braket{\uparrow|v_+}  \rvert ^2 = A^2 \equiv P_\uparrow$.
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+Il sistema \`e ancora in $\ket{v_+}$; indicando con $\ket{\rightarrow} = \begin{pmatrix} 1\\ 1 \end{pmatrix} $	e $\ket{\leftarrow} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}  $ gli autostati di $\sigma _x$, calcolare la probabilit\`a di trovare il sistema in $\ket{\leftarrow} $.
+\begin{svolgimento}
+	Si riscrive $\ket{v_+} $ in termini di $\ket{\leftarrow}, \ \ket{\rightarrow} $:
+	\[
+	\ket{v_+} = A_+ \left(\frac{1+R_+}{\sqrt{2} }\ket{\rightarrow} + \frac{1-R_+}{\sqrt{2} }\ket{\leftarrow} \right) 
+	\] 
+quindi $P_\leftarrow = \displaystyle \left(A_+\frac{1-R_+}{\sqrt{2} }\right) ^2$.
+\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Calcolare valore di aspettazione di $\sigma _z$ in $\ket{v_+} $.
+	\begin{svolgimento}
+		Essendo $\ket{v_+} = A_+(\ket{\uparrow} + R_+ \ket{\downarrow}) \Rightarrow \sigma _z \ket{v_+} = A_+(\ket{\uparrow} - R_+ \ket{\downarrow}) $. Inoltre $\bra{v_+} = A_+^* (\bra{\uparrow} + R_+^* \bra{\downarrow} ) = A(\bra{\uparrow} + R_+ \bra{\downarrow} )$ visto che $A_+, R_+ \in \mathbb{R}$. Allora:
+		\[
+		\braket{v_+|\sigma _z|v_+} = A^2 - A^2 R_+^2 = A^2 (1-R_+^2)
+		\] 
+	\end{svolgimento}
+\end{esercizio}
+\subsection{Sistema composto da due sottosistemi a due livelli}
+I due sottosistemi si indicano con $1$ e $2$, quindi $\ket{\psi _1}$ sar\`a stato del primo e $\ket{\psi _2} $ sar\`a stato del secondo.
+
+Si considera sistema con Hamiltoniano $\hat{H} = J \sigma _1 \cdot \sigma _2$, con $J \in \mathbb{R}$ e $\sigma _i = (\sigma _{i,x} , \sigma _{i,y} , \sigma _{i,z} )$, mentre il prodotto, invece, \`e definito da:
+\begin{equation}
+	\sigma _1 \cdot \sigma _2 \overset{\text{def}}{=} \sum_{i=\left\{ x,y,z \right\} }^{} \sigma _{1,i} \otimes \sigma _{2,i} 
+\end{equation}
+\begin{definizione}[Prodotto tensore tra matrici]
+	Il prodotto tensore tra due matrici, rispettivamente di dimensioni $m \times n$ e $p \times q$, restituisce una matrice di dimensioni $pm  \times  qn$ definita come:
+	\begin{equation}
+		A \otimes B \overset{\text{def}}{=} \begin{pmatrix} a_{11} B & \cdots & a_{1n} B\\ \vdots & \ddots&\vdots \\ a_{m1}B & \cdots  & a_{mn} B\end{pmatrix} 
+	\end{equation}
+	dove ogni prodotto $a_{ij} B$ \`e blocco dato dal prodotto della matrice $B$ per lo scalare $a_{ij} $. 
+\end{definizione}
+\noindent Si assume che i due sottosistemi non interagiscono fra loro, quindi ogni operatore agisce sul proprio stato e la base di $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ \`e semplicemente $\mathcal{B} = \mathcal{B}_1 \otimes \mathcal{B}_2$, ossia:
+\begin{equation}
+	\mathcal{B} = \left\{ \ket{\uparrow \uparrow} , \ket{\uparrow \downarrow} , \ket{\downarrow \uparrow}, \ket{\downarrow \downarrow}   \right\} 
+\end{equation}
+Si vuole rappresentare $\mathcal{H}$ in forma matriciale. Usando:
+\[
+\begin{split}
+	&\sigma _x \ket{\uparrow} = \ket{\downarrow} \ , \hspace{.2cm} \sigma _x \ket{\downarrow} = \ket{\uparrow} \\
+	&\sigma _y \ket{\uparrow} = i\ket{\downarrow} \ , \hspace{.2cm} \sigma _y \ket{\downarrow} = -i \ket{\uparrow} \\
+	&\sigma _z \ket{\uparrow} = \ket{\uparrow} \ , \hspace{.2cm} \sigma _z \ket{\downarrow} = -\ket{\downarrow}
+	\end{split} \hspace{.2cm}\implies\hspace{.2cm} \begin{split}
+	&\hat{ H} \ket{\uparrow \uparrow} = J \ket{\uparrow \uparrow}\ , \hspace{.2cm}\hat{H} \ket{\downarrow \uparrow} = J \left(2 \ket{\uparrow\downarrow} - \ket{\downarrow \uparrow} \right) \\
+	&\hat{ H} \ket{\uparrow \downarrow} = J \left(2 \ket{\downarrow \uparrow} - \ket{\uparrow \downarrow} \right) \ , \hspace{.2cm}  \hat{H} \ket{\downarrow \downarrow} = J \ket{\downarrow \downarrow} 
+\end{split}
+\] 
+si ha:
+\begin{equation}
+	H = J \begin{pmatrix} 1& 0&0&0 \\ 0 & -1 & 2 & 0 \\ 0&2 & -1 & 0 \\ 0&0&0&1 \end{pmatrix} 
+\end{equation}
+\subsubsection{Spettro dell'Hamiltoniano}
+\begin{boxenv}[]
+\centering Continua nella lezione $3$
+\end{boxenv}
+\subsection{Buca di potenziale}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
