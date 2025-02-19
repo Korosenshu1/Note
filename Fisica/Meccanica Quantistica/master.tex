@@ -1595,9 +1595,31 @@ si ha:
 \begin{boxenv}[]
 \centering Continua nella lezione $3$
 \end{boxenv}
-\subsection{Buca di potenziale}
+\subsection{Buche di potenziale}
+\subsubsection{Buca di potenziale $V_0$}
 
-
+Si considera 
+\[
+V(x) = \begin{cases}
+ 0 & \ , \lvert x \rvert > \frac{a}{2}\\
+-V_0 &\ , \lvert x \rvert \le \frac{a}{2}
+\end{cases}\hspace{.1cm} , \hspace{.2cm} a \in R^{>0} 
+\] 
+L'Hamiltoniano \`e $\hat{H} = \hat{p}^2 / 2m + V(\hat{x})$ e si risolve $\hat{H}\psi (x) = E \psi (x)$, ossia
+\begin{equation}
+	-\frac{\hbar ^2}{2m} \partial _x^2 \psi (x) + V(x) \psi (x) = E\psi (x)
+\end{equation}
+\begin{svolgimento}
+	Si assume $E>0$. Fuori dalla buca ($\lvert x \rvert > a / 2$) vale $V(x) = 0$, quindi:
+	\begin{equation}
+		\psi _\text{out}(x) = A \exp \left(i \frac{\sqrt{2mE} }{\hbar }x\right) + B \exp \left( - i \frac{\sqrt{2mE} }{\hbar } x\right) 
+	\end{equation}
+	Se $\lvert x \rvert = a / 2$, invece, si ha:
+	\begin{equation}
+		\psi _\text{bound}(x) = A' \exp \left(i \frac{\sqrt{2m(E+V_0)} }{\hbar }x\right) + B' \exp \left( - i \frac{\sqrt{2m(E+V_0)} }{\hbar } x\right) 
+	\end{equation}
+	Si rigetta, allora, la possibilit\`a $E>0$ perch\'e si \`e interessati al caso di \textbf{stati legati}. D'ora in avanti, si considerer\`a $E<0$.
+\end{svolgimento}
 
 
 
