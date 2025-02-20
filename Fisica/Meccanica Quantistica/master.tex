@@ -1618,7 +1618,88 @@ L'Hamiltoniano \`e $\hat{H} = \hat{p}^2 / 2m + V(\hat{x})$ e si risolve $\hat{H}
 	\begin{equation}
 		\psi _\text{bound}(x) = A' \exp \left(i \frac{\sqrt{2m(E+V_0)} }{\hbar }x\right) + B' \exp \left( - i \frac{\sqrt{2m(E+V_0)} }{\hbar } x\right) 
 	\end{equation}
-	Si rigetta, allora, la possibilit\`a $E>0$ perch\'e si \`e interessati al caso di \textbf{stati legati}. D'ora in avanti, si considerer\`a $E<0$.
+	Si rigetta, allora, la possibilit\`a $E>0$ perch\'e si \`e interessati al caso di \textbf{stati legati}. D'ora in avanti, si considerer\`a $E<0$. Si nota, inoltre, che $E\ge -V_0$ perch\'e:
+	\[
+	\begin{split}
+		&\frac{\hat{p}^2}{2m} \ket{\psi }  + V(\hat{x}) \ket{\psi } = E \ket{\psi } \implies \Braket{\psi |\frac{\hat{p}^2}{2m}|\psi } + \braket{\psi |V(\hat{x})|\psi } = E\\
+		&\Rightarrow \Braket{\psi |\frac{\hat{p}^2}{2m}|\psi } + \int_{-\infty} ^{+\infty} dx\ \psi ^*(x) V(x) \psi (x) \ge \Braket{\psi |\frac{\hat{p}^2}{2m}|\psi } + \min_x V(x) \int_{-\infty} ^{+\infty} dx\ \lvert \psi (x) \rvert ^2
+	\end{split}
+	\] 
+Per condizione di normalizzazione, si trova che: 
+\begin{equation}
+	E \ge \left\langle \frac{\hat{p}^2}{2m} \right\rangle + \min_x V(x) \Rightarrow  E\ge  \min_x V(x) \equiv -V_0
+\end{equation}
+Si \`e interessati al caso di una particella all'interno della buca di potenziale, la cui posizione decresce esponenzialmente al di fuori, pertanto il range di interesse \`e $-V_0\le E <0$. 
+
+\begin{itemize}
+	\item Soluzione fuori dalla buca.
+
+		Qui $V(x) =0$, quindi la funzione d'onda \`e della forma $\psi (x) = Ae^{\lambda x} + B e^{-\lambda x} $, con $\lambda  = \frac{1}{\hbar } \sqrt{2m(-E)} $\footnote{Si nota che $-E > 0$, quindi $\lambda \in \mathbb{R}$.}. Si indicher\`a la soluzione per $\lvert x \rvert < a /2 $ con $1$ e con $3$ quella per $\lvert x \rvert > a / 2$.
+	\item Soluzione nella buca.
+
+		Qui $V(x) = - V_0$, quindi per $\eta = \frac{\sqrt{2m (E+V_0)} }{\hbar }$, si ha $\psi (x) = A_2e^{i\eta x}  + B_2 e^{-i\eta x} $. Visto che $E>-V_0\Rightarrow \eta>0$.
+\end{itemize}
+Si devono raccordare le soluzioni. Intanto si eliminano i termini non fisicamente pertinenti, come $B_1 e^{- \lambda x} $ e $A_3 e^{\lambda  x} $ perch\'e fanno divergere le soluzioni. Le condizioni di raccordo sono:
+\[
+\begin{split}
+	&\psi _1\left(-\frac{a}{2}\right) = \psi _2 \left(-\frac{a}{2}\right) \hspace{.1cm}; \hspace{.2cm}\psi _1'\left(-\frac{a}{2}\right) = \psi _2 '\left(-\frac{a}{2}\right) \\
+	&\psi _2\left(\frac{a}{2}\right) = \psi _3 \left(\frac{a}{2}\right) \hspace{.1cm}; \hspace{.2cm}\psi _2'\left(\frac{a}{2}\right) = \psi _3 '\left(\frac{a}{2}\right) 
+\end{split}
+\] 
+Da quelle nella prima riga, si ha $A_1 e^{- \lambda  \frac{a}{2}} = A_2 e^{i\eta \frac{a}{2}} + B_2 e^{-i\eta \frac{a}{2}} $ e $\lambda  A_1 e^{ \lambda  \frac{a}{2}} = i\eta A_2 e^{i\eta }  - i\eta B_2 e^{-i\eta \frac{a}{2}} $. Risolvendo per $A_2,B_2$:
+\[
+	A_2 = \frac{i\eta +\lambda }{2 i\eta }A_1 e^{- (\lambda -i\eta) \frac{a}{2}} \hspace{.1cm} ; \hspace{.2cm} B_2 = \frac{i\eta -\lambda }{2 i\eta }A_1 e^{- (\lambda +i\eta) \frac{a}{2}} 
+\] 
+In modo analogo, dalle altre si ottengono due espressioni per $B_3$:
+\[
+B_3 = \begin{cases}
+	\displaystyle \left(e^{i\eta a }\frac{\lambda + i\eta}{2 i \eta} - e^{-i\eta a } \frac{\lambda  - i\eta}{2i\eta}\right) A_1 \\
+	\\
+	\displaystyle \left(-e^{i\eta a } \frac{\lambda + i\eta}{2 \lambda }- e^{-i\eta a } \frac{\lambda  - i\eta}{2\lambda }\right) A_1 
+\end{cases} \Rightarrow e^{i\eta a} \frac{\lambda ^2 + 2i\lambda \eta - \eta^2}{2 i \lambda \eta} = e^{-i\eta a} \frac{\lambda ^2 - 2i\lambda \eta - \eta^2}{2i\lambda \eta}
+\] 
+da cui
+\begin{equation}
+	e^{2i \eta a} \frac{(\lambda +i\eta)^2}{(\lambda -i\\eta)^2} = 1 \implies \frac{\lambda - i\eta}{\lambda  + i\eta} = \pm e^{i \eta a} 
+\end{equation}
+Si distinguono i casi negativo (caso a) e positivo (caso b).
+\begin{itemize}
+	\item Caso a.
+
+	La condizione si riscrive come:
+	\[
+	\begin{split}
+		&\frac{\lambda  / \eta - i}{\lambda  / \eta + i} = - e^{i\eta a}  \implies \frac{\lambda}{\eta} (1+e^{i\eta} ) = i (1- e^{i\eta a} ) \\
+		& \Rightarrow \frac{\lambda}{\eta} = \tan \left(\frac{\eta a}{2}\right) 
+	\end{split}
+	\] 
+	In questo caso, i coefficienti verificano
+	\[
+		\frac{A_1}{B_3}= -e^{i\eta a} \frac{\lambda  + i \eta}{\lambda  - i \eta} = 1 \hspace{.1cm} ; \hspace{.2cm} \frac{A_2}{B_2}= e^{i\eta a} \frac{\lambda +i\eta }{2i\eta }= 1
+	\] 
+cio\`e le autofunzioni sono simmetriche rispetto allo zero, quindi sono pari: $\psi_a (x) = \psi_a (-x)$. In definitiva:
+\begin{equation}
+	\psi _a(x) = \begin{cases}
+		A_1 e^{\lambda x} &,\  x < - a/2\\
+		B_2 (e^{i\eta x} + e^{-i\eta x} ) = 2B_2 \cos(\eta x) & ,\ \lvert x \rvert < a / 2\\
+		A_1 e^{-\lambda x} &,\ x > a / 2
+	\end{cases}
+\end{equation}
+\item Caso b.
+
+	Analogamente, al caso precedente, si ottiene:
+	\[
+	\frac{\lambda }{\eta} = -\frac{1}{\tan\left(\frac{\eta a}{2}\right) }
+	\] 
+	Questa volta si ha $\frac{A_1}{B_3} = - 1$ e $\frac{A_2}{B_2} = -1$, quindi $\psi _b(x) = - \psi _b(-x)$. In definitiva:
+\begin{equation}
+	\psi _b(x) = \begin{cases}
+		A_1 e^{\lambda x} &,\  x < - a/2\\
+		B_2 (e^{i\eta x} - e^{-i\eta x} ) = 2iB_2 \sin(\eta x) & ,\ \lvert x \rvert < a / 2\\
+		-A_1 e^{-\lambda x} &,\ x > a / 2
+	\end{cases}
+\end{equation}
+\end{itemize}
 \end{svolgimento}
 
 
