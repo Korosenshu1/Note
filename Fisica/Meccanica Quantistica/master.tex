@@ -1485,7 +1485,39 @@ D'altra parte $\braket{0|\hat{X}_a^2|0} = \frac{1}{3} \braket{0|\hat{\mathbf{X} 
 \end{equation}
 per cui si ottiene un limite inferiore pi\`u preciso. Tuttavia si possono usare i risultati in eq. \ref{hvar}, per concludere che $\langle \hat{\mathbf{X} }^2 \rangle\langle \hat{\mathbf{p} }^2 \rangle = 3\hbar ^2$, conforme con le stime di sopra.
 
+\subsubsection{Oscillatore armonico 3D}
+
+Si studia sistema con Hamiltoniano $\hat{H}= \sum_{i=1}^{3} \frac{\hat{p}_i^2}{2m} + \frac{1}{2} m\omega^2 \hat{x}_i^2$. Questo si pu\`o scomporre come $\hat{H} = \hat{H}_1 + \hat{H}_2 + \hat{H}_3$, ciascuno relativo a una coordinata spaziale.
+
+Gli Hamiltoniani si diagonalizzano separatamente, con $\hat{H}_1 \ket{n_1}  = E_{n_1}  \ket{n_1} $, con $E_{n_1} = \hbar  \omega (n_1 + 1 / 2)$. Per operatore di creazione: $\ket{n_1} = \frac{1}{\sqrt{n_1} !} (\hat{a}_1^{+})^n  \ket{0} $, con $\ket{0}  = \frac{1}{\pi^{ 1/4} \ell _\omega ^{1 / 2}}   e^{ - x^2 / (2 \ell _\omega^{2})} $.
+
+Chiaramente $[\hat{H}_i, \hat{H}_j] = 0$, quindi uno stato di $\hat{H}$, individuabile tramite $\ket{ n_1 n_2n_3} $, si pu\`o rappresentare con $\ket{n_1} \ket{n_2} \ket{n_3} $; ne segue che $E_{n_1n_2n_3} = \hbar \omega(n_1+n_2+n_3 + 3 / 2) \equiv \hbar \omega (n+ 3 / 2)$, visto che $\hat{H}= \hat{H}_1 + \hat{H}_2 +\hat{H}_3$.
+
+Potendo scomporre $\ket{n_1n_2n_3} $, questo si scrive come:
+\[
+\ket{n_1n_2n_3} = C (\hat{a}_1^+)^n(\hat{a}_2^+)^n(\hat{a}_3^+)^n \ket{0 0 0} 
+\] 
+dove $C $ \`e un fattore di normalizzazione e gli $\hat{a}_i^+$ sono operatori di creazione relativi alla variabile $i$-esima.
+
+In 3D, la funzione d'onda \`e:
+\begin{equation}
+	\varphi _0 = \left(\frac{1}{\pi^{1 / 4} \ell _\omega^{1 / 2} }\right) ^3 e^{- r^2 / (2\ell _\omega^2)} 
+\end{equation}
+Il valore medio della distanza \`e dato, usando $\hat{r}^2 = \hat{x}^2_1 + \hat{x}_2^2 + \hat{x}^2_3$, da:
+\[
+	\bra{0} ^{(1)} \bra{0} ^{(2)} \bra{0}^{(3)} ( \hat{x}_1^2 + \hat{x}_2^2 + \hat{x}_3^2 )\ket{0} ^{(1)}  \ket{0} ^{(2)} \ket{0} ^{(3)} = \braket{0|\hat{x}_1^2|0} \braket{0|\hat{x}_2^2|0} \braket{0|\hat{x}_3^2|0} =\frac{3}{2}\ell _\omega^2
+\] 
+
+
+
+
+
+
+
+
 \newpage
+
+
 \section{Esercitazioni}
 \subsection{Sistemi a due livelli}
 \subsubsection{Descrizione generale}
