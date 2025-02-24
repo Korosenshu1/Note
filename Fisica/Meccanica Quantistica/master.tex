@@ -1508,11 +1508,53 @@ Il valore medio della distanza \`e dato, usando $\hat{r}^2 = \hat{x}^2_1 + \hat{
 	\bra{0} ^{(1)} \bra{0} ^{(2)} \bra{0}^{(3)} ( \hat{x}_1^2 + \hat{x}_2^2 + \hat{x}_3^2 )\ket{0} ^{(1)}  \ket{0} ^{(2)} \ket{0} ^{(3)} = \braket{0|\hat{x}_1^2|0} \braket{0|\hat{x}_2^2|0} \braket{0|\hat{x}_3^2|0} =\frac{3}{2}\ell _\omega^2
 \] 
 
+\subsection{Lo spin}
+Si ricorda che per sistemi descritti da pi\`u funzioni d'onda, una rotazione $\hat{R}$ agisce come:
+\[
+\hat{R} \begin{pmatrix} \psi_1 \\ \vdots\\ \psi _n \end{pmatrix} = \hat{M} \begin{pmatrix} \psi _1(R^{-1} \mathbf{x} ) \\ \vdots \\ \psi _n(R^{-1} \mathbf{x} )\end{pmatrix} 
+\] 
+con $\hat{R}(\hat{n},\theta ) = e^{- \frac{i}{\hbar } \theta  \hat{n}\cdot \hat{\mathbf{L}} } \hat{M}(\hat{n},\theta ) $, dove $\hat{M}$ agisce sulle componenti (rotazione passiva), mentre l'esponenziale agisce sulle coordinate (rotazione attiva).
 
+Visto che $\hat{R}$ deve essere unitario e che l'esponenziale gi\`a lo \`e, anche $\hat{M}$ deve esserlo; allora $\hat{M}(\hat{n},\theta ) = e^{- \frac{i}{\hbar } \theta  \hat{n} \cdot \hat{\mathbf{S} } } $, con $\hat{\mathbf{S} }$ Hermitiano.
 
+$[\hat{\mathbf{L} }, \hat{\mathbf{S} }]= 0$ visto che agiscono indipendentemente, quindi $\hat{R}(\hat{n},\theta ) = e^{ - \frac{i}{\hbar } \theta  \hat{n}\cdot (\hat{\mathbf{L} }+ \hat{\mathbf{S} })}\equiv e^{ - \frac{i}{\hbar } \theta  \hat{n}\cdot \hat{\mathbf{J} }}$.
 
-
-
+Valendo $[\hat{J}_i, \hat{J}_j] = i\hbar \varepsilon _{ijk} \hat{J}_k$ e $[\hat{L}_i, \hat{L}_j] = i \hbar \varepsilon _{ijk} \hat{L}_k$, deve risultare $[\hat{S}_i , \hat{S}_j ] = i\hbar \varepsilon _{ijk} \hat{S}_k$. Si ha anche:
+\begin{boxenv}[]
+\begin{equation}
+\begin{split}
+	&[\hat{S}^2 , \hat{S}_a] = 0\\
+	&\begin{cases}
+		\hat{S}^2 \ket{s ,s_z} = \hbar ^2 s(s+1) \ket{s, s_z}\hspace{.1cm} , \hspace{.2cm} s = \frac{n}{2} \text{ e } n = 0,1,2,\ldots\\
+		\hat{S}_z \ket{s,s_z} = \hbar s_z \ket{s,s_z} \hspace{.1cm} , \hspace{.2cm} -s\le s_z \le s
+	\end{cases}
+\end{split}
+\end{equation}
+\end{boxenv}
+\subsubsection{Gli angoli di Eulero e le matrici di Wigner}
+Permettono di esprimere la rotazione pi\`u generica. Si indicher\`a rotazione con $\hat{R}(\alpha ,\beta ,\gamma)$. Usando base completa $\ket{jm} $, si verifica che $\braket{j'm'|\hat{R}|jm} \equiv \langle \hat{R} \rangle= M\delta _{j'j} $, con $M$ matrice generica; per farlo, si usa $[\hat{J}^2 , \hat{R}] = 0$:
+\[
+\begin{cases}
+	\braket{j'm'|\hat{J}^2 \hat{R}|jm}  = j' (j'+1) \langle \hat{R} \rangle\\
+	\braket{j'm'|\hat{J}^2 \hat{R}|jm} = j(j+1) \langle \hat{R} \rangle
+\end{cases} \iff j = j'
+\] 
+Si indica $\langle \hat{R} \rangle\equiv D^j _{m , m'} (\alpha ,\beta ,\gamma)$, con $\alpha ,\beta ,\gamma$ una delle possibili parametrizzazioni. Usando base $\ket{jm} $:
+\[
+\hat{R} \ket{jm}  = \sum_{j'm'}^{} \ket{j'm'} \braket{j'm'|\hat{R}|jm} = \sum_{m'}^{} \ket{jm'} D_{m,m'} ^j (\alpha ,\beta ,\gamma)
+\] 
+Significa che per ogni rotazione, $j$ \`e fissato. Si calcolano elementi di $D^j_{m,m'} $; si pu\`o dimostrare che\footnote{La seconda disuguaglianza non \`e dimostrata, \`e da prendere per buona.}:
+\[
+\hat{R}(\alpha ,\beta ,\gamma) = e^{-\frac{i}{\hbar }  \gamma \hat{z}' \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \beta  \hat{u} \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \alpha \hat{z} \cdot \mathbf{J} }= e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  
+\] 
+Ne segue che:
+\[
+	\begin{split}
+		D^j_{m,m'} (\alpha ,\beta ,\gamma) &= \braket{jm'|e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  | jm} = e^{i(\alpha m' - \gamma m)}  \braket{jm'|e^{-\frac{i}{\hbar } \beta J_y} | jm} \\
+						   &\equiv  e^{i (\alpha m' - \gamma m)} d^j_{m,m'} (\beta )
+	\end{split}
+\] 
+Le matrici $D,d$ sono note come \textbf{matrici di Winger}.
 
 
 \newpage
