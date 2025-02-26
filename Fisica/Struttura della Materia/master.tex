@@ -72,7 +72,7 @@
 }
 
 % Titles 
-\title{Note di\\\vspace{.1cm} Struttura della Materia}
+\title{Note di\\\vspace{.2cm} Struttura della Materia}
 \author{Manuel Deodato}
 \date{}
 
@@ -191,21 +191,80 @@ title=#1
 \newpage
 \tableofcontents 
 \newpage
-\section{Lezione 1}
+\section{Nozioni di meccanica statistica e termodinamica}
 
-\subsection{Descrizione microscopica}
+\subsection{Gas di particelle}
 
-\subsubsection{Gas di particelle in volume}
 
 Si considera gas di particelle non interagenti e puntiformi. Ciascuna particella soddisfa $\hat{H}\psi (\mathbf{r} ) = E  \psi (\mathbf{r} )$ con $\hat{H} = \frac{\hat{\mathbf{p} }}{2m}$ e $E = \frac{\hbar ^2}{2m} q ^2 $, quindi la soluzione generale \`e:
 \begin{equation}
 	\psi (\mathbf{r} ) = e^{ i \mathbf{q} \cdot \mathbf{r} } 
 \end{equation}
+Imponendo condizione di periodicit\`a al bordo della scatola $\Rightarrow q_i = \frac{2\pi}{L}l_i, \ l_i = 0, \pm 1,\pm 2,\ldots$. 
 
+Si assumer\`a che particelle interagiscano abbastanza poco da rendere valida questa trattazione, e abbastanza tanto da permettere transizioni di fase.
+\subsection{Principi della termodinamica}
+\begin{enumerate}[(a).]
+	\item \textbf{Primo principio}: per un sistema chiuso (niente scambio di particelle) e isolato, vi \`e conservazione dell'energia interna:
+		\begin{equation}
+			dE = \delta  Q + \delta L
+		\end{equation}
+	\item \textbf{Secondo principio}: l'entropia, data da $S = \kappa _B \log \Gamma$\footnote{Questa espressione \`e il caso limite della pi\`u generale $S = \kappa _B \sum_{i}^{} p_i \log p_i$ che si ha quando il sistema non \`e all'equilibrio, cio\`e quando i microstati non sono popolati uniformemente.} (con $\Gamma$ numero di microstati del sistema all'equilibrio), per un sistema isolato, soddisfa $\frac{d S}{d t} \ge 0$. L'uguaglianza vale quando \`e raggiunto l'equilibrio.
+	\item \textbf{Terzo principio}: l'entropia tende a $0$ per sistemi perfettamente ordinati, cio\`e sistemi in cui tutte le particelle popolano un solo microstato $\Rightarrow S = \kappa _B \log 1 = 0$. Sistemi perfettamente ordinati sono cristalli perfetti a temperatura nulla; non tutti i materiali a $T=0$ risultano perfettamente ordinati e alcuni presentano entropia residua.
+\end{enumerate}
+\subsection{Potenziali termodinamici}
+A seconda del caso, si usano diverse riscritture dell'energia.
+\begin{itemize}
+	\item \textbf{Energia libera di Helmholtz}: $F = E - TS \Rightarrow dF = -SdT - PdV$. La sua variazione a temperatura costante restituisce lavoro compiuto sul sistema: $\delta F |_T = - P \delta V |_T = \delta L$.
+	\item \textbf{Energia libera di Gibbs}: $\Phi = E - TS + PV = F + PV \Rightarrow d\Phi=  VdP - SdT$. \`E adatta a descrivere transizioni di fase.
+	\item \textbf{Entalpia}: $W = E + PV \Rightarrow dW=  TdS + VdP$. La sua variazione a pressione costante \`e il calore scambiato dal sistema: $\delta W|_P = T \delta S|_P = \delta Q$.
+\end{itemize}
+Se \`e possibile scambio di particelle, la dipendenza da $N$ nei potenziali si aggiunge con:
+\begin{equation}
+	\mu = \left(\frac{\partial E}{\partial N} \right) _{SV} = \left(\frac{\partial F}{\partial N} \right) _{TV} = \left(\frac{\partial \Phi}{\partial N} \right) _{SP} 
+\end{equation}
+$\mu $ \`e esso stesso un potenziale: $d\mu = - S / N dT + V / N dP = - s dT + vdP$\footnote{Aggiungendo particelle ferme ad un sistema, \`e ragionevole avere $\mu < 0$, visto che l'energia media diminuirebbe con l'aumentare di $N$.}. Un altro potenziale utile \`e il \textbf{potenziale di Landau}: $\Omega = F - \mu N\Rightarrow d\Omega = -SdT - PdV - N d\mu $.
 
+\subsection{Modello per sistemi statistici}
 
+Si tratteranno i sistemi dividendo l'Universo in sistema in esame ($E,S,T$) $+$ parte complementare, chiamata \textbf{bagno termico} ($E',S',T$). Quest'ultimo sar\`a assunto essere \textit{sempre all'equilibrio e alla stessa temperatura del sistema}. 
 
+La variazione di energia del bagno termico dipende solo da variazione dell'entropia $\Rightarrow \delta E' = T \delta S'$; inoltre essendo l'Universo sempre isolato, la sua variazione di energia \`e nulla $\Rightarrow \delta E + \delta E' =0$. 
 
+Unendo le due, si ha $\delta S' = -\delta E / T$; per il secondo principio, $\delta S + \delta S' \ge 0 \Rightarrow T\delta S - \delta E \ge 0 \Rightarrow \delta (E-TS) \le 0$, da cui si deduce che un sistema \textit{a temperatura fissata} \`e all'equilibrio quando $F = E- TS $ \`e al minimo.
+
+Consentendo scambio di particelle, vale lo stesso principio con $\delta \Omega \le 0$, quindi $\Omega = F - \mu N $ minimo.
+
+\subsection{Calori specifici e compressibilit\`a}
+
+Calori specifici a volume e pressione costante:
+\begin{equation}
+	\begin{split}
+		&c_V = \left(\frac{\partial E}{\partial T} \right) _V = \frac{1}{T} \left(\frac{\partial S}{\partial T} \right) _V = -T \left(\frac{\partial ^2 F}{\partial T^2} \right) _V \\
+		&c_P = \left(\frac{\partial E}{\partial T} \right) _P = T \left(\frac{\partial S}{\partial T} \right) _P = -T \left(\frac{\partial ^2 \Phi}{\partial T^2} \right) _P
+	\end{split}
+\end{equation}
+Vale
+\begin{equation}
+	c_P \ge  c_V
+\end{equation}
+Compressibilit\`a per trasformazioni isoterma e adiabatica:
+\begin{equation}
+	k_T = -\frac{1}{V} \left(\frac{\partial V}{\partial P} \right) _T=-\frac{1}{V}\left(\frac{\partial ^2\Phi}{\partial P^2} \right) _T \hspace{.1cm} ; \hspace{.2cm} k_S = -\frac{1}{V } \left(\frac{\partial V}{\partial P} \right) _S = \left[ V \left(\frac{\partial ^2E}{\partial V^2} \right) _S \right] ^{-1} 
+\end{equation}
+\subsection{Diagrammi di fase}
+Grafico che mostra stato fisico di una sostanza in funzione, solitamente, di temperatura e pressione. Assumendo di avere un sistema con due stati coesistenti $\Rightarrow N_1+N_2 = \text{cost.}\Rightarrow \delta N_1 = - \delta N_2$, all'equilibrio:
+\[
+\frac{\partial F}{\partial N_1} = \frac{\partial }{\partial N_1} (F_1+F_2) = \frac{\partial F_1}{\partial N_1} -\frac{\partial F_2}{\partial N_2} = \mu_1-\mu_2 = 0
+\] 
+da cui si ottiene relazione $\mu _1 (P,T) = \mu _2(P,T)$ che permette di tracciare grafico $P=f(T)$. Lo stesso si pu\`o fare per tre stati coesistenti, individuando \textit{punto triplo}. 
+
+Da $d\mu_1 = d \mu _2$, si ha $-s_1 dT + v_1 dP = -s_2 dT - v_2dP$, quindi:
+\begin{equation}
+	\frac{d P}{d T} = \frac{s_2-s_1}{v_2-v_1}
+\end{equation}
+
+\subsection{Sistema in bagno termico}
 
 
 
