@@ -225,15 +225,7 @@ Se \`e possibile scambio di particelle, la dipendenza da $N$ nei potenziali si a
 \end{equation}
 $\mu $ \`e esso stesso un potenziale: $d\mu = - S / N dT + V / N dP = - s dT + vdP$\footnote{Aggiungendo particelle ferme ad un sistema, \`e ragionevole avere $\mu < 0$, visto che l'energia media diminuirebbe con l'aumentare di $N$.}. Un altro potenziale utile \`e il \textbf{potenziale di Landau}: $\Omega = F - \mu N\Rightarrow d\Omega = -SdT - PdV - N d\mu $.
 
-\subsection{Modello per sistemi statistici}
 
-Si tratteranno i sistemi dividendo l'Universo in sistema in esame ($E,S,T$) $+$ parte complementare, chiamata \textbf{bagno termico} ($E',S',T$). Quest'ultimo sar\`a assunto essere \textit{sempre all'equilibrio e alla stessa temperatura del sistema}. 
-
-La variazione di energia del bagno termico dipende solo da variazione dell'entropia $\Rightarrow \delta E' = T \delta S'$; inoltre essendo l'Universo sempre isolato, la sua variazione di energia \`e nulla $\Rightarrow \delta E + \delta E' =0$. 
-
-Unendo le due, si ha $\delta S' = -\delta E / T$; per il secondo principio, $\delta S + \delta S' \ge 0 \Rightarrow T\delta S - \delta E \ge 0 \Rightarrow \delta (E-TS) \le 0$, da cui si deduce che un sistema \textit{a temperatura fissata} \`e all'equilibrio quando $F = E- TS $ \`e al minimo.
-
-Consentendo scambio di particelle, vale lo stesso principio con $\delta \Omega \le 0$, quindi $\Omega = F - \mu N $ minimo.
 
 \subsection{Calori specifici e compressibilit\`a}
 
@@ -263,8 +255,211 @@ Da $d\mu_1 = d \mu _2$, si ha $-s_1 dT + v_1 dP = -s_2 dT - v_2dP$, quindi:
 \begin{equation}
 	\frac{d P}{d T} = \frac{s_2-s_1}{v_2-v_1}
 \end{equation}
+\subsection{Modello per sistemi statistici}
 
-\subsection{Sistema in bagno termico}
+Si tratteranno i sistemi dividendo l'Universo in sistema in esame ($E,S,T$) $+$ parte complementare, chiamata \textbf{bagno termico} ($E',S',T$). Quest'ultimo sar\`a assunto essere \textit{sempre all'equilibrio e alla stessa temperatura del sistema}. 
+
+La variazione di energia del bagno termico dipende solo da variazione dell'entropia $\Rightarrow \delta E' = T \delta S'$; inoltre essendo l'Universo sempre isolato, la sua variazione di energia \`e nulla $\Rightarrow \delta E + \delta E' =0$. 
+
+Unendo le due, si ha $\delta S' = -\delta E / T$; per il secondo principio, $\delta S + \delta S' \ge 0 \Rightarrow T\delta S - \delta E \ge 0 \Rightarrow \delta (E-TS) \le 0$, da cui si deduce che un sistema \textit{a temperatura fissata} \`e all'equilibrio quando $F = E- TS $ \`e al minimo.
+
+Consentendo scambio di particelle, vale lo stesso principio con $\delta \Omega \le 0$, quindi $\Omega = F - \mu N $ minimo.
+\subsubsection{Sistema in bagno termico}
+
+Si indica con $\mathscr{S}$ il sistema immerso in bagno termico $\mathscr{S}'$ e con $\mathscr{S}_0$ l'Universo. Questi hanno rispettivamente dipendenza dalle variabili $(V,N,E,S), \ (V',N',E',S') , \ (V_0,N_0,E_0,S_0)$.
+
+$\mathscr{S}$ si trova in stato quantistico generico indicato tramite serie di numeri quantici $\alpha $; si assume che \textit{il volume sia fissato} e si richiede che: $E_\alpha \ll E_0$ e $N_\alpha  \ll N_0$; in questo modo \textit{temperatura e potenziale chimico del bagno termico sono costanti}.
+
+I microstati dell'Universo sempre equiprobabili perch\'e \`e sempre all'equilibrio $\Rightarrow w_\text{eq} = 1 / \Gamma_0$, con $\Gamma_0$ numero di microstati. La probabilit\`a di avere uno stato $\alpha $ per il sistema, allora \`e $w_\alpha  = \Gamma'_\alpha  / \Gamma_0$, dove $\Gamma'_\alpha $ \`e il numero di microstati in cui $\mathscr{S}$ \`e in $\alpha $ e $\mathscr{S}' $ \`e in uno stato generico.
+
+L'entropia di $\mathscr{S}'$ \`e:
+\begin{equation}\label{spa}
+	S'_\alpha = \kappa _B \log \Gamma'_\alpha  = S'(E_0 - E_\alpha , N_0 - N_\alpha )
+\end{equation}
+Inoltre:
+\begin{equation}
+	S_0 - S'_\alpha  = \kappa _B \log \Gamma_0 - \kappa _B \log \Gamma'_\alpha = - \kappa _B \log \frac{\Gamma'_\alpha }{\Gamma_0} = -\kappa _B \log w_\alpha 
+\end{equation}
+quindi
+\begin{boxenv}[]
+\begin{equation}
+	w_\alpha  = \exp \left(-\frac{S_0-S'_\alpha }{\kappa _B}\right) \equiv A e^{S'_\alpha  / \kappa _B} 
+\end{equation}
+\end{boxenv}
+\noindent In questo modo, si pu\`o calcolare valore medio dell'entropia per $\mathscr{S}$ (in genere $\alpha $ non \`e uno stato di equilibrio per $\mathscr{S}$):
+\begin{equation}
+	\langle S  \rangle \equiv \langle S_0 - S'_\alpha  \rangle = - \kappa _B \sum_{\alpha }^{} w_\alpha  \log w_\alpha 
+\end{equation}
+\subsubsection{Funzione di granpartizione}
+Sviluppando in serie eq. \ref{spa}, si ha:
+\begin{equation}
+	S'_\alpha  \simeq S'(E_0,N_0) - \left(\frac{\partial S'}{\partial E'} \right) _{N'} E_\alpha - \left(\frac{\partial S'}{\partial N'} \right) _{E'} N_\alpha \Rightarrow S'_\alpha  = \text{cost.} - \frac{E_\alpha - \mu  N_\alpha }{T }
+\end{equation}
+perci\`o la probabilit\`a, comprensiva di normalizzazione, \`e:
+\begin{boxenv}[]
+\begin{equation}
+	w_\alpha = \frac{\exp \left[ -(E_\alpha  - \mu  N_\alpha ) / \kappa _B T \right] }{\sum_{\alpha }^{} \exp \left[ - (E_\alpha  - \mu  N_\alpha ) / \kappa _B T \right] } \equiv \frac{1}{\mathscr{L}} \exp \left(- \frac{E_\alpha - \mu  N_\alpha }{\kappa _B T}\right) 
+\end{equation}
+\end{boxenv}
+\noindent con $\mathscr{L}$ \textbf{funzione di granpartizione}. Nel limite di $N_\alpha  = N, \ \forall \alpha $, $w_\alpha $ tende al caso canonico con normalizzazione data dalla funzione di partizione $\mathscr{Z}$.
+
+\subsubsection{Entropia e potenziali}
+Ora si pu\`o calcolare $\langle S_\alpha  \rangle$:
+\begin{equation}
+	\langle S  \rangle = \kappa \log \mathscr{L} + \frac{1}{T} \sum_{\alpha }^{} w_\alpha  E_\alpha - \frac{\mu }{T} \sum_{\alpha }^{} w_\alpha  N_\alpha = \kappa _B \log\mathscr{L} + \frac{\langle E \rangle - \mu  \langle N \rangle}{T}
+\end{equation}
+Da questa si ottiene il potenziale di Landau:
+\begin{equation}
+	\begin{split}
+		\Omega &= -\kappa _B T \log \mathscr{L}  = -\kappa _B T \log \sum_{\alpha }^{} \exp \left(- \frac{E_\alpha -\mu N_\alpha }{\kappa _B T}\right)  \\
+		       &= -\mu  N - \kappa _B T \log \sum_{\alpha }^{} \exp \left( -\frac{E_\alpha }{\kappa _B T}\right) = -\mu  N- \kappa _B T \log\mathscr{Z}
+	\end{split}
+\end{equation}
+dove si \`e imposto $N_\alpha  = N , \ \forall \alpha $. Conseguentemente $F = \Omega +\mu N = - \kappa _B T \log\mathscr{Z}$. 
+
+\subsubsection{Degenerazione dei livelli energetici}
+
+Ammettendo che \textit{diversi stati occupano stesso livello energetico}, continuando ad assumere $N_\alpha  = N , \ \forall \alpha $:
+\begin{equation}
+	w(E_\alpha )= \frac{1}{\mathscr{Z}} \rho (E_\alpha ) \exp \left( - \frac{E_\alpha }{\kappa _B T}\right) 
+\end{equation}
+con $\rho $ degenerazione relativa a energia $E_\alpha $. Passando al continuo:
+\begin{equation}
+	w(E_\alpha ) \to w (\mathscr{E}) = \frac{1}{\mathscr{Z}} \rho (\mathscr{E}) \exp \left(- \frac{\mathscr{E}}{\kappa _BT}\right) , \ \mathscr{Z}\to \int_{0} ^{+\infty} d \mathscr{E}\ \rho (\mathscr{E}) \exp\left(- \frac{\mathscr{E}}{\kappa _BT}\right) 
+\end{equation}
+Il numero di microstati si pu\`o riscrivere come:
+\begin{equation}
+	d\Gamma = \frac{d\Gamma}{d \mathscr{E}}d\mathscr{E} = \rho (\mathscr{E}) d \mathscr{E}
+\end{equation}
+
+\subsubsection{Applicazione -- Particelle non-interagenti}
+
+Per $N$ particelle non-interagenti, ciascun grado di libert\`a fattorizza in $\mathscr{Z}$; per particelle \textbf{distinguibili} (distribuzioni diverse delle particelle in microstati individuano stati diversi), si ha $\mathscr{Z}_\text{tot} = \mathscr{Z}_{1p} ^N$; per particelle \textbf{indistinguibili}, una buona stima \`e: $\mathscr{Z}_\text{tot} = \frac{1}{N!}\mathscr{Z}_{1p} ^N$. Si considera il secondo caso.
+
+Si ha $F = - \kappa _B T \log \mathscr{Z}= \kappa _B T \log N! - \kappa _B N T \log \mathscr{Z}_{1p} $. Ricordando che $E_{q_i}  = \frac{\hbar ^2 q_{i} ^2}{2m} $, con $q _ i= \frac{2\pi l_i}{L}$, quindi $E_q \propto L^{-2} = V^{-2 / 3} $, pertanto:
+\[
+\begin{split}
+	P &= - \left(\frac{\partial F}{\partial V} \right) _T = \frac{N\kappa _B T}{\mathscr{Z}_{1p} }\frac{\partial \mathscr{Z}_{1p} }{\partial V} = - \frac{N\kappa _B T}{\mathscr{Z}_{1p} }\frac{1}{\kappa _BT} \sum_{i}^{} \frac{\partial E_{q_i} }{\partial V} \exp \left(- \frac{E_{q_i} }{\kappa _B T}\right) \\
+	  &= \frac{2N}{3V}\frac{1}{\mathscr{Z}_{1p} } \sum_{i}^{} E_{q_i} \exp \left( - \frac{E_{q_i} }{\kappa _BT}\right) \equiv \frac{2N}{3V} \langle E \rangle
+\end{split}
+\] 
+
+
+\subsubsection{Applicazione -- Gas perfetto}
+Particelle confinate in scatola con autostati dell'energia individuati dagli impulsi $q$. Numero di particelle in uno stato \`e $n_q$. 
+
+Per gas ideale, la maggior parte dei microstati sar\`a vuota, cio\`e $w(0) \approx 1$, e la probabilit\`a di avere pi\`u di una particella in un microstato \`e praticamente nulla, quindi $w(1) \ll 1$ e $w(n\ge 2) \approx 0$. Usando $\mathscr{L} = \exp \left[ - \Omega / \kappa _B T \right] $:
+\begin{equation}
+	w(n_q) = \exp \left[ \frac{\Omega _q - n_q (E_q - \mu )}{\kappa _B T} \right] 
+\end{equation}
+Allora le condizioni di popolazione dei microstati si traducono in:
+\begin{equation}
+	\begin{split}
+		&w(0) \approx 1 \Rightarrow \exp \left(\frac{\Omega _q}{\kappa _B T}\right) \approx 1\\
+		&w(n) = e^{\Omega _q / \kappa _B T} \left[\exp \left(- \frac{E_q - \mu }{\kappa _BT} \right)\right]  ^n\equiv w^n(1)  \ll 1, \forall q \iff \exp \left(\frac{\mu}{\kappa _BT }\right) \ll 1
+	\end{split}
+\end{equation}
+quindi $\mu \to -\infty$. Da questo, il numero medio di particelle in uno stato $q$ \`e:
+\begin{equation}
+	\langle n_q \rangle = \frac{\sum_{n_q}^{} n_q \exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right] }{\sum_{n_q}^{}\exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right]  } \approx \exp \left(- \frac{E_q - \mu }{\kappa _BT }\right) 
+\end{equation}
+avendo usato $w(1) \ll 1$. Dal potenziale di Landau, si ottiene equazione di stato dei gas perfetti:
+\[
+\Omega _q \approx -\kappa _B T \log \left[ 1 + \exp\left(- \frac{E_q - \mu }{\kappa _B T }\right)  \right] = -\kappa _B T \log \Big(1 + \langle n_q \rangle\Big) \approx -\kappa _B T \langle n_q \rangle
+\] 
+Essendo $\Omega \approx - \kappa _B T \sum_{q}^{}a \langle b_q \rangle  \equiv -\kappa _B T N$ e valendo allo stesso tempo $\Omega = - PV$, si ha $PV = \kappa _B NT$.
+
+\subsubsection{Applicazione -- Sistema a due stati*}
+\begin{boxenv}[]
+\centering \textit{Sistema in cui particelle interagiscono solo tramite spin\\ Valutare se va scritto} 
+\end{boxenv}
+\subsection{Spazio delle fasi}
+
+Per sistema di $N$ particelle, \`e uno spazio $6N$-dimensionale delle coordinate e impulsi. Fissare energia dell'Universo equivale a definire un'ipersuperficie $\Sigma_0$ a $(6N-1)$ dimensioni data da $\mathscr{E}_0\big(\left\{ x_i \right\} , \left\{ p_i \right\} \big) = E_0$.
+
+Si discretizza lo spazio in celle che rispettano $\Delta x_k \Delta p_k = \tau $, con $\tau $ costante generica. Si assume che \textit{le celle siano piccoli a sufficienza da avere un solo stato in ciascuna}; allora numero di stati sar\`a area dell'ipersuperficie normalizzata con elemento di volume:
+\begin{equation}
+	\Gamma_0 = \frac{1}{\tau ^{f_0} } \iint_{\Sigma_0} \prod_{i=1} ^{f_0}  dx_i , dp_i , \ \text{ con } f_0 = 3N
+\end{equation}
+Allora l'entropia dell'Universo \`e:
+\begin{equation}
+	S_0 = \kappa _B \log \iint_{\Sigma_0} \prod_{i=1} ^{f_0} dx_i dp_i - \kappa _B f_0 \log \tau 
+\end{equation}
+Per $\Sigma'$ ipersuperificie data da $E'_\alpha  = E_0 - E_\alpha $, si pu\`o ripetere il discorso per il bagno termico:
+\begin{equation}
+	S'_\alpha  = \kappa _B \log \iint_{\Sigma'} \prod_{i=1} ^{f'} dx_i dp_i - \kappa _B f' \log \tau 
+\end{equation}
+In questo modo, l'entropia media del sistema \`e:
+\begin{equation}
+	\langle S \rangle = \kappa _B \log \iint_{\Sigma_0} \prod_{i=1} ^{f_0} dx_i dp_i - \left\langle \kappa _B \log \iint_{\Sigma'} \prod_{i=1} ^{f'} dx_i dp_i \right\rangle - \kappa _B (f_0-f') \log \tau 
+\end{equation}
+L'entropia \`e singolare per $\tau \to 0$, quindi deve essere un valore finito.
+
+\subsubsection{Costante di Planck}
+Si ricava per particella confinata in segmento $L$. I livelli energetici sono $E_q = \hbar ^2 q^2 / (2m)$ con $q = 2\pi l / L$, e $l \in \mathbb{Z}$. Il conteggio degli stati nella cella $L \Delta p$ \`e $\Delta l = L\Delta q / (2\pi) = L\Delta p /(2\pi\hbar )$; d'altra parte:
+\[
+\frac{1}{\tau }\int_{L} \int_{\Delta p} dxdp = \frac{L}{\tau }\Delta p \Rightarrow \tau  =2\pi \hbar  = h
+\] 
+\subsubsection{Applicazione -- Densit\`a di energia ed energia per singola particella}
+
+Per singola particella libera, usando coordinate cilindriche per gli impulsi:
+\begin{equation}
+	\Gamma = \frac{1}{h^3} \iint d^3 x d^3 p = \frac{V}{h^3} \int 4\pi  p^2 \ dp
+\end{equation}
+Visto che $\mathscr{E} = p^2 / 2m$, tramite confronto:
+\begin{equation}
+	\rho (\mathscr{E})d \mathscr{E} = \frac{4\pi V }{h^3}p^2 \frac{d p}{d \mathscr{E}} d \mathscr{E}= \frac{4\pi V m^{3 / 2} }{h^3}\sqrt{2 \mathscr{E}} d \mathscr{E}
+\end{equation}
+Si pu\`o calcolare l'energia media:
+\begin{equation*}
+		\langle \mathscr{E} \rangle = \frac{\displaystyle \int_{0} ^{+\infty} \mathscr{E} e^{ - \mathscr{E} / \kappa _B T}  \rho (\mathscr{E}) d \mathscr{E}  }{\displaystyle \int_{0} ^{+\infty} e^{ - \mathscr{E} / \kappa _B T}  \rho (\mathscr{E}) d \mathscr{E}  }= \kappa _B T \frac{\displaystyle \int_{0} ^{+\infty} dx \ x^{3 / 2} e^{ - x} }{\displaystyle \int_{0} ^{+\infty}dx \ x^{1 / 2} } e ^{-x} = \kappa_B T \frac{\Gamma(5 / 2)}{\Gamma (3/2)} = \frac{3}{2} \kappa _B T
+\end{equation*}
+\subsubsection{Applicazione -- Gas interagente}
+
+Gas non-relativistico immerso in potenziale generico dipendente solo dalle coordinate. Elemento differenziale dello spazio delle fasi \`e $d\Gamma = \rho (\mathscr{E}) d \mathscr{E} = \frac{1}{N!h^{3N} } \prod_{i=1} ^{3N} dx_i dp_i$, da cui essendo $\mathscr{E} = U\big(\left\{ x_i \right\} \big) + \sum_{i=1}^{3N} p_i^2 / 2m$
+\[
+	\begin{split}
+	\mathscr{Z} &= \int e^{- \mathscr{E} / \kappa _B T}  \rho (\mathscr{E}) d \mathscr{E} = \frac{1}{N! h^{3N} }\iint \prod_{i=1} ^{3N} dx_i dp_i e^{- \mathscr{E} / \kappa _B T} \\
+			    &= \frac{1}{N! h^{3N} } \iint \prod_{i=1} ^{3N} dx_i dp_i \ \exp \left[ - \frac{\sum_{i=1}^{3N} p_i^2}{2m\kappa _B T} - \frac{U \big(\left\{ x_i \right\} \big)}{\kappa _BT} \right] \\
+			    &=\frac{1}{N! h^{3N} } \int \prod _{i=1} ^N d^3 p_i \exp \left[ - \frac{\sum_{i=1}^{N} p_i  ^2}{2m \kappa _B T} \right] \int \prod_{i=1} ^N d^3 x_i \exp\left[ - \frac{U\big(\left\{ x_i \right\} \big)}{\kappa _B T} \right] 
+	\end{split}
+\] 
+Il primo integrale, insieme al prefattore, si pu\`o ricondurre a quello di un gas ideale, a meno di un $V^N$:
+\[
+		\mathscr{Z}_{IG}= \frac{1}{N!} \left[ \frac{1}{h^3} \iint d^3 x d^3 p \ \exp \left( - \frac{p^2}{2m\kappa _B T } \right) \right] ^N= \frac{V^N}{N! h^{3N} } \int \prod_{i=1} ^N d^3 p_i \ \exp \left(-\frac{\sum_{i=1}^{N} p_i^2}{2m\kappa _BT}\right) = \frac{1}{N!} \frac{V^N}{\Lambda ^{3N} }
+\] 
+con $\Lambda = 2\pi \hbar /\sqrt{2\pi m\kappa _B T} $ lunghezza d'onda termica di de Broglie. Il secondo dipende dalla forma del potenziale ed \`e detto \textbf{integrale delle configurazioni}:
+\begin{equation}
+	\mathscr{D} \equiv \int \prod_{i=1} ^N	d^3 x_i \ \exp \left(- \frac{U\big(\left\{ x_i \right\} \big)}{\kappa _BT}\right) 
+\end{equation}
+Quindi:
+\begin{equation}
+\mathscr{Z} = \frac{1}{N!} \frac{\mathscr{D}}{\Lambda ^{3N} }
+\end{equation}
+Per la funzione di granpartizione\footnote{Nella seconda uguagliamza, si spezza la somma, raggruppando i termini della somma stessa in base a $N_\alpha $, per questo $\alpha | N_\alpha $ indica una somma sugli $\alpha $ relativa a ciascun $N_\alpha $.}:
+\begin{equation}
+	\begin{split}
+		\mathscr{L} &= \sum_{\alpha }^{} \exp \left[ - \frac{E_\alpha  - \mu  N_\alpha }{\kappa _B T} \right] = \sum_{N_\alpha }^{} \left[ \exp \left(\frac{\mu N_\alpha }{\kappa _B T}\right) \sum_{\alpha | N_\alpha }^{} \exp \left(- \frac{E_\alpha }{\kappa _B T}\right)  \right] \\
+			    & =\sum_{N_\alpha }^{} \left\{ \left[ \exp \left(\frac{\mu }{\kappa _BT}\right)  \right] ^{N_\alpha } \sum_{\alpha | N_\alpha }^{} \exp \left(-\frac{E_\alpha }{\kappa _BT}\right)  \right\} \equiv \sum_{N_\alpha }^{} \left[ z^{N_\alpha } \sum_{\alpha | N_\alpha }^{} \exp\left(- \frac{E_\alpha }{\kappa _BT}\right)  \right] 
+	\end{split}
+\end{equation}
+dove $z$ \`e detta \textbf{fugacit\`a}. Nel limite al continuo, si trova:
+\begin{equation}
+	\mathscr{L}= \sum_{N}^{} \frac{z^N \mathscr{D}_N}{N! \Lambda ^{3N} }
+\end{equation}
+con $\mathscr{D}_N$ integrale delle configurazioni relativo agli stati $\alpha $ con $N$ particelle.
+
+\subsection{Distribuzione delle variabili termodinamiche*}
+\begin{boxenv}[]
+\centering \textit{Valutare se va aggiunto} 
+\end{boxenv}
+\subsection{Incertezze quantistiche*}
+\begin{boxenv}[]
+\centering \textit{Valutare se va aggiunto} 
+\end{boxenv}
+
+
+
 
 
 
