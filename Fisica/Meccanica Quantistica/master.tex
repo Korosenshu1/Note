@@ -1555,12 +1555,40 @@ Ne segue che:
 	\end{split}
 \] 
 Le matrici $D,d$ sono note come \textbf{matrici di Winger}. 
+\subsubsection{Coefficienti di Clebsch-Gordan}
+Si considerano due sistemi a due livelli, $1$ e $2$, con momenti angolari fissati $J_1,J_2$ rispettivamente. Hanno basi $\ket{j_1m_1} $ e $\ket{j_2m_2} $ singolarmente, mentre la base della compoiszione\footnote{La base della composizione di due sistemi \`e sempre il prodotto tensore delle basi, per\`o quando vi \`e interazione, vi pu\`o essere la formazione di stati entangled che non sono esprimibili tramite stati di $\mathcal{H}$.} si indica con $\ket{j_1j_2m_1m_2} = \ket{j_1m_1} \otimes \ket{j_2m_2} $.
+
+Si cerca un cambio di base da $\ket{j_1,j_2,m_1,m_2} $ a $\ket{j_1,j_2,J,M} $, con $J$ riferito a $\hat{J} = \hat{J}_1 + \hat{J}_2$ e $M$ a $\hat{J}_z$, per sistema complessivo invariante rispetto a rotazioni globali (date da $\hat{J}$).
+
+Si impone $M \stackrel{!}{=} m_1+m_2$ perch\'e $\hat{J}_z \ket{j_1j_2m_1m_2} = M \ket{j_1j_2m_1m_2} $. Definendo $N(J)$ numero di stati associati a $J$ e $n(M)$ numero di stati associati a $M$, si ha:
+\begin{equation}
+	n(M) = \sum_{i\ge |M|}^{} N(i)
+\end{equation}
+Per esempio, se $j_1=j_2=1 / 2$, vale $n(1) = 1, n(0) = 2, n(-1) = 1\Rightarrow N(1) = 1, N(0) =1$; se $j_1=j_2=1$, vale $n(2) = 1, n(1) = 2, n(0) = 3$, quindi $N(2) = 1, N(0) = 1, N(1) = 1$. Vale $N(j) = 1 $ se $\lvert j_1-j_2 \rvert \le j \le j_1+j_2$.
+
+La relazione tra le due basi \`e  data dai \textbf{coefficienti di Clebsch-Gordan}:
+\begin{equation}
+	\begin{split}
+		\ket{j_1 j_2 J M } &= \sum_{m_1,m_2}^{} \ket{j_1j_2m_1m_2} \braket{j_1j_2m_1m_2|j_1j_2JM} \\
+				   &\equiv \sum_{m_1,m_2}^{} C^{JM} _{j_1j_2m_1m_2} \ket{j_1j_2m_1m_2} 
+	\end{split}
+\end{equation}
+Questi coefficienti possono essere scelti reali tramite fasi per gli stati. La relazione si pu\`o invertire per scrivere $\ket{j_1j_2m_1m_2} $ tramite il complesso coniugato di $C^{JM} _{j_1j_2m_1m_2} $. 
+Per il seguito, \textbf{si assumeranno reali}.
+
+Questi soddisfano\footnote{Si ottengono sostituendo i coefficienti di una delle due equazioni (quelle per $\ket{j_1j_2m_1m_2} $ e $\ket{j_1j_2JM} $ per il cambio di base) e imponendo che valga l'uguaglianza.}:
+\begin{equation}
+	\begin{split}
+	&\sum_{m_1,m_2}^{} C^{JM} _{j_1j_2m_1m_2} C^{J'M'} _{j_1j_2m_1m_2} = \delta _{JJ'} \delta _{MM'} \\
+	&\sum_{J,M}^{} C^{JM} _{j_1j_2m_1m_2} C^{JM} _{j_1j_2m_1'm_2'} = \delta _{m_1m_1'} \delta _{m_2m_2'}
+	\end{split}
+\end{equation}
 
 \subsubsection{Composizione di due sistemi a due livelli}
 
 Si considerano due sistemi, $1,2$, a due livelli (quindi entrambi hanno spin $1 / 2$); in questo caso, ciascun operatore di spin sar\`a associato ad una matrice di Puali: $\hat{S}_a = \frac{\hbar}{2} \sigma _a$.
 
-Per i due sistemi, $\hat{S}^2 $ e $\hat{S}_z$ forniscono base completa $\ket{s = 1 / 2, s_z = \pm 1 / 2} $. Per descrivere uno stato di un solo sistema, \`e sufficiente $\ket{s_z} $, infatti si pu\`o scegliere $\ket{s_z = - 1 /2}  = \begin{pmatrix} 0 \\ 1 \end{pmatrix} $ e $\ket{s_z = + 1 / 2}  = \begin{pmatrix} 1 \\ 0 \end{pmatrix} $. Per il sistema composto, la base \`e data dal prodotto tensore:
+Per i due sistemi, $\hat{S}^2 $ e $\hat{S}_z$ forniscono base completa $\ket{S = 1 / 2, S_z = \pm 1 / 2} $. Per descrivere uno stato di un solo sistema, \`e sufficiente $\ket{S_z} $, infatti si pu\`o scegliere $\ket{S_z = - 1 /2}  = \begin{pmatrix} 0 \\ 1 \end{pmatrix} $ e $\ket{S_z = + 1 / 2}  = \begin{pmatrix} 1 \\ 0 \end{pmatrix} $. Per il sistema composto, la base \`e data dal prodotto tensore:
 \begin{equation}
 	\begin{split}
 		\mathcal{B} = \Bigg\{ \ket{1} = \Ket{\frac{1}{2}} ^{(1)} \Ket{\frac{1}{2}}^{(2)}  &, \ \ket{2} = \Ket{\frac{1}{2}} ^{(1)} \Ket{- \frac{1}{2}} ^{(2)} , \ \ket{3}  = \Ket{- \frac{1}{2}}^{(1)} \Ket{\frac{1}{2}}^{(2)}  \\ 
@@ -1569,17 +1597,35 @@ Per i due sistemi, $\hat{S}^2 $ e $\hat{S}_z$ forniscono base completa $\ket{s =
 \end{equation}
 Ora si assume che i due sistemi interagiscono con $\hat{H} = \beta  \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2$; si definisce $\hat{\mathbf{S} }= \hat{\mathbf{S} }_1 + \hat{\mathbf{S} }_2$ e soddisfa $[\hat{H}, \hat{\mathbf{S} }] = 0$ perch\'e $\mathbf{S} _1 \cdot \mathbf{S} _2$ \`e uno scalare, quindi invariante sotto rotazioni.
 
-Inoltre, visto che $\hat{H}$ dipende dall'interazione dei due spin: $[\hat{H}, \hat{S}_j] \neq 0$, mentre $[\hat{H},\hat{P}_j^2] = 0 $. Un possibile autostato di $\hat{H}$ potrebbe essere, allora, $\ket{s_1, s_2,s,s_z} $\footnote{In questa notazione, $s_1,s_2$ sono gli autostati di $\hat{S}_1^2$ e $\hat{S}_2^2$ rispettivamente.} perch\'e $\hat{S}_1^2, \hat{S}_2^2, \hat{S}^2, \hat{S}_z$ commutano con $\hat{H}$.
+Inoltre, visto che $\hat{H}$ dipende dall'interazione dei due spin: $[\hat{H}, \hat{S}_j] \neq 0$, mentre $[\hat{H},\hat{P}_j^2] = 0 $. Un possibile autostato di $\hat{H}$ potrebbe essere, allora, $\ket{S_1, S_2,S,S_z} $\footnote{In questa notazione, $S_1,S_2$ sono gli autostati di $\hat{S}_1^2$ e $\hat{S}_2^2$ rispettivamente.} perch\'e $\hat{S}_1^2, \hat{S}_2^2, \hat{S}^2, \hat{S}_z$ commutano con $\hat{H}$.
 
-Si nota che $\hat{H} = \frac{1}{2} \beta  \left[ (S_1+S_2)^2 - S_1^2 - S_2^2 \right] $, cio\`e dipende solo da $\hat{S}^2, \hat{S}_1 ^2 , \hat{S}_2^2$, quindi i possibili autovalori sono $\frac{\hbar ^2}{2}\beta \big[s(s+1) - s_1(s_1+1) - s_2(s_2+1)\big]$.
+Si nota che $\hat{H} = \frac{1}{2} \beta  \left[ (S_1+S_2)^2 - S_1^2 - S_2^2 \right] $, cio\`e dipende solo da $\hat{S}^2, \hat{S}_1 ^2 , \hat{S}_2^2$, quindi i possibili autovalori sono $\frac{\hbar ^2}{2}\beta \big[S(S+1) - S_1(S_1+1) - S_2(S_2+1)\big]$.
 
-Si cerca un cambio di base da $\ket{j_1, m_1} \otimes \ket{j_2,m_2} = \ket{j_1,j_2,m_1,m_2} $ a $\ket{j_1,j_2,J,M} $, con $J$ riferito a $\hat{J} = \hat{J}_1 + \hat{J}_2$ e $M$ a $\hat{J}_z$, che \`e utile quando il sistema \`e invariante per rotazioni.
-
-Si impone $M \stackrel{!}{=} m_1+m_2$ perch\'e $\hat{J}_z \ket{j_1j_2m_1m_2} = M \ket{j_1j_2m_1m_2} $. Definendo $N(J)$ numero di stati associati a $J$ e $n(M)$ numero di stati associati a $M$, si ha:
+Si cercano i coefficienti di Clebsch-Gordan per 
+\[
+\ket{S_1S_{1,z} S S_Z } = \sum_{S_{1,z} , S_{2,z}}^{} \ket{S_1S_2 S_{1,z} S_{2,z} } C^{SS_z} _{S_1S_2S_{1,z} S_{2,z} } 
+\] 
+Si definisce $\hat{J}_- = \hat{J}_x - i \hat{J}_y$ con $\hat{J}_- \ket{jm} = \hbar [(j-m+1)(j+m)]^{1 / 2}\ket{j (m-1)}  $ e, conseguentemente, si definiscono $\hat{J}_{1-} , \hat{J}_{2-} $ tali che $\hat{J}_- = \hat{J}_{1-} + \hat{J}_{2-} $; si ha:
 \begin{equation}
-	n(M) = \sum_{i\ge |M|}^{} N(i)
+\begin{split}
+	& \ket{S=1 , S_z = 1} = \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} \Rightarrow \hat{J}_- \ket{S=1, S_z = 1} = \hbar  \sqrt{2}  \ket{S=1, S_z = 0} \\
+	& \begin{split}
+		\Rightarrow(\hat{J}_{1-} + \hat{J}_{2-} ) \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} &= \hat{J}_{1-} \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} + \ket{1 / 2} ^{(1)}\hat{J}_{2-}  \ket{1 / 2} ^{(2)}\\
+										     & = \hbar \left(\ket{-1 / 2}^{(1)} \ket{1 / 2} ^{(2)} + \ket{ 1/2}^{(1)} \ket{-1 / 2} ^{(2)}   \right) 
+	\end{split}\\
+	&\Rightarrow \ket{S=1, S_z = 0} = \frac{1}{\sqrt{2} } \left(\ket{-1 / 2}^{(1)} \ket{1 / 2} ^{(2)} + \ket{ 1/2}^{(1)} \ket{-1 / 2} ^{(2)}   \right) \\
+	&\Rightarrow \ket{S=1, S_z = -1} = \ket{- 1/2} ^{(1)} \ket{- 1 / 2} ^{(2)} \\
+	&\ket{S=0, S_z=0} = \frac{1}{\sqrt{2} } \left(\ket{1 / 2} ^{(1)} \ket{- 1 / 2} ^{(2)} - \ket{-1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} \right) 
+\end{split}	
 \end{equation}
-Per esempio, se $j_1=j_2=1 / 2$, vale $n(1) = 1, n(0) = 2, n(-1) = 1\Rightarrow N(1) = 1, N(0) =1$; se $j_1=j_2=1$, vale $n(2) = 1, n(1) = 2, n(0) = 3$, quindi $N(2) = 1, N(0) = 1, N(1) = 1$. Vale $N(j) = 1 $ se $\lvert j_1-j_2 \rvert \le j \le j_1+j_2$.
+L'ultimo stato si ottiene per ortogonalit\`a con gli altri e usando $S_z = 0\Rightarrow $ combinazione di up e down come $\ket{S=1,S_z = 0} $. In questo modo:
+\begin{equation}
+	C^{11} _{1 / 2} = 1 \hspace{.1cm} ; \hspace{.2cm} C^{10} _{\frac{1}{2} \frac{1}{2}\frac{1}{2} \text{-}\frac{1}{2}} = \frac{1}{\sqrt{2} }\hspace{.1cm} ; \hspace{.2cm} C^{00} _{\frac{1}{2} \frac{1}{2}\text{-}\frac{1}{2}\frac{1}{2}} = - \frac{1}{\sqrt{2} }
+\end{equation}
+
+
+
+
 
 
 
