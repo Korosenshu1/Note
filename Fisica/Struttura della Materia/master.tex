@@ -232,7 +232,7 @@ $\mu $ \`e esso stesso un potenziale: $d\mu = - S / N dT + V / N dP = - s dT + v
 Calori specifici a volume e pressione costante:
 \begin{equation}
 	\begin{split}
-		&c_V = \left(\frac{\partial E}{\partial T} \right) _V = \frac{1}{T} \left(\frac{\partial S}{\partial T} \right) _V = -T \left(\frac{\partial ^2 F}{\partial T^2} \right) _V \\
+		&c_V = \left(\frac{\partial E}{\partial T} \right) _V = T \left(\frac{\partial S}{\partial T} \right) _V = -T \left(\frac{\partial ^2 F}{\partial T^2} \right) _V \\
 		&c_P = \left(\frac{\partial E}{\partial T} \right) _P = T \left(\frac{\partial S}{\partial T} \right) _P = -T \left(\frac{\partial ^2 \Phi}{\partial T^2} \right) _P
 	\end{split}
 \end{equation}
@@ -304,7 +304,7 @@ perci\`o la probabilit\`a, comprensiva di normalizzazione, \`e:
 \noindent con $\mathscr{L}$ \textbf{funzione di granpartizione}. Nel limite di $N_\alpha  = N, \ \forall \alpha $, $w_\alpha $ tende al caso canonico con normalizzazione data dalla funzione di partizione $\mathscr{Z}$.
 
 \subsubsection{Entropia e potenziali}
-Ora si pu\`o calcolare $\langle S_\alpha  \rangle$:
+Ora si pu\`o calcolare $\langle S \rangle$:
 \begin{equation}
 	\langle S  \rangle = \kappa \log \mathscr{L} + \frac{1}{T} \sum_{\alpha }^{} w_\alpha  E_\alpha - \frac{\mu }{T} \sum_{\alpha }^{} w_\alpha  N_\alpha = \kappa _B \log\mathscr{L} + \frac{\langle E \rangle - \mu  \langle N \rangle}{T}
 \end{equation}
@@ -345,30 +345,6 @@ Si ha $F = - \kappa _B T \log \mathscr{Z}= \kappa _B T \log N! - \kappa _B N T \
 \] 
 
 
-\subsubsection{Applicazione -- Gas perfetto}
-Particelle confinate in scatola con autostati dell'energia individuati dagli impulsi $q$. Numero di particelle in uno stato \`e $n_q$. 
-
-Per gas ideale, la maggior parte dei microstati sar\`a vuota, cio\`e $w(0) \approx 1$, e la probabilit\`a di avere pi\`u di una particella in un microstato \`e praticamente nulla, quindi $w(1) \ll 1$ e $w(n\ge 2) \approx 0$. Usando $\mathscr{L} = \exp \left[ - \Omega / \kappa _B T \right] $:
-\begin{equation}
-	w(n_q) = \exp \left[ \frac{\Omega _q - n_q (E_q - \mu )}{\kappa _B T} \right] 
-\end{equation}
-Allora le condizioni di popolazione dei microstati si traducono in:
-\begin{equation}
-	\begin{split}
-		&w(0) \approx 1 \Rightarrow \exp \left(\frac{\Omega _q}{\kappa _B T}\right) \approx 1\\
-		&w(n) = e^{\Omega _q / \kappa _B T} \left[\exp \left(- \frac{E_q - \mu }{\kappa _BT} \right)\right]  ^n\equiv w^n(1)  \ll 1, \forall q \iff \exp \left(\frac{\mu}{\kappa _BT }\right) \ll 1
-	\end{split}
-\end{equation}
-quindi $\mu \to -\infty$. Da questo, il numero medio di particelle in uno stato $q$ \`e:
-\begin{equation}
-	\langle n_q \rangle = \frac{\sum_{n_q}^{} n_q \exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right] }{\sum_{n_q}^{}\exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right]  } \approx \exp \left(- \frac{E_q - \mu }{\kappa _BT }\right) 
-\end{equation}
-avendo usato $w(1) \ll 1$. Dal potenziale di Landau, si ottiene equazione di stato dei gas perfetti:
-\[
-\Omega _q \approx -\kappa _B T \log \left[ 1 + \exp\left(- \frac{E_q - \mu }{\kappa _B T }\right)  \right] = -\kappa _B T \log \Big(1 + \langle n_q \rangle\Big) \approx -\kappa _B T \langle n_q \rangle
-\] 
-Essendo $\Omega \approx - \kappa _B T \sum_{q}^{}a \langle b_q \rangle  \equiv -\kappa _B T N$ e valendo allo stesso tempo $\Omega = - PV$, si ha $PV = \kappa _B NT$.
-
 \subsubsection{Applicazione -- Sistema a due stati*}
 \begin{boxenv}[]
 \centering \textit{Sistema in cui particelle interagiscono solo tramite spin\\ Valutare se va scritto} 
@@ -400,7 +376,7 @@ Si ricava per particella confinata in segmento $L$. I livelli energetici sono $E
 \[
 \frac{1}{\tau }\int_{L} \int_{\Delta p} dxdp = \frac{L}{\tau }\Delta p \Rightarrow \tau  =2\pi \hbar  = h
 \] 
-\subsubsection{Applicazione -- Densit\`a di energia ed energia per singola particella}
+\subsubsection{Applicazione -- Densit\`a di energia ed energia per singola particella}\label{1p}
 
 Per singola particella libera, usando coordinate cilindriche per gli impulsi:
 \begin{equation}
@@ -449,14 +425,306 @@ dove $z$ \`e detta \textbf{fugacit\`a}. Nel limite al continuo, si trova:
 \end{equation}
 con $\mathscr{D}_N$ integrale delle configurazioni relativo agli stati $\alpha $ con $N$ particelle.
 
-\subsection{Distribuzione delle variabili termodinamiche*}
+
+\subsection{Gas perfetto}
+Particelle confinate in scatola con autostati dell'energia individuati dagli impulsi $q$. Numero di particelle in uno stato \`e $n_q$. 
+
+Per gas ideale, la maggior parte dei microstati sar\`a vuota, cio\`e $w(0) \approx 1$, e la probabilit\`a di avere pi\`u di una particella in un microstato \`e praticamente nulla, quindi $w(1) \ll 1$ e $w(n\ge 2) \approx 0$. Usando $\mathscr{L} = \exp \left[ - \Omega / \kappa _B T \right] $:
+\begin{equation}
+	w(n_q) = \exp \left[ \frac{\Omega _q - n_q (E_q - \mu )}{\kappa _B T} \right] 
+\end{equation}
+Allora le condizioni di popolazione dei microstati si traducono in:
+\begin{equation}
+	\begin{split}
+		&w(0) \approx 1 \Rightarrow \exp \left(\frac{\Omega _q}{\kappa _B T}\right) \approx 1\\
+		&w(n) = e^{\Omega _q / \kappa _B T} \left[\exp \left(- \frac{E_q - \mu }{\kappa _BT} \right)\right]  ^n\equiv w^n(1)  \ll 1, \forall q \iff \exp \left(\frac{\mu}{\kappa _BT }\right) \ll 1
+	\end{split}
+\end{equation}
+quindi $\mu \to -\infty$. Da questo, il numero medio di particelle in uno stato $q$ \`e:
+\begin{equation}
+	\langle n_q \rangle = \frac{\sum_{n_q}^{} n_q \exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right] }{\sum_{n_q}^{}\exp\left[ -n_q (E_q - \mu ) / \kappa _BT \right]  } \approx \exp \left(- \frac{E_q - \mu }{\kappa _BT }\right) 
+\end{equation}
+avendo usato $w(1) \ll 1$. Dal potenziale di Landau, si ottiene equazione di stato dei gas perfetti:
+\[
+\Omega _q \approx -\kappa _B T \log \left[ 1 + \exp\left(- \frac{E_q - \mu }{\kappa _B T }\right)  \right] = -\kappa _B T \log \Big(1 + \langle n_q \rangle\Big) \approx -\kappa _B T \langle n_q \rangle
+\] 
+Essendo $\Omega \approx - \kappa _B T \sum_{q}^{} \langle n_q \rangle  \equiv -\kappa _B T N$ e valendo allo stesso tempo $\Omega = - PV$, si ha $PV = \kappa _B NT$.
+
+Ora si ricava $N$ in funzione di $T,V,\mu $. Usando la densit\`a di stati $\rho (\mathscr{E})$ trovata per singola particella in \S \ref{1p}, si ha:
+\begin{equation}
+	\begin{split}
+		N &= \int \rho (\mathscr{E}) \exp\left(- \frac{\mathscr{E}-\mu }{\kappa _BT}\right) \ d \mathscr{E}= \frac{4\pi \sqrt{2} V m^{ 3 /2 } }{h^3}e^{ \mu  / \kappa _B T} \int d\mathscr{E} \ e^{ - \mathscr{E} / \kappa _B T}  \mathscr{E}^{1 / 2} \\
+		  &= \frac{V}{\Lambda ^3}e^{\mu  / \kappa _B T} 
+	\end{split}
+\end{equation}
+Usando $PV = N\kappa _B T$, si pu\`o scrivere
+\begin{equation}
+	\begin{split}
+		&\mu = - \kappa _B T \log \frac{\kappa _B T}{P \Lambda ^3}\\
+		&\Phi = N\mu  = - \kappa _B NT \log \frac{\kappa _B T}{P\Lambda ^3}
+	\end{split}
+\end{equation}
+Quindi, espandendo il logaritmo del prodotto nelle somme dei logaritmi e nuovamente la legge $PV = N\kappa _B T$ per sostituire la pressione nel primo logaritmo:
+\begin{equation}
+	\begin{split}
+		S &= - \left(\frac{\partial \Phi}{\partial T} \right) _{PN} = - N\kappa _B \log \frac{V}{N} + \frac{5}{2} N\kappa _B \log\kappa _B T + N\kappa _B \left(\frac{5}{2} + \frac{3}{2} \log \frac{m}{2\pi\hbar ^2}\right) 
+	\end{split}
+\end{equation}
+Da questa trattazione, si ricavano tutti gli altri risultati, come:
+\[
+c_P = T \left(\frac{\partial S}{\partial T} \right) _P =  \frac{5}{2}N\kappa _B \hspace{.1cm} ; \hspace{.2cm} c_V = T \left(\frac{\partial S}{\partial T} \right) _V = \frac{3}{2} N \kappa _B 
+\] 
+Dalla formula per $\mu $, la condizione di gas ideale diventa:
+\begin{equation}
+	\frac{\kappa _B  T}{P\Lambda ^3}  \gg 1 \iff \frac{N\Lambda ^3}{V}\ll 1
+\end{equation}
+Infine, fissando $N$ (ensemble canonico):
+\begin{equation}
+	F = -N\kappa _BT \log \frac{V}{\Lambda ^3}  + \kappa _BT \log N!
+\end{equation}
+mentre fissando $\langle N \rangle$ (ensemble grancanonico):
+\begin{equation}
+	F = \Phi - PV = - N\kappa _B T  \log \frac{V}{\Lambda ^3} + \kappa _B T (N \log N - N)
+\end{equation}
+Per $N$ grandi, queste espressioni coincidono, essendo $\log N! \approx N \log N - N$.
+
+
+\subsection{Distribuzione dell'energia}
+
+In assenza di potenziale, vincolo sull'energia \`e fissato da $\mathscr{E} = \frac{1}{2m} \sum_{i=1}^{3N} p_i^2$; in questo, un elemento dello spazio delle fasi $d\Gamma$ sar\`a proporzionale ad un elemento di volume, a sua volta proporzionale al raggio: $\rho (\mathscr{E}) d \mathscr{E} \propto d V* (\mathscr{E}) \propto (p^*)^{3N } $, con $p^* = \sqrt{2 m \mathscr{E}} = \sqrt{\sum_{i=1}^{3N} p_i^2} $.
+
+Ricordando che $w (\mathscr{E}) = \frac{1}{\mathscr{Z}}\rho (\mathscr{E}) e^{ - \mathscr{E } /\kappa _B T} $ (nel caso di degenerazione di un livello energetico e $N _\alpha  = N ,  \ \forall  \alpha $):
+\[
+\begin{split}
+	&dV^* \propto \frac{\partial V^*}{\partial \mathscr{E}}  d \mathscr{E} \propto (p^*)^{3N -1 } \frac{\partial p^*}{\partial \mathscr{E}} d \mathscr{E}\propto \mathscr{E} ^{3N /2 -1} d \mathscr{E}\\
+	&\Rightarrow  w (\mathscr{E}) \propto \mathscr{E}^{3N /2 -1 } \exp \left(- \frac{\mathscr{E}}{\kappa _B T}\right) \Rightarrow w(\mathscr{E}) = \frac{1}{\Gamma(3N / 2) } \left(\frac{\mathscr{E}}{\kappa _B T}\right) ^{3N / 2 -1} \frac{\exp(- \mathscr{E}/\kappa _B T)}{\kappa _B T}
+\end{split}
+\] 
+L'energia pi\`u probabile si ottiene imponendo $\partial _\mathscr{E} w \stackrel{!}{=} 0$, da cui $\mathscr{E}_\text{max}= (3N / 2 -1) \kappa _B T$. D'altra parte, il valore medio \`e $E = \int d \mathscr{E} \ w(\mathscr{E}) \mathscr{E} = \frac{3}{2}N \kappa _B T $: i due differiscono per fattore additivo indipendnete da $N$, quindi per $N$ molto grandi, la distribuzione \`e piccata attorno al valore medio.
+
+Per la varianza $\sigma _\mathscr{E}^2 = \langle \mathscr{E}^2 \rangle- E^2$, si usa $\partial _T^2 F = (E^2 - \langle \mathscr{E}^2 \rangle) / (\kappa _B T^3)$ e $c_V = \partial_T E = 3N\kappa _B / 2$, quindi:
+\begin{equation}
+	\sigma _\mathscr{E}^2 = - \kappa _B T^3 \frac{\partial ^2F}{\partial T^2} = \kappa _B T^2 c_V = \frac{3}{2} N\kappa _B^ 2 T^2 
+\end{equation}
+ Per la singola particella, allora: $\sigma _\mathscr{E} \sim \kappa _B T$.
+
+
+
+
+\subsection{Incertezze quantistiche}
 \begin{boxenv}[]
-\centering \textit{Valutare se va aggiunto} 
+	\centering \textit{Valutare se aggiungere} 
 \end{boxenv}
-\subsection{Incertezze quantistiche*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Gas quantistici}
+\subsection{Statistiche di Bose-Einstein e Fermi-Dirac}
+Perch\'e valga indistinguibilit\`a delle particelle, a bassa temperatura si devono modificare gli stati occupabili. Per sistema di due particelle, deve risultare $\lvert \psi (1,2) \rvert ^2 = \lvert \psi (2,1) \rvert ^2$, cio\`e la probabilit\`a di trovare le particelle in un punto dello spazio deve essere uguale se si scambiano le due particelle.
+
+Quindi $\psi (1,2) = \pm \psi (2,1)$. Si assume che le due particelle stiano o in $a$, o in $b$, si \textit{suppone che le funzioni d'onda delle singole particelle siano fattorizzate}; le uniche combinazioni che rispettano la condizione $\psi (1,2) = \pm \psi (2,1)$ sono una simmetrica e una antisimmetrica:
+\begin{equation}
+		\psi _S = \psi _a (1) \psi _b (2) + \psi _a(2) \psi _b(1); \ \psi _A = \psi _a(1) \psi _b(2) - \psi _a(2) \psi _b(1)
+\end{equation}
+Quando entrambe sono nello stesso stato ($a=b$), $\psi _A = 0 $; questo \`e il principio di esclusione di Pauli. 
+
+Particelle con funzione d'onda antisimmetrica sono dette \textbf{fermioni}, mentre con funzione d'onda simmetrica sono dette \textbf{bosoni}.
+
+Per principio di esclusione, i fermioni possono soddisfare $n_q = 0,1$ solamente, quindi:
+\begin{equation}\label{ofd}
+	\Omega _q = -\kappa _B T \log \left[ 1+ \exp\left(\frac{\mu  - E_q}{\kappa _B T}\right)  \right] 
+\end{equation}
+da cui si ricava la \textbf{statistica di Fermi-Dirac}:
 \begin{boxenv}[]
-\centering \textit{Valutare se va aggiunto} 
+\begin{equation}
+	\langle n_q \rangle = - \frac{\partial \Omega _q}{\partial \mu } = \frac{1}{\exp \left[ (E_q - \mu ) / \kappa_B T \right]  + 1}
+\end{equation}
 \end{boxenv}
+\noindent Per ottenere potenziale di Landau e numero di particelle totali, bastsa sommare su $q$. Per i bosoni, invece, tutti gli $n$ sono possibili e si deve calcolare la somma di una serie geometrica, \textit{che converge solamente se} $\mu \le  E_0$. In questa trattazione $E_0=0$, quindi $\mu $ deve essere negativo e
+\begin{equation}\label{obe}
+	\Omega _q = - \kappa _B T \log \sum_{n=0}^{+\infty} \exp \left[ \frac{n(\mu  - E_q)}{\kappa _B T} \right] = \kappa _B T \log \left[1 - \exp\left(\frac{\mu  - E_q}{\kappa _B T}\right) \right]
+\end{equation}
+da cui la \textbf{statistica di Bose-Einstein} \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\langle n_q \rangle = \frac{1}{\exp\left[ (E_q - \mu )/\kappa _B T \right] - 1}
+\end{equation}
+\end{boxenv}
+\subsection{Gas perfetto debolmente degenere}
+Si studia comportamento quantistico del gas perfetto. Per passare al continuo, \`e necessario che fluttuazioni statistiche siano maggiori della separazione tra i livelli, quindi
+\begin{equation}
+	\kappa _B T \gg \frac{\hbar ^2}{2m} \left(\frac{2\pi}{L}\right) ^2
+\end{equation}
+Se $L\sim 1 \text{ cm}$ e $m\sim 10^{-24} \text{ g}$ (massa atomo di idrogeno), si ha $T \gg 10^{-13} $ K; per elettroni $T\gg 10^{-10} $ K. Dal punto di vista pratico, queste sono sempre soddisfatte.
+
+In assenza di campi, ogni spin $S$ ha $g = 2S + 1$ orientazioni possibili e si deve aggiungere nel conteggio dei microstati\footnote{Aumentando il numero di microstati di $g$, l'entropia subisce un aumento per un termine $\kappa _B \log g$.}. La correzione per misura dello spazio delle fasi \`e:
+\[
+d\Gamma= \frac{d^3 x d^3 p }{h^3}\to g \frac{d^3 xd^3p}{h^3}
+\] 
+Si sviluppano in serie le espressioni dei potenziali di Landau per ciascuna statistica (eq. \ref{ofd}, \ref{obe}) (segno superiore per FD, inferiore per BE):
+\begin{equation*}
+	\begin{split}
+		\Omega &= \mp \kappa _B T \sum_{q}^{} \log \left[ 1\pm \exp\left( - \frac{E_q - \mu }{\kappa _B T}\right)  \right] \\
+		       &= -\kappa _B T \sum_{q}^{} \exp \left(-\frac{E_q - \mu }{\kappa _B T} \right) \pm \frac{\kappa _B T }{2}\sum_{q}^{} \exp \left(-2 \frac{E_q - \mu }{\kappa_B T }\right) \\
+		       &= \Omega _\text{class} \pm \frac{\kappa _B T}{2} \sum_{q}^{} \exp \left( - 2 \frac{E_q - \mu }{\kappa _B T}\right) 
+	\end{split}
+\end{equation*}
+Si esegue il passaggio al continuo e si sostituisce $\mathscr{E} \to 2\mathscr{E}$, usando $\rho (\mathscr{E}) \propto \sqrt{\mathscr{E}} $; inoltre si riscrive il potenziale classico:
+\[
+\begin{split}
+	&\sum_{q}^{} \exp \left(- \frac{2 E_q}{\kappa _B T}\right)  \to \int_{0} ^{+\infty} \rho (\mathscr{E}) \exp \left(-\frac{2\mathscr{E}}{\kappa _B T}\right) \ d\mathscr{E} \to \left(\frac{1}{2}\right) ^{3 / 2} \int_{0} ^{\infty} \rho (\mathscr{E}) \exp\left(- \frac{\mathscr{E}}{\kappa _B T}\right)  d \mathscr{E}\\
+	& \Omega _\text{class} \to - \kappa _B T \exp \left(\frac{\mu  }{\kappa _B T}\right)  \int_{0} ^{+\infty} \rho (\mathscr{E}) \exp \left(- \frac{\mathscr{E}}{\kappa _B T}\right) \ d \mathscr{E}
+\end{split}
+\] 
+Da questi passaggi, si ottiene:
+\begin{equation}
+	\Omega \simeq \Omega _{\text{class}} \left(1 \mp \frac{e^{ \mu  / \kappa _B  T} }{2 ^{5 / 2} }\right) 
+\end{equation}
+Usando $\Omega  = - PV $ e $\Omega _\text{class} = - N \kappa _B T$:
+\begin{equation}
+	PV \simeq N\kappa _B T \left(1 \mp \frac{e^{ \mu  / \kappa _B T} }{2^{ 5 / 2} }\right) 
+\end{equation}
+La statistica agisce come sorta di forza sulle particelle; per capire se attrattiva o repulsiva, si deve passare da $\Omega $ a $F $\footnote{Usando $\Omega $, si \`e trovato risultato in cui $P / N$ ha $N$ variabile.}, in cui sono fissati $T,V,N$. Definendo $\delta \Omega = \Omega  - \Omega _\text{class}$ e $\delta F  = F - F_\text{class}$, si ha $(\delta \Omega ) _{T,V,\mu } = (\delta F) _{T,V,N} $. 
+
+Per eliminare $\mu $ in $\delta \Omega  = \pm N\kappa _B Te^{\mu  / \kappa _B T} / 2^{5 / 2} $, si usa espressione classica $\mu _\text{class}= - \kappa _B T \log V /(N\Lambda ^3)$, da cui:
+\begin{equation}
+	\begin{split}
+		&F = F_\text{class} \pm \frac{N^2 \kappa _B T \Lambda ^3}{2^{5 / 2}V }\\
+		& \Rightarrow P = - \frac{\partial F }{\partial V } = \frac{N\kappa _B T}{V}\left(1 \pm \frac{N\Lambda ^3}{2^{5 / 2} V}\right) 
+	\end{split}
+\end{equation}
+Quindi la statistica di Fermi corrisponde ad una forza repulsiva, mentre quella di Bose a una attrattiva.
+\subsection{Gas di Fermi}
+
+Si considera gas di fermioni nel limite $T \to 0 $, in cui le particelle occuperanno i livelli energetici pi\`u bassi consetiti dal principio di esclusione, inziando dal ground state a salire, fino a esaurimento particelle. 
+
+Allora lo spazio delle fasi di singola particella\footnote{Per spazio delle fasi di singola particella, si fa riferimento all'insieme di tutti i possibili stati che una particella pu\`o occupare; in avanti, si menzioner\`a lo spazio delle fasi complessivo (quello di tutto il gas), il quale rappresenter\`a tutti gli stati occupabili dall'intero sistema. Essendo le particelle indistinguibili, quest'ultimo deve collassare a un punto perch\'e i fermioni si possono distribuire solo in stati di singola particella ad energia via via crescente.} avr\`a tutte le celle piene dall'origine fino a un'energia $E_f = p_f^2 / 2m$, con $E_f$ \textbf{energia di Fermi} e $p_f$ \textbf{impulso di Fermi}, relativa all'energia del pi\`u alto stato quantistico occupabile da una particella\footnote{In quanto tale, dipender\`a dal numero totale di particelle e dal volume in cui è confinato il gas.}; lo spazio delle fasi a molti corpi, invece, consiste in un solo punto.
+
+Nel limite $T\to 0$, il grafico ($E_q$, $n_q$) (numero di occupazione in funzione dell'energia) \`e un gradino con $n_q = 1$ per $0\le E_q\le \mu_0$ e $0$ altrimenti, con $\mu (T=0) \equiv \mu_{0}\equiv E_f$.
+
+Quest'ultimo \`e fissato dal numero totale di particelle dato da:
+\begin{equation}
+	\begin{split}
+		N = \lim_{T \to 0} \sum_{q}^{} \frac{1}{\exp\left[ (E_q - \mu  ) / \kappa _B T \right]  + 1 } &\to \lim_{T \to 0 } \int_{0} ^{+\infty} \frac{\rho (\mathscr{E})}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] + 1}\\
+		  & =  \frac{gV}{h^3}\frac{4}{3}\pi p^3_f
+	\end{split}
+\end{equation}
+con $g = 2S + 1$ degenerazione degli stati quantistici dovuta allo spin. L'ultima uguaglianza \`e verificata perch\'e, in questo caso, $N$ \`e \# di celle in una sfera di raggio $p_f^3$ nello spazio delle fasi di singola particella. 
+
+Da questo, $p_f = h [3N / (4\pi g)] ^{1 / 3}$, quindi il valore dell'energia di Fermi \`e:
+\begin{equation}
+	E_f = \frac{h^2}{2m} \left(\frac{N}{V}\right) ^{2/3} \left(\frac{3}{4\pi g} \right) ^{2 /3 }
+\end{equation}
+Da questa si ottiene \textbf{temperatura di Fermi} $\kappa _B T_f = E_f$. 
+
+La sfera nello spazio di singola particella \`e detta \textbf{sfera di Fermi}, o \textbf{mare di Fermi}, mentre il guscio \`e detto \textbf{superficie di Fermi}.
+
+Essendo $\rho (\mathscr{E}) \propto \mathscr{E}^{1 / 2} $, l'energia media per particella è:
+\begin{equation}
+	\langle \mathscr{E} \rangle = \frac{\displaystyle \int_{0} ^{E_f} \mathscr{E}\rho (\mathscr{E}) d \mathscr{E}}{\displaystyle \int_{0} ^{E_f} \rho (\mathscr{E}) d\mathscr{E}} = \frac{ \displaystyle \int_{0} ^{E_f} \mathscr{E}^{3 / 2}  d \mathscr{E}}{\displaystyle  \int_{0} ^{E_f} \mathscr{E}^{1 / 2}  d \mathscr{E}}= \frac{3}{5} E_f
+\end{equation}
+Quindi l'energia totale \`e $E = \frac{3}{5} N E_f$. 
+
+Entropia del sistema \`e nulla (una sola possibile configurazione nello spazio delle fasi del gas) e l'energia complessiva del sistema coincide con l'energia interna (sempre perché il sistema si pu\`o trovare in un solo stato); allora la pressione \`e:
+\[
+P = - \left(\frac{\partial E}{\partial V} \right) _N = \frac{2}{3} \frac{E}{V}
+\] 
+Pressione finita a temperatura nulla \`e conseguenza della forza repulsiva tra i fermioni.	
+\subsubsection{Comportamento del gas per $T>0$}
+Si considera cosa succede al gas quando la temperatura sale di poco sopra $0$, quindi nel limite $T \ll T_f$\footnote{La scala di grandezza delle temperature \`e data solo da $T_f$ in questo caso, quindi si usa questa come riferimento.}. \textit{Questo modello si user\`a per studiare comportamento degli elettroni nei metalli}, quindi si stima $T_f$ usando massa e spin dell'elettrone e densit\`a di elettroni di conduzione nel rame, ottenendo $T_f \approx 8.5 \times 10^4$ K; questa risulta due ordini di grandezza sopra la temperatura di fusione del rame stesso, quindi il gas di elettroni \`e sempre in limite di basse temperature.
+
+Con aumento di $T$, le particelle sulla superficie di Fermi (nei livelli energetici pi\`u esterni) possono eccitarsi con energia $\sim \kappa _B T$, mentre quelli nel mare no perch\'e i livelli successivi sono occupati. 
+Numero di elettroni eccitati $\sim T / T_f$ per il totale. 
+
+Il grafico di $n(e)$ \`e un gradino consumato: l'intervallo attorno a $E_f$, di larghezza $\sim \kappa _B T$. 
+
+Questo modello per elettroni in metallo con background uniforme postiivamente carico\footnote{Approssimazione in cui gli ioni si immaginano come una carica positiva uniformemente distribuita invece che come punti discreti facenti parte di un reticolo, per questo l'approssimazione \`e valida nella condizione riportata.}, quindi finch\'e $\lambda \gg a$, con $\lambda $ lunghezza d'onda elettroni e $a$ dimensione caratteristica del reticolo del metallo.
+
+La condizione \`e verificata per stati a bassi impulsi ($p = \hbar  q$), per i quali si pu\`o assumere che $E \propto q^2$ (l'energia continua ad obbedire la legge di dispersione), mentre avr\`a una forma diversa fuori da questo regime. 
+In realt\`a, anche in questo caso, \`e diversa: $E = \frac{\hbar ^2 q^2}{2m^*}$, con $m^*$ massa efficace dovuta all'interazione degli elettroni con gli ioni.
+
+\subsubsection{Propriet\`a termiche del gas di Fermi}
+Indicando con $\overline{n}(\mathscr{E})$ la statistica di Fermi-Dirac, \textit{si sa} che per gas perfetti con dispersione quadratica $\Omega = -\frac{2}{3}E$, quindi:
+\[
+	\Omega = -\frac{2}{3} \int_{0} ^{+\infty} \rho (\mathscr{E}) \overline{n}(\mathscr{E}) \ d \mathscr{E}= -\frac{2}{3} \frac{4 \pi V g \sqrt{2} m^{2 / 3} }{h^3}\int_{0} ^{+\infty} \frac{\mathscr{E}^{3/2} }{\exp \big[(\mathscr{E}-\mu) / \kappa _BT \big] + 1} d \mathscr{E}
+\] 
+Si deve, quindi, risolvere integrale della forma $I = \int_{0} ^{+\infty} \frac{f(\mathscr{E}) d \mathscr{E}}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _ BT \right] +1}$.
+Visto che $\overline{n}(\mathscr{E})$ \`e una funzione gradino per $T \ll T_f$, il contributo maggiore nell'integrale sar\`a da $0$ a $E_f$ in cui $n(\mathscr{E}) = 1$.
+L'integrale su questi estremi si chiama $I_0$. La correzione su $I$ \`e $\delta I$ in modo che $I = I_0 + \delta I$; essendo $I = I_0$ per $T=0$, il comportamento termico \`e incluso in $\delta I$.
+
+Per ricavare $\delta I$, si calcola differenza tra integrale sul gradino e integrale esatto: $\delta I = I - I_0$. Si introduce una sovrastima prima di $E_f$ e una sottostima dopo per avere gradino perfetto; questi due si compensano a vicenda e termine lineare \`e nullo.
+
+Per correzioni successive, si prende $z = (\mathscr{E} - \mu ) / \kappa _B T $. Si definiscono $g_0(z), g_1(z)$ non nulle attorno $z=0$ e si esprime la correzione con\footnote{\color{red} Vedere perch\'e estremo inferiore \`e $-\infty$.}
+\[
+\delta I = \int_{-\infty} ^{+\infty} d \mathscr{E} \ f(\mathscr{E}) \left[ g_1(z) - g_0(z) \right] = \int_{-\infty} ^{+\infty} \kappa _B T f(\mu +\kappa _B T z) \left[ g_1(z) - g_0(z) \right]  \ dz
+\] 
+Essendo $g_0,g_1 \neq 0$ solo intorno a $z=0$, si sviluppa attorno a $z=0$:
+\[
+	\begin{split}
+		&f(\mu  + \kappa _B T z) \simeq f(\mu ) + \kappa _B T z \left(\frac{\partial f}{\partial \mathscr{E}} \right) _{\mathscr{E} = \mu } = f(\mu ) + \kappa _B T zf '(\mu )\\
+		& \Rightarrow \delta I = \kappa _B T f(\mu ) \int_{-\infty} ^{+\infty} dz \left[ g_1(z) - g_0(z) \right] + \kappa _B^2 T^2 f'(\mu ) \int_{-\infty} ^{+\infty} dz \left[ g_1(z) - g_0(z) \right] z
+	\end{split}
+\] 
+Essendo $g_1(z)$ la parte di $\overline{n}$ per $z\ge 0$ e $g_0(z)=1 - \overline{n}$, per $z\le 0$:
+\[
+	g_1 (z) = \frac{1}{e^z +1} \hspace{.1cm} ; \hspace{.2cm} g_0(z) = 1 - \frac{1}{e^z +1} = \frac{1}{e^{-z}  +1}
+\] 
+Allora il primo termine in $\delta I$ \`e nullo, mentre il secondo \`e
+\[
+\int_{0} ^{+\infty} dz \ z g_1(z) - \int_{-\infty} ^0 dz \ z g_0(z) = 2 \int_{0} ^{+\infty} \frac{z dz}{e^z + 1}= \frac{\pi^2 }{6}
+\] 
+Complessivo di correzione quadratica in $T$, il potenziale di Landau \`e:
+\begin{equation}
+	\Omega = -\frac{2}{3} \frac{4 \pi \sqrt{2} V g m^{ 3 /2 } }{h^3}\left[ \frac{2}{5} \mu ^{5 / 2} + \frac{\pi^2 }{4} \sqrt{\mu } (\kappa _B  T )^2  \right] 
+\end{equation}
+quindi 
+\begin{equation}
+	N = - \frac{\partial \Omega }{\partial \mu } = N_0 \left[ 1 + \frac{\pi^2}{8} \left(\frac{\kappa _B T}{\mu }\right) ^2 \right] 
+\end{equation}
+Ora si vuole capire come si distribuiscono gli $N$ elettroni nei livelli al variare della temperatura. 
+Per questo si considerano sistemi $\mathscr{S}, \mathscr{S}'$ a $T \neq 0$ e $N_0\neq N'_0$, $\mu  \neq \mu '$.
+All'aumentare di $T$, $N,N'$ seguono la legge sopra. Se $N$ rimanesse invariato, $\mu $ dovrebbe cambiare di conseguenza, quindi basta imporre $N' = N_0(\mu )$. 
+
+Dalla stessa legge per $N$, si vede che $N_0 \propto \mu ^{3 / 2} $ ({\color{red}?}), quindi si pu\`o sostituire rapporto $N'_0 / N_0$ in favore di $\mu ' / \mu $:
+\[
+\left[ 1+ \frac{\pi^2}{8}\left(\frac{\kappa _B T}{\mu '}\right) ^2 \right] \left(\frac{\mu '}{\mu }\right) ^{3 / 2} =1
+\] 
+Si risolve per $\mu '$, sostituendo $\mu $ con $\mu '$ al denominatore (che porta errore oltre secondo ordine) e si sviluppa in serie:
+\[
+\mu ' = \frac{\mu }{\left[ 1 + \pi^2 / 8 (\kappa _B T / \mu ')^2 \right] ^{2 / 3} }\simeq \mu \left[ 1 - \frac{\pi^2}{12} \left(\frac{\kappa _B T}{\mu }\right) ^2 \right] 
+\] 
+Sostituendo in $\Omega $, si possono trovare entropia e calore specifico:
+\[
+\begin{split}
+	&S = -\frac{\partial \Omega }{\partial T}  = \frac{4 \pi \sqrt{2} V g m^{3 / 2} }{h^3}\frac{\pi^2 }{3}\mu ^{1 / 2} \kappa _B^2 T \simeq \frac{\pi^2}{2} N \kappa _B \frac{T}{T_f}\\
+	&c_V = T \left(\frac{\partial S}{\partial T} \right) _V \simeq \frac{\pi^2}{ 2} N\kappa _B \frac{T}{T_f}
+\end{split}
+\] 
+Stima per calore specifico in accordo con dati sperimentali, ma stime migliori si ottengono per $m\to m^*$. 
+La massa effettiva si pu\`o misurare tramite campi magnetici ed \`e legata a frequenza di ciclotrone: $\omega_c = e \lvert \mathbf{H}  \rvert / (m^* c)$.
+
+\subsubsection{Paramagnetismo di Pauli}
+
 
 
 
