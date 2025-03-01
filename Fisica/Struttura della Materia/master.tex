@@ -1,6 +1,5 @@
 \documentclass[10pt, a4paper]{scrartcl}
 % Packages
-%\usepackage{stix}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{index}
 \makeindex
@@ -33,7 +32,8 @@
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
-
+\usepackage{cmupint}
+\usepackage{newtxmath}
 %Captions
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
@@ -176,7 +176,6 @@ title=#1
     }{
    \end{eqbox}
 }
-
 
 
 
@@ -724,6 +723,119 @@ Stima per calore specifico in accordo con dati sperimentali, ma stime migliori s
 La massa effettiva si pu\`o misurare tramite campi magnetici ed \`e legata a frequenza di ciclotrone: $\omega_c = e \lvert \mathbf{H}  \rvert / (m^* c)$.
 
 \subsubsection{Paramagnetismo di Pauli}
+
+Immergendo sistema in campo magnetico, la degenerazione dovuta allo spin \`e rotta e si ha $\mathscr{E}_{\pm} = \frac{p^2}{2m} \pm \mu B$, con $\mu $ momento magnetico della particella.
+Questo termine aggiuntivo trasla energia e va considerato in calcolo del numreo di occupazione e densit\`a di stati.
+
+Se $T\sim 0 , B=0$, densit\`a di popolazioni con spin up e spin down \`e uguale per entrambe e pari a $\rho (\mathscr{E}) / 2$ e lo spazio delle fasi \`e riempito dall'origine a $E_f$. 
+
+Quando $B \neq 0 $, questo interagisce con momento magnetico intrinseco delle particelle e l'energia per gli stati dei due tipi di spin cambia secondo energia di Zeeman:
+\[
+	E_\uparrow = E - \mu  B \hspace{.1cm} ; \hspace{.2cm} E _\downarrow = E + \mu B
+\] 
+quindi stati $\uparrow$ avranno energia minore e quindi saranno pi\`u popolati, nonostante l'energia di Fermi rimanga invariata.
+
+La differenza di popolazione $\Delta N$ si pu\`o approssimare con $\rho (E_f) / 2 E_\downarrow - \rho (E_f) / 2 E\uparrow = \Delta E \rho (E_f) / 2$, assumendo $\rho (\mathscr{E})$ costante.
+In questo modo:
+\[
+\Delta N = 2\mu B \frac{\rho (E_f) }{2} = 2\mu  _B \frac{4 \pi V m^{3 / 2} }{\sqrt{2} h^3}\sqrt{E_f} = \frac{3}{2}N \frac{\mu  B }{E_f}
+\] 
+con $N$ calcolato sulla densit\`a per $B=0 , T=0$:
+\[
+N = \int_{0} ^{E_f} \rho  (\mathscr{E}) \ d \mathscr{E} = \int_{0} ^{E_f} \frac{4\pi \sqrt{2} V m^{3 / 2} }{h^3} \mathscr{E}^{1 / 2}  \ d \mathscr{E} = \frac{4\pi \sqrt{2} V m^{3/2} }{h^3} \frac{2}{3} E_f^{ 3 / 2} 
+\] 
+Questa forma di paramagnetismo, con magnetizzazione
+\begin{equation}
+	M = \mu  \Delta N = \frac{3N}{2} \frac{\mu ^2}{E_f}B
+\end{equation}
+\`e detta \textbf{paramagnetismo di Pauli}.
+
+\subsubsection{Emissione termoionica}
+
+Emissione di elettroni indotta termicamente nei conduttori. Si fanno le seguenti ipotesi:
+\begin{itemize}
+	\item il metallo \`e una buca di potenziale alta $W$;
+	\item il rate di emissione \`e basso $\Rightarrow $ numero di elettroni nel metallo \`e $\sim$ costante;
+	\item \`e presente campo elettrico esterno che rimuove elettroni emessi (altrimenti il rate sarebbe nullo);
+	\item \`e il compleanno di Stefano (tanti auguri).
+\end{itemize}
+Affinch\'e vi sia effettiva emissione, si impone che in direzione $z$ (arbitraria) valga $p_z > \sqrt{2m W} $. 
+Se $dt$ tempo di emissione, si deve avere $dz = v_z dt = p_z / m dt$.
+
+Il numero di elettroni emessi sar\`a proporzionale all'integrale del numero di occupazione sulla parte di spazio delle fasi in cui si pu\`o verificare l'emissione;
+dividendo per $dt$, si ottiene il rate.
+
+Definendo rate per unit\`a di superficie, si tagli ala'integrale su $dS = dxdy$:
+\begin{equation*}
+			dR = \frac{g \overline{n} d\Gamma}{dS dt} = \frac{2 \overline{n}}{h^3} \frac{dxdy v_z dt d^3 p}{dS dt}= \frac{2\overline{n}}{h^3}\frac{p_z }{m} d^3p
+\end{equation*}
+quindi:
+\begin{equation*}
+  			\begin{split}
+			 R &= \frac{2}{h^3} \int_{\sqrt{2m W} } ^{+\infty} \frac{p_z dp_z}{m} \iint_{\mathbb{R}^2}  \frac{dp_x dp_y}{\exp \left[ (p^2 / 2m - \mu ) / \kappa _ B T \right] + 1} \\
+					      &= \frac{2}{h^3} \int_{\sqrt{2m W} } ^{+\infty} \frac{p_z dp_z}{m} \int_{0} ^{+\infty} \frac{2\pi p ' dp'}{\exp \left[ \big(p'^2 + p_z^2)/ 2m - \mu \big) / \kappa _ B T \right] + 1} \\
+					      &= \frac{4\pi \kappa _B T }{h^3}\int_{\sqrt{2mW} } ^{+\infty} p_z\log \left[ 1+ \exp\left(\frac{\mu  - p_z^2 / 2m}{\kappa _B T}\right)  \right] dp_z  =  \frac{4 \pi m \kappa _B T }{h^3} \int_{W} ^{+\infty} d \mathscr{E}_z \ \log \left[ 1+ \exp \left(\frac{\mu - \mathscr{E}_z}{\kappa _B T}\right)  \right] 
+			\end{split}
+\end{equation*}
+Infine, bisogna imporre che $W - \mu  \gg \kappa _B T$\footnote{Si richiede che il potenziale di estrazione sia molto maggiore del potenziale chimico, altrimenti elettroni fuggirebbero spontaneamente.}, per cui $\exp\left(\frac{\mu  - \mathscr{E}_z}{\kappa _B T}\right) \ll 1$; allora sviluppando:
+\begin{equation}
+	R \simeq \frac{4\pi m \kappa _B T }{h^3}\int_{W} ^{+\infty} d \mathscr{E}_z\ \exp\left( \frac{\mu  - \mathscr{E}_z}{\kappa _B T}\right) = \frac{4\pi m \kappa _B ^2 T^2}{h^3} \exp \left(\frac{\mu  - W}{\kappa _B T}\right) 
+\end{equation}
+Dal rate, si ottiene la densit\`a di corrente:
+\begin{equation}
+	J = eR = \frac{4 \pi e m_e \kappa _B ^2 T^2}{h^3} \exp \left(\frac{\mu  - W}{\kappa _B T}\right) 
+\end{equation}
+\subsubsection{Effetto fotoelettrico}
+
+Gas di elettroni nel metallo colpito da fotoni di energia $hv$. La condizione in direzione di fuga diventa: $\frac{p^2_z}{2m} + hv > W$, quindi:
+\[
+R = \frac{4 \pi m \kappa _B T}{h^3} \int_{W- hv} ^{+\infty}  d \mathscr{E}_z \log \left[ 1 + \exp \left(\frac{\mu - \mathscr{E}_z}{\kappa _B T}\right)  \right] 
+\] 
+Non si pu\`o sviluppare in serie come prima perch\'e potrebbe essere $hv \sim W$. Si prende $x = \frac{\mathscr{E}_z - W + hv}{\kappa _B T}$ e $hv_0 = W - \mu  \approx W - E_f = \phi $:
+\[
+R = \frac{4 \pi m \kappa _B^2 T^2}{h^3}  \int_{0} ^{+\infty} dx \ \log \left[ 1+ \exp \left(\frac{h(v-v_0)}{\kappa _B T} - x\right)  \right] 
+\] 
+Integrali del genere hanno soluzioni della forma
+\[
+\int_{0} ^{+\infty} dx \ \log \left(1 + e ^{ \delta  - x } \right) = f_2 (e^\delta )
+\] 
+Per trovare espressione di $f_2$ si considerano i casi limite, rispettivamente radiazione molto energetica e poco energetica:
+\[
+\begin{split}
+	&h(v-v_0) \gg \kappa _B T \Rightarrow  e^\delta  \gg 1 \Rightarrow  f_2 (e^\delta ) \simeq \frac{\delta ^2}{2}\\
+	& v< v_0 \Rightarrow  h|v-v_0| \gg \kappa _B T \Rightarrow e^\delta \ll 1 \Rightarrow  f_2 (e^\delta ) \simeq e^\delta 
+\end{split}
+\] 
+Nel primo caso, l'espressione della corrente \`e 
+\begin{equation}
+	J \simeq \frac{me}{\hbar } (v-v_0)^2
+\end{equation}
+cio\`e la corrente non ha dipendenza dalla temperatura perch\'e l'emissione degli elettroni \`e prevalentemente dovuta all'incisione di fotoni ad alta energia.
+
+Nel secondo caso, invece:
+\begin{equation}
+	J \simeq \frac{4 \pi m e \kappa _B^2 T^2}{h^3} \exp \left(\frac{hv - \phi }{\kappa _B T}\right) 
+\end{equation}
+che \`e una correzione alla corrente termoionica.
+\subsection{Gas di Bose}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
