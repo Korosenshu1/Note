@@ -143,7 +143,7 @@
 {\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
-{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.}
 
 
 
@@ -818,26 +818,126 @@ Nel secondo caso, invece:
 \end{equation}
 che \`e una correzione alla corrente termoionica.
 \subsection{Gas di Bose}
+\subsubsection{Condensato di Bose-Einstein}
+Bosoni descritti dalla statistica
+\[
+\overline{n} (\mathscr{E}) = \frac{1}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] - 1}
+\] 
+e deve valere $\mu  < 0$. Nel limite $\mu \to 0$:
+\begin{itemize}
+	\item a $T $ costante, esiste massimo numero di particelle consentito, sopra cui si dovrebbe avere $\mu >0$;
+	\item a $N$ fissato, esiste limite inferiore per $T$, imposto sempre dal segno di $\mu $.
+\end{itemize}
+Ci si aspetterebbe, per\`o, di poter osservare un gas a qualsi temperatura con qualsiasi numero di particelle. 
+Si cerca il motivo di questo risultato.
 
+Si calcola $N$ a $T$ costante passando da somma a integrale:
+\[
+N = \sum_{q}^{} \overline{n}_q = \frac{4\pi V g \sqrt{2} m^{3 / 2} }{h^3}\int_{0} ^{+\infty} \frac{\mathscr{E}^{1 / 2} d\mathscr{E}}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] - 1}
+\] 
+Si manda $\mu \to 0$ e si prende $\mathscr{E} = \kappa _B T x$, quindi:
+\[
+N = \frac{4\pi V g \sqrt{2} m^{3 / 2} }{h^3} (\kappa _B T)^{3 / 2} \int_{0} ^{+\infty}  \frac{\sqrt{x} dx}{e^x - 1}
+\] 
+L'integrale ha soluzione generale: $\int_{0} ^{+\infty} \frac{x^n dx}{e^x - 1} = \Gamma(n+1) \zeta(n+1)$;
+il risultato corrisponderebbe alle aspettative se l'integrale divergesse, mentre $\int_{0} ^{+\infty} \frac{\sqrt{x} dx}{e^x - 1} = 2.31$. 
+Si definiscono, quindi, una densit\`a critica e una temperatura critica, rispettivamente, sopra cui e sotto cui sorgono problemi:
+\begin{equation}
+	\begin{split}
+		& \left(\frac{N}{V}\right) _c = \frac{2.612}{\Lambda ^3}\\
+		& T_c = \frac{1}{2.31} \left(\frac{N}{V}\right) _c^{2 / 3} \frac{h^2}{(4\pi \sqrt{2} )^{2/3} m\kappa _B }
+	\end{split}
+\end{equation}
+L'errore \`e dovuto nel passaggio al continuo: per quanto la condizione $\kappa _B T \gg \frac{1}{2m} (h / L)^2\Rightarrow N^{2 / 3} \gg 2.31 \frac{(4\pi \sqrt{2} )^{2/3} }{2} \approx 7.8$ sia solitamente verificata, si ha, contemporaneamente al passaggio al continuo, anche $\lim_{\mathscr{E} \to 0} \rho (\mathscr{E}) =0$, quindi nei conti precedendi, si sono trascurate le particelle nello stato fondamentale.
 
+Queste, per\`o, tendono a popolare sempre pi\`u lo stato fondamentale pi\`u si sale sopra la densit\`a critica a $T$ fissato, o si scende sotto temperatura critica a $N$ fissato.
 
+Quello che si verifica \`e una \textbf{transizione di fase} in uno stato conosciuto come \textbf{condensato di Bose-Einstein}, con numero di particelle nello stato fondamentale dato da:
+\begin{boxenv}[]
+\begin{equation}
+	\overline{n}_0 = \frac{1}{\exp(-\mu / \kappa _B T) - 1}
+\end{equation}
+\end{boxenv}
+\noindent che coerentemente converge per $\mu \to 0$.
 
+Valore di $N$ calcolato prima, in realt\`a, \`e $N^* = N - N_0 = N (T / T_c)^{3 / 2} $, da cui:
+\begin{equation}
+	N_0 = N \left[1 - \left(\frac{T}{T_c}\right) ^{3 / 2} \right] 
+\end{equation}
+\begin{osservazione}
+	In due dimensioni non vi pu\`o essere condensazione perch\'e la densit\`a di stati \`e costante in energia:
+	\[
+	d \mathscr{E} = \frac{p dp }{m} \Rightarrow d^2 p = 2 \pi p dp = 2\pi m d\mathscr{E}
+	\] 
+\end{osservazione}
+\noindent Per $\mu \to 0$ e per $T< T_c$, ricordando che le particelle nel condensato hanno energia nulla, l'energia media \`e:
+\begin{equation}
+		E = \int_{0} ^{+\infty}\frac{\rho  ( \mathscr{E}) d \mathscr{E}}{\exp(\mathscr{E} / \kappa _B T) - 1} = \frac{4\pi V g \sqrt{2} m^{3 / 2} }{h^3} (\kappa _BT)^{ 3 / 2} \kappa _B T \int_{0} ^{+\infty} \frac{x ^{3 / 2} dx}{e^x - 1}\approx 0.77 \cdot N\kappa _B T \left(\frac{T}{T_c}\right) ^{3 / 2} \propto T^{5 / 2} 
+\end{equation}
+da cui la capacit\`a termica \`e:
+\begin{equation}
+	c_V \approx 1.9 \cdot  N\kappa _B \left(\frac{T}{T_c}\right) ^{3 / 2} = 1.9 \cdot  N^* \kappa _B \propto T^{3 / 2} 
+\end{equation}
+Per $T$ grande, per\`o, $c_V $ deve tenere a $3N\kappa _B / 2$; l'andamento trovato sopra cambia bruscamente per $T \sim T_c$.
 
+Infine, la pressione si ottiene a partire dalla formula valida per tutti i gas perfetti a dispersione quadratica:
+\begin{equation}
+	P = \frac{2}{3} \frac{E}{V} \approx 0.513 \cdot  \frac{N\kappa _B T}{V} \left(\frac{T}{T_c}\right) ^{3/2} 
+\end{equation}
+Essendo calcolata a $\mu (P,T) = 0$, questa identifica la curva di coesistenza tra stato gassoso non degenere e del condensato di Bose-Einstein.
 
+\subsubsection{Oscillatori in una scatola}
 
+L'Hamiltoniano di singolo oscillatore \`e:
+\begin{equation}
+	H = \frac{\mathbf{p} ^2}{2m} + \frac{m\omega ^2 \mathbf{x} ^2}{2}		
+\end{equation}
+L'energia media classica \`e data dal principio di equipaartizione ed \`e $E = 3N\kappa _B T$, mentre l'energia quantizzata per singola particella \`e $E_n=(n+1 / 2) \hbar \omega$.
 
+La funzione di partizione di singola particella, quindi, \`e:
+\begin{equation}
+	Z_1 = \sum_{n=0}^{+\infty} \exp \left[ - \left(n + \frac{1}{2}\right) \frac{\hbar \omega}{\kappa _B T} \right] = \frac{1}{2 \operatorname{sinh}(\hbar  \omega / \kappa _B T) }
+\end{equation}
+Da questa, si ottiene energia media per oscillatore:
+\begin{equation}
+	E = \frac{1}{2}\hbar  \omega + \frac{\hbar  \omega}{\exp(hta \omega / \kappa _B T) - 1} = \left(\overline{n} + \frac{1}{2}\right) \hbar \omega
+\end{equation}
+Dall'ultima, si ha che gli oscillatori seguono la statistica di Bose-Einstein con $\mu =0$:
+\begin{equation}
+	\overline{n}(\omega) = \frac{1}{\exp(\hbar \omega / \kappa _B T) - 1}
+\end{equation}
+\subsubsection{Corpo nero}
+Si usa gas di oscillatori come modello per campo elettromagnetico: si vede campo come un oscillatore con diversi livelli popolati secondo la statistica $\overline{n}$, o come unico livello popolato da $\overline{n}$ fotoni.
 
+Essendo $\mu  =0 $, non esiste legge di conservazione per numero totale di quasiparticelle: se ne possono creare e distruggere a piacimento.
 
+Inserendo gas in scsatola con pareti perfettamente assorbenti (quindi con condizione di annullamento ai bordi), la legge di dispersione \`e $\omega = ck$, quindi $\mathscr{E} = cp$.
 
+Allora elemento di spazio delle fasi \`e:
+\begin{equation}
+	d\Gamma = 2V \frac{4 \pi p^2 dp}{h^3} = V \frac{\omega^2 d\omega }{\pi^2 c^3} \rho (\omega) d\omega
+\end{equation}
+dove il fattore $2$ \`e perch\'e esistono due modi possibili di propagazione, linearmente indipendenti fra loro, per il campo (circolare destra e circolare sinsitra), associata allo spin del fotone.
 
+La densit\`a di energia per unit\`a di volume \`e ottenuta moltiplicando energia del singolo fotone per numero di occupazione e densit\`a (a meno di $V$), trascurando energia $\hbar  \omega / 2$ che non \`e misurabile e farebbe divergere energia totale. 
+Quindi:
+\begin{boxenv}[]
+\begin{equation}
+	u(\omega ) d\omega = \frac{\rho (\omega)}{V} \overline{n}(\omega) \hbar \omega \ d\omega= \frac{\hbar  \omega^3}{\exp(\hbar \omega / \kappa _B T ) - 1} \frac{d\omega}{\pi^2 c^3}
+\end{equation}
+\end{boxenv}
+\noindent Questa \`e la \textbf{legge di Planck} per radiazione di corpo nero. 
 
-
-
-
-
-
-
-
+Integrando sulle frequenze, si ha energia totale del corpo nero in funzione della temperatura:
+\begin{equation}
+	E = \int_{0} ^{+\infty} u(\omega) d\omega = \sigma T^4
+\end{equation}
+con $\sigma $ \textbf{costante di Stefan-Boltzmann}. Il calore specifico \`e 
+\begin{equation}
+	c_ V = \frac{\partial E}{\partial T} \propto T^3		
+\end{equation}
+e diverge con $T$  perch\'e $N$ non \`e fissato e $\omega$ non ha limite superiore, quindi si possono aggiungere quasiparticelle con energia grande a piacere. 
+Il limite classico per alte $T$ non si osserva perch\'e gli oscillatori trattati sono infiniti.
 
 
 
