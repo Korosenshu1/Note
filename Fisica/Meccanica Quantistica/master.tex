@@ -130,6 +130,8 @@
 
 % Font
 \usepackage[osf]{newpxtext}
+\usepackage{cmupint}
+\usepackage{newpxmath}
 
 \usepackage{sansiwona}
 
@@ -1740,8 +1742,7 @@ si ha:
 \begin{boxenv}[]
 \centering Continua nella lezione $3$
 \end{boxenv}
-\subsection{Buche di potenziale}
-\subsubsection{Buca di potenziale $V_0$}
+\subsection{Buca di potenziale $V_0$}
 
 Si considera 
 \[
@@ -1812,18 +1813,18 @@ Si distinguono i casi negativo (caso a) e positivo (caso b).
 	\item Caso a.
 
 	La condizione si riscrive come:
-	\[
+	\begin{equation}\label{sca}
 	\begin{split}
 		&\frac{\lambda  / \eta - i}{\lambda  / \eta + i} = - e^{i\eta a}  \implies \frac{\lambda}{\eta} (1+e^{i\eta} ) = i (1- e^{i\eta a} ) \\
 		& \Rightarrow \frac{\lambda}{\eta} = \tan \left(\frac{\eta a}{2}\right) 
 	\end{split}
-	\] 
+	\end{equation}
 	In questo caso, i coefficienti verificano
 	\[
 		\frac{A_1}{B_3}= -e^{i\eta a} \frac{\lambda  + i \eta}{\lambda  - i \eta} = 1 \hspace{.1cm} ; \hspace{.2cm} \frac{A_2}{B_2}= e^{i\eta a} \frac{\lambda +i\eta }{2i\eta }= 1
 	\] 
 cio\`e le autofunzioni sono simmetriche rispetto allo zero, quindi sono pari: $\psi_a (x) = \psi_a (-x)$. In definitiva:
-\begin{equation}
+\begin{equation}\label{spp}
 	\psi _a(x) = \begin{cases}
 		A_1 e^{\lambda x} &,\  x < - a/2\\
 		B_2 (e^{i\eta x} + e^{-i\eta x} ) = 2B_2 \cos(\eta x) & ,\ \lvert x \rvert < a / 2\\
@@ -1833,11 +1834,11 @@ cio\`e le autofunzioni sono simmetriche rispetto allo zero, quindi sono pari: $\
 \item Caso b.
 
 	Analogamente, al caso precedente, si ottiene:
-	\[
+	\begin{equation}\label{scb}
 	\frac{\lambda }{\eta} = -\frac{1}{\tan\left(\frac{\eta a}{2}\right) }
-	\] 
+	\end{equation}
 	Questa volta si ha $\frac{A_1}{B_3} = - 1$ e $\frac{A_2}{B_2} = -1$, quindi $\psi _b(x) = - \psi _b(-x)$. In definitiva:
-\begin{equation}
+	\begin{equation}\label{spn}
 	\psi _b(x) = \begin{cases}
 		A_1 e^{\lambda x} &,\  x < - a/2\\
 		B_2 (e^{i\eta x} - e^{-i\eta x} ) = 2iB_2 \sin(\eta x) & ,\ \lvert x \rvert < a / 2\\
@@ -1847,11 +1848,51 @@ cio\`e le autofunzioni sono simmetriche rispetto allo zero, quindi sono pari: $\
 \end{itemize}
 \end{svolgimento}
 
+\subsubsection{Buca di potenziale con parit\`a}
+Si risolve problema della sezione precedente usando l'operatore parit\`a.
+\begin{svolgimento}
+	Invece di verificare alla fine le propriet\`a di parit\`a delle autofunzioni, si poteva osservare fin da subito che, dato $\hat{\mathcal{P}}$ operatore di parit\`a rispetto allo zero, si ha $[\hat{\mathcal{P}},V(\hat{x})]= 0$, il che \`e sufficiente per dire che:
+	\begin{equation}
+		[\hat{\mathcal{P}}, \hat{H}] =0
+	\end{equation}
+Questo implica che esiste una base comune di autovettori di $\hat{\mathcal{P}}, \hat{H}$, 
+quindi le autofunzioni cercate devono avere parit\`a definita\footnote{Con questo, si intende che devono essere o pari o dispari rispetto a $0$.}, quindi, rispetto a $\hat{\mathcal{P}}$, avere autovalore $+1$ o $-1 $ a seconda se sono pari o dispari rispettivamente.
 
+Questo si traduce in $A_1 = B_3$ e $A_2=B_2$ per parit\`a positiva e $A_1= - B_3$ e $A_2=-B_2$ per parit\`a negativa.
+In questo modo, si trovano subito le equazioni \ref{spp} e \ref{spn}, dalle quali si ricavano le equazioni \ref{sca} e \ref{scb}.
+\end{svolgimento}
 
-
-
-
+\subsubsection{Spettro energetico}
+Si cercano i livelli energetici.
+Per autofunzioni pari, bisogna imporre contemporaneamente:
+\begin{equation}
+	\begin{split}
+		&\lambda  = \eta \tan \left(\eta \frac{a}{2}\right) \\
+		&k_0 \equiv \sqrt{\frac{2m V_0}{\hbar ^2}} = \sqrt{\lambda ^2 + \eta^2} 
+	\end{split} \Rightarrow \eta \tan\left(\eta \frac{a}{2}\right) = \sqrt{k_0^2 - \eta^2} 
+\end{equation}
+Nel caso dispari, analogamente si ha:
+\begin{equation}
+	\begin{split}
+		&\lambda  = \frac{- \eta}{ \tan \left(\eta \frac{a}{2}\right) }\\
+		&k_0 = \sqrt{\lambda ^2 + \eta^2} 
+	\end{split} \Rightarrow \frac{-\eta}{\tan \left(\eta \frac{a}{2}\right) } = \sqrt{k_0^2 - \eta^2} 
+\end{equation}
+Queste non sono facilmente risolvibili analiticamente e si usa metodo grafico come mostrato di seguito:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.4\columnwidth]{well-sol.png}
+	\caption{Rappresentazione grafica dell'intersezione delle condizioni. Soluzioni pari in linea continua, mentre soluzioni dispari in linea tratteggiata.}
+\end{figure}
+Si nota che a prescindere dai parametri del sistema, esister\`a sempre un'energia fondamentale relativa al primo stato pari. 
+Detti $P,D$ numeri delle soluzioni, rispettivamente, pari e dispari, si ha $N = P+D$ numero complessivo di autofunzioni, dalla figura si nota che:
+\begin{equation}
+	\begin{split}
+		&P = \left\lceil \frac{k_0 a }{2\pi} \right\rceil = 1 + \max_{n \in \mathbb{N}}  \left\{ n : \frac{2\pi}{a}n \le k_0 \right\} \\
+		& D = \left\lfloor \frac{1}{2}\left(\frac{k_0 a }{\pi}- 1\right)  \right\rfloor= \max_{n \in \mathbb{N}}  \left\{ n : \frac{(2n+1)\pi}{a} \le k_0 \right\} \\
+		& N = \left\lceil \frac{k_0 a}{\pi} \right\rceil = 1+ \max_{n \in \mathbb{N}} \left\{ n : \frac{\pi}{a} n \le k_0 \right\} 
+	\end{split}
+\end{equation}
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  28 FEB 2025 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  3 MAR 2025 14:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1099,28 +1099,159 @@ File: t1zplosf.fd 2021/05/25 v1.0 font definition file for T1/zpl/osf
 LaTeX Font Info:    Trying to load font information for T1+zplTOsF on input line 801.
  (/usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd
 File: t1zpltosf.fd 2021/05/25 v1.0 font definition file for T1/zpl/tosf
-)) (/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
+)) (/usr/share/texmf-dist/tex/latex/cmupint/cmupint.sty
+Package: cmupint 2020/04/13 v1.1 cmupint
+\symuplargesymbols=\mathgroup8
+) (/usr/share/texmf-dist/tex/latex/newpx/newpxmath.sty
+Package: newpxmath 2023/11/08 v1.533
+ `newpxmath' v1.533, 2023/11/08 Math macros based on pxfonts (msharpe) (/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex) (/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\px@tA=\toks66
+\px@tB=\toks67
+\px@su=\read5
+\px@Isdigit=\count383
+
+amsthm NOT loaded
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 222.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/zpltlf/m/n on input line 222.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/zpltlf/m/n on input line 222.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/zpltlf/m/n --> OT1/zpltlf/b/n on input line 223.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 226.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/qhv/m/n on input line 226.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/qhv/m/n on input line 226.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 227.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/zpltlf/m/it on input line 227.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/zpltlf/m/it on input line 227.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 228.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/npxtt/m/n on input line 228.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/npxtt/m/n on input line 228.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 230.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/zpltlf/b/n on input line 230.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/zpltlf/b/n on input line 230.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/zpltlf/m/it --> OT1/zpltlf/b/it on input line 231.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/qhv/m/n --> T1/qhv/b/n on input line 233.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/npxtt/m/n --> T1/npxtt/b/n on input line 234.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 245.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/npxmi/m/it on input line 245.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/npxmi/m/it on input line 245.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/npxmi/m/it --> OML/npxmi/b/it on input line 246.
+\symlettersA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/npxmia/m/it --> U/npxmia/b/it on input line 264.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 266.
+Now handling font encoding LMS ...
+... no UTF-8 mapping file for font encoding LMS
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 274.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 274.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> LMS/npxsy/m/n on input line 274.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 274.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> LMS/npxsy/m/n on input line 274.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/npxsy/m/n --> LMS/npxsy/b/n on input line 275.
+\symAMSm=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/npxsym/m/n --> U/npxsym/b/n on input line 295.
+\symsymbolsC=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/npxsyc/m/n --> U/npxsyc/b/n on input line 317.
+Now handling font encoding LMX ...
+... no UTF-8 mapping file for font encoding LMX
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 337.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 337.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 337.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 337.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 337.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/npxexx/m/n --> LMX/npxexx/b/n on input line 338.
+\symlargesymbolsPXA=\mathgroup12
+LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
+(Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 345.
+\px@cntz=\count384
+\px@IsAlNum=\count385
+\px@sbptoks=\toks68
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 500.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 501.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 502.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 503.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 508.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 509.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 511.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 513.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 517.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 519.
+LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 520.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 560.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 561.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 562.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 563.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 564.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 565.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 566.
+LaTeX Font Info:    Redeclaring math accent \check on input line 567.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 571.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 572.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1617.
+LaTeX Info: Redefining \Bbbk on input line 2194.
+LaTeX Info: Redefining \not on input line 2476.
+LaTeX Info: Redefining \textsquare on input line 2491.
+LaTeX Info: Redefining \openbox on input line 2493.
+) (/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
 Package: sansiwona 
  (/usr/share/texmf-dist/tex/latex/iwona/iwona.sty
 Package: iwona 2005/10/03 v.1.2 Iwona package (MW)
-\c@mv@iwona=\count383
-\c@mv@iwonabold=\count384
+\c@mv@iwona=\count386
+\c@mv@iwonabold=\count387
 LaTeX Font Info:    Overwriting symbol font `operators' in version `iwona'
-(Font)                  OT1/cmr/m/n --> OT1/iwonam/m/n on input line 58.
+(Font)                  OT1/zpltlf/m/n --> OT1/iwonam/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `iwona'
-(Font)                  OML/cmm/m/it --> OML/iwona/m/it on input line 59.
+(Font)                  OML/npxmi/m/it --> OML/iwona/m/it on input line 59.
+LaTeX Font Info:    Encoding `LMS' has changed to `OMS' for symbol font
+(Font)              `symbols' in the math version `iwona' on input line 60.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwona'
-(Font)                  OMS/cmsy/m/n --> OMS/iwona/m/n on input line 60.
+(Font)                  LMS/npxsy/m/n --> OMS/iwona/m/n on input line 60.
+LaTeX Font Info:    Encoding `LMX' has changed to `OMX' for symbol font
+(Font)              `largesymbols' in the math version `iwona' on input line 61.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwona'
-(Font)                  OMX/cmex/m/n --> OMX/iwona/m/n on input line 61.
+(Font)                  LMX/npxexx/m/n --> OMX/iwona/m/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `iwonabold'
-(Font)                  OT1/cmr/m/n --> OT1/iwonam/b/n on input line 62.
+(Font)                  OT1/zpltlf/m/n --> OT1/iwonam/b/n on input line 62.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `iwonabold'
-(Font)                  OML/cmm/m/it --> OML/iwona/b/it on input line 63.
+(Font)                  OML/npxmi/m/it --> OML/iwona/b/it on input line 63.
+LaTeX Font Info:    Encoding `LMS' has changed to `OMS' for symbol font
+(Font)              `symbols' in the math version `iwonabold' on input line 64.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwonabold'
-(Font)                  OMS/cmsy/m/n --> OMS/iwona/b/n on input line 64.
+(Font)                  LMS/npxsy/m/n --> OMS/iwona/b/n on input line 64.
+LaTeX Font Info:    Encoding `LMX' has changed to `OMX' for symbol font
+(Font)              `largesymbols' in the math version `iwonabold' on input line 65.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwonabold'
-(Font)                  OMX/cmex/m/n --> OMX/iwona/b/n on input line 65.
+(Font)                  LMX/npxexx/m/n --> OMX/iwona/b/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `iwona'
 (Font)                  OT1/cmr/bx/n --> OT1/iwona/bx/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwona'
@@ -1134,37 +1265,57 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwonabold'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwonabold'
 (Font)                  OT1/cmr/m/it --> OT1/iwona/bx/it on input line 72.
 ))
-\c@osservazione=\count385
-\c@teorema=\count386
-\c@corollario=\count387
-\c@lemma=\count388
-\c@definizione=\count389
-\c@notazione=\count390
-\c@esempio=\count391
-\c@esercizio=\count392
+\c@osservazione=\count388
+\c@teorema=\count389
+\c@corollario=\count390
+\c@lemma=\count391
+\c@definizione=\count392
+\c@notazione=\count393
+\c@esempio=\count394
+\c@esercizio=\count395
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 199.
+(Font)              scaled to size 10.0pt on input line 201.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 201.
+LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 201.
+ (/usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
+)
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 201.
+LaTeX Font Info:    Trying to load font information for U+npxexa on input line 201.
+ (/usr/share/texmf-dist/tex/latex/newpx/unpxexa.fd
+File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
+)
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 201.
+LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line 201.
+ (/usr/share/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
+File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
+)
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 201.
+LaTeX Font Info:    Trying to load font information for LMX+npxexx on input line 201.
+ (/usr/share/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
+File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
+)
+LaTeX Font Info:    ... okay on input line 201.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1200,19 +1351,21 @@ LaTeX Font Info:    ... okay on input line 199.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Info: Command `\dddot' is already robust on input line 201.
+LaTeX Info: Command `\ddddot' is already robust on input line 201.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count393
+\scratchcounter=\count396
 \scratchdimen=\dimen378
 \scratchbox=\box128
-\nofMPsegments=\count394
-\nofMParguments=\count395
-\everyMPshowfont=\toks66
-\MPscratchCnt=\count396
+\nofMPsegments=\count397
+\nofMParguments=\count398
+\everyMPshowfont=\toks69
+\MPscratchCnt=\count399
 \MPscratchDim=\dimen379
-\MPnumerator=\count397
-\makeMPintoPDFobject=\count398
-\everyMPtoPDFconversion=\toks67
+\MPnumerator=\count400
+\makeMPintoPDFobject=\count401
+\everyMPtoPDFconversion=\toks70
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
@@ -1225,7 +1378,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 199.
+Package hyperref Info: Link coloring ON on input line 201.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 \openout5 = `master.out'.
@@ -1237,44 +1390,54 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 199.
+(scrartcl)           before \begin{document} on input line 201.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count399
+\BKM@id=\count402
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 199.
+ on input line 201.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen380
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen381
 \c__nicematrix_innersep_middle_dim=\dimen382
-LaTeX Info: Redefining \it@ocap on input line 199.
-LaTeX Info: Redefining \it@ccap on input line 199.
-\c@mv@tabular=\count400
-\c@mv@boldtabular=\count401
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 200.
+LaTeX Info: Redefining \it@ocap on input line 201.
+LaTeX Info: Redefining \it@ccap on input line 201.
+\c@mv@tabular=\count403
+\c@mv@boldtabular=\count404
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 202.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 202.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 202.
 <front.jpg, id=7, 903.375pt x 602.25pt>
 File: front.jpg Graphic file (type jpg)
 <use front.jpg>
-Package pdftex.def Info: front.jpg  used on input line 204.
+Package pdftex.def Info: front.jpg  used on input line 206.
 (pdftex.def)             Requested size: 380.69788pt x 253.7979pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc} <./front.jpg>] (./master.toc
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+zpltlf on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
+File: ot1zpltlf.fd 2021/05/25 v1.0 font definition file for OT1/zpl/tlf
+)
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 5.5pt on input line 3.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1290,150 +1453,203 @@ File: uesint.fd
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
  (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [2])
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 3.
+
+LaTeX Font Info:    Trying to load font information for U+cmupint on input line 3.
+(/usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
+File: ucmupint.fd 
+)
+LaTeX Font Info:    Trying to load font information for U+npxmia on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
+File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+npxsym on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newpx/unpxsym.fd
+File: unpxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/npxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newpx/unpxsyc.fd
+File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
+) [2{/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}])
 \tf@toc=\write6
 \openout6 = `master.toc'.
 
- [3]
+ [3{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 209.
+(Font)              scaled to size 15.0pt on input line 211.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 209.
+(Font)              scaled to size 20.0pt on input line 211.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 210.
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 215.
+(Font)              scaled to size 12.0pt on input line 212.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 217.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 215.
+(Font)              scaled to size 10.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 223.
+(Font)              scaled to size 7.3pt on input line 225.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 223.
+(Font)              scaled to size 5.5pt on input line 225.
  [4{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] [5] [6]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 398.
+(Font)              scaled to size 8.0pt on input line 400.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 400.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 6.2pt on input line 400.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 398.
+(Font)              scaled to size 6.2pt on input line 400.
  [7] [8]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 457.
+(Font)              scaled to size 10.0pt on input line 459.
  [9]
-Overfull \hbox (35.67833pt too wide) detected at line 503
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 494.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 7.3pt on input line 494.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 5.5pt on input line 494.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 494.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 6.2pt on input line 494.
+
+Overfull \hbox (5.7pt too wide) detected at line 505
 []
  []
 
-[10] [11] [12] [13]
-Overfull \hbox (33.45792pt too wide) detected at line 689
-\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ) = [] = [][] \OML/cmm/m/it/10 dx  [] [] \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 dx  [][] [] [] \OT1/cmr/m/n/10 = 2\OML/cmm/m/it/10 ^^Y [][] \U/msb/m/n/10 ~\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )
+[10] [11] [12] [13] [14]
+Overfull \hbox (2.8226pt too wide) detected at line 691
+\OML/npxmi/m/it/10 ^^N\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 p[] \LMS/npxsy/m/n/10 ^^@ \OML/npxmi/m/it/10 p\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = [] = [] \OML/npxmi/m/it/10 dx  [] [] \U/npxmia/m/it/10 = [] \OML/npxmi/m/it/10 dx  [][] [] [] \U/npxmia/m/it/10 = \OT1/zpltlf/m/n/10 2\OML/npxmi/m/it/10 ^^Y [][] \U/npxmia/m/it/10 \\OML/npxmi/m/it/10 ^^N\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 p \LMS/npxsy/m/n/10 ^^@ \OML/npxmi/m/it/10 p[]\LMS/npxsy/m/n/10 º
  []
 
-[14]
-Overfull \hbox (25.41617pt too wide) in paragraph at lines 723--724
-$[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; t[]\OT1/cmr/m/n/10 )$ \T1/zpltosf/m/n/10 ope-ra-to-re di evo-lu-zio-ne tem-po-ra-le: $[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 t; t[]\OT1/cmr/m/n/10 ) []$ \T1/zpltosf/m/n/10 e $[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 t; t[]\OT1/cmr/m/n/10 ) []$\T1/zpltosf/m/n/10 .
+[15]
+Overfull \hbox (23.78397pt too wide) in paragraph at lines 725--726
+$[]\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 t; t[]\LMS/npxsy/m/n/10 º$ \T1/zpltosf/m/n/10 ope-ra-to-re di evo-lu-zio-ne tem-po-ra-le: $[] \U/npxmia/m/it/10 = []\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 t; t[]\LMS/npxsy/m/n/10 º []$ \T1/zpltosf/m/n/10 e $[] \U/npxmia/m/it/10 = []\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 t; t[]\LMS/npxsy/m/n/10 º []$\T1/zpltosf/m/n/10 .
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 734.
+(hyperref)                removing `math shift' on input line 736.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 734.
+(hyperref)                removing `math shift' on input line 736.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 734.
+(hyperref)                removing `math shift' on input line 736.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 734.
+(hyperref)                removing `math shift' on input line 736.
 
-[15] [16]
-Overfull \hbox (43.94476pt too wide) detected at line 807
+[16]
+Underfull \hbox (badness 1019) in paragraph at lines 773--773
+[][]\T1/zpltosf/m/n/8 Essa è de-fi-ni-ta, sot-to l'as-sun-zio-ne di po-ter se-pa-ra-re le va-ria-bi-li nel-l'in-te-gra-le, co-me $\OML/npxmi/m/it/8  \LMS/npxsy/m/n/8 ¹\OT1/zpltlf/b/n/8 r\LMS/npxsy/m/n/8 º \U/npxmia/m/it/8 =
+ []
+
+[17]
+Overfull \hbox (36.52109pt too wide) detected at line 809
 []
  []
 
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 822.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 822.
+LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 822.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 822.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 8.8pt on input line 822.
+LaTeX Font Info:    Font shape `OT1/zpltlf/b/n' will be
+(Font)              scaled to size 6.6pt on input line 822.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 820.
+(hyperref)                removing `math shift' on input line 822.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 820.
+(hyperref)                removing `math shift' on input line 822.
 
-[17] [18]
-Overfull \hbox (2.19998pt too wide) in paragraph at lines 922--923
-\T1/zpltosf/m/n/10 In rap-pre-sen-ta-zio-ne del-le coor-di-na-te, l'e-qua-zio-ne di Sh-rö-din-ger è $[]\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; t\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 i\U/msb/m/n/10 ~\OML/cmm/m/it/10 @[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; t\OT1/cmr/m/n/10 )$\T1/zpltosf/m/n/10 ,
+[18] [19]
+Overfull \hbox (0.96176pt too wide) in paragraph at lines 924--925
+\T1/zpltosf/m/n/10 In rap-pre-sen-ta-zio-ne del-le coor-di-na-te, l'e-qua-zio-ne di Sh-rö-din-ger è $[]\OML/npxmi/m/it/10  \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 i\U/npxmia/m/it/10 \\OML/npxmi/m/it/10 @[] \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 º$\T1/zpltosf/m/n/10 ,
  []
 
-[19] [20] [21] [22]
-Overfull \hbox (10.30415pt too wide) in paragraph at lines 1095--1096
-\T1/zpltosf/m/n/10 Si con-si-de-ra-no si-ste-mi $\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2$\T1/zpltosf/m/n/10 . Se que-sti non in-te-ra-gi-sco-no $\OMS/cmsy/m/n/10 ) H \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 H[] 
- H[]$\T1/zpltosf/m/n/10 ; se $[][] \OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 f[]g[]$
+[20] [21] [22] [23]
+Overfull \hbox (11.38333pt too wide) in paragraph at lines 1097--1098
+\T1/zpltosf/m/n/10 Si con-si-de-ra-no si-ste-mi $\OT1/zpltlf/m/n/10 1\OML/npxmi/m/it/10 ; \OT1/zpltlf/m/n/10 2$\T1/zpltosf/m/n/10 . Se que-sti non in-te-ra-gi-sco-no $\LMS/npxsy/m/n/10 ) H \U/npxmia/m/it/10 = \LMS/npxsy/m/n/10 H[] 
+ H[]$\T1/zpltosf/m/n/10 ; se $[][] \OML/npxmi/m/it/10 ; \LMS/npxsy/m/n/10 f[]g[]$
  []
 
-
-Overfull \hbox (0.18976pt too wide) in paragraph at lines 1111--1113
-\T1/zpltosf/m/n/10 Per que-sta ca-rat-te-riz-za-zio-ne, de-ve ri-sul-ta-re $\OT1/cmr/m/n/10 [[]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 ] = 0$[][][][][][]\T1/zpltosf/m/n/10 . In-fi-ne, se $[] \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 c[] [] \OMS/cmsy/m/n/10 
-
- []
-
-[23]
-Overfull \hbox (28.09338pt too wide) detected at line 1133
+[24]
+Overfull \hbox (16.3316pt too wide) detected at line 1135
 []
  []
 
-[24] [25] [26] [27]
-Overfull \hbox (26.00308pt too wide) in paragraph at lines 1326--1328
-\T1/zpltosf/m/n/10 Si cer-ca so-lu-zio-ne con la se-pa-ra-zio-ne del-le va-ria-bi-li: $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r; ^^R; '\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 Y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R; '\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )^^B(\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )^^H(\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 )$\T1/zpltosf/m/n/10 .
+[25] [26] [27] [28] [29]
+Overfull \hbox (26.07196pt too wide) in paragraph at lines 1328--1330
+\T1/zpltosf/m/n/10 Si cer-ca so-lu-zio-ne con la se-pa-ra-zio-ne del-le va-ria-bi-li: $\OML/npxmi/m/it/10  \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 r; ^^R; '\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 R\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 r\LMS/npxsy/m/n/10 º\OML/npxmi/m/it/10 Y\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 ^^R; '\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 R\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 r\LMS/npxsy/m/n/10 º\U/npxmia/m/it/10 ^^B\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 ^^R\LMS/npxsy/m/n/10 º\U/npxmia/m/it/10 ^^H\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 '\LMS/npxsy/m/n/10 º$\T1/zpltosf/m/n/10 .
  []
 
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37]
+[30] [31] [32] [33] [34] [35]
+Overfull \vbox (0.18704pt too high) has occurred while \output is active []
+
+ [36] [37] [38] [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1744.
+(hyperref)                removing `math shift' on input line 1745.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1744.
+(hyperref)                removing `subscript' on input line 1745.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1744.
+(hyperref)                removing `math shift' on input line 1745.
 
+[40] [41] [42]
+<well-sol.png, id=644, 804.75656pt x 707.64375pt>
+File: well-sol.png Graphic file (type png)
+<use well-sol.png>
+Package pdftex.def Info: well-sol.png  used on input line 1884.
+(pdftex.def)             Requested size: 152.27682pt x 133.89223pt.
 
-Overfull \hbox (7.38185pt too wide) detected at line 1772
-[]
- []
-
-[38]
-Overfull \hbox (12.9398pt too wide) detected at line 1805
-\OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ) \OML/cmm/m/it/10 e[][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[][]
- []
-
-[39]
 
 Package caption Warning: Unused \captionsetup[table] on input line 39.
 See the caption package documentation for explanation.
 
-[40] (./master.aux)
+[43 <./well-sol.png (PNG copy)>] (./master.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 45518 strings out of 474116
- 1049067 string characters out of 5750249
- 1953187 words of memory out of 5000000
- 66812 multiletter control sequences out of 15000+600000
- 630407 words of font info for 103 fonts, out of 8000000 for 9000
+ 47526 strings out of 474116
+ 1071963 string characters out of 5750249
+ 1954187 words of memory out of 5000000
+ 68736 multiletter control sequences out of 15000+600000
+ 673592 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,26n,107p,10936b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.42} has been referenced but does not exist, replaced by a fixed one
 
@@ -1560,12 +1776,11 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs
-10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (40 pages, 724990 bytes).
+</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (43 pages, 593862 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 990 compressed objects within 10 object streams
- 338 named destinations out of 1000 (max. 500000)
- 674 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1055 PDF objects out of 1200 (max. 8388607)
+ 966 compressed objects within 10 object streams
+ 350 named destinations out of 1000 (max. 500000)
+ 687 words of extra memory for PDF output out of 10000 (max. 10000000)
 
