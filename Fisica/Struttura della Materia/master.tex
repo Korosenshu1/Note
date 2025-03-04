@@ -559,7 +559,7 @@ da cui si ricava la \textbf{statistica di Fermi-Dirac}:
 	\langle n_q \rangle = - \frac{\partial \Omega _q}{\partial \mu } = \frac{1}{\exp \left[ (E_q - \mu ) / \kappa_B T \right]  + 1}
 \end{equation}
 \end{boxenv}
-\noindent Per ottenere potenziale di Landau e numero di particelle totali, bastsa sommare su $q$. Per i bosoni, invece, tutti gli $n$ sono possibili e si deve calcolare la somma di una serie geometrica, \textit{che converge solamente se} $\mu \le  E_0$. In questa trattazione $E_0=0$, quindi $\mu $ deve essere negativo e
+\noindent Per ottenere potenziale di Landau e numero di particelle totali, basta sommare su $q$. Per i bosoni, invece, tutti gli $n$ sono possibili e si deve calcolare la somma di una serie geometrica, \textit{che converge solamente se} $\mu \le  E_0$\footnote{Visto che $E_0$ \`e l'energia minore, la condizione pi\`u restrittiva \`e $\mu \le E_0$.}. In questa trattazione $E_0=0$, quindi $\mu $ deve essere negativo e
 \begin{equation}\label{obe}
 	\Omega _q = - \kappa _B T \log \sum_{n=0}^{+\infty} \exp \left[ \frac{n(\mu  - E_q)}{\kappa _B T} \right] = \kappa _B T \log \left[1 - \exp\left(\frac{\mu  - E_q}{\kappa _B T}\right) \right]
 \end{equation}
@@ -584,7 +584,7 @@ Si sviluppano in serie le espressioni dei potenziali di Landau per ciascuna stat
 \begin{equation*}
 	\begin{split}
 		\Omega &= \mp \kappa _B T \sum_{q}^{} \log \left[ 1\pm \exp\left( - \frac{E_q - \mu }{\kappa _B T}\right)  \right] \\
-		       &= -\kappa _B T \sum_{q}^{} \exp \left(-\frac{E_q - \mu }{\kappa _B T} \right) \pm \frac{\kappa _B T }{2}\sum_{q}^{} \exp \left(-2 \frac{E_q - \mu }{\kappa_B T }\right) \\
+		       &\simeq -\kappa _B T \sum_{q}^{} \exp \left(-\frac{E_q - \mu }{\kappa _B T} \right) \pm \frac{\kappa _B T }{2}\sum_{q}^{} \exp \left(-2 \frac{E_q - \mu }{\kappa_B T }\right) \\
 		       &= \Omega _\text{class} \pm \frac{\kappa _B T}{2} \sum_{q}^{} \exp \left( - 2 \frac{E_q - \mu }{\kappa _B T}\right) 
 	\end{split}
 \end{equation*}

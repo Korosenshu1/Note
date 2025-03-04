@@ -1,5 +1,4 @@
-\documentclass[10pt, a4paper]{scrartcl}
-% Packages
+\documentclass[10pt, a4paper]{scrartcl} % Packages
 %\usepackage{stix}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -1705,6 +1704,12 @@ quindi $P_\leftarrow = \displaystyle \left(A_+\frac{1-R_+}{\sqrt{2} }\right) ^2$
 		\] 
 	\end{svolgimento}
 \end{esercizio}
+\subsubsection{Dinamica di sistemi a due livelli}
+\begin{boxenv}[]
+	\centering \color{red} Riprendere dalla lezione 4
+\end{boxenv}
+
+
 \subsection{Sistema composto da due sottosistemi a due livelli}
 I due sottosistemi si indicano con $1$ e $2$, quindi $\ket{\psi _1}$ sar\`a stato del primo e $\ket{\psi _2} $ sar\`a stato del secondo.
 
@@ -1739,9 +1744,76 @@ si ha:
 	H = J \begin{pmatrix} 1& 0&0&0 \\ 0 & -1 & 2 & 0 \\ 0&2 & -1 & 0 \\ 0&0&0&1 \end{pmatrix} 
 \end{equation}
 \subsubsection{Spettro dell'Hamiltoniano}
-\begin{boxenv}[]
-\centering Continua nella lezione $3$
-\end{boxenv}
+
+Ci si restringe al blocco centrale:
+\begin{equation}
+	\begin{split}
+		& \begin{pmatrix} -J & 2J \\ 2J & - J \end{pmatrix} \to  \begin{pmatrix} - J -\lambda & 2J \\ 2J & - J - \lambda  \end{pmatrix} \Rightarrow (J+\lambda  - 2J) (J+\lambda +2J) \stackrel{!}{=} 0 \\
+		&\Rightarrow \lambda_1 = J, \ \lambda_2 = - 3J
+	\end{split}
+\end{equation}
+Quindi gli autovalori sono $E= J,J,J, - 3J$. Da questi, si ottengono gli autostati che, normalizzati, sono:
+\begin{equation}
+	\left\{ \ket{\uparrow \uparrow} , \ket{\downarrow \downarrow}, \frac{\ket{\uparrow \downarrow} + \ket{\downarrow \uparrow} }{\sqrt{2} }, \frac{\ket{\uparrow \downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} }  \right\} 
+\end{equation}
+dove i primi 3 sono \textit{stati di tripletto}, mentre l'ultimo \`e di \textit{singoletto}. Questi, in ordine, hanno autovalori $J,J,J,-3J$.
+\subsubsection{Matrice densit\`a}
+Si vuole scrivere $\rho _\psi $ per l'autostato $\psi \equiv \frac{\ket{\uparrow \downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} } $:
+\begin{equation}
+	\begin{split}
+		\rho _\psi  &= \ket{\psi } \bra{\psi } = \frac{1}{2} \big(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow} \big) \big( \bra{\uparrow\downarrow} - \ket{\downarrow\uparrow}  \big) \\
+			    &= \frac{1}{2} \big(\ket{\uparrow \downarrow} \bra{\uparrow \downarrow} - \ket{\uparrow \downarrow} \bra{\downarrow\uparrow} - \ket{\downarrow\uparrow} \bra{\uparrow\downarrow}  + \ket{\downarrow \uparrow} \bra{\downarrow\uparrow} \big)=  \frac{1}{2} \begin{pmatrix} 1 & - 1 \\ -1 & 1 \end{pmatrix} 
+	\end{split}
+\end{equation}
+da cui si nota che $\rho  =  \rho ^\dagger $ e $\operatorname{tr} \rho  = 1$. 
+Per vedere se lo stato \`e puro, si calcola:
+\begin{equation}
+	\operatorname{tr} \rho ^2 = \frac{1}{4} \operatorname{tr} \left[ \begin{pmatrix} 1 & - 1 \\ -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & - 1 \\ -1 &1 \end{pmatrix}  \right] = \frac{1}{4} \operatorname{tr}  \begin{pmatrix} 2 & - 2 \\ -2 & 2 \end{pmatrix} = 1 \equiv \operatorname{tr} \rho 
+\end{equation}
+quindi lo stato \`a puro. 
+
+Si restringe $\rho_\psi $ a $\rho _\psi ^{(1)} = \operatorname{tr} ^{(2)} \rho _\psi $:
+\begin{equation}
+	\begin{split}
+		\rho_\psi ^{(1)}  &= \sum_{j}^{} \braket{j|\rho _\psi |j} = \bra{\uparrow} ^{(2)}  \rho \ket{\uparrow} ^{(2)} + \bra{\downarrow} ^{(2)} \rho  \ket{\downarrow} ^{(2)} \\
+				  &\begin{split}
+					  =&\frac{1}{2} \bra{\uparrow} ^{(2)}  \big(\ket{\uparrow \downarrow} \bra{\uparrow \downarrow} - \ket{\uparrow \downarrow} \bra{\downarrow\uparrow} - \ket{\downarrow\uparrow} \bra{\uparrow\downarrow}  + \ket{\downarrow \uparrow} \bra{\downarrow\uparrow} \big) \ket{\uparrow} ^{(2)} + \\
+					   &+ \frac{1}{2} \bra{\downarrow} ^{(2)} \big(\ket{\uparrow \downarrow} \bra{\uparrow \downarrow} - \ket{\uparrow \downarrow} \bra{\downarrow\uparrow} - \ket{\downarrow\uparrow} \bra{\uparrow\downarrow}  + \ket{\downarrow \uparrow} \bra{\downarrow\uparrow} \big) \ket{\downarrow} ^{(2)} 
+				  \end{split}\\
+				  &= \frac{1}{2} \ket{\uparrow} \bra{\uparrow} + \frac{1}{2} \ket{\downarrow} \bra{\downarrow} = \frac{1}{2} \begin{pmatrix} 1&0\\ 0 &1 \end{pmatrix} 
+	\end{split}
+\end{equation}
+dove si \`e usato il fatto che $\ket{\uparrow} $  e $\ket{\downarrow}  $ sono ortonormali. 
+Si nota che i sistemi $1,2$ sono entangled perch\'e:
+\[
+	\big(\rho ^{(1)} \big)^2 = \frac{1}{4} \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}  \Rightarrow  \operatorname{tr} \big(\rho ^{(1)} \big)^2 = \frac{1}{2} \neq 1
+\] 
+Conoscendo  $\rho ^{(1)} $, ogni operatore $\sigma _{1,i} $ che agisce su $1$ \`e t.c. $\langle \sigma _{1,i}  \rangle = \operatorname{tr} (\rho ^{(1)  })\sigma _{1,i} $.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Buca di potenziale $V_0$}
 
 Si considera 
@@ -1893,6 +1965,49 @@ Detti $P,D$ numeri delle soluzioni, rispettivamente, pari e dispari, si ha $N = 
 		& N = \left\lceil \frac{k_0 a}{\pi} \right\rceil = 1+ \max_{n \in \mathbb{N}} \left\{ n : \frac{\pi}{a} n \le k_0 \right\} 
 	\end{split}
 \end{equation}
+\subsubsection{Buca di potenziale infinita}
+Si manda $V_0 \to \infty$, per cui $k_0 = \sqrt{2m V_0 / \hbar ^2} \to +\infty$. 
+Per questo motivo, le soluzioni (sia pari che dispari) coincidono con gli asintoti:
+\begin{equation}
+	\lambda _n ' = \begin{cases}
+		\displaystyle \frac{2n+1}{a} \pi & ,\ \text{caso pari}\\
+		\\
+		\displaystyle \frac{2n}{a} \pi & ,\ \text{caso dispari}\\
+	\end{cases} 
+\end{equation}
+A queste, corrispondono i livelli energetici $E_n = \frac{\hbar ^2 \lambda '^2}{2m} - V_0$, quindi si deve risolvere il problema di $V_0 \to \infty$ in questa espressione.
+
+Per correggere espressione, si considera il problema speculare in cui:
+\[
+	V(x)=
+\begin{cases}
+	+\infty &, \ \lvert x \rvert > a / 2\\
+	0 &, \ \lvert x \rvert \le a / 2
+\end{cases}
+\] 
+La soluzione \`e data da
+\begin{equation}
+	-\frac{\hbar ^2}{2m} \frac{d ^2 \psi (x)}{d x^2}  = E \psi (x) , \ \lvert x \rvert \le \frac{a}{2} \Rightarrow  \psi  (x) = A \cos(kx) + B \sin(kx)
+\end{equation}
+e $k = \sqrt{2mE / \hbar ^2} $; dall'imposizione che $\psi (x) = 0 , \lvert x \rvert > a / 2$, si deve imporre $\psi (\pm a / 2) =0$.
+Cos\`i facendo, si trovano due famiglie di soluzioni:
+\begin{itemize}
+	\item soluzioni pari date da $\cos(k_nx)$ con $k_n = 2n \pi / a$;
+	\item soluzioni dispari date da $\sin(k_nx) $ con $k_n = (2n+1) \pi / a$.
+\end{itemize}
+Si unificano scrivendo $k_n = n \pi / a, \ n \in \mathbb{N}$. 
+Allora $E_n = \frac{\hbar ^2 k_n^2}{2m} =  \frac{\hbar ^2 \pi^2 n^2}{2ma^2}$.
+La normalizzazione impone che i coefficienti delle soluzioni siano $\sqrt{2 / a} $.
+
+
+
+
+
+
+
+
+
+
 
 
 
