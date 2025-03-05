@@ -624,13 +624,13 @@ Nel limite $T\to 0$, il grafico ($E_q$, $n_q$) (numero di occupazione in funzion
 Quest'ultimo \`e fissato dal numero totale di particelle dato da:
 \begin{equation}
 	\begin{split}
-		N = \lim_{T \to 0} \sum_{q}^{} \frac{1}{\exp\left[ (E_q - \mu  ) / \kappa _B T \right]  + 1 } &\to \lim_{T \to 0 } \int_{0} ^{+\infty} \frac{\rho (\mathscr{E})}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] + 1}\\
+		N = \lim_{T \to 0} \sum_{q}^{} \frac{1}{\exp\left[ (E_q - \mu  ) / \kappa _B T \right]  + 1 } &\to \lim_{T \to 0 } \int_{0} ^{+\infty} \frac{\rho (\mathscr{E})d \mathscr{E}}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] + 1}\\
 		  & =  \frac{gV}{h^3}\frac{4}{3}\pi p^3_f
 	\end{split}
 \end{equation}
 con $g = 2S + 1$ degenerazione degli stati quantistici dovuta allo spin. L'ultima uguaglianza \`e verificata perch\'e, in questo caso, $N$ \`e \# di celle in una sfera di raggio $p_f^3$ nello spazio delle fasi di singola particella. 
 
-Da questo, $p_f = h [3N / (4\pi g)] ^{1 / 3}$, quindi il valore dell'energia di Fermi \`e:
+Da questo, $p_f = h [3N / (4\pi V g)] ^{1 / 3}$, quindi il valore dell'energia di Fermi \`e:
 \begin{equation}
 	E_f = \frac{h^2}{2m} \left(\frac{N}{V}\right) ^{2/3} \left(\frac{3}{4\pi g} \right) ^{2 /3 }
 \end{equation}
@@ -671,13 +671,17 @@ Si deve, quindi, risolvere integrale della forma $I = \int_{0} ^{+\infty} \frac{
 Visto che $\overline{n}(\mathscr{E})$ \`e una funzione gradino per $T \ll T_f$, il contributo maggiore nell'integrale sar\`a da $0$ a $E_f$ in cui $n(\mathscr{E}) = 1$.
 L'integrale su questi estremi si chiama $I_0$. La correzione su $I$ \`e $\delta I$ in modo che $I = I_0 + \delta I$; essendo $I = I_0$ per $T=0$, il comportamento termico \`e incluso in $\delta I$.
 
-Per ricavare $\delta I$, si calcola differenza tra integrale sul gradino e integrale esatto: $\delta I = I - I_0$. Si introduce una sovrastima prima di $E_f$ e una sottostima dopo per avere gradino perfetto; questi due si compensano a vicenda e termine lineare \`e nullo.
+Per ricavare $\delta I$, si calcola differenza tra integrale sul gradino e integrale esatto: $\delta I = I - I_0$.
 
-Per correzioni successive, si prende $z = (\mathscr{E} - \mu ) / \kappa _B T $. Si definiscono $g_0(z), g_1(z)$ non nulle attorno $z=0$ e si esprime la correzione con\footnote{L'estremo inferiore \`e $-\infty$ perch\'e per temperature sufficientemente basse, si ha $- \mu  / \kappa _B T \approx - \infty$; questo permette di semplificare calcolo dell'integrale.}
+Nel calcolo di $I_0$ al posto di $I$, si introduce una sovrastima prima di $E_f$ e una sottostima dopo per avere gradino perfetto. Si prende $z = (\mathscr{E} - \mu ) / \kappa _B T $. Si definiscono $g_0(z), g_1(z)$ come
+\[
+	g_1 (z) = \frac{1}{e^z +1} \hspace{.1cm} ; \hspace{.2cm} g_0(z) = 1 - \frac{1}{e^z +1} = \frac{1}{e^{-z}  +1}
+\] 
+Si nota che la loro differenza rappresenta esattamente la differenza tra la funzione gradino e la vera statistica; allora $\delta I$ \`e dato da\footnote{L'estremo inferiore \`e $-\infty$ perch\'e per temperature sufficientemente basse, si ha $- \mu  / \kappa _B T \approx - \infty$; questo permette di semplificare calcolo dell'integrale.}
 \[
 \delta I = \int_{0} ^{+\infty} d \mathscr{E} \ f(\mathscr{E}) \left[ g_1(z) - g_0(z) \right] = \int_{-\infty} ^{+\infty} \kappa _B T f(\mu +\kappa _B T z) \left[ g_1(z) - g_0(z) \right]  \ dz
 \] 
-Essendo $g_0,g_1 \neq 0$ solo intorno a $z=0$, si sviluppa attorno a $z=0$:
+Visto che $g_1-g_0 \neq 0$ solo intorno a $z=0$, si sviluppa, $f$ attorno a $z=0$:
 \[
 	\begin{split}
 		&f(\mu  + \kappa _B T z) \simeq f(\mu ) + \kappa _B T z \left(\frac{\partial f}{\partial \mathscr{E}} \right) _{\mathscr{E} = \mu } = f(\mu ) + \kappa _B T zf '(\mu )\\
@@ -685,9 +689,6 @@ Essendo $g_0,g_1 \neq 0$ solo intorno a $z=0$, si sviluppa attorno a $z=0$:
 	\end{split}
 \] 
 Essendo $g_1(z)$ la parte di $\overline{n}$ per $z\ge 0$ e $g_0(z)=1 - \overline{n}$, per $z\le 0$:
-\[
-	g_1 (z) = \frac{1}{e^z +1} \hspace{.1cm} ; \hspace{.2cm} g_0(z) = 1 - \frac{1}{e^z +1} = \frac{1}{e^{-z}  +1}
-\] 
 Allora, mandando $z\to - z$ e considerando che $g_1(z) \neq 0 $ solo per $z\ge 0$ e $g_0(z) \neq 0$ solo per $z \le 0$, il primo termine in $\delta I$ \`e nullo, mentre il secondo \`e
 \[
 \int_{0} ^{+\infty} dz \ z g_1(z) - \int_{-\infty} ^0 dz \ z g_0(z) = 2 \int_{0} ^{+\infty} \frac{z dz}{e^z + 1}= \frac{\pi^2 }{6}
