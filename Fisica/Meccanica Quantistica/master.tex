@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{varwidth}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsbsy}
 \usepackage{esint}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -1704,10 +1704,101 @@ quindi $P_\leftarrow = \displaystyle \left(A_+\frac{1-R_+}{\sqrt{2} }\right) ^2$
 		\] 
 	\end{svolgimento}
 \end{esercizio}
-\subsubsection{Dinamica di sistemi a due livelli}
-\begin{boxenv}[]
-	\centering \color{red} Riprendere dalla lezione 4
-\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Sistema composto da due sottosistemi a due livelli}
@@ -1729,7 +1820,7 @@ Si considera sistema con Hamiltoniano $\hat{H} = J \sigma _1 \cdot \sigma _2$, c
 	\mathcal{B} = \left\{ \ket{\uparrow \uparrow} , \ket{\uparrow \downarrow} , \ket{\downarrow \uparrow}, \ket{\downarrow \downarrow}   \right\} 
 \end{equation}
 Si vuole rappresentare $\mathcal{H}$ in forma matriciale. Usando:
-\[
+\begin{equation}\label{pupd}
 \begin{split}
 	&\sigma _x \ket{\uparrow} = \ket{\downarrow} \ , \hspace{.2cm} \sigma _x \ket{\downarrow} = \ket{\uparrow} \\
 	&\sigma _y \ket{\uparrow} = i\ket{\downarrow} \ , \hspace{.2cm} \sigma _y \ket{\downarrow} = -i \ket{\uparrow} \\
@@ -1738,7 +1829,7 @@ Si vuole rappresentare $\mathcal{H}$ in forma matriciale. Usando:
 	&\hat{ H} \ket{\uparrow \uparrow} = J \ket{\uparrow \uparrow}\ , \hspace{.2cm}\hat{H} \ket{\downarrow \uparrow} = J \left(2 \ket{\uparrow\downarrow} - \ket{\downarrow \uparrow} \right) \\
 	&\hat{ H} \ket{\uparrow \downarrow} = J \left(2 \ket{\downarrow \uparrow} - \ket{\uparrow \downarrow} \right) \ , \hspace{.2cm}  \hat{H} \ket{\downarrow \downarrow} = J \ket{\downarrow \downarrow} 
 \end{split}
-\] 
+\end{equation}
 si ha:
 \begin{equation}
 	H = J \begin{pmatrix} 1& 0&0&0 \\ 0 & -1 & 2 & 0 \\ 0&2 & -1 & 0 \\ 0&0&0&1 \end{pmatrix} 
@@ -1997,9 +2088,60 @@ Cos\`i facendo, si trovano due famiglie di soluzioni:
 \end{itemize}
 Si unificano scrivendo $k_n = n \pi / a, \ n \in \mathbb{N}$. 
 Allora $E_n = \frac{\hbar ^2 k_n^2}{2m} =  \frac{\hbar ^2 \pi^2 n^2}{2ma^2}$.
-La normalizzazione impone che i coefficienti delle soluzioni siano $\sqrt{2 / a} $.
+La normalizzazione impone che i coefficienti delle soluzioni siano $\sqrt{2 / a} $. 
+
+\subsection{Dinamica degli operatori}
 
 
+\subsubsection{Dinamica di un sistema a due livelli}
+
+Si considera $\hat{H} = - \hat{\pmb{\mu } }\cdot \mathbf{B} $, dove $\mathbf{B} = (0,0,B_0)$ e $\hat{\pmb{\mu} }= \gamma \hat{\mathbf{S}} $ e $\hat{\mathbf{S}}  = \frac{\hbar }{2} \hat{\pmb{\sigma } }$ e $\hat{\pmb{\sigma }} $ vettore delle tre matrici di Pauli, quindi:
+\begin{equation}
+	\hat{H} = - \gamma \frac{\hbar}{2} \hat{\sigma}_z B_0 
+\end{equation}
+Vista la forma di $\hat{\sigma}_z$, $\hat{H}$ ha autostati $\ket{\uparrow} , \ket{\downarrow} $, con autovalori, rispettivamente, $-\gamma \frac{\hbar }{2}B_0$ e $\gamma \frac{\hbar }{2} B_0$.
+Conseguentemente, se $\gamma, B_0 >0$, lo stato fondamentale \`e $\ket{\uparrow} $ (in quanto autostato dell'Hamiltoniano con autovalore pi\`u basso).
+
+Si considera generico stato $\ket{\psi } $ e si vuole scrivere evoluzione temporale a partire da $\ket{\psi _0}  = a_{1} \ket{\uparrow} + a_2 \ket{\downarrow} $, con $\lvert a_1 \rvert ^2 + \lvert a_2 \rvert ^2 = 1, \ a_1,a_2 \in \mathbb{C}$. L'evoluzione \`e data da:
+\begin{equation}
+	\begin{split}
+		&\ket{\psi (t)} = a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow} \to \Big[a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow}\Big] e^{ \frac{i}{2\hbar } (E_\uparrow+E_\downarrow) t} \\
+		&\Rightarrow \ket{\psi (t)} = a_1 e^{i\omega_0 t / 2} \ket{\uparrow} + a_2 e^{ - i \omega_0 t / 2} \ket{\downarrow} , \ \omega_0 = \frac{E_\downarrow- E_\uparrow}{\hbar }
+	\end{split}
+\end{equation}
+dove freccia $\to$ \`e per indicare la moltiplicazione per una fase.
+
+Si calcolano valori medi delle componenti di $\hat{\pmb{\mu }} $. Si nota che:
+\begin{equation}
+		\langle \hat{\mu }_x \rangle = \gamma \frac{\hbar }{2} \left(a_1^* a_2 e^{-i\omega_0 t} + a_2^* a_1 e^{ i \omega_0 t} \right)= \gamma \hbar  \Re \left\{ a_2a_1^* e^{-i\omega_0 t}  \right\} 
+\end{equation}
+dove si \`e usato che $\hat{\mu } _x = \gamma \frac{\hbar }{2} \hat{\sigma }_x$ e come agisce $\hat{\sigma } _x = \begin{pmatrix} 0& 1 \\ 1 & 0  \end{pmatrix} $ su $\ket{\uparrow} $ e $\ket{\downarrow} $ (eq. \ref{pupd}). Prendendo, poi, $a_1=a_2 = 1 / \sqrt{2} $, si trova $\hat{\mu } _x$ e analogamente anche gli altri:
+\begin{equation}
+	\langle \hat{\mu } _x \rangle = \gamma \frac{\hbar}{2} \cos(\omega_0 t) , \ \langle \hat{\mu } _y \rangle = - \gamma \frac{\hbar }{2} \sin(\omega_0t) , \ \langle \hat{\mu } _z \rangle = 0
+\end{equation}
+Infine:
+\begin{equation}
+		\frac{d }{d t} \langle \hat{\pmb{\mu } } \rangle = - \frac{\omega_0 \hbar }{2} \gamma \begin{pmatrix} \sin \omega_0 t \\ \cos \omega_0 t \\ 0 \end{pmatrix} = \langle \hat{\pmb{\mu }  }\rangle \times \omega _0 \hat{z}
+\end{equation}
+
+\subsubsection{Dinamica di un sistema a due livelli tramite rappresentazione di Heisenberg}
+
+In questa: $\hat{H} \to \hat{H} (t)$. Dato operatore in rappresentazione di Shr\"odinger $\hat{O}_S$, in rappresentazione di Heisenberg diventa:
+\[
+\braket{\psi (t)| \hat{O}_S|\psi (t)} = \Braket{\psi _0| e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} | \psi _0}  \equiv \braket{\psi_0|\hat{O}_H|\psi _0} \Rightarrow \hat{O}_H = e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} 
+\] 
+Conseguentemente:
+\begin{equation}
+	\frac{d }{d t}  \hat{O}_h = \frac{i}{\hbar }\hat{H} e^{ \frac{i}{\hbar } \hat{H}t}  \hat{O}_S  e^{- \frac{i}{\hbar }\hat{H}t}  - \frac{i}{\hbar } \hat{H} e^{ \frac{i}{\hbar }\hat{H}t}  \hat{O}_S e^{ - \frac{i}{\hbar }\hat{H}t} \equiv \frac{i}{\hbar } [\hat{H},\hat{O}_H] 	 
+\end{equation}
+Per gli operatori di seguito, si sottintende che sono in rappresentazione di Heisenberg. Per calcolare $\frac{d }{d t} \hat{\mu }_x$, bisogna calcolare $\frac{d }{d t} \hat{S}_x = \frac{i}{\hbar }[\hat{H},\hat{S}_x]$ per la formula sopra. 
+Essendo $\hat{H} \propto \hat{S }_z$ e $[\hat{S}_z, \hat{S}_x] = i\hbar  \hat{S}_y$, si ottiene facilmente il risultato.
+
+Considerando $\mathbf{B} = (B_x,B_y,B_z)$, invece, si ottiene il risultato pi\`u generale per cui $[\hat{H}, \hat{S}_x] = B_y [ \hat{S}_y , \hat{S}_x] + B_z [\hat{S}_z , \hat{S}_x] = i \hbar \big(B_z \hat{S}_y - B_y \hat{S}_z\big)$.
+Questa si generalizza a:
+\begin{equation}
+	\frac{d }{d t} \hat{\mathbf{S} } = \hat{\mathbf{S} } \times  \gamma \mathbf{B} 
+\end{equation}
 
 
 

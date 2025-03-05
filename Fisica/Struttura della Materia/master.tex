@@ -645,9 +645,9 @@ Essendo $\rho (\mathscr{E}) \propto \mathscr{E}^{1 / 2} $, l'energia media per p
 Quindi l'energia totale \`e $E = \frac{3}{5} N E_f$. 
 
 Entropia del sistema \`e nulla (una sola possibile configurazione nello spazio delle fasi del gas) e l'energia complessiva del sistema coincide con l'energia interna (sempre perché il sistema si pu\`o trovare in un solo stato); allora la pressione \`e:
-\[
+\begin{equation}\label{Pf}
 P = - \left(\frac{\partial E}{\partial V} \right) _N = \frac{2}{3} \frac{E}{V}
-\] 
+\end{equation}
 Pressione finita a temperatura nulla \`e conseguenza della forza repulsiva tra i fermioni.	
 \subsubsection{Comportamento del gas per $T>0$}
 Si considera cosa succede al gas quando la temperatura sale di poco sopra $0$, quindi nel limite $T \ll T_f$\footnote{La scala di grandezza delle temperature \`e data solo da $T_f$ in questo caso, quindi si usa questa come riferimento.}. \textit{Questo modello si user\`a per studiare comportamento degli elettroni nei metalli}, quindi si stima $T_f$ usando massa e spin dell'elettrone e densit\`a di elettroni di conduzione nel rame, ottenendo $T_f \approx 8.5 \times 10^4$ K; questa risulta due ordini di grandezza sopra la temperatura di fusione del rame stesso, quindi il gas di elettroni \`e sempre in limite di basse temperature.
@@ -655,17 +655,17 @@ Si considera cosa succede al gas quando la temperatura sale di poco sopra $0$, q
 Con aumento di $T$, le particelle sulla superficie di Fermi (nei livelli energetici pi\`u esterni) possono eccitarsi con energia $\sim \kappa _B T$, mentre quelli nel mare no perch\'e i livelli successivi sono occupati. 
 Numero di elettroni eccitati $\sim T / T_f$ per il totale. 
 
-Il grafico di $n(e)$ \`e un gradino consumato: l'intervallo attorno a $E_f$, di larghezza $\sim \kappa _B T$. 
+Il grafico di $n(\mathscr{E})$ \`e un gradino consumato nell'intervallo attorno a $E_f$, di larghezza $\sim \kappa _B T$. 
 
-Questo modello per elettroni in metallo con background uniforme postiivamente carico\footnote{Approssimazione in cui gli ioni si immaginano come una carica positiva uniformemente distribuita invece che come punti discreti facenti parte di un reticolo, per questo l'approssimazione \`e valida nella condizione riportata.}, quindi finch\'e $\lambda \gg a$, con $\lambda $ lunghezza d'onda elettroni e $a$ dimensione caratteristica del reticolo del metallo.
+Questo modello, per elettroni in metallo con background uniforme positivamente carico\footnote{Approssimazione in cui gli ioni si immaginano come una carica positiva uniformemente distribuita invece che come punti discreti facenti parte di un reticolo, per questo l'approssimazione \`e valida nella condizione riportata.}, \`e valido finch\'e $\lambda \gg a$, con $\lambda $ lunghezza d'onda elettroni e $a$ dimensione caratteristica del reticolo del metallo.
 
 La condizione \`e verificata per stati a bassi impulsi ($p = \hbar  q$), per i quali si pu\`o assumere che $E \propto q^2$ (l'energia continua ad obbedire la legge di dispersione), mentre avr\`a una forma diversa fuori da questo regime. 
 In realt\`a, anche in questo caso, \`e diversa: $E = \frac{\hbar ^2 q^2}{2m^*}$, con $m^*$ massa efficace dovuta all'interazione degli elettroni con gli ioni.
 
 \subsubsection{Propriet\`a termiche del gas di Fermi}
-Indicando con $\overline{n}(\mathscr{E})$ la statistica di Fermi-Dirac, \textit{si sa} che per gas perfetti con dispersione quadratica $\Omega = -\frac{2}{3}E$, quindi:
+Indicando con $\overline{n}(\mathscr{E})$ la statistica di Fermi-Dirac, si sa da eq. \ref{Pf} che $\Omega = -\frac{2}{3}E$, quindi:
 \[
-	\Omega = -\frac{2}{3} \int_{0} ^{+\infty} \rho (\mathscr{E}) \overline{n}(\mathscr{E}) \ d \mathscr{E}= -\frac{2}{3} \frac{4 \pi V g \sqrt{2} m^{2 / 3} }{h^3}\int_{0} ^{+\infty} \frac{\mathscr{E}^{3/2} }{\exp \big[(\mathscr{E}-\mu) / \kappa _BT \big] + 1} d \mathscr{E}
+	\Omega = -\frac{2}{3} \int_{0} ^{+\infty} \mathscr{E}\rho (\mathscr{E}) \overline{n}(\mathscr{E}) \ d \mathscr{E}= -\frac{2}{3} \frac{4 \pi V g \sqrt{2} m^{2 / 3} }{h^3}\int_{0} ^{+\infty} \frac{\mathscr{E}^{3/2} }{\exp \big[(\mathscr{E}-\mu) / \kappa _BT \big] + 1} d \mathscr{E}
 \] 
 Si deve, quindi, risolvere integrale della forma $I = \int_{0} ^{+\infty} \frac{f(\mathscr{E}) d \mathscr{E}}{\exp\left[ (\mathscr{E}-\mu ) / \kappa _ BT \right] +1}$.
 Visto che $\overline{n}(\mathscr{E})$ \`e una funzione gradino per $T \ll T_f$, il contributo maggiore nell'integrale sar\`a da $0$ a $E_f$ in cui $n(\mathscr{E}) = 1$.
@@ -673,9 +673,9 @@ L'integrale su questi estremi si chiama $I_0$. La correzione su $I$ \`e $\delta 
 
 Per ricavare $\delta I$, si calcola differenza tra integrale sul gradino e integrale esatto: $\delta I = I - I_0$. Si introduce una sovrastima prima di $E_f$ e una sottostima dopo per avere gradino perfetto; questi due si compensano a vicenda e termine lineare \`e nullo.
 
-Per correzioni successive, si prende $z = (\mathscr{E} - \mu ) / \kappa _B T $. Si definiscono $g_0(z), g_1(z)$ non nulle attorno $z=0$ e si esprime la correzione con\footnote{\color{red} Vedere perch\'e estremo inferiore \`e $-\infty$.}
+Per correzioni successive, si prende $z = (\mathscr{E} - \mu ) / \kappa _B T $. Si definiscono $g_0(z), g_1(z)$ non nulle attorno $z=0$ e si esprime la correzione con\footnote{L'estremo inferiore \`e $-\infty$ perch\'e per temperature sufficientemente basse, si ha $- \mu  / \kappa _B T \approx - \infty$; questo permette di semplificare calcolo dell'integrale.}
 \[
-\delta I = \int_{-\infty} ^{+\infty} d \mathscr{E} \ f(\mathscr{E}) \left[ g_1(z) - g_0(z) \right] = \int_{-\infty} ^{+\infty} \kappa _B T f(\mu +\kappa _B T z) \left[ g_1(z) - g_0(z) \right]  \ dz
+\delta I = \int_{0} ^{+\infty} d \mathscr{E} \ f(\mathscr{E}) \left[ g_1(z) - g_0(z) \right] = \int_{-\infty} ^{+\infty} \kappa _B T f(\mu +\kappa _B T z) \left[ g_1(z) - g_0(z) \right]  \ dz
 \] 
 Essendo $g_0,g_1 \neq 0$ solo intorno a $z=0$, si sviluppa attorno a $z=0$:
 \[
@@ -688,7 +688,7 @@ Essendo $g_1(z)$ la parte di $\overline{n}$ per $z\ge 0$ e $g_0(z)=1 - \overline
 \[
 	g_1 (z) = \frac{1}{e^z +1} \hspace{.1cm} ; \hspace{.2cm} g_0(z) = 1 - \frac{1}{e^z +1} = \frac{1}{e^{-z}  +1}
 \] 
-Allora il primo termine in $\delta I$ \`e nullo, mentre il secondo \`e
+Allora, mandando $z\to - z$ e considerando che $g_1(z) \neq 0 $ solo per $z\ge 0$ e $g_0(z) \neq 0$ solo per $z \le 0$, il primo termine in $\delta I$ \`e nullo, mentre il secondo \`e
 \[
 \int_{0} ^{+\infty} dz \ z g_1(z) - \int_{-\infty} ^0 dz \ z g_0(z) = 2 \int_{0} ^{+\infty} \frac{z dz}{e^z + 1}= \frac{\pi^2 }{6}
 \] 
