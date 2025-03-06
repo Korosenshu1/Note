@@ -701,22 +701,25 @@ quindi
 \begin{equation}
 	N = - \frac{\partial \Omega }{\partial \mu } = N_0 \left[ 1 + \frac{\pi^2}{8} \left(\frac{\kappa _B T}{\mu }\right) ^2 \right] 
 \end{equation}
-Ora si vuole capire come si distribuiscono gli $N$ elettroni nei livelli al variare della temperatura. 
-Per questo si considerano sistemi $\mathscr{S}, \mathscr{S}'$ a $T \neq 0$ e $N_0\neq N'_0$, $\mu  \neq \mu '$.
-All'aumentare di $T$, $N,N'$ seguono la legge sopra. Se $N$ rimanesse invariato, $\mu $ dovrebbe cambiare di conseguenza, quindi basta imporre $N' = N_0(\mu )$. 
+Questo risultato è utile nel caso di esperimenti in cui vi \`e un gran numero di particelle e il potenziale chimico viene tenuto costante.
+In altri esperimenti, capita di lavorare con $N$ fisso e conviene trovare un'espressione per $\mu $, che sarà funzione di $T$.
 
-Dalla stessa legge per $N$, si vede che $N_0 \propto \mu ^{3 / 2} $ ({\color{red}?}), quindi si pu\`o sostituire rapporto $N'_0 / N_0$ in favore di $\mu ' / \mu $:
+Si consiera stato iniziale a $T=0$ con $N =  N_0 \propto \big(\mu (T=0)\big)^{ 3 / 2} \equiv \mu_0^{3 / 2} $; per assunzione, $N$ \`e costante, quindi ad una certa temperatura $T \gtrsim 0$, si ha:
 \[
-\left[ 1+ \frac{\pi^2}{8}\left(\frac{\kappa _B T}{\mu '}\right) ^2 \right] \left(\frac{\mu '}{\mu }\right) ^{3 / 2} =1
+	N' = N'_0 \left[1 + \frac{\pi^2}{8} \left(\frac{\kappa _B T}{\mu' }\right)^2\right]
 \] 
-Si risolve per $\mu '$, sostituendo $\mu $ con $\mu '$ al denominatore (che porta errore oltre secondo ordine) e si sviluppa in serie:
+con $\mu ' \equiv \mu (T)$. Ora, imponendo conservazione del numero di particelle, deve valere $N' / N=N' / N_0 \stackrel{!}{=} 1$, ossia:
 \[
-\mu ' = \frac{\mu }{\left[ 1 + \pi^2 / 8 (\kappa _B T / \mu ')^2 \right] ^{2 / 3} }\simeq \mu \left[ 1 - \frac{\pi^2}{12} \left(\frac{\kappa _B T}{\mu }\right) ^2 \right] 
+\left[ 1+ \frac{\pi^2}{8}\left(\frac{\kappa _B T}{\mu '}\right) ^2 \right] \left(\frac{\mu '}{\mu_0 }\right) ^{3 / 2} =1
 \] 
+Si risolve per $\mu '$, sostituendo $\mu' $ con $\mu_0$ al denominatore (che porta errore oltre secondo ordine) e si sviluppa in serie:
+\begin{equation}
+\mu ' = \frac{\mu_0 }{\left[ 1 + \pi^2 / 8 (\kappa _B T / \mu ')^2 \right] ^{2 / 3} }\simeq \mu_0 \left[ 1 - \frac{\pi^2}{12} \left(\frac{\kappa _B T}{\mu_0 }\right) ^2 \right] 
+\end{equation}
 Sostituendo in $\Omega $, si possono trovare entropia e calore specifico:
 \[
 \begin{split}
-	&S = -\frac{\partial \Omega }{\partial T}  = \frac{4 \pi \sqrt{2} V g m^{3 / 2} }{h^3}\frac{\pi^2 }{3}\mu ^{1 / 2} \kappa _B^2 T \simeq \frac{\pi^2}{2} N \kappa _B \frac{T}{T_f}\\
+	&S = -\left(\frac{\partial \Omega }{\partial T}\right)_{V,\mu }    = \frac{4 \pi \sqrt{2} V g m^{3 / 2} }{h^3}\frac{\pi^2 }{3}\mu ^{1 / 2} \kappa _B^2 T \simeq \frac{\pi^2}{2} N \kappa _B \frac{T}{T_f}\\
 	&c_V = T \left(\frac{\partial S}{\partial T} \right) _V \simeq \frac{\pi^2}{ 2} N\kappa _B \frac{T}{T_f}
 \end{split}
 \] 
@@ -726,9 +729,9 @@ La massa effettiva si pu\`o misurare tramite campi magnetici ed \`e legata a fre
 \subsubsection{Paramagnetismo di Pauli}
 
 Immergendo sistema in campo magnetico, la degenerazione dovuta allo spin \`e rotta e si ha $\mathscr{E}_{\pm} = \frac{p^2}{2m} \pm \mu B$, con $\mu $ momento magnetico della particella.
-Questo termine aggiuntivo trasla energia e va considerato in calcolo del numreo di occupazione e densit\`a di stati.
+Questo termine aggiuntivo trasla energia e va considerato in calcolo del numero di occupazione e densit\`a di stati.
 
-Se $T\sim 0 , B=0$, densit\`a di popolazioni con spin up e spin down \`e uguale per entrambe e pari a $\rho (\mathscr{E}) / 2$ e lo spazio delle fasi \`e riempito dall'origine a $E_f$. 
+Se $T= 0 , B=0$, densit\`a di popolazioni con spin up e spin down \`e uguale per entrambe e pari a $\rho (\mathscr{E}) / 2$ e lo spazio delle fasi \`e riempito dall'origine a $E_f$. 
 
 Quando $B \neq 0 $, questo interagisce con momento magnetico intrinseco delle particelle e l'energia per gli stati dei due tipi di spin cambia secondo energia di Zeeman:
 \[
@@ -736,10 +739,10 @@ Quando $B \neq 0 $, questo interagisce con momento magnetico intrinseco delle pa
 \] 
 quindi stati $\uparrow$ avranno energia minore e quindi saranno pi\`u popolati, nonostante l'energia di Fermi rimanga invariata.
 
-La differenza di popolazione $\Delta N$ si pu\`o approssimare con $\rho (E_f) / 2 E_\downarrow - \rho (E_f) / 2 E\uparrow = \Delta E \rho (E_f) / 2$, assumendo $\rho (\mathscr{E})$ costante.
+La differenza di popolazione $\Delta N$ si pu\`o approssimare con $ E_\downarrow\rho (E_f) / 2 - E_\uparrow\rho (E_f) / 2  = \Delta E \rho (E_f) / 2$, assumendo $\rho (\mathscr{E})$ uniforme.
 In questo modo:
 \[
-\Delta N = 2\mu B \frac{\rho (E_f) }{2} = 2\mu  _B \frac{4 \pi V m^{3 / 2} }{\sqrt{2} h^3}\sqrt{E_f} = \frac{3}{2}N \frac{\mu  B }{E_f}
+\Delta N = 2\mu B \frac{\rho (E_f) }{2} = 2\mu  _B \frac{4 \pi V m^{3 / 2} }{\sqrt{2} h^3}\sqrt{E_f} = \frac{3}{2} \frac{\mu  B }{E_f}N
 \] 
 con $N$ calcolato sulla densit\`a per $B=0 , T=0$:
 \[
@@ -761,12 +764,11 @@ Emissione di elettroni indotta termicamente nei conduttori. Si fanno le seguenti
 	\item \`e il compleanno di Stefano (tanti auguri).
 \end{itemize}
 Affinch\'e vi sia effettiva emissione, si impone che in direzione $z$ (arbitraria) valga $p_z > \sqrt{2m W} $. 
-Se $dt$ tempo di emissione, si deve avere $dz = v_z dt = p_z / m dt$.
+Se $dt$ tempo di emissione, si deve avere $dz = v_z dt = (p_z / m) dt$.
 
 Il numero di elettroni emessi sar\`a proporzionale all'integrale del numero di occupazione sulla parte di spazio delle fasi in cui si pu\`o verificare l'emissione;
 dividendo per $dt$, si ottiene il rate.
-
-Definendo rate per unit\`a di superficie, si tagli ala'integrale su $dS = dxdy$:
+Definendo rate per unit\`a di superficie, si taglia l'integrale su $dS = dxdy$:
 \begin{equation*}
 			dR = \frac{g \overline{n} d\Gamma}{dS dt} = \frac{2 \overline{n}}{h^3} \frac{dxdy v_z dt d^3 p}{dS dt}= \frac{2\overline{n}}{h^3}\frac{p_z }{m} d^3p
 \end{equation*}
