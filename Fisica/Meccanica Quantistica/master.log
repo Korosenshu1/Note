@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  5 MAR 2025 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  7 MAR 2025 23:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1602,31 +1602,41 @@ Overfull \hbox (26.07196pt too wide) in paragraph at lines 1327--1329
 [30] [31] [32] [33] [34] [35]
 Overfull \vbox (0.18704pt too high) has occurred while \output is active []
 
- [36] [37] [38] [39] [40]
+ [36] [37] [38] [39]
+./master.tex:1736: Undefined control sequence.
+l.1736 ...con $\hat{n} = \frac{1}{\alpha } (\oemga
+                                                  _1 , 0 , \omega_0 + \omega...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[40] [41] [42] [43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1908.
+(hyperref)                removing `math shift' on input line 2051.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1908.
+(hyperref)                removing `subscript' on input line 2051.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1908.
+(hyperref)                removing `math shift' on input line 2051.
 
-[41] [42] [43]
-<well-sol.png, id=665, 804.75656pt x 707.64375pt>
+[44] [45] [46]
+<well-sol.png, id=705, 804.75656pt x 707.64375pt>
 File: well-sol.png Graphic file (type png)
 <use well-sol.png>
-Package pdftex.def Info: well-sol.png  used on input line 2047.
+Package pdftex.def Info: well-sol.png  used on input line 2190.
 (pdftex.def)             Requested size: 152.27682pt x 133.89223pt.
- [44 <./well-sol.png (PNG copy)>] [45]
+ [47 <./well-sol.png (PNG copy)>]
 
 Package caption Warning: Unused \captionsetup[table] on input line 38.
 See the caption package documentation for explanation.
 
-[46] (./master.aux)
+[48] (./master.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1640,10 +1650,10 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47551 strings out of 474116
- 1072236 string characters out of 5750249
- 1954187 words of memory out of 5000000
- 68738 multiletter control sequences out of 15000+600000
+ 47573 strings out of 474116
+ 1072530 string characters out of 5750249
+ 1956187 words of memory out of 5000000
+ 68740 multiletter control sequences out of 15000+600000
  673592 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,26n,107p,10936b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1777,10 +1787,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (46 pages, 607478 bytes).
+Output written on master.pdf (48 pages, 617570 bytes).
 PDF statistics:
- 1114 PDF objects out of 1200 (max. 8388607)
- 1021 compressed objects within 11 object streams
- 373 named destinations out of 1000 (max. 500000)
- 727 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 1056 compressed objects within 11 object streams
+ 393 named destinations out of 1000 (max. 500000)
+ 743 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1705,8 +1705,68 @@ quindi $P_\leftarrow = \displaystyle \left(A_+\frac{1-R_+}{\sqrt{2} }\right) ^2$
 	\end{svolgimento}
 \end{esercizio}
 
+\subsubsection{Risonanza di spin}
+\begin{center}
+Nota: da vedere dopo aver visto dinamica degli operatori.
+\end{center}
+Si prende $\mathbf{B}  = B_0 \hat{z} + \mathbf{B} _1 (t)$, con $\mathbf{B} _1(t) = \hat{x}B_1\cos \omega t + \hat{y} B_1 \sin \omega t$. 
+Scegliendo come Hamiltoniano $\hat{H}= - \gamma \mathbf{B} \cdot \hat{\mathbf{S} }$, si ha:
+\begin{equation}
+	\begin{split}
+		\hat{H} &= -\gamma B_0 \hat{S}_z - \gamma B_1 \hat{\mathbf{S} }\cdot  ( \hat{x} B_1 \cos \omega t + \hat{y} B_1 \sin  \omega t)\\
+			&= - \gamma B_0 \hat{S}_z - \gamma B_1 e^{ - \frac{i}{\hbar }\omega t \hat{S}_z}  \hat{S}_x e^{\frac{i}{\hbar }\omega t \hat{S}_z} 
+	\end{split}
+\end{equation}
+L'ultima uguaglianza si pu\`o dimostrare per calcolo diretto, ma non si fa. Per risolvere $i\hbar  \partial _t \ket{\psi (t)}  = \hat{H}\ket{\psi (0)} $, si moltiplica per una fase $e^{ \frac{i}{\hbar }\omega t \hat{S}_z} $:
+\[
+\Rightarrow i\hbar e^{\frac{i}{\hbar }\omega t \hat{S}_z} \partial _t \ket{\psi (t)}  = \left[ - \gamma B_0 \hat{S}_z e^{\frac{i}{\hbar }\omega t \hat{S}_z}  - \hat{S}_x e^{\frac{i}{\hbar }\omega t \hat{S}_z} \right] \ket{\psi (0)} 
+\] 
+Si prende $\ket{\phi } = e^{\frac{i}{\hbar }\omega t \hat{S}_z} $, che equivale a mettersi in SR rotante; allora:
+\begin{equation}
+	\begin{split}
+		&i\hbar  \partial _t \ket{\phi } = \underbracket{[- (\gamma B_0 + \omega)\hat{S}_z - \gamma B_1 \hat{S_x}]}_{\equiv \hat{H}_\text{eff}} \ket{\phi } \\
+		&\Rightarrow \ket{\phi } = e^{ -\frac{i}{\hbar }\hat{H}_\text{eff}t} \ket{\phi } 
+	\end{split}
+\end{equation}
+con $\hat{H}_\text{eff}$ indipendente dal tempo. Si riscrive
+\begin{equation}
+	\hat{H}_\text{eff} = - \frac{1}{2} \hbar \left[ (\omega_0 + \omega) \hat{\sigma }_z + \omega \hat{\sigma }_x \right] , \ \omega_0 = \gamma B_0 \text{ e } \omega _1 = \gamma B_1
+\end{equation}
+e si assume $\ket{\phi (0)} = \ket{\uparrow} \Rightarrow \ket{\psi (T)} = e^{- \frac{i}{\hbar }\omega T \hat{S}_z} e^{- \frac{i}{\hbar } \hat{H}_\text{eff}T} \ket{\uparrow}  $.
+Ora si deve calcolare $e^{ - \frac{i}{\hbar }\hat{H}_\text{eff}t} $; per farlo, si prende $\hat{H}_\text{eff} = -\frac{1}{2} \hbar  \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }$, con $\hat{n} = \frac{1}{\alpha } (\oemga_1 , 0 , \omega_0 + \omega)$ e $\alpha  = \big( \omega_1 ^2 + (\omega_0 +\omega)^2\big)^{1 / 2} $. Allora:
+\begin{equation}
+	\begin{split}
+		e^{- \frac{i}{\hbar } \hat{H}_\text{eff}t } &= e^{\frac{i}{2} \alpha  t \hat{n}\cdot \hat{\pmb{\sigma } }} = \cos \left(\frac{\alpha  t  }{2}\right)  \operatorname{Id} + i (\hat{n}\cdot \hat{\pmb{\sigma } }) \sin \left(\frac{\alpha  t }{2}\right) \\
+							    &= \begin{pmatrix} \displaystyle \cos \frac{\alpha t}{2} + i \frac{\omega_0 +\omega}{\alpha } \sin \frac{\alpha  t}{2} & \displaystyle i \omega_1 \sin \frac{\alpha  t}{2}\\ & \\\displaystyle i \frac{\omega_1}{\alpha } \sin \frac{\alpha  t }{2} & \displaystyle \cos \frac{\alpha  t}{2} - i \frac{\omega_0 + \omega}{\alpha }\sin \frac{\alpha  t }{2}  \end{pmatrix} \equiv A
+	\end{split}
+\end{equation}
+Da questa, si ottiene:
+\begin{equation}
+	\ket{\phi (t)} = A \ket{\uparrow} = \begin{pmatrix} \displaystyle \cos \frac{\alpha  t }{2} + i \frac{\omega_0 + \omega }{\alpha } \sin \frac{\alpha  t  }{2} \\ \displaystyle i \frac{\omega_1}{\alpha } \sin \frac{\alpha  t }{2} \end{pmatrix} = A_{11} \ket{\uparrow} + A_{21} \ket{\downarrow} 
+\end{equation}
+quindi l'espressione per $\ket{\psi } $ \`e:
+\begin{equation}
+	\ket{\psi (T)} = e^{-\frac{i}{2}\omega T} A_{11} \ket{\uparrow} + e^{- \frac{i}{2}\omega T} \ket{\downarrow} 
+\end{equation}
+Se al tempo $T$, il campo magnetico rotante cessa:
+\begin{equation}
+	\ket{\psi (t)} = e^{\frac{i}{2}\omega_0 (t-T)} e^{-\frac{i}{2}\omega T} A_{11} (T) \ket{\uparrow} + e^{-\frac{i}{2}\omega_0(t-T)} e^{ \frac{i}{2}\omega T} A_{12}(T) \ket{\downarrow} 
+\end{equation}
+\begin{esercizio}
+	[Probabilit\`a che per $t>T$, la particella sia in $\ket{\downarrow} $]	
 
 
+	Si ha:
+	\begin{equation}
+	P_\downarrow = \lvert \braket{\downarrow|\psi (t>T)}  \rvert ^2 = \lvert A_{21} \rvert ^2 = \left\lvert \omega_1 \frac{\sin (\alpha T / 2)}{\alpha } \right\rvert ^2
+	\end{equation}
+	La dipendenza da $T $ \`e data dal fatto che per $t>T$, il campo magnetico rotante che permette il passaggio da $\ket{\uparrow} $ a $\ket{\downarrow} $ cessa di agire. 
+	Inoltre, la probabilit\`a ha massimo per $T = \pi / \alpha $, con
+	\begin{equation}
+		\frac{\omega_1^2 }{(\omega_0+\omega)^2 + \omega_1^2}\le  1
+	\end{equation}
+	L'uguaglianza vale nel caso di risonanza, cio\`e per $\omega = \omega_0$.
+\end{esercizio}
 
 
 
@@ -1790,13 +1850,96 @@ quindi $P_\leftarrow = \displaystyle \left(A_+\frac{1-R_+}{\sqrt{2} }\right) ^2$
 
 
 
+\subsection{Dinamica degli operatori}
 
 
+\subsubsection{Dinamica di un sistema a due livelli}
 
+Si considera $\hat{H} = - \hat{\pmb{\mu } }\cdot \mathbf{B} $, dove $\mathbf{B} = (0,0,B_0)$ e $\hat{\pmb{\mu} }= \gamma \hat{\mathbf{S}} $ e $\hat{\mathbf{S}}  = \frac{\hbar }{2} \hat{\pmb{\sigma } }$ e $\hat{\pmb{\sigma }} $ vettore delle tre matrici di Pauli, quindi:
+\begin{equation}
+	\hat{H} = - \gamma \frac{\hbar}{2} \hat{\sigma}_z B_0 
+\end{equation}
+Vista la forma di $\hat{\sigma}_z$, $\hat{H}$ ha autostati $\ket{\uparrow} , \ket{\downarrow} $, con autovalori, rispettivamente, $-\gamma \frac{\hbar }{2}B_0$ e $\gamma \frac{\hbar }{2} B_0$.
+Conseguentemente, se $\gamma, B_0 >0$, lo stato fondamentale \`e $\ket{\uparrow} $ (in quanto autostato dell'Hamiltoniano con autovalore pi\`u basso).
 
+Si considera generico stato $\ket{\psi } $ e si vuole scrivere evoluzione temporale a partire da $\ket{\psi _0}  = a_{1} \ket{\uparrow} + a_2 \ket{\downarrow} $, con $\lvert a_1 \rvert ^2 + \lvert a_2 \rvert ^2 = 1, \ a_1,a_2 \in \mathbb{C}$. L'evoluzione \`e data da:
+\begin{equation}
+	\begin{split}
+		&\ket{\psi (t)} = a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow} \to \Big[a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow}\Big] e^{ \frac{i}{2\hbar } (E_\uparrow+E_\downarrow) t} \\
+		&\Rightarrow \ket{\psi (t)} = a_1 e^{i\omega_0 t / 2} \ket{\uparrow} + a_2 e^{ - i \omega_0 t / 2} \ket{\downarrow} , \ \omega_0 = \frac{E_\downarrow- E_\uparrow}{\hbar }
+	\end{split}
+\end{equation}
+dove freccia $\to$ \`e per indicare la moltiplicazione per una fase.
 
+Si calcolano valori medi delle componenti di $\hat{\pmb{\mu }} $. Si nota che:
+\begin{equation}
+		\langle \hat{\mu }_x \rangle = \gamma \frac{\hbar }{2} \left(a_1^* a_2 e^{-i\omega_0 t} + a_2^* a_1 e^{ i \omega_0 t} \right)= \gamma \hbar  \Re \left\{ a_2a_1^* e^{-i\omega_0 t}  \right\} 
+\end{equation}
+dove si \`e usato che $\hat{\mu } _x = \gamma \frac{\hbar }{2} \hat{\sigma }_x$ e come agisce $\hat{\sigma } _x = \begin{pmatrix} 0& 1 \\ 1 & 0  \end{pmatrix} $ su $\ket{\uparrow} $ e $\ket{\downarrow} $ (eq. \ref{pupd}). Prendendo, poi, $a_1=a_2 = 1 / \sqrt{2} $, si trova $\hat{\mu } _x$ e analogamente anche gli altri:
+\begin{equation}
+	\langle \hat{\mu } _x \rangle = \gamma \frac{\hbar}{2} \cos(\omega_0 t) , \ \langle \hat{\mu } _y \rangle = - \gamma \frac{\hbar }{2} \sin(\omega_0t) , \ \langle \hat{\mu } _z \rangle = 0
+\end{equation}
+Infine:
+\begin{equation}
+		\frac{d }{d t} \langle \hat{\pmb{\mu } } \rangle = - \frac{\omega_0 \hbar }{2} \gamma \begin{pmatrix} \sin \omega_0 t \\ \cos \omega_0 t \\ 0 \end{pmatrix} = \langle \hat{\pmb{\mu }  }\rangle \times \omega _0 \hat{z}
+\end{equation}
 
+\subsubsection{Dinamica di un sistema a due livelli tramite rappresentazione di Heisenberg}
 
+In questa: $\hat{H} \to \hat{H} (t)$. Dato operatore in rappresentazione di Shr\"odinger $\hat{O}_S$, in rappresentazione di Heisenberg diventa:
+\[
+\braket{\psi (t)| \hat{O}_S|\psi (t)} = \Braket{\psi _0| e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} | \psi _0}  \equiv \braket{\psi_0|\hat{O}_H|\psi _0} \Rightarrow \hat{O}_H = e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} 
+\] 
+Conseguentemente:
+\begin{equation}
+	\frac{d }{d t}  \hat{O}_h = \frac{i}{\hbar }\hat{H} e^{ \frac{i}{\hbar } \hat{H}t}  \hat{O}_S  e^{- \frac{i}{\hbar }\hat{H}t}  - \frac{i}{\hbar } \hat{H} e^{ \frac{i}{\hbar }\hat{H}t}  \hat{O}_S e^{ - \frac{i}{\hbar }\hat{H}t} \equiv \frac{i}{\hbar } [\hat{H},\hat{O}_H] 	 
+\end{equation}
+Per gli operatori di seguito, si sottintende che sono in rappresentazione di Heisenberg. Per calcolare $\frac{d }{d t} \hat{\mu }_x$, bisogna calcolare $\frac{d }{d t} \hat{S}_x = \frac{i}{\hbar }[\hat{H},\hat{S}_x]$ per la formula sopra. 
+Essendo $\hat{H} \propto \hat{S }_z$ e $[\hat{S}_z, \hat{S}_x] = i\hbar  \hat{S}_y$, si ottiene facilmente il risultato.
+
+Considerando $\mathbf{B} = (B_x,B_y,B_z)$, invece, si ottiene il risultato pi\`u generale per cui $[\hat{H}, \hat{S}_x] = B_y [ \hat{S}_y , \hat{S}_x] + B_z [\hat{S}_z , \hat{S}_x] = i \hbar \big(B_z \hat{S}_y - B_y \hat{S}_z\big)$.
+Questa si generalizza a:
+\begin{equation}
+	\frac{d }{d t} \hat{\mathbf{S} } = \hat{\mathbf{S} } \times  \gamma \mathbf{B} 
+\end{equation}
+
+\subsubsection{Metodo di soluzione alternativo}
+Si considera solito $\hat{H } = - \gamma \mathbf{B} \cdot \hat{\mathbf{S} }$ e generico stato $\ket{\psi  (t) } = e^{ - \frac{i}{\hbar } \hat{H} t} \ket{\psi (0)} $, con $\ket{\psi(0) }$ dato.
+Si riscrive $e^{- \frac{i}{\hbar }\hat{H}t}  = e^{\frac{i}{2}\mathbf{B} \cdot \hat{\pmb{\sigma  } } t} = e^{i \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }}  $, con $\hat{n} = \frac{1}{\lvert \mathbf{B}  \rvert } (B_x , B_y , B_z)$ e $\alpha  = \frac{\lvert \mathbf{B}  \rvert t}{2}$.
+Usando questa espressione:
+\[
+e^{i \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }} = \sum_{k=0}^{+\infty} \frac{(i \alpha  \hat{n}\cdot  \hat{\pmb{\sigma } })^k}{k!} = \sum_{k=0}^{+\infty} \frac{(i\alpha )^k}{k!} (\hat{n}\cdot \hat{\pmb{\sigma } })^k
+\] 
+Si svolge calcolo per $k=2$ ad esempio: $(\hat{n}\cdot \hat{\pmb{\sigma } })^2 = \sum_{i,j}^{} n_i n_j \sigma _i \sigma _j$. Essendo che $[\sigma _\alpha , \sigma _\beta ] = 2 i \varepsilon _{\alpha \beta \gamma} \sigma _\gamma$ e $\left\{ \sigma _\alpha , \sigma _\beta  \right\} = 2\delta _{\alpha  \beta }  \operatorname{Id} $, allora:
+	\begin{equation}
+		\sigma _\alpha  \sigma _\beta  = \operatorname{Id} \delta _{\alpha \beta  } + i \sum_{\gamma}^{} \varepsilon _{\alpha  \beta  \gamma}  \sigma _\gamma \Rightarrow (\hat{n}\cdot \hat{\pmb{\sigma } })^2 = \sum_{\alpha ,\beta }^{} n_\alpha  n_\beta  ( \operatorname{Id} \delta _{\alpha  \beta } +i \varepsilon _{\alpha  \beta  \gamma} \hat{\sigma }_\gamma)
+	\end{equation}
+Si nota che $\sum_{\alpha ,\beta }^{} n_\alpha  n_\beta  (i \varepsilon _{\alpha  \beta  \gamma} \hat{\sigma }_\gamma) = 0$ perch\'e $n_\alpha  n_\beta $ \`e simmetrico per scambio di indici, mentre $\varepsilon _{\alpha  \beta  \gamma} $ \`e antisimmetrico, perci\`o la somma \`e nulla. Allora:
+\begin{equation}
+	(\hat{n}\cdot \hat{\pmb{\sigma } })^2 = \sum_{\alpha ,\beta }^{} n_\alpha  n_\beta  \operatorname{Id} \delta _{\alpha \beta } = (\hat{n}\cdot \hat{n}) \operatorname{Id} = \operatorname{Id} 
+\end{equation}
+Quindi:
+\begin{equation}
+	(\hat{n}\cdot \hat{\pmb{\sigma } }) ^k = \begin{cases}
+		\hat{n}\cdot \hat{\pmb{\sigma } } & , \ k \text{ pari}\\
+		\operatorname{Id}  & , \ k \text{ dispari}\\
+	\end{cases}
+\end{equation}
+Allora:
+\begin{equation}
+	e^{i \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }} = \operatorname{Id}  \cos \alpha  + i \hat{n}\cdot \hat{\pmb{\sigma } } \sin \alpha 
+\end{equation}
+Ritornando all'evoluzione temporale, questa si scrive come:
+\begin{equation}
+	\ket{\psi (t)}= e^{ - \frac{i}{\hbar } \hat{H }t }  \ket{\psi (0)} = \left[ \cos \left(\frac{\lvert \mathbf{B}  \rvert t}{2}\right) \operatorname{Id}  + i \sin\left(\frac{\lvert \mathbf{B}  \rvert t}{2}\right) \hat{n}\cdot \hat{a\pmb{\sigma } } \right] \ket{\psi (0)} 
+\end{equation}
+Quindi per operatore di spin in rappresentazione di Heisenberg:
+\begin{equation}
+	\begin{split}
+		&\hat{S}_x(t) = e^{ \frac{i}{\hbar }\hat{H}t} S_x(0) e^{ - \frac{i}{\hbar }\hat{H}t} \\
+			     &= \left[ \cos \left(\frac{\lvert \mathbf{B}  \rvert t}{2} \operatorname{Id} - i \sin \left(\frac{\lvert \mathbf{B}  \rvert t}{2}\right) \hat{n}\cdot \hat{\pmb{\sigma } }\right)  \right] S_x(0)\left[ \cos \left(\frac{\lvert \mathbf{B}  \rvert t}{2} \operatorname{Id} + i \sin \left(\frac{\lvert \mathbf{B}  \rvert t}{2}\right) \hat{n}\cdot \hat{\pmb{\sigma } }\right)  \right]
+	\end{split}
+\end{equation}
 
 
 
@@ -2090,58 +2233,26 @@ Si unificano scrivendo $k_n = n \pi / a, \ n \in \mathbb{N}$.
 Allora $E_n = \frac{\hbar ^2 k_n^2}{2m} =  \frac{\hbar ^2 \pi^2 n^2}{2ma^2}$.
 La normalizzazione impone che i coefficienti delle soluzioni siano $\sqrt{2 / a} $. 
 
-\subsection{Dinamica degli operatori}
 
 
-\subsubsection{Dinamica di un sistema a due livelli}
 
-Si considera $\hat{H} = - \hat{\pmb{\mu } }\cdot \mathbf{B} $, dove $\mathbf{B} = (0,0,B_0)$ e $\hat{\pmb{\mu} }= \gamma \hat{\mathbf{S}} $ e $\hat{\mathbf{S}}  = \frac{\hbar }{2} \hat{\pmb{\sigma } }$ e $\hat{\pmb{\sigma }} $ vettore delle tre matrici di Pauli, quindi:
-\begin{equation}
-	\hat{H} = - \gamma \frac{\hbar}{2} \hat{\sigma}_z B_0 
-\end{equation}
-Vista la forma di $\hat{\sigma}_z$, $\hat{H}$ ha autostati $\ket{\uparrow} , \ket{\downarrow} $, con autovalori, rispettivamente, $-\gamma \frac{\hbar }{2}B_0$ e $\gamma \frac{\hbar }{2} B_0$.
-Conseguentemente, se $\gamma, B_0 >0$, lo stato fondamentale \`e $\ket{\uparrow} $ (in quanto autostato dell'Hamiltoniano con autovalore pi\`u basso).
 
-Si considera generico stato $\ket{\psi } $ e si vuole scrivere evoluzione temporale a partire da $\ket{\psi _0}  = a_{1} \ket{\uparrow} + a_2 \ket{\downarrow} $, con $\lvert a_1 \rvert ^2 + \lvert a_2 \rvert ^2 = 1, \ a_1,a_2 \in \mathbb{C}$. L'evoluzione \`e data da:
-\begin{equation}
-	\begin{split}
-		&\ket{\psi (t)} = a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow} \to \Big[a_1 e^{ - \frac{i}{\hbar }E_\uparrow   t} \ket{\uparrow}  + a_2 e^{ - \frac{i}{\hbar } E_\downarrow t} \ket{\downarrow}\Big] e^{ \frac{i}{2\hbar } (E_\uparrow+E_\downarrow) t} \\
-		&\Rightarrow \ket{\psi (t)} = a_1 e^{i\omega_0 t / 2} \ket{\uparrow} + a_2 e^{ - i \omega_0 t / 2} \ket{\downarrow} , \ \omega_0 = \frac{E_\downarrow- E_\uparrow}{\hbar }
-	\end{split}
-\end{equation}
-dove freccia $\to$ \`e per indicare la moltiplicazione per una fase.
 
-Si calcolano valori medi delle componenti di $\hat{\pmb{\mu }} $. Si nota che:
-\begin{equation}
-		\langle \hat{\mu }_x \rangle = \gamma \frac{\hbar }{2} \left(a_1^* a_2 e^{-i\omega_0 t} + a_2^* a_1 e^{ i \omega_0 t} \right)= \gamma \hbar  \Re \left\{ a_2a_1^* e^{-i\omega_0 t}  \right\} 
-\end{equation}
-dove si \`e usato che $\hat{\mu } _x = \gamma \frac{\hbar }{2} \hat{\sigma }_x$ e come agisce $\hat{\sigma } _x = \begin{pmatrix} 0& 1 \\ 1 & 0  \end{pmatrix} $ su $\ket{\uparrow} $ e $\ket{\downarrow} $ (eq. \ref{pupd}). Prendendo, poi, $a_1=a_2 = 1 / \sqrt{2} $, si trova $\hat{\mu } _x$ e analogamente anche gli altri:
-\begin{equation}
-	\langle \hat{\mu } _x \rangle = \gamma \frac{\hbar}{2} \cos(\omega_0 t) , \ \langle \hat{\mu } _y \rangle = - \gamma \frac{\hbar }{2} \sin(\omega_0t) , \ \langle \hat{\mu } _z \rangle = 0
-\end{equation}
-Infine:
-\begin{equation}
-		\frac{d }{d t} \langle \hat{\pmb{\mu } } \rangle = - \frac{\omega_0 \hbar }{2} \gamma \begin{pmatrix} \sin \omega_0 t \\ \cos \omega_0 t \\ 0 \end{pmatrix} = \langle \hat{\pmb{\mu }  }\rangle \times \omega _0 \hat{z}
-\end{equation}
 
-\subsubsection{Dinamica di un sistema a due livelli tramite rappresentazione di Heisenberg}
 
-In questa: $\hat{H} \to \hat{H} (t)$. Dato operatore in rappresentazione di Shr\"odinger $\hat{O}_S$, in rappresentazione di Heisenberg diventa:
-\[
-\braket{\psi (t)| \hat{O}_S|\psi (t)} = \Braket{\psi _0| e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} | \psi _0}  \equiv \braket{\psi_0|\hat{O}_H|\psi _0} \Rightarrow \hat{O}_H = e^{ \frac{i}{\hbar } \hat{H}t} \hat{O}_S e^{-\frac{i}{\hbar }\hat{H}t} 
-\] 
-Conseguentemente:
-\begin{equation}
-	\frac{d }{d t}  \hat{O}_h = \frac{i}{\hbar }\hat{H} e^{ \frac{i}{\hbar } \hat{H}t}  \hat{O}_S  e^{- \frac{i}{\hbar }\hat{H}t}  - \frac{i}{\hbar } \hat{H} e^{ \frac{i}{\hbar }\hat{H}t}  \hat{O}_S e^{ - \frac{i}{\hbar }\hat{H}t} \equiv \frac{i}{\hbar } [\hat{H},\hat{O}_H] 	 
-\end{equation}
-Per gli operatori di seguito, si sottintende che sono in rappresentazione di Heisenberg. Per calcolare $\frac{d }{d t} \hat{\mu }_x$, bisogna calcolare $\frac{d }{d t} \hat{S}_x = \frac{i}{\hbar }[\hat{H},\hat{S}_x]$ per la formula sopra. 
-Essendo $\hat{H} \propto \hat{S }_z$ e $[\hat{S}_z, \hat{S}_x] = i\hbar  \hat{S}_y$, si ottiene facilmente il risultato.
 
-Considerando $\mathbf{B} = (B_x,B_y,B_z)$, invece, si ottiene il risultato pi\`u generale per cui $[\hat{H}, \hat{S}_x] = B_y [ \hat{S}_y , \hat{S}_x] + B_z [\hat{S}_z , \hat{S}_x] = i \hbar \big(B_z \hat{S}_y - B_y \hat{S}_z\big)$.
-Questa si generalizza a:
-\begin{equation}
-	\frac{d }{d t} \hat{\mathbf{S} } = \hat{\mathbf{S} } \times  \gamma \mathbf{B} 
-\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

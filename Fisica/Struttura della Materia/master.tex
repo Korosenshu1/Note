@@ -843,7 +843,7 @@ Si manda $\mu \to 0$ e si prende $\mathscr{E} = \kappa _B T x$, quindi:
 N = \frac{4\pi V g \sqrt{2} m^{3 / 2} }{h^3} (\kappa _B T)^{3 / 2} \int_{0} ^{+\infty}  \frac{\sqrt{x} dx}{e^x - 1}
 \] 
 L'integrale ha soluzione generale: $\int_{0} ^{+\infty} \frac{x^n dx}{e^x - 1} = \Gamma(n+1) \zeta(n+1)$;
-il risultato corrisponderebbe alle aspettative se l'integrale divergesse, mentre $\int_{0} ^{+\infty} \frac{\sqrt{x} dx}{e^x - 1} = 2.31$. 
+il risultato corrisponderebbe alle aspettative se l'integrale divergesse, mentre $\int_{0} ^{+\infty} \frac{\sqrt{x} dx}{e^x - 1} =\frac{\sqrt{\pi} }{2}2.612= 2.31$. 
 Si definiscono, quindi, una densit\`a critica e una temperatura critica, rispettivamente, sopra cui e sotto cui sorgono problemi:
 \begin{equation}
 	\begin{split}
@@ -851,7 +851,7 @@ Si definiscono, quindi, una densit\`a critica e una temperatura critica, rispett
 		& T_c = \frac{1}{2.31} \left(\frac{N}{V}\right) _c^{2 / 3} \frac{h^2}{(4\pi \sqrt{2} )^{2/3} m\kappa _B }
 	\end{split}
 \end{equation}
-L'errore \`e dovuto nel passaggio al continuo: per quanto la condizione $\kappa _B T \gg \frac{1}{2m} (h / L)^2\Rightarrow N^{2 / 3} \gg 2.31 \frac{(4\pi \sqrt{2} )^{2/3} }{2} \approx 7.8$ sia solitamente verificata, si ha, contemporaneamente al passaggio al continuo, anche $\lim_{\mathscr{E} \to 0} \rho (\mathscr{E}) =0$, quindi nei conti precedendi, si sono trascurate le particelle nello stato fondamentale.
+L'errore \`e dovuto nel passaggio al continuo: per quanto la condizione $\kappa _B T \gg \frac{1}{2m} (h / L)^2\Rightarrow N^{2 / 3} \gg 2.31 \frac{(4\pi \sqrt{2} )^{2/3} }{2} \approx 7.8$ sia solitamente verificata, si ha, contemporaneamente al passaggio al continuo, anche $\lim_{\mathscr{E} \to 0} \rho (\mathscr{E}) =0$, quindi nei conti precedenti, si sono trascurate le particelle nello stato fondamentale.
 
 Queste, per\`o, tendono a popolare sempre pi\`u lo stato fondamentale pi\`u si sale sopra la densit\`a critica a $T$ fissato, o si scende sotto temperatura critica a $N$ fissato.
 
@@ -861,16 +861,16 @@ Quello che si verifica \`e una \textbf{transizione di fase} in uno stato conosci
 	\overline{n}_0 = \frac{1}{\exp(-\mu / \kappa _B T) - 1}
 \end{equation}
 \end{boxenv}
-\noindent che coerentemente converge per $\mu \to 0$.
+\noindent che coerentemente diverge per $\mu \to 0$.
 
 Valore di $N$ calcolato prima, in realt\`a, \`e $N^* = N - N_0 = N (T / T_c)^{3 / 2} $, da cui:
 \begin{equation}
 	N_0 = N \left[1 - \left(\frac{T}{T_c}\right) ^{3 / 2} \right] 
 \end{equation}
 \begin{osservazione}
-	In due dimensioni non vi pu\`o essere condensazione perch\'e la densit\`a di stati \`e costante in energia:
+	In due dimensioni non vi pu\`o essere condensazione perch\'e la densit\`a di stati \`e costante in energia; infatti per $p^2=p_i^2+p_j^2$:
 	\[
-	d \mathscr{E} = \frac{p dp }{m} \Rightarrow d^2 p = 2 \pi p dp = 2\pi m d\mathscr{E}
+	d \mathscr{E} = \frac{p dp }{m} \Rightarrow dp_i dp_j = 2 \pi p dp = 2\pi m d\mathscr{E}
 	\] 
 \end{osservazione}
 \noindent Per $\mu \to 0$ e per $T< T_c$, ricordando che le particelle nel condensato hanno energia nulla, l'energia media \`e:
@@ -895,7 +895,7 @@ L'Hamiltoniano di singolo oscillatore \`e:
 \begin{equation}
 	H = \frac{\mathbf{p} ^2}{2m} + \frac{m\omega ^2 \mathbf{x} ^2}{2}		
 \end{equation}
-L'energia media classica \`e data dal principio di equipaartizione ed \`e $E = 3N\kappa _B T$, mentre l'energia quantizzata per singola particella \`e $E_n=(n+1 / 2) \hbar \omega$.
+L'energia media classica \`e data dal principio di equipartizione ed \`e $E = 3N\kappa _B T$, mentre l'energia quantizzata per singola particella \`e $E_n=(n+1 / 2) \hbar \omega$.
 
 La funzione di partizione di singola particella, quindi, \`e:
 \begin{equation}
@@ -903,7 +903,7 @@ La funzione di partizione di singola particella, quindi, \`e:
 \end{equation}
 Da questa, si ottiene energia media per oscillatore:
 \begin{equation}
-	E = \frac{1}{2}\hbar  \omega + \frac{\hbar  \omega}{\exp(hta \omega / \kappa _B T) - 1} = \left(\overline{n} + \frac{1}{2}\right) \hbar \omega
+	E = \frac{1}{2}\hbar  \omega + \frac{\hbar  \omega}{\exp(\hbar \omega / \kappa _B T) - 1} = \left(\overline{n} + \frac{1}{2}\right) \hbar \omega
 \end{equation}
 Dall'ultima, si ha che gli oscillatori seguono la statistica di Bose-Einstein con $\mu =0$:
 \begin{equation}
@@ -914,7 +914,7 @@ Si usa gas di oscillatori come modello per campo elettromagnetico: si vede campo
 
 Essendo $\mu  =0 $, non esiste legge di conservazione per numero totale di quasiparticelle: se ne possono creare e distruggere a piacimento.
 
-Inserendo gas in scsatola con pareti perfettamente assorbenti (quindi con condizione di annullamento ai bordi), la legge di dispersione \`e $\omega = ck$, quindi $\mathscr{E} = cp$.
+Inserendo gas in scatola con pareti perfettamente assorbenti (quindi con condizione di annullamento ai bordi), la legge di dispersione \`e $\omega = ck$, quindi $\mathscr{E} = cp$.
 
 Allora elemento di spazio delle fasi \`e:
 \begin{equation}
@@ -1318,6 +1318,195 @@ La densit\`a spettrale del ruimore shot \`e:
 	G(f) = 2e \langle I \rangle
 \end{equation}
 Il rumore shot \`e pi\`u significativo del Johnson a temperatura ambiente nel caso in cui $\Delta V = RI > 2\kappa _BT / e \approx 50$ mV.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Solidi cristallini}
+\subsection{Livelli energetici di un cristallo}
+
+
+Si risolve equazione di Shr\"odinger pi\`u completa per livelli elettronici; l'Hamiltoniano deve contenere parte cinetica di elettroni e nuclei e componente di interazione Coulomniana tra di essi:
+\begin{equation}
+	\begin{split}
+		H_0 &= T_e + T_N + V_{ee} + V_{NN} + V_{eN}   \\
+		    &= - \frac{\hbar ^2}{2m} \sum_{i}^{} \nabla _i^2 - \frac{\hbar ^2 }{2M} \sum_{i}^{} \nabla _i^2 + \frac{1}{2} \sum_{i\neq j}^{} \frac{e^2}{\lvert \mathbf{r} _i - \mathbf{r} _j \rvert } + \frac{1}{2}\sum_{l\neq m }^{} \frac{Z_l Z_m e^2 }{\lvert \mathbf{R} _l - \mathbf{R}_m  \rvert } - \sum_{i,l}^{} \frac{Z_l e^2}{\lvert \mathbf{r} _i - \mathbf{R} _l \rvert }
+	\end{split}
+\end{equation}
+Quindi si risolve $H_0 \psi  = E \psi $ in approssimazione non-relativistica.
+Oltre ad approssimazione non-relativistica, si assume che la funzione d'onda fattorizzi come $\psi (\vec{\mathbf{r} }, \vec{\mathbf{R} }) = F( \vec{\mathbf{R} }) \phi _n (\vec{\mathbf{r} }, \vec{\mathbf{R} })$ e che $\vec{\mathbf{R} }$ sia un parametro in $\phi _n$\footnote{Il pedice $n$ in $\phi _n$ sta ad indicare il generico livello energetico $n$-esimo a cui tale funzione d'onda fa riferimento.} e non variabile.
+Questa \`e l'\textbf{approssimazione di Born-Oppenheimer} ed \`e giustificata dal fatto che i nuclei, molto pi\`u pensati degli elettroni, sono approssimabili come fermi nello studio del moto degli elettroni stessi. Allora:
+\begin{equation}
+	\nabla ^2 _\mathbf{R} \psi  \equiv \phi _n \nabla ^2 _\mathbf{R} F + 2 \nabla _\mathbf{R} \phi _n \cdot \nabla _\mathbf{R} F + F \nabla ^2_\mathbf{R} \phi _n = \phi _n \nabla ^2_\mathbf{R} F
+\end{equation}
+Complessivamente, l'equazione di Shr\"odinger \`e data da:
+\begin{equation}
+	\begin{split}
+		-\frac{\hbar ^2}{2m} F( \vec{\mathbf{R} }) \nabla ^2_\mathbf{r} \phi _n (\vec{\mathbf{R} }, \vec{\mathbf{r} }) &+ ( V_{ee}  + V_{eN}+V_{N N} ) F(\vec{\mathbf{R} }) \phi_n (\vec{\mathbf{R} }, \vec{\mathbf{r} }) + \operatorname{} \\
+				&- \frac{\hbar ^2}{2M} \phi _n (\vec{\mathbf{R} }, \vec{\mathbf{r} }) \nabla ^2_\mathbf{R} F(\vec{\mathbf{R} })  = E F(\vec{\mathbf{R} }) \phi _n(\vec{\mathbf{R} }, \vec{\mathbf{r} })
+	\end{split}
+\end{equation}
+Dividendo ambo i membri per $\psi $ e includendo termini nucleari nell'autoenergia:
+\begin{equation}
+-\frac{\hbar ^2}{2m}\frac{\nabla ^2 _\mathbf{r} \phi _n}{\phi _n} + V_{ee}  + V_{eN} = E_n(\vec{\mathbf{R} })
+\end{equation}
+Trovate le autoenergie, si pu\`o scrivere equazione di Shr\"odinger per il nucleo:
+\begin{equation}
+	-\frac{\hbar ^2}{2M} \frac{\nabla ^2 _\mathbf{R} F(\vec{\mathbf{R} })}{F(\vec{\mathbf{R} })} + V_{N N } + E_n(\vec{\mathbf{R} }) = E
+\end{equation}
+Tuttavia non si è ancora in grado di risolvere quella per gli elettroni, nonostante le semplificazioni.
+Si assume, ulteriormente, che gli elettroni siano indipendenti, ossia che la funzione d'onda elettronica si scriva come prodotto delle funzioni d'onda per singolo elettrone.
+Avendo a che fare con fermioni, questa scomposizione deve risultare antisimmetrica per scambio delle particelle. 
+Questa si ricava dal \textbf{determinante di Slater}:
+\begin{equation}
+	\phi _n (\vec{\mathbf{r} }) = \frac{1}{\sqrt{n!} } \begin{vmatrix} \phi _1(\mathbf{r} _1) & \phi _1(\mathbf{r} _2) & \cdots & \phi _1 (\mathbf{r} _n) \\ 
+	\phi_2 (\mathbf{r}_1 )& \phi _2 ( \mathbf{r} _2) & \cdots & \phi _2 (\mathbf{r} _n)\\
+	\vdots & \vdots& \ddots & \vdots\\
+\phi _n (\mathbf{r} _1) & \phi _n (\mathbf{r} _2) & \cdots &\phi _n(\mathbf{r} _n)\end{vmatrix} 
+\end{equation}
+L'Hamiltoniano ottenuto per la funzione d'onda elettronica \`e dato da:
+\begin{equation}
+	H_\text{HF} = -\frac{\hbar^2}{2m} \nabla ^2_\mathbf{r}  + \frac{1}{2}\sum_{i\neq j}^{} \frac{e^2}{\lvert \mathbf{r} _i - \mathbf{r} _j \rvert } - \sum_{i,l}^{} \frac{Z_l e^2}{\lvert \mathbf{r} _i - \mathbf{R} _l \rvert }
+\end{equation}
+Applicandolo alla funzione d'onda fattorizzata, si ottiene l'\textbf{Hamiltoniano di Hartree-Fock}:
+\begin{equation}
+	\begin{split}
+		\hat{H}_\text{HF} \phi _i (\vec{\mathbf{r} } ) = &- \frac{\hbar ^2}{2m} \nabla _\mathbf{r} ^2 \phi _i(\vec{\mathbf{r} })-\sum_{l}^{} \frac{Z_l e^2}{\lvert \vec{\mathbf{r} } - \mathbf{R} _l \rvert } \phi _i (\vec{\mathbf{r} }) + e^2 \sum_{j\neq i }^{} \int \frac{\phi _j^*(\vec{\mathbf{r} }') \phi _j(\vec{\mathbf{r} }')}{\lvert \vec{\mathbf{r} }-\vec{\mathbf{r} }' \rvert } d^3 r' \ \phi _i (\vec{\mathbf{r} })\\
+							   &-e^2 \sum_{j\neq i}^{} \int \frac{\phi _j^*(\vec{\mathbf{r} }') \phi _i (\vec{\mathbf{r} }')}{\lvert \vec{\mathbf{r} }- \vec{\mathbf{r} }' \rvert } d^3 r' \ \phi _j (\vec{\mathbf{r} })
+	\end{split}
+\end{equation}
+I primi due termini rappresentano parte cinetica e interazione Coulombiana con i nuclei; il terzo termine \`e \textbf{termine di Hartree} e rappresenta la parte puramente moltiplicativa dell'interazione Coulombiana tra elettroni; l'ultimo termine, detto \textbf{di scambio}, assicura antisimmetria della funzione d'onda imponendo cambiamento di segno quando si scambiano due elettroni.
+
+L'ultimo \`e problematico perch\'e contiene la $\phi _i$ per cui si vuole risolvere;
+un metodo per trattare il problema \`e tramite \textbf{local density approximation}, in cui si media il potenziale nel termine di scambio sommando sulle $\phi _i$ e rinormalizzando. 
+Cos\`i facendo, l'interazione Coulombiana si pu\`o scrivere tramite singolo potenziale $V(\vec{\mathbf{r} })$ e l'equazione per le autoenergie si scrive in una forma standard:
+\begin{equation}\label{eser}
+	-\frac{\hbar ^2}{2m} \nabla ^2_\mathbf{r} \phi _i(\vec{\mathbf{r} }) + V(\vec{\mathbf{r} }) \phi _i (\vec{\mathbf{r} }) = E_n \phi _i (\vec{\mathbf{r} })
+\end{equation}
+\subsection{Reticoli e teorema di Bloch}
+In solidi cristallini, le posizioni di equilibrio degli atomi sono periodiche, quindi \`e periodico il potenziale a cui sono soggetti gli elettroni: $V(\mathbf{r} +\mathbf{R} ) = V(\mathbf{r} )$, con $\mathbf{R} $ set di vettori, esprimibile come $\mathbf{R} = n_1\mathbf{a} _1 + n_2 \mathbf{a} _2 + n_3 \mathbf{a} _3$. 
+Gli $\mathbf{a} _i$ definiscono una \textbf{cella unitaria}, definita come la pi\`u piccola struttura periodica identificabile in un cristallo. 
+L'insieme $\{\mathbf{R} \}$ \`e detto \textbf{reticolo di Bravais}; non \`e assicurato che questo coincida con la forma del reticolo atomico, n\'e che ogni cella unitaria contenga un singolo atomo.
+Per ogni set $\left\{ \mathbf{R}  \right\} $, si definisce \textbf{reticolo reciproco} il set $\left\{ \mathbf{K}  \right\} $ tale che
+\[
+e^{i \mathbf{K} \cdot \mathbf{R} }  =1 
+\] 
+\begin{esempio}
+Per reticolo cubico con $\mathbf{a} _i = a_i \hat{\mathbf{x} }_i$, il reticolo reciproco \`e dato da $\mathbf{b} _i = 2\pi \hat{\mathbf{x} }_i / a_i$.
+\end{esempio}
+Si usa eq. \ref{eser} con ipotesi di periodicit\`a per $V(\mathbf{r} )$. 
+L'impulso non va bene come numero quantico perch\'e l'Hamiltoniano non commuta con $\mathbf{p} $ sempre, ma solo per un generico sottogruppo di traslazioni. 
+Questo significa che il potenziale $V(\mathbf{r} )$ accoppia onde piane con impulsi diversi: per reticolo unidimensionale, gli elettroni entrano come onde piane di impulso $\mathbf{q} _0$ ed escono con impulso $|\mathbf{q} | = | \mathbf{q} _0|$ ma con angolo\footnote{Immaginando reticolo disposto lungo asse $\hat{x}$, se gli elettroni arrivano dal semipiano negativo, questi individuano angolo $\alpha_0$ con asse $\hat{x}$; l'angolo in uscita $\alpha $ \`e formato simmetricamente rispetto ad asse $\hat{y}$ con lo stesso asse $\hat{x}$.} $\alpha \neq \alpha _0$a. 
+La differenza di cammino ottico \`e $\delta = a(\cos \alpha - \cos \alpha _0)$, con $\cos \alpha  = q_x / \lvert \mathbf{q}  \rvert $ e $\cos \alpha _0 = q_{0,x} / \lvert \mathbf{q} _0 \rvert $.
+
+Per avere interferenza costruttiva, si impone che $\delta $ sia multiplo della lunghezza d'onda degli elettroni:
+\[
+	\delta = \frac{\mathbf{a} \cdot  \Delta \mathbf{q} }{\lvert \mathbf{q}  \rvert } \stackrel{!}{=} l \lambda  \implies \Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l  \ {\color{red} (?)}
+\] 
+dove si \`e usato che $\lvert \mathbf{q}  \rvert = \lvert \mathbf{q} _0 \rvert $ e $\mathbf{a } = a \hat{\mathbf{x} }$.
+Essendo $\Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l$, allora $\Delta \mathbf{q} \in \left\{ \mathbf{K}  \right\} $; si assume, quindi, che le soluzioni a \ref{eser} siano combinazioni lineari di onde piane, i cui impulsi differiscono per un vettore in $\left\{ \mathbf{K}  \right\} $.
+
+Questo ansatz \`e formalizzato dal \textbf{teorema di Bloch}, secondo cui le soluzioni della \ref{eser} sono le cosiddette \textbf{funzioni di Bloch}, che si scrivono come:
+\begin{equation}
+	\phi _{n, \mathbf{k} } (\mathbf{r} ) = e^{i \mathbf{k} \cdot \mathbf{r} } u _{n, \mathbf{k} } (\mathbf{r} )
+\end{equation}
+con $u_{n, \mathbf{k} } $ funzione periodica sul reticolo, che rende periodica sul reticolo stesso anche  $\phi _{n,\mathbf{k} } $, a meno di una fase:
+\[
+u_{n,\mathbf{k} } (\mathbf{r} + \mathbf{R} ) = u_{n,\mathbf{k} } (\mathbf{r} ) \implies \phi _{n,\mathbf{k} } (\mathbf{r} + \mathbf{R} ) = e^{i \mathbf{k} \cdot \mathbf{R} } \phi _{n,\mathbf{k} } (\mathbf{r} ) 
+\] 
+\begin{proof}
+	Si  definisce set di operatori che rappresentano traslazioni discrete sul reticolo, per cui $[\hat{T}_\mathbf{R} , \hat{H}] = 0$. Per le autofunzioni simultanee dei due varr\`a: $T_\mathbf{R} \phi  = C(\mathbf{R} ) \phi $; inoltre, gli operatori di traslazione godono della propriet\`a di composizione: $T_\mathbf{R} T_{\mathbf{R}'}  = T_{\mathbf{R} '}  T_\mathbf{R} = T_{\mathbf{R} + \mathbf{R} '} $, per cui vale anche $C(\mathbf{R} ) C(\mathbf{R} ') = C(\mathbf{R} +\mathbf{R} ')$. Sfruttando questa propriet\`a, ogni autovalore si pu\`o scrivere come:
+	\begin{equation}
+		C( \mathbf{R} ) = C( \mathbf{a} _1) ^{n_1} C(\mathbf{a} _2)^{n_2} C(\mathbf{a} _3) ^{n_3} = e^{ i \mathbf{k} \cdot \mathbf{R} } 
+	\end{equation}
+dove $\mathbf{k} = x_1 \mathbf{b} _1 + x_2 \mathbf{b} _2  + x_3 \mathbf{b} _3$ e $\mathbf{b} _i \cdot \mathbf{a}_j = 2\pi \delta _{ij} $, quindi $C(\mathbf{a} _i) = e^{2 \pi i x_i} $. 
+
+Rimane da mostrare che gli $x_i$ sono reali. 
+Questo si ottiene dalla condizione di periodicit\`a delle autofunzioni: $\phi (\mathbf{r} + N_i \mathbf{a}_i) = \phi (\mathbf{r} ) $; allo stesso tempo si ha l'ipotesi per cui
+\[
+\phi _{n, \mathbf{k} } (\mathbf{r} + N_i \mathbf{a} _i) = e^{i \mathbf{k} \cdot N_i \mathbf{a} _i} \phi _{n , \mathbf{k} } (\mathbf{r} )
+\] 
+per cui $e^{i \mathbf{k} \cdot N_i \mathbf{a}_i } \phi _{n, \mathbf{k} } (\mathbf{r} ) = \phi _{n , \mathbf{k} } (\mathbf{r} )$, che \`e verificata per $\mathbf{k} \cdot N_i \mathbf{a} _i = 2\pi l $, quindi $x_i = m_i /  N_i$, con $l , m$ interi.
+\end{proof}
+Gli impulsi permessi per le autofunzioni di $\hat{H}, \hat{T}_\mathbf{R} $ sono un insieme approssimabile come continuo per $N_i$ grandi, cio\`e cristalli infiniti e:
+\begin{equation}
+	\mathbf{k} = \sum_{i=1}^{3} \frac{m_i}{N_i} \mathbf{b} _i
+\end{equation}
+\subsection{Soluzione per $\hat{H}_\text{HF} $ e bande energetiche}
+Si risolve l'equazione di Shr\"odinger perturbativamente. Essendo le funzioni di Bloch combinazioni lineari di onde piane, non sono autofunzioni dell'operatore impulso:
+\[
+\braket{\mathbf{r} |\hat{\mathbf{p} }|\psi _{n,\mathbf{k} } } =  - i \hbar  \nabla \psi _{n,\mathbf{k} } = \hbar \mathbf{k} \psi _{n,\mathbf{k} }  - i\hbar e^{i \mathbf{k} \cdot \mathbf{r} } \nabla u_{n,\mathbf{k} } (\mathbf{r} )
+\] 
+Riscrivendo numero d'onda traslando lungo il reticolo reciproco, cio\`e $\mathbf{k}  = \mathbf{k} ' + \mathbf{K} $, la funzione di Bloch diventa:
+\[
+e^{i \mathbf{k} \cdot \mathbf{r} } u_{n,\mathbf{k} } (\mathbf{r} ) = e^{i \mathbf{k} ' \cdot \mathbf{r} } e^{i \mathbf{K} \cdot \mathbf{r} } u_{n, \mathbf{k} } (\mathbf{r} )=  e^{i \mathbf{k} '\cdot \mathbf{r} } u_{n, \mathbf{k} '} (\mathbf{r} )
+\] 
+dove l'ultima uguaglianza \`e data dalla periodicit\`a delle $u$ sul reticolo, essendo $\mathbf{K}  \cdot \mathbf{R}  = 2\pi n$. Tramite questa riscrittura, si nota che \`e presente arbitrariet\`a nella scelta deel numero d'onda associato alle autofunzioni, cio\`e esiste relazione di equivalenza tra tutti i $\mathbf{k} $ che differiscono tra di loro per un vettore in $\left\{ \mathbf{K}  \right\} $. 
+Per eliminare tale ambiguit\`a sugli autostati di $\hat{H}_\text{HF}$, ci si restringe a cella unitraria del reticolo reciproco. Si usa \textbf{cella di Wigner-Seitz}, definita univocamente come regione spaziale costruita attorno ad un nodo reticolare del reticolo di Bravais formata dai punti pi\`u vicini a tale nodo.
+\begin{boxenv}[]
+\centering Riprendere da pagina 67, dopo immagine
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
