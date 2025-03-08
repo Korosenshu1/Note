@@ -1733,7 +1733,7 @@ con $\hat{H}_\text{eff}$ indipendente dal tempo. Si riscrive
 	\hat{H}_\text{eff} = - \frac{1}{2} \hbar \left[ (\omega_0 + \omega) \hat{\sigma }_z + \omega \hat{\sigma }_x \right] , \ \omega_0 = \gamma B_0 \text{ e } \omega _1 = \gamma B_1
 \end{equation}
 e si assume $\ket{\phi (0)} = \ket{\uparrow} \Rightarrow \ket{\psi (T)} = e^{- \frac{i}{\hbar }\omega T \hat{S}_z} e^{- \frac{i}{\hbar } \hat{H}_\text{eff}T} \ket{\uparrow}  $.
-Ora si deve calcolare $e^{ - \frac{i}{\hbar }\hat{H}_\text{eff}t} $; per farlo, si prende $\hat{H}_\text{eff} = -\frac{1}{2} \hbar  \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }$, con $\hat{n} = \frac{1}{\alpha } (\oemga_1 , 0 , \omega_0 + \omega)$ e $\alpha  = \big( \omega_1 ^2 + (\omega_0 +\omega)^2\big)^{1 / 2} $. Allora:
+Ora si deve calcolare $e^{ - \frac{i}{\hbar }\hat{H}_\text{eff}t} $; per farlo, si prende $\hat{H}_\text{eff} = -\frac{1}{2} \hbar  \alpha  \hat{n}\cdot \hat{\pmb{\sigma } }$, con $\hat{n} = \frac{1}{\alpha } (\omega_1 , 0 , \omega_0 + \omega)$ e $\alpha  = \big( \omega_1 ^2 + (\omega_0 +\omega)^2\big)^{1 / 2} $. Allora:
 \begin{equation}
 	\begin{split}
 		e^{- \frac{i}{\hbar } \hat{H}_\text{eff}t } &= e^{\frac{i}{2} \alpha  t \hat{n}\cdot \hat{\pmb{\sigma } }} = \cos \left(\frac{\alpha  t  }{2}\right)  \operatorname{Id} + i (\hat{n}\cdot \hat{\pmb{\sigma } }) \sin \left(\frac{\alpha  t }{2}\right) \\
@@ -2233,9 +2233,93 @@ Si unificano scrivendo $k_n = n \pi / a, \ n \in \mathbb{N}$.
 Allora $E_n = \frac{\hbar ^2 k_n^2}{2m} =  \frac{\hbar ^2 \pi^2 n^2}{2ma^2}$.
 La normalizzazione impone che i coefficienti delle soluzioni siano $\sqrt{2 / a} $. 
 
+\subsection{Positronio (prova d'esame)}
+
+Il sistema consiste di un elettrone e un positrone legati insieme da potenziale di Coulomb $U(r) = - k / r$, con $k = e^2$.
+
+\begin{enumerate}[(1).]
+	\item \textbf{Scrivere l'Hamiltoniano del sistema ed elencare le quantit\`a conservate.} 
+
+		Si ha $\displaystyle \hat{H} = \frac{\hat{p}_1 ^2 }{2m} + \frac{\hat{p}_2^2}{2m} - \frac{k}{\hat{r}}$. Visto che $\hat{H}$ non dipende dal tempo, si conserva. L'Hamiltoniano \`e anche invariante sotto traslazioni globali $\Rightarrow $ si conserva l'impulso del CM ed \`e invariante per rotazioni, quindi si conserva il momento angolare.
+	\item \textbf{Scrivere l'Hamiltoniano in coordinate del CM e relativa, poi trovare le energie degli stati legati del sistema.}   
+
+Nel CM, l'Hamiltoniano diventa: $\hat{H} = \displaystyle \frac{\hat{P}^2_\text{CM}}{2M} + \frac{\hat{p}_r^2}{2\mu } - \frac{k}{\hat{r}}$, con $M = 2m$ e $\mu = m / 2$. Allora il CM compie un moto libero, essendo che il potenziale dipende solo dalla coordinata relativa;
+si osserva meglio notando che l'Hamiltoniano si pu\`o disaccoppiare: 
+\[
+\hat{H} = \frac{\hat{P}^2_\text{CM}}{2M} + \left(\frac{\hat{p}_r^2}{2\mu } - \frac{k}{\hat{r}}\right) \Rightarrow  \hat{H} = \hat{H}_\text{CM} + \hat{H}_r
+\] 
+dove $\hat{H}_\text{CM}$ non contiene alcun potenziale, quindi il centro di massa compie moto libero. 
+Essendo $\hat{H}$ separabile nelle due coordinate, la funzione d'onda si pu\`o scrivere come $\psi = \psi _\text{CM} \psi _r$, con $\psi _\text{CM} = e ^{i \mathbf{k} _\text{CM}\cdot \mathbf{x} _\text{CM}} $ e $\mathbf{k} _\text{CM} = \frac{\mathbf{p} _\text{CM}}{\hbar }$. 
+Per il seguito, quindi, si studia solamente $\psi _r$.
+
+Quanto ad $\hat{H}_r$, questo \`e lo stesso Hamiltoniano studiato nel caso dell'atomo di idrogeno, quindi, con l'accortezza di sostituire $m_e \to \mu $, si ha:
+\begin{equation}
+	E_n = -\frac{\mu k^2}{2 (\hbar n)^2}
+\end{equation}
+\item \textbf{Ricavare funzione d'onda dello stato fondamentale e calcolare il raggio quadratico medio.} 
+
+	Riprendendo trattazione dell'atomo di idrogeno, ogni autotato \`e della forma $\ket{n,\ell ,m} $, con $\ell $ associato a $\hat{L}^2$ e $m$ associato a $\hat{L}_z$, ossia $\hat{L^2}\ket{n,\ell ,m} = \ell (\ell +1) \ket{n,\ell ,m} $ e $\hat{L}_z \ket{n,\ell ,m} = m \ket{n,\ell ,m} $. Si ricorda che $-\ell \le m \le +\ell  $, quindi lo stato fondamentale sar\`a non-degenere, mentre gli altri s\`i e con degenerazione pari a $n^2$, visto che, fissato $n$, si ha $\ell =0, \ldots, n-1$ e $m\in [-\ell ,\ell]$:
+	\[
+	\operatorname{deg} \big(\ket{n,\ell ,m} \big) = \sum_{\ell =0}^{n-1} (2\ell +1) = n^2
+	\] 
+dove $2\ell +1$	sono i valori di $m$. In generale, nella rappresentazione delle coordinate, $\psi _{n,\ell ,m} (r,\theta ,\varphi ) = R_{n\ell } (r) Y_{\ell m} (\theta ,\varphi )$; si \`e interessati a $\ket{1,0,0} $, associato a $R_{10 } (r) Y_{00} (\theta ,\varphi )$, dove:
+\[
+Y_{00} = \frac{1}{\sqrt{4\pi} }, \ R_{10} = \frac{2}{r_B^{3 / 2} }e ^{ - r / r_B} 
+\] 
+in cui $r_B=\hbar  / (\mu  \alpha  c)$ \`e il raggio di Bohr.
+
+Per il raggio quadratico medio
+\[
+r_p = \sqrt{\left\langle \lvert \mathbf{x} _1 - \mathbf{x} _2 \rvert ^2 \right\rangle} 
+\] 
+con $\lvert \mathbf{x} _1 - \mathbf{x} _2 \rvert \equiv r$, si ha:
+\[
+\begin{split}
+	\langle r^2 \rangle &= \braket{100|r^2|100} = \int d^3 x \ \psi _{100} ^*(\mathbf{x} ) r^2 \psi _{100} (\mathbf{x} ) = \int_{0} ^{+\infty} dr \ r^4 \int_{0} ^\pi d\theta \ \sin \theta \int_{0} ^{2\pi} d\varphi \ \lvert Y_{00}  \rvert ^2 \lvert R_{10}  \rvert ^2\\
+			    &\int_{0} ^{+\infty} dr \ r^4 \cancel{\int_{-1}^{+1}d(\cos \theta ) \int_{0} ^{2\pi} d\varphi  \ \lvert Y_{00}  \rvert ^2 } \frac{4}{r_B^3}e^{-2 r / r_B} = \frac{4}{r_B^3} \int_{0} ^{+\infty} r^4 e^{- 2r / r_B} \ dr
+\end{split}
+\] 
+dove si \`e usato che $Y_{\ell m}(\theta ,\varphi ) $ \`e correttamente normalizzata. L'integrale rimanente si pu\`o risolvere per parti, oppure notando che per $\alpha  = r / r_B$ si ha $\frac{d ^4}{d \alpha ^4} e^{- \alpha  r} = r^4 e^{-\alpha  r} $, quindi:
+\begin{equation}
+	\langle r^2 \rangle= 3r_B^2\Rightarrow r_p = \sqrt{3} r_B
+\end{equation}
+\item \textbf{Ripetere il punto (3) per i primi stati eccitati con $n=2$, corrispondenti a $\ell =1$ e $\ell =0$.} 
+Si ha:
+\begin{equation*}
+	R_{20} = \frac{1}{\sqrt{2} r_B^{3/2} }\left(1 - \frac{r}{2r_B}\right) e^{ - r / (2r_B)}  ; \ R_{21} = \frac{1}{\sqrt{24} r_B^{3 / 2} } \frac{r}{r_B} e^{-r / (2r_B)} 
+\end{equation*}
+Le armoniche sferiche non sono date perch\'e tanto sono normalizzate, quindi non rientrano nel calcolo, esattamente come nel punto precedente.
+Come prima:
+\[
+\begin{split}
+\langle r^2 \rangle_{200} &= \int r^2 \lvert \psi _{200}  \rvert ^2 \ d^3 x = \int_{0} ^{+\infty} \int_{0} ^\pi \int_{0} ^{2\pi} r^2 \lvert \psi _{200}  \rvert ^2 r^2 \sin \theta  \ dr d\theta  d\varphi \\
+			  &=\int_{0} ^{+\infty} r^4 R_{20} ^2 \ dr = \frac{1}{2} \int_{0} ^{+\infty} \frac{r^4}{r_B^3} \left(1- \frac{r}{2r_B}\right)^2 e ^{- r / r_B}  \ dr = \frac{r_B^2}{2}\int_{0} ^{+\infty} u^4 \left(1 - \frac{u}{2}\right) ^2 e^{-u}  \ du\\
+			  &=\frac{r_{B} ^2}{2}\int_{0} ^{+\infty} \left(u^4 - u^5 + \frac{u^6}{4}\right) e ^{- u}  \ du = \frac{r_B^2}{2} \left(4! - 5! + \frac{6!}{4}\right) = 42 r_B^2
+\end{split}
+\] 
+dove si \`e preso $u = \alpha  r$. 
+
+Per gli stati $\ket{2 , 1 , m} $, invece, per il fatto che l'integrale del raggio quadratico medio coinvolge una grandezza indipendente da $m$, il risultato \`e analogo per tutti gli stati al variare di $m = -1,0,1$. Ripetendo un calcolo analogo, si trova $\langle r^2 \rangle_{21}  = 30 r_B^2$.
+\item \textbf{Scrivere funzione d'onda in SR in moto con velocit\`a $\mathbf{V} = v \hat{x}$ costante rispetto al CM.} 
+
+Occorre compiere una traslazione sull'impulso del centro di massa. L'operatore unitario che compie tale traslazione \`e $\hat{U} = e^{\frac{i}{\hbar }p \hat{X}_\text{CM}} = e^{\frac{i}{\hbar } MV \hat{X}_\text{CM}} $, quindi:
+\begin{equation}
+	\psi  \to e^{\frac{i}{\hbar } MV \hat{X}_\text{CM}} \psi 
+\end{equation}
+\item \textbf{Il positronio pu\`o decadere in due fotoni. Si assume che questo possa avvenire quando la distanza tra le due particelle \`e minore della lunghezza d'onda Compton $\lambda  - \alpha  r_B$. Valutare la probabilit\`a dell'evento nello stato fondamentale, secondo la stima $P_\text{decay}\sim P(r<\lambda )$, usando $\lambda \ll r_B$.} 
+
+	Si cambia variabile in $x = r / \lambda $. Allora:
+	\[
+	\begin{split}
+		P(r\le \lambda ) &= \int_{0} ^\lambda dr \int d\Omega  \ r^2 \lvert \psi _{100}  \rvert ^2 = \int_{0} ^\lambda r^2 R_{10} ^2 \ dr = \int_{0} ^\lambda \frac{4r^2}{r_B^3} e^{- 2 r / r_B} \ dr = 4 \frac{\lambda ^3}{r_B^3}\int_{0} ^1 x^2 e ^{-2\lambda  x / r_B}  \ dx\\
+				 &\simeq 4 \frac{\lambda ^3}{r_B^3} \int_{0} ^1 x^2 \left(1-2x \frac{\lambda}{r_B}\right)  dx= 4 \frac{\lambda ^3}{r_B^3} \left(\frac{1}{3}-\frac{\lambda }{2r_B}\right) \simeq \frac{4}{3}\frac{\lambda ^3}{r_B^3} = \frac{4}{3}\alpha ^3
+	\end{split}
+	\] 
+dove si \`e sviluppato l'esponenziale per $\lambda \ll r_B$.
 
 
 
+\end{enumerate}
 
 
 
