@@ -956,22 +956,21 @@ E = E_0 + 3N \frac{\hbar \omega}{\exp(\hbar \omega / \kappa _B T) -1 }
 \] 
 che soddisfa $c_V \to 0$ per $T \to 0$ e $c_V \to 3N \kappa _B $ per $T \to + \infty$. 
 Questo \`e il \textbf{modello di Einstein.} 
-
 Anche questo \`e in disaccordo con gli esperimenti perch\'e $c_V \to 0$ proporzionalmente a $T^3$, non esponenzialmente.
-
 L'errore \`e trattare oscillatori indipendenti: cos\`i facendo, $\omega$ non dipende dalla densit\`a, quindi l'energia non dipende dal volume $\Rightarrow $ compressibilit\`a infinita.
 
-Nel \textbf{modello di Debeye}, gli oscillatori sono accoppiati e i \textit{fononi} sono i modi di oscillaione collettiva degli atomi.
-
+Nel \textbf{modello di Debeye}, gli oscillatori sono accoppiati, quindi ognuno osciller\`a con una propria frequenza $\omega_\alpha $ e influenzer\`a gli oscillatori vicino. In questo modello, i \textit{fononi} saranno i modi di oscillazione collettiva degli atomi.
 La lunghezza d'onda dei fononi \`e \textit{limitata superiormente} dalla dimensione del solido e \textit{inferiormente} dal passo del reticolo del cristallo.
 
 \subsubsection{Modello di Debeye continuo}
 
-Si tratta modello di Debeye per $k\to 0$ per poter approssimare reticolo come continuo. 
-Per mezzi continui: $\partial _t \rho  + \nabla (\rho  \mathbf{v} ) = 0$ e $\rho  \partial _t \mathbf{ v}  + \nabla P = 0$.
-Se pressione e densit\`a si discostano di poco dall'equilibrio, cio\`e $P = P_0 + P'$ e $\rho  = \rho _0 + \rho '$: $\nabla P' + \rho _0 \partial _t \mathbf{v} = 0$ e $\partial _t \rho ' + \rho _0 \nabla \cdot \mathbf{v} =0$.
+Si tratta modello di Debeye per $k\to 0$ perch\'e si \`e interessati al comportamento del modello per basse temperature\footnote{Bassi $k$ implicano basse energie che implicano basse temperature.}, essendo in questo regime l'andamento da correggere. 
+Inoltre, errori a temperature pi\`u alte, gli stati sarebbero molto poco popolati (visto che seguono una Bose-Einstein), quindi compiere degli errori ad alte $T$ non cambia il risultato.
+In questa approssimazione \`e anche possibile trattare il reticolo come continuo: se $k\to 0 \Rightarrow  \lambda \to \infty$, quindi non si \`e sensibili alla discretizzazione del cristallo.
 
-Si assume che $\rho $ dipenda solo da $P$; sviluppando: $\rho \simeq \rho (P_0) + P'\partial _P \rho $, con $\rho _0 \equiv \rho (P_0)$. Quindi deve valere $\rho ' = P'\partial _P \rho  \equiv P ' / c^2$, dove $c^2 \equiv \partial _\rho P = 1 / k\rho $, in cui $k = k_T = k_V$ \`e la compressibilit\`a.
+Per mezzi continui: $\partial _t \rho  + \nabla (\rho  \mathbf{v} ) = 0$ e $\rho  \partial _t \mathbf{ v}  + \nabla P = 0$\footnote{La prima \`e l'equazione di continuit\`a per la corrente di massa, mentre la seconda deriva da $F=ma$. Indicando con $\mathcal{F}$ una forza per unit\`a di volume, l'uguaglianza soddisfatta \`e: $\mathcal{F} = \rho \partial _t v$. Infine, usando $\mathcal{F}=-\nabla P$, si ottiene proprio $\nabla P +\rho \partial _t v = 0$.}.
+Se pressione e densit\`a si discostano di poco dall'equilibrio, cio\`e $P = P_0 + P'$ e $\rho  = \rho _0 + \rho '$: $\nabla P' + \rho _0 \partial _t \mathbf{v} = 0$ e $\partial _t \rho ' + \rho _0 \nabla \cdot \mathbf{v} =0$.
+Si assume che $\rho $ dipenda solo da $P$; sviluppando: $\rho \simeq \rho (P_0) + P'\partial _P \rho $, con $\rho _0 \equiv \rho (P_0)$. Quindi deve valere $\rho ' = P'\partial _P \rho  \equiv P ' / c^2$, dove $c^2 \equiv \partial _\rho P = 1 / k\rho $, in cui $k = k_T = k_S$\footnote{Avendo assunto indipendenza dalla temperatura nello sviluppo di $\rho $, non ha senso distinguere tra $k _T$ e $k_S$.} \`e la compressibilit\`a.
 
 Le equazioni differenziali diventano:
 \begin{equation}
@@ -982,7 +981,7 @@ Le equazioni differenziali diventano:
 	\end{cases} \Longrightarrow \frac{1}{c^2}\frac{\partial ^2 \rho '}{\partial t^2} - \nabla ^2 \rho ' = 0
 \end{equation}
 L'equazione di d'Alambert \`e ottenuta sottraendo la divergenza della prima e la derivata parziale temporale della seconda.
-Una base per le soluzioni sono le done piane con
+Una base per le soluzioni sono le onde piane con
 \begin{equation}
 	\rho '(t,\mathbf{x} ) \propto e^{- (\omega t - \mathbf{q} \cdot \mathbf{x} )} , \ \omega = cq
 \end{equation}
@@ -995,23 +994,31 @@ Nel conteggio, bisogna includere modi di propagazione trasversi e propagazione l
 		&= \frac{3V}{2\pi^2 \overline{c}^3} \frac{\hbar  \omega^3 d\omega}{\exp(\hbar \omega / \kappa _B T ) -1}
 	\end{split}
 \end{equation}
-Nell'ultima uguaglianza, si \`e considerata velocit\`a media $\overline{c}$ per semplificare trattazione.
+Nell'ultima uguaglianza, si \`e considerata velocit\`a media $\overline{c}$ per semplificare trattazione. 
+Nell'integrare questa densit\`a di energia, l'integrale non si estende pi\`u fino a infinito come per campo em, ma esiste un'energia massima associata ad una frequenz a massima $\omega_\text{max}$, a sua volta associata ad un vettore d'onda massimo $q_D$ che \`e il \textbf{vettore d'onda di Debeye}. Questo \`e presente perch\'e, al contrario dei fotoni del campo elettromagnetico, i fononi sono oscillazioni di un reticolo cristallino, quindi non possono avere una lunghezza d'onda inferiore al passo reticolare.
 
-Si calcola energia totale per basse temperature, ossia $\kappa _B T \ll \hbar \omega_\text{max} = \frac{hc}{\lambda _\text{min}}$\footnote{Questa condizione equivale a richiedere che il contributo della coda dello spettro sia molto piccolo; in questo modo, si lega la temperatura alla spaziatura del reticolo.} e si ottiene:
+Si calcola energia totale per basse temperature, ossia $\kappa _B T \ll \hbar \omega_\text{max} = \frac{hc}{\lambda _\text{min}}$; \`e chiaro che in questo regime, si pu\`o approssimare il limite superiore dell'energia come infinito e si ottiene lo stesso integrale ottenuto per il campo elettromagnetico:
 \begin{equation}
-	E = E_0 + \int_{0} ^{+\infty} u(\omega) \ d\omega \propto T^4 \Rightarrow c_V \propto T^3
+	E = \int_{0} ^{+\infty} u(\omega) \ d\omega \propto T^4 \Rightarrow c_V \propto T^3
 \end{equation}
-in accordo con gli esperimenti.
+Il risultato ottenuto \`e in accordo con l'andamento misurato sperimentalmente.
 
-Si sa che per modi ad alta frequenza, il calore specifico dipende dal numero totale dei modi, non dalla loro distribuzione, 
-quindi si estende integrale della densit\`a fino a una frequenza di taglio definita, detta \textbf{frequenza di Debeye}, deifnita da:
+Per studiare il limite opposto (alte temperature), si ha il problema che $\rho (\omega)$ usata finora non \`e pi\`u valida perch\'e \`e stata ricavata in assunzione di $k\to 0$; 
+per temperature alte, ci si avvicina a lunghezze d'onda dell'ordine del passo reticolare, quindi l'assunzione di mezzo continuo non \`e pi\`u valida.
+Prendendo la solita $\omega=ck$ lineare derivante da tale approssimazione, si finirebbero per contare pi\`u modi di quelli effettivamente presenti.
+
+Per continuare a usare la stessa $\rho (\omega)$, ma contare il numero giusto di modi si ridefinisce la frequenza massima, imponendo che il numero sia sempre $3N$:
 \begin{equation}
-	3N = \int_{0} ^{\omega_m}  \rho (\omega) \ d\omega
+	3N = \int_{0} ^{\omega_\text{max}}  \rho (\omega) \ d\omega= \frac{12 \pi V}{(2\pi \overline{c})^3}\int_{0} ^{\omega_\text{max}} \omega^2 \ d\omega  \implies \omega_\text{max}=2\pi \overline{c} \left(\frac{3N}{4\pi V}\right) ^{ 1/3} 
 \end{equation}
-Questa dipende dal materiale e dalla velocit\`a media del suono in tale materiale:
+dove $3N$ sono le possibili degenerazioni, avendo tre possibili modi di propagazione (uno longitudinale e due trasversali) e $N$ oscillatori accoppiati. Da questa, si ottiene la temperatura di Debeye come $\hbar \omega_\text{max} = \kappa _B \theta _D$ e l'energia \`e:
 \begin{equation}
-	\omega_m = 2\pi \overline{c } \left(\frac{3N}{4\pi V}\right) ^{ 1 / 3} 
+	\begin{split}
+		E &= \int_{0} ^{\kappa _B \theta _D} \mathscr{E} \rho (\mathscr{E}) \overline{n}(\mathscr{E}) \ d\mathscr{E} = 9 N\kappa _B T \left(\frac{T}{\theta _D}\right) ^3 \int_{0} ^{\theta _D / T} \frac{x^3}{e^x - 1} \ dx \\
+		  &\simeq 9 N\kappa _B T \left(\frac{T}{\theta _D}\right) ^3 \int_{0} ^{\theta _D / T} \frac{x^3}{x}=3N\kappa _B T
+	\end{split}
 \end{equation}
+in accordo con Dulong-Petit. Si nota che avendo preso $\theta _D / T \ll 1$, si \`e potuto sviluppare $e^x -1 \simeq x$.
 \subsection{Equazione del trasporto di Boltzmann}
 Se $f$ distribuzione nello spazio delle fasi per sistema conservativo, il teorema di Liouville permette di scrivere:
 \[
@@ -1042,32 +1049,27 @@ Da questa si ottiene l'\textbf{equazione del trasporto di Boltzmann}:
 \end{equation}
 \end{boxenv}
 \noindent Le soluzioni stazionarie si ottengono potenndo $\partial _t f = 0$.
-
 Unidimensionalmente, lungo $x$, si ha:
 \[
-v_x \frac{\partial f }{\partial x}  + \dot{v}_x \frac{\partial f}{\partial v_x}  = \frac{f- f_0}{\tau _c}\Rightarrow f = f_0 - \tau _c \left(a \frac{\partial f}{\partial v_x} + v \frac{\partial f}{\partial x} \right) 
+v_x \frac{\partial f }{\partial x}  + \dot{v}_x \frac{\partial f}{\partial v_x}  = \frac{f- f_0}{\tau _c}\Rightarrow f = f_0 - \tau _c \left(a_x \frac{\partial f}{\partial v_x} + v_x \frac{\partial f}{\partial x} \right) 
 \] 
-con $a = \dot{v}_x$. Si assume sistema poco fuori equilibrio, cio\`e $f \simeq f_0 + \Delta $, quindi, compiendo errore al secondo ordine nelle derivate:
+con $a_x = \dot{v}_x$. Si assume sistema poco fuori equilibrio, cio\`e $f \simeq f_0 + \Delta $, quindi, compiendo errore al secondo ordine nelle derivate\footnote{Questo si pu\`o fare perch\'e il termine con le derivate \`e gi\`a una correzione a $f$, quindi aggiungendo $\Delta $ nelle derivate, si otterrebbe una correzione al secondo ordine, che si trascura.}:
 \begin{equation}
 	f = f_0 - \tau _c \left(a \frac{\partial f_0}{\partial v_x}  + v \frac{\partial f_0}{\partial x} \right) 
 \end{equation}
 \subsubsection{Conducibilit\`a elettrica}
 Gas di elettroni portato di poco fuori equilibrio da debole campo elettrico.
 Si usa equazione del trasporto per calcolare la conducibilit\`a elettrica.
-
 La trattazione \`e semi-classica perch\'e si tratteranno elettroni come particelle, sotto l'assunzione che la lunghezza d'onda
 di de Broglie degli elettroni sia molto pi\`u piccola della lunghezza caratteristica su cui variano statistica e potenziale elettrico.
-
 Da argomenti di parit\`a, si mostra che la correzione alle autoenergie svanisce al primo ordine in teoria delle perturbazioni, cio\`e per piccoli campi,
 la struttura dei livelli energetivi \`e invariata.
-
 Si \textit{assume che gli elettroni siano localmente distribuiti secondo la Fermi-Dirac}:
 \begin{equation}
 	f_0 = \frac{1}{\exp\left[ (\mathscr{E}-\mu ) /\kappa _B T  \right] +1}
 \end{equation}
 Inoltre, \textit{si assume che potenziale chimico e temperatura siano uniformi nello spazio}: $\partial _\mathbf{x} \mu = \partial _\mathbf{x} T = 0$.
 Si ricorda ancora che l'energia \`e indipendente da $\mathbf{x} $ al primo ordine perturbativo.
-
 Si ha:
 \[
 	\partial _x f_0 = \frac{\partial f_0}{\partial \mu } \frac{\partial \mu }{\partial x} + \frac{\partial f_0}{\partial T} \frac{\partial T}{\partial x} = 0 \hspace{.1cm} ; \hspace{.2cm} \partial _{v_x} f_0 = \frac{\partial f_0}{\partial \mathscr{E}} \frac{\partial \mathscr{E}}{\partial v_x} = mv_x \frac{\partial f_0}{\partial \mathscr{E}} 
@@ -1076,15 +1078,15 @@ Usando $a = eE / m$, si trova:
 \begin{equation}
 	f = f_0- \tau _c e E v_x \frac{\partial f_0}{\partial \mathscr{E}} 
 \end{equation}
-Per basse temperature, a la Fermi-Dirac \`e un gradino, quindi $\partial _\mathscr{E} f_0 = -\delta  (\mathscr{E}-E_f)$;
+Per basse temperature, cio\`e $T\ll T_f$, la Fermi-Dirac \`e un gradino, quindi $\partial _\mathscr{E} f_0 = -\delta  (\mathscr{E}-E_f)$\footnote{Questo perch\'e la distribuzione \`e un gradino per $T\sim 0 $ e decresce solamente in $\mathscr{E} = E_f$; il segno negativo \`e perch\'e decresce.};
 la densit\`a di corrente \`e:
 \begin{equation}
 	\begin{split}
 		&dJ = (2s+1) ev_x f \frac{d \Gamma}{d ^3 x}  = 2ev_x f \frac{d^3 p}{h^3}\\
-		&\Rightarrow J = 2e \int v_x f \frac{d^3 p}{h^3} = 2e \int v_x f_0 \frac{d^3 p}{h^3} + 2e^2 E \tau _c \int v_x^2 \delta (\mathscr{E}-E_f) \frac{d^3p}{ h^3} 
+		&\Rightarrow J = 2e \int_{-\infty} ^{+\infty}  v_x f \frac{d^3 p}{h^3} = 2e \int_{-\infty} ^{+\infty}  v_x f_0 \frac{d^3 p}{h^3} + 2e^2 E \tau _c \int_{-\infty} ^{+\infty}  v_x^2 \delta (\mathscr{E}-E_f) \frac{d^3p}{ h^3} 
 	\end{split}
 \end{equation}
-Il primo integrale svanisce per integranda dispari in $v_x$, quindi:
+Il primo integrale svanisce per integranda dispari in $v_x$ (essendo la Fermi-Dirac $f_0$ pari perch\'e dipendente da $p^2 / 2m$)\footnote{Ci si aspetta che questo faccia $0$ perch\'e \`e la parte in assenza di campo elettrico, quindi la corrente netta deve essere nulla.}, quindi:
 \begin{equation}
 	\begin{split}
 		J &= 2e^2 E \tau _c \int v^2 \cos^2 \theta  \delta (\mathscr{E} -E_f) \frac{2\pi p ^2 dp \sin \theta  d\theta }{h^3}\\
@@ -1092,7 +1094,7 @@ Il primo integrale svanisce per integranda dispari in $v_x$, quindi:
 		  &= \frac{2 e^2 E \tau _c}{3 \pi ^2 \hbar ^3} \sqrt{ 2m}  \int \mathscr{E }^{3 / 2}  \delta (\mathscr{E}-E_f) \ d\mathscr{E} = \frac{2e^2 E \tau _c}{3 \pi^2 \hbar ^3} \sqrt{2m}  E_f ^{3 / 2} = \frac{e^2 \tau _c N}{mV } E
 	\end{split}
 \end{equation}
-con $E $ campo elettrico. Da questa, si ottiene la \textbf{conducibilit\`a elettrica}:
+con $E $ campo elettrico, dove nell'ultima uguaglianza si \`e sostituito $E_f$ ottenuto da $\frac{N}{V}=\int_{0} ^{E_f} \rho (\mathscr{E}) d  \mathscr{E}$. Da questa, si ottiene la \textbf{conducibilit\`a elettrica}:
 \begin{equation}
 	\sigma  = \frac{J}{E} = \frac{e^2 \tau _c}{m} \frac{N}{V}
 \end{equation}
@@ -1101,7 +1103,9 @@ con $E $ campo elettrico. Da questa, si ottiene la \textbf{conducibilit\`a elett
 \begin{equation}
 	J_Q = - \kappa _T \frac{d T}{d x} 
 \end{equation}
-Essendo interessati al solo trasporto di entropia, si toglie il potenziale chimico all'energia totale:
+Essendo questa una corrente di calore, quindi di energia, si potrebbe pensare di ispirarsi al conto precedente, scrivendo $J_Q = \int \mathscr{E} f v_x \frac{d^3 p}{h^3}$, ma questo coincide col flusso di energia.
+Essendo interessati al solo trasporto di calore e non anche al moto stesso delle particelle, si toglie il potenziale chimico all'energia totale, visto che $\delta Q = T dS = dE -\mu dN$; per singola particella, si divide per $dN$, quindi si ottiene $\mathscr{E}-\mu $.
+Allora:
 \begin{equation}
 	J_Q = \int (\mathscr{E} -\mu ) f v_x \frac{d^3 }{h^3}
 \end{equation}
@@ -1133,7 +1137,7 @@ In generale, fluttuazioni del numero di particelle per gas perfetto sono date da
 \end{equation}
 mentre per numero di occupazione del singolo stato si ha:
 \begin{equation}
-	\left\langle (\Delta n) ^2 \right\rangle= - \kappa _B T \left(\frac{\partial^2 \Omega _Q}{\partial \mu ^2} \right) _{TV} 
+	\left\langle (\Delta n) ^2 \right\rangle= - \kappa _B T \left(\frac{\partial^2 \Omega _q}{\partial \mu ^2} \right) _{TV} 
 \end{equation}
 Visto che $\overline{n}_q = -\partial _\mu  \Omega _q$, si ha:
 \begin{equation}
@@ -1141,7 +1145,7 @@ Visto che $\overline{n}_q = -\partial _\mu  \Omega _q$, si ha:
 \end{equation}
 Nel caso particolare di statistiche di Fermi-Dirac o Bose-Einstein:
 \begin{equation}
-	\left\langle (\Delta n)^2 \right\rangle = \kappa _B T \frac{\partial \overline{n}}{\partial \mu } = \frac{\exp \left[ (\mathscr{E}-\mu ) \kappa _B T \right] }{\big(\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] \pm 1\big)^2} = \overline{n} \mp \overline{n}^2
+	\left\langle (\Delta n)^2 \right\rangle = \kappa _B T \frac{\partial \overline{n}}{\partial \mu } = \frac{\exp \left[ (\mathscr{E}-\mu ) \kappa _B T \right] + {\color{asdf}( \pm 1 \mp 1 )} }{\big(\exp\left[ (\mathscr{E}-\mu ) / \kappa _B T \right] \pm 1\big)^2} = \overline{n} \mp \overline{n}^2
 \end{equation}
 dove il $-$ \`e per i fermioni, mentre $+$ per i bosoni.
 
@@ -1150,21 +1154,21 @@ dove il $-$ \`e per i fermioni, mentre $+$ per i bosoni.
 	Si mostra che per fotoni (bosoni) vale $\left\langle (\Delta n)^2 \right\rangle \propto \overline{n}^2$ come trovato sopra.
 
 
-	Per farlo, si consierano $N$ sorgenti che emettono radiazione non-coerente, che fa interferenza in un punto dello spazio. 
-Il capmo elettrico, per ampiezze uguali, \`e $E = \sum_{j=1}^{N} \varepsilon e^{i \phi _j} $. 
-Numero di fotoni proporzionae a intensit\`a media della radiazione, a sua volta proporzionale a $\langle \lvert E \rvert ^2 \rangle$; si ha:
+	Per farlo, si considerano $N$ sorgenti che emettono radiazione non-coerente, che fa interferenza in un punto dello spazio. 
+Il campo elettrico, per ampiezze uguali, \`e $E = \sum_{j=1}^{N} \varepsilon e^{i \phi _j} $. 
+Numero di fotoni proporzionale a intensit\`a media della radiazione, a sua volta proporzionale a $\langle \lvert E \rvert ^2 \rangle$; si ha:
 \[
 		\lvert E \rvert ^2 = \sum_{j=1}^{N} \varepsilon  e^{i\phi _j} \sum_{l=1}^{N} \varepsilon e^{-i \phi _l} = \varepsilon ^2 \left[N + \sum_{l\neq j}^{N} e^{ i (\phi _j - \phi _l)} \right] = \varepsilon ^2 \left[ N + 2 \sum_{j>l}^{N} \cos(\phi _j - \phi _l) \right] 
 \] 
 Visto che il secondo termine ha media nulla, si ha: $\overline{n} \propto \langle \lvert E \rvert ^2 \rangle=N \varepsilon ^2$. 
-Infine, essendo che:
+Infine, essendo che
 \begin{equation*}
 	\begin{split}
 		\langle n^2 \rangle \propto \langle \lvert E \rvert^4  \rangle &= \varepsilon  \left\langle \left(N + 2 \sum_{j>l}^{N} \cos(\phi _j - \phi _{l}) \right) ^2 \right\rangle = \varepsilon ^4 \left(N^2 + 4N \left\langle \sum_{j>l}^{N} \cos(\phi _j - \phi l) \right\rangle + 4 \left\langle \sum_{j>l}^{N} \cos^2 (\phi _j - \phi _l) \right\rangle\right) \\
 				    &= \varepsilon ^4 \left(N^2 + 4 \frac{1}{2} \frac{N(N-1)}{2}\right) = \varepsilon ^4 (2N^2-N) \sim 2 \varepsilon ^4 N^2
 	\end{split}
 \end{equation*}
-Quindi si riottiene effettivamente $\langle (\Delta n)^2 \rangle \propto \varepsilon ^4 N^2 = \overline{n}^2$.
+si riottiene effettivamente $\langle (\Delta n)^2 \rangle \propto \varepsilon ^4 N^2 = \overline{n}^2$.
 \end{esempio}
 \noindent Si ripete ragionamento per $g$ celle dello spazio delle fasi pi\`u che per singolo stato.
 Assumendo che celle vicine abbiano energie simili, quindi numeri di occupazione simili, il numero di occupazione del gruppo di celle \`e $\overline{N} = g \overline{n}$.
@@ -1173,13 +1177,13 @@ Le fluttuazioni sono date da:
 \[
 \langle (\Delta N)^2 \rangle = \kappa _B T \left(\frac{\partial \overline{N}}{\partial \mu } \right) _{TV}  = \kappa _B T g \left(\frac{\partial \overline{n}}{\partial \mu } \right) _{TV}  =  g(\overline{n} \pm \overline{n}^2) = \overline{N} \pm \frac{\overline{N}^2}{g}
 \] 
-Per stimare $g$ in situazione sperimentale, si indica con $S$ area della sorgente e misurare entro angolo solido $\Delta \Omega $.
+Per stimare $g$ in situazione sperimentale, si indica con $S$ area della sorgente e misurando entro angolo solido $\Delta \Omega $.
 Per $T $ tempo di msura, il volume dello spazio interessato dai fotoni \`e $V = ScT$, mentre la larghezza degli impulsi \`e $\Delta p = h \Delta \nu  / c \sim h / (c \tau _c)$ con $\Delta \nu $ larghezza di banda e $\tau _c $ tempo di coerenza.
 Allora:
 \begin{equation}
 	g = \frac{Vp^2 \Delta p \Delta \Omega }{h^3} = \frac{S\Delta \Omega }{\lambda ^2}\frac{T}{\tau _c} \equiv \frac{S'}{A_c}\frac{T}{\tau _c}
 \end{equation}
-Si nota che $g$ \`e il prodotto di coerenza spaziale per coerenza temporale.
+Si nota che $g$ \`e il prodotto di coerenza spaziale per coerenza temporale. 
 \subsubsection{Esperimento di Hanbury, Brown e Twiss}
 Siano $R_{1},R_2$ due rivelatori a distanza $d$ variabile in modo che possano entrare e uscire dall'area di coerenza.
 Siano $N_1,N_2$ due contatori che misurano in un certo intervallo temporale.
