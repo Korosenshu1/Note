@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  9 MAR 2025 00:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.2.26)  9 MAR 2025 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1454,12 +1454,7 @@ File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 3.
  (/usr/share/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-) [2]
-LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 50.
-LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 50.
-)
+) [2])
 \tf@toc=\write6
 \openout6 = `master.toc'.
 
@@ -1481,6 +1476,8 @@ Overfull \hbox (4.0928pt too wide) in paragraph at lines 201--203
  []
 
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 211.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 211.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 (Font)              scaled to size 6.2pt on input line 211.
@@ -1491,6 +1488,8 @@ File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 217.
  [4{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 5.5pt on input line 247.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 251.
  [5] [6] [7] [8]
@@ -1532,24 +1531,10 @@ Overfull \hbox (3.05005pt too wide) in paragraph at lines 1375--1379
 \OML/ntxmi/m/it/10 F\LMS/ntxsy/m/n/10 ¹[]º\OML/ntxmi/m/it/10 ^^^[]\LMS/ntxsy/m/n/10 ¹[]\OML/ntxmi/m/it/10 ; []\LMS/ntxsy/m/n/10 º$ \T1/zpltosf/m/n/10 e che $[]$ sia un pa-ra-me-tro in $\OML/ntxmi/m/it/10 ^^^[]$[][][][][][] \T1/zpltosf/m/n/10 e non va-ria-bi-le. Que-sta è l'\T1/zpltosf/b/n/10 approssimazione
  []
 
-[31] [32]
+[31] [32] [33]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 8.8pt on input line 1475.
-LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 6.6pt on input line 1475.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1475.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1475.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1475.
-
+(Font)              scaled to size 8.0pt on input line 1486.
+ [34] [35] [36]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 38.
 See the caption package documentation for explanation.
@@ -1558,7 +1543,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 39.
 See the caption package documentation for explanation.
 
-[33] (./master.aux)
+[37] (./master.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1572,13 +1557,28 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47472 strings out of 474116
- 1070092 string characters out of 5750249
- 1952187 words of memory out of 5000000
- 68803 multiletter control sequences out of 15000+600000
- 665291 words of font info for 193 fonts, out of 8000000 for 9000
+ 47465 strings out of 474116
+ 1069902 string characters out of 5750249
+ 1951187 words of memory out of 5000000
+ 68768 multiletter control sequences out of 15000+600000
+ 648638 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,21n,107p,10936b,693s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exist, replaced by a fixed one
 
@@ -1642,11 +1642,11 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (33 pages, 464556 bytes).
+</usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (37 pages, 475092 bytes).
 PDF statistics:
- 740 PDF objects out of 1000 (max. 8388607)
- 654 compressed objects within 7 object streams
- 233 named destinations out of 1000 (max. 500000)
- 397 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 817 PDF objects out of 1000 (max. 8388607)
+ 728 compressed objects within 8 object streams
+ 265 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1406,7 +1406,7 @@ Questa si ricava dal \textbf{determinante di Slater}:
 \end{equation}
 L'Hamiltoniano ottenuto per la funzione d'onda elettronica \`e dato da:
 \begin{equation}
-	H_\text{HF} = -\frac{\hbar^2}{2m} \nabla ^2_\mathbf{r}  + \frac{1}{2}\sum_{i\neq j}^{} \frac{e^2}{\lvert \mathbf{r} _i - \mathbf{r} _j \rvert } - \sum_{i,l}^{} \frac{Z_l e^2}{\lvert \mathbf{r} _i - \mathbf{R} _l \rvert }
+	\hat{H} = -\frac{\hbar^2}{2m} \nabla ^2_\mathbf{r}  + \frac{1}{2}\sum_{i\neq j}^{} \frac{e^2}{\lvert \mathbf{r} _i - \mathbf{r} _j \rvert } - \sum_{i,l}^{} \frac{Z_l e^2}{\lvert \mathbf{r} _i - \mathbf{R} _l \rvert }
 \end{equation}
 Applicandolo alla funzione d'onda fattorizzata, si ottiene l'\textbf{Hamiltoniano di Hartree-Fock}:
 \begin{equation}
@@ -1423,30 +1423,42 @@ Cos\`i facendo, l'interazione Coulombiana si pu\`o scrivere tramite singolo pote
 \begin{equation}\label{eser}
 	-\frac{\hbar ^2}{2m} \nabla ^2_\mathbf{r} \phi _i(\vec{\mathbf{r} }) + V(\vec{\mathbf{r} }) \phi _i (\vec{\mathbf{r} }) = E_n \phi _i (\vec{\mathbf{r} })
 \end{equation}
+L'idea ora non \`e di risolvere l'equazione in quanto $V$ pu\`o essere molto complicato, ma piuttosto se ne vogliono studiare le propriet\`a.
 \subsection{Reticoli e teorema di Bloch}
-In solidi cristallini, le posizioni di equilibrio degli atomi sono periodiche, quindi \`e periodico il potenziale a cui sono soggetti gli elettroni: $V(\mathbf{r} +\mathbf{R} ) = V(\mathbf{r} )$, con $\mathbf{R} $ set di vettori, esprimibile come $\mathbf{R} = n_1\mathbf{a} _1 + n_2 \mathbf{a} _2 + n_3 \mathbf{a} _3$. 
+In solidi cristallini, le posizioni di equilibrio degli atomi sono periodiche, quindi \`e periodico il potenziale a cui sono soggetti gli elettroni: $V(\mathbf{r} +\mathbf{R} ) = V(\mathbf{r} )$, con $\left\{ \mathbf{R}  \right\} $ set di vettori che definiscono il reticolo cristallino, dove ogni elemento \`e esprimibile come $\mathbf{R} = n_1\mathbf{a} _1 + n_2 \mathbf{a} _2 + n_3 \mathbf{a} _3$. 
 Gli $\mathbf{a} _i$ definiscono una \textbf{cella unitaria}, definita come la pi\`u piccola struttura periodica identificabile in un cristallo. 
 L'insieme $\{\mathbf{R} \}$ \`e detto \textbf{reticolo di Bravais}; non \`e assicurato che questo coincida con la forma del reticolo atomico, n\'e che ogni cella unitaria contenga un singolo atomo.
 Per ogni set $\left\{ \mathbf{R}  \right\} $, si definisce \textbf{reticolo reciproco} il set $\left\{ \mathbf{K}  \right\} $ tale che
 \[
 e^{i \mathbf{K} \cdot \mathbf{R} }  =1 
 \] 
-\begin{esempio}
-Per reticolo cubico con $\mathbf{a} _i = a_i \hat{\mathbf{x} }_i$, il reticolo reciproco \`e dato da $\mathbf{b} _i = 2\pi \hat{\mathbf{x} }_i / a_i$.
-\end{esempio}
+dove ogni vettore in $\left\{ \mathbf{K}  \right\} $ si potr\`a scrivere come: $\mathbf{K}  = n_1 \mathbf{b} _1 + n_2 \mathbf{b} _2 + n_3 \mathbf{b} _3$.
+Dovendo soddisfare $e^{i \mathbf{K} \cdot \mathbf{R} } = 1$, deve valere $\mathbf{a} _i \cdot \mathbf{b} _j = 2\pi \delta _{ij} $.
+Ad esempio, per reticolo cubico di lato $a$, con $\mathbf{a} _i = a_i \hat{\mathbf{x} }_i\equiv a \hat{\mathbf{x} }_i$, il reticolo reciproco \`e dato da $\mathbf{b} _i = 2\pi \hat{\mathbf{x} }_i / a$.
+
 Si usa eq. \ref{eser} con ipotesi di periodicit\`a per $V(\mathbf{r} )$. 
 L'impulso non va bene come numero quantico perch\'e l'Hamiltoniano non commuta con $\mathbf{p} $ sempre, ma solo per un generico sottogruppo di traslazioni. 
-Questo significa che il potenziale $V(\mathbf{r} )$ accoppia onde piane con impulsi diversi: per reticolo unidimensionale, gli elettroni entrano come onde piane di impulso $\mathbf{q} _0$ ed escono con impulso $|\mathbf{q} | = | \mathbf{q} _0|$ ma con angolo\footnote{Immaginando reticolo disposto lungo asse $\hat{x}$, se gli elettroni arrivano dal semipiano negativo, questi individuano angolo $\alpha_0$ con asse $\hat{x}$; l'angolo in uscita $\alpha $ \`e formato simmetricamente rispetto ad asse $\hat{y}$ con lo stesso asse $\hat{x}$.} $\alpha \neq \alpha _0$a. 
+Quindi $V(\mathbf{r} )$ accoppia onde piane con impulsi diversi: per reticolo unidimensionale di passo $a$, gli elettroni entrano come onde piane di impulso $\mathbf{q} _0$ ed escono con impulso $|\mathbf{q} | = | \mathbf{q} _0|$\footnote{Questo \`e assicurato dal fatto che, essendo il reticolo di massa molto grande, l'impulso trasferito dall'urto non \`e sufficiente da farlo spostare significativamente dall'equilibrio ed \`e possibile assumere l'urto come elastico.} ma con angolo\footnote{Immaginando reticolo disposto lungo asse $\hat{x}$, se gli elettroni arrivano dal semipiano negativo, questi individuano angolo $\alpha_0$ con asse $\hat{x}$; l'angolo in uscita $\alpha $ \`e formato simmetricamente rispetto ad asse $\hat{y}$ con lo stesso asse $\hat{x}$.} $\alpha \neq \alpha _0$. 
 La differenza di cammino ottico \`e $\delta = a(\cos \alpha - \cos \alpha _0)$, con $\cos \alpha  = q_x / \lvert \mathbf{q}  \rvert $ e $\cos \alpha _0 = q_{0,x} / \lvert \mathbf{q} _0 \rvert $.
 
 Per avere interferenza costruttiva, si impone che $\delta $ sia multiplo della lunghezza d'onda degli elettroni:
 \[
-	\delta = \frac{\mathbf{a} \cdot  \Delta \mathbf{q} }{\lvert \mathbf{q}  \rvert } \stackrel{!}{=} l \lambda  \implies \Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l  \ {\color{red} (?)}
+	\delta = \frac{\mathbf{a} \cdot  \Delta \mathbf{q} }{\lvert \mathbf{q}  \rvert } \stackrel{!}{=} l \lambda  \implies \Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l  
 \] 
-dove si \`e usato che $\lvert \mathbf{q}  \rvert = \lvert \mathbf{q} _0 \rvert $ e $\mathbf{a } = a \hat{\mathbf{x} }$.
-Essendo $\Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l$, allora $\Delta \mathbf{q} \in \left\{ \mathbf{K}  \right\} $; si assume, quindi, che le soluzioni a \ref{eser} siano combinazioni lineari di onde piane, i cui impulsi differiscono per un vettore in $\left\{ \mathbf{K}  \right\} $.
+dove si \`e usato che $\lvert \mathbf{q}  \rvert = \lvert \mathbf{q} _0 \rvert = 2\pi /\lambda $ e $\mathbf{a } = a \hat{\mathbf{x} }$.
+Essendo $\Delta \mathbf{q} \cdot \mathbf{a}  = 2\pi l$\footnote{Chiaramente, si fosse trattato un reticolo tridimensionale, si sarebbe avuto un risultato simile: $\mathbf{a } \cdot  \Delta \mathbf{q} = 2\pi l_1, \ \mathbf{b} \cdot  \Delta \mathbf{q} = 2\pi l_2, \ \mathbf{c} \cdot \Delta \mathbf{q} = 2\pi l_3$.}, le variazioni tra vettore d'onda in entrata e uscita soddisfa le regole date per i vettori del reticolo reciproco, quindi $\Delta \mathbf{q} \in \left\{ \mathbf{K}  \right\} $.
+Questo metodo viene usato per determinare la struttura dei reticoli di un cristallo: quando si osserva interferenza costruttiva, si sa che la differenza tra vettore d'onda in entrata e uscita \`e un vettore di $\left\{ \mathbf{K}  \right\} $, quindi si fa il reciproco del reticolo reciproco per ottenere la struttura interna del reticolo data dai vettori di $\left\{ \mathbf{R}  \right\} $.
+\subsubsection{Cella di Wigner-Seitz e prima zona di Brillouin}
+La \textbf{cella di Wigner-Seitz} \`e una cella primitiva che rispetta tutte le propriet\`a di simmetria della struttura cristallina. Questa \`e definita attorno a un punto (nodo) del reticolo di Bravais ed \`e formata dai punti che sono pi\`u vicini a quel nodo rispetto a qualunque altro. Geometricamente, la regione corrisponde al pi\`u piccolo poliedro individuato dall'intersezione dei piani che bisecano ortogonalmente i segmenti che congiungono il nodo a ciascuno dei \textit{primi pi\`u vicini} ad esso.
 
-Questo ansatz \`e formalizzato dal \textbf{teorema di Bloch}, secondo cui le soluzioni della \ref{eser} sono le cosiddette \textbf{funzioni di Bloch}, che si scrivono come:
+La \textbf{prima zona di Brillouin} \`e l'analogo della cella di Wigner-Seitz per il reticolo reciproco e si ottiene con gli stessi identici passaggi, solo che nel reticolo reciproco.
+ 
+\subsubsection{Teorema di Bloch}
+Il teorema afferma che se il potenziale $V(\mathbf{r} )$ in
+\[
+\left( - \frac{\hbar ^2}{2m}\nabla ^2 + V(\mathbf{r} )\right) \psi (\mathbf{r} ) = E \psi (\mathbf{r} )
+\] 
+\`e periodico ($V(\mathbf{r} +\mathbf{R} )=V(\mathbf{r} )$), proprio come nel caso considerato, allora le soluzioni all'equazione di Shr\"odinger sono date dalle \textbf{funzioni di Bloch}:
 \begin{equation}
 	\phi _{n, \mathbf{k} } (\mathbf{r} ) = e^{i \mathbf{k} \cdot \mathbf{r} } u _{n, \mathbf{k} } (\mathbf{r} )
 \end{equation}
@@ -1454,45 +1466,145 @@ con $u_{n, \mathbf{k} } $ funzione periodica sul reticolo, che rende periodica s
 \[
 u_{n,\mathbf{k} } (\mathbf{r} + \mathbf{R} ) = u_{n,\mathbf{k} } (\mathbf{r} ) \implies \phi _{n,\mathbf{k} } (\mathbf{r} + \mathbf{R} ) = e^{i \mathbf{k} \cdot \mathbf{R} } \phi _{n,\mathbf{k} } (\mathbf{r} ) 
 \] 
+Si nota che nel caso di $V(\mathbf{r}) =0$, si ha invarianza traslazionale completa e le soluzioni all'equazione di Shr\"odinger sono onde piane; l'aggiunta di questo potenziale porta una simmetria traslazionale parziale, quindi il risultato dell'equazione non sono esattamente onde piane, ma hanno una forma pi\`u complessa. 
+In questo caso, si nota applicando $\hat{p}$ alla soluzione $\psi _{n,\mathbf{k} } $, che queste non sono autofunzioni dell'impulso, quindi impulso ed Hamiltoniano non commutano.
+Per questa ragione, l'impulso in s\'e non \`e pi\`u un buon numero quantico, ma lo \`e se ridefinito includendo un vettore del reticolo reciproco.
 \begin{proof}
-	Si  definisce set di operatori che rappresentano traslazioni discrete sul reticolo, per cui $[\hat{T}_\mathbf{R} , \hat{H}] = 0$. Per le autofunzioni simultanee dei due varr\`a: $T_\mathbf{R} \phi  = C(\mathbf{R} ) \phi $; inoltre, gli operatori di traslazione godono della propriet\`a di composizione: $T_\mathbf{R} T_{\mathbf{R}'}  = T_{\mathbf{R} '}  T_\mathbf{R} = T_{\mathbf{R} + \mathbf{R} '} $, per cui vale anche $C(\mathbf{R} ) C(\mathbf{R} ') = C(\mathbf{R} +\mathbf{R} ')$. Sfruttando questa propriet\`a, ogni autovalore si pu\`o scrivere come:
+	Si  definisce set di operatori che rappresentano traslazioni discrete sul reticolo, per cui $[\hat{T}_\mathbf{R} , \hat{H}] = 0$\footnote{Questo si dimostra a partire dal fatto che $V(\mathbf{r} ) = V(\mathbf{r} +\mathbf{R} )$.}. Per le autofunzioni simultanee dei due varr\`a: $\hat{T}_\mathbf{R} \phi  = C(\mathbf{R} ) \phi $; inoltre, gli operatori di traslazione godono della propriet\`a di composizione: $\hat{T}_\mathbf{R} \hat{T}_{\mathbf{R}'}  = \hat{T}_{\mathbf{R} '}  \hat{T}_\mathbf{R} = \hat{T}_{\mathbf{R} + \mathbf{R} '} $, per cui vale anche $C(\mathbf{R} ) C(\mathbf{R} ') = C(\mathbf{R} +\mathbf{R} ')$. 
+
+	Si definiscono questi autovalori per traslazioni di $\mathbf{a} _1, \mathbf{a} _2, \mathbf{a}_3 $; essendo numeri complessi in generale, si scrivono come esponenziali:
+	\[
+	C(\mathbf{a} _1) = e^{2\pi i x_1} ; \ C(\mathbf{a} _2) = e^{2\pi i x_2} ; \ C(\mathbf{a} _3) e^{2\pi i x_3} 
+	\] 
+	Sfruttando questa propriet\`a considerando che un generico $\mathbf{R} = n_1 \mathbf{a} _1 + n_2 \mathbf{a} _2 + n_3 \mathbf{a}_3 $, ogni autovalore si pu\`o scrivere come:
 	\begin{equation}
 		C( \mathbf{R} ) = C( \mathbf{a} _1) ^{n_1} C(\mathbf{a} _2)^{n_2} C(\mathbf{a} _3) ^{n_3} = e^{ i \mathbf{k} \cdot \mathbf{R} } 
 	\end{equation}
-dove $\mathbf{k} = x_1 \mathbf{b} _1 + x_2 \mathbf{b} _2  + x_3 \mathbf{b} _3$ e $\mathbf{b} _i \cdot \mathbf{a}_j = 2\pi \delta _{ij} $, quindi $C(\mathbf{a} _i) = e^{2 \pi i x_i} $. 
+dove $\mathbf{k} = x_1 \mathbf{b} _1 + x_2 \mathbf{b} _2  + x_3 \mathbf{b} _3$ e $\mathbf{b} _i \cdot \mathbf{a}_j = 2\pi \delta _{ij} $. 
 
 Rimane da mostrare che gli $x_i$ sono reali. 
-Questo si ottiene dalla condizione di periodicit\`a delle autofunzioni: $\phi (\mathbf{r} + N_i \mathbf{a}_i) = \phi (\mathbf{r} ) $; allo stesso tempo si ha l'ipotesi per cui
+Questo si ottiene da ipotesi su condizioni al contorno. Si \`e interessati a descrivere cristallo idealmente infinito, cio\`e non si vuole che le dimensioni del cristallo rientrino nella trattazione, se non per il numero totale di celle del cristallo. Si immagina di avere $N$ cellette totali, con $N_1$ nella prima direzione, $N_2$ nella seconda e $N_3$ nella terza in modo da scrivere che $N = N_1N_2N_3$. Quindi, per descrivere cristallo infinito, \`e comodo prendere condizioni al bordo periodiche\footnote{Note col nome di \textbf{condizioni di Born-von Karman}.} t.c. $\phi (\mathbf{r} + N_i \mathbf{a}_i) = \phi (\mathbf{r} ) $; allo stesso tempo si ha l'ipotesi per cui
 \[
 \phi _{n, \mathbf{k} } (\mathbf{r} + N_i \mathbf{a} _i) = e^{i \mathbf{k} \cdot N_i \mathbf{a} _i} \phi _{n , \mathbf{k} } (\mathbf{r} )
 \] 
-per cui $e^{i \mathbf{k} \cdot N_i \mathbf{a}_i } \phi _{n, \mathbf{k} } (\mathbf{r} ) = \phi _{n , \mathbf{k} } (\mathbf{r} )$, che \`e verificata per $\mathbf{k} \cdot N_i \mathbf{a} _i = 2\pi l $, quindi $x_i = m_i /  N_i$, con $l , m$ interi.
+per cui $e^{i \mathbf{k} \cdot N_i \mathbf{a}_i } \phi _{n, \mathbf{k} } (\mathbf{r} ) = \phi _{n , \mathbf{k} } (\mathbf{r} )$, che \`e verificata per $\mathbf{k} \cdot N_i \mathbf{a} _i = 2\pi m_i $, quindi $x_i = m_i /  N_i$, con $m_i\in \mathbb{Z}$.
 \end{proof}
 Gli impulsi permessi per le autofunzioni di $\hat{H}, \hat{T}_\mathbf{R} $ sono un insieme approssimabile come continuo per $N_i$ grandi, cio\`e cristalli infiniti e:
 \begin{equation}
 	\mathbf{k} = \sum_{i=1}^{3} \frac{m_i}{N_i} \mathbf{b} _i
 \end{equation}
-\subsection{Soluzione per $\hat{H}_\text{HF} $ e bande energetiche}
-Si risolve l'equazione di Shr\"odinger perturbativamente. Essendo le funzioni di Bloch combinazioni lineari di onde piane, non sono autofunzioni dell'operatore impulso:
+\begin{osservazione}
+	Finch\'e $m_i < N_i$ si \`e nella stessa cella unitaria; quando vale $m_i > N_i$, ci si \`e spostati in una cella adiacente. Per questo motivo, $N$ \`e sia il numero di celle del cristallo nello spazio reale, sia il numero di autostati in ogni cella unitaria del reticolo reciproco.
+\end{osservazione}
+Il teorema permette di restringersi alla cella unitaria del reticolo reciproco per la caratterizzazione degli autostati. Tipicamente, la cella unitaria si identifica con la prima zona di Brillouin.
+\begin{proof}
+	Si considera $\mathbf{k} ' = \mathbf{k} + \mathbf{K} $, con $\mathbf{k} $ nella prima zona di Brillouin. Allora $\psi _{n, \mathbf{k}' } (\mathbf{r} ) = e^{ i \mathbf{k} ' \cdot \mathbf{r} } u_{n, \mathbf{k} '} (\mathbf{r} )=e^{i \mathbf{k} \cdot \mathbf{r} } e^{i \mathbf{K} \cdot \mathbf{r} } u_{n ,\mathbf{k} '} (\mathbf{r} ) $. Per\`o, mandando $\mathbf{r} \to \mathbf{r } + \mathbf{R} $, si ha:
+	\[
+		e^{i \mathbf{K} \cdot \mathbf{r} } u_{n,\mathbf{k} '} (\mathbf{r} )\to e^{i \mathbf{K} \cdot \mathbf{r} } \underbracket{e^{i \mathbf{K} \cdot \mathbf{R} }}_{=1}  u_{n,\mathbf{k} '} (\mathbf{r} +\mathbf{R}) = e^{i \mathbf{K} \cdot \mathbf{r} } u_{n,\mathbf{k} '} (\mathbf{r} )
+	\] 
+	Essendo $e^{i \mathbf{K} \cdot \mathbf{r} } u_{n,\mathbf{k} '} (\mathbf{r} )$ periodico, allora si sceglie $e^{i\mathbf{K} \cdot \mathbf{r} } u_{n,\mathbf{k} '} (\mathbf{r} ) \equiv u_{n,\mathbf{k} } (\mathbf{r} )$, con $\mathbf{k} $ nella prima zona di Brillouin. Quindi:
+	\begin{equation}
+		\psi _{n, \mathbf{k}' }(\mathbf{r} ) \equiv \psi _{n,\mathbf{k} }(\mathbf{r} ) = e^{i \mathbf{k} \cdot \mathbf{r} } u_{n,\mathbf{k} } (\mathbf{r} )
+	\end{equation}
+\end{proof}
+\subsection{Bande energetiche}
+Per introdurle, si considera la presenza di potenziale $V(\mathbf{r} )$ che non influisce sulla forma dei livelli energetici. Permette di scrivere ancora che $\mathscr{E}_\mathbf{k}  = \frac{\hbar ^2 k^2}{2m}$.
+
+Per cristallo unidimensionale con passo reticolare $a$, la prima zona di Brillouin va da $- \pi / a$ a $ + \pi / a$. Il grafico di $\mathscr{E}(k)$ sar\`a una parabola e si traslano all'interno dell'intervallo $[-\pi/a,\pi / a]$ tutti quei $k$ fuori dalla zona di Brillouin. Le soluzioni all'equazione di Shr\"odinger unidimesionale per particella libera sono onde piane $e^{i \mathbf{k} \cdot \mathbf{r} } $; se $k\in [-\pi / a, \pi /a]$, allora si sta studiando la prima banda energetica con $u_{1,\mathbf{k} } (\mathbf{r} ) = 1$. Per $k\in [\pm\pi / a, \pm2 \pi /a]$, si \`e nella seconda banda energetica e $\psi _{2,\mathbf{k} }(\mathbf{r} ) = e^{i \mathbf{k} \cdot \mathbf{r} }  e^{\pm i 2\pi r / a }  \Rightarrow u_{2,\mathbf{k}}(\mathbf{r} ) =e^{\pm i 2\pi r / a}  $. Considerazioni analoghe valgono per bande energetiche superiori. L'indice $n$ permette di individuare la banda energetica in esame.
+
+\subsubsection{Approccio perturbativo}
+
+
+Si studia sistema con potenziale diverso considerandolo come perturbazione dalla particella libera per caratterizzarne le bande e vedere in che modo si distingue dal caso appena trattato. Nello sviluppo, si devono tenere solo onde piane che corrispondono ad un certo $\mathbf{k} $ nella zona di Brillouin, altrimenti la propriet\`a di periodicit\`a viene meno, quindi:
+\begin{equation}
+	\psi _{\mathbf{k} } = \sum_{\mathbf{K} }^{} c_{\mathbf{k} - \mathbf{K} } e^{i(\mathbf{k} -\mathbf{K} ) \cdot  \mathbf{r} } 
+\end{equation}
+Essendo potenziale periodico, si sviluppa in serie di Fourier:
+\begin{equation}
+	V(\mathbf{r} ) = \sum_{\mathbf{K} }^{} V_\mathbf{K} e^{i \mathbf{K} \cdot \mathbf{ r} } \Rightarrow V_\mathbf{K} = \frac{1}{V}\int_{\text{celle}} d\mathbf{r}  \ V(\mathbf{r} ) e^{-i\mathbf{K} \cdot \mathbf{r} } 
+\end{equation}
+Per semplificare i conti, si assume
 \[
-\braket{\mathbf{r} |\hat{\mathbf{p} }|\psi _{n,\mathbf{k} } } =  - i \hbar  \nabla \psi _{n,\mathbf{k} } = \hbar \mathbf{k} \psi _{n,\mathbf{k} }  - i\hbar e^{i \mathbf{k} \cdot \mathbf{r} } \nabla u_{n,\mathbf{k} } (\mathbf{r} )
+V_0 = \frac{1}{V} \int_{\text{celle}} d\mathbf{r} \ V(\mathbf{r} ) \stackrel{!}{=} 0
 \] 
-Riscrivendo numero d'onda traslando lungo il reticolo reciproco, cio\`e $\mathbf{k}  = \mathbf{k} ' + \mathbf{K} $, la funzione di Bloch diventa:
+Inserendo correzione nel problema originale e proiettando lungo ciascuna onda piana, si ottengono $n$ equazioni (una per ciascun termine dello sviluppo) della forma:
+\begin{equation}
+	\left[ \frac{\hbar ^2}{2m} (\mathbf{k}-\mathbf{K} )^2 - E \right] c_{\mathbf{k} -\mathbf{K} } + \sum_{\mathbf{K} '}^{} V_{\mathbf{K} ' - \mathbf{K} } c_{\mathbf{k} -\mathbf{K} '} =0
+\end{equation}
+\subsubsection{Caso non-degenere}
+Si considerano $\mathbf{k} $ lontani da $\mathbf{k} + \mathbf{K} $\footnote{Questi saranno, relativamente alla parabola del caso semplice considerato prima, quelli lontani dagli estremi della prima zona di Brillouin.} in modo da trattare caso non-degenere. Si definisce 
+\begin{equation}
+	\mathscr{E}^0_{\mathbf{k} -\mathbf{K} } := \frac{\hbar ^2}{2m}(\mathbf{k} -\mathbf{K} )^2
+\end{equation}
+In assunzione di non-degenerazione:
 \[
-e^{i \mathbf{k} \cdot \mathbf{r} } u_{n,\mathbf{k} } (\mathbf{r} ) = e^{i \mathbf{k} ' \cdot \mathbf{r} } e^{i \mathbf{K} \cdot \mathbf{r} } u_{n, \mathbf{k} } (\mathbf{r} )=  e^{i \mathbf{k} '\cdot \mathbf{r} } u_{n, \mathbf{k} '} (\mathbf{r} )
+\lvert \mathscr{E}^0_{\mathbf{k} -\mathbf{K} } - \mathscr{E}^0_{\mathbf{k} -\mathbf{K} _1}  \rvert \gg V_\mathbf{K} , \ \forall \mathbf{K} \neq \mathbf{K} _1
 \] 
-dove l'ultima uguaglianza \`e data dalla periodicit\`a delle $u$ sul reticolo, essendo $\mathbf{K}  \cdot \mathbf{R}  = 2\pi n$. Tramite questa riscrittura, si nota che \`e presente arbitrariet\`a nella scelta deel numero d'onda associato alle autofunzioni, cio\`e esiste relazione di equivalenza tra tutti i $\mathbf{k} $ che differiscono tra di loro per un vettore in $\left\{ \mathbf{K}  \right\} $. 
-Per eliminare tale ambiguit\`a sugli autostati di $\hat{H}_\text{HF}$, ci si restringe a cella unitraria del reticolo reciproco. Si usa \textbf{cella di Wigner-Seitz}, definita univocamente come regione spaziale costruita attorno ad un nodo reticolare del reticolo di Bravais formata dai punti pi\`u vicini a tale nodo.
+Ricordando che $V_0=0$, l'equazione si scrive come:
+\begin{equation}
+	(E-\mathscr{E}^0_{\mathbf{k}-\mathbf{K} _1 }) c_{\mathbf{k} -\mathbf{K} _1} = \sum_{\mathbf{K} \neq\mathbf{K}_1 }^{} c_{\mathbf{k} -\mathbf{K} } V_{\mathbf{K} -\mathbf{K} _1} 
+\end{equation}
+I coefficienti si possono determinare dalle altre $n-1$ equazioni:
+\begin{equation}
+	c_{\mathbf{k} -\mathbf{K} } = \frac{1}{E - \mathscr{E}^0_{\mathbf{k} - \mathbf{K} } } \sum_{\mathbf{K} '}^{} V_{\mathbf{K}' - \mathbf{K} } c_{\mathbf{k} - \mathbf{K} '}=\frac{V_{\mathbf{K} _1 - \mathbf{K} } c_{\mathbf{k} -\mathbf{K} _1} }{E-\mathscr{E}^0_{\mathbf{k} -\mathbf{K} } } + \frac{1}{E-\mathscr{E}^0_{\mathbf{k} -\mathbf{K} } } \sum_{\mathbf{K} ' \neq \mathbf{K} _1}^{} V_{\mathbf{K} '-\mathbf{K} }c_{\mathbf{k} -\mathbf{K} '} 
+	\end{equation}
+Studiando ordini di grandezza, il primo termine qui \`e di ordine $V$ per via del potenziale (cio\`e ordine molto piccolo visto che si sta assumendo potenziale come piccola perturbazione); il termine con la somma, invece, deve essere di ordine $V^2$ perch\'e i coefficienti sono relativi a $\mathbf{K} $ superiori a $\mathbf{K} _1$. Inserendo nell'equazione 4.3.5, si trascurano termini di ordine $V^3$ (\`e presente un ulteriore $V$ a moltiplicare) e si rimane con:
+\begin{equation}
+	E \simeq \mathscr{E}^0_{\mathbf{k} -\mathbf{K} _1}  + \sum_{\mathbf{K} }^{} \frac{\lvert V_{\mathbf{K}-\mathbf{K} _1 }   \rvert ^2}{\mathscr{E}^0_{\mathbf{k} -\mathbf{K} _1 } - \mathscr{E}^0 _{\mathbf{k} -\mathbf{K} } }
+\end{equation}
+\subsubsection{Caso degenere}
+
+In questo caso, si considerano vettori d'onda vicino agli spigoli. Nel caso bidimensionale, la degenerazione pu\`o essere massimo due, mentre in pi\`u dimensioni ce ne possono stare molti raggruppati in un intorno. Questo caso \`e contraddistinto da:
+\begin{equation}
+	E \sim \mathscr{E}^0_{\mathbf{k} - \mathbf{K} _1} , \ldots, \mathscr{E}^0_{\mathbf{k} -\mathbf{K} _m} \implies \lvert \mathscr{E}^0_{\mathbf{k} - \mathbf{K} _i} - \mathscr{E}^0_{\mathbf{k} - \mathbf{K} _j}  \rvert \ll V ,  \ \forall j=1,\ldots,m  
+\end{equation}
+Cio\`e le energie sono molto vicine per questi $m$ $\mathbf{k} _j$. L'equazione, separando degeneri e non-degeneri, diventa:
+\begin{equation}
+	(E-\mathscr{E}^0_{\mathbf{k} -\mathbf{K} _i}) c_{\mathbf{k} -\mathbf{K} _i} = \sum_{j=1}^{m} V_{\mathbf{K} _j - \mathbf{K} _i} c_{\mathbf{k} -\mathbf{K} _j} + \sum_{\mathbf{K} \neq \mathbf{K_m} }^{} V_{\mathbf{K} -\mathbf{K} _i} c_{\mathbf{k} -\mathbf{K} } 
+\end{equation}
+dove per $\mathbf{K} _m$ si intende tutti quelli degeneri. Analogamente al caso precedente, si possono trovare delle espressioni per i coefficienti. Nel caso degenere, questo pu\`o essere fatto solamente per quelli della parte non-degenere perch\'e si deve dividere per la differenza delle energie al primo membro e si \`e sicuri che \`e diversa da zero solamente nel caso non-degenere.
+\begin{equation}
+	c_{\mathbf{k} -\mathbf{K} } = \frac{1}{E- \mathscr{E}^0_{\mathbf{k} - \mathbf{K} } } \Bigg[ \sum_{j=1}^{m}\underbracket{ V_{\mathbf{K} _j - \mathbf{K}} c_{\mathbf{k} -\mathbf{K} _j}}_{=o(U)}   + \sum_{\mathbf{K}' \neq \mathbf{K} _m}^{} \underbracket{V_{\mathbf{K} ' - \mathbf{K} } c_{\mathbf{k} -\mathbf{K} '} }_{= o(U^2)}   \Bigg] \simeq \frac{1}{E - \mathscr{E}^0_{\mathbf{k} - \mathbf{K} } } \sum_{j=1}^{m} V_{\mathbf{K} _j - \mathbf{K} } c_{\mathbf{k} - \mathbf{K} _j} 
+\end{equation}
+dove si sono tenuti solamente quelli di ordine $o(U)$. Sostituendo nell'equazione e tenendo solo quelli di ordine $o(U)$ come nel caso non-degenere:
+\begin{equation}
+	(E-\mathscr{E}^0_{\mathbf{k} - \mathbf{K} _i} ) c_{\mathbf{k} - \mathbf{K} _i} = \sum_{j=1}^{m} V_{\mathbf{K} _j - \mathbf{K} _i} c_{\mathbf{k} -\mathbf{K} _j} + o(U^2) + o(U^3) \simeq \sum_{j=1}^{m} V_{\mathbf{K} _j - \mathbf{K} _i} c_{\mathbf{k} -\mathbf{K} _j}
+\end{equation}
+In due dimensioni, si hanno due equazioni:
+\[
+\begin{cases}
+	\displaystyle (E-\mathscr{E}^0_{\mathbf{k} - \mathbf{K} _1} )c_{\mathbf{k} -\mathbf{K} _1} = V_{\mathbf{K}_2 - \mathbf{K} _1} c_{\mathbf{k}-\mathbf{K}_2  } \\
+	\\
+	\displaystyle (E-\mathscr{E}^0_{\mathbf{k} - \mathbf{K} _2} )c_{\mathbf{k} -\mathbf{K} _2} = V_{\mathbf{K}_1 - \mathbf{K} _2} c_{\mathbf{k}-\mathbf{K}_1  } 
+\end{cases}
+\] 
+Si sostituiscono $\mathbf{q} = \mathbf{k} -\mathbf{K} _1$ e $\mathbf{K} = \mathbf{K}_2 -\mathbf{K} _1$, quindi:
+\begin{equation}
+	\begin{cases}
+		(E-\mathscr{E}^0_\mathbf{q} ) c_\mathbf{q}  = V_\mathbf{K} c_{q - \mathbf{K} } \\
+		(E-\mathscr{E}^0_\mathbf{q-\mathbf{K} } ) c_\mathbf{q-\mathbf{K} }  = V_\mathbf{-K} c_{\mathbf{q} }\equiv V^*_\mathbf{K} c_\mathbf{q}  \\
+	\end{cases}
+\end{equation}
+Questi sono degeneri, quindi hanno circa la stessa energia: $\mathscr{E}^0_{\mathbf{q} } \sim \mathscr{E}^0_{\mathbf{q} -\mathbf{K} } $, quindi $\lvert \mathbf{q}  \rvert \sim \lvert \mathbf{q} -\mathbf{K}  \rvert $. Le soluzioni non banali del sistema si ottengono imponendo determinante nullo:
+\begin{equation}
+	E = \frac{\mathscr{E}^0 _\mathbf{q}  + \mathscr{E}^0_{\mathbf{q- \mathbf{K} } } }{2} \pm \sqrt{\left(\frac{\mathscr{E}^0_\mathbf{q} - \mathscr{E}^0_{\mathbf{q} - \mathbf{K} } }{2}\right) ^2 + \lvert V_\mathbf{K}  \rvert ^2} 
+\end{equation}
+Nel caso fossero esattamente degeneri: $E  = \mathscr{E}^0_\mathbf{q} \pm \lvert V_\mathbf{K}  \rvert $.
+\subsection{Propriet\`a dei cristalli}
+Con trattazione precedente, si \`e trovata la possibilit\`a di descrivere livelli energetici non tramite il vettore d'onda in s\'e, ma quasi: si usa vettore d'onda e i vettori nel reticolo reciproco. Inoltre, dalla teoria perturbativa, si \`e visto che queste energie si distribuiscono a formare dei \textit{gap} in cui non sono presenti livelli energetici accessibili.
+
+Le bande sono riferite a energie degli elettroni, che soddisfano la Fermi-Dirac; si distinguono diversi casi: per ogni banda, saranno possibili $2N$ stati, dove $N$ deriva dal numero di impulsi nella prima zona di Brillouin, mentre il $2$ \`e per lo spin. 
+Si distinguono diversi casi.
+\begin{enumerate}[(a).]
+	\item L'energia di Fermi cade in un gap: in questo caso si ha un \textbf{isolante} perch\'e l'azione di un campo elettrico esterno non \`e sufficiente per far aumentare l'energia a tal punto da colmare la differenza tra l'energia di Fermi e l'energia pi\`u bassa della banda superiore. In questo caso, gli elettroni si distribuiscono nelle bande sotto il livello definito dall'energia di Fermi.
+	\item L'energia di Fermi cade all'interno di una banda: in questo caso si ha un \textbf{conduttore} perch\'e l'azione di un campo elettrico \`e sufficiente a portare gli elettroni in stati superiori a quelli sotto l'energia di Fermi.
+	\item L'energia cade in un gap, ma tramite drogaggio, si riesce a far avvicinare a sufficienza il livello energetico ad una banda cosicch\'e l'applicazione di un campo elettrico farebbe comportare il materiale come conduttore. 
+
+		Gli atomi accettori o donori creano dei nuovi stati energetici per la disposizione degli elettroni, rispettivamente vicino alla banda inferiore e quella superiore.
+\end{enumerate}
 \begin{boxenv}[]
-\centering Riprendere da pagina 67, dopo immagine
+\centering Riprendere Lezione 15 da 49:13 
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
