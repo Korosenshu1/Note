@@ -25,6 +25,10 @@ INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
 INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
 INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
 INPUT /usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
+INPUT /home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
+INPUT /usr/share/texmf-dist/tex/latex/iwona/iwona.sty
+INPUT /usr/share/texmf-dist/tex/latex/iwona/iwona.sty
 INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -93,8 +97,6 @@ INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
-INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
-INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -105,6 +107,8 @@ INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -395,8 +399,6 @@ INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zplosf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd
-INPUT /usr/share/texmf-dist/tex/latex/cmupint/cmupint.sty
-INPUT /usr/share/texmf-dist/tex/latex/cmupint/cmupint.sty
 INPUT /usr/share/texmf-dist/tex/latex/newpx/newpxmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/newpx/newpxmath.sty
 INPUT /usr/share/texmf-dist/tex/generic/kastrup/binhex.tex
@@ -406,10 +408,8 @@ INPUT /usr/share/texmf-dist/tex/generic/kastrup/binhex.tex
 INPUT /usr/share/texmf-dist/tex/generic/kastrup/binhex.tex
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
-INPUT /home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
-INPUT /home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
-INPUT /usr/share/texmf-dist/tex/latex/iwona/iwona.sty
-INPUT /usr/share/texmf-dist/tex/latex/iwona/iwona.sty
+INPUT /usr/share/texmf-dist/tex/latex/cmupint/cmupint.sty
+INPUT /usr/share/texmf-dist/tex/latex/cmupint/cmupint.sty
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-t1.tfm
 INPUT ./master.aux
 INPUT ./master.aux
@@ -432,8 +432,6 @@ INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-INPUT /usr/share/texmf-dist/tex/latex/grfext/grfext.sty
-INPUT /usr/share/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -446,6 +444,7 @@ INPUT ./master.out
 INPUT ./master.out
 OUTPUT master.out
 OUTPUT master.pdf
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -474,9 +473,9 @@ INPUT ./master.toc
 INPUT ./master.toc
 INPUT master.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tosf-t1.tfm
-INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
-INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
-INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
+INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
+INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
+INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
@@ -513,12 +512,6 @@ INPUT /usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
-INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
-INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
@@ -540,6 +533,12 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
+INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
+INPUT /usr/share/texmf-dist/tex/latex/cmupint/ucmupint.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
@@ -599,8 +598,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
@@ -609,6 +606,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
@@ -656,9 +655,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
@@ -671,6 +667,9 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cmupint/cmupint.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -700,7 +699,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb

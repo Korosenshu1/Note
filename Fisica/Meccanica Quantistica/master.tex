@@ -1,5 +1,6 @@
 \documentclass[10pt, a4paper]{scrartcl} % Packages
 %\usepackage{stix}
+\usepackage{sansiwona}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{index}
 \makeindex
@@ -127,12 +128,6 @@
 % Personalizzazione scritta indice
 
 
-% Font
-\usepackage[osf]{newpxtext}
-\usepackage{cmupint}
-\usepackage{newpxmath}
-
-\usepackage{sansiwona}
 
 
 % Ambienti
@@ -193,6 +188,11 @@ title=#1
 
 
 
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage{newpxmath}
+\usepackage{cmupint}
+%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2316,6 +2316,114 @@ Occorre compiere una traslazione sull'impulso del centro di massa. L'operatore u
 	\end{split}
 	\] 
 dove si \`e sviluppato l'esponenziale per $\lambda \ll r_B$.
+
+\item \textbf{Si aggiunge all'Hamiltoniano del sistema una componente di spin $\hat{H}_\text{spin}= \beta  \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2$, con $1$ relativo a $e^-$ e $2$ a $e^+$. Descrivere come cambiano le funzioni d'onda.}
+
+	L'aggiunta di spin comporta il passaggio ad uno spazio di Hilbert prodotto $\mathcal{H} = \mathcal{H}_\text{orb} \otimes \mathcal{H}_\text{spin}$, dove $\mathcal{H}_\text{spin}$ \`e lo spazio di Hilbert per gli spin di entrambe le particelle, che essendo di spin $1 / 2$, ha dimensione $4$, e $\mathcal{H}_\text{orb}$ \`e lo spazio di Hilbert usato finora.
+Quindi $\ket{\psi } \in \mathcal{H}\Rightarrow \ket{\psi } = \ket{\psi _\text{orb}} \otimes \ket{\psi } _\text{spin}$.
+
+Si potrebbe pensare di usare una base del tipo $\left\{ \ket{\uparrow \uparrow}, \ket{\uparrow\downarrow} , \ket{\downarrow\uparrow} , \ket{\downarrow\downarrow}   \right\} $ per gli stati di $\mathcal{H}_\text{spin}$, ma questa non diagonalizza l'Hamiltoniano complessivo $\hat{H}= \hat{H}_\text{orb}+\hat{H}_\text{spin}$;
+infatti si \`e visto che in questa base
+\[
+	\hat{H}_\text{spin}\propto \begin{pmatrix} 1 &0&0&0\\ 0& - 1 &  2 & 0  \\ 0& 2 & - 1 &0 \\ 0&0&0&1 \end{pmatrix} 
+\] 
+ottenibile applicando $\hat{H}_\text{spin}$ ai 4 vettori di base. 
+Il modo pi\`u semplice per trovare altra base \`e utilizzare che $\hat{S}^2 = (\hat{\mathbf{S} }_1+\hat{\mathbf{S} }_2)^2 = \hat{S}_1^2 + \hat{S}_2^2 + 2 \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2$, da cui:
+\begin{equation}
+	\hat{H}_\text{spin }= \frac{\beta }{2} (\hat{S}^2 - \hat{S}_1 ^2 - \hat{S}_2^2)
+\end{equation}
+Gli autostati di $\hat{S}^2$ diagonalizzano $\hat{H}_\text{spin}$ perch\'e per le propriet\`a delle matrici di Pauli $\hat{S}_1^2 , \hat{S}_2^2$ sono banali: $\hat{\sigma }_j ^2 = \operatorname{Id} $, quindi
+\[
+	\hat{S}_i^2 = \left(\frac{\hbar }{2}\right) ^2 (\hat{\sigma }_x^2 + \hat{\sigma }_y^2 + \hat{\sigma }_z^2) = \frac{3}{4}\hbar ^2 \operatorname{Id}, \ i = 1,2
+\] 
+Sia $\ket{S} $ autostato di $\hat{S}^2$, quindi (per $\hbar =1$) $\hat{S}^2 \ket{S} = s(s+1) \ket{S} $; allora:
+\[
+\hat{H}_\text{spin}\ket{S}  = \frac{\beta }{2}(\hat{S}^2 - \hat{S}_1^2 - \hat{S}_2^2) \ket{S}  = \frac{\beta }{2} \left[ s(s+1) - \frac{3}{4} - \frac{3}{4} \right] \ket{S} 
+\] 
+Nota: visto che $[\hat{S}^2 , \hat{S}_z]=0$, si pu\`o trovare base di autostati comune.
+
+Ora si studia lo spettro di $\hat{S}^2$. Per regola di addizione dei momenti angolari, ricordando che $s_1= s_2 = 1 / 2$: 
+\begin{equation}
+	\lvert s_1-s_2 \rvert \le s \le  s_1 + s_2
+\end{equation}
+Quindi $s=0$ oppure $s=1$. L'autovalore $s=1$ ha degenerazione $3$ perch\'e ad esso possono corrispondere le proiezioni lungo $z$ con valori $s_z=0,1,-1$, cio\`e si distinguono tre stati diversi $\ket{s=1, s_z = 1} , \ket{s=1,s_z=0} ,  \ket{s=1, s_z=-1} $. 
+Per $s=0$, si pu\`o avere solo $s_z= 0$, quindi \`e un singoletto.
+
+Si dimostra che una scelta di base completa che diagonalizza $\hat{H}_\text{spin}$ \`e:
+\begin{equation}
+	\begin{split}
+		&\ket{s=1,s_z =1} = \ket{\uparrow\uparrow} ; \ \ket{s=1, s_z=1}  = \ket{\downarrow\downarrow} \\
+		&\ket{s=1,s_z = 0} = \frac{\ket{\uparrow\downarrow} + \ket{\downarrow\uparrow}  }{\sqrt{2} };\ \ket{s=0,s_z=0} = \frac{\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} } \\
+	\end{split}
+\end{equation}
+Per i primi due \`e semplice: per due particelle di spin $1 / 2$, le uniche combinazioni per cui $s_z= \pm 1$ si hanno quando entrambe hanno spin concordi.
+
+Nel seguito i ket con numeri tipo $\ket{01} $ si riferiscono a spin totale, mentre quelli con le frecce tipo $\ket{\uparrow\downarrow} $ agli spin distinti. 
+Si studiano, quindi, $\ket{00} , \ket{10} $, per i quali $\hat{S}^2 \ket{00} = 0$ e $\hat{S}^2 \ket{10} = 2\ket{10} $.
+
+Si cercano i coefficienti $\alpha ,\beta $ tali che
+\[
+\hat{S}^2(\alpha \ket{\uparrow \downarrow}  + \beta \ket{\downarrow\uparrow)} = (\hat{S}_1^2 + \hat{S}_2^2 + 2 \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2) (\alpha \ket{\uparrow \downarrow} + \beta \ket{\downarrow\uparrow} ) = \gamma(\alpha  \ket{\uparrow\downarrow} +\beta \ket{\downarrow\uparrow} )\equiv \gamma \ket{\psi } 
+\] 
+con $\gamma = 0 ,2$. Si nota che per spin $ 1 /2$, l'operatore $\hat{S}_i^2$ agisce come $\hat{S}_i^2 \alpha \ket{\uparrow\downarrow} = \frac{3}{4}\alpha  \ket{\uparrow\downarrow} $ e $\hat{S}_i^2 \beta \ket{\downarrow\uparrow} = \frac{3}{4} \beta \ket{\downarrow\uparrow} ,\  i = 1,2 $, visto che moltiplicano il ket per $s(s+1) = 3 / 4$.
+
+Per spin $ 1 / 2$, come gi\`a accennato, $\hat{S}_i = \hat{\sigma }_i / 2$, quindi:
+\[
+\begin{split}
+	\hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 \ket{\uparrow\downarrow} &= \frac{1}{4}\Big[\hat{\sigma }_{1x} \hat{\sigma }_{2x} \ket{\uparrow\downarrow} + \hat{\sigma }_{1y} \hat{\sigma }_{2y} \ket{\uparrow\downarrow} + \hat{\sigma }_{1z} \hat{\sigma }_{2z} \ket{\uparrow \downarrow} \Big] = \frac{1}{4} \Big[\ket{\downarrow\uparrow} + \ket{\downarrow\uparrow} - \ket{\uparrow\downarrow} \Big]\\
+									       &= \frac{1}{2}\ket{\downarrow\uparrow} - \frac{1}{4} \ket{\uparrow\downarrow} 
+\end{split}
+\] 
+Analogamente: $\hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 \ket{\downarrow\uparrow}  = \frac{1}{2}\ket{\uparrow\downarrow} -\frac{1}{4}\ket{\downarrow\uparrow}  $.
+Mettendo tutto insieme:
+\[
+\begin{split}
+	\hat{S}^2 \ket{\psi } &= \frac{3}{2}\alpha  \ket{\uparrow\downarrow} + \frac{3}{2} \beta \ket{\downarrow\uparrow} +\alpha  \left(\ket{\downarrow\uparrow} -\frac{1}{2}\ket{\uparrow\downarrow} \right) + \beta \left(\ket{\uparrow\downarrow} -\frac{1}{2}\ket{\downarrow\uparrow} \right) = (\alpha +\beta ) \ket{\uparrow\downarrow} + (\alpha +\beta ) \ket{\downarrow\uparrow} 
+\end{split}
+\] 
+Si dividono i due casi, a seconda del valore di $\gamma$:
+\begin{itemize}
+	\item se $\gamma=0$, le componenti della combinazione sopra devono annullarsi, quindi $\alpha  = - \beta $, quindi
+		\begin{equation}
+			\ket{00} = \frac{\ket{\uparrowp\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} }
+		\end{equation}
+		comprensivo di normalizzazione;
+	\item se $\gamma=2$, deve risultare $\alpha = \beta $, quindi
+		\begin{equation}
+			\ket{10}  = \frac{\ket{\uparrow \downarrow} + \ket{\downarrow\uparrow} }{\sqrt{2} }
+		\end{equation}
+		anche questo comprensivo di normalizzazione.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
