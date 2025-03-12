@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.10)  10 MAR 2025 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.10)  13 MAR 2025 00:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1612,7 +1612,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [16]
 
 [17]
-Overfull \hbox (17.67574pt too wide) detected at line 782
+Overfull \hbox (17.67574pt too wide) detected at line 784
 []
  []
 
@@ -1621,12 +1621,12 @@ Overfull \hbox (17.67574pt too wide) detected at line 782
 [18]
 
 [19]
-Overfull \hbox (4.85104pt too wide) in paragraph at lines 853--855
+Overfull \hbox (4.85104pt too wide) in paragraph at lines 855--857
 \T1/zpltosf/m/n/10 L'errore Ë do-vu-to nel pas-sag-gio al con-ti-nuo: per quan-to la con-di-zio-ne $\OML/ntxmi/m/it/10 ^^T[]T \LMS/ntxsy/m/n/10 ^^] []π\OML/ntxmi/m/it/10 h\LMS/ntxsy/m/n/10 ù\OML/ntxmi/m/it/10 L\LMS/ntxsy/m/n/10 ∫[] )
  []
 
 
-Overfull \hbox (9.81091pt too wide) detected at line 879
+Overfull \hbox (9.81091pt too wide) detected at line 881
 [][][]\OML/ntxmi/m/it/10 E \U/ntxmia/m/it/10 = [] [] = []\LMS/ntxsy/m/n/10 π\OML/ntxmi/m/it/10 ^^T[]T\LMS/ntxsy/m/n/10 ∫[]\OML/ntxmi/m/it/10 ^^T[]T [] [] \LMS/ntxsy/m/n/10 ^^Y \OT1/cmr/m/n/10 0\OML/ntxmi/m/it/10 :\OT1/cmr/m/n/10 77 \LMS/ntxsy/m/n/10 ^^A \OML/ntxmi/m/it/10 N^^T[]T [][] \LMS/ntxsy/m/n/10 / \OML/ntxmi/m/it/10 T[]
  []
 
@@ -1647,7 +1647,7 @@ Overfull \hbox (9.81091pt too wide) detected at line 879
 [26]
 
 [27]
-Overfull \hbox (54.21921pt too wide) detected at line 1170
+Overfull \hbox (54.21921pt too wide) detected at line 1188
 []
  []
 
@@ -1660,7 +1660,7 @@ Overfull \hbox (54.21921pt too wide) detected at line 1170
 [30]
 
 [31]
-Overfull \hbox (3.05005pt too wide) in paragraph at lines 1375--1379
+Overfull \hbox (3.05005pt too wide) in paragraph at lines 1393--1397
 \OML/ntxmi/m/it/10 F\LMS/ntxsy/m/n/10 π[]∫\OML/ntxmi/m/it/10 ^^^[]\LMS/ntxsy/m/n/10 π[]\OML/ntxmi/m/it/10 ; []\LMS/ntxsy/m/n/10 ∫$ \T1/zpltosf/m/n/10 e che $[]$ sia un pa-ra-me-tro in $\OML/ntxmi/m/it/10 ^^^[]$[][][][][][] \T1/zpltosf/m/n/10 e non va-ria-bi-le. Que-sta Ë l'\T1/zpltosf/b/n/10 approssimazione
  []
 
@@ -1672,7 +1672,7 @@ Overfull \hbox (3.05005pt too wide) in paragraph at lines 1375--1379
 
 [34]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 1486.
+(Font)              scaled to size 8.0pt on input line 1504.
 
 
 [35]
@@ -1704,13 +1704,19 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47775 strings out of 473190
- 1078626 string characters out of 5722601
- 1776573 words of memory out of 5000000
- 69970 multiletter control sequences out of 15000+600000
+ 47779 strings out of 473190
+ 1078682 string characters out of 5722601
+ 1776571 words of memory out of 5000000
+ 69972 multiletter control sequences out of 15000+600000
  649418 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,21n,107p,10936b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not exist, replaced by a fixed one
 
@@ -1790,10 +1796,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (38 pages, 470491 bytes).
+Output written on master.pdf (38 pages, 472613 bytes).
 PDF statistics:
- 821 PDF objects out of 1000 (max. 8388607)
- 731 compressed objects within 8 object streams
- 266 named destinations out of 1000 (max. 500000)
+ 825 PDF objects out of 1000 (max. 8388607)
+ 735 compressed objects within 8 object streams
+ 268 named destinations out of 1000 (max. 500000)
  445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

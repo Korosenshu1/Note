@@ -678,6 +678,7 @@ Nel calcolo di $I_0$ al posto di $I$, si introduce una sovrastima prima di $E_f$
 	g_1 (z) = \frac{1}{e^z +1} \hspace{.1cm} ; \hspace{.2cm} g_0(z) = 1 - \frac{1}{e^z +1} = \frac{1}{e^{-z}  +1}
 \] 
 Si nota che la loro differenza rappresenta esattamente la differenza tra la funzione gradino e la vera statistica; allora $\delta I$ \`e dato da\footnote{L'estremo inferiore \`e $-\infty$ perch\'e per temperature sufficientemente basse, si ha $- \mu  / \kappa _B T \approx - \infty$; questo permette di semplificare calcolo dell'integrale.}
+
 \[
 \delta I = \int_{0} ^{+\infty} d \mathscr{E} \ f(\mathscr{E}) \left[ g_1(z) - g_0(z) \right] = \int_{-\infty} ^{+\infty} \kappa _B T f(\mu +\kappa _B T z) \left[ g_1(z) - g_0(z) \right]  \ dz
 \] 
@@ -739,10 +740,11 @@ Quando $B \neq 0 $, questo interagisce con momento magnetico intrinseco delle pa
 \] 
 quindi stati $\uparrow$ avranno energia minore e quindi saranno pi\`u popolati, nonostante l'energia di Fermi rimanga invariata.
 
-La differenza di popolazione $\Delta N$ si pu\`o approssimare con $ E_\downarrow\rho (E_f) / 2 - E_\uparrow\rho (E_f) / 2  = \Delta E \rho (E_f) / 2$, assumendo $\rho (\mathscr{E})$ uniforme.
-In questo modo:
+La differenza di popolazione $\Delta N$ si ottiene dalla differenza degli integrali di $\rho (\mathscr{E})$\footnote{Chiaramente se $\rho (\mathscr{E})$ \`e riferita al totale, si deve dividere per due quando usata per una delle due popolazioni.} riferiti alle due popolazioni distinte, dove una \`e traslata indietro di $\mu B$ e l'altra \`e traslata in avanti dello stesso termine. 
+Per prendere la differenza, si trasla di $2\mu B$ indietro quella traslata in avanti, che si sovrapporr\`a completamente a quella traslata indietro per un certo tratto finch\'e non arriva a $E_f-2\mu B$ dove termina. 
+Assumendo uniforme nel tratto rimanente, lungo $2\mu  B$, $\rho (\mathscr{E})\equiv \rho (E_f)$, si ha:
 \[
-\Delta N = 2\mu B \frac{\rho (E_f) }{2} = 2\mu  _B \frac{4 \pi V m^{3 / 2} }{\sqrt{2} h^3}\sqrt{E_f} = \frac{3}{2} \frac{\mu  B }{E_f}N
+	\Delta N = 2\mu B \frac{\rho (E_f)}{2} =  \mu  B \frac{4\pi Vm^{3 / 2} \sqrt{2} }{h^3}\sqrt{E_f} = \frac{3}{2}\mu B \frac{N}{E_f}
 \] 
 con $N$ calcolato sulla densit\`a per $B=0 , T=0$:
 \[
@@ -896,7 +898,6 @@ L'Hamiltoniano di singolo oscillatore \`e:
 	H = \frac{\mathbf{p} ^2}{2m} + \frac{m\omega ^2 \mathbf{x} ^2}{2}		
 \end{equation}
 L'energia media classica \`e data dal principio di equipartizione ed \`e $E = 3N\kappa _B T$, mentre l'energia quantizzata per singola particella \`e $E_n=(n+1 / 2) \hbar \omega$.
-
 La funzione di partizione di singola particella, quindi, \`e:
 \begin{equation}
 	Z_1 = \sum_{n=0}^{+\infty} \exp \left[ - \left(n + \frac{1}{2}\right) \frac{\hbar \omega}{\kappa _B T} \right] = \frac{1}{2 \operatorname{sinh}(\hbar  \omega / \kappa _B T) }
@@ -911,25 +912,43 @@ Dall'ultima, si ha che gli oscillatori seguono la statistica di Bose-Einstein co
 \end{equation}
 \subsubsection{Corpo nero}
 Si usa gas di oscillatori come modello per campo elettromagnetico: si vede campo come un oscillatore con diversi livelli popolati secondo la statistica $\overline{n}$, o come unico livello popolato da $\overline{n}$ fotoni.
+Le quasiparticelle \textbf{fononi} o \textbf{fotoni} non saranno rappresentati dal singolo oscillatore armonico, n\'e saranno i suoi modi di oscillazione.
+Questi rappresentano i \textbf{quanti di eccitazione} degli oscillatori che modellano il campo.
 
 Essendo $\mu  =0 $, non esiste legge di conservazione per numero totale di quasiparticelle: se ne possono creare e distruggere a piacimento.
 
-Inserendo gas in scatola con pareti perfettamente assorbenti (quindi con condizione di annullamento ai bordi), la legge di dispersione \`e $\omega = ck$, quindi $\mathscr{E} = cp$.
+Inserendo gas in scatola con pareti perfettamente assorbenti (quindi con condizione di annullamento ai bordi), la legge di dispersione \`e $\omega = ck$, quindi $\mathscr{E} = cp$ (con $c$ velocit\`a della luce).
 
 Allora elemento di spazio delle fasi \`e:
 \begin{equation}
-	d\Gamma = 2V \frac{4 \pi p^2 dp}{h^3} = V \frac{\omega^2 d\omega }{\pi^2 c^3} \rho (\omega) d\omega
+	d\Gamma= \frac{V}{h^3} d^3p  = 2V \frac{4 \pi p^2 dp}{h^3} = V \frac{\omega^2 d\omega }{\pi^2 c^3}\equiv \rho (\omega) d\omega
 \end{equation}
-dove il fattore $2$ \`e perch\'e esistono due modi possibili di propagazione, linearmente indipendenti fra loro, per il campo (circolare destra e circolare sinsitra), associata allo spin del fotone.
+dove il fattore $2$ \`e legato alla degenerazione della polarizzazione del campo elettromagnetico per ciascun vettore d'onda.
 
-La densit\`a di energia per unit\`a di volume \`e ottenuta moltiplicando energia del singolo fotone per numero di occupazione e densit\`a (a meno di $V$), trascurando energia $\hbar  \omega / 2$ che non \`e misurabile e farebbe divergere energia totale. 
-Quindi:
+All'equilibrio termodinamico a temperatura $T$, si vuole trovare distribuzione di energia per unit\`a di frequenza $u(\omega)$ (densit\`a di energia per unit\`a di frequenza). 
+Questo \`e dato dal prodotto di:
+\begin{itemize}
+	\item energia del singolo modo $\hbar \omega$;
+	\item numero di modi per unit\`a di frequenza, rappresentato da $\rho (\omega)$ ottenuta sopra;
+	\item quanto \`e eccitato in media ogni singolo modo, quindi quanti fotoni ci sono per singolo modo, dato da $\overline{n}(\omega)$ (numero medio di quasiparticelle per modo).
+\end{itemize}
 \begin{boxenv}[]
 \begin{equation}
-	u(\omega ) d\omega = \frac{\rho (\omega)}{V} \overline{n}(\omega) \hbar \omega \ d\omega= \frac{\hbar  \omega^3}{\exp(\hbar \omega / \kappa _B T ) - 1} \frac{d\omega}{\pi^2 c^3}
+	u(\omega ) d\omega=\rho (\omega) \overline{n}(\omega) \hbar \omega \ d\omega= \frac{V \hbar  \omega^3}{\exp(\hbar \omega / \kappa _B T ) - 1} \frac{d\omega}{\pi^2 c^3}
 \end{equation}
 \end{boxenv}
 \noindent Questa \`e la \textbf{legge di Planck} per radiazione di corpo nero. 
+Per piccole $\omega$, si pu\`o sviluppare l'esponenziale, $e^{\alpha\omega}\simeq 1 + \alpha  \omega$: i due $1$ si cancellano e si semplifica $\omega^3$ al numeratore.
+Significa che per basse frequenze, la funzione sale $\sim \omega^2$.
+Per alte $\omega$, l'andamento \`e esponenziale decrescente chiaramente.
+Nel mezzo, si raccordano i due limiti ed \`e presente un punto di massimo.
+
+Indipendentemente dalla frequenza, pi\`u \`e alta $u(\omega)$; una curva $u(\omega)$ a $T$ maggiore \`e sempre pi\`u alta a quella a temperatura inferiore. 
+Modificando la temperatura, si sposta anche la posizione del massimo: pi\`u alta la temperatura, pi\`u il massimo si sposta verso destra linearmente con la temperatura, cio\`e $\hbar \omega_\text{max}\propto T$. Questa \`e la \textbf{legge di Wien}.
+A temperatura ambiente ($300$ K), la $\omega_\text{max} $ \`e nell'infrarosso, mentre a $6000$ K (temperatura del Sole), $\omega_\text{max}$ \`e nel giallo.
+
+La legge $u(\omega)$ \`e nota come \textbf{legge di emissione del corpo nero}. 
+La condizione di corpo nero (dove in questo caso, il corpo sarebbero le pareti di una stanza) si traduce in indipendenza dalla frequenza: la $\rho (\omega)$ contiene condizioni di annullamento al bordo di tutte le radiazioni, indipendentemente dalla loro frequenza.
 
 Integrando sulle frequenze, si ha energia totale del corpo nero in funzione della temperatura:
 \begin{equation}
@@ -948,7 +967,6 @@ Il limite classico per alte $T$ non si osserva perch\'e gli oscillatori trattati
 \subsection{Modelli di Einstein e Debeye}
 Si modellano atomi di un cristallo come oscillatori armonici indipendeti; classciamente $c_V = 3 N \kappa _B$ (in base a quanto trovato nel capitolo precedente)
 che \`e la \textbf{legge di Dulong-Petit}.
-
 Sperimentalmente, però, si vede che $c_V \to 0 $ per $T \to 0$.
 Per gas di oscillatori, si \`e visto che:
 \[
@@ -959,19 +977,19 @@ Questo \`e il \textbf{modello di Einstein.}
 Anche questo \`e in disaccordo con gli esperimenti perch\'e $c_V \to 0$ proporzionalmente a $T^3$, non esponenzialmente.
 L'errore \`e trattare oscillatori indipendenti: cos\`i facendo, $\omega$ non dipende dalla densit\`a, quindi l'energia non dipende dal volume $\Rightarrow $ compressibilit\`a infinita.
 
-Nel \textbf{modello di Debeye}, gli oscillatori sono accoppiati, quindi ognuno osciller\`a con una propria frequenza $\omega_\alpha $ e influenzer\`a gli oscillatori vicino. In questo modello, i \textit{fononi} saranno i modi di oscillazione collettiva degli atomi.
+\subsubsection{Modello di Debeye}
+Nel \textbf{modello di Debeye}, gli oscillatori sono accoppiati, quindi ognuno osciller\`a con una propria frequenza $\omega_\alpha $ e influenzer\`a gli oscillatori vicino. 
+In questo modello, i \textit{fononi} saranno le eccitazioni di ciascun oscillatore\footnote{Similmente al campo em, la quantizzazione delle vibrazioni porta la quantizzazione dell'energia di ciascun modo normale, che pu\`o assumere soltanto multipli di $\hbar  \omega$.}.
 La lunghezza d'onda dei fononi \`e \textit{limitata superiormente} dalla dimensione del solido e \textit{inferiormente} dal passo del reticolo del cristallo.
 
-\subsubsection{Modello di Debeye continuo}
 
 Si tratta modello di Debeye per $k\to 0$ perch\'e si \`e interessati al comportamento del modello per basse temperature\footnote{Bassi $k$ implicano basse energie che implicano basse temperature.}, essendo in questo regime l'andamento da correggere. 
 Inoltre, errori a temperature pi\`u alte, gli stati sarebbero molto poco popolati (visto che seguono una Bose-Einstein), quindi compiere degli errori ad alte $T$ non cambia il risultato.
 In questa approssimazione \`e anche possibile trattare il reticolo come continuo: se $k\to 0 \Rightarrow  \lambda \to \infty$, quindi non si \`e sensibili alla discretizzazione del cristallo.
 
-Per mezzi continui: $\partial _t \rho  + \nabla (\rho  \mathbf{v} ) = 0$ e $\rho  \partial _t \mathbf{ v}  + \nabla P = 0$\footnote{La prima \`e l'equazione di continuit\`a per la corrente di massa, mentre la seconda deriva da $F=ma$. Indicando con $\mathcal{F}$ una forza per unit\`a di volume, l'uguaglianza soddisfatta \`e: $\mathcal{F} = \rho \partial _t v$. Infine, usando $\mathcal{F}=-\nabla P$, si ottiene proprio $\nabla P +\rho \partial _t v = 0$.}.
+Per mezzi continui: $\partial _t \rho  + \nabla \cdot  (\rho  \mathbf{v} ) = 0$ e $\rho  \partial _t \mathbf{ v}  + \nabla P = 0$\footnote{La prima \`e l'equazione di continuit\`a per la corrente di massa, mentre la seconda deriva da $F=ma$. Indicando con $\mathcal{F}$ una forza per unit\`a di volume, l'uguaglianza soddisfatta \`e: $\mathcal{F} = \rho \partial _t v$. Infine, usando $\mathcal{F}=-\nabla P$, si ottiene proprio $\nabla P +\rho \partial _t v = 0$.}.
 Se pressione e densit\`a si discostano di poco dall'equilibrio, cio\`e $P = P_0 + P'$ e $\rho  = \rho _0 + \rho '$: $\nabla P' + \rho _0 \partial _t \mathbf{v} = 0$ e $\partial _t \rho ' + \rho _0 \nabla \cdot \mathbf{v} =0$.
-Si assume che $\rho $ dipenda solo da $P$; sviluppando: $\rho \simeq \rho (P_0) + P'\partial _P \rho $, con $\rho _0 \equiv \rho (P_0)$. Quindi deve valere $\rho ' = P'\partial _P \rho  \equiv P ' / c^2$, dove $c^2 \equiv \partial _\rho P = 1 / k\rho $, in cui $k = k_T = k_S$\footnote{Avendo assunto indipendenza dalla temperatura nello sviluppo di $\rho $, non ha senso distinguere tra $k _T$ e $k_S$.} \`e la compressibilit\`a.
-
+Si assume che $\rho $ dipenda solo da $P$; sviluppando: $\rho \simeq \rho (P_0) + P'\partial _P \rho $, con $\rho _0 \equiv \rho (P_0)$. Quindi deve valere $\rho ' = P'\partial _P \rho  \equiv P ' / c^2$, dove $c^2 \equiv \partial _\rho P = 1 / k\rho $, in cui $k = k_T = k_S$\footnote{Avendo assunto indipendenza dalla temperatura nello sviluppo di $\rho $, non si distingue tra $k _T$ e $k_S$.} \`e la compressibilit\`a.
 Le equazioni differenziali diventano:
 \begin{equation}
 	\begin{cases}
@@ -995,7 +1013,7 @@ Nel conteggio, bisogna includere modi di propagazione trasversi e propagazione l
 	\end{split}
 \end{equation}
 Nell'ultima uguaglianza, si \`e considerata velocit\`a media $\overline{c}$ per semplificare trattazione. 
-Nell'integrare questa densit\`a di energia, l'integrale non si estende pi\`u fino a infinito come per campo em, ma esiste un'energia massima associata ad una frequenz a massima $\omega_\text{max}$, a sua volta associata ad un vettore d'onda massimo $q_D$ che \`e il \textbf{vettore d'onda di Debeye}. Questo \`e presente perch\'e, al contrario dei fotoni del campo elettromagnetico, i fononi sono oscillazioni di un reticolo cristallino, quindi non possono avere una lunghezza d'onda inferiore al passo reticolare.
+Nell'integrare questa densit\`a di energia, l'integrale non si estende pi\`u fino a infinito come per campo em, ma esiste un'energia massima associata ad una frequenza massima $\omega_\text{max}$, a sua volta associata ad un vettore d'onda massimo $q_D$ che \`e il \textbf{vettore d'onda di Debeye}. Questo \`e presente perch\'e, al contrario dei fotoni del campo elettromagnetico, i fononi sono oscillazioni di un reticolo cristallino, quindi non possono avere una lunghezza d'onda inferiore al passo reticolare.
 
 Si calcola energia totale per basse temperature, ossia $\kappa _B T \ll \hbar \omega_\text{max} = \frac{hc}{\lambda _\text{min}}$; \`e chiaro che in questo regime, si pu\`o approssimare il limite superiore dell'energia come infinito e si ottiene lo stesso integrale ottenuto per il campo elettromagnetico:
 \begin{equation}
@@ -1005,7 +1023,7 @@ Il risultato ottenuto \`e in accordo con l'andamento misurato sperimentalmente.
 
 Per studiare il limite opposto (alte temperature), si ha il problema che $\rho (\omega)$ usata finora non \`e pi\`u valida perch\'e \`e stata ricavata in assunzione di $k\to 0$; 
 per temperature alte, ci si avvicina a lunghezze d'onda dell'ordine del passo reticolare, quindi l'assunzione di mezzo continuo non \`e pi\`u valida.
-Prendendo la solita $\omega=ck$ lineare derivante da tale approssimazione, si finirebbero per contare pi\`u modi di quelli effettivamente presenti.
+Prendendo la solita $\omega=ck$ lineare derivante da tale approssimazione, si finirebbe per contare pi\`u modi di quelli effettivamente presenti.
 
 Per continuare a usare la stessa $\rho (\omega)$, ma contare il numero giusto di modi si ridefinisce la frequenza massima, imponendo che il numero sia sempre $3N$:
 \begin{equation}
@@ -1015,7 +1033,7 @@ dove $3N$ sono le possibili degenerazioni, avendo tre possibili modi di propagaz
 \begin{equation}
 	\begin{split}
 		E &= \int_{0} ^{\kappa _B \theta _D} \mathscr{E} \rho (\mathscr{E}) \overline{n}(\mathscr{E}) \ d\mathscr{E} = 9 N\kappa _B T \left(\frac{T}{\theta _D}\right) ^3 \int_{0} ^{\theta _D / T} \frac{x^3}{e^x - 1} \ dx \\
-		  &\simeq 9 N\kappa _B T \left(\frac{T}{\theta _D}\right) ^3 \int_{0} ^{\theta _D / T} \frac{x^3}{x}=3N\kappa _B T
+		  &\simeq 9 N\kappa _B T \left(\frac{T}{\theta _D}\right) ^3 \int_{0} ^{\theta _D / T} \frac{x^3}{x}dx=3N\kappa _B T
 	\end{split}
 \end{equation}
 in accordo con Dulong-Petit. Si nota che avendo preso $\theta _D / T \ll 1$, si \`e potuto sviluppare $e^x -1 \simeq x$.
@@ -1034,7 +1052,7 @@ La forma pi\`u semplice \`e quella della derivata collisionale:
 \begin{equation}
 	\left(\frac{\partial f}{\partial t} \right) _\text{coll} = - \frac{f-f_0}{\tau _c}
 \end{equation}
-con $f_0$ distribuzione all'equilibrio. In assenza di capi, questa ha soluzione
+con $f_0$ distribuzione all'equilibrio. In assenza di campi, questa ha soluzione
 \begin{equation}
 	f(t) - f_0 = \left[ f(0) - f_0 \right] e^{-t  / \tau _c} 
 \end{equation}
@@ -1048,14 +1066,14 @@ Da questa si ottiene l'\textbf{equazione del trasporto di Boltzmann}:
 	\frac{\partial f}{\partial t} + \frac{d \mathbf{r} }{d t} \cdot \nabla _\mathbf{r} f + \frac{d \mathbf{v} }{d t} \cdot \nabla _\mathbf{v} f = \left(\frac{\partial f}{\partial t} \right) _\text{coll}
 \end{equation}
 \end{boxenv}
-\noindent Le soluzioni stazionarie si ottengono potenndo $\partial _t f = 0$.
+\noindent Le soluzioni stazionarie si ottengono ponendo $\partial _t f = 0$.
 Unidimensionalmente, lungo $x$, si ha:
 \[
 v_x \frac{\partial f }{\partial x}  + \dot{v}_x \frac{\partial f}{\partial v_x}  = \frac{f- f_0}{\tau _c}\Rightarrow f = f_0 - \tau _c \left(a_x \frac{\partial f}{\partial v_x} + v_x \frac{\partial f}{\partial x} \right) 
 \] 
 con $a_x = \dot{v}_x$. Si assume sistema poco fuori equilibrio, cio\`e $f \simeq f_0 + \Delta $, quindi, compiendo errore al secondo ordine nelle derivate\footnote{Questo si pu\`o fare perch\'e il termine con le derivate \`e gi\`a una correzione a $f$, quindi aggiungendo $\Delta $ nelle derivate, si otterrebbe una correzione al secondo ordine, che si trascura.}:
 \begin{equation}
-	f = f_0 - \tau _c \left(a \frac{\partial f_0}{\partial v_x}  + v \frac{\partial f_0}{\partial x} \right) 
+	f = f_0 - \tau _c \left(a_x \frac{\partial f_0}{\partial v_x}  + v_x \frac{\partial f_0}{\partial x} \right) 
 \end{equation}
 \subsubsection{Conducibilit\`a elettrica}
 Gas di elettroni portato di poco fuori equilibrio da debole campo elettrico.
