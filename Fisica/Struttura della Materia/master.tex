@@ -144,16 +144,22 @@
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.}
-
-
-
-
+\newtheoremstyle{style2}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
 \theoremstyle{style1}
+\newtheorem{osservazione}{Osservazione}[section]
+\theoremstyle{style2}
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{corollario}{Corollario}[teorema]
 \newtheorem{lemma}{Lemma}[teorema]
 \newtheorem{definizione}{Definizione}[section]
-\newtheorem{osservazione}{Osservazione}[section]
 \newtheorem{notazione}{Notazione}[section]
 \newtheorem{esempio}{Esempio}[section]
 \newtheorem{esercizio}{Esercizio}[section]
@@ -1620,26 +1626,121 @@ Si distinguono diversi casi.
 
 		Gli atomi accettori o donori creano dei nuovi stati energetici per la disposizione degli elettroni, rispettivamente vicino alla banda inferiore e quella superiore.
 \end{enumerate}
-\begin{boxenv}[]
-\centering Riprendere Lezione 15 da 49:13 
-\end{boxenv}
+\subsubsection{Stati stazionari del reticolo}
 
 
+Ai bordi della zona di Brillouin, si ha $\partial _k \mathscr{E}_n(k) = 0 $, cio\`e le bande al bordo della zona sono piatte, dove $\mathscr{E}_n (k)$ \`e l'energia che definisce una generica banda.
+
+Per capire meglio cosa vuol dire, si nota che gli stati al bordo di una banda sono stazionari. 
+Questo perch\'e sono lo stesso stato, visto che differiscono di un vettore del reticolo reciproco, ma riferiti a due onde piane con vettore d'onda esattamente opposto. 
+Allora \`e dato dalla sovrapposizione di due onde piane: $\psi _{n,\mathbf{k} } (x) = C_+ e^{ikx} + C_- e^{-ikx} $, con $k= \pi/a$ per reticolo 1D. Uno stato dato da sovrapposizione di onde piane con vettori d'onda opposto \`e stazionario.
+Per quanto detto, gli stati al bordo, contrassegnati da vettore d'onda $k$, soddisfano $2k = K$ con $K$ vettore del reticolo reciproco.
+
+\subsubsection{Velocit\`a di stati stazionari}
+
+L'elettrone che si propaga in stato al bordo della zona di Brillouin fa scattering con il reticolo dovuto alla periodicit\`a  del potenziale del reticolo a cui ogni elettrone \`e soggetto. 
+Essendo un $k$ sul bordo il massimo impulso permesso, in questo stato l'elettrone pu\`o essere riflesso con vettore d'onda $-k$, oppure possono formarsi stati stazionari in cui l'energia dell'elettrone si stabilizza e rimane costante.
+
+Per stati stazionari, ci si aspetta che la velocit\`a di propagazione sia nulla. Prima bisogna capire cos'\`e la velocit\`a perch\'e i $k$ non sono impulsi, essendo definiti a meno di un vettore nel reticolo reciproco.
+L'idea \`e calcolare impulso medio su una funzione di Bloch. L'azione di $\hat{H}$ su funzione di Bloch restituisce autovalore dell'energia: 
+\[ 
+		 \hat{H} \psi _{n,\mathbf{k} } (\mathbf{r} ) =  \mathscr{E}_n (\mathbf{k} ) \psi _{n,\mathbf{k} }\Rightarrow \hat{H} \left(e^{i \mathbf{k} \cdot \mathbf{r} }u_{n,\mathbf{k} } (\mathbf{r} ) \right)  = \mathscr{E}_n (\mathbf{k} ) e^{i\mathbf{k} \cdot \mathbf{r} } u_{n,\mathbf{k} } (\mathbf{r} ) \\ 
+\] 
+con $\hat{H} = -\frac{\hbar ^2}{2m}\nabla ^2 + V(\mathbf{r} )$. Sostituendo $\hat{H}$, si ricava equazione per $u_{n,\mathbf{k} } $:
+\begin{equation}
+	\hat{H}_\mathbf{k} u_{n,\mathbf{k} } (\mathbf{r} ) = \left[ \frac{\hbar ^2}{2m} \left(-i \nabla +\mathbf{k} \right) ^2 + V(\mathbf{r} ) \right] u_{n,\mathbf{k} } (\mathbf{r} ) = \mathscr{E}_{n} (\mathbf{k} ) u_{n,\mathbf{k} } (\mathbf{r} )
+\end{equation}
+dove $\hat{H}_\mathbf{k} $ non \`e propriamente un Hamiltoniano perch\'e dipende da $\mathbf{k} $, ma \`e importante evidenziare che se $u_{n,\mathbf{k} } $ soddisfa la prima, soddisfa anche l'ultima con sempre stesso autovalore.
+
+Si sviluppa energia attorno a punto nei pressi del bordo della banda:
+\[
+\mathscr{E}_n(\mathbf{k} +\mathbf{q} ) \simeq \mathscr{E}_n (\mathbf{k} ) + \sum_{i} \frac{\partial \mathscr{E}_n(\mathbf{k} )}{\partial k_i} q_i +\frac{1}{2} \sum_{i,j}^{} \frac{\partial ^2 \mathscr{E}_n(\mathbf{k} )}{\partial k_i \partial k_j} q_iq_j
+\] 
+Energia $\mathscr{E}_n(\mathbf{k} +\mathbf{q} )$ \`e autovalore di:
+\[
+\hat{H}_{\mathbf{k} +\mathbf{q} }  = \left[ \frac{\hbar ^2}{2m} \left(\frac{\nabla}{i}  +(\mathbf{k} +\mathbf{q}) \right) ^2 + V(\mathbf{r} ) \right]= \hat{H}_\mathbf{k} + \frac{\hbar ^2}{m} \left(\frac{\nabla}{i}+\mathbf{k} \right) \cdot \mathbf{q} + \frac{\hbar ^2 \mathbf{q} ^2}{2m}
+\] 
+dove \`e presente termine indipendente da $\mathbf{q} $, uno lineare e uno quadratico. Si fa teoria delle perturbazioni su questa, tenendo solo ordine lineare:
+\begin{equation*}
+	\mathscr{E}_{n} (\mathbf{k} +\mathbf{q} )  \simeq \mathscr{E}_n(\mathbf{k} ) + \frac{\hbar ^2}{m}\int d^3 r \  u^*_{n,\mathbf{k} } \left[ -i \nabla +\mathbf{k}  \right] \cdot \mathbf{q} u_{n,\mathbf{k} } = \mathscr{E}_n(\mathbf{k} )+ \sum_{j}^{}\int d^3 r \  u^*_{n,\mathbf{k} } \left[ \frac{\hbar ^2}{m}\left(\frac{\nabla}{i} +\mathbf{k}\right)_j   q_j  \right]u_{n,\mathbf{k} }
+\end{equation*}
+da cui confrontando le due espressioni (sviluppo e teoria delle perturbazioni), si trova che:
+\begin{equation}
+	\sum_{j}^{} \frac{\partial \mathscr{E}_n(\mathbf{k} )}{\partial k_j}q_j= \mathscr{E}_n(\mathbf{k} )+ \sum_{j}^{}\int d^3 r \  u^*_{n,\mathbf{k} } \left[ \frac{\hbar ^2}{m}\left(\frac{\nabla}{i} +\mathbf{k}\right)_j   q_j  \right]u_{n,\mathbf{k} }
+\end{equation}
+Reintroducendo la $\psi $ originale con $u_{n,\mathbf{k} } (\mathbf{r}) = \psi _{n,\mathbf{k} } (\mathbf{r} )e^{-i\mathbf{k} \cdot \mathbf{r} } $, si ottiene:
+\begin{equation}
+	\frac{\partial \mathscr{E}_n(\mathbf{k} )}{\partial \mathbf{k} } = \hbar \int dr \ \psi ^*_{n,\mathbf{k} } (\mathbf{r} ) \left[ \frac{\hbar ^2}{m} \frac{\nabla}{i}  \right] \psi _{n,\mathbf{k} } (\mathbf{r} ) = \hbar \braket{\psi _{n,\mathbf{k} } |\hat{\mathbf{v} }|\psi_{n,\mathbf{k} } } 
+\end{equation}
+con $\hat{\mathbf{v} }$ operatore velocit\`a. Quanto detto a inizio sottosezione precedente, cio\`e che $\partial _k \mathscr{E}_n(\mathbf{k} ) = 0$, si pu\`o interpretare come l'annullamento della velocit\`a media sugli stati al bordo della banda.
+
+Quello che si verifica ai bordi \`e una sorta di \textit{effetto Pacman} per cui l'elettrone arriva al bordo venendo decelerato e viene rimandato indietro tendendo ad oscillare tra gli estremi di una banda. Sperimentalmente \`e difficile da vedere perch\'e tendenzialmente l'elettrone fa scattering con un fonone prima di raggiungere l'estremo della banda.
 
 
+\subsection{Fononi}
+Ottenute soluzioni per gli elettroni $E_e (\mathbf{R} _1, \ldots, \mathbf{R} _n)$\footnote{Si nota che le energie dei singoli elettroni dipendono necessariamente dalla posizione dei nuclei.}, si risolve equazione per i nuclei {\color{red}(mettere riferimento)}, la cui Hamiltoniana \`e:
+\begin{equation}
+	H = \sum_{j}^{} \frac{P^2_j}{2M_j} + \sum_{jj'}^{} \frac{1}{2} \frac{Z_jZ_j'e^2}{\lvert \mathbf{R} _j - \mathbf{R} _{j'}  \rvert } + E_e(\mathbf{R} _1,\ldots,\mathbf{R} _n)
+\end{equation}
+Anche questo da risolvere \`e particolarmente complicato, quindi si risolve considerando piccoli spostamenti dall'equilibrio fino al secondo ordine.
+Si scrive $\mathbf{R} _j = \mathbf{R} _{0j} +\mathbf{u} _j$, con $\mathbf{u}_j$ correzione e ci si fermer\`a al secondo ordine in $\mathbf{u} $.
+Potendo avere pi\`u atomi per celle unitarie, si usa la notazione $\mathbf{u} _{ lj} $, dove $j$ indica la cella e $l$ indica l'atomo all'interno di tale cella.
+Per singolo atomo $(lj)$-esimo, allora l'hamiltoniana per le piccole oscillazioni \`e:
+\begin{equation}
+	H ' = \frac{1}{2}M_l \left(\frac{d \mathbf{u} _{lj} }{d t} \right) ^2 + \frac{1}{2} \sum_{l'j'}^{} \mathbf{u} _{lj} \phi (l,j,l',j') \mathbf{u} _{l'j'} 
+\end{equation}
+con $\phi $ matrice delle costanti di forza delle interazioni fra i vari atomi. Per ogni atomo, le equazioni del moto sono $m\dot{\mathbf{v} }= - \frac{\partial U}{\partial \mathbf{r} } $. Si \`e interessati a risolvere il problema classicamente per le ampiezze di oscillazione, quindi ci si aspetta una soluzione del tipo
+\[
+\mathbf{u} _{lj} (\mathbf{q} ,\omega) = e^{i (\mathbf{q} \cdot \mathbf{R}_{0j} - \omega t )} \mathbf{u} _{l0} 
+\] 
+Questa rappresenta gli spostamenti attorno a posizione di equilibrio e non ha senso definirla in punti in cui gli atomi non sono presenti. 
+Il teorema di Bloch afferma che la funzione d'onda \`e composta da un'onda piana (in questo caso data dall'esponenziale) e da funzione periodica; dovendo essere periodica e essendo il suo valore importante solo nel punto in cui sono presenti gli atomi, si sceglie una costante come $u_{l 0} $ in modo da semplificare l'espressione. Per questo motivo, siano $k,k'$ diversi tali che l'onda piana assume stesso valore nelle posizioni dei nuclei; allora le due onde piane descrivono lo stesso modo perch\'e quello che succede fuori dalle posizioni dei nuclei non entra nella soluzione. Per gli elettroni, un $k$ a cui si sommava vettore del reticolo restituiva stesso $k$ relativo ad una banda diversa, mentre nel caso dei nuclei si ottiene esattamente lo stesso stato energetico. Questo significa che il numero di bande \`e finito.
 
+Sostituendo espressione nelle equazioni del moto, si trovano:
+\begin{equation}
+	M_l \omega^2 \mathbf{u} _{l 0} = \sum_{l'j}^{} \phi (l,j,l',0)e^{-i\mathbf{q} \cdot \mathbf{R}_{0j} } \mathbf{u} _{l' 0} 
+\end{equation}
+Soluzione tramite introduzione della \textbf{matrice dinamica} (trasformata di Fourier della $\phi $):
+\[
+	\begin{split}
+		&D_{l l'} (\mathbf{q} ) = \sum_{j}^{} \phi (l,j,l',0) (M_lM_{l'} )^{ - 1 / 2} e^{-i \mathbf{q} \cdot \mathbf{R}_{0j}  } \\
+		 &\Rightarrow \sum_{l'}^{} \left[ D_{ll'} (\mathbf{q} ) - \omega^2 \delta _{l l'}  \right] \mathbf{u} _{l'0} =0
+	\end{split}
+\] 
+dove le frequenze si trovano prendendo $\det \Big(D_{ll'} (\mathbf{q} ) - \omega^2 \delta _{l l'} \Big) =0 $.
+\begin{esempio}[Catena atomica unidimensionale]
+	Atomi disposti lungo una dimensione con passo reticolare $a$. Si prende atomo $p$-esimo (nella cella $p$-esima perch\'e si suppone che per cella unitaria sia presente un solo atomo). Le equazioni del moto sono $m\ddot{u}_p = c (u_{p+1} -u_p + u_{p-1} - u_p)$, con $c$ costante di forza e $\ddot{u}_p$ accelerazione dell'atomo $p$-esima. Contenuto della parentesi tonda legato a interazione del $p$-esimo con quelli vicini, dipendente dalla distanza relativa tra di essi.
 
+	Si cerca soluzione della forma $u_p = u_0 e^{i(qpa-\omega t)} $ dove la posizione dell'atomo $p$-esimo \`e $pa$; sostituendo:
+\[
+-\omega^2 m \ddot{u}_p = c \left[ e^{i q a} +e^{-iqa} - 2  \right] u_p\Rightarrow \omega^2 - \frac{c}{m} \big[ 2 \cos (qa) - 2) \big] \Rightarrow \omega = \sqrt{\frac{4c}{m}} \left\lvert \sin \frac{qa}{2} \right\rvert 
+\] 
+\end{esempio}
+Al variare delle dimensioni, aumentano le bande energetiche dei fononi: in 3D, ad esempio, si avranno $3N$ modi normali, quindi $3$ bande legate ai tre modi diversi di propagazione rispetto al vettore d'onda, ossia due trasversali e una longitudinale, dove le onde trasversali sono sempre meno energetiche di quelle longitudinali. 
 
-
-
-
-
-
-
-
-
-
-
+\subsubsection{Fononi ottici e acustici}
+	Si studia cristallo composto da due atomi per cella unitaria, equidistanti l'uno dall'altro a distanza $d$ e disposti unidimensionalmente lungo un certo asse.
+	Si indica con $m_1$ la massa del primo atomo e con $m_2$ la massa del secondo.
+	Per questa configurazione, in una posizione pari sar\`a sempre presente $m_1$ e in $2p+1$ sempre $m_2$ per esempio; allora le equazioni sono:
+	\begin{equation}
+		\begin{split}
+			&m_1\ddot{u}_{2p} = c (u_{2p+1} - u_{2p} + u_{2p -1} -2_{2p} )\\
+			& m_2 \ddot{u}_{2p+1} = c (u_{2p+2} -u_{2p+1} +u_{2p} - u_{2p+1} )
+		\end{split}
+	\end{equation}
+Come prima, si cercano soluzioni del tipo $u_{2p}  = u_1 e^{i (2pdq - \omega )}$ e $u_{2p+1} = u_2 e^{i\big[(2p+1) dp - \omega t\big]} $; sostituendo, si ottiene:
+\begin{equation}
+	\det \begin{pmatrix}\displaystyle  \frac{2c}{m_1}- \omega^2 &\displaystyle  - \frac{2c}{m_1}\cos dq \\ & \\ \displaystyle -\frac{2c}{m_1}\cos dq &\displaystyle  \frac{2c}{m_2}-\omega ^2\end{pmatrix}  = 0 \Rightarrow  \omega ^2 = c \left[ \left(\frac{1}{m_1}+\frac{1}{m_2}\right) \pm\sqrt{ \left(\frac{1}{m_1}+\frac{1}{m_2}\right) ^2 - \frac{4 \sin^2dq}{m_1m_2}}  \right] 
+\end{equation}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\columnwidth]{fon.png}
+\end{figure}
+Il segno nella relazione di dispersione permette di individuare due diverse bande separate da un gap il cui spessore dipende dalla differenza in massa delle due specie. Queste individuano due tipi di fononi.
+\begin{itemize}
+	\item \textbf{Fononi ottici}: generati dalle oscillazioni opposte in fase degli atomi nella cella unitaria. Possono interagire con la radiazione elettromagnetica in quanto possono avere la giusta combinazione di $\omega, k$ della radiazione incidente per permettere scattering. Questa interazione \`e permessa dal fatto che l'oscillazione in controfase degli atomi nella cella unitaria genera una separazione periodica di carica nella cella stessa, portando alla formazione di un momento di dipolo oscillante.
+	\item \textbf{Fononi acustici}: rappresentano moto collettivo delle celle e sono principali responsabili della propagazione del suono in un mezzo proprio per il fatto che sono formati dalle oscillazioni collettive degli atomi nel reticolo.
+\end{itemize}
 
 
 
