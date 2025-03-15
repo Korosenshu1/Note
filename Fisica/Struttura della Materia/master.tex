@@ -1742,13 +1742,126 @@ Il segno nella relazione di dispersione permette di individuare due diverse band
 	\item \textbf{Fononi acustici}: rappresentano moto collettivo delle celle e sono principali responsabili della propagazione del suono in un mezzo proprio per il fatto che sono formati dalle oscillazioni collettive degli atomi nel reticolo.
 \end{itemize}
 
+\newpage
 
+\section{Interazioni radiazione materia}
 
+\subsection{Modello per l'interazione}
+Si studia risposta del materiale a interazione con campo em. Si invia campo em con potenziale
+\begin{equation}
+	V(t) = \begin{cases}
+		V &, \ 0\le  t\le \tau \\
+		0 & , \ \text{ altrimenti}
+	\end{cases}
+\end{equation}
+Gli autostati di $H_0$ Hamiltoniano cinetico sono $\ket{\phi _n} $ e non sono autostati di $H = H_0 + V(t)$. 
+Generico stati si scrive con opportuni pesi dipendenti dal tempo:
+\begin{equation}
+	\ket{\psi (t)}  = \sum_{n}^{} a_n(t) e^{ - \frac{i}{\hbar }E_n t } \ket{\phi _n} 
+\end{equation}
+Si impone condizione iniziale $\ket{\psi (0)}  = \ket{\phi _m} \Rightarrow  a_n(0) = \delta _{nm} $. Dopo tempo $\tau $, cio\`e alla fine dell'interazione, il sistema si trova in:
+\begin{equation}
+	\ket{\psi _\text{fin}(t)}  = \sum_{n}^{} a_{m\to n} (\tau ) e^{ - \frac{i}{\hbar }E_n t } \ket{\phi _n} 
+\end{equation}
+dove la probabilit\`a di passare da stato $m$ a stato $n$ a fine interazione \`e:
+\begin{equation}
+	W_{m\to n} (\tau ) = \lvert a_{m\to n} (\tau ) \rvert ^2
+\end{equation}
+L'equazione di Shr\"odinger \`e allora data da:
+\begin{equation}
+	i \hbar  \partial _t a_{m\to n} (t) = \sum_{\ell }^{} \braket{n|W(t)|\ell } e^{i \omega_{n\ell } t} a_{m\to \ell } (t), \ \omega_{n\ell } = \frac{E_n - E_\ell }{\hbar }
+\end{equation}
+con $\int \phi _n^* W(t) \phi _\ell \ d^3 r = \braket{n|W(t)|\ell } $. 
+Si risolve equazione tramite perturbazioni, fermandosi al primo ordine perturbativo:
+\begin{equation}
+	i\hbar \frac{d a^{(1)} _{m\to n} }{d t} = \braket{n|W(t)|m} e^{i \omega_{nm} t} \implies a^{(1)} _{m\to n} (t) = \frac{1}{i\hbar }\int_{0} ^t \braket{n|W(t')|m} e^{ i \omega_{nm} t'} \ dt'
+\end{equation}
+dove si sono imposte condizioni iniziali al membro di destra.
+Potenziale oscillante, quindi proporzionale a $\cos(\omega t)$, che si separa in $e^{i\omega t }, \ e^{-i\omega t} $.
+Si definiscono $W^+,W^-$ rispettivamente per $e^{-i\omega t} , \ e^{i\omega t}  $; per il momento si porta avanti $W(t) = W^+ e^{-i\omega t} $, ma analogo per l'altro. I coefficienti sono:
+\begin{equation}
+	a_{m\to n } (t) = \frac{1}{i\hbar } \braket{n|W^+|m} \int_{0} ^t e^{i (\omega_{nm} -\omega)t '} dt' = \frac{1}{i\hbar }\braket{n|W^+|m} \frac{e^{i(\omega_{nm} -\omega)t} -1 }{i(\omega_{nm} -\omega)}
+\end{equation}
+La probabilit\`a \`e data allora da:
+\begin{equation}
+	W^{(1)}_{m\to n}  (\tau ) = \frac{2}{\hbar ^2}\lvert \braket{n|W^+|m}  \rvert ^2 F(\tau , x) \equiv \frac{2}{\hbar ^2}\lvert \braket{n|W^+|m}  \rvert ^2 \frac{2}{(x / \hbar )^2}\sin^2\left(\frac{x \tau }{2 \hbar }\right) 
+\end{equation}
+con $x = E_n-E_m-\hbar \omega$. Questa funzione \`e piccata in $x=0$ e ha picchi minori ogni $h / \tau $; il valore nel picco \`e $\tau ^2 / 2$. Allora maggiore \`e $\tau $, pi\`u tende a $\delta $ di Dirac. 
+\textbf{La probabilit\`a di interazione \`e massima se} $\hbar \omega \sim E_n - E_m$, cio\`e $x \sim 0$, il che significa che probabilit\`a di interazione \`e massima quando la radiazione ha energia prossima alla differenza tra due gap energetici.
+Coefficiente $W^+$ corrisponde ad assorbimento e $W^-$ a emissione stimalata perch\'e si ha rispettivamente $\hbar \omega\sim E_n - E_m$ e $\hbar \omega \sim E_m - E_n$, cio\`e solo livelli superiori e solo inferiori. 
+Quando $F$ non tende ad una $\delta $, si ha interazione per $\Delta E \cdot \tau \sim h$, essendo larghezza della campana pari a $h / \tau $.
 
+\subsubsection{Considerazioni sulla trattazione}
+Per il momento si \`e assunta radiazione monocromatica, avendo preso potenziale $\propto \cos(\omega t)$.
+Si sono potuti trattare separatamente i pezzi $e^{i\omega t} , \ e^{-i\omega t} $ perch\'e quando $F$ sufficientemente stretta, le due campane non si sovrappongono mai. 
+\subsubsection{Regola d'oro di Fermi}
 
+La possibilit\`a di approssimare $F$ come $\delta $ si ha in due casi: o $\tau \gg 1/\Delta E$ o quando la transizione si ha tra livello $E_m$ e una densit\`a di stati $\rho (E_n)$, con $\int \rho (E_n) dE_n = 1$ come pu\`o essere tra bande di semiconduttori.
+In questo caso:
+\[
+W^{(1)} _{m\to n} (\tau ) = \frac{2}{\hbar ^2} \int \lvert \braket{n|W^+|m} \rvert  ^2 F(\tau ,E_n-E_m-\hbar \omega) \rho (E_n)\ dE_n
+\] 
+Se $\rho (E_n)$ \`e larga $\Delta E_n$ e $\tau  \gg 2\pi / \Delta E_{n} $, allora $F$ stretta attorno a $\hbar \omega = E_n - E_m$ rispetto alla larghezza di $\rho (E_n)$, quindi si pu\`o prendere $\rho (E_n) \sim $ cost. nell'integrale e tirarlo fuori. In questo modo, si ottiene la \textbf{regola d'oro di Fermi}:
+\begin{boxenv}[]
+\begin{equation}
+	\overline{W}^{(1)} _{m\to n} (\tau ) = \frac{2}{\hbar ^2} \lvert \braket{\overline{n}|W^+|m}  \rvert ^2 \tau 
+\end{equation}
+\end{boxenv}
+\noindent dove barra sopra $W$ indica integrale calcolato e $\overline{n}$ identifica livello energetico tra quelli di $\rho (E_n)$ con $E_{\overline{n}} = E_m + \hbar  \omega$. \`E possibile definire probabilit\`a per unit\`a di tempo:
+\begin{equation}
+	\overline{P}^{(1)} _{m\to n} (\tau ) = \frac{\overline{W}^{(1)} _{m\to n}(\tau ) }{\tau }
+\end{equation}
+Questa definizione \`e possibile solo in presenza di densit\`a di stati perch\'e valore massimo di $F$ \`e proporzionale a $\tau ^2$, rendendo impossibile tale definizione.
+\subsubsection{Eccitazione tra densit\`a di stati}
+Generalmente si ha densit\`a di stati anche in partenza $\rho (E_m)$. In questo caso, si definisce \textbf{densit\`a di stati congiunta} $\rho (E_{n} -E_m)$ che indica \# di coppie di stati elettronici disponibili per transizione indotta da fotone.
 
+In semiconduttore, si pu\`o assumere impulso della radiazione circa nullo (all'interno della zona di Brillouin), quindi per conservazione dell'impulso, $k$ non varia da una banda all'altra.
 
-
+\subsubsection{Operatore probabilit\`a}
+Si riscrive probabilit\`a di interazione come operatore. In gauge di Coulomb, il potenziale, considerando termini lineari in $\mathbf{A} $, \`e $V(t) = - \frac{e}{mc}\mathbf{A} \cdot \mathbf{p} $.
+Si \`e interessati a potenziale oscillante, quindi $\mathbf{A}  = A_0 \hat{\mathbf{e} } \cos(\mathbf{k} \cdot \mathbf{r} -\omega t)= \frac{1}{2}A_0 \hat{\mathbf{e} }\big[e^{i(\mathbf{k} \cdot \mathbf{r} -\omega t)}+e^{- i (\mathbf{k}\cdot \mathbf{r} -\omega t) } \big] $.
+Il potenziale vettore non si misura, quindi si passa al campo elettrico:
+\[
+	\begin{split}
+		&\mathbf{E} = - \frac{1}{c} \frac{d \mathbf{A} }{d t} = - A_0 \hat{\mathbf{e} } \frac{\omega}{c} \sin(\mathbf{k} \cdot \mathbf{r} -\omega t) = E_0 \hat{\mathbf{e} }\sin\left(\mathbf{k} \cdot \mathbf{r}- \omega t \right) \\
+		&\Rightarrow \hat{V}(t) = \frac{eE_0}{2m\omega}\left(e^{i \mathbf{k} \cdot \mathbf{r} } e^{-i\omega t} + e^{-i\mathbf{k} \cdot \mathbf{r} } e^{i\omega t} \right) \hat{\mathbf{e} }\cdot \hat{\mathbf{p} }\\
+		&\Rightarrow  \hat{W}^+ = \frac{eE_0}{2m\omega} e^{i\mathbf{k} \cdot \mathbf{r} } \hat{\mathbf{e} } \cdot \hat{\mathbf{p} };  \ \hat{W}^- = \frac{eE_0}{2m\omega} e^{-i\mathbf{k} \cdot \mathbf{r} } \hat{\mathbf{e} } \cdot \hat{\mathbf{p} };  \ 
+	\end{split}
+\] 
+La probabilit\`a per unit\`a di tempo diventa:
+\begin{equation}
+	\overline{P}^{(1)} _{m\to n} = \frac{2\pi}{\hbar } \frac{e^2 }{m^2 \omega_0} E_0^2 \frac{1}{4} \left\lvert \Braket{\overline{n}|e^{\pm i \mathbf{k} \cdot \mathbf{r} } \hat{\mathbf{e}}\cdot \hat{\mathbf{p} }|\overline{m}}  \right\rvert ^2 \rho (E_n-E_m = \pm\hbar \omega)
+\end{equation}
+Tipicamente si \`e in approssimazione di dipolo per cui $e^{\pm i\mathbf{k} \cdot \mathbf{r} } \sim 1 $ e quando $H_0 = p^2 / 2m + U(r)$ (molto spesso), vale $[\hat{\mathbf{r} }, \hat{H}_0] = i\hbar  \hat{\mathbf{p} } / m$, quindi $\braket{n|\hat{\mathbf{p} }|m} = i m \omega_{nm} \braket{n|\hat{\mathbf{r} }|m} $ (applicando $\hat{H}_0$ a destra e sinistra).
+Infine, definendo operatore dipolo $\hat{\mathbf{d} }= e \hat{\mathbf{r} }$, si ha:
+\begin{equation}
+	\overline{P}^{(1)} _{m\to n} = \frac{2\pi}{\hbar }\frac{E_0^2}{4}\lvert \braket{n|\hat{\mathbf{e} }\cdot \hat{\mathbf{d} }|m}  \rvert ^2 \rho (E_n-E_m \pm \hbar \omega)
+\end{equation}
+con $\omega_{nm} \sim \omega$.
+\subsubsection{Densit\`a di energia in frequenza}
+Si esprime probabilit\`a per unit\`a di tempo in funzione di densit\`a $u(\nu ) d\nu $. In CGS, $u(\nu ) d\nu  = E_0^2 / (8\pi)$. Prima di svolgere l'integrale:
+\begin{equation}
+	P^{(1)} _{m\to n}  = \frac{2\pi}{\hbar ^2} \lvert \braket{\overline{n}|\hat{\mathbf{e}}\cdot \hat{\mathbf{d} }|\overline{m}}  \rvert ^2 \delta (\nu _{nm} \pm\nu ) g(\nu _{nm} )u (\nu ) d\nu 
+\end{equation}
+con $\int \rho (E_{nm} ) dE_{nm} = \int g(\nu _{nm} ) d\nu _{nm}  = 1 $, cio\`e $\rho = \frac{1}{2\pi \hbar }g$. 
+Questo vale per radiazioni polarizzate lungo $\hat{\mathbf{e} }$; in assenza di polarizzazione, compare coseno da mediare su angolo solido che porta $1 /3 $ fuori, cio\`e:
+\begin{equation}
+	P^{(1)} _{m\to n} = \frac{2\pi}{3 \hbar ^2}\lvert \braket{n|d|m}  \rvert ^2 g(\nu _{nm} ) \delta (\nu _{nm} \pm\nu ) u(\nu ) d\nu 
+\end{equation}
+Questa \`e da integrare rispetto a $\nu $ e $\nu _{nm} $; la regola d'oro di Fermi vale in due casi allora:
+\begin{itemize}
+	\item densit\`a di stati congiunta molto larga rispetto a $1 / \tau $;
+	\item distribuzione del campo em molto larga rispetto a $1 / \tau $.
+\end{itemize}
+Assumendo $g$ larga e integrando rispetto a $\nu $, si ottiene
+\[
+\overline{P}^{(1)} _{m\to n}  = \frac{2\pi}{3\hbar ^2}\int \lvert \braket{n|d|m}  \rvert ^2 u(\nu _{nm} ) g(\nu _{nm} )\ d \nu _{nm} 
+\] 
+Assumendo che $u$ sia larga rispetto a $g$, si porta fuori e l'integrale di $g$ \`e $1$ perch\'e \`e normalizzata:
+\begin{equation}
+	\overline{P}^{(1)} _{m\to n} = B_{m\to n} u_{\nu } (\overline{\nu }_{nm} )
+\end{equation}
+con $\overline{\nu }_{nm} $ frequenza centrale tanto $u\sim$ cost. e $B_{m\to n} = \frac{2\pi}{3\hbar ^2}\lvert \braket{n|d|m}  \rvert ^2$ \textbf{coefficiente B di Einstein}.
 
 \end{document}
 

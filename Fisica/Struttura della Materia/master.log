@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.10)  14 MAR 2025 00:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.15)  15 MAR 2025 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1695,7 +1695,7 @@ Overfull \hbox (2.47728pt too wide) in paragraph at lines 1730--1732
 \T1/zpltosf/m/n/10 Come pri-ma, si cer-ca-no so-lu-zio-ni del ti-po $\OML/ntxmi/m/it/10 u[] \U/ntxmia/m/it/10 = \OML/ntxmi/m/it/10 u[]e[]$ \T1/zpltosf/m/n/10 e $\OML/ntxmi/m/it/10 u[] \U/ntxmia/m/it/10 = \OML/ntxmi/m/it/10 u[]e[]$\T1/zpltosf/m/n/10 ;
  []
 
-<fon.png, id=534, 982.42032pt x 382.42876pt>
+<fon.png, id=548, 982.42032pt x 382.42876pt>
 File: fon.png Graphic file (type png)
 <use fon.png>
 Package pdftex.def Info: fon.png  used on input line 1737.
@@ -1704,12 +1704,18 @@ Package pdftex.def Info: fon.png  used on input line 1737.
 
 [41 <./fon.png (PNG copy)>]
 
+[42]
+
+[43]
+
+[44]
+
 Package caption Warning: Unused \captionsetup[table] on input line 39.
 See the caption package documentation for explanation.
 
 
 
-[42] (./master.aux)
+[45] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1723,11 +1729,11 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47817 strings out of 473190
- 1079226 string characters out of 5722601
- 1776653 words of memory out of 5000000
- 69991 multiletter control sequences out of 15000+600000
- 649418 words of font info for 151 fonts, out of 8000000 for 9000
+ 47852 strings out of 473190
+ 1079654 string characters out of 5722601
+ 1776655 words of memory out of 5000000
+ 69999 multiletter control sequences out of 15000+600000
+ 650031 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,21n,107p,10936b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1818,10 +1824,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (42 pages, 620520 bytes).
+Output written on master.pdf (45 pages, 636779 bytes).
 PDF statistics:
- 877 PDF objects out of 1000 (max. 8388607)
- 782 compressed objects within 8 object streams
- 287 named destinations out of 1000 (max. 500000)
- 482 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 946 PDF objects out of 1000 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 312 named destinations out of 1000 (max. 500000)
+ 538 words of extra memory for PDF output out of 10000 (max. 10000000)
 
