@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.15)  23 MAR 2025 14:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Arch Linux) (preloaded format=pdflatex 2025.3.15)  23 MAR 2025 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,6 +1082,8 @@ Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
 )) (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
+) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
 \FN@temptoken=\toks60
@@ -1107,8 +1109,8 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 768.
 \c@tcb@cnt@corollario=\count396
 \c@obs=\count397
 \c@nota=\count398
-Package hyperref Info: Option `colorlinks' set `true' on input line 148.
-Package hyperref Info: Option `breaklinks' set `true' on input line 148.
+Package hyperref Info: Option `colorlinks' set `true' on input line 150.
+Package hyperref Info: Option `breaklinks' set `true' on input line 150.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1129,7 +1131,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 183.
+(scrartcl)              package `tocloft' on input line 185.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1294,40 +1296,40 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwonabold'
 (Font)                  OML/iwona/b/it --> OT1/iwona/bx/it on input line 72.
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 199.
+(Font)              scaled to size 10.0pt on input line 201.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 199.
-LaTeX Font Info:    Trying to load font information for LS1+stix on input line 199.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 201.
+LaTeX Font Info:    Trying to load font information for LS1+stix on input line 201.
  (/usr/share/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 199.
-LaTeX Font Info:    Trying to load font information for LS2+stix on input line 199.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 201.
+LaTeX Font Info:    Trying to load font information for LS2+stix on input line 201.
  (/usr/share/texmf-dist/tex/latex/stix/ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1388,9 +1390,9 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 199.
-LaTeX Info: Command `\ddddot' is already robust on input line 199.
-Package hyperref Info: Link coloring ON on input line 199.
+LaTeX Info: Command `\dddot' is already robust on input line 201.
+LaTeX Info: Command `\ddddot' is already robust on input line 201.
+Package hyperref Info: Link coloring ON on input line 201.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 \openout5 = `master.out'.
@@ -1402,7 +1404,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 199.
+(scrartcl)           before \begin{document} on input line 201.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1411,7 +1413,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 199.
+ on input line 201.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -1420,24 +1422,24 @@ Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen394
 \c__nicematrix_innersep_middle_dim=\dimen395
 \c@lstlisting=\count414
-Package tocbasic Info: setting babel extension for `lol' on input line 199.
+Package tocbasic Info: setting babel extension for `lol' on input line 201.
 \scr@dte@lstlisting@maxnumwidth=\skip116
-LaTeX Info: Redefining \it@ocap on input line 199.
-LaTeX Info: Redefining \it@ccap on input line 199.
+LaTeX Info: Redefining \it@ocap on input line 201.
+LaTeX Info: Redefining \it@ccap on input line 201.
 \c@mv@tabular=\count415
 \c@mv@boldtabular=\count416
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 200.
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 202.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 202.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 202.
 <front.jpg, id=7, 2280.52pt x 1509.64pt>
 File: front.jpg Graphic file (type jpg)
 <use front.jpg>
-Package pdftex.def Info: front.jpg  used on input line 204.
+Package pdftex.def Info: front.jpg  used on input line 206.
 (pdftex.def)             Requested size: 416.83289pt x 275.9159pt.
 
 
@@ -1502,37 +1504,38 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.5> not available
 
 [2]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 210.
+(Font)              scaled to size 15.0pt on input line 212.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 210.
+(Font)              scaled to size 20.0pt on input line 212.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 211.
+(Font)              scaled to size 12.0pt on input line 213.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 214.
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 216.
+(Font)              scaled to size 10.0pt on input line 216.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 218.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 216.
+(Font)              scaled to size 10.0pt on input line 218.
 
 
 [3{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 7.5pt on input line 274.
+(Font)              scaled to size 7.5pt on input line 276.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
-LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 305.
-LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 8.0pt on input line 305.
+(Font)              scaled to size 6.0pt on input line 276.
 
 
 [4]
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 307.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
+(Font)              scaled to size 8.0pt on input line 307.
+
 
 [5]
 
-Package caption Warning: Unused \captionsetup[table] on input line 141.
+Package caption Warning: Unused \captionsetup[table] on input line 143.
 See the caption package documentation for explanation.
 
 
@@ -1551,18 +1554,18 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 50450 strings out of 473190
- 1144821 string characters out of 5722601
- 1781415 words of memory out of 5000000
- 72887 multiletter control sequences out of 15000+600000
+ 50444 strings out of 473190
+ 1144752 string characters out of 5722601
+ 1780849 words of memory out of 5000000
+ 72877 multiletter control sequences out of 15000+600000
  647985 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 124i,20n,121p,10937b,1113s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,20n,121p,10937b,775s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (6 pages, 398126 bytes).
+Output written on master.pdf (6 pages, 398089 bytes).
 PDF statistics:
  168 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
