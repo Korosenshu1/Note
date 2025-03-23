@@ -91,8 +91,6 @@ INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
-INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
-INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -103,6 +101,8 @@ INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -398,6 +398,7 @@ INPUT ./master.out
 INPUT ./master.out
 OUTPUT master.out
 OUTPUT master.pdf
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def

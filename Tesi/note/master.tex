@@ -1,0 +1,292 @@
+\documentclass[10pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{parskip}
+\usepackage{pythonhighlight}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+
+% Titles 
+\title{Appunti di EDP}
+\author{Manuel Deodato}
+\date{}
+
+%%%%% tcolorbox setup
+
+% Teorema e proposizione
+\NewTcbTheorem[number within=section]{teorema}{Teorema}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
+
+\NewTcbTheorem[number within=section]{prop}{Proposizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
+
+
+
+
+
+% Definizione
+\definecolor{greendef}{HTML}{b8d8be}
+
+\NewTcbTheorem[number within=section]{definizione}{Definizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
+
+
+% Esempio
+\theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+
+%\definecolor{empurple}{HTML}{6e5e89}
+
+%\NewTcbTheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
+
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
+
+\numberwithin{esempio}{section}
+
+
+% Lemma e Corollario
+\definecolor{lemcor}{HTML}{a78d8a}
+
+\NewTcbTheorem[number within=section]{lemma}{Lemma}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
+\NewTcbTheorem[number within=section]{corollario}{Corollario}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
+
+
+
+% Osservazione
+\theoremstyle{definition}
+\newtheorem{obs}{Osservazione}
+
+\definecolor{coloros}{HTML}{6e5e89}
+
+\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
+
+\numberwithin{obs}{section}
+
+% Nota
+\newtheorem{nota}{Nota}
+
+\definecolor{ncol}{HTML}{f9ebbe}
+
+\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
+
+\numberwithin{nota}{section}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage{sansiwona}
+\usepackage{cmupint}
+\usepackage{newtxmath}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents 
+\newpage
+\section{Introduzione -- Derivata e soluzioni deboli, spazi $\mathcal{E}, \ \mathcal{D}$}
+\begin{definizione}{Definizione di derivata debole}{dd}
+	Sia $f\in L^1_\text{loc}(\Omega )$ e $\alpha  \in \mathbb{N}_0^n$; allora si dice che esiste $\partial ^\alpha  f \in L^1_\text{loc}(\Omega ) $ \textit{in senso debole} se:
+	\begin{equation}
+		\exists g \in L^1_\text{loc}(\Omega ) : \int_{\Omega } g \varphi \ dx = (-1)^{\left\lvert \alpha  \right\rvert } \int_{\Omega } f \partial ^\alpha  \varphi  \ dx, \ \forall \varphi \in C_0^\infty (\Omega )
+	\end{equation}
+	Se questo \`e vero, allora $\partial ^\alpha  f =g$ e si dice che $g$ \`e la \textbf{derivata debole} di ordine $\alpha $ di $f$.
+\end{definizione}
+
+\begin{teorema}{Teorema di Riemann-Lebesgue}{rlth}
+
+	Sia $g \in L^1_\text{loc}(\Omega )$ e $\int_{\Omega } g \varphi  \ dx = 0, \ \forall \varphi  \in C_0^\infty(\Omega )$; allora $g= 0$ quasi ovunque in $\Omega $.
+\end{teorema}
+
+\noindent Si applica il concetto di derivata debole alle edp; sia $P(x,\partial )$ un operatore differenziale lineare di ordine $m\in \mathbb{N}$ del tipo:
+\begin{equation}
+	P(x,\partial ) : = \sum_{\left\lvert \alpha  \right\rvert \le m}^{} a_\alpha  (x) \partial ^\alpha , \ a_\alpha  \in C^{\left\lvert \alpha  \right\rvert } (\Omega ) , \ \alpha \in \mathbb{N}_0^n, \ \left\lvert \alpha  \right\rvert \le m
+\end{equation}
+Si prende $u \in C^m (\Omega )$ come la soluzione classica di $P(x,\partial ) u = f, \ f \in C^0 (\Omega )$; integrando per parti per ogni $\varphi \in C_0^\infty(\Omega )$:
+\begin{equation*}
+	\int_{\Omega } f \varphi  \ dx = \int_{\Omega } \varphi \left[ \sum_{\left\lvert \alpha  \right\rvert \le m}^{} a_\alpha (\partial ^\alpha u)\right]  \ dx = \int_{\Omega } \left[ \sum_{\left\lvert \alpha  \right\rvert \le m}^{} (-1)^{\left\lvert \alpha  \right\rvert } \partial ^\alpha  (a_\alpha  \varphi ) \right] u \ dx
+\end{equation*}
+da cui si definisce:
+\begin{equation}
+	P^\top (x,\partial ) \varphi  : = \sum_{\left\lvert \alpha  \right\rvert \le m}^{} (-1)^{\left\lvert \alpha  \right\rvert } \partial ^\alpha  (a_\alpha  \varphi )
+\end{equation}
+e si chiama \textbf{operatore trasposto} di $P(x,\partial )$. Si arriva alla seguente definizione.
+\begin{definizione}
+	{Soluzione debole}{sdb}
+	Siano $u,f \in L^1_\text{loc}(\Omega )$ e sia $P(x,\partial )$ come definito sopra; si dice che $P(x,\partial ) u = f$ \`e valida debolmente se:
+	\begin{equation}
+		\int_{\Omega } f\varphi  \ dx = \int_{\Omega } \left[ P^\top(x,\partial ) \varphi  \right] u \ dx, \ \forall \varphi \in C_0^\infty (\Omega )
+	\end{equation}
+\end{definizione}
+Il problema con la definizione \ref{def:dd} \`e che mentre il lato di destra \`e sempre verificato, quello di sinistra potrebbe perdere senso perch\'e non \`e detto che una funzione $u \in L^1_\text{loc}$ sia derivabile; a questo proposito, ci si concentra sul lato di destra e, data $f\in L^1_\text{loc}(\Omega )$, si considera la mappa:
+\begin{equation}\label{distschel}
+	g_\alpha  : C_0^\infty(\Omega )\to \mathbb{C}, \ g_\alpha (\varphi ) := (-1)^{\left\lvert \alpha  \right\rvert } \int_{\Omega } f (\partial ^\alpha  \varphi ) \ dx , \ \forall \varphi  \in C_0^\infty(\Omega )
+\end{equation}
+Questo funzionale $g_\alpha $ \`e lineare e $\forall \varphi \in C_0^\infty(\Omega )$ se ne pu\`o stimare la norma:
+\begin{equation}
+	\left\lvert g_\alpha (\varphi ) \right\rvert \le \int_{K } \left\lvert f \right\rvert \left\lvert \partial ^\alpha \varphi  \right\rvert dx \le \sup_{x \in K} \left\lvert \partial ^\alpha \varphi (x) \right\rvert  \int_{K } \left\lvert f \right\rvert \ dx
+\end{equation}
+dove viene fissato $K$ compatto e tale che $K \subset \Omega, \ \operatorname{supp}\varphi \subseteq K  $ cos\`i da avere l'integrale di $f$ indipendente dal supporto di $\varphi $ e, quindi, costante. Questo fa pensare di dotare $C^\infty(\Omega )$ di una topologia\footnote{L'obiettivo per $C^\infty$ e poi per $C_0^\infty$ \`e quello di definire delle topologie rispetto alle quali gli operatori differenziali con i quali si avr\`a a che fare risulteranno essere continui.} $\tau $ si definisce $\mathcal{E}(\Omega ):= \left(C^\infty(\Omega ) , \tau \right) $. Allora:
+\begin{itemize}
+	\item una successione $\left\{ \varphi _j \right\} _{j\in \mathbb{N}} \subset C^\infty(\Omega )$ converge in $\mathcal{E}(\Omega )$ a $\varphi  \in C^\infty(\Omega )$ se e soltanto se:
+		\begin{equation}
+			\forall K \subset \Omega \text{ compatto }, \forall \alpha \in \mathbb{N}^n_0, \ \lim_{j \to \infty} \sup_{x \in K} \left\lvert \partial ^\alpha (\varphi _j -\varphi )(x) \right\rvert =0
+		\end{equation}
+	\item $\mathcal{E}(\Omega )$ \`e un localmente convesso, metrizzabile e completo spazio vettoriale topologico su $\mathbb{C}$.
+\end{itemize}
+Si vuole arrivare allo stesso risultato per $C_0^\infty(\Omega )$; si potrebbe pensare di usare la topologia indotta da $\mathcal{E}(\Omega $ in $C_0^\infty(\Omega )$, ma questa avrebbe il difetto che non assicura la compattezza di funzioni risultanti da serie di funzioni compatte.
+
+La definizione di $\mathcal{D}(\Omega )$ si ottiene come segue: si prende $\mathcal{D}_K(\Omega )$ come lo spazio di funzioni $C^\infty(\Omega )$ a supporto in $K$ con la topologia indotta da $\mathcal{E}(\Omega )$; si considera in $C_0^\infty(\Omega )$ la topologia indotta limite dagli spazi $\left\{ \mathcal{D}_K(\Omega ) \right\}, \ K\subset \Omega    $ compatto e il risultante spazio vettoriale topologico \`e proprio $\mathcal{D}(\Omega )$. Presenta le seguenti caratteristiche:
+\begin{itemize}
+	\item $\mathcal{D}(\Omega )$ \`e uno spazio vettoriale topologico, localmente convesso e completo, su $\mathbb{C}$;
+	\item una successione $\left\{ \varphi _j \right\} _{j\in \mathbb{N}} \subset C_0^\infty(\Omega )$ converge in $\mathcal{D}(\Omega )$ a $\varphi \in C_0^{\infty} (\Omega )$ se e soltanto se sono verificate le due seguenti condizioni:
+		\begin{itemize}
+			\item esiste $K \subset \Omega $ compatto tale che $\operatorname{supp} \varphi _j \subseteq K, \ \forall j \in \mathbb{N}$ e $\operatorname{supp} \subseteq K$;
+			\item $\forall \alpha \in \mathbb{N}_0^n$ si ha:
+				\begin{equation}
+				\lim_{j \to \infty} \sup_{x \in K} \left\lvert \partial ^\alpha (\varphi _j - \varphi ) (x)  \right\rvert =0 
+				\end{equation}
+		\end{itemize}
+\end{itemize}
+La topologia definita su $\mathcal{D}(\Omega )$ \`e talmente pi\`u raffinata di quella su $\mathcal{E}(\Omega )$ che se anche la funzione limite di una successione di funzioni lisce a supporto compatto appartiene a $\mathcal{D}(\Omega )$, pu\`o ancora non avere limite nel senso di $\mathcal{D}(\Omega )$.
+
+\newpage
+\section{Distribuzioni}
+\subsection{Caratterizzazione}
+Riprendendo la mappa definita in $\ref{distschel}$, si d\`a la seguente definizione.
+\begin{definizione}
+	{Definizione di distribuzione}{defistr}
+	La mappa $u:\mathcal{D}(\Omega ) \to \mathbb{C}$ \`e chiamata distribuzione su $\Omega $ se \`e lineare e continua.
+\end{definizione}
+Ogni funzionale lineare e continuo \`e, in generale, sequenzialmente continuo, ma non vale il contrario. Tuttavia, per un funzionale lineare su $\mathcal{D}(\Omega )$, continuit\`a e continuit\`a sequenziale si equivalgono, quindi: \textit{sia $u:\mathcal{D}(\Omega ) \to \mathbb{C}$ lineare; allora $u$ \`e una distribuzione se e soltanto se $\forall \left\{ \varphi _j \right\} _{j\in \mathbb{N}} \subset C_0^{\infty} (\Omega )$ t.c. $\varphi _j\to \varphi \in C_0^{\infty} (\Omega )$ in $\mathcal{D}(\Omega )$, vale $\lim_{j \to \infty} \langle u,\varphi _j \rangle=\left\langle u,\varphi  \right\rangle$}.
+\begin{prop}
+	{}{distk}
+	Sia $u:\mathcal{D}(\Omega ) \to \mathbb{C}$ lineare; allora $u$ \`e una distribuzione se e soltanto se $\forall K \subset \Omega $ compatto, esiste $k \in \mathbb{N}_0$ e $C \in (0,\infty)$ tale che:
+	\begin{equation}
+		\left\lvert \left\langle u,\varphi  \right\rangle \right\rvert \le C \sup_{\substack{x \in  K \\ \left\lvert \alpha   \right\rvert \le  k}} \left\lvert \partial ^\alpha  \varphi (x) \right\rvert , \ \forall \varphi  \in  C_0^\infty(\Omega ), \ \operatorname{supp} \varphi \subseteq K
+	\end{equation}
+	\begin{proof}
+		Si dimostra $(\Leftarrow)$, assumendo che $\forall K \subset \Omega $ compatto, esistano $k$ e $C$ che soddisfano la relazione riportata sopra. Per mostrare che $u$ \`e una distribuzione, si prende $\varphi _j \to 0$ in $\mathcal{D}(\Omega )$; allora esiste un compatto $K \subseteq \Omega $ t.c. $\operatorname{supp} (\varphi _j) \subseteq K, \ \forall j \in \mathbb{N}$ e $\partial ^\alpha \varphi _j \to 0 $ uniformemente in $K, \ \forall \alpha  \in \mathbb{N}_0^n$ per definizione di convergenza in $\mathcal{D}$.
+
+		Per l'assunzione di partenza, ci sono $k,C$ per questo $K$ che soddisfano 
+		\begin{equation}
+			\left\lvert \left\langle u,\varphi _j \right\rangle \right\rvert \le C \sup_{\substack{x \in K \\ \left\lvert \alpha  \right\rvert \le k}} \left\lvert \partial ^\alpha  \varphi _j(x) \right\rvert \to 0
+		\end{equation}
+	\end{proof}
+\end{prop}
+
+
+
+
+
+
+\end{document}
