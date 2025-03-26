@@ -271,16 +271,13 @@ Valendo $\forall x \in X$, allora $f$ \`e continua.
 \subsubsection{Distanze equivalenti}
 \begin{definizione}
 	{Distanze topologicamente equivalenti}{}
-	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se 
-	\begin{equation}
-		d(x,x') = r \overline{d}(x,x'), \ \text{ per qualche } r\in \mathbb{R}^{>0}
-	\end{equation}
+	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se hanno gli stessi insiemi aperti, cio\`e se generano la stessa topologia.
 \end{definizione}
-\noindent Evidentemente, $\forall \epsilon >0$:
+\noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \epsilon >0$:
 \[
 B_\varepsilon (x) = \overline{B}_{r\varepsilon } (x)
 \] 
-cio\`e le due distanze $d,\overline{d}$ identificano le stesse palle aperte, quindi gli stessi insiemi aperti, da qui il termine \textbf{topologicamente equivalenti}.
+cio\`e le due distanze $d,\overline{d}$ identificano le stesse palle aperte, quindi gli stessi insiemi aperti.
 In $\mathbb{R}^n$, le distanze 
 \begin{equation}
 	\begin{split}
@@ -361,18 +358,35 @@ Sono isometrie $\operatorname{Id} : X \to X$, cio\`e l'applicazione identit\`a, 
 	Dati $X,Y$ spazi metrici, un'applicazione biettiva $f:X\to Y$ \`e un \textit{omeomorfismo} se la sua inversa e $f$ stessa sono continue.
 \end{definizione}
 \noindent Ne segue che ogni isometria \`e un omeomorfismo, ma non \`e vero il viceversa. Per esempio, definendo $e^x : \mathbb{R} \to (0,+\infty)$, questa ha un'inversa continua $\log(x) : (0,+\infty) \to \mathbb{R}$, quindi \`e un omeomorfismo, ma non \`e un'isometria perch\'e manda $(-\infty,0]$ in $(0,1]$.
-
 Anche gli omemorfismi definiscono una \textbf{relazione di equivalenza} tra spazi metrici.
 \subsection{Spazi topologici}
-
-
-
-
-
-
-
-
-
+\begin{definizione}
+	{Topologia e spazio topologico}{}
+	Sia $X$ un insieme non-vuoto. Una \textit{topologia} su $X$ \`e una famiglia non-vuota $\tau $ di sottoinsiemi di $X$, chiamati \textit{insiemi aperti della topologia}. Questi soddisfano le seguenti condizioni:
+	\begin{itemize}
+		\item $\varnothing, \ X$ sono aperti;
+		\item l'unione di una qualsiasi famiglia di insiemi aperti \`e un insieme aperto;
+		\item l'intersezione di due insiemi aperti \`e un aperto.
+	\end{itemize}
+	Allora si definisce \textit{spazio topologico} la coppia $(X,\tau )$, dove $X$ \`e detto \textit{supporto} dello spazio topologico e i suoi elementi sono i \textit{punti} dello spazio.
+\end{definizione}
+\noindent Dato $(X,d)$ spazio metrico, la famiglia degli insiemi aperti rispetto a $d$ \`e una topologia su $X$ indotta da $d$ stessa.
+In $\mathbb{R}^n$, si definisce \textbf{topologia euclidea} (o \textbf{naturale}) $\mathcal{E}$ come quella indotta dalla distanza euclidea $d_2$. Su $\mathbb{C}$, la topologia euclidea $\mathcal{E}$ \`e quella indotta da $d(z,w) = \lvert z-w \rvert $; 
+questa conclusione si pu\`o ottenere identificando $\mathbb{C}$ con $\mathbb{R}^2$ da $z=x+iy \mapsto (x,y)$ e considerando la distanza euclidea di $\mathbb{R}^2$. 
+In modo del tutto analogo, si identifica $\mathbb{C}^n$ con $\mathbb{R}^{2n} $ e la distanza euclidea di $\mathbb{R}^{2n} $ definisce, su $\mathbb{C}^n$, una distanza e, quindi, una topologia che \`e la topologia naturale di $\mathbb{C}^n$, $\mathcal{E}$.
+scr
+Su un qualunque insieme non-vuoto $X$, si possono sempre definire due topologie:
+\begin{itemize}
+	\item la \textbf{topologia banale} $\mathcal{B}=\left\{ X, \varnothing \right\} $, con $(X,\mathcal{B})$ \textbf{spazio topologico banale};
+	\item la \textbf{topologia discreta} ottenuta prendendo $\tau  = \mathcal{P}(X)$, con $(X,\mathcal{P}(X))$ \textbf{spazio topologico discreto}.
+\end{itemize}
+\begin{definizione}
+	{Spazio metrizzabile}{}
+	Uno spazio topologico $(X,\tau )$ \`e detto \textit{metrizzabile} se si pu\`o definire una distanza su $X$ che induce la topologia $\tau $.
+\end{definizione}
+\noindent Sia dato $Y$ sottoinsieme non-vuoto di uno spazio metrizzabile $(X,d_X)$; si sa gi\`a che $d_Y$, ottenuta come restrizione di $d_X$ a $Y$, \`e una distanza su $Y$.
+In questo caso, la topologia indotta da $d_Y$ su $Y$ si dice \textit{topologia indotta da $X$ su $Y$}. 
+Allora, se $y \in Y$: $B_\varepsilon ^{(Y)} (y) = B_\varepsilon ^{(X)} (y) \cap Y$; questo significa che gli aperti di $Y$ sono della forma $A \cap Y$, con $A $ aperto di $X$.
 
 
 
