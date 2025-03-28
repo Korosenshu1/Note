@@ -10,7 +10,6 @@
 \tcbuselibrary{skins}
 \tcbuselibrary{breakable}
 \usepackage{varwidth}
-\usepackage{textcomp}
 \usepackage{amsmath, amssymb}
 \usepackage{esint}
 \usepackage{titlesec}
@@ -18,23 +17,20 @@
 \usepackage{titling}
 \usepackage[linktocpage]{hyperref}
 \usepackage{pgfplots}
-\usepackage{multicol}
-\setlength{\columnsep}{2em}
 \usepackage{caption}
 \usepackage{amsthm}
 \usepackage{import}
 \usepackage{cancel}
 \usepackage{caption}
 \usepackage{nicematrix}
-\usepackage{mathrsfs}
 \usepackage{mathtools}
-%\usepackage{parskip}
-\usepackage{pythonhighlight}
+\usepackage{mathrsfs}
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{setspace}
+\usepackage[perpage]{footmisc} % To reset footnote numbering each page
 \setstretch{1.1}
 
 % Titles 
@@ -189,9 +185,9 @@
 
 
 % Font
-% \usepackage[osf]{newpxtext}
+%\usepackage[osf]{newpxtext}
+%\usepackage{newpxmath}
 \usepackage{sansiwona}
-
 
 \begin{document}
 \maketitle
@@ -932,15 +928,39 @@ Se, invece, $\alpha > 1$:
 \] 
 \end{svolgimento}
 \end{esempio}
+\newpage
+\section{Curve e superfici}
+\subsection{Curve in $\mathbb{R}^n$}
+\begin{definizione}
+	{Curva e parametrizzazione}{}
+	Una curva \`e un'applicazione $\gamma: [a,b] \to \mathbb{R}^n$. L'equazione parametrica della curva \`e un'equazione della forma $\mathbf{x}  = \gamma(t)$.
+\end{definizione}
+\begin{esempio}
+L'equazione $x = \cos t , \ y = \sin t, \ 0\le t\le 2\pi$ \`e l'equazione parametrica in $\mathbb{R}^2$ della circonferenza di raggio $1$ e centro l'origine.
+\end{esempio}
+\noindent Si vede $t$ come variabile temporale, per cui $\gamma(t)$ \`e la posizione al tempo $t$ di un punto mobile nello spazio $\mathbb{R}^n$. 
+Si fissano due istanti $t_0,t$; nel tempo $t-t_0$ che intercorre fra i due istanti, la velocit\`a media (vettoriale) del punto \`e data da $\frac{\gamma(t) - \gamma(t_0)}{t-t_0}$.
+Facendo tendere $t\to t_0$, se le componenti della curva $\gamma_1(t) , \ldots, \gamma_n(t)$ sono derivabili in $t_0$, si ottiene la velocit\`a istantanea del punto in $t_0$:
+\[
+\mathbf{v} (t_0) \equiv \gamma'(t_0) = \lim_{t \to t_0} \frac{\gamma(t) - \gamma(t_0)}{t-t_0}
+\] 
+Se $\gamma'(t_0) \neq 0 $, la retta tangente alla curva nel punto $\gamma(t_{0})$ \`e $\mathbf{x} = \gamma(t_0) + \gamma'(t_0) ( t-t_0)$, infatti la relazione 
+\[
+\lim_{t \to t_0} \frac{\gamma(t) - \gamma(t_0) -\mathbf{v}(t-t_0)}{t-t_0} = 0 \iff \mathbf{v} = \gamma'(t_0)\neq 0
+\] 
+Quindi, perch\'e esista la retta tangente a $\gamma$, \`e necessario che la derivata esista e sia anche diversa da $0$, altrimenti la curva non avrebbe una direzione ben definita in tale punto.
+Da qui la seguente definizione.
+\begin{definizione}
+	{Regolarit\`a di una curva}{}
+	Una curva $\gamma:[a,b]  \to \mathbb{R}^n$ si dice \textit{regolare} se ha derivata continua, che non si annulla in nessun punto di $(a,b)$.
 
+	La curva $\gamma$ si dice \textit{regolare a tratti} se \`e continua e si pu\`o dividere l'intervallo $[a.b]$ in un numero finito di intervalli, in ognuno dei quali $\gamma$ \`e regolare.
+\end{definizione}
+\begin{esempio}
+	Sia $f(x) \in C^1\big([a,b]\big)$; la curva piana di equazioni $x(t) = t, \ y(t) = f(t)$ \`e regolare perch\'e il vettore velocit\`a $\big(1,f'(t)\big)$ ha prima componente sempre pari a $1$.
 
-
-
-
-
-
-
-
+	Il suo sostegno coincide con il grafico della funzione $f$.
+\end{esempio}
 
 
 
