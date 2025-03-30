@@ -359,6 +359,89 @@ Ora si pu\`o dimostrare il seguente.
 	perch\'e $1$ appartiene all'ideale generato dagli $m_i$.
 \end{definizione}
 \subsection{Fattorizzazione unica}
+\begin{definizione}
+	{Numero primo}{}
+	Si dice che $p$ \`e un numero primo se \`e un intero e $p\ge   2$ tale che, data una fattorizzazione $p = mn $, con interi positivi $m,n$, allora $m=1$ o $n=1$.
+\end{definizione}
+\noindent Ora si mostra che ogni numero intero ammette un'unica scomposizione in numeri primi. 
+Per dimostrare l'unicit\`a di tale scomposizione, si introduce il seguente lemma.
+\begin{lemma}
+	{}{lemmaprimdecomp}
+	Sia $p$ un numero primo e siano $m,n$ intero non-nulli e tali che $p$ divide $mn$. Allora o $p|m$ o $p |n$.
+	\begin{proof}
+		Senza perdita di generalit\`a, si assume che $p$ \textit{non} divida $m$. 
+		Allora, il massimo comune divisore di $p$ e $m$ deve essere $1$, pertanto esistono interi $a,b$ tali per cui $1 = ap + bm$.
+
+		Ora, moltiplicando ambo i membri per $n$, si ha $n = nap + bmn$, ma $mn = pc$ per qualche intero $c$ (essendo in assunzione $mn$ divisibile per $p$), quindi
+		\[
+		n = nap + bpc = (na + bc) p
+		\] 
+		il che implica che $p$ divide $n$.
+	\end{proof}
+\end{lemma}
+\noindent Per evidenziare l'utilit\`a del lemma nel seguente teorema, si nota che se $p$ divide un prodotto di numeri primi $q_1\ldots q_s$, si hanno due possibilit\`a: o $p$ divide $q_1$, o divide $q_2 \ldots q_s$; se divide $q_1$, allora $p \equiv q_1$, altrimenti si trova $p\equiv q_i$ procedendo induttivamente. 
+Il caso interessante \`e quando si ha un uguaglianza tra prodotti di numeri primi 
+\[
+p_1 \ldots p_r = q_1\ldots q_s
+\] 
+Rinumerandoli, si pu\`o assumere senza perdita di generalit\`a che $p_1 = q_1$ e, induttivamente, che $p_i = q_i$ e $r = s$, essendo due scomposizioni in un numeri primi.
+\begin{teorema}
+	{}{}
+	Ogni intero positivo $n\ge   2$ ammette una fattorizzazione come prodotto di numeri primi (non necessariamente distinti) $n=p_1\ldots p_r$ e tale fattorizzazione \`e unica.
+	\begin{proof}
+		Si assume per assurdo che esista almeno un intero $\ge  2 $ che non possa essere espresso come prodotto di numeri primi.
+		Sia $m$ il pi\`u piccolo di questi. 
+
+		Per costruzione, $m$ non pu\`o essere primo, quindi $m = de$, con $d,e > 1$. 
+		Visto che $d$ ed $e$ sono minori di $m$ e visto che $m$ \`e scelto per essere il pi\`u piccolo fra gli interi non fattorizzabili come numeri primi, allora sia $d$ che $e$ ammettono scomposizione in prodotto di numeri primi:
+		\[
+		\begin{split}
+			&d = p_1 \ldots p_r \\
+			&e = p'_1 \ldots p'_s
+		\end{split}\implies m = p_1 \ldots p_r p'_1 \ldots p'_s
+		\] 
+	da cui l'assurdo.	
+
+	Per mostrare l'unicit\`a, si usa il lemma \ref{lem:lemmaprimdecomp}. 
+	Come conseguenza, diretta del lemma, se esistessero due scomposizioni in primi $p_1 \ldots p_r $ e $p'_1 \ldots p'_s$, varrebbe $p_1 \ldots p_r = p'_1 \ldots p'_s\Rightarrow p_i = p'_i$ e $r = s$, da cui l'unicit\`a
+	\end{proof}
+\end{teorema}
+\subsection{Relazioni di equivalenza e congruenza}
+\begin{definizione}
+	{Relazione di equivalenza}{}
+	Sia $S$ un insieme.
+	Una relazione di equivalenza su $S$ \`e una relazione indicata con $x \sim y, \ x, y \in S$, tale che:
+	\begin{enumerate}[ER 1.]
+		\item $\forall x \in S, \ x \sim x$;
+		\item se $x \sim y$ e $y\sim z$, allora $x \sim z$;
+		\item se $x\sim y$, allora $y \sim x$.
+	\end{enumerate}
+\end{definizione}
+\noindent Se su $S$ \`e definita una relazione di equivalenza $\sim$, le classi di equivalenza sono insiemi $C_x : = \left\{ y \in S : y \sim x \right\} $ partizionano $S$ in insiemi disgiunti. 
+Inoltre, dati due elementi $r,s \in S$, si ha $C_r \equiv C_s$, oppure $C_r,\ C_s$ non hanno elementi in comune.
+Si sceglie un elemento che identifica la classe di equivalenza, ad esempio $x$ per $C_x$, e tale elemento si chiama rappresentante della classe di equivalenza. 
+Un esempio di relazione di equivalenza \`e la congruenza.
+\begin{definizione}
+	{Congruenza}{}
+	Sia $n$ un intero positivo e siano $x,y$ due interi. Si dice che $x$ \`e \textit{congruente} $y$ \textit{modulo} $n$ se $\exists m : x-y = mn$. In tal caso, si scriver\`a $x \equiv y  \pmod{n}  $.
+\end{definizione}
+\noindent La congruenza di $x,y$ come $x-y = mn$ implica automaticamente che $x-y$ appartiene all'ideale generato da $n$; inoltre, se $n\neq 0$, allora $x-y$ \`e divisibile per $n$.
+
+Oltre alle propriet\`a delle relazioni di equivalenza, la congruenza ne soddisfa anche altre due:
+\begin{itemize}
+	\item se $x\equiv y \pmod{n}$ e $z$ \`e un intero, allora $xz \equiv yz \pmod{n}  $;
+	\item se $x \equiv y \pmod{n} $ e $x'\equiv y' \pmod{n} $, allora $xx' \equiv yy' \pmod{n} $ e $x + x' = y + y' \pmod{n} $.
+\end{itemize}
+Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come quelli che sono congruenti a $0 \pmod{2} $ (quindi $n = 2m$) e quelli \textbf{dispari} come gli interi che non sono pari, quindi della forma $2m + 1$, per qualche intero $m$.
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
