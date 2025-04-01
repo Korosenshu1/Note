@@ -11,27 +11,6 @@ Il ciclo Carbonio-Azoto-Ossigeno (CNO)
 .AU
 Manuel Deodato
 .NH 
-Introduzione
-.LP
-Il ciclo CNO, o
-.B "ciclo di Bethe" ,
-è una delle più comuni serie di reazioni nucleari che avvengono all'interno delle stelle.
-È la principale sorgente di energia per le stelle più massicce (cioè con masse circa il 20% maggiori di quella del sole).
-Il ciclo parte da quattro protoni e produce:
-.LI
-una particella alfa;
-.LI
-due positroni;
-.LI
-due neutrini;
-.LI
-ulteriore rilascio di energia sotto forma di raggi gamma.
-.LP
-I nuclei di carbonio, azoto e ossigeno, da cui il ciclo prende nome, svolgono il ruolo di 
-.B catalizzatori
-nella fusione nucleare indiretta dell'idrogeno.
-Il ciclo è complesso e avviene ad una temperatura molto alta rispetto altri processi all'interno delle stelle, pertanto ha luogo principalmente all'interno di stelle sufficientemente grandi.
-.NH 
 Le reazioni chimiche del ciclo
 .LP	
 Le reazioni che avvengono nel ciclo sono:
@@ -40,7 +19,7 @@ Le reazioni che avvengono nel ciclo sono:
 .EN
 
 .EQ
-"" sup 13 N -> "" sup 13 C + e sup + +  nu sub e + 1.37 " MeV"
+"" sup 13 N -> "" sup 13 C + e sup + +  nu sub e + 1.20 " MeV"
 .EN
 
 .EQ
@@ -50,7 +29,7 @@ Le reazioni che avvengono nel ciclo sono:
 "" sup 14 N + "" sup 1 H -> "" sup 15 O  + gamma + 7.35 " MeV"
 .EN
 .EQ
-"" sup 15 O -> "" sup 15 N + e sup + + nu sub e + 1.86 " MeV"
+"" sup 15 O -> "" sup 15 N + e sup + + nu sub e + 1.73 " MeV"
 .EN
 .EQ
 "" sup 15 N + "" sup 1 H -> "" sup 12 C + "" sup  4 He + 4.96 " MeV"
@@ -59,40 +38,39 @@ Le reazioni che avvengono nel ciclo sono:
 Il ciclo inizia con protone (nucleo di idrogeno) catturato da un nucleo di carbonio-12, reazione che forma un nucleo di azoto-13; quest'ultimo produce carbonio-13 a seguito di un successivo decadimento $beta$. 
 Il carbonio-13 prodotto dal decadimento $beta$ interagisce con un altro protone, producendo un nucleo di azoto-14, il quale può reagire con un altro protone a formare un nucleo di ossigeno-15; questo, a seguito di un decadimento $beta$, produce azoto-15.
 Il ciclo si conclude con il nucleo di azoto-15 che cattura un protone, formando carbonio-12 e liberando un nucleo di elio-4, insieme ad un carbonio-12, che permette di ripetere il ciclo.
-.PP
-Il ciclo non consuma i catalizzatori utilizzati per le varie reazioni, quindi continua fintanto che sono presenti protoni per iniziarlo.
-.NH 2
-Ramo secondario 
+I Q-valori dei decadimenti $beta sup + $ sono stati calcolati tenendo conto della massa del positrone emesso e dell'elettrone in più nel nucleo prodotto, che lo rende negativamente carico. 
+In realtà, quello che si verifica è che questi due reagiscono successivamente annichilandosi nella reazione $e sup + + e sup - -> 2 gamma $, quindi l'energia rimossa nel Q-valore viene recuperata.
+.NH 2 
+Esempio di calcolo di un Q-valore	
 .LP
-Si è visto che con la probabilità dello 0.04%, la reazione finale non produce carbonio-12 e elio-4, ma ossigeno-16 e un fotone:
-.EQ
-"" sup 15 N + "" sup 1 H -> "" sup 16 O + gamma
-.EN
-.EQ
-"" sup 16 O + "" sup 1 H -> "" sup 17 F + gamma
-.EN
-.EQ
-"" sup 17 F -> "" sup 17 O + e sup + + nu sub e 
-.EN
-.EQ
-"" sup 17 O + "" sup 1 H -> "" sup 14 N + "" sup 4 He
-.EN
-.LP
-Quindi il ciclo non è completamente efficiente. 
-Similmente al ruolo di carbonio, azoto e ossigeno del ramo principale, il fluoro prodotto in questo ramo secondario ha una funzione esclusivamente catalitica.
+Per calcolare il Q-valore, si calcola differenza di massa in uma tra reagenti e prodotti e si moltiplica il tutto per il fattore di conversione $ 1 " u.m.a." = 931.494 " MeV" / c sup 2$, ottenuto sostituendo in, $E = mc sup 2$, $m = m("" sup 12 C) / 12 $ e facendo uso della conversione $1 " eV" approx 1.60 times 10 sup -19 " J"$. 
 .PP
-Si riporta esempio di calcolo di un Q-valore nel caso della reazione del ramo secondario $"" sup 15 N + "" sup 1 H -> "" sup 16 O + gamma$. 
-Si converte una unità di massa atomica in MeV/c$"" sup 2$: visto che $1 u = m("" sup 12  C) / 12$, allora $E = mc sup 2 = (1.66053906660 cdot 10 sup −27 " kg") (2.99792458 cdot 10 sup 8 " m/s") sup 2$. 
-Ora si esegue la conversione da Joule a eV, usando che $1 " eV" = 1.602176634 cdot 10 sup -19 " J"$, quindi $E approx 931.494 " MeV"$.
-Si calcola la differenza di massa tra prodotti e reagenti e la si moltiplica per il fattore di conversione: si  ha $H sub "uma" = 1.00782503223 " u"$, $N sub "uma" = 15.00010889888 " u"$, $O sub "uma" = 15.99491461957 " u"$, quindi $Q approx 12.12 " MeV"$.
-Per le altre reazioni si ha, rispettivamente:
-.LI
-$Q approx 0.60 " MeV"$;
-.LI
-$Q approx 2.25 " MeV"$;
-.LI
-$Q approx 1.19 " MeV"$. 
-.NH
-NOTE
-.LI
-Aggiungere i tempi di reazione.
+Considerando la prima reazione $"" sup 12 C + "" sup 1 H -> "" sup 13 N $, si ha $m("" sup 12 C) == 12$, $m("" sup 1 H) = 1.00782503223$, $m("" sup 13 N ) = 13.005738609$. 
+Si ha $Delta m = m ( "" sup 12 C) + m ( "" sup 1 H ) - m( "" sup 13 N )$, quindi il Q-valore è:
+.EQ
+Q = Delta m cdot 931.494 " MeV" approx 1.95 " MeV" 
+.EN
+.NH 2 
+Caratterizzazione delle reazioni
+.LP
+Nella seguente tabella sono riportate le reazioni e le interazioni che le rendono possibili, comprensive dei tempi caratteristici.
+
+.ce
+.TS
+allbox tab(|);
+c c c c
+c c c c
+c c c c
+c c c c
+c c c c
+c c c c
+c c c c.
+Reazione | Tipo di reazione - interazione | Q-valore (MeV) | Tempo di reazione (s)
+$"" sup 12 C + "" sup 1 H -> "" sup 13 N + gamma $  | Fusione nucleare - forza forte + em | 1.95 | circa $ 10 sup 6$ 
+$"" sup 13 N -> "" sup 13 C + e  sup  + + nu sub e$  | Decadimento $beta " " sup + $ - forza debole  | 1.20 | circa $ 800 $ 
+$"" sup 13 C + "" sup 1 H -> "" sup 14 N + gamma$  | Fusione nucleare - forza forte + em | 7.54 | circa $ 10 sup 6$ 
+$"" sup 14 N + "" sup 1  H -> "" sup 15 O + gamma $  | Fusione nucleare - forza forte + em | 7.35 | circa $ 10 sup 6$ 
+$"" sup 15 O -> "" sup 15 N + e sup + + gamma  $  | Decadimento $beta " " sup +$ - forza debole | 1.73 | circa $170$ 
+$"" sup 15 N + "" sup 1 H -> "" sup 12 C + "" sup 4 He$  | Fusione nucleare - forza forte | 4.96 | circa $ 10 sup 6$ 
+.TE
+
