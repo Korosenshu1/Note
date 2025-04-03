@@ -208,15 +208,15 @@ Una propriet\`a dei numeri interi, che si prender\`a come assiomatica, \`e quell
 Da questa deriva la seguente.
 \begin{teorema}
 	{Principio di induzione (prima forma)}{}
-	Sia $A(n)$ un'affermazione valida per ogni intero $n\ge 1$ e si assume la possibilit\`a di dimostrare che:
+	Sia $A(n)$ un'affermazione valida per ogni intero $n\ge 1$. Se
 	\begin{enumerate}[(1).]
-		\item $A(1)$ \`e vera;
-		\item $\forall n \ge  1$, se $A(n)$ \`e vera $\implies A(n+1)$ \`e vera.
+		\item $A(1)$ \`e vera,
+		\item $\forall n \ge  1$, se $A(n)$ \`e vera $\implies A(n+1)$ \`e vera,
 	\end{enumerate}
-	Allora, $\forall n \ge  1$, $A(n)$ \`e vera.
+	allora, $\forall n \ge  1$, $A(n)$ \`e vera.
 	\begin{proof}
 		Sia $S $ l'insieme di interi per cui $A(n)$ \`e falsa. Si mostra che $S$ \`e l'insieme vuoto. 
-		Assumendo per assurdo che $S\neq \varnothing\Rightarrow \exists n_0 \in S$, con $n_0$ minimo (esistente per il buon ordinamento), e, per assunzione, deve essere $n_0 \neq 1 \Rightarrow  n_0>1$. 
+		Si assume per assurdo che $S\neq \varnothing\Rightarrow \exists n_0 \in S$, con $n_0$ minimo (esistente per il buon ordinamento), e, per assunzione, deve essere $n_0 \neq 1 \Rightarrow  n_0>1$. 
 		Questo vuol dire che $n_0 -1$ non \`e in $S$ e, quindi, $A(n_0-1)$ \`e vera.
 
 		Per la propriet\`a (2), per\`o, deve essere vera anche $A(n_0)$ perch\'e $n_0 = (n_0-1) + 1$, il che \`e assurdo e, pertanto, $S = \varnothing$.
@@ -252,7 +252,7 @@ Da questa deriva la seguente.
 	\end{equation}
 	Inoltre, gli interi $q,r$ sono univocamente determinati da tali condizioni.
 	\begin{proof}
-		Visto che l'insieme degli interi $q$ tali per cui $qm\le n$ \`e limitato superiormente per definizione, si pu\`o usare il buon ordinamento per affermare che esiste un elemento pi\`u grande tale che
+		Visto che l'insieme degli interi $q$ tali per cui $qm\le n$ \`e limitato superiormente per definizione, si pu\`o usare il buon ordinamento per affermare che esiste un elemento pi\`u grande\footnote{Basta applicare il buon ordinamento all'elemento più piccolo dell'insieme $n-qm$.} tale che
 		\[
 		qm \le n < (q+1) m = q m + m
 		\] 
