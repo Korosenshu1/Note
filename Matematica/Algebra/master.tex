@@ -266,7 +266,7 @@ Da questa deriva la seguente.
 		\end{cases}
 		\] 
 		con $r_1 \neq r_2$. Sia, per esempio, $r_2> r_1$; allora, sottraendo le due, si ha $(q_1-q_2) m = r_2-r_1$. 
-		Per\`o, si avrebbe $r_2-r_1> 0$, il che non \`e possibile perch\'e $q_1-q_2$ \`e un intero per cui $(q_1 - q_2)m > 0$, quindi si avrebbe $(q_1-q_2)m \ge m$.
+		Per\`o, si ha $r_2-r_1> 0$ e $r_2-r_1 < m$, il che non \`e possibile perch\'e $q_1-q_2$ \`e un intero per cui $(q_1 - q_2)m > 0$, quindi si avrebbe $r_2-r_1 = (q_1-q_2)m \ge m$ e, quindi $r_2-r_1\ge m$.
 		Pertanto, deve essere $r_1=r_2$, che fra l'altro implica $q_1m=q_2m$, per cui $q_1=q_2$.
 	\end{proof}
 \end{teorema}
@@ -284,15 +284,17 @@ Allora si ha la seguente definizione.
 Per farlo, si d\`a prima la seguente definizione.
 \begin{definizione}
 	{Ideale}{}
-	Sia $J$ un sottoinsieme degli interi. Si dice che $J$ \`e un \textit{ideale} se:
+	Sia $J\subseteq \mathbb{Z}$ un sottoinsieme degli interi. Si dice che $J$ \`e un \textit{ideale} se:
 	\begin{itemize}
 		\item $0 \in J$;
 		\item $m,n\in J\implies m+n \in J$
 		\item se $m\in J$ e $n$ \`e un intero qualsiasi, allora $mn \in J$.
 	\end{itemize}
 \end{definizione}
-\begin{esempio}
-Siano $m_1, \ldots,m_r$ interi. Sia $J$ l'insieme di tutti gli interi che si scrivono come
+\begin{obs}
+	Di seguito, per ideale si intender\`a sempre un sottoinsieme degli interi.
+\end{obs}
+\noindent Siano $m_1, \ldots,m_r$ interi. Sia $J$ l'insieme di tutti gli interi che si scrivono come
 \[
 x_1m_1+\ldots+x_r m_r
 \] 
@@ -311,19 +313,17 @@ Allora \`e automaticamente verificato che $J$ \`e un ideale. Infatti
 		che, quindi, appartiene a $J$;
 	\item si pu\`o scrivere $0$ come $0m_1 + \ldots + 0m_r$, quindi anche $0 \in J$.
 \end{itemize}
-\end{esempio}
-\noindent Dall'esempio precedente, si dice che $J$ \`e \textbf{generato} dagli interi $m_1,\ldots,m_r$ e che questi sono i suoi \textbf{generatori}.
-Si nota che l'insieme $\left\{ 0 \right\} $ \`e esso stesso un ideale, chiamato \textbf{ideale nullo}. 
+In questo caso, si dice che $J$ \`e \textbf{generato} dagli interi $m_1,\ldots,m_r$ e che questi sono i suoi \textbf{generatori}. L'insieme $\left\{ 0 \right\} $ \`e esso stesso un ideale, chiamato \textbf{ideale nullo}. 
 Inoltre, $\mathbb{Z}$ \`e detto \textbf{ideale unit\`a}.
 Ora si pu\`o dimostrare il seguente.
 \begin{teorema}
 	{}{}
-	Sia $J$ un ideale di $\mathbb{Z}$. Allora esiste un intero $d$ che \`e un generatore di $J$. Inoltre, se $J \neq \left\{ 0 \right\} $, allora $d$ \`e il pi\`u piccolo interno positivo in $J$.
+	Sia $J$ un ideale di $\mathbb{Z}$. Allora esiste un intero $d$ che \`e un generatore di $J$. Inoltre, se $J \neq \left\{ 0 \right\} $, allora $d$ \`e il pi\`u piccolo intero positivo in $J$.
 	\begin{proof}
 	Sia $J$ l'ideale nullo; allora $0$ \`e un suo generatore.
 	Sia, ora, $J \neq \left\{ 0 \right\} $; se $n \in J$, allora $-n = (-1) n $ \`e anche in $J$, quindi $J$ contiene degli interi positivi.
 	Si vuole dimostrare che $d$, definito come il pi\`u piccolo intero positivo, \`e un generatore.
-	Per farlo, sia $n \in J$, con $n = dq + r, \ 0\le  r < d$; allora $r = n - dq \in J$ e, visto che vale $r < d$, segue che $r = 0$, quindi $n = dq$ e, allora, $d$ \`e un generatore.
+	Per farlo, sia $n \in J$, con $n = dq + r, \ 0\le  r < d$; allora $r = n - dq \in J$ e, visto che vale $r < d$, segue che $r = 0$\footnote{Altrimenti $d$ non sarebbe il pi\`u piccolo intero positivo.}, quindi $n = dq$ e, allora, $d$ \`e un generatore.
 	\end{proof}
 \end{teorema}
 \begin{teorema}
@@ -331,7 +331,7 @@ Ora si pu\`o dimostrare il seguente.
 	Siano $m_1,m_2$ due interi positivi e sia $d$ un generatore positivo per l'ideale generato da $m_1,m_2$. Allora $d$ \`e il massimo comune divisore di $m_1,m_2$.
 	\begin{proof}
 		Per definizione, $m_1,m_2 \in J$\footnote{Questo \`e ovvio perch\'e $m_1 = 1m_1 + 0 m_2$ e $m_2  = 0 m_1 + 1 m_2$.}, quindi esiste un intero $q_1$ tale che $m_1=q_1 d$, per cui $d|
-		m$.
+		m_1$.
 		Analogamente $d|m_2$.
 		Sia, poi, $e$ un intero non-nullo che divide sia $m_1$ che $m_2$ come $m_1 = h_1 e$ e $mm_2=h_2 e$, con interi $h_1,h_2$.
 		Visto che $d$ \`e nell'ideale generato da $m_1,m_2$, esistono degli interi $s_1,s_2$ tali che $d = s_1m_1 + s_2m_2$, quindi
@@ -344,8 +344,13 @@ Ora si pu\`o dimostrare il seguente.
 \begin{obs}
 	La stessa esatta dimostrazione funziona per pi\`u di due interi, quindi se si considerassero $m_1,\ldots,m _r$ degli interi, con $d$ generatore positivo dell'ideale da loro generato, $d$ sarebbe anche il massimo comune divisore.
 \end{obs}
+\noindent Questi due teoremi permettono di concludere i seguenti fatti.
+\begin{itemize}
+	\item Ogni ideale $J$ contiene un numero intero che lo genera interamente e questo coincide col pi\`u piccolo intero positivo in esso contenuto, quindi \`e l'unico generatore \textit{singolo} dell'ideale.
+	\item Ogni insieme di numeri interi ha un massimo comune divisore perch\'e tale insieme genera un ideale, il quale, per\`o, contiene un generatore (pi\`u piccolo numero intero in esso contenuto) che \`e un massimo comune divisore per l'insieme di interi iniziale.
+\end{itemize}
 \begin{definizione}
-	{Interi relativamente primi}{}
+	{Interi relativamente primi}{relprime}
 	Siano $m_1,\ldots,m_r$ degli interi il cui massimo comune divisore \`e $1$. 
 	Allora $m_1,\ldots,m_r$ si dicono \textit{relativamente primi} e, per questi, esistono interi $x_1,\ldots,x_r$ tali che
 	\[
@@ -353,16 +358,25 @@ Ora si pu\`o dimostrare il seguente.
 	\] 
 	perch\'e $1$ appartiene all'ideale generato dagli $m_i$.
 \end{definizione}
+\`E immediato verificare per definizione di ideale che $1 \in  J \iff J \equiv \mathbb{Z}$.
+Dalla definizione \ref{def:relprime} segue direttamente che ogni insieme di interi relativamente primi genera $\mathbb{Z}$.
+\begin{obs}
+	Si potrebbe pensare che se $p$ \`e un numero primo, allora l'insieme $\left\{ p \right\} $ generi $\mathbb{Z}$, cio\`e $p$ generi $\mathbb{Z}$. 
+	Questo \`e ovviamente falso sia perch\'e, evidentemente, $J_p$ non contiene $1$, sia perch\'e $p$ non \`e relativamente primo con se stesso, avendo come altro divisore se stesso oltre che $1$.
+\end{obs}
 \subsection{Fattorizzazione unica}
 \begin{definizione}
 	{Numero primo}{}
 	Si dice che $p$ \`e un numero primo se \`e un intero e $p\ge   2$ tale che, data una fattorizzazione $p = mn $, con interi positivi $m,n$, allora $m=1$ o $n=1$.
 \end{definizione}
+\begin{obs}
+	Il fatto che $p=mn$ con $m=1$, o $n=1$ implica $p$ numero primo significa che $p$ \`e diviso unicamente o da $1$ o, da se stesso.
+\end{obs}
 \noindent Ora si mostra che ogni numero intero ammette un'unica scomposizione in numeri primi. 
 Per dimostrare l'unicit\`a di tale scomposizione, si introduce il seguente lemma.
 \begin{lemma}
 	{}{lemmaprimdecomp}
-	Sia $p$ un numero primo e siano $m,n$ intero non-nulli e tali che $p$ divide $mn$. Allora o $p|m$ o $p |n$.
+	Sia $p$ un numero primo e siano $m,n$ interi non-nulli e tali che $p$ divide $mn$. Allora o $p|m$ o $p |n$.
 	\begin{proof}
 		Senza perdita di generalit\`a, si assume che $p$ \textit{non} divida $m$. 
 		Allora, il massimo comune divisore di $p$ e $m$ deve essere $1$, pertanto esistono interi $a,b$ tali per cui $1 = ap + bm$.
@@ -379,7 +393,7 @@ Il caso interessante \`e quando si ha un uguaglianza tra prodotti di numeri prim
 \[
 p_1 \ldots p_r = q_1\ldots q_s
 \] 
-Rinumerandoli, si pu\`o assumere senza perdita di generalit\`a che $p_1 = q_1$ e, induttivamente, che $p_i = q_i$ e $r = s$, essendo due scomposizioni in un numeri primi.
+dove ogni $p_i$ divide il prodotto\footnote{Per vederlo, \`e sufficiente prendere $c = p_1 \ldots p_{i-1} p_{i+1} \ldots p_r$, quindi si ha $c p_i = q_1 \ldots q_s$, che \`e la definizione di $p_i | q_1 \ldots q_s$.}. Rinumerandoli, si pu\`o assumere senza perdita di generalit\`a che $p_1 = q_1$ e, induttivamente, che $p_i = q_i$ e $r = s$, essendo due scomposizioni in un numeri primi.
 \begin{teorema}
 	{}{}
 	Ogni intero positivo $n\ge   2$ ammette una fattorizzazione come prodotto di numeri primi (non necessariamente distinti) $n=p_1\ldots p_r$ e tale fattorizzazione \`e unica.
@@ -425,9 +439,14 @@ Un esempio di relazione di equivalenza \`e la congruenza.
 Oltre alle propriet\`a delle relazioni di equivalenza, la congruenza ne soddisfa anche altre due:
 \begin{itemize}
 	\item se $x\equiv y \pmod{n}$ e $z$ \`e un intero, allora $xz \equiv yz \pmod{n}  $;
-	\item se $x \equiv y \pmod{n} $ e $x'\equiv y' \pmod{n} $, allora $xx' \equiv yy' \pmod{n} $ e $x + x' = y + y' \pmod{n} $.
+	\item se $x \equiv y \pmod{n} $ e $x'\equiv y' \pmod{n} $, allora $xx' \equiv yy' \pmod{n} $\footnote{Per dimostrare questa, basta notare che $xx' - yy' = x x' + x'y - x'y - y y ' = x' (x-y) + y ( x'-y')$.} e $x + x' \equiv y + y' \pmod{n} $.
 \end{itemize}
 Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come quelli che sono congruenti a $0 \pmod{2} $ (quindi $n = 2m$) e quelli \textbf{dispari} come gli interi che non sono pari, quindi della forma $2m + 1$, per qualche intero $m$.
+
+\newpage
+
+\section{Teoria dei gruppi}
+
 
 
 
