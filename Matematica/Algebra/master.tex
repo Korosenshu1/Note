@@ -196,6 +196,11 @@
 
 \begin{document}
 \maketitle
+\vspace{9cm}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\columnwidth]{front.png}
+\end{figure}
 \newpage
 \tableofcontents 
 \newpage
@@ -446,6 +451,92 @@ Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come qu
 \newpage
 
 \section{Teoria dei gruppi}
+
+\subsection{Introduzione}
+
+\begin{definizione}
+	{Gruppo}{}
+	Un \textit{gruppo} $G$ \`e un insieme su cui \`e definita una \textit{legge di composizione} $\circ : G \to G$ che soddisfa le seguenti condizioni per gli elementi di $G$:
+	\begin{enumerate}[GR 1.]
+		\item $(x\circ y)\circ z =  z\circ (y \circ z)$ (\textit{associativit\`a});
+		\item $\exists e \in G : x\circ e = e\circ x = x$ (elemento neutro);
+		\item $\forall x \in G, \ \exists y \in G$ tale che $x\circ y = y\circ x = e$ (elemento inverso).
+	\end{enumerate}
+\end{definizione}
+\noindent Quando $\circ$ \`e la moltiplicazione, $G $ si dice \textbf{gruppo moltiplicativo}; quando $\circ $ \`e l'addizione, $G $ si dice \textbf{gruppo additivo}.
+\begin{definizione}
+	{Gruppo commutativo}{}
+	Un insieme $G$ \`e detto \textit{gruppo commutativo} se \`e un gruppo e se soddisfa ulteriormente
+	\[
+	x \circ y = y \circ x, \ \forall x,y \in G
+	\] 
+\end{definizione}
+\noindent L'elemento neutro di ciascun gruppo \`e unico.
+\begin{proof}
+	Sia $e' $ un altro elemento neutro; si nota che: $e = e e' = e'$.
+\end{proof}
+\noindent L'elemento inverso di ciascun elemento di un gruppo $G$ \`e unico.
+\begin{proof}
+	Siano $y,y'$ gli elementi inversi di $x$; allora: $e = x y\implies y' e = y' x y \Rightarrow y' = y$.
+\end{proof}
+\noindent Questo elemento inverso si indica con $x^{-1} $; per gruppo additivo, si indicher\`a con $-x$.
+\begin{esempio}
+I numeri reali $\mathbb{R}$ e i numeri complessi $\mathbb{C}$ sono entrambi gruppi additivi. I numeri reali diversi da $0$, $\mathbb{R}^*$, e i numeri complessi diversi da $0$, $\mathbb{C}^*$, sono gruppi moltiplicativi.
+\end{esempio}
+\begin{esempio}
+	L'insieme dei numeri complessi di modulo $1$, $\mathscr{I}:= \left\{ z \in \mathbb{C} : |z| = 1 \right\} $, \`e un gruppo moltiplicativo.
+\end{esempio}
+\begin{definizione}
+	{Prodotto diretto}{}
+	Siano $G_1, \ldots, G_n$ dei gruppi; si definisce \textit{prodotto diretto} l'insieme
+	\[
+	G_P = \prod_{i=1} ^n G_i = G_1 \times G_2 \times \ldots \times G_n
+	\] 
+	e contiene tutte le $n$-uple $(x_1,\ldots,x_n), \ x_i \in G_i$.
+\end{definizione}
+\noindent Prendendo un prodotto diretto di gruppi ed equipaggiandolo con il prodotto componente per componente, dove l'elemento unit\`a \`e $(e_1,\ldots,e_n)$, con $e_i$ unit\`a di $G_i$, si ottiene un gruppo moltiplicativo.
+\begin{definizione}
+	{Gruppo finito}{}
+	Un gruppo $G$ si dice \textit{finito} se ha un numero limitato di elementi; si chiama \textbf{ordine} il numero di elementi di tale gruppo.
+\end{definizione}
+\begin{definizione}
+	{Sottogruppo}{}
+	Sia $G$ un gruppo e $H \subset G$ un sottoinsieme di $G$. Si dice che $H$ \`e un sottogruppo di $G$ se:
+	\begin{itemize}
+		\item  $e \in H$;
+		\item $\forall x,y \in H, \ x\circ y \in H$;
+		\item $\forall x \in H, \ x^{-1}  \in H$.
+	\end{itemize}
+\end{definizione}
+\begin{definizione}
+	{Generazione di un sottogruppo}{}
+	Sia $S = \left\{ x_1,\ldots,x_n \right\} \subset  G$ un sottoinsieme di un gruppo $G$; l'insieme $H:= \left\{ x \in G : x = x_1 \circ \ldots\circ x_n  \right\}\cup \left\{ x^{-1} \in G : x \in S \right\} \cup \left\{ e \in G \right\}  $ \`e un sottogruppo di $G$ ed \`e detto \textit{generato} da $S$, dove gli elementi di $S$ sono detti i \textit{generatori di} $H$.
+
+	In questo caso, si scriver\`a che $H = \langle S \rangle\equiv \langle x_1,\ldots,x_n \rangle$.
+\end{definizione}
+\noindent Si nota che $\left\{ 1 \right\} $ \`e un generatore per il gruppo additivo degli interi, visto che ogni $z \in \mathbb{Z} \setminus\left\{ 0 \right\} $ si pu\`o scrivere come $1 + 1+ \ldots +1$, o $-1 - 1-\ldots-1$, mentre l'elemento neutro ne fa parte per definizione.
+
+Ora si definisce una notazione per indicare una ripetizione dell'operazione di composizione con lo stesso elemento. In generale, si scriver\`a:
+\begin{equation}
+	x^ n \equiv \underbracket{x \circ x \circ \ldots \circ x}_{n \text{ volte}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
