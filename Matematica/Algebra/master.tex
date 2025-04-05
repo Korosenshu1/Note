@@ -322,7 +322,7 @@ In questo caso, si dice che $J$ \`e \textbf{generato} dagli interi $m_1,\ldots,m
 Inoltre, $\mathbb{Z}$ \`e detto \textbf{ideale unit\`a}.
 Ora si pu\`o dimostrare il seguente.
 \begin{teorema}
-	{}{}
+	{}{smalld}
 	Sia $J$ un ideale di $\mathbb{Z}$. Allora esiste un intero $d$ che \`e un generatore di $J$. Inoltre, se $J \neq \left\{ 0 \right\} $, allora $d$ \`e il pi\`u piccolo intero positivo in $J$.
 	\begin{proof}
 	Sia $J$ l'ideale nullo; allora $0$ \`e un suo generatore.
@@ -514,21 +514,78 @@ I numeri reali $\mathbb{R}$ e i numeri complessi $\mathbb{C}$ sono entrambi grup
 
 	In questo caso, si scriver\`a che $H = \langle S \rangle\equiv \langle x_1,\ldots,x_n \rangle$.
 \end{definizione}
-\noindent Si nota che $\left\{ 1 \right\} $ \`e un generatore per il gruppo additivo degli interi, visto che ogni $z \in \mathbb{Z} \setminus\left\{ 0 \right\} $ si pu\`o scrivere come $1 + 1+ \ldots +1$, o $-1 - 1-\ldots-1$, mentre l'elemento neutro ne fa parte per definizione.
-
+\begin{esempio}\label{1genz}
+Si nota che $\left\{ 1 \right\} $ \`e un generatore per il gruppo additivo degli interi, visto che ogni $z \in \mathbb{Z} \setminus\left\{ 0 \right\} $ si pu\`o scrivere come $1 + 1+ \ldots +1$, o $-1 - 1-\ldots-1$, mentre l'elemento neutro ne fa parte per definizione.
+\end{esempio}
 Ora si definisce una notazione per indicare una ripetizione dell'operazione di composizione con lo stesso elemento. In generale, si scriver\`a:
 \begin{equation}
 	x^ n \equiv \underbracket{x \circ x \circ \ldots \circ x}_{n \text{ volte}}
 \end{equation}
+Se $n=0$, si definisce $x^n = e$; invece, se $n=-m$, si ha la seguente definizione:
+\[
+x^{-m} = (x^{-1} )^m
+\] 
+Allora si possono verificare le seguenti:
+\begin{itemize}
+	\item $x^{n+m} = x^n x^m$;
+	\item $x^{-m} x^n = x^{n-m} $;
+	\item $(x^n)^m = x^{nm} $.
+\end{itemize}
+Queste sono direttamente valide per la moltiplicazione, mentre per l'addizione si ha un qualcosa di analogo.
+Per cominciare $x^n \equiv nx$ nel caso dell'addizione, per definizione.
+Conseguentemente, le regole soddisfatte sono le seguenti:
+\[
+	(m+n) x = mx + nx \ ; \hspace{.2cm} (mn)x = m(nx)
+\] 
+\subsubsection{Gruppi ciclici}
+Sia, $G$ un gruppo e sia $a \in  G$.
+Si definisce il sottogruppo $H$ di $G$ come quell'insieme avente tutti elementi del tipo $a^n, \ \forall n \in \mathbb{Z}$. 
+In questo senso, $H$ \`e generato da $a$.
+Per mostrare che \`e un gruppo, si nota che :$e \in H$ perch\'e $e = a^ 0 $; dati, poi, $a^n,a^m \in H$, anche $a^{n+m} \equiv a^n a^m \in H $ perch\'e $n+m \in \mathbb{Z}$.
+Infine, l'inverso di ciascun elemento $a^n$ appartiene ad $H$ perch\'e $(a^n)^{-1} \equiv a^{-n}  $, che appartiene ad $H$ perch\'e $-n \in \mathbb{Z}$.
+\begin{definizione}
+	{Gruppo ciclico}{}
+	Sia $G$ un gruppo; si dice che $G$ \`e \textit{ciclico} se esiste $a \in G : \forall g \in G, \ g = a^n$, per qualche intero $n$.
+\end{definizione}
+\noindent Riprendendo l'esempio \ref{1genz}, $\mathbb{Z}$ \`e un gruppo additivo ciclico, con generatore $1$.
+Visto che un sottogruppo di $Z$ \`e quello che si \`e chiamato \textit{ideale}, si ha la seguente.
+\begin{prop}
+	{}{}
+	Sia $H$ un sottogruppo di $\mathbb{Z}$. Se $H$ non \`e il sottogruppo banale, sia $d$ il pi\`u piccolo intero in esso contenuto; allora $H$ contiene tutti elementi della forma $nd$, con $n \in \mathbb{Z}$, pertanto $H$ \`e ciclico.
+\end{prop}
+Sia $G$ un gruppo ciclico e sia $a \in G$ il suo generatore; si hanno due casi possibili.
+\begin{itemize}
+	\item \textit{Caso 1}: non esiste $n \in \mathbb{Z}^{>0} : a^n = e$.
 
+		Allora per ogni intero $n \neq 0$, $a^n \neq e$ e, allora, $G$ si dice \textbf{infinitamente ciclico}, o che $a$ ha \textbf{ordine infinito} perch\'e ogni elemento $a^n \in G$ \`e distinto dall'altro.
+		\begin{proof}
+			Si assume $a^r = a^s$ per qualche coppia di interi $r,s$; allora $a^{s-r} = e \Rightarrow s-r = 0 \Rightarrow r=s$.
+		\end{proof}
+	\item \textit{Caso 2}: $\exists m \in \mathbb{Z}^{>0} : a^m = e$.
 
+		In questo caso, $a$ ha \textbf{ordine finito}. Evidentemente, il gruppo \`e finito perch\'e i suoi elementi si ripetono periodicamente. 
 
+		Sia $J$ l'insieme degli $n \in \mathbb{Z}$ tali che $a^n = e$; allora $J$ \`e un sottogruppo di $\mathbb{Z}$.
+		\begin{proof}
+			Si ha $0 \in J$ perch\'e $a^0 = e$ per definizione. Se $m,n \in J$, allora $a^{m+n} = a^m a^n = e \Rightarrow  m+n \in J$.
+			Infine, visto che $a^{-m} = (a^m)^{-1} =e$, anche $-m \in J$.
+		\end{proof}
+\end{itemize}
+Per il teorema \ref{th:smalld}, il pi\`u piccolo intero positivo contenuto in $J$ genera $J$ stesso;
+allora, per definizione, $d$ \`e il pi\`u piccolo intero tale che $a^d = e$ e, per questo, viene chiamato \textbf{periodo} di $a$. 
+In quanto tale, se $a^n = e$ per qualche intero $n$, allora $n = ds$, per qualche intero $s$.
 
+\begin{teorema}
+	{}{}
+	Sia $G$ un gruppo e sia $a \in G$ un elemento di periodo $d$; allora $a$ genera il sottogruppo ciclico di ordine $d$, i cui elementi sono $e, a , \ldots, a^{d-1} $.
+	\begin{proof}
+	Per mostrare l'esistenza di tale sottogruppo, si nota che per $a \in G$, di periodo $d$, e per generico $n \in \mathbb{Z}$, l'algoritmo euclideo afferma che $n = qd +r $, con $q,r \in \mathbb{Z}$ e $0\le r < d$, per cui vale $a^n = a^r$.
 
-
-
-
-
+	Ora si mostra che gli elementi sono distinti.
+	Se fosse $a^r = a^s$, con $0\le r ,s\le d-1$ e, per assunzione, $r\le s$, allora $a^{s-r} = e $; per\`o $0\le  s-r < d$, quindi bisogna avere $s-r=0$, da cui $r=s$.
+	\end{proof}
+\end{teorema}
+\subsection{Mappe tra gruppi}
 
 
 
