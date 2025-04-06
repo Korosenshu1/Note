@@ -537,7 +537,7 @@ Conseguentemente, le regole soddisfatte sono le seguenti:
 \[
 	(m+n) x = mx + nx \ ; \hspace{.2cm} (mn)x = m(nx)
 \] 
-\subsubsection{Gruppi ciclici}
+
 Sia, $G$ un gruppo e sia $a \in  G$.
 Si definisce il sottogruppo $H$ di $G$ come quell'insieme avente tutti elementi del tipo $a^n, \ \forall n \in \mathbb{Z}$. 
 In questo senso, $H$ \`e generato da $a$.
@@ -671,7 +671,7 @@ Cos\`i facendo, si rende possibile avere sempre una $f^{-1} $ perch\'e il suo ri
 	\] 
 dove $f_i :X \to Y_i, \ i=1, \ldots, n$.
 \end{definizione}
-\subsection{Omomorfismi di gruppo}
+\subsection{Omomorfismi, isomorfismi e automorfismi}
 \begin{definizione}
 	{Omomorfismo}{}
 	Dati $G,G'$ due gruppi, un omomorfismo $f: G \to G'$ \`e una mappa che conserva le operazioni di gruppo, cio\`e
@@ -753,31 +753,111 @@ Si considera, ora, un gruppo $G$ e si prende un suo elemento $a \in G$; si nota 
 \begin{prop}
 	{}{}
 	Sia $f:G \to G'$ un omomorfismo e sia $H' \subset G'$; prendendo $H = f^{-1} (H')$ come l'insieme delle $x \in G : f(x) \in H'$, allora $H$ \`e un sottogruppo di $G$.
+\end{prop}
+\noindent Si nota che nella proposizione sopra, per $H'=\left\{ e' \right\} $, si ha $f^{-1} (H') \equiv \mathrm{Ker} (f)$.
+\begin{definizione}
+	{Isomorfismo di gruppi}{}
+Dato $f:G\to G'$ un omomorfismo di gruppi, si dice che \`e un \textit{isomorfismo di gruppi} se esiste un altro omomorfismo di gruppi $g : G' \to G$ e tale che $f \circ g = \mathrm{id} _{G'} $ e $ g\circ f = \mathrm{id} _{G} $. 
+In tal caso, si dir\`a che $G \approx G'$.
+\end{definizione}
+\noindent Questo significa che se uno dei due ha delle propriet\`a esprimibili esclusivamente in termini delle operazioni di gruppo, allora anche ogni altro gruppo isomorfo a questo conserva le stesse propriet\`a. 
+Alcune di queste sono:
+\begin{itemize}
+	\item la ciclicit\`a;
+	\item l'ordine;
+	\item l'essere abeliano.
+\end{itemize}
+\begin{prop}
+	{}{iscond}
+	Un omomorfismo di gruppi $f: G \to G'$ che \`e anche biettivo \`e un isomorfismo.
 	\begin{proof}
-		{\color{red} DA DIMOSTRARE.}
+		L'esistenza di $f^{-1} :G' \to G$ \`e assicurata dal fatto che $f$ \`e biettiva. Si deve mostrare che $f^{-1} $ \`e un omomorfismo. 
+
+		Siano dati $x, y \in G': f(x) = x' , \ f(y) = y'\Rightarrow f(x*y) = x'*y'$, visto che $f$ \`e un omomorfismo; allora si nota che:
+		\[
+		f^{-1} (x'*y')= x*y = f^{-1} (x) * f^{-1} (y) 
+		\] 
+		
 	\end{proof}
 \end{prop}
-\begin{center}
-	Riprendere da met\`a pagina 35.
-\end{center}
+\noindent Dalla precedente proposizione, si ottiene il seguente teorema che permette di capire se un omomorfismo \`e un isomorfismo.
+\begin{teorema}
+	{}{}
+	Sia $f:G \to G'$ un omomorfismo di gruppi. Allora:
+	\begin{enumerate}[(a).]
+		\item se $\mathrm{Ker} (f) = \left\{ e \right\} \implies f$ \`e un isomorfismo da $G\to f(G) \equiv \mathrm{Im} (f)$;
+		\item $f:G\to G'$ \`e suriettiva e $\mathrm{Ker} (f) = \left\{ e \right\} $, allora $f$ \`e un isomorfismo da $G\to G'$.
+	\end{enumerate}
+	\begin{proof}
+		Si \`e gi\`a dimostrato che se il nucleo di $f$ \`e banale, allora $f$ \`e iniettiva; chiaramente $f$ \`e sempre suriettiva dall'insieme di partenza nella sua immagine, quindi la tesi \`e verificata dalla proposizione \ref{prop:iscond}. 
 
+		Sempre per la stessa, segue direttamente il punto (b).
+	\end{proof}
+\end{teorema}
+\begin{definizione}
+	{Automorfismo}{}
+	Un \textit{automorfismo di gruppi} \`e un isomorfismo $f:G \to G'$ con $G' \equiv G$.
+\end{definizione}
+\noindent Si indica con $\mathrm{Aut} (G)$ l'insieme di tutti gli automorfismi definiti su $G$. Inoltre, se equipaggiato con la legge di composizione fra funzioni, $\mathrm{Aut} (G)$ \`e un sottogruppo del gruppo delle permutazioni di $G$.
+\begin{proof}
+	\color{red} DA DIMOSTRARE. 
+\end{proof}
 
+\begin{definizione}
+	{Traslazione}{}
+	Dato un gruppo $G$, la mappa che, per qualche $a \in G$, associa $x \mapsto a*x$, definita da $T_a :G \to G$, \`e chiamata \textit{traslazione}. Questa, in particolare, \`e chiamata traslazione sinistra.
+La mappa inversa di una traslazione \`e $T_{a^{-1} } $, in quanto $x = a^{-1} a x$. 
+\end{definizione}
+\noindent Si consideri la mappa che, per $a \in G$, associa $a \mapsto T_a : G \to \mathrm{Perm} (G)$; questa \`e un omomorfismo perch\'e dati $a, b \in G$, si ha $T_{ab} (x) = abx =( T_a \circ T_b) (x) $, cio\`e $T_{ab} = T_a \circ T_b $.
+Evidentemente, questo isomorfismo \`e anche iniettivo perch\'e per $a\neq b$, si ha $T_a \neq T_b$, pertanto $a\mapsto T_a$ risulta un isomorfismo su $G$, la cui immagine non \`e necessariamente coincidente con $\mathrm{Perm} (G)$.
+\begin{definizione}
+	{Coniugazioni}{}
+	Sia $G$ un gruppo e sia $a \in G$; si definisce \textit{coniugazione} la mappa $\mathfrak{c} _a : G \to G$ tale che $x\mapsto axa^{-1} $.
+\end{definizione}
+\noindent \`E evidente che $\mathfrak{c} _a$ \`e un automorfismo di $G$, in particolare, si definisce \textbf{automorfismo interno}.
+La mappa $a \mapsto \mathfrak{c} _a$ \`e un omomorfismo di $G \to \mathrm{Aut} (G)$, la cui legge di composizione \`e la composizione di funzioni.
 
+\begin{definizione}
+	{Somma diretta}{}
+	Siano $B_1,\ldots,B_r$ dei sottogruppi di un gruppo abeliano additivo $A$; si dice che $A$ \`e \textit{somma diretta} di questi se 
+	\[
+	A = \bigoplus _{i=1} ^r B_i = B_1\oplus B_2 \oplus \ldots\oplus B_r
+	\] 
+	cio\`e se $\forall x \in A$, $x = \sum_{i=1}^{r} b_i, \ b_i \in B_i$ \`e scritto \textit{univocamente} come somma di elementi dei $B_i$.
+\end{definizione}
+\noindent In generale, se $A$ \`e un gruppo additivo abeliano, con $B,  C $ suoi sottogruppi, allora $B+C$ forma un sottogruppo di $A$, i cui elementi sono tutti della forma $b + c, \ b\in B , \ c \in C$.
+\begin{teorema}
+	{}{}
+	Sia $A$ un gruppo abeliano; questo \`e somma diretta di suoi sottogruppi $B, C$ se e soltanto se $A = B+C$ e $B\cap C = \left\{ 0 \right\} $. 
+	Questo \`e vero se e soltanto se la mappa $(b,c)\mapsto b+c : B \times C \to A$ \`e un isomorfismo.
+\end{teorema}
+ Per finire, si considera l'insieme degli omomorfismi tra due gruppi abeliani additivi $A ,B$, indicato con $\mathrm{Hom } (A,B)$. \`E possibile rendere questo un gruppo, definendo $f+g : A \to B$, per $f,g \in \mathrm{Hom} (A,B)$, come
+ \[
+	 (f+g) (x) = f(x) + g(x), \ \forall x \in A
+ \] 
+\begin{proof}
+	Si mostra che questo, cos\`i definito, \`e un gruppo. Intanto si osserva l'\textit{associativit\`a}:
+	\[
+	\begin{split}
+		&\big( (f+g) + h\big)(x) = (f+g) (x) + h(x) = f(x) + g(x) + h(x)\\
+		&\big(f + (g+h)\big)(x) = f(x) + (g+h) (x) = f(x) + g(x) +h(x)
+	\end{split}
+	\] 
+da cui $f + (g+h) = (f+g) +h$. 
+Si ha anche l'elemento unit\`a rispetto a $+$, indicato con $0$, che ad ogni elemento di $A$, assegna l'elemento nullo di $B$, che risulta un omomorfismo. 
 
+Per finire, si definisce l'elemento $-f$ con la propriet\`a che $f + (-f) = 0$ e si mostra che $f+g$ e $-f$ sono omomorfismi:
+\[
+		(f+g) (x+y) = f(x+y) + g(x+y) = f(x) + f(y) + g(x) + g(y) = (f+g) (x) + (f+g) (y)
+\] 
+e 
+\[
+	(-f)(x+y) = -\big(f(x+y) \big)= - \big(f(x) + f(y)\big) = - f(x) - f(y)
+\] 
+Quindi $\mathrm{Hom}(A,B) $ \`e un gruppo.
+\end{proof} 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Classi laterali e sottogruppi normali}
 
 
 
