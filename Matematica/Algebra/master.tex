@@ -279,7 +279,7 @@ Da questa deriva la seguente.
 \subsection{Massimo comune divisore}
 Siano $n, d$ due interi diversi da $0$.
 Si dice che $d$ \textit{divide} $n$ se esiste $q$ intero tale che $n = dq$; in questo caso, si scrive $d|n$.
-Se $m,n$ sono interi non-nulli, per \textit{divisore comune} di $m$ e $n$ si intende un interno $d\neq 0$ tale che $d | m$ e $d | n$. 
+Se $m,n$ sono interi non-nulli, per \textit{divisore comune} di $m$ e $n$ si intende un intero $d\neq 0$ tale che $d | m$ e $d | n$. 
 Allora si ha la seguente definizione.
 \begin{definizione}
 	{Massimo comune divisore}{}
@@ -456,19 +456,19 @@ Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come qu
 
 \begin{definizione}
 	{Gruppo}{}
-	Un \textit{gruppo} $G$ \`e un insieme su cui \`e definita una \textit{legge di composizione} $\circ : G \to G$ che soddisfa le seguenti condizioni per gli elementi di $G$:
+	Un \textit{gruppo} $G$ \`e un insieme su cui \`e definita una \textit{legge di composizione} $* : G \to G$ che soddisfa le seguenti condizioni per gli elementi di $G$:
 	\begin{enumerate}[GR 1.]
-		\item $(x\circ y)\circ z =  z\circ (y \circ z)$ (\textit{associativit\`a});
-		\item $\exists e \in G : x\circ e = e\circ x = x$ (elemento neutro);
-		\item $\forall x \in G, \ \exists y \in G$ tale che $x\circ y = y\circ x = e$ (elemento inverso).
+		\item $(x*y) * z =  z*(y * z)$ (\textit{associativit\`a});
+		\item $\exists e \in G : x*e = e*x = x$ (elemento neutro);
+		\item $\forall x \in G, \ \exists y \in G$ tale che $x*y = y*x = e$ (elemento inverso).
 	\end{enumerate}
 \end{definizione}
-\noindent Quando $\circ$ \`e la moltiplicazione, $G $ si dice \textbf{gruppo moltiplicativo}; quando $\circ $ \`e l'addizione, $G $ si dice \textbf{gruppo additivo}.
+\noindent Quando $*$ \`e la moltiplicazione, $G $ si dice \textbf{gruppo moltiplicativo}; quando $*$ \`e l'addizione, $G $ si dice \textbf{gruppo additivo}.
 \begin{definizione}
 	{Gruppo commutativo}{}
 	Un insieme $G$ \`e detto \textit{gruppo commutativo} se \`e un gruppo e se soddisfa ulteriormente
 	\[
-	x \circ y = y \circ x, \ \forall x,y \in G
+	x *y = y *x, \ \forall x,y \in G
 	\] 
 \end{definizione}
 \noindent L'elemento neutro di ciascun gruppo \`e unico.
@@ -504,13 +504,13 @@ I numeri reali $\mathbb{R}$ e i numeri complessi $\mathbb{C}$ sono entrambi grup
 	Sia $G$ un gruppo e $H \subset G$ un sottoinsieme di $G$. Si dice che $H$ \`e un sottogruppo di $G$ se:
 	\begin{itemize}
 		\item  $e \in H$;
-		\item $\forall x,y \in H, \ x\circ y \in H$;
+		\item $\forall x,y \in H, \ x*y \in H$;
 		\item $\forall x \in H, \ x^{-1}  \in H$.
 	\end{itemize}
 \end{definizione}
 \begin{definizione}
 	{Generazione di un sottogruppo}{}
-	Sia $S = \left\{ x_1,\ldots,x_n \right\} \subset  G$ un sottoinsieme di un gruppo $G$; l'insieme $H:= \left\{ x \in G : x = x_1 \circ \ldots\circ x_n  \right\}\cup \left\{ x^{-1} \in G : x \in S \right\} \cup \left\{ e \in G \right\}  $ \`e un sottogruppo di $G$ ed \`e detto \textit{generato} da $S$, dove gli elementi di $S$ sono detti i \textit{generatori di} $H$.
+	Sia $S = \left\{ x_1,\ldots,x_n \right\} \subset  G$ un sottoinsieme di un gruppo $G$; l'insieme $H:= \left\{ x \in G : x = x_1 *\ldots*x_n  \right\}\cup \left\{ x^{-1} \in G : x \in S \right\} \cup \left\{ e \in G \right\}  $ \`e un sottogruppo di $G$ ed \`e detto \textit{generato} da $S$, dove gli elementi di $S$ sono detti i \textit{generatori di} $H$.
 
 	In questo caso, si scriver\`a che $H = \langle S \rangle\equiv \langle x_1,\ldots,x_n \rangle$.
 \end{definizione}
@@ -519,7 +519,7 @@ Si nota che $\left\{ 1 \right\} $ \`e un generatore per il gruppo additivo degli
 \end{esempio}
 Ora si definisce una notazione per indicare una ripetizione dell'operazione di composizione con lo stesso elemento. In generale, si scriver\`a:
 \begin{equation}
-	x^ n \equiv \underbracket{x \circ x \circ \ldots \circ x}_{n \text{ volte}}
+	x^ n \equiv \underbracket{x *x *\ldots *x}_{n \text{ volte}}
 \end{equation}
 Se $n=0$, si definisce $x^n = e$; invece, se $n=-m$, si ha la seguente definizione:
 \[
@@ -586,6 +586,185 @@ In quanto tale, se $a^n = e$ per qualche intero $n$, allora $n = ds$, per qualch
 	\end{proof}
 \end{teorema}
 \subsection{Mappe tra gruppi}
+Dati $S , S' $ due insiemi, una mappa fra questi \`e indicata con $f: S \to S'$; per $x \in S$, si indica con $f(x) \in S'$ l'immagine di $x$ attraverso la mappa $f$.
+Per definire l'immagine di $x$ attraverso $f$, si usa anche la notazione $x \mapsto f(x)$.
+
+Data $f:S \to S'$ e $T \subset S$, si pu\`o definire una mappa che \`e la restrizione di $f$ a $T$, assegnando $x \mapsto f(x), \ \forall x \in T \subset S$; questa si indica con $f|_T : T \to S'$.
+
+Una mappa $f :S\to S'$ si dice \textbf{iniettiva} se $\forall x,y \in S, \ x \neq y \Rightarrow f(x) \neq f(y)$. Una mappa si dice \textbf{suriettiva} se $\forall y \in S', \exists x \in S : f(x) = y $. Infine, $f$ \`e \textbf{biettiva} se \`e sia iniettiva che suriettiva.
+Il fatto che $f$ sia biettiva permette di individuare univocamente il suo inverso, la cui esistenza \`e assicurata dalla suriettivit\`a, mentre l'unicit\`a dall'iniettivit\`a.
+\begin{definizione}
+	{Mappa inclusione}{}
+Sia $S$ un insieme e $T \subset S$; la mappa identit\`a di $T$, $\mathrm{id} _T$, vista come mappa $\mathrm{id} _T : T \to S$ \`e chiamata \textit{inclusione} e si indica con il simbolo $T \hookrightarrow S$.
+\end{definizione}
+\begin{definizione}
+	{Composizione}{}
+	Date due mappe $f : S \to T, \ g:T \to  U$, si definisce la \textit{mappa composta} come:
+	\[
+	g \circ f : S \to U , \ (g\circ f ) (x) =  g\big( f(x) \big)
+	\] 
+\end{definizione}
+\noindent Va notato che la composizione \textit{non} \`e commutativa\footnote{se $f(x) = x^2$ e $g(x) = x+1$, si ha $g\circ f = x^2+1$, mentre $f\circ g = (x +1)^2$.}, invece \`e, per definizione, associativa\footnote{Infatti, se $f,g,h$ sono tre mappe tali per cui $h(g(f(x))$ \`e ben definita, allora si ha $h\circ \big(g \circ f\big) = h\circ (g(f(x))=h(g(f(x)))$, ma anche $(h \circ g) \circ f = (h \circ g)\big(f(x)\big) = h(g(f(x)))$.}. 
+\begin{prop}
+	{}{}
+	Siano $S,T,U$ insiemi e siano $f:S \to T , \ g : T \to U$ due mappe; allora:
+	\begin{itemize}
+		\item $f,g$ iniettive $\Rightarrow g\circ f$ iniettiva;
+		\item $f,g$ suriettive $\Rightarrow g\circ f$ suriettiva.
+	\end{itemize}
+\end{prop}
+\begin{definizione}
+	{Mappa inversa}{}
+	Data $f: S\to S'$ una mappa; la sua inversa \`e la mappa $f^{-1}  : S' \to S$ tale che
+	\[
+		(f \circ f^{-1} ) (x') = \mathrm{id} _{S'} ; \ (f^{-1} \circ f) (x) = \mathrm{id} _S
+	\] 
+\end{definizione}
+\noindent Indicare l'inversa di $f$ con $f^{-1} $ presuppone che l'inversa sia unica, e infatti \`e cos\`i.
+\begin{proof}
+	Sia $f:S \to S'$ e siano $g_1, g_2$ due mappe inverse per $f$; ma allora:
+	\[
+		\mathrm{id} _{S'}(x') = (f\circ g_1) (x') \implies (g_2 \circ \mathrm{id} _{S'}  )(x') \equiv g_2 = g_2\circ (f\circ g_1) = (g_2 \circ f ) \circ g_1 \equiv g_1
+	\] 
+\end{proof}
+\begin{prop}
+	{}{}
+	Sia $f:S \to S'$; allora $f$ \`e biettiva se e solo se $f$ ha un'inversa.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item $(\Rightarrow )$ Si assume che $f$ sia biettiva e si mostra che ha un'inversa.
+
+				La mappa $f$ \`e tale che $\forall x' \in X', \exists ! x \in X : f(x) = x'$; la mappa $x' \mapsto x$ \`e, allora, ben definita e questa coincide con l'inversa.
+			\item $(\Leftarrow)$ Si assume che $f$ abbia un'inversa e si mostra che \`e biettiva.
+
+				Per l'iniettivit\`a, si nota che se $x_1\neq x_2 $, allora deve essere anche $x_1' = f(x_1) \neq f(x_2) = x_2'$, altrimenti, se si avesse $f(x_1) = f(x_2) = x'$, $f^{-1} (x')$ non sarebbe una mappa ben definita perch\'e ad un singolo elemento, ne fa corrispondere due.
+
+				Per la suriettivit\`a, il discorso \`e analogo: $f^{-1} :S'\to S$ non sarebbe ben definita se si avesse $x_0' \in S' : \not \exists x \in X , \ f(x) = x_0'$, allora non varrebbe $(f\circ f^{-1} ) (x_0') = \mathrm{id}_{S'}  $.
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\noindent Nonostante la precedente proposizione, la notazione $f^{-1} $ si usa anche quando $f:X \to Y$ non ha propriamente un'inversa.
+In questo caso, $f^{-1} $ \`e definita come una mappa tra l'insieme dei sottoinsiemi di $Y$ e l'insieme dei sottoinsiemi di $X$.
+Cos\`i facendo, si rende possibile avere sempre una $f^{-1} $ perch\'e il suo risultato pu\`o essere l'insieme vuoto (nel caso in cui $f$ non sia suriettiva), oppure un insieme composto da pi\`u elementi nel caso in cui $f$ non sia iniettiva.
+\begin{definizione}
+	{Permutazione}{}
+	Sia $S$ un generico insieme; \`e chiamata \textit{permutazione} di $S$ una mappa biettiva $f: S \to S$ e si indica con $\mathrm{Perm}(S) $ l'insieme delle permutazioni di $S$.
+\end{definizione}
+\begin{prop}
+	{}{}
+	L'insieme $\mathrm{Perm} (S)$ \`e un gruppo, la cui legge di composizione \`e data dalla composizione di mappe.
+	\begin{proof}
+	Si \`e gi\`a mostrato che la composizione di mappe \`e associativa e, chiaramente, esiste la permutazione identit\`a che \`e $\mathrm{id} _S$.
+
+	Inoltre, se $f,g$ sono permutazioni, allora $g\circ f, \ f\circ g : S \to S$ e sono biettive, quindi sono permutazioni. Questo mostra che $\mathrm{Perm} (S)$ \`e chiuso sotto la composizione di mappe.
+
+	Infine, ogni permutazione $f$ ha un'inversa $f^{-1} $ perch\'e $f$ \`e biettiva per definizione.	
+	\end{proof}
+\end{prop}
+\noindent Generalmente, per la composizione di permutazioni, si scrive direttamente $\sigma \tau $, invece di $\sigma \circ \tau $.
+\begin{definizione}
+	{Sistemi di coordinate}{}
+	Siano gli $Y_1,\ldots, Y_n$ degli insiemi; si definisce sistema di coordinate una mappa 
+	\[
+	f: X \to \prod _{i=1} ^n Y_i = Y_1 \times \ldots \times Y_n, \ f(x) = \big(f_1(x), \ldots, f_n(x)\big)
+	\] 
+dove $f_i :X \to Y_i, \ i=1, \ldots, n$.
+\end{definizione}
+\subsection{Omomorfismi di gruppo}
+\begin{definizione}
+	{Omomorfismo}{}
+	Dati $G,G'$ due gruppi, un omomorfismo $f: G \to G'$ \`e una mappa che conserva le operazioni di gruppo, cio\`e
+	\[
+	\forall  x,y \in G, \ f(x*_G y ) = f(x) *_{G'} f(y)
+	\] 
+	con $*_G, \ *_{G'} $ leggi di composizione, rispettivamente, di $G$ e $G'$.
+\end{definizione}
+\noindent Si ometteranno i pedici alle leggi di composizioni, ma la distinzione \`e sottintesa.
+Per brevit\`a, invece di specificare che in $f:G \to G'$, $G$ e $G'$ sono gruppi, si dir\`a che $f:G\to G'$ \`e un \textit{omomorfismo di gruppi}.
+\begin{esempio}
+Sia $G$ un gruppo commutativo; allora la mappa $x \mapsto x^{-1} : G \to G $ \`e un omomorfismo. 
+Si nota che la richiesta che $G$ sia commutativo \`e fondamentale perch\'e si abbia tale omomorfismo; infatti, $ (x*y)^{-1} = x ^{-1}*y^{-1} $ solamente se $G$ \`e commutativo, altrimenti $x*y *(x*y)^{-1} = e \neq x*y *x^{-1} *y^{-1} $.
+\end{esempio}
+\begin{esempio}
+ La mappa $x\mapsto e^x : (\mathbb{R}, +) \to (\mathbb{R}^{>0} , \cdot )$ \`e un omomorfismo, infatti:
+ \[
+ x + y \mapsto e^{x+y} = e^x \cdot e^y
+ \] 
+Questo \`e un esempio in cui le leggi di composizione di gruppo sono diverse perch\'e i due gruppi sono fondamentalmente diversi. 
+\end{esempio}
+\begin{prop}
+	{}{}
+	Siano $G,H$ due gruppi, con $H = \prod_{i=1}^n  H_i$. La mappa $f : G \to H $ \`e un omomorfismo se e soltanto se $\forall i, \ f_i$ \`e un omomorfismo.
+\end{prop}
+\begin{prop}
+	{}{}
+	Sia $f:G \to G'$ un omomorfismo di gruppi. Allora $f$ conserva l'unit\`a, nel senso che $f(e) = e' $, e conserva l'inversa, nel senso $f(x^{-1} ) = f(x)^{-1} $.
+	\begin{proof}
+		Per la prima, si nota che $f(e) = f(ee) = f(e)*f(e)$. Moltiplicando (nel senso della legge $*_{G'} $) ambo i membri per $f(e)^{-1} $, si ottiene $e' = f(e)$.
+
+		Per la seconda, sia $x \in G$ tale che $\exists f^{-1} (x)$; allora $e' = f(x*x^{-1} )= f(x) * f(x^{-1} )$. Moltiplicando ambo i membri a sinistra per $f (x)^{-1} $, si ottiene $f (x) ^{-1} = f(x^{-1} )$.
+	\end{proof}
+\end{prop}
+\noindent Si nota che nella proposizione di sopra, si \`e usata la notazione $f(x)^{-1} $ per indicare l'elemento inverso nel gruppo, ossia quell'elemento tale che $f(x) *_{G'} f(x)^{-1} = e'$, ben diverso da $f^{-1} (x)$ funzione inversa, tale che $f \circ f^{-1}=\mathrm{id} $.
+\begin{prop}
+	{}{}
+	Siano $f:G\to G', \ g:G' \to G''$ due omomorfismi di gruppi; allora la loro composizione $g \circ f : G \to G''$ \`e un omomorfismo di gruppi.
+	\begin{proof}
+		Per calcolo diretto, si ha: $(g\circ f)(x*y) = g\big(f(x*y)\big) = g \big(f(x) * f(y)\big) = g\big(f(x)\big) * g\big(f(y)\big)$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Dato $f:G \to G'$ un omomorfismo di gruppi, l'immagine di $f$ \`e un sottogruppo di $G'$.
+	\begin{proof}
+		Dati due elementi $f(x) = x', \ f(y) = y' \in \mathrm{Im} (f) \subset G'$, si ha:
+		\[
+		x' * y' = f(x) * f(y) = f(x*y) \in \mathrm{Im} (f)
+		\] 
+		Quindi $\mathrm{Im} (f)$ \`e chiuso rispetto alla legge di composizione definita in $G'$. Anche l'inverso appartiene a $\mathrm{Im} (f)$ perch\'e $x^{-1} \in G \Rightarrow f(x)^{-1} = f(x^{-1} ) \in \mathrm{Im} (f) $. Infine, anche l'identit\`a vi appartiene sempre perch\'e $e \in G \Rightarrow e' = f(e) \in \mathrm{Im} (f)$.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	{Kernel di un omomorfismo}{}
+	Sia $f:G \to G'$ un omomorfismo di gruppi; il suo kernel (o nucleo) \`e l'insieme
+	\[
+	\mathrm{Ker} (f) := \left\{ x \in G : f(x) = e' \in G' \right\} 
+	\] 
+\end{definizione}
+\begin{prop}
+	{}{}
+	Il kernel di un omomorfismo di gruppi $f:G\to G'$ \`e un sottogruppo di $G$.
+	\begin{proof}
+		Se $x, y \in \mathrm{Ker} (f)$, allora $x*y \in \mathrm{Ker} (f)$ perch\'e $f(x*y) = f(x) * f(y) = e' * e' = e'$. L'identit\`a appartiene a $\mathrm{Ker} (f)$ perch\'e $f(e) = e'$ e, per finire, se $x \in \mathrm{Ker} (f)$, anche $x^{-1} $ vi appartiene perch\'e $e' = f(e)= f(x * x^{-1} ) = f(x) * f(x^{-1} ) = e' * f(x^{-1} ) \Rightarrow e' = f(x^{-1} )$.
+	\end{proof}
+\end{prop}
+Si considera, ora, un gruppo $G$ e si prende un suo elemento $a \in G$; si nota che la mappa $n\mapsto a^n$ \`e un omomorfismo di $\mathbb{Z}$ in $G$. Questo \`e facile da dimostrare, ma pi\`u interessante \`e il fatto che il kernel di questo omomorfismo pu\`o essere composto o dal solo $0 \in \mathbb{Z}$, o \`e un sottogruppo generato dal periodo di $a$.
+\begin{prop}
+	{}{}
+	Sia $f : G\to G'$ un omomorfismo di gruppi; se $\mathrm{Ker} (f) = \left\{ e \right\} $, allora $f$ \`e iniettivo.
+	\begin{proof}
+		Si assume, quindi, che $\mathrm{Ker} (f) = \left\{ e \right\} $ e si mostra che $f$ \`e iniettiva. Dati $x,y \in G, \ x\neq y$, se per assurdo, si avesse $f(x) = f(y)$, allora $ e'=  f(x) * f(y)^{-1} = f(x * y^{-1} )\Rightarrow x*y^{-1}  \in \mathrm{Ker} (f)$, con $x*y^{-1}  \neq x * x^{-1} = e$ perch\'e, per assunzione, $x \neq y$.
+		Ne segue che $f$ \`e iniettiva.
+	\end{proof}
+\end{prop}
+\noindent Un omomorfismo iniettivo fra due gruppi $G\to G'$ \`e chiamato \textbf{embedding} (o \textbf{iniezione}) e, come l'inclusione, si indica con $G \hookrightarrow G'$.
+
+\begin{prop}
+	{}{}
+	Sia $f:G \to G'$ un omomorfismo e sia $H' \subset G'$; prendendo $H = f^{-1} (H')$ come l'insieme delle $x \in G : f(x) \in H'$, allora $H$ \`e un sottogruppo di $G$.
+	\begin{proof}
+		{\color{red} DA DIMOSTRARE.}
+	\end{proof}
+\end{prop}
+\begin{center}
+	Riprendere da met\`a pagina 35.
+\end{center}
+
+
+
+
+
 
 
 
