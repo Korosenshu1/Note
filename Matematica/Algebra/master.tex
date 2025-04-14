@@ -858,6 +858,90 @@ Quindi $\mathrm{Hom}(A,B) $ \`e un gruppo.
 \end{proof} 
 
 \subsection{Classi laterali e sottogruppi normali}
+Siano $S,S'$ due sottoinsiemi di un gruppo $(G,*)$; il loro \textbf{prodotto} \`e:
+\begin{equation*}
+	S * S' = \left\{ x \in G : x = s * s', \ s \in S,\ s' \in S' \right\} 
+\end{equation*}
+Allora, se $S_1,S_2,S_3 \subset G$, vale $(S_1 * S_2) * S_3 = S_1 * (S_2 * S_3)$.
+Di seguito, alcune altre propriet\`a.
+\begin{itemize}
+	\item Sia $H$ sottogruppo di $G$; allora $H * H = H$.
+		\begin{proof}
+			\`E sufficiente prendere l'elemento neutro di uno dei due e far variare tutti gli elementi dell'altro per ottenere tutto $H$. 
+			Non si pu\`o uscire da $H$ perch\'e $H$ stesso \`e un gruppo, quindi \`e chiuso rispetto a $*$.
+		\end{proof}
+	\item Sia $S \subset H$ un generico sottoinsieme e $H$ come sopra; allora $S * H = H$.
+		\begin{proof}
+			Corrisponde a traslare ciascun elemento di $H$, ma si riottiene comunque $H$. 
+			Per vederlo, sia $s \in S$ fissato; dato un generico $h_0 \in H$, si vuole mostrare che $\exists h \in H : s*h= h_0$.
+
+			Visto che $H$ \`e un sottogruppo di $G$, $H$ contiene l'inverso di qualunque suo elemento e di ogni elemento di $S$, pertanto \`e ben definito $h = s^{-1} * h_0$, che soddisfa la richiesta.
+		\end{proof}
+	\item Dati $S_1,S_2,S_3 \subset G$, allora $S_1 * (S_2 \cup S_3) = S_1*S_2 \cup S_1 * S_3$.
+		\begin{proof}
+			Si indica con $S: = S_1 * (S_2 \cup S_3)$ e con $\overline{S}:= S_1 * S_2 \cup S_1 * S_3$.
+
+			Un generico elemento di $S$ \`e il prodotto tra $s_1 \in S_1$ e un altro elemento che sta in $S_2$ o in $S_3$.
+			Un generico elemento di $\overline{S}$ \`e o il prodotto tra $s_1 \in S_1$ e $s_2 \in  S_2$, o $s_1 \in S_1$ e $s_3 \in S_3$. Allora $S = \overline{S}$.
+		\end{proof}
+\end{itemize}
+\begin{definizione}
+	{Classe laterale}{}
+	Sia $G$ un gruppo e sia $H$ un suo sottogruppo. Dato $a \in G$, l'insieme di tutti gli elementi della forma $ax, \ x \in H$ \`e chiamato \textit{classe laterale} di $H$ in $G$.
+
+	Si indicher\`a con $aH$.
+\end{definizione}
+Si nota che, essendo in generale $G$ non-commutativo, la scrittura $aH \neq Ha$; la prima si chiama \textit{classe laterale sinistra}, mentre la seconda sar\`a la \textit{classe laterale destra}.
+
+\begin{obs}
+	Pi\`u precisamente dovrebbe essere $a * H$, ma si elimina $*$ per alleggerire la notazione. Nel caso della somma, diventerebbe $a+ H$.
+\end{obs}
+\begin{teorema}
+	{}{}
+	Siano $aH$ e $bH$ due classi laterali di $H$ in $G$: o le due classi laterali sono uguali, o non hanno alcun elemento in comune.
+	\begin{proof}
+		Si assume che $\exists x,y \in H: ax= by$. Allora si osserva che, essendo $xH = H = yH$:
+		\[
+		aH = axH = byH = bH
+		\] 
+	\end{proof}
+\end{teorema}
+\`E possibile decomporre un gruppo in classi laterali. 
+Si considera il caso specifico di $G$ grupp[o finito; ogni elemento $x \in G$ appartiene ad una classe laterale, per esempio $xH$, con $H$ sottogruppo di $G$.
+Allora, $G$ si pu\`o scrivere come unione finita di classi laterali di $H$:
+\begin{equation}
+	G = \bigcup_{i=1} ^r a _i H
+\end{equation}
+dove ogni classe laterale \`e distinta dall'altra, altrimenti sarebbero uguali e non si sarebbe aggiunto nessun nuovo elemento di $G$.
+Ogni elemento $ah, \ h \in H$ \`e chiamato \textbf{rappresentante} della classe laterale $aH$.
+
+Lo stesso si pu\`o dire per gruppi infiniti, ma sono ammesse unioni di infinite classi laterali; indicando con $I$ un certo insieme di indicizzazione potenzialmente infinito:
+\begin{equation}
+	G = \bigcup _{i \in I} a _i H
+\end{equation}
+con $G$ finito o infinito.
+\begin{teorema}
+	{}{}
+	Sia $G$ un gruppo e $H$ un sottogruppo finito. Allora il numero di elementi di una certa classe laterale $aH$ \`e il numero di elementi di $H$.
+\end{teorema}
+Dati $G,H$ come al solito, si indica con $G/H$ l'insieme di tutte le classi laterali sinistre di $H$ in $G$.
+Si chiama \textbf{indice} il numero di tutte le distinte classi laterali di $H$ in $G$ e si indica con $(G:H)$.
+Se $\# S$ \`e il numero di elementi in $S$, allora $\# (G / H) = (G:H)$ e $\# G = (G:1)$.
+\begin{teorema}
+	{}{}
+	Sia $G$ un gruppo finito e $H$ un suo sottogruppo. Allora:
+	\begin{enumerate}[(a).]
+		\item $\mathrm{ord}(G) =  (G:H) \cdot \mathrm{ord} (H) $, con $\mathrm{ord} (\cdot )$ che indica l'ordine di un certo gruppo finito;
+		\item dato $L \subset G$ un generico sottogruppo, $\mathrm{ord}(L) $ divide $\mathrm{ord}(G) $;
+		\item dato $a \in G$, il periodo di $a$ divide $\mathrm{ord}(G) $;
+		\item se $G \supset H \supset K$ sono sottogruppi, allora $(G:K) = (G:H)(H:K)$.
+	\end{enumerate}
+\end{teorema}
+
+
+
+
+
 
 
 
