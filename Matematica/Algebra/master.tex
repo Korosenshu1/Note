@@ -497,7 +497,7 @@ I numeri reali $\mathbb{R}$ e i numeri complessi $\mathbb{C}$ sono entrambi grup
 \noindent Prendendo un prodotto diretto di gruppi ed equipaggiandolo con il prodotto componente per componente, dove l'elemento unit\`a \`e $(e_1,\ldots,e_n)$, con $e_i$ unit\`a di $G_i$, si ottiene un gruppo moltiplicativo.
 \begin{definizione}
 	{Gruppo finito}{}
-	Un gruppo $G$ si dice \textit{finito} se ha un numero limitato di elementi; si chiama \textbf{ordine} il numero di elementi di tale gruppo.
+	Un gruppo $G$ si dice \textit{finito} se ha un numero limitato di elementi; si chiama \textbf{ordine} il numero di elementi di tale gruppo e si indica con $|G|$.
 \end{definizione}
 \begin{definizione}
 	{Sottogruppo}{}
@@ -897,7 +897,7 @@ Si nota che, essendo in generale $G$ non-commutativo, la scrittura $aH \neq Ha$;
 	Pi\`u precisamente dovrebbe essere $a * H$, ma si elimina $*$ per alleggerire la notazione. Nel caso della somma, diventerebbe $a+ H$.
 \end{obs}
 \begin{teorema}
-	{}{}
+	{}{cl1}
 	Siano $aH$ e $bH$ due classi laterali di $H$ in $G$: o le due classi laterali sono uguali, o non hanno alcun elemento in comune.
 	\begin{proof}
 		Si assume che $\exists x,y \in H: ax= by$. Allora si osserva che, essendo $xH = H = yH$:
@@ -908,35 +908,68 @@ Si nota che, essendo in generale $G$ non-commutativo, la scrittura $aH \neq Ha$;
 \end{teorema}
 \`E possibile decomporre un gruppo in classi laterali. 
 Si considera il caso specifico di $G$ grupp[o finito; ogni elemento $x \in G$ appartiene ad una classe laterale, per esempio $xH$, con $H$ sottogruppo di $G$.
-Allora, $G$ si pu\`o scrivere come unione finita di classi laterali di $H$:
+Allora, $G$ si pu\`o scrivere come unione finita di classi laterali di $H$\footnote{Il simbolo $\bigsqcup$ indica unione di insiemi disgiunti.}:
 \begin{equation}
-	G = \bigcup_{i=1} ^r a _i H
+	G = \bigsqcup_{i=1} ^r a _i H
 \end{equation}
 dove ogni classe laterale \`e distinta dall'altra, altrimenti sarebbero uguali e non si sarebbe aggiunto nessun nuovo elemento di $G$.
 Ogni elemento $ah, \ h \in H$ \`e chiamato \textbf{rappresentante} della classe laterale $aH$.
 
 Lo stesso si pu\`o dire per gruppi infiniti, ma sono ammesse unioni di infinite classi laterali; indicando con $I$ un certo insieme di indicizzazione potenzialmente infinito:
 \begin{equation}
-	G = \bigcup _{i \in I} a _i H
+	G = \bigsqcup _{i \in I} a _i H
 \end{equation}
 con $G$ finito o infinito.
 \begin{teorema}
-	{}{}
+	{}{cl2}
 	Sia $G$ un gruppo e $H$ un sottogruppo finito. Allora il numero di elementi di una certa classe laterale $aH$ \`e il numero di elementi di $H$.
+	\begin{proof}
+		Siano $x,x' \in H : x\neq x'$; allora, $ax \neq ax'$ perch\'e se fosse $ax=ax'$, si potrebbe moltiplicare ambo i membri per $a^{-1} $ e ottenere $x=x'$, il che \`e falso per assunzione di partenza.
+
+		Ne segue che, prendendo $x_1,\ldots,x_n \in H$ tutti diversi, anche $ax_1, \ldots, ax_n$ sono diversi, quindi il numero di elementi di una classe coincide col numero di elementi di $H$.
+	\end{proof}
 \end{teorema}
 Dati $G,H$ come al solito, si indica con $G/H$ l'insieme di tutte le classi laterali sinistre di $H$ in $G$.
 Si chiama \textbf{indice} il numero di tutte le distinte classi laterali di $H$ in $G$ e si indica con $(G:H)$.
-Se $\# S$ \`e il numero di elementi in $S$, allora $\# (G / H) = (G:H)$ e $\# G = (G:1)$.
+Se $|S|$ \`e il numero di elementi in $S$, allora $| (G / H) |= (G:H)$ e $|G| = (G:1)$.
 \begin{teorema}
-	{}{}
-	Sia $G$ un gruppo finito e $H$ un suo sottogruppo. Allora:
-	\begin{enumerate}[(a).]
-		\item $\mathrm{ord}(G) =  (G:H) \cdot \mathrm{ord} (H) $, con $\mathrm{ord} (\cdot )$ che indica l'ordine di un certo gruppo finito;
-		\item dato $L \subset G$ un generico sottogruppo, $\mathrm{ord}(L) $ divide $\mathrm{ord}(G) $;
-		\item dato $a \in G$, il periodo di $a$ divide $\mathrm{ord}(G) $;
-		\item se $G \supset H \supset K$ sono sottogruppi, allora $(G:K) = (G:H)(H:K)$.
-	\end{enumerate}
+	{Teorema di Lagrange}{cl3}
+	Sia $G$ un gruppo finito e $H$ un suo sottogruppo; allora 
+	\[
+	|G| = (G:H) |H|
+	\] 
+\begin{proof}
+		Per teorema \ref{th:cl1}, ogni elemento di $G$ sta in, esattamente, una classe laterale; se $g \in G \Rightarrow g \in gH$ perch\'e $g*e \in gH$.
+		Per teorema \ref{th:cl2}, ciascuna classe ha lo stesso numero di elementi.
+
+		La relazione segue direttamente da queste conclusioni perch\'e ogni classe laterale contiene $|H|$ elementi distinti di $G$ e diversi da tutte le altre che decompongono $G$ stesso (altrimenti le classi sarebbero uguali), il cui numero \`e $(G:H)$.
+\end{proof}	
 \end{teorema}
+\begin{corollario}
+	{}{}
+	Sia $G$ un gruppo finito e $H$ un suo sottogruppo; allora $|H|$ divide $|G|$.	
+\end{corollario}
+\begin{corollario}
+	{}{}
+	Sia $G$ un gruppo e $a \in G$ un suo elemento; il periodo di $a$, divide $|G|$.
+	\begin{proof}
+		Il periodo di $a$ \`e il numero di elementi del sottogruppo generato da $a$ stesso.
+	\end{proof}
+\end{corollario}
+\begin{corollario}
+	{}{}
+	Sia $G$ un gruppo e siano $K \subset H \subset G$ due sottogruppi; allora $(G:K) = (G:H)(H:K)$.
+	\begin{proof}
+Applicando due volte Lagrange:
+\[
+|G| = (G:H) |H| = (G:H) (H:K) |K|
+\] 
+Allo stesso tempo, sempre per Lagrange, $|G| = (G:K) |K|$, quindi:
+\[
+(G:K) |K| = (G:H)(H:K)|K|\implies (G:K)= (G:H)(H:K)
+\] 
+	\end{proof}
+\end{corollario}
 
 
 
