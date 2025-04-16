@@ -857,7 +857,7 @@ e
 Quindi $\mathrm{Hom}(A,B) $ \`e un gruppo.
 \end{proof} 
 
-\subsection{Classi laterali e sottogruppi normali}
+\subsection{Classi laterali}\label{cosets}
 Siano $S,S'$ due sottoinsiemi di un gruppo $(G,*)$; il loro \textbf{prodotto} \`e:
 \begin{equation*}
 	S * S' = \left\{ x \in G : x = s * s', \ s \in S,\ s' \in S' \right\} 
@@ -970,6 +970,146 @@ Allo stesso tempo, sempre per Lagrange, $|G| = (G:K) |K|$, quindi:
 \] 
 	\end{proof}
 \end{corollario}
+
+Si considera d'esempio il gruppo $S_n$ delle permutazioni di $\left\{ 1, \ldots , n \right\} $. 
+Sia $H$ il sottogruppo di $S_n$ che contiene tutte el permutazioni $\sigma $ della forma $\sigma (n) = n $; questo, come sottogruppo, coincide con $S_{n-1} , n > 1$.
+
+Si studiano le classi laterali di $H$; pi\`u in dettaglio, vale il seguente.
+\begin{prop}
+	{}{permcoset}
+	Le sole classi laterali distinte di $H \equiv S_{n-1} , \ n > 1$ come sottogruppo di $S_n$ sono
+	\begin{equation}
+		\tau _1 H , \ldots , \tau _n H
+	\end{equation}
+	con $\tau _i (n) = i, \ \tau_i (i) =n$ e tutti gli altri interi sono lasciati invariati.
+	\begin{proof}
+		Per prima cosa, si mostra che ogni elemento $\sigma \in S_n$ \`e contenuto in una classe laterale. 
+		Intanto si nota che $H$ coincide con $\tau _n H$ perch\'e $\tau _n$ \`e l'identit\`a per definizione;
+		allora, si prende un elemento che non sta in $H$ e si mostra che appartiene ad una classe laterale.
+		Senza perdita di generalit\`a, quindi, sia $\sigma \in S_n : \sigma (n ) = i$; allora
+		\[
+		\tau _i ^{-1} \circ \sigma (n) = \tau _i ^{-1} (i)= n 
+		\] 
+		Questo significa che $\tau ^{-1} _i \sigma \in H \implies \sigma \in \tau _i H$. 
+		Questo dimostra che $S_n / H \equiv \left\{ \tau _i H  \right\} _{i=1} ^n$; manca da mostrare che queste sono tutte distinte.
+
+		Per vederlo, si assume $i\neq j$ e si nota che, $\forall \sigma \in H$, $\tau _i \circ\sigma(n) = \tau _i (n) = i$ e $\tau _j \circ \sigma (n) = j$, quindi $\tau _i H$ e $\tau _j H$ non possono avere elementi in comune,
+	\end{proof}
+\end{prop} 
+Vista la proposizione \ref{prop:permcoset}, il teorema di Lagrange permette anche di concludere che $|S_n| = n |S_{n-1} |$; per induzione, si mostra che, in generale:
+\begin{equation}
+	|S_n| = n!
+\end{equation}
+\begin{teorema}
+	{}{}
+	Sia $f : G \to G'$ un omomorfismo di gruppi. Dato $a' \in \mathrm{Im} (f) \subset G'$, con $a'= f(a)$ per qualche $ a \in G$, allora l'insieme degli elementi $x \in G : f(x ) = a'$ coincide con la classe laterale $a  \mathrm{Ker} (f)$.
+	\begin{proof}
+L'idea \`e di mostrare che i due insiemi sono contenuti uno nell'altro.
+
+Sia $x \in a\mathrm{Ker} (f)$, cio\`e per qualche $h \in \mathrm{Ker} (f), \ x = ah$; allora:
+\[
+f(x) = f(a) *  f(h) = f(a)
+\] 
+cio\`e $x \in a \mathrm{Ker} (f) \implies x \in \left\{ y \in G : f(y) = a' \right\} $.
+
+Sia ora $x \in \left\{ y \in G : f(y) = a' \right\} $; allora:
+\[
+	f(a^{-1} x) = f(a) ^{-1}*  f(x)  = a'^{-1} * a'= e'
+\] 
+cio\`e $a^{-1} x \in \mathrm{Ker} (f)$, per esempio $h = a^{-1} x$, quindi $x = ah\implies x \in a \mathrm{Ker} (f)$.
+	\end{proof}
+\end{teorema}
+
+\subsection{Sottogruppi normali}
+\begin{definizione}
+	{Sottogruppo normale}{}
+	Sia $G$ un gruppo e sia $H$ un suo sottogruppo. Si dice che $H $ \`e \textit{normale} se soddisfa una delle due, equivalenti, condizioni:
+	\begin{enumerate}[NOR 1.]
+		\item $\forall x \in G, \ xH = Hx$, cio\`e $xHx^{-1} = H$;
+		\item $H$ \`e il kernel di qualche omomorfismo di $G$ in qualche altro gruppo.
+	\end{enumerate}
+\end{definizione}
+\noindent Intanto si nota che la condizione NOR 1 non coincide con la condizione $x h x^{-1} = h, \ \forall h \in H$ quando $G$ non \`e commutativo.
+Nel caso di $G$ commutativo, ogni sottogruppo $H$ \`e normale e soddisfa la condizione pi\`u forte di NOR 1, cio\`e proprio $x^{-1} h x = h, \ \forall h \in H$.
+
+Ora si dimostra che NOR 1 $\iff$ NOR 2. L'implicazione NOR 1 $\implies$ NOR 2 si vede di seguito.
+\begin{proof}
+	Sia $H\equiv \mathrm{Ker} (f)$, con $ \ f: G \to G'$ un omomorfismo di gruppi; allora:
+	\[
+	f(xHx^{-1} ) = f(x) f(H) f(x) ^{-1} = e' \in G'
+	\] 
+	Da questo, segue che $x H x^{-1} \subset H, \ \forall x \in G$, quindi vale anche $x^{-1} H x \subset H$\footnote{Visto che tale condizione vale $\forall x \in G$, si pu\`o mandare $x\to x^{-1} $ e, conseguentemente, $x^{-1} \to x$ e ottenere $x^{-1} Hx \subset H$.}, da cui (moltiplicando a sinistra per $x$ e a destra per $x^{-1} $) si ha $H \subset x H x^{-1} $.
+\end{proof}
+L'altra implicazione si dimostra nel seguente teorema e nel successivo corollario.
+
+\begin{teorema}
+	{}{}
+	Sia $G$ un gruppo e sia $H$ un sottogruppo tale che $xH = Hx, \ \forall x \in G$. Se $aH, \ bH$ sono due classi laterali di $H$, allora il prodotto $(aH) * (bH) $ \`e ancora una classe laterale. Inoltre, l'insieme delle classi laterali \`e esso stesso un gruppo, il cui prodotto \`e quello appena descritto.
+
+	\begin{proof}
+		La prima affermazione \`e immediata: $(aH) * (bH) = aHbH = abHH = abH$, usando che $xH = Hx$.
+
+		L'assioma GR 1 \`e osservata all'inizio di \S \ref{cosets}; GR 2 \`e soddisfatto da $eH = H$; GR 3, infine, \`e soddisfatto da $a^{-1 } H$ come inverso di $aH$.
+	\end{proof}
+\end{teorema}
+\noindent Il gruppo delle classi laterali $G / H$ \`e chiamato \textbf{gruppo quoziente} e si dice anche $G$ \textbf{modulo} $H$. 
+Il poter trattare questo come un gruppo \`e dovuto all'assunzione $xH = Hx$.
+\begin{corollario}
+	{Omomorfismo canonico}{}
+	Sia $G$ un gruppo e sia $H$ un sottogruppo tale che $xH = Hx , \ \forall x \in G$. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
+	\begin{proof}
+	\`E evidente che $f$ sia un omomorfismo dalla definizione di prodotto di classi laterali.
+	Per il kernel, si vede che ogni elemento di $H$ \`e automaticamente in $\mathrm{Ker} (f)$ perch\'e se $h \in H \Rightarrow  f(h) = hH \equiv H$.
+Sia, invece, $x \in G:f(x) = xH $ sia l'elemento unit\`a di $G/H$, quindi coincidente con il laterale $H$ stesso: $xH = H$.
+Questo vuol dire che $xe = x$ \`e un elemento di $H$. Quindi $H$ coincide con il kernel di $f$.
+	\end{proof}
+\end{corollario}
+Sia $f:G\to G'$ un omomorfismo. Dato $x \in G$, allora, $\forall k \in \mathrm{Ker} (f)$:
+\[
+	f(xk) = f(x) f(k) = f(x) \implies f(x\mathrm{Ker} (f)) = f(x)
+\] 
+Questo significa che ogni elemento in un laterale di $\mathrm{Ker} (f)$ ha la stessa immagine sotto $f$.
+\begin{corollario}
+	{}{}
+	Sia $f:G\to G'$ un omomorfismo; la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo di $G / H$ con l'immagine di $f$ e si scrive che $G/H \stackrel{\approx}{\to }\mathrm{Im} (f)$.
+	\begin{proof}
+		Si definisce $\overline{f}: G / H \to G' $ t.c. $ xH \mapsto f(xH)$. Si ha che $\overline{f}$ \`e un omomorfismo, infatti:
+		\[
+		\overline{f}(xHyH) = \overline{f}(xyH) = f(xy) = f(x)f(y) = \overline{f}(xH) \overline{f}(yH)
+		\] 
+		Da terminare corollario 4.7, pag. 46.
+	\end{proof}
+\end{corollario}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
