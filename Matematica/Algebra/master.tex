@@ -257,7 +257,7 @@ Da questa deriva la seguente.
 	\end{equation}
 	Inoltre, gli interi $q,r$ sono univocamente determinati da tali condizioni.
 	\begin{proof}
-		Visto che l'insieme degli interi $q$ tali per cui $qm\le n$ \`e limitato superiormente per definizione, si pu\`o usare il buon ordinamento per affermare che esiste un elemento pi\`u grande\footnote{Basta applicare il buon ordinamento all'elemento più piccolo dell'insieme $n-qm$.} tale che
+		Visto che l'insieme degli interi $q$ tali per cui $qm\le n$ \`e limitato superiormente per definizione, si pu\`o usare il buon ordinamento per affermare che esiste un elemento pi\`u grande\footnote{Basta applicare il buon ordinamento all'elemento pi\`u piccolo dell'insieme $n-qm$.} tale che
 		\[
 		qm \le n < (q+1) m = q m + m
 		\] 
@@ -332,7 +332,7 @@ Ora si pu\`o dimostrare il seguente.
 	\end{proof}
 \end{teorema}
 \begin{teorema}
-	{}{}
+	{}{bezid}
 	Siano $m_1,m_2$ due interi positivi e sia $d$ un generatore positivo per l'ideale generato da $m_1,m_2$. Allora $d$ \`e il massimo comune divisore di $m_1,m_2$.
 	\begin{proof}
 		Per definizione, $m_1,m_2 \in J$\footnote{Questo \`e ovvio perch\'e $m_1 = 1m_1 + 0 m_2$ e $m_2  = 0 m_1 + 1 m_2$.}, quindi esiste un intero $q_1$ tale che $m_1=q_1 d$, per cui $d|
@@ -355,19 +355,19 @@ Ora si pu\`o dimostrare il seguente.
 	\item Ogni insieme di numeri interi ha un massimo comune divisore perch\'e tale insieme genera un ideale, il quale, per\`o, contiene un generatore (pi\`u piccolo numero intero in esso contenuto) che \`e un massimo comune divisore per l'insieme di interi iniziale.
 \end{itemize}
 \begin{definizione}
-	{Interi relativamente primi}{relprime}
+	{Interi coprimi}{relprime}
 	Siano $m_1,\ldots,m_r$ degli interi il cui massimo comune divisore \`e $1$. 
-	Allora $m_1,\ldots,m_r$ si dicono \textit{relativamente primi} e, per questi, esistono interi $x_1,\ldots,x_r$ tali che
+	Allora $m_1,\ldots,m_r$ si dicono \textit{coprimi} e, per questi, esistono interi $x_1,\ldots,x_r$ tali che
 	\[
 	x_1m_1   +\ldots + x_r m_r = 1
 	\] 
 	perch\'e $1$ appartiene all'ideale generato dagli $m_i$.
 \end{definizione}
 \`E immediato verificare per definizione di ideale che $1 \in  J \iff J \equiv \mathbb{Z}$.
-Dalla definizione \ref{def:relprime} segue direttamente che ogni insieme di interi relativamente primi genera $\mathbb{Z}$.
+Dalla definizione \ref{def:relprime} segue direttamente che ogni insieme di interi coprimi genera $\mathbb{Z}$.
 \begin{obs}
 	Si potrebbe pensare che se $p$ \`e un numero primo, allora l'insieme $\left\{ p \right\} $ generi $\mathbb{Z}$, cio\`e $p$ generi $\mathbb{Z}$. 
-	Questo \`e ovviamente falso sia perch\'e, evidentemente, $J_p$ non contiene $1$, sia perch\'e $p$ non \`e relativamente primo con se stesso, avendo come altro divisore se stesso oltre che $1$.
+	Questo \`e ovviamente falso sia perch\'e, evidentemente, $J_p$ non contiene $1$, sia perch\'e $p$ non \`e coprimo con se stesso, avendo come altro divisore proprio $p$ oltre che $1$.
 \end{obs}
 \subsection{Fattorizzazione unica}
 \begin{definizione}
@@ -447,6 +447,159 @@ Oltre alle propriet\`a delle relazioni di equivalenza, la congruenza ne soddisfa
 	\item se $x \equiv y \pmod{n} $ e $x'\equiv y' \pmod{n} $, allora $xx' \equiv yy' \pmod{n} $\footnote{Per dimostrare questa, basta notare che $xx' - yy' = x x' + x'y - x'y - y y ' = x' (x-y) + y ( x'-y')$.} e $x + x' \equiv y + y' \pmod{n} $.
 \end{itemize}
 Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come quelli che sono congruenti a $0 \pmod{2} $ (quindi $n = 2m$) e quelli \textbf{dispari} come gli interi che non sono pari, quindi della forma $2m + 1$, per qualche intero $m$.
+
+\subsection{Identit\`a di B\'ezout e equazioni diofantee}
+
+\subsubsection{Identit\`a di B\'ezout}
+L'identit\`a di B\'ezout non \`e altro che quanto espresso in teorema \ref{th:bezid}. Di seguito lo si enuncia senza ricorrere a tale trattazione. 
+\begin{teorema}
+	{Identit\`a di B\'ezout}{}
+	Dati $a,b \in \mathbb{Z}$ non entrambi nulli, esistono altri due interi $m,n$ tali che:
+	\[
+	\operatorname{gcd} (a,b) = am +  bn
+	\] 
+\begin{proof}
+	Si considera l'insieme di tutte le possibili combinazioni lineari positive di $a,b$, dato da $\mathrm{CL} ^+(a,b) : = \left\{ ar+ bs : r, s \in \mathbb{Z} , \ ar + bs > 0 \right\} $. Questo \`e non-vuoto perch\'e, assumendo senza perdita di generalit\`a $a\neq 0$, esistono, per $s =0 $, degli $r\in \mathbb{Z}$ tali che $ra >0 $.
+
+	Visto che $\mathrm{CL} ^+(a,b) \subseteq \mathbb{N}$, per il principio del buon ordinamento, questo ammette un minimo $d$; in quanto tale $\exists m,n \in \mathbb{Z}:d = am + bn$. 
+	Infine, si motra che $d = \operatorname{gcd} (a,b)$, cio\`e si mostrano i seguenti punti.
+	\begin{itemize}
+		\item Si ha $d|a$ e $d|b$.
+
+			Dividendo $a$ per $d$, si ha $a = qd +r$, con $0\le r < d$, quindi
+			\[
+			a a= q ( am +  bn) + r
+			\] 
+			da cui 
+			\[
+			r = (-qm + 1) a + (-qn) b
+			\] 
+			In questo modo, $r$ \`e combinazione lineare di $a,b$ ed \`e minore di $d$, ma questo \`e assurdo perch\'e $d $ era minimo per assunzione, quindi deve essere $r= 0$. Allo stesso modo si mostra $d | b$.
+		\item Se $c|a$ e $c|b \implies c \le d$.
+
+			Questo \`e vero perch\'e se $c|a, \ c|b$, allora (in particolare) $c | (am + bn) $, cio\`e $ c | d \Rightarrow c\le d$.
+	\end{itemize}
+\end{proof}
+\end{teorema}
+\begin{obs}
+	Il teorema afferma l'esistenza di una possibile coppia $(m,n) \in \mathbb{Z} \times \mathbb{Z}$ che soddisfa $\operatorname{gcd} (a,b) = am + bn$, ma non ne specifica l'unicit\`a; di fatto, si vedr\`a che di coppie simili ce ne sono infinite.
+\end{obs}
+\begin{corollario}
+	{}{}
+	Dati $a,b \in \mathbb{Z}$ non entrambi nulli e sia $c\in \mathbb{Z} : c|a$ e $c|b$; allora $c | \operatorname{gcd}(a,b) $. 
+\end{corollario}
+Complessivamente, esattamente come riportato nel teorema \ref{th:bezid}, si \`e dimostrato che il massimo comune divisore di due interi $a,b$ \`e la pi\`u piccola combinazione lineare positiva ottenibile dai due.
+\begin{corollario}
+	{}{c1}
+	Dati $a,b$ non entrambi nulli e $\operatorname{gcd}(a,b) $ il loro massimo comune divsore, allora gli interi 
+	\[
+		a' = \frac{a}{\operatorname{gcd}(a,b) } \hspace{2cm} b' = \frac{b}{\operatorname{gcd}(a,b) }
+	\] 
+	sono coprimi.
+	\begin{proof}
+	Si pu\`o dimostrare in due modi diversi. Nel primo, si assume per assurdo che esista un divisore comune $d> 1 $ di $a' , b'$; se cos\`i fosse, per\`o, $d \cdot \operatorname{gcd}(a,b) $ dividerebbe sia $a$ che $b$ e sarebbe pi\`u grande di $\operatorname{gcd}(a,b) $ stesso, il che \`e assurdo.
+
+	Il secondo fa uso dell'identit\`a di B\'ezout per cui $\operatorname{gcd}(a,b) = am+bn $; dividendo per $\operatorname{gcd}(a,b) $, si ha:
+	\[
+	1 = a'm + b'n 
+	\] 
+	per cui $1$ \`e ilpi\`u piccolo intero positivo  ottenibile come combinazione lineare positiva di $a', b'$, quindi i due sono coprimi.
+	\end{proof}
+\end{corollario}
+\begin{teorema}
+	{}{d1}
+	Siano $a,b,c \in \mathbb{Z}$; se $a|bc$ e $\operatorname{gcd}(a,b) =1$, allora $a|c$.
+	\begin{proof}
+		Per B\'ezout, visto che $\operatorname{gcd}(a,b) = 1$, si ha $1 = an + bm$ per una coppia di numeri $m,n \in \mathbb{Z}$. 
+		Moltiplicando ambo i membri per $c$, ne segue che:
+		\[
+		c = acn + bcm
+		\] 
+		quindi $a | c$ perch\'e, ovviamente, $a | acn$, mentre $a | bcm$ perch\'e, per ipotesi, $a | bc$, quindi $a| (acn + bcm)$, cio\`e $a | c$.
+	\end{proof}
+\end{teorema}
+\noindent Il teorema appena dimostrato \`e alla base del fatto che la fattorizzazione di interi in numeri primi \`e unica.
+
+\subsubsection{Equazioni diofantee}
+
+
+Dati $a,b,c \in \mathbb{Z}$, si dice \textbf{equazione diofantea} un'equazione del tipo	
+\begin{equation}
+	ax + by = c
+\end{equation}
+La sua soluzione \`e una coppia di interi $(\overline{x},\overline{y}) \in \mathbb{Z} \times \mathbb{Z}$ che la soddisfa.
+
+\begin{obs}
+	L'equazione diofantea con $a=b=0$ ha soluzione $\iff c= 0$ e ne ammette infinite, consistenti in tutte le possibili coppie $(\overline{x},\overline{y}) \in \mathbb{Z}\times \mathbb{Z}$, perch\'e ogni coppia soddisfa $0 x + 0y = c$.
+\end{obs}
+Per il caso generale di $a,b$ non entrambi nulli, si ha il seguente.
+\begin{teorema}
+	{}{}
+	L'equazione $ax + by = c$, con $a,b$ non entrambi nulli, ha soluzione $\iff \operatorname{gcd} (a,b )  | c$.
+	\begin{proof}
+		Per l'identit\`a di B\'ezout, si sa che vi \`e soluzione all'equazione 
+		\[
+		ax + by = \operatorname{gcd}(a,b) 
+		\] 
+		L'equazione da risolvere \`e diversa: al posto di $\operatorname{gcd}(a,b) $ c'\`e $c$; allora la dimostrazione si basa sul capire se $\operatorname{gcd}(a,b) $ divide o meno $c$.
+
+		Nel caso in cui $\operatorname{gcd}(a,b) | c$ (per cui si ha $c = k\cdot \operatorname{gcd}(a,b) $ per qualche intero $k$), allora l'equazione diofantea ammette soluzione. Infatti, dopo aver trovato $(m,n) \in \mathbb{Z} \times \mathbb{Z}$ che risolve $am + bn = \operatorname{gcd}(a,b) $, si ha che $(m k , nk) \in \mathbb{Z} \times \mathbb{Z}$ risolve l'equazione diofantea perch\'e 
+		\[
+		k \cdot (am + bn ) = akm + bkn = k\cdot \operatorname{gcd}(a,b) = c
+		\] 
+		Viceversa, se $\operatorname{gcd}(a,b)$ non divide $c$, allora non vi \`e soluzione. Se, per assurdo, vi fosse soluzione, sia questa $(\overline{x},\overline{y})$, allora $a \overline{x}+ b \overline{y}=c$ implica che $\operatorname{gcd}(a,b) | c$ perch\'e $\operatorname{gcd}(a,b) $ divide il membro di sinistra (essendo un divisore sia di $a$ che di $b$). 
+		Questo, per\`o, \`e assurdo perch\'e si era nell'ipotesi in cui $\operatorname{gcd}(a,b) \not | \ c$.
+	\end{proof}
+\end{teorema}
+Si considera il caso in cui l'equazione $ax + by = c$ ha soluzione; si vuole capire se la soluzione \`e unica, o se ve ne sono di pi\`u. 
+Si considera, a tal proposito, l'\textbf{omogenea associata} $ax + by = 0$. 
+\begin{obs}
+	La comodit\`a nel lavorare con l'omogenea associata sta nel fatto che se $(\overline{x}, \overline{y})$ risolve $ax + by = c$ e  $(\gamma, \delta )$ risolve l'omogenea, allora $(\overline{x}+\gamma, \overline{y}+\delta )$ \`e ancora soluzione di $ax + by = c$.
+\end{obs}
+\noindent L'obiettivo, ora, \`e di trovare il numero delle soluzioni per l'omogenea associata.
+Si nota che $ax + by =0 \Rightarrow  axa = - by$; si risolve
+\[
+\frac{a}{\operatorname{gcd}(a,b) } x = - \frac{b}{\operatorname{gcd}(a,b) } y 
+\] 
+Sia $(\gamma, \delta )$ una soluzione di questa; visto che $a/\operatorname{gcd}(a,b) $ e $b / \operatorname{gcd}(a,b) $ sono coprimi\footnote{Vedi corollario \ref{cor:c1}.}, il teorema \ref{th:d1} afferma che $a / \operatorname{gcd}(a,b) $ divide $\delta $, quindi $\delta $ \`e della forma $\frac{a}{\operatorname{gcd}(a,b)}  t$ e $\gamma$, analogamente, \`e della forma $- \frac{b}{\operatorname{gcd}(a,b)} t$.
+
+Al contrario, si nota facilmente che una qualunque coppia della forma $\left( - \frac{b}{\operatorname{gcd}(a,b) }t , \frac{a}{\operatorname{gcd}(a,b) }t\right), \ t \in \mathbb{Z} $ \`e una soluzione dell'omogenea associata. 
+Questo significa che le soluzioni dell'omogenea associata sono tutte di questa forma, pertanto sono infinite.
+
+Da questo discorso, si pu\`o concludere che anche le soluzioni dell'equazione diofantea iniziale $ax + by = c$ sono infinite. 
+Il teorema di seguito permette di concludere, ulteriormente, che \textit{tutte} le soluzioni di $ax + by = c$ sono esprimibili tramite quelle dell'omogenea, quindi equazione originale e omogenea hanno lo stesso numero di soluzioni.
+\begin{teorema}
+	{}{}
+	Se l'equazione $ax + by = c$ ammette soluzione, allora ne ammette infinite. Data $(\overline{x}, \overline{y})$ una sua soluzione, l'insieme $\mathcal{S} $ di tutte le soluzioni di $ax +by = c$ \`e ottenibile come
+	\[
+	\mathcal{S}  = \left\{ (\overline{x}+\gamma, \overline{y}+\delta ) : (\gamma, \delta ) \text{ soluzione dell'omogenea associata}\right\} 
+	\] 
+	\begin{proof}
+		Per quanto detto sopra, si conclude che 
+		\[
+		\left\{(\overline{x}+\gamma, \overline{y}+\delta ) : (\gamma, \delta ) \text{ soluzione dell'omogenea associata}  \right\} \subseteq \mathcal{S} 
+		\] 
+		Si deve mostrare l'inclusione inversa.
+		Questo segue direttamente dal fatto che, se $(\alpha ,\beta )$ \`e soluzione di $ax + by = c$, allora $(\alpha -\overline{x}, \beta - \overline{y})$ \`e soluzione dell'omogenea associata.
+	\end{proof}
+\end{teorema}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Teorema cinese del resto e classi di resto}
+
+
 
 \newpage
 
@@ -541,7 +694,7 @@ Conseguentemente, le regole soddisfatte sono le seguenti:
 Sia, $G$ un gruppo e sia $a \in  G$.
 Si definisce il sottogruppo $H$ di $G$ come quell'insieme avente tutti elementi del tipo $a^n, \ \forall n \in \mathbb{Z}$. 
 In questo senso, $H$ \`e generato da $a$.
-Per mostrare che \`e un gruppo, si nota che :$e \in H$ perch\'e $e = a^ 0 $; dati, poi, $a^n,a^m \in H$, anche $a^{n+m} \equiv a^n a^m \in H $ perch\'e $n+m \in \mathbb{Z}$.
+Per mostrare che \`e un gruppo, si nota che $e \in H$ perch\'e $e = a^ 0 $; dati, poi, $a^n,a^m \in H$, anche $a^{n+m} \equiv a^n a^m \in H $ perch\'e $n+m \in \mathbb{Z}$.
 Infine, l'inverso di ciascun elemento $a^n$ appartiene ad $H$ perch\'e $(a^n)^{-1} \equiv a^{-n}  $, che appartiene ad $H$ perch\'e $-n \in \mathbb{Z}$.
 \begin{definizione}
 	{Gruppo ciclico}{}
@@ -782,7 +935,7 @@ Alcune di queste sono:
 \end{prop}
 \noindent Dalla precedente proposizione, si ottiene il seguente teorema che permette di capire se un omomorfismo \`e un isomorfismo.
 \begin{teorema}
-	{}{}
+	{}{homism}
 	Sia $f:G \to G'$ un omomorfismo di gruppi. Allora:
 	\begin{enumerate}[(a).]
 		\item se $\mathrm{Ker} (f) = \left\{ e \right\} \implies f$ \`e un isomorfismo da $G\to f(G) \equiv \mathrm{Im} (f)$;
@@ -1028,6 +1181,7 @@ cio\`e $a^{-1} x \in \mathrm{Ker} (f)$, per esempio $h = a^{-1} x$, quindi $x = 
 		\item $\forall x \in G, \ xH = Hx$, cio\`e $xHx^{-1} = H$;
 		\item $H$ \`e il kernel di qualche omomorfismo di $G$ in qualche altro gruppo.
 	\end{enumerate}
+	Per indicare che $H$ \`e un sottogruppo normale di $G$ si scrive $H \lhd G$.
 \end{definizione}
 \noindent Intanto si nota che la condizione NOR 1 non coincide con la condizione $x h x^{-1} = h, \ \forall h \in H$ quando $G$ non \`e commutativo.
 Nel caso di $G$ commutativo, ogni sottogruppo $H$ \`e normale e soddisfa la condizione pi\`u forte di NOR 1, cio\`e proprio $x^{-1} h x = h, \ \forall h \in H$.
@@ -1054,6 +1208,11 @@ L'altra implicazione si dimostra nel seguente teorema e nel successivo corollari
 \end{teorema}
 \noindent Il gruppo delle classi laterali $G / H$ \`e chiamato \textbf{gruppo quoziente} e si dice anche $G$ \textbf{modulo} $H$. 
 Il poter trattare questo come un gruppo \`e dovuto all'assunzione $xH = Hx$.
+\begin{obs}
+	Parlando di gruppo quoziente $G / H$ si assumer\`a sempre che $H$ \`e un sottogruppo normale di $G$.
+
+	\`E chiaro che per essere vero che $G / H$ \`e un gruppo quoziente, $H$ deve per forza essere un sottogruppo normale di $G$, da qui il motivo per cui lo si sottintende.
+\end{obs}
 \begin{corollario}
 	{Omomorfismo canonico}{}
 	Sia $G$ un gruppo e sia $H$ un sottogruppo tale che $xH = Hx , \ \forall x \in G$. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
@@ -1071,19 +1230,36 @@ Sia $f:G\to G'$ un omomorfismo. Dato $x \in G$, allora, $\forall k \in \mathrm{K
 Questo significa che ogni elemento in un laterale di $\mathrm{Ker} (f)$ ha la stessa immagine sotto $f$.
 \begin{corollario}
 	{}{}
-	Sia $f:G\to G'$ un omomorfismo; la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo di $G / H$ con l'immagine di $f$ e si scrive che $G/H \stackrel{\approx}{\to }\mathrm{Im} (f)$.
+	Sia $f:G\to G'$ un omomorfismo e sia $H= \mathrm{Ker} (f)$; allora la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo del gruppo quoziente $G / H$ con l'immagine di $f$, cio\`e $G/H \stackrel{\approx}{\longrightarrow}\mathrm{Im} (f)$.
+In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da $f$.
 	\begin{proof}
-		Si definisce $\overline{f}: G / H \to G' $ t.c. $ xH \mapsto f(xH)$. Si ha che $\overline{f}$ \`e un omomorfismo, infatti:
+		Si definisce $\overline{f}: G / H \to G' $ t.c. $ xH \mapsto f(xH)$. Ora si verifica che \`e un isomorfismo usando il teorema \ref{th:homism}. Intanto si ha che $\overline{f}$ \`e un omomorfismo, infatti:
 		\[
 		\overline{f}(xHyH) = \overline{f}(xyH) = f(xy) = f(x)f(y) = \overline{f}(xH) \overline{f}(yH)
 		\] 
-		Da terminare corollario 4.7, pag. 46.
+\`E anche iniettiva perch\'e il suo nucleo sono quei laterali $xH$ tali che $f(xH) = e'$, quindi solamente $H$, che \`e l'unit\`a di $G / H$.
+
+Infine si ha $\mathrm{Im} (\overline{f}) = \mathrm{Im} (f)$ per definizione di $f$.
+
+Quest'ultima considerazione permette di concludere che $G / H \cong \mathrm{Im} (f)$.
 	\end{proof}
 \end{corollario}
+\begin{esempio}
+Si considera, come esempio, $\mathbb{Z}$ come sottogruppo del gruppo additivo $(\mathbb{R}, + )$; il gruppo quoziente $\mathbb{R} / \mathbb{Z}$ \`e chiamato \textbf{gruppo circolare}. 
 
+Dati due numeri reali $x,y \in \mathbb{R}$, si dice che $x \equiv y \pmod{\mathbb{Z}}$ se $x - y \in \mathbb{Z}$; questa definisce una relazione di equivalenza, le cui classi di equivalenza sono esattamente i laterali di $\mathbb{Z}$ in $\mathbb{R}$. 
+Se \`e vero che $x \equiv y \pmod{\mathbb{Z}}$, allora $e^{2\pi i x} = e^{2\pi i y} $ e la mappa $x \mapsto e^{2\pi i x} $ definisce un isomorfismo di $\mathbb{R} / \mathbb{Z}$ nel gruppo moltiplicativo dei numeri complessi che hanno modulo unitario.
+\end{esempio}
+\begin{esempio}
+Siano $\mathbb{C}^*$ e $\mathbb{R}^+$, rispettivamente, il gruppo moltiplicativo dei numeri complessi non-nulli e il gruppo moltiplicativo dei reali positivi.
 
-
-
+Dato $\alpha \in \mathbb{C}^*$, vale $\alpha  = ru$, con $r \in \mathbb{R}^+$ e $\lvert u \rvert = 1$ (si prende $u = \alpha  / \lvert \alpha  \rvert $). 
+L'espressione di $u$ \`e sempre determinata e la mappa $\alpha \mapsto \alpha / \lvert \alpha  \rvert $ \`e un omomorfismo di $\mathbb{C}^*$ in $\mathbb{C}_1 := \left\{ x \in \mathbb{C} : \lvert x \rvert = 1 \right\} $.
+Essendo il nucleo di questo omomorfismo proprio $\mathbb{R}^+$, allora $\mathbb{C}^* / \mathbb{R}^+ \cong \mathbb{C}_1$.
+\end{esempio}
+\begin{center}
+	\color{asdf}Riprendere da pagina 48 dopo esempio 5
+\end{center}
 
 
 
