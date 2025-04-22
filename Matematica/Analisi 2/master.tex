@@ -30,6 +30,7 @@
 \usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{setspace}
+%\usepackage{cmupint}
 \usepackage[perpage]{footmisc} % To reset footnote numbering each page
 \setstretch{1.1}
 
@@ -962,6 +963,337 @@ Da qui la seguente definizione.
 	Il suo sostegno coincide con il grafico della funzione $f$.
 \end{esempio}
 
+\noindent Supponendo che la curva sia di classe $C^1$ senza assumere che $\gamma'(t)$ sia diversa da zero, il suo sostegno pu\`o avere dei punti angolosi. 
+Ad esempio, nel caso di 
+\[
+\begin{cases}
+	x = t^3\\
+	y = t^2
+\end{cases}
+\] 
+si ha $\gamma'(t) = (3t^2 , 2t)$, che si annulla per $t= 0$.
+Eliminando $t$ dalle precedenti equazioni, si verifica che il sostegno della curva ha, effettivamente, una cuspide nell'origine; infatti da $t=\sqrt[3]{x} $, si ottiene $y= x^{2  / 3} $, che ha una cuspide nell'origine.
+
+\begin{obs}
+	Un altro modo per convincersi della necessit\`a di richiedere $\gamma' \neq 0$ \`e dovuto al fatto che se un punto si muove con velocit\`a non-nulla, non pu\`o cambiare direzione della velocit\`a senza avere una discontinuit\`a nella velocit\`a stessa; se, invece, ad un certo istante avesse velocit\`a nulla, potrebbe riprendere il moto in direzione generica senza discontinuit\`a.
+\end{obs}
+Si considera una curva piana $\big(x(t) , y(t)\big)$; l'equazione della retta ad essa tangente nel punto $\big(x(t_0) , y(t_0)\big)$ \`e, quindi:
+\[
+\begin{split}
+	& x = x(t_0) + x'(t_0) (t-t_0)\\
+	& y= y(t_0) + y'(t_0) (t-t_0)
+\end{split}
+\] 
+Se $y'(t_0)  \neq 0$\footnote{Altrimenti, si ricava $t-t_0$ dalla prima perch\'e deve essere $x'(t_0) \neq 0 $ altrimenti al curva non sarebbe regolare.}, si ricava 
+\[
+t-t_0 = \frac{y-y(t_0)}{y'(t_0)}
+\] 
+che sostituito nella prima, permette di concludere che
+\begin{equation}
+y'(t_0) \big(x-x(t_0)\big) = x'(t_0) \big(y-y(t_0)\big)
+\end{equation}
+\begin{esempio}
+	Calcolare la retta tangente alla curva $\gamma$ di equazioni\footnote{Questa curva \`e detta cicloide ed \`e quella descritta da un punto su una circonferenza di raggio $1$ che rotola su una retta.}
+\[
+\begin{cases}
+	x = t- \sin t\\
+	y = 1- \cos t
+\end{cases}
+\] 
+in $P = (\pi / 2 - 1 , 1)$.
+\begin{svolgimento}
+	Intanto si deve verificare che il punto $P$ si trovi sulla curva, cio\`e che corrisponda a qualche $t_0$.
+	Sia $y(t_0) = 1- \cos t_0 \stackrel{!}{=} 1\iff t_0 = \pi/2 + k\pi$. 
+	Da questa condizione, si ottiene
+	\[
+	x(t_0) = t_0 - \sin t_0 = \frac{\pi}{2} + k\pi - 1 \stackrel{!}{=} \frac{\pi}{2}-1 \iff k=0
+	\] 
+	Allora il punto si trova sulla curva in corrispondenza di $t_0 = \pi / 2$.
+	Per finire, si ha $x'(t) = 1 - \cos t$ e $y'(t) = \sin t$, quindi $x'(t_0) = 1$ e $y'(t_0) = 1$. 
+La retta tangente, allora, \`e:
+\[
+y = x - \frac{\pi}{2} + 2
+\] 
+
+\end{svolgimento}
+\end{esempio}
+\begin{definizione}
+	{Curve equivalenti}{}
+	Due curve regolari $\varphi :\left[ a,b \right] \to \mathbb{R}^n $ e $\gamma: \left[ c,d \right] \to \mathbb{R}^n$ si dicono equivalenti se esiste una funzione $p:\left[ a,b \right] \to \left[ c,d \right] $, di classe $C^1$, suriettiva e sempre diversa da $0$, tale che $\varphi (t) = \gamma(p(t))$.
+\end{definizione}
+\noindent Due curve equivalenti hanno, evidentemente, stesso sostegno.
+Inoltre, se $p'>0$, allora $p(t)$ \`e crescente e, quindi, $p(c) = a, \ p(d) = b$; in questo caso, le curve hanno stesso verso, mentre se fosse $p'<0$, avrebbero verso opposto con estremi scambiati, cio\`e $p(c) = b, \ p(d) = a$.
+\begin{definizione}
+	{Versore tangente}{}
+	Il versore tangente ad una curva regolare $\varphi $ \`e definito come
+	\[
+	\tau _\varphi (t) = \frac{\varphi '(t)}{\left\lVert \varphi '(t) \right\rVert }
+	\] 
+Questo ha stesso verso e direzione della velocit\`a della curva e ha lunghezza unitaria.	
+\end{definizione}
+\begin{teorema}
+	{}{}
+	Se due curve $\varphi , \gamma$ sono equivalenti e hanno lo stesso verso, allora i loro versori tangenti coincidono.
+	\begin{proof}
+		Si abbia, allora, $\varphi '(t) = \gamma'(p(t)) p'(t)$ e $\left\lVert \varphi '(t) \right\rVert = \left\lVert \gamma'(p(t)) \right\rVert p'(t)$, visto che, per assunzione, le curve hanno stesso verso (ossia $p' > 0$).
+
+		La tesi \`e dimostrata per calcolo diretto:
+		\[
+		\tau _\varphi  (t) = \frac{\varphi '(t) }{\left\lVert \varphi '(t) \right\rVert } = \frac{\gamma'(p(t)) p'(t)}{\left\lVert \gamma'(p(t)) \right\rVert p'(t)}=\frac{\gamma'(p(t))}{\left\lVert \gamma'(p(t)) \right\rVert }\equiv \tau _\gamma(p(t))
+		\] 
+	\end{proof}
+\end{teorema}
+\subsection{Lunghezza di una curva}
+
+\begin{definizione}
+	{Lunghezza di una curva}{}
+	Sia $\gamma(t), \ a\le t \le b$ una curva di classe $C^1$. La sua lunghezza \`e data da:
+	\[
+	L(\gamma) = \int_{a} ^b \left\lVert \gamma'(t) \right\rVert  \ dt
+	\] 
+\end{definizione}
+	Si nota che 
+	\[
+	\Delta x \overset{\text{def}}{=} \int_{a} ^b \gamma'(t) \ dt \equiv \gamma(b) - \gamma(a)
+	\] 
+	non coincide sempre con la lunghezza della curva perch\'e questo rappresenta lo spostamento: se la curva avesse estremi coincidenti, questo integrale restituirebbe $0$. Quindi si ha il seguente.
+	\begin{teorema}
+		{}{}
+La lunghezza di una curva \`e sempre maggiore o uguale della norma dello spostamento, cio\`e:
+\[
+L(\gamma) = \int_{a} ^b \left\lVert \gamma'(t) \right\rVert \ dt \ge \left\lVert \int_{a} ^b \gamma'(t) \ dt \right\rVert  \equiv \left\lVert \gamma(b) - \gamma(a) \right\rVert 
+\] 
+\begin{proof}
+	Se lo spostamento \`e nullo, questo \`e automaticamente verificato. 
+	Nel caso di $\Delta x \neq 0  $, allora, si ha, per generico vettore $\mathbf{u} $:
+	\[
+	\int_{a} ^b \gamma'(t) \ dt \cdot  \mathbf{u} = \int_{a} ^b \gamma'(t)\cdot  \mathbf{u} \ dt \le \int_{a } ^b \left\lVert \gamma'(t) \right\rVert \left\lVert \mathbf{u}  \right\rVert \ dt = \left\lVert \mathbf{u}  \right\rVert  L
+	\] 
+	con $\cdot $ prodotto scalare.
+	Nel caso particolare di $\mathbf{u}  = \int_{a}^b \gamma'(t) \ dt $, si ha:
+	\[
+	\left\lVert \int_{a} ^b \gamma'(t) \ dt  \right\rVert ^2 \le \left\lVert \int_{a} ^b \gamma'(t) \ dt \right\rVert  L 
+	\] 
+da cui segue la tesi.	
+\end{proof}
+	\end{teorema}
+Sia $\gamma$ il segmento che unisce due punti $\mathbf{x}_1 , \mathbf{x} _2$; questo ha equazione parametrica $\mathbf{x}  = \mathbf{x} _1 + t (\mathbf{x} _2 - \mathbf{x} _1) , \ 0\le  t \le 1$. Allora $\gamma'(t) = \mathbf{x} _2 - \mathbf{x} _1$, pertanto:
+\[
+L(\gamma) = \int_{0} ^1 \left\lVert \gamma'(t) \right\rVert \ dt = \left\lVert \mathbf{x}_2 - \mathbf{x} _1  \right\rVert 
+\] 
+Allora la lunghezza di un segmento che unisce due punti \`e uguale alla distanza tra i punti stessi.
+
+\begin{esempio}
+Si considera nuovamente la curva di equazioni 
+\[
+\begin{cases}
+	x = t^3\\
+	y = t^2
+\end{cases}
+\] 
+Calcolare la lunghezza di tale curva per $0\le t\le a$, con $a > 0$.
+\begin{svolgimento}
+	Per calcolo diretto, si ha:
+	\[
+	L = \int_{0} ^a \sqrt{9t^4 + 4t^2} \ dt = \int_{0} ^a t\sqrt{9t^2 + 4} \ dt
+	\] 
+	Per $u = t^2$, si ottiene:
+	\[
+		L = \frac{1}{2} \int_{0} ^{a^2} \sqrt{9u + 4 }  \ du = \Eval{\frac{1}{27}(9u + 4)^{3 / 2} }{0}{a^2} = \frac{1}{27} \left[ \left(9a^2  + 4 \right) ^{3 / 2}  - 8 \right] 
+	\] 
+\end{svolgimento}
+\end{esempio}
+	Sia data la curva in coordinate polari
+	\[
+		\begin{cases}
+	\rho  = \rho (t)\\
+	\varphi = \varphi (t)
+		\end{cases}, \ a\le t \le b
+	\] 
+corrispondente alle equazioni parametriche
+\[
+\begin{cases}
+	 x = \rho (t) \cos \varphi (t) \\
+	 y = \rho  (t) \sin \varphi (t)
+\end{cases}, \ a \le t \le b
+\] 
+Allora 
+\[
+\begin{cases}
+	x' (t) = \rho '(t) \cos \varphi (t) - \rho (t) \varphi '(t)\sin \varphi (t) \\
+	y'(t) = \rho '(t) \sin \varphi (t) + \rho (t) \varphi '(t) \cos \varphi (t)
+\end{cases} \Rightarrow x'^2 (t) + y'^2(t) = \rho '^2(t) + \rho ^2 (t) \varphi '^2(t)
+\] 
+La lunghezza della curva sar\`a, allora, data da:
+\begin{equation}
+	L = \int_{a} ^b \sqrt{\rho '^2(t) + \rho ^2 (t) \varphi '^2(t)} \ dt
+\end{equation}
+Talvolta, si prende come $t$ lo stesso angolo $\varphi $; in questo caso si ha $\rho  = \rho (\varphi ) , \ \varphi _0 \le  \varphi  \le \varphi _1$, quindi l'equazione diventa
+\begin{equation}
+	L = \int_{\varphi _0} ^{\varphi _1} \sqrt{\rho '^2(\varphi ) + \rho ^2 (\varphi )}  \ d\varphi 
+\end{equation}
+essendo $\varphi ' = 1$.
+\begin{esempio}
+Si considera un \textit{cardioide}, di equazione $\rho  = (1+ \cos\varphi ) , \ 0\le \varphi \le  2\pi $. Calcolarne la lunghezza.
+\begin{svolgimento}
+	Si ha 
+	\[
+	L = \int_{0} ^{2\pi} \sqrt{\sin^2 \varphi  + (1+ \cos\varphi )^2 }  \ d\varphi  = \int_{0} ^{2\pi} \sqrt{2 + 2 \cos \varphi  }  \ d\varphi = 2 \int_{0} ^{2\pi}\left\lvert \cos \frac{\varphi }{2}  \right\rvert   \ d\varphi 
+	\] 
+	Prendendo $2 u = \varphi $:
+	\[
+	L = 4 \int_{0} ^\pi \lvert \cos u \rvert  \ du = 8 \int_{0} ^{\pi / 2} \cos u \ du = 8 
+	\] 
+\end{svolgimento}
+\end{esempio}
+\begin{teorema}
+	{Lunghezza di curve equivalenti}{}
+	Due curve equivalenti $\sigma , \gamma$ hanno stessa lunghezza.
+	\begin{proof}
+		Sia $\sigma (t) = \gamma(p(t))$, con $p'(t) \neq 0 $. 
+		Si assume, senza perdita di generalit\`a, $p'>0$, quindi $\left\lVert \sigma '(t) \right\rVert = \left\lVert \gamma'(p(t)) \right\rVert p'(t)$, pertanto:
+\[
+L (\sigma ) = \int_{c} ^d \left\lVert \sigma '(t) \right\rVert \ dt = \int_{c} ^d \left\lVert \gamma '(p(t)) \right\rVert p'(t) \ dt 
+\] 
+Cambiando variabili con $ u = p(t)$ e usando che $p'>0$, per cui si ha $p(c) = a , \ p(d)= b  $, si ha:
+\[
+L(\sigma ) = \int_{c} ^d \left\lVert \gamma'(p(t))  \right\rVert p'(t) \ dt = \int_{a} ^b \left\lVert \gamma' (u)\right\rVert  \ du \equiv L(\gamma)
+\] 
+Se, invece, fosse $p'<0$, si avrebbe un segno $-$ dovuto a $p'$, ma gli estremi di integrazione verrebbero invertiti, quindi il risultato \`e consistente:
+\[
+	L(\sigma ) = - \int_{c} ^d \left\lVert \gamma'(p(t)) \right\rVert p'(t) \ dt = \int_{b} ^a \left\lVert \gamma'(u)  \right\rVert  \ du \equiv L(\gamma)
+\] 
+	\end{proof}
+\end{teorema}
+Inscrivendo in una circonferenza un poligono regolare, il perimetro dell'ultimo \`e sempre minore della lunghezza della circonferenza e la approssima tanto meglio, quanto pi\`u aumenta il numero di lati. 
+Di fatto, la lunghezza della circonferenza si definisce come il limite dei perimetri dei poligono regolari inscritti.
+
+Usando questo ragionamento, si ottiene la lunghezza di una curva approssimandola con delle spezzate con vertici sul suo sostegno.
+
+Sia $\gamma : \left[ a,b \right] \to \mathbb{R}^n$ una curva di classe $C^1$. 
+Si divide $\left[ a,b \right] $ in $N$ sottintervalli con estremi $a= t_0 < t_1< \ldots< t_N = b$;
+unendo i corrispondenti $\gamma(t_0), \gamma(t_1), \ldots, \gamma(t_N)$, si ottiene una spezzata $\Sigma$, i cui vertici sono sul sostegno della curva $\gamma$.
+
+La lunghezza di $\Sigma$ sar\`a, evidentemente, minore della lunghezza della curva perch\'e, per quanto visto:
+\[
+	\begin{split}
+		&\left\lVert \gamma(t_i) - \gamma(t_{i-1} ) \right\rVert  = \left\lVert \int_{t_{i-1} } ^{t_i} \gamma'(t) \ dt  \right\rVert \le  \int_{t_{i-1} } ^{t_i} \left\lVert \gamma'(t) \right\rVert \  dt\\
+		&\Rightarrow L(\Sigma) = \sum_{i=1}^{N} \left\lVert \gamma(t_i) - \gamma(t_{i-1} ) \right\rVert \le \sum_{i=1}^{N} \int_{t_{i-1} } ^{t_i} \left\lVert \gamma'(t) \right\rVert \ dt = \int_{a} ^b \left\lVert \gamma'(t) \right\rVert \ dt 
+	\end{split}
+\] 
+Tuttavia, prendendo $t_i$ molto vicini fra loro, si pu\`o far avvicinare $L(\Sigma)$ a $L(\gamma)$ a piacimento.
+Per dimostrare questo, occorre il seguente lemma.
+\begin{lemma}
+	{}{lemcurv}
+	Sia $\mathbf{v} (t):\left[ \alpha ,\beta  \right] \to \mathbb{R}^n$ e sia $\tau \in \left[ \alpha ,\beta  \right] $; allora si ha:
+	\[
+	\left\lVert \int_{\alpha } ^{\beta } \mathbf{v} (t)  \ dt\right\rVert \ge \int_{\alpha } ^\beta  \left\lVert \mathbf{v} (t)  \right\rVert  \ dt   - 2 \int_{\alpha } ^\beta \left\lVert \mathbf{v} (t) - \mathbf{v} (\tau ) \right\rVert  \ dt 
+	\] 
+\begin{proof}
+	Si ha:
+	\[
+	\mathbf{v} (\tau ) (\beta -\alpha ) = \int_{\alpha } ^{\beta } \mathbf{v} (\tau ) \ dt = \int_{\alpha } ^\beta \mathbf{v} (t) \ dt - \int_{\alpha } ^\beta \big[ \mathbf{v} (t) - \mathbf{v} (\tau ) \big]  \ dt 
+	\] 
+Usando la disuguaglianza triangolare:
+\[
+	\left\lVert \mathbf{v} (\tau ) \right\rVert (\beta - \alpha ) \le \left\lVert \int_{\alpha } ^\beta \mathbf{v} (t) \ dt  \right\rVert  + \left\lVert \int_{\alpha } ^\beta \big[\mathbf{v} (t) - \mathbf{v} (\tau )\big] \ dt \right\rVert \le \left\lVert \int_{\alpha } ^\beta \mathbf{v} (t) \ dt \right\rVert + \int_{\alpha } ^\beta \left\lVert \mathbf{v} (t) - \mathbf{v}(\tau )  \right\rVert \ dt 
+\] 
+Sempre per la disuguaglianza triangolare, risulta $\left\lVert \mathbf{v} (\tau ) \right\rVert \ge \left\lVert \mathbf{v} (t) \right\rVert - \left\lVert \mathbf{v} (t)  - \mathbf{v} (\tau ) \right\rVert  $, quindi, integrando:
+\[
+\left\lVert \mathbf{v} (\tau ) \right\rVert (\beta -\alpha ) \ge \int_{\alpha } ^\beta \left\lVert \mathbf{v} (t) \right\rVert \ dt - \int_{\alpha } ^\beta \left\lVert \mathbf{v} (t) - \mathbf{v} (\tau ) \right\rVert  \ dt 
+\] 
+Confrontando le due disuguaglianze ottenute, si ottiene direttamente la tesi.
+\end{proof}	
+\end{lemma}
+\begin{teorema}
+	{}{}
+	La lunghezza di una curva regolare $\gamma$ \`e l'estremo superiore delle lunghezze delle spezzate con i vertici sul suo sostegno.
+	\begin{proof}
+		La funzione $\gamma'$ \`e continua in $\left[ a,b \right] $, quindi \`e uniformemente continua nello stesso.
+		Fissato, dunque, $\varepsilon >0, \ \exists \delta >0 $ tale che se $t, \tau \in \left[ a,b \right] $, allora $\lvert t-\tau  \rvert <\delta \Rightarrow \left\lVert \gamma'(t) - \gamma'(\tau )   \right\rVert < \varepsilon $.
+
+		Si divide $\left[ a,b \right] $ in intervalli pi\`u piccoli, con estremi $a = t_0 < t_1 < \ldots < t_N = b$ in modo tale che ogni $\left[ t_{i-1} ,t_i \right] $ abbia lunghezza $\lvert t_i - t_{i-1}  \rvert < \delta $.
+
+		Per il lemma \ref{lem:lemcurv}, si ha:
+		\[
+		\left\lVert \gamma(t_i) - \gamma(t_{i-1} ) \right\rVert  = \left\lVert \int_{t_{i-1} } ^{t_i} \gamma'(t) \ dt  \right\rVert \ge  \int_{t_{i-1} } ^{t_i} \left\lVert \gamma'(t) \right\rVert  \ dt - 2 \int_{t_{i-1} } ^{t_i} \left\lVert \gamma'(t) - \gamma'(\tau ) \right\rVert \ dt
+		\] 
+		con $\tau $ punto generico in $\left[ a,b \right] $.
+		Per costruzione, risulta $\left\lVert \gamma'(t) - \gamma'( \tau ) \right\rVert < \varepsilon $, pertanto
+		\[
+		\left\lVert \gamma(t_i) - \gamma(t_{i-1})  \right\rVert \ge  \int_{t_{i-1} } ^{t_i} \left\lVert \gamma' (t) \right\rVert \ dt - 2 \varepsilon  ( t_i - t_{i-1} )
+		\] 
+	Sommando su $i= 1, \ldots, N$ al primo membro, si ottiene la lunghezza della spezzata.
+	Al secondo membro, la somma degli integrali restituisce la lunghezza della curva, mentre quella dell'altro termine restituisce $2\varepsilon  (b-a)$. 
+	In conclusione, si \`e trovato
+	\[
+	L(\Sigma) \ge  \int_{a} ^b \left\lVert \gamma'  (t)\right\rVert \ dt - 2\varepsilon (b-a)
+	\] 
+	Conseguentemente, anche l'estremo superiore delle lunghezze delle spezzate \`e maggiore della stessa quantit\`a; per l'arbitrariet\`a di $\varepsilon $, tale $\sup$ \`e maggiore o uguale alla lunghezza della curva. 
+
+	Avendo gi\`a mostrato la disuguaglianza opposta, segue l'uguaglianza e, al contempo, anche la tesi.
+	\end{proof}
+\end{teorema}
+Si definisce la lunghezza di una porzione di curva $\gamma$ nell'estremo $\left[ a,t \right] $ come
+\[
+s(t) = \int_{a} ^t \left\lVert \gamma'(r) \right\rVert \ dr
+\] 
+Al variare di $t \in \left[ a,b \right] $, $s(t)$ varia in $\left[ 0,L \right] $; se $\gamma$ \`e regolare, allora $s(t)$ \`e strettamente crescente, visto che $ s'(t) = \left\lVert \gamma'(t) \right\rVert > 0$.
+
+Sia, allora, $t(s) $ la sua inversa, che mappa $\left[ 0, L \right] \to \left[ a,b \right] $ e 
+\[
+	t'(s) = \Eval{\frac{1}{s'(t)}}{t = t(s)}{}  = \frac{1}{\left\lVert \gamma'(t(s)) \right\rVert }
+\] 
+Ponendo $\psi (s) = \gamma(t(s))$, la curva $\psi $ \`e equivalente a $\gamma$ e ha stesso verso; inoltre
+\[
+\psi' (s) = \gamma'(t(s)) t'(s) = \frac{\gamma'(t(s))}{\left\lVert \gamma'(t(s)) \right\rVert }
+\] 
+cio\`e $\left\lVert \psi '(s) \right\rVert = 1$ e la velocit\`a coincide col versore tangente.
+
+	Nel caso in cui $\gamma$ \`e il grafico di una funzione $y(x)$, si ha $s'(x) = \sqrt{1 + y'^2 (x)} $; la qantit\`a $s$ \`e detta \textbf{ascissa curvilinea}. 
+	In casi del genere, la lunghezza della curva coincide con l'integrale $\int_{\psi }  ds$.
+
+	In generale, la notazione $\int_{\gamma} ds$ si pu\`o usare per indicare la lunghezza di una generica curva $\gamma$, essendo $ds = \left\lVert \gamma'(t) \right\rVert dt $.
+	Tale notazione \`e dovuta al fatto che la lunghezza del segmento infinitesimo tra i punti $\gamma(t)$ e $\gamma(t+dt)$ \`e
+	\[
+	ds = \left\lVert \gamma(t+dt) - \gamma(t) \right\rVert = \left\lVert d\gamma(t) \right\rVert  = \left\lVert \gamma'(t) \right\rVert  dt 
+	\] 
+In questo modo, si pu\`o dare la definizione di \textbf{integrale curvilineo} di una funzione $f$.
+\begin{definizione}
+	{Integrale curvilineo}{}
+	Sia $f$	una funzione; il suo integrale curvilineo \`e definito come:
+	\[
+	\int_{\gamma} f \ ds = \int_{a} ^b f(\gamma(t)) \left\lVert \gamma' (t)\right\rVert \ dt 
+	\] 
+\end{definizione}
+Se, poi, $\gamma$ e $\sigma $ sono due curve equivalenti, l'integrale curvilineo di $f$ su $\sigma $ coincide con quello su $\gamma$:
+\begin{equation}
+	\int_{\gamma}  f \ ds = \int_{\sigma } f \ ds
+\end{equation}
+\begin{proof}
+	Sia $\sigma (t) = \gamma(p(t))$. Per conto diretto, assumendo senza perdita di generalit\`a che $p' > 0$:
+	\[
+		\begin{split}
+			\int_{\sigma } f \ ds &= \int_{c} ^d f(\sigma (t)) \left\lVert \sigma '(t) \right\rVert  \ dt = \int_{c} ^d f\big(\gamma(p(t))\big)\left\lVert \gamma'(p(t)) \right\rVert p'(t) \ dt\\
+					      &= \int_{a} ^b f(\gamma(r)) \left\lVert \gamma'(r) \right\rVert  \ dr \equiv \int_{\gamma} f \ ds
+		\end{split}
+	\] 
+dove si \`e preso $r = p(t)\Rightarrow dr = p'(t) \ dt $. 
+Se fosse $p'<0$, si otterrebbe lo stesso risultato.
+\end{proof}
+\begin{esempio}
+Calcolare, per $\gamma$ arco di parabola di equazioni $x = t  , \ y = t^2, \ 0\le t \le  1$, l'integrale
+\[
+\int_{\gamma}  \sqrt{1 + 3x^2 +y }  \ ds
+\] 
+\begin{svolgimento}
+	Si ha $ds = \sqrt{1 + 4t^2}  dt  $, quindi:
+	\[
+	\int_{\gamma} \sqrt{1+ 3x^2 + y}  \ ds = \int_{0} ^1 (1+4t^2) \ dt = \frac{7}{3}
+	\] 
+	
+\end{svolgimento}
+\end{esempio}
 
 
 
@@ -974,4 +1306,7 @@ Da qui la seguente definizione.
 
 
 
-\end{document}
+
+
+
+\end{document} 
