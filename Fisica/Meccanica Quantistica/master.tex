@@ -25,7 +25,6 @@
 \usepackage{caption}
 \usepackage{tcolorbox}
 \usepackage{nicematrix}
-\usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{graphicx}
@@ -1316,7 +1315,7 @@ Analogamente a quanto fatto per $\hat{J}$, si usano $\hat{L}^2, \hat{L}_z$ con a
 \] 
 Usando coordinate sferiche, $\hat{\mathbf{L}}$ nello spazio delle coordinate diventa:
 \[
-	\hat{\mathbf{L} } = r \hat{r} \times (i\hbar ) \left[ \hat{r} \partial _r + \frac{1}{r} \hat{\theta } \partial _\theta + \frac{1}{r \sin \theta } \partial _\varphi \right] = -i \hbar  \left[ \hat{\varphi } \partial _\theta - \frac{1}{\sin \theta } \hat{\theta } \partial _\varphi  \right] 
+	\hat{\mathbf{L} } = r \hat{r} \times (-i\hbar ) \left[ \hat{r} \partial _r + \frac{1}{r} \hat{\theta } \partial _\theta + \frac{1}{r \sin \theta } \partial _\varphi \right] = -i \hbar  \left[ \hat{\varphi } \partial _\theta - \frac{1}{\sin \theta } \hat{\theta } \partial _\varphi  \right] 
 \] 
 Si definiscono\footnote{In $\hat{\ell }_z$ si ha solo componente $\varphi $ perch\'e \`e l'unica che contribuisce alla componente $z$ di $\hat{\mathbf{L} }$, infatti $\hat{z} = \hat{r}\cos \theta   -  \hat{ \theta }\sin \theta  $.}:
 \begin{equation}\label{lL}
@@ -1346,7 +1345,7 @@ Si cerca soluzione con la separazione delle variabili: $\psi (r,\theta ,\varphi 
 		Infine, dovendo risultare $\varphi  +2\pi = \varphi $, si richiede che $\Phi (\varphi + 2\pi ) = \Phi(\varphi ) \Rightarrow e^{im (2\pi + \varphi ) } = e^{im\varphi } \iff e^{i 2\pi m} = 1 \iff m \in \mathbb{Z}$. Allora $\hat{L}_z$ pu\`o avere solo autovalori del tipo $0, \pm\hbar , \pm 2 \hbar , \ldots$.
 	\item \textbf{Soluzione della prima equazione.} 
 
-		Si inserisce $\Phi_m(\varphi )$ e si usa $\partial^2 \Phi_m(\varphi ) =-m^2 \Phi_m(\varphi) $, ottenendo:
+		Si inserisce $\Phi_m(\varphi )$ e si usa $\partial^2_\varphi  \Phi_m(\varphi ) =-m^2 \Phi_m(\varphi) $, ottenendo:
 		\[
 		- \left[ - \frac{m^2}{\sin^ 2 \theta } + \frac{1}{\sin\theta } \frac{\partial }{\partial \theta } \left(\sin \theta \frac{\partial }{\partial \theta } \right)  \right] \Theta(\theta ) = \ell (\ell +1) \Theta(\theta )
 		\] 
@@ -1385,7 +1384,7 @@ Usando $\chi (r) = r R(r)$, tale che $\chi (r) \to 0$ per $r\to 0$, e definendo 
 \begin{equation}
 	\frac{d ^2}{d r^2} \chi (r) + \frac{2m}{\hbar ^2}\Big(E - U_\text{eff}(r)\Big) \chi (r) = 0
 \end{equation}
-Vista l'equazione differenziale, la soluzione dipender\`a dai parametri $E, \ell $, quindi un autostato si esprime, in generale, come $\ket{E,\ell ,m} $ e costituiscono un sistema ortonormale, che \`e anche non-degenere, conclusione derivante dal fatto che il problema per $R(r)$ \`e unidimensionale e relativo a moto limitato, quindi la coppia di autovalori $E, \ell $, relativi rispettivamente a $\hat{H}, \hat{\ell }^2$, \`e non-degenere. Visto che le autofunzioni dipendono da $m$, lo si include per la descrizione degli stati.
+Vista l'equazione differenziale, la soluzione dipender\`a dai parametri $E, \ell $, quindi un autostato si esprime, in generale, come $\ket{E,\ell ,m} $ e costituiscono un sistema ortonormale. Questo sistema \`e anche non-degenere perch\'e il problema per $R(r)$ \`e unidimensionale e relativo a moto limitato, quindi la coppia di autovalori $E, \ell $, relativi rispettivamente a $\hat{H}, \hat{\ell }^2$, \`e non-degenere. Visto che le autofunzioni dipendono da $m$, lo si include per la descrizione degli stati.
 
 Si assume $R(r) \propto r^a$, con $a$ da determinare; per farlo, si sostituisce nell'equazione differenziale e si manda $r\to 0 $, facendo rimanere l'equazione nel limite asintotico di $r$ piccoli:
 \begin{equation}
@@ -1433,7 +1432,7 @@ L'energia minima del sistema \`e $E_1 = - m_e \alpha ^2 c^2 / 2$ e, visto che si
 \begin{equation}
 	\psi _{100} (r,\theta ,\varphi ) = R_{10} (r) Y_{00} (\theta ,\varphi ) = \frac{1}{\sqrt{\pi \ell _B^3} } e^{- r / \ell _B} 
 \end{equation}
-Essendo il sistema nello stato fondamentale invariante per rotazioni, deve anche valere $\braket{0|\hat{\mathbf{X} }|0} = 0$; questo perch\'e se esistesse grandezza vettoriale, sistema non pi\`u invariante per rotazioni $\Rightarrow $ si distingue direzione e verso del vettore. Per lo stesso motivo: $\braket{0|\hat{\mathbf{p} }|0}  =0$\footnote{\`E ragionevole che sia $0$ perch\'e lo stato \`e legato, nel senso che l'elettrone \`e vincolato a un moto limitato ad una certa regione dello spazio. Se non fosse nullo, il sistema andrebbe all'infinito lungo quella particolare direzione.}.
+Essendo il sistema nello stato fondamentale invariante per rotazioni, deve anche valere $\braket{0|\hat{\mathbf{X} }|0} = 0$; si distinguerebbero direzione e verso del vettore. Per lo stesso motivo: $\braket{0|\hat{\mathbf{p} }|0}  =0$\footnote{\`E ragionevole che sia $0$ perch\'e lo stato \`e legato, nel senso che l'elettrone \`e vincolato a un moto limitato ad una certa regione dello spazio. Se non fosse nullo, il sistema andrebbe all'infinito lungo quella particolare direzione.}.
 
 Si pu\`o riscrivere $\psi _{100} $ in termini di $\overline{r} = r / \ell _B$, con normalizzazione $(\sqrt{\pi} )^{-1} \Rightarrow \psi _{100} = \frac{1}{\sqrt{\pi} }e^{ - \overline{r}} $. 
 
@@ -2385,7 +2384,7 @@ Si dividono i due casi, a seconda del valore di $\gamma$:
 \begin{itemize}
 	\item se $\gamma=0$, le componenti della combinazione sopra devono annullarsi, quindi $\alpha  = - \beta $, quindi
 		\begin{equation}
-			\ket{00} = \frac{\ket{\uparrowp\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} }
+			\ket{00} = \frac{\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} }
 		\end{equation}
 		comprensivo di normalizzazione;
 	\item se $\gamma=2$, deve risultare $\alpha = \beta $, quindi
@@ -2394,8 +2393,6 @@ Si dividono i due casi, a seconda del valore di $\gamma$:
 		\end{equation}
 		anche questo comprensivo di normalizzazione.
 \end{itemize}
-
-
 
 
 
