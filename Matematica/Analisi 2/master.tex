@@ -1294,19 +1294,141 @@ Calcolare, per $\gamma$ arco di parabola di equazioni $x = t  , \ y = t^2, \ 0\l
 	
 \end{svolgimento}
 \end{esempio}
+\subsection{Superfici}
+Similmente alle curve, le superfici sono applicazioni di un insieme $K \subset \mathbb{R}^2 \to \mathbb{R}^n$. 
+Per semplicit\`a, si considerer\`a sempre $n=3$ e si assumer\`a di avere a che fare con \textbf{superfici semplici}, cio\`e che non si intersecano, e \textbf{connesse}, che significa, a grandi linee, che sono composte da un unico corpo.
+\begin{definizione}
+	{Superfici regolari}{}
+Una superficie regolare \`e un'applicazione $\varphi (u,v):K \subset \mathbb{R}^2 \to \mathbb{R}^3$, con $K$ ottenuto dalla chiusura di un aperto limitato e connesso, con le seguenti propriet\`a:
+\begin{enumerate}[(a).]
+	\item $\varphi \in C^1(K)$;
+	\item la restrizione di $\varphi $ all'interno di $K$ \`e un'applicazione iniettiva;
+	\item $\varphi _u (\mathbf{w}_0) \wedge \varphi _v(\mathbf{w} _0) \neq  0 , \ \forall \mathbf{w} _0 \in K^i$.
+\end{enumerate}
+L'immagine $\varphi (K)$ \`e un insieme di $\mathbb{R}^3$ detto \textbf{sostegno} della superficie.
+\end{definizione}
+\begin{obs}
+	[Condizioni su $K$]
+Volendo evitare che la superficie sia costituita da due parti staccate, o congiunte da una curva, l'ipotesi $K:= \overline{K^i}$ (cio\`e ottenuto come chiusura della sua parte interna), con l'aggiunta che sia connesso, risulta necessaria. 
+Cos\`i facendo, la condizione $K = \overline{K^i}$ esclude che il sostegno della superficie sia composto da due parti congiunte da una curva, mentre la connessione esclude che tale sostegno sia composto da due pezzi staccati.
+\end{obs}
+Nelle curve regolari, si aveva la possibilit\`a di definire una \textit{retta tangente}; analogamente, nelle superfici regolari si pu\`o definire un \textit{piano tangente}.
+Per farlo, si considera un punto $\mathbf{w} _0 = (u_0,v_0) \in K^i$ e una curva regolare $\mathbf{w} (t), \ a \le t\le b$ passante per $\mathbf{w} _0 $ stesso (cio\`e $\exists t_0 \in (a,b) : \mathbf{w} (t_0) = \mathbf{w} _0$).
 
+L'applicazione composta $\gamma(t) = \varphi (\mathbf{w} (t)) = \varphi (u(t), v(t))$ \`e una curva in $\mathbb{R}^3$ passante per il punto $\mathbf{x} _0 = \gamma(t_0) = \varphi (\mathbf{w} _0)$\footnote{Questo perch\'e sia $u$ che $v$, cio\`e i gradi di libert\`a della superficie, dipendono direttamente da $t$ e variano insieme, quindi complessivamente si ha una curva, avendo praticamente eliminato un grado di libert\`a.}.
+La retta $\gamma(t_0) + \gamma'(t_0) (t-t_0)$ \`e tangente al sostegno di $\gamma$ in $\mathbf{x} _0$, con 
+\[
+\gamma'(t_0) = \varphi _u(\mathbf{w} _0) u'(t_0) + \varphi _v (\mathbf{w} _0) v'(t_0)
+\] 
+Da questo, si vede che $\gamma'(t_0)$, che \`e il vettore che d\`a la direzione della retta tangente, \`e combinazione lineare dei vettori $\mathbf{r}  = \varphi _u (\mathbf{w} _0)$ e $\mathbf{s} = \varphi _v(\mathbf{w} _0)$, che dipendono dalla superficie $\varphi $ e dal punto $\mathbf{w} _0$, ma non dalla curva $\mathbf{w} (t)$.
+Facendo variare la curva, il vettore $\gamma'(t_0)$ descrive un piano fintanto che $\mathbf{r} ,\mathbf{s} $ sono linearmente indipendenti, da cui la condizione
+\begin{equation}
+	\mathbf{r} \wedge \mathbf{s} = \varphi _u (\mathbf{w} _0) \wedge \varphi _v(\mathbf{w} _0) \neq 0
+\end{equation}
+Quando questa \`e soddisfatta $\forall \mathbf{w} _0 \in K^i$, la superficie si dice regolare.
+\begin{esempio}\label{sf}
+La superficie di equazioni
+\[
+\begin{cases}
+	x = \sin u  \cos v\\
+	y = \sin u \sin v \\
+	z = \cos u
+\end{cases}, \ 0\le u\le \pi,\ 0\le  v \le 2\pi
+\] 
+\`e la sfera di raggio $1$ e centro $0$. 
+Si ha
+\[
+	\begin{split}
+		&\varphi _u = (\cos u \cos v , \cos u \sin v, -\sin u); \ \varphi _v = (-\sin u \sin v , \sin u \cos v , 0 )\\
+		&\Rightarrow \varphi _u \wedge \varphi _v = \sin u ( \sin u \cos v, \sin u \sin v, \cos u)
+	\end{split}
+\] 
+Quindi, nei punti interni a $K = \left[ 0,\pi \right] \times \left[ 0,2\pi \right] $, si ha $\left\lVert \varphi _u \wedge \varphi _v \right\rVert = \lvert \sin u \rvert  = \sin u  >0 $. 
+Allora la superficie \`e regolare.
+\end{esempio}
+\begin{esempio}
+Sia $f(x,y) \in C^1$ e sia il suo grafico una superficie regolare in $\mathbb{R}^3$; in questo caso, l'applicazione $\varphi $ di componenti 
+\[
+\begin{cases}
+	x = x\\
+	y= y \\
+	z= f(x,y)\\
+\end{cases}	
+\] 
+con $\varphi _x = (1,0,f_x) , \ \varphi _y = (0,1,f_y) \Rightarrow \varphi _x \wedge \varphi _y = (-f_x, -f_y, 1)$ \`e una superficie regolare perch\'e $\left\lVert \varphi _x \wedge \varphi _y \right\rVert = \sqrt{1+ f_x^2 + f_y^2 } > 0$.
 
+\end{esempio}
+\begin{esempio}
+Trovare il versore normale alla superficie di equazioni parametriche 
+\[
+\begin{cases}
+	x = u + v \\
+	y = u -v \\
+	z= u^2 + v^2
+\end{cases}
+\] 
+\begin{svolgimento}
+Si ha $\varphi _u = (1,1,2u), \ \varphi _v = (1,-1,2v)$, per cui $\varphi _u \wedge \varphi _v = (2v+2u, 2u-2v,-2) $. 
+Il versore \`e dato da:
+\[
+\hat{n} = \frac{2 (u+v , u-v ,-1)}{\sqrt{4 \left[ (u+v)^2 + (u-v)^2 + 1  \right] } } = \frac{(u+v,u-v,-1)}{\sqrt{1+2u^2 + 2v^2} }
+\] 
 
+\end{svolgimento}
+\end{esempio}
+Se la superficie \`e il grafico di una funzione $f(x,y)$, usando come parametri le coordinate $x,y$ stesse, per quanto visto, si ha
+\[
+	\begin{split}
+		&\varphi _x \wedge   \varphi _y = (-f_x , -f_y ,1) \implies \left\lVert \varphi _x \wedge \varphi _y \right\rVert = \sqrt{1+ f_x^2 + f_y^2} = \sqrt{1+ \left\lVert \nabla f \right\rVert ^2} \\
+		&\Rightarrow \hat{n}=\frac{(-f_x,-f_y,1)}{\sqrt{1+\left\lVert \nabla f \right\rVert ^2} }
+	\end{split}
+\] 
+Allora si pu\`o osservare che la terza componente di $\hat{n}$ \`e sempre positiva, quindi $\hat{n}$ punter\`a sempre \textit{verso l'alto}.
 
-
-
-
-
-
-
-
-
-
+\subsection{Area di una superficie}
+\begin{definizione}
+	{Area di una superficie}{}
+	Se $\varphi : L \to \mathbb{R}^3$ \`e una superficie regolare, la sua area \`e data da:
+	\[
+	A(\varphi ) = \int_{K}  \left\lVert \varphi _u \wedge \varphi _v \right\rVert \ du dv
+	\] 
+	
+\end{definizione}
+\begin{esempio}
+Calcolare l'area della sfera di raggio $1$, ossia della superficie parametrizzata da
+\[
+\begin{cases}
+	x = \sin u  \cos v\\
+	y = \sin u \sin v \\
+	z = \cos u
+\end{cases}, \ 0\le u\le \pi,\ 0\le  v \le 2\pi
+\] 
+\begin{svolgimento}
+	Come visto in esempio \ref{sf}, $\left\lVert \varphi _u \wedge \varphi _v \right\rVert = \sin u$, quindi l'area \`e:
+	\[
+	\int_{0} ^\pi \sin u\ du \int_{0} ^{2\pi} dv = 2\pi \int_{0} ^\pi \sin u \ du = 4\pi
+	\] 
+\end{svolgimento}
+\end{esempio}
+	Si considera superficie data dal grafico di una $f(x,y)$, per cui $\left\lVert \varphi _x \wedge \varphi _y \right\rVert  = \sqrt{1+\left\lVert \nabla f \right\rVert ^2} $.
+	Se $(x,y)$ variano in un insieme $E \subset \mathbb{R}^2$, l'area della superficie \`e data da:
+	\begin{equation}
+		\int_{E} \sqrt{1 + \left\lVert \nabla f \right\rVert ^2 } \ dxdy
+	\end{equation}
+\begin{esempio}
+Calcolare l'area del paraboloide $z = x^2 + y^2$ con dominio il cerchio unitario $C = \left\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 \le 1 \right\} $.
+\begin{svolgimento}
+	Usando le coordinate polari:
+	\[
+	\begin{split}
+		\int_{C} \sqrt{1+4x^2 + 4y^2}  \ dx dy & = \int_{0} ^1 \rho \sqrt{1+ 4 \rho ^2 }  \ d\rho \int_{0} ^{2\pi } d\vartheta = 2\pi \int_{0} ^1 \rho  \sqrt{1 + 4 \rho ^2 }  \ d\rho \\
+						       &= \pi \int_{0} ^1 \sqrt{1 + 4s }  \ ds = \frac{\pi}{6} \left(5 ^{3 / 2} - 1\right) 
+	\end{split}
+	\] 
+	
+\end{svolgimento}
+\end{esempio}	
+\subsection{Il teorema delle funzioni implicite}
 
 
 \end{document} 
