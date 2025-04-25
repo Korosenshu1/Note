@@ -1429,6 +1429,100 @@ Calcolare l'area del paraboloide $z = x^2 + y^2$ con dominio il cerchio unitario
 \end{svolgimento}
 \end{esempio}	
 \subsection{Il teorema delle funzioni implicite}
+Un ulteriore modo di definire una curva \`e dando il luogo degli zeri di una funzione di due variabili. 
+Sia $F(x,y)$ una funzione; si  definisce il sostegno di una curva $\gamma$ come l'insieme
+\[
+Z = \left\{ (x,y) \in \mathbb{R}^2 : F(x,y) = 0 \right\} 
+\] 
+Si mostra che, anche definendo cos\`i una curva regolare, questa risulti localmente come grafico di una funzione.
+\begin{teorema}
+	{Teorema delle funzioni implicite}{}
+	Sia $F(x,y):A \subset \mathbb{R}^2 \to \mathbb{R}$, con $A$ aperto, e tale che $F \in C^1(A)$.
+	Sia $(x_0,y_0) \in A $ e tale che
+	\[
+		F(x_0,y_0) = 0 \hspace{1cm} \frac{\partial F}{\partial y} (x_0,y_0) \neq 0
+	\] 
+Allora esistono un intorno $U$ di $x_0$ e $V$ di $y_0$  tali che $\forall x \in U, \ \exists ! y = f(X) \in V : F(x,y)=0$.
+
+La funzione $f:U \to V$ cos\`i definita \`e di classe $C^1(U)$ e 
+\[
+f'(X) = - \frac{F_x(x,f(x))}{F_y(x,f(x))}
+\] 
+\begin{proof}
+	Sia, per esempio, $F_{y} (x_0,y_0)>0$. 
+	$F_y$ \`e continua per assunzione, quindi esiste un rettangolo chiuso $W \times V$, centrato in $(x_0,y_0)$, in cui $F_y$ continua ad essere positiva.
+	Sia $V=(y_0-h,y_0+h)$; allora  $\forall x \in W$, $F(x,y)$, considerata funzione solo di $y$, ha derivata positiva, quindi \`e strettamente crescente.
+
+	In particolare, sar\`a crescente la funzione $F(x_0,y)$ e, visto che $F(x_0,y_0) = 0$, si ha
+	\[
+		F(x_0,y_0+h) > 0 \hspace{1cm} F(x_0,y_0 - h) < 0
+	\] 
+Ora si considerano, come funzioni della sola $x$, $F(x,y_0+h)$ e $F(x,y_0-h)$; queste sono continue in $W$, quindi, per la permanenza del segno, deve esistere un intorno $U$ di $x_0$ tale per cui $\forall x \in U, \ F(x,y_0+h) >0 $ e $F(x,y_0-h)<0$.
+Essendo che $\forall x \in U$, $F$ \`e strettamente crescente in $y$ e che $F(x,y_0-h) < 0$, $F(x,y_0+h)>0$, si conclude che $\exists ! y \in (y_0-h,y_0+h)$ tale che $F(x,y) = 0$.
+Questo dimostra la prima parte.
+
+Rimane da mostrare l'espressione per $f'$.
+Siano $x,x_1 \in U$ due punti e sia
+\[
+G(t)  = F\big(x_1+t(x-x_1),f(x_1) +  t (f(x)-f(x_1))\big)
+\] 
+per cui $G(0) =  F(x_1,f(x_1))  = 0$ e $G(1) = F(x,f(x))=0$. 
+Usando il teorema di Rolle, si trova un $\tau  \in (0,1) :  G'(\tau ) = 0 $; posti $\xi  = x_1 + \tau (x-x_1)$ e $\eta = f(x_1) + \tau (f(x) - f(x_1))$, si trova
+\[
+\begin{split}
+	&F_x(\xi ,\eta) (x-x_1) + F_y(\xi ,\eta)(f(x)-f(x_1)) = 0\\
+	&\Rightarrow \frac{f(x) -f(x_1)}{x-x_1} = - \frac{F_x(\xi ,\eta)}{F_y(\xi ,\eta)}
+\end{split}
+\] 
+Indicando $R = U \times V$ e ricordando che $F_y > 0$ in $W\times V$, per cui si ha $F_y > 0$ anche in $\overline{R}$ (chiusura di $U \times V$), si conclude che il suo minimo in $R$ \`e positivo e quindi, dalla relazione precedente:
+\[
+\lvert f(x) - f(x_1) \rvert \le \frac{\max_R \lvert F_x \rvert }{\min_R F_y}\lvert x-x_1 \rvert 
+\] 
+Questo implica che $f$ \`e continua, perci\`o $x\to x_1$, $f(x) \to f(x_1)$, quindi $\xi  \to  x_1$ e $\eta \to f(x_1)$.
+Per la continuit\`a delle derivate di $F$, si ha:
+\[
+f'(x_1) =  \lim_{x \to x_1} \frac{f(x) - f(x_1)}{x-x_1}= -  \frac{F_x(x_1,f(x_1))}{F_y(x_1,f(x_1))}
+\] 
+
+\end{proof}
+\end{teorema}
+
+
+
+\begin{obs}
+	Indicando con $Z$ l'insieme degli zeri di $F$, il teorema afferma che se $(x_0,y_0) \in Z$ e tale che $F_y\neq 0$, allora si trova un rettangolo $R = U \times V$ con centro $(x_0,y_0)$ tale che $Z \cap R$ \`e il grafico di una funzione $y=f(x)$, di classe $C^1$, la cui derivata \`e data da $-\frac{F_x(x,f(x))}{F_y(x,f(x))}$.
+\end{obs}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document} 
