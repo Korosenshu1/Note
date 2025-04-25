@@ -1268,7 +1268,7 @@ Si definisce $\hat{\mathbf{L} } = \hat{\mathbf{X} } \times \hat{\mathbf{p} } $ p
 \subsubsection{Spettro del momento angolare}
 $\hat{J}_a$ e $\hat{H}$ non commutano, quindi non hanno base comune. Si definisce $\hat{J }^2 = \sum_{a}^{} \hat{J}_a^2 $ e si pu\`o mostrare che $[\hat{J}^2 , \hat{J}_a] = 0$. Si cerca base comune a $\hat{J}^2$ e $\hat{J}_z$ per convenzione; in particolare, si richiede:
 \[
-\hat{J}^2 \ket{\beta m} = \hbar \beta  \ket{\beta m} ; \ \hat{J}_z \ket{\beta  m}  = \hbar m \ket{\beta  m } 
+\hat{J}^2 \ket{\beta m} = \hbar^2 \beta  \ket{\beta m} ; \ \hat{J}_z \ket{\beta  m}  = \hbar m \ket{\beta  m } 
 \] 
 con $\ket{\beta m} $ autostati normalizzabili\footnote{Si usa notazione con due variabili $\beta , m$ perch\'e corrisponderanno ai due numeri quantici che permettono una pi\`u dettagliata descrizione dello stato che rappresentano.}. Si nota che:
 \begin{enumerate}[(a).]
@@ -1543,7 +1543,7 @@ Si indica $\langle \hat{R} \rangle\equiv D^j _{m , m'} (\alpha ,\beta ,\gamma)$,
 \[
 \hat{R} \ket{jm}  = \sum_{j'm'}^{} \ket{j'm'} \braket{j'm'|\hat{R}|jm} = \sum_{m'}^{} \ket{jm'} D_{m,m'} ^j (\alpha ,\beta ,\gamma)
 \] 
-Significa che per ogni rotazione, $j$ \`e fissato. Si calcolano elementi di $D^j_{m,m'} $; si pu\`o dimostrare che\footnote{La seconda disuguaglianza non \`e dimostrata, \`e da prendere per buona.}:
+Significa che per ogni rotazione, $j$ \`e fissato. Si calcolano elementi di $D^j_{m,m'} $; si pu\`o dimostrare che\footnote{La seconda uguaglianza non \`e dimostrata, \`e da prendere per buona.}:
 \[
 \hat{R}(\alpha ,\beta ,\gamma) = e^{-\frac{i}{\hbar }  \gamma \hat{z}' \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \beta  \hat{u} \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \alpha \hat{z} \cdot \mathbf{J} }= e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  
 \] 
@@ -1580,7 +1580,7 @@ Questi soddisfano\footnote{Si ottengono sostituendo i coefficienti di una delle 
 \begin{equation}
 	\begin{split}
 	&\sum_{m_1,m_2}^{} C^{JM} _{j_1j_2m_1m_2} C^{J'M'} _{j_1j_2m_1m_2} = \delta _{JJ'} \delta _{MM'} \\
-	&\sum_{J,M}^{} C^{JM} _{j_1j_2m_1m_2} C^{JM} _{j_1j_2m_1'm_2'} = \delta _{m_1m_1'} \delta _{m_2m_2'}
+	&\sum_{J,M}^{} C^{JM} _{j_1j_2m_1m_2} C^{JM} _{j_1j_2m_1'm_2'} = \delta _{m_1m_1'} \delta _{m_2 m_2'}
 	\end{split}
 \end{equation}
 
@@ -1631,7 +1631,7 @@ L'ultimo stato si ottiene per ortogonalit\`a con gli altri e usando $S_z = 0\Rig
 
 
 \newpage
-\section{Esercitazioni}
+\section{Esercitazioni (23-24)}
 \subsection{Sistemi a due livelli}
 \subsubsection{Descrizione generale}
 
@@ -2393,56 +2393,185 @@ Si dividono i due casi, a seconda del valore di $\gamma$:
 		\end{equation}
 		anche questo comprensivo di normalizzazione.
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{enumerate}
 
+\newpage
 
+\section{Esercitazioni 21-22}
 
+\subsection{Sistema di qubit}\label{1q}
+Si considera un singolo sistema di due qubit.
+Come base si usano autovettori di $\sigma _3$, ossia 
+\[
+\left\{ \ket{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} , \ \ket{2} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}  \right\} 
+\] 
+Si considera l'Hamiltoniano
+\[
+	\hat{H} = \operatorname{Id} + \sigma _1 = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} 
+\] 
+Gli autovalori di questa sono $\epsilon _1 = 0 $ e $\epsilon_2 = 2$ perch\'e ha determinante $0$ ($\Rightarrow  \epsilon _1 = 0$) e la traccia \`e conservata, quindi l'altro autovalore deve essere $2$. 
+I relativi autovettori normalizzati sono:
+\[
+	\ket{\epsilon _1} = \frac{1}{\sqrt{2} }\begin{pmatrix} 1\\ -1 \end{pmatrix} = \frac{1}{\sqrt{2} }\Big(\ket{1} - \ket{2} \Big)  \hspace{1cm} \ket{\epsilon _2}  = \frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\ 1  \end{pmatrix} = \frac{1}{\sqrt{2} } \Big( \ket{1}  + \ket{2} \Big)
+\] 
+A questo punto, un generico stato si pu\`o scrivere come:
+\[
+\ket{\psi } = a \ket{\epsilon _1 } + b \ket{\epsilon _2} = \overline{a}\ket{1} + \overline{b}\ket{2} 
+\] 
+Volendo studiare sua evoluzione temporale, conviene usare la base delle autoenergie perch\'e  gli autovettori di $\hat{H}$ sono stazionari; di fatto:
+\begin{equation}\label{tempev}
+	\ket{\psi (t)} = e^{-\frac{i}{\hbar }\hat{H}  t} \ket{\psi (0)} = e^{-\frac{i}{\hbar }\hat{H}t } \Big[a \ket{\epsilon _1}  + b \ket{\epsilon _2} \Big] = a e^{-\frac{i}{\hbar }\epsilon _1  t} \ket{\epsilon _1} +  b e^{-\frac{i}{\hbar } \epsilon _2 t} \ket{\epsilon _2} 
+\end{equation}
+\begin{osservazione}
+	Risulta pi\`u comodo usare la base degli autostati di $\hat{H}$ perch\'e $[\hat{H} , \sigma _3]\neq 0$ perch\'e $[\sigma _1,\sigma _3] = -2i  \sigma _2$, il che vuol dire che $\sigma _3$ e $\hat{H}$ non hanno base comune.
+\end{osservazione}
+Ora si assume che $\ket{\psi (0)} = \ket{1} $. 
+Volendo scrivere evoluzione temporale in termini delle autoenergie, si scrive $\ket{1} $ in termini di $\ket{\epsilon _1} $ e $\ket{\epsilon _2} $:
+\[
+\frac{1}{2 } \ket{\epsilon _1} + \frac{1}{2}\ket{\epsilon _2} = \frac{1}{2}\Big(\ket{1} - \ket{2} \Big) + \frac{1}{2} \Big(\ket{1} + \ket{2} \Big) = \ket{1} \equiv \ket{\psi (t=0)} 
+\] 
+cio\`e $a=b = 1/\sqrt{2} $.
+Sostituendo questi in eq. \ref{tempev}, si ottiene l'evoluzione temporale per $\ket{\psi (t)} $.
+Considerando $\sigma _3$ come osservabile, si vuole vedere il suo valore medio a $t=0$ nello stato $\ket{\psi } $, quindi si calcola
+\[
+\braket{\psi (0)|\sigma _3|\psi (0)} \equiv \braket{1|\sigma _3|1} = 1
+\] 
+Ora, pi\`u in generale, si calcola $\braket{\psi (t)|\sigma _3|\psi (t)} $. 
+Per farlo, conviene esprimere $\ket{\psi (t)} $ in termini di $\ket{1} , \ket{2} $:
+\[
+	\begin{split}
+		\ket{\psi (t)} &=\frac{1}{\sqrt{2} }\left(e^{-\frac{i}{\hbar }\epsilon _1 t} \ket{\epsilon _1}  + e^{-\frac{i}{\hbar }\epsilon _2 t} \ket{\epsilon _2}  \right) = \frac{1}{\sqrt{2} } \left[ e^{-\frac{i}{\hbar }\epsilon _1 t} \frac{1}{\sqrt{2} } \Big(\ket{1} -\ket{2} \Big)+ e^{-\frac{i}{\hbar }\epsilon _2 t} \frac{1}{\sqrt{2} } \Big(\ket{1} +\ket{2} \Big)  \right]\\
+			       &= \frac{1}{2} \left[ \left( e^{-\frac{i}{\hbar }\epsilon _1 t} + e^{-\frac{i}{\hbar }\epsilon _2 t}  \right) \ket{1} + \left( e^{-\frac{i}{\hbar }\epsilon _2 t} - e^{-\frac{i}{\hbar }\epsilon _1 t}  \right) \ket{2} \right] \equiv a(t) \ket{1}  + b(t) \ket{2} 
+	\end{split}
+\] 
+Visto che $\sigma _3 \ket{1} = \ket{1} $, mentre $\sigma _3 \ket{2}  = - \ket{2} $, si ha $\braket{\psi (t)|\sigma _3|\psi (t)} = \lvert a(t) \rvert ^2 - \lvert b(t) \rvert ^2$, dove
+\[
+\begin{split}
+	&\lvert a(t) \rvert ^2 = \frac{1}{4}\left[  2 + e^{\frac{i}{\hbar }(\epsilon_1 - \epsilon _2)  t}  + e^{\frac{i}{\hbar } (\epsilon _2 - \epsilon _1)t} \right]  = \frac{1}{2}\left[ 1 +\cos \frac{\epsilon _1 - \epsilon _2}{\hbar }t \right] \\
+	& \lvert b(t) \rvert ^2 = \frac{1}{2}\left[ 1- \cos \frac{\epsilon _1 - \epsilon _2}{\hbar }t \right] \\
+	&\Rightarrow \braket{\psi (t)|\sigma _3|\psi (t)} = \lvert a(t) \rvert ^2 - \lvert b (t)\rvert ^2 = \cos \frac{\epsilon _1 - \epsilon _2}{\hbar }t
+\end{split}
+\] 
 
+\subsection{Teoria generica sui sistemi composti}
 
+Si considerano due sistemi $1,2$ e si cerca di caratterizzare gli stati del sistema globale $1+2$.
+Si indicano con $\hat{A}^{(1)} $ gli operatori hermitiani del sistema $1$ e con $\hat{B}^{(2)} $ quelli del $2$, cio\`e, tali che $\hat{A}^{(1)} \ket{a_n} = a_n \ket{a_n} $, con $a_n$ autostati di $\hat{A}^{(1)} $ e che $\hat{B}^{(2)} \ket{b_m} = b_m \ket{b_m} $\footnote{Si assume base di autovettori discreta per semplicit\`a e si assume, inoltre, assenza di degenerazione.}.
 
+Lo spazio di Hilbert di $1+2$, a partire dalle basi fornite dagli operatori $\hat{A}^{(1)} , \hat{B}^{(2)} $ per $1 $ e $2$ rispettivamente, \`e ottenuto tramite prodotto vettore:
+\begin{equation}
+	\ket{a_n b_m} = \ket{a_n}^{(1)}  \otimes \ket{b_m}^{(2)}  
+\end{equation}
+L'azione di un operatore di uno dei due spazi su un elemento di base dello spazio completo agisce solo sulla componente proveniente dallo stesso spazio; ad esempio
+\[
+\hat{A}^{(1)} \ket{a_n b_m} = \hat{A}^{(1)} \ket{a_n} ^{(1)} \otimes \ket{b_m} ^{(2)} = \left(\hat{A}^{(1)} \ket{a_n} \right) \otimes \ket{b_m} ^{(2)} 
+\] 
+Di fatto, si ha $\left[ \hat{A}^{(1)} , \hat{B}^{(2)}  \right] = 0$.
 
+Il generico stato ottenuto da questa base sar\`a:
+\[
+\ket{\psi } = \sum_{n,m}^{} c_{nm} \ket{a_n} ^{(1)} \otimes \ket{b_m} ^{(2)} 
+\] 
+Dato $\hat{R}$ generico operatore, si vuole calcolare $\braket{\psi |\hat{R}|\psi } \equiv \operatorname{tr} \rho \hat{R}$, con $\rho  = \ket{\psi } \bra{\psi } $.
+Rinominando con $\ket{nm} = \ket{n} \otimes \ket{m}$ un elemento di base dello spazio completo, si pu\`o scrivere $\rho $ in forma matriciale come
+\[
+\rho _{nm,n'm'} = \braket{nm|\psi } \braket{\psi |n'm'} \implies \rho  = \sum_{n,m,n',m'}^{} \ket{nm} \rho _{n,m,n',m'} \ket{n'm'} = \ket{\psi } \bra{\psi }  
+\] 
+Allo stesso modo, si rappresenta in forma matriciale l'operatore $\hat{R}$:
+\[
+R_{nm,n'm'} = \braket{nm|\hat{R}|n'm'} 
+\] 
+A questo punto
+\[
+\braket{\psi |\hat{R}|\psi } = \operatorname{tr} \rho \hat{R} = \sum_{n,m,n',m'}^{} \braket{nm|\rho |n'm'} \braket{n'm'|\hat{R}|nm} =\sum_{n,m,n',m'}^{} \rho _{nm,n'm'} R_{nm,n'm'} 
+\] 
+Limitando l'azione dell'opertaore $\hat{R}$ solamente allo stato $1$, cio\`e $\hat{R}\to \hat{R}^{(1)} $, l'espressione sopra si modifica come segue:
+\[
+\begin{split}
+	\operatorname{tr} \rho  \hat{R}^{(1)} &=\sum_{n,m,n',m'}^{} \braket{nm|\rho |n'm'} \braket{n'm'|\hat{R}^{(1)} |nm} = \sum_{n,m,n',m'}^{} \braket{nm|\rho |n'm'} \braket{n'|\hat{R}^{(1)} |n} \overbracket{\braket{m'|m}}^{= \delta _{mm'} } \\
+					      &=\sum_{n,n'}^{} \sum_{m}^{} \underbracket{\braket{nm|\rho |n'm}}_{\equiv \rho ^{(1)} }  \braket{n'|\hat{R}^{(1)} |n} 
+\end{split}
+\] 
+visto che $\hat{R}^{(1)} $ agisce solo su $1$, con $\rho ^{(1)} $ matrice densit\`a limitata allo spazio $1$. 
+Si capisce se il sistema $1$ \`e isolato se $\operatorname{tr} \left[ \rho^{(1)} \right] ^2 = 1  $.
+\begin{osservazione}
+	Nel passaggio da  $\rho $ a $\rho ^{(1)} $ o $\rho ^{(2)} $ si perdono informazioni sul sistema globale: $\rho ^{(i)} $ permette di studiare i sottosistemi singolarmente, ma non contiene l'informazione riguardante la comunicazione tra i vari sottosistemi contenuta, invece, in $\rho $.
+\end{osservazione}
+Si immagina, ora, di mantenere attiva l'interazione fra due sistemi $1,2$ per $t<t_0$; in questa frazione di tempo, l'Hamiltoniano complessivo \`e dato da $\hat{H}= \hat{H}_1 + \hat{H}_2 + \hat{H}_{12} $.
+Immaginando, a $t =t_0$, di rimuovere l'interazione e di continuare a studiare unicamente l'interazione del sistema $1$, il nuovo Hamiltoniano \`e semplicemente $\hat{H}_1$, quindi l'evoluzione temporale \`e ottenuta tramite $e^{-\frac{i}{\hbar }\hat{H}_1 (t-t_0)} , \ t>t_0$:
+\begin{equation}
+\rho ^{(1)} (t) = e^{\frac{i}{\hbar }\hat{H}_1 (t-t_0)}  \rho ^{(1)} (t=t_0) e^{-\frac{i}{\hbar }\hat{H}_1 (t-t_0)} 
+\end{equation}
+dove si usa la condizione iniziale di $\rho^{(1)} (t=t_0) = \operatorname{tr} _{2} \rho (t_0) $\footnote{Si traccia via $2$ dalla matrice densit\`a completa.}, cio\`e la condizione del sistema $1$ poco prima della fine dell'interazione.
+\subsection{Sistemi di due qubit interagenti}
+Per $a = 1, 2$ (a seconda di quale sistema di qubit si considera), si individua l'operatore 
+\[
+	\hat{M}_a = \sigma _3 ^{(a)} , \ \text{ con } \sigma _3 = \begin{pmatrix} 1 & 0 \\ 0 &-1 \end{pmatrix} 
+\] 
+Questo fornisce base per il sistema $a$ data da $\ket{1} ^{(a)} = \begin{pmatrix} 1 \\0  \end{pmatrix}, \  \ket{2} ^{(a)} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} $.
+Si indica con $\ket{k}, \ k=1,2,3,4  $ la base completa dello spazio di Hilbert dei due sistemi di qubit, cio\`e:
+\begin{equation}
+	\begin{split}
+		&\ket{1} =\begin{pmatrix} 1 \\0 \end{pmatrix}^{(1)}  \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} ^{(2)} ; \ \ket{2} \begin{pmatrix} 1 \\0  \end{pmatrix}^{(1)} \otimes \begin{pmatrix} 0\\ 1 \end{pmatrix} ^{(2)} \\
+		& \ket{3}  = \begin{pmatrix} 0 \\ 1 \end{pmatrix} ^{(1)} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} ^{(2)} ; \ \ket{4} = \begin{pmatrix} 0 \\ 1  \end{pmatrix} ^{(1)} \otimes \begin{pmatrix} 0\\ 1 \end{pmatrix} ^{(2)} 
+	\end{split}
+\end{equation}
+Si studia il sistema sotto l'Hamiltoniano
+\[
+\hat{H} = \frac{1}{4} \left( \vec{\sigma }^{(1)}  + \vec{\sigma }^{(2)} \right)^2= \frac{3}{2} + \frac{1}{2} \vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)}
+\] 
+con $\vec{\sigma } = (\sigma _1 , \sigma_2 , \sigma _3)$, dove la seconda uguaglianza \`e ottenuta dal fatto che, per una generica matrice di Pauli, vale $\sigma _i ^2 = \operatorname{Id} \Rightarrow \vec{\sigma }^2 = 3 \operatorname{Id} $\footnote{Il risultato $3 /2$ in $\hat{H}$ deriva dal fatto che, nonostante $\left[ \vec{\sigma }^{(1)}  \right] ^2 = 3\operatorname{Id} ^{(1)} $, in realt\`a un generico operatore $\hat{A}^{(1)}$, cio\`e agente solo su $1$, equivale a $\hat{A}^{(1)} \otimes \operatorname{Id} ^{(2)} $. Nelle parentesi tonde di $\hat{H}$, si avrebbe
+\[
+	\hat{H}= \frac{1}{4} \left(3 \operatorname{Id} ^{(1)} \otimes \operatorname{Id} ^{(2)} + 3 \operatorname{Id} ^{(1)} \otimes \operatorname{Id} ^{(2)} + 2 \vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)} \right) 
+\] 
+da cui il $3 / 2$, che \`e sarebbe pi\`u correttamente da moltiplicare per $\operatorname{Id} ^{(1)} \otimes \operatorname{Id} ^{(2)} $, ma si sottintende per non appesantire la notazione.
+}.
 
+Il prossimo passo \`e scrivere $\hat{H}$ in forma matriciale in modo da poterne calcolare gli autovalori.
+Quindi se $\ket{q} , \ket{k} $ sono elementi della base dello spazio completo, si calcola $H_{qk} =\braket{q|\hat{H}|k} $, che sar\`a una matrice $4\times 4$.
+Si ha:
+\[
+	H_{qk} =\frac{3}{2} \overbracket{\braket{q|\operatorname{Id} ^{(1) } \otimes \operatorname{Id} ^{(2)} |k} }^{\equiv \braket{q|k} = \delta _{qk} } + \frac{1}{2} \braket{q|\vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)} |k} =  \frac{3}{2}\delta _{qk} + \frac{1}{2} \braket{q|\vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)} |k}  
+\] 
+Si nota che 
+\[
+\braket{q|\vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)} |k}  = \bra{i} ^{(1)} \bra{j} ^{(2)} \vec{\sigma }^{(1)} \cdot \vec{\sigma }^{(2)} \ket{i'} ^{(1)} \ket{j'} ^{(2)} = \braket{i|\vec{\sigma }^{(1)} |i'}\cdot  \braket{j|\vec{\sigma }^{(2)} |j'} 
+\] 
+dove si \`e sottinteso il prodotto tensore, con $i,i',j,j' = 1,2$.
+Svolgendo il calcolo, si trova
+\[
+	H_{qk} = \begin{pmatrix} 2 & 0 &0 &0\\ 0&1&1&0\\0&1&1&0 \\ 0&0&0&2\end{pmatrix} 
+\] 
+Da questa rappresentazione, si vede che gli elementi di base $\ket{1} , \ket{4} $ sono autostati con autovalore $2$; considerando il blocco centrale e ricordando autovalori e autovettori trovati in \S\ref{1q}, si ha:
+\begin{equation}\label{auten1}
+\begin{split}
+	\lambda = 2&: \left\{\ket{\epsilon _1} = \begin{pmatrix} 1\\0\end{pmatrix} \otimes \begin{pmatrix} 1\\0 \end{pmatrix} ,\  \ket{\epsilon _2}= \begin{pmatrix} 0\\1 \end{pmatrix} \otimes \begin{pmatrix} 0\\1 \end{pmatrix} , \ \ket{\epsilon _3} = \frac{1}{\sqrt{2} }\left[ \begin{pmatrix} 1\\0 \end{pmatrix} \otimes \begin{pmatrix} 0\\1 \end{pmatrix} + \begin{pmatrix} 0\\1 \end{pmatrix} \otimes \begin{pmatrix} 1\\0 \end{pmatrix}  \right] \right\} \\
+	\lambda =0&: \ket{\epsilon _0}=  \frac{1}{\sqrt{2} } \left[ \begin{pmatrix} 1\\0 \end{pmatrix} \otimes \begin{pmatrix} 0\\1 \end{pmatrix} - \begin{pmatrix} 0\\1 \end{pmatrix} \otimes \begin{pmatrix} 1\\0 \end{pmatrix}  \right]  
+\end{split}
+\end{equation}
+\begin{boxenv}[]
+\begin{osservazione}
+In questo caso, si ha una degenerazione pari a $3$; la presenza di degenerazione non permette di distinguere, dal punto di vista energetico, i vari stati perch\'e una misura di energia restituisce lo stesso valore (autoenergia) per tre stati.
 
-
-
-
-
-
-
-
-
-
-
+\`E necessario trovare un'altra base che permetta di avere autovalori dell'energia diversi, quindi bisogna trovare un altro operatore, che commuta con l'Hamiltoniano, e che non abbia degenerazione nello spettro.
+\end{osservazione}
+\end{boxenv}
+Si studia l'operatore 
+\begin{equation}
+	\hat{S}_3 = \frac{1}{2} \left(\sigma _3^{(1)} + \sigma _3 ^{(2)} \right) 
+\end{equation}
+e si vede se riesce a distinguere gli autostati.
+Intanto si verifica che commuta con $\hat{H}$; per farlo, si osserva che, definendo $\hat{S}_i = \frac{1}{2}\left(\sigma _i^{(1)} + \sigma _i^{(2)} \right) $, si ha $\hat{H}= \sum_{i=1}^{3} \hat{S}_i^2$. 
+Visto che $[\hat{S}_i , \hat{S}_3] = i \varepsilon _{i3k} \hat{S}_k$\footnote{Qui \`e sufficiente usare le regole di commutazione delle matrici di Pauli che definiscono gli $\hat{S}_i$, ricordando che in questi \`e presente un fattore $1 / 2$.}, allora\footnote{Qui si \`e usta la propriet\`a del commutatore $[AB,C] = A[B,C] + [A,C]B$.} $[\hat{S}_i^2 , \hat{S}_3] = i \varepsilon _{i 3 k} (\hat{S}_i \hat{S}_k + \hat{S}_k \hat{S}_i)$.
+Quindi:
+\[
+	\begin{split}
+		[\hat{H},\hat{S}_3] &= i  \sum_{i,k}^{} \varepsilon _{i 3 k } (\hat{S}_i  \hat{S}_k + \hat{S}_k \hat{S}_i) \\
+				    &= i \sum_{i,k}^{} \varepsilon _{k 3 i} (\hat{S}_{i} \hat{S_k} + \hat{S}_k \hat{S}_i) \\
+				    &= -i  \sum_{i,k}^{} \varepsilon _{i 3 k } (\hat{S}_i  \hat{S}_k + \hat{S}_k \hat{S}_i)
+	\end{split} \iff[\hat{H},\hat{S}_3] = 0
+\] 
+Andando a calcolare $\braket{\epsilon _i|\hat{S}_3|\epsilon _i} $ con gli $\ket{\epsilon _i} $ definiti in eq. $\ref{auten1}$, si trova $\epsilon _1 = 1$, $ \epsilon _2 = -1$, $\epsilon _3 = 0 $ e $\epsilon _4 = 0 $, quindi ha risolto la degenerazione osservata prima.
 
 
 

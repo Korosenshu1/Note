@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  23 APR 2025 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  25 APR 2025 17:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1724,7 +1724,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [45]
 
 [46]
-<well-sol.png, id=707, 804.75656pt x 707.64375pt>
+<well-sol.png, id=715, 804.75656pt x 707.64375pt>
 File: well-sol.png Graphic file (type png)
 <use well-sol.png>
 Package pdftex.def Info: well-sol.png  used on input line 2189.
@@ -1753,12 +1753,33 @@ Overfull \hbox (19.16pt too wide) detected at line 2382
  []
 
 
+
+[51]
+Overfull \hbox (8.32431pt too wide) detected at line 2446
+[]
+ []
+
+
+
+[52]
+Overfull \hbox (1.4533pt too wide) detected at line 2494
+[]
+ []
+
+
+
+[53]
+
+[54]
+
+[55]
+
 Package caption Warning: Unused \captionsetup[table] on input line 38.
 See the caption package documentation for explanation.
 
 
 
-[51] (./master.aux)
+[56] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1767,13 +1788,28 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47824 strings out of 473190
- 1079639 string characters out of 5722593
+ 47863 strings out of 473190
+ 1080076 string characters out of 5722593
  1780217 words of memory out of 5000000
- 69879 multiletter control sequences out of 15000+600000
- 673206 words of font info for 198 fonts, out of 8000000 for 9000
+ 69892 multiletter control sequences out of 15000+600000
+ 674198 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,26n,107p,10923b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.48} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.47} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.46} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.45} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.44} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exist, replaced by a fixed one
 
@@ -1904,10 +1940,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (51 pages, 626763 bytes).
+Output written on master.pdf (56 pages, 646784 bytes).
 PDF statistics:
- 1188 PDF objects out of 1200 (max. 8388607)
- 1090 compressed objects within 11 object streams
- 412 named destinations out of 1000 (max. 500000)
- 751 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1258 PDF objects out of 1440 (max. 8388607)
+ 1154 compressed objects within 12 object streams
+ 435 named destinations out of 1000 (max. 500000)
+ 783 words of extra memory for PDF output out of 10000 (max. 10000000)
 
