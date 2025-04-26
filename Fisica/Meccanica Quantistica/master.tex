@@ -2399,6 +2399,201 @@ Si dividono i due casi, a seconda del valore di $\gamma$:
 
 \section{Esercitazioni 21-22}
 
+\subsection{Generalit\`a sui sistemi a due livelli}
+
+Le matrici di Pauli sono:
+\begin{equation}
+	\sigma _1 = \begin{pmatrix} 0& 1 \\ 1& 0  \end{pmatrix} \hspace{1cm} \sigma _2 = \begin{pmatrix} 0& -i \\ i &0  \end{pmatrix} \hspace{1cm} \sigma _3 = \begin{pmatrix} 1 & 0  \\ 0 & -1  \end{pmatrix} 
+\end{equation}
+Queste soddisfano le seguenti propriet\`a:
+\begin{boxenv}[]
+	\begin{equation}
+		\begin{split}
+			&\sigma _i = \sigma _i ^\dagger \hspace{1cm} \sigma _i^2 = \operatorname{Id} \hspace{1cm} [\sigma _i, \sigma _j] =  2i \varepsilon _{ijk} \sigma _k\\
+			&\sigma _i \sigma _j = \delta _{ij} \operatorname{Id} +  i \varepsilon _{ijk} \sigma _k \hspace{1cm} \operatorname{tr} \sigma _i = 0	
+		\end{split}
+	\end{equation}
+\end{boxenv}
+Le matrici Hermitiane $2\times 2$ formano uno spazio vettoriale quadridimensionale sui reali e la forma pi\`u generale di una matrice Hermitiana si pu\`o scrivere tramite le matrici di Pauli:
+\begin{equation}\label{hmat}
+	\begin{split}
+		&A = \begin{pmatrix} a & c+id\\c-id& b \end{pmatrix}, \ a,c,b,d \in \mathbb{R}\\
+		&A = a_0 \operatorname{Id} + \sum_{i=1}^{3} a_i \sigma _i, \ a_j \in \mathbb{R}, \ j=0,1,2,3
+	\end{split}
+\end{equation}
+Un sistema a due livelli prende stati in uno spazio di Hilbert bidimensionale a coefficienti su $\mathbb{C}$. 
+Una possibile base completa \`e:
+\begin{equation}
+	\mathcal{B} = \left\{ \ket{+ } =\begin{pmatrix} 1 \\ 0 \end{pmatrix} , \ \ket{-} = \begin{pmatrix} 0\\1 \end{pmatrix}  \right\} 
+\end{equation}
+
+Lo stato pi\`u generale del sistema si scrive, tramite la base scelta, come
+\[
+\ket{\psi } = a_+ \ket{+} + a_- \ket{-} 
+\] 
+dove $\lvert a_+ \rvert ^2 + \lvert a_- \rvert ^2 \stackrel{!}{=} 1$ per la condizione di normalizzazione.
+
+La matrice densit\`a associata allo stato $\ket{\psi } $ \`e scritta, in forma operatoriale, come $\rho _\psi =\ket{\psi } \bra{\psi } $. 
+La matrice densit\`a soddisfa le seguenti propriet\`a:
+\begin{boxenv}[]
+\begin{equation}
+	\rho = \rho ^\dagger \hspace{1cm} \operatorname{tr}  \rho  =1 \hspace{1cm} \rho ^2 = \rho 
+\end{equation}
+\end{boxenv}
+\noindent dove l'ultima ($\rho ^2 = \rho $) \`e verificata unicamente per stati puri.
+Se $\ket{i} ,\ket{j} $ sono elementi di base, la matrice densit\`a si pu\`o rappresentare anche in forma matriciale come
+\begin{equation}
+	\rho _{ij} = \braket{i|\rho _\psi |j} \implies \rho _\psi = \ket{i} \rho _{ij} \bra{j} 
+\end{equation}
+
+Si nota che l'operatore $\hat{M}=\sigma _3$ \`e tale per cui 
+\[
+	M_{ij} = \braket{i|\hat{M}|j} = \begin{pmatrix} 1  & 0 \\ 0 & - 1 \end{pmatrix} = \sigma _3
+\] 
+come si \`e scelta la base.
+
+\`E possibile calcolare il valore di aspettazione di un osservabile $\hat{O}$ su uno stato generico (anche non puro) usando la matrice densit\`a tramite la relazione $\langle \hat{O} \rangle = \operatorname{tr} \rho  \hat{O}$.
+\begin{esercizio}
+	Scrivere il pi\`u generale Hamiltoniano per un sistema a due livelli.
+	\begin{svolgimento}
+		Un Hamiltoniano deve essere un operatore Hermitiano, quindi si usa l'espressione della pi\`u generale matrice Hermitiana $2\times 2$ riportata in eq. \ref{hmat}.
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Scrivere il pi\`u generale Hamiltoniano che ha $\ket{+} , \  \ket{-} $ come autostati.
+	\begin{svolgimento}
+		Partendo dall'espressione di $\hat{H}$ in eq. \ref{hmat}, si impone che $\ket{+} $ e $\ket{-} $ siano autostati:
+		\[
+		\begin{split}
+			&\begin{pmatrix} a & c+ id \\ c-id & b \end{pmatrix} \begin{pmatrix} 1 \\0 \end{pmatrix}= \begin{pmatrix} a \\ c-id \end{pmatrix}  \stackrel{!}{=} \lambda_+ \begin{pmatrix} 1\\0 \end{pmatrix} \iff c-id = 0\\
+			&\begin{pmatrix} a & c+id \\ c-id & b \end{pmatrix} \begin{pmatrix} 0\\1 \end{pmatrix} = \begin{pmatrix} c+id \\ b \end{pmatrix} \stackrel{!}{=} \lambda _- \begin{pmatrix} 0 \\1 \end{pmatrix} \iff c+id = 0
+		\end{split}
+		\] 
+		Quindi si richiede $c=d = 0$. 
+		Questo significa che la pi\`u generale espressione di $\hat{H}$ che abbia $\ket{+} , \ \ket{-} $ come autostati \`e:
+	\begin{equation}
+		\hat{H} = \begin{pmatrix} a  &  0 \\ 0 &  b \end{pmatrix} = a_0 \operatorname{Id} + a_3 \sigma _3
+	\end{equation}	
+	dove $a_0$ e $a_3$ scelti in modo tale che sulla diagonale escano $a,b$.
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Calcolare la matrice densit\`a $\rho _\psi =  \ket{\psi } \bra{\psi }  $ per gli stati
+	\begin{itemize}
+		\item $\ket{\psi } = \ket{+} $;
+		\item $\ket{\psi } = \ket{-} $;
+		\item $\ket{\psi } = a \ket{+} + b \ket{-} $.
+	\end{itemize}
+	\begin{svolgimento}
+		Se $\ket{\psi } = \ket{+} $, allora $\rho _+ = \ket{+} \bra{+} $, il che significa che, per l'ortonormalit\`a degli elementi di base, vale 
+		\[
+			\rho _+=\begin{pmatrix} 1 & 0 \\ 0 &0 \end{pmatrix} 
+		\] 
+		Analogamente si trova $\rho _-$. 
+		Se $\ket{\psi } = a \ket{+}  + b \ket{-} $, invece, si ha
+		\[
+			\begin{split}
+				&\bra{+} \Big(a \ket{+} + b \ket{-} \Big) \Big(\bra{+} a^* + \bra{-} b^*\Big) \ket{+}  = \lvert a \rvert ^2 \hspace{1cm}\braket{+|\rho _\psi |-} = ab^* \\
+				&\bra{-} \Big(a \ket{+} + b \ket{-} \Big) \Big(\bra{+} a^* + \bra{-} b^*\Big) \ket{-}  = \lvert b \rvert ^2\hspace{1cm} \braket{-|\rho _\psi |+} = a^* b\\
+				&\Rightarrow \rho _{ij} = \begin{pmatrix} \lvert a \rvert ^2 & ab^* \\ a^* b  & \lvert b \rvert ^2 \end{pmatrix} 
+			\end{split}
+		\] 
+		In quest'ultimo caso, si nota che  $\ket{\psi } $ \`e normalizzato $\Rightarrow \lvert a \rvert ^2 + \lvert b \rvert ^2 = 1\Rightarrow  \operatorname{tr} \rho =  1$. 
+		Inoltre $\rho = \rho ^+$ e 
+		\[
+			\rho ^2 = \begin{pmatrix} \lvert a \rvert ^2 & ab^* \\ a^* b& \lvert b \rvert ^2 \end{pmatrix} \begin{pmatrix} \lvert a \rvert ^2 & ab^* \\ a^* b& \lvert b \rvert ^2 \end{pmatrix} = \begin{pmatrix} \lvert a \rvert ^4 + \lvert a \rvert ^2 \lvert b \rvert ^2 & \lvert a \rvert ^2 ab^* + ab^* \lvert b \rvert ^2 \\ a^* b \left(\lvert a \rvert ^2 + \lvert b \rvert ^2\right) & \lvert a \rvert ^2  \lvert b \rvert ^2 + \lvert b \rvert ^4\end{pmatrix} = \begin{pmatrix} \lvert a \rvert ^2 & ab^* \\ a^* b & \lvert b \rvert ^2 \end{pmatrix} = \rho 
+		\] 
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Scrivere la pi\`u generale matrice densit\`a. NOTA: le propriet\`a pi\`u generali sono quelle per stati qualsiasi, non necessariamente puri, quindi $\operatorname{tr} \rho = 1, \ \rho  = \rho ^+$ e $\operatorname{tr} \rho ^2 \le 1$.
+	\begin{svolgimento}
+		Facendo uso della pi\`u generale espressione di una matrice Hermitiana riportata in eq. \ref{hmat}, si ha il punto di partenza
+		\[
+		\rho _{ij} = a_0 \operatorname{Id} + \sum_{i=1}^{3} a_i \sigma _i
+		\] 
+		Visto che deve risultare $\operatorname{tr} \rho  = 1$, si deve avere $a_0 + a_3 + a_0 - a_3 = 2a_0\stackrel{!}{=} 1$, quindi $a_0= 1 / 2$.
+
+		Infine, si calcola $\rho ^2$ per imporre $\operatorname{tr} \rho ^2 \le 1$, ricordando che $\sigma _i ^2 = 1$. 
+		Per farlo, si nota che, ridefinendo $a_i, \ i=1,2,3$ in modo che $\rho  = \frac{1}{2}\left(\operatorname{Id} +\vec{a}\cdot \vec{\sigma }\right) $, si trova\footnote{La seconda uguaglianza \`e da dimostrare.}:
+		\[
+		\rho ^2 = \frac{1}{4} ( \operatorname{Id}  + \vec{a}\cdot \vec{\sigma }) ( \operatorname{Id} + \vec{a}\cdot \vec{\sigma }) = \frac{1+a^2}{4}\operatorname{Id} + \frac{1}{2}\vec{a}\cdot \vec{\sigma }
+		\] 
+		Si nota che $\rho $ descrive uno stato puro $\iff a^2 = 1$, per cui si verifica $\rho  = \rho ^2$. 
+		In generale, visto che $\operatorname{tr} \sigma _i =0$, si ha $\operatorname{tr} \rho ^2 = \frac{1+a^2}{2} \le 1 \iff a^2 \le 1$.
+		L'espressione pi\`u generica per la matrice densit\`a \`e:
+		\[
+		\rho = \frac{1}{2}(\operatorname{Id} + \vec{a}\cdot \vec{\sigma })
+		\] 
+		con $a^2 \le 1$. 
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Calcolare il valore di aspettazione $\hat{M}= \sigma _3$ su uno stato generico individuato da $\rho = \frac{1}{2}\left(\operatorname{Id} +\vec{a}\cdot \vec{\sigma }\right) $.
+	\begin{svolgimento}
+		Per conto diretto:
+		\[
+			\operatorname{Tr} \rho \hat{O} = \sum_{i}^{} \rho _{ii} M_{ii} = \frac{1}{2}\left(1+a_3\right)  M_{11} + \frac{1}{2}\left(1- a_3\right)  M_{22}= \frac{1}{2}(1+a_3) -\frac{1}{2}(1+a_3) = a_3 
+		\] 
+		Pi\`u efficientemente, si sarebbe potuto notare che, visto che $\operatorname{Tr} \sigma _i = 0$:
+		\[
+		\operatorname{Tr} \left[ \frac{1}{2}\left(\operatorname{Id}  + \vec{a}\cdot \vec{\sigma }\right) \sigma _3 \right] = \operatorname{Tr} \frac{1}{2} a_3 \sigma ^2_3 = \operatorname{Tr} \frac{1}{2}a_3 \operatorname{Id} = a_3
+		\] 
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Scrivere la pi\`u generale $\rho $ tale per cui $\langle \hat{M} \rangle=0$.
+	\begin{svolgimento}
+		Dall'esercizio precedente, si ricava la condizione $a_3= 0$; allora la $\rho $ pi\`u generica \`e:
+		\[
+		\rho  = \frac{1}{2}\left(\operatorname{Id}  + a_1\sigma _1 + a_2 \sigma _2\right) 
+		\] 
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Trovare il pi\`u generico stato puro $\ket{\psi } $ tale per cui $\braket{\psi |\hat{M}|\psi } = 0 $.
+	\begin{svolgimento}
+		Prendendo $\ket{\psi } = a \ket{+} + b \ket{-} $, con $\lvert a \rvert ^2 + \lvert b \rvert ^2 = 1$, si ha
+		\[
+		\braket{\psi |\hat{M}|\psi } = \braket{\psi |\sigma _3|\psi } = \lvert a \rvert ^2 - \lvert b \rvert ^2
+		\] 
+		Quindi si deve imporre $\lvert a \rvert ^2 = \lvert b \rvert ^2$.
+		Dalla condizione di normalizzazione, si ottiene che deve essere $\lvert a \rvert ^2 = 1/2$, quindi, in generale:
+		\[
+		\ket{\psi } = e^{i \theta } \left(\frac{\ket{+} + e^{i \varphi } \ket{-}}{\sqrt{2} }\right) 
+		\] 
+		ha $\langle \hat{M} \rangle= 0 $.
+	\end{svolgimento}
+\end{esercizio}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Sistema di qubit}\label{1q}
 Si considera un singolo sistema di due qubit.
 Come base si usano autovettori di $\sigma _3$, ossia 
@@ -2569,22 +2764,102 @@ Quindi:
 		[\hat{H},\hat{S}_3] &= i  \sum_{i,k}^{} \varepsilon _{i 3 k } (\hat{S}_i  \hat{S}_k + \hat{S}_k \hat{S}_i) \\
 				    &= i \sum_{i,k}^{} \varepsilon _{k 3 i} (\hat{S}_{i} \hat{S_k} + \hat{S}_k \hat{S}_i) \\
 				    &= -i  \sum_{i,k}^{} \varepsilon _{i 3 k } (\hat{S}_i  \hat{S}_k + \hat{S}_k \hat{S}_i)
-	\end{split} \iff[\hat{H},\hat{S}_3] = 0
+	\end{split} \implies [\hat{H},\hat{S}_3] = 0
 \] 
-Andando a calcolare $\braket{\epsilon _i|\hat{S}_3|\epsilon _i} $ con gli $\ket{\epsilon _i} $ definiti in eq. $\ref{auten1}$, si trova $\epsilon _1 = 1$, $ \epsilon _2 = -1$, $\epsilon _3 = 0 $ e $\epsilon _4 = 0 $, quindi ha risolto la degenerazione osservata prima.
+Andando a calcolare $\braket{\epsilon _i|\hat{S}_3|\epsilon _i} $ con gli $\ket{\epsilon _i} $ definiti in eq. $\ref{auten1}$, si trova $\epsilon _0= 0$, $ \epsilon _1 = 1$, $ \epsilon _2 = -1$ e $\epsilon _3 = 0 $, quindi ha risolto la degenerazione osservata prima.
+
+Ora si considera in particolare lo stato fondamentale $\ket{\epsilon _0} = \frac{1}{\sqrt{2} }\big(\ket{12} - \ket{21} \big)$\footnote{Riprendendo la notazione per gli elementi di base per singolo sistema di due qubit, si ha $\ket{12} = \ket{1} \otimes \ket{2}$.}. 
+Si vuole guardare lo stato fondamentale del solo sistema $1$; allora si definisce $\rho = \ket{\epsilon _0} \bra{\epsilon _0} $ e si calcola $\rho ^{(1)} = \operatorname{Tr} ^{(2)} \rho $ (cio\`e si traccia sul secondo sottosistema).
+\begin{boxenv}[]
+	\begin{esercizio}[(facoltativo)]
+Per esercizio (non sar\`a utile nel seguito), si calcola la forma matriciale di $\rho $, indicata con $\rho _{qk}=\braket{q|\rho |k}  $. 
+\begin{svolgimento}
+Questa matrice avr\`a evidentemente tutti $0$ nei posti in cui $\ket{k}$ o $\ket{q} $ sono diversi da $\ket{12} $ o $\ket{21} $; allora la matrice sar\`a composta da tutti zeri tranne un blocco quadrato $2\times 2$.
+
+Sfruttando le propriet\`a $\operatorname{Tr} \rho  = 1$ e $\rho = \rho ^\dagger $, \`e sufficiente calcolare gli elementi $\braket{12|\rho |12} $ e $\braket{12|\rho |21} $ per dedurre conseguentemente gli altri.
+I vari elementi di matrice si calcolano facilmente ad occhio: i braket $\braket{12|12} = \braket{21|21} =1$, mentre $\braket{12|21} = \braket{21|12} =-1$ perch\'e il coefficiente di $\ket{21} $ in $\ket{\epsilon _0} $ \`e $-1$. 
+Ne segue che gli elementi fuori diagonale nel blocco $2\times 2$ hanno un segno negativo, mentre quelli sulla diagonale hanno segno positivo. 
+Tutti questi sono moltiplicati per $1 / 2$ derivante dal prodotto dei due $1 / \sqrt{2} $ in $\rho  = \ket{\epsilon _0} \bra{\epsilon _0} $. 
+Complessivamente:
+\begin{equation}
+	\rho _{qk} = \frac{1}{2} \begin{pmatrix} 0 & 0&0&0\\ 0& 1 & -1 & 0\\ 0&-1&1&0 \\ 0&0&0&0 \end{pmatrix} 
+\end{equation}
+Ad occhio si vede che soddisfa anche le propriet\`a $\rho = \rho^\dagger , \ \operatorname{Tr} \rho  = 1$.
+Ora si calcola $\rho ^2 $ per vedere se soddisfa $\operatorname{Tr} \rho ^2 = 1$.
+\[
+	\rho ^2 = \frac{1}{4}  \begin{pmatrix} 0 & 0&0&0\\ 0& 1 & -1 & 0\\ 0&-1&1&0 \\ 0&0&0&0 \end{pmatrix}\begin{pmatrix} 0 & 0&0&0\\ 0& 1 & -1 & 0\\ 0&-1&1&0 \\ 0&0&0&0 \end{pmatrix} = \frac{1}{4} \begin{pmatrix} 0 & 0 & 0& 0\\ 0& 2 & -2 &0\\ 0& -2 & 2 &0\\ 0& 0& 0&0 \end{pmatrix} 
+\] 
+da cui si vede subito che $\operatorname{Tr} \rho ^2 = 1$.
+\end{svolgimento}
+\end{esercizio}
+\end{boxenv}
+Ora si calcola $\rho ^{(1)} $:
+\[
+	\begin{split}
+		\rho ^{(1)} &= \sum_{j}^{} \bra{j}^{(2)}  \big (\ket{\epsilon _0} \bra{\epsilon _0}\big)  \ket{j}  ^{(2)} = \frac{1}{2}\sum_{j}^{} \bra{j}\Big(\ket{1} \ket{2} - \ket{2} \ket{1} \Big)\Big(\bra{1} \bra{2} -\bra{2} \bra{1} \Big) \ket{j} \\
+			    &= \frac{1}{2} \bra{1} \Big(\ket{1} \ket{2} - \ket{2} \ket{1} \Big)\Big(\bra{1} \bra{2} -\bra{2} \bra{1} \Big) \ket{1}  + \frac{1}{2} \bra{2} \Big(\ket{1} \ket{2} - \ket{2} \ket{1} \Big)\Big(\bra{1} \bra{2} -\bra{2} \bra{1} \Big)\ket{2} \\
+			    &= \frac{1}{2} \big[ \ket{2} \bra{2} + \ket{1} \bra{1} \big]
+	\end{split}
+\] 
+\begin{osservazione}
+	Nel calcolo precedente, prestare attenzione a far agire $\ket{j} $ e $\bra{j} $ solamente sugli stati del sottosistema $2$.
+\end{osservazione}
+In forma matriciale, evidentemente:
+\[
+	\rho ^{(1)} _{ij} = \begin{pmatrix} 1 / 2  & 0 \\  0 & 1 / 2 \end{pmatrix} = \frac{1}{2} \operatorname{Id} 
+\] 
+Si vede facilmente che soddisfa $\operatorname{Tr} \rho ^{(1)} = 1 $ e $\rho ^{(1)} = \big(\rho ^{(1)} \big)^\dagger $, mentre 
+\[
+\big(\rho ^{(1)} \big)^2   = \frac{1}{4} \operatorname{Id}  \implies \operatorname{Tr} \big(\rho ^{(1)} \big)^2 = \frac{1}{2}<1
+\] 
+quindi lo stato che rappresenta non \`e puro.
+
+Volendo calcolare il valore di aspettazione dell'operatore $\hat{M}$ sul sottosistema $1$, si nota ad occhio che $\langle M \rangle^{(1)}=\operatorname{Tr} \rho ^{(1)} \hat{M}= 0$.
 
 
 
+\subsection{Complementi di teoria}
 
+\subsubsection{Entropia di entanglement}
 
+\`E possibile quantificare la purezza di uno stato a seconda di quando $\operatorname{Tr} \rho ^2$ \`e vicina a $1$. 
+Questo viene fatto tramite \textbf{entropia di entanglement}:
+\begin{boxenv}[]
+\begin{equation}
+	S = - \ln \left[ \operatorname{Tr} \left(\rho ^{(1)} \right) ^2 \right] 
+\end{equation}
+\end{boxenv}
+Pi\`u in generale, si definisce 
+\begin{equation}
+	S_\alpha = \frac{1}{1-\alpha } \ln \left[ \operatorname{Tr} \left(\rho^{(1)}  \right) ^\alpha  \right] 
+\end{equation}
+Si pu\`o anche definire l'entropia di von Neumann:
+\begin{equation}
+	S_\text{VN} = - \operatorname{Tr} \left(\rho ^{(1)} \ln\rho ^{(1)} \right) 
+\end{equation}
+\subsubsection{Funzione di una matrice}
+Si \`e appena usato $\ln \rho $, con $\rho $ matrice. 
+Per capire cosa significa, si prende una matrice $M$ hermitiana e una sua funzione $F(M)$ \`e definita come:
+\begin{equation}
+	F(M) = U F(\lambda _i) U^{-1} 
+\end{equation}
+dove $U$ \`e la matrice che diagonalizza $M$, i $\lambda _i$ sono i suoi autovalori e $F(\lambda _i)$ \`e la matrice in cui la funzione $F$ agisce sugli autovalori della matrice.
 
+Praticamente, se $F(M) = M ^3$ per esempio, si ha:
+\[
+	F(M) = U \begin{pmatrix} \lambda _1^3 & 0 &0 & \cdots \\ 0& \lambda _2 ^3 & 0 &\cdots \\ \vdots & \vdots & \ddots & \vdots\end{pmatrix} U^{-1} 
+\] 
+Questo significa che si applica $F$ su una matrice diagonale dove l'operazione \`e ben definita e poi si ritorna alla rappresentazione originaria della matrice tramite la matrice $U$ che \`e quella che diagonalizza $M$, cio\`e che la porta nella rappresentazione in cui \`e diagonale.
 
+\subsubsection{Evoluzione temporale di stati impuri}
 
-
-
-
-
-
+Stati impuri che si formano dall'interazione di pi\`u sistemi mantengono la loro impurit\`a anche quando si blocca l'interazione. 
+Per dimostrarlo, sia $\rho ^{(1)} (0)$ la matrice densit\`a di uno stato entangled, cio\`e tale che $\operatorname{Tr} \left(\rho ^{(1)}(0) \right) ^2 < 1 $.
+Se a $t=0$ si blocca l'interazione, $\forall t> 0 , \ \operatorname{Tr} \left(\rho ^{(1)} (t)\right) ^2 < 1$:
+\[
+\operatorname{Tr} \left(\rho ^{(1)} (t)\right) ^2 = \operatorname{Tr} \left(e^{\frac{i}{\hbar }\hat{H}_1 t} \rho ^{(1)} (0) e^{-\frac{i}{\hbar }\hat{H}_1 t} \right) ^2 = \operatorname{Tr} \left(\rho ^{(1)}(0)  e^{\frac{i}{\hbar }\hat{H}_1 t} e^{-\frac{i}{\hbar }\hat{H}_1 t}  \right) ^2 = \operatorname{Tr} \left(\rho ^{(1)} (0)\right) ^2 < 1
+\] 
+dove si \`e usata la propriet\`a della traccia per cui $\operatorname{Tr} AB = \operatorname{Tr} BA$.
 
 
 
