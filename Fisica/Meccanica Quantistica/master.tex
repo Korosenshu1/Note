@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{scrartcl} % Packages
+\documentclass[11pt, a4paper]{scrartcl} % Packages
 %\usepackage{stix}
 \usepackage{sansiwona}
 \usepackage[margin=1.5in]{geometry}
@@ -32,6 +32,8 @@
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
 
 %Captions
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
@@ -52,11 +54,11 @@
 }
 \definecolor{asdf}{HTML}{4a7aa4}
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -1516,9 +1518,7 @@ Si ricorda che per sistemi descritti da pi\`u funzioni d'onda, una rotazione $\h
 con $\hat{R}(\hat{n},\theta ) = e^{- \frac{i}{\hbar } \theta  \hat{n}\cdot \hat{\mathbf{L}} } \hat{M}(\hat{n},\theta ) $, dove $\hat{M}$ agisce sulle componenti (rotazione passiva), mentre l'esponenziale agisce sulle coordinate (rotazione attiva).
 
 Visto che $\hat{R}$ deve essere unitario e che l'esponenziale gi\`a lo \`e, anche $\hat{M}$ deve esserlo; allora $\hat{M}(\hat{n},\theta ) = e^{- \frac{i}{\hbar } \theta  \hat{n} \cdot \hat{\mathbf{S} } } $, con $\hat{\mathbf{S} }$ Hermitiano.
-
 $[\hat{\mathbf{L} }, \hat{\mathbf{S} }]= 0$ visto che agiscono indipendentemente, quindi $\hat{R}(\hat{n},\theta ) = e^{ - \frac{i}{\hbar } \theta  \hat{n}\cdot (\hat{\mathbf{L} }+ \hat{\mathbf{S} })}\equiv e^{ - \frac{i}{\hbar } \theta  \hat{n}\cdot \hat{\mathbf{J} }}$.
-
 Valendo $[\hat{J}_i, \hat{J}_j] = i\hbar \varepsilon _{ijk} \hat{J}_k$ e $[\hat{L}_i, \hat{L}_j] = i \hbar \varepsilon _{ijk} \hat{L}_k$, deve risultare $[\hat{S}_i , \hat{S}_j ] = i\hbar \varepsilon _{ijk} \hat{S}_k$. Si ha anche:
 \begin{boxenv}[]
 \begin{equation}
@@ -1531,6 +1531,80 @@ Valendo $[\hat{J}_i, \hat{J}_j] = i\hbar \varepsilon _{ijk} \hat{J}_k$ e $[\hat{
 \end{split}
 \end{equation}
 \end{boxenv}
+\subsubsection{Esempio -- Sistema di spin $1 / 2$ (parte 1)}
+
+Si considera per esempio un sistema (una particella tipo elettrone) di spin $1 / 2$. 
+Lo studio di un sistema del genere consiste nel trascurare qualunque altro aspetto del sistema se non il suo spin.
+In altre parole, gli stati del sistema in esame saranno unicamente stati di spin e non coinvolgeranno energia o altri valori.
+
+Per $s= 1/2$, si ha $m = 1/2, \ m = -1 / 2 $ perch\'e $m$ si muove a passi di $1$ tramite gli operatori di salita e discesa, quindi il sistema ha un totale di due gradi di libert\`a.
+Questo significa che gli stati prendono valori in uno spazio vettoriale bidimensionale, pertanto gli operatori di spin saranno matrici hermitiane $2\times 2$.
+In questo caso, la forma matriciale degli operatori di spin \`e ottenuta tramite le matrici di Pauli:
+\begin{equation}
+	\hat{S}_x = \frac{1}{2}\hbar \sigma _1\hspace{1cm} \hat{S}_y = \frac{1}{2}\hbar \sigma _2 \hspace{1cm} \hat{S}_z = \frac{1}{2}\hbar \sigma _3
+\end{equation}
+dove i coefficienti $\hbar  / 2$ servono a rendere esatte le relazioni dell'algebra di tali operatori. 
+
+Da \S\ref{2lsys} e \S\ref{1q}, si sa che $\sigma _3$, quindi $\hat{S}_z$, fornisce una base completa per il sistema ed \`e data da
+\[
+\left\{ \ket{\uparrow} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} , \ \ket{\downarrow} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}  \right\} 
+\] 
+Si vede che $\ket{\uparrow} = \ket{s=\frac{1}{2}, m= \frac{1}{2}}=\begin{pmatrix} 1 & 0  \end{pmatrix}  $, mentre $\ket{\downarrow} = \ket{s=\frac{1}{2}, m = - \frac{1}{2}} = \begin{pmatrix} 0 &  1 \end{pmatrix} $\footnote{Si sottintende $\hbar = 1$.}:
+\[
+	\hat{S}_z \ket{\uparrow} = \frac{1}{2} \begin{pmatrix} 1 & 0 \\0 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0  \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
+\] 
+quindi $m = 1 / 2$ effettivamente perch\'e \`e l'autovalore di $\hat{S}_z$. 
+Questo dimostra che lo spin up coincide con $\begin{pmatrix} 1 & 0 \end{pmatrix} $ e, quindi, il down coincide con $\begin{pmatrix} 0 & 1 \end{pmatrix} $.
+
+Sia $\ket{\psi } =  \alpha  \ket{\uparrow} + \beta \ket{\downarrow} $ un generico stato; la probabilit\`a di trovare il sistema nello stato $\ket{\uparrow} $ in questo sistema \`e, per definizione, $\lvert \braket{\uparrow|\psi }  \rvert ^2 = \lvert \alpha  \rvert ^2$; analogamente, la probabilit\`a di trovarlo in $\ket{\downarrow} $ \`e $\lvert \braket{\downarrow|\psi }  \rvert ^2 = \lvert \beta  \rvert ^2$. 
+Per normalizzazione dello stato, la somma di queste fa $1$, coerentemente con quanto ci si sarebbe aspettato.
+
+\subsubsection{Esempio -- Sistema di spin $ 1 / 2$ (parte 2)}
+Si considera ancora $s = 1 / 2$, per cui l'autovalore di $\hat{S}_z$ \`e: $m=s_z = -1 / 2 ,  1 / 2$. L'autovalore di $\hat{S}^2$, invece, ha valore $3 / 4$.
+In unit\`a naturali, si considera $\hat{S}_a = \sigma _a / 2, \ a = 1 ,2 ,3 $.
+Gli elementi della base completa si indicano con $\ket{s,m} $ e si prende, come base completa, gli autostati di $\hat{S}_z$.
+
+Ora si studia l'effetto di una rotazione, attorno all'asse $\hat{n}$ e di angolo $\theta $, su un generico stato $\ket{\psi } = a  \ket{\frac{1}{2}, \frac{1}{2}} + b  \ket{\frac{1}{2}, -\frac{1}{2}} $.
+Tale rotazione sar\`a data da $\hat{R}(\hat{n},\theta ) = e^{- \frac{i}{\hbar }\hat{n}\cdot \hat{S}\theta } $; se ne cercher\`a rappresentazione matriciale per ottenere autovalori e autovettori.
+Il versore in coordinate polari \`e $\hat{n} = (\sin \theta  \cos\varphi  , \sin \theta  \sin \varphi , \cos\theta )$, quindi:
+\[
+	\hat{n}\cdot \hat{S} = \frac{1}{2}\hbar \hat{n}\cdot \hat{\sigma }= \frac{1}{2}\hbar \begin{pmatrix} \cos \theta  & e^{-i \varphi } \sin \theta \\ e^{i\varphi } \sin \theta  & - \cos \theta  \end{pmatrix} \equiv \frac{1}{2}\hbar M
+\] 
+\begin{esercizio}
+	Si cercano autovalori e autovettori di $M$.
+	\begin{svolgimento}
+		Per gli autovalori:
+		\[
+			 \begin{vmatrix} \cos \theta  - \lambda  & e^{-i\varphi } \sin \theta  \\ e^{i\varphi } \sin \theta  & - \cos \theta - \lambda  \end{vmatrix} = \lambda ^2 - \cos^2 \theta -\sin^2 \theta = \lambda ^2 - 1 \stackrel{!}{=}0 
+		\] 
+	quindi $\lambda _{\pm}  = \pm 1 $. 
+	Quindi gli autovettori sono:
+	\[
+		\begin{split}
+			&\begin{pmatrix} \cos \theta \mp 1 & e^{-i\varphi } \sin \theta  \\ e^{i\varphi } \sin \theta  & -\cos \theta \mp 1 \end{pmatrix} \begin{pmatrix} a\\ b \end{pmatrix} \stackrel{!}{=}0 \iff a\big(\cos \theta \mp 1\big) + b e^{-i\varphi } \sin \theta  = 0\\
+			&\Rightarrow b =e^{i\varphi }  \frac{\pm 1 - \cos \theta }{\sin \theta } a 
+		\end{split}
+	\] 
+	dove il segno superiore \`e relativo a $\lambda = 1$, mentre quello inferiore a $\lambda = - 1$. 
+	Queste possono essere riscritte meglio usando le identit\`a trigonometriche $\sin \theta  = 2 \sin (\theta / 2) \cos (\theta / 2)$, $1 + \cos \theta = 2 \cos^2 (\theta / 2)$ e $1 - \cos \theta  = 2 \sin ^2 (\theta / 2)$:
+	\[
+	\begin{split}
+		&b_+ = e^{i\varphi }  \frac{ 1 - \cos \theta }{\sin \theta } a_+ =  e^{i\varphi } \frac{2 \sin ^2 \theta  / 2}{2 \cos \theta  / 2 \sin \theta  / 2}a_+ = e^{i\varphi } \frac{\sin \theta  / 2}{\cos \theta  / 2} a_+\\
+		&b_- = - e^{i\varphi } \frac{1+\cos \theta }{\sin \theta }a_- =   -e ^{i\varphi } \frac{2 \cos ^2 \theta / 2}{2 \sin \theta / 2 \cos \theta  /  2}a_- = - e^{i\varphi } \frac{\cos \theta  / 2}{\sin \theta  / 2} a_-
+	\end{split}
+	\] 
+	Cos\`i facendo, si possono ottenere degli autovettori scritti in maniera simmetrica prendendo $a_+ = e^{-i\varphi  / 2} \cos \theta  / 2$ e $a_- = - e^{-\varphi / 2} \sin \theta  / 2$:
+	\[
+		\ket{v_+} = \begin{pmatrix} e^{-\varphi  / 2} \cos \theta / 2 \\ e^{i \varphi  / 2} \sin \theta  / 2\end{pmatrix} \hspace{1cm} \ket{v_-} = \begin{pmatrix} -e^{- i \varphi  / 2} \sin \theta  / 2 \\ e^{- i\varphi   / 2} \cos \theta  / 2 \end{pmatrix} 
+	\] 
+	
+	\end{svolgimento}
+\end{esercizio}
+\begin{osservazione}
+Si nota che gli autovalori si sarebbero potuti determinare in principio senza calcoli: il sistema \`e invariante per rotazioni per assunzione, quindi, visto che ruotando $\hat{S}_z$ lungo un altro asse, il sistema deve rimanere uguale, anche i suoi autovalori devono rimanere invariati.
+\end{osservazione}
+A questo punto, gli autostati di $\hat{R} = e^{- \frac{i}{\hbar }\hat{n}\cdot \hat{S}\theta } $ sono gli stessi di $\hat{n}\cdot \hat{S}$, che, a loro volta, sono gli stessi di $M$.
+
 \subsubsection{Gli angoli di Eulero e le matrici di Wigner}
 Permettono di esprimere la rotazione pi\`u generica. Si indicher\`a rotazione con $\hat{R}(\alpha ,\beta ,\gamma)$. Usando base completa $\ket{jm} $, si verifica che $\braket{j'm'|\hat{R}|jm} \equiv \langle \hat{R} \rangle= M\delta _{j'j} $, con $M$ matrice generica; per farlo, si usa $[\hat{J}^2 , \hat{R}] = 0$:
 \[
@@ -1543,18 +1617,46 @@ Si indica $\langle \hat{R} \rangle\equiv D^j _{m , m'} (\alpha ,\beta ,\gamma)$,
 \[
 \hat{R} \ket{jm}  = \sum_{j'm'}^{} \ket{j'm'} \braket{j'm'|\hat{R}|jm} = \sum_{m'}^{} \ket{jm'} D_{m,m'} ^j (\alpha ,\beta ,\gamma)
 \] 
-Significa che per ogni rotazione, $j$ \`e fissato. Si calcolano elementi di $D^j_{m,m'} $; si pu\`o dimostrare che\footnote{La seconda uguaglianza non \`e dimostrata, \`e da prendere per buona.}:
+Significa che per ogni rotazione, $j$ \`e fissato. 
+
+Si calcolano elementi di $D^j_{m,m'} $.
+Per farlo, si considera che una generica rotazione si pu\`o spezzare nella composizione delle rotazioni per ciascun angolo di Eulero:
 \[
-\hat{R}(\alpha ,\beta ,\gamma) = e^{-\frac{i}{\hbar }  \gamma \hat{z}' \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \beta  \hat{u} \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \alpha \hat{z} \cdot \mathbf{J} }= e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  
+\hat{R}(\alpha ,\beta ,\gamma) = \hat{R}(\hat{z}', \gamma) \hat{R}(\hat{u},\beta ) \hat{R} (\hat{z},\alpha )=e^{-\frac{i}{\hbar }  \gamma \hat{z}' \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \beta  \hat{u} \cdot \mathbf{J} } e^{-\frac{i}{\hbar } \alpha \hat{z} \cdot \mathbf{J} }
+\] 
+con $\hat{u}$ versore $\hat{y}$ dopo rotazione attorno all'asse $\hat{z}$, di angolo $\alpha $ e $\hat{z}'$ versore $\hat{z}$ che si ottiene dopo rotazione attorno a $\hat{u}$ di angolo $\beta $.
+Si pu\`o dimostrare che:
+\[
+\hat{R}(\alpha ,\beta ,\gamma)  = e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  
 \] 
 Ne segue che:
-\[
+\begin{equation}
 	\begin{split}
 		D^j_{m,m'} (\alpha ,\beta ,\gamma) &= \braket{jm'|e^{-\frac{i}{\hbar } \alpha  J_z}  e^{-\frac{i}{\hbar } \beta J_y} e^{-\frac{i}{\hbar } \gamma J_z}  | jm} = e^{i(\alpha m' - \gamma m)}  \braket{jm'|e^{-\frac{i}{\hbar } \beta J_y} | jm} \\
-						   &\equiv  e^{i (\alpha m' - \gamma m)} d^j_{m,m'} (\beta )
+						   &\equiv  e^{-i (\alpha m' + \gamma m)} d^j_{m,m'} (\beta )
 	\end{split}
-\] 
+\end{equation}
 Le matrici $D,d$ sono note come \textbf{matrici di Winger}. 
+\begin{esempio}[Matrice di Wigner per spin $ 1/2$]
+Si vuole calcolare $d^j _{m,m'} (\beta )$ nel caso di $s= 1 / 2$.
+In questo caso, in unit\`a naturali, $J_y = \sigma _y / 2$, quindi si deve calcolare $e^{-\frac{i}{2}\beta \sigma _y} $.
+Si ha:
+\[
+e^{-i \frac{\beta \sigma _y}{2}} = \cos \frac{\beta}{2} - i \sigma _y\sin \frac{\beta}{2}
+\] 
+Allora:
+\begin{equation}
+	d^{1 / 2} _{m,m'} (\beta ) = \begin{pmatrix} \cos \beta  / 2 & - \sin \beta / 2 \\ \sin \beta  / 2 & \cos \beta / 2 \end{pmatrix} 
+\end{equation}
+Da questa, si ricava
+\begin{equation}
+		D^{1 / 2} _{m,m'} (\alpha ,\beta ,\gamma) = e^{-i (\alpha m' + \gamma m)} \begin{pmatrix} \cos \beta  / 2 & - \sin \beta / 2 \\ \sin \beta  / 2 & \cos \beta / 2 \end{pmatrix}
+\end{equation}
+\end{esempio}
+Facendo agire questa rotazione sulle armoniche sferiche, che sono gli autostati del momento angolare orbitale, si deve ottenere lo stesso effetto che su $\ket{jm} $, quindi:
+\begin{equation}
+	\hat{R}(\alpha , \beta , \gamma)  Y_{lm} (\theta , \varphi ) = Y_{lm} (\theta',\varphi ') = \sum_{m'}^{} Y_{lm'} (\theta ,\varphi ) D^\ell _{m',m} (\alpha ,\beta ,\gamma)
+\end{equation}
 \subsubsection{Coefficienti di Clebsch-Gordan}
 Si considerano due sistemi a due livelli, $1$ e $2$, con momenti angolari fissati $J_1,J_2$ rispettivamente. Hanno basi $\ket{j_1m_1} $ e $\ket{j_2m_2} $ singolarmente, mentre la base della compoiszione\footnote{La base della composizione di due sistemi \`e sempre il prodotto tensore delle basi, per\`o quando vi \`e interazione, vi pu\`o essere la formazione di stati entangled che non sono esprimibili tramite stati di $\mathcal{H}$.} si indica con $\ket{j_1j_2m_1m_2} = \ket{j_1m_1} \otimes \ket{j_2m_2} $.
 
@@ -2399,7 +2501,7 @@ Si dividono i due casi, a seconda del valore di $\gamma$:
 
 \section{Esercitazioni 21-22}
 
-\subsection{Generalit\`a sui sistemi a due livelli}
+\subsection{Generalit\`a sui sistemi a due livelli}\label{2lsys}
 
 Le matrici di Pauli sono:
 \begin{equation}
