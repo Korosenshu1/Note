@@ -1657,17 +1657,94 @@ Facendo agire questa rotazione sulle armoniche sferiche, che sono gli autostati 
 \begin{equation}
 	\hat{R}(\alpha , \beta , \gamma)  Y_{lm} (\theta , \varphi ) = Y_{lm} (\theta',\varphi ') = \sum_{m'}^{} Y_{lm'} (\theta ,\varphi ) D^\ell _{m',m} (\alpha ,\beta ,\gamma)
 \end{equation}
-\subsubsection{Coefficienti di Clebsch-Gordan}
-Si considerano due sistemi a due livelli, $1$ e $2$, con momenti angolari fissati $J_1,J_2$ rispettivamente. Hanno basi $\ket{j_1m_1} $ e $\ket{j_2m_2} $ singolarmente, mentre la base della compoiszione\footnote{La base della composizione di due sistemi \`e sempre il prodotto tensore delle basi, per\`o quando vi \`e interazione, vi pu\`o essere la formazione di stati entangled che non sono esprimibili tramite stati di $\mathcal{H}$.} si indica con $\ket{j_1j_2m_1m_2} = \ket{j_1m_1} \otimes \ket{j_2m_2} $.
-
-Si cerca un cambio di base da $\ket{j_1,j_2,m_1,m_2} $ a $\ket{j_1,j_2,J,M} $, con $J$ riferito a $\hat{J} = \hat{J}_1 + \hat{J}_2$ e $M$ a $\hat{J}_z$, per sistema complessivo invariante rispetto a rotazioni globali (date da $\hat{J}$).
-
-Si impone $M \stackrel{!}{=} m_1+m_2$ perch\'e $\hat{J}_z \ket{j_1j_2m_1m_2} = M \ket{j_1j_2m_1m_2} $. Definendo $N(J)$ numero di stati associati a $J$ e $n(M)$ numero di stati associati a $M$, si ha:
-\begin{equation}
-	n(M) = \sum_{i\ge |M|}^{} N(i)
+\subsubsection{Regole di superselezione}
+Si considera una rotazione di $\theta  = 2\pi$ attorno all'asse $\hat{z}$; questa agisce su un autostato nel seguente modo:
+\[
+	\hat{R}_{2\pi}\ket{jm} = e^{-i 2\pi \hat{J}_z} \ket{jm} = e^{-i 2\pi m} \ket{jm} = (e^{-i\pi} ) ^{2m} \ket{jm} =(-1)^{2m} \ket{j m} 
+\] 
+Si nota che $m$ dipende direttamente da $j$: se $j \in \mathbb{Z}\Rightarrow m \in \mathbb{Z} \Rightarrow (-1)^{2m} = 1$; 
+al contrario, se fosse $j$ semintero\footnote{Cio\`e della forma $n / 2, \ n \in \mathbb{N}$.}, visto che ogni valore di $m$ si trova a passi di $1$ da $j$, significa che $m$ rimane semintero\footnote{Infatti se $2$ non divide $n\Rightarrow n = 2q + r, \ q \in \mathbb{N}$ e $0\le  r< 2$, pertanto sommando un $k\in \mathbb{N}$, si trova $(n+2k) / 2$. Si deve mostrare che questo non \`e divisibile per $2$ ed \`e immediato, visto che $n + 2k = 2(q+k) + r \equiv 2n' + r$.}. 
+Allora si pu\`o pi\`u semplicemente scrivere che
+\begin{equation}\label{hiam}
+	\hat{R}_{2\pi} \ket{jm} = (-1)^{2j} \ket{jm} 
 \end{equation}
-Per esempio, se $j_1=j_2=1 / 2$, vale $n(1) = 1, n(0) = 2, n(-1) = 1\Rightarrow N(1) = 1, N(0) =1$; se $j_1=j_2=1$, vale $n(2) = 1, n(1) = 2, n(0) = 3$, quindi $N(2) = 1, N(0) = 1, N(1) = 1$. Vale $N(j) = 1 $ se $\lvert j_1-j_2 \rvert \le j \le j_1+j_2$.
+\begin{osservazione}
+Nel caso di spin semintero (quindi per fermioni) si osserva che una rotazione di $2\pi$ non \`e sufficiente a far tornare il sistema allo stesso punto di partenza.
+\end{osservazione}
+Dal punto di vista fisico, nonostante gli stati possono subire variazioni a seguito di rotazioni di $2\pi$, si deve comunque verificare un'invarianza degli operatori: le misure che si compiono ruotando il sistema di $2\pi$ devono essere le stesse.
+Per imporre questa condizione su un osservabile $\hat{O}$ generico, si richiede $\left[ \hat{O}, \hat{R}_{2\pi}  \right] = 0 $.
+D'ora in poi, ogni osservabile che sia \textit{un buon osservabile}, soddisfa automaticamente $\left[ \hat{O}, \hat{U} \right] =0$.
 
+Usare operatori che soddisfano questa richiesta non \`e sufficiente a rendere indifferente il risultato in eq. \ref{hiam}.
+Sia $\hat{U}\equiv \hat{R}_{2\pi} $ e sia $\ket{\psi '} = \hat{U}\ket{\psi } \neq \ket{\psi } $; per osservabile $\hat{A}$ tale che $\left[ \hat{A},\hat{U} \right] =0$:
+\[
+\braket{\psi '|\hat{A}|\psi '} = \braket{\psi |\hat{U}^\dagger \hat{A}\hat{U}|\psi } = \braket{\psi |\hat{A}|\psi } 
+\] 
+visto che $\left[ \hat{A}, \hat{U} \right]=0 \Rightarrow \hat{A}\hat{U}= \hat{U}\hat{A}\Rightarrow \hat{U}^\dagger \hat{A}\hat{U}= \hat{U}^\dagger \hat{U}\hat{A}= \hat{A}$, essendo $\hat{U}$ unitario.
+Questo significa che se anche gli stati non rimangono invariati sotto rotazione di $2\pi$, nel caso in cui l'osservabile commuti con tale rotazione, il suo valore medio sullo stato rimane invariato.
+
+Visto che $\hat{R}_{2\pi} \ket{jm} = (-1)^{2j} \ket{jm} $, alcuni stati prenderanno un segno negativo, altri no:
+\[
+	\hat{R}_{2\pi} \ket{+} = \ket{+} \hspace{1cm} \hat{R}_{2\pi} \ket{-} = - \ket{-} 
+\] 
+Se $\left[ \hat{A}, \hat{R}_{2\pi}  \right] = 0 $, usando sempre che $\hat{R}_{2\pi} $ \`e unitario, si trova che:
+\begin{equation*}
+	\braket{+|\hat{R}_{2\pi} \hat{A}|-} = \braket{+|\hat{A}\hat{R}_{2\pi} |-} \Rightarrow \braket{+|\hat{A}|-} = - \braket{+|\hat{A}|-} \iff  \braket{+|\hat{A}|-} =0
+\end{equation*}
+dove si \`e applicato prima $\hat{R}_{2\pi} $ su $\ket{+} $ e poi su $\ket{-} $.
+
+Le implicazioni di questo sono che gli stati a $j$ intero e quelli a $j$ semintero non interferiscono tra di loro.
+A questo punto, il valor medio di un operatore $\hat{A}$ su uno stato composto dalla mistura di questi due, tipo $\ket{\psi _\omega} = \ket{+} + e^{i\omega} \ket{-}  $, dipende singolaramente dal valor medio di $\hat{A}$ su $\ket{+} $ e su $\ket{-} $:
+\[
+\braket{\psi _\omega|\hat{A}|\psi _\omega} = \braket{+|\hat{A}|+} + \braket{-|\hat{A}|-} 
+\] 
+Questa \`e chiamata \textbf{regola di superselezione}.
+
+\subsubsection{Coefficienti di Clebsch-Gordan}
+Si considerano due sistemi a due livelli, $1$ e $2$, con momenti angolari fissati $j_1,j_2$ rispettivamente. Hanno basi, rispettivamente, $\ket{j_1m_1} $ e $\ket{j_2m_2} $ di $2j_1+1$ e $2j_2+1$ elementi, mentre la base della composizione\footnote{La base della composizione di due sistemi \`e sempre il prodotto tensore delle basi, per\`o quando vi \`e interazione, vi pu\`o essere la formazione di stati entangled che non sono esprimibili tramite stati di $\mathcal{H}$.} \`e data da $\ket{j_1j_2m_1m_2} = \ket{j_1m_1} \otimes \ket{j_2m_2} $ e ha $(2j_1+1)(2j_2+1)$ elementi.
+
+Si cerca un cambio di base da $\ket{j_1,j_2,m_1,m_2} $ a $\ket{j_1,j_2,J,M} $, con $J$ riferito a $\hat{J}^2 = \hat{J}_1^2  + \hat{J}^2_2 $ e $M$ a $\hat{J}_z=\hat{J}_{1,z}  + \hat{J}_{2,z} $, per sistema complessivo invariante rispetto a rotazioni globali.
+\`E possibile usare gli autovalori di $\hat{J}^2$ e $\hat{J}_z$ come numeri quantici perch\'e formano un set completo; questo si dimostra facendo vedere che $\hat{J}^2_1 , \hat{J}_2^2 , \hat{J}^2, \hat{J}_z$ commutano, cosa che deriva direttamente dal fatto che $\left[ \hat{J}^2_1 , \hat{J}_2^2  \right] =0$ e dal fatto che commutano anche $\hat{J}^2 , \hat{J}_{z} $.
+
+Sia $N(J)$ numero di set indipendenti associati a $J$\footnote{Con set si intende l'insieme degli stati che, a fissato $J$, hanno $-J\le M\le J$ diverso.} e $n(M)$ numero di stati con autovalore $M$.
+Si ha:
+\begin{equation}
+	n(M) = \sum_{J\ge |M|}^{} N(J)
+\end{equation}
+Questa implica che $N(J) = n(J) - n(J+1)$. Inoltre, si ha che:
+\begin{equation}
+	n(M) = \begin{cases}
+		0&,\ \lvert M \rvert > j_1+j_2\\
+		j_1+j_2+1-\lvert M \rvert &,\ j_1+j_2 \ge \lvert M \rvert \ge \lvert j_1-j_2 \rvert \\
+		2 \min\left\{ j_1,j_2 \right\} +1 &,\ \lvert j_1-j_2 \rvert \ge \lvert M \rvert \ge 0
+	\end{cases}
+\end{equation}
+Allora 
+\begin{equation}
+	N(J) = n(J) - n(J+1) \implies N(J) =\begin{cases}
+		1 &,\ \lvert j_1-j_2 \rvert \le J\le \lvert j_1+j_2 \rvert \\
+		0&,\ \text{altrimenti }
+	\end{cases}
+\end{equation}
+\begin{esempio}[Caso $j_1=j_2=1$.]
+	Si considera il caso $j_1 = j_2 = 1$, quindi $m_1, m_2 = 1,0,-1$. 
+	Si calcola $n(M)$, che sarebbe il numero di stati con $m_1,m_2 $ tali che $m_1+m_2=M$.
+In questo caso $-2\le M\le 2$, quindi si calcolano i seguenti.
+\begin{itemize}
+	\item $n(2) = 1$, perch\'e l'unica combinazione che restituisce $M = 2$ \`e $m_1=m_2 = 1$.
+	\item $n(1) = 2$ perch\'e si pu\`o ottenere da $(m_1,m_2) = (1,0)$ o $(0,1)$.
+	\item $n(0) = 3$ perch\'e si pu\`o ottenere da $(0,0)$, $ (1,-1)$ o $(-1,1)$.
+\end{itemize}
+Conseguentemente si ha:
+\begin{itemize}
+	\item $N(2) = n(2) - n(3) = 1 - 0 = 1$;
+	\item $N(1) = n(1) - n(2) = 2 - 1 = 1$;
+	\item $N(0) = n(0) - n(1) = 3 - 2 = 1$.
+\end{itemize}
+\end{esempio}
+Questo \`e servito a dimostrare che nella base $\ket{j_1 j_2 JM} $, ad ogni valore fissato di $J$, si ha un singolo set di $M$ perch\'e $N(J)$ \`e al massimo $1$ e i valori di $J$ sono tali per cui $\lvert j_1-j_2 \rvert \le J \le j_1+j_2$. 
+
+Pertanto \`e possibile passare dalla base $\ket{j_1m_1} \otimes \ket{j_2m_2} = \ket{j_1j_2m_1m_2} $ alla base $\ket{j_1j_2JM} $ perch\'e quest'ultima \`e ben definita.
 La relazione tra le due basi \`e  data dai \textbf{coefficienti di Clebsch-Gordan}:
 \begin{equation}
 	\begin{split}
@@ -1678,7 +1755,7 @@ La relazione tra le due basi \`e  data dai \textbf{coefficienti di Clebsch-Gorda
 Questi coefficienti possono essere scelti reali tramite fasi per gli stati. La relazione si pu\`o invertire per scrivere $\ket{j_1j_2m_1m_2} $ tramite il complesso coniugato di $C^{JM} _{j_1j_2m_1m_2} $. 
 Per il seguito, \textbf{si assumeranno reali}.
 
-Questi soddisfano\footnote{Si ottengono sostituendo i coefficienti di una delle due equazioni (quelle per $\ket{j_1j_2m_1m_2} $ e $\ket{j_1j_2JM} $ per il cambio di base) e imponendo che valga l'uguaglianza.}:
+Questi coefficienti, essendo trasformazioni unitarie, soddisfano le seguenti relazioni\footnote{Si ottengono sostituendo i coefficienti di una delle due equazioni (quelle per $\ket{j_1j_2m_1m_2} $ e $\ket{j_1j_2JM} $ per il cambio di base) e imponendo che valga l'uguaglianza.}:
 \begin{equation}
 	\begin{split}
 	&\sum_{m_1,m_2}^{} C^{JM} _{j_1j_2m_1m_2} C^{J'M'} _{j_1j_2m_1m_2} = \delta _{JJ'} \delta _{MM'} \\
@@ -1686,44 +1763,126 @@ Questi soddisfano\footnote{Si ottengono sostituendo i coefficienti di una delle 
 	\end{split}
 \end{equation}
 
-\subsubsection{Composizione di due sistemi a due livelli}
+\subsubsection{Esempio -- Coefficienti di Clebsch-Gordan per due spin $1/2$} 
 
-Si considerano due sistemi, $1,2$, a due livelli (quindi entrambi hanno spin $1 / 2$); in questo caso, ciascun operatore di spin sar\`a associato ad una matrice di Puali: $\hat{S}_a = \frac{\hbar}{2} \sigma _a$.
-
-Per i due sistemi, $\hat{S}^2 $ e $\hat{S}_z$ forniscono base completa $\ket{S = 1 / 2, S_z = \pm 1 / 2} $. Per descrivere uno stato di un solo sistema, \`e sufficiente $\ket{S_z} $, infatti si pu\`o scegliere $\ket{S_z = - 1 /2}  = \begin{pmatrix} 0 \\ 1 \end{pmatrix} $ e $\ket{S_z = + 1 / 2}  = \begin{pmatrix} 1 \\ 0 \end{pmatrix} $. Per il sistema composto, la base \`e data dal prodotto tensore:
-\begin{equation}
-	\begin{split}
-		\mathcal{B} = \Bigg\{ \ket{1} = \Ket{\frac{1}{2}} ^{(1)} \Ket{\frac{1}{2}}^{(2)}  &, \ \ket{2} = \Ket{\frac{1}{2}} ^{(1)} \Ket{- \frac{1}{2}} ^{(2)} , \ \ket{3}  = \Ket{- \frac{1}{2}}^{(1)} \Ket{\frac{1}{2}}^{(2)}  \\ 
-												      &,\ \ket{4} = \Ket{- \frac{1}{2}} ^{(1)} \Ket{- \frac{1}{2}} ^{(2)}     \Bigg\} 
-	\end{split}
-\end{equation}
-Ora si assume che i due sistemi interagiscono con $\hat{H} = \beta  \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2$; si definisce $\hat{\mathbf{S} }= \hat{\mathbf{S} }_1 + \hat{\mathbf{S} }_2$ e soddisfa $[\hat{H}, \hat{\mathbf{S} }] = 0$ perch\'e $\mathbf{S} _1 \cdot \mathbf{S} _2$ \`e uno scalare, quindi invariante sotto rotazioni.
-
-Inoltre, visto che $\hat{H}$ dipende dall'interazione dei due spin: $[\hat{H}, \hat{S}_j] \neq 0$, mentre $[\hat{H},\hat{P}_j^2] = 0 $. Un possibile autostato di $\hat{H}$ potrebbe essere, allora, $\ket{S_1, S_2,S,S_z} $\footnote{In questa notazione, $S_1,S_2$ sono gli autostati di $\hat{S}_1^2$ e $\hat{S}_2^2$ rispettivamente.} perch\'e $\hat{S}_1^2, \hat{S}_2^2, \hat{S}^2, \hat{S}_z$ commutano con $\hat{H}$.
-
-Si nota che $\hat{H} = \frac{1}{2} \beta  \left[ (S_1+S_2)^2 - S_1^2 - S_2^2 \right] $, cio\`e dipende solo da $\hat{S}^2, \hat{S}_1 ^2 , \hat{S}_2^2$, quindi i possibili autovalori sono $\frac{\hbar ^2}{2}\beta \big[S(S+1) - S_1(S_1+1) - S_2(S_2+1)\big]$.
-
-Si cercano i coefficienti di Clebsch-Gordan per 
+Si considera la composizione di due spin $1 / 2$, cio\`e $j_1=j_2 = 1 / 2$.
+In questo caso, la base data dal prodotto tensore \`e della forma
 \[
-\ket{S_1S_{1,z} S S_Z } = \sum_{S_{1,z} , S_{2,z}}^{} \ket{S_1S_2 S_{1,z} S_{2,z} } C^{SS_z} _{S_1S_2S_{1,z} S_{2,z} } 
+\Ket{\frac{1}{2}\pm \frac{1}{2}} \otimes \Ket{\frac{1}{2} \pm \frac{1}{2}} = \Ket{ \frac{1}{2} \frac{1}{2}\pm \frac{1}{2} \pm \frac{1}{2}} 
 \] 
-Si definisce $\hat{J}_- = \hat{J}_x - i \hat{J}_y$ con $\hat{J}_- \ket{jm} = \hbar [(j-m+1)(j+m)]^{1 / 2}\ket{j (m-1)}  $ e, conseguentemente, si definiscono $\hat{J}_{1-} , \hat{J}_{2-} $ tali che $\hat{J}_- = \hat{J}_{1-} + \hat{J}_{2-} $; si ha:
+Si vogliono calcolare i coefficienti di Clebsch-Gordan per passare da $\Ket{\frac{1}{2} \frac{1}{2} \pm \frac{1}{2}\pm \frac{1}{2}} $ a $\Ket{\frac{1}{2}\frac{1}{2} J M}$.
+
+Per iniziare, si considerano $\ket{j_1j_2 JM}= \Ket{\frac{1}{2}\frac{1}{2} 1 1 } $ e $\Ket{\frac{1}{2}\frac{1}{2} 1 -1} $; dovendo avere $M= 1, -1 $, l'unica possibilit\`a \`e, rispettivamente, $m_1 = m_2 = 1/2$ e $m_1=m_2= -1 / 2$, quindi, in entrambi i casi, i coefficienti di Clebsch-Gordan sono pari a $1$:
+\[
+\Ket{\frac{1}{2}\frac{1}{2}11} = C^{1 1} _{\frac{1}{2}\frac{1}{2}\frac{1}{2}\frac{1}{2}}  \Ket{\frac{1}{2}\frac{1}{2}\frac{1}{2}\frac{1}{2}} = \Ket{\frac{1}{2}\frac{1}{2}\frac{1}{2}1/2} \hspace{1cm}\Ket{\frac{1}{2}\frac{1}{2}1-1} =  \Ket{\frac{1}{2}\frac{1}{2}-\frac{1}{2}-\frac{1}{2}} 
+\] 
+Si riprende l'operatore discesa $\hat{J}_- =  \hat{J}_x - i \hat{J}_y = \hat{J}_{1,-} + \hat{J}_{2,-} $, che \`e tale per cui $\hat{J}_- \ket{JM}= \big[ (J-M+1)(J+M) \big] ^{1 / 2} \ket{J, M-1}$.
+Tramite questo, si possono calcolare gli altri coefficienti:
+\[
+\hat{J}_- \Ket{\frac{1}{2}\frac{1}{2}1  1} = \sqrt{2} \Ket{\frac{1}{2}\frac{1}{2}10} = (\hat{J}_{1,-} + \hat{J}_{2,-} ) \Ket{\frac{1}{2}\frac{1}{2}} ^{(1)}  \Ket{\frac{1}{2}\frac{1}{2}} ^{(2)} = \Ket{\frac{1}{2}-\frac{1}{2}} ^{(1)}  \Ket{\frac{1}{2}\frac{1}{2}} + \Ket{\frac{1}{2}\frac{1}{2}} ^{(1)} \Ket{\frac{1}{2}-\frac{1}{2}} ^{(2)} 
+\] 
+da cui
+\begin{equation*}
+	\Ket{\frac{1}{2}\frac{1}{2}10} =\frac{1}{\sqrt{2} }\left(\Ket{\frac{1}{2}\frac{1}{2}-\frac{1}{2}\frac{1}{2}} + \Ket{\frac{1}{2}\frac{1}{2}\frac{1}{2}-\frac{1}{2}}\right)  
+\end{equation*}
+L'ultimo si trova per ortogonalit\`a con gli altri ed \`e:
+\[
+\Ket{\frac{1}{2}\frac{1}{2}00} =\frac{1}{\sqrt{2} }\left(\Ket{\frac{1}{2}\frac{1}{2}\frac{1}{2}-\frac{1}{2}} - \Ket{\frac{1}{2}\frac{1}{2}-\frac{1}{2}\frac{1}{2}} \right) 
+\] 
+Ricapitolando, i coefficienti di Clebsch-Gordan sono:
+\[
+C^{11} _{\frac{1}{2}\frac{1}{2}\pm\frac{1}{2}\pm \frac{1}{2}} = 1 \hspace{1cm} C^{10} _{\frac{1}{2}\frac{1}{2}\pm\frac{1}{2}\mp\frac{1}{2}} = \frac{1}{\sqrt{2} } \hspace{1cm} C^{00} _{\frac{1}{2}\frac{1}{2}\pm \frac{1}{2}\mp \frac{1}{2} } =\pm \frac{1}{\sqrt{2} }
+\] 
+e gli altri sono nulli.
+
+\subsubsection{Operatori tensoriali irriducibili}
+
+
+
+Si ricorda che 
+\[
+\braket{j'm'|\hat{R}(\alpha ,\beta ,\gamma)|jm}  = \delta _{jj'} D^j_{m'm} (\alpha, \beta ,\gamma)
+\] 
+che \`e equivalente a
+\[
+\hat{R}(\alpha ,\beta ,\gamma) \ket{jm} = \sum_{m'}^{} \ket{jm'} D^{j} _{m'm} (\alpha ,\beta ,\gamma)
+\] 
+\begin{definizione}[Operatori tensoriali irriducibili]
+Si parla di \textbf{operatori tensoriali irriducibili} (ITO, \textit{irreducible tensor operators}) riferendosi all'insieme di operatori $\hat{T}^{(k)} _q ,\ -k\le q\le k$ (quindi sono $2k+1$ elementi) che soddisfano:
 \begin{equation}
-\begin{split}
-	& \ket{S=1 , S_z = 1} = \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} \Rightarrow \hat{J}_- \ket{S=1, S_z = 1} = \hbar  \sqrt{2}  \ket{S=1, S_z = 0} \\
-	& \begin{split}
-		\Rightarrow(\hat{J}_{1-} + \hat{J}_{2-} ) \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} &= \hat{J}_{1-} \ket{1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} + \ket{1 / 2} ^{(1)}\hat{J}_{2-}  \ket{1 / 2} ^{(2)}\\
-										     & = \hbar \left(\ket{-1 / 2}^{(1)} \ket{1 / 2} ^{(2)} + \ket{ 1/2}^{(1)} \ket{-1 / 2} ^{(2)}   \right) 
-	\end{split}\\
-	&\Rightarrow \ket{S=1, S_z = 0} = \frac{1}{\sqrt{2} } \left(\ket{-1 / 2}^{(1)} \ket{1 / 2} ^{(2)} + \ket{ 1/2}^{(1)} \ket{-1 / 2} ^{(2)}   \right) \\
-	&\Rightarrow \ket{S=1, S_z = -1} = \ket{- 1/2} ^{(1)} \ket{- 1 / 2} ^{(2)} \\
-	&\ket{S=0, S_z=0} = \frac{1}{\sqrt{2} } \left(\ket{1 / 2} ^{(1)} \ket{- 1 / 2} ^{(2)} - \ket{-1 / 2} ^{(1)} \ket{1 / 2} ^{(2)} \right) 
-\end{split}	
+	\hat{R}(\alpha ,\beta ,\gamma) \hat{T}_q^{k} A \hat{R}^{-1} (\alpha ,\beta ,\gamma) = \sum_{q'}^{} \hat{T}_{q'}^kD^k _{q'q} (\alpha ,\beta ,\gamma)
 \end{equation}
-L'ultimo stato si ottiene per ortogonalit\`a con gli altri e usando $S_z = 0\Rightarrow $ combinazione di up e down come $\ket{S=1,S_z = 0} $. In questo modo:
+\end{definizione}
+\begin{esempio}[ITO scalari]
+	Si considera $\hat{T}^0_0$; allora:
+	\[
+	\hat{R}\hat{T}^0_0 \hat{R}^{-1} = \hat{T}^0_0D^0_{00} (\alpha ,\beta ,\gamma) = \hat{T}^0_0
+	\] 
+	cio\`e $\hat{T}^0_0$ \`e un operatore scalare.
+\end{esempio}
+Sia $\hat{\vec{V}}$ un generico operatore vettoriale (tipo la posizione o il momento); se ne costruiscono gli ITO come segue:
 \begin{equation}
-	C^{11} _{1 / 2} = 1 \hspace{.1cm} ; \hspace{.2cm} C^{10} _{\frac{1}{2} \frac{1}{2}\frac{1}{2} \text{-}\frac{1}{2}} = \frac{1}{\sqrt{2} }\hspace{.1cm} ; \hspace{.2cm} C^{00} _{\frac{1}{2} \frac{1}{2}\text{-}\frac{1}{2}\frac{1}{2}} = - \frac{1}{\sqrt{2} }
+\hat{T}_1^1  = -\frac{1}{\sqrt{2} } \left(\hat{V}_x + i \hat{V}_y\right)  \hspace{1cm} \hat{T}^1_0 = \hat{V}_z \hspace{1cm} \hat{T}^1_{-1} = \frac{1}{\sqrt{2} }\left(\hat{V}_x - i\hat{V}_y\right) 
 \end{equation}
+
+Per definizione, si ha\footnote{Si nota che qui $k,q,q',\ldots$ sono autostati della forma $\ket{jm} $ del momento angolare.}:
+\[
+\hat{R}\hat{T}_q^k \hat{R}^{-1} = \sum_{q'}^{} \hat{T}^k_{q'} D^k_{q'q} = \sum_{q'}^{} \hat{T}^k_{q'} \braket{kq'|\hat{R}|kq} 
+\] 
+Si esprime $\hat{R}= 1 - i \epsilon \hat{n}\cdot \hat{J}$ come rotazione infinitesima e, sostituendo, si trova:
+\[
+\hat{T}^k _q - i \epsilon \left[ \hat{n}\cdot \hat{J}, \hat{T}^k_q \right] = \hat{T}^k_q - i \epsilon  \sum_{q'}^{} \hat{T}^k_{q'} \braket{kq'|\hat{n}\cdot \hat{J}|kq} 
+\] 
+da cui
+\begin{equation}
+	\left[ \hat{n}\cdot \hat{J}, \hat{T}^k_q \right] = \sum_{q'}^{} \hat{T}^k_{q'} \braket{kq'|\hat{n}\cdot \hat{J}|kq} 
+\end{equation}
+Da questa relazione, si possono caloclare le regole di commutazione coi vari operatori di momento angolare definiti; ricordando la definizione di operatore di salita, per esempio
+\[
+	\begin{split}
+		&\hat{J}_+ \ket{jm} = \left[ j+m+1)(j-m) \right] ^{1 / 2} \ket{j,m+1} \\
+		&\Rightarrow \left[ \hat{J}_+, \hat{T}_q^k \right] = \left[ (k-q)(k+q+1) \right] ^{1 / 2}  \hat{T}^k _{q+1} 
+	\end{split}
+\] 
+oppure
+\[
+	 \left[ \hat{J}_z , \hat{T}^k_q \right] =  q \hat{T}^{k} _q
+\] 
+\subsubsection{Teorema di Wigner-Eckart}
+Siano gli stati di un sistema generico della forma $\ket{\alpha J M } $; volendo calcolare
+\[
+\braket{\alpha 'J'M'|T^k_q|\alpha JM} =C^{J'M'}_{JkMq} \braket{\alpha ' J'||T^k_q||\alpha J} 
+\] 
+dove $C$ sono i coefficienti di Clebsch-Gordan. 
+L'importanza del teorema sta nel fatto che tutta la dipendenza da $M,M',q$ sta in $C^{J'M'} _{JkMq} $ e risulta utile nel calcolare rapporti fra elementi di matrice.
+
+\begin{esempio}
+	Si usa il teorema nel caso di un operatore scalare $\hat{S}$ che \`e della forma $T^0_0$:
+	\[
+		\braket{\alpha ' J'M'|\hat{S}|\alpha JM} = C^{JM'} _{J0M0}  \braket{\alpha 'J'||\hat{S} ||\alpha J} 
+	\] 
+	Visto che $C^{JM'} _{J0M0}=\braket{J 0 M 0|J_1J_2 J M} = \delta _{JJ'}\delta _{MM'}  $, si ha:
+	\[
+	\braket{\alpha ' J'M'|\hat{S}|\alpha JM} = \delta _{JJ'} \delta_{ MM'} \braket{\alpha 'J'||\hat{S}||\alpha J} 
+	\] 
+\end{esempio}
+
+\newpage
+\section{Teoria delle perturbazioni}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
