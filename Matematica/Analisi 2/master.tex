@@ -32,7 +32,7 @@
 \usepackage{setspace}
 %\usepackage{cmupint}
 \usepackage[perpage]{footmisc} % To reset footnote numbering each page
-\setstretch{1.1}
+\setstretch{1.2}
 
 % Titles 
 \title{Note di Analisi 2}
@@ -1486,34 +1486,114 @@ f'(x_1) =  \lim_{x \to x_1} \frac{f(x) - f(x_1)}{x-x_1}= -  \frac{F_x(x_1,f(x_1)
 
 \end{proof}
 \end{teorema}
-
-
-
 \begin{obs}
 	Indicando con $Z$ l'insieme degli zeri di $F$, il teorema afferma che se $(x_0,y_0) \in Z$ e tale che $F_y\neq 0$, allora si trova un rettangolo $R = U \times V$ con centro $(x_0,y_0)$ tale che $Z \cap R$ \`e il grafico di una funzione $y=f(x)$, di classe $C^1$, la cui derivata \`e data da $-\frac{F_x(x,f(x))}{F_y(x,f(x))}$.
 \end{obs}
+\begin{obs}
+Il vettore velocit\`a, che \`e tangente alla curva, sar\`a dato da:
+\begin{equation}
+	\mathbf{v} - (1 , f'(x) ) = \left(1 , - \frac{F_x(x,f(x))}{F_y(x,f(x))}\right) 
+\end{equation}
+e si vede che \`e anche ortogonale al gradiente di $F$:
+\[
+	\nabla F \cdot \mathbf{v} = F_x - F_y \frac{F_x}{F_y}=0
+\] 
+\end{obs}
+Ovviamente se in un intorno di $(x_0,y_0)$ fosse $\partial _x F \neq 0$, l'insieme $Z$ sarebbe il grafico di una funzione del tipo $x = g(y)$, che soddisferebbe:
+\begin{equation}
+	g'(y) = - \frac{F_y(g(y),y)}{F_x(g(y),y)}
+\end{equation}
+
+Questo permette di concludere che se $F(x_0,y_0) = 0$ e $\nabla F (x_0,y_0) \neq 0 $, allora esiste un rettangolo $R$ centrato in $(x_0,y_0)$ tale per cui $Z \cap R$ \`e il grafico di una funzione di classe $C^1$.
+Gli eventuali punti singolari di $Z$ si cercare fra gli $(x,y) : F(x,y) = 0 $ e $\nabla F(x,y) = 0$.
+
+Un analogo di questo teorema si ottiene per le superfici a partire da funzioni di tre variabili. 
+Se $F(x,y,z)$ \`e una funzione di classe $C^1$ e, in $(x_0,y_0,z_0)$, risulta
+\[
+F (x_0,y_0,z_0) = 0 \text{ e } F_z(x_0,y_0,z_0)=0
+\] 
+allora, in un intorno di $(x_0,y_0,z_0)$, l'insieme degli zeri di $F$ \`e il grafico di una funzione $z=f(x,y)$ tale che:
+\begin{equation}\label{prteqxy}
+	\partial _x f (x,y) = - \frac{F_x(x,y,f(x,y))}{F_z(x,y,f(x,y))} \hspace{1cm} \partial _y f(x,y) = - \frac{F_y(x,y,f(x,y))}{F_z(x,y,f(x,y))}
+\end{equation}
+In questo caso, $\nabla F(x,y,f(x,y))$ \`e ortogonale alla superficie.
 
 
+Il teorema delle funzioni implicite \`e esprimibile equivalentemente affermando che, prendendo per esempio $\mathbb{R}^3$, se le variabili $(x,y,z)$ sono legate dall'equazione $F(x,y,z) = 0$, allora una di esse si scrive, localmente, tramite le altre due, sotto le opportune ipotesi.
 
+Assumendo, ora, che $x,y,z$ siano legate da due relazioni $F(x,y,z) = 0$ e $G(x,y,z) = 0$, ci si aspetta di poter esprimere due variabili in termini della terza, per esempio $y = \varphi (x)$ e $z = \psi (x)$.
+Si vuole capire sotto quali condizioni questo \`e possibile.
+Sia $\mathbf{x} _0$ tale che $F(\mathbf{x} _0) = G(\mathbf{x} _0) = 0$ e $F_z (\mathbf{x} _0) \neq 0$; allora si trova un intorno $W$ di $\mathbf{x} _0$ in cui l'insieme degli zeri di $F$, $Z_F$, \`e il grafico di una funzione $z=f(x,y)$ e sono verificate le relazioni in eq. \ref{prteqxy}.
 
+Un punto di $Z_F \cap W	$ appartiene a $Z_G$ se e solo se $\Phi(x,y):= G(x,y,f(x,y))=0$, con $\Phi(x,y)$ definita in un intorno di $(x_0,y_0)$ e $\Phi(x_0,y_0)=0$.
+L'idea, ora, \`e di applicazione il teorema delle funzioni implicite a $\Phi$, per cui se 
+\[
+\Phi_y = G_y + G_z f_y = G_y - G_z \frac{F_y}{F_z} \neq 0 \text{ in } (x_0,y_0)
+\] 
+la $y$ si pu\`o scrivere localmente come funzione di $x$: $y=  \varphi (x)$.
+In questo caso, si potr\`a anche scrivere $z= f(x,y) = f(x,\varphi (x))=\psi (x)$.
 
+Ricapitolando, $y$ e $z$ si possono scrivere localmente in funzione di $x$ se:
+\begin{equation}
+	F_z(\mathbf{x} _0) G_y(\mathbf{x} _0) - F_y(\mathbf{x} _0) G_z(\mathbf{x} _0) \neq 0
+\end{equation}
+Questa condizione impone che non valga contemporaneamente $F_z(\mathbf{x} _0) = G_z(\mathbf{x} _0) = 0$ e, pertanto, permette di evitare di specificare la richiesta $F_z(\mathbf{x} _0)\neq 0$.
+Se fosse, infatti, $F_z (\mathbf{x} _0) = 0$, deve essere $G_z(\mathbf{x} _0)$ e si pu\`o procedere equivalentemente usando $G$.
 
+Questa condizione \`e la componente $x$ del vettore $\nabla F(\mathbf{x} _0) \wedge \nabla G(\mathbf{x} _0)$ e, quando questa \`e non-nulla, si possono esprimere $y,z$ in funzione di $x$.
+Se risulta 
+\begin{equation}
+	\nabla F(\mathbf{x} _0) \wedge \nabla G(\mathbf{x} _0) \neq 0
+\end{equation}
+allora due qualunque delle variabili si possono esprimere in termini della terza.
 
+Questa relazione impone che i due vettori, oltre ad essere non-nulli, non hanno la stessa direzione. 
+Pertanto, le equazioni $F(x,y,z) = 0$ e $G(x,y,z) = 0$ individuano, in un intorno di $\mathbf{x} _0$, due superfici regolari passanti per tale punto.
+Inoltre, essendo $\nabla F, \nabla G$ ortogonali a tali superfici, significa che le due superfici non sono tangenti; viceversa, due superfici regolari non tangenti identificano una curva regolare come loro intersezione.
 
+\subsection{Massimi e minimi vincolati}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Si \`e visto che se $\mathbf{x}_0 $ \`e un punto di massimo o di minimo relativo interno per $f$ e se quest'ultima \`e derivabile in $\mathbf{x} _0$, allora questo deve essere un punto stazionario, cio\`e tale che $\nabla f(\mathbf{x} _0) = 0$.
+I punti di massimo di minimo di $f$ in un insieme $A$ possono cadere:
+\begin{itemize}
+	\item nei punti interni in cui $f$ non \`e derivabile;
+	\item nei punti stazionari;
+	\item sulla frontiera di $A$, $\partial A$.
+\end{itemize}
+Rimane da vedere l'ultimo caso.
+\begin{esempio}
+	Si vogliono calcolare il punto di massimo e minimo di
+	\[
+	f(x,y) = x^2 + 2y^2 - 4xy + 2x
+	\] 
+	nel rettangolo 
+	\[
+	R = \left\{ (x,y) : 0\le x\le 2 , \ 0\le y \le 3 \right\} 
+	\] 
+	\begin{svolgimento}
+		Si cercano i punti stazionari: si ha
+		\[
+		f_x = 2x - 4y + 2 = 0 \hspace{1cm}f_y = 4y -4x = 0
+		\] 
+		Dalla seconda, deve risultare $x=y$; inserendola nella prima, si ottiene $-2x + 2 =0$. 
+		L'unico punto stazionario, allora, \`e $(1,1)$, che \`e interno ad $R$ e tale che $f(1,1) = 1$.
+		Essendo $f$ sempre derivabile, rimane solo da studiarne la frontiera.
+		\begin{itemize}
+			\item Per $x = 0, \ 0\le y\le 3$, si ha $f(0,y) = 2y^2$, la cui derivata \`e $4y$ e si annulla solo in $y=0$, che \`e l'estremo dell'intervallo.
+			\item Per $x=2, \ 0\le y\le 3$, si ha $f(2,y) = 2y^2 - 8y +8$, con derivata $4y-8$; questa si annulla in $y=2$, che \`e un punto interno all'intervallo, e si ha $f(2,2) = 0$.
+			\item Per $y=0, \ 0\le x\le 2$, si ha $f(x,0) = x^2 + 2x$, la cui derivata $2x+2$ si annulla in $x=-1$, che \`e esterno all'intervallo di definizione di $f$.
+			\item Per $y=3, \ 0\le x\le 2$, si ha $f(x,3) = x^2 -10x+18$, con derivata $2x-10$ che si annulla per $x=5$, che \`e esterno.
+		\end{itemize}
+		Per finire, rimangono i valori della funzione sui vertici:
+		\[
+		f(0,0) = 0 \hspace{1cm} f(0,3) = 18 \hspace{1cm} f(2,3) = 2 \hspace{1cm} f(2,0) = 8
+		\] 
+		Si conclude che il massimo \`e $18$, raggiunto nel punto $(0,3)$ al vertice del rettangolo, mentre il minimo \`e raggiunto nei punti $(2,2)$ e $(0,0)$.
+	\end{svolgimento}
+\end{esempio}
+\begin{obs}
+Lo svolgimento dell'esempio precedente \`e semplificato dal fatto che l'insieme da cui $f$ prendeva valori era un rettangolo, mentre in generale la situazione \`e pi\`u complicata.
+\end{obs}
 
 
 
