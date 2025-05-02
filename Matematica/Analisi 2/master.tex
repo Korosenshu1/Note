@@ -1560,7 +1560,7 @@ I punti di massimo di minimo di $f$ in un insieme $A$ possono cadere:
 	\item nei punti stazionari;
 	\item sulla frontiera di $A$, $\partial A$.
 \end{itemize}
-Rimane da vedere l'ultimo caso.
+Rimane da vedere l'ultimo caso, per cui il termine \textbf{vincolo} far\`a riferimento proprio a $\partial A$ e si dir\`a che un punto di massimo o di minimo \`e vincolato se \`e interno a $\partial A$.
 \begin{esempio}
 	Si vogliono calcolare il punto di massimo e minimo di
 	\[
@@ -1594,11 +1594,466 @@ Rimane da vedere l'ultimo caso.
 \begin{obs}
 Lo svolgimento dell'esempio precedente \`e semplificato dal fatto che l'insieme da cui $f$ prendeva valori era un rettangolo, mentre in generale la situazione \`e pi\`u complicata.
 \end{obs}
+Ora si individua $\partial A$ come una generica curva \textit{regolare a tratti}, ossia composta da un numero finito di curve regolari; in questo caso, ci si pu\`o restringere a trattare il caso di una curva regolare, analizzando successivamente il comportamento della funzione su eventuali punti singolari.
+Sia $\mathbf{x} : \left[ a,b \right] \to \mathbb{R}^2$ una curva regolare e sia $G$ il suo sostegno. 
+Si considera la restrizione di $f(x,y)$ a $\mathbf{x}(t) = (x(t),y(t)), \ a\le t\le b$ e se ne vogliono calcolare i massimi e i minimi; questo equivale a calcolare massimi e minimi di $F(t) = f(x(t), y(t))$, i quali saranno tra i punti in cui $F' = 0$, cio\`e:
+\[
+\nabla f(\mathbf{x} (t)) \cdot \mathbf{x} '(t) = 0 
+\] 
+Si conclude il seguente.
+\begin{teorema}
+	{}{}
+	La restrizione di $f(\mathbf{x} )$ al sostegno $G$ di una curva regolare $\mathbf{x} (t)$ ha un massimo o un minimo relativo in un certo $\mathbf{x} (t_0) = \mathbf{x} _0 \in G$ se $\nabla f(\mathbf{x} _0) \cdot \mathbf{x} '(t_0) = 0 $.
+\end{teorema}
+\begin{esempio}
+Si considera la restrizione di $f(x,y)=x+y$ alla circonferenza di centro l'origine e raggio $1$, che \`e il sostegno di 
+\[
+\begin{cases}
+	x =\cos t\\
+	y= \sin t
+\end{cases}, \  0\le t \le  2\pi
+\] 
+e se ne calcolano massimi e minimi.
+\begin{svolgimento}
+Si ha $F(t) = f(\cos t, \sin t) = \cos t + \sin t$, quindi $F' (t) = - \sin t + \cos t$, che si annulla per $t = \pi / 4$  e $t =  5 \pi /4$.
+Per verifica, si ha $\nabla f = (1,1)$ e $\mathbf{x}' (t) = (-\sin t, \cos t)$, per cui $\nabla f \cdot \mathbf{x} ' = - \sin t + \cos t$, che coincide con $F'$ e si annulla negli stessi punti.
+\end{svolgimento}
+\end{esempio}
+Il risultato si estende al caso $n$-dimensionale in cui $f$ \`e una funzione di $n$ variabili e viene ristretta al sostegno di una curva in $\mathbb{R}^n$.
+Per esempio, dato $G$ il sostegno di una superficie $\varphi $ di equazioni
+\[
+	x = x(u,v) \hspace{1cm} y = y(u,v)  \hspace{1cm} z = z(u,v)
+\] 
+si cercano i massimi e minimi della funzione
+\[
+F(u,v) = f(x(u,v) , y(u,v), z(u,v))
+\] 
+La condizione necessaria perch\'e questa abbia un massimo o minimo relativo interno \`e che il suo gradiente si deve annullare, cio\`e devono essere verificate le condizioni 
+\begin{equation}
+	\frac{\partial F}{\partial u} = \nabla f \cdot \varphi _u = 0 \hspace{1cm}\frac{\partial F}{\partial v} = \nabla f\cdot \varphi _v = 0
+\end{equation}
+Visto che i vettori $\varphi _u$ e $\varphi _v$ determinano il piano tangente alla superficie, si conclude che $\nabla f$ deve essere ortogonale alla superficie stessa. 
+\begin{teorema}
+	{}{}
+	Sia $G$ un vincolo e sia $f \in C^1(A): A \supset G $ aperto. 
+	Se $f$ ha un massimo o minimo relativo vincolato in un punto $\mathbf{x} _0 $ interno a $G$, allora $\mathbf{x} _0$ \`e un punto stazionario vincolato, cio\`e $\nabla f(\mathbf{x} _0)$ \`e ortogonale a $G$.
+\end{teorema}
+Nella pratica, il teorema precedente non aiuta. 
+Il metodo usato \`e sempre quello di procedere studiando la funzione composta $F (t) = f(\mathbf{x} (t))$.
+Il teorema appena enunciato pu\`o essere riscritto in modo da essere usato quando il vincolo non \`e dato in termini di equazioni parametriche, ma in forma cartesiana.
 
+Per capire meglio, si considera la funzione $f(x,y)$ e si calcolano i suoi punti di massimo o minimo sulla curva di equazione cartesiana $g(x,y) =0 $.
+\begin{obs}
+	Si ricorda che $\nabla g$ \`e ortogonale alla curva definita da $g(x,y) = 0$; infatti, se la curva \`e parametrizzata da $\gamma=(x(t),y(t))$, allora:
+	\[
+	\frac{d }{d t} g(x(t),y(t)) = \frac{\partial g}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial g}{\partial y} \frac{\partial y}{\partial t} = \nabla g \cdot \gamma' = 0
+	\] 
+\end{obs}
+	Quindi, essendo $\nabla g$ ortogonale alla curva ed essendo $\nabla f$ ortogonale alla stessa curva nei punti in cui ha un massimo o un minimo vincolato, significa che i due devono essere proporzionali nei punti in cui $f$ ha massimo o minimo relativo:
+	\[
+	\nabla f(x,y) + \lambda \nabla g(x,y) = 0 
+	\] 
+Essendo $(x,y)$ sulla curva, $g(x,y)$ \`e contemporaneamente soggetta a $g(x,y) = 0$, quindi i punti di massimo o minimo relativo vincolato di $f$ sono tali da risolvere:
+\begin{equation}
+	\begin{cases}
+		f_x(x,y) + \lambda g_x(x,y) = 0 \\
+		f_Y(x,y) + \lambda g_y(x,y) =0\\
+		g(x,y) = 0
+	\end{cases}
+\end{equation}
+Questo \`e un sistema di tre equazioni nelle tre incognite $x,y,\lambda $ e se ne deriva il seguente.
+\begin{teorema}
+	{Teorema dei moltiplicatori di Lagrange}{}
+	Sia $G$ il vincolo dato da $g(x,y) = 0$, con $g(x,y) \in C^1$, e sia $f(x,y)\in C^1(A)$, con $A \supset G$ aperto. 
+	Allora i punti di massimo e minimo relativo vincolati di $f$ interni a $G$ sono soluzioni di
+	\[
+	\begin{cases}
+		f_x(x,y) + \lambda g_x(x,y) = 0 \\
+		f_Y(x,y) + \lambda g_y(x,y) =0\\
+		g(x,y) = 0
+	\end{cases}
+	\] 
+\end{teorema}
+\begin{esempio}
+Una scatola a forma di parallelepipedo rettangolo senza coperchio ha una superficie di area $12$. 
+Trovare le lunghezze degli spigoli in modo che il volume sia massimo.
+\begin{svolgimento}
+	Siano $x,y$ i alti della base e $z$ l'altezza. 
+	Si cerca di massimizzare la funzione $f(x,y,z) = xyz$ sulla superficie di equazione $xy + 2xz + 2yz = 12$ con le condizioni $x,y,z>0$.
 
+	Il corrispondente sistema di quattro equazioni in quattro incognite \`e:
+	\[
+	\begin{cases}
+		yz + \lambda (y+2z) = 0 \\
+		xz + \lambda (x+2z) = 0\\
+		xy + 2\lambda (x+y) = 0\\
+		xy + 2xz + 2yz = 12
+	\end{cases}
+	\] 
+	Sottraendo le prime due, si ha $(x-y) (z+\lambda ) = 0$, cio\`e o $x=y$, o $\lambda = -z$. 
+	L'ultima condizione non \`e possibile perch\'e, sostituendola nella prima, si trova $-2z^2 = 0 \Rightarrow z= 0$, che non \`e possibile avendo assunto $z>0$.
 
+	Allora \`e $x=y$, quindi le equazioni rimanenti sono:
+	\[
+	\begin{cases}
+		xz + \lambda x + 2 \lambda z=0\\
+		x^2 + 4\lambda  x = 0\\
+		x^2 + 4xz = 12
+	\end{cases}
+	\] 
+	Dalla seconda, si ha $x=-4\lambda $ (si scarta $x=0$ perch\'e deve essere $x>0$), quindi si rimane con
+	\[
+	\begin{cases}
+		4\lambda (z+\lambda ) = 2\lambda z \\
+		4\lambda (z-\lambda ) = -3
+	\end{cases}
+	\] 
+	Sommandole, si ha $8\lambda z = 2\lambda z -  3\Rightarrow \lambda  z = -1 / 2$.
+	Inserendo questo nella prima, si ha $4\lambda ^2 = 1$, quindi $\lambda  = \pm 1/2$, ma $\lambda  = 1 / 2$ non \`e possibile perch\'e darebbe $x = -2$.
 
+	In definitiva, si ha $\lambda  = - 1  / 2$, per cui $x=y=2$ e $z=1$.
+\end{svolgimento}
+\end{esempio}
 
+\newpage
+\section{Forme differenziali}
+\subsection{Lavoro di una forza}
+
+Per un corpo in moto da un punto $\mathbf{x} _1$ a $\mathbf{x} _2$ sotto l'azione di una forza $\mathbf{F} $ costante, questa compie un lavoro dato da $\Lambda = \mathbf{F} \cdot (\mathbf{x} _2 - \mathbf{x} _1)$.
+
+Nel caso in cui $\mathbf{F} $ non \`e pi\`u costante, ma dipende da $\mathbf{x} $, si prende $\gamma = \mathbf{x} (t)$, con $a\le t\le b$, che definisce il percorso seguito dal corpo e si spezza in l'intervallo $[a,b]$ in $a = t_1 < t_2 < \ldots< t_N < t_{N+1} = b$. 
+A questo punto, si uniscono i punti corrispondenti sulla curva $\mathbf{x} _1 = \gamma(t_1), \ldots, \mathbf{x} _{N+1}=\gamma(t_{N+1} ) $, formando una serie di spezzate che approssima sempre meglio, al crescere di $N$, la curva $\gamma$.
+
+Se $\mathbf{F} $ \`e costante in ogni segmento $[\mathbf{x} _i, \mathbf{x} _{i+1} )$,, il lavoro compiuto \`e, complessivamente, dato da:
+\begin{equation}\label{lav1}
+	\Lambda = \sum_{i=1}^{N} \mathbf{F} (\mathbf{x} _i) \cdot (\mathbf{x} _{i+1} - \mathbf{x} _i)
+\end{equation}
+Nel caso in cui $\mathbf{F} (\mathbf{x} )$ non fosse costante in questi intervalli, cosa che \`e ragionevole pensare, l'eq. \ref{lav1} costituisce una buona approssimazione e, nel caso in cui $\mathbf{F} $ sia continua\footnote{Cio\`e ciascuna componente di $\mathbf{F} $, $F_i(\mathbf{x} )$, deve essere continua.}, tende al valore giusto per $N\to \infty$.
+
+Per studiare questo limite, si riscrive l'eq. \ref{lav1} usando la rappresentazione parametrica della curva:
+\[
+	\begin{split}
+		\mathbf{F} (\mathbf{x} _i) \cdot  (\mathbf{x} _{i+1} - \mathbf{x} _i) &= \mathbf{F} (\gamma(t_i)) \cdot  \big(\gamma(t_{i+1}) - \gamma(t_i) \big)  = \mathbf{F} (\gamma(t_i)) \cdot \int_{t_i} ^{t_{i+1} } \gamma'(t)\ dt \\
+										      &= \int_{t_i} ^{t_{i+1} } \mathbf{F} (\gamma(t_i)) \cdot \gamma'(t) \ dt\\
+										      &=\int_{t_i} ^{t_{i+1} } \mathbf{F} (\gamma(t)) \cdot \gamma'(t) \ dt + \int_{t_i} ^{t_{i+1} } \big[\mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t))\big] \cdot \gamma'(t) \ dt
+	\end{split}
+\] 
+Sommando su $i$:
+\begin{equation}
+	\begin{split}
+		\Lambda &=  \sum_{i=1}^{N} \int_{t_i} ^{t_{i+1} } \mathbf{F} (\gamma(t)) \cdot \gamma'(t) \ dt + \sum_{i=1}^{N} \int_{t_i} ^{t_{i+1} } \big[\mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t))\big] \cdot \gamma'(t) \ dt\\
+			&= \int_{a} ^b \mathbf{F} (\gamma(t)) \cdot \gamma'(t) \ dt + \sum_{i=1}^{N} \int_{t_i} ^{t_{i+1} } \big[\mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t))\big]\cdot \gamma'(t) \ dt 
+	\end{split}
+\end{equation}
+Si assumono sia $\mathbf{F} (\mathbf{x} )$ che $\gamma(t)$ continue, quindi anche $\mathbf{F} (\gamma(t))$ \`e continua.
+Avendola definita nell'intervallo chiuso $\left[ a,b \right] $, essa \`e uniformemente continua.
+Questo implica che 
+\[
+\forall \varepsilon >0, \exists \delta >0 : \lvert t-s \rvert < \delta \Rightarrow  \left\lVert \mathbf{F} (\gamma(t)) - \mathbf{F} (\gamma(s)) \right\rVert < \varepsilon 
+\] 
+Allora \`e chiaro che, prendendo $N$ \textit{sufficientemente} grande, ogni intervallo $t_i, t_{i+1} $ ha ampiezza minore di $\delta $; cos\`i facendo, risulta $\left\lVert \mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t)) \right\rVert <  \varepsilon $, quindi
+\[
+	\left\lvert \int_{t_i} ^{t_{i+1} } \big[\mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t))\big] \cdot \gamma' (t)  \ dt \right\rvert \le \int_{t_i} ^{t_{i+1} } \left\lVert \mathbf{F} (\gamma(t_{i} ))-  \mathbf{F} (\gamma(t)) \right\rVert \left\lVert \gamma'(t) \right\rVert \ dt < \varepsilon \int_{t_i} ^{t_{i+1} } \left\lVert \gamma'(t) \right\rVert \ dt 
+\]
+Reintroducendo la somma su $i$, si ottiene
+\[
+	\left\lvert \sum_{i=1}^{N} \int_{t_i} ^{t_{i+1} } \big[\mathbf{F} (\gamma(t_i)) - \mathbf{F} (\gamma(t))\big] \cdot \gamma'(t) \ dt\right\rvert < \varepsilon \sum_{i=1}^{N} \int_{t_i} ^{t_{i+1} } \left\lVert \gamma'(t) \right\rVert \ dt \equiv \varepsilon L(\gamma)
+\] 
+con $L(\gamma)$ lunghezza della curva.
+Questo (di)mostra che quando i lati della spezzata tendono a $+\infty$, quindi la lunghezza dei lati tende a $0$, $\Lambda $ converge al seguente integrale:
+\begin{equation}
+	\mathcal{L} = \int_{a} ^b \mathbf{F} (\gamma(t)) \cdot \gamma'(t) \ dt = \int_\gamma \mathbf{F} (\mathbf{x} ) \cdot d \mathbf{x} 
+\end{equation}
+\subsection{Introduzione alle forme differenziali}
+\begin{definizione}
+	{Forma differenziale}{}
+	Dato $A \subset \mathbb{R}^n$ un aperto e date $a_1(\mathbf{x} ), \ldots, a_n (\mathbf{x} )$ delle funzioni continue in $A$, si definisce \textit{forma differenziale} l'espressione
+	\[
+	\omega = \sum_{i=1}^{n} a_i (\mathbf{x} ) dx_i
+	\] 
+dove le funzioni $a_i\mathbf{(x)} $ sono dette componenti della forma.
+\end{definizione}
+\begin{definizione}
+	{Integrale di una forma}{}
+	Data $\omega = \sum_{i=1}^{n} a_i(\mathbf{x} ) dx_i$ come sopra, il suo integrale su una curva regolare $\gamma:\left[ a,b \right] \to A$ \`e definito come
+	\[
+	\int_{\gamma} \omega = \int_{a} ^b \sum_{i=1}^{n} a_i(\gamma(t)) \gamma'_i(t)
+	\] 
+\end{definizione}
+\begin{obs}
+	In realt\`a, l'integrale di una forma si pu\`o definire anche su una curva $\gamma$ regolare a tratti usando la definizione per ogni intervallo in cui questa \`e regolare e sommando tutti i contributi.
+\end{obs}
+\begin{esempio}
+Il differenziale di una funzione
+\[
+df(\mathbf{x} ) = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} dx_i
+\] 
+\`e una forma differenziale.
+Data $\gamma$ curva regolare, l'integrale di questa forma \`e:
+\[
+\int_{\gamma}  df = \int_{a} ^b \sum_{i=1}^{n} \frac{\partial f(\gamma(t))}{\partial x_i} \gamma'_i(t) dt 
+\] 
+Definendo $G(t) = f(\gamma(t))$, si ha
+\[
+G'(t) = \sum_{i=1}^{n} \frac{\partial f(\gamma(t))}{\partial x_i} \gamma_i'(t)
+\] 
+per cui
+\[
+\int_{\gamma} df = \int_{a} ^b G'(t) dt = G(b) - G(a) = f(\gamma(b)) - f(\gamma(a))
+\] 
+Questo \`e valido anche per $\gamma$ regolare a tratti, infatti, sommando i vari integrali, i termini intermedi si elidono.
+\end{esempio}
+Se le funzioni $a_1(\mathbf{x} ), \ldots, a_n(\mathbf{x} )$ sono le componenti di un campo vettoriale $\mathbf{V} (\mathbf{x})$ e indicando con $d\mathbf{x} = (dx_1, \ldots, dx_n)$, la forma $\omega$ si pu\`o riscrivere come
+\begin{equation*}
+	\omega = \mathbf{V} (\mathbf{x} ) \cdot d\mathbf{x} 
+\end{equation*}
+per cui, data $\varphi:\left[ a,b \right] \to A $ una curva regolare:
+\[
+\int_{\varphi } \omega = \int_{a} ^b \mathbf{V} (\varphi (t)) \cdot \varphi '(t) \ dt 
+\] 
+Usando che il versore tangente a $\varphi $ \`e
+\[
+\tau  = \frac{\varphi '(t) }{\left\lVert \varphi '(t) \right\rVert }
+\] 
+si trova che
+\begin{equation}
+	\int_{\varphi } \omega = \int_{a} ^b \mathbf{V} (\varphi (t)) \cdot \tau (t) \left\lVert \varphi '(t) \right\rVert \ dt = \int_{\varphi } \mathbf{V} \cdot \tau \ ds
+\end{equation}
+Il teorema di seguito \`e l'analogo di quanto visto per l'equivalenza di due integrali curvilinei della stessa funzione su due curve equivalenti.
+\begin{teorema}
+	{}{}
+	Siano $\varphi , \gamma$ due curve equivalenti; allora, se $\varphi $ e $\gamma$ hanno stesso verso
+	\[
+	\int_{\varphi } \omega = \int_{\gamma} \omega
+	\] 
+	altrimenti
+	\[
+	\int_{\varphi } \omega = - \int_{\gamma}  \omega
+	\] 
+\begin{proof}
+	Date, quindi, $\varphi \left[ a,b \right] \to \mathbb{R}^n$, $\gamma:\left[ c,d \right] \to \mathbb{R}^n$ e $p:\left[ a,b \right] \to \left[ c,d \right] $ tale che $\varphi (t) = \gamma(p(t))$, si ha:
+	\[
+	\int_{\varphi } \omega = \int_{a} ^b \mathbf{V} (\varphi (t)) \cdot \varphi '(t) \ dt = \int_{a} ^b \mathbf{V} (\gamma(p(t))) \cdot \gamma'(p(t)) p'(t) \ dt
+	\] 
+	dove si \`e assunto $p' > 0$\footnote{Altrimenti ci sarebbe dovuto essere $\lvert p'(t) \rvert $.}, per cui $p(a) = c$ e $p(b) = d$. Prendendo $u=p(t)$:
+	\[
+	\int_{a} ^b \mathbf{V} (\gamma(p(t))) \cdot \gamma'(p(t)) p'(t) \ dt =\int_{ c} ^d \mathbf{V} (\gamma(u)) \cdot \gamma'(u) \ du = \int_{\gamma} \omega
+	\] 
+	Se, invece, fosse stato $p'<0$, gli estremi di integrazione sarebbero risultati invertiti (cio\`e $p(a) = d$ e $p(b) = c$), quindi si sarebbe trovato 
+	\[
+	\int_{\varphi } \omega = - \int_{\gamma} \omega
+	\] 
+	proprio come atteso.
+\end{proof}	
+\end{teorema}
+
+\subsection{Forme esatte}
+
+Si \`e visto che 
+\[
+\int_{\gamma} df = f(\gamma(b)) - f(\gamma(a))
+\] 
+Pertanto, se la curva \`e chiusa, cio\`e  $\gamma(b) = \gamma(a)$, allora l'integrale \`e nullo.
+Inoltre, questo integrale \`e lo stesso per tutte le curve i cui estremi coincidono ordinatamente, cio\`e se il primo estremo di una curva \`e il primo dell'altra e il secondo della prima \`e il secondo dell'altra.
+
+Da questo si ricava la definizione di forma esatta.
+\begin{definizione}
+	{Forma differenziale esatta}{}
+	Una forma differenziale $\omega = \sum_{i}^{} a_i(\mathbf{x} ) dx_i$, definita su $A \subset \mathbb{R}^n$ aperto, \`e detta \textit{esatta} se \`e il differenziale di qualche funzione.
+
+	In altre parole, se esiste $f:A \to \mathbb{R}, \ f \in C^1(A)$ tale che $\omega = df$, o meglio se
+	\[
+	a_k (\mathbf{x} ) = \frac{\partial f(\mathbf{x} )}{\partial x_k} , \ k=1, \ldots, n
+	\] 
+	allora $\omega$ \`e esatta.
+\end{definizione}
+\noindent Se $\omega$ \`e esatta, il campo vettoriale $\mathbf{V} (\mathbf{x} ) = (a_1(\mathbf{x} ) ,\ldots, a_n(\mathbf{x} ))$ \`e detto \textbf{conservativo}; in questo caso, la funzione $f(\mathbf{x} )$ si dice \textbf{primitiva} della forma $\omega$, o anche \textbf{funzione potenziale} del campo $\mathbf{V} $.
+
+Come gi\`a accennato, se $\omega$ \`e esatta, il suo integrale $\int_{\gamma} \omega$ \`e lo stesso per ogni altra curva con gli stessi estremi. 
+Dati $\mathbf{x} _1, \mathbf{x} _2 \in \mathbb{R}^n$, sia $\Gamma(\mathbf{x} _1, \mathbf{x} _2)$ la classe di tutte le curve regolari a tratti, con sostegno in $A$, che hanno $\mathbf{x} _1$ come primo estremo e $\mathbf{x} _2$ come secondo; se $\omega$ \`e esatta in $A$, $\forall \mathbf{x} _1, \mathbf{x} _2 \in A , \ \forall \gamma_1, \gamma_2 \in \Gamma(\mathbf{x} _1, \mathbf{x} _2)$, si ha
+\[
+\int_{\gamma_1} \omega = \int_{\gamma_2} \omega
+\] 
+Da questo, si ha il seguente.
+\begin{teorema}
+	{}{t42}
+	Sia $\omega = \sum_{i=1}^{n} a_i dx_i$ una forma differenziale continua in $A$\footnote{Cio\`e tutte le $a_i(\mathbf{x} )$ sono continue in $A$.} aperto e connesso. 
+	Se comunque presi $\mathbf{x} _1,\mathbf{x} _2 \in A$ e due curve $\gamma_1, \gamma_2$ con questi estremi, si ha 
+	\[
+	\int_{\gamma_1} \omega = \int_{\gamma_2} \omega
+	\] 
+	allora $\omega$ \`e esatta.
+	\begin{proof}
+		Si fissa $\mathbf{x} _0 \in A$ e si definisce 
+		\[
+		f(\mathbf{x} ) = \int_{\gamma} \omega
+		\] 
+		con $\gamma \in \Gamma(\mathbf{x} _0 ,\mathbf{x} )$.
+		Si vuole dimostrare che
+		\[
+		a_k(\mathbf{x} ) = \frac{\partial f(\mathbf{x} )}{\partial x_k} , \  \forall k = 1,\ldots,n
+		\] 
+		Sia $\mathbf{e} _k$ il versore dell'asse $x_k$ e sia $\mathbf{x} \in A$; visto che $A$ \`e aperto, si trova un intorno tutto contenuto in $A$: $I(\mathbf{x} ,r)\subset A$.
+		
+		Per $\lvert h \rvert < r$, il segmento che congiunge $\mathbf{x}$ e $ \mathbf{x} + h\mathbf{e} _k$ \`e tutto contenuto in $A$.
+		Per definizione
+		\[
+		f(\mathbf{x} +h\mathbf{e} _k) = \int_{\sigma } \omega
+		\] 
+	con $\sigma $ generica curva regolare a tratti che congiunge $\mathbf{x} _0$ con $\mathbf{x} +h\mathbf{e} _k$.
+	Scegliendo 
+	\[
+	\sigma (t) = \begin{cases}
+		\gamma(t) &,\ a\le t\le b\\
+		\mathbf{x} + (t-b)h \mathbf{e} _k &,\ b\le t\le b+1
+	\end{cases}
+	\] 
+	nell'intervallo $b<t<b+1$, vale
+	\[
+	\sigma '_i = h \delta _{ik} = \begin{cases}
+		h &,\ i = k\\
+		0 &,\ i\neq k
+	\end{cases}
+	\] 
+	Conseguentemente, si trova che
+	\[
+		\begin{split}
+			&f(\mathbf{x} +h \mathbf{e} _k) = \int_{\sigma } \omega = \int_{\gamma} \omega + \int_{b} ^{b+1} a_k \big(\mathbf{x} +(t-b) h\mathbf{e} _k\big) h \ dt\\
+			&\Rightarrow \frac{f(\mathbf{x} +h\mathbf{e} _k) - f(\mathbf{x} )}{h} = \int_{b} ^{b+1} a_k \big(\mathbf{x} +(t-b)h \mathbf{e} _k\big) \ dt
+		\end{split}
+	\] 
+	Per il lemma della media integrale, si trova $\xi \in \left[ b,b+1 \right] $ tale che
+	\[
+		 \frac{f(\mathbf{x} +h\mathbf{e} _k) - f(\mathbf{x} )}{h} =  a_k \big(\mathbf{x} +(\xi -b)h \mathbf{e} _k\big) 
+	\] 
+	Mandando $h\to  0$, $\mathbf{x} + (\xi -b) h \mathbf{e} _k \to \mathbf{x} $ e, per continuit\`a delle $a_k$, si ha
+	\[
+	\frac{\partial f(\mathbf{x} )}{\partial x_k} = a_k(\mathbf{x} )
+	\] 
+	\end{proof}
+\end{teorema}
+\noindent Questo teorema si pu\`o enunciare in maniera diversa come segue.
+\begin{teorema}
+	{}{}
+	Sia $\omega$ una forma differenziale continua in $A$ aperto connesso.
+	La forma $\omega$ \`e esatta se e e soltanto se per ogni curva chiusa $\gamma$, regolare a tratti e con sostegno in $A$, vale
+	\[
+	\int_{\gamma} \omega = 0 
+	\] 
+	\begin{proof}
+		Si \`e gi\`a visto che se $\omega$ \`e esatta, il suo integrale su una curva chiusa \`e nullo, quindi si dimostra il viceversa.
+
+		Si assume, quindi, che $ \forall \gamma$ chiusa, regolare a tratti e a sostegno in $A$ risulti
+		\[
+		\int_{\gamma} \omega = 0
+		\] 
+		Siano $\mathbf{x} _1, \mathbf{x} _2 \in A$ e $\gamma_1 :\left[ a,b \right] \to A$, $\gamma_2:\left[ c,d \right] \to A$ due curve in $\Gamma(\mathbf{x} _1,\mathbf{x} _2)$ tali che $\gamma_1(a) = \gamma_2(c)=\mathbf{x} _1$ e $\gamma_1(b) = \gamma_2(d) = \mathbf{x} _2$.
+		Sia, poi, $\gamma_3:\left[ b,b+1 \right] \to A$ una curva equivalente a $\gamma_2$, ma con verso opposto, definita come
+		\[
+		\gamma_3(t) = \gamma_2(d+(t-b)(c-d))
+		\] 
+		Allora, la curva $\gamma:\left[ a,b+1 \right] \to A$ data da
+		\[
+		\gamma = \begin{cases}
+			\gamma_1(t) &,\ a\le t\le b\\
+			\gamma_3(t) &,\ b\le t\le b+1
+		\end{cases}
+		\] 
+		\`e chiusa e regolare a tratti, quindi deve essere $\int_{\gamma} \omega = 0$. 
+		D'altra parte
+		\[
+		0 = \int_{\gamma} \omega = \int_{\gamma_1} \omega + \int_{\gamma_3} \omega = \int_{\gamma_1} \omega - \int_{\gamma_2} \omega
+		\] 
+		visto che $\gamma_3$ e $\gamma_2$ hanno verso opposto.
+		Ne segue che gli integrali di $\omega$ su $\gamma_1$ e $\gamma_2$ sono uguali e, dunque, $\omega$ soddisfa le ipotesi del teorema precedente (th. \ref{th:t42}), risultando, pertanto, esatta.
+	\end{proof}
+\end{teorema}
+\begin{obs}
+ Questo risulta valido anche per curve semplici, o anche poligonali.
+\end{obs}
+Questi teoremi non permettono agevolmente di capire se una forma \`e esatta o meno perch\'e richiedono il calcolo degli integrali su tutte le possibili curve della forma stessa.
+Allora si introduce il seguente.
+\begin{teorema}
+	{}{t43}
+	Sia $\omega = \sum_{i=1}^{n} a_i(\mathbf{x} ) dx_i$ una forma di classe $C^1(A)$. Se $\omega$ \`e esatta, allora 
+	\[
+	\frac{\partial a_i(\mathbf{x} )}{\partial x_k} = \frac{\partial a_k(\mathbf{x} )}{\partial x_i} , \ \forall \mathbf{x} \in A, \ \forall i,k=1,\ldots,n
+	\] 
+	\begin{proof}
+		Per assunzione, $\omega = df$, per cui $a_i =  \partial _{x_i} f$; applicando il teorema di Schwarz:
+		\[
+		\frac{\partial a_i}{\partial x_k} = \frac{\partial }{\partial x_k} \frac{\partial f}{\partial x_i} = \frac{\partial }{\partial x_i} \frac{\partial f}{\partial x_k} = \frac{\partial a_k}{\partial x_i} 
+		\] 
+	\end{proof}
+\end{teorema}
+\begin{definizione}
+	{Forma differenziale chiusa}{}
+	Una forma differenziale $\omega = \sum_{i=1}^{n} a_i(\mathbf{x} ) dx_i$ su $A$ \`e detta \textit{chiusa} se
+	\begin{equation}
+		\frac{\partial a_i(\mathbf{x} )}{\partial x_k}  = \frac{\partial a_k(\mathbf{x} )}{\partial x_i} , \ \forall \mathbf{x} \in A, \ \forall i,k = 1 ,\ldots,n
+	\end{equation}
+\end{definizione}
+Il teorema \ref{th:t43} afferma che ogni forma esatta \`e anche chiusa.
+Il viceversa non \`e vero; ad esempio
+\[
+\omega =- \frac{ydx}{x^2 + y^2} + \frac{xdy}{x^2 + y^2}
+\] 
+\`e chiusa, ma non esatta. 
+Infatti, per $\gamma$ di equazioni $x = \cos t$ e $y = \sin t$:
+\[
+\int_{\gamma} \omega = \int_{0} ^{2\pi} (\sin^2 t + \cos^2 t) \ dt = 2\pi
+\] 
+Il motivo per cui non vale il viceversa \`e che l'$\omega$ considerata non \`e definita in tutto il piano, ma solo in $\mathbb{R}\setminus\left\{ 0 \right\} $ e $\gamma$ circonda l'origine.
+
+Ora si cerca una condizione sufficiente; per farlo, si parte dalla seguente definizione.
+\begin{definizione}
+	{Insieme stellato}{}
+	Un insieme $A$ si dice stellato rispetto ad un suo punto $\mathbf{x} _0$ se $\forall \mathbf{x} \in A$, il segmento di estremi $\mathbf{x} _0, \mathbf{x} $ \`e interamente contenuto in $A$.
+\end{definizione}
+\begin{teorema}
+	{}{}
+	Se $A \subset \mathbb{R}^n$ \`e un aperto stellato, ogni forma chiusa definita in $A$ \`e anche esatta.
+	\begin{proof}
+		Senza perdita di generalit\`a, si assume che $A$ sia stellato rispetto all'origine.
+Dato $\mathbf{x} \in A$, significa che il segmento di equazaione $\gamma(t) = t \mathbf{x} , \ 0\le t \le 1$ \`e interamente contenuto in $A$ perch\'e unisce $\mathbf{x} \in A$ con l'origine.
+
+Sia, poi
+\[
+f(\mathbf{x} ) = \int_{\gamma} \omega = \int_{0} ^1  \sum_{i=1}^{n} a_i(t\mathbf{x} ) x_i \ dt 
+\] 
+L'idea \`e di mostrare che $f(\mathbf{x} )$ \`e una primitiva di $\omega$, che, quindi, risulta esatta.
+
+Per il teorema di derivazione sotto il segno di integrale:
+\[
+\frac{\partial f}{\partial x_k} = \int_{0} ^1 \sum_{i=1}^{n} \frac{\partial }{\partial x_k} \big(a_i(t\mathbf{x} ) x_i\big) \ dt 
+\] 
+dove 
+\[
+\frac{\partial }{\partial x_i} \big(a_i(t\mathbf{x} ) x_i\big)= \begin{cases}
+	\displaystyle \frac{\partial a_i(t\mathbf{x} )}{\partial x_k} t x_i &,\ i\neq k\\
+	\\
+	\displaystyle \frac{\partial a_k(t\mathbf{x} )}{\partial x_k} tx_k + a_k(t\mathbf{x} ) &,\ i = k
+\end{cases}
+\] 
+Sommando su $i$, allora, si ottiene
+\[
+\sum_{i=1}^{n} \frac{\partial }{\partial x_k} \big(a_i(t\mathbf{x} ) x_i\big)= \sum_{i=1}^{n} \frac{\partial a_i(t\mathbf{x} )}{\partial x_k} tx_i +  a_k(t\mathbf{x} )
+\] 
+Usando, ora, la definizione di forma chiusa, si ottiene
+\[
+\frac{\partial f}{\partial x_k} = \int_{0} ^1 \left(\sum_{i=1}^{n} \frac{\partial a_k(t\mathbf{x} )}{\partial x_i} tx_i + a_k(t\mathbf{x} )\right)  d 
+\] 
+Si prende $g(t) = ta_k(t\mathbf{x} )$, per cui
+\[
+g' (t) = a_k (t\mathbf{x} ) + \sum_{i=1}^{n} t \frac{\partial a_k}{\partial x_i} (t\mathbf{x} ) x_i
+\] 
+In conclusione, si trova che
+\[
+\frac{\partial f(\mathbf{x} )}{\partial x_k} = \int_{0} ^1 g'(t) \ dt = g(1) - g(0) = a_k (\mathbf{x} )
+\] 
+per cui $df = \omega$.
+	\end{proof}
+\end{teorema}
 
 
 
