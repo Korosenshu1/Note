@@ -1870,13 +1870,293 @@ L'importanza del teorema sta nel fatto che tutta la dipendenza da $M,M',q$ sta i
 \newpage
 \section{Teoria delle perturbazioni}
 
+\subsection{Introduzione}
 
+Si assume che il sistema in esame sia descrivibile tramite $\hat{H} = \hat{H}_0 + \lambda \hat{H}_1$, con $\lambda $  parametro \textit{piccolo}.
+Si vuole calcolare lo spettro, cio\`e risolvere 
+\begin{equation}\label{p1}
+	(\hat{H}_0 + \lambda \hat{H}_1 ) \ket{\psi _n} = E_n \ket{\psi _n} 
+\end{equation}
+Generalmente quello che si sperimenta in teoria delle perturbazioni \`e che il problema con $\lambda = 0$ si sa risolvere ed \`e noto, quindi si vanno a studiare gli effetti che produce $\hat{H}_1$ all'aumentare di $\lambda $.
 
+Sia, allora, $\hat{H}_0 \ket{n} = \epsilon _n \ket{n} $ spettro noto.
+Gli autostati $\ket{n} $ formano una base completa; il fatto che sia completa \`e indipendente dal fatto che siano autostati di $\hat{H}$ o meno, quindi si pu\`o usare come tale anche quando $\lambda \neq 0$\footnote{Anche se il nuovo Hamiltoniano comprenda un potenziale che vincola il sistema ad una certa regione spaziale, gli stati al di fuori di questa regione sono ancora accessibili, ma avranno un modulo quadro della funzione d'onda prossimo a zero semmai. Questo per dire che la struttura dello spazio di Hilbert \`e determinata in principio, cio\`e dipende dal sistema considerato e non dallo specifico operatore Hamiltoniano che agisce su di esso.}.
 
+In eq. \ref{p1} si devono trovare sia gli autostati $\ket{\psi _n} $, sia gli autovalori $E_n$; per farlo, si segue il seguente \textit{ansatz}: 
+\begin{equation}
+	\begin{split}
+		&E_n = E_n^{(0)} + \lambda E_n^{(1)} + \lambda ^2 E_n^{(2)} + \ldots\\
+		& \ket{\psi _n} = \ket{\psi _n^{(0)} }  + \lambda \ket{\psi ^{(1)} _n} + \lambda ^2 \ket{\psi ^{(2)} _n} 
+	\end{split}
+\end{equation}
+cio\`e si espande in potenze di $\lambda $.
 
+Si assume che lo spettro di $\hat{H}_0$ sia non degenere, cio\`e $\epsilon _n = \epsilon _{n'} \Rightarrow  \ket{n}  = \ket{n'} $.
+Inserendo questo \textit{ansatz} in eq. \ref{p1}:
+\[
+	(\hat{H}_0+\lambda \hat{H}_1) \left(\ket{\psi ^{(0)} _n} + \lambda \ket{\psi ^{(1)} _n} + \ldots \right) = \left(E_n^{(0)} + \lambda E^{(1)} _n + \ldots\right) \left(\ket{\psi _n^{(0)} } + \lambda \ket{\psi ^{(1)} _n} +\ldots \right) 
+\] 
+Questa \`e vera se ciascun termine relativo ad una potenza di $\lambda $ del membro di sinistra \`e uguale al relativo membro di sinistra. 
+Per l'ordine $0$, si ottiene il problema per $\hat{H}_0$ come ci si sarebbe aspettato:
+\[
+\hat{H}_0\ket{\psi ^{(0)} _n} = E_n^{(0)} \ket{\psi _n^{(0)} } \implies \begin{cases}
+	E_n^{(0)} \epsilon _n\\
+	\ket{\psi _n^{(0)} } = \ket{n} 
+\end{cases}
+\] 
+Per il primo e il secondo ordine perturbativo, si trova:
+\[
+	\begin{split}
+		&\left(\hat{H}_0 - E_n^{(0)} \right) \ket{\psi ^{(1)} _n} = \left(E^{(1)} _n - \hat{H}_1\right) \ket{\psi ^{(0)} _n} \\
+		&\left(\hat{H}_0- E^{(0)} _n\right) \ket{\psi ^{(2)} _n} = \left(E^{(1)}_n -\hat{H}_1\right) \ket{\psi ^{(1)}_n } + E^{(2)} \ket{\psi ^{(0)} _n} 
+	\end{split}
+\] 
+Si vede facilmente, allora, che per l'ordine $r$, si ha:
+\begin{boxenv}[]
+\begin{equation}
+	 \left(\hat{H}_0 - E^{(0)} _n\right) \ket{\psi ^{(r)} _n} = \left(E^{(1)} _n - \hat{H}_1\right) \ket{\psi ^{(r-1)} _n} + E^{(2)} _n\ket{\psi ^{(r-2)} _n} + \ldots + E^{(r)} _n \ket{\psi _n^{(0)} } 
+\end{equation}
+\end{boxenv}
+Visto che $\ket{n} $ \`e una base completa, si possono espandere gli autostati del problema perturbato: $\ket{\psi _n} = \sum_{n'}^{} \ket{n'} \braket{n'|\psi _n} $, con $\braket{n|n'} = \delta _{nn'} $.
 
+Inoltre, non si normalizzano ad $1$ gli stati (cio\`e non si impone $\braket{\psi _n|\psi _n} \stackrel{!}{=} 1$), ma, per comodit\`a di calcolo, si prende la seguente normalizzazione:
+\begin{equation}
+	\braket{\psi _n^{(0)} |\psi _n} = \braket{n|\psi _n} \stackrel{!}{=}1
+\end{equation}
+il che implica 
+\[
+\braket{\psi _n|\psi _n} = \left(\sum_{n'}^{} \braket{\psi _n|n'} \bra{n'} \right) \left(\sum_{n''}^{} \ket{n''} \braket{n''|\psi _n} \right) = \sum_{n'}^{} \lvert \braket{\psi _n|n'}  \rvert ^2 \Rightarrow 1
+\] 
+\begin{osservazione}
+Questo verr\`a rinormalizzato correttamente alla fine dei calcoli per cui si necessita l'altra condizione di normalizzazione, cosa che \`e possibile perch\'e le equazioni sono omogenee.
+\end{osservazione}
+Questa normalizzazione \`e utile per quanto segue:
+\[
+	1 = \braket{n|\psi _n} = \bra{n} \left(\ket{\psi _n^{(0)} }+ \lambda \ket{\psi ^{(1)}_n } + \ldots \right) = \braket{n|\psi ^{(0)} _n} + \lambda \braket{n|\psi ^{(1)} _n} + \ldots
+\] 
+ma visto che $\psi _n^{(0)} = n \Rightarrow  \braket{n|\psi ^{(0)} _n} = \braket{n|n} = 1$, allora $\forall r>0, \ \braket{n|\psi ^{(r)} _n} = 0$.
 
+\subsubsection{Primo ordine perturbativo}
+Si studia $\left(\hat{H}_0 - E^{(0)}_n \right) \ket{\psi ^{(1)} _n} = \left(E^{(1)} _n - \hat{H}_1\right) \ket{\psi ^{(0)} _n} $; si pu\`o sviluppare $\ket{\psi ^{(1)} _n} $ nella base fornita da $\hat{H}_0$: $\ket{\psi ^{(1)} _n}  = \sum_{n'\neq n}^{} \ket{n'} \braket{n'|\psi ^{(1)} _n} = \sum_{n'\neq n}^{} a^{(1)} _{n'} \ket{n'} $, dove si \`e scritto $n\neq n'$ perch\'e $\braket{n|\psi ^{(r)} _n} = 0, \ \forall r > 0$. 
+Da questo, si ha:
+\[
+\left(\hat{H}_0-E_n^{(0)} \right) \sum_{n'\neq n}^{} a^{(1)} _{n'} \ket{n'} = \left(E_n^{(1)} - \hat{H}_1\right) \ket{n} 
+\] 
+Moltiplicando a destra e sinistra per un elemento della base $\bra{m}  $:
+\[
+	\begin{split}
+		&\bra{m} \left(\hat{H}_0-E_n^{(0)} \right) \sum_{n'\neq n}^{} a^{(1)} _{n'} \ket{n'} =\bra{m}  \left(E_n^{(1)} - \hat{H}_1\right) \ket{n} \\
+		&\Rightarrow (\epsilon _m-\epsilon _n) a^{(1)} _m = E_n^{(1)} \delta _{mn} - \braket{m|\hat{H}_1|n}  
+	\end{split}
+\] 
+dove si \`e fatto prima agire $(\hat{H}_0 - E^{(0)}_n )$ su $\bra{m} $ e poi si \`e portato questo su $\ket{n'} $, dove ha portato $\delta _{n'm} $.
+Si distinguono diversi risultati a seconda di $m$.
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		&m=n \implies E^{(1)} _n = \braket{n|\hat{H}_1|n} \\
+		&m\neq n \implies a_m^{(1)} = \frac{\braket{m|\hat{H}_1|n} }{\epsilon _n - \epsilon _m}
+	\end{split}
+\end{equation}
+\end{boxenv}
+\noindent Allora:
+\begin{boxenv}[]
+\begin{equation}
+	\ket{\psi ^{(1)} _n} = \sum_{m\neq n}^{} \ket{m} \frac{\braket{m|\hat{H}_1|n} }{\epsilon _n- \epsilon _m}
+\end{equation}
+\end{boxenv}
+Le \textbf{condizioni dello sviluppo} sono date dalla verifica che gli ordini correttivi sono sempre molto pi\`u piccoli del relativo ordine precedente.
+In questo caso, quindi, deve risultare
+\[
+\lvert \braket{m|\lambda \hat{H}_1|n}  \rvert \ll \lvert \epsilon _n -\epsilon _m \rvert 
+\] 
+dove si \`e inserito $\lambda $ perch\'e il termine che compare nello sviluppo \`e $\lambda \ket{\psi ^{(1)} _n} $.
 
+\subsubsection{Ordini superiori}
+Riprendendo la generica equazione per ordine $r$ e moltiplicando ambo i membri per $\bra{n} $:
+\[
+\begin{split}
+	&\bra{n} \left(\hat{H}_0 - E^{(0)} _n\right) \ket{\psi ^{(r)} _n} = \bra{n}\left[  \left(E^{(1)} _n - \hat{H}_1\right) \ket{\psi ^{(r-1)} _n} + E^{(2)} _n\ket{\psi ^{(r-2)} _n} + \ldots + E^{(r)} _n \ket{\psi _n^{(0)} } \right]\\
+	&\Rightarrow 0 = - \braket{n|\hat{H}_1|\psi ^{(r-1)} _n} + E^{(r)} _n
+\end{split}
+\] 
+dove si \`e usata la condizione di normalizzazione imposta precedentemente, cio\`e $\braket{n|\psi ^{(r)} _n} = 0, \ \forall r > 0$.
+Pertanto, si ricava che
+\begin{boxenv}[]
+\begin{equation}
+	E_n^{(r)} = \braket{n|\hat{H}_1|\psi ^{(r-1)} _n} 
+\end{equation}
+\end{boxenv}
+\noindent Questo significa che, avendo calcolato i termini dell'ordine $1$, si possono ricavare tutti gli altri.
+Per il \textbf{secondo ordine}, infatti, ricordando che
+\[
+\lambda \ket{\psi ^{(1)} _n} = \sum_{m\neq n}^{} \ket{m} \frac{\braket{m|\lambda \hat{H}_1|n} }{\epsilon _n  - \epsilon _m}
+\] 
+si ottiene:
+\begin{boxenv}[]
+\begin{equation}
+	E^{(2)} _n = \sum_{m\neq n}^{} \frac{\braket{n|\hat{H}_1|m} \braket{m|\hat{H}_1|n} }{\epsilon _n - \epsilon _m}
+\end{equation}
+\end{boxenv}
+\subsubsection{Normalizzazione}
+Gli stati $\ket{\psi _n} $ non sono normalizzati per aver scelto una diversa condizione di normalizzazione; assumendo, per esempio, che sia $\braket{\psi _n|\psi _n} = Z_n$, per rinormalizzare gli stati, \`e sufficiente prendere $\ket{\Psi _n} = Z_n^{1 / 2} \ket{\psi _n} $.
+
+Svolgendo il calcolo, si trova che:
+\[
+\left(\bra{\psi ^{(0)} _n } + \lambda \bra{\psi ^{(1)} _n}  + \ldots\right) \left(\ket{\psi ^{(0)} _n}+ \lambda \ket{\psi _n^{(1)} } + \ldots  \right) = 1 + \lambda ^2 \braket{\psi ^{(1)} _n|\psi ^{(1)} _{n} }  + \ldots 
+\] 
+Si nota che all'ordine $\lambda $, la normalizzazione \`e gi\`a verificata.
+Inserendo il risultato trovato, si conclude che il valore di $Z_n$ all'ordine $2$ (indicato con $Z_n^{(2)} $) \`e:
+\begin{equation}
+	Z_n^{(2)}  = 1+ \lambda ^2 \sum_{m\neq n}^{} \frac{\lvert \braket{m|\hat{H}_1|n}  \rvert ^2}{(\epsilon _n - \epsilon _m)^2}
+\end{equation}
+\begin{osservazione}
+Sviluppando perturbativamente, la condizione di normalizzazione non necessita modifiche fintanto che non si arriva al secondo ordine.
+\end{osservazione}
+\subsubsection{Esempio -- Sistema a due livelli}
+Si considera un sistema a due livelli in cui $\hat{H} = \hat{H}_0 + \lambda \hat{V}$. 
+Come visto in esercizio \ref{esh2l}, l'$\hat{H}$ pi\`u generale sar\`a la pi\`u generale matrice Hermitiana\footnote{La perturbazione \`e unicamente fuori diagonale per assunzione.}:
+\[
+	\hat{H} = \begin{pmatrix} E^{(0)} _1 & \lambda V_{12} \\ \lambda V_{21} & E^{(0)} _2\end{pmatrix} 
+\] 
+dove si \`e assunto che $V_{12} = V_{21} $, ma in generale sarebbe potuto valere anche $V_{12}= V_{21}^*$. Il motivo del nome degli elementi della forma matriciale \`e dovuto al fatto che l'Hamiltoniano si pu\`o riscrivere come
+\[
+	\hat{H} = \underbracket{a_0 \operatorname{Id} + a_3 \sigma_3}_{\equiv \hat{H}_0}  + \underbracket{a_1 \sigma_1 }_{\lambda \hat{V}} \hspace{1cm}\hat{H}_0 = \begin{pmatrix} E^{(1)} _0 & 0 \\ 0 & E^{(0)} _2 \end{pmatrix} , \ \lambda \hat{V} = \begin{pmatrix} 0 & \lambda V_{12} \\ \lambda V_{21} & 0  \end{pmatrix} 
+\] 
+con $ a_0 =\big(E^{(0)}_1 + E^{(0)}_2\big) / 2$, $a_1 = \lambda V_{12} $ e $ a_3 =\big( E_1^{(0)} - E_2^{(0)} \big) / 2$. Si \`e assunto $E_1 > E_2 $.
+
+Gli autovalori sono dati da: 
+\begin{equation}
+	E_{\pm} = \frac{E^{(0)} _1 + E^{(0)} }{2} \pm \sqrt{\frac{\left(E_1^{(0)} - E_2^{(0)} \right) ^2 }{4} + \lambda ^2 V_{12}^2} 
+\end{equation}
+Assumendo $\lambda $ molto piccolo, si pu\`o sviluppare il termine sotto radice; ricordando che $\sqrt{1+x} \simeq 1 + x / 2 - x^2 / 8$, si trova
+\[
+E_+ = E^{(0)} _1 + \frac{\lambda ^2 \lvert V_{12} \rvert ^2}{E^{(0)} _1 - E_2^{(0)} } \hspace{1cm} E_- = E_2^{(0)} - \frac{\lambda ^2 \lvert V_{12} \rvert ^2}{E_1^{(0)} E_2^{(0)}  }
+\] 
+Avendo, ora, sviluppato gli autovalori dell'Hamiltoniano per $\lambda \ll 1$, si possono confrontare con quanto previsto dalla teoria delle perturbazioni.
+Prendendo d'esempio $E_+$, effettivamente $E^{(0)} _n = \epsilon _n$ perch\'e, in $E_+$, il termine di ordine $0$ \`e proprio l'energia dell'Hamiltoniano non perturbato.
+
+Si nota, poi, che $E^{(1)} _n = \braket{n|\hat{H}_1|n} $, in questo caso, \`e nullo perch\'e la perturbazione \`e fuori diagonale; infatti, non vi \`e termine di ordine $1$ in $\lambda $ nell'espressione di $E_+$.
+
+Infine, per l'ordine $2$, si deve trovare 
+\[
+E^{(2)} _n = \sum_{m\neq n}^{} \frac{\lvert \braket{m|\hat{H}_1|n}  \rvert ^2}{\epsilon _n - \epsilon _m}
+\] 
+il che coincide proprio con quanto riporta il termine di ordine $2$ in $E_+$.
+
+\subsubsection{Esempio -- Oscillatore armonico}
+L'Hamiltoniano \`e
+\[
+\hat{H}_0 = \frac{\hat{P}^2}{2m} + \frac{1}{2}m\omega^2 \hat{q}^2 
+\] 
+A questo si aggiunge il termine perturbativo $\lambda \hat{H}_1 = \lambda \hat{q}$ (quindi della forma di un potenziale, vista la dipendenza dalle coordinate).
+
+Per oscillatore armonico, si conosce $E^{(0)} _n = \epsilon _n = \hbar \omega (n  + 1/2)$, mentre dalla teoria delle perturbazioni si sa che
+\[
+E^{(1)} _n = \braket{n|\hat{q}|n} \hspace{1cm}E^{(2)} _n = \sum_{m\neq n}^{} \frac{\lvert \braket{m|\hat{q}|n}  \rvert ^2 }{\epsilon _m - \epsilon _n}
+\] 
+\begin{boxenv}[]
+\begin{osservazione}
+Il primo ordine \`e sempre $0$. 
+Questo \`e dovuto al fatto che gli autostati dell'oscillatore armonico hanno parit\`a ben definita, quindi in
+\[
+\braket{n|\hat{q}|n} = \int_{-\infty}^{+\infty} (\psi ^{(0)} _n )^*q \psi _n ^{(0)} \ dq
+\] 
+gli $\psi ^{(0)} _n$ hanno parit\`a ben definita, quindi il loro prodotto \`e sempre pari, mentre la posizione \`e dispari, quindi l'integrale fa $0$.
+\end{osservazione}
+\end{boxenv}
+Si riscrive l'Hamiltoniano:
+\[
+\hat{H} = \frac{ \hat{P}^2 }{2m} + \frac{1}{2} m\omega^2 \hat{q}^2 + \lambda \hat{q} = \frac{\hat{P}^2}{2m} + \frac{1}{2}m\omega^2 \left(\hat{q}+ \frac{\lambda }{m\omega^2}\right) ^2 - \frac{\lambda ^2 }{2m\omega^2}
+\] 
+Si prende $\hat{Q} = \hat{q} + \lambda  / m\omega^2$, che conserva le leggi di commutazione con $\hat{P}$, e si ottiene
+\[
+\hat{H} = \frac{\hat{P}^2}{2m} + \frac{1}{2} m\omega^2 \hat{Q}^2 - \frac{\lambda ^2}{2m\omega^2}\implies E_n = \hbar  \omega (n + 1 / 2) - \frac{\lambda ^2}{2m\omega^2}
+\] 
+Ora che si \`e risolto esattamente il problema, si confronta la soluzione con quanto previsto dalla teoria delle perturbazioni. 
+Si \`e gi\`a visto che il primo ordine perturbativo \`e nullo, quindi si calcola il termine del secondo ordine. 
+
+L'idea per il calcolo \`e di partire dalla definizione degli operatori di salita e discesa e ricavare un'espressione di $\hat{q}$ in termini di questi due; si ottiene 
+\[
+\hat{q} = \left(\frac{\hbar }{2m\omega}\right) ^{1/2} (\hat{a} + \hat{a}^\dagger )
+\] 
+\subsection{Teoria delle perturbazioni per spettri degeneri}
+
+Nel caso non-degenere, l'ordine $0$ della perturbazione implicava $\ket{\psi_n^{(0)} }  = \ket{n} $.
+Nel caso di degenerazione, si indicano gli stati di $\hat{H}_0$ come $\ket{n,r} $ dove $r$ d\`a la degenerazione di $n$; si ha, per definizione, $\hat{H}_0 \ket{n,r} = \epsilon _n \ket{n, r} $, con $\braket{n,r|n,s} = \delta _{rs} $.
+Lo stato all'ordine $0$ si scrive, allora, come
+\begin{equation}
+	\ket{\psi ^{(0)} _{n,r} } =\sum_{s}^{} c_{rs} \ket{n,s} 
+\end{equation}
+Si cercano i coefficienti $c_{rs} $.
+Al primo ordine in $\lambda $, si ha $E_{nr} = E^{(0)} _{nr} + \lambda E^{(1)} _{nr} $ e $\ket{\psi _{nr} } = \ket{\psi ^{(0)} _{nr} } + \lambda \ket{\psi ^{(1)} _{nr} } $. 
+L'equazione del primo ordine perturbativo \`e, moltiplicando ambo i membri per $\bra{ns} $:
+\[
+	\begin{split}
+		&\bra{ns} 	(\hat{H}_0 -\epsilon _n) \ket{\psi ^{(1)} _{nr} } = \bra{ns} ( E^{(1)} _{nr} - \hat{H}_1) \ket{\psi ^{(0)} _{nr} } \\
+		&\Rightarrow 0 = \bra{ns} (E^{(1)} _{nr} - \hat{H}_1) \sum_{r'}^{} c_{rr'} \ket{nr'} \\
+		&\Rightarrow  0 = \sum_{r'}^{} \left[ E_{nr} \delta _{sr'}  - \braket{ns|\hat{H}_1|nr'}  \right] c_{rr'} 
+	\end{split}
+\] 
+da cui si ottiene l'equazione agli autovalori $M_{sr'} c_{rr'} =E_{nr} ^{(1)}  \delta _{sr'} c_{rr'} $.
+Questa permette di ottenere i coefficienti per gli stati all'ordine $0$ e anche gli autovalori.
+
+Immaginando di aver scelto in principio una base di autostati $\ket{k} $ che diagonalizza, all'interno della degenerazione, anche $\hat{H}_1$. 
+In termini di questi $\ket{k} $, tutta la trattazione precedente torna valida.
+\subsubsection{Esempio -- Sistema a due livelli degenere}
+
+Si considera il caso in cui 
+\[
+	\hat{H}_0 = \begin{pmatrix} \epsilon _1 & 0 \\ 0& \epsilon _2 \end{pmatrix} \hspace{1cm}\hat{H}_1 = \begin{pmatrix} 0 & v \\ v^* & 0\end{pmatrix}  
+\] 
+con $v \in \mathbb{C}, \lvert v \rvert \ll 1$.
+Si considera il problema agli autovalori $(\hat{H}_0 + \hat{H}_1) \ket{\psi } = E \ket{\psi } $, che si risolve da 
+\[
+	\begin{split}
+		&\begin{vmatrix} \epsilon _1 - E & v \\ v^* & \epsilon _2 - E \end{vmatrix} \stackrel{!}{=} 0 \implies E^2 - (\epsilon _1 + \epsilon _2) E + (\epsilon _1\epsilon _2 - \lvert v \rvert ^2 ) = 0 \\
+		&\Rightarrow E_{\pm} = \frac{1}{2}(\epsilon _1 + \epsilon _2) \pm \frac{1}{2}\sqrt{(\epsilon _1-\epsilon _2)^2 + 4 \lvert v \rvert ^2} 
+	\end{split}
+\] 
+Nel caso di degenerazione, cio\`e $\epsilon _1 = \epsilon _{2}=\epsilon  $, non si hanno problemi in questa soluzione esatta: si trova $E_{\pm} = \epsilon \pm \lvert v \rvert $.
+
+La formula perturbativa per il secondo ordine correttivo nell'energia \`e
+\[
+E_n^{(2)} = \sum_{n\neq m}^{} \frac{\lvert \braket{m|\hat{H}_1|n}  \rvert ^2}{\epsilon _n-\epsilon _m} 
+\] 
+che porta a qualcosa della forma $\lvert v \rvert ^2 / (\epsilon _1 - \epsilon _2)$.
+Nel caso di degenerazione, questa non va pi\`u bene.
+Questo crea problemi anche nel caso in cui $\lvert \epsilon _1 - \epsilon _2 \rvert \ll 1$.
+\begin{center}
+	\textit{Da continuare\ldots} 
+\end{center}
+\subsubsection{Soluzione operatoriale}
+
+Si riparte da capo, assumendo di avere Hamiltoniano $\hat{H} = \hat{H}_0 + \lambda \hat{H}_1$ e conoscere lo spettro di $\hat{H}_0$, dato da $\hat{H}_0 \ket{n}  = \epsilon _n \ket{n} $, ma non si fanno altre assunzioni.
+Di nuovo si trova che $\hat{H} \ket{\psi _n}  = E_n \ket{\psi _n}  \Rightarrow (E_n- \hat{H}_0) \ket{\psi _n}  = \lambda \hat{H}_1 \ket{\psi _n} $.
+Si definisce l'operatore
+\begin{equation}
+	\hat{Q}_n := \sum_{r\neq n}^{} \ket{r} \bra{r} = 1 - \ket{n} \bra{n} 
+\end{equation}
+che \`e un proiettore su tutti gli stati a parte $n$, il che giustifica la seconda uguaglianza.
+Visto che il $\hat{Q}_n$ \`e scritto in termini degli autostati di $\hat{H}_0$, si ha $[\hat{Q}_n , \hat{H}_0] = 0 $.
+
+Con la normalizzazione $\braket{\psi _n|n} =1$, si pu\`o scrivere un generico autostato di $\hat{H}$ come:
+\begin{equation}
+	\ket{\psi _n}  = \ket{n}  + \hat{Q}_n \ket{\psi _n} 
+\end{equation}
+Applicando $\hat{Q}_n$ a sinistra di entrambi i membri dell'equazione di Shr\"odinger e usando il fatto che commuta con $\hat{H}_0$, si trova che:
+\[
+ (E_n-\hat{H}_0) \hat{Q}_n \ket{\psi _n} = \hat{Q}_n \hat{H}_1 \ket{\psi _n} 
+\] 
+La soluzione di questa si ottiene assumendo che l'operatore $(E_n- \hat{H}_0)$ non sia degenere; allora si pu\`o moltiplicare per il suo inverso e ottenere
+\[
+\hat{Q}_n \ket{\psi _n} = (E_n - \hat{H}_0)^{-1} \hat{Q}_n \hat{H}_1 \ket{\psi _n} 
+\] 
+Si definisce $\hat{R}_n = (E_n- \hat{H}_0)^{-1} \hat{Q}_n= \hat{Q}_n (E_n -\hat{H}_0) ^{-1} $; allora:
+\begin{equation}
+\ket{\psi _n} = \ket{n} + \hat{R}_n \hat{H}_1 \ket{\psi _n} 
+\end{equation}
+Questa riscrittura permette uno sviluppo perturbativo tramite serie di potenze.
 
 
 
@@ -2050,7 +2330,7 @@ Si nota che l'operatore $\hat{M}=\sigma _3$ \`e tale per cui
 come si \`e scelta la base.
 
 \`E possibile calcolare il valore di aspettazione di un osservabile $\hat{O}$ su uno stato generico (anche non puro) usando la matrice densit\`a tramite la relazione $\langle \hat{O} \rangle = \operatorname{tr} \rho  \hat{O}$.
-\begin{esercizio}
+\begin{esercizio}\label{esh2l}
 	Scrivere il pi\`u generale Hamiltoniano per un sistema a due livelli.
 	\begin{svolgimento}
 		Un Hamiltoniano deve essere un operatore Hermitiano, quindi si usa l'espressione della pi\`u generale matrice Hermitiana $2\times 2$ riportata in eq. \ref{hmat}.
