@@ -2054,9 +2054,108 @@ In conclusione, si trova che
 per cui $df = \omega$.
 	\end{proof}
 \end{teorema}
+\subsubsection{La formula di Gauss-Green}
+Sia $\gamma:\left[ a,b \right] \to \mathbb{R}^2$ una curva semplice\footnote{Una curva $\gamma:\left[ a,b \right] \to \mathbb{R}^n$ \`e detta semplice se non si interseca mai, quindi se \`e iniettiva in $(a,b)$.} e chiusa, il cui sostegno \`e la frontiera di un certo insieme $E \subset \mathbb{R}^2$.
+Si dice che $\gamma$ \`e \textbf{orientata positivamente} se, percorrendola nel senso di $t$ crescente, il dominio $E$ rimane alla sinistra.
 
+Date due curve $\gamma, \varphi $ che contornano lo stesso insieme $E$, ma hanno versi opposti, per sottolineare questo fatto si scriver\`a $\partial ^+E$ al posto di $\gamma$ e $\partial ^- E$ al posto di $\varphi $.
+\begin{teorema}
+	{Formula di Gauss-Green}{}
+	Se $\omega = M(x,y)  dx + N(x,y) dy$ \`e una forma differenziale di classe $C^1$, allora vale la formula di Gauss-Green:
+	\begin{equation}
+		\int_{\partial ^+ E} \omega= \int_{E} \left(\frac{\partial N}{\partial x}  - \frac{\partial M}{\partial y} \right)  dxdy
+	\end{equation}
+\begin{proof}
+	L'idea \`e di dimostrare separatamente le due seguenti relazioni, che poi portano alla formula di Gauss-Green:
+	\[
+		\int_{ \partial ^+ E} M(x,y) dx = - \int_{E} \frac{\partial M}{\partial y} dxdy \hspace{1cm} \int_{\partial ^+E} N(x,y) dy= \int_{E} \frac{\partial N}{\partial x} dxdy
+	\] 
+	Per semplicit\`a di calcolo, si assume che $E$ sia un dominio normale rispetto all'asse delle $y$, cio\`e che sia della forma:
+	\[
+	E = \left\{ (x,y) \in \mathbb{R}^2:a\le x\le b, \ \alpha (x) \le  y \le  \beta (x) \right\} 
+	\] 
+	Cos\`i facendo, l'insieme $E$ \`e composto da due funzioni i cui lati sinistro e destro sono uniti da due segmenti verticali, mentre la forma dei lati superiore e inferiore \`e determinata da $\alpha (x)$ e $\beta (x)$.
 
+	In questo modo, si ha che $dx = 0$ sui segmenti verticali di $\partial E$, cio\`e:
+	\[
+	\int_{\partial ^+ E}  M(x,y) dx = \int_{a} ^b M(x,\alpha (x)) dx - \int_{a} ^b M(x,\beta (x)) dx
+	\] 
+	D'altra parte, si ha
+	\[
+	M(x,\alpha (x)) - M(x,\beta (x)) = \int_{\beta (x)} ^{\alpha (x)} \frac{\partial M(x,y)}{\partial y} dy = -  \int_{\alpha (x)} ^{\beta (x)} \frac{\partial M(x,y)}{\partial y} dy
+	\] 
+Quindi
+\[
+\int_{\partial ^+ E} M(x,y) dx = -\int_{a} ^b dx \int_{\alpha (x)} ^{\beta (x)} \frac{\partial M}{\partial y} dy = - \int_{E} \frac{\partial M}{\partial y} dxdy
+\] 
+che dimostra la prima relazione.
 
+Per la seconda, si ha:
+\[
+	\begin{split}
+		\int_{\partial ^+ E} N(x,y) dy = \int_{a} ^b N(x,\alpha (x)) \alpha '(x) dx &+ \int_{\alpha (b)} ^{\beta (b)} N(b,y)  dy - \int_{a} ^b N(x,\beta (x)) \beta '(x) dx\\
+											    &- \int_{\alpha (a)} ^{\beta (a)} N(a,y) dy
+	\end{split}
+\] 
+Si prende $F(x,y) = \int_{\alpha (x)} ^{y} N(x,t) dt$, per cui $\partial _y F(x,y) = N(x,y)$, quindi
+\[
+N(x,\alpha (x)) \alpha '(x) = \frac{d }{d x} F(x,\alpha (x)) - \frac{\partial F}{\partial x} (x,\alpha (x))
+\] 
+Da questo, segue che
+\[
+\int_{a} ^b N(x,\alpha (x)) \alpha '(x) dx = F(b,\alpha (b)) - F(a,\alpha (a)) - \int_{a} ^b \frac{\partial F(x,\alpha (x))}{\partial x}  dx
+\] 
+Analogamente, si trova che $N(x,\beta (x)) \beta '(x) = d_x F(x,\beta (x)) - \partial _x F(x,\beta (x))$, per cui
+\[
+\int_{a} ^b N(x,\beta (x)) \beta '(x) dx = F(b,\beta (b)) - F(a,\beta (a)) - \int_{a} ^b \frac{\partial F(x,\beta (x))}{\partial x} dx
+\] 
+Allo stesso tempo, valgono
+\[
+\begin{split}
+	&\int_{\alpha (b)} ^{\beta (b)} N(b,y) dy = \int_{\alpha (b)} ^{\beta (b)} \frac{\partial F(b,y)}{\partial y} dy = F(b,\beta (b)) - F(b,\alpha (b))\\
+	& \int_{\alpha (a)} ^{\beta (a)} N(a,y) dy = \int_{\alpha (a)} ^{\beta (a)} \frac{\partial F(a,y)}{\partial y} dy = F(a,\beta (a)) - F(a,\alpha (a))
+\end{split}
+\] 
+Mettendo tutto insieme, molti termini si semplificano e si rimane con:
+\[
+\int_{\partial ^+ E} N(x,y) dy = \int_{a} ^b \left(\frac{\partial F(x,\beta (x))}{\partial x}-\frac{\partial F(x,\alpha (x))}{\partial x}  \right) dx
+\] 
+Per finire, essendo che
+\[
+\frac{\partial F(x,\beta (x))}{\partial x}-\frac{\partial F(x,\alpha (x))}{\partial x} = \int_{\alpha (x)} ^{\beta (x)} \frac{\partial ^2F(x,y)}{\partial x\partial y} dy = \int_{\alpha (x)} ^{\beta (x)} \frac{\partial N}{\partial x} dy
+\] 
+si ottiene
+\[
+\int_{\partial ^+E} N(x,y) dy = \int_{a} ^b dx \int_{\alpha (x)} ^{\beta (x)} \frac{\partial N}{\partial x} dy=\int_{E} \frac{\partial N}{\partial x} dxdy
+\] 
+\end{proof}
+\end{teorema}
+Si ricorda che, data una curva piana regolare $\gamma:\left[ a,b \right] \to \mathbb{R}^2$ di componenti $(x(t), y(t))$, il versore tangente a $\gamma$ \`e
+\[
+\tau = \frac{\gamma'}{\left\lVert \gamma' \right\rVert } = \left(\frac{x'}{\sqrt{x'^2 + y'^2} }, \frac{y'}{\sqrt{x'^2 + y'^2} }\right) \equiv (\tau _1, \tau _2)
+\] 
+Prendendo $\nu = (\tau _2, -\tau _1)$, si ottiene un versore tale che $\nu \cdot \tau =0 $, cio\`e il \textit{versore normale} alla curva $\gamma$.
+Se $\gamma = \partial ^+ E$, il versore normale $\nu $ come definito sopra risulta puntare verso l'esterno di $E$.
+In questo modo:
+\[
+\int_{\partial ^+E} M dx = \int_{a} ^b M(\gamma(t)) \gamma_1'(t) dt = \int_{a} ^b M(\gamma(t)) \frac{\gamma'_1(t)}{\left\lVert \gamma'_1(t) \right\rVert }\left\lVert \gamma'_1(t) \right\rVert  dt  = \int_{\gamma} M\tau _1  ds = - \int_{\partial E} M\nu _2 ds
+\] 
+\begin{obs}
+	Nell'ultimo integrale, si \`e scritto solo $\partial E$ perch\'e l'integrale curvilineo non dipende dall'orientazione.
+\end{obs}
+Allo stesso modo si trova che
+\[
+\int_{\partial ^+ E} N dy = \int_{\partial E} N \nu_1 ds
+\] 
+Le relazioni che costituiscono la formula di Gauss-Green, usando queste relazioni, diventano:
+\[
+\int_{E} \frac{\partial M}{\partial y} dxdy = \int_{\partial E} M\nu _2  ds \hspace{1cm}\int_{E} \frac{\partial N}{\partial x} dxdy = \int_{\partial E} N \nu _1 ds
+\] 
+Definendo, ora, il campo vettoriale $\mathbf{V} (\mathbf{x} )$ in $\mathbb{R}^2$ tale che $\mathbf{V} = (V_1,V_2) = (N,M)$, allora la formula di Gauss-Green diventa:
+\begin{equation}
+	\int_{E} \nabla \cdot \mathbf{V} \ dxdy = \int_{\partial E} (V_1 \nu _1 + V_2 \nu _2) ds = \int_{\partial E} \mathbf{V} \cdot \nu \ ds
+\end{equation}
+Questo \`e noto come \textbf{teorema della divergenza} e l'integrale al secondo membro \`e il \textit{flusso} di $\mathbf{V} $ attraverso $\partial E$.
 
 
 
