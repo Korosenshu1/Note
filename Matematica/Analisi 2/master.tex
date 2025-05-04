@@ -1816,7 +1816,7 @@ Usando che il versore tangente a $\varphi $ \`e
 \tau  = \frac{\varphi '(t) }{\left\lVert \varphi '(t) \right\rVert }
 \] 
 si trova che
-\begin{equation}
+\begin{equation}\label{u1}
 	\int_{\varphi } \omega = \int_{a} ^b \mathbf{V} (\varphi (t)) \cdot \tau (t) \left\lVert \varphi '(t) \right\rVert \ dt = \int_{\varphi } \mathbf{V} \cdot \tau \ ds
 \end{equation}
 Il teorema di seguito \`e l'analogo di quanto visto per l'equivalenza di due integrali curvilinei della stessa funzione su due curve equivalenti.
@@ -1934,7 +1934,7 @@ Da questo, si ha il seguente.
 \end{teorema}
 \noindent Questo teorema si pu\`o enunciare in maniera diversa come segue.
 \begin{teorema}
-	{}{}
+	{}{cce}
 	Sia $\omega$ una forma differenziale continua in $A$ aperto connesso.
 	La forma $\omega$ \`e esatta se e e soltanto se per ogni curva chiusa $\gamma$, regolare a tratti e con sostegno in $A$, vale
 	\[
@@ -1968,7 +1968,7 @@ Da questo, si ha il seguente.
 		Ne segue che gli integrali di $\omega$ su $\gamma_1$ e $\gamma_2$ sono uguali e, dunque, $\omega$ soddisfa le ipotesi del teorema precedente (th. \ref{th:t42}), risultando, pertanto, esatta.
 	\end{proof}
 \end{teorema}
-\begin{obs}
+\begin{obs}\label{o42}
  Questo risulta valido anche per curve semplici, o anche poligonali.
 \end{obs}
 Questi teoremi non permettono agevolmente di capire se una forma \`e esatta o meno perch\'e richiedono il calcolo degli integrali su tutte le possibili curve della forma stessa.
@@ -2054,7 +2054,7 @@ In conclusione, si trova che
 per cui $df = \omega$.
 	\end{proof}
 \end{teorema}
-\subsubsection{La formula di Gauss-Green}
+\subsection{La formula di Gauss-Green}
 Sia $\gamma:\left[ a,b \right] \to \mathbb{R}^2$ una curva semplice\footnote{Una curva $\gamma:\left[ a,b \right] \to \mathbb{R}^n$ \`e detta semplice se non si interseca mai, quindi se \`e iniettiva in $(a,b)$.} e chiusa, il cui sostegno \`e la frontiera di un certo insieme $E \subset \mathbb{R}^2$.
 Si dice che $\gamma$ \`e \textbf{orientata positivamente} se, percorrendola nel senso di $t$ crescente, il dominio $E$ rimane alla sinistra.
 
@@ -2062,7 +2062,7 @@ Date due curve $\gamma, \varphi $ che contornano lo stesso insieme $E$, ma hanno
 \begin{teorema}
 	{Formula di Gauss-Green}{}
 	Se $\omega = M(x,y)  dx + N(x,y) dy$ \`e una forma differenziale di classe $C^1$, allora vale la formula di Gauss-Green:
-	\begin{equation}
+	\begin{equation}\label{gg}
 		\int_{\partial ^+ E} \omega= \int_{E} \left(\frac{\partial N}{\partial x}  - \frac{\partial M}{\partial y} \right)  dxdy
 	\end{equation}
 \begin{proof}
@@ -2156,6 +2156,198 @@ Definendo, ora, il campo vettoriale $\mathbf{V} (\mathbf{x} )$ in $\mathbb{R}^2$
 	\int_{E} \nabla \cdot \mathbf{V} \ dxdy = \int_{\partial E} (V_1 \nu _1 + V_2 \nu _2) ds = \int_{\partial E} \mathbf{V} \cdot \nu \ ds
 \end{equation}
 Questo \`e noto come \textbf{teorema della divergenza} e l'integrale al secondo membro \`e il \textit{flusso} di $\mathbf{V} $ attraverso $\partial E$.
+
+Questo vale anche per tre o pi\`u dimensioni; in $3D$, soddisfa
+\[
+\int_{E} \frac{\partial f}{\partial x} dxdydz = \int_{\partial E} f\nu _1 d\sigma \hspace{.7cm} \int_{E} \frac{\partial f}{\partial y} dxdydz = \int_{\partial E} f\nu _2 d\sigma \hspace{.7cm}\int_{E} \frac{\partial f}{\partial z} dxdydz = \int_{\partial E} f\nu _3 d\sigma
+\] 
+che si possono riscrivere in forma vettoriale come
+\begin{equation}
+	\int_{E} \nabla \cdot \mathbf{V} \ dxdydz = \int_{\partial E} \mathbf{V} \cdot \nu \ d\sigma 
+\end{equation}
+La dimostrazione \`e omessa (pag. 180, E. Giusti - \textit{Analisi Matematica 2}).
+
+\subsubsection{Area di figure piane}
+
+Se in eq. \ref{gg}, si prendono $M = 0, \ N = x$ e, poi, si prendono $N= 0 , \ M = y$, si ottengono, rispettivamente, le seguenti relazioni:
+\begin{equation}\label{agg1}
+	\int_{\partial ^+E } xdy = \int_{E} dxdy = m(E) \hspace{1cm} \int_{\partial ^+ E } ydx = - \int_{E} dxdy  = -  m(E)
+\end{equation}
+Evidentemente, prendendo $M = - y / 2$ e $N = x / 2$:
+\begin{equation}\label{agg2}
+	m(E) =  \frac{1}{ 2} \int_{\partial ^+ E } x dy - y dx
+\end{equation}
+Queste formule si applicano bene quando l'insieme $E$ di cui si vuole calcolare l'area \`e dato come l'insieme racchiuso da una curva.
+
+\begin{esempio}
+Calcolare l'area racchiusa dalla cicloide di equazioni
+\[
+\begin{cases}
+	x = t - \sin t \\
+	y = 1 - \cos t
+\end{cases},  \ 0\le t\le 2 \pi
+\] 
+e dall'asse delle $x$.
+\begin{svolgimento}
+	Usando la prima formula in eq. \ref{agg1}, si trova
+	\[
+	m(E) = \int_{\partial ^+E} xdy =  - \int_{0} ^{2\pi} (t-\sin t ) \sin t \ dt  = \int_{0} ^{2\pi} \sin^2 t \ dt - \int_{0} ^{2\pi} t \sin t \ dt = \pi + 2\pi = 3 \pi 
+	\] 
+\end{svolgimento}
+\end{esempio}
+Nel caso in cui la curva sia data in coordinate polari, invece, \`e conveniente usare l'eq. \ref{agg2}.
+Infatti, per
+\[
+\begin{cases}
+	x = \rho (\varphi ) \cos  \varphi \\
+	y = \rho (\varphi ) \sin \varphi 
+\end{cases}\implies \begin{cases}
+	dx = (\rho '\cos\varphi  - \rho  \sin \varphi ) d\varphi \\
+	dy = (\rho ' \sin  \varphi  + \rho \cos \varphi ) d\varphi 
+\end{cases}
+\] 
+si ricava che
+\begin{equation}
+xdy - ydx = \rho ^2 (\sin ^2 \varphi  + \cos ^2 \varphi )d\varphi  = \rho ^2 d\varphi 
+\end{equation}
+\begin{esempio}
+Calcolare l'area racchiuda dalla cardioide di equazione $\rho = 1 + \cos \varphi , \ 0\le \varphi \le 2\pi$.
+\begin{svolgimento}
+	Applicando direttamente la formula trovata:
+	\[
+	m = \frac{1}{2}\int_{0} ^{2\pi} \big(1 + 2 \cos \varphi  + \cos^2 \varphi  \big) d\varphi = \frac{3}{2}\pi
+	\] 
+\end{svolgimento}
+\end{esempio}
+\subsubsection{Ancora sulle forme esatte}
+La formula di Gauss-Green permette di aggiungere informazioni alla caratterizzazione delle forme esatte.
+Si \`e mostrato che, affinch\'e una forma differenziale del tipo $\omega = M(x,y) dx+ N(x,y)  dy $ sia esatta in un dominio $A$ \`e che sia verificata la condizione
+\[
+\frac{\partial M}{\partial y}  = \frac{\partial N}{\partial x} 
+\] 
+Questa diventa sufficiente quando il dominio $A$ soddisfa alcune condizioni geometriche, ad esempio l'essere \textit{stellato}. 
+Questo risultato pu\`o essere migliorato tramite la formula di Gauss-Green.
+\begin{definizione}
+	{Insieme semplicemente connesso}{}
+	Un insieme connesso $A \subset \mathbb{R}^{2} $ \`e semplicemente connesso se $\forall \gamma$ curva chiusa e semplice con sostegno $G \subsetneq A$, $G$ \`e la frontiera di un insieme limitato interamente contenuto in $A$.
+\end{definizione}
+\begin{teorema}
+	{}{}
+	Se $A \subset \mathbb{R}^2$ \`e semplicemente connesso, ogni forma chiusa in $A$ \`e esatta.
+	\begin{proof}
+		Sia $\gamma$ una curva semplice e chiusa con sostegno $G$ interamente contenuto in $A$; essendo $A$ semplicemente connesso, esiste un insieme $E $ aperto interamente contenuto in $A$ con $\partial E =  G$.
+		Per Gauss-Green, data $\omega$ una forma chiusa in $A$:
+		\[
+		\int_{\partial ^+ E} \omega = \int_{E} \left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dxdy = 0
+		\] 
+		dove l'ultima uguaglianza \`e garantita dal fatto che $\omega $ \`e chiusa.
+		Allo stesso tempo, a seconda che $\gamma$ sia orientata positivamente o negativamente, si ha:
+		\[
+		\int_{\gamma} \omega = \pm \int_{\partial ^+ E } \omega = 0
+		\] 
+		che risulta nullo $\forall \gamma$ chiusa e semplice con sostegno in $A$. 
+		Per il teorema \ref{th:cce} e per l'osservazione \ref{o42}, $\omega $ \`e esatta.
+	\end{proof}
+\end{teorema}
+\subsection{La formula di Stokes}
+
+\`E l'analogo tridimensionale della formula di Gauss-Green. 
+Di seguito si danno alcune definizioni preliminari.
+
+Siano dati una superficie regolare $\Sigma \subset \mathbb{R}^3$ di equazioni $\mathbf{x}  = \varphi (u,v)$, cio\`e
+\[
+\begin{cases}
+	x = x (u,v) \\
+	y= y (u,v) \\
+	z=  z(u,v)
+\end{cases} , \ (u,v) \in K
+\] 
+un insieme aperto $A\subset K$ e $\gamma : \left[ a,b \right] \to K$ una curva semplice e chiusa di equazioni
+\[
+\begin{cases}
+	u = u(t) \\ 
+	v = v(t)
+\end{cases}
+\] 
+con sostegno $G = \partial A$.
+L'insieme $S = \varphi (A)$ \`e una superficie regolare con equazioni identiche a quelle di $\Sigma$, ma con $(u,v) \in A$.
+Il bordo di $S$ coincide, allora, con l'immagine di $\partial A$, ossia $\partial S = \varphi (\partial A$).
+
+La curva $\Gamma = \varphi  \circ \gamma$ ha equazioni paramatriche
+\[
+\begin{cases}
+	x = x(u(t), v(t))\\
+	y = y (u(t) , v(t))\\
+	z = z(u(t), v(t)) 
+\end{cases}
+\] 
+e ha, come sostegno, l'insieme $\partial S$.
+Se $\gamma$ \`e orientata positivamente, si dir\`a che $\Gamma$ (il bordo di $S$) \`e orientata positivamente, altrimenti vale il viceversa.
+
+Sia, infine, $\mathbf{V} (x,y,z) = (X (x,y,z) , Y(x,y,z) , Z(x,y,z))$ un campo vettoriale; si definisce \textit{rotore} di $\mathbf{V} $ l'espressione
+\begin{equation}
+\operatorname{rot} \mathbf{V}   = \left(\frac{\partial Z}{\partial y} - \frac{\partial Y}{\partial z} , \frac{\partial X}{\partial z} - \frac{\partial Z}{\partial x} , \frac{\partial Y}{\partial x} - \frac{\partial X}{\partial y} \right) \equiv \nabla \times \mathbf{V} 
+\end{equation}
+
+\begin{teorema}
+	{Teorema di Stokes}{}
+	Sia $S$ una superficie di classe $C^2$. Allora
+	\begin{equation}
+		\int_{S} \nabla \times \mathbf{V} \cdot \nu \ d\sigma = \int_{\partial ^+ S} \mathbf{V} \cdot d\mathbf{x} 
+	\end{equation}
+	dove $\nu $ rappresenta il versore normale a $S$:
+	\[
+	\nu = \frac{\varphi _u \wedge \varphi _v}{\left\lVert \varphi _u \wedge \varphi _v \right\rVert } = \frac{1}{\left\lVert \varphi _u \wedge \varphi _v \right\rVert } \big( y_uz_v - z_uy_v , \ z_ux_v - x_u z_v, \ x_uy_v - y_ux_v\big)
+	\] 
+\begin{proof}
+Il primo membro della formula diventa	
+\[
+	\begin{split}
+		\int_{S}  \nabla \times  \mathbf{V} \cdot \nu  \ d\sigma  = \int_{A} \cancel{\frac{1}{\left\lVert \varphi _u\wedge \varphi _v \right\rVert }}\Big[&(Z_y - Y_z) (y_uz_v-z_uy_v)+(X_z-Z_x)(z_ux_v-x_uz_v) + \\
+																				  &+ (Y_x - X_y)(x_uy_v-y_ux_v)\Big]\cancel{\left\lVert \varphi _u\wedge \varphi _v \right\rVert}dudv
+	\end{split}
+\] 
+dove le funzioni $Z_y , Y_z, \ldots$ sono calcolate in $\big(x(u,v), y(u,v), z(u,v)\big)$.
+Si prende
+\[
+\omega = (Xx_u  + Yy_u  + Zz_u) du + (Xx_v + Yy_v  + Zz_v) dv \equiv M(u,v) du + N(u,v) dv
+\] 
+Allora, passando attraverso qualche calcolo, si pu\`o dimostrare che l'argomento dell'integrale non \`e altro che $\partial _u N - \partial _v M$, da cui, per la formula di Gauss-Green, risulta:
+\[
+	\int_{S}  \nabla \times \mathbf{V} \cdot \nu  \ d\sigma = \int_{\partial ^+ A}  \omega 
+\] 
+Allo stesso tempo, si nota che 
+\[
+\begin{split}
+	\int_{\partial ^+ A}  \omega &=  \int_{a} ^b \Big[(Xx_u+Yy_u+Zz_u)u' + (Xx_v + Yy_v + Zz_v) v'\Big]dt\\
+				     &=\int_{a} ^b \Big[X(x_u u' + x_vv') + Y (y_uu' + y_v v') + Z (z_uu'+z_v v')\Big] dt \\
+				     &= \int_{\partial ^+ S} Xdx + Y dy + Zdz 
+\end{split}
+\] 
+da cui segue la tesi.
+\end{proof}	
+\end{teorema}
+\begin{obs}
+Usando eq. \ref{u1}, la formula di Stokes si pu\`o scrivere come
+\begin{equation}
+	\int_{S}  \nabla \times \mathbf{V}  \cdot \nu  \ d\sigma = \int_{\partial ^+ S} \mathbf{V} \cdot \tau \ ds
+\end{equation}
+con $\tau $ versore tangente alla curva $\partial ^+ S$.
+Il teorema di Stokes, allora, lega \`e la circuitazione di $\mathbf{V} $ (il secondo integrale) e il flusso di $\operatorname{rot} \mathbf{V}  $ attraverso $S$ (il primo integrale).
+\end{obs}
+Il teorema di Stokes permette di dimostrare il seguente, che \`e l'analogo di quanto visto con la formula di Gauss-Green.
+In $\mathbb{R}^3$, un $A$ aperto semplicemente connesso \`e un insieme per cui ogni curva semplice e chiusa con sostegno in $A$ fa da bordo a una superficie $S$ con sostengo interamente contenuto in $A$.
+\begin{teorema}
+	{}{}
+Sia $A\subset \mathbb{R}^3$ un insieme semplicemente connesso; allora ogni forma chiusa definita in $A$ \`e anche esatta.
+	\begin{proof}
+	Sia $\gamma$ una curva semplice e chiusa e sia $S$ la superficie da essa delimitata.
+	Visto che $\omega$ \`e chiusa per assunzione, il suo campo vettoriale associato $\mathbf{V} $ \`e \textit{irrotazionale}, cio\`e $\operatorname{rot} \mathbf{V} = 0$. 
+	Per Stokes, allora, si ha $\int_{\gamma} \omega = 0$. 
+	Per il teorema \ref{th:cce}, $\omega = Xdx + Ydy + Zdz$ \`e esatta.
+	\end{proof}
+\end{teorema}
+
 
 
 
