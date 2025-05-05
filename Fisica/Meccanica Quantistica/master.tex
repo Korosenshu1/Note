@@ -1393,7 +1393,7 @@ Si assume $R(r) \propto r^a$, con $a$ da determinare; per farlo, si sostituisce 
 	\frac{d }{d r} \left(r^2 \frac{d R}{d r} \right) - \ell (\ell +1) R = 0 \Rightarrow a = \ell 
 \end{equation}
 quindi $R(r) \propto r^{\ell } $.
-\subsubsection{Funzione d'onda per l'atomo di idrogeno}
+\subsubsection{Funzione d'onda per l'atomo di idrogeno}\label{hat}
 
 \`E il caso particolare della trattazione precedente con $U(\hat{r}) = \frac{e^2}{4 \pi \varepsilon  _0 \hat{r}}$. A partire dalle grandezze $m_e c^2 \simeq 0.5$ MeV e $\alpha = \frac{e^2 }{4\pi \varepsilon _0 \hbar  c} $ costante di struttura fine, si definisco le grandezze caratteristiche del sistema:
 \begin{equation}
@@ -2112,11 +2112,12 @@ Si considera il caso in cui
 con $v \in \mathbb{C}, \lvert v \rvert \ll 1$.
 Si considera il problema agli autovalori $(\hat{H}_0 + \hat{H}_1) \ket{\psi } = E \ket{\psi } $, che si risolve da 
 \[
-	\begin{split}
-		&\begin{vmatrix} \epsilon _1 - E & v \\ v^* & \epsilon _2 - E \end{vmatrix} \stackrel{!}{=} 0 \implies E^2 - (\epsilon _1 + \epsilon _2) E + (\epsilon _1\epsilon _2 - \lvert v \rvert ^2 ) = 0 \\
-		&\Rightarrow E_{\pm} = \frac{1}{2}(\epsilon _1 + \epsilon _2) \pm \frac{1}{2}\sqrt{(\epsilon _1-\epsilon _2)^2 + 4 \lvert v \rvert ^2} 
-	\end{split}
+		\begin{vmatrix} \epsilon _1 - E & v \\ v^* & \epsilon _2 - E \end{vmatrix} \stackrel{!}{=} 0 \implies E^2 - (\epsilon _1 + \epsilon _2) E + (\epsilon _1\epsilon _2 - \lvert v \rvert ^2 ) = 0 
 \] 
+da cui
+\begin{equation}\label{2lsol}
+		\Rightarrow E_{\pm} = \frac{1}{2}(\epsilon _1 + \epsilon _2) \pm \frac{1}{2}\sqrt{(\epsilon _1-\epsilon _2)^2 + 4 \lvert v \rvert ^2} 
+\end{equation}
 Nel caso di degenerazione, cio\`e $\epsilon _1 = \epsilon _{2}=\epsilon  $, non si hanno problemi in questa soluzione esatta: si trova $E_{\pm} = \epsilon \pm \lvert v \rvert $.
 
 La formula perturbativa per il secondo ordine correttivo nell'energia \`e
@@ -2157,6 +2158,156 @@ Si definisce $\hat{R}_n = (E_n- \hat{H}_0)^{-1} \hat{Q}_n= \hat{Q}_n (E_n -\hat{
 \ket{\psi _n} = \ket{n} + \hat{R}_n \hat{H}_1 \ket{\psi _n} 
 \end{equation}
 Questa riscrittura permette uno sviluppo perturbativo tramite serie di potenze.
+
+\subsubsection{Limite a spettro non-degnere}
+
+Si vuole studiare la trattazione della teoria delle perturbazioni che permette di capire cosa succede quando, in presenza di degenerazioni, si influenzi il sistema in modo da rimuoverle.
+Un esempio pratico di questo \`e legato all'atomo di idrogeno, il quale ha momento angolare conservato, legato alla simmetria per rotazioni. 
+Applicando un campo (elettrico o magnetico) esterno, questa simmetria si rompe e si vuole capire come questo si manifesta in teoria delle perturbazioni.
+
+Si parte sempre da $\hat{H} = \hat{H}_0 + \lambda  \hat{H}_1$, con $\hat{H}_0 \ket{n} = \epsilon _n \ket{n} $ noto.
+Si cerca di risolvere $\hat{H} \ket{\psi _n} = E_n \ket{\psi _n} $, assumendo in prima battuta che $\ket{\psi _n} = \ket{n} + \mathrm{O} (\lambda )$. 
+Questa assunzione era possibile unicamente quando $\hat{H}_0$ aveva spettro non-degenere, quindi non sembra utile alla trattazione; il caso in esame, per\`o, prevede di mettersi in una situazione di spettro \textit{quasi-degenere}, quindi, per il momento, si prender\`a per buona.
+
+L'equazione per $\hat{H}$ si riscrive come $(E_n - \hat{H}_0) \ket{\psi _n} = \lambda \hat{H}_1 \ket{\psi _n} $.
+Poi si riprende l'operatore $\hat{Q}_n = \sum_{r\neq n}^{} \ket{r} \bra{r} = 1 - \ket{n} \bra{n} $, che permette di scriverve $\ket{\psi _n} = \ket{n} + \hat{Q}_n  \ket{\psi _n} $; inoltre, si ricorda che soddisfa $[\hat{Q}_n, \hat{H}_0] =0 $ perch\'e $\hat{Q}_n$ \`e costruito tramite autostati di $\hat{H}_0$.
+Si user\`a la condizione di normalizzazione $\braket{n|\psi _n} =1 $.
+\begin{osservazione}
+A volte, si potrebbe evitare di specificare $\lambda $ affianco ad $\hat{H}_1$, ma questi vanno sempre l'uno con l'altro. 
+Si pu\`o, per\`o, assumere che $\lambda $ venga inglobato nella definizione di $\hat{H}_1$, quindi, quando non scrive esplicitamente, lo si sottintende.
+\end{osservazione}
+Si nota che
+\[
+\begin{split}
+	&\hat{Q}_n (E_n - \hat{H}_0) \ket{\psi _n} = \hat{Q}_n \hat{H}_1 \ket{\psi _n} \\
+	&\Rightarrow (E_n-\hat{H}_0) \hat{Q}_n \ket{\psi _n} = \hat{Q}_n \hat{H}_1 \ket{\psi _n} \\
+	&\Rightarrow \hat{Q}_n \ket{\psi _n} = (E_n -\hat{H}_0)^{-1} \hat{Q}_n \hat{H}_1 \ket{\psi _n} 
+\end{split}
+\] 
+Allora, definendo\footnote{Nella seconda uguaglianza, si \`e semplicemente fatto agire $\hat{H}_0$ su $\ket{r} \bra{r} $ nella definizione di $\hat{Q}_n$.}
+\[
+\hat{R}_n = (E_n - \hat{H}_0) ^{-1} \hat{Q}_n = \sum_{r\neq n}^{} \frac{\ket{r} \bra{r} }{E_n - \epsilon _r}
+\] 
+si pu\`o scrivere $\ket{\psi _n }  = \ket{n} +\hat{R}_n \hat{H}_1 \ket{\psi _n} $.
+
+Il vantaggio di questa scrittura \`e che si pu\`o arrivare ad uno sviluppo per $\ket{\psi _n} $ perch\'e il termine con $\hat{H}_1$ \`e piccolo:
+\begin{equation}
+	\ket{\psi _n} = \ket{n} + \hat{R}_n \lambda \hat{H}_1\ket{n}  + \left(\hat{R}_n \lambda \hat{H}_1\right) ^2 \ket{n} + \ldots = (1- \hat{R}_n \lambda \hat{H}_1)^{-1} \ket{n} 
+\end{equation}
+dove il coefficiente $(1-\hat{R}_n \lambda \hat{H}_1) ^{-1} $, sviluppato con Taylor come sviluppo di $1 / (1-x)$ porta all'espressione dell'uguaglianza precedente.
+
+In questo modo, si riscrive l'equazione iniziale applicando il bra $\bra{n} $:
+\[
+	\begin{split}
+		&\bra{n} (\hat{H}_0 - \lambda \hat{H}_1) \ket{\psi _n} =  E_n\braket{n|\psi } = E_n\\
+		&\Rightarrow E_n = \epsilon _n \braket{n|\lambda \hat{H}_1|\psi _n} 
+	\end{split}
+\] 
+dove si \`e usata la condizione di normalizzazione $\braket{n|\psi _n} =1$. 
+Inserendo lo sviluppo di $\ket{\psi _n} $:
+\begin{boxenv}[]
+	\begin{equation}\label{prtap}
+	E_n = \epsilon _n + \braket{n|\lambda \hat{H}_1|n} + \sum_{m\neq n}^{} \frac{\braket{n|\lambda \hat{H}_1|m} \braket{m|\lambda \hat{H}_1|n} }{E_n - \epsilon _m}
+\end{equation}
+\end{boxenv}
+Per riottenere l'espressione del caso non-degenere, si deve sviluppare l'$E_n$ al denominatore del secondo membro.
+\subsubsection{Esempio -- Sistema a due livelli}
+Si scelgono
+\[
+	\hat{H}_0 = \begin{pmatrix} \epsilon _1 & 0 \\ 0 & \epsilon _2 \end{pmatrix} \hspace{1cm}\hat{H}_1 = \begin{pmatrix} 0&v\\v^* & 0  \end{pmatrix} 
+\] 
+Il problema risolto esattamente si \`e gi\`a fatto in eq. \ref{2lsol}:
+\[
+E_\pm = \frac{1}{2}(\epsilon _1 + \epsilon _2) \pm \frac{1}{2}\sqrt{(\epsilon _1 - \epsilon _2)^2 + 4 \lvert v \rvert ^2} 
+\] 
+Nel caso di degenerazione $\epsilon _1 = \epsilon _2 = \epsilon \Rightarrow E_\pm = \epsilon  \pm \lvert v \rvert $.
+L'approssimazione in eq. \ref{prtap} porta $E_1 = \epsilon _1 + \lvert v \rvert ^2 / (E_1 - \epsilon _2)$, che \`e l'equazione esatta che si ottiene dal calcolo degli autovalori della matrice $\hat{H}$.
+\subsection{Atomo di idrogeno}
+Si assume che il protone rimanga fermo e considerare solo il moto dell'elettrone. 
+Nel caso in cui si volesse risolvere senza questa approssimazione, ci si mette nel centro di massa e si deve considerare la massa ridotta.
+Si considera l'Hamiltoniano
+\[
+\hat{H} = \frac{\hat{p}^2 }{2m}- \frac{k}{\hat{r}}, \ k\sim e^2
+\] 
+Nella soluzione vista in \S\ref{hat}, uno stato era descritto da $\ket{nlm} $, con $n = 1 ,2 ,\ldots$, $0<\ell <n$ e $-m\le \ell \le m$. 
+La degenerazione \`e data da $\sum_{\ell =0}^{n-1} 2l+1 = n^2$.
+
+Includendo lo spin, che per l'elettrone \`e $\pm 1 /2$, la base completa sar\`a data da $\ket{n\ell m} \otimes \ket{s,s_z} $, per cui la degenerazione complessiva \`e $2n^2$, avendo due valori di spin possibili.
+
+\subsubsection{Correzione relativistica}
+Dalla relativit\`a ristretta, si ha
+\[
+E = \sqrt{m^2 c^4 + p^2 c^2} - mc^2 \simeq \frac{p^2}{2m}- \frac{(p^2)^2}{8m^3c^2}
+\] 
+dove si toglie $mc^2$ per rendere tale energia confrontabile con l'energia cinetica non-relativistica.
+Lo sviluppo si \`e fatto per $p$ piccolo.
+
+Per introdurre questa correzione nella trattazione dell'atomo di idrogeno, si considerano
+\[
+\hat{H}_0 = \frac{\hat{p}^2}{2m}- \frac{k}{\hat{r}} \hspace{1cm}\hat{H}_k = - \frac{(\hat{p}^2)^2}{8m^3c^2}
+\] 
+L'operatore $\hat{H}_k$ \`e invariante per rotazione, visto che $[\hat{L},\hat{p}^2] =0\Rightarrow [\hat{L},\hat{H}_k] = 0$ (come visto nella trattazione dell'atomo di idrogeno).
+Questo significa che i due operatori si possono diagonalizzare contemporaneamente.
+
+Il primo ordine di correzione all'energia \`e $E^{(1)} _{n\ell m}=\braket{n\ell m|\hat{H}_k|n\ell m}  $.
+Per calcolarlo, si pu\`o usare che $\hat{H}_0 = \hat{p}^2 / 2m - k / \hat{r}\Rightarrow (\hat{p}^2)^2 = 4m^2 \left(\hat{H}_0+ k / \hat{r}\right) ^2$, allora
+\[
+\frac{(\hat{p}^2)^2}{8m^3c^2}= \frac{4m^2}{8m^3c^2}\left(\hat{H}_0+\frac{k}{\hat{r}}\right) ^2
+\] 
+Allora
+\[
+\Braket{n\ell m|\hat{H}_0^2 + \hat{H}_0 \frac{k}{\hat{r}} + \frac{k}{\hat{r}}\hat{H}_0 + \frac{k^2}{\hat{r}^2}|n\ell m} =\left(E^{(0)} _{n\ell m}\right)  ^2 + 2 E^{(0)} _{n\ell m} \Braket{n\ell m|\frac{k}{\hat{r}}|n\ell m} + \Braket{n\ell m|\frac{k^2}{\hat{r}^2}|n\ell m} 
+\] 
+Gli altri elementi di matrice si calcolano per conto diretto, cio\`e svolgendo $\int \psi _{n\ell m} ^*(r,\theta ,\varphi ) \frac{k}{r} \psi _{n\ell m} (r,\theta ,\varphi ) \ d^3  $.
+
+Ricordando che $E^{(0)} _{n\ell m} = -mk^2/(2n^2)$ e completando il calcolo, si trova
+\begin{equation}
+	E_{n\ell m} ^{(1)} =- \frac{E_{n\ell m} ^{(0)} }{2mc^2}\left[ -3 +\frac{4n}{\ell + 1 / 2} \right] 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2798,10 +2949,115 @@ Se al tempo $T$, il campo magnetico rotante cessa:
 	L'uguaglianza vale nel caso di risonanza, cio\`e per $\omega = \omega_0$.
 \end{esercizio}
 \subsubsection{Effetto Landau-Zener}
+Su un sistema a due livelli, si studia l'effetto di un Hamiltoniano dipendente dal tempo:
+\begin{equation}
+	\hat{H}= \Delta \sigma _x + \alpha  t \sigma _z = \begin{pmatrix} \alpha  t & \Delta \\ \Delta  & - \alpha  t \end{pmatrix} 
+\end{equation}
+Se $\Delta = 0\Rightarrow \hat{H} \propto \sigma _z$, quindi si conosco gli autostati, pari a $\ket{\uparrow} , \ket{\downarrow}$, con autovalori, rispettivamente, $\pm \alpha t$.
+Se, invece, $t=0, \ \Delta \neq 0\Rightarrow \hat{H} \propto \sigma _x$, quindi gli autostati sono della forma
+\[
+\ket{\rightarrow}  = \frac{\ket{\uparrow} + \ket{\downarrow} }{\sqrt{2} } \hspace{1cm}\ket{\leftarrow} = \frac{\ket{\uparrow} -\ket{\downarrow} }{\sqrt{2} }
+\] 
+mentre gli autovalori sono, rispettivamente, $\pm\Delta $.
 
-\begin{center}
-\color{asdf} Da svolgere in esercitazione 3
-\end{center}
+Si assume, per il momento, che sia $\Delta =0 $; l'andamento delle energie dei singoli stati nel tempo \`e crescente per $\ket{\uparrow} $ e decrescente per $\ket{\downarrow} $. 
+Le funzioni $\alpha t$ (autoenergia di $\ket{\uparrow} $) e $- \alpha t$ (autoenergia di $\ket{\downarrow} $) si incontrano in $t=0$ e si scambiano.
+
+Si vuole studiare la dinamica del sistema. 
+Si prepara il sistema nello stato $\ket{\uparrow} $ e si parte da $t = -\infty$ per vedere cosa succede quando $t\to + \infty$.
+\begin{esercizio}
+	Considerando $\Delta , t \neq 0$, calcolare autovalori e autovettori di $\hat{H}$ con $\Delta = 0 $ per un $t$ generico fissato, senza usare l'equazione di Shr\"odinger time-dependent.
+	\begin{svolgimento}
+	Gli autovalori sono dati da:
+	\[
+		\begin{vmatrix} \alpha t -\lambda & \Delta \\ \Delta  & - \alpha t - \lambda   \end{vmatrix} = -(\alpha t)^2 + \lambda ^2 - \Delta ^2 \stackrel{!}{=}0\implies E_{\pm} = \pm\sqrt{\alpha ^2 t^2 + \Delta ^2} 
+	\] 
+	Gli autostati si ottengono dalla seguente relazione:
+	\[
+		(\alpha t - E_\pm)x  + \Delta y = 0 \implies y = x\frac{E_\pm -\alpha t}{\Delta }
+	\] 
+	Quindi saranno della forma
+	\[
+	\ket{\psi _\pm} = \left(1 ,\ \frac{\pm\sqrt{\alpha ^2 t^2 + \Delta ^2} - \alpha t}{\Delta }\right)  
+	\] 
+	Avendo visto che, per $\Delta \neq 0$, le energie valgono $\pm\Delta $, significa che non si incontrano pi\`u come il caso $\Delta =0$; l'andamento per $t\to \pm\infty$ \`e uguale perch\'e $\Delta $ diventa trascurabile.
+	
+	Va notato, comunque, che gli autostati ottenuti vanno normalizzati.
+	\end{svolgimento}
+\end{esercizio}
+
+\begin{esercizio}
+	Risolvere l'equazione di Shr\"odinger time-dipendent per l'evoluzione temporale del sistema, assumendo che in $t\to -\infty$, il sistema stesso si trovi in $\ket{\uparrow} $.
+	\begin{svolgimento}
+		Si risolve
+		\[
+		i\hbar \partial _t \ket{\psi (t)}  = \hat{H}\ket{\psi (t)} 
+		\] 
+		con generico $\ket{\psi (t)} = c_1(t) \ket{\uparrow} + c_2(t) \ket{\downarrow} $ e $\ket{\psi (t=-\infty)} = \ket{\uparrow} \Rightarrow  \lvert c_1(t=-\infty) \rvert^2 = 1 $ e $c_2(t) \to 0$ per $t\to -\infty$.
+
+Inserendo $\hat{H}$ in forma matriciale, l'equazione diventa:
+\[
+		i\hbar \partial _t \big(c_1(t) \ket{\uparrow} + c_2(t) \ket{\downarrow} \big) = \begin{pmatrix} \alpha t & \Delta \\\Delta & -\alpha t \end{pmatrix} \big(c_1(t) \ket{\uparrow} + c_2(t) \ket{\downarrow} \big)=\begin{pmatrix} \alpha t & \Delta \\\Delta & -\alpha t \end{pmatrix} \begin{pmatrix} c_1(t)\\c_2(t) \end{pmatrix}  
+		\] 
+		\[
+		\Rightarrow i\hbar \begin{pmatrix} \dot{c}_1(t) \\ \dot{c}_2(t) \end{pmatrix} = \begin{pmatrix} \alpha t c_1(t) + \Delta c_2(t) \\ \Delta c_1(t) - \alpha  t c_2(t) \end{pmatrix} 
+\] 
+da cui si ottiene il sistema
+\[
+\begin{cases}
+	i\hbar \dot{c}_1(t) = \alpha t c_1(t) + \Delta c_2(t)\\
+	i\hbar \dot{c}_2(t) = \Delta c_1(t) - \alpha t c_2(t)
+\end{cases}
+\] 
+Non si risolve esattamente, ma si scrive un'equazione del secondo ordine per uno dei due coefficienti.
+Per farlo, si moltiplica la prima equazione per $\alpha t$ e la seconda per $\Delta $, dopo averle combinate (tramite somma o sottrazione), si ottiene
+\[
+\ddot{c}_1 + \left[ \frac{\Delta ^2}{\hbar ^2} + \frac{i\alpha }{\hbar }+\frac{\alpha ^2 t^2}{\hbar ^2} \right] c_1 = 0
+\] 
+Altrimenti, quella per $c_2$ \`e simile:
+\[
+\ddot{c}_2 + \left[ \frac{\Delta ^2}{\hbar ^2}+\frac{\alpha ^2 t^2}{\hbar ^2}- \frac{i\alpha }{\hbar } \right] c_2 = 0
+\] 
+La soluzione, in questo caso riportata per $c_2$, si esprime tramite funzioni speciali (funzioni cilindriche paraboliche) $D_\nu (z)$; pi\`u in particolare, si \`e interessati a
+\[
+D_{-1-\frac{i\Delta }{2\alpha \hbar }} \left(\pm (-1)^{1 / 4}  \sqrt{\frac{2\alpha }{\hbar }} t\right) 
+\] 
+dove il segno $\pm$ \`e dovuto al fatto che entrambe sono soluzione. 
+Tuttavia, volendo che $c_2$ vada a $0$ per $t\to -\infty$, si deve tenere solo la soluzione col segno meno davanti.
+Si indicano con $\nu_0, z_0$ gli argomenti della soluzione, cio\`e 
+\[
+\nu_0 = -1 - \frac{i\Delta }{2\alpha \hbar } \hspace{1cm} z_0 = - (-1)^{1 / 4}  \sqrt{\frac{2\alpha }{\hbar }} t
+\] 
+Per cui $c_2 = B D_{\nu_0} (z_0)$, con $B $ costante da determinare.
+Questa si determina imponendo che $\lvert c_1 \rvert ^2 = 1$; per farlo, si ricava $c_1$ dal sistema di equazioni:
+\[
+c_1(t) = \frac{i\hbar \dot{c}_2+\alpha t c_2}{\Delta }\implies \lvert c_1(t\to-\infty) \rvert = B\frac{\sqrt{2\alpha\hbar  }  }{\Delta }\exp\left(\frac{5\pi\Delta ^2}{8\hbar \alpha } \right) 
+\] 
+Quindi $B = \Delta e^{ - 5\pi\Delta ^2 / (8\hbar \alpha )} /\sqrt{2\alpha \hbar }  $.
+	\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+	Calcolare la probabilit\`a che, per $t\to+\infty$, il sistema sia ancora in $\ket{\uparrow} $.
+	\begin{svolgimento}
+		Per assunzione $\ket{\psi (-\infty)} = \ket{\uparrow} $ e si vuole calcolare $\ket{\psi (+\infty)} $ visto che si conosce $\ket{\psi (t)} $. 
+Per calcolare la probabilit\`a, si nota che $P_{\ket{\uparrow}}  (t\to+\infty) = \lvert c_1(+\infty) \rvert ^2$.
+
+Per questi calcoli, si far\`a uso del fatto che
+\[
+\lim_{R \to \infty} D_{-1-n} \left(i(-1)^{3 / 4} R\right) = e^{\frac{3}{4} \pi (n+1)i} e^{ - i R^2 / 4} R^{- n - 1} +\frac{\sqrt{2\pi} }{\Gamma(n+1)}e^{\frac{1}{4}\pi n i} e^{i R^2 / 4 } R^n 
+\] 
+Usandola, si ottiene che
+\[
+P_{\ket{\uparrow} } (t\to+\infty) = e^{- \pi \Delta ^2 / (\hbar \alpha )} 
+\] 
+Per $\alpha \to 0 \Rightarrow  P_{\ket{\uparrow} } \to 0$; questo \`e il limite \textbf{adiabatico}: si ha uno switch allo stato opposto.
+Nel limite opposto ($\alpha \to + \infty$), il sistema rimane nello stesso stato.
+	\end{svolgimento}
+\end{esercizio}
+
+
+
+
 
 \subsection{Buca di potenziale $V_0$}
 
