@@ -272,8 +272,54 @@ Per $r = e^\rho $, si ha $\rho  = \ln r$ e $S(\rho ) = R(r)|_{r= e^\rho } $, da 
 \[
 	\frac{d R}{d r} = \frac{d S}{d \rho } \frac{d \rho }{d r} = \frac{S'}{r} \implies \frac{d ^2 R}{d r^2} =  \frac{d }{d r} \left(\frac{S'}{r}\right) = \frac{1}{r^2} (S'' - S'). 
 \] 
-Sostituendo, si ha l'equazione per $S(\rho )$: $S'' + 2S' - \lambda S = 0$
+Sostituendo, si ha l'equazione per $S(\rho )$: $S'' + 2S' - \lambda S = 0$, la quale ha soluzione $S(\rho ) = Ae^{(-1+k)\rho } + B e^{(-1-k)  \rho } $, dove $k = \sqrt{1+\lambda } $.
+Allora la soluzione per $R$ \`e $R(r) = Ar^{-1+k} + B r^{-1-k} $, ma si prende $A= 0$ perch\'e, essendo $k> 1 $, il primo termine diverge per $r\to +\infty$, mentre $V(r,\theta )$ dovrebbe essere finito $\forall r > 0$.
+In definitiva, si ha:
+\begin{equation}
+	R(r) = \frac{B}{r^{1+\sqrt{1+\lambda } }  }, \  \forall r> a
+\end{equation}
+Per risolvere l'equazione angolare, si prende $x = \cos \theta $ e $y(x) \equiv W(\theta )$, dove $x \in \left[ -1,1 \right] $ (visto che $\theta  \in  \left[ 0,\pi \right] $); usando il fatto che $\partial _\theta = \partial _\theta x \partial _x=-\sin \theta \partial _x = -(1-x^2) \partial _x$, si pu\`o riscrivere l'equazione differenziale come:
+\begin{equation}
+	\partial _x\left[ (1-x^2)\partial _x y  \right]  + \lambda y = 0
+\end{equation}
+Questa \`e proprio l'\textbf{equazione differenziale di Legendre}, la quale pu\`o apparire scritta in modo pi\`u esplicito come $(1-x^2) y'' - 2xy' + \lambda y = 0$ e solitamente si ha $\lambda  = \ell (\ell +1), \ \ell \ge 0$, che \`e plausibile perch\'e le uniche condizioni imposte su $\lambda $ finora sono che debba essere reale e non-negativo.
+\subsubsection{Soluzione dell'equazione angolare}
+Si cercano soluzioni della forma
+\[
+y(x) = \sum_{k=0}^{+\infty} c_k x^k 
+\] 
+da cui l'ODE diventa:
+\[
+	\begin{split}
+		&(1-x^2) \sum_{k=2}^{+\infty} k(k-1) c_k x^{k-2} -2x \sum_{k=1}^{+\infty} kc_k x^{k-1} +\lambda \sum_{k=0}^{+\infty} c_k x^k = 0\\
+		&\Rightarrow \sum_{k=2}^{+\infty} k(k-1)x_kc^{k-2} - \sum_{k=0}^{+\infty} k(k-1)c_k x^k - 2 \sum_{k=0}^{+\infty} kc_kx^k + \lambda \sum_{k=0}^{+\infty} c_kx^k = 0\\
+		&\Rightarrow \sum_{k=2}^{+\infty} k(k-1)c_kx^{k-2} + \sum_{k=0}^{+\infty } \left[ \lambda -k(k-1) - 2k \right] c_kx^k =0 \\
+		&\Rightarrow \sum_{k=2}^{+\infty} k(k-1)c_kx^{k-2} + \sum_{k=0}^{+\infty } \left[ \lambda -k(k+1) \right] c_kx^k =0\\
+		&\Rightarrow \sum_{k=0}^{+\infty} \big\{\left[ \lambda -k(k+1) \right] c_k + (k+1)(k+2)c_{k+2} \big\} x^k = 0
+	\end{split}
+\] 
+Visto che la serie deve essere nulla $\forall x \in [-1,1]$, si conclude che devono essere nulli i coefficienti, per cui:
+\begin{equation}\label{lco}
+	c_{k+2}  = -\frac{\lambda - k(k+1)}{(k+1)(k+2)} c_{k} 
+\end{equation}
+Le serie $y(x)$ con coefficienti dati da eq. \ref{lco} sono dette \textit{funzioni di Legendre}.
 
+La condizione perch\'e questa sia soluzione \`e che converga $\forall x \in [-1,1]$. 
+La propriet\`a dei coefficienti permette di studiare il comportamento all'infinito della serie; di fatto, si nota che $c_{k+2} \simeq c_k$ per $k\to +\infty$.
+Questo permette di identificare il comportamento della serie in questione con quello di una serie geometrica $c_{\infty} \sum_{k=0}^{+\infty} x^k$, che converge per $\lvert x \rvert <1$.
+Nel caso della serie $y(x)$, per\`o, si ha la possibilit\`a $x = \pm 1 $, quindi, per garantire la convergenza, l'unica possibilit\`a \`e che, per qualche $n\ge 0$, la serie termina.
+Per imporre questa condizione, si richiede che $c_n \neq 0 $ e che $c_{n+2} = 0$, che implica $c_{n+2m} =0, \ m =1,2,3,\ldots$.
+Inserendo la richiesta $c_{n+2} $ in eq. \ref{lco}, si ottiene che essere $\lambda  = n(n+1)$\footnote{\`E anche possibile dimostrare che $\lambda $ non \`e un intero non-negativo, allora non vi sono soluzioni limitate per l'equazione di Legendre, a parte $y(x) \equiv 0$.}.
+La serie $y(x)$ si riduce, dunque, ad una funzione polinomiale di ordine $n$, con la propriet\`a che \`e pari o dispari a seconda di $n$ stesso, per via del fatto che si potranno avere solo potenze pari o solo potenze dispari a seconda dei valori di $c_0$ e $c_1$ (di fatto, $c_0 \neq 0 \Rightarrow c_1 = 0$ e viceversa).
+
+Usando l'equazione \ref{lco}, si nota che:
+\[
+c_n = - \frac{n(n+1) - (n-2)(n-1)}{n(n-1)} c_{n-2}  = -\frac{ 2(2n -1)}{n(n-1)}c_{n-2 }  \implies 2(2n-1)c_{n-2} = - n(n-1) c_n
+\] 
+La ripetizione di questa porta ad esprimere tutti i coefficienti non nulli di ordine pi\`u piccolo di $n$ come multipli di $c_n$:
+\[
+	c_{n-2k} = \frac{(-1)^k}{k!2^n}\frac{n(n-1)(n-2) \ldots (n-(2k-1))}{(2n-1)(2n-3)\ldots(2n-(2k-1))}c_n , \ \forall k > 0
+\] 
 
 \newpage
 \section{Propriet\`a matematiche dei polinomi di Legendre}

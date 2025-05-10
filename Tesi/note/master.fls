@@ -1,4 +1,4 @@
-PWD /home/manuel/Documents/Tesi/note
+PWD /home/manuel/Documents/Note/Tesi/note
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT master.tex
@@ -581,11 +581,9 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr7.tfm
-INPUT ./lp-plot.pdf
-INPUT ./lp-plot.pdf
-INPUT ./lp-plot.pdf
-INPUT ./lp-plot.pdf
-INPUT ./lp-plot.pdf
+INPUT /usr/share/texmf-dist/fonts/vf/public/eulervm/zeuex10.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/eulervm/zeurm10.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -595,9 +593,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/eulervm/zeusm10.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/eulervm/zeuex10.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm
+INPUT ./lp-plot.pdf
+INPUT ./lp-plot.pdf
+INPUT ./lp-plot.pdf
+INPUT ./lp-plot.pdf
+INPUT ./lp-plot.pdf
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  6 MAY 2025 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  9 MAY 2025 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1397,40 +1397,47 @@ LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
 [2{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
 
 [3]
+Overfull \hbox (29.6984pt too wide) detected at line 318
+\U/zeur/m/n/10.95 c[] \U/zeus/m/n/10.95 ½ ^^@[]\U/zeur/m/n/10.95 c[] \U/zeus/m/n/10.95 ½ ^^@[]\U/zeur/m/n/10.95 c[]  ‚[]\U/zeus/m/n/10.95 )  \U/zeur/m/n/10.95 2\U/zeus/m/n/10.95 ¨\U/zeur/m/n/10.95 2n \U/zeus/m/n/10.95 ^^@ \U/zeur/m/n/10.95 1\U/zeus/m/n/10.95 ©\U/zeur/m/n/10.95 c[] \U/zeus/m/n/10.95 ½ ^^@\U/zeur/m/n/10.95 n\U/zeus/m/n/10.95 ¨\U/zeur/m/n/10.95 n \U/zeus/m/n/10.95 ^^@ \U/zeur/m/n/10.95 1\U/zeus/m/n/10.95 ©\U/zeur/m/n/10.95 c[]
+ []
+
+
 
 [4]
-<lp-plot.pdf, id=75, 451.6875pt x 301.125pt>
+
+[5]
+<lp-plot.pdf, id=90, 451.6875pt x 301.125pt>
 File: lp-plot.pdf Graphic file (type pdf)
 <use lp-plot.pdf>
-Package pdftex.def Info: lp-plot.pdf  used on input line 326.
+Package pdftex.def Info: lp-plot.pdf  used on input line 372.
 (pdftex.def)             Requested size: 250.10226pt x 166.73578pt.
 
-Overfull \hbox (33.9204pt too wide) in paragraph at lines 333--334
+Overfull \hbox (33.9204pt too wide) in paragraph at lines 379--380
 []\T1/zpltosf/m/n/10.95 Evidentemente, $[] []\U/zeur/m/n/10.95 P[]\U/zeus/m/n/10.95 ¨^^@\U/zeur/m/n/10.95 x\U/zeus/m/n/10.95 ©[] ½ \U/zeur/m/n/10.95 n$\T1/zpltosf/m/n/10.95 ; usan-do che, per de-fi-ni-zio-ne $\U/zeus/m/n/10.95 h\U/zeur/m/n/10.95 P[]\U/zeus/m/n/10.95 ¨\U/zeur/m/n/10.95 x\U/zeus/m/n/10.95 ©\U/zeur/m/n/10.95 ; Q\U/zeus/m/n/10.95 ¨\U/zeur/m/n/10.95 x\U/zeus/m/n/10.95 ©i ½
  []
 
 
 
-[5 <./lp-plot.pdf>]
+[6 <./lp-plot.pdf>]
 
-[6]
-Overfull \hbox (12.19727pt too wide) in paragraph at lines 397--400
+[7]
+Overfull \hbox (12.19727pt too wide) in paragraph at lines 443--446
 \T1/zpltosf/m/n/10.95 cioè $\U/zeus/m/n/10.95 h\U/zeur/m/n/10.95 L\U/zeus/m/n/10.95 Û\U/zeur/m/n/10.95 P\U/zeus/m/n/10.95 Ý\U/zeur/m/n/10.95 ; Q\U/zeus/m/n/10.95 i ½ h\U/zeur/m/n/10.95 P; L\U/zeus/m/n/10.95 Û\U/zeur/m/n/10.95 Q\U/zeus/m/n/10.95 Ýi$\T1/zpltosf/m/n/10.95 . L'o-pe-ra-to-re $\U/zeur/m/n/10.95 L$ \T1/zpltosf/m/n/10.95 man-tie-ne il gra-do del po-li-no-mio, os-sia $[] []\U/zeur/m/n/10.95 L\U/zeus/m/n/10.95 Û\U/zeur/m/n/10.95 P\U/zeus/m/n/10.95 Ý[] ½
  []
 
 
 
-[7]
-
 [8]
 
 [9]
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 514.
+
+[10]
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 560.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 514.
+(Font)              scaled to size 10.95pt on input line 560.
 
 
 Package caption Warning: Unused \captionsetup[table] on input line 157.
@@ -1438,7 +1445,7 @@ See the caption package documentation for explanation.
 
 
 
-[10{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] (./master.aux)
+[11{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1447,21 +1454,24 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 48594 strings out of 473190
- 1128199 string characters out of 5722593
+ 48603 strings out of 473190
+ 1128304 string characters out of 5722593
  1800795 words of memory out of 5000000
- 70998 multiletter control sequences out of 15000+600000
+ 71001 multiletter control sequences out of 15000+600000
  642277 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,19n,107p,10937b,767s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cmupint/cmupint.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (10 pages, 248872 bytes).
+Output written on master.pdf (11 pages, 257005 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 41 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 314 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
