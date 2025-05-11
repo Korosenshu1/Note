@@ -1983,7 +1983,7 @@ Riprendendo la generica equazione per ordine $r$ e moltiplicando ambo i membri p
 dove si \`e usata la condizione di normalizzazione imposta precedentemente, cio\`e $\braket{n|\psi ^{(r)} _n} = 0, \ \forall r > 0$.
 Pertanto, si ricava che
 \begin{boxenv}[]
-\begin{equation}
+	\begin{equation}\label{end1}
 	E_n^{(r)} = \braket{n|\hat{H}_1|\psi ^{(r-1)} _n} 
 \end{equation}
 \end{boxenv}
@@ -3532,7 +3532,7 @@ Atomo di idrogeno perturbato da un campo elettrico. Si considerano
 \[
 \hat{H}_0 = \frac{\hat{\vec{p}}^2}{2\mu } - \frac{e^2}{\hat{r}} \hspace{1cm} \hat{H}_1 = - \hat{\vec{d}}\cdot \vec{E}=e\hat{\vec{r}}\cdot \vec{E}
 \] 
-con $\hat{\vec{d}}= - e \hat{\vec{r}}$ operatore momento di dipolo elettrico.
+con $\hat{\vec{d}}= - e \hat{\vec{r}}$ operatore momento di dipolo elettrico\footnote{Il momento di dipolo per un sistema di cariche \`e definito come $\vec{d} = \sum_{i}^{} q_i \vec{r}_i$, con $q_i$ carica nella posizione $\vec{r}_i$ rispetto a un'origine fissata. Prendendo come origine il protone, $\vec{r}$ \`e il raggio vettore che unisce il protone con l'elettrone nel caso dell'atomo di idrogeno e si ha $\vec{d}=-e \vec{r}$ perch\'e $-e$ \`e la carica in posizione $\vec{r}$.}.
 Approssimando $\mu \approx m_e$, cio\`e sostituendo $\mu $ con la massa dell'elettrone si commette un'errore di $\sim 10^{-3} $.
 
 I livelli energetici dell'atomo di idrogeno si identificano con $E_n$, dipendenti dal numero quantico principale $n$; il loro andamento con $n$ \`e stabilito in termini della \textit{costante di Rydberg} $R_y = 13.6$ eV:
@@ -3543,7 +3543,7 @@ La costante di Rydberg $R_H$ vera e propria \`e legata a $R_y$ tramite $\hbar c 
 
 Questi livelli energetici sono degeneri e la loro degenerazione \`e dovuta alla simmetria per rotazioni; il livello $n$-esimo ha degenerazione $n^2$.
 
-Si prendono gli assi di modo che il campo elettrico sia direzionato lungo $z$, per cui $\hat{H}_1 = -e \lvert \vec{E} \rvert \hat{z}$ {\color{red} (perch\'e il segno negativo?)}.
+Si prendono gli assi di modo che il campo elettrico sia direzionato lungo $z$, per cui $\hat{H}_1 = e E \hat{z}$ (qui $\hat{z}$ \`e l'operatore posizione lungo l'asse $z$).
 Si cercano le correzioni agli autostati dovute a questo termine $\hat{H}_1$; per il generico livello $n$, si ha:
 \[
 E_n = E_n^{(0)} + E_n^{(1)} +\ldots
@@ -3551,10 +3551,60 @@ E_n = E_n^{(0)} + E_n^{(1)} +\ldots
 {\sffamily\bfseries Primo ordine del ground state.}
 La correzione, al primo ordine dello sviluppo, per l'energia del ground state \`e:
 \[
-E_1^{(1)} = -eE  \braket{100|\hat{z}|100} =-eE \int_{-\infty} ^{+\infty}\psi^* _{100}(r,\theta ,\varphi )   \hat{z} \psi _{100} (r,\theta ,\varphi )\ d^3x = 0
+	E_1^{(1)} = eE  \braket{100|\hat{z}|100} =eE \int_{-\infty} ^{+\infty}\psi^* _{100}(r,\theta ,\varphi )   \hat{z} \psi _{100} (r,\theta ,\varphi )\ d^3x = 0
 \] 
 Questo si annulla perch\'e il prodotto delle funzioni d'onda \`e pari, mentre l'operatore posizione \`e dispari, quindi \`e l'integrale di una funzione dispari.
 
+Per calcolare il secondo ordine dello sviluppo, essendo questo livello energetico non-degenere, si pu\`o usare l'eq. \ref{end1}, da cui $E_1^{(2)} = \braket{100|\hat{H}_1|100} _1$, dove si \`e indicato con $\ket{100} _1$ la correzione al primo ordine dell'autostato $\ket{100} $ relativo al ground state.
+L'obiettivo, ora, \`e quello di calcolare $\ket{100} _1$.
+
+Usando il fatto che $E_1^{(1)} =   0$:
+\[
+	(\hat{H}_0 + \hat{H}_1) \big(\ket{100} + \ket{100} _1\big) = E_1^{(0)} \big(\ket{100} + \ket{100} _1\big)
+\] 
+Conservando solo le correzioni al primo ordine\footnote{Cio\`e si elimina $E_1^{(0)} \ket{100} $ con $\hat{H}_0 \ket{100} $, mentre il rimanente \`e ignoto e rimane.}, si rimane con
+\begin{equation}\label{sec2}
+(\hat{H}_0 - E_1^{(0)} ) \ket{100} _1 = - \hat{H}_1 \ket{100} 
+\end{equation}
+In rappresentazione delle coordinate: $\braket{\vec{x}|\hat{H}_0 - E^{(0)} _1 |100} _1=-\braket{\vec{x}|\hat{H}_1|100} $.
+Si usa come \textit{ansatz} il fatto che la correzione che soddisfa questa equazione si possa esprimere in funzione dell'autostato imperturbato $\ket{100} $.
+Si prende la seguente correzione:
+\[
+\braket{\vec{x}|100} _1 = f(r,\theta ) \braket{\vec{x}|100} \ \text{ con } \ f(r,\theta ) = (A+Br+Cr^2) \cos \theta  e^{- r / r_B} 
+\] 
+Inserendo questa assunzione in eq. \ref{sec2}, si ottiene la seguente equazione differenziale:
+\begin{equation}
+	\left[ - \frac{\hbar ^2}{2m}\nabla ^2 + V(\vec{x}) - E^{(0)} _1 \right] f(r,\theta ) \psi ^{(0)} _{100} (\vec{x}) = -e Er\cos\theta \psi ^{(0)} _{100} (\vec{x})
+\end{equation}
+con $V(\vec{x})$ potenziale elettrostatico dell'atomo di idrogeno. 
+Si passa in coordinate sferiche, usando il fatto che $\psi ^{(0)} _{100} $ risolve
+\[
+\left[ - \frac{\hbar ^2}{2m}\nabla ^2 + V(\vec{x}) - E_1^{(0)}  \right] \psi ^{(0)} _{100} = 0 
+\] 
+pertanto si ottiene
+\[
+	-\frac{\hbar ^2}{2m} \Big[2 \nabla \psi ^{(0)} _{100} \cdot \nabla f(r,\theta ) + \psi _{100} ^{(0)} \nabla ^2 f(r,\theta )\Big] = -e Er\cos \theta  \psi _{100} ^{(0)} 
+\] 
+Per\`o si sa che $\psi _{100} ^{(0)} (r) = e^{-r / r_B} / \sqrt{\pi r^3 _B} $ che \`e indipendente da $\theta $ e $\varphi $, quindi $\nabla \psi _{100} ^{(0)}  = \hat{r} \partial _r \psi ^{(0)} _{100}  = -\hat{r} \psi ^{(0)} _{100} / r_B$ (in questo caso $\hat{r}$ \`e il versore radiale dovuto al gradiente).
+Ne segue che il prodotto scalare tra i gradienti nell'equazione differenziale \`e
+\[
+\nabla \psi ^{(0)} _{100} \cdot \nabla f(r,\theta ) = - \frac{1}{r_B}\psi _{100} ^{(0)} \partial _r f(r,\theta )
+\] 
+Allora, semplificando i fattori $\psi ^{(0)}_{100}  $ (sempre diversi da $0$) nell'equazione differenziale, si ha:
+\begin{equation}
+	\frac{\hbar ^2}{2m} \left[ \nabla ^2 f(r,\theta ) - \frac{2}{r_B}\partial _r f(r,\theta ) \right] = eEr\cos \theta 
+\end{equation}
+Una volta risolta questa, si pu\`o determinare la correzione al primo ordine dell'autostato del ground state:
+\begin{equation}
+	\psi ^{(1)} _{100} (r,\theta ,\varphi ) =- \frac{me Er_B}{2\hbar ^2}\sqrt{\pi} r_B^3	(r^2 + 2r_Br) e^{ - r / r_B} \cos \theta 
+\end{equation}
+Con questo, si pu\`o calcolare $E_1^{(2)} = \braket{100|\hat{H}_1|100} _1$:
+\begin{equation}
+	\begin{split}
+		E_1^{(2)} &= \int_{0} ^{2\pi} d\varphi \int_{0} ^\pi d \theta \int_{0} ^{+\infty} dr \ r^2 \sin \theta  \psi _{100} ^{(0)} a\big(eEr\cos\theta \big) \psi _{100} ^{(1)}  = -\frac{9me^2 E^2 r^4_B}{4 \hbar ^2}
+	\end{split}
+\end{equation}
+\vspace{0.5cm}
 \newline
 {\sffamily\bfseries Primo ordine del primo stato eccitato.}
 La degenerazione in questo caso \`e $4$ e la base di questo autospazio \`e $\mathcal{B} = \left\{ \ket{200} , \ket{210} , \ket{211} ,\ket{21-1}  \right\} $, corrispondenti ai livelli $2s,2p_z,2p_y,2p_x$, e rinominati rispettivamente $\ket{1} ,\ket{2} ,\ket{3} ,\ket{4} $.
@@ -3598,14 +3648,14 @@ Si ha:
 Allora:
 \[
 \begin{split}
-	\braket{200|\hat{H}_1|210} &= -eE \int_{\mathbb{R}^3} d^3x \ \psi ^*_{200} (\vec{x}) z\psi _{210} (\vec{x})\\
-				   &=-  2\pi eE \int_{0} ^{\pi} d\theta \int_{0} ^{+\infty} dr \ \psi ^*_{200} (r,\theta ) r \cos \theta \psi _{210} (r,\theta ) \ (r^2  \sin \theta )\\
-				   &=-2\pi eE \int_{0} ^\pi Y_{00}^* (\theta )Y_{10}(\theta ) \cos \theta \sin \theta \ d \theta \int_{0} ^{+\infty}r^3  R^*_{20} (r) R_{21} (r) \ dr\\
-				   &=- 2\pi e E \underbracket{\int_{0} ^\pi \frac{1}{\sqrt{4\pi} } \sqrt{\frac{3}{4\pi}} \cos^2 \theta  \sin \theta \ d\theta}_{= 2 / 3}    \int_{0} ^{+\infty} \frac{r^4 e^{-r / r_B}}{\sqrt{3} r_B(2r_B)^{3} }  \left(2 - \frac{r}{r_B}\right) \ dr \\
-				   &=-\frac{eE}{24r_B^4} \int_{0} ^{+\infty} r^4 e^{- r / r_B} \left(2- \frac{r}{r_B}\right) \ dr
+	\braket{200|\hat{H}_1|210} &= eE \int_{\mathbb{R}^3} d^3x \ \psi ^*_{200} (\vec{x}) z\psi _{210} (\vec{x})\\
+				   &=  2\pi eE \int_{0} ^{\pi} d\theta \int_{0} ^{+\infty} dr \ \psi ^*_{200} (r,\theta ) r \cos \theta \psi _{210} (r,\theta ) \ (r^2  \sin \theta )\\
+				   &=2\pi eE \int_{0} ^\pi Y_{00}^* (\theta )Y_{10}(\theta ) \cos \theta \sin \theta \ d \theta \int_{0} ^{+\infty}r^3  R^*_{20} (r) R_{21} (r) \ dr\\
+				   &= 2\pi e E \underbracket{\int_{0} ^\pi \frac{1}{\sqrt{4\pi} } \sqrt{\frac{3}{4\pi}} \cos^2 \theta  \sin \theta \ d\theta}_{= 2 / 3}    \int_{0} ^{+\infty} \frac{r^4 e^{-r / r_B}}{\sqrt{3} r_B(2r_B)^{3} }  \left(2 - \frac{r}{r_B}\right) \ dr \\
+				   &=\frac{eE}{24r_B^4} \int_{0} ^{+\infty} r^4 e^{- r / r_B} \left(2- \frac{r}{r_B}\right) \ dr
 \end{split}
 \] 
-{\color{red} (Problema con segno negativo che di seguito si toglie per far tornare il calcolo)} Questo si risolve prendendo $\rho =  r / r_B$ e usando $\int_{0} ^{+\infty} \rho ^k e^{-\alpha \rho } \ d\rho = k! / \alpha ^{k+1} $,da cui risulta che $\braket{200|\hat{H}_1|210} =\frac{eE}{24}r_B (2\cdot 4! - 5!) = - 3eEr_B$.
+Questo si risolve prendendo $\rho =  r / r_B$ e usando $\int_{0} ^{+\infty} \rho ^k e^{-\alpha \rho } \ d\rho = k! / \alpha ^{k+1} $, da cui risulta che $\braket{200|\hat{H}_1|210} =\frac{eE}{24}r_B (2\cdot 4! - 5!) = - 3eEr_B$.
 Essendo reale, la matrice risultante \`e
 \[
 	[\hat{H}_1]_\mathcal{B} = -3e Er_B\begin{pmatrix} 0&1&0&0\\1&0&0&0\\0&0&0&0\\0&0&0&0 \end{pmatrix} 
