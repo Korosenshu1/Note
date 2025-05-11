@@ -2223,25 +2223,23 @@ E_\pm = \frac{1}{2}(\epsilon _1 + \epsilon _2) \pm \frac{1}{2}\sqrt{(\epsilon _1
 Nel caso di degenerazione $\epsilon _1 = \epsilon _2 = \epsilon \Rightarrow E_\pm = \epsilon  \pm \lvert v \rvert $.
 L'approssimazione in eq. \ref{prtap} porta $E_1 = \epsilon _1 + \lvert v \rvert ^2 / (E_1 - \epsilon _2)$, che \`e l'equazione esatta che si ottiene dal calcolo degli autovalori della matrice $\hat{H}$.
 \subsection{Atomo di idrogeno}
-Si assume che il protone rimanga fermo e considerare solo il moto dell'elettrone. 
+Si assume che il protone rimanga fermo e si considera solo il moto dell'elettrone. 
 Nel caso in cui si volesse risolvere senza questa approssimazione, ci si mette nel centro di massa e si deve considerare la massa ridotta.
 Si considera l'Hamiltoniano
 \[
 \hat{H} = \frac{\hat{p}^2 }{2m}- \frac{k}{\hat{r}}, \ k\sim e^2
 \] 
-Nella soluzione vista in \S\ref{hat}, uno stato era descritto da $\ket{nlm} $, con $n = 1 ,2 ,\ldots$, $0<\ell <n$ e $-m\le \ell \le m$. 
+Nella soluzione vista in \S\ref{hat}, uno stato era descritto da $\ket{n\ell m} $, con $n = 1 ,2 ,\ldots$, $0\le \ell <n$ e $-m\le \ell \le m$. 
 La degenerazione \`e data da $\sum_{\ell =0}^{n-1} 2l+1 = n^2$.
-
 Includendo lo spin, che per l'elettrone \`e $\pm 1 /2$, la base completa sar\`a data da $\ket{n\ell m} \otimes \ket{s,s_z} $, per cui la degenerazione complessiva \`e $2n^2$, avendo due valori di spin possibili.
 
 \subsubsection{Correzione relativistica}
-Dalla relativit\`a ristretta, si ha
+Dalla relativit\`a ristretta, l'energia cinetica \`e:
 \[
-E = \sqrt{m^2 c^4 + p^2 c^2} - mc^2 \simeq \frac{p^2}{2m}- \frac{(p^2)^2}{8m^3c^2}
+K = \sqrt{m^2 c^4 + p^2 c^2} - mc^2 \simeq \frac{p^2}{2m}- \frac{(p^2)^2}{8m^3c^2}
 \] 
 dove si toglie $mc^2$ per rendere tale energia confrontabile con l'energia cinetica non-relativistica.
 Lo sviluppo si \`e fatto per $p$ piccolo.
-
 Per introdurre questa correzione nella trattazione dell'atomo di idrogeno, si considerano
 \[
 \hat{H}_0 = \frac{\hat{p}^2}{2m}- \frac{k}{\hat{r}} \hspace{1cm}\hat{H}_k = - \frac{(\hat{p}^2)^2}{8m^3c^2}
@@ -2258,17 +2256,96 @@ Allora
 \[
 \Braket{n\ell m|\hat{H}_0^2 + \hat{H}_0 \frac{k}{\hat{r}} + \frac{k}{\hat{r}}\hat{H}_0 + \frac{k^2}{\hat{r}^2}|n\ell m} =\left(E^{(0)} _{n\ell m}\right)  ^2 + 2 E^{(0)} _{n\ell m} \Braket{n\ell m|\frac{k}{\hat{r}}|n\ell m} + \Braket{n\ell m|\frac{k^2}{\hat{r}^2}|n\ell m} 
 \] 
-Gli altri elementi di matrice si calcolano per conto diretto, cio\`e svolgendo $\int \psi _{n\ell m} ^*(r,\theta ,\varphi ) \frac{k}{r} \psi _{n\ell m} (r,\theta ,\varphi ) \ d^3  $.
-
-Ricordando che $E^{(0)} _{n\ell m} = -mk^2/(2n^2)$ e completando il calcolo, si trova
+Gli altri elementi di matrice si calcolano per conto diretto, cio\`e svolgendo $\int \psi _{n\ell m} ^*(r,\theta ,\varphi ) \frac{k}{r} \psi _{n\ell m} (r,\theta ,\varphi ) \ d^3 x $.
+Ricordando che $E^{(0)} _{n\ell m} = -mk^2/(2n^2)$ e completando il calcolo, si trova:
+\begin{boxenv}[]
 \begin{equation}
 	E_{n\ell m} ^{(1)} =- \frac{E_{n\ell m} ^{(0)} }{2mc^2}\left[ -3 +\frac{4n}{\ell + 1 / 2} \right] 
 \end{equation}
+\end{boxenv}
+\subsubsection{Dipendenza dallo spin}
+Si vuole studiare l'atomo di idrogeno nel caso di termine di interazione $\hat{\vec{L}}\cdot \hat{\vec{S}}$.
+Introducendo la dipendenza dallo spin nell'atomo di idrogeno, gli stati del sistema si potranno scrivere come $\ket{n\ell m} \otimes \ket{ss_z} $.
+Questa base di autostati \`e legata, rispettivamente, agli operataori  $\hat{H}_0, \hat{L}^2, \hat{L}_z , \hat{S}^2, \hat{S}_z$; visto che il termine $\hat{\vec{L}}\cdot \hat{\vec{S}}$ non \`e diagonale in questa base, si vuole passare a quella fornita da $\hat{H}_0, \hat{L}^2, \hat{S}^2, \hat{J}^2 , \hat{J}_z$.
+\begin{osservazione}
+Nel seguito, si tralascer\`a $n$ negli stati perch\'e rimane comune a entrambe le basi.
+\end{osservazione}
+Tale passaggio di base avviene tramite i coefficienti di Clebsch-Gordan $C^{JM} _{J_1J_2m_1m_2} $:
+\[
+\ket{J_1J_2JM} = \sum_{m_1, m_2}^{} \ket{J_1J_2m_1m_2} \braket{K_1K_2m_1m_2|J_1J_2JM} \equiv \sum_{m_1, m_2}^{}C^{JM} _{J_1J_2m_1m_2} \ket{J_1J_2m_1m_2}
+\] 
+Si ricorda che, essendo questi coefficienti relativi ad una trasformazione unitaria, devono soddisfare le seguenti propriet\`a:
+\[
+\sum_{m_1,m_2}^{} C^{JM} _{J_1J_2m_1m_2} C^{J'M'} _{J_1J_2m_1m_2} = \delta _{JJ'} \delta _{MM'} \hspace{1cm}\sum_{JM}^{} C^{JM} _{J_1J_2m_1m_2} C^{JM} _{J_1J_2m_1'm_2'} = \delta _{m_1m_1'} \delta _{m_2m_2'} 
+\] 
+Visto che $J_z = J_{1,z} + J_{2,z} $, perch\'e questi coefficienti siano non-nulli devono soddisfare $m_1+m_2 = M$ e, inoltre, deve essere $\lvert J_1-J_2 \rvert \le J \le  J_1+J_2$ e $J_1+J_2+J \in \mathbb{Z}$.
 
+In questo caso particolare, si ha:
+\[
+\ket{\ell s J M} = \sum_{m,s_z}^{} \ket{\ell sms_z} \braket{\ell sms_z|\ell sJM} 
+\] 
+Visto che ci si mette nel caso di spin $1 / 2$ e si ha $m + s_z = M$, si pu\`o riscrivere questa operazione come somma solamente su $s_z$:
+\[
+\Ket{\ell \frac{1}{2} JM } = \sum_{s_z}^{} C^{JM} _{\ell, \frac{1}{2}, M-s_z, s_z} \Ket{\ell ,\frac{1}{2},M-s_z, s_z} 
+\] 
+Scrivendo $J = \ell  +1 / 2$, si ha: 
+\begin{equation}
+	\begin{split}
+		W^{\ell  + \frac{1}{2} , M} _{\ell }(\theta ,\varphi ) &= C^{\ell +\frac{1}{2 }, M} _{\ell , \frac{1}{2}, M - \frac{1}{2}, \frac{1}{2}} \underbracket{\Ket{\ell , M- \frac{1}{2}} }_{\displaystyle Y_{\ell , M - \frac{1}{2}} } \otimes \underbracket{\Ket{\frac{1}{2}, \frac{1}{2}} }_{\begin{pmatrix} 1& 0 \end{pmatrix}^\top } + C^{\ell  +\frac{1}{2}, M} _{\ell , \frac{1}{2}, M+\frac{1}{2}, -\frac{1}{2}} \underbracket{\Ket{\ell , M+\frac{1}{2}} }_{\displaystyle Y_{\ell , M +\frac{1}{2}} } \otimes \underbracket{\Ket{\frac{1}{2}, - \frac{1}{2}} }_{\begin{pmatrix} 0 & 1 \end{pmatrix}^\top } \\
+		&= (2 \ell +1)^{- 1 / 2} \begin{bmatrix} \left(\ell +M+\frac{1}{2}\right) ^{ 1 / 2} Y_{\ell ,  M - \frac{1}{2}} (\theta ,\varphi )\\ \left(\ell -M+ \frac{1}{2}\right)^{1 /2}  Y_{\ell ,M+\frac{1}{2}} (\theta ,\varphi ) \end{bmatrix} 
+	\end{split}
+\end{equation}
+Analogamente:
+\begin{equation}
+W^{\ell - \frac{1}{2}, M} _{\ell } (\theta ,\varphi ) =  (2 \ell +1)^{- 1 / 2} \begin{bmatrix} - \left(\ell -M+\frac{1}{2}\right) ^{ 1 / 2} Y_{\ell ,  M - \frac{1}{2}} (\theta ,\varphi )\\ \left(\ell +M+ \frac{1}{2}\right)^{1 /2}  Y_{\ell ,M+\frac{1}{2}} (\theta ,\varphi ) \end{bmatrix} 
+\end{equation}
+con $\lvert \ell -s \rvert \le J\le \ell +s$. Queste funzioni $W^{JM} _{\ell } $ sono normalizzate, cio\`e
+\[
+\int \left(W^{JM} _\ell\right)^\dagger   W_{\ell '}^{J'M'}  = \delta _{\ell \ell '} \delta _{JJ'} \delta _{MM'} 
+\] 
+e permettono di ricavare i nuovi autostati come 
+\begin{equation}
+	\Psi_{n\ell JM} (r,\theta,\varphi ) = R_{n\ell } (r) W_{\ell } ^{JM} (\theta ,\varphi )
+\end{equation}
+\begin{esercizio}
+Si considerano gli stati relativi a $\ell =0, J = \frac{1}{2}, M =\frac{1}{2}$ e $\ell =1, J =\frac{1}{2}, M=\frac{1}{2}$ e si vuole, in entrambi i casi, calcolare la probabilit\`a che lo stato sia nello spin up, cio\`e $S_z  = \frac{1}{2}$.
+{\color{red} Da fare!}
+\begin{svolgimento}
+	Nel primo caso \`e $1$, nel secondo caso $1 / 3$ (lezione 40 1:05:00). 
+\end{svolgimento}
+\end{esercizio}
+\subsection{Teoria delle perturbazioni dipendente dal tempo}
+Si considera $\hat{H} = \hat{H}_0 + \lambda \hat{H}_1(t)$, conoscendo $\hat{H}_0 \ket{n} = \epsilon _n \ket{n} $ che si possono usare come base completa.
+Usando questa:
+\[
+\ket{\psi (t)} = \sum_{n}^{} a_n(t) e^{-i \epsilon _n t} \ket{n} 
+\] 
+dove se $\lambda $ fosse stato nullo, allora gli $a_n(t) $ sarebbero stati dei coefficienti costanti.
+Prendendo, per pertinenza con l'essenza della teoria delle perturbazioni, $\lambda \ll 1$, ci si aspetta che $\dot{a}_n(t) \ll 1$, cio\`e che gli $a_n(t)$ abbiano una dipendenza debole dal tempo.
 
-
-
-
+Inserendo lo stato $\ket{\psi (t)} $ con lo sviluppo stabilito sopra all'interno dell'equazione di Shr\"odinger $i \partial _t \ket{\psi (t)} = \big(\hat{H}_0 + \lambda \hat{H}_1(t)\big) \ket{\psi (t)} $, si trova:
+\[
+	\begin{split}
+		&\sum_{n}^{} \left[ i \dot{a}_n(t) +\epsilon _n a_n(t) \right]  e^{-i \epsilon _n t} \ket{n} = \sum_{n}^{} \epsilon _n a_n(t) e^{-i \epsilon _n t} \ket{n} + \lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{H}_1(t) \ket{n} \\
+		&\Rightarrow \sum_{n}^{}  i \dot{a}_n(t) e^{-i \epsilon _n t} \ket{n} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{H}_1(t) \ket{n} 
+	\end{split}
+\] 
+Si applica $\bra{m} $ (facente parte della base completa fornita da $\hat{H}_0$, quindi \`e un suo autostato) per ottenere:
+\[
+\sum_{n}^{} \braket{m|i\dot{a}_n(t) e^{-i \epsilon _n t}  |n} = i \dot{a}_m(t) e^{-i\epsilon _m t} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n t} \braket{m|\hat{H}_1(t)|n} 
+\] 
+cio\`e:
+\begin{equation}
+	i \dot{a}_m(t) = \lambda \sum_{n}^{} a_n(t) e^{i\omega_{nm} t} \braket{m|\hat{H}_1(t)|n} 
+\end{equation}
+con $\omega_{nm } = \epsilon _m - \epsilon _n$ (ottenuto dividendo per $e^{-i\epsilon _m t} $).
+Questa si pu\`o risolvere perturbativamente prendendo $a_k(t) = a_k^{(0)} + \lambda a_k^{(1)} (t) + \ldots$, da cui
+\begin{boxenv}[]
+\begin{equation}
+	i \dot{a}_m^{(1)} (t) = \lambda \sum_{n}^{} a_n^{(0)} e^{i \omega_{nm} t} \braket{m|\hat{H}_1(t)|n} 
+\end{equation}
+\end{boxenv}
+\noindent dove l'aver preso $a_n^{(0)} $ \`e legato alla consistenza dello sviluppo al primo ordine, avendo gi\`a un $\lambda $ a moltiplicare.
 
 
 
