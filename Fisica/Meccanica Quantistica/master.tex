@@ -2263,14 +2263,35 @@ Ricordando che $E^{(0)} _{n\ell m} = -mk^2/(2n^2)$ e completando il calcolo, si 
 	E_{n\ell m} ^{(1)} =- \frac{E_{n\ell m} ^{(0)} }{2mc^2}\left[ -3 +\frac{4n}{\ell + 1 / 2} \right] 
 \end{equation}
 \end{boxenv}
-\subsubsection{Dipendenza dallo spin}
-Si vuole studiare l'atomo di idrogeno nel caso di termine di interazione $\hat{\vec{L}}\cdot \hat{\vec{S}}$.
-Introducendo la dipendenza dallo spin nell'atomo di idrogeno, gli stati del sistema si potranno scrivere come $\ket{n\ell m} \otimes \ket{ss_z} $.
-Questa base di autostati \`e legata, rispettivamente, agli operataori  $\hat{H}_0, \hat{L}^2, \hat{L}_z , \hat{S}^2, \hat{S}_z$; visto che il termine $\hat{\vec{L}}\cdot \hat{\vec{S}}$ non \`e diagonale in questa base, si vuole passare a quella fornita da $\hat{H}_0, \hat{L}^2, \hat{S}^2, \hat{J}^2 , \hat{J}_z$.
-\begin{osservazione}
-Nel seguito, si tralascer\`a $n$ negli stati perch\'e rimane comune a entrambe le basi.
-\end{osservazione}
-Tale passaggio di base avviene tramite i coefficienti di Clebsch-Gordan $C^{JM} _{J_1J_2m_1m_2} $:
+\subsubsection{Dipendenza dallo spin -- Introduzione}
+Nell'Hamiltoniano dell'atomo di idrogeno $\hat{H}_0= \frac{\hat{p}^2}{2m}-  \frac{k}{\hat{r}}$ non \`e presente alcun termine riguardante lo spin, quindi si modellizzereanno gli stati, una volta considerato il termine di interazione $\hat{\vec{L}} \cdot \hat{\vec{S}}$, come $\ket{n\ell m} \otimes \ket{ss_z} $. 
+Di fatto, si ha $[\hat{H}_0, \hat{S}_\alpha ] = 0$, quindi possono essere simultaneamente diagonalizzati.
+Come gi\`a accennato, la degnerazione, che prima era di $n^2$, ora passa a $2n^2$ per via degli stati ottenuti tramite prodotto tensore, essendo che l'elettrone si pu\`o trovare sia con spin up che spin down.
+
+Quando c'\`e invarianza per rotazioni, non \`e singolarmente $\hat{L}$ a conservarsi (cio\`e $[\hat{H}, \hat{\vec{L}}] = 0$), ma \`e $\hat{\vec{J}}$, quindi si vuole usare una base che possa essere \textit{sensibile} a questa invarianza.
+L'idea \`e di usare  quella fornita simultaneamente da $\hat{L}^2, \hat{S}^2, \hat{J}^2 , \hat{J}_z$\footnote{Si tralascia il numero quantico $n$ relativo all'Hamiltoniano perch\'e \`e presente in ogni caso e non influenza la trattazione.}.
+La comodit\`a di questa scelta risiede nel fatto che $\hat{\vec{L}}\cdot \hat{\vec{S}}$ sar\`a diagonale in questa base.
+
+\vspace{.5cm}	
+{\bfseries\sffamily Si mostra che $\hat{\vec{L}}\cdot \hat{\vec{S}}$ \`e diagonale nella nuova base.} Intanto si ricorda che i valori possibili di $J$, per le regole di composizione del momento angolare, sono $\ell  \pm \frac{1}{2}$.
+Si calcola $\braket{\ell sJM|\hat{\vec{L}}\cdot \hat{\vec{S}}|\ell 's' J'M'} $.
+Per farlo, si usa che $\hat{J}^2 = (\hat{\vec{L}}+ \hat{\vec{S}})^2 = \hat{L}^2 + \hat{S}^2 + 2 \hat{\vec{L}}\cdot \hat{\vec{S}}$, quindi
+\[
+\hat{\vec{L}}\cdot \hat{\vec{S}} = \frac{1}{2}\left(\hat{J}^2 - \hat{L}^2 - \hat{S}^2\right) 
+\] 
+da cui appare evidente che $\ket{\ell s JM} $ \`e autostato di $\hat{\vec{L}}\cdot \hat{\vec{S}}$, visto che \`e autostato di $\hat{J}^2 ,\hat{L}^2, \hat{S}^2$.
+\textbf{D'ora in poi, si trascurano i segni di vettore e si sottintendono.} 
+Considerando, poi, $J = \ell  + \frac{1}{2}$, si ha
+\[
+	\begin{split}
+		\hat{L}\cdot \hat{S} \ket{\ell s JM } &= \frac{1}{2}\Big[ J\left(J + 1\right) - \ell (\ell +1) - s (s+1) \Big] \ket{\ell s JM} \\
+						      &= \frac{1}{2}\left[ \left(\ell +\frac{1}{2}\right)\left(\ell +\frac{3}{2}\right) - \ell (\ell +1) - \frac{3}{4} \right] \ket{\ell s JM} = \frac{1}{2}\ell \ket{\ell s JM} 
+	\end{split}
+\] 
+Nel caso di $J = \ell  -\frac{1}{2}$, invece, si ha autovalore $-\frac{1}{2}(\ell +1)$. 
+In questo modo, si vede che l'operatore \`e diagonale in questa base.
+\subsubsection{Dipendenza dallo spin -- Coefficienti di Clebsch-Gordan}
+Il passaggio di base avviene tramite i coefficienti di Clebsch-Gordan $C^{JM} _{J_1J_2m_1m_2} $:
 \[
 \ket{J_1J_2JM} = \sum_{m_1, m_2}^{} \ket{J_1J_2m_1m_2} \braket{K_1K_2m_1m_2|J_1J_2JM} \equiv \sum_{m_1, m_2}^{}C^{JM} _{J_1J_2m_1m_2} \ket{J_1J_2m_1m_2}
 \] 
@@ -2315,7 +2336,7 @@ Si considerano gli stati relativi a $\ell =0, J = \frac{1}{2}, M =\frac{1}{2}$ e
 \end{svolgimento}
 \end{esercizio}
 \subsection{Teoria delle perturbazioni dipendente dal tempo}
-Si considera $\hat{H} = \hat{H}_0 + \lambda \hat{H}_1(t)$, conoscendo $\hat{H}_0 \ket{n} = \epsilon _n \ket{n} $ che si possono usare come base completa.
+Si considera $\hat{H} = \hat{H}_0 + \lambda \hat{P}(t)$, conoscendo $\hat{H}_0 \ket{n} = \epsilon _n \ket{n} $ che si possono usare come base completa.
 Usando questa:
 \[
 \ket{\psi (t)} = \sum_{n}^{} a_n(t) e^{-i \epsilon _n t} \ket{n} 
@@ -2323,34 +2344,53 @@ Usando questa:
 dove se $\lambda $ fosse stato nullo, allora gli $a_n(t) $ sarebbero stati dei coefficienti costanti.
 Prendendo, per pertinenza con l'essenza della teoria delle perturbazioni, $\lambda \ll 1$, ci si aspetta che $\dot{a}_n(t) \ll 1$, cio\`e che gli $a_n(t)$ abbiano una dipendenza debole dal tempo.
 
-Inserendo lo stato $\ket{\psi (t)} $ con lo sviluppo stabilito sopra all'interno dell'equazione di Shr\"odinger $i \partial _t \ket{\psi (t)} = \big(\hat{H}_0 + \lambda \hat{H}_1(t)\big) \ket{\psi (t)} $, si trova:
+Inserendo lo stato $\ket{\psi (t)} $ con lo sviluppo stabilito sopra all'interno dell'equazione di Shr\"odinger $i \partial _t \ket{\psi (t)} = \big(\hat{H}_0 + \lambda \hat{P}(t)\big) \ket{\psi (t)} $, si trova:
 \[
 	\begin{split}
-		&\sum_{n}^{} \left[ i \dot{a}_n(t) +\epsilon _n a_n(t) \right]  e^{-i \epsilon _n t} \ket{n} = \sum_{n}^{} \epsilon _n a_n(t) e^{-i \epsilon _n t} \ket{n} + \lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{H}_1(t) \ket{n} \\
-		&\Rightarrow \sum_{n}^{}  i \dot{a}_n(t) e^{-i \epsilon _n t} \ket{n} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{H}_1(t) \ket{n} 
+		&\sum_{n}^{} \left[ i \dot{a}_n(t) +\epsilon _n a_n(t) \right]  e^{-i \epsilon _n t} \ket{n} = \sum_{n}^{} \epsilon _n a_n(t) e^{-i \epsilon _n t} \ket{n} + \lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{P}(t) \ket{n} \\
+		&\Rightarrow \sum_{n}^{}  i \dot{a}_n(t) e^{-i \epsilon _n t} \ket{n} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n  t} \hat{P}(t) \ket{n} 
 	\end{split}
 \] 
 Si applica $\bra{m} $ (facente parte della base completa fornita da $\hat{H}_0$, quindi \`e un suo autostato) per ottenere:
 \[
-\sum_{n}^{} \braket{m|i\dot{a}_n(t) e^{-i \epsilon _n t}  |n} = i \dot{a}_m(t) e^{-i\epsilon _m t} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n t} \braket{m|\hat{H}_1(t)|n} 
+\sum_{n}^{} \braket{m|i\dot{a}_n(t) e^{-i \epsilon _n t}  |n} = i \dot{a}_m(t) e^{-i\epsilon _m t} =\lambda \sum_{n}^{} a_n(t) e^{-i \epsilon _n t} \braket{m|\hat{P}(t)|n} 
 \] 
 cio\`e:
 \begin{equation}
-	i \dot{a}_m(t) = \lambda \sum_{n}^{} a_n(t) e^{i\omega_{nm} t} \braket{m|\hat{H}_1(t)|n} 
+	i \dot{a}_m(t) = \lambda \sum_{n}^{} a_n(t) e^{i\omega_{nm} t} \braket{m|\hat{P}(t)|n} 
 \end{equation}
 con $\omega_{nm } = \epsilon _m - \epsilon _n$ (ottenuto dividendo per $e^{-i\epsilon _m t} $).
 Questa si pu\`o risolvere perturbativamente prendendo $a_k(t) = a_k^{(0)} + \lambda a_k^{(1)} (t) + \ldots$, da cui
 \begin{boxenv}[]
 \begin{equation}
-	i \dot{a}_m^{(1)} (t) = \lambda \sum_{n}^{} a_n^{(0)} e^{i \omega_{nm} t} \braket{m|\hat{H}_1(t)|n} 
+	i \lambda ^r \dot{a}_m^{(r)} (t) =  \lambda \sum_{n}^{} \lambda ^{r-1}  a_n^{(r-1)} e^{i \omega_{nm} t} \braket{m|\hat{P}(t)|n} 
 \end{equation}
 \end{boxenv}
-\noindent dove l'aver preso $a_n^{(0)} $ \`e legato alla consistenza dello sviluppo al primo ordine, avendo gi\`a un $\lambda $ a moltiplicare.
+\noindent Al primo ordine, per esempio, definendo $\braket{m|\hat{P}(t)|n} = P_{mn} (t)$, si ha:
+\begin{equation}
+	i \dot{a}_m^{(1)} (t) = \sum_{n}^{} a_n^{(0)} e^{i\omega_{nm} t} P_{mn} (t)
+\end{equation}
+Per risolvere l'equazione differenziale, \`e prassi assumere che lo stato al tempo $t=0$ sia autostato dell'Hamiltoniano, quindi $a_n^{(0)} = \delta _{ni} $.
+\subsubsection{Schema risolutivo}
+In linea di principio, si assumer\`a che per $t\le 0$, la perturbazione \`e spenta, quindi gli stati evolvono solamente tramite $\hat{H}_0$, quindi:
+\[
+\ket{\psi (t)}  = \sum_{n}^{} a_n e^{-i \epsilon _n t } \ket{n} 
+\] 
+Per $0\le t \le T$, invece, si ha $\hat{H} = \hat{H}_0 + \hat{P}(t)$, per cui 
+\[
+\ket{\psi (t)} = \sum_{n}^{} a_n(t) e^{-i\epsilon _n t}  \ket{n} 
+\] 
+Infine, per $t > T$ si spegne la perturbazione, quindi il sistema evolve di nuovo secondo $\hat{H}_0$ e si ha
+\[
+\ket{\psi (t)} = \sum_{n}^{} a_n(T) e^{-i \epsilon _n t} \ket{n} 
+\] 
+Ora si cerca la probabilit\`a $P_f$ di ottenere una certa energia finale $\epsilon _f $, tenendo conto del fatto che $a_n(t=0) = \delta _{ni} $, con $\ket{\psi (t)} = \sum_{n}^{}a_n(T) e^{-i\epsilon _n t}  \ket{n} $.
+Questa si ottiene direttamente da $\lvert a_f(T) \rvert ^2$, visto che $e^{-i \epsilon _f T} $ \`e una fase.
 
 
-
-
-
+\begin{center}
+	\bfseries Riprendere da 27:00
+\end{center}
 
 
 
