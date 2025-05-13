@@ -2376,7 +2376,7 @@ In linea di principio, si assumer\`a che per $t\le 0$, la perturbazione \`e spen
 \[
 \ket{\psi (t)}  = \sum_{n}^{} a_n e^{-i \epsilon _n t } \ket{n} 
 \] 
-Per $0\le t \le T$, invece, si ha $\hat{H} = \hat{H}_0 + \hat{P}(t)$, per cui 
+Per $0\le t \le T$, invece, si ha $\hat{H} = \hat{H}_0 + \hat{P}(t)$\footnote{Si ingloba $\lambda $ in $\hat{P}(t)$.}, per cui 
 \[
 \ket{\psi (t)} = \sum_{n}^{} a_n(t) e^{-i\epsilon _n t}  \ket{n} 
 \] 
@@ -2386,16 +2386,78 @@ Infine, per $t > T$ si spegne la perturbazione, quindi il sistema evolve di nuov
 \] 
 Ora si cerca la probabilit\`a $P_f$ di ottenere una certa energia finale $\epsilon _f $, tenendo conto del fatto che $a_n(t=0) = \delta _{ni} $, con $\ket{\psi (t)} = \sum_{n}^{}a_n(T) e^{-i\epsilon _n t}  \ket{n} $.
 Questa si ottiene direttamente da $\lvert a_f(T) \rvert ^2$, visto che $e^{-i \epsilon _f T} $ \`e una fase.
+\begin{osservazione}
+Si nota che questa probabilit\`a rimane la stessa $\forall t > T$ perch\'e $a_f(T)$ \`e costante e $e^{- i \epsilon _f t} $ \`e una fase ad ogni $t$.
+\end{osservazione}
+Si vuole calcolare $a_f$ usando la teoria delle perturbazioni, fermandosi al primo ordine di approssimazione; per farlo, si usa:
+\[
+i \dot{a}^{(1)} _f (t)= \sum_{n}^{} \braket{f|\hat{P}(t)|n} e^{i \omega_{fn} t} a_n^{(0)} = \braket{f|\hat{P}(t)|i} e^{i \omega_{fi} t} 
+\] 
+visto che si \`e preso come dato iniziale $a_n^{(0)} =\delta _{ni} $; questo implica anche che $a_f(0) = 0$, quindi la soluzione dell'equazione differenziale, al tempo $T$, \`e:
+\begin{equation}
+	a^{(1)} _f (T) = - \int_{0} ^T dt \ \braket{f|\hat{P}(t)|i} e^{i\omega_{fi} t} 
+\end{equation}
+\subsubsection{Esempio di applicazione \#1}
+Si considera una perturbazione del tipo $\hat{P}(t) = Ae^{-i\Omega t} + A^\dagger e^{i\Omega t} $, che agisce per $0\le t \le T$.
+Il coefficiente finale \`e ottenuto come segue:
+\[
+\begin{split}
+	a_f^{(1)} (T) &= - i \braket{f|A|i} \int_{0} ^T dt \ e^{i(\omega_{fi} - \Omega ) t} - i \braket{f|A^\dagger |i} \int_{0} ^T dt \ e^{i (\omega_{fi} + \Omega ) t} \\
+		      &= \braket{f|A|i} \frac{1 - e ^{i(\omega_{fi} - \Omega ) T} }{\omega_{fi} -\Omega } + \braket{f|A^\dagger |i} \frac{1-e^{i(\omega_{fi} +\Omega ) T} }{\omega_{fi} +\Omega }
+\end{split}
+\] 
 
+\subsubsection{Esempio di applicazione \#2}
+Si considera un sistema a due livelli sotto l'azione di 
+\[
+	\begin{split}
+		&\hat{H}_0 = - \frac{\mu B_0}{2}\sigma _z \equiv -\frac{\omega_0}{2} \sigma _z \\
+		&\hat{P}(t) = - \frac{\mu B_1}{2} \big(\sigma _x \cos \omega t  + \sigma _y \sin \omega t \big) \equiv - \frac{\omega_1}{2}\big(\sigma _x \cos \omega t + \sigma _y \sin \omega _t\big)\equiv A e^{-i\omega t} + A^\dagger e^{i\omega t} 
+	\end{split}
+\] 
+Si assume che lo stato iniziale sia il ground state di $\hat{H}_0$, cio\`e $\ket{i} = \ket{\uparrow} $.
+Ci si chiede la probabilit\`a di trovare il sistema in $\ket{\downarrow} $.
+Usando la teoria appena sviluppata, si trova che:
+\begin{equation}
+	\lvert a_f \rvert ^2 \simeq \frac{\omega_1^2}{4} \left\lvert \frac{1-e^{i(\omega_{fi} + \omega)T} }{\omega_{fi} +\omega} \right\rvert  ^2 = \frac{\omega_1^2}{4} \left\lvert \frac{1-e^{i(\omega_0 + \omega)T} }{\omega_0+\omega} \right\rvert  ^2 
+\end{equation}
+Il risultato esatto a questo problema si \`e ottenuto in \S\ref{mag2liv}, che \`e pari a 
+\[
+\lvert a_f(T) \rvert ^2 = \left(\frac{\omega_1}{\alpha }\right) ^2 \left(\sin \frac{\alpha T}{2}\right) ^2, \ \alpha  = \sqrt{(\omega_0+\omega)^2 + \omega_1^2} 
+\] 
+Si sviluppa in potenza, assumendo $\lvert \omega_1 / (\omega_0+\omega) \rvert \ll 1$ e si mostra che coincidono.
 
-\begin{center}
-	\bfseries Riprendere da 27:00
-\end{center}
+Considerando, ora, il caso in cui $\omega + \omega _0 \to 0$, si trova che la soluzione esatta \`e $\lvert a_f \rvert ^2 = \sin^2 \omega_1 T / 2$, mentre la soluzione approssimata \`e $\lvert a_f \rvert ^2 = (\omega_1 T / 2 )^2$.
+Quindi, in condizioni di risonanza, la soluzione approssimata \`e una buona approssimazione solo quando $\omega_1 T \ll 1$.
+\subsubsection{Condizione di risonanza -- Regola d'oro di Fermi}
 
+Riprendendo il caso dell'esempio precedente, ci si chiede quando sia possibile uno sviluppo perturbativo in condizioni di risonanza. 
+L'equazione generale trovata \`e:
+\begin{equation}
+	a_f^{(1)} (T) = \braket{f|A|i} \frac{1- e^{-i(\omega _{fi} - \omega)T} }{\omega_{fi} - \omega} + \braket{f|A^\dagger |i} \frac{1- e^{-i (\omega_{fi} +\omega)T} }{\omega_{fi} +\omega}
+\end{equation}
+dove si sta considerando il sistema soggetto a $\hat{P}(t) = A e^{-i\omega t} + A^\dagger e^{i\omega t} $.
+La risonanza si verifica $\omega_{fi} -\omega \to 0$ o $\omega_{fi} +\omega \to 0$; la condizione per avere uno sviluppo perturbativo consistente \`e $\braket{f|A|i} T \ll 1$, nel caso di $\omega_{fi} -\omega \to 0$.
 
+Per $\omega_{fi} -\omega \to 0 $, si pu\`o scrivere
+\begin{equation}\label{coff}
+\lvert a_f(T) \rvert ^2 \simeq \lvert \braket{f|A|i}  \rvert ^2 \left\lvert \frac{\sin \left[ \frac{1}{2}\left(\omega-\omega_{fi} \right) T \right] }{\omega-\omega_{fi} } \right\rvert ^2= c \lvert A_{fi}  \rvert ^2 \left\lvert \frac{\sin \left(\frac{\omega_{fi} -\omega}{2}\right) T}{\frac{1}{2}(\omega_{fi} -\omega)} \right\rvert ^2
+\end{equation}
+Il plot di questa funzione \`e una campana con lati oscillanti, il cui massimo \`e $\sim T^2$ e la larghezza FWHM \`e $\sim 1 / T$.
+Si ottiene un valore significativamente diverso da $0$ per $\lvert \omega_{fi} -\omega \rvert < 2\pi / T$, cio\`e si ha uno pseudo principio di indeterminazione $\Delta E \sim 1 / T$.
+Non \`e propriamente un principio di indeterminazione perch\'e il tempo non ha un equivalente operatoriale.
 
-
-
+Prendendo in considerazione la seconda uguaglianza di eq. \ref{coff}, si nota che
+\[
+	\begin{split}
+		&\lim_{T \to +\infty} \left\lvert \frac{\sin \left(\frac{\omega_{fi} -\omega}{2}\right) T}{\frac{1}{2}(\omega_{fi} -\omega)} \right\rvert ^2 =  2\pi \delta (\omega-\omega_{fi} ) T\\
+		&\Rightarrow \lim_{T \to +\infty} T^{-1} \lvert a_f(T) \rvert ^2 = \lvert \braket{f|A|i}  \rvert ^2 \delta \big(\epsilon _f- (\epsilon _i +\omega)\big)
+	\end{split}
+\] 
+Partendo da $\epsilon _i$ e finendo in una densit\`a di stati $n(\epsilon _f)$, si ottiene il rate integrando:
+\begin{equation}
+	R = \int 2\pi \lvert \braket{f|A|i}  \rvert ^2 \delta \big(\epsilon _f - (\epsilon _i + \omega)	\big) n(\epsilon _f) \ d\epsilon _f = 2\pi \lvert \braket{f|A|i}  \rvert ^2 n(\epsilon _f)
+\end{equation}
 
 
 
@@ -3006,7 +3068,7 @@ Quindi per operatore di spin in rappresentazione di Heisenberg:
 	\end{split}
 \end{equation*}
 
-\subsubsection{Risonanza di spin}
+\subsubsection{Risonanza di spin}\label{mag2liv}
 Si prende $\mathbf{B}  = B_0 \hat{z} + \mathbf{B} _1 (t)$, con $\mathbf{B} _1(t) = \hat{x}B_1\cos \omega t + \hat{y} B_1 \sin \omega t$. 
 Scegliendo come Hamiltoniano $\hat{H}= - \gamma \mathbf{B} \cdot \hat{\mathbf{S} }$, si ha:
 \begin{equation}
@@ -3785,6 +3847,34 @@ Nella base $\mathcal{B} ' = \left\{ \ket{v_+} , \ket{v_-} , \ket{211} , \ket{21 
 \begin{equation}
 	[\hat{H}]_{\mathcal{B} '} = \begin{pmatrix} E_2^{(0)} - 3e Er_B & 0& 0&0\\0& E_2^{(0)} +3 e E r_B & 0& 0\\ 0 &0&E_2^{(0)} &0\\ 0&0&0&E_2^{(0)}  \end{pmatrix} 
 \end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
