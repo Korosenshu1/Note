@@ -489,7 +489,7 @@ La condizione di normalizzazione \`e:
 	\end{equation}
 \end{proof}
 \end{boxenv}
-\subsubsection{Flusso di probabilit\`a ed equazione di continuit\`a}
+\subsubsection{Flusso di probabilit\`a ed equazione di continuit\`a}\label{fp}
 
 Sistema composto da particella in 3D sotto potenziale $V(x)$. Sia $\psi (\mathbf{x} ,t)$ funzione d'onda per stato $\ket{\psi(t) } $. La probabilit\`a di trovare particella in una regione $\Gamma$ dello spazio \`e\footnote{I termini con il potenziale si cancellano perch\'e simmetrici, mentre quelli con $\nabla ^2$ no perch\'e in uno sar\`a derivato $\psi $, nell'altro $\psi ^*$.}:
 \begin{equation}
@@ -2537,7 +2537,51 @@ P(t; n \neq i) = \left\lvert c_n^{(0)} + c_n^{(1)} + \ldots \right\rvert ^2
 \] 
 \end{esempio}
 Questo \`e tutto consistente con quanto trovato dalla teoria perturbativa sviluppata finora, solo che si riesce a esprimere in maniera pi\`u sintetica ed elegante.
-
+\subsection{Dinamiche adiabatiche}
+Si assume di avere un Hamiltoniano $\hat{H}$ che dipende dal tempo \textit{molto lentamente} tramite un parametro $\lambda (t)$; in tal caso, si scriver\`a $\hat{H}[\lambda (t)]$.
+Si assume che, istante per istante, se ne conosca lo spettro tramite l'equazione
+\begin{equation}
+	\hat{H}[\lambda (t)] \ket{n,\lambda (t)} = E_n[\lambda (t)] \ket{n, \lambda (t)} 
+\end{equation}
+Si assume un'evoluzione da uno stato $\ket{n,\lambda (0)} $ a uno stato $\ket{n,\lambda (t_f)} $ e si assume che $\ket{n, \lambda (t)} $ sia una base completa ad ogni istante; in questo caso, si potr\`a scrivere
+\begin{equation}
+	\ket{\psi (t)}  = \sum_{n}^{} a_n(t) e^{i \alpha _n(t)} \ket{n, \lambda (t)} , \ \alpha _n (t) = - \frac{1}{\hbar } \int_{0} ^t E_n[\lambda (t')] dt'
+\end{equation}
+Questa scelta di come rappresentare i coefficienti della sovrapposizione sar\`a chiara pi\`u avanti per semplificazioni di calcoli.
+Inserendo questa combinazione lineare nell'equazione di Schr\"odinger time-dependent per l'evoluzione temporale $i\hbar \partial _t \ket{\psi (t)} = \hat{H}[\lambda (t)]\ket{\psi (t)} $, si trova che (posto $\hbar =1$):
+\[
+\begin{split}
+	i \sum_{n}^{} \bigg(\dot{a}_n(t) e^{i\alpha _n(t)} \ket{n,\lambda (t)} + &\cancel{a_n(t) \big(-iE_n [\lambda (t)]\big)e^{i\alpha _n(t)} \ket{n,\lambda (t)}} + a_n e^{i\alpha _n (t)} \partial _t \ket{n,\lambda (t)} \bigg) \\
+															     &= \cancel{\sum_{n}^{} a_n e^{i\alpha _n(t)} E_n[\lambda (t)] \ket{n, \lambda (t)} }
+\end{split}
+\] 
+Applicando il bra $\bra{m ,\lambda (t)} $ ai termini rimanenti, si trova che:
+\begin{equation}
+\dot{a}_m(t) e^{i\alpha _m(t)} = - \sum_{n}^{} a_n(t)e^{i\alpha _n(t)} \braket{m,\lambda (t)|\partial _t|n \lambda (t)} 
+\end{equation}
+Ora si deve calcolare l'elemento di matrice $\braket{m,\lambda (t)|\partial _t|n,\lambda (t)} $; per farlo, si deriva rispetto al tempo l'equazione $\hat{H}[\lambda (t)] \ket{n,\lambda (t)} = E_n[\lambda (t)] \ket{n,\lambda (t)} $:
+\[
+	\dot{\hat{H}}[\lambda (t)]\ket{n,\lambda (t)} + \hat{H}[\lambda (t)] \partial _T \ket{n, \lambda (t)}  = \dot{E}_n [\lambda (t)] \ket{n, \lambda (t)} + E_n [\lambda (t)] \partial _t \ket{n,\lambda (t)} 
+\] 
+Applicando $\bra{m, \lambda (t)} , \ m\neq n$, si ha: 
+\[
+	\begin{split}
+		&\braket{m, \lambda (t)|\dot{\hat{H}}[\lambda (t)|n , \lambda (t)}  + E_m[\lambda (t)] \braket{m, \lambda (t)|\partial _t|n,\lambda (t)} = E_n [\lambda (t)] \braket{m ,\lambda (t)|\partial _t|n , \lambda (t)} \\
+		&\Rightarrow \braket{m , \lambda (t)|\partial _t|n , \lambda (t)} = \frac{\braket{m , \lambda (t)|\dot{\hat{H}}[\lambda (t)]|n,\lambda (t)} }{E_n[\lambda (t)] - E_m [\lambda (t)]}
+	\end{split}
+\] 
+Partendo, come accennato, da $\ket{\psi (t=0)} = \ket{n,\lambda (0)} $, allora {\color{red} DA VERIFICARE}
+\begin{equation}
+	\dot{a}_m(t) = \sum_{n\neq m}^{} a_n(t) e^{i \big(\alpha _n(t) - \alpha _m(t)\big)} \frac{\braket{m,\lambda (t)|\hat{\dot{H}}[\lambda (t)]|n,\lambda (t)} }{E_n[\lambda (t)]- E_m[\lambda (t)]}
+\end{equation}
+Da questa, si ricava che 
+\begin{equation}
+	a_m(t) \approx \frac{\braket{m, \lambda (t)|\hat{\dot{H}}|n, \lambda (t)} }{(E_m - E_n)^2}
+\end{equation}
+e si trova una condizione di sufficiente \textit{lentezza} per lo sviluppo adiabatico, dove la derivata dell'Hamiltoniano \`e da confrontare con $(E_m - E_n)^2$.
+\begin{center}
+	Riprendere da lezione 46
+\end{center}
 \newpage 
 \section{Interazioni elettromagnetiche}
 \subsection{Introduzione}
@@ -2585,30 +2629,152 @@ Allo stesso tempo, si ha $[\hat{p}_i, \hat{p}_j ] = 0, \ i \neq j $; si vuole mo
 \end{boxenv}
 \noindent dove si \`e usato il fatto che, essendo $\hat{\vec{A}}$ funzione di $\hat{\vec{x}}$, vale $[\hat{p}_i , \hat{A}_j ] = - i \partial _t \hat{A}_j$.
 
+\subsubsection{Invarianza di Gauge}
 
+I campi elettrico e magnetico in termini dei potenziali sono espressi come:
+\begin{equation}
+	\vec{E} = - \nabla \phi - \frac{\partial \vec{A}}{\partial t} \hspace{1cm} \vec{B} = \nabla \times \vec{A}
+\end{equation}
+Questo porta una libert\`a di Gauge data da:
+\begin{equation}\label{gt}
+		\phi ' = \phi - \frac{1}{c}\frac{\partial \chi }{\partial t} \hspace{1cm} \vec{A}' = \vec{A} + \nabla \chi 
+\end{equation}
+con $\chi (\vec{r},t)$ generica funzione scalare sufficientemente liscia.
+In meccanica quantistica, queste sono chiaramente ancora valide e si pu\`o dimostrare che l'equazione di Schr\"odinger \`e lasciata inalterata se, oltre alle trasformazioni in \ref{gt}, si prende anche
+\begin{equation}
+	\psi '(\vec{r},t) = \psi(\vec{r},t) \exp \left[ \frac{iq}{\hbar c }\chi (\vec{r},t) \right] 
+\end{equation}
+\begin{proof}
+	Si prendono gli $\vec{A}', \phi '$ come in eq. \ref{gt}. 
+	Si mostra che il nuovo Hamiltoniano $\hat{H}' = \hat{H}(\phi ', \vec{A}')$ \`e tale da soddisfare $\hat{H}' \psi ' = i\hbar \partial _t \psi '$.
 
+	Si nota, intanto, che:
+	\[
+		\begin{split}
+			\left[- i \hbar \nabla  -\frac{q}{c}(\vec{A}+ \nabla \chi )\right] \psi e^{\frac{iq}{\hbar c}\chi } &= -i \hbar e^{\frac{iq}{\hbar c}\chi } \nabla \psi \cancel{+ \frac{q}{c} \psi e^{\frac{iq}{\hbar c}\chi } \nabla \chi }- \frac{q}{c}\vec{A} \psi e^{\frac{iq}{\hbar c}\chi } \cancel{- \frac{q}{c} \psi e^{\frac{iq }{\hbar c}\chi } \nabla \chi }\\
+															    & = e^{\frac{iq}{\hbar c}\chi }\left(\hat{\vec{p}}- \frac{q}{c}\vec{A}\right)  \psi 
+		\end{split}
+	\] 
+Riapplicando nuovamente lo stesso operatore, si trova $e^{\frac{iq}{\hbar c}\chi } \left(\hat{\vec{p}}-\frac{q}{c}\vec{A}\right) ^2 \psi $. 
+Scrivendo l'equazione di Shr\"odinger, si ha:
+\[
+	\begin{split}
+		&\cancel{e^{\frac{iq}{\hbar c}\chi }}\frac{1}{2m} \left(\hat{\vec{p}}- \frac{q}{c}\vec{A}\right)^2 \psi + q \cancel{e^{\frac{iq}{\hbar c}\chi } }\left(\phi \cancel{- \frac{1}{c}\frac{\partial \chi }{\partial t}} \right) \psi   = i\hbar \partial _t \left(\psi e^{\frac{iq}{\hbar c}\chi }   \right) =i \hbar \cancel{e^{\frac{iq}{\hbar c}\chi }} \partial _t \psi \cancel{- \frac{q}{c} e^{\frac{iq}{\hbar c}\chi } \psi  \partial _t \chi }\\
+		&\Rightarrow \frac{1}{2m}\left(\hat{\vec{p}}-\frac{q}{c}\vec{A}\right) \psi  + q\phi \psi = i\hbar \partial _t \psi 
+	\end{split}
+\] 
+che coincide proprio con l'equazione di Shr\"odinger originale per $\psi $.
+\end{proof}
+Usando l'invarianza di Gauge, si estende il concetto di \textit{flusso di probabilit\`a} a questo caso. 
+In \S\ref{fp}, si era definito
+\[
+\vec{J}= \Re \left\{ \psi ^* \hat{\vec{v}} \psi \right\} = \frac{i\hbar }{m}\Re \left\{ \psi ^* \nabla \psi  \right\} 
+\] 
+La formula pi\`u generale e corretta \`e:
+\begin{equation}
+	\vec{J}= \Re \left\{ \psi ^* \hat{\vec{v}} \psi \right\} 
+\end{equation}
+proprio perch\'e in questo modo risulta invariante sotto trasformazioni di Gauge.
+\subsection{Particella in campo magnetico}
+Si considera particella in campo magnetico $\vec{B}=B_z \hat{z}$. 
+Si scrive l'Hamiltoniano come:
+\begin{equation}
+	\hat{H} = \hat{H}_{xy} + \hat{H}_z = \frac{1}{2}m \left(\hat{v}_x^2 + \hat{v}_y^2\right) + \frac{1}{2}m \hat{v}_z^2
+\end{equation}
+dove il campo magnetico \`e inserito implicitamente in $\hat{\vec{v}}= \frac{1}{m}\left(\hat{\vec{p}}-\frac{q}{c}\vec{A}\right) $.
+Il motivo per cui si \`e diviso l'Hamiltoniano in quel modo sta nel seguente commutatore:
+\begin{equation}
+	[\hat{H}_{xy} , \hat{H}_z] =  0
+\end{equation}
+Questa relazione si mostra facilmente perch\'e $B_x = B_y = 0$.
+Questo implica che il problema \`e separabile nei due termini. 
 
+\vspace{.5cm}
+\noindent {\sffamily \bfseries Problema nel piano xy.}
+L'idea \`e di ricondurre $\hat{H}_{xy} $ all'Hamiltoniano di un oscillatore armonico unidimensionale.
+Nell'oscillatore armonico, lo spettro era dato da $\hbar \omega (n + 1 /2)$ perch\'e l'Hamiltoniano si riusciva a scrivere come $\hbar \omega (\hat{x}^2 + \hat{p}^2) / 2$, con $[\hat{x},\hat{p}] = i$ (dopo rinormalizzazione con le costanti del problema).
 
+In questo caso, si sa gi\`a scrivere l'Hamiltoniano in una forma analoga, infatti $\hat{H}_{xy}  = m(\hat{v}_x^2 + \hat{v}_y^2) / 2$. 
+Il problema sta nel commutatore che, definendo $\gamma = \sqrt{\hbar q B_z / m^2 c} $, \`e dato da $[\hat{v}_x,\hat{v}_y] = i \gamma$.
+Allora si definiscono $\hat{v}_x=\gamma \hat{q}$ e $\hat{v}_y = \gamma\hat{p}$, che soddisfano proprio $[\hat{q}, \hat{p}] = i$; allora, per questi, si trova che lo spettro \`e dato da
+\begin{equation}
+	\frac{\hbar q B_z}{mc}\left(n + \frac{1}{2}\right) \equiv \hbar \omega_c \left(n+\frac{1}{2}\right) , \ n = 0,1,\ldots
+\end{equation}
+visto che $\hat{H}_{xy} = \frac{1}{2}\left(\hat{p}^2 + \hat{q}^2\right) \frac{\hbar q B_z}{mc}$, con $\omega_c$ frequenza di ciclotrone.
 
+\vspace{.5cm}
+\noindent {\sffamily \bfseries Problema complessivo.}
+Ora si vuole ricavare lo spettro dell'Hamiltoniano totale $\hat{H}_{xy} + \hat{H}_z$.
+Avendo mostrato che $[\hat{H}_{xy} , \hat{H}_z] = 0$, il problema \`e separabile, quindi lo spettro risultante sar\`a la somma degli spettri. 
+Per quanto riguarda $\hat{H}_z$, lungo questa direzione non accade nulla e lo spettro \`e quello di una particella libera, cio\`e $p^2_z / 2m$.
+\subsection{Atomo in campo magnetico -- Effetto Zeeman}
+L'Hamiltoniano \`e:
+\begin{equation}
+	\begin{split}
+		\hat{H} &= \frac{1}{2m} \left(\hat{\vec{p}} + \frac{e}{c}\hat{\vec{A}}\right) ^2 - \frac{k}{\hat{r}} + \hat{\overline{P}} \\
+			&= \underbracket{\frac{\hat{p}^2}{2m} - \frac{k}{\hat{r}}}_{\hat{H}_0}  + \underbracket{\frac{e}{2cm}\left(\hat{\vec{p}} \cdot \hat{\vec{A}}+ \hat{\vec{A}}\cdot \hat{\vec{p}}\right) + \frac{e^2}{2mc^2} \hat{A}^2}_{\hat{P}} 
+	\end{split}
+\end{equation}
+dove si prende, per la scelta di Gauge, $\vec{A} = \frac{1}{2} \left(\vec{B}\times \vec{x}\right) $.
+In questo caso, l'Hamiltoniano $\hat{H}_0$ \`e quello dell'atomo di idrogeno, quindi si pu\`o risolvere il problema come perturbazione di $\hat{H}_0$.
+\begin{osservazione}
+Si nota che $\hat{\vec{p}}$ e $\hat{\vec{A}}$ commutano; passando in rappresentazione delle coordinate, infatti, si trova che $i \hbar  \nabla \cdot \vec{A} = \vec{A} \cdot i \hbar  \nabla + \hbar  (\nabla \cdot \vec{A})$.
+Per\`o $\nabla \cdot \vec{A} = 0$ perch\'e si \`e definito come un rotore, pertanto $\nabla \cdot A = A \cdot \nabla $.
+\end{osservazione}
+\noindent Per questa osservazione, la perturbazione \`e
+\begin{equation}
+	\hat{P} = \frac{e}{mc}\hat{\vec{A}}\cdot \hat{\vec{p}} + \frac{e^2}{2mc^2}\hat{A}^2
+\end{equation}
+In ipotesi di campo magnetico sufficientemente debole, si pu\`o trascurare il termine quadratico in $\hat{P}$.
+Si nota, poi, che:
+\[
+\vec{A}\cdot \vec{p} =\frac{1}{2} (\vec{B}\times \vec{x}) \cdot \vec{p} = \frac{1}{2} \varepsilon _{ijk} B_j x_k p_i = \frac{1}{2} \varepsilon _{jki} B_j x_k p_i= \frac{1}{2} \vec{B}\cdot (\vec{x}\times \vec{p}) = \frac{1}{2}\vec{B}\cdot \vec{L}
+\] 
+Allora, in approssimazione di campo magnetico debole:
+\begin{equation}
+	\hat{H} = \hat{H}_0 + \frac{e}{2mc} \hat{\vec{B}} \cdot \hat{\vec{L}} -\hat{ \vec{\mu }} \cdot \vec{B}
+\end{equation}
+dove si \`e considerata l'interazione spin-campo magnetico, con $\hat{\vec{\mu }} = \frac{e}{mc}\hat{\vec{S}}$.
 
+Si cerca una base in cui la perturbazione \`e diagonale. 
+Considerando anche lo spin, la base che si prende \`e $\ket{n\ell m} \otimes \ket{\frac{1}{2} s_z} $.
+Scegliendo un sistema di assi per cui $\vec{B} $ \`e parallelo a $\hat{z}$, si nota che la perturbazione \`e diagonale nella base appena riportata; il primo ordine di approssimazione dello sviluppo perturbativo \`e, dunque:
+\begin{equation}
+	E^{(1)} _{n\ell m s_z}  = \frac{e B_z}{2m_e c}\big(m - 2s_z\big)
+\end{equation}
+dove si \`e indicata, ora, la massa dell'elettrone con $m_e$ per distinguerla dal numero quantico $m$.
 
+\subsection{Atomo in campo elettromagnetico}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Si considera atomo di idrogeno soggetto a radiazione elettromagnetica, per cui l'Hamiltoniano complessivo \`e dato da\footnote{Si sottintende il simbolo di operatore.}:
+\begin{equation}
+	\hat{H} =\frac{1}{2m} \left(\vec{p} + \frac{e}{c} \vec{A}\right) ^2 + e \phi (x) + V(\vec{x}), \ V (\vec{x}) = - \frac{k}{r}
+\end{equation}
+L'idea \`e sempre di scrivere $\hat{H} = \hat{H}_0 + \hat{H}_I$, con $\hat{H}_I$ perturbazione e $\hat{H}_0$ Hamiltoniano dell'atomo di idrogeno.
+Con questa notazione, si trova che
+\[
+\hat{H}_I = -e \phi  + \frac{e}{2mc} \left(\vec{p}\cdot \vec{A} + \vec{A}\cdot \vec{p}\right) + \frac{e^2}{2mc^2}A^2
+\] 
+Si assume che la scala di grandezza su cui varia il campo elettrico (che \`e circa una lunghezza d'onda) sia molto pi\`u grande della grandezza dell'atomo e si trascura il campo magnetico\footnote{Quest'ultimo si pu\`o trascurare perch\'e varia con un fattore $\alpha  / c$ rispetto al campo elettrico, quindi di pu\`o vedere come effetto secondario (da controllare).}.
+In queste assunzioni, si pu\`o prendere $\vec{A} = 0 $ e $\vec{E} = - \nabla \phi $, quindi $\hat{H}_I = - e \phi $.
+Il potenziale scalare, vista la condizione $\vec{E} = - \nabla \phi $, si prende
+\begin{equation}
+	\phi (\vec{x}) = -\int_0^{\vec{x}} \vec{E}(\vec{x}',t) \cdot d \vec{x}'
+\end{equation}
+Avendo assunto il campo elettrico costante in questa regione di spazio, assumendo che l'atomo sia centrato in $\vec{x}= 0$, si pu\`o scrivere $\vec{E}(\vec{x}', t ) \simeq \vec{E} (0,t)$ e si pu\`o portare fuori dall'integrale, quindi $\phi (\vec{x}) \simeq - \vec{E}(0,t) \cdot \vec{x}$.
+In definitiva, si ha $\hat{H}_I = \vec{E}(0,t) \cdot \vec{d}$, con $\vec{d}= -e \vec{x}$.
+Ora si esplicita la dipendenza temporale del campo elettrico, per ottenere\footnote{La somma degli esponenziali complessi \`e per fare in modo che il risultato sia un valore reale (mancherebbe un fattore $1 / 2$ per avere $\vec{E}(0,0) = \vec{E}_0$).}:
+\begin{equation}
+	\hat{H}_I = \vec{E}_0 \cdot \vec{d} \left(e^{-i\omega t}  + e^{i\omega t} \right) 
+\end{equation}
+A $t=0$, si prepara il sistema in $\ket{i} $; dopo un certo tempo di interazione $T$, lo stato sar\`a una sovrapposizione del tipo $\sum_{n}^{} a_n(T) e^{-i E_n T } \ket{n} $, dove $a_n(T)$ \`e la \textit{probabilit\`a di transizione} (in realt\`a lo sarebbe il suo modulo quadro).
+Il primo ordine perturbativo di questa probabilit\`a \`e
+\[
+a_f^{(1)} = \frac{-e\vec{E}_0\braket{f|\vec{x}|i} }{\hbar } \frac{1- e^{i (\omega_{fi} -\omega) t } }{\omega_{fi} - \omega}+\frac{-e\vec{E}_0\braket{f|\vec{x}^\dagger |i} }{\hbar } \frac{1- e^{i (\omega_{fi} +\omega) t } }{\omega_{fi} + \omega}
+\] 
+Una condizione per avere transizione, quindi, \`e $\braket{f|\vec{x}|i} \neq 0 $.
+Si devono trovare, quindi, gli stati $\ket{f} $ per cui tale elemento di matrice \`e non-nullo.
+Si pu\`o dimostrare tramite il teorema di Wigner-Eckart (esercitazione) che gli unici $\ell _f $ ammessi tali che $\braket{n_f \ell _fm_f|\vec{x}|n_i \ell _i m_i} \neq 0$ sono $\ell _f = \ell _i, \ell _i \pm 1$.
 
 
 \newpage
