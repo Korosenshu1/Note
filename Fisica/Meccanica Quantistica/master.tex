@@ -2362,7 +2362,7 @@ cio\`e:
 con $\omega_{nm } = \epsilon _m - \epsilon _n$ (ottenuto dividendo per $e^{-i\epsilon _m t} $).
 Questa si pu\`o risolvere perturbativamente prendendo $a_k(t) = a_k^{(0)} + \lambda a_k^{(1)} (t) + \ldots$, da cui
 \begin{boxenv}[]
-\begin{equation}
+	\begin{equation}\label{prtemp}
 	i \lambda ^r \dot{a}_m^{(r)} (t) =  \lambda \sum_{n}^{} \lambda ^{r-1}  a_n^{(r-1)} e^{i \omega_{nm} t} \braket{m|\hat{P}(t)|n} 
 \end{equation}
 \end{boxenv}
@@ -2458,22 +2458,132 @@ Partendo da $\epsilon _i$ e finendo in una densit\`a di stati $n(\epsilon _f)$, 
 \begin{equation}
 	R = \int 2\pi \lvert \braket{f|A|i}  \rvert ^2 \delta \big(\epsilon _f - (\epsilon _i + \omega)	\big) n(\epsilon _f) \ d\epsilon _f = 2\pi \lvert \braket{f|A|i}  \rvert ^2 n(\epsilon _f)
 \end{equation}
+\subsubsection{Rappresentazione dell'interazione}
 
+Invece di scrivere il generico stato $\ket{\psi (t)}_S = \sum_{}^{} c_n(t) e^{-i E_n t} \ket{n} $, si scrive in una rappresentazione diversa, chiamata \textit{dell'interazione}:
+\begin{equation}
+	\ket{\psi (t)} _I \overset{\text{def}}{=} e^{i \hat{H}_0 t} \ket{\psi (t)}_S = e^{i \hat{H}_0 t}   \sum_{}^{} c_n(t) e^{-i E_n t} \ket{n} = \sum_{}^{} c_n(t) \ket{n} 
+\end{equation}
+cio\`e tutta la dipendenza temporale \`e gestita dai coefficienti $c_n(t)$ della perturbazione.
+In questa rappresentazione, l'equazione di Shr\"odinger diventa:
+\[
+	\begin{split}
+		i \partial _t \ket{\psi (t)} _I &= \left(-\hat{H}_0 e^{i \hat{H}_0 t} \ket{\psi (t)}_S \right) +e ^{i \hat{H}_0 t} (\hat{H}_0 + \hat{P}) \ket{\psi (t)} _S \\
+		&= e^{i \hat{H}_0 t} \hat{P}\ket{\psi (t)} _S = e^{i \hat{H}_0 t} \hat{P}(t) e^{-i \hat{H}_0 t} e^{i \hat{H}_0 t} \ket{\psi (t)} _S\\
+		&= \hat{P}_I(t) \ket{\psi (t)} _I
+	\end{split}
+\] 
+dove si \`e definito $\hat{P}_I(t)$ che \`e l'operatore di perturbazione in rappresentazione dell'interazione.
+Complessivamente, in questa rappresentazione, l'equazione di Shr\"odinger \`e:
+\begin{boxenv}[]
+\begin{equation}
+	i \partial _t \ket{\psi (t)} _I = \hat{P}_I(t) \ket{\psi (t)} _I
+\end{equation}
+\end{boxenv}
+Usando questo formalismo, si vuole ritrovare il risultato ottenuto in eq. \ref{prtemp}.
+Per farlo, si moltiplica per $\bra{n} $ l'equazione sopra:
+\[
+	\begin{split}
+		&\braket{n|\psi (t)} _I = \Braket{n|\sum_{n}^{} c_m(t)|m} = c_n(t)\\
+		&\begin{split}
+			\Rightarrow i \dot{c}_n(t) &= \sum_{m}^{} \braket{n|\hat{P}_I(t)|m} \underbracket{\braket{m|\psi (t)} _I}_{\equiv c_m(t)}  = \sum_{m}^{} \Braket{n|e^{i \hat{H}_o t} \hat{P}(t) e^{-i\hat{H}_0 t}|m} c_m(t) \\
+			&= \sum_{m}^{} e ^{i (E_n - E_m)t} \braket{n|\hat{P}(t)|m} c_m(t)\\
+		\end{split}\\
+		&\Rightarrow i \dot{c}_n(t)= \sum_{m}^{} P_{nm} (t) e^{i\omega_{nm} t} c_m(t)
+	\end{split}
+\] 
+Quindi questo formalismo si \`e dimostrato consistente con quanto trovato precedentemente.
 
+Ora si cerca una soluzione all'equazione di Schr\"odinger nella nuova rappresentazione $ i \partial _t \ket{\psi (t)} _I = \hat{P}_I (t) \ket{\psi (t)} _I$. 
+Si introduce, come visto anche per l'altro formalismo, un operatore di evoluzione temporale $U_I(t)$ tale che 
+\[
+\ket{\psi (t)} _I = U_I(t) \ket{\psi (t=0)} _I
+\] 
+che nel caso del formalismo di Schr\"odinger, in cui l'Hamiltoniano era indipendente dal tempo, si trovava essere $e^{-i \hat{H} t} $. 
+Non essendoci pi\`u indipendenza temporale, i vari operatori potrebbero non commutare pi\`u, quindi la forma non sar\`a un altro esponenziale.
+Inserendo questa espressione nell'equazione, si trova:
+\[
+	\begin{cases}
+		i \partial _t \hat{U}_I(t) = \hat{P}_I(t) \hat{U}_I(t)\\
+		\hat{U}_I(0) = 1
+	\end{cases}
+\] 
+La soluzione di questa si esprime tramite il \textit{T-prodotto}:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{split}
+		\hat{U}_I(t) &= 1 - i \int_{0} ^t \hat{P}_I(t') dt' + (-i)^2 \int_{0} ^t dt' \int_{0} ^{t'} dt'' \hat{P}_I(t') \hat{P}_I(t'') + \ldots\\
+			     &= \mathcal{T}  e^{-i \int_{0} ^t \hat{P}(t') dt'} 
+	\end{split}
+\end{equation}
+\end{boxenv}
+\noindent In questa espressione, si nota che i termini da sinistra verso destra (che sono perturbazioni) sono tutti uno pi\`u piccolo del precedente.
+\begin{esempio}
+Si immagina che $\ket{i} = \ket{\psi (t=0)} _S = \ket{\psi (t=0)} _I$; conseguentemente, usando $\ket{\psi (t)} _I = \hat{U}_I(t) \ket{i} $, si ha
+\[
+\begin{split}
+	&\sum_{n}^{} c_n(t) \ket{n} = \sum_{n}^{} \ket{n} \braket{n|\hat{U}_I(t)|i} \implies c_n(t) = \braket{N|\hat{U}_I(t)|i} 
+\end{split}
+\] 
+Da questa espressione, si trova uno sviluppo perturbativo per i coefficienti perch\'e $\hat{U}_I(t)$ \`e in potenze di $\hat{P}(t)$.
+Intanto, risulta $c^{(0)} _n = \delta _{ni} $ perch\'e all'ordine $0$, $\hat{U}_I(t)$ \`e l'identit\`a.
+Si trova facilmente il primo ordine come:
+\[
+c^{(1)} _n (t) = \Braket{n|-i \int_{0} ^t \hat{P}_I(t') dt'|i} = - i \int_{0} ^t dt' \ e^{i \omega_{ni} t} \braket{n|\hat{P}(t')|i} 
+\] 
+La probabilit\`a ad un tempo $t$ che si misuri il sistema in uno stato $n$ \`e proprio 
+\[
+P(t; n \neq i) = \left\lvert c_n^{(0)} + c_n^{(1)} + \ldots \right\rvert ^2 
+\] 
+\end{esempio}
+Questo \`e tutto consistente con quanto trovato dalla teoria perturbativa sviluppata finora, solo che si riesce a esprimere in maniera pi\`u sintetica ed elegante.
 
+\newpage 
+\section{Interazioni elettromagnetiche}
+\subsection{Introduzione}
 
+La Lagrangiana per un'interazione elettromagnetica, scritta in termini dei potenziali scalare $\phi $ e vettore $\vec{A}$, \`e:
+\begin{equation}
+	\mathcal{L } = \frac{mv^2}{2} - q \phi + \frac{q}{c}\vec{v}\cdot \vec{A}
+\end{equation}
+L'impulso coniugato, a partire da questa, \`e dato da:
+\begin{equation}
+	\vec{p}= \frac{\partial \mathcal{L} }{\partial \dot{\vec{x}}} = m\vec{v}+ \frac{q}{c}\vec{A}
+\end{equation}
+Tramite trasformata di Legendre, si ottiene l'Hamiltoniana:
+\begin{equation}
+	\begin{split}
+		H &= \frac{mv^2}{2} + q \phi  = \frac{1}{2m}\left(\vec{p} - \frac{q}{c}\vec{A}\right) ^2 + q\phi \\
+		  & = \frac{p^2}{2m} - \frac{q}{2m}\vec{p}\cdot \vec{A} + \frac{q^2}{2mc^2}A^2 + q\phi 
+	\end{split}
+\end{equation}
+Per passare alla formulazione quantistica, si estende l'Hamiltoniana ad operatore Hamiltoniano definendo $\hat{\vec{A}} \overset{\text{def}}{=} \vec{A} (\hat{\vec{x}},t)$ e $\hat{\phi }\overset{\text{def}}{=} \phi (\hat{\vec{x}},t)$; in questo modo, l'ipotesi di Hamiltoniano per l'interazione elettromagnetica \`e:
+\begin{boxenv}[]
+\begin{equation}
+	\hat{H} = \frac{1}{2m} \left(\hat{\vec{p}}- \frac{q}{c}\hat{\vec{A}}\right) ^2 + q \hat{\phi }
+\end{equation}
+\end{boxenv}
+\subsubsection{L'operatore velocit\`a}
 
-
-
-
-
-
-
-
-
-
-
-
+Per calcoli a seguire, torna utile definire e studiare l'operatore velocit\`a, la cui definizione si pu\`o ricondurre a 
+\begin{equation}
+	\hat{\vec{v}}=\frac{i}{\hbar } [\hat{H},\hat{\vec{x}}] = \frac{1}{m} \left(\hat{\vec{p}} - \frac{1}{c} \hat{\vec{A}}\right) 
+\end{equation}
+consistentemente con quanto si sarebbe immaginato.
+Visto che \`e ancora soddisfatta la regola di commutazione $[\hat{x}_i , \hat{p}_j ] = i \delta _{ij} $, allora si trova:
+\begin{equation}
+	[\hat{x}_i , \hat{v}_j] = \frac{i}{m}\delta _{ij} 
+\end{equation}
+Allo stesso tempo, si ha $[\hat{p}_i, \hat{p}_j ] = 0, \ i \neq j $; si vuole mostrare che \`e valido anche per la velocit\`a:
+\begin{boxenv}[]
+\begin{equation}
+\begin{split}
+	[\hat{v}_i, \hat{v}_j] &= \frac{1}{m^2}\left[ \hat{p}_i - \frac{q}{c}\hat{A}_i , \hat{p}_j - \frac{q}{c}\hat{A}_j \right] = \frac{i\hbar q}{m^2c}\left(\nabla \times \hat{\vec{A}}\right) _k\\
+			       &=\frac{i\hbar q}{m^2c}\epsilon _{ijk} B_k
+\end{split}
+\end{equation}
+\end{boxenv}
+\noindent dove si \`e usato il fatto che, essendo $\hat{\vec{A}}$ funzione di $\hat{\vec{x}}$, vale $[\hat{p}_i , \hat{A}_j ] = - i \partial _t \hat{A}_j$.
 
 
 
@@ -3847,6 +3957,84 @@ Nella base $\mathcal{B} ' = \left\{ \ket{v_+} , \ket{v_-} , \ket{211} , \ket{21 
 \begin{equation}
 	[\hat{H}]_{\mathcal{B} '} = \begin{pmatrix} E_2^{(0)} - 3e Er_B & 0& 0&0\\0& E_2^{(0)} +3 e E r_B & 0& 0\\ 0 &0&E_2^{(0)} &0\\ 0&0&0&E_2^{(0)}  \end{pmatrix} 
 \end{equation}
+
+\subsubsection{Perturbazione spin-posizione}
+Si considera un atomo di idrogeno soggetto ad una perturbazione $\hat{W} = \hat{\vec{S}}\cdot \hat{\vec{r}}$, quindi con Hamiltoniano complessivo dato da $\hat{H} = \hat{H}_0 + \lambda \hat{W}$.
+Lo spin \`e rappresentato dalle matrici di Pauli $\hat{\vec{S}}= \frac{\hbar}{2} \vec{\sigma }$ e $\hat{\vec{r}} = (\hat{x},\hat{y},\hat{z})$.
+
+Si considera, inizialmente, come base dello spazio di Hilbert del sistema quella data da $\ket{n \ell m} \otimes \ket{s s_z} \equiv \ket{n\ell m ss_z} $, con $s$ e $s_z$ riferiti, rispettivamente, a $\hat{S}^2$ e $\hat{S}_z$.
+In questo caso, si avr\`a $s = 1 / 2 $ per via dello spin dell'elettrone.
+L'obiettivo \`e calcolare la correzione al primo livello energetico eccitato ($n=2$).
+
+Si ricorda che la degenerazione di questo sistema, per via dello spin, \`e $2n^2$; per $n=2$, si ha degenerazione $8$, il che porta al calcolo di una matrice di $64$ elementi totali per studiare il primo ordine perturbativo, la cui espressione \`e
+\[
+W_{\ell ,\ell ',s_z,s'_z} = \Braket{\ell m \frac{1}{2}s_z|\hat{W}|\ell ' m' \frac{1}{2} s'_z} 
+\] 
+In questa espressione si \`e trascurato il numero quantico $n=2$ perch\'e superfluo, visto che si intende rimanere nell'autospazio associato alla sua degenerazione.
+
+L'obiettivo, ora, \`e di individuare le regole di selezione del problema per evitare il calcolo dei 64 elementi di matrice. 
+Di questi, si sa subito che $36$ sono indipendenti perch\'e la matrice \`e Hermitiana, quindi ci sono $8 $ gradi di libert\`a reali sulla diagonale e $n(n-1) / 2 = 28$ gradi di libert\`a complessi fuori diagonale, per un totale di $36$ elementi.
+\vspace{.5cm}
+
+\noindent \textbf{Parit\`a.} Si nota che, sotto parit\`a, $\hat{W}$ \`e dispari:
+\[
+\hat{\mathcal{P} } \hat{\vec{S}}\cdot \hat{\vec{r}}\hat{\mathcal{P} }= \hat{\mathcal{P} } \hat{\vec{S}}\hat{\mathcal{P} } \cdot \hat{\mathcal{P} }\hat{\vec{r}}\hat{\mathcal{P} }= - \hat{\vec{S}}\cdot \hat{\vec{r}}
+\] 
+visto che $\hat{\vec{S}}$ \`e invariante sotto parit\`a. 
+Visto che gli operatori scalari rispetto al momento angolare orbitale sono invarianti per parit\`a, allora $\hat{W}$ non \`e scalare rispetto a $\hat{\vec{L}}$ (questo si user\`a pi\`u avanti).
+
+Gli stati della base scelta hanno parit\`a definita da $\ell $ e si sa che 
+\[
+\braket{\ell m|\hat{W}|\ell 'm'} = (-1)^{\ell  + \ell ' + 1}  \braket{\ell m|\hat{W}|\ell ' m'} 
+\] 
+quindi quelli stati con $\ell + \ell ' + 1$ dispari hanno elemento di matrice nullo.
+Avendo $n=2$, sono possibili $\ell = 0 ,1$, quindi si ha
+\[
+\Braket{\ell =0, m =0|\hat{W}|\ell '=0, m' = 0} =0 \hspace{1cm} \Braket{\ell =1, m|\hat{W}|\ell ' = 1, m'} =0
+\] 
+In questo modo, si devono calcolare solo elementi di matrice per $\ell \neq \ell '$, per un totale di $12$ elementi della forma
+\[
+\Braket{\ell =0,m=0, \frac{1}{2} , s_z|\hat{W}|\ell ' = 1 , m ' , \frac{1}{2}, s_z} 
+\] 
+\vspace{.5cm}
+
+\noindent \textbf{Commutazione con il momento angolare.} Nella trattazione dell'effetto Stark, si \`e visto che 
+\begin{equation}
+	\left[ \hat{L}_z , \hat{V} \right]  = 0 \implies \braket{\ell ' m'|\hat{V}|\ell m} \propto \delta _{\ell \ell '} \delta _{mm'} 
+\end{equation}
+Si vorrebbe sfruttare questa propriet\`a in questo caso, ma, sottintendendo la somma sugli indici ripetuti:
+\[
+	[\hat{L}_i , \hat{W}] = [\hat{L}_i, \hat{S}_j \hat{r}_j] = \hat{S}_j [\hat{L}_i, \hat{r}_j] = i\hbar \varepsilon _{ijk} \hat{S}_j \hat{r}_k
+\] 
+visto che $[\hat{L}_i, \hat{S}_j] = 0 $. 
+Questo implica che $[\hat{L}_z , \hat{W}] = i \hbar (\hat{S}_x \hat{y} - \hat{S}_y \hat{x})$, che \`e diverso da $0$: come si era accennato prima, $\hat{W}$ non \`e scalare rispetto a $\hat{L}$.
+
+Tuttavia, si nota che $\hat{W}$ \`e scalare rispetto a $\hat{\vec{J}}$:
+\[
+	[\hat{J}_i, \hat{S}_j \hat{r}_j] = [\hat{L}_i + \hat{S}_i, \hat{S}_j \hat{r}_j] = \hat{S}_j [ \hat{L}_i,\hat{r}_j] + [\hat{S}_i, \hat{S}_j] \hat{r}_j = i\hbar \varepsilon _{ijk} (\hat{S}_j \hat{r}_k + \hat{S}_k \hat{r}_j) = 0
+\] 
+L'espressione finale risulta nulla perch\'e, sotto scambio di indici, $\epsilon _{ijk} $ \`e antisimmetrico, mentre la parentesi \`e simmetrica.
+
+La relazione che viene soddisfatta in questo caso \`e 
+\begin{equation}
+	[\hat{J}_z, \hat{W}] =0 \implies \Braket{JM|\hat{W}|J'M'} \propto \delta _{JJ'} \delta _{MM'} 
+\end{equation}
+Si utilizzer\`a, allora, la base $\ket{n \ell s J M} $ per sfruttare questa regola di selezione e poi si torner\`a all'originale tramite i coefficienti di Clebsch-Gordan.
+Anche nella nuova base, la precedente regola di selezione salva solamente gli stati con $\ell $ diverso, quindi si calcolano elementi della forma
+\[
+\Braket{0, \frac{1}{2}, J,M|\hat{W}|1 , \frac{1}{2}, J' ,M'} 
+\] 
+Applicando l'attuale regola di selezione, gli elementi di sopra devono necessariamente essere della forma
+\[
+\Braket{0, \frac{1}{2}, J,M|\hat{W}|1 , \frac{1}{2}, J ,M} 
+\] 
+Per $\ell =0$, si ha $m=0$; valendo anche $s_z = \pm 1 / 2$ ed essendo $M = m + s_z$, allora $J = 1 / 2$; pertanto si distinguono soltanto due elementi di matrice da calcolare:
+\begin{equation}
+	\phi _{\pm} = \Braket{0, \frac{1}{2}, \frac{1}{2}, M = \pm \frac{1}{2}|\hat{W}|1, \frac{1}{2}, \frac{1}{2}, M = \pm \frac{1}{2}} 
+\end{equation}
+\vspace{.5cm}
+
+Ora si usano i coefficienti di Clebsch-Gordan per tornare alla base precedente.
 
 
 
