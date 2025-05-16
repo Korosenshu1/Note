@@ -2539,11 +2539,11 @@ P(t; n \neq i) = \left\lvert c_n^{(0)} + c_n^{(1)} + \ldots \right\rvert ^2
 Questo \`e tutto consistente con quanto trovato dalla teoria perturbativa sviluppata finora, solo che si riesce a esprimere in maniera pi\`u sintetica ed elegante.
 \subsection{Dinamiche adiabatiche}
 Si assume di avere un Hamiltoniano $\hat{H}$ che dipende dal tempo \textit{molto lentamente} tramite un parametro $\lambda (t)$; in tal caso, si scriver\`a $\hat{H}[\lambda (t)]$.
-Si assume che, istante per istante, se ne conosca lo spettro tramite l'equazione
+Si assume che, istante per istante, se ne conosca lo spettro (e che questo sia non-degenere) tramite l'equazione
 \begin{equation}
 	\hat{H}[\lambda (t)] \ket{n,\lambda (t)} = E_n[\lambda (t)] \ket{n, \lambda (t)} 
 \end{equation}
-Si assume un'evoluzione da uno stato $\ket{n,\lambda (0)} $ a uno stato $\ket{n,\lambda (t_f)} $ e si assume che $\ket{n, \lambda (t)} $ sia una base completa ad ogni istante; in questo caso, si potr\`a scrivere
+Si assume un'evoluzione da uno stato $\ket{n,\lambda (0)} $ a uno stato $\ket{n,\lambda (t_f)} $\footnote{Cio\`e dopo un certo tempo di evoluzione, lo stato finale non diventa una sovrapposizione, ma rimane lo stesso stato con parametro $\lambda $ aggiornato all'ultimo istante.} e si assume che $\ket{n, \lambda (t)} $ sia una base completa ad ogni istante; in questo caso, si potr\`a scrivere
 \begin{equation}
 	\ket{\psi (t)}  = \sum_{n}^{} a_n(t) e^{i \alpha _n(t)} \ket{n, \lambda (t)} , \ \alpha _n (t) = - \frac{1}{\hbar } \int_{0} ^t E_n[\lambda (t')] dt'
 \end{equation}
@@ -2561,7 +2561,7 @@ Applicando il bra $\bra{m ,\lambda (t)} $ ai termini rimanenti, si trova che:
 \end{equation}
 Ora si deve calcolare l'elemento di matrice $\braket{m,\lambda (t)|\partial _t|n,\lambda (t)} $; per farlo, si deriva rispetto al tempo l'equazione $\hat{H}[\lambda (t)] \ket{n,\lambda (t)} = E_n[\lambda (t)] \ket{n,\lambda (t)} $:
 \[
-	\dot{\hat{H}}[\lambda (t)]\ket{n,\lambda (t)} + \hat{H}[\lambda (t)] \partial _T \ket{n, \lambda (t)}  = \dot{E}_n [\lambda (t)] \ket{n, \lambda (t)} + E_n [\lambda (t)] \partial _t \ket{n,\lambda (t)} 
+	\dot{\hat{H}}[\lambda (t)]\ket{n,\lambda (t)} + \hat{H}[\lambda (t)] \partial _t \ket{n, \lambda (t)}  = \dot{E}_n [\lambda (t)] \ket{n, \lambda (t)} + E_n [\lambda (t)] \partial _t \ket{n,\lambda (t)} 
 \] 
 Applicando $\bra{m, \lambda (t)} , \ m\neq n$, si ha: 
 \[
@@ -2570,21 +2570,26 @@ Applicando $\bra{m, \lambda (t)} , \ m\neq n$, si ha:
 		&\Rightarrow \braket{m , \lambda (t)|\partial _t|n , \lambda (t)} = \frac{\braket{m , \lambda (t)|\dot{\hat{H}}[\lambda (t)]|n,\lambda (t)} }{E_n[\lambda (t)] - E_m [\lambda (t)]}
 	\end{split}
 \] 
-Partendo, come accennato, da $\ket{\psi (t=0)} = \ket{n,\lambda (0)} $, allora {\color{red} DA VERIFICARE}
+Partendo, come accennato, da $\ket{\psi (t=0)} = \ket{n,\lambda (0)} $, allora\footnote{\color{red} In teoria la somma non dovrebbe essere su $n$; da controllare perch\'e non dovrebbe essere ben definito quando $m = n$.}:
 \begin{equation}
-	\dot{a}_m(t) = \sum_{n\neq m}^{} a_n(t) e^{i \big(\alpha _n(t) - \alpha _m(t)\big)} \frac{\braket{m,\lambda (t)|\hat{\dot{H}}[\lambda (t)]|n,\lambda (t)} }{E_n[\lambda (t)]- E_m[\lambda (t)]}
+	\dot{a}_m(t) = -\sum_{n}^{} a_n(t) e^{i \big(\alpha _n(t) - \alpha _m(t)\big)} \frac{\braket{m,\lambda (t)|\hat{\dot{H}}[\lambda (t)]|n,\lambda (t)} }{E_n[\lambda (t)]- E_m[\lambda (t)]}
 \end{equation}
-Da questa, si ricava che 
+Si assume che, inizialmente, il sistema sia preparato nello stato $\ket{n, \lambda (0)} $, quindi $a_n(0) = 1$ e $a_m(0) = 0 $ se $m\neq n$.
+Per uno stato $m\neq n$, assumendo una piccolissima dipendenza temporale, cio\`e che l'evoluzione temporale praticamente non fa discostare il sistema dalle condizioni iniziali, si pu\`o scrivere
+\begin{equation}\label{eqr}
+	\dot{a}_m(t) \approx  e^{i \big(\alpha _n(t) - \alpha _m(t)\big)} \frac{\braket{m , \lambda (t)|\hat{\dot{H}}|n,\lambda (t)} }{E_n[\lambda (t)] - E_m[\lambda (t)]}
+\end{equation}
+dove si \`e usato che $a_n(0) = 1$ e si \`e ridotta la serie al solo termine $n$-esimo perch\'e tutti gli altri sono nulli per condizioni iniziali.
+Si immagina, inoltre, che la variazione sia talmente minima da rendere il coefficiente dell'esponenziale in \ref{eqr} come costante nel tempo e da poter approssimare l'esponente come la differenza delle energie:
 \begin{equation}
-	a_m(t) \approx \frac{\braket{m, \lambda (t)|\hat{\dot{H}}|n, \lambda (t)} }{(E_m - E_n)^2}
+	\dot{a}_m(t) \approx e^{-i (E_n - E_m)t} \frac{\braket{m , \lambda (t)|\hat{\dot{H}}|n,\lambda (t)} }{E_n[\lambda (t)] - E_m[\lambda (t)]}
 \end{equation}
-e si trova una condizione di sufficiente \textit{lentezza} per lo sviluppo adiabatico, dove la derivata dell'Hamiltoniano \`e da confrontare con $(E_m - E_n)^2$.
-\begin{center}
-	Riprendere da lezione 46
-\end{center}
-\newpage 
-\section{Interazioni elettromagnetiche}
-\subsection{Introduzione}
+Questa, ora, si sa integrare e diventa:
+\begin{equation}
+	a_m(t) \approx \frac{\braket{m , \lambda (t)|\hat{\dot{H}}|n,\lambda (t)} }{\Big(E_n[\lambda (t)] - E_m[\lambda (t)]\Big) ^2}\left(e^{-i(E_n - E_m) t} -1\right)  
+\end{equation}
+
+\subsection{Interazioni elettromagnetiche}
 
 La Lagrangiana per un'interazione elettromagnetica, scritta in termini dei potenziali scalare $\phi $ e vettore $\vec{A}$, \`e:
 \begin{equation}
@@ -2675,7 +2680,7 @@ La formula pi\`u generale e corretta \`e:
 	\vec{J}= \Re \left\{ \psi ^* \hat{\vec{v}} \psi \right\} 
 \end{equation}
 proprio perch\'e in questo modo risulta invariante sotto trasformazioni di Gauge.
-\subsection{Particella in campo magnetico}
+\subsubsection{Particella in campo magnetico}
 Si considera particella in campo magnetico $\vec{B}=B_z \hat{z}$. 
 Si scrive l'Hamiltoniano come:
 \begin{equation}
@@ -2707,7 +2712,7 @@ visto che $\hat{H}_{xy} = \frac{1}{2}\left(\hat{p}^2 + \hat{q}^2\right) \frac{\h
 Ora si vuole ricavare lo spettro dell'Hamiltoniano totale $\hat{H}_{xy} + \hat{H}_z$.
 Avendo mostrato che $[\hat{H}_{xy} , \hat{H}_z] = 0$, il problema \`e separabile, quindi lo spettro risultante sar\`a la somma degli spettri. 
 Per quanto riguarda $\hat{H}_z$, lungo questa direzione non accade nulla e lo spettro \`e quello di una particella libera, cio\`e $p^2_z / 2m$.
-\subsection{Atomo in campo magnetico -- Effetto Zeeman}
+\subsubsection{Atomo in campo magnetico -- Effetto Zeeman}
 L'Hamiltoniano \`e:
 \begin{equation}
 	\begin{split}
@@ -2744,7 +2749,7 @@ Scegliendo un sistema di assi per cui $\vec{B} $ \`e parallelo a $\hat{z}$, si n
 \end{equation}
 dove si \`e indicata, ora, la massa dell'elettrone con $m_e$ per distinguerla dal numero quantico $m$.
 
-\subsection{Atomo in campo elettromagnetico}
+\subsubsection{Atomo in campo elettromagnetico}
 
 Si considera atomo di idrogeno soggetto a radiazione elettromagnetica, per cui l'Hamiltoniano complessivo \`e dato da\footnote{Si sottintende il simbolo di operatore.}:
 \begin{equation}
@@ -2776,6 +2781,203 @@ Una condizione per avere transizione, quindi, \`e $\braket{f|\vec{x}|i} \neq 0 $
 Si devono trovare, quindi, gli stati $\ket{f} $ per cui tale elemento di matrice \`e non-nullo.
 Si pu\`o dimostrare tramite il teorema di Wigner-Eckart (esercitazione) che gli unici $\ell _f $ ammessi tali che $\braket{n_f \ell _fm_f|\vec{x}|n_i \ell _i m_i} \neq 0$ sono $\ell _f = \ell _i, \ell _i \pm 1$.
 
+\newpage
+\section{Simmetrie}
+\begin{definizione}[Definizione di simmetria]
+Data una trasformazione $\hat{O}$ (tipo una rotazione) e dati due stati di un sistema $\ket{\psi _1} , \ket{\psi _2} $, si dice che $\hat{O}$ \`e una simmetria per il sistema se, per $\ket{\psi _1'} = \hat{O}\ket{\psi _1} , \ket{\psi _2'} = \hat{O} \ket{\psi _2} $, si ha:
+\begin{equation}
+	\lvert \braket{\psi _1|\psi _2}  \rvert = \lvert \braket{\psi _1'|\psi _2'}  \rvert 
+\end{equation}
+\end{definizione}
+Il teorema di Wigner permette di concludere che operatori che sono simmetrie per un sistema possono essere rappresentati tramite operatori unitari $\hat{U} ^{-1} = \hat{U}^\dagger $ o tramite operatori \textit{anti-unitari}.
+Questi ultimi sono operatori che soddisfano ancora $\hat{A}^{-1} = \hat{A}^\dagger $, ma invece di essere lineari, soddisfano $\hat{A}\left(a \ket{\psi _1} +b \ket{\psi _2}\right)  = a^* \hat{A}\ket{\psi _1} + b^* \hat{A}\ket{\psi _2} $.
+\subsection{Parit\`a e time reversal}
+Entrambi questi operatori sono definiti in base a come si dovrebbero comportare su posizione, momento e momento angolare:
+\begin{equation}
+	\begin{split}
+		&\hat{P}_a \hat{x}\hat{P}_a^{-1} = - \hat{x} \hspace{1cm}\hat{P}_a \hat{p}\hat{P}_a^{-1} = - \hat{p} \hspace{1cm} \hat{P}_a \hat{J}\hat{P}_a^{-1} =  \hat{J} \\
+		&\hat{T} \hat{x}\hat{T}^{-1} =  \hat{x} \hspace{1cm}\hat{T} \hat{p}\hat{T}^{-1} = - \hat{p} \hspace{1cm} \hat{T} \hat{J}\hat{T}^{-1} =  - \hat{J} 
+	\end{split}
+\end{equation}
+Si mostra che, per come sono definiti, la parit\`a sar\`a un operatore unitario, mentre il time reversal sar\`a anti-unitario.
+
+Dovendo essere $[\hat{x},\hat{p}] = i \hbar $, per consistenza, deve valere $[\hat{x}_p , \hat{p}_p] = i \hbar $, con $\hat{O}_p = \hat{P}_a \hat{O}\hat{P}_a^{-1}$. 
+Visto che
+\[
+	\begin{split}
+		[\hat{x}_p, \hat{p}_p] &= \hat{P}_a \hat{x}\hat{P}_a^{-1}\hat{P}_a \hat{p}\hat{P}_a^{-1} -  \hat{P}_a \hat{p}\hat{P}_a^{-1}\hat{P}_a \hat{x}\hat{P}_a^{-1} = \hat{P}_a \hat{x} \hat{p}\hat{P}_a^{-1} -  \hat{P}_a \hat{p}\hat{x}\hat{P}_a^{-1}\\
+				       &= \hat{P}_a [\hat{x},\hat{p}] \hat{P}_a^{-1} = \hat{P}_a i \hbar \hat{P}_a^{-1} \stackrel{!}{=} i\hbar 
+	\end{split}
+\] 
+Perch\'e l'uguaglianza sia verificata, $\hat{P}_a $ deve essere lineare, quindi \`e unitario.
+
+Ripetendo la stessa logica con il time reversal, dovendo risultare $[\hat{x}_T, \hat{p}_T] = - i\hbar $, allora deve essere $\hat{T} i\hbar \hat{T}^{-1} = - i\hbar $, che \`e verificato solamente se $\hat{T}$ \`e anti-lineare, quindi anti-unitario.
+
+\subsubsection{L'operatore parit\`a}
+
+L'operatore parit\`a, oltre a essere unitario, \`e anche, conseguentemente, Hermitiano perch\'e soddisfa $\hat{P}_a^2 = \operatorname{Id} \Rightarrow  \hat{P}_a = \hat{P}_a^\dagger $.
+
+Per ottenere l'effetto che la parit\`a ha su un autostato della posizione $\ket{x} $, si considera che:
+\[
+\begin{split}
+	&\hat{P}_a \hat{x}\ket{x}  = \hat{P}_a x \ket{x}  = x \hat{P}_a \ket{x} \\
+	& \hat{P}_a \hat{x} \ket{x}  = \hat{P}_a \hat{x}\hat{P}_a^{-1} \hat{P}_a \ket{x}  = -\hat{x} \hat{P}_a \ket{x} 
+\end{split}\implies \hat{P}_a \ket{x}  = \ket{-x}  
+\] 
+Si usa questo per capire come agisce su una funzione d'onda. 
+Visto che, \textbf{per definizione}, si ha $\hat{P}_a \psi (x) \overset{\text{def}}{=} \braket{x|\hat{P}_a|\psi} $, si trova che:
+\[
+\hat{P}_a \psi (x) = \braket{x|\hat{P}_a|\psi } = \braket{-x|\psi } = \psi (-x)
+\] 
+visto che $\hat{P}_a$ \`e Hermitiano e si pu\`o far agire su $\bra{x} $.
+
+Un'altra proprit\`a importante deriva dal fatto che $\hat{P}_a ^2 = \operatorname{Id} $, il che implica che gli autovalori della parit\`a sono $\lambda _P = \pm 1$.
+Per quanto motivo, se si trova che $[\hat{H},\hat{P}_a] = 0$, il che implica che si pu\`o trovare una base comune ad entrambi, significa che le autoenergie devono avere parit\`a definita.
+
+Questa parit\`a si conserva anche nel tempo; infatti, assumendo sempre che $[\hat{P}_a, \hat{H}] = 0$, facendo evolvere temporalmente $\psi (x,t) $ secondo $i \partial _t \psi (x,t) = \hat{H} \psi (x,t)$ con l'assunzione che $\hat{P}_a \psi (x,0) = \pm \psi (x,0)$, visto che $\psi (x,t) = e ^{- i \hat{H} t} \psi (x,0)$, si ha:
+\[
+\hat{P}_a \psi (x,t) = \hat{P}_a e^{- i \hat{H}  t} \psi (x,0) = e ^{- i \hat{H} t}  \hat{P}_a \psi (x,0) =\pm e^{ - i \hat{H} t} \psi (x,t)
+\] 
+visto che, per assunzione, $\hat{P_a}$ commuta con $\hat{H}$.
+
+Prendendo, ora, gli autostati del momento angolare $\ket{\ell m} $, si vuole capire come la parit\`a agisce su questi.
+Si pu\`o dimostrare che una trasformazione sotto parit\`a \`e tale per cui $Y_{\ell } ^m (\theta , \varphi ) \to Y_\ell ^m (\pi - \theta , \varphi + \pi) = (-1)^\ell Y_\ell ^m (\theta ,\varphi )$, per cui
+\[
+\hat{P}_a \ket{n\ell m} = (-1)^\ell \ket{n\ell m} 
+\] 
+Da questo \`e evidente che, per la composizione di due momenti angolari, si ha:
+\[
+\hat{P}_a \ket{\ell _1 \ell _2 JM} = \sum_{}^{} C^{JM} _{\ell _1\ell _2 m_1m_2} \hat{P}_a\ket{\ell _1 m_1} \otimes \ket{\ell _2 m_2} = (-1)^{\ell _1 + \ell _2} \ket{\ell _1 \ell _2 JM} 
+\] 
+Per finire, si pu\`o vedere come la parit\`a agisce sull'operatore momento di dipolo elettrico $\hat{d}= \sum_{i}^{} q_i \hat{x}_i$.
+Sia $\ket{\psi } $ autostato di $\hat{H}$, cio\`e $\hat{H} \ket{\psi } = E \ket{\psi } $; si nota che
+\[
+\braket{\psi |\hat{d}|\psi } = \braket{\psi |\hat{P}_a^{-1} \hat{P}_a \hat{d}\hat{P}_{a} ^{-1} \hat{P}_a|\psi } = - \braket{\psi '|\hat{d}|\psi '} 
+\] 
+dove $\ket{\psi '} = \hat{P}_a \ket{\psi } $.
+Per\`o si osserva anche che $\hat{P}_a \hat{H} \hat{P}_a^{-1} \hat{P}_a \ket{\psi } = E \hat{P}_a \ket{\psi } \Rightarrow \hat{H}\ket{\psi '} = E \ket{\psi '} $. 
+In assenza di degenerazione nello spettro, avendo assunto che $[\hat{P}_a, \hat{H}] = 0$, si sa che $\hat{P}_a \ket{\psi }  = \pm \ket{\psi } $, ma qualunque segno possano prendere, questo viene eliminato nell'elemento di matrice, quindi, sotto parit\`a, si verifica:
+\[
+\braket{\psi |\hat{d}|\psi } = - \braket{\psi |\hat{d}|\psi } 
+\] 
+\subsubsection{Operatore di inversione temporale}
+
+Si caratterizza tale operatore, avendo definito in partenza come agisce su alcuni operatori, quali posizione, momento e momento angolare.
+Si considera $\hat{H}\ket{\psi (t)} = i \partial _t \ket{\psi (t)} $ e si assume che valga $[\hat{H}, \hat{T}] =0 $; allora:
+\[
+\hat{T}\hat{H} \hat{T}^{-1} \hat{T}\ket{\psi (t)}  = \hat{T} i \partial _t \ket{\psi (t)} = -i \partial _t \hat{T}\ket{\psi (t)} \implies \hat{H} \hat{T}\ket{\psi (t)}  = - i \partial _t \hat{T} \ket{\psi (t)} 
+\] 
+Ora, mandando $t \to - t$ nell'equazione sopra, notando che $\partial _t \to - \partial _t$ conseguentemente, si ha:
+\[
+\hat{H} \hat{T} \ket{\psi (-t)} = i \partial _t \hat{T}\ket{\psi (-t)} 
+\] 
+\begin{boxenv}[]
+\begin{center}
+	\textit{Si nota che quanto appena trovato \`e l'equazione di Shr\"odinger per lo stato $\hat{T}\ket{\psi (-t)} $, il che vuol dire che se $\ket{\psi (t)} $ \`e soluzione dell'equazione di Schr\"odinger, anche $\hat{T}\ket{\psi (-t)} $ lo \`e.} 
+\end{center}
+\end{boxenv}
+Si considera, ora, un Hamiltoniano in rappresentazione delle coordinate comprensivo di un termine potenziale generico $V(x)$.
+L'equazione di Shr\"odinger, conseguentemente, sar\`a:
+\[
+\left[ - \frac{\hbar ^2}{2m}\nabla ^2 + V(x) \right] \psi (x,t) = i\hbar  \partial _t \psi (x,t)
+\] 
+Facendo il coniugato complessi di entrambi i membri, si ottiene:
+\[
+\left[ -\frac{\hbar ^2}{2m}\nabla ^2 + V(x) \right] \psi ^*(x,t) = - i\hbar \partial _t \psi ^* (x,t)
+\] 
+Mandando $t\to - t$:
+\[
+\left[ -\frac{\hbar ^2}{2m}\nabla ^2 + V(x) \right] \psi ^* (x,-t) = i \hbar  \partial _t \psi^* (x,-t)
+\] 
+che \`e la stessa equazione ma per $\psi ^*(x,-t)$.
+Ricordando quanto detto prima, cio\`e che se $\ket{\psi (t)} $, relativo alla funzione d'onda $\psi (x,t)$, \`e soluzione, allora anche $\hat{T}\ket{\psi (-t)} $, il quale sar\`a relativo alla funzione d'onda $\psi ^*(x,-t)$.
+Allora si trova che l'azione di $\hat{T}$ su una funzione d'onda restituisce il complesso coniugato della stessa:
+\begin{boxenv}[]
+\begin{equation}
+	\hat{T}\psi (x,t) = \psi ^*(x,t)
+\end{equation}
+\end{boxenv}
+\begin{osservazione}
+Questo si mostrer\`a vero solamente per particelle senza spin.	
+\end{osservazione}
+Tramite questa propriet\`a, si ottiene l'azione di $\hat{T}$ su $\ket{x} $.
+Per $\ket{\psi } = \int dx \ \braket{x|\psi } \ket{x} $, si ha:
+\[
+\hat{T} \ket{x}  = \int dx \ \psi ^* (x) \hat{T}\ket{x} 
+\] 
+Per consistenza col fatto che $\hat{T} \psi (x) = \psi ^* (x)$, deve valere
+\begin{boxenv}[]
+\begin{equation}
+	\hat{T}\ket{x} = \ket{x} 
+\end{equation}
+\end{boxenv}
+Similmente, si mostra che
+\begin{boxenv}[]
+\begin{equation}
+	\hat{T}\ket{p}  = \ket{-p} 
+\end{equation}
+\end{boxenv}
+Finora, l'azione di $\hat{T}$ \`e l'azione di un operatore $\hat{K}$ che prende il complesso coniugato. 
+Questo non va pi\`u bene per lo spin, che deve soddisfare $\hat{T}\hat{S}\hat{T}^{-1} = - \hat{S}$;
+infatti, se $s = 1 / 2$, per cui $\hat{S}_a = \sigma _a / 2$, si ottiene
+\[
+\hat{K}\hat{S}_1 \hat{K}^{-1}  = \hat{S}_1  \hspace{1cm} \hat{K}\hat{S}_2 \hat{K}^{-1}  = -\hat{S}_1 \hspace{1cm}\hat{K}\hat{S}_3 \hat{K}^{-1}  = \hat{S}_3
+\] 
+visto che solo $\sigma _2$ ha elementi complessi.
+Per risolvere questo, si prende $\hat{T} = \hat{Y}\hat{K}$, dove $\hat{Y}$ agisce solo sullo spin ed \`e definito come 
+\begin{equation}
+	\hat{Y} = e^{-\frac{i}{\hbar } \pi \hat{S}_y} 
+\end{equation}
+In questo modo, \`e effettivamente verificato $\hat{T} \hat{S} \hat{T}^{-1}  =- \hat{S}$.
+\begin{osservazione}
+Questa \`e la correzione per lo spin $ 1 / 2$; altri spin avranno le opportune correzioni.
+\end{osservazione}
+\begin{osservazione}
+Non \`e sempre detto che $\hat{T}^2 = \operatorname{Id} $.
+\end{osservazione}
+\subsection{Particelle identiche}
+
+Si prende un sistema composto da due particelle; 
+la base complessiva si indica con $\ket{\alpha }^{(1)}  \otimes \ket{\beta }^{(2)}  =\ket{\alpha } \ket{\beta } $.
+Un generico stato \`e:
+\[
+	\begin{split}
+		&\ket{\psi } = \sum_{}^{} c_{\alpha \beta } \ket{\alpha } \ket{\beta } \\
+		&\Rightarrow \psi (x_1,x_2) \overset{\text{def}}{=} \bra{x_1} \otimes \bra{x_2} \sum_{\alpha ,\beta }^{} c_{\alpha \beta } \ket{\alpha } \ket{\beta } = \sum_{\alpha ,\beta }^{} c_{\alpha  \beta } \braket{x_1|\alpha } \braket{x_2|\beta } = \sum_{\alpha ,\beta }^{} c_{\alpha \beta } \psi _\alpha (x_1) \psi _\beta (x_2)
+	\end{split}
+\] 
+\begin{osservazione}
+La funzione d'onda $\psi (x_1,x_2)$ (il suo modulo quadro) rappresenta la probabilit\`a di trovare la particella $1 $ in $x_1$ e la particella $2$ in $x_2$, quindi consente una descrizione simultanea del sistema.
+Essendo interessati alla sola probabilit\`a di trovare $1$ in $x_1$, si calcola $\int dx_2 \ \lvert \psi (x_1,x_2) \rvert ^2$.
+\end{osservazione}
+Si definisce, ora, l'operatore che scambia le due particelle:
+\begin{equation}
+	\hat{P}_{12} \ket{\alpha } ^{(1)} \otimes \ket{\beta } ^{(2)}  = \ket{\beta } ^{(1)}\otimes \ket{\alpha } ^{(2)} \equiv \ket{\beta } \ket{\alpha } 
+\end{equation}
+il che \`e possibile perch\'e le due particelle hanno stesso spazio di Hilbert.
+Questo operatore soddisfa $\hat{P}_{12} ^{2 }  = \operatorname{Id} $ e $\hat{P}_{12} = \hat{P}^\dagger _{12} = \hat{P}^{-1} _{12} $.
+La sua azione su una funzione d'onda \`e data da:
+\[
+	\begin{split}
+		\hat{P}_{12}  \psi (x_1,x_2) &= \bra{x_1} \bra{x_2} \hat{P}_{12} \ket{\psi } = \bra{x_1} \bra{x_2} \sum_{\alpha ,\beta }^{} c_{\alpha  \beta } \hat{P}_{12} \ket{\alpha } \ket{\beta } \\
+					     &= \bra{x_1} \bra{x_2} \sum_{\alpha ,\beta }^{} c_{\alpha \beta } \ket{\beta } \ket{\alpha } = \sum_{\alpha ,\beta }^{} c_{\alpha \beta } \psi _\beta (x_1) \psi _\alpha (x_2) \equiv\psi (x_2,x_1)
+	\end{split}
+\] 
+Si assume che $[\hat{P}_{12} , \hat{H}] = 0$; come nel caso della parit\`a, significa che, essendo $\hat{P}_{12} ^2 = \operatorname{Id} \Rightarrow \hat{P}_{12} \ket{\psi } = \pm\ket{\psi } $ su $\ket{\psi }$ autostato, gli autostati dell'Hamiltoniano mantengono la proprit\`a di simmetria o antisimmetria per scambio delle due particelle nell'evoluzione temporale.
+
+Nel caso di tre particelle, uno stato si indica con $\ket{\alpha \beta \gamma} = \ket{\alpha } ^{(1)} \otimes \ket{\beta } ^{(2)} \otimes \ket{\gamma} ^{(3)} $.
+In questo caso gli operatori di scambio sono $\operatorname{Id}, \hat{P}_{12}, \hat{P}_{13} , \hat{P}_{23} , \hat{P}_{123} , \hat{P}_{123} ^2$, dove $\hat{P}_{123} \ket{\alpha \beta \gamma} = \ket{\gamma \alpha  \beta } $ e $\hat{P}_{123} ^2 \ket{\alpha  \beta \gamma} = \ket{\beta \gamma\alpha } $.
+Chiaramente tutti questi operatori non commutano fra loro.
+
+Di seguito, si riportano, rispettivamente, uno stato simmetrico rispetto a questi operatori e uno anti-simmetrico rispetto allo scambio di due particelle:
+\[
+\begin{split}
+	& \frac{1}{\sqrt{6} } \Big[\ket{\alpha \beta \gamma} + \ket{\beta \alpha \gamma} +\ket{\alpha \gamma\beta } + \ket{\gamma\beta \alpha } +\ket{\gamma\alpha \beta } + \ket{\beta \gamma\alpha } \Big]\\
+	&\frac{1}{\sqrt{6} } \Big[\ket{\alpha \beta \gamma} - \ket{\beta \alpha \gamma} - \ket{\alpha \gamma\beta } -\ket{\gamma\beta \alpha } + \ket{\gamma\alpha \beta } + \ket{\beta \gamma\alpha } \Big]
+\end{split}
+\] 
+dove $1 / \sqrt{6} $ \`e la costante di normalizzazione.
+Se $[\hat{H},\hat{P}_a] = 0, \ \forall a$, si pu\`o dimostrare che gli autostati appartengono a spazi invarianti, quindi verr\`a sempre restituito o uno stato simmetrico o antisimmetrico per scambio di due particelle.
 
 \newpage
 \section{Esercitazioni}
