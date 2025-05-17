@@ -536,7 +536,7 @@ La sua soluzione \`e una coppia di interi $(\overline{x},\overline{y}) \in \math
 \end{obs}
 Per il caso generale di $a,b$ non entrambi nulli, si ha il seguente.
 \begin{teorema}
-	{}{}
+	{}{solco}
 	L'equazione $ax + by = c$, con $a,b$ non entrambi nulli, ha soluzione $\iff \operatorname{gcd} (a,b )  | c$.
 	\begin{proof}
 		Per l'identit\`a di B\'ezout, si sa che vi \`e soluzione all'equazione 
@@ -599,7 +599,75 @@ Il teorema di seguito permette di concludere, ulteriormente, che \textit{tutte} 
 
 
 
-\subsection{Teorema cinese del resto e classi di resto}
+\subsection{Il teorema cinese del resto e classi di resto}
+\subsubsection{Il teorema cinese del resto}
+
+Stabilisce una condizione per risolvere sistemi di congruenze.
+Si vuole risolvere un sistema del tipo 
+\begin{equation}\label{sisp}
+\begin{cases}
+	x \equiv a\pmod{m_1}\\
+	x \equiv b\pmod{m_2}
+\end{cases}
+\end{equation} 
+La soluzione della prima \`e data $x = a + km_1, \ k \in \mathbb{Z}$; inserendolo nella seconda (considerando $k$ come variabile), si ottiene $a+ km_1 \equiv b \pmod{m_2} $, da cui
+\[
+m_1 k \equiv b -a \pmod{m_2} \implies k m_1 - k' m_2 = b-a
+\] 
+che si sa avere soluzione (per th. \ref{th:solco}) se e soltanto se $\operatorname{gcd}(m_1,m_2)  \mid b-a$.
+
+Si cerca di capire come trovare tutte le soluzioni una volta concluso che tale sistema ne ammette.
+A tale proposito, si considera una soluzione particolare $k_0$ di $km_1 \equiv b-a \pmod{m_2} $; quindi $x_0 = a + k_0 m_1$ risolve il sistema di partenza in eq. \ref{sisp}:
+\[
+\begin{cases}
+	x_0 \equiv a \pmod{m_1} \\
+	x_0 \equiv b \pmod{m_2} 
+\end{cases}
+\] 
+Sia $x_1$ un'altra soluzione di tale sistema; prendendo la differenza, si ottiene:
+\[
+	\begin{cases}
+x_0-x_1 \equiv 0 \pmod{m_1} \\
+x_0-x_1\equiv 0 \pmod{m_2} 
+	\end{cases}
+\] 
+Quindi la differenza tra le soluzioni \`e sia multiplo di $m_1$ che di $m_2$.
+Il pi\`u piccolo intero che soddisfa questa condizione \`e chiamato \textit{minimo comune multiplo} di $m_1$ e $m_2$ e si indica con $\operatorname{lcm} (m_1,m_2)$.
+Tutto questo si riassume nel seguente teorema.
+\begin{teorema}
+	{Teorema cinese del resto}{}
+	Sia dato il sistema 
+	\[
+	\begin{cases}
+		x\equiv a \pmod{m_1} \\
+		x \equiv b \pmod{m_2} 
+	\end{cases}
+	\] 
+Questo sistema ammette soluzione $\iff \operatorname{gcd}(m_1,m_2)  \mid b-a$; in questo caso, data $x_0$ una soluzione, tutte le altre soluzioni del sistema sono della forma
+\[
+x_0 + s \cdot \operatorname{lcm} (m_1,m_2) ,\ s \in \mathbb{Z}
+\] 
+\end{teorema}
+\begin{obs}
+	Equivalentemente, si pu\`o scrivere che tutte le soluzioni del sistema sono le $x$ tali che
+	\begin{equation}
+		x\equiv x_0 \pmod{\operatorname{lcm} (m_1,m_2)} 
+	\end{equation}
+	Si nota, infine, che esiste un'unica soluzione $x $ tale che $0\le  x < \operatorname{lcm} (m_1,m_2)$.
+\end{obs}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

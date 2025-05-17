@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  5 MAY 2025 10:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  17 MAY 2025 22:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1304,23 +1304,23 @@ Overfull \hbox (4.57251pt too wide) in paragraph at lines 568--570
 [14]
 
 [15]
-Underfull \hbox (badness 1127) in paragraph at lines 813--814
+
+[16]
+Underfull \hbox (badness 1127) in paragraph at lines 881--882
 []\T1/cmr/m/n/10 Si è già mo-stra-to che la com-po-si-zio-ne di map-pe è as-so-cia-ti-va e,
  []
 
 
 
-[16]
-
 [17]
 
 [18]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 970.
+
+[19]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 1038.
  (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-
-[19]
 
 [20]
 
@@ -1332,12 +1332,14 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 [24]
 
+[25]
+
 Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[25] (./master.aux)
+[26] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1351,10 +1353,10 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 46827 strings out of 473190
- 1094496 string characters out of 5722593
+ 46838 strings out of 473190
+ 1094631 string characters out of 5722593
  1763598 words of memory out of 5000000
- 69208 multiletter control sequences out of 15000+600000
+ 69213 multiletter control sequences out of 15000+600000
  591392 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,19n,121p,10937b,1113s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1390,10 +1392,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/
 share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (25 pages, 553779 bytes).
+Output written on master.pdf (26 pages, 557058 bytes).
 PDF statistics:
- 540 PDF objects out of 1000 (max. 8388607)
- 440 compressed objects within 5 object streams
- 156 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 455 compressed objects within 5 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
