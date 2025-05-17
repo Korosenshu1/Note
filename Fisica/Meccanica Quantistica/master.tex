@@ -2937,7 +2937,7 @@ Non \`e sempre detto che $\hat{T}^2 = \operatorname{Id} $.
 \end{osservazione}
 \subsection{Particelle identiche}
 
-Si prende un sistema composto da due particelle; 
+Si prende un sistema composto da due particelle identiche; 
 la base complessiva si indica con $\ket{\alpha }^{(1)}  \otimes \ket{\beta }^{(2)}  =\ket{\alpha } \ket{\beta } $.
 Un generico stato \`e:
 \[
@@ -2954,7 +2954,7 @@ Si definisce, ora, l'operatore che scambia le due particelle:
 \begin{equation}
 	\hat{P}_{12} \ket{\alpha } ^{(1)} \otimes \ket{\beta } ^{(2)}  = \ket{\beta } ^{(1)}\otimes \ket{\alpha } ^{(2)} \equiv \ket{\beta } \ket{\alpha } 
 \end{equation}
-il che \`e possibile perch\'e le due particelle hanno stesso spazio di Hilbert.
+il che \`e possibile perch\'e le due particelle hanno stesso spazio di Hilbert (sono particelle identiche).
 Questo operatore soddisfa $\hat{P}_{12} ^{2 }  = \operatorname{Id} $ e $\hat{P}_{12} = \hat{P}^\dagger _{12} = \hat{P}^{-1} _{12} $.
 La sua azione su una funzione d'onda \`e data da:
 \[
@@ -2978,6 +2978,154 @@ Di seguito, si riportano, rispettivamente, uno stato simmetrico rispetto a quest
 \] 
 dove $1 / \sqrt{6} $ \`e la costante di normalizzazione.
 Se $[\hat{H},\hat{P}_a] = 0, \ \forall a$, si pu\`o dimostrare che gli autostati appartengono a spazi invarianti, quindi verr\`a sempre restituito o uno stato simmetrico o antisimmetrico per scambio di due particelle.
+\subsubsection{Condizione di identicit\`a}
+\begin{osservazione}
+Il solo fatto che $\hat{H}$ commuti con tutti gli operatori di scambio di due particelle non implica che le due particelle siano identiche; infatti, prendendo $\hat{H} = p_1^2 / 2m + p_2^2 / 2m + V(r), \ r = \lvert x_2 -x_1 \rvert $ agente su sistema composto da elettrone e positrone (positronio), le due particelle non sono identiche, ma l'Hamiltoniano \`e invariante per scambio.
+\end{osservazione}
+\begin{definizione}
+	[Particelle identiche]
+Due particelle $1$ e $2$ si dicono identiche se non esiste operatore (misura) in grado di distinguerle.
+\end{definizione}
+Sia $\hat{A}$ un generico operatore; praticamente quello che si sta richiedendo \`e che per ogni stato $\ket{\psi }  $ di un sistema a due (per esempio) particelle, deve risultare
+\begin{equation}
+	\braket{\psi |\hat{A}|\psi } = \braket{\hat{P}_{12} \psi |\hat{A}|\hat{P}_{12} \psi } = \braket{\psi |\hat{P}_{12} ^\dagger \hat{A}\hat{P}_{12} |\psi } 
+\end{equation}
+Questa richiesta si formalizza nel fatto che $\hat{A} = \hat{P}_{12} ^\dagger \hat{A}\hat{P}_{12} $; ricordando, per\`o, che vale $\hat{P}_{12} = \hat{P}_{12} ^\dagger = \hat{P}_{12} ^{-1} $, la richiesta \`e equivalente a dire
+\begin{boxenv}[]
+\begin{equation}
+	[\hat{A}, \hat{P}_{12} ]=  0
+\end{equation}
+\end{boxenv}
+\noindent Quindi $\hat{P}_{12} $ non deve commutare solo con $\hat{H}$, ma con tutti gli operatori Hermitiani.
+\begin{boxenv}[]
+\begin{itemize}
+	\item Le particelle i cui stati risultano simmetrici per scambio sono dette \textbf{bosoni}.
+	\item Le particelle i cui stati risultano anti-simmetrici per scambio sono dette \textbf{fermioni}.
+\end{itemize}
+\end{boxenv}
+\begin{esempio}
+	[Sistema di oscillatori senza spin]
+	Si prende $\hat{H}=\sum_{i=1}^{N} \hat{p}^2_i / 2m + m\omega^2 \hat{x}^2_i / 2$, con lunghezza caratteristica $l = \sqrt{\hbar / m\omega} $.
+	Il generico livello energetico per lo stato $\ket{n_i} $ \`e $E_{n_i} = \hbar  \omega ( n_i + 1 / 2)$, mentre uno stato del sistema complessivo \`e $\ket{n_1 n_2 \ldots n_N} $, con energia
+	\[
+	E_{n_1 \ldots n_N} = \hbar \omega \left[ \frac{N}{2} + \sum_{i=1}^{N} n_i \right] 
+	\] 
+	Per $N=2$, volendo calcolare, per esempio, il numero di stati con energia $E_{n_1 n_2} \le E_\text{tot} = \hbar \omega (m + N / 2) = \hbar \omega (m + 1)$\footnote{Qui $m$ non \`e il numero quantico, ma un generico numero intero noto.}, si deve imporre $\sum_{i=1}^{2} n_i \le m$.
+
+	Di seguito, \`e riportata una tabella con il numero di stati possibili (senza considerare lo spin) nel caso di sistema non-identico, bosoni e fermioni.
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c | c | c | c}
+		 & $m=0$ & $m=1$ & $m=2$\\
+		\hline
+			non identiche &1 $\ket{00} $&3 $\ket{00} , \ket{01} , \ket{10} $& 6\\
+			bosoni&1 $\ket{00} $ &2 $\ket{00} , \ket{01} +\ket{10} $ &4\\
+			fermioni &0 &1 $\ket{01} - \ket{10} $&2\\
+		\hline
+		\end{tabular}
+		\caption{Numero di stati per vari valori di $m=0,1,2$ a seconda se le due particelle che compongono il sistema sono, rispettivamente, diverse, bosoni o fermioni.}
+	\end{table}
+\end{esempio}
+\begin{esempio}
+	[Sistema di oscillatori con spin]
+	L'Hamiltoniano \`e sempre $\hat{H} = \sum_{}^{} \hat{p}_i^2 / 2m + m\omega^2 \hat{x}^2 / 2$, ma questa volta gli stati di singola particella sono della forma $\ket{n_i} \otimes \ket{s_i} $.
+	Per due particelle, quindi, si ha $\big(\ket{n_1} \otimes \ket{s_1} \big)\otimes \big(\ket{n_2} \otimes \ket{s_2} \big)$.
+	Per studiare il problema, si considera la base $\ket{s_1s_1 JM} $, che ha propriet\`a utili rispetto alla permutazione. 
+	
+	Prendendo d'esempio i fermioni, con spin $ s =1  / 2$, la base $\ket{JM} $ \`e
+	\[
+		\begin{split}
+			&\ket{J=1,M=1} = \Ket{s_{z,1} = \frac{1}{2}, \ s_{z,2} = \frac{1}{2}} \hspace{.5cm}\ket{J=1,M=-1} = \Ket{s_{z,1} = -\frac{1}{2}, \ s_{z,2} = -\frac{1}{2}}\\
+			&\ket{J=1, M=0} = \frac{1}{\sqrt{2} } \left(\Ket{\frac{1}{2}, -\frac{1}{2}}  + \Ket{-\frac{1}{2}, \frac{1}{2}} \right) \hspace{1cm} \ket{00} =\frac{1}{\sqrt{2} } \left(\Ket{\frac{1}{2}, -\frac{1}{2}}  - \Ket{-\frac{1}{2}, \frac{1}{2}} \right)
+		\end{split}
+	\] 
+	Si nota che $J=1$ ha stati simmetrici per scambio, menetre $J=0$ ne ha di anti-simmetrici. 
+	Conseguentemente, si ha la seguente tabella degli stati anti-simmetrici al variare di $m$.
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c | c | c}
+			& $m=0$ & $m=1$\\
+		\hline
+			$J=0$ & 1 & 2  \\
+			$J=1$ & 0 & 3  \\
+		\hline
+		\end{tabular}
+	\end{table}
+
+\noindent 	Per $J=0,m=0$ si ha lo stato $\ket{00} $ composto con lo stato anti-simmetrico di spin $\ket{J=0, M=0} $, mentre per $J=1$ sono tutti simmetrici, quindi non ce ne sono di anti-simmetrici. 
+
+Se $m=1$, ci sono due stati simmetrici: $\ket{00}, \ \ket{10} + \ket{01} $, quindi $J=0$ ha uno stato anti-simmetrico che composto con questi due d\`a due stati anti-simmetrici; se $J=1$, ci sono tre stati simmetrici e $m=1$ ne porta uno anti-simmetrico $\ket{01} - \ket{10} $, quindi ci sono tre stati anti-simmetrici.
+\end{esempio}
+\subsubsection{Disuguaglianza di Bell}
+
+Si inizia col considerare il seguente esempio.
+\begin{esempio}
+Siano $1$, $2$ due particelle. 
+Se ne considera lo stato complessivo a spin $0$ 
+\[
+\ket{\psi } = \frac{1}{\sqrt{2} } \Big(\ket{+} \ket{-} - \ket{-} \ket{+} \Big)
+\] 
+La direzione di spin \`e arbitraria perch\'e sar\`a $J,M=0$ lungo qualunque asse. 
+Si considera l'operatore 
+\[
+\hat{O}_{12} = \vec{\sigma }_1 \cdot \hat{n}_1 \otimes \vec{\sigma }_2 \cdot \hat{n}_2
+\] 
+con $\vec{\sigma }_i$ matrici di Pauli relative alla particella $i$-esima, mentre $\hat{n}_1, \hat{n}_2$ sono due versori.
+Essendo $\ket{\psi } $ uno stato con direzione di spin arbitraria, cio\`e a seguito di una rotazione, la sua espressione rimane la stessa e anche il suo valore di spin, si pu\`o ruotare il sistema in modo da scegliere, per esempio, $\hat{n}_1 = \hat{z}$.
+Cos\`i facendo, $\hat{O}_{12} = \sigma ^{(1)} _z \otimes \sigma ^{(2)} _z \cos \theta _{12} $, con $\theta _{12} $ angolo formato tra $\hat{n}_1$ e $\hat{n}_2$ (quindi tra $\hat{z}$ e $\hat{n}_2$).
+Allora
+\[
+\braket{\psi |\sigma ^{(1)} _z \otimes \sigma ^{(2)} _z \cos \theta _{12} |\psi } = \frac{1}{2} \left(\braket{-|\sigma ^{(2)} _z \cos\theta _{12} |-} - \braket{|\sigma ^{(2)} _z \cos \theta _{12} |+} \right) = - \cos \theta _{12} 
+\] 
+\end{esempio}
+\begin{center}
+	Fuori dal programma, lezione 49	
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \section{Esercitazioni}
