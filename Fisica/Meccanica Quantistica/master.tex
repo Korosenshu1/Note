@@ -192,7 +192,7 @@ title=#1
 % Font
 \usepackage[osf]{newpxtext}
 \usepackage{newpxmath}
-\usepackage{cmupint}
+%\usepackage{cmupint}
 %%%
 
 
@@ -3082,30 +3082,191 @@ Allora
 	Fuori dal programma, lezione 49	
 \end{center}
 
+\newpage
 
+\section{Scattering quantistico}
+\subsection{Introduzione}
 
+Avendo assenza di traiettoria in meccanica quantistica, si modella un fascio di particelle incidenti su un bersaglio tramite il flusso di probabilit\`a introdotto in \S\ref{fp}.
+Si chiama il flusso incidente $J_i$; le particelle incidenti hanno una certa probabilit\`a di essere deflesse di un certo angolo $\theta $, quindi si ha un certo flusso uscente di particelle passanti attraverso un angolo solido $d\Omega $.
+Il numero di particelle uscente viene parametrizzato come segue:
+\begin{equation}
+	dN = J_i d\Omega \sigma (\theta )
+\end{equation}
+\begin{itemize}
+	\item \`E proporzionale a $J_i$ perch\'e ci si aspetta che raddoppiando il flusso entrante, raddoppi anche quello uscente.
+	\item \`E proporzionale a $d\Omega $ perch\'e ci si aspetta che raddoppiando l'angolo solido su cui il rivelatore cattura le particelle deflesse, raddoppi il numero di particelle rivelate.
+	\item Per potenziali a simmetria centrale, la sezione d'urto $\sigma $ dipende unicamente da $\theta $; pi\`u in generale dovrebbe dipendere anche da $\varphi $, ma per il momento si assume dipendenza unicamente da $\theta $.
+\end{itemize}
+Tramite $dN$, si ottiene il numero di particelle (come densit\`a di probabilit\`a uscente) che attraversa il rivelatore, cio\`e il numero di particelle per unit\`a di area $r^2 d\Omega $, quindi:
+\begin{equation}
+	J_s = \frac{d N}{ r^2 d\Omega } 
+\end{equation}
+Conseguentemente, si ottiene un'espressione per la sezione d'urto differenziale:
+\begin{boxenv}[]
+\begin{equation}
+	\sigma (\theta  ) = \frac{r^2 J_s(\theta )}{J_i}
+\end{equation}
+\end{boxenv}
+\noindent Da questa, si pu\`o ottenere la sezione d'urto totale integrando sull'angolo solido:
+\[
+\sigma  = \int_0^{2\pi} d\varphi \int_{0} ^\pi d\theta \  \sin\theta \sigma  (\theta   ) = 2\pi \int_{0} ^\pi \sigma(  \theta)  \sin\theta \ d\theta 
+\] 
 
+Si modella l'interazione del fascio col centro diffusore tramite
+\begin{equation}
+	\hat{H} = - \frac{\hbar ^2}{2m_1}\nabla ^2_1 - \frac{\hbar ^2}{2m_2} \nabla ^2_2 + V( \vec{x}_1 -\vec{x}_2 )= - \frac{\hbar ^2}{2M}\nabla ^2 _X - \frac{\hbar ^2}{2\mu }\nabla ^2_r + V(\vec{r})
+\end{equation}
+dove si \`e fatto il cambio di variabile nel CM: $\vec{X} = \frac{m_1\vec{x}_1 + m_2 \vec{x}_2}{m_1+m_2}$ e $\vec{r} = \vec{x}_1 - \vec{x}_2$.
+L'Hamiltoniano \`e separabile in $\vec{X}$ e $\vec{r}$, quindi la funzione d'onda si potr\`a scrivere come $\Psi (\vec{x}_1, \vec{x}_2)= \phi (\vec{X}) \psi (\vec{r})$.
+Il problema relativo a $\vec{X}$ \`e quello di una particella libera, quindi si studia solamente 
+\[
+\hat{H}_\text{rid}=- \frac{\hbar ^2}{2\mu }\nabla ^2 _r + V(\vec{r}) \longrightarrow i \hbar \partial _t \psi (\vec{r},t) = \hat{H}_\text{rid}\psi (\vec{r},t)
+\] 
+\begin{osservazione}
+Contrariamente a quanto fatto nei problemi precedenti, dove come condizione al contorno dell'equazione di Shr\"odinger si imponeva una probabilit\`a nulla di trovare le particelle, qui \`e il contrario. Nel primo caso, infatti, si studiavano gli stati legati, mentre qui si \`e proprio interessati al comportamento delle particelle all'infinito.
+\end{osservazione}
+Allontanandosi molto dalla regione di interazione, cio\`e per $r\to +\infty$, la funzione d'onda deve contenere, separatamente, la funzione d'onda del fascio incidente e del fascio uscente; le particelle entranti e uscenti non devono sentire il potenziale fuori dalla regione di interazione, pertanto dovranno comportarsi come particelle libere. 
+Allora, si scrive $\psi (\vec{r}\to +\infty) = \psi _i (\vec{r}) + \psi _s(\vec{r})$, dove $\psi _i(\vec{r}) = A e^{ikz} $, dove $z$ \`e l'asse lungo cui procede il fascio, con $E = \frac{\hbar ^2 k^2}{2m}$.
+Da questa, si ricava il flusso di probabilit\`a:
+\begin{equation}
+\vec{J}_i = \frac{\hbar }{m} \Im \left\{ \psi ^*_i \nabla \psi _i \right\} = \lvert A \rvert ^2 \frac{k_z \hbar }{m}
+\end{equation}
+Per trovare la funzione d'onda uscente, si risolve l'equazione di Shr\"odinger  $\hat{H}\psi _s(r) = E \psi (r)$, con $E = \frac{\hbar ^2k^2}{2m}$ perch\'e anche questo, nel limite $r \to +\infty$, \`e una particella libera. 
+Quindi si ha l'equazione 
+\[
+\nabla ^2 \psi_s + k^2 \psi_s  = 0
+\] 
+Le soluzioni che si cercano devono essere radiali, cio\`e devono descrivere un'emissione radiale dal centro diffusore; si pu\`o dimostrare che funzioni con questa caratteristica sono della forma\footnote{La costante $A$ \`e uguale per entrambe le funzioni d'onda.}
+\begin{equation}
+	\psi _s(\vec{r}) =A f(\theta ) \frac{e^{ikr}}{r} 
+\end{equation}
+La componente radiale del flusso uscente \`e:
+\begin{equation}
+	(\vec{J}_s)_r = \frac{\hbar }{m}\Im \left\{ \psi ^*_s \partial _r \psi _s \right\} = \lvert A \rvert ^2 \frac{\lvert f \rvert ^2}{r^2} \frac{k}{m}
+\end{equation}
+Complessivamente, quindi:
+\begin{equation}\label{condcont}
+	\psi (r\to +\infty) = A \left[ e^{ikz} + f(\theta ) \frac{e^{ikr} }{r} \right] 
+\end{equation}
+Inoltre, dai flussi calcolati, si trova:
+\begin{equation}
+	\sigma (\theta ) = \frac{J_s(\theta ) r^2}{J_i}= \lvert f(\theta ) \rvert ^2
+\end{equation}
+Quindi, risolvendo l'equazione di Shr\"odinger con la condizione al contorno in eq. \ref{condcont}, si pu\`o ricavare $f(\theta )$ e, quindi, la sezione d'urto.
+\begin{osservazione}
+Il problema con quanto fatto finora \`e che, invece di calcolare il flusso della funzione d'onda complessiva $\psi = \psi _i + \psi _s$, si sono calcolati i flussi separatamente, assumendo nullo il termine di interferenza fra i due. 
+Questo non \`e nullo in generale, ma quanto ricavato va bene perch\'e il termine di interferenza \`e rilevante solo per angoli $\theta \approx 0$ perch\'e il flusso entrante ha una certa sezione e la loro interferenza si osserva solamente a piccoli angoli di scattering.
+\end{osservazione}
+\subsection{Approssimazione di Born}
 
+Si assume che il potenziale di interazione sia una perturbazione.
+Si risolve, quindi
+\[
+\nabla ^2 + k^2 \psi  = \frac{2mV}{\hbar ^2}\psi , \ k = \sqrt{\frac{2mE}{\hbar ^2}} = \frac{p}{\hbar }
+\] 
+Avendo assunto un potenziale piccolo tale da essere una perturbazione, si scrive la soluzione di tale equazione come $\psi = \psi ^{(0)}  + \psi ^{(1)} $, dove lo sviluppo \`e in $V$ e $\psi ^{(0)} $ \`e il termine in assenza di $V$, mentre $\psi ^{(1)} $ \`e al primo ordine.
+L'assunzione di potenziale $V$ piccolo verr\`a definita meglio pi\`u avanti, intanto si procede con questa \textit{ipotesi di lavoro}.
 
+La $\psi ^{(0)} $, quindi, soddisfa l'equazione di particella libera $\nabla ^2 \psi ^{(0)} + k^2 \psi ^{(0)} =0$ e sar\`a $\psi ^{(0)}  =  e^{ikz}  = e^{i \vec{k}\cdot \vec{x}}$, assumendo $A = 1$\footnote{La sezione d'urto \`e definita in modo tale da non dipendere dalle costanti di normalizzazione utilizzate, quindi prendere $A=1$ non comporta errore.}. 
+La seconda uguaglianza \`e il caso pi\`u generale in cui non si fanno scelte sugli assi.
 
+Dalla conoscenza di $\psi ^{(0)} $, si ricava $\psi ^{(1)} $:
+\[
+\nabla ^2 \psi ^{(1)} + k^2 \psi ^{(1)} = \frac{2mV}{\hbar ^2}\psi ^{(0)} = \frac{2mV(\vec{x})}{\hbar ^2} e^{i \vec{k}\cdot \vec{x}} 
+\] 
+La soluzione di questa \`e
+\[
+\psi ^{(1)} (\vec{x}) = - \frac{m}{2\pi \hbar ^2}\int \psi ^{(0)} (\vec{x}') V(\vec{x}') \frac{e^{ikr}}{r} \ d^3 x', \ r = \lvert \vec{x}-\vec{x}' \rvert 
+\] 
+\subsubsection{Validit\`a dello sviluppo}
 
+Ora si pu\`o capire cosa significa $V$ piccolo. 
+Per consistenza dello sviluppo, deve valere $\psi ^{(1)} \ll\psi ^{(0)} \sim 1$\footnote{Questo perch\'e $\psi ^{(0)} $ \`e una funzione oscillante, che \`e dell'ordine di $1$.}.
+Inoltre, l'assunzione di assenza di interazione fuori dalla regione di interazione impone che, se $a$ \`e la dimensione caratteristica di tale regione, allora $V(r) \approx 0, \ r > a$.
+Calcolando $\psi ^{(1)}  $ al limite della regione di interazione (quindi in $a$) e compiendo le dovute approssimazioni, si ottiene:
+\[
+\psi ^{(0)} \sim 1 \gg \frac{m a^2}{ \hbar ^2} V(a) \implies V(a) \ll \frac{ \hbar ^2}{m a^2}
+\] 
+Prendendo un fascio incidente molto veloce (ma comunque in limite non-relativistico), cio\`e $ka \gg 1$, l'ipotesi di potenziale piccolo si pu\`o alleggerire come
+\begin{equation}
+	\lvert V \rvert  \ll \frac{\hbar ^2}{ma^2} ka
+\end{equation}
+\begin{proof}
+	Per dimostrarlo, in regime $ka \gg 1$, si sostituisce $\psi ^{(1)} (\vec{x}) = e^{ikz} g(\vec{x})$ in $\nabla ^2 \psi ^{(1)} + k^2 \psi ^{(1)} = \frac{2mV}{\hbar ^2} e^{ikz} $ per ottenere
+	\[
+		2ik \partial _z g \cancel{e^{ikz}} + \cancel{e^{ikz} \nabla ^2 g } = \frac{2mV}{\hbar ^2}\cancel{e^{ikz} } \Rightarrow 2ik \partial _z g = \frac{2mV}{\hbar ^2}\Rightarrow g = \frac{m}{ik\hbar ^2}\int V dz
+	\] 
+dove si \`e trascurato il termine $\nabla ^2 g$ perch\'e non proporzionale a $k$.	
+Dal fatto che $g \sim \frac{m}{k\hbar ^2} \int V dz \sim \frac{m}{k\hbar ^2}Va$, dovendo risultare $g\ll 1$, si ottiene 
+\[
+\frac{mVa}{k\hbar ^2}\ll 1 \implies V \ll \frac{\hbar ^2}{ma^2}ka
+\] 
 
+\end{proof}
+\subsubsection{Soluzione in zona di radiazione}
+Ci si mette a grandi distanze dal centro diffusore, cio\`e $x \gg a$, e si approssima $\lvert \vec{x}- \vec{x}' \rvert \simeq r - \vec{x}' \cdot \hat{n}$, dove $\lvert \vec{x} \rvert = r$ e $\hat{n} = \vec{x} / r$.
+Quindi, assumendo di essere di approssimazione di Born (quindi vale o $V \ll \frac{\hbar ^2}{ma^2}$ o $V \ll \frac{\hbar ^2}{ma^2}ka$), si ha:
+\[
+\begin{split}
+	\psi ^{(1)} (\vec{x}) &= -\frac{m}{2\pi \hbar ^2}\int \psi ^{(0)} (\vec{x}') V(\vec{x}') \frac{e^{ik\lvert \vec{x}- \vec{x}' \rvert }}{\lvert \vec{x}-\vec{x}' \rvert } \ d^3 x'\\
+	& \simeq - \frac{m}{2\pi \hbar ^2} \int e^{i \vec{k}\cdot \vec{x}'} V(\vec{x}') \frac{e^{ikr - ik \vec{x}' \cdot \hat{n}} }{r} \ d^3 x' = - \frac{m}{2\pi \hbar ^2} \frac{e^{ikr} }{r} \int V (x') e^{i(\vec{k}-\vec{k}') \cdot \vec{x}'}  d^3 x'
+\end{split}
+\] 
+dove si \`e preso $\vec{k}' = k \hat{n}$.
+Ora, ricordando che $\psi \simeq e^{i \vec{k}\cdot \vec{x}} + f(\theta ) \frac{e^{ikr} }{r}$, si deduce che:
+\begin{equation*}
+	f(\theta ) = - \frac{m}{2\pi \hbar ^2}\int V(x') e^{i \vec{q}\cdot \vec{x}'}  d^3 x'
+\end{equation*}
+con $\vec{q} = \vec{k} - \vec{k}', \ \lvert \vec{q} \rvert = 2k \sin (\theta / 2)$ impulso trasferito.
+Per risolvere questo integrale, si passa in coordinate sferiche:
+\begin{equation}
+	\begin{split}
+		f(\theta ) &=- \frac{m}{2\pi \hbar ^2} \int V(r') e^{i \vec{q}\cdot \vec{r}'} d^3 r'\\
+			   &= - \frac{m}{2\pi \hbar ^2}\int V(r') e^{iq r' \cos \theta '} r'^2 \sin \theta ' dr' d\theta ' d \varphi '\\
+			   &= - \frac{2m}{\hbar ^2} \int V(r') \frac{\sin qr'}{q} dr'
+	\end{split}
+\end{equation}
+Per procedere nell'integrazione, \`e necessaria un'espressione per il potenziale.
+\subsubsection{Trasformata di Fourier e regola d'oro di Fermi}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Riprendendo l'espressione
+\[
+f(\theta ) = - \frac{m}{2\pi \hbar ^2}\int V(x') e^{i \vec{q}\cdot \vec{x}'} d^3 x'
+\] 
+questa si pu\`o vedere come una trasformata di Fourier di $V$, per cui si pu\`o scrivere la sezione d'urto differenziale come:
+\begin{equation}
+	\sigma (\theta ) = \lvert f(\theta ) \rvert ^2 = \frac{m^2}{4 \pi ^2 \hbar ^4} \lvert \widetilde{U}(k-k') \rvert ^2
+\end{equation}
+Si lega questo alla regola d'oro di Fermi.
+Si considera, allora, uno stato iniziale 
+\[
+\ket{i} = \sqrt{\frac{m}{k\hbar }} e^{i\vec{k}\cdot \vec{x}} , \ p = \hbar  k
+\] 
+Lo stato finale, invece, si scrive come
+\[
+\ket{f}  = e^{i \vec{k}' \cdot \vec{x}} 
+\] 
+con $\vec{k}'$ impulso uscente.
+Si vuole ricavare la probabilit\`a di transizione da $\ket{i} $ a $\ket{f} $.
+La formula trovata per la regola d'oro \`e:
+\[
+d \omega_{fi} = \frac{2\pi}{\hbar }\lvert \braket{f|V|i}  \rvert ^2 \delta (E_f - E_i) d \nu _f
+\] 
+In questo caso particolare, questa formula diventa:
+\[
+d \omega_{kk'}  = \frac{4\pi m }{\hbar } \lvert \braket{f|V|i}  \rvert ^2 \delta (p^2-p'^2) \frac{d^3 p'}{(2\pi \hbar )^3}
+\] 
+con
+\[
+\braket{f|V|i}  = \sqrt{\frac{m}{k}} \int e^{i \vec{k}' \cdot \vec{x}} V e^{i\vec{k}\cdot \vec{x}} d^3 x
+\] 
+che coincide con l'integrale ottenuto per la sezione d'urto.
+\begin{osservazione}
+La differenza dei due approcci \`e che questo appena fatto, cio\`e calcolare le funzioni d'onda, permette una visione pi\`u completa perch\'e tramite la funzione d'onda si ha anche accesso alla fase, pi\`u che al modulo quadro ottenuto direttamente da $d\omega_{fi} $.
+Al contrario, la regola d'oro \`e pi\`u conveniente da usare in casi pi\`u complicati, come scattering di elettrone veloce contro atomo ad esempio.
+Le formule ricavate con le funzioni d'onda, invece, sono limitate allo scattering da potenziale.
+\end{osservazione}
 
 
 
@@ -4552,6 +4713,9 @@ Per $\ell =0$, si ha $m=0$; valendo anche $s_z = \pm 1 / 2$ ed essendo $M = m + 
 
 Ora si usano i coefficienti di Clebsch-Gordan per tornare alla base precedente.
 
+\begin{center}
+	Terminare da esercitazione 7
+\end{center}
 
 
 
