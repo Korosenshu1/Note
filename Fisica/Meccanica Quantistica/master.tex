@@ -3179,7 +3179,7 @@ La soluzione di questa \`e
 \[
 \psi ^{(1)} (\vec{x}) = - \frac{m}{2\pi \hbar ^2}\int \psi ^{(0)} (\vec{x}') V(\vec{x}') \frac{e^{ikr}}{r} \ d^3 x', \ r = \lvert \vec{x}-\vec{x}' \rvert 
 \] 
-\subsubsection{Validit\`a dello sviluppo}
+\subsection{Validit\`a dello sviluppo}
 
 Ora si pu\`o capire cosa significa $V$ piccolo. 
 Per consistenza dello sviluppo, deve valere $\psi ^{(1)} \ll\psi ^{(0)} \sim 1$\footnote{Questo perch\'e $\psi ^{(0)} $ \`e una funzione oscillante, che \`e dell'ordine di $1$.}.
@@ -3204,7 +3204,7 @@ Dal fatto che $g \sim \frac{m}{k\hbar ^2} \int V dz \sim \frac{m}{k\hbar ^2}Va$,
 \] 
 
 \end{proof}
-\subsubsection{Soluzione in zona di radiazione}
+\subsection{Soluzione in zona di radiazione}
 Ci si mette a grandi distanze dal centro diffusore, cio\`e $x \gg a$, e si approssima $\lvert \vec{x}- \vec{x}' \rvert \simeq r - \vec{x}' \cdot \hat{n}$, dove $\lvert \vec{x} \rvert = r$ e $\hat{n} = \vec{x} / r$.
 Quindi, assumendo di essere di approssimazione di Born (quindi vale o $V \ll \frac{\hbar ^2}{ma^2}$ o $V \ll \frac{\hbar ^2}{ma^2}ka$), si ha:
 \[
@@ -3228,7 +3228,7 @@ Per risolvere questo integrale, si passa in coordinate sferiche:
 	\end{split}
 \end{equation}
 Per procedere nell'integrazione, \`e necessaria un'espressione per il potenziale.
-\subsubsection{Trasformata di Fourier e regola d'oro di Fermi}
+\subsection{Trasformata di Fourier e regola d'oro di Fermi}
 
 Riprendendo l'espressione
 \[
@@ -3267,7 +3267,6 @@ La differenza dei due approcci \`e che questo appena fatto, cio\`e calcolare le 
 Al contrario, la regola d'oro \`e pi\`u conveniente da usare in casi pi\`u complicati, come scattering di elettrone veloce contro atomo ad esempio.
 Le formule ricavate con le funzioni d'onda, invece, sono limitate allo scattering da potenziale.
 \end{osservazione}
-
 
 
 
@@ -4411,7 +4410,7 @@ Studiare i primi 3 livelli del sistema per capire come reagiscono alla perturbaz
 			che si ottiene notando che i termini in $\hat{x}$ e $\hat{y}$ sono indipendenti e che, per quello unidimensionale, si ha $\hat{H}_0^{1D} = \hbar \omega(\hat{N} + 1 / 2)$.
 			Come per il caso $1D$, si ricavano i commutatori $[\hat{N}_x, \hat{a}_x] = - \hat{a}_x$ e $[\hat{N}_x, \hat{a}_x^\dagger ] = \hat{a}_x ^\dagger $.
 
-			Rispetto al caso unidimensionale, gli stati saranno $\ket{n_xn_y} $, con $\hat{N}_x \ket{n_x} = n_x \ket{n_x} $, cio\`e $\hat{N} \ket{n_xn_y} = (n_x+n_y) \ket{n_xn_Y} $.
+			Rispetto al caso unidimensionale, gli stati saranno $\ket{n_xn_y} $, con $\hat{N}_x \ket{n_x} = n_x \ket{n_x} $, cio\`e $\hat{N} \ket{n_xn_y} = (n_x+n_y) \ket{n_xn_y} $.
 			Pertanto:
 			\[
 			\hat{H}_0 \ket{n_xn_y} = \hbar \omega (\hat{N} + 1 ) \ket{n_xn_y} = \hbar \omega (n_x + n_y+1)\ket{n_xn_y} \equiv E^{(0)} \ket{n_xn_y} 
@@ -4712,18 +4711,181 @@ Per $\ell =0$, si ha $m=0$; valendo anche $s_z = \pm 1 / 2$ ed essendo $M = m + 
 \vspace{.5cm}
 
 Ora si usano i coefficienti di Clebsch-Gordan per tornare alla base precedente.
+Tramite le apposite tavole, si trovano le seguenti relazioni:
+\[
+\begin{split}
+	&\Ket{0, \frac{1}{2}, \frac{1}{2}, \pm \frac{1}{2}} = \Ket{0 , 0 , \frac{1}{2}, \pm \frac{1}{2}} \\
+	& \Ket{1 , \frac{1}{2} , \frac{1}{2}, \frac{1}{2}} = \sqrt{\frac{2}{3}} \Ket{1,1,\frac{1}{2}, -\frac{1}{2}} - \sqrt{\frac{1}{3}}  \Ket{1,0,\frac{1}{2},\frac{1}{2}} \\
+	& \Ket{1 , \frac{1}{2}, \frac{1}{2},-\frac{1}{2}} = \sqrt{\frac{1}{3}} \Ket{1,0,\frac{1}{2},-\frac{1}{2}} - \sqrt{\frac{2}{3}} \Ket{1,-1,\frac{1}{2}, \frac{1}{2}} 
+\end{split}
+\] 
+Si svolge il procedimento per $\phi _+$ perch\'e analogo per $\phi _-$.
+Si nota che la matrice $W$ sar\`a a blocchi in $\phi _{\pm} $, cio\`e sar\`a composta da un blocco $2\times 2$ con $\phi _+$ e $\phi _+^*$ sull'anti-diagonale e da un'altra matrice $2\times 2$ con $\phi _-$ e $\phi _-^*$ sull'anti-diagonale, mentre tutti gli altri elementi sono nulli.
+
+Per il calcolo dell'elemento di matrice, \`e conveniente introdurre gli operatori di salita e discesa 
+\[
+\hat{S}_+ = \hat{S}_x + i \hat{S}_y \hspace{1cm} \hat{S}_- = \hat{S}_x - i \hat{S}_y
+\] 
+Ricordando che $\hat{\vec{S}} = \hbar  \vec{\sigma }/2$, questi operatori soddisfano
+\[
+\hat{S}_+ \ket{\downarrow} = \hbar \ket{\uparrow} \hspace{1cm}\hat{S}_- \ket{\uparrow} = \hbar \ket{\downarrow} \hspace{1cm} \hat{S}_- \ket{\downarrow} = \hat{S}_+ \ket{\uparrow} = 0
+\] 
+con $\ket{\uparrow} = \ket{s=1 / 2, \ s_z = 1 / 2} $ e $\ket{\downarrow} = \ket{s=1 / 2, \ s_z = -1 / 2} $.
+Tramite gli operatori di salita e discesa, si possono riscrivere 
+\[
+\hat{S}_x = \frac{\hat{S}_+ + \hat{S}_-}{2} \hspace{1cm}\hat{S}_y = \frac{\hat{S}_x - \hat{S}_y}{2i}
+\] 
+per cui 
+\[
+\hat{\vec{S}}\cdot \hat{\vec{r}}= \hat{S}_x \hat{x} + \hat{S}_y \hat{y} + \hat{S}_z \hat{z}= \frac{\hat{S}_+ + \hat{S}_-}{2}\hat{x}+ \frac{\hat{S}_+ - \hat{S}_-}{2i} \hat{y} + \hat{S}_z \hat{z}
+\] 
+Infine, ricordando che gli operatori di spin agiscono unicamente sullo spazio degli stati di spin, si ottiene:
+\[
+\begin{split}
+&\begin{split}
+	\phi _+ =&  \sqrt{\frac{2}{3}}\bigg[ \Braket{\uparrow|\frac{\hat{S}_+ + \hat{S}_-}{2}|\downarrow} \braket{0,0|\hat{x}|1,1} + \Braket{\uparrow|\frac{\hat{S}_+ - \hat{S}_-}{2i}|\downarrow} \braket{0,0|\hat{y}|1,1}+ \\
+		 &+ \braket{\uparrow|\hat{S}_z|\downarrow} \braket{0,0|\hat{z}|1,1}   \bigg] - \sqrt{\frac{1}{3}} \bigg[\Braket{\uparrow|\frac{\hat{S}_+ + \hat{S}_-}{2}|\downarrow} \braket{0,0|\hat{x}|1,0} + \\
+		 &+ \Braket{\uparrow|\frac{\hat{S}_+ - \hat{S}_-}{2i}|\downarrow}\braket{0,0|\hat{y}|1,0} +\braket{\uparrow|\hat{S}_z|\downarrow} \braket{0,0|\hat{z}|1,0}  \bigg]
+\end{split} \\
+& \Rightarrow \phi _+ = \hbar \sqrt{\frac{2}{3}} \Braket{0,0|\frac{\hat{x}- i \hat{y}}{2}|1,1} - \hbar \sqrt{\frac{1}{3}} \Braket{0,0|\frac{\hat{x}- i\hat{y}}{2}|1,0} 
+\end{split}
+\] 
+Questi ultimi elementi si possono calcolare seguendo quanto fatto sull'atomo di idrogeno.
+
+\subsubsection{Hamiltoniano di Heisenberg con campo magnetico}
+
+Si considera l'Hamiltoniano\footnote{Qui $J$ non \`e il momento angolare, \`e solamente una generica costante reale.}
+\begin{equation}
+	\hat{H} = J \pmb{\sigma } _1 \cdot \pmb{\sigma } _2 + \mathbf{B} _1 \cdot \pmb{\sigma } _1 + \mathbf{B} _2 \cdot \pmb{\sigma } _2
+\end{equation}
+relativo a due qubits ($1$ e $2$), con i campi magnetici $\mathbf{B} _1, \mathbf{B} _2  \mid \mid  \hat{z}$.
+Si prender\`a, come Hamiltoniano imperturbato, il termine $\hat{H}_0 = J \pmb{\sigma } _1 \cdot \pmb{\sigma } _2 $, mentre la perturbazione sar\`a la parte legata al campo magnetico, cio\`e $\hat{V} = B_1 \sigma ^{(1)} _z + B_2 \sigma ^{(2)} _z$.
+\begin{enumerate}[(a).]
+	\item Scrivere l'Hamiltoniano $\hat{H}_0$ in forma matriciale e calcolarne gli autovalori.
+		\begin{svolgimento}
+			Per farlo, \`e necessario scegliere una base e si prende quella fornita da
+			\[
+				\sigma _z = \begin{pmatrix} 1 & 0 \\ 0 & - 1 \end{pmatrix} \longrightarrow \ket{\uparrow}=  \begin{pmatrix} 1 \\0  \end{pmatrix} , \ \ket{\downarrow} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+			\] 
+		con autovalori, rispettivamente, $1, -1$.
+		Per scrivere $\hat{H}_0$, si ricordano le azioni delle altre matrici di Pauli su questa base:
+		\[
+		\begin{split}
+			&\sigma _x \ket{\uparrow}  = \begin{pmatrix} 0 & 1 \\ 1 & 0  \end{pmatrix} \begin{pmatrix} 1 \\0  \end{pmatrix} = \begin{pmatrix} 0 \\1 \end{pmatrix} = \ket{\downarrow} \hspace{1cm} \sigma _x \ket{\downarrow} = \ket{\uparrow} \\
+			& \sigma _y \ket{\uparrow} = \begin{pmatrix} 0 & -i \\ i & 0  \end{pmatrix} \begin{pmatrix} 1 \\0  \end{pmatrix} = \begin{pmatrix} 0 \\ i \end{pmatrix} =i \ket{\downarrow} \hspace{1cm} \sigma _y \ket{\downarrow} = - i \ket{\uparrow} 
+		\end{split}
+		\] 
+		Il sistema \`e composto da 2 qubits, quindi la base sar\`a il prodotto tensore: $\mathcal{B}= \left\{ \ket{\uparrow\uparrow} , \ket{\uparrow\downarrow} , \ket{\downarrow\uparrow} , \ket{ \downarrow\downarrow}  \right\} $.
+		Indicando con $\sigma _a = \sigma _a^{(1)} \otimes \sigma _a ^{(2)} $, si nota che:
+		\[
+		\braket{ij|\sigma _x|mn} = \braket{ij|\overline{m} \overline{n}} = \delta _{i \overline{m}} \delta _{j \overline{n}} 
+		\] 
+	dove $\overline{m}, \overline{n}$ sono $m,n$ flippati. 
+	Questa relazione implica che $i = \overline{m}, \ j \overline{n}$, cio\`e $m,n$ devono essere rispettivamente $i,j$ flippati.
+	Allora la componente con $\sigma _x$ non ha termini diagonali. 
+	Lo stesso vale per $\sigma _y$, eccetto gli opportuni coefficienti prodotti. 
+	I termini diagonali sono $\pm1$ per via di $\sigma _z$, a seconda che gli stati di spin siano misti o meno, visto che $\sigma _z$ ha autovalore $-1$ su $\ket{\downarrow} $.
+	Procedendo al calcolo, si trova che i termini dovuti a $\ket{\uparrow \uparrow} $ con $\ket{\downarrow\downarrow} $ si annullano perch\'e $\sigma _x$ produce $1$ e $\sigma _y$ un $-1$, quindi si sottraggono e si annullano. 
+	Al contrario, i termini misti si sommano e viene una sotto-matrice quadrata con dei $2$ sull'anti-diagonale:
+	\[
+		\hat{H}_0 = J\begin{pmatrix} 1 & 0& 0&0 \\ 0& -1 & 2 &0 \\ 0&2&-1&0\\ 0&0&0&1 \end{pmatrix} 
+	\] 
+			Per gli autovalori, si ha $\lambda _0 = 1$ con molteplicit\`a $2$, al momento.
+			Per gli altri, si studia la sotto-matrice quadrata, i cui autovalori sono dati da
+			\[
+				(1+\lambda )^2- 4= \lambda ^2 + 2 \lambda  -3 \stackrel{!}{=} 0\implies \lambda _\pm = -1 \pm 2
+			\] 
+		Quindi, in realt\`a, l'autovalore $\lambda _0 = 1$ ha molteplicit\`a $3$ e un altro autovalore \`e $\lambda _1 = -3$.
+
+		\vspace{.5cm}
+		{\sffamily \bfseries Svolgimento alternativo.} In alternativa a tutto questo procedimento, si sarebbe potuto notare, prendendo $\hbar = 1$, che: 
+		\[
+		\hat{H}_0 = 4J \hat{\mathbf{S}} _1 \cdot \hat{\mathbf{S}} _2 = 4 J \left(\frac{S_\text{tot}^2 - \hat{S}_1^2 - \hat{S}_2 ^2}{2}\right) =2 J \left(\hat{S}_\text{tot}^2 - \hat{S}_1^2 - \hat{S}_2 ^2\right)
+		\] 
+		Avendo a che fare con due spin $1 / 2$, usando i coefficienti di Clebsch-Gordan, la base $\ket{S_\text{tot}, S_\text{tot,z}} $ \`e:
+		\[
+		\begin{split}
+			&\ket{1,1} = \ket{\uparrow\uparrow} \hspace{1cm} \ket{1, -1 } = \ket{\downarrow\downarrow} \\
+			& \ket{1,0} = \frac{1}{\sqrt{2} } \big(\ket{\uparrow \downarrow} + \ket{\downarrow\uparrow} \big) \hspace{1cm} \ket{0,0}  = \frac{1}{\sqrt{2} }  \big(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow}  \big)
+		\end{split}
+		\] 
+	Quindi,	per esempio, si ha $\hat{S}_\text{tot}^2 \ket{\uparrow\uparrow} = s_\text{tot}(s_\text{tot}+1) \ket{\uparrow\uparrow} = 2 \ket{\uparrow\uparrow} $.
+	Applicando tutto l'Hamiltoniano, invece:
+	\[
+		\begin{split}
+			&\hat{H}_0  \ket{1,1} = 2J \left[2 - \frac{1}{2}\left(\frac{1}{2}+1\right) - \frac{1}{2}\left(\frac{1}{2}+1\right) \right] \ket{\uparrow\uparrow} = J \ket{\uparrow\uparrow} \\
+			& \hat{H}_0 \ket{1,-1} = J \ket{\downarrow\downarrow} \\
+			& \hat{H}_0 \ket{1,0} = J \ket{1,0}\\
+			& \hat{H}_0 \ket{0,0} = 2J \left[ -\frac{1}{2} \left(\frac{1}{2}+1\right) - \frac{1}{2}\left(\frac{1}{2}+1\right)  \right] = - 3 J \ket{0,0} 
+		\end{split}
+	\] 
+I primi 3 devono per forza essere cos\`i perch\'e $S_\text{tot} = 1$, quindi i due spin devono essere separatamente $1 / 2 $ in ciascuno di questi. 
+
+In termini dei proiettori, l'Hamiltoniano si pu\`o scrivere come
+\[
+\hat{H}_0 = J \Big(\ket{1,1} \bra{1,1} + \ket{1,-1} \bra{1,-1} + \ket{1,0} \bra{1,0} \Big) - 3J \ket{0,0} \bra{0,0} 
+\] 
+Andando a sostituire questi ket nella base di $\sigma _z$ tramite i Clebsch-Gordan scritti sopra, si ottiene la matrice trovata tramite il procedimento fatto all'inizio.
+		\end{svolgimento}
+	\item Considerazioni sugli autovalori.
+
+Le autoenergie trovate, quindi, sono $J,J,J,-3J$; questo significa che, per $J>0$, lo stato fondamentale ha energia $-3J$ ed \`e un singoletto.
+In questo caso, il comportamento del sistema \`e detto \textbf{anti-ferromagnetico}.
+
+Se $J<0$, allora il sistema \`e detto \textbf{ferromagnetico} e il ground state ha energia $J$ e i tripletti che compongono lo stato fondamentale hanno spin diverso da 0 complessivamente, quindi il comportamento complessivo del sistema ha tendenze ferromangetiche.
+\item Si accende il potenziale e si considera l'Hamiltoniano completo $\hat{H}$. 
+	Calcolare la forma matriciale esatta di $\hat{H}$, quindi senza usare la teoria perturbativa.
+	Successivamente, calcolarne gli autovalori.
+	\begin{svolgimento}
+		Essendo che $\sigma ^{(1)} _z = \sigma _z^{(1)} \otimes \operatorname{Id} ^{(2)}$ e, analogamente, $\sigma _z^{(2)}  =  \sigma _z^{(2)} \otimes \operatorname{Id} ^{(1)} $, gli unici elementi non nulli del potenziale sono quelli sulla diagonale; complessivamente, si trova:
+		\[
+			[\hat{V}]_\mathcal{B} = \begin{pmatrix} B_1+B_2 &0&0&0\\ 0& B_1-B_2 &0&0\\0&0&B_2-B_1 &0\\0&0&0&-(B_1+B_2) \end{pmatrix} 
+		\] 
+		Quindi, la matrice associata all'Hamiltoniano completo \`e:
+		\begin{equation}
+			[\hat{H}]_\mathcal{B} = \begin{pmatrix}  J + B_1+B_2 & 0 &0&0\\ 0 &B_1-J-B_2 & 2 J&0 \\ 0& 2J & B_2 -J - B_1 & 0 \\ 0& 0& 0& J - B_1-B_2\end{pmatrix} 
+		\end{equation}
+		Seguendo il procedimento per $\hat{H}_0$, gli autovalori si modificano in 
+		\[
+		J+B_1+B_2 \hspace{1cm} J - B_1 -B_2 \hspace{1cm}- J \pm\sqrt{(B_1-B_2)^2 + 4J^2} 
+		\] 
+	\end{svolgimento}
+\item Calcolare l'effetto del potenziale sul ground state come fosse una perturbazione, nel caso $J > 0$.
+	\begin{svolgimento}
+		Per trattare $\hat{V}$ come perturbazione, si stanno assumendo $\lvert B_1 \rvert , \lvert B_2 \rvert \ll 1$.
+		Il ground state di energia $- 3J$ \`e $\ket{00} = \frac{\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2}} $, quindi il primo ordine perturbativo \`e dato da:
+		\[
+		\Braket{ 00| B_1 \sigma ^{(1)} _z + B_2 \sigma _z^{(2)} |00} = 0
+		\] 
+	Questo risultato \`e giustificato dal fatto che 
+	\[
+	\sigma ^{(1)} _z \frac{\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow} }{\sqrt{2} } = \frac{\ket{\uparrow\downarrow} + \ket{\downarrow\uparrow} }{\sqrt{2} }
+	\] 
+	quindi, applicando il bra a sinistra, i due sono ortogonali e si ottiene $0$. 
+	Lo stesso vale per $\sigma ^{(2)} _z$.
+Questo era anche intuibile perch\'e sviluppando la radice per $B_1,B_2$ piccoli, si vede che la correzione \`e quadratica in $B_1$ e $B_2$.
+	\end{svolgimento}
+\item Calcolare l'effetto della perturbazione al secondo ordine, sempre nel caso $J >0$ e sempre per il ground state.	
+	\begin{svolgimento}
+		Si calcola 
+		\[
+		E^{(2)} _0 = \sum_{n>0,m}^{} \frac{\lvert \braket{nm|\hat{V}|00}  \rvert ^2}{E^{(0)} _0 - E_{nm} ^{(0)} }
+		\] 
+		Ricordando che le $\sigma _z$ agiscono mandando $\ket{00} $ in $\ket{10} $, solo il termine $\braket{10|\hat{V}|00} $ sar\`a non-nullo.
+		Visto che
+		\[
+		\braket{10|B_1 \sigma ^{(1)} _z|00} = B_1 \hspace{1cm}\braket{ 10|\sigma ^{(2)} _z |00} = - B_2
+		\] 
+		e che $E_0^{(0)} - E_{10} ^{(0)}  = -4J$, si ha:
+		\[
+		E^{(2)} _0 =- \frac{(B_1-B_2)^2}{4J} 
+		\] 
+	\end{svolgimento}
+\end{enumerate}
 
 \begin{center}
-	Terminare da esercitazione 7
+	Riprendere da esercitazione 9	
 \end{center}
-
-
-
-
-
-
-
-
 
 
 
