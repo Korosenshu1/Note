@@ -3389,6 +3389,112 @@ dove si usa la condizione iniziale di $\rho^{(1)} (t=t_0) = \operatorname{tr} _{
 		A \otimes B \overset{\text{def}}{=} \begin{pmatrix} a_{11} B & \cdots & a_{1n} B\\ \vdots & \ddots&\vdots \\ a_{m1}B & \cdots  & a_{mn} B\end{pmatrix} 
 	\end{equation}
 	dove ogni prodotto $a_{ij} B$ \`e blocco dato dal prodotto della matrice $B$ per lo scalare $a_{ij} $. 
+\subsubsection{Regole di selezione}
+
+Le regole di selezione sono particolarmente utili e verranno applicate nello studio delle transizioni di stato per atomo di idrogeno investito da radiazione elettromagnetica in approssimazione di dipolo e si \`e interessati alle regole di selezione del problema, quali simmetrie, parit\`a o momento angolare.
+Si \`e visto che la probabilit\`a di transizione da uno stato $a$ ad uno stato $b$ \`e:
+\[
+P_{a\to b} \propto \left\lvert \Braket{E_b^{(0)} |\hat{\mathbf{d} } \cdot \hat{\mathbf{e} }|E_a^{(0)} }  \right\rvert ^2
+\] 
+con 
+\[
+\hat{\mathbf{d} }= \sum_{i}^{} q_i \hat{x}_i 
+\] 
+\`e il momento di dipolo, che per l'atomo di idrogeno \`e $-e \hat{\mathbf{r} }$ e $\mathbf{e} $ rappresenta la polarizzazione dell'onda.
+Si studieranno i casi (regole di selezione) in cui questo elemento di matrice \`e non-nullo, il che implica una probabilit\`a non-nulla di transizione.
+Le seguenti regole saranno rivolte principalmente alle transizioni nell'atomo di idrogeno in approssimazione di dipolo elettrico, ma per lo pi\`u sono regole generali.
+\begin{enumerate}[(a).]
+	\item {\sffamily \bfseries Parit\`a.}
+		In questo contesto, si immagina di avere una transizione tra stati che hanno parit\`a definita.
+		Si immagina una transizione tra due stati $\ket{p_1} , \ket{p_2} $\footnote{Visto il discorso, si indica, come numero quantico, solo quello relativo alla parit\`a, ma questi stati, in generale, saranno caratterizzati da altri numeri quantici, come $n,\ell ,m$ per l'atomo di idrogeno.}, cio\`e tali che $\hat{\mathcal{P} }\ket{p_i} = p_i \ket{p_i}$; in questo caso, la transizione \`e permessa se
+		\[
+		0\neq\braket{p_1|\hat{d}_i|p_2} =\braket{p_1|\hat{\mathcal{P} }^\dagger \hat{\mathcal{P} } \hat{d}_i \hat{\mathcal{P} }^\dagger  \hat{\mathcal{P} }|p_2} = - p_1p_2 \braket{p_1|\hat{d}_i|p_2} 
+		\] 
+	dove si \`e usato che $\hat{d}_i$ \`e dispari sotto parit\`a (essendo proporzionale alla posizione).	
+	\`E vero che questo elemento di matrice \`e non-nullo se $p_1\neq p_2$, cio\`e se $\ket{p_1} $ e $\ket{p_2} $ hanno parit\`a opposta.
+	\item {\sffamily \bfseries Momento angolare $\hat{L}_z$.}
+		Si considerano stati che abbiano $m$ come numero quantico, cio\`e tali che $\hat{L}_z \ket{m} = m \ket{m} $. 
+		Anche in questo caso, si riporta solo il numero quantico rilevante per il caso specifico in esame.
+
+		Si vuole capire quando $\braket{m'|\hat{d}_i |m} \neq 0$.
+		Per farlo, si usano 
+		\[
+		\hat{d}_+ = \hat{d}_x + i \hat{d}_y \hspace{1cm} \hat{d}_-= \hat{d}_x - i \hat{d}_y \hspace{1cm} \hat{d}_z
+		\] 
+		Si possono mostrare le regole di commutazione 
+		\[
+			[\hat{L}_z, \hat{d}_{\pm} ] = \pm \hbar  \hat{d}_\pm \hspace{1cm} [\hat{L}_z , \hat{d}_z] = 0 
+		\] 
+	\begin{osservazione}
+	Queste regole di commutazione sono, in realt\`a, verificate per ogni operatore che trasforma come un vettore rispetto a $\hat{L}_z$ e la trattazione non \`e specificatamente legata al caso in esame della radiazione che incide sull'atomo di idrogeno, quindi come operatore il momento di dipolo.
+	\end{osservazione}	
+Utilizzando i commutatori, si ha che:
+\[
+\begin{split}
+	\Braket{m'|[\hat{L}_z,  \hat{d}_{\pm} ]|m} &= \pm \hbar \braket{m'|\hat{d}_\pm|m} \\
+						   &= \Braket{m'|\hat{L}_z \hat{d}_\pm - \hat{d}_\pm \hat{L}_z|m} = (m' - m) \braket{m'|\hat{d}_\pm|m} 
+\end{split}
+\] 
+Mettendo insieme le due uguaglianze, si ottiene la condizione
+\begin{equation}\label{rsmz}
+	(m'-m \mp 1) \braket{m'|\hat{d}_\pm|m} = 0
+\end{equation}
+Ripetendo gli stessi passaggi anche per $\hat{d}_z$, usando che $[\hat{L}_z, \hat{d}_z] = 0$, si trova che:
+\begin{equation}\label{rsmz2}
+	(m' - m) \braket{m'|\hat{d}_z|m} = 0
+\end{equation}
+\begin{osservazione}
+In tutti i conti sopra, si \`e preso $\hbar  = 1$.
+\end{osservazione}
+\begin{boxenv}[]
+Per la relazione in eq. \ref{rsmz}, dalla richiesta che tale elemento di matrice sia diverso da $0$, si ottiene la condizione $m ' - m = \pm 1$.
+Da questa, esplicitando $\hat{d}_x, \hat{d}_y$ come combinazioni di $\hat{d}_\pm$, si ottiene l'analoga condizione $\Delta m = \pm 1$.
+
+Dalla relazione in eq. \ref{rsmz2}, invece, si ottiene la condizione $m' - m = 0$.
+\end{boxenv}
+Da questo, si conclude che $\hat{d}_x, \hat{d}_y$ connettono stati con autovalore di $\hat{L}_z$ che differiscono di $1$ e che $\hat{d}_z$ connette stati che hanno stesso $m$.
+	\item {\sffamily \bfseries Momento angolare $\hat{L}^2$.}
+		Si considerano stati della forma $\ket{\ell } $ tali che $\hat{L}^2 = \ell (\ell +1) \ket{\ell } $ (sempre ponendo $\hbar  =1 $) e ci si chiede quando $\braket{\ell '| \hat{d}_i |\ell } \neq 0$.
+		Per farlo, si usa la relazione 
+		\begin{equation}
+			\left[ \hat{L}^2 , [\hat{L}^2 , \hat{x}_k] \right]  = 2 \hbar ^2 \left(\hat{L}^2 \hat{x}_k + \hat{x}_k \hat{L}^2\right) 
+		\end{equation}
+		Prendendo $\hbar = 1$, si ottengono, separatamente, le seguenti relazioni:
+		\[
+		\begin{split}
+			&\begin{split}
+				\Braket{\ell '|\left[ \hat{L}^2, [\hat{L}^2 , \hat{x}_k] \right] |\ell } &= 2 \braket{\ell '|\hat{L}^2 \hat{x}_k + \hat{x}_k \hat{L}^2|\ell } \\
+				&= 2 \left[ \ell (\ell +1) + \ell '(\ell '+1) \right] \braket{\ell '|\hat{x}_k|\ell } 
+			\end{split}\\
+			&\begin{split}
+				\Braket{\ell' |\hat{L}^2 [\hat{L}^2 , \hat{x}_k]- [\hat{L}^2 , \hat{x}_k] \hat{L}^2|\ell } &= \left[ \ell ' (\ell ' +1) - \ell (\ell +1) \right] \braket{\ell '|[\hat{L}^2 , \hat{x}_k] |\ell} \\
+															   &=\left[ \ell '(\ell ' +1) - \ell (\ell +1) \right] ^2 \braket{\ell '|\hat{x}_k|\ell } 
+			\end{split}
+		\end{split}
+		\] 
+	Visto che sono risultato della stessa espressione di partenza, eguagliandole e usando che
+\[
+\begin{split}
+	&\ell '(\ell '+1) - \ell (\ell +1) = (\ell ' + \ell + 1) (\ell '-\ell )\\
+	&2 \left[ \ell (\ell +1) + \ell ' (\ell '+1) \right] = (\ell '+\ell +1)^2 + (\ell '-\ell )^2 - 1
+\end{split}
+\] 
+	si ottiene la condizione 
+	\begin{boxenv}[]
+	\begin{equation}
+		\left[ (\ell '+\ell +1)^2 - 1 \right] \left[ (\ell '-\ell ) - 1 \right]  = 0\implies \ell ',  \ell \neq 0 \text{ \& } \ell '- \ell = \pm 1
+	\end{equation}
+	\end{boxenv}
+	\item {\sffamily \bfseries Teorema di Wigner-Eckart.} Le regole di selezione si possono ricavare direttamente dal teorema di Wigner-Eckart. 
+		Dato, quindi, un tensore irriducibile $\hat{T}^{(\ell  )} _m$, con $m = -\ell ,\ldots,+\ell $, si ha
+		\[
+		\Braket{\ell '' m''|\hat{T}^{(\ell )} _m|\ell' m'} = C^{\ell 'm'} _{\ell m; mm' } \Braket{\ell ''|\hat{T}^{(\ell )} |\ell '} 
+		\] 
+		I coefficienti di Clebasch-Gordan che figurano in questo teorema pongono le condizioni per le regole di selezione:
+		\[
+		\lvert \ell _i - \ell _f \rvert \le  1 \hspace{1cm} \lvert m_i - m_f \rvert \le 1 \hspace{1cm} \ell _i + \ell _f \neq 0 
+		\] 
+\end{enumerate}
 \subsection{Sistemi a due livelli}
 
 
@@ -4838,9 +4944,9 @@ Se $J<0$, allora il sistema \`e detto \textbf{ferromagnetico} e il ground state 
 	Successivamente, calcolarne gli autovalori.
 	\begin{svolgimento}
 		Essendo che $\sigma ^{(1)} _z = \sigma _z^{(1)} \otimes \operatorname{Id} ^{(2)}$ e, analogamente, $\sigma _z^{(2)}  =  \sigma _z^{(2)} \otimes \operatorname{Id} ^{(1)} $, gli unici elementi non nulli del potenziale sono quelli sulla diagonale; complessivamente, si trova:
-		\[
+		\begin{equation}\label{poth}
 			[\hat{V}]_\mathcal{B} = \begin{pmatrix} B_1+B_2 &0&0&0\\ 0& B_1-B_2 &0&0\\0&0&B_2-B_1 &0\\0&0&0&-(B_1+B_2) \end{pmatrix} 
-		\] 
+		\end{equation}
 		Quindi, la matrice associata all'Hamiltoniano completo \`e:
 		\begin{equation}
 			[\hat{H}]_\mathcal{B} = \begin{pmatrix}  J + B_1+B_2 & 0 &0&0\\ 0 &B_1-J-B_2 & 2 J&0 \\ 0& 2J & B_2 -J - B_1 & 0 \\ 0& 0& 0& J - B_1-B_2\end{pmatrix} 
@@ -4881,18 +4987,13 @@ Questo era anche intuibile perch\'e sviluppando la radice per $B_1,B_2$ piccoli,
 		E^{(2)} _0 =- \frac{(B_1-B_2)^2}{4J} 
 		\] 
 	\end{svolgimento}
+\item Considerare, ora, $\hat{H} _0 = B_1 \sigma ^{(1)} _z + B_2 \sigma ^{(2)} _z$ e trattare il termine $\hat{H}_1 = J \pmb{\sigma } _1 \cdot \pmb{\sigma } _2$ come perturbazione.
+	In sostanza, calcolare prima la forma matriciale di $\hat{H}_0$ e relativi autovalori, per poi calcolare gli effetti della perturbazione $\hat{H}_1$ sugli stessi.
+	\begin{svolgimento}
+		La forma matriciale \`e riportata in eq. \ref{poth}, quindi con autovalori $B_1+B_2, B_1-B_2, B_2-B_1, -B_1-B_2$.
+		Ora si assume $J$ piccolo per trattare $\hat{H}_1$ come perturbazione; di questa, si sono gi\`a calcolati i vari elementi di matrice nel punto (a), quindi se ne conoscono automaticamente gli effetti perturbativi sui livelli energetici appena riportati (che corrispondono agli elementi diagonali di tale matrice.
+	\end{svolgimento}
 \end{enumerate}
-
-\begin{center}
-	Riprendere da esercitazione 9	
-\end{center}
-
-
-
-
-
-
-
 
 
 
