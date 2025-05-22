@@ -4995,9 +4995,237 @@ Questo era anche intuibile perch\'e sviluppando la radice per $B_1,B_2$ piccoli,
 	\end{svolgimento}
 \end{enumerate}
 
+\subsubsection{Atomo di idrogeno in campo elettrico}
+
+Si considera un tempo elettrico $\mathbf{E}  = \mathbf{E} _0 e^{- t / \tau } $ agente su un atomo di idrogeno per $t > 0$; si sa che in $t=0$, il sistema \`e nello stato fondamentale $\ket{100} $.
+Si cerca la probabilit\`a che il sistema compia una transizione allo stato $2p$, cio\`e $\ket{2,1,\ell _z} $, con $\ell _z = -1,0,+1$.
+
+\begin{svolgimento}
+La formula generale per il calcolo della probabilit\`a di transizione da stato iniziale a stato finale \`e:
+\begin{equation}
+	P_{i\to f} (t) =  \frac{1}{\hbar ^2}\left\lvert \int_{t_0} ^t dt ' \ \Braket{f^{(0)} |\hat{H}'(t')|i^{(0)} } e^{\frac{i}{\hbar } (E_f^{(0)} - E_i^{(0)} (t'-t_0)}  \right\rvert  ^2
+\end{equation}
+con $\hat{H}'$ perturbazione che, in questo caso, \`e $\hat{H}'(t) = -e E_0 \hat{z} e^{- t / \tau '} $.
+In questo caso specifico, la formula diventa:
+\[
+P_{1s\to 2p} (t) = \frac{e^2 E_0^2}{\hbar ^2}\left\lvert \int_{0} ^t dt ' \ e^{\frac{i}{\hbar } (E_2-E_1) t' }e^{-t ' / \tau } \braket{210|\hat{z}|100}   \right\rvert ^2
+\] 
+dove si \`e lasciato solamente lo stato $2p$ relativo a $\ell _z = 0$, $\ket{210} $, perch\'e tutti gli altri restituiscono $0$ per la regola di selezione.
+Inoltre, per parit\`a, si ha una regola di selezione anche su $\ell $: perch\'e l'elemento di matrice sia diverso da $0$, i due stati devono avere parit\`a opposta, cosa che \`e verificata in questo caso perch\'e la parit\`a di uno stato \`e data da $(-1)^\ell $.
+
+Le funzioni d'onda utili sono:
+\[
+\psi _{100}(r) = \frac{1}{\sqrt{\pi r_B^3} } e^{- r / r_B}  \hspace{1cm} \psi _{210} = \frac{1}{4 \sqrt{2 \pi r_B^3} } \frac{r}{r_B}e^{-r / 2r_B} \cos \theta 
+\] 
+da cui l'elemento di matrice \`e:
+\[
+\begin{split}
+	\braket{210|\hat{z}|100} &= \frac{1}{2 \sqrt{2} r_B^4}\int_{0} ^{+\infty} r^4 e^{-\frac{3}{2}\frac{r}{r_B}}  \ dr \int_{0} ^\pi \sin \theta  \cos^2 \theta  \ d\theta = \frac{1}{2 \sqrt{2} r_B^4} \frac{2}{3} 4! \left(\frac{2}{3}r_B\right) ^5\\
+				 &=\frac{r_B 4!}{3 \sqrt{2} } \left(\frac{2}{3}\right) ^5
+\end{split}
+\] 
+Prendendo $\omega = (E_2-E_1) / \hbar =\frac{3e^2}{8\hbar r_B} $, si ha:
+\[
+\begin{split}
+	\int_{0} ^t dt' e^{\frac{i}{\hbar }(E_2-E_1)t'} e^{-t' /\tau } \braket{210|\hat{z}|100} &= \frac{r_B 4!}{3 \sqrt{2} }\left(\frac{2}{3}\right) ^5 \int_{0} ^t\exp \left[ t' \left(\frac{i}{\hbar }(E_2-E_1)- \frac{1}{\tau }\right)  \right] dt' \\
+												&= \frac{r_B 4!}{3 \sqrt{2} }\left(\frac{2}{3}\right) ^5 \int_{0} ^t e^{i(\omega+i / \tau ) t'}   dt' \\
+												&= \frac{1}{i(\omega + i /\tau )}\frac{r_B 4!}{3 \sqrt{2} }\left(\frac{2}{3}\right) ^5 \left[ e^{i\omega t - t / \tau } -1 \right] 
+\end{split}
+\] 
+Conseguentemente:
+\begin{equation}
+	P_{1s\to 2p} = \frac{e^2 E_0^2 r_B^2}{2\hbar ^2}\left(\frac{256}{243}\right) ^2 \frac{1-2 e^{- t /\tau } \cos \omega t + e^{-2t /\tau } }{\omega^2 + 1/\tau ^2}
+\end{equation}
+Si nota che, nel limite $t \gg \tau $:
+\[
+P_{1s \to 2p} \sim \frac{1}{\omega^2 + 1/\tau ^2}\frac{r_B^2 e^2 E_0^2}{\hbar ^2}
+\] 
+\end{svolgimento}
+
+\subsubsection{Oscillatore armonico 1D in campo elettrico}
+Si consideraun oscillatore armonico che, in $t=0$ \`e nello stato fondamentale, mentre per $t > 0$ \`e soggetto ad una forza $F = F_0 e^{- t / \tau } $.
+L'Hamiltoniano imperturbato \`e $\hat{H}_0 = \hat{p}^2 / 2m + \frac{1}{2}m \omega^2 \hat{x}^2$, il quale \`e soggetto alla perturbazione $\hat{V}(t) = - F_0 x e^{- t / \tau } $; si calcola la probabilit\`a di transizione ad uno stato eccitato.
+\begin{svolgimento}
+	Si svolge il problema per intero, senza ricorrere a formule.
+	Gli stati dell'Hamiltoniano imperturbato sono della forma
+	\[
+	\ket{\alpha (t)} = \sum_{n}^{} c_n(t) e^{-\frac{i}{\hbar }E_n t} \ket{n} 
+	\] 
+	Sostituendo nell'equazione di Shr\"odinger, si trova:
+	\[
+	i \hbar \partial _t c_n(t) = \sum_{m}^{} V_{nm} e^{i \omega_{nm} t} c_m (t) 
+	\] 
+	dove si \`e preso $V_{nm} = \braket{n|\hat{V}|m} = - F_0 e^{- t / \tau } \braket{n|\hat{x}|m} $ e $\omega_{nm} = (E_n -E_m) / \hbar =\omega(n-m)$, visto che $E_n^{(0)} = \hbar \omega ( n + 1 /2)$.
+L'elemento di matrice \`e:
+\[
+ \braket{n|\hat{x}|m} = \sqrt{\frac{\hbar }{2m\omega}} \left(\sqrt{n} \delta _{n,m-1} + \sqrt{n+1} \delta _{n,m+1} \right) 
+\] 
+che si ottiene riscrivendo $\hat{x} $ in termini degli operatori di salita e discesa.
+L'equazione di Schr\"odinger diventa:
+\begin{equation}
+i \hbar  \partial _t c_n(t) = - F_0 e^{- t / \tau }  \sqrt{\frac{\hbar }{2m\omega}} \left[ \sqrt{n+1} e^{-i\omega t} c_{n+1} (t) + \sqrt{n} e^{i\omega t} c_{n-1} (t) \right] 
+\end{equation}
+Questa si pu\`o risolvere perturbativamente: si prende $c_n(t) = c_n^{(0)} + c_n^{(1)} + \ldots $  con l'assunzione $\partial _t c_n^{(0)} =0\Rightarrow c_n^{(0)} = \delta _{n,0} $.
+In questo modo, si ottiene
+\begin{equation}
+	c_n^{(1)} (t) = \frac{1}{i\hbar } \int dt' \sum_{m}^{} V_{nm} (t') e^{i\omega_{nm} t'} c_n^{(0)} 
+\end{equation}
+che, in questo caso, \`e pari a:
+\[
+c^{(1)} _n (t) = -\frac{F_0}{i\hbar } \sqrt{\frac{\hbar }{2m\omega}} \int_{0} ^t dt' \ e^{- t' / \tau } \left(\sqrt{n+1} e^{-i\omega t'} c_{n+1} ^{(0)} + \sqrt{n} e^{i\omega t'} c_{n+1}^{(0)}  \right) 
+\] 
+Dalla condizione $c_n^{(0)} = \delta _{n,0} $, per\`o, si trova che deve essere $n=1$ e sopravvive solamente il termine con $c_{n+1} ^{(0)} $:
+\begin{equation}
+	c_1^{(1)} = - \frac{F_0}{i\hbar } \sqrt{\frac{\hbar }{2m\omega}} \int_{0} ^t dt ' e^{i\omega t' - t' / \tau } = \frac{F_0}{i\hbar }\sqrt{\frac{\hbar }{2m\omega}} \frac{1}{i\omega - 1 /\tau } \left(1- e^{(i\omega - 1 / \tau ) t} \right) 
+\end{equation}
+\begin{osservazione}
+Nel limite per $t \gg \tau $, tende allo stesso limite trovato per l'atomo di idrogeno.
+\end{osservazione}
+\end{svolgimento}
+\subsubsection{Buca di potenziale infinita con campo elettrico}
+
+Si considera una buca di potenziale con 
+\[
+V(x) = \begin{cases}
+	 0 &,\ \lvert x \rvert < L \\
+	 +\infty &,\ \lvert x \rvert > L
+\end{cases}
+\] 
+L'Hamiltoniano imperturbato \`e $\hat{H}_0 = \hat{p}^2 / 2m + V(\hat{x})$. 
+Si immagina, poi, di immergere la particella in un campo elettrico, per cui si avr\`a una perturbazione della forma $\hat{H}_1 = - q \mathcal{E} \hat{x} $.
+
+Questo potenziale modifica la forma della buca: se prima vi era assenza di potenziale per $-L < x< +L$, ora \`e presente un potenziale che aumenta (o diminuisce a seconda del segno della carica) linearmente con $x$.
+\begin{enumerate}[(a).]
+	\item Calcolare il primo e il secondo ordine perturbativo per l'energia dello stato fondamentale $E_1$.
+		\begin{svolgimento}
+			La funzione d'onda per la buca di potenziale \`e
+			\[
+			\psi _n(x) = \begin{cases}
+				\sqrt{\frac{2}{L}} \sin (k_n x) &,\ n \text{ pari }\\
+				\sqrt{\frac{2}{L}} \cos (k_n x) &,\ n \text{ dispari }
+			\end{cases}, \ k_n = \frac{n \pi }{L}
+			\] 
+			Le relative energie sono date da $E_n = \hbar \omega _n = \frac{\hbar ^2 k_n^2}{2m}$.
+			Per la correzione al primo ordine, si ha $\braket{\psi _1(x)|\hat{H}_1|\psi _1(x)}$, con $\hat{H}_1 \propto \hat{x}$ quindi:
+			\[
+				\begin{split}
+					\braket{\psi_1|\hat{x}|\psi _1} = \frac{2}{L}\int_{-L} ^{+L} x \cos(k_1 x)\ dx = 0
+				\end{split}
+			\] 
+			che \`e nullo perch\'e l'integrando \`e dispari.
+			Al primo ordine, non vi \`e correzione.
+
+			Per il secondo ordine, invece, si calcola
+			\[
+			E^{(2)} _1 = \sum_{n>1}^{} \frac{\left\lvert \Braket{\psi _n(x)|\hat{H}_1|\psi _1(x)}  \right\rvert ^2}{E_1^{(0)} - E^{(0)} _n} 
+			\] 
+	Visto che $\psi _1(x)$ \`e pari, la regole di selezione per l'elemento di matrice \`e che sia $n$ pari, cos\`i il seno in $\psi _n(x)$ compensa la disparit\`a dell'integrando $x \psi _1(x)$.
+	Allora la correzione al secondo ordine sar\`a della forma 
+	\[
+	E^{(2)} _1 = \sum_{\nu =1}^{+\infty}  \frac{\left\lvert \Braket{\psi _{2\nu } (x)|\hat{H}_1|\psi _1(x)}  \right\rvert ^2}{E_1^{(0)} - E^{(0)} _{2\nu } }
+	\] 
+Ciascun elemento di matrice, allora, si pu\`o calcolare com segue:
+\[
+\begin{split}
+	\braket{\psi _1 |\hat{H}_1|\psi _{2\nu } }&= - q \mathcal{E}  \braket{\psi _1|\hat{x}|\psi _{2\nu } } = - \frac{q\mathcal{E} }{4 L} \int_{-L} ^{+L} dx \left[ e^{\frac{i \pi x}{2L}} + e^{- \frac{i\pi x}{2L}}  \right] x \left[ e^{\frac{i \pi x\nu }{L}} - e^{\frac{-i \pi x \nu }{L}}  \right] \\
+						  &= (-1)^{\nu } q \mathcal{E} \frac{32i L \nu }{(1-4\nu ^2)^2 \pi^2}
+\end{split}
+\] 
+Da questo, si pu\`o calcolare la correzione al secondo ordine, che ammette un risultato finito alla serie.
+		\end{svolgimento}
+	\item Si modifica la perturbazione con $\hat{H}_1 = -q \mathcal{E} _0 e^{-t / \tau } x$; calcolare la probabilit\`a di transizione $P_{1\to n} (t)$.
+		\begin{svolgimento}
+			   La probabilit\`a di transizione \`e data da:
+			   \[
+			   P_{1\to n}  (t) = \frac{1}{\hbar ^2} \left\lvert  \int_{0} ^t dt' \ e^{i\omega_{n1} t'} \braket{\psi _n |\hat{H}_1|\psi _1}  \right\rvert ^2 = \frac{q^2 \mathcal{E} _0^2}{\hbar ^2} \left\lvert \int_{0} ^t e^{t' (i\omega_{n1} -1 / \tau ) } \braket{\psi _n|\hat{x}|\psi _1}  \right\rvert ^2
+			   \] 
+			   Usando la stessa regola di selezione usata prima, si conclude che le uniche transizioni che possono avvenire dal ground state sono ad un livello energetico con $n$ pari ($n = 2\nu $).
+			   Si ricorda il risultato dell'elemento di matrice:
+			   \[
+			   \lvert \braket{\psi _1|\hat{x}|\psi _{2\nu } }  \rvert ^2 = \left(\frac{32 L \nu }{(1-4\nu ^2)^2 \pi^2}\right) ^2
+		   \] 
 
 
+			  In definita, pertanto, la probabilit\`a di transizione \`e:
+			  \begin{equation}
+					  P_{1\to 2\nu } (t) = \frac{q^2 \mathcal{E} _0^2}{\hbar ^2}  \left(\frac{32 L \nu }{(1-4\nu ^2)^2 \pi^2}\right) ^2 \frac{\tau ^2}{(\omega\tau )^2 + 1} \Big[ e^{-2 t / \tau } - 2 e ^{-t / \tau } \cos(\omega_{n1} t)+ 1  \Big] 
+			  \end{equation}
+		\end{svolgimento}
+\end{enumerate}
 
+\subsubsection{Due particelle identiche di spin $1$ in potenziale armonico}
+Si considerano due particelle identiche di spin $1$ (bosoniche) in 3D, immerse nel potenziale
+\[
+V(r_1,r_2) = \frac{1}{2} m\omega^2 ( r_1^2 + r_2^2)
+\] 
+Si perturba questo sistema con una perturbazione della forma 
+\[
+W = \lambda (2x_1 + 3y_1 + 4z_1) (2x_2 + 3y_2 + 4z_2)
+\] 
+\begin{enumerate}[(a).]
+	\item Calcolare l'energia dello stato fondamentale $E_0$ e l'energia del primo stato eccitato $E_1$.
+		\begin{svolgimento}
+			Il sistema \`e un oscillatore armonico 3D per due particelle; l'energia del livello $n$-esimo per il singolo oscillatore armonico 3D \`e $ \hbar \omega (n + 3/2)$, con $n = n_x + n_y + n_z$, quindi l'energia del livello $N$-esimo del sistema complessivo \`e $E_N = \hbar \omega (n_1 + n_2 + 3) = \hbar \omega (N + 3)$, con $n_1$ riferito alla particella $1 $ e $n_2$ alla particella $2$.
+
+			In particolare, lo stato fondamentale ha energia $E_0 =3 \hbar \omega  $, mentre il primo stato eccitato, invece, ha energia $E_1 = 4\hbar  \omega$.
+		\end{svolgimento}
+	\item Calcolare gli effetti della perturbazione sul primo stato eccitato.
+		\begin{svolgimento}
+			Si hanno due particelle identiche, cosa di cui si deve tenere conto nella determinazione della funzione d'onda dello stato, visto che deve risultare simmetrica per scambio delle due particelle.
+			Per questa ragione, quella del primo stato eccitato si ottiene da:
+			\[
+				\ket{\psi_1 (r_1,r_2)}  = \frac{\ket{\psi _0(r_1)} \ket{\psi _1(r_2)} \pm \ket{\psi _0(r_2)} \ket{\psi _1(r_1)} }{\sqrt{2} } \ket{\phi _{\pm} } 
+			\] 
+			dove $\ket{\phi _{\pm}} $ \`e lo stato di spin che va composto con la parte orbitale; i segni $\pm$ indicano, rispettivamente, lo stato simmetrico e lo stato anti-simmetrico, cosicch\'e la composizione di parte orbitale e parte di spin sia sempre simmetrica.
+			In particolare, gli stati di spin pari sono quelli per $S = 0,2$, mentre quelli anti-simmetrici sono per $S = 1$.
+
+			Il numero totale di stati per il primo livello energetico \`e $27$ perch\'e per spin $0$, si ha un solo stato di spin, per spin 1 se ne hanno $3$ e per spin $2$ se ne hanno $5$, per un totale di $9$. 
+			Per la parte orbitale, invece, visto che uno stato eccitato \`e dato da $n=n_x + n_y +n_z=1$, si hanno $3$ combinazioni per ottenerlo, quindi il numero totale di stati \`e $9\cdot 3 = 27$\footnote{Qui, chiaramente, non si distinguono $n_1 =1, \ n_2=0 $ e $n_1=0,\ n_2 = 1$ perch\'e sono la stessa identica cosa, visto che le due particelle sono identiche e lo stato \`e conseguentemente simmetrico per scambio.}.
+
+			Prima di calcolare gli elementi di matrice per la correzione dell'energia, si riscrive il potenziale come segue:
+			\[
+			W = 29 \lambda (\mathbf{r} _1 \cdot \mathbf{u} ) (\mathbf{r} _2\cdot \mathbf{u} ), \ \mathbf{u} = \frac{1}{\sqrt{29} } (2,3,4)
+			\] 
+			dove $1 / \sqrt{29} $ \`e la costante di normalizzazione. 
+			Ora, scegliendo gli assi di modo che $\hat{z}  \mid  \mathbf{u} $, si ottiene:
+			\begin{equation}
+				W = \lambda ' z_1z_2
+			\end{equation}
+			In questo modo, esprimendo $z$ in termini degli operatori di salita e discesa per i singoli oscillatori, la correzioni all'energia si vede facilmente essere determinata da soli $4$ termini non-nulli: 
+\[
+\begin{split}
+	E^{(1)} _1 = \pm \frac{\lambda '}{2} \frac{\hbar }{m\omega} \bigg(&\braket{P_1,0,0,1|\hat{a}^\dagger _{z_1} |P_1,0,0,0}\braket{P_2,0,0,0|\hat{a}_{z_2} |P_2,0,0,1} +\\
+	&+\braket{P_1,0,0,0|\hat{a}_{z_1} |P_1,0,0,1} \braket{P_2,0,0,1|\hat{a}_{z_2} ^\dagger |P_{2},0,0,0} \bigg)
+\end{split}
+\] 
+dove si sono indicati con $\ket{P_1,n_{x_1} , n_{y_1}, n_{z_1}  } $ uno stato della particella $1$ e con $\ket{P_2,n_{x_2} , n_{y_2}, n_{z_2}  } $ uno stato della particella $2$.
+Visto che tutti gli elementi di matrice valgono $1$, si trova
+\[
+E^{(1)} _1 = \pm \lambda ' \frac{\hbar }{m\omega}
+\] 
+Si conclude che $9$ stati di spin per $2$ orbitali, per un totale di $18$ stati, hanno correzione nulla al primo ordine per via del fatto che quando $n_x$ o $n_y$ sono $1$, l'elemento di matrice \`e nullo perch\'e l'operatore di salita/discesa non collega stati uguali.
+Inoltre, gli stati con $S = 0,2$ hanno correzione positiva perch\'e sono pari e sono un totale di $6$ stati, mentre quelli per $S = 1$ hanno correzione negativa e sono $3$ stati.
+		\end{svolgimento}
+\end{enumerate}
+\begin{osservazione}
+		Evidentemente si \`e interessati all'effetto della perturbazione sul primo stato eccitato perch\'e la funzione d'onda dello stato fondamentale ha parit\`a definita e l'elemento di matrice sarebbe nullo, visto che la perturbazione \`e proporzionale all'operatore posizione.
+\end{osservazione}
+\subsubsection{Ionizzazione per atomo di idrogeno soggetto a potenziale}
+\begin{center}
+	Vedere consegna da fine esercitazione 13 e iniziare 14
+\end{center}
+
+\newpage
+\section{Formulario}
+
+\subsection{Integrali utili}
+
+\begin{equation}
+\int_{0} ^{+\infty} t^n e^{-\alpha t} dt = \frac{n!}{\alpha ^{n+1} }
+\end{equation}
+\begin{equation}
+	\int_{0} ^\pi \sin \theta \cos ^2 \theta  \ d\theta  = \frac{2}{3}
+\end{equation}
 
 
 
