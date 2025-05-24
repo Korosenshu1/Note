@@ -3220,11 +3220,11 @@ Ora, ricordando che $\psi \simeq e^{i \vec{k}\cdot \vec{x}} + f(\theta ) \frac{e
 \end{equation*}
 con $\vec{q} = \vec{k} - \vec{k}', \ \lvert \vec{q} \rvert = 2k \sin (\theta / 2)$ impulso trasferito.
 Per risolvere questo integrale, si passa in coordinate sferiche:
-\begin{equation}
+\begin{equation}\label{ampscat1}
 	\begin{split}
 		f(\theta ) &=- \frac{m}{2\pi \hbar ^2} \int V(r') e^{i \vec{q}\cdot \vec{r}'} d^3 r'\\
 			   &= - \frac{m}{2\pi \hbar ^2}\int V(r') e^{iq r' \cos \theta '} r'^2 \sin \theta ' dr' d\theta ' d \varphi '\\
-			   &= - \frac{2m}{\hbar ^2} \int V(r') \frac{\sin qr'}{q} dr'
+			   &= - \frac{2m}{\hbar ^2} \int V(r') r'\frac{\sin qr'}{q} dr'
 	\end{split}
 \end{equation}
 Per procedere nell'integrazione, \`e necessaria un'espressione per il potenziale.
@@ -3236,7 +3236,7 @@ f(\theta ) = - \frac{m}{2\pi \hbar ^2}\int V(x') e^{i \vec{q}\cdot \vec{x}'} d^3
 \] 
 questa si pu\`o vedere come una trasformata di Fourier di $V$, per cui si pu\`o scrivere la sezione d'urto differenziale come:
 \begin{equation}
-	\sigma (\theta ) = \lvert f(\theta ) \rvert ^2 = \frac{m^2}{4 \pi ^2 \hbar ^4} \lvert \widetilde{U}(k-k') \rvert ^2
+	\sigma (\theta ) = \lvert f(\theta ) \rvert ^2 = \frac{m^2}{4 \pi ^2 \hbar ^4} \lvert \widetilde{V}(k-k') \rvert ^2
 \end{equation}
 Si lega questo alla regola d'oro di Fermi.
 Si considera, allora, uno stato iniziale 
@@ -3250,13 +3250,15 @@ Lo stato finale, invece, si scrive come
 con $\vec{k}'$ impulso uscente.
 Si vuole ricavare la probabilit\`a di transizione da $\ket{i} $ a $\ket{f} $.
 La formula trovata per la regola d'oro \`e:
-\[
+\begin{boxenv}[]
+\begin{equation}
 d \omega_{fi} = \frac{2\pi}{\hbar }\lvert \braket{f|V|i}  \rvert ^2 \delta (E_f - E_i) d \nu _f
-\] 
-In questo caso particolare, questa formula diventa:
-\[
+\end{equation}
+\end{boxenv}
+\noindent In questo caso particolare, questa formula diventa:
+\begin{equation}\label{scop}
 d \omega_{kk'}  = \frac{4\pi m }{\hbar } \lvert \braket{f|V|i}  \rvert ^2 \delta (p^2-p'^2) \frac{d^3 p'}{(2\pi \hbar )^3}
-\] 
+\end{equation}
 con
 \[
 \braket{f|V|i}  = \sqrt{\frac{m}{k}} \int e^{i \vec{k}' \cdot \vec{x}} V e^{i\vec{k}\cdot \vec{x}} d^3 x
@@ -5210,24 +5212,164 @@ Inoltre, gli stati con $S = 0,2$ hanno correzione positiva perch\'e sono pari e 
 \begin{osservazione}
 		Evidentemente si \`e interessati all'effetto della perturbazione sul primo stato eccitato perch\'e la funzione d'onda dello stato fondamentale ha parit\`a definita e l'elemento di matrice sarebbe nullo, visto che la perturbazione \`e proporzionale all'operatore posizione.
 \end{osservazione}
+\subsection{Problemi di scattering}
+
+
 \subsubsection{Ionizzazione per atomo di idrogeno soggetto a potenziale}
-\begin{center}
-	Vedere consegna da fine esercitazione 13 e iniziare 14
-\end{center}
+Si considera atomo di idrogeno, inizialmente nello stato fondamentale, soggetto ad una perturbazione dipendente dal tempo:
+\[
+W(\mathbf{x} ,t) = V_0 \cos (kz -\omega t) = \frac{V_0}{2} \left[ e^{i(kz-\omega t)} +  e^{-i(kz-\omega t)}  \right] \equiv V e^{i\omega t} + V^\dagger e^{-i\omega t} 
+\] 
+Si vuole calcolare la probabilit\`a che l'atomo si ionizzi $P_{g\to f} (t)$, dove $\ket{g} $ \`e lo stato fondamentale e
+\[
+\ket{f} = \frac{1}{\sqrt{L^3} }e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{x} } 
+\] 
+\`e lo stato finale, corrispondente ad un'onda piana. 
+Nello scrivere lo stato finale, si \`e assunto che il sistema si trovi in una scatola di lato $L$ e che l'elettrone sia emesso con impulso $\mathbf{p} $ fuori  dal sistema, contemporaneamente col fatto che non sia pi\`u soggetto al potenziale del protone una volta liberato, in modo da poter schematizzare il suo moto come onda piana.
+Calcolare, inoltre, la distribuzione angolare dell'elettrone.
+
+\begin{svolgimento}
+	Il coefficiente $n$-esimo al primo ordine di approssimazione \`e dato da:
+	\[
+		\begin{split}
+			c^{(1)} _n (t) &=-\frac{i}{\hbar } \int_0^t dt ' \ e^{-\frac{i}{\hbar }(E_f-E_i) t'} \left(V_{fi} e^{i\omega t'} + V_{fi} ^\dagger e^{-i\omega t'} \right)  \\
+				       &= \frac{1}{\hbar } \left[\frac{1- e^{i(\omega +\omega_{fi} ) t } }{\omega+\omega_{fi}}V_{fi} + \frac{1- e^{i(\omega_{fi } -\omega)t} }{\omega_{fi} -\omega }V_{fi} ^\dagger \right] 
+		\end{split}
+	\] 
+	con $\omega_{fi} = (E_f-E_i)/\hbar $.
+La probabilit\`a di transizione \`e data da:
+\[
+P_{i\to f} (t) = \frac{2\pi}{\hbar } \lvert V_{fi}  \rvert ^2 \delta  \big(E_f -(E_i + \hbar \omega) \big)
+\] 
+Si deve calcolare l'elemento di matrice $\braket{f|e^{ikz} |100} $ per ottenere $V_{fi} $. 
+Considerando che allo stato finale \`e associata l'onda piana $e^{i \mathbf{k} _f \cdot \mathbf{x} } $ e che la funzione d'onda dello stato fondamentale \`e
+\[
+\psi _{100} = \frac{1}{\sqrt{\pi r_B^3} } e^{-r /r_B} 
+\] 
+l'elemento di matrice consiste nel seguente integrale:
+\[
+	\begin{split}
+		\braket{f|e^{ik \hat{z}} |100}&= \int_{0} ^{2\pi} d\varphi \int_{0} ^\pi d\theta \int_{0} ^{+\infty} dr \ r^2 \sin \theta e^{- i k_f r \cos \theta } e^{ik r \cos \theta } \frac{1}{\sqrt{\pi  r_B^3} }e^{-r / r_B} \\
+					      &= \frac{2 \sqrt{\pi} }{r_B^{3 / 2} } \int_{0} ^\pi d\theta \int_{0} ^{+\infty} dr \ r ^2 \sin \theta  e^{-i q r \cos \theta} e^{ - r / r_B} \\
+					       &= \frac{2\sqrt{\pi} }{r_B^{ 3 / 2} } \int_{0} ^{+\infty}\left( \int_{0} ^\pi e^{-i  q r \cos \theta } \sin \theta  \ d  \theta \right)r^2 e^{-r / r_B}  dr \\
+					      &= \frac{4 \sqrt{\pi} }{qr_B^{3 / 2} } \int_{0} ^{+\infty} r \sin (qr)e^{-r / r_B} \ dr = \frac{8  }{(1+r_B^2  q^2 )^2}\sqrt{\pi r_B^3}
+	\end{split}
+\] 
+dove si \`e definito $\mathbf{q} = \mathbf{k} _f - k \hat{z} $ e lo si \`e assunto parallelo all'asse $\hat{z}$, il che significa aver preso gli assi tali che $\mathbf{k} _f  \mid  \mid \hat{z}$.
+Nello svolgere l'integrale rispetto a $\theta $, si \`e preso $y = \cos \theta \Rightarrow dy = - \sin \theta  d\theta $.
+L'integrale rispetto a $r$ si risolve usando eq. \ref{solint3}.
+Usando eq. \ref{scop}, si trova la probabilit\`a di transizione come:
+\[
+d \omega_{i\to f} = \frac{V_0^2}{\hbar }\frac{32 \pi^2}{r_B^5} \frac{1}{\left(\frac{1}{r_B^2}+ q^2\right)^4 } \frac{d^3p_f}{(2\pi\hbar )^3}
+\] 
+con $p_f = \hbar k_f$.
+Da questa, si cerca di ricavare la distribuzione angolare per l'emissione dell'elettrone; per farlo, si riscrive in coordinate polari come segue:
+\[
+d\omega_{i\to f}  = \frac{32 \pi^2 V_0^2}{r_B^5} \frac{1}{\left(1 / r_B^2 + \lvert \mathbf{k} _f - k \hat{z} \rvert ^2\right) ^4}\frac{k_f^2}{(2\pi\hbar )^3} dk_f d\Omega 
+\] 
+Usando che 
+\[
+\begin{split}
+	(\mathbf{k} _f - k \hat{z})^2 &= \left[ (k_f \cos \theta - k ) \hat{z} + k_f \sin \theta  (\cos \varphi  \hat{x} + \sin \varphi  \hat{y}) \right] ^2 \\
+				      &= k_f^2 \cos ^2 \theta + k^2 - 2 k k_f \cos \theta  + k_f^2 \sin^2 \theta \\
+				      &= k_f^2 + k^2 - 2k k_f \cos \theta 
+\end{split}
+\] 
+si ottiene tutta la dipendenza angolare della probabilit\`a di transizione.
+\end{svolgimento}
+
+\subsubsection{Sezione d'urto per potenziale esponenzialmente decrescente}
+
+Si considera il potenziale	
+\[
+U(r) = \frac{\alpha}{r} e^{- r / R} 
+\] 
+Calcolare, in approssimazione di Born, la relativa sezione d'urto.
+\begin{svolgimento}
+	Usando eq. \ref{ampscat1}, si trova l'ampiezza di scattering:
+	\[
+	f(\theta ) = - \frac{2m\alpha }{\hbar ^2q} \int_{0} ^{+\infty} \sin(qr) e^{-r / R} \ dr = - \frac{2m \alpha }{\hbar ^2} \frac{R^2}{1+ q^2 R^2}
+	\] 
+	Ne segue che la sezione d'urto, ottenuta da $\lvert f(\theta ) \rvert ^2$, \`e:
+	\begin{equation}
+		\sigma (\theta ) = \frac{4 m^2 \alpha ^2}{\hbar ^4} \frac{R^4}{(1+q^2 R^2)^2}
+	\end{equation}
+	Si nota che la dipendenza angolare della sezione d'urto \`e contenuta all'interno di $q^2$, visto che $q = 2k \sin \theta / 2$.
+\end{svolgimento}
+
+\subsubsection{Scattering inelastico di un elettrone su un atomo di idrogeno}
+
+In questo processo, si considera l'atomo a riposo e nello stato fondamentale. 
+La posizione dell'elettrone proiettile viene indicata con $\mathbf{r} $ e si prende, come origine del sistema di riferimento, il protone dell'atomo di idrogeno.
+Si indica, poi, con $\mathbf{r} _e$ la posizione dell'elettrone dell'atomo di idrogeno, sempre rispetto al protone.
+
+L'elettrone incidente \`e modellizzato come un'onda piana $e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} } $, cos\`i come \`e un'onda piana l'elettrone uscente dopo l'interazione, che verr\`a deflesso con un altro impulso $\mathbf{p} '$, quindi si scriver\`a come $e^{\frac{i}{\hbar }\mathbf{p} ' \cdot \mathbf{r } } $.
+Si \`e interessati a studiare i vari casi prodotto del processo.
+
+\vspace{.5cm} 
+\noindent {\bfseries Cosa succede all'atomo?} Se lo stato finale $\ket{f} $ dell'atomo \`e ancora il ground state $\ket{0} $, allora significa che l'elettrone incidente non ha ceduto energia e, quindi, che $\lvert \mathbf{p} ' \rvert = \lvert  \mathbf{p}  \rvert $, che corrisponde al caso di \textbf{scattering elastico}.
+
+Se, invece, $\ket{f}  = \ket{n} \neq \ket{0} $, significa che l'elettrone ha ceduto dell'energia e $\lvert \mathbf{p} ' \rvert \neq \lvert \mathbf{p}  \rvert $. 
+In questo caso, \`e anche possibile che l'atomo di idrogeno si ionizzi.
+\vspace{.5cm} 
+\begin{svolgimento}
+	Si parte dalla regola d'oro di Fermi
+	\begin{equation}\label{dsw}
+		d\omega = \frac{2\pi}{\hbar }\left\lvert \braket{n,\mathbf{p} '|\hat{U}|0,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m} +E_n - E_0\right) \frac{d^3 p'}{(2\pi \hbar )^3}
+	\end{equation}
+	Il potenziale $\hat{U}$ contiene sia la parte di interazione Coulombiana tra elettrone e protone nell'atomo, sia la parte di interazione Coulombiana legata all'elettrone che incide, quindi \`e della forma
+	\[
+		U(\mathbf{r},\mathbf{r} _e) = \frac{e^2}{\mathbf{r} } - \frac{e^2}{\lvert \mathbf{r} -\mathbf{r} _e \rvert } 
+	\] 
+Si prende l'onda incidente $\psi _p$ con normalizzazione $\sqrt{m / p} $ per richiedere che il flusso incidente sia unitario; per l'onda dell'elettrone scatterato, si lascia coefficiente unitario. In complessivo:
+\[
+\psi _p = \sqrt{\frac{m}{p}} e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} } \hspace{1cm} \psi _{p'} = e^{\frac{i}{\hbar }\mathbf{p} ' \cdot bfr} 
+\] 
+Passando in coordiante polari, si riscrive eq. \ref{dsw} come
+\[
+ d\omega = \frac{2\pi}{\hbar }\left\lvert \braket{n,\mathbf{p} '|\hat{U}|0,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m}+E_n - E_0\right) \frac{p'^2 dp' d\Omega' }{(2\pi \hbar )^3}
+\] 
+Si integra rispetto a $p'$ e si usa la formula 
+\[
+\int g(x) \delta \big(f(x)\big) dx = \sum_{i}^{} \frac{g(x_i)}{\lvert f'(x_i) \rvert }
+\] 
+dove gli $x_i $ sono tali che $f(x_i) =0 , \ f'(x_i) \neq 0$. 
+Quindi si ha:
+\[
+	d\omega =  \frac{mp'}{4\pi^2 \hbar ^4} \left\lvert \braket{n,\mathbf{p'} |\hat{U}|0,\mathbf{p} }  \right\rvert ^2 d\Omega '
+\] 
+dove $p'$ \`e definito dalla relazione fornita dalla $\delta $, ossia $(p'^2 - p^2) / 2m + E_n - E_0 = 0$.
+Svolgendo l'elemento di matrice:
+23:30.
+\end{svolgimento}
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \section{Formulario}
 
 \subsection{Integrali utili}
 
-\begin{equation}
+\begin{equation}\label{solint1}
 \int_{0} ^{+\infty} t^n e^{-\alpha t} dt = \frac{n!}{\alpha ^{n+1} }
 \end{equation}
-\begin{equation}
+\begin{equation}\label{solint2}
 	\int_{0} ^\pi \sin \theta \cos ^2 \theta  \ d\theta  = \frac{2}{3}
 \end{equation}
-
-
+\begin{equation}\label{solint3}
+	\int_{0} ^{+\infty} r e^{- \alpha  r}  \sin (\beta r)\ dr = \frac{2 \alpha  \beta }{(\alpha ^2 + \beta ^2)^2}, \ \Re \left\{ \alpha  \right\} >0
+\end{equation}
+\begin{equation}\label{solint4}
+	\int_{0} ^{+\infty} \sin(qr) e^{-r / R} \ dr = \frac{qR^2}{1 + q^2 R^2}
+\end{equation}
 
 
 
