@@ -3372,13 +3372,64 @@ La differenza dei due approcci \`e che questo appena fatto, cio\`e calcolare le 
 Al contrario, la regola d'oro \`e pi\`u conveniente da usare in casi pi\`u complicati, come scattering di elettrone veloce contro atomo ad esempio.
 Le formule ricavate con le funzioni d'onda, invece, sono limitate allo scattering da potenziale.
 \end{osservazione}
+\subsection{Soluzione alternativa al problema dello scattering}
+L'idea \`e di partire dall'equazione di Schr\"odinger in campo centrale
+\[
+\nabla ^2 \psi (\mathbf{x} ) + \big(k^2 - \overline{U}(r)\big) \psi (\mathbf{x} ) = 0, \ \overline{U}(r) = \frac{2m}{\hbar ^2}U(r)
+\] 
+La soluzione di questa sar\`a della forma
+\[
+\psi (\mathbf{x} ) = \sum_{\ell ,m}^{} a_{\ell m} Y_{\ell m} (\theta ,\varphi ) R_{k\ell } (r)
+\] 
+Inserendola nell'equazione differenziale e passando in coordinate sferiche, si trova, per $u _{k\ell } = r R_{k\ell } $, che:
+\[
+u'' _{k \ell } + \left[ k^2 - \overline{U}(r) - \frac{\ell (\ell +1)}{r^2} \right] u_{k\ell  } = 0 
+\] 
+Nel limite $r\to +\infty$, per\`o, si sa che la soluzione di questa deve essere quella di una particella libera perch\'e si \`e fuori dalla regione di interazione, quindi $u_{k\ell } \simeq e^{ik r}  $.
 
+La funzione d'onda che risolve l'equazione differenziale permette di ottenere un'espressione significativa per l'ampiezza di scattering se, nel momento in cui \`e espressa nella forma (ansatz)
+\[
+\psi = \sum_{\ell =0}^{+\infty} A_\ell R_{k\ell } (r) P_\ell (\cos\theta )
+\] 
+si sceglie
+\[
+A_\ell  = \frac{1}{2k}(2\ell +1) i^{\ell } e^{i \delta _\ell } 
+\] 
+Tutte le informazioni sul potenziale sono contenute nella fase $\delta _\ell $, dove si \`e eliminata la $m$ perch\'e, per assunzione, non si vuole avere dipendenza da $\varphi $, per si prende $m=0$. 
+Inserendo questo ansatz nell'equazione differenziale per $u$, da cui si ricava, poi, il comportamento asintotico di $R_{k\ell } $ tramite la relazione $R_{k\ell } = u_{k\ell } / r$, si ottiene
+\[
+R_{k\ell } \simeq \frac{2}{r} \sin \left(kr - \frac{\ell \pi}{2}+ \delta _\ell \right)  
+\] 
+Complessivamente, la funzione d'onda si scrive come:
+\[
+\psi  = \frac{1}{2ik r} \sum_{\ell =0}^{+\infty} (2\ell +1) P_\ell (\cos \theta ) \left[ (-1)^{\ell +1} e^{-ikr } + S_\ell e^{ikr }  \right] ,  \ S_\ell  = e^{i 2 \delta _\ell } 
+\] 
+Da questa funzione d'onda si vuole ricavare la parte con $f(\theta )$; ricordando che $\psi  = e^{ikz}  + f(\theta ) \frac{e^{ikr} }{r}$, si ottiene $f(\theta )$ espandendo $e^{ikz} $ in onde sferiche:
+\[
+e^{ikz}  = \frac{1}{2 ikr }\sum_{\ell =0}^{+\infty} (2\ell +1) P_\ell (\cos \theta ) \left[ (-1)^{\ell +1} e^{-ikr} + e^{ikr}  \right] 
+\] 
+da cui 
+\[
+\psi - e^{ikz} = f(\theta ) \frac{e^{ikr} }{r}\Rightarrow f(\theta ) = \frac{1}{2ik} \sum_{\ell =0}^{+\infty} (2\ell +1) (S_\ell -1) P_\ell (\cos \theta )
+\] 
+Tutto il problema di scattering si \`e ricondotto alla determinazione di un infinito numero di fasi, date dal potenziale, contenute in $S_\ell $.
 
-
-
-
-
-
+A questo punto, la sezione d'urto totale \`e ottenuta tramite la seguente espressione:
+\begin{equation}
+	\sigma  = 2\pi \int_{0} ^\pi d\theta  \sin \theta \lvert f(\theta ) \rvert ^2 = \frac{4\pi}{k^2}\sum_{\ell =0}^{+\infty} (2\ell +1) \sin^2 \delta _\ell 
+\end{equation}
+dove si sono usate le seguenti relazioni:
+\[
+\begin{split}
+	&\int d \cos \theta  \ P_\ell (\cos \theta ) P_{\ell '} (\cos \theta ) = 0 \\
+	& \int d \cos \theta  P_\ell ^2 (\cos \theta ) = \frac{2}{2\ell +1}
+\end{split}
+\] 
+Si considera l'approssimazione di $k$ piccoli, ossia $pa / \hbar = ka \ll 1$, con $a$ lunghezza caratteristica del potenziale d'interazione.
+In questo regime ($ka \ll 1$) si ha $\delta _\ell \simeq c_\ell  k^{2\ell +1} $, da cui
+\[
+\sigma = \frac{4\pi}{k^2} \sum_{\ell =0}^{+\infty} (2\ell +1) c_\ell ^2 k^{2 + 4 \ell } \simeq 2\pi c_0^2, \ ka \ll 1
+\] 
 
 
 
