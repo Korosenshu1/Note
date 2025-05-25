@@ -1866,6 +1866,109 @@ L'importanza del teorema sta nel fatto che tutta la dipendenza da $M,M',q$ sta i
 	\braket{\alpha ' J'M'|\hat{S}|\alpha JM} = \delta _{JJ'} \delta_{ MM'} \braket{\alpha 'J'||\hat{S}||\alpha J} 
 	\] 
 \end{esempio}
+\subsection{Formulazione tramite path integral}
+La formulazione tramite path integral si ottiene nel risolvere l'equazione di Schr\"odinger dipendente dal tempo in maniera alternativa. 
+A partire da $i\hbar  \partial _t \ket{\psi (t)}  =  \hat{H}\ket{\psi (t)} $, si definisce $\hat{U}(t,t_0)$ l'operatore generico che si occupa dell'evoluzione temporale; allora:
+\begin{equation}
+	\begin{split}
+		\braket{x|\psi (t)}  = \braket{x |\hat{U}(t,t_0)|\psi (t_0)} &= \int dx_0 \ \braket{x|\hat{U}(t,t_0)|x_0} \braket{x_0|\psi (t_0)} \\
+				     &= \int dx_0\ G(x,t; x_0,t_0) \psi (t_0) 
+	\end{split}
+\end{equation}
+dove si sta assumendo di essere in 1D, ma non compromette la generalit\`a del discorso.
+Dove il nucleo $G(x,t;x_0,t_0)$ \`e detto \textbf{propagatore}.
+
+Si ricorda che per $t_2<t_1<t_0$, l'evoluzione temporale $\hat{U}(t_2,t_0)$ si pu\`o scrivere come $\hat{U}(t_2,t_1) \hat{U}(t_{1},t_0)$ e questo vale per un arbitrario numeri di istanti tra $t_2$ e $t_0$.
+L'idea, adesso, \`e proprio quella di suddividere l'intervallo $[t_0,t]$ in $N$ intervalli, di modo che:
+\[
+	\begin{split}
+		&\hat{U}(t,t_0) = \hat{U}(t,t_{N-1} ) \hat{U}(t_{N-1} ,  t_{N-2} )  \ldots \hat{U}(t_1,t_0)\\
+		&\Rightarrow \braket{x|\hat{U}(t,t_0)|x_0} = \Braket{x|\hat{U}(t,t_{N-1} ) \hat{U}(t_{N-1} ,  t_{N-2} )  \ldots \hat{U}(t_1,t_0)|x_0} 
+	\end{split}
+\] 
+In mezzo a ciascun evolutore, si pu\`o inserire una base completa in modo da ottenere la seguente scrittura:
+\begin{equation}
+	\begin{split}
+		\braket{x|\hat{U}(t,t_0)|x_0} &= \int \prod_{i=1} ^{N-1} dx_i \ \braket{x|\hat{U}(t,t_{N-1} )|x_{N-1} } \ldots \braket{x_1|\hat{U}(t_1,t_0)|x_0} \\
+					      &= \int \prod _{i=1} ^{N-1} dx_i\   G(x,t;x_{N-1}, t_{N-1} ) \ldots G(x_1, t_1; x_0,t_0)
+	\end{split}
+\end{equation}
+\begin{osservazione}
+	Il significato di questa scrittura \`e di ottenere una somma su tutti i possibili percorsi che portano da $x_0$ a $x$; infatti, visto che ogni propagatore, relativo a ciascun sotto-intervallo di $[t_0,t]$, \`e integrato sui possibili percorsi $x_1,\ldots,x_{N-1} $, il risultato sar\`a una sovrapposizione di tutte le possibilit\`a per passare da $x_0$ a $x$.
+\end{osservazione}
+La divisione in sotto-intervalli temporali serve per poter approssimare i propagatori nel limite di intervalli sufficientemente stretti.
+Assumendo un Hamiltoniano della forma $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})$, il generico propagatore \`e scritto come
+\[
+G(x,t; x',t') =  \Braket{x |e^{-\frac{i}{\hbar }\Delta  t \hat{H}} |x'} 
+\] 
+L'idea \`e di usare la formula di Baker-Campbell-Hausdorff:
+\[
+	e^{\alpha  \hat{X}}  e^{\alpha  \hat{Y}}  = e^{\alpha  \hat{Z}} , \ \hat{Z} = \hat{X}+ \hat{Y} + \frac{\alpha }{2} [\hat{X},\hat{Y}] + \ldots
+\] 
+Tramite approssimazione al primo ordine di sviluppo, cio\`e $\hat{Z}\simeq \hat{X } + \hat{Y}$, si pu\`o scrivere 
+\[
+	\Braket{x|e^{-\frac{i}{\hbar }\Delta \big(\hat{T}+ V(\hat{x})\big)} |x'} \simeq \Braket{x|e^{-\frac{i}{\hbar }\Delta t \hat{T}} e^{-\frac{i}{\hbar }\Delta  t V(\hat{x})} |x'} =  \Braket{x|e^{-\frac{i}{\hbar }\Delta  t \hat{T}} |x'} e^{-\frac{i}{\hbar }\Delta  t V(x')} 
+\] 
+dove si \`e usato che $F(\hat{x}) \ket{x} = F(x) \ket{x} $.
+Per l'elemento di matrice rimanente, si ha:
+\[
+\int dp \ \Braket{x|e^{-\frac{i}{\hbar } \Delta t T(\hat{p})} |p} \braket{p|x'} = \int dp \ e^{-\frac{i}{\hbar }\Delta t \frac{p^2}{2m}} \braket{x|p} \braket{p|x'} 
+\] 
+Si usa che $\braket{x|p} = (2\pi\hbar )^{- 1 / 2} e^{\frac{i}{\hbar }px} $ e l'eq. \ref{solint5} con $a = \frac{i\Delta  t}{2m \hbar }$ e $b = - i (x' -x)$ per ottenere che
+\[
+\int dp \ e^{-\frac{i}{\hbar }\Delta t \frac{p^2}{2m}} \braket{x|p} \braket{p|x'} = \frac{1}{2m\hbar }\int dp \ e^{-\frac{i\Delta  t p^2}{2m\hbar }} e^{-\frac{i}{\hbar }p(x'-x)} = \sqrt{\frac{m}{i 2 \pi \hbar  \Delta t}} e^{i \frac{m (x-x')^2}{2\hbar \Delta t}} 
+\] 
+Mettendo tutto insieme, si ottiene:
+\begin{equation*}
+	\begin{split}
+		&\Braket{x|e^{-\frac{i}{\hbar }\hat{H}(t-t_0)} |x_0}  = \lim_{N\to +\infty} \int \prod _{i=1} ^{N-1} dx_i \prod _{j=0} ^{N-1} G(x_{j+1}, t_{j+1} ; x_j t_j)\\
+								     &= \lim_{N \to +\infty} \int \prod_{i=1} ^{N-1} dx_i \left(\frac{m}{i 2\pi \hbar  \Delta t}\right) ^{N / 2} \exp \left\{ \frac{i}{\hbar }\sum_{j=0}^{N-1} \Delta t \left[ \frac{m}{2} \left(\frac{x_{j+1} - x_j}{\Delta t}\right) ^2 -V(x_j)  \right]  \right\} 
+	\end{split}
+\end{equation*}
+Si nota che $N\to +\infty$ corrisponde a mandare $\Delta  t \to 0$ perch\'e l'intervallo \`e fissato, quindi deve diminuire l'ampiezza di ciascun sotto-intervallo; in questo limite, le somme diventano degli integrali:
+\[
+\sum_{j=0}^{N-1} \Delta  V(x_j) = \int_{t_0} ^t dt \ V(x) \hspace{1cm} \sum_{j=0}^{N-1} \Delta t \frac{m}{2} \left(\frac{x_{j+1} -x_j}{\Delta t}\right) ^2 = \int_{t_0} ^t dt \ \frac{m}{2}\dot{x}^2
+\] 
+Conseguentemente, l'esponente dell'esponenziale diventa $\frac{i}{\hbar } \int_{t_0} ^t dt \ \left(\frac{1}{2}m\dot{x}^2 - V(x)\right) = \frac{i}{\hbar }\int_{t_0} ^t dt \ \mathcal{L} (x,\dot{x})\equiv \frac{i}{\hbar }S\big(x[t]\big)$, dove $\mathcal{L}$ \`e la Lagrangiana e $S$ \`e l'azione.
+Complessivamente, si ha:
+\begin{boxenv}[]
+\begin{equation}
+	G(x,t;x_0,t_0) = \int \mathcal{D} x \ e^{\frac{i}{\hbar }S\big(x[t]\big)} 
+\end{equation}
+\end{boxenv}
+\noindent dove la misura di integrazione \`e:
+\begin{equation}
+	\mathcal{D} x = \lim_{N \to +\infty} \prod_{i=1} ^{N-1} dx_i \left(\frac{m}{2\pi i \hbar \Delta t}\right) ^{N / 2} 
+\end{equation}
+\begin{osservazione}
+Il termine cinetico della forma $\frac{i}{\hbar }\left(\frac{x_{j+1} - x_j}{\Delta t}\right) ^2$ risolve potenzialmente problemi di percorsi spigolosi, o comunque non regolari.
+\end{osservazione}
+\subsubsection{Particella libera}
+
+Per la teoria appena sviluppata, la formulazione tramite path integral della particella libera (che coinvolge solamente un termine cinetico) \`e espressa come:
+\begin{equation}
+	\Braket{x|e^{- \frac{i}{\hbar }T (t-t_0)} |x'} = \int \mathcal{D}  x \ e^{\frac{i}{\hbar } \int_{t_0} ^t dt\ \frac{m}{2}\dot{x}^2}  
+\end{equation}
+Per quanto l'integrale sia calcolabile, si ottiene il risultato in maniera alternativa:
+\[
+	\begin{split}
+		\Braket{x|e^{-\frac{i}{\hbar }T (t-t_0)} |x'}  &= \int dp  \Braket{x|e^{-\frac{i}{\hbar }(t-t_0) \frac{p^2}{2m}} |p} \braket{p|x'} = \int dp \ \braket{x|p} \braket{p|x'} e^{-\frac{i}{\hbar } (t-t_0) \frac{p^2}{2m}} \\
+							       &= \int dp \ e^{\frac{i}{\hbar }(x-x') p}  e^{-\frac{i}{\hbar }(t-t_0) \frac{p^2}{2m}} = \sqrt{\frac{m}{2\pi i \hbar (t-t_0)}}\exp \left[ i \frac{m (x-x_0)^2}{2\hbar (t-t_0)} \right]  
+	\end{split}
+\] 
+\subsubsection{Oscillatore armonico}
+In questo caso, si deve calcolare
+\[
+\Braket{x|e^{-\frac{i}{\hbar }(t-t_0) \hat{H}} |x_0} = \int \mathcal{D}  x \ e^{\frac{i}{\hbar }\int_{t_0} ^t \left(\frac{1}{2}m \dot{x}^2 - \frac{1}{2}m\omega^2 x^2\right) } 
+\] 
+con $\hat{H} = \frac{p^2 }{2m} + \frac{1}{2}m\omega^2 x^2$. 
+Questa volta, come base completa si usa quella fornita da $\hat{H}$:
+\begin{equation*}
+	\begin{split}
+		&\Braket{x|e^{-\frac{i}{\hbar } \hat{H} (t-t_0)} |x_0}  = \sum_{n}^{} \Braket{x|e^{-\frac{i}{\hbar } \hat{H} (t-t_0)} |n} \braket{n|x_0} = \sum_{n}^{} \psi _n^*(x_0) \psi _n(x) e^{-\frac{i}{\hbar } E_n (t-t_0)}\\
+								       &=\left(\frac{m\omega}{2\pi \hbar  i \sin \omega (t-t_0)}\right) ^{ 1/2} \exp \left\{ \frac{i}{2 \hbar } \frac{m\omega}{\sin \omega(t-t_0)} \left[ (x^2 + x_0^2) \cos \omega(t-t_0) - 2 x x_0 \right] \right\} 
+	\end{split}
+\end{equation*}
 
 \newpage
 \section{Teoria delle perturbazioni}
@@ -5370,7 +5473,10 @@ Svolgendo l'elemento di matrice:
 \begin{equation}\label{solint4}
 	\int_{0} ^{+\infty} \sin(qr) e^{-r / R} \ dr = \frac{qR^2}{1 + q^2 R^2}
 \end{equation}
-
+\begin{equation}
+	\label{solint5}
+	\int_{-\infty} ^{+\infty} e^{-a y^2 + by}  dy = \sqrt{\frac{\pi}{a}} e^{b^2 / 4 a} 
+\end{equation}
 
 
 
