@@ -2883,6 +2883,69 @@ a_f^{(1)} = \frac{-e\vec{E}_0\braket{f|\vec{x}|i} }{\hbar } \frac{1- e^{i (\omeg
 Una condizione per avere transizione, quindi, \`e $\braket{f|\vec{x}|i} \neq 0 $.
 Si devono trovare, quindi, gli stati $\ket{f} $ per cui tale elemento di matrice \`e non-nullo.
 Si pu\`o dimostrare tramite il teorema di Wigner-Eckart (esercitazione) che gli unici $\ell _f $ ammessi tali che $\braket{n_f \ell _fm_f|\vec{x}|n_i \ell _i m_i} \neq 0$ sono $\ell _f = \ell _i, \ell _i \pm 1$.
+\subsubsection{Effetto Aharanov-Bohm}
+Si considera un solenoide infinito di raggio $a$ orientato lungo $\hat{z}$ e percorso da corrente costante nel tempo.
+Questo genera, al suo interno, un certo campo magnetico $\mathbf{B} = B_0 \hat{z}$, mentre se $r > a$, si ha $\mathbf{B} = 0$.
+Si nota che il potenziale vettore non pu\`o essere nullo per nessuna scelta di Gauge perch\'e, per il teorema di Stokes:
+\[
+\nabla \times \mathbf{A}  = \mathbf{B}  \implies \int_{\Gamma} \mathbf{A} \cdot d\mathbf{l} = \int_{S} \mathbf{B} \cdot d\mathbf{S} \neq 0
+\] 
+dove $S$ \`e la superficie racchiusa da $\Gamma$, con $\Gamma$ curva chiusa e orientata di raggio $r > a$.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{sol.png}
+	\caption{Rappresentazione schematica del solenoide, in cui la particella \`e vincolata a muoversi sulla curva chiusa $\Gamma$, di raggio $r$.}
+\end{figure}
+
+Se $\Phi(\mathbf{B} ) = \pi a^2 B_0$ \`e il flusso di $\mathbf{B} $ attraverso l'intera sezione del solenoide, per il teorema di Stokes, si ha:
+\[
+2 \pi r A(r) = \Phi (\mathbf{B} ) \implies \mathbf{A} (r) = \frac{\Phi(\mathbf{B}) }{2\pi r} \hat{\phi }
+\] 
+L'impulso in rappresentazione delle coordinate cilindriche \`e:
+\[
+	\hat{\mathbf{p} } = - i\hbar  \nabla  = - i\hbar  \left( \hat{r} \frac{\partial }{\partial r}  + \hat{\phi }\frac{1}{r}\frac{\partial \phi }{\partial \phi } + \hat{z}\frac{\partial }{\partial z} \right) 
+\] 
+Immaginando di vincolare una particella carica a muoversi unicamente su $\Gamma$, cio\`e a $r,z$ costanti, si possono trascurare le derivate rispetto a queste ultime due variabili. 
+Si ha, quindi, $\psi = \psi (\phi )$ e $\hat{\mathbf{p} }= \hat{\phi }\frac{-i \hbar }{r}\partial _\phi \Rightarrow \hat{p}^2 = - \frac{\hbar ^2}{r^2} \partial _\phi ^2$.
+L'Hamiltoniano del sistema \`e:
+\begin{equation}
+	\begin{split}
+		\hat{H}&= \frac{1}{2\mu }\left(\hat{\phi }\frac{-i\hbar }{r} \frac{\partial }{\partial \phi } - \frac{q}{c} \frac{\Phi(\mathbf{B} )}{2\pi r} \hat{\phi }\right) ^2=- \frac{\hbar ^2}{2\mu  r^2}\left(\frac{\partial }{\partial \phi } - \frac{i}{\hbar }\frac{q}{c} \frac{\Phi(\mathbf{B} )}{2\pi}\right) ^2\\
+		       &=- \frac{\hbar ^2}{2\mu r^2}\left(\frac{\partial }{\partial \phi } - i \eta\right) ^2
+	\end{split}
+\end{equation}
+dove si \`e definito $\eta = q \Phi(\mathbf{B} ) / (2\pi \hbar  c)$ e si \`e indicata la massa della particella con $\mu $, mentre la sua carica con $q$.
+
+L'equazione di Schr\"odinger, a questo punto, \`e un'equazione differenziale ordinaria:
+\begin{equation}
+	- \frac{\hbar ^2}{2\mu  r^2} \left(\frac{d }{d \phi } - i \eta\right) ^2 \psi (\phi ) = E \psi (\phi )
+\end{equation}
+la cui soluzione \`e ottenibile tramite l'ansatz 
+\[
+\psi _m (\phi ) = \frac{1}{\sqrt{2\pi} }e^{i m \phi } ,\ \int_{0} ^{2\pi} d\phi \ \lvert \psi (\phi ) \rvert ^2 = 1
+\] 
+cio\`e \`e gi\`a correttamente normalizzato. 
+Inserendo l'ansatz nell'equazione, si ottiene:
+\[
+\begin{split}
+	- \frac{\hbar ^2}{2\mu  r^2}\left(\frac{d ^2}{d \phi ^2} - \eta^2 - 2 i \eta  \frac{d }{d \phi } \right)  \psi (\phi ) & = - \frac{\hbar ^2}{2\mu  r^2} \big[(im)^2 - \eta^2 - 2i \eta (im)\big] \psi (\phi )\\
+															       & = - \frac{\hbar ^2}{2\mu r^2}[-m^2 - \eta^2 + 2m \eta] \psi (\phi) \\
+															       &= \frac{\hbar ^2}{2\mu r^2}(m-\eta)^2 \psi (\phi ) \equiv E \psi (\phi )
+\end{split}
+\] 
+Imponendo che $\psi (\phi  + 2\pi) = \psi (\phi )$, il che equivale a richiedere che $e^{i 2\pi m } = 1 $, si ottiene che deve essere $m \in \mathbb{Z}$, dove questo $m$ \`e il numero quantico autovalore di $\hat{L}_z$; infatti, essendo questo un problema a simmetria cilindrica, il sistema \`e invariante per rotazioni sul piano $xy$, pertanto $\hat{L}_z$ \`e conservato.
+Per verificarlo:
+\[
+	\begin{split}
+		&\hat{\mathbf{L} } = \hat{\mathbf{x} } \times \hat{\mathbf{p} } = r \hat{r} \times  \left(- \frac{i\hbar }{r} \frac{\partial }{\partial \phi } \hat{\phi }\right) = - i\hbar \frac{d }{d \phi } \hat{z}\\
+		&\Rightarrow \hat{L}_z \psi _m (\phi ) = - i \hbar  \frac{d }{d \phi } \psi (\phi ) = \hbar  m \psi (\phi )
+	\end{split}
+\] 
+Visto che i livelli energetici di una particella vincolata a muoversi su una circonferenza sono della forma $E_n = \frac{\hbar ^2 n ^2}{2 \mu  r^2}$, si nota che il campo magnetico influenza i livelli energetici anche dove non \`e fisicamente presente; tale influenza \`e legata al parametro 
+\[
+\eta = \frac{e \Phi }{2\pi \hbar  c} \equiv \frac{\Phi}{\Phi_0}
+\] 
+dove $\Phi_0$ pu\`o essere visto come un'unit\`a di flusso del campo magnetico: se $\eta$ \`e intero, allora lo spettro rimane lo stesso, solo che ogni autostato verrebbe mappato nel successivo, ma rimangono complessivamente gli stessi al variare di $m \in \mathbb{Z}$; al contrario, se $\Phi$ non fosse multiplo di $\Phi_0$, allora la particella subirebbe uno shift misurabile dei livelli energetici.
 
 \newpage
 \section{Simmetrie}
