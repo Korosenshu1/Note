@@ -5576,41 +5576,146 @@ L'elettrone incidente \`e modellizzato come un'onda piana $e^{\frac{i}{\hbar }\m
 Si \`e interessati a studiare i vari casi prodotto del processo.
 
 \vspace{.5cm} 
-\noindent {\bfseries Cosa succede all'atomo?} Se lo stato finale $\ket{f} $ dell'atomo \`e ancora il ground state $\ket{0} $, allora significa che l'elettrone incidente non ha ceduto energia e, quindi, che $\lvert \mathbf{p} ' \rvert = \lvert  \mathbf{p}  \rvert $, che corrisponde al caso di \textbf{scattering elastico}.
+\noindent {\bfseries Cosa succede all'atomo?} Se lo stato finale $\ket{f} $ dell'atomo \`e ancora il ground state $\ket{1} $, allora significa che l'elettrone incidente non ha ceduto energia e, quindi, che $\lvert \mathbf{p} ' \rvert = \lvert  \mathbf{p}  \rvert $, che corrisponde al caso di \textbf{scattering elastico}.
 
-Se, invece, $\ket{f}  = \ket{n} \neq \ket{0} $, significa che l'elettrone ha ceduto dell'energia e $\lvert \mathbf{p} ' \rvert \neq \lvert \mathbf{p}  \rvert $. 
+Se, invece, $\ket{f}  = \ket{n} \neq \ket{1} $, significa che l'elettrone ha ceduto dell'energia e $\lvert \mathbf{p} ' \rvert \neq \lvert \mathbf{p}  \rvert $. 
 In questo caso, \`e anche possibile che l'atomo di idrogeno si ionizzi.
 \vspace{.5cm} 
-\begin{svolgimento}
-	Si parte dalla regola d'oro di Fermi
+	Per studiare il problema, si parte dalla regola d'oro di Fermi:
 	\begin{equation}\label{dsw}
-		d\omega = \frac{2\pi}{\hbar }\left\lvert \braket{n,\mathbf{p} '|\hat{U}|0,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m} +E_n - E_0\right) \frac{d^3 p'}{(2\pi \hbar )^3}
+		d\omega = \frac{2\pi}{\hbar }\left\lvert \braket{n,\mathbf{p} '|\hat{U}|1,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m} +E_n - E_1\right) \frac{d^3 p'}{(2\pi \hbar )^3}
 	\end{equation}
+	dove la $\delta $ assicura la conservazione dell'energia.
 	Il potenziale $\hat{U}$ contiene sia la parte di interazione Coulombiana tra elettrone e protone nell'atomo, sia la parte di interazione Coulombiana legata all'elettrone che incide, quindi \`e della forma
 	\[
-		U(\mathbf{r},\mathbf{r} _e) = \frac{e^2}{\mathbf{r} } - \frac{e^2}{\lvert \mathbf{r} -\mathbf{r} _e \rvert } 
+		U(\mathbf{r},\mathbf{r} _e) = -\frac{e^2}{\mathbf{r} } + \frac{e^2}{\lvert \mathbf{r} -\mathbf{r} _e \rvert } 
 	\] 
-Si prende l'onda incidente $\psi _p$ con normalizzazione $\sqrt{m / p} $ per richiedere che il flusso incidente sia unitario; per l'onda dell'elettrone scatterato, si lascia coefficiente unitario. In complessivo:
+	Si prende l'onda incidente $\psi _p$ con normalizzazione $\sqrt{m / p} $ per richiedere che il flusso incidente sia unitario; per l'onda dell'elettrone scatterato, si lascia coefficiente unitario\footnote{In ogni caso, qualunque scelta di normalizzazione finirebbe per elidersi, in quando dovrebbe comparire anche al denominatore dell'elemento di spazio delle fasi.}. In complessivo:
 \[
 \psi _p = \sqrt{\frac{m}{p}} e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} } \hspace{1cm} \psi _{p'} = e^{\frac{i}{\hbar }\mathbf{p} ' \cdot bfr} 
 \] 
+Visto che questa normalizzazione assicura un flusso incidente unitario, \`e possibile affermare che $d\omega$ coincide con la sezione d'urto, vista la relazione $d\omega = \lvert \mathbf{J} _i \rvert d\sigma $.
 Passando in coordiante polari, si riscrive eq. \ref{dsw} come
 \[
- d\omega = \frac{2\pi}{\hbar }\left\lvert \braket{n,\mathbf{p} '|\hat{U}|0,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m}+E_n - E_0\right) \frac{p'^2 dp' d\Omega' }{(2\pi \hbar )^3}
+ d\sigma  = \frac{2\pi m }{\hbar p}\left\lvert \braket{n,\mathbf{p} '|\hat{U}|1,\mathbf{p} }  \right\rvert ^2 \delta \left(\frac{p'^2 - p^2}{2m}+E_n - E_1\right) \frac{p'^2 dp' d\Omega' }{(2\pi \hbar )^3}
 \] 
-Si integra rispetto a $p'$ e si usa la formula 
+dove il fattore $m / p$ deriva dall'aver esplicitato la condizione di normalizzazione scelta per lo stato dell'onda incidente.
+Si integra rispetto a $p'$, operazione tramite cui si pu\`o eliminare la $\delta $, facendo uso della formula 
 \[
 \int g(x) \delta \big(f(x)\big) dx = \sum_{i}^{} \frac{g(x_i)}{\lvert f'(x_i) \rvert }
 \] 
 dove gli $x_i $ sono tali che $f(x_i) =0 , \ f'(x_i) \neq 0$. 
 Quindi si ha:
 \[
-	d\omega =  \frac{mp'}{4\pi^2 \hbar ^4} \left\lvert \braket{n,\mathbf{p'} |\hat{U}|0,\mathbf{p} }  \right\rvert ^2 d\Omega '
+	d\sigma =  \frac{m^2}{4\pi^2 \hbar ^4} \frac{p'}{p}\left\lvert \braket{n,\mathbf{p'} |\hat{U}|1,\mathbf{p} }  \right\rvert ^2 d\Omega '
 \] 
-dove $p'$ \`e definito dalla relazione fornita dalla $\delta $, ossia $(p'^2 - p^2) / 2m + E_n - E_0 = 0$.
-Svolgendo l'elemento di matrice:
-23:30.
-\end{svolgimento}
+dove $p'$, ora, \`e vincolato dalla relazione fornita dalla $\delta $: $(p'^2 - p^2) / 2m + E_n - E_1 = 0$.
+Svolgendo l'elemento di matrice, definendo $\mathbf{q} = \mathbf{p} ' - \mathbf{p} $, si ha:
+\[
+d\sigma  = \frac{m^2}{4\pi^2 \hbar ^4} \frac{p'}{p} \left\lvert \iint U(\mathbf{r} ,\mathbf{r} _e) e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} } \psi ^*_n(\mathbf{r} _e) \psi _1 (\mathbf{r} _e)\  d^3 r d^3 r_e\right\rvert ^2 d\Omega '
+\] 
+
+\vspace{.5cm}
+\noindent 	\textbf{\sffamily Caso elastico. } Si considera il caso di scattering elastico; in questo caso, quindi, si avrebbe:
+		\[
+d\sigma  _\text{el}= \frac{m^2}{4\pi^2 \hbar ^4}  \left\lvert \iint U(\mathbf{r} ,\mathbf{r} _e) e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} } \lvert \psi _1 (\mathbf{r} _e) \rvert ^2\  d^3 r d^3 r_e\right\rvert ^2 d\Omega '
+		\] 
+	Si nota che l'integrale rispetto a $\mathbf{r} $ corrisponde con la trasformata di Fourier del potenziale:
+	\[
+	\widetilde{U}(\mathbf{q}, \mathbf{r} _e) \equiv \int d^3 r \ U(\mathbf{r} , \mathbf{r} _e) e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} } 
+\] 
+per cui la sezione d'urto differenziale elastica si pu\`o scrivere come	
+\[
+d\sigma _\text{el} = \frac{m^2}{4 \pi^2 \hbar ^4} \left\lvert \int   \widetilde{U}(\mathbf{q} , \mathbf{r} _e) \lvert \psi _1(\mathbf{r} _e) \rvert ^2\  d^3 r_e\right\rvert^2 d\Omega '
+\] 
+Il potenziale Coulombiano soddisfa l'equazione di Poisson:
+\[
+\nabla ^2 \Phi (\mathbf{r} ,\mathbf{r} _e) = - 4 \pi \rho (\mathbf{r} ,\mathbf{r} _e)
+\] 
+dove $U(\mathbf{r} ,\mathbf{r} _e) = e \Phi(\mathbf{r} , \mathbf{r} _e)$ e la densit\`a volumica di carica si pu\`o scrivere tramite delle $\delta $ di Dirac: 
+\[
+\rho (\mathbf{r} ,\mathbf{r} _e) = e \delta (\mathbf{r} ) - e \delta (\mathbf{r} -\mathbf{r} _e)
+\] 
+Tenendo conto del fatto che $\mathcal{F} [\nabla ^2 f(\mathbf{r} )] = - q^2 \mathcal{F} [f(\mathbf{r} )]$, con $q = \lvert \mathbf{q}  \rvert $, si ha:
+\[
+	\begin{split}
+		\int d^3 r \ \nabla ^2 U (\mathbf{r} , \mathbf{r} _e) e^{- \frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} } &= - q^2 \int d^3 r \ U (\mathbf{r} , \mathbf{r} _e) e^{-\frac{i}{\hbar } } \\
+															  &= - 4\pi e \int \rho (\mathbf{r} ,\mathbf{r} _e) e^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{r} } \ d^3 r = - 4 \pi e^2 \left(1- e ^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{r} } \right) 
+	\end{split}
+\] 
+Questo implica che 
+\[
+	\widetilde{U}(\mathbf{q} ,\mathbf{r} _e) = \frac{4\pi e^2}{q^2} \left(1 - e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} } \right) 
+\] 
+In questo modo, l'espressione della sezione d'urto elastica diventa ({\color{red} controllare esponente di $\hbar $}):
+\begin{equation}\label{sexp}
+	d\sigma _\text{el} = \frac{4 m^2 e^4}{\hbar ^2 q^4} \left\lvert 1 - \int_{\mathbb{R}^3} d^3 r_e \ e^{-i\mathbf{q} \cdot \mathbf{r} _e} \lvert \psi _1(\mathbf{r} _e) \rvert ^2\right\rvert ^2 d\Omega '
+\end{equation}
+\begin{itemize}
+	\item \textbf{Impulsi $q$ molto piccoli.} 
+
+		Per \textit{scattering elastico} si sa valere la relazione $q = 2p \sin \theta  / 2$; per questa, a $p$ fissato, la richiesta di impulsi $q $ molto piccoli si traduce nella richiesta di angoli molto piccoli. 
+		Tramite questa approssimazione, si ottiene la relazione linearizzata $q \simeq p \theta $.
+
+		Ora si cerca di dare un senso all'affermazione \textit{impulsi piccoli}.
+Una grandezza caratteristica con cui eseguire il confronto nel caso dell'atomo di idrogeno \`e il raggio di Bohr; tramite la sostituzione $p = mv$, si ha:
+\[
+\begin{split}
+	&\frac{qr_B}{\hbar } \simeq \frac{p \theta  r_B}{\hbar } = \frac{mv \theta r_B}{\hbar }\\
+	&\Rightarrow  mv \frac{\theta r_B}{\hbar }\ll 1 \implies v\ll \frac{\hbar }{m\theta r_B}
+\end{split}
+\] 
+Si pu\`o prendere $\theta  = 1 \text{ rad}$ (angolo non piccolo in questo contesto) per ottenere una relazione che, se verificata, soddisfa anche quella per $\theta $ generico; questa nuova relazione \`e scritta in termini della velocit\`a tipica dell'elettrone nell'atomo di idrogeno $v_0 = \hbar  / (mr_B) = \alpha  c$:
+\begin{equation}
+	v\ll v_0 = \frac{\hbar }{mr_B}
+\end{equation}
+Si assume, quindi, che l'elettrone incidente proceda ad una velocit\`a $v$ molto inferiore a quella dell'elettrone nell'atomo; in questo regime, \`e possibile sviluppare l'esponenziale nella sezione d'urto:
+\[
+e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r}_e } \simeq 1 - i \left(\frac{\mathbf{q} \cdot \mathbf{r} _e}{\hbar }\right) - \frac{1}{2} \left(\frac{\mathbf{q} \cdot \mathbf{r}_e }{\hbar }\right) ^2 \equiv 1- i \xi  - \frac{1}{2}\xi ^2 
+\] 
+dove si \`e definito $\xi  = \mathbf{q}  \cdot \mathbf{r}_e / \hbar $.
+Il termine di ordine zero semplifica l'$1$ presente nel modulo, mentre il termine al primo ordine, che \`e dispari rispetto allo zero, annulla l'intero integrale, visto che \`e moltiplicato per il termine pari $\lvert \psi _1(\mathbf{r} _e) \rvert ^2$.
+Il primo contributo non-nullo \`e dato dal termine al secondo ordine; trascurando ordini superiori, si rimane con ({\color{red} controllare le espressioni percedenti della sezione d'urto per errore negli esponenti dei coefficienti}):
+\[
+\frac{d \sigma _\text{el}}{d \Omega '} \simeq \frac{4m^2 e^2}{\hbar ^4 q^4} \left\lvert \int \frac{1}{2} (\mathbf{q} \cdot \mathbf{r} _e)^2 \lvert \psi _1(\mathbf{r} _e) \rvert ^2 d^3 r_e \right\rvert ^2
+\] 
+Questo integrale si pu\`o ridurre alla forma
+\[
+\frac{d \sigma _\text{el}}{d \Omega '} \simeq \frac{m^2 e^4}{9 \hbar ^4}\left\lvert \int d^3r_e \ r_e^2 \lvert \psi _1(\mathbf{r} _e )\rvert ^2 \right\rvert ^2 = \frac{1}{9r_B^2}\left\lvert \int r_e^2 \lvert \psi _1(\mathbf{r} _e) \rvert ^2 \ d^3 r_e \right\rvert ^2
+\] 
+dove si \`e usato che, in CGS, $r_B = \hbar ^2 / me^2$.
+L'integrale con cui si rimane \`e quello del raggio quadratico medio $\langle r_e^2 \rangle= 3 r_B^2$; allora il valore della sezione d'urto differenziale nel caso di piccoli impulsi \`e
+\begin{equation}
+	\frac{d \sigma_\text{el} }{d \Omega '} \simeq \frac{r_B^2}{3}
+\end{equation}
+\item \textbf{Impulsi $q$ molto grandi.} 
+
+	In questo caso, ci si mette nel limite opposto: $qr_B / \hbar \gg 1$; per questo regime, la fase $e^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{r} _e} $ oscilla molto rapidamente.
+	Questo comportamento permette di trascurare l'integrale e trovare rapidamente che, in questo regime, la sezione d'urto differenziale \`e data da:
+	\begin{equation}
+		\frac{d \sigma _\text{el}}{d \Omega '} = \frac{4m^2 e^4}{\hbar ^2 q^4}
+	\end{equation}
+	Usando $p=mv$ e $q=2p \sin \theta  / 2$, si ottiene l'espressione della sezione d'urto differenziale Rutherford:
+	\begin{equation}
+		\left(\frac{d \sigma _\text{el}}{d \Omega '} \right) _\text{ruth}= \left(\frac{e}{2mv^2}\right) ^2 \frac{1}{\sin^4 \theta /2}
+	\end{equation}
+\item \textbf{Soluzione esatta.} 
+
+	Partendo nuovamente da eq. \ref{sexp}, sostituendo 
+	\[
+	\psi _1 (\mathbf{r} _e) = \frac{1}{\sqrt{\pi r^3_B} } e^{-r / r_B} 
+	\] 
+	e integrando, si ottiene:
+	\[
+	\int_{\mathbb{R}^3} d^3 r_e \ e^{-\frac{i}{\hbar } \mathbf{q} \cdot \mathbf{r} _e} \lvert \psi _1(\mathbf{r} _e \rvert ^2 = \left(1+\frac{r_B^2 q^2}{4\hbar ^2}\right) ^{-2} = \left(1+ \frac{\zeta}{4}\right) ^{-2} 
+	\] 
+	con $\zeta = (r_B q / \hbar )^2$. 
+	In questo modo, si ottiene:
+	\begin{equation}
+		\frac{d \sigma _\text{el}}{d \Omega '} = 4e^4 \frac{(8 + \zeta)^2}{(4 + \zeta)^4}
+	\end{equation}
+
+\end{itemize}
 
 
 

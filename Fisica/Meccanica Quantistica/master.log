@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  26 MAY 2025 13:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  26 MAY 2025 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2247,7 +2247,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [165]
 
-[166] (./master.aux)
+[166]
+
+[167]
+
+[168]
+
+[169] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2260,13 +2266,16 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 48388 strings out of 473190
- 1086520 string characters out of 5722593
+ 48400 strings out of 473190
+ 1086662 string characters out of 5722593
  1772167 words of memory out of 5000000
- 70019 multiletter control sequences out of 15000+600000
+ 70021 multiletter control sequences out of 15000+600000
  703351 words of font info for 248 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,29n,107p,10923b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.72} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.71} has been referenced but does not exist, replaced by a fixed one
 
@@ -2481,10 +2490,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (166 pages, 984113 bytes).
+Output written on master.pdf (169 pages, 995335 bytes).
 PDF statistics:
- 2410 PDF objects out of 2487 (max. 8388607)
- 2186 compressed objects within 22 object streams
- 832 named destinations out of 1000 (max. 500000)
+ 2435 PDF objects out of 2487 (max. 8388607)
+ 2207 compressed objects within 23 object streams
+ 842 named destinations out of 1000 (max. 500000)
  1316 words of extra memory for PDF output out of 10000 (max. 10000000)
 
