@@ -3241,12 +3241,64 @@ Essendo $\ket{\psi } $ uno stato con direzione di spin arbitraria, cio\`e a segu
 Cos\`i facendo, $\hat{O}_{12} = \sigma ^{(1)} _z \otimes \sigma ^{(2)} _z \cos \theta _{12} $, con $\theta _{12} $ angolo formato tra $\hat{n}_1$ e $\hat{n}_2$ (quindi tra $\hat{z}$ e $\hat{n}_2$).
 Allora
 \[
-\braket{\psi |\sigma ^{(1)} _z \otimes \sigma ^{(2)} _z \cos \theta _{12} |\psi } = \frac{1}{2} \left(\braket{-|\sigma ^{(2)} _z \cos\theta _{12} |-} - \braket{|\sigma ^{(2)} _z \cos \theta _{12} |+} \right) = - \cos \theta _{12} 
+\braket{\psi |\sigma ^{(1)} _z \otimes \sigma ^{(2)} _z \cos \theta _{12} |\psi } = \frac{1}{2} \left(\braket{-|\sigma ^{(2)} _z \cos\theta _{12} |-} - \braket{+|\sigma ^{(2)} _z \cos \theta _{12} |+} \right) = - \cos \theta _{12} 
 \] 
 \end{esempio}
-\begin{center}
-	Fuori dal programma, lezione 49	
-\end{center}
+Ora si immagina di avere due particelle a formare uno stato di singoletto $\ket{\psi } = \frac{1}{\sqrt{2} } \left(\ket{+} \ket{-} - \ket{-} \ket{+} \right) $ e si indica con $\hat{a}$ il versore lungo cui il rivelatore per la particella $a$ ne misura lo spin e $\hat{b}$ l'analogo per la particella $b$.
+
+La misura per la particella $a$, $A(\hat{a},\lambda )$, si immagina dipendere esclusivamente dalla direzione di misurazione $\hat{a}$ e da altri parametri generici contenuti in $\lambda $; lo stesso si fa per $B(\hat{b}, \lambda )$.
+La misura complessiva di entrambe le particelle sar\`a, allora, della forma $M(\hat{a},\hat{b},\lambda )$.
+
+Si definisce la \textbf{correlazione} tra le due misurazioni la seguente grandezza:
+\begin{equation}
+	C(\hat{a},\hat{b}) = \int A(\hat{a},\lambda ) B (\hat{b},\lambda ) \rho (\lambda ) d\lambda 
+\end{equation}
+dove si \`e assunto che i parametri contenuti in $\lambda $ seguono una certa distribuzione (correttamente normalizzata) $\rho (\lambda )$.
+
+Dall'assunzione $\lvert A(\hat{a},\lambda ) \rvert = \lvert B(\hat{b},\lambda ) \rvert \le  1$, si ottiene che:
+\[
+\begin{split}
+	C(\hat{a},\hat{b}) - C(\hat{a},\hat{b}') &=\int \Big[A(\hat{a},\lambda ) B(\hat{b},\lambda ) - A(\hat{a},\lambda ) B(\hat{b}', \lambda )\Big]\rho (\lambda ) d\lambda \\
+						 &\begin{split}
+						 	=\int &A(\hat{a},\lambda ) B(\hat{b},\lambda ) \big[1 \pm A(\hat{a}', \lambda ) B(\hat{b}', \lambda )\big] +\\
+							      &- A(\hat{a},\lambda ) B(\hat{b}',\lambda ) \big[1\pm A(\hat{a}' ,\lambda ) B(\hat{b},\lambda )\big] \rho (\lambda ) d \lambda 
+						 \end{split}
+\end{split}
+\] 
+Ne segue che:
+\begin{equation*}
+	\begin{split}
+		&\lvert C(\hat{a},\hat{b}) - C(\hat{a},\hat{b}') \rvert \le \int \left(1\pm A(\hat{a}',\lambda ) B(\hat{b}' ,\lambda )\right) \rho (\lambda ) d\lambda + \int \left( 1 \pm A(\hat{a}', \lambda ) B(\hat{b},\lambda )\right) \rho (\lambda ) d\lambda \\
+		&\Rightarrow \lvert C(\hat{a},\hat{b}) - C(\hat{a},\hat{b}') \rvert \le 2 + \left[ C(\hat{a},\hat{b}') + C(\hat{a}', \hat{b}) \right]
+	\end{split}
+\end{equation*}
+Quindi:
+\begin{equation}
+	\lvert C(\hat{a},\hat{b}) - C(\hat{a}, \hat{b}') \rvert + \lvert C(\hat{a}', \hat{b}') + C(\hat{a}', \hat{b}) \rvert \le  2 
+\end{equation}
+In meccanica quantistica \`e possibile osservare la violazione di questa disuguaglianza in varie combinazioni; se si prende $\hat{b}= \hat{a}'$ e si definisce $\theta $ come l'angolo fra $\hat{a}$ e $\hat{a}'$ e come, contemporaneamente, l'angolo tra $\hat{b}$ e $\hat{b}'$, si ottiene:
+\[
+\lvert C(\theta ) - C(2\theta )  \rvert + \lvert C(\theta ) + C(0)  \rvert \le 2 
+\] 
+Considerando che, per la meccanica quantistica, si \`e trovato $C(\theta ) = - \cos \theta $, allora deve valere $\lvert - \cos \theta + \cos 2\theta  \rvert + \lvert -\cos \theta - 1 \rvert \le 2\Rightarrow 2 \cos \theta  - \cos 2 \theta \le 1 $.
+Come accennato, ci sono varie combinazioni per cui si assiste alla violazione di tale disuguaglianza; una di queste si ha per $\theta = \pi / 3$ perch\'e si avrebbe $1 + 1 / 2 \le 1$, che \`e chiaramente falso.
+
+La trattazione fatta \`e stata utile solamente per arrivare alla conclusione che la disuguaglianza di Bell non \`e verificata; con un approccio pi\`u completo, \`e anche possibile mostrare che il problema delle assunzioni di partenza che portano ad un assurdo \`e legata alla causalit\`a.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 
