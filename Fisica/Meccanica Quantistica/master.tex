@@ -889,7 +889,7 @@ Tramite costanti del sistema come $m , \omega, \hbar $, si costruiscono altre co
 		\hat{q} = \hat{x} / \ell _\omega
 	\end{cases} \Rightarrow \hat{H} = \frac{\hbar \omega}{2} \left[ \hat{p}^2 + \hat{q}^2 \right] 
 \end{equation}
-Si definisce anche $\hat{a} = (\hat{q}+i \hat{p}) / \sqrt{2} $, che soddisfa $\left[ \hat{a}, \hat{a}^\dagger  \right] = 1$ e $\hat{H} = \frac{\hbar \omega}{2} \left(\hat{a} \hat{a}^\dagger + \hat{a}^\dagger  \hat{a}\right) $. Per $\hat{N} = \hat{a}^\dagger \hat{a}\Rightarrow  \hat{H} = \hbar  \omega (\hat{N} + 1/2)$\footnote{Questo si ottiene aggiungendo e sottraendo $\hat{a}^\dagger \hat{a}$ all'interno della parentesi in $\hat{H}$.}; inoltre:
+Si definisce anche $\hat{a} = (\hat{q}+i \hat{p}) / \sqrt{2} $, che soddisfa $\left[ \hat{a}, \hat{a}^\dagger  \right] = 1$ e $\hat{H} = \frac{\hbar \omega}{2} \left(\hat{a} \hat{a}^\dagger + \hat{a}^\dagger  \hat{a}\right) $. Per $\hat{N} = \hat{a}^\dagger \hat{a}\Rightarrow  \hat{H} = \hbar  \omega (\hat{N} + 1/2)$\footnote{Questo si ottiene usando $\left[ \hat{a}, \hat{a}^\dagger  \right] =1 $, per cui risulta che $\hat{a} \hat{a}^\dagger = \hat{a}^\dagger \hat{a}+1$.}; inoltre:
 \[
 \begin{split}
 	&[ \hat{N},\hat{a} ] = [ \hat{a}^\dagger \hat{a}, \hat{a} ] = \hat{a}^\dagger \hat{a}\hat{a} - \hat{a}\hat{a}^\dagger \hat{a}= [\hat{a}^\dagger , \hat{a}] \hat{a} = -\hat{a}\\
@@ -5731,12 +5731,14 @@ L'integrale con cui si rimane \`e quello del raggio quadratico medio $\langle r_
 \section{Formulario}
 
 \subsection{Integrali utili}
-
-\begin{equation}\label{solint1}
-\int_{0} ^{+\infty} t^n e^{-\alpha t} dt = \frac{n!}{\alpha ^{n+1} }
+\begin{equation}
+	\int_{0} ^{r_*} r e^{-\alpha r^2} dr = \frac{1}{2\alpha } \left(1 - e^{-\alpha r_*^2 } \right) 
 \end{equation}
-\begin{equation}\label{solint2}
-	\int_{0} ^\pi \sin \theta \cos ^2 \theta  \ d\theta  = \frac{2}{3}
+\begin{equation}\label{solint1}
+\int_{0} ^{+\infty} r^n e^{-\alpha r} dr = \frac{n!}{\alpha ^{n+1} }
+\end{equation}
+\begin{equation}
+	\int_{0} ^{+\infty} r^2 e^{-\alpha r^2} dr = \frac{\sqrt{\pi} }{4} \alpha ^{-3 / 2} 
 \end{equation}
 \begin{equation}\label{solint3}
 	\int_{0} ^{+\infty} r e^{- \alpha  r}  \sin (\beta r)\ dr = \frac{2 \alpha  \beta }{(\alpha ^2 + \beta ^2)^2}, \ \Re \left\{ \alpha  \right\} >0
@@ -5748,6 +5750,35 @@ L'integrale con cui si rimane \`e quello del raggio quadratico medio $\langle r_
 	\label{solint5}
 	\int_{-\infty} ^{+\infty} e^{-a y^2 + by}  dy = \sqrt{\frac{\pi}{a}} e^{b^2 / 4 a} 
 \end{equation}
+\begin{equation}\label{solint2}
+	\int_{0} ^\pi \sin \theta \cos ^2 \theta  \ d\theta  = \frac{2}{3}
+\end{equation}
+\subsection{Trucchi utili}
+\begin{center}
+	\textit{Vedere svolgimento prove d'esame in mqnotes per alcuni suggerimenti.} 
+\end{center}
+\begin{itemize}
+	\item \textbf{Funzione d'onda negli impulsi.} 
+
+		Quando l'Hamiltoniano \`e speculare in impulso e posizione, \`e possibile ottenere le funzioni d'onda nello spazio degli impulsi definendo dei parametri in modo che l'impulso assuma stessa forma delle posizioni (\textit{stando attenti a ridefinire tutti i parametri nella funzione d'onda, di modo che eventuali funzioni degli impulsi risultino adimensionali}).
+		\begin{esempio}
+	Per oscillatore armonico 2D con $\hat{H}= \hat{p}^2 / 2m + m\omega ^2 \hat{x}^2 / 2$, la funzione d'onda nelle posizioni dello stato fondamentale \`e $\pi^{-1 / 2} \gamma^{-1} e^{-(x^2 + y^2) / 2 \gamma^2} $, con $\gamma^2$ lunghezza caratteristica del sistema; nello spazio degli impulsi, questa diventa $\pi^{-1 / 2} \gamma'^{-1} e^{-(p_x^2 + p_y^2) / 2 \gamma'^2} $, dove $\gamma'$ \`e l'impulso caratteristico del sistema, dato da $\hbar / \gamma$.
+		\end{esempio}
+	\item \textbf{Soluzione esatta a Hamiltoniano con perturbazione.} 
+
+		Quando viene chiesto un calcolo esatto, invece che approssimazione perturbativa, probabilmente c'\`e la possibilit\`a di riarrangiare l'Hamiltoniano e di ricondurlo ad uno di una forma analoga a quello imperturbato.
+	\item \textbf{Operatore prodotto scalare tra due spin.} 
+
+		Nello studio di un Hamiltoniano di spin $\hat{H}_s = \kappa \hat{\mathbf{s} }_1 \cdot \hat{\mathbf{s} }_2$, torna utile la relazione
+		\begin{equation}
+			\hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 = \frac{\hat{S}^2 - \hat{S}_1^2 - \hat{S}_2^2}{2}
+		\end{equation}
+		dove $\hat{\mathbf{S} } = \hat{\mathbf{S} }_1 + \hat{\mathbf{S} }_2$.
+	\item \textbf{Quantit\`a conservate.} 
+
+		Le quantit\`a di cui verificare la commutazione con l'Hamiltoniano sono: $\hat{p}, \hat{L}, \hat{J}, \hat{\mathcal{P} }, \hat{T}$. 
+		In generale, sono sufficienti le prime tre (se non le prime due nel caso in cui non vi sia un termine di spin nell'Hamiltoniano).
+\end{itemize}
 
 
 
