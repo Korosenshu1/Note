@@ -1,0 +1,1212 @@
+\documentclass[11pt, a4paper]{scrartcl} % Packages
+%\usepackage{stix}
+\usepackage{sansiwona}
+\usepackage[margin=.25in]{geometry}
+\usepackage{index}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb, amsbsy}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{braket}
+\usepackage{tensor}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+%\usepackage{setspace}
+%\setstretch{1.2}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+
+\newcommand\vertarrowbox[3][6ex]{%
+  \begin{array}[t]{@{}c@{}} #2 \
+  \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\
+  \makebox[0pt]{\scriptsize#3}
+  \end{array}%
+}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+% Titles 
+\title{Note di\\ \vspace{.1in} Meccanica Quantistica}
+\author{Manuel Deodato}
+\date{}
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{section}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+
+
+% Ambienti
+\newtheoremstyle{style1}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
+
+\newtheoremstyle{style2}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\ }
+
+
+\theoremstyle{style2}
+\newtheorem{osservazione}{Osservazione}[section]
+
+\theoremstyle{style1}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\spadesuit$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+
+
+
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage[euler-digits,euler-hat-accent]{eulervm}
+\usepackage{dsfont}
+%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\section{Misure, valori medi, probabilit\`a, proiettore, evoluzione temporale, rappresentazione degli impulsi e principio di indeterminazione}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Valore medio.} 
+			\begin{equation}
+				\langle \hat{A} \rangle_\psi = \braket{\psi |\hat{A}|\psi } 
+			\end{equation}
+			\begin{equation}
+				\langle \hat{A} \rangle_\psi  = \operatorname{Tr} \rho_\psi  \hat{A}
+			\end{equation}
+		\item {\sffamily \bfseries Normalizzazione.} Per base discreta $\left\{ \ket{n}  \right\} $ e per base continua $\left\{ \ket{x}  \right\} $, rispettivamente:
+			\begin{equation}
+				\begin{split}
+					&\braket{\psi |\psi } = \sum_{n=1}^{+\infty} \lvert c_n \rvert ^2= 1\\
+					&\braket{\psi |\psi } = \int_\mathbb{R} \lvert \psi (x) \rvert ^2 \ dx = 1 
+				\end{split}
+			\end{equation}
+		\item {\sffamily \bfseries Matrice densit\`a.} Per stato generico:
+		\begin{equation}
+				\operatorname{Tr} \rho  = 1 \hspace{1cm} \rho ^\dagger = \rho \hspace{1cm} \operatorname{Tr} \rho ^2 \le  1
+		\end{equation}	
+		per stati puri: $\operatorname{Tr} \rho ^2 = 1$.
+
+		Se $\rho $ relativa a spazio composto da due sottospazi, la sua ridotta al primo \`e:
+		\begin{equation}
+			\rho ^{(1)} = \operatorname{Tr} _2 \rho = \sum_{m}^{} \braket{a_n b_m|\rho |a_j b_m} 
+		\end{equation}
+		La sua evoluzione temporale \`e:
+		\begin{equation}
+			\rho (t) = e^{-\frac{i}{\hbar } \hat{H} t } \rho (0) e^{\frac{i}{\hbar }\hat{H} t} 
+		\end{equation}
+		\item {\sffamily \bfseries Flusso di probabilit\`a.} 
+			\begin{equation}
+				\mathbf{J} = - \frac{i\hbar }{2m} \big(\psi ^* \nabla \psi - \psi  \nabla \psi ^*\big)
+			\end{equation}
+			L'equazione di continuit\`a \`e:
+			\begin{equation}
+				\partial _t \lvert \psi  \rvert ^2 + \nabla \cdot \mathbf{J} = 0
+			\end{equation}
+		\item {\sffamily \bfseries Probabilit\`a di misura.} Dato osservabile $\hat{A}$, e $\psi = \sum_{i}^{} c_i \ket{a _i} $ espresso in base fornita da $\hat{A}$, la probabilit\`a di ottenere la misura $a_i$ su $\ket{\psi } $ \`e $\lvert c_i \rvert ^2$.
+
+			Se $\hat{A}$ fornisce base continua, allora:
+			\begin{equation}
+				P(a) da =\left\lvert \braket{a|\psi }  \right\rvert ^2 da 
+			\end{equation}
+			La probabilit\`a di trovare una particella in $\ket{\psi } $ ad una distanza maggiore di $x_0$, per esempio, \`e:
+			\[
+			P(x\ge x_0) = \int_{x_0}^{+\infty}  \left\lvert \psi (x) \right\rvert ^2 dx
+			\] 
+		\item {\sffamily \bfseries Impulso, posizione e distanza media.} Sia $\ket{\psi } $ uno stato; allora:
+			\begin{equation*}
+				\langle \hat{x} \rangle_\psi = \braket{\psi |\hat{x}|\psi }  = \int_{-\infty} ^{+\infty} x \left\lvert \psi (x) \right\rvert ^2 dx 
+			\end{equation*}
+			\begin{equation*}
+				\langle \hat{p} \rangle_\psi = \braket{\psi |\hat{p}|\psi } = \int_{-\infty} ^{+\infty} \psi ^*(x)\big[-i\hbar \partial _x \psi (x)\big] dx
+			\end{equation*}
+			\begin{equation*}
+					\langle \hat{r} \rangle_\psi = \int_{\mathbb{R}^3} \sqrt{x^2 + y^2 + z^2} \left\lvert \psi (\mathbf{x} ) \right\rvert ^2 d^3x
+			\end{equation*}
+			\begin{equation*}
+				\langle \hat{r}^2 \rangle _\psi = \int_{\mathbb{R}^3} \big[x^2 + y^2 + z^2\big] \left\lvert \psi (\mathbf{x} ) \right\rvert ^2 d^3x
+			\end{equation*}
+	dove gli ultimi due sono distanza media dal centro e raggio quadratico medio in 3D.
+
+	\begin{osservazione}
+	Il valore medio di spin \`e analogo, ma calcolato solo su stati di spin; la parte orbitale sparisce per normalizzazione.
+	\end{osservazione}
+	\item {\sffamily \bfseries Evoluzione temporale.}
+		\begin{equation}
+			i \hbar \partial _t \psi (\mathbf{x} ,t)= \hat{H} \psi (\mathbf{x} ,t)
+		\end{equation}
+	\item {\sffamily \bfseries Trasformate di Fourier.} 
+		\begin{equation}
+			\widetilde{\psi }(p) = \frac{1}{\sqrt{2\pi \hbar } } \int_{-\infty} ^{+\infty} \psi (x) e^{-\frac{i}{\hbar }px} dx
+		\end{equation}
+		\begin{equation}
+			\psi (x) = \frac{1}{\sqrt{2 \pi \hbar } } \int_{-\infty} ^{+\infty } \widetilde{\psi }(p) e^{\frac{i}{\hbar }px}  dp 
+		\end{equation}
+		\item {\sffamily \bfseries Principio di indeterminazione.} 
+			Per operatori $\hat{A},\hat{B}$ tali che $[\hat{A},\hat{B}] = i \hat{C}$, su uno stato $\ket{\psi } $ si ha:
+			\begin{equation}
+				\Delta _A \Delta _B \ge \frac{\lvert \langle \hat{C} \rangle_\psi  \rvert }{2} = \frac{\lvert \braket{\psi |[ \hat{A},\hat{B} ] |\psi }  \rvert }{2}
+			\end{equation}
+			dove per generico operatore $\hat{O}$:
+			\begin{equation}
+				\Delta _O = \sqrt{\langle \hat{O}^2 \rangle - \langle \hat{O} \rangle^2} 
+			\end{equation}
+	\end{itemize}
+\end{multicols}
+\section{Commutatori e rappresentazione di operatori}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Rappresentazione di coordinate in impulsi e viceversa.}
+			\begin{equation}
+				\hat{X}\widetilde{\psi }(p) = i\hbar \partial _p \widetilde{\psi }(p)
+			\end{equation}
+			\begin{equation}
+				\hat{P} \psi (x) = - i \hbar  \partial _x \psi (x)
+			\end{equation}
+			\item {\sffamily \bfseries Commutatore posizione-impulso.} 
+				\begin{equation}
+					[\hat{X},\hat{P}] = i\hbar \mathds{1}
+				\end{equation}
+				\item {\sffamily \bfseries Commutatori con momento angolare.} 
+					\begin{equation*}
+						\begin{split}
+							[\hat{J}_a , \hat{J}_b] = i\hbar \varepsilon _{abc} \hat{J}_c \hspace{.25cm}&\hspace{.25cm} [\hat{X}_a, \hat{J}_b] = i \hbar \varepsilon _{abc} \hat{X}_c\\
+							[\hat{P}_a, \hat{J}_b] &= i\hbar \varepsilon _{abc} \hat{P}_c
+						\end{split}
+					\end{equation*}
+					\item {\sffamily \bfseries Momento angolare in coordinate.} Si usa il fatto che $\hat{\mathbf{L} }= \hat{\mathbf{x} } \times \hat{\mathbf{p} }$:
+						\begin{equation}
+							\hat{\mathbf{L} } \psi (\mathbf{x} ) =  \left[ -i\hbar \mathbf{x} \times \pmb{\nabla } \right]  \psi (\mathbf{x} )
+						\end{equation}
+	\end{itemize}
+\end{multicols}
+\section{Potenziale centrale e cambiamenti di variabile}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Coordinate CM e relativa.} 
+			\begin{equation}
+				\begin{split}
+					&\hat{\mathbf{X}} = \frac{m_1\hat{\mathbf{r}}_1 + m_2 \hat{\mathbf{r} }_2}{m_1+m_2} \hspace{1cm} \hat{\mathbf{x}} = \hat{\mathbf{r} }_1 - \hat{\mathbf{r} }_2\\
+					& \hat{\mathbf{P} }= \hat{\mathbf{p} }_1 + \hat{\mathbf{p} }_2 \hspace{1cm} \hat{\mathbf{p} } = \frac{m_1\hat{\mathbf{p} }_1 - m_2 \hat{\mathbf{p} }_2}{m_1+m_2}
+				\end{split}
+			\end{equation}
+			Soddisfano $[\hat{X}_i, \hat{P}_j] = i \hbar \delta _{ij} , \ [\hat{x}_i, \hat{p}_j] = i\hbar \delta _{ij} $ e gli altri commutatori sono nulli.
+
+			Tornano utili la massa totale $M = m_1+m_2$ e la massa ridotta $\mu = m_1m_2/(m_1+m_2)$.
+			\item {\sffamily \bfseries Alcuni cambiamenti di variabile.} 
+				\begin{equation*}
+					\begin{split}
+						&\hat{H} = \frac{\hat{\mathbf{p}  }_1^2}{2m_1}+ \frac{ \hat{\mathbf{p}  }_2^2}{2m_2} + U\big(\lvert \hat{\mathbf{r} }_1 - \hat{\mathbf{r} }_2 \rvert \big)\\
+						&\to  \hat{H} = \frac{\hat{\mathbf{P} }^2}{2M} + \frac{\hat{\mathbf{p}}^2}{2\mu } + U\big(\hat{\mathbf{x} }\big)
+					\end{split}
+				\end{equation*}
+				\begin{equation*}
+					\begin{split}
+						&\hat{H} = \frac{\hat{\mathbf{p} }_1^2 + \hat{\mathbf{p} }_2^2}{2m} + \frac{1}{2}m\omega^2 (\hat{\mathbf{r} }_1^2 + \hat{\mathbf{r} }_2)^2 + \frac{1}{4}m \kappa ^2 (\hat{\mathbf{r} }_1 - \hat{\mathbf{r} }_2)^2\\
+						&\to \hat{H} = \frac{\hat{\mathbf{P} }^2}{2M}+\frac{1}{2}M\omega^2 \hat{\mathbf{R} }^2 + \frac{\hat{\mathbf{p} }^2}{2\mu } + \frac{1}{2}\mu (\omega ^2 + \kappa ^2 ) \hat{\mathbf{r} }^2
+					\end{split}
+				\end{equation*}
+				Nell'ultimo, le masse delle due particelle sono uguali, quindi $M = 2m $ e $\mu = m / 2$.
+	\end{itemize}
+\end{multicols}
+\section{Oscillatore armonico}
+\begin{multicols}{2}
+\begin{itemize}
+	\item {\sffamily \bfseries Hamiltoniano e grandezze caratteristiche.} 
+		\begin{equation}
+			\hat{H} = \frac{\hat{P}^2}{2m} + \frac{1}{2}m \omega^2 \hat{X}^2
+		\end{equation}
+		Si definiscono variabili riscalate $\hat{p} = \hat{P} / p_\omega$ e $\hat{x} = \hat{X} / \ell _\omega$, dove $\ell _\omega = \sqrt{\hbar / m\omega} $ e $p_\omega = m\omega \ell _\omega$.
+		Con queste:
+		\begin{equation}
+			\hat{H} = \frac{\hbar \omega}{2} \left[ \hat{p}^2 + \hat{x}^2 \right] 
+		\end{equation}
+	\item {\sffamily \bfseries Operatori di distruzione e creazione.} 
+Tramite grandezze riscalate, sono definiti, rispettivamente, da:
+\begin{equation}
+	\hat{a} = \frac{\hat{x}+i \hat{p}}{\sqrt{2} } \hspace{1cm} \hat{a}^\dagger = \frac{\hat{x}-i \hat{p}}{\sqrt{2} }
+\end{equation}
+Soddisfano $[\hat{a}, \hat{a}^\dagger ] = 1$ e 
+\begin{equation}
+	\hat{H} = \frac{\hbar \omega}{2} \left[ \hat{a}\hat{a}^\dagger + \hat{a}^\dagger \hat{a} \right] 
+\end{equation}
+\item {\sffamily \bfseries Operatore numero.} Dato da $\hat{N} = \hat{a}^\dagger \hat{a}$ e soddisfa
+	\begin{equation}
+		[\hat{N}, \hat{a}] = - \hat{a}\hspace{1cm} [\hat{N}, \hat{a}^\dagger ]= \hat{a}^\dagger 
+	\end{equation}
+Si ha
+\begin{equation}
+	\hat{H} = \hbar \omega ( \hat{N} + 1 / 2)
+\end{equation}
+Gli autovalori di $\hat{N}$ permettono di trovare autovalori di $\hat{H}$ e caratterizzano le autoenergie perch\'e $n\ge 0, n \in \mathbb{N}$:
+\begin{equation}
+	E_n = \hbar \omega (n + 1 / 2)
+\end{equation}
+\item {\sffamily \bfseries Funzioni d'onda dei primi due livelli.} 
+	\begin{equation}
+		\begin{split}
+			&\varphi _0(\omega , x) = \frac{1}{\pi^{1 / 4} \sqrt{\ell _\omega}  } e^{- x^2 / (2\ell _\omega^2)} \\ 
+			&\varphi _1 (\omega , x) = \frac{\sqrt{2} }{\pi^{1 / 4} \sqrt{\ell _\omega}  } \frac{x}{\ell _\omega} e^{- x^2 / (2\ell _\omega^2)} 
+		\end{split}
+	\end{equation}
+	La \textbf{parit\`a} \`e $(-1)^n$.
+	\item {\sffamily \bfseries Oscillatore armonico in 2D e 3D}. Le funzioni d'onda si ottengono per prodotto lungo le varie dimensioni. 
+		Le energie si sommano lungo le varie direzioni:
+		\begin{equation*}
+			\begin{split}
+				&E_N ^{(2D)} = \hbar \omega ( n_x + n_y + 1 )  = \hbar \omega (N + 1) \\
+				& E_N ^{(3D)}  = \hbar \omega (n_x + n_y + n_z + 3/2) = \hbar \omega ( N + 3 / 2)
+			\end{split}
+		\end{equation*}
+		I livelli energetici in 2D hanno degenerazione $N+1$; in 3D hanno degenerazione $(N+1)(N+2) / 2$.
+		\item {\sffamily \bfseries Oscillatore in coordinate sferiche.} 
+Ottenuto perch\'e l'Hamiltoniano commuta con il momento angolare totale.
+
+Le energie si riscrivono per $N = 2n_r + \ell $:
+\begin{equation}
+	E_{n_r,\ell } = \hbar \omega (2n_r + \ell  + 3 / 2)
+\end{equation}
+La funzione d'onda si scrive come $\psi (r,\theta ,\varphi ) = R_{n_r , \ell }(r) Y_{\ell ,m} (\theta ,\varphi ) $, con $Y_{\ell ,m} (\theta ,\varphi )$ sono le armoniche sferiche.
+
+La \textbf{parit\`a} di ciascun livello \`e legata alle armoniche sferiche ed \`e $(-1)^{\ell } $.
+\end{itemize}	
+\end{multicols}
+\section{Particella in buca di potenziale infinita}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Energia.} 
+			Si ha 
+			\begin{equation}
+				E_n = \frac{\hbar ^2 k_n^2}{2m} = \frac{\hbar ^2 \pi ^2 n ^2}{2ma^2}, \ k_n = \frac{n\pi }{a}
+			\end{equation}
+			con $n > 0 , n \in \mathbb{N}$.
+			\item {\sffamily \bfseries Funzioni d'onda.} 
+				\begin{equation}
+					\psi _n(x) = \begin{cases}
+						\displaystyle \sqrt{\frac{2}{a}} \sin \left(\frac{n\pi }{a}x\right) &,\ n \text{ pari }\\
+						\\
+						\displaystyle \sqrt{\frac{2}{a}} \cos \left(\frac{n\pi}{a}x\right) &,\ n \text{ dispari }
+					\end{cases}
+				\end{equation}
+				per $\lvert x \rvert \le a /2 $ e $0$ fuori. 
+	\end{itemize}
+\end{multicols}
+\section{Atomo di idrogeno}
+\section{Spin e composizione di momenti angolari}
+\section{Teoria delle perturbazioni}
+\section{Operatori parit\`a e time-reversal}
+\section{Scattering}
+\section{Regole di selezione}
+\newpage
+\section{Integrali utili}
+\begin{multicols}{2}
+\begin{equation*}
+	\int_{0} ^{r_*} r e^{-\alpha r^2} dr = \frac{1}{2\alpha } \left(1 - e^{-\alpha r_*^2 } \right) 
+\end{equation*}
+\begin{equation*}\label{solint1}
+\int_{0} ^{+\infty} r^n e^{-\alpha r} dr = \frac{n!}{\alpha ^{n+1} }
+\end{equation*}
+\begin{equation*}
+	\int_{0} ^{+\infty} r^2 e^{-\alpha r^2} dr = \frac{\sqrt{\pi} }{4} \alpha ^{-3 / 2} 
+\end{equation*}
+\begin{equation*}\label{solint3}
+	\int_{0} ^{+\infty} r e^{- \alpha  r}  \sin (\beta r)\ dr = \frac{2 \alpha  \beta }{(\alpha ^2 + \beta ^2)^2}, \ \Re \left\{ \alpha  \right\} >0
+\end{equation*}
+\begin{equation*}\label{solint4}
+	\int_{0} ^{+\infty} \sin(qr) e^{-r / R} \ dr = \frac{qR^2}{1 + q^2 R^2}
+\end{equation*}
+\begin{equation*}
+	\label{solint5}
+	\int_{-\infty} ^{+\infty} e^{-a y^2 + by}  dy = \sqrt{\frac{\pi}{a}} e^{b^2 / 4 a} 
+\end{equation*}
+\begin{equation*}\label{solint2}
+	\int_{0} ^\pi \sin \theta \cos ^2 \theta  \ d\theta  = \frac{2}{3}
+\end{equation*}
+\end{multicols}
+\section{Sviluppi in serie}
+\begin{multicols}{2}
+    \[
+      \frac{1}{1 - x} = \sum_{n=0}^{\infty} x^n
+    \]
+    \[
+      e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+\]
+    \[
+      \sin x = \sum_{n=0}^{\infty} (-1)^n \,\frac{x^{2n+1}}{(2n+1)!}
+      = x - \frac{x^3}{3!} +\frac{x^5}{5!} - \ldots
+    \]
+    \[
+      \cos x = \sum_{n=0}^{\infty} (-1)^n \,\frac{x^{2n}}{(2n)!}
+      = 1 -\frac{x^2}{2!} +\frac{x^4}{4!}-\cdots
+    \]
+    \[
+      \sinh x = \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!}
+      = x +\frac{x^3}{3!} +\frac{x^5}{5!}+\cdots    \]
+    \[
+      \cosh x = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!}
+      = 1 +\frac{x^2}{2!} +\frac{x^4}{4!}+\cdots    \]
+    \[
+      \ln(1 + x) = \sum_{n=1}^{\infty} (-1)^{\,n-1} \,\frac{x^n}{n}
+      = x -\frac{x^2}{2} +\frac{x^3}{3} -\cdots    \]
+    \[
+      \arctan x = \sum_{n=0}^{\infty} (-1)^n\,\frac{x^{2n+1}}{2n+1} 
+      = x -\frac{x^3}{3} +\frac{x^5}{5}-\cdots    
+\]
+    \[
+	    \begin{split}
+		    (1 + x)^\alpha &=1+\alpha x + \frac{\alpha(\alpha-1)}{2!}x^2 +\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3 + \cdots
+	    \end{split}
+\]
+\end{multicols}
+\section{Trucchi utili}
+\begin{multicols}{2}
+\begin{itemize}
+	\item \textbf{Funzione d'onda negli impulsi.} 
+
+		Quando l'Hamiltoniano \`e speculare in impulso e posizione, \`e possibile ottenere le funzioni d'onda nello spazio degli impulsi definendo dei parametri in modo che l'impulso assuma stessa forma delle posizioni (\textit{stando attenti a ridefinire tutti i parametri nella funzione d'onda, di modo che eventuali funzioni degli impulsi risultino adimensionali}).
+		\begin{esempio}
+	Per oscillatore armonico 2D con $\hat{H}= \hat{p}^2 / 2m + m\omega ^2 \hat{x}^2 / 2$, la funzione d'onda nelle posizioni dello stato fondamentale \`e $\pi^{-1 / 2} \gamma^{-1} e^{-(x^2 + y^2) / 2 \gamma^2} $, con $\gamma^2$ lunghezza caratteristica del sistema; nello spazio degli impulsi, questa diventa $\pi^{-1 / 2} \gamma'^{-1} e^{-(p_x^2 + p_y^2) / 2 \gamma'^2} $, dove $\gamma'$ \`e l'impulso caratteristico del sistema, dato da $\hbar / \gamma$.
+		\end{esempio}
+	\item \textbf{Soluzione esatta a Hamiltoniano con perturbazione.} 
+
+		Quando viene chiesto un calcolo esatto, invece che approssimazione perturbativa, probabilmente c'\`e la possibilit\`a di riarrangiare l'Hamiltoniano e di ricondurlo ad uno di una forma analoga a quello imperturbato.
+	\item \textbf{Operatore prodotto scalare tra due spin.} 
+
+		Nello studio di un Hamiltoniano di spin $\hat{H}_s = \kappa \hat{\mathbf{s} }_1 \cdot \hat{\mathbf{s} }_2$, torna utile la relazione
+		\begin{equation}
+			\hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 = \frac{\hat{S}^2 - \hat{S}_1^2 - \hat{S}_2^2}{2}
+		\end{equation}
+		dove $\hat{\mathbf{S} } = \hat{\mathbf{S} }_1 + \hat{\mathbf{S} }_2$.
+	\item \textbf{Quantit\`a conservate.} 
+
+		Le quantit\`a di cui verificare la commutazione con l'Hamiltoniano sono: $\hat{p}, \hat{L}, \hat{J}, \hat{\mathcal{P} }, \hat{T}$. 
+		In generale, sono sufficienti le prime tre (se non le prime due nel caso in cui non vi sia un termine di spin nell'Hamiltoniano).
+	\item {\sffamily \bfseries Calcolo elementi di matrice.} Ricordare che \`e possibile utilizzare regole di selezione o espressioni dell'operatore (tipo per la posizione usare operatori di salita e discesa nell'oscillatore armonico), oppure si pu\`o passare al calcolo dell'integrale, come nel caso della trattazione perturbativa del potenziale di Coulomb.
+\end{itemize}
+\end{multicols}
+\section{Propriet\`a del commutatore}
+\section{Polinomi di Hermite, Laguerre e Lagrange e armoniche sferiche}
+
+
+\newpage
+\section{Coefficienti di Clebsch-Gordan}
+\begin{figure}[h!]
+\begin{center}
+\setlength{\unitlength}{0.9mm}
+\begin{picture}(160,184)
+\scriptsize
+%
+% j1 x j2
+%
+\put(44,156){\line(1,0){36}}
+\put(44,156){\line(0,1){14}}
+\put(60,170){\line(-1,0){16}}
+\put(60,170){\line(0,1){8}}
+\put(80,178){\line(-1,0){20}}
+\put(80,178){\line(0,-1){22}}
+\multiput(60,170)(2,0){10}{\line(1,0){1}}
+\multiput(60,170)(0,-2){7}{\line(0,-1){1}}
+\put(63,176){\makebox(0,0){$J$}}
+\put(63,172){\makebox(0,0){$M$}}
+\put(69,176){\makebox(0,0){$J$}}
+\put(69,172){\makebox(0,0){$M$}}
+\put(75,176){\makebox(0,0){$\cdots$}}
+\put(75,172){\makebox(0,0){$\cdots$}}
+\put(48,168){\makebox(0,0){$m_1$}}
+\put(56,168){\makebox(0,0){$m_2$}}
+\put(48,164){\makebox(0,0){$m_1$}}
+\put(56,164){\makebox(0,0){$m_2$}}
+\put(48,161){\makebox(0,0){$\vdots$}}
+\put(56,161){\makebox(0,0){$\vdots$}}
+\put(52,174){\makebox(0,0){\normalsize
+   $j_1 \, \times \, j_2$}}
+\put(70,163){\makebox(0,0){Coefficients}}
+%
+% 2 x 1/2
+%
+\put(-4,146){\line(1,0){24}}
+\put(-4,146){\line(0,1){4}}
+\put(12,150){\line(-1,0){16}}
+\put(12,150){\line(0,1){8}}
+\put(20,158){\line(-1,0){8}}
+\put(20,158){\line(0,-1){12}}
+\multiput(12,150)(2,0){4}{\line(1,0){1}}
+\multiput(12,150)(0,-2){2}{\line(0,-1){1}}
+\put(4,138){\line(1,0){32}}
+\put(4,138){\line(0,1){8}}
+\put(36,154){\line(-1,0){16}}
+\put(36,154){\line(0,-1){16}}
+\multiput(20,146)(2,0){8}{\line(1,0){1}}
+\multiput(20,146)(0,-2){4}{\line(0,-1){1}}
+\put(20,130){\line(1,0){32}}
+\put(20,130){\line(0,1){8}}
+\put(52,146){\line(-1,0){16}}
+\put(52,146){\line(0,-1){16}}
+\multiput(36,138)(2,0){8}{\line(1,0){1}}
+\multiput(36,138)(0,-2){4}{\line(0,-1){1}}
+\put(36,122){\line(1,0){32}}
+\put(36,122){\line(0,1){8}}
+\put(68,138){\line(-1,0){16}}
+\put(68,138){\line(0,-1){16}}
+\multiput(52,130)(2,0){8}{\line(1,0){1}}
+\multiput(52,130)(0,-2){4}{\line(0,-1){1}}
+\put(52,114){\line(1,0){32}}
+\put(52,114){\line(0,1){8}}
+\put(84,130){\line(-1,0){16}}
+\put(84,130){\line(0,-1){16}}
+\multiput(68,122)(2,0){8}{\line(1,0){1}}
+\multiput(68,122)(0,-2){4}{\line(0,-1){1}}
+\put(68,110){\line(1,0){24}}
+\put(68,110){\line(0,1){4}}
+\put(92,122){\line(-1,0){8}}
+\put(92,122){\line(0,-1){12}}
+\multiput(84,114)(2,0){4}{\line(1,0){1}}
+\multiput(84,114)(0,-2){2}{\line(0,-1){1}}
+\put(4,154){\makebox(0,0){\normalsize 2$\, \times \,$1/2}}
+\put(16,156){\makebox(0,0){5/2}}
+\put(16,152){\makebox(0,0){5/2}}
+\put(24,152){\makebox(0,0){5/2}}
+\put(32,152){\makebox(0,0){3/2}}
+\put(0,148){\makebox(0,0){2}}
+\put(8,148){\makebox(0,0){1/2}}
+\put(16,148){\makebox(0,0){1}}
+\put(24,148){\makebox(0,0){3/2}}
+\put(32,148){\makebox(0,0){3/2}}
+\put(8,144){\makebox(0,0){2}}
+\put(16,144){\makebox(0,0){-1/2}}
+\put(24,144){\makebox(0,0){1/5}}
+\put(32,144){\makebox(0,0){4/5}}
+\put(40,144){\makebox(0,0){5/2}}
+\put(48,144){\makebox(0,0){3/2}}
+\put(8,140){\makebox(0,0){1}}
+\put(16,140){\makebox(0,0){1/2}}
+\put(24,140){\makebox(0,0){4/5}}
+\put(32,140){\makebox(0,0){-1/5}}
+\put(40,140){\makebox(0,0){1/2}}
+\put(48,140){\makebox(0,0){1/2}}
+\put(24,136){\makebox(0,0){1}}
+\put(32,136){\makebox(0,0){-1/2}}
+\put(40,136){\makebox(0,0){2/5}}
+\put(48,136){\makebox(0,0){3/5}}
+\put(56,136){\makebox(0,0){5/2}}
+\put(64,136){\makebox(0,0){3/2}}
+\put(24,132){\makebox(0,0){0}}
+\put(32,132){\makebox(0,0){1/2}}
+\put(40,132){\makebox(0,0){3/5}}
+\put(48,132){\makebox(0,0){-2/5}}
+\put(56,132){\makebox(0,0){-1/2}}
+\put(64,132){\makebox(0,0){-1/2}}
+\put(40,128){\makebox(0,0){0}}
+\put(48,128){\makebox(0,0){-1/2}}
+\put(56,128){\makebox(0,0){3/5}}
+\put(64,128){\makebox(0,0){2/5}}
+\put(72,128){\makebox(0,0){5/2}}
+\put(80,128){\makebox(0,0){3/2}}
+\put(40,124){\makebox(0,0){-1}}
+\put(48,124){\makebox(0,0){1/2}}
+\put(56,124){\makebox(0,0){2/5}}
+\put(64,124){\makebox(0,0){-3/5}}
+\put(72,124){\makebox(0,0){-3/2}}
+\put(80,124){\makebox(0,0){-3/2}}
+\put(56,120){\makebox(0,0){-1}}
+\put(64,120){\makebox(0,0){-1/2}}
+\put(72,120){\makebox(0,0){4/5}}
+\put(80,120){\makebox(0,0){1/5}}
+\put(88,120){\makebox(0,0){5/2}}
+\put(56,116){\makebox(0,0){-2}}
+\put(64,116){\makebox(0,0){1/2}}
+\put(72,116){\makebox(0,0){1/5}}
+\put(80,116){\makebox(0,0){-4/5}}
+\put(88,116){\makebox(0,0){-5/2}}
+\put(72,112){\makebox(0,0){-2}}
+\put(80,112){\makebox(0,0){-1/2}}
+\put(88,112){\makebox(0,0){1}}
+%
+% 3/2 x 1/2
+%
+\put(84,138){\line(1,0){24}}
+\put(84,138){\line(0,1){4}}
+\put(100,142){\line(-1,0){16}}
+\put(100,142){\line(0,1){8}}
+\put(108,150){\line(-1,0){8}}
+\put(108,150){\line(0,-1){12}}
+\multiput(100,142)(2,0){4}{\line(1,0){1}}
+\multiput(100,142)(0,-2){2}{\line(0,-1){1}}
+\put(92,130){\line(1,0){32}}
+\put(92,130){\line(0,1){8}}
+\put(124,146){\line(-1,0){16}}
+\put(124,146){\line(0,-1){16}}
+\multiput(108,138)(2,0){8}{\line(1,0){1}}
+\multiput(108,138)(0,-2){4}{\line(0,-1){1}}
+\put(108,122){\line(1,0){32}}
+\put(108,122){\line(0,1){8}}
+\put(140,138){\line(-1,0){16}}
+\put(140,138){\line(0,-1){16}}
+\multiput(124,130)(2,0){8}{\line(1,0){1}}
+\multiput(124,130)(0,-2){4}{\line(0,-1){1}}
+\put(124,114){\line(1,0){32}}
+\put(124,114){\line(0,1){8}}
+\put(156,130){\line(-1,0){16}}
+\put(156,130){\line(0,-1){16}}
+\multiput(140,122)(2,0){8}{\line(1,0){1}}
+\multiput(140,122)(0,-2){4}{\line(0,-1){1}}
+\put(140,110){\line(1,0){24}}
+\put(140,110){\line(0,1){4}}
+\put(164,122){\line(-1,0){8}}
+\put(164,122){\line(0,-1){12}}
+\multiput(156,114)(2,0){4}{\line(1,0){1}}
+\multiput(156,114)(0,-2){2}{\line(0,-1){1}}
+\put(90,146){\makebox(0,0){\normalsize 3/2$\, \times \,$1/2}}
+\put(104,148){\makebox(0,0){2}}
+\put(104,144){\makebox(0,0){2}}
+\put(112,144){\makebox(0,0){2}}
+\put(120,144){\makebox(0,0){1}}
+\put(88,140){\makebox(0,0){3/2}}
+\put(96,140){\makebox(0,0){1/2}}
+\put(104,140){\makebox(0,0){1}}
+\put(112,140){\makebox(0,0){1}}
+\put(120,140){\makebox(0,0){1}}
+\put(96,136){\makebox(0,0){3/2}}
+\put(104,136){\makebox(0,0){-1/2}}
+\put(112,136){\makebox(0,0){1/4}}
+\put(120,136){\makebox(0,0){3/4}}
+\put(128,136){\makebox(0,0){2}}
+\put(136,136){\makebox(0,0){1}}
+\put(96,132){\makebox(0,0){1/2}}
+\put(104,132){\makebox(0,0){1/2}}
+\put(112,132){\makebox(0,0){3/4}}
+\put(120,132){\makebox(0,0){-1/4}}
+\put(128,132){\makebox(0,0){0}}
+\put(136,132){\makebox(0,0){0}}
+\put(112,128){\makebox(0,0){1/2}}
+\put(120,128){\makebox(0,0){-1/2}}
+\put(128,128){\makebox(0,0){1/2}}
+\put(136,128){\makebox(0,0){1/2}}
+\put(144,128){\makebox(0,0){2}}
+\put(152,128){\makebox(0,0){1}}
+\put(112,124){\makebox(0,0){-1/2}}
+\put(120,124){\makebox(0,0){1/2}}
+\put(128,124){\makebox(0,0){1/2}}
+\put(136,124){\makebox(0,0){-1/2}}
+\put(144,124){\makebox(0,0){-1}}
+\put(152,124){\makebox(0,0){-1}}
+\put(128,120){\makebox(0,0){-1/2}}
+\put(136,120){\makebox(0,0){-1/2}}
+\put(144,120){\makebox(0,0){3/4}}
+\put(152,120){\makebox(0,0){1/4}}
+\put(160,120){\makebox(0,0){2}}
+\put(128,116){\makebox(0,0){-3/2}}
+\put(136,116){\makebox(0,0){1/2}}
+\put(144,116){\makebox(0,0){1/4}}
+\put(152,116){\makebox(0,0){-3/4}}
+\put(160,116){\makebox(0,0){-2}}
+\put(144,112){\makebox(0,0){-3/2}}
+\put(152,112){\makebox(0,0){-1/2}}
+\put(160,112){\makebox(0,0){1}}
+%
+% 1/2 x 1/2
+%
+\put(-4,108){\line(1,0){24}}
+\put(-4,108){\line(0,1){4}}
+\put(12,112){\line(-1,0){16}}
+\put(12,112){\line(0,1){8}}
+\put(20,120){\line(-1,0){8}}
+\put(20,120){\line(0,-1){12}}
+\multiput(12,112)(2,0){4}{\line(1,0){1}}
+\multiput(12,112)(0,-2){2}{\line(0,-1){1}}
+\put(4,100){\line(1,0){32}}
+\put(4,100){\line(0,1){8}}
+\put(36,116){\line(-1,0){16}}
+\put(36,116){\line(0,-1){16}}
+\multiput(20,108)(2,0){8}{\line(1,0){1}}
+\multiput(20,108)(0,-2){4}{\line(0,-1){1}}
+\put(20,96){\line(1,0){24}}
+\put(20,96){\line(0,1){4}}
+\put(44,108){\line(-1,0){8}}
+\put(44,108){\line(0,-1){12}}
+\multiput(36,100)(2,0){4}{\line(1,0){1}}
+\multiput(36,100)(0,-2){2}{\line(0,-1){1}}
+\put(2,116){\makebox(0,0){\normalsize 1/2$\, \times \,$1/2}}
+\put(16,118){\makebox(0,0){1}}
+\put(16,114){\makebox(0,0){1}}
+\put(24,114){\makebox(0,0){1}}
+\put(32,114){\makebox(0,0){0}}
+\put(0,110){\makebox(0,0){1/2}}
+\put(8,110){\makebox(0,0){1/2}}
+\put(16,110){\makebox(0,0){1}}
+\put(24,110){\makebox(0,0){0}}
+\put(32,110){\makebox(0,0){0}}
+\put(8,106){\makebox(0,0){1/2}}
+\put(16,106){\makebox(0,0){-1/2}}
+\put(24,106){\makebox(0,0){1/2}}
+\put(32,106){\makebox(0,0){1/2}}
+\put(40,106){\makebox(0,0){1}}
+\put(8,102){\makebox(0,0){-1/2}}
+\put(16,102){\makebox(0,0){1/2}}
+\put(24,102){\makebox(0,0){1/2}}
+\put(32,102){\makebox(0,0){-1/2}}
+\put(40,102){\makebox(0,0){-1}}
+\put(24,98){\makebox(0,0){-1/2}}
+\put(32,98){\makebox(0,0){-1/2}}
+\put(40,98){\makebox(0,0){1}}
+%
+% 1 x 1/2
+%
+\put(116,100){\line(-1,0){16}}
+\put(116,100){\line(0,1){8}}
+\put(100,96){\line(1,0){24}}
+\put(100,96){\line(0,1){4}}
+\put(124,108){\line(-1,0){8}}
+\put(124,108){\line(0,-1){12}}
+\multiput(116,100)(2,0){4}{\line(1,0){1}}
+\multiput(116,100)(0,-2){2}{\line(0,-1){1}}
+\put(108,88){\line(1,0){32}}
+\put(108,88){\line(0,1){8}}
+\put(140,104){\line(-1,0){16}}
+\put(140,104){\line(0,-1){16}}
+\multiput(124,96)(2,0){8}{\line(1,0){1}}
+\multiput(124,96)(0,-2){4}{\line(0,-1){1}}
+\put(124,80){\line(1,0){32}}
+\put(124,80){\line(0,1){8}}
+\put(156,96){\line(-1,0){16}}
+\put(156,96){\line(0,-1){16}}
+\multiput(140,88)(2,0){8}{\line(1,0){1}}
+\multiput(140,88)(0,-2){4}{\line(0,-1){1}}
+\put(140,76){\line(1,0){24}}
+\put(140,76){\line(0,1){4}}
+\put(164,88){\line(-1,0){8}}
+\put(164,88){\line(0,-1){12}}
+\multiput(156,80)(2,0){4}{\line(1,0){1}}
+\multiput(156,80)(0,-2){2}{\line(0,-1){1}}
+\put(108,104){\makebox(0,0){\normalsize 1$\, \times \,$1/2}}
+\put(120,106){\makebox(0,0){3/2}}
+\put(120,102){\makebox(0,0){3/2}}
+\put(128,102){\makebox(0,0){3/2}}
+\put(136,102){\makebox(0,0){1/2}}
+\put(104,98){\makebox(0,0){1}}
+\put(112,98){\makebox(0,0){1/2}}
+\put(120,98){\makebox(0,0){1}}
+\put(128,98){\makebox(0,0){1/2}}
+\put(136,98){\makebox(0,0){1/2}}
+\put(112,94){\makebox(0,0){1}}
+\put(120,94){\makebox(0,0){-1/2}}
+\put(128,94){\makebox(0,0){1/3}}
+\put(136,94){\makebox(0,0){2/3}}
+\put(144,94){\makebox(0,0){3/2}}
+\put(152,94){\makebox(0,0){1/2}}
+\put(112,90){\makebox(0,0){0}}
+\put(120,90){\makebox(0,0){1/2}}
+\put(128,90){\makebox(0,0){2/3}}
+\put(136,90){\makebox(0,0){-1/3}}
+\put(144,90){\makebox(0,0){-1/2}}
+\put(152,90){\makebox(0,0){-1/2}}
+\put(128,86){\makebox(0,0){0}}
+\put(136,86){\makebox(0,0){-1/2}}
+\put(144,86){\makebox(0,0){2/3}}
+\put(152,86){\makebox(0,0){1/3}}
+\put(160,86){\makebox(0,0){3/2}}
+\put(128,82){\makebox(0,0){-1}}
+\put(136,82){\makebox(0,0){1/2}}
+\put(144,82){\makebox(0,0){1/3}}
+\put(152,82){\makebox(0,0){-2/3}}
+\put(160,82){\makebox(0,0){-3/2}}
+\put(144,78){\makebox(0,0){-1}}
+\put(152,78){\makebox(0,0){-1/2}}
+\put(160,78){\makebox(0,0){1}}
+%
+% 3/2 x 1
+%
+\put(44,84){\line(1,0){24}}
+\put(44,84){\line(0,1){4}}
+\put(60,88){\line(-1,0){16}}
+\put(60,88){\line(0,1){8}}
+\put(68,96){\line(-1,0){8}}
+\put(68,96){\line(0,-1){12}}
+\multiput(60,88)(2,0){4}{\line(1,0){1}}
+\multiput(60,88)(0,-2){2}{\line(0,-1){1}}
+\put(52,76){\line(1,0){32}}
+\put(52,76){\line(0,1){8}}
+\put(84,92){\line(-1,0){16}}
+\put(84,92){\line(0,-1){16}}
+\multiput(68,84)(2,0){8}{\line(1,0){1}}
+\multiput(68,84)(0,-2){4}{\line(0,-1){1}}
+\put(68,64){\line(1,0){44}}
+\put(68,64){\line(0,1){12}}
+\put(112,84){\line(-1,0){28}}
+\put(112,84){\line(0,-1){20}}
+\multiput(84,76)(2,0){14}{\line(1,0){1}}
+\multiput(84,76)(0,-2){6}{\line(0,-1){1}}
+\put(94,52){\line(1,0){46}}
+\put(94,52){\line(0,1){12}}
+\put(140,72){\line(-1,0){28}}
+\put(140,72){\line(0,-1){20}}
+\multiput(112,64)(2,0){14}{\line(1,0){1}}
+\multiput(112,64)(0,-2){6}{\line(0,-1){1}}
+\put(122,44){\line(1,0){34}}
+\put(122,44){\line(0,1){8}}
+\put(156,60){\line(-1,0){16}}
+\put(156,60){\line(0,-1){16}}
+\multiput(140,52)(2,0){8}{\line(1,0){1}}
+\multiput(140,52)(0,-2){4}{\line(0,-1){1}}
+\put(140,40){\line(1,0){24}}
+\put(140,40){\line(0,1){4}}
+\put(164,52){\line(-1,0){8}}
+\put(164,52){\line(0,-1){12}}
+\multiput(156,44)(2,0){4}{\line(1,0){1}}
+\multiput(156,44)(0,-2){2}{\line(0,-1){1}}
+\put(52,92){\makebox(0,0){\normalsize 3/2$\, \times \,$1}}
+\put(64,94){\makebox(0,0){5/2}}
+\put(64,90){\makebox(0,0){5/2}}
+\put(72,90){\makebox(0,0){5/2}}
+\put(80,90){\makebox(0,0){3/2}}
+\put(48,86){\makebox(0,0){3/2}}
+\put(56,86){\makebox(0,0){1}}
+\put(64,86){\makebox(0,0){1}}
+\put(72,86){\makebox(0,0){3/2}}
+\put(80,86){\makebox(0,0){3/2}}
+\put(56,82){\makebox(0,0){3/2}}
+\put(64,82){\makebox(0,0){0}}
+\put(72,82){\makebox(0,0){2/5}}
+\put(80,82){\makebox(0,0){3/5}}
+\put(89,82){\makebox(0,0){5/2}}
+\put(99,82){\makebox(0,0){3/2}}
+\put(108,82){\makebox(0,0){1/2}}
+\put(56,78){\makebox(0,0){1/2}}
+\put(64,78){\makebox(0,0){1}}
+\put(72,78){\makebox(0,0){3/5}}
+\put(80,78){\makebox(0,0){-2/5}}
+\put(89,78){\makebox(0,0){1/2}}
+\put(99,78){\makebox(0,0){1/2}}
+\put(108,78){\makebox(0,0){1/2}}
+\put(72,74){\makebox(0,0){3/2}}
+\put(80,74){\makebox(0,0){-1}}
+\put(89,74){\makebox(0,0){1/10}}
+\put(99,74){\makebox(0,0){2/5}}
+\put(108,74){\makebox(0,0){1/2}}
+\put(72,70){\makebox(0,0){1/2}}
+\put(80,70){\makebox(0,0){0}}
+\put(89,70){\makebox(0,0){3/5}}
+\put(99,70){\makebox(0,0){1/15}}
+\put(108,70){\makebox(0,0){-1/3}}
+\put(117,70){\makebox(0,0){5/2}}
+\put(127,70){\makebox(0,0){3/2}}
+\put(136,70){\makebox(0,0){1/2}}
+\put(72,66){\makebox(0,0){-1/2}}
+\put(80,66){\makebox(0,0){1}}
+\put(89,66){\makebox(0,0){3/10}}
+\put(99,66){\makebox(0,0){-8/15}}
+\put(108,66){\makebox(0,0){1/6}}
+\put(117,66){\makebox(0,0){-1/2}}
+\put(127,66){\makebox(0,0){-1/2}}
+\put(136,66){\makebox(0,0){-1/2}}
+\put(99,62){\makebox(0,0){1/2}}
+\put(108,62){\makebox(0,0){-1}}
+\put(117,62){\makebox(0,0){3/10}}
+\put(127,62){\makebox(0,0){8/15}}
+\put(136,62){\makebox(0,0){1/6}}
+\put(99,58){\makebox(0,0){-1/2}}
+\put(108,58){\makebox(0,0){0}}
+\put(117,58){\makebox(0,0){3/5}}
+\put(127,58){\makebox(0,0){-1/15}}
+\put(136,58){\makebox(0,0){-1/3}}
+\put(144,58){\makebox(0,0){5/2}}
+\put(152,58){\makebox(0,0){3/2}}
+\put(99,54){\makebox(0,0){-3/2}}
+\put(108,54){\makebox(0,0){1}}
+\put(117,54){\makebox(0,0){1/10}}
+\put(127,54){\makebox(0,0){-2/5}}
+\put(136,54){\makebox(0,0){1/2}}
+\put(144,54){\makebox(0,0){-3/2}}
+\put(152,54){\makebox(0,0){-3/2}}
+\put(127,50){\makebox(0,0){-1/2}}
+\put(136,50){\makebox(0,0){-1}}
+\put(144,50){\makebox(0,0){3/5}}
+\put(152,50){\makebox(0,0){2/5}}
+\put(160,50){\makebox(0,0){5/2}}
+\put(127,46){\makebox(0,0){-3/2}}
+\put(136,46){\makebox(0,0){0}}
+\put(144,46){\makebox(0,0){2/5}}
+\put(152,46){\makebox(0,0){-3/5}}
+\put(160,46){\makebox(0,0){-5/2}}
+\put(144,42){\makebox(0,0){-3/2}}
+\put(152,42){\makebox(0,0){-1}}
+\put(160,42){\makebox(0,0){1}}
+%
+% 2 x 1
+%
+\put(-4,68){\line(1,0){24}}
+\put(-4,68){\line(0,1){4}}
+\put(12,72){\line(-1,0){16}}
+\put(12,72){\line(0,1){8}}
+\put(20,80){\line(-1,0){8}}
+\put(20,80){\line(0,-1){12}}
+\multiput(12,72)(2,0){4}{\line(1,0){1}}
+\multiput(12,72)(0,-2){2}{\line(0,-1){1}}
+\put(4,60){\line(1,0){32}}
+\put(4,60){\line(0,1){8}}
+\put(36,76){\line(-1,0){16}}
+\put(36,76){\line(0,-1){16}}
+\multiput(20,68)(2,0){8}{\line(1,0){1}}
+\multiput(20,68)(0,-2){4}{\line(0,-1){1}}
+\put(20,48){\line(1,0){44}}
+\put(20,48){\line(0,1){12}}
+\put(64,68){\line(-1,0){28}}
+\put(64,68){\line(0,-1){20}}
+\multiput(36,60)(2,0){14}{\line(1,0){1}}
+\multiput(36,60)(0,-2){6}{\line(0,-1){1}}
+\put(46,36){\line(1,0){44}}
+\put(46,36){\line(0,1){12}}
+\put(90,56){\line(-1,0){26}}
+\put(90,56){\line(0,-1){20}}
+\multiput(64,48)(2,0){13}{\line(1,0){1}}
+\multiput(64,48)(0,-2){6}{\line(0,-1){1}}
+\put(72,24){\line(1,0){46}}
+\put(72,24){\line(0,1){12}}
+\put(118,44){\line(-1,0){28}}
+\put(118,44){\line(0,-1){20}}
+\multiput(90,36)(2,0){14}{\line(1,0){1}}
+\multiput(90,36)(0,-2){6}{\line(0,-1){1}}
+\put(100,16){\line(1,0){34}}
+\put(100,16){\line(0,1){8}}
+\put(134,32){\line(-1,0){16}}
+\put(134,32){\line(0,-1){16}}
+\multiput(118,24)(2,0){8}{\line(1,0){1}}
+\multiput(118,24)(0,-2){4}{\line(0,-1){1}}
+\put(118,12){\line(1,0){24}}
+\put(118,12){\line(0,1){4}}
+\put(142,24){\line(-1,0){8}}
+\put(142,24){\line(0,-1){12}}
+\multiput(134,16)(2,0){4}{\line(1,0){1}}
+\multiput(134,16)(0,-2){2}{\line(0,-1){1}}
+\put(4,76){\makebox(0,0){\normalsize 2$\, \times \,$1}}
+\put(16,78){\makebox(0,0){3}}
+\put(16,74){\makebox(0,0){3}}
+\put(24,74){\makebox(0,0){3}}
+\put(32,74){\makebox(0,0){2}}
+\put(0,70){\makebox(0,0){2}}
+\put(8,70){\makebox(0,0){1}}
+\put(16,70){\makebox(0,0){1}}
+\put(24,70){\makebox(0,0){2}}
+\put(32,70){\makebox(0,0){2}}
+\put(8,66){\makebox(0,0){2}}
+\put(16,66){\makebox(0,0){0}}
+\put(24,66){\makebox(0,0){1/3}}
+\put(32,66){\makebox(0,0){2/3}}
+\put(41,66){\makebox(0,0){3}}
+\put(50,66){\makebox(0,0){2}}
+\put(59,66){\makebox(0,0){1}}
+\put(8,62){\makebox(0,0){1}}
+\put(16,62){\makebox(0,0){1}}
+\put(24,62){\makebox(0,0){2/3}}
+\put(32,62){\makebox(0,0){-1/3}}
+\put(41,62){\makebox(0,0){1}}
+\put(50,62){\makebox(0,0){1}}
+\put(59,62){\makebox(0,0){1}}
+\put(24,58){\makebox(0,0){2}}
+\put(32,58){\makebox(0,0){-1}}
+\put(41,58){\makebox(0,0){1/15}}
+\put(50,58){\makebox(0,0){1/3}}
+\put(59,58){\makebox(0,0){3/5}}
+\put(24,54){\makebox(0,0){1}}
+\put(32,54){\makebox(0,0){0}}
+\put(41,54){\makebox(0,0){8/15}}
+\put(50,54){\makebox(0,0){1/6}}
+\put(59,54){\makebox(0,0){-3/10}}
+\put(68,54){\makebox(0,0){3}}
+\put(76,54){\makebox(0,0){2}}
+\put(85,54){\makebox(0,0){1}}
+\put(24,50){\makebox(0,0){0}}
+\put(32,50){\makebox(0,0){1}}
+\put(41,50){\makebox(0,0){6/15}}
+\put(50,50){\makebox(0,0){-1/2}}
+\put(59,50){\makebox(0,0){1/10}}
+\put(68,50){\makebox(0,0){0}}
+\put(76,50){\makebox(0,0){0}}
+\put(85,50){\makebox(0,0){0}}
+\put(50,46){\makebox(0,0){1}}
+\put(59,46){\makebox(0,0){-1}}
+\put(68,46){\makebox(0,0){1/5}}
+\put(76,46){\makebox(0,0){1/2}}
+\put(85,46){\makebox(0,0){3/10}}
+\put(50,42){\makebox(0,0){0}}
+\put(59,42){\makebox(0,0){0}}
+\put(68,42){\makebox(0,0){3/5}}
+\put(76,42){\makebox(0,0){0}}
+\put(85,42){\makebox(0,0){-2/5}}
+\put(95,42){\makebox(0,0){3}}
+\put(104,42){\makebox(0,0){2}}
+\put(113,42){\makebox(0,0){1}}
+\put(50,38){\makebox(0,0){-1}}
+\put(59,38){\makebox(0,0){1}}
+\put(68,38){\makebox(0,0){1/5}}
+\put(76,38){\makebox(0,0){-1/2}}
+\put(85,38){\makebox(0,0){3/10}}
+\put(95,38){\makebox(0,0){-1}}
+\put(104,38){\makebox(0,0){-1}}
+\put(113,38){\makebox(0,0){-1}}
+\put(76,34){\makebox(0,0){0}}
+\put(85,34){\makebox(0,0){-1}}
+\put(95,34){\makebox(0,0){6/15}}
+\put(104,34){\makebox(0,0){1/2}}
+\put(113,34){\makebox(0,0){1/10}}
+\put(76,30){\makebox(0,0){-1}}
+\put(85,30){\makebox(0,0){0}}
+\put(95,30){\makebox(0,0){8/15}}
+\put(104,30){\makebox(0,0){-1/6}}
+\put(113,30){\makebox(0,0){-3/10}}
+\put(122,30){\makebox(0,0){3}}
+\put(130,30){\makebox(0,0){2}}
+\put(76,26){\makebox(0,0){-2}}
+\put(85,26){\makebox(0,0){1}}
+\put(95,26){\makebox(0,0){1/15}}
+\put(104,26){\makebox(0,0){-1/3}}
+\put(113,26){\makebox(0,0){3/5}}
+\put(122,26){\makebox(0,0){-2}}
+\put(130,26){\makebox(0,0){-2}}
+\put(104,22){\makebox(0,0){-1}}
+\put(113,22){\makebox(0,0){-1}}
+\put(122,22){\makebox(0,0){2/3}}
+\put(130,22){\makebox(0,0){1/3}}
+\put(138,22){\makebox(0,0){3}}
+\put(104,18){\makebox(0,0){-2}}
+\put(113,18){\makebox(0,0){0}}
+\put(122,18){\makebox(0,0){1/3}}
+\put(130,18){\makebox(0,0){-2/3}}
+\put(138,18){\makebox(0,0){-3}}
+\put(122,14){\makebox(0,0){-2}}
+\put(130,14){\makebox(0,0){-1}}
+\put(138,14){\makebox(0,0){1}}
+%
+% 1 x 1
+%
+\put(-4,32){\line(1,0){24}}
+\put(-4,32){\line(0,1){4}}
+\put(12,36){\line(-1,0){16}}
+\put(12,36){\line(0,1){8}}
+\put(20,44){\line(-1,0){8}}
+\put(20,44){\line(0,-1){12}}
+\multiput(12,36)(2,0){4}{\line(1,0){1}}
+\multiput(12,36)(0,-2){2}{\line(0,-1){1}}
+\put(4,24){\line(1,0){32}}
+\put(4,24){\line(0,1){8}}
+\put(36,40){\line(-1,0){16}}
+\put(36,40){\line(0,-1){16}}
+\multiput(20,32)(2,0){8}{\line(1,0){1}}
+\multiput(20,32)(0,-2){4}{\line(0,-1){1}}
+\put(20,12){\line(1,0){40}}
+\put(20,12){\line(0,1){12}}
+\put(60,32){\line(-1,0){24}}
+\put(60,32){\line(0,-1){20}}
+\multiput(36,24)(2,0){12}{\line(1,0){1}}
+\multiput(36,24)(0,-2){6}{\line(0,-1){1}}
+\put(44,4){\line(1,0){32}}
+\put(44,4){\line(0,1){8}}
+\put(76,20){\line(-1,0){16}}
+\put(76,20){\line(0,-1){16}}
+\multiput(60,12)(2,0){8}{\line(1,0){1}}
+\multiput(60,12)(0,-2){4}{\line(0,-1){1}}
+\put(60,0){\line(1,0){24}}
+\put(60,0){\line(0,1){4}}
+\put(84,12){\line(-1,0){8}}
+\put(84,12){\line(0,-1){12}}
+\multiput(76,4)(2,0){4}{\line(1,0){1}}
+\multiput(76,4)(0,-2){2}{\line(0,-1){1}}
+\put(4,40){\makebox(0,0){\normalsize 1$\, \times \,$1}}
+\put(16,42){\makebox(0,0){2}}
+\put(16,38){\makebox(0,0){2}}
+\put(24,38){\makebox(0,0){2}}
+\put(32,38){\makebox(0,0){1}}
+\put(0,34){\makebox(0,0){1}}
+\put(8,34){\makebox(0,0){1}}
+\put(16,34){\makebox(0,0){1}}
+\put(24,34){\makebox(0,0){1}}
+\put(32,34){\makebox(0,0){1}}
+\put(8,30){\makebox(0,0){1}}
+\put(16,30){\makebox(0,0){0}}
+\put(24,30){\makebox(0,0){1/2}}
+\put(32,30){\makebox(0,0){1/2}}
+\put(40,30){\makebox(0,0){2}}
+\put(48,30){\makebox(0,0){1}}
+\put(56,30){\makebox(0,0){0}}
+\put(8,26){\makebox(0,0){0}}
+\put(16,26){\makebox(0,0){1}}
+\put(24,26){\makebox(0,0){1/2}}
+\put(32,26){\makebox(0,0){-1/2}}
+\put(40,26){\makebox(0,0){0}}
+\put(48,26){\makebox(0,0){0}}
+\put(56,26){\makebox(0,0){0}}
+\put(24,22){\makebox(0,0){1}}
+\put(32,22){\makebox(0,0){-1}}
+\put(40,22){\makebox(0,0){1/6}}
+\put(48,22){\makebox(0,0){1/2}}
+\put(56,22){\makebox(0,0){1/3}}
+\put(24,18){\makebox(0,0){0}}
+\put(32,18){\makebox(0,0){0}}
+\put(40,18){\makebox(0,0){2/3}}
+\put(48,18){\makebox(0,0){0}}
+\put(56,18){\makebox(0,0){-1/3}}
+\put(64,18){\makebox(0,0){2}}
+\put(72,18){\makebox(0,0){1}}
+\put(24,14){\makebox(0,0){-1}}
+\put(32,14){\makebox(0,0){1}}
+\put(40,14){\makebox(0,0){1/6}}
+\put(48,14){\makebox(0,0){-1/2}}
+\put(56,14){\makebox(0,0){1/3}}
+\put(64,14){\makebox(0,0){-1}}
+\put(72,14){\makebox(0,0){-1}}
+\put(48,10){\makebox(0,0){0}}
+\put(56,10){\makebox(0,0){-1}}
+\put(64,10){\makebox(0,0){1/2}}
+\put(72,10){\makebox(0,0){1/2}}
+\put(80,10){\makebox(0,0){2}}
+\put(48,6){\makebox(0,0){-1}}
+\put(56,6){\makebox(0,0){0}}
+\put(64,6){\makebox(0,0){1/2}}
+\put(72,6){\makebox(0,0){-1/2}}
+\put(80,6){\makebox(0,0){-2}}
+\put(64,2){\makebox(0,0){-1}}
+\put(72,2){\makebox(0,0){-1}}
+\put(80,2){\makebox(0,0){1}}
+%
+\end{picture}
+\end{center}
+\caption{Clebsch-Gordan coefficients. A square root is understood on each coefficient, that is, $-1/3$ means $-\sqrt{1/3}$.}
+\end{figure}
+
+\end{document}
+
