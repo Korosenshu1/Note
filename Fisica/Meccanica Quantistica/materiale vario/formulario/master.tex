@@ -427,11 +427,244 @@ La \textbf{parit\`a} di ciascun livello \`e legata alle armoniche sferiche ed \`
 	\end{itemize}
 \end{multicols}
 \section{Atomo di idrogeno}
+\begin{multicols}{2}	
+	\begin{itemize}
+		\item {\sffamily \bfseries Hamiltoniano e approssimazioni.} 
+			Si considera protone fermo (altrimenti si studia nel CM con $m_e\to \mu $); l'Hamiltoniano \`e:
+			\begin{equation}
+				\hat{H} = - \frac{\hbar ^2}{2m_e}\nabla ^2 - \frac{k}{r}, \ k = \frac{e^2}{4\pi \varepsilon _0}
+			\end{equation}
+		\item {\sffamily \bfseries Costanti fondamentali.} Si definiscono il raggio di Borh $r_B = \hbar / (m_e c \alpha )$ e la costante di Rydberg $E_B = m_e c^2 \alpha  ^2 / 2$, con $\alpha $ costante di struttura fine.
+			\item {\sffamily \bfseries Energie e degenerazione.} Sono proporzionali alla costante di Rydberg $E_B$:
+				\begin{equation}
+					E_n =- \frac{E_B}{n^2}
+				\end{equation}
+				La degenerazione di ciascun livello \`e $n^2$. 
+				Tenendo conto anche dello spin, ammonta a $2n^2$.
+
+				La \textbf{parit\`a} deriva dai polinomi di Lagrange nelle armoniche sferiche ed \`e $(-1)^\ell $.
+			\item {\sffamily \bfseries Funzioni d'onda per il fondamentale.} Per lo stato fondamentale si ha $n=1, \ell =0, m =0$:
+				\begin{equation}
+					\begin{split}
+						&\psi _{100} (r,\theta ,\varphi ) = \frac{1}{\sqrt{\pi r_B^3 } } e^{-r / r_B} \\
+						&\widetilde{\psi }_{100} =\frac{2 \sqrt{2} }{\pi} \left(\frac{r_B}{\hbar }\right) ^{3/2} \frac{1}{(1+(r_B p / \hbar )^2)^2}
+					\end{split}
+				\end{equation}
+				\item {\sffamily \bfseries Funzione d'onda per $n=2$.} 
+					La parte radiale per $n=2$ \`e:
+					\begin{equation}
+						\begin{split}
+							&R_{20} (r) = \frac{1}{2\sqrt{2} r_B^{3 / 2} } \left(2 - \frac{r}{r_B}\right) e^{-r / 2r_B} \\
+							&R_{21} (r) = \frac{1}{2\sqrt{6} r_B^{3 / 2} } \frac{r}{r_B} e^{-r / 2r_B} 
+						\end{split}
+					\end{equation}
+	\end{itemize}
+\end{multicols}
 \section{Spin e composizione di momenti angolari}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Matrici di Pauli per spin $1 / 2$.} 
+			\begin{equation*}
+				\begin{split}
+					&\sigma _x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \hspace{.25cm} \sigma _y = \begin{pmatrix} 0 & - i \\ i & 0 \end{pmatrix} \hspace{.25cm} \sigma _z = \begin{pmatrix} 1 & 0 \\ 0 & -1  \end{pmatrix} 
+				\end{split}
+			\end{equation*}
+			Gli operatori di spin $1 / 2$ sono dati da $\hat{S}_a = \frac{\hbar }{2}\sigma _a$.
+
+			La base di $\sigma _x$ \`e:
+			\begin{equation}
+				\frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\ \pm 1 \end{pmatrix} , \ \lambda _\pm = \pm 1
+			\end{equation}
+			La base di $\sigma _y$ \`e:
+			\begin{equation}
+				\frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\ \pm i \end{pmatrix} , \ \lambda _\pm = \pm 1
+			\end{equation}
+			La base di $\sigma _z$ \`e:
+			\begin{equation}
+				\left\{ \begin{pmatrix} 1\\ 0 \end{pmatrix} , \begin{pmatrix} 0 \\ 1 \end{pmatrix}  \right\} , \ \lambda _\pm = \pm 1
+			\end{equation}
+			\item {\sffamily \bfseries Matrici per spin 1.} Le matrici usate per lo spin $1$ sono:
+				\begin{equation}
+					\begin{split}
+						&M_x =\frac{1}{\sqrt{2} } \begin{pmatrix} 0& 1 & 0 \\ 1& 0& 1 \\ 0&1 &0 \end{pmatrix}, \ M_y = \frac{1}{\sqrt{2} } \begin{pmatrix} 0&-i & 0 \\ i& 0& -i\\ 0& i &0 \end{pmatrix} \\
+						&M_z = \begin{pmatrix} 1 & 0&0\\ 0&0&0\\ 0&0&-1 \end{pmatrix} 
+					\end{split}
+				\end{equation}
+				Gli operatori di spin si ottengono dalla relazione
+				\begin{equation}
+					\hat{S}_a = \hbar M_a
+				\end{equation}
+				La base di $M_z$ \`e (gli autovalori seguono l'ordine degli autovettori):
+				\begin{equation}
+					\left\{ \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,\ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} ,\ \begin{pmatrix} 0\\ 0\\ 1 \end{pmatrix} \right\}  \hspace{.5cm} \lambda = 1,0,-1
+				\end{equation}
+				La base di $M_x$ \`e:
+				\begin{equation}
+					\left\{ \frac{1}{2}\begin{pmatrix} 1 \\ \sqrt{2} \\1 \end{pmatrix} , \ \frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\0 \\ -1 \end{pmatrix} , \ \frac{1}{2}\begin{pmatrix} 1 \\ -\sqrt{2} \\ 1 \end{pmatrix}  \right\} 
+				\end{equation}
+				con $\lambda = 1,0,-1$ rispettivamente.
+
+				La base di $M_y$ \`e:
+				\begin{equation}
+					\left\{ \frac{1}{2}\begin{pmatrix} 1 \\ i\sqrt{2} \\ -1 \end{pmatrix} , \ \frac{1}{\sqrt{2} } \begin{pmatrix} 1 \\0 \\ 1 \end{pmatrix} , \ \frac{1}{2}\begin{pmatrix} 1 \\ -i\sqrt{2} \\- 1 \end{pmatrix}  \right\} 
+				\end{equation}
+				con $\lambda = 1,0,-1$ rispettivamente.
+				\item {\sffamily \bfseries Regole di composizione dei momenti angolari.} 
+					Nel passare ad una base fornita da $\hat{J}^2$ e $\hat{J}_z$, si deve tenere conto che l'autovalore $J$ associato a $\hat{J}^2$ \`e tale che 
+					\begin{equation}
+						\lvert j_1-j_2 \rvert \le J\le j_1+j_2
+					\end{equation}
+					Inoltre, deve valere
+					\begin{equation}
+						M = m_1+m_2
+					\end{equation}
+					Se $n(M)$ indica numero di stati con $M$ e $N(J)$ indica il numero di stati con $J$:
+					\begin{equation}
+						N(J)= n(J) - n(J+1)
+					\end{equation}
+					Il valore $n(M)$ sono tutte le combinazioni per cui $m_1+m_2=M$.
+	\end{itemize}
+\end{multicols}
 \section{Teoria delle perturbazioni}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Primo ordine non-degenere.} 
+			\begin{equation}
+				E^{(1)} _n = \braket{\psi ^{(0)} _n|\hat{H}'|\psi ^{(0)} _n} 
+			\end{equation}
+			\begin{equation}
+				\ket{\psi ^{(1)} _n} = \sum_{n\neq m} \frac{\braket{\psi _m^{(0)} |\hat{H}'|\psi ^{(0)} _n} }{E_n^{(0)} - E_m^{(0)} } \ket{\psi _m^{(0)} } 
+			\end{equation}
+			\item {\sffamily \bfseries Secondo ordine non-degenere.} 
+				\begin{equation}
+					E^{(2)} _n = \sum_{m\neq n}^{} \frac{\left\lvert \Braket{\psi ^{(0)} _m|\hat{H}'|\psi ^{(0)} _n}  \right\rvert ^2}{E^{(0)} _n - E^{(0)} _m}
+				\end{equation}
+				\item {\sffamily \bfseries Primo ordine degenere.} 
+					Se $E_n^{(0)} $ ha degenerazione $g$, allora il primo ordine perturbativo \`e ottenuto dagli autovalori della matrice della perturbazione, diagonalizzata nel sottospazio degenere:
+			\begin{equation}
+				W^{(n)} _{ab} = \Braket{\psi ^{(0)} _{n,a} |\hat{H}'|\psi ^{(0)} _{n,b}} ,\ a,b=1,\ldots,g
+			\end{equation}
+			Gli autovalori di questa sono le correzioni energetiche.
+			\item {\sffamily \bfseries Regola d'oro di Fermi.} 
+				Stato iniziale $\ket{i} $ con energia $E_i$ soggetto a perturbazione $\hat{H}'$ che connette a stati continui (con una certa distribuzione) identificati dallo stato finale $\ket{f} $ a energia $E_f$, la probabilit\`a di transizione \`e:
+				\begin{equation}
+					\omega_{i\to f} = \frac{2\pi}{\hbar }\left\lvert \Braket{f|\hat{H}'|i}  \right\rvert ^2 \rho (E_f)
+				\end{equation}
+				con $\rho (E_f)$ distribuzione degli stati.
+	\end{itemize}
+\end{multicols}
 \section{Operatori parit\`a e time-reversal}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Definizione di parit\`a e time-reveresal.} 
+			\begin{equation*}
+				\begin{split}
+					&\hat{P}_a \hat{x}\hat{P}_a^{-1}  = - \hat{x} \hspace{.5cm} \hat{P}_a \hat{p}\hat{P}_a ^{-1} = - \hat{p} \hspace{.5cm} \hat{P}_a \hat{J}\hat{P}_a^{-1} = \hat{J}\\
+					\\
+					&\hat{T}\hat{x}\hat{T}^{-1} = \hat{x} \hspace{.5cm} \hat{T}\hat{p}\hat{T}^{-1} =- \hat{p} \hspace{.5cm} \hat{T}\hat{J}\hat{T}^{-1} = - \hat{J}
+				\end{split}
+			\end{equation*}
+			\item {\sffamily \bfseries Propriet\`a della parit\`a.} 
+				\begin{equation*}
+					\begin{split}
+						&\hat{P}_a \ket{x} = \ket{-x}\hspace{.5cm} \hat{P}_a \psi (x) = \psi (-x)\\
+						&\hat{P}_a \ket{n\ell m} = (-1)^{\ell } \ket{n\ell m} \\
+						&\hat{P}_a \ket{\ell _1  \ell _2 JM} = (-1)^{\ell _1+\ell _2} \ket{\ell _1 \ell_ 2 JM} 
+					\end{split}
+				\end{equation*}
+				\item {\sffamily \bfseries Propriet\`a del time-reversal.} 
+					Se $[\hat{H},\hat{T}] =0$ e $\ket{\psi (t)}  $ risolve l'equazione di Schr\"odinger, allora anche $\hat{T} \ket{\psi (-t)} $ la risolve.
+					\begin{equation}
+						\hat{T}\psi (x,t) = \psi ^*(x,t)
+					\end{equation}
+					\begin{equation}
+						\hat{T}\ket{x} = \ket{x} \hspace{1cm}\hat{T}\ket{p} = \ket{-p} 
+					\end{equation}
+					Per spin $1 / 2$, $\hat{T} = \hat{Y} \hat{K}$, con $\hat{K}$ operatore che prende il coniugato e 
+					\begin{equation}
+						\hat{Y}= e^{-\frac{i}{\hbar }\pi \hat{S}_y} 
+					\end{equation}
+					In questo modo $\hat{T}\hat{S}\hat{T}^{-1} = - \hat{S}$.
+	\end{itemize}
+\end{multicols}
 \section{Scattering}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Flussi e sezione d'urto.} 
+			Numero di particelle uscenti:
+			\begin{equation}
+				dN = J_i \sigma (\theta ) d\Omega 
+			\end{equation}
+			Flusso uscente:
+			\begin{equation}
+				J_s = \frac{dN}{r^2 d\Omega }
+			\end{equation}
+			Sezione d'urto differenziale:
+			\begin{equation}
+				\sigma (\theta ) = \frac{r^2 J_s(\theta )}{J_i}
+			\end{equation}
+Sezione d'urto totale:
+\begin{equation}
+	\sigma = 2\pi \int_{0} ^\pi \sigma (\theta ) \sin \theta  d\theta 
+\end{equation}
+\item {\sffamily \bfseries Approssimazione di Born.} 
+	Il potenziale su cui si invia il fascio di particelle deve essere tale per cui 
+	\begin{equation}
+		\lvert V(a) \rvert  \ll \frac{\hbar ^2}{ma^2}
+	\end{equation}
+	con $a$ dimensione caratteristica della scala spaziale su cui agisce $V$.
+
+	Per fascio incidente veloce $ka \gg 1$, si pu\`o verificare:
+	\begin{equation}
+		\lvert V(a) \rvert \ll \frac{\hbar ^2}{ma^2}ka
+	\end{equation}
+	\item {\sffamily \bfseries Ampiezza di scattering.} 
+		\begin{equation}
+			\begin{split}
+				f(\theta ) &=-\frac{m}{2\pi \hbar ^2} \int V(x') e^{i \mathbf{q} \cdot \mathbf{x} '} d^3 x'\\
+					   &= - \frac{2m}{\hbar ^2}\int V(r') r' \frac{\sin qr'}{q} dr'
+			\end{split}
+		\end{equation}
+		con $\lvert \mathbf{q}  \rvert = 2k \sin \theta  / 2$. Da questa la \textbf{sezione d'urto} \`e:
+		\begin{equation}
+			\sigma (\theta ) = \lvert f(\theta ) \rvert ^2 = \frac{m^2}{4\pi^2 \hbar ^4} \lvert \widetilde{V}(k-k') \rvert ^2
+		\end{equation}
+		\item {\sffamily \bfseries Regola d'oro di Fermi.} 
+			\begin{equation}
+				d\omega_{fi} = \frac{2\pi}{\hbar } \left\lvert \braket{f|V|i}  \right\rvert ^2 \delta (E_f -E_i) d\nu _f
+			\end{equation}
+			dove $\ket{i} = \sqrt{m / k\hbar } e^{i \mathbf{k} \cdot \mathbf{x} } $ \`e lo stato iniziale e $\ket{f} = e^{i \mathbf{k} ' \cdot \mathbf{x} } $ \`e quello finale.
+			
+			Si pu\`o scrivere come:
+			\begin{equation}
+				d\omega_{kk'} = \frac{4 \pi m }{\hbar } \left\lvert \braket{f|V|i}  \right\rvert ^2 \delta (p^2-p'^2) \frac{d^3 p'}{(2\pi \hbar )^3}
+			\end{equation}
+			con
+			\begin{equation}
+				\braket{f|V|i} = \sqrt{\frac{m}{k}} \int e^{i \mathbf{k} ' \cdot \mathbf{x} } V e^{i \mathbf{k} \cdot \mathbf{x} } d^3 x
+			\end{equation}
+			\item {\sffamily \bfseries Probabilit\`a di transizione.} 
+				\begin{equation}
+					P_{i\to f} (t) = \frac{1}{\hbar^2 }\left\lvert \int_{0} ^t dt' \ e^{i\omega_{fi} t'} \braket{\psi _f|\hat{H}'|\psi _i}  \right\rvert ^2
+				\end{equation}
+	\end{itemize}
+\end{multicols}
 \section{Regole di selezione}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item {\sffamily \bfseries Parit\`a.} Per stati e operatori con parit\`a definita, l'elemento di matrice \`e non-nullo se $p_{1} = p_2$ nel caso di operatore pari, e $p_1 \neq p_2$ per operatori dispari.
+			\item {\sffamily \bfseries Momento angolare $\hat{L}_z$.} Per stati con $m$ come numero quantico sono connessi solo con stati con uguale $m$ dalla componente $z$ di operatori come $\hat{\mathbf{d} }$ (dipolo elettrico), mentre le componenti $x,y$ connettono stati con $\Delta m = \pm 1$. 
+			\item {\sffamily \bfseries Momento angolare $\hat{L}^2$.} Sempre per operatori tipo $\hat{\mathbf{d} }$, si ha $\Delta \ell = \pm 1$, con $\ell , \ell ' \neq 0$.
+				\item {\sffamily \bfseries Teorema di Wigner-Eckart.} Dato un operatore tensoriale irriducibile $\hat{T}^{(\ell )} _m$, con $m=- \ell ,\ldots,\ell $, si ha:
+					\begin{equation}
+						\Braket{\ell '' m''|\hat{T}^{(\ell )} _m|\ell 'm'} = C^{\ell ' m'} _{\ell m;mm'} \Braket{\ell ''|\hat{T}^{(\ell )} |\ell '} 
+					\end{equation}
+					Da cui l'elemento di matrice \`e non-nullo se 
+					\begin{equation}
+						\lvert \ell _i - \ell _f \rvert \le 1 \hspace{.5cm} \lvert m_i - m_f \rvert \le 1 \hspace{.5cm} \ell _i + \ell _f \neq 0 
+					\end{equation}
+	\end{itemize}
+\end{multicols}
 \newpage
 \section{Integrali utili}
 \begin{multicols}{2}
@@ -493,6 +726,81 @@ La \textbf{parit\`a} di ciascun livello \`e legata alle armoniche sferiche ed \`
 	    \end{split}
 \]
 \end{multicols}
+\section{Propriet\`a del commutatore}
+\begin{multicols}{2}
+	\begin{equation*}
+		\begin{split}
+			& [a,b + c] = [a,b] + [a,c]\vspace{1cm} [a + b,c] = [a,c] + [b,c]\\
+			& [a,b] = - [b,a]\\
+ 			&[a,[b,c]] + [b,[c,a]] + [c,[a,b]] = 0\\
+			&[a,bc] = [a,b]c + b[a,c]\\
+			& [ab,c] = a[b,c] + [a,c]b\\
+			& [abc,d]  = ab[c,d] + a[b,d]c + [a,d]bc\\
+			& [\lambda a,b] = \lambda[a,b] = [a,\lambda b], \lambda \in \mathbb{K}
+		\end{split}
+	\end{equation*}
+Per $n\ge 0, \ n \in \mathbb{Z}$ e $f,g$ sviluppabili in serie: 
+\begin{equation*}
+	\begin{split}
+		&\bigl[\hat x,\hat p^n \bigr] = i\hbar n\hat p^{n-1}\\
+		&\bigl[\hat x^n,\hat p \bigr] = i\hbar n\hat x^{n-1} \\
+		&\bigl[\hat x,f(\hat p)\bigr] = i\hbar \frac{\mathrm{d}f}{\mathrm{d}p} \bigl(\hat p\bigr)\\
+		&\bigl[g(\hat x),\hat p\bigr] = i\hbar \frac{\mathrm{d}g}{\mathrm{d}x} \bigl(\hat x\bigr)
+	\end{split}
+\end{equation*}
+\end{multicols}
+\section{Polinomi di Hermite, Laguerre e Lagrange e armoniche sferiche}
+\begin{multicols}{2}
+	\begin{itemize}
+	\item {\sffamily \bfseries Polinomi di Legendre.} Parte angolare ($m=0$) per potenziale centrale, tipo atomo di idrogeno in cui $\Theta(\theta ) \propto P_\ell (\cos\theta )$.
+		\begin{equation*}
+\begin{split}
+	& P_0(x) = 1\\
+	& P_1(x) = x\\
+	& P_2(x) = \frac{1}{2}(3x^2 -1)
+\end{split}
+		\end{equation*}
+		\item {\sffamily \bfseries Polinomi di Hermite.} 
+			Derivanti ad esempio da oscillatore armonico 1D.
+			\begin{equation*}
+				\begin{split}
+					&H_0(x) = 1\\
+					&H_1(x) = 2x\\
+					& H_2(x) = 4x^2 -2
+				\end{split}
+			\end{equation*}
+			\item {\sffamily \bfseries Polinomi di Laguerre.} Parte radiale dell'atomo di idrogeno ($\ell =0$)
+				\begin{equation*}
+\begin{split}
+	&L_0(x) = 1 \\
+	&L_1(x) = 1-x \\
+	& L_2(x) = \frac{1}{2} (x^2 - 4x + 2)
+\end{split}
+				\end{equation*}
+				\item {\sffamily \bfseries Armoniche sferiche.} 
+					Parte angolare completa dell'equazione di Schr\"odinger in potenziale centrale (tipo atomo di idrogeno).
+					\begin{equation*}
+						\begin{split}
+							&Y_{00} (\theta ,\varphi ) = \frac{1}{\sqrt{4\pi} }\\
+							&Y_{10} (\theta ,\varphi ) = \sqrt{\frac{3}{4\pi}} \cos \theta \\
+							& Y_{11} (\theta ,\varphi ) = - \sqrt{\frac{3}{8\pi}} \sin \theta e^{i\varphi } 
+						\end{split}
+					\end{equation*}
+	\end{itemize}
+\end{multicols}
+\section{Derivate in coordinate sferiche}
+	\[
+		\begin{split}
+			&\nabla f(r,\theta,\varphi)= \hat{e}_r \frac{\partial f}{\partial r}
++ \hat{e}_\theta \frac{1}{r} \frac{\partial f}{\partial \theta}+ \hat{e}_\varphi \frac{1}{r \sin\theta} \frac{\partial f}{\partial \varphi}\\
+\\
+			&\nabla^2 f(r,\theta,\varphi) = \frac{1}{r^2} \frac{\partial}{\partial r}\Bigl(r^2 \frac{\partial f}{\partial r}\Bigr) + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta}\Bigl(\sin\theta \frac{\partial f}{\partial \theta}\Bigr) + \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 f}{\partial \varphi^2}\\
+			\\
+			&\nabla = \hat{e}_r \frac{\partial}{\partial r} + \hat{e}_\theta \frac{1}{r} \frac{\partial}{\partial \theta} + \hat{e}_\varphi \frac{1}{r \sin\theta} \frac{\partial}{\partial \varphi}\\
+			\\
+			&\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r}\Bigl(r^2 \frac{\partial}{\partial r}\Bigr) + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta}\Bigl(\sin\theta \frac{\partial}{\partial \theta}\Bigr) + \frac{1}{r^2 \sin^2\theta} \frac{\partial^2}{\partial \varphi^2}
+		\end{split}
+\]
 \section{Trucchi utili}
 \begin{multicols}{2}
 \begin{itemize}
@@ -519,8 +827,28 @@ La \textbf{parit\`a} di ciascun livello \`e legata alle armoniche sferiche ed \`
 	\item {\sffamily \bfseries Calcolo elementi di matrice.} Ricordare che \`e possibile utilizzare regole di selezione o espressioni dell'operatore (tipo per la posizione usare operatori di salita e discesa nell'oscillatore armonico), oppure si pu\`o passare al calcolo dell'integrale, come nel caso della trattazione perturbativa del potenziale di Coulomb.
 \end{itemize}
 \end{multicols}
-\section{Propriet\`a del commutatore}
-\section{Polinomi di Hermite, Laguerre e Lagrange e armoniche sferiche}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage
