@@ -1,0 +1,271 @@
+\documentclass[11pt, a4paper]{scrartcl} % Packages
+\usepackage{sansiwona}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{index}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb, amsbsy}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{braket}
+\usepackage{tensor}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.5}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+
+\newcommand\vertarrowbox[3][6ex]{%
+  \begin{array}[t]{@{}c@{}} #2 \
+  \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\
+  \makebox[0pt]{\scriptsize#3}
+  \end{array}%
+}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+% Titles 
+\title{Divergenza dello sviluppo perturbativo per l'oscillatore anarmonico}
+\author{Manuel Deodato}
+\date{}
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{section}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+
+
+% Ambienti
+\newtheoremstyle{style1}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
+
+\newtheoremstyle{style2}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\ }
+
+
+\theoremstyle{style2}
+\newtheorem{osservazione}{Osservazione}[section]
+
+\theoremstyle{style1}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\spadesuit$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+
+
+
+% Font
+\usepackage{mathpazo}
+\usepackage{ebgaramond}
+%\usepackage{cmupint}
+%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Un esempio di divergenza}
+Molte serie perturbative in meccanica quantistica sono divergenti; l'origine di questa divergenza appare connessa con altri aspetti, apparentemente sconnessi, fra cui:
+\begin{itemize}
+	\item la possibili\`a di ricostruire il risultato esatto da uno sviluppo asintotico;
+	\item l'analiticit\`a della struttura del problema in esame;
+	\item la stabilit\`a del sistema.
+\end{itemize}
+Si vuole studiare un esempio concreto per capire come approcciare il problema.
+A tal proposito, si usa, come sistema esempio, un oscillatore anarmonico descritto da
+\begin{equation}
+	\hat{H} = \frac{1}{2}\hat{p}^2 + \frac{1}{2}\hat{x}^2 + \frac{1}{2}g\hat{x}^4
+\end{equation}
+dove si sono scelti $m=1,\omega =1$.
+Esprimendo $\hat{x}^4$ tramite gli operatori di creazione e distruzione, ci si convince che gli elementi di matrice della perturbazione possono connettere solamente stati che hanno $|\Delta  n| \le 4$.
+L'espansione perturbativa dell'energia \`e della forma $E = 1/2 + \sum_{}^{} g^n E_n$, mentre la funzione d'onda del fondamentale imperturbato \`e della forma $\psi _0 \propto e^{-  x^2 / 2} $.
+Visto che la funzione d'onda dell'$n$-esimo stato \`e un polinomio di grado $n$ moltiplicato per $\psi _0$, si cerca soluzione della forma $B(x) e^{-x^2 / 2} $ all'equazione differenziale
+\begin{equation}
+\left(	-\frac{1}{2} \frac{d ^2}{d x^2}  + \frac{1}{2}x^2  +\frac{1}{2}gx^4  \right) \psi  = E \psi 
+\end{equation}
+Sostituendo l'\textit{ansatz}, si trova
+\[
+\frac{d ^2B}{d x^2} - 2x \frac{d B}{d x}  - gx^4 B + (2E - 1) B = 0
+\] 
+Essendo interessati particolarmente allo sviluppo dello stato fondamentale e visto che $\hat{P}_a$ commuta con la perturbazione, lo stato fondamentale, che originariamente \`e pari, rimane pari; allora avr\`a senso la seguente scelta: 
+\[
+B(x) = \sum_{k=0}^{+\infty} B_k(x) \hspace{1cm} B_k(x) = \sum_{j=0}^{2k} A_{kj} x^{2j} 
+\] 
+con $A_{k0}=1 $.
+Le energie si potranno scrivere come $2E = \sum_{k=0}^{+\infty} \epsilon _k g^k$, dove $\epsilon _0 = 1$.
+La condizione di normalizzazione per queste funzioni d'onda \`e $B_k(0) = 1$. 
+Sostituendo nell'equazione trovata per $B$, si ottiene:
+\[
+	\begin{split}
+		&B''_k - 2B'_k - x^4 B_{k-1} + \sum_{s=0}^{k} \epsilon _s B_{k-s} - B_k = 0\\
+		&\begin{split}
+			\Rightarrow \sum_{\ell =1}^{2k} 2\ell (2\ell -1) A_{k,\ell } x^{2\ell -1} &-2 \sum_{j=1}^{2k} 2j A_{k,j} x^{2j}  - \sum_{\ell =0}^{2k-2} A_{k-1,\ell } x^{2\ell +4} \\
+			&- \sum_{j=0}^{2k} A_{k,j} x^{2j}  + \sum_{s=0}^{k} \epsilon _s \sum_{j=0}^{2k-2s} A_{k-s,j} x^{2j} =0
+		\end{split}
+	\end{split}
+\] 
+Si adotta la convenzione per cui $A_{k,j} = 0$ per $j > 2k$; cos\`i facendo, sostituendo nella prima somma $\ell = j +1$ e nella terza $\ell = j-2$, si trova che:
+\begin{equation*}
+	\sum_{j=0}^{2k} x^{2j}\left[ (2j+2)(2j+1) A_{k,j+1} -4j A_{k,j}  - A_{k-1,j-2} -A_{k,j} + \sum_{s=0}^{k} \epsilon _s A_{k-s,j}  \right]  = 0
+\end{equation*}
+Tutti i coefficienti di questo polinomio devono essere nulli. 
+Usando che $\epsilon _0 = 1$, si trova che il termine $s=0$ cancella $-A_{k,j} $:
+\begin{equation}
+	(2j+2)(2j+1) A_{k,j+1} - 4j A_{k,j} - A_{k-1,j-2} + \sum_{s=1}^{k} \epsilon _s A_{k-s,j} =0
+\end{equation}
+Inoltre, il termine per $s=k$ nella somma ha coefficiente $A_{0,j} $, che \`e pari a $1$ per $j=0$ e nullo altrimenti; da questo, si ottiene una relazione ricorsiva per le energie $\epsilon _k$, quando siano noti i coefficienti $A_{k,1} $:
+\begin{equation}
+	\epsilon _k = -2A_{k,1} - \sum_{s=1}^{k-1} \epsilon _s
+\end{equation}
+Considerando, invece, $j\neq 0 $:
+\begin{equation*}
+	(2j+2)(2j+1) A_{k,j+1} - 4j A_{k,j} - A_{k-1,j-2} + \sum_{s=1}^{k-1} \epsilon _s A_{k-s,j} =0
+\end{equation*}
+Si nota che in questa espressione, il termine $\epsilon _k$ non compare pi\`u.
+Si prende $j=2k$, per cui $A_{k,2k+1} =0$. 
+Questo permette di trovare una relazione ricorsiva per $A_{k,j} $:
+\begin{equation}
+	A_{k,j} = \frac{1}{4j} \left[ (2j+2)(2j+1)A_{k,j+1} -A_{k-1,j-2} +\sum_{s=1}^{k-1} \epsilon _s A_{k-s,j}  \right] 
+\end{equation}
+con $j=2k,2k-1, \ldots, 1$.
+
+Trovati gli $A_{k,1} $, si possono determinare le energie $\epsilon _k$; facendolo, si osserva che questi termini, di segno alterno, aumentano molto velocemente.
+\end{document}
