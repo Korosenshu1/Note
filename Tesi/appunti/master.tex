@@ -139,7 +139,7 @@
 {\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
-{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}}.\newline}
 
 \newtheoremstyle{style2}% name of the style to be used
 {15pt}% measure of space to leave above the theorem. E.g.: 3pt
@@ -225,9 +225,9 @@ Sostituendo l'\textit{ansatz}, si trova
 \[
 \frac{d ^2B}{d x^2} - 2x \frac{d B}{d x}  - gx^4 B + (2E - 1) B = 0
 \] 
-Essendo interessati particolarmente allo sviluppo dello stato fondamentale e visto che $\hat{P}_a$ commuta con la perturbazione, lo stato fondamentale, che originariamente \`e pari, rimane pari; allora avr\`a senso la seguente scelta: 
+Essendo interessati particolarmente allo sviluppo dello stato fondamentale e visto che $\hat{P}_a$ commuta con la perturbazione, lo stato fondamentale, che originariamente \`e pari, rimane pari; allora avr\`a senso la seguente scelta ({\color{red}perch\'e?}): 
 \[
-B(x) = \sum_{k=0}^{+\infty} B_k(x) \hspace{1cm} B_k(x) = \sum_{j=0}^{2k} A_{kj} x^{2j} 
+B(x) = \sum_{k=0}^{+\infty} g^k B_k(x) \hspace{1cm} B_k(x) = \sum_{j=0}^{2k} A_{kj} x^{2j} 
 \] 
 con $A_{k0}=1 $.
 Le energie si potranno scrivere come $2E = \sum_{k=0}^{+\infty} \epsilon _k g^k$, dove $\epsilon _0 = 1$.
@@ -268,4 +268,80 @@ Questo permette di trovare una relazione ricorsiva per $A_{k,j} $:
 con $j=2k,2k-1, \ldots, 1$.
 
 Trovati gli $A_{k,1} $, si possono determinare le energie $\epsilon _k$; facendolo, si osserva che questi termini, di segno alterno, aumentano molto velocemente.
+
+\section{Origine della divergenza}
+Si considera lo studio della serie dell'energia relativa ad uno stato fondamentale (nello specifico, quello dell'oscillatore appena trattato); in generale, questa \`e data da:
+\begin{equation}
+	E(g) = E_0 + \sum_{}^{} E_n g^n
+\end{equation}
+Quando questa serie \`e divergente come nel caso trattato sopra (in cui $E_n \sim n!$), questo vuol dire che $E(g)$ non \`e analitica in $g=0$.
+La motivazione per questa non-analiticit\`a \`e proposta da Dyson e si basas sul fatto che, se fosse $E(g)$ analitica in $g=0$, esisterebbe un dominio di convergenza attorno a tale punto, sia questo $\lvert g \rvert < R$, e, in questo dominio, la somma della serie dovrebbe riprodurre esattamente $E(g)$.
+Tuttavia, per $g<0$, l'Hamiltoniano non \`e limitato dal basso, quindi la funzione $E(g)$ non pu\`o essere analitica. 
+
+Nel caso dell'oscillatore armonico imperturbato (quindi armonico), {\color{red}una particella nel fondamentale pu\`o decadere tramite effetto tunnel attraverso la barriera di potenziale (?)} e tale stato pu\`o essere unicamente metastabile; questo stesso effetto non pu\`o essere descritto tramite una teoria perturbativa, che mantiene gli stati in $\mathbb{L}^2$. 
+Allora, nel potenziale perturbato
+\[
+V(x) = \frac{x^2 + gx^4 }{2}
+\] 
+nel caso di $g< 0$, l'effetto tunnel \`e responsabile per la non-analiticit\`a della funzione $E(g)$.
+Si afferma, inoltre, che la parte immaginaria di $E(g)$ per $g<0$, che restituisce lo spessore di linea e il tempo di dimezzamento, deve essere collegata con il comportamento divergente dei coefficienti perturbativi $E_n$.
+Questa relazione, si ottiene di seguito come relazione di dispersione.
+\section{Analiticit\`a del dominio}
+La mancanza di analiticit\`a si pu\`o intendere come segue.
+Sia $\hat{H}_0$ l'Hamiltoniano imperturbato al quale \`e associato un certo dominio $D(H_0)\subset \mathbb{L}^2$ dato da tutte quelle funzioni per cui $\hat{H}_0$ risulta autoaggiunto.
+
+Per esempio, il dominio deve essere tale che $\forall \psi \in D(H_0)$
+\[
+\int dx \lvert \psi (x) \rvert ^2 x^2 < \infty
+\] 
+cio\`e il valore d'aspettazione del potenziale deve esistere.
+Sia, esempio, $\psi _0\sim 1 / x^2$; per questa, si ha:
+\[
+\int dx \lvert \psi _0(x) \rvert ^2 x^2 < \infty \hspace{1cm} \int dx \lvert \psi _0(x) \rvert ^2 x^4 \sim \int dx \frac{1}{x^4} x^4 \to \infty
+\] 
+In questo caso, la funzione $\psi _0$ appartiene al dominio di $\hat{H}_0$, ma $\psi _0 \not \in D(H)$.
+Questo discorso serve per dire che esistono stati perfettamente ammissibili dal punto di vista dall'Hamiltoniano imperturbato, ma che non lo sono da quello di $\hat{H}$ perch\'e, indipendentemente da quanto si prenda $g$ piccolo, la perturbazione non potr\`a mai essere considerata piccola.
+Questo discorso \`e motivato formalmente dal seguente teorema.
+\begin{teorema}
+	[Kato-Rellich]
+Sia $H (g) $ una famiglia di operatori con $g \in S \subset  \mathbb{C}$ e valgano i seguenti punti:
+\begin{enumerate}[(a).]
+	\item $D\big(H(g)\big)$ \`e indipendente da $g$;
+	\item $\forall \psi  \in D\big(H(g)\big)$, l'elemento di matrice $\braket{\psi |H(g)|\psi } $ \`e una funzione analitica di $g$ in $S$.
+\end{enumerate}
+Allora $\forall g_0 \in S$ e per ogni autovalore isolato $E(g_0)$ relativo a $\hat{H}(g_0)$, esiste un intorno $V_{g_0} $ tale che $\hat{H}(g)$ ha un autovalore unico e isolato $E(g)$ in un intorno di $E(g_0)$.
+La funzione $E(g)$ \`e analitica in $V_{g_0} $ ed esiste una funzione $\psi _g$, analitica in $g$, tale che
+\[
+\hat{H}(g) \psi _g = E(g) \psi _g
+\] 
+Inoltre, la serie di Taylor di $E(g)$ coincide con lo sviluppo perturbativo per $\hat{H}(g)$.
+\end{teorema}
+Questo teorema permette di concludere che, soddisfatte le sue condizioni, lo sviluppo perturbativo restituisce il risultato esatto.
+Una condizione sufficiente per la validit\`a dei due punti del teorema \`e data dal seguente.
+\begin{teorema}
+	[Kato]
+	Se esistono due numeri $a,b$ tali che $\forall \psi \in D(\hat{H}_0), \ \forall \psi \in D(V)$ risulta soddisfatta 
+	\begin{equation}
+		\left\lVert \hat{V}\psi  \right\rVert \le a \left\lVert \hat{H}_0 \psi  \right\rVert + b \left\lVert \psi  \right\rVert 
+	\end{equation}
+	allora le condizioni del teorema di Kato-Rellich sono soddisfatte.
+\end{teorema}
+Nel caso dell'oscillatore anarmonico, il problema sorge nella condizione (a) del teorema di Kato-Rellich: di fatto, la funzione $E(g)$ non pu\`o essere espansa in $g=0$, anche se \`e espandibile $\forall g > 0$.
+Quello che si verifica \`e che, man mano che si approccia lo zero, il raggio di convergenza dello sviluppo diventa sempre pi\`u piccolo fino a risultare nullo.
+
+Nel caso specifico dell'oscillatore anarmonico, molte propriet\`a relative all'analiticit\`a di $E(g)$ possono essere ottenute tramite le seguenti considerazioni. 
+Si prende la trasformazione $U(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi \big(\lambda x\big)$, che si nota essere unitaria e tale che per un Hamiltoniano della forma $\hat{H}= \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, soddisfa:
+\begin{equation}
+	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2}  \hat{H}(\alpha \lambda ^4, g \lambda ^6)
+\end{equation}
+Dovendo gli autovalori rimanere invariati sotto trasformazioni unitarie, prendendo $\lambda = g ^{ 1/6} $, si ha:
+\begin{equation}\label{wer}
+	E_n(1,g) = g^{1 / 3} E_n(g^{-2 / 3} , 1)
+\end{equation}
+Questa relazione permette di concludere che la singolarit\`a per $g = 0$ di $E(g)$ \`e cubica; inoltre, per il criterio di Kato, l'espansione
+\[
+E_n(g) = g^{1 / 3} \sum_{k}^{} a_k g^{ - 2k / 3} 
+\]
+\`e convergente e, asintoticamente, si ha $E_n(g) \sim g^{ 1/3} $.
+Si pu\`o mostrare che la superficie di Riemann associata \`e a tre fogli, con un branch point in $g=0$, come suggerito da eq. \ref{wer}, e che la funzione $E(g)$ risulta analitica nel primo foglio con $\lvert \operatorname{arg} (g) \rvert < \pi $.
 \end{document}
