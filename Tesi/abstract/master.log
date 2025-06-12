@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  12 JUN 2025 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  12 JUN 2025 12:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -33,15 +33,15 @@ Package: tocbasic 2024/10/24 v3.43 KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 135.
-Package scrartcl Info: You've used standard option `10pt'.
+Package scrartcl Info: You've used standard option `11pt'.
 (scrartcl)             This is correct!
-(scrartcl)             Internally I'm using `fontsize=10pt'.
+(scrartcl)             Internally I'm using `fontsize=11pt'.
 (scrartcl)             If you'd like to set the option with \KOMAoptions,
-(scrartcl)             you'd have to use `fontsize=10pt' there
-(scrartcl)             instead of `10pt', too.
-Class scrartcl Info: File `scrsize10pt.clo' used to setup font sizes on input line 2466.
- (/usr/share/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
-File: scrsize10pt.clo 2024/10/24 v3.43 KOMA-Script font size class option (10pt)
+(scrartcl)             you'd have to use `fontsize=11pt' there
+(scrartcl)             instead of `11pt', too.
+Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input line 2466.
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2024/10/24 v3.43 KOMA-Script font size class option (11pt)
 ) (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2024/10/24 v3.43 KOMA-Script package (type area)
 \ta@bcor=\skip50
@@ -57,21 +57,21 @@ Package typearea Info: You've used standard option `a4paper'.
 \ta@temp=\skip53
 \footheight=\skip54
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 8
+(typearea)             DIV  = 10
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 373.44246pt
-(typearea)              DIV departure   = -4%
-(typearea)              \evensidemargin = 39.76274pt
-(typearea)              \oddsidemargin  = 39.76274pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 17.3562pt
+(typearea)              \oddsidemargin  = 17.3562pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 538.0pt
-(typearea)              \topmargin      = 0.36087pt
-(typearea)              \headheight     = 15.0pt
-(typearea)              \headsep        = 18.0pt
-(typearea)              \topskip        = 10.0pt
-(typearea)              \footskip       = 42.0pt
-(typearea)              \baselineskip   = 12.0pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
 (typearea)              on input line 1802.
 )
 \c@part=\count197
@@ -123,50 +123,16 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count270
 Class scrartcl Info: Redefining `\numberline' on input line 6523.
 \bibindent=\dimen141
-) (/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
-Package: sansiwona 
- (/usr/share/texmf-dist/tex/latex/iwona/iwona.sty
-Package: iwona 2005/10/03 v.1.2 Iwona package (MW)
-\c@mv@iwona=\count271
-\c@mv@iwonabold=\count272
-LaTeX Font Info:    Overwriting symbol font `operators' in version `iwona'
-(Font)                  OT1/cmr/m/n --> OT1/iwonam/m/n on input line 58.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `iwona'
-(Font)                  OML/cmm/m/it --> OML/iwona/m/it on input line 59.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwona'
-(Font)                  OMS/cmsy/m/n --> OMS/iwona/m/n on input line 60.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwona'
-(Font)                  OMX/cmex/m/n --> OMX/iwona/m/n on input line 61.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `iwonabold'
-(Font)                  OT1/cmr/m/n --> OT1/iwonam/b/n on input line 62.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `iwonabold'
-(Font)                  OML/cmm/m/it --> OML/iwona/b/it on input line 63.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwonabold'
-(Font)                  OMS/cmsy/m/n --> OMS/iwona/b/n on input line 64.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwonabold'
-(Font)                  OMX/cmex/m/n --> OMX/iwona/b/n on input line 65.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `iwona'
-(Font)                  OT1/cmr/bx/n --> OT1/iwona/bx/n on input line 67.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwona'
-(Font)                  OT1/cmss/m/n --> OT1/iwona/m/n on input line 68.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwona'
-(Font)                  OT1/cmr/m/it --> OT1/iwona/m/it on input line 69.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `iwona'
-(Font)                  OT1/cmtt/m/n --> OT1/iwona/m/n on input line 70.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwonabold'
-(Font)                  OT1/cmss/m/n --> OT1/iwona/bx/n on input line 71.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwonabold'
-(Font)                  OT1/cmr/m/it --> OT1/iwona/bx/it on input line 72.
-)) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count273
-\Gm@cntv=\count274
-\c@Gm@tempcnt=\count275
+\Gm@cnth=\count271
+\Gm@cntv=\count272
+\c@Gm@tempcnt=\count273
 \Gm@bindingoffset=\dimen142
 \Gm@wd@mp=\dimen143
 \Gm@odd@mp=\dimen144
@@ -185,7 +151,7 @@ Package: index 2025/02/06 v4.04 Improved index support (dmj)
 \tf@default=\write3
 \openout3 = `master.idx'.
 
-Package index Info: Writing index file master.idx on input line 5.
+Package index Info: Writing index file master.idx on input line 6.
  (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks21
@@ -195,9 +161,17 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box54
-\sift@deathcycles=\count276
+\sift@deathcycles=\count274
 \@vwid@loff=\dimen150
 \@vwid@roff=\dimen151
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen152
+)
+\pmbraise@=\dimen153
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip65
@@ -205,24 +179,17 @@ Package: amsmath 2024/11/05 v2.17t AMS math features
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks23
-\ex@=\dimen152
-)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen153
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count277
+\inf@bad=\count275
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count278
-\leftroot@=\count279
+\uproot@=\count276
+\leftroot@=\count277
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count280
-\DOTSCASE@=\count281
+\classnum@=\count278
+\DOTSCASE@=\count279
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -235,20 +202,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen154
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count282
+\macc@depth=\count280
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count283
+\c@MaxMatrixCols=\count281
 \dotsspace@=\muskip17
-\c@parentequation=\count284
-\dspbrk@lvl=\count285
+\c@parentequation=\count282
+\dspbrk@lvl=\count283
 \tag@help=\toks24
-\row@=\count286
-\column@=\count287
-\maxfields@=\count288
+\row@=\count284
+\column@=\count285
+\maxfields@=\count286
 \andhelp@=\toks25
 \eqnshift@=\dimen155
 \alignsep@=\dimen156
@@ -283,7 +250,7 @@ Class scrartcl Warning: Usage of package `titlesec' together
 (scrartcl)              and several others to re-configure section
 (scrartcl)              headings.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `titlesec' on input line 12.
+(scrartcl)              package `titlesec' on input line 14.
 
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
@@ -376,16 +343,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count289
+\c@section@level=\count287
 ) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count290
+\etb@tempcnta=\count288
 ) (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen166
-\Hy@linkcounter=\count291
-\Hy@pagecounter=\count292
+\Hy@linkcounter=\count289
+\Hy@pagecounter=\count290
  (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -393,7 +360,7 @@ Now handling font encoding PD1 ...
 ) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count293
+\Hy@SavedSpaceFactor=\count291
  (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -407,7 +374,7 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count294
+\c@Hy@tempcnt=\count292
  (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -419,7 +386,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count295
+\Fld@menulength=\count293
 \Field@Width=\dimen168
 \Fld@charsize=\dimen169
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -433,9 +400,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count296
-\c@Item=\count297
-\c@Hfootnote=\count298
+\Hy@abspage=\count294
+\c@Item=\count295
+\c@Hfootnote=\count296
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -444,8 +411,8 @@ File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count299
-\c@bookmark@seq@number=\count300
+\Fld@listcount=\count297
+\c@bookmark@seq@number=\count298
  (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -500,14 +467,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen183
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
-\c@pgf@counta=\count301
-\c@pgf@countb=\count302
-\c@pgf@countc=\count303
-\c@pgf@countd=\count304
+\c@pgf@counta=\count299
+\c@pgf@countb=\count300
+\c@pgf@countc=\count301
+\c@pgf@countd=\count302
 \t@pgf@toka=\toks38
 \t@pgf@tokb=\toks39
 \t@pgf@tokc=\toks40
-\pgf@sys@id@count=\count305
+\pgf@sys@id@count=\count303
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -518,22 +485,22 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count306
-\pgfsyssoftpath@bigbuffer@items=\count307
+\pgfsyssoftpath@smallbuffer@items=\count304
+\pgfsyssoftpath@bigbuffer@items=\count305
 ) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen184
-\pgfmath@count=\count308
+\pgfmath@count=\count306
 \pgfmath@box=\box59
 \pgfmath@toks=\toks41
 \pgfmath@stack@operand=\toks42
 \pgfmath@stack@operation=\toks43
 ) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count309
+\c@pgfmathroundto@lastzeros=\count307
 )) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen185
@@ -563,7 +530,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box60
 \pgf@hbox=\box61
 \pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count310
+\pgf@picture@serial@count=\count308
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen259
@@ -584,8 +551,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen264
-\pgf@sys@shading@range@num=\count311
-\pgf@shadingcount=\count312
+\pgf@sys@shading@range@num=\count309
+\pgf@shadingcount=\count310
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -621,7 +588,7 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count313
+\pgf@plot@mark@count=\count311
 \pgfplotmarksize=\dimen269
 )
 \tikz@lastx=\dimen270
@@ -636,17 +603,17 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box66
 \tikz@tempbox=\box67
 \tikz@tempbox@bg=\box68
-\tikztreelevel=\count314
-\tikznumberofchildren=\count315
-\tikznumberofcurrentchild=\count316
-\tikz@fig@count=\count317
+\tikztreelevel=\count312
+\tikznumberofchildren=\count313
+\tikznumberofcurrentchild=\count314
+\tikz@fig@count=\count315
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count318
-\pgfmatrixcurrentcolumn=\count319
-\pgf@matrix@numberofcolumns=\count320
+\pgfmatrixcurrentrow=\count316
+\pgfmatrixcurrentcolumn=\count317
+\pgf@matrix@numberofcolumns=\count318
 )
-\tikz@expandcount=\count321
+\tikz@expandcount=\count319
  (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
@@ -654,20 +621,20 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \t@pgfplots@tokb=\toks47
 \t@pgfplots@tokc=\toks48
 \pgfplots@tmpa=\dimen278
-\c@pgfplots@coordindex=\count322
-\c@pgfplots@scanlineindex=\count323
+\c@pgfplots@coordindex=\count320
+\c@pgfplots@scanlineindex=\count321
  (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks49
 \t@pgf@tokb=\toks50
 \t@pgf@tokc=\toks51
 (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count324
+\c@pgfplotsarray@tmp=\count322
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count325
+\c@pgfplotstable@counta=\count323
 \t@pgfplotstable@a=\toks52
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count326
+\c@pgfplotslibrarysurf@no=\count324
  (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen279
@@ -675,13 +642,13 @@ Package pgfplots: loading complementary utilities for your pgf version...
 \pgfdecoratedinputsegmentcompleteddistance=\dimen281
 \pgfdecoratedinputsegmentremainingdistance=\dimen282
 \pgf@decorate@distancetomove=\dimen283
-\pgf@decorate@repeatstate=\count327
+\pgf@decorate@repeatstate=\count325
 \pgfdecorationsegmentamplitude=\dimen284
 \pgfdecorationsegmentlength=\dimen285
 )
 \tikz@lib@dec@box=\box69
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count328
+\pgfplots@numplots=\count326
 \pgfplots@xmin@reg=\dimen286
 \pgfplots@xmax@reg=\dimen287
 \pgfplots@ymin@reg=\dimen288
@@ -694,14 +661,14 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
-\c@tracingmulticols=\count329
+\c@tracingmulticols=\count327
 \mult@box=\box70
 \multicol@leftmargin=\dimen292
-\c@unbalance=\count330
-\c@collectmore=\count331
-\doublecol@number=\count332
-\multicoltolerance=\count333
-\multicolpretolerance=\count334
+\c@unbalance=\count328
+\c@collectmore=\count329
+\doublecol@number=\count330
+\multicoltolerance=\count331
+\multicolpretolerance=\count332
 \full@width=\dimen293
 \page@free=\dimen294
 \premulticols=\dimen295
@@ -752,15 +719,15 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \@tempa=\box111
 \@tempa=\box112
 \@tempa=\box113
-\c@minrows=\count335
-\c@columnbadness=\count336
-\c@finalcolumnbadness=\count337
+\c@minrows=\count333
+\c@columnbadness=\count334
+\c@finalcolumnbadness=\count335
 \last@try=\dimen298
 \multicolovershoot=\dimen299
 \multicolundershoot=\dimen300
 \mult@nat@firstbox=\box114
 \colbreak@box=\box115
-\mc@col@check@num=\count338
+\mc@col@check@num=\count336
 ) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
@@ -777,8 +744,8 @@ Package caption Info: KOMA-Script document class detected.
  (/usr/share/texmf-dist/tex/latex/caption/caption-koma.sto
 File: caption-koma.sto 2023/09/08 v2.0e Adaption of the caption package to the KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count339
-\c@continuedfloat=\count340
+\c@caption@flags=\count337
+\c@continuedfloat=\count338
 Package caption Info: hyperref package is loaded.
 Package caption Info: KOMA-Script scrextend package detected.
 \caption@addmargin@hsize=\dimen309
@@ -798,7 +765,7 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: expl3 2025-01-18 L3 programming layer (loader) 
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count341
+\l__color_backend_stack_int=\count339
 \l__pdf_internal_box=\box116
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
@@ -826,9 +793,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box118
 \tcb@lowerbox=\box119
 \tcb@phantombox=\box120
-\c@tcbbreakpart=\count342
-\c@tcblayer=\count343
-\c@tcolorbox@number=\count344
+\c@tcbbreakpart=\count340
+\c@tcblayer=\count341
+\c@tcolorbox@number=\count342
 \l__tcobox_tmpa_box=\box121
 \l__tcobox_tmpa_dim=\dimen311
 \tcb@temp=\box122
@@ -849,24 +816,24 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \backup@length=\skip80
 \ar@cellbox=\box127
 )
-\g__nicematrix_env_int=\count345
-\g__nicematrix_NiceMatrixBlock_int=\count346
-\g__nicematrix_notes_caption_int=\count347
+\g__nicematrix_env_int=\count343
+\g__nicematrix_NiceMatrixBlock_int=\count344
+\g__nicematrix_notes_caption_int=\count345
 \l__nicematrix_columns_width_dim=\dimen314
 \l__nicematrix_col_width_dim=\dimen315
-\g__nicematrix_row_total_int=\count348
-\g__nicematrix_col_total_int=\count349
-\g__nicematrix_last_row_node_int=\count350
-\l__nicematrix_key_nb_rows_int=\count351
+\g__nicematrix_row_total_int=\count346
+\g__nicematrix_col_total_int=\count347
+\g__nicematrix_last_row_node_int=\count348
+\l__nicematrix_key_nb_rows_int=\count349
 \g__nicematrix_blocks_wd_dim=\dimen316
 \g__nicematrix_blocks_ht_dim=\dimen317
 \g__nicematrix_blocks_dp_dim=\dimen318
 \l__nicematrix_width_dim=\dimen319
 \l__nicematrix_tabular_width_dim=\dimen320
 \l__nicematrix_rule_width_dim=\dimen321
-\l__nicematrix_old_iRow_int=\count352
-\l__nicematrix_old_jCol_int=\count353
-\g__nicematrix_total_X_weight_int=\count354
+\l__nicematrix_old_iRow_int=\count350
+\l__nicematrix_old_jCol_int=\count351
+\g__nicematrix_total_X_weight_int=\count352
 \l__nicematrix_X_columns_dim=\dimen322
 \l__nicematrix_x_initial_dim=\dimen323
 \l__nicematrix_y_initial_dim=\dimen324
@@ -884,30 +851,30 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \g__nicematrix_dp_last_row_dim=\dimen336
 \g__nicematrix_width_last_col_dim=\dimen337
 \g__nicematrix_width_first_col_dim=\dimen338
-\l__nicematrix_row_min_int=\count355
-\l__nicematrix_row_max_int=\count356
-\l__nicematrix_col_min_int=\count357
-\l__nicematrix_col_max_int=\count358
-\l__nicematrix_start_int=\count359
-\l__nicematrix_end_int=\count360
-\l__nicematrix_local_start_int=\count361
-\l__nicematrix_local_end_int=\count362
-\g__nicematrix_static_num_of_col_int=\count363
+\l__nicematrix_row_min_int=\count353
+\l__nicematrix_row_max_int=\count354
+\l__nicematrix_col_min_int=\count355
+\l__nicematrix_col_max_int=\count356
+\l__nicematrix_start_int=\count357
+\l__nicematrix_end_int=\count358
+\l__nicematrix_local_start_int=\count359
+\l__nicematrix_local_end_int=\count360
+\g__nicematrix_static_num_of_col_int=\count361
 \l__nicematrix_rounded_corners_dim=\dimen339
 \l__nicematrix_tab_rounded_corners_dim=\dimen340
 \l__nicematrix_offset_dim=\dimen341
 \l__nicematrix_line_width_dim=\dimen342
-\g__nicematrix_block_box_int=\count364
+\g__nicematrix_block_box_int=\count362
 \l__nicematrix_submatrix_extra_height_dim=\dimen343
 \l__nicematrix_submatrix_left_xshift_dim=\dimen344
 \l__nicematrix_submatrix_right_xshift_dim=\dimen345
-\l__nicematrix_first_row_int=\count365
-\l__nicematrix_first_col_int=\count366
-\l__nicematrix_last_row_int=\count367
-\l__nicematrix_last_col_int=\count368
-\c@tabularnote=\count369
-\g__nicematrix_tabularnote_int=\count370
-\c@nicematrix_draft=\count371
+\l__nicematrix_first_row_int=\count363
+\l__nicematrix_first_col_int=\count364
+\l__nicematrix_last_row_int=\count365
+\l__nicematrix_last_col_int=\count366
+\c@tabularnote=\count367
+\g__nicematrix_tabularnote_int=\count368
+\c@nicematrix_draft=\count369
 \l__nicematrix_cell_space_top_limit_dim=\dimen346
 \l__nicematrix_cell_space_bottom_limit_dim=\dimen347
 \l__nicematrix_xdots_inter_dim=\dimen348
@@ -920,28 +887,31 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \l__nicematrix_extra_left_margin_dim=\dimen355
 \l__nicematrix_extra_right_margin_dim=\dimen356
 \c__nicematrix_max_l_dim=\dimen357
-\l__nicematrix_position_int=\count372
-\l__nicematrix_multiplicity_int=\count373
+\l__nicematrix_position_int=\count370
+\l__nicematrix_multiplicity_int=\count371
 \l__nicematrix_brace_yshift_dim=\dimen358
-) (/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+) (/usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup7
+)
+(/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
-
-(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+ (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count374
-\calc@Bcount=\count375
+\calc@Acount=\count372
+\calc@Bcount=\count373
 \calc@Adimen=\dimen359
 \calc@Bdimen=\dimen360
 \calc@Askip=\skip81
 \calc@Bskip=\skip82
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count376
+\calc@Ccount=\count374
 \calc@Cskip=\skip83
 ) (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count377
+\g_MT_multlinerow_int=\count375
 \l_MT_multwidth_dim=\dimen361
 \origjot=\skip84
 \l_MT_shortvdotswithinadjustabove_dim=\dimen362
@@ -957,22 +927,22 @@ Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks62
 ) (/usr/share/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count378
-\l__lipsum_a_int=\count379
-\l__lipsum_b_int=\count380
+\g__lipsum_par_int=\count376
+\l__lipsum_a_int=\count377
+\l__lipsum_b_int=\count378
  (/usr/share/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
-\babel@savecnt=\count381
+\babel@savecnt=\count379
 \U@D=\dimen369
 \l@unhyphenated=\language90
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count382
+\bbl@dirlevel=\count380
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
-\it@lettering=\count383
-\it@doublequoteactive=\count384
-\it@ISOcompliance=\count385
+\it@lettering=\count381
+\it@doublequoteactive=\count382
+\it@ISOcompliance=\count383
 )) (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
@@ -983,9 +953,9 @@ Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
 \@outputbox@depth=\dimen371
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count386
+\c@abspage=\count384
 )
-\c@pp@a@footnote=\count387
+\c@pp@a@footnote=\count385
 Package footmisc Info: Declaring symbol style bringhurst on input line 699.
 Package footmisc Info: Declaring symbol style chicago on input line 707.
 Package footmisc Info: Declaring symbol style wiley on input line 716.
@@ -995,8 +965,8 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 768.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 46.
-Package hyperref Info: Option `breaklinks' set `true' on input line 46.
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
+Package hyperref Info: Option `breaklinks' set `true' on input line 49.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1017,7 +987,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 121.
+(scrartcl)              package `tocloft' on input line 127.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1048,8 +1018,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip108
 \cftfigindent=\skip109
 \cftfignumwidth=\skip110
-\c@lofdepth=\count388
-\c@lotdepth=\count389
+\c@lofdepth=\count386
+\c@lotdepth=\count387
 \cftbeforelottitleskip=\skip111
 \cftafterlottitleskip=\skip112
 \cftbeforetabskip=\skip113
@@ -1062,40 +1032,34 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen372
-)
-\c@osservazione=\count390
-\c@teorema=\count391
-\c@corollario=\count392
-\c@lemma=\count393
-\c@definizione=\count394
-\c@notazione=\count395
-\c@esempio=\count396
-\c@esercizio=\count397
- (/usr/share/texmf-dist/tex/latex/psnfss/mathpazo.sty
-Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup7
-) (/usr/share/texmf-dist/tex/latex/ebgaramond/ebgaramond.sty
-Package: ebgaramond 2024/04/23 (Bob Tennent and autoinst) Style file for EB Garamond fonts.
- (/usr/share/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
+Package: newpxtext 2025/02/10 v1.541(Michael Sharpe) latex and unicode latex support for TeXGyrePagellaX
+ `newpxtext' v1.541, 2025/02/10 Text macros taking advantage of TeXGyre Pagella and its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks64
 \XKV@tempa@toks=\toks65
 )
-\XKV@depth=\count398
+\XKV@depth=\count388
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 116.
- (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
-File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-)) (/usr/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count389
+\xs_countb=\count390
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting zplLF sub-encoding to TS1/0 on input line 40.
+LaTeX Font Info:    Setting zplTLF sub-encoding to TS1/0 on input line 40.
+LaTeX Font Info:    Setting zplOsF sub-encoding to TS1/0 on input line 40.
+LaTeX Font Info:    Setting zplTOsF sub-encoding to TS1/0 on input line 40.
+\zpl@cnt=\count391
+ (/usr/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
 Package: fontaxes 2020/07/21 v1.0e Font selection axes
 LaTeX Info: Redefining \upshape on input line 29.
 LaTeX Info: Redefining \itshape on input line 31.
@@ -1108,37 +1072,102 @@ LaTeX Info: Redefining \textsw on input line 47.
 LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
 )
-LaTeX Info: Redefining \oldstylenums on input line 163.
-LaTeX Info: Redefining \textin on input line 167.
-LaTeX Info: Redefining \textsw on input line 173.
+\zpl@sixem=\dimen373
+\zpl@y=\dimen374
+\zpl@x=\dimen375
+\zpl@tmpdima=\dimen376
+\zpl@tmpdimb=\dimen377
+\zpl@tmpdimc=\dimen378
+\zpl@tmpdimd=\dimen379
+\zpl@tmpdime=\dimen380
+\zpl@tmpdimf=\dimen381
+\zpl@dimA=\dimen382
+\zpl@dimAA=\dimen383
+\zpl@dimB=\dimen384
+\zpl@dimBB=\dimen385
+\zpl@dimC=\dimen386
+LaTeX Info: Redefining \oldstylenums on input line 807.
+LaTeX Font Info:    Trying to load font information for T1+zplLF on input line 815.
+ (/usr/share/texmf-dist/tex/latex/newpx/t1zpllf.fd
+File: t1zplllf.fd 2021/05/25 v1.0 font definition file for T1/zpl/lf
 )
-LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on input line 200.
- (/usr/share/texmf-dist/tex/latex/ebgaramond/T1EBGaramond-OsF.fd
-File: T1EBGaramond-OsF.fd 2023/03/19 (autoinst) Font definitions for T1/EBGaramond-OsF.
+LaTeX Font Info:    Trying to load font information for T1+zplTLF on input line 816.
+ (/usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd
+File: t1zpltlf.fd 2021/05/25 v1.0 font definition file for T1/zpl/tlf
 )
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 200.
+LaTeX Font Info:    Trying to load font information for T1+zplOsF on input line 817.
+ (/usr/share/texmf-dist/tex/latex/newpx/t1zplosf.fd
+File: t1zplosf.fd 2021/05/25 v1.0 font definition file for T1/zpl/osf
+)
+LaTeX Font Info:    Trying to load font information for T1+zplTOsF on input line 818.
+ (/usr/share/texmf-dist/tex/latex/newpx/t1zpltosf.fd
+File: t1zpltosf.fd 2021/05/25 v1.0 font definition file for T1/zpl/tosf
+)) (/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty
+Package: sansiwona 
+ (/usr/share/texmf-dist/tex/latex/iwona/iwona.sty
+Package: iwona 2005/10/03 v.1.2 Iwona package (MW)
+\c@mv@iwona=\count392
+\c@mv@iwonabold=\count393
+LaTeX Font Info:    Overwriting symbol font `operators' in version `iwona'
+(Font)                  OT1/cmr/m/n --> OT1/iwonam/m/n on input line 58.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `iwona'
+(Font)                  OML/cmm/m/it --> OML/iwona/m/it on input line 59.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwona'
+(Font)                  OMS/cmsy/m/n --> OMS/iwona/m/n on input line 60.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwona'
+(Font)                  OMX/cmex/m/n --> OMX/iwona/m/n on input line 61.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `iwonabold'
+(Font)                  OT1/cmr/m/n --> OT1/iwonam/b/n on input line 62.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `iwonabold'
+(Font)                  OML/cmm/m/it --> OML/iwona/b/it on input line 63.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `iwonabold'
+(Font)                  OMS/cmsy/m/n --> OMS/iwona/b/n on input line 64.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `iwonabold'
+(Font)                  OMX/cmex/m/n --> OMX/iwona/b/n on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `iwona'
+(Font)                  OT1/cmr/bx/n --> OT1/iwona/bx/n on input line 67.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwona'
+(Font)                  OT1/cmss/m/n --> OT1/iwona/m/n on input line 68.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwona'
+(Font)                  OT1/cmr/m/it --> OT1/iwona/m/it on input line 69.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `iwona'
+(Font)                  OT1/cmtt/m/n --> OT1/iwona/m/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `iwonabold'
+(Font)                  OT1/cmss/m/n --> OT1/iwona/bx/n on input line 71.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `iwonabold'
+(Font)                  OT1/cmr/m/it --> OT1/iwona/bx/it on input line 72.
+))
+\c@teorema=\count394
+\c@corollario=\count395
+\c@lemma=\count396
+\c@definizione=\count397
+\c@osservazione=\count398
+\c@notazione=\count399
+\c@esempio=\count400
+\c@esercizio=\count401
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 195.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1148,23 +1177,23 @@ LaTeX Font Info:    ... okay on input line 200.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(108.405pt, 380.69788pt, 108.405pt)
-* v-part:(T,H,B)=(108.405pt, 628.23685pt, 108.405pt)
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=380.69788pt
-* \textheight=628.23685pt
-* \oddsidemargin=36.13501pt
-* \evensidemargin=36.13501pt
-* \topmargin=3.13501pt
-* \headheight=15.0pt
-* \headsep=18.0pt
-* \topskip=10.0pt
-* \footskip=42.0pt
-* \marginparwidth=74.68849pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.40001pt
+* \headheight=17.0pt
+* \headsep=20.40001pt
+* \topskip=11.0pt
+* \footskip=47.6pt
+* \marginparwidth=59.7508pt
 * \marginparsep=12.8401pt
-* \columnsep=19.99512pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \columnsep=21.77576pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1176,24 +1205,30 @@ LaTeX Font Info:    ... okay on input line 200.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count399
-\scratchdimen=\dimen373
+\scratchcounter=\count402
+\scratchdimen=\dimen387
 \scratchbox=\box129
-\nofMPsegments=\count400
-\nofMParguments=\count401
+\nofMPsegments=\count403
+\nofMParguments=\count404
 \everyMPshowfont=\toks66
-\MPscratchCnt=\count402
-\MPscratchDim=\dimen374
-\MPnumerator=\count403
-\makeMPintoPDFobject=\count404
+\MPscratchCnt=\count405
+\MPscratchDim=\dimen388
+\MPnumerator=\count406
+\makeMPintoPDFobject=\count407
 \everyMPtoPDFconversion=\toks67
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 200.
+Package hyperref Info: Link coloring ON on input line 195.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 \openout5 = `master.out'.
@@ -1205,137 +1240,52 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 200.
+(scrartcl)           before \begin{document} on input line 195.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count405
+\BKM@id=\count408
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 200.
+ on input line 195.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen375
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen376
-\c__nicematrix_innersep_middle_dim=\dimen377
-LaTeX Info: Redefining \it@ocap on input line 200.
-LaTeX Info: Redefining \it@ccap on input line 200.
-\c@mv@tabular=\count406
-\c@mv@boldtabular=\count407
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 201.
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen389
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen390
+\c__nicematrix_innersep_middle_dim=\dimen391
+LaTeX Info: Redefining \it@ocap on input line 195.
+LaTeX Info: Redefining \it@ccap on input line 195.
+\c@mv@tabular=\count409
+\c@mv@boldtabular=\count410
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 196.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 201.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 201.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 196.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
+(Font)              scaled to size 12.0pt on input line 196.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 199.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
+(Font)              scaled to size 14.4pt on input line 199.
+
+
+Package caption Warning: Unused \captionsetup[figure] on input line 41.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[table] on input line 42.
+See the caption package documentation for explanation.
+
 
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_tcdnmr.enc}] (./master.toc
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 3.
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 3.
- (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
-)
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 3.
- (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 3.
- (/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 3.
- (/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 3.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 3.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 3.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 3.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 3.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 3.
-LaTeX Font Info:    Trying to load font information for U+esint on input line 3.
- (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
-File: uesint.fd 
-)
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 3.
- (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-))
-\tf@toc=\write6
-\openout6 = `master.toc'.
-
-
-
-[2]
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 15.0pt on input line 205.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 20.0pt on input line 205.
-LaTeX Font Info:    Trying to load font information for TS1+EBGaramond-OsF on input line 208.
- (/usr/share/texmf-dist/tex/latex/ebgaramond/TS1EBGaramond-OsF.fd
-File: TS1EBGaramond-OsF.fd 2023/03/19 (autoinst) Font definitions for TS1/EBGaramond-OsF.
-)
-LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 208.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 224.
-
-
-[3{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_yod6vr.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_ljow5q.enc}]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 281.
- (/usr/share/texmf-dist/tex/latex/psnfss/ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-
-[4]
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
-(Font)              scaled to size 13.0pt on input line 303.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 13.0pt on input line 303.
-
-
-[5]
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 7.6pt on input line 332.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 336.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 336.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 336.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 336.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 336.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 336.
-
-
-Package caption Warning: Unused \captionsetup[figure] on input line 38.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: Unused \captionsetup[table] on input line 39.
-See the caption package documentation for explanation.
-
-
-
-[6] (./master.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1344,21 +1294,18 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 44801 strings out of 473190
- 1044655 string characters out of 5722593
- 1751228 words of memory out of 5000000
- 67278 multiletter control sequences out of 15000+600000
- 673447 words of font info for 144 fonts, out of 8000000 for 9000
+ 45076 strings out of 473190
+ 1046632 string characters out of 5722593
+ 1759347 words of memory out of 5000000
+ 67643 multiletter control sequences out of 15000+600000
+ 584088 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,21n,107p,10923b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
-
-</usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on master.pdf (6 pages, 201810 bytes).
+ 108i,7n,107p,10934b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (1 page, 79248 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 37 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

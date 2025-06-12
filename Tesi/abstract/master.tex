@@ -1,0 +1,222 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+%\usepackage{stix}
+\usepackage[margin=1in]{geometry}
+\usepackage{index}
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{varwidth}
+\usepackage{amsbsy} % Bold math symbols
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{braket}
+\usepackage{tensor}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.1}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+
+\newcommand\vertarrowbox[3][6ex]{%
+  \begin{array}[t]{@{}c@{}} #2 \
+  \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\
+  \makebox[0pt]{\scriptsize#3}
+  \end{array}%
+}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+% Titles 
+\title{
+Divergenza delle serie
+perturbative in
+meccanica quantistica\\}
+\author{Manuel Deodato}
+\date{}
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage[osf]{newpxtext}
+
+\usepackage{sansiwona}
+
+
+% Ambienti
+\newtheoremstyle{style1}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{~--- #3}}.\newline}
+
+
+
+
+\theoremstyle{style1}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\spadesuit$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\vspace{.5cm}
+\begin{center}
+	\Large\textit{LONG ABSTRACT} 
+\end{center}
+L'obiettivo della tesi \`e quello di investigare tali evenienze per capire le motivazioni che dietro tali comportamenti.
+A scopo di esempio, si utilizzer\`a un oscillatore armonico soggetto a perturbazione quartica; in questo caso particolare, si mostrer\`a come il problema risiede nella dipendenza dal parametro infinitesimo di questa perturbazione.
+
+Studiando l'esempio proposto, si pu\`o arrivare allo sviluppo perturbativo per lo stato fondamentale notando che ogni stato eccitato per l'oscillatore armonico \`e scrivibile come un polinomio per una gaussiana. 
+Tramite argomenti di parit\`a, si conclude che la perturbazione, essendo pari, non pu\`o mischiare stati con parit\`a diversa, quindi lo stato fondamentale in particolare verr\`a collegato solo a stati pari.
+Inoltre, scrivendo la potenza quartica del potenziale in termini degli operatori di salita e discesa, si nota che uno stato si collega con un altro il cui livello energetico dista massimo quattro livelli dal primo.
+Usando queste regole di selezione per caratterizzare il polinomio e inserendo tutto nell'equazione di partenza, si ottiene una relazione per gli ordini perturbativi dell'energia; tramite calcolo numerico, si trova che il loro valore \`e legato al fattoriale dell'ordine di sviluppo a cui appartengono.
+
+La divergenza di questo sviluppo \`e inevitabilmente sinonimo di una mancata convergenza nell'intorno dello zero del parametro infinitesimo della perturbazione: di fatto, il potenziale quartico in cui si immerge la particella, nel caso in cui il relativo parametro sia negativo, risulta non pi\`u limitato inferiormente, il che permetterebbe alla particella di liberarsi dal potenziale per effetto tunnel.
+In questo caso, l'effetto tunnel -- il quale non \`e descrivibile perturbativamente -- \`e il motivo per cui lo sviluppo in serie delle energie attorno allo zero fallisce nel convergere.
+
+\`E possibile caratterizzare ulteriormente questa divergenza tramite lo scaling di Symanzik: tramite una trasformazione unitaria, si trova una relazione che lega l'energia in funzione del parametro perturbativo con un'altra funzione con coefficiente la radice cubica di tale parametro. 
+Questo permette di evidenziare ulteriormente la causa della divergenza dello sviluppo in serie attorno allo zero.
+
+La divergenza \`e legata all'analiticit\`a del dominio, il quale \`e formato dagli stati per cui l'Hamiltoniano risulta Hermitiano.
+Una condizione \`e che il potenziale ammetta valore medio sugli stati, cio\`e che l'integrale associato sia convergente. 
+Prendendo una funzione d'onda che va come l'inverso di una potenza quadratica nella posizione, questa \`e valida dal punto di vista dell'Hamiltoniano imperturbato, ma non della perturbazione quartica perch\'e il prodotto tra il modulo quadro della funzione d'onda e il potenziale quartico si semplificherebbero, facendo divergere l'integrale.
+Questa divergenza del valore medio della perturbazione sugli stati ammissibili dal punto di vista dell'Hamiltoniano imperturbato \`e sinonimo del fatto che, indipendentemente da quanto piccolo si prende il parametro associato alla perturbazione stessa, gli effetti che questa ha sul sistema non \`e mai tale.
+
+Questo si generalizza tramite il teorema di Kato-Rellich, il quale stabilisce due condizioni che, se rispettate, assicurano tale sviluppo, e usando il teorema di Kato, che fornisce una condizione sufficiente per rientrare nelle condizioni del primo.
+
+\end{document}
