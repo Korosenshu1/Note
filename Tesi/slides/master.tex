@@ -1,0 +1,134 @@
+\documentclass[10pt]{beamer}
+\usepackage{beamer}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{amsmath, amssymb, amsbsy}
+\usepackage{tensor}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{braket}
+\usepackage{mathtools}
+\usepackage{newtxmath}
+
+
+% default color is dark
+
+\def\colortheme{dark} % preset themes available are lighten, light, dark
+\def\alertcolor{dark} % preset themes available are lighten, light, dark
+\def\upperbar{\true} % i want upper index/navigation bar, \true or \false
+\def\bottomsectionbar{\true} % i want bottom bar with Title and Frame/Slide number, \true or \false
+\def\bottomtitlebar{\true} % i want bottom bar with Section and Institute, \true or \false
+
+% % %
+\if\upperbar\false
+    \setbeamertemplate{headline}{}
+\fi
+% % %
+
+\title{Divergenza delle serie perturbative}
+\author{Manuel Deodato}
+\institute
+{
+  Università di Pisa
+}
+\date{}
+
+\begin{document}
+
+\firstpage % optional. First page
+
+\footnotesize
+\begin{frame}
+	\frametitle{L'oscillatore anarmonico}
+Particella 1D in potenziale 
+\begin{equation*}
+	\hat{V} = \frac{1}{2}\hat{x}^2 + \frac{1}{2}g \hat{x}^4
+\end{equation*}
+Perturbativamente, le energie del fondamentale sono della forma $E = 1/2 + \sum_{}^{} g^n E_n$ e le funzioni d'onda degli stati eccitati si scrivono come $B(x) e^{-x^2 / 2} $.
+Se $\ket{n} , \ket{m} $ sono due autostati di $\hat{H}_0$:
+\begin{equation*}
+	\braket{n |\hat{x}^4|m} \neq 0 \iff \begin{cases}
+		\Delta n= |n-m| \le  4\\
+		\pi_n = \pi_m
+	\end{cases}
+\end{equation*}
+Si parte dal fondamentale, quindi $m\le 4$ e $\pi_m= +1$; il polinomio $B(x)$ si pu\`o scrivere come:
+\begin{equation*}
+	B(x) = \sum_{k=0}^{+\infty} g^k B_k(x) \hspace{1cm} B_k(x)= \sum_{j=0}^{2k} A_{k,j} x^{2j} 
+\end{equation*}
+con $B_k(0)=1$ come scelta di normalizzazione $\Rightarrow A_{k,0} =1$.
+Inserendo nell'equazione di Schr\"odinger, si trovano le seguenti relazioni ricorsive per determinare le energie:
+\begin{equation*}
+		\epsilon _k = - 2A_{k,1}  - \sum_{s=1}^{k-1} \epsilon _s; \ A_{k,j} = \frac{1}{4j} \left[ (2j+2)(2j+1) A_{k,j+1} - A_{k-1,j-2} + \sum_{s=1}^{k-1} \epsilon _s A_{k-s,j}  \right] 
+\end{equation*}
+Tramite calcolo numerico, si vede che queste sono divergenti con $E_n \sim n!$.
+\end{frame}
+
+
+  \begin{frame}
+\frametitle{Origine della divergenza e scaling di Symanzik}
+Divergenza $\Rightarrow $ non analiticit\`a di $E(g)$ in un intorno di $g=0$. 
+Per $g<0$, il potenziale \`e
+\begin{equation*}
+	V= \frac{1}{2}x^2 - \frac{1}{2}\lvert g \rvert x^4
+\end{equation*}
+  \begin{minipage}{0.45\textwidth}
+    	\centering
+    	\includegraphics[width=\columnwidth]{f1.pdf}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}{0.5\textwidth}
+	  Per $g<0$, la particella si trova in una buca di potenziale $\to$ per effetto tunnel vi pu\`o fuoriuscire e liberarsi.
+
+	  Questo non \`e descrivibile perturbativamente.
+  \end{minipage}
+  \begin{center}
+	  \color{red} Scrivere formula effetto tunnel
+  \end{center}
+  Per evidenziare la divergenza, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
+  \begin{equation*}
+  	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2} \hat{H}(\alpha  \lambda ^4, g \lambda ^6)
+  \end{equation*}
+  Quindi, per $\lambda  = g^{- 1 / 6} $:
+  \[
+  E_n(1,g) = g^{1 / 3} E_n(g^{-2 / 3} , 1) \implies E_n(g) = g^{1 /3 }  \sum_{k}^{} a_k g^{-2k/3} \sim g^{1 / 3} 
+  \] 
+  
+  \end{frame} 
+   \begin{frame}
+	   \frametitle{Analiticit\`a del dominio}
+	   $D(\hat{H}) \subset L^2$ \`e caratterizzato dalle funzioni che rendono $\hat{H}$ Hermitiano; in particolare, il valore medio del potenziale deve esistere.
+	   Se $\psi \sim 1/x^2$:
+	   \begin{equation*}
+	   	\int dx \ \lvert \psi (x) \rvert ^2 x^2 < \infty \hspace{1cm} \int dx\ \lvert \psi (x) \rvert ^2 x^4 \sim \int dx\  \frac{1}{x^4}x^4 \to \infty
+	   \end{equation*}
+	   Allora $\psi \in D(\hat{H}_0),\ \psi \not \in D(\hat{H})$ perch\'e il valore medio del potenziale perturbato diverge.
+
+	   $\Rightarrow $ Per quanto $g$ sia piccolo, la perturbazione non pu\`o mai essere considerata tale.
+
+	   Questo si generalizza nel seguente.
+	   \begin{theorem}
+		   [Teorema di Kato-Rellich]
+		   Sia $\hat{H}(g)$ una famiglia di operatori con $g \in S \subset \mathbb{C}$ tale che:
+		   \begin{enumerate}[1]
+		   	\item $D(\hat{H}(g))$ \`e indipendente da $g$;
+			\item $\forall \psi \in D(\hat{H}(g))$, la funzione $\braket{\psi |\hat{H}(g)|\psi } $ \`e analitica per $g \in S$.
+		   \end{enumerate}  
+		   Allora $\forall g_0\in S, \forall E(g_0)$ autovalore isolato di $\hat{H}(g_0)$, esiste un intorno $I_{g_0} $ tale che $\hat{H}(g)$ ha un unico autovalore isolato $E(g)$; in questo intorno, $E(g)$ \`e analitica e esiste $\psi _g$ anch'essa analitica e tale che $\hat{H}(g) \psi _g = E(g) \psi _g$.
+	   \end{theorem}
+   \end{frame} 
+   \begin{frame}
+	   Le due condizioni del teorema di Kato-Rellich possono essere verificate tramite la condizione posta dal seguente.
+   	\begin{theorem}
+		[Teorema di Kato]
+Siano $a,b \in \mathbb{R}$ tali che $\forall \psi \in D(\hat{H}_0) \cap D(\hat{V})$, cio\`e $\forall \psi  \in D(\hat{H})$:
+\begin{equation*}
+	\lVert \hat{V}\psi  \rVert \le  a \lVert \hat{H}_0 \psi  \rVert + b \lVert \psi  \rVert 
+\end{equation*}
+   	\end{theorem}
+	Per l'oscillatore con $\hat{V} = \frac{1}{2} \hat{x}^2 + \frac{1}{2}g \hat{x}^4$ non \`e verificato il punto (1) del teorema di Kato-Rellich $\longrightarrow$ il dominio dipende da $g$.
+   \end{frame}
+\end{document}
