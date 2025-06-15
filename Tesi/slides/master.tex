@@ -1,6 +1,5 @@
 \documentclass[10pt]{beamer}
 \usepackage{beamer}
-\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} 
 \usepackage{graphicx}
@@ -12,8 +11,8 @@
 \usepackage{braket}
 \usepackage{mathtools}
 \usepackage{newtxmath}
-
-
+\usepackage[italian]{babel}
+\newtheorem{teorema}{Teorema}
 % default color is dark
 
 \def\colortheme{dark} % preset themes available are lighten, light, dark
@@ -68,7 +67,7 @@ Si parte dal fondamentale, quindi $m\le 4$ e $\pi_m= +1$; il polinomio $B(x)$ si
 con $B_k(0)=1$ come scelta di normalizzazione $\Rightarrow A_{k,0} =1$.\pause
 Inserendo nell'equazione di Schr\"odinger, si trovano le seguenti relazioni ricorsive per determinare le energie:
 \begin{equation*}
-		\epsilon _k = - 2A_{k,1}  - \sum_{s=1}^{k-1} \epsilon _s; \ A_{k,j} = \frac{1}{4j} \left[ (2j+2)(2j+1) A_{k,j+1} - A_{k-1,j-2} + \sum_{s=1}^{k-1} \epsilon _s A_{k-s,j}  \right] 
+		E_k = - 2A_{k,1}  - \sum_{s=1}^{k-1} E_s; \ A_{k,j} = \frac{1}{4j} \left[ (2j+2)(2j+1) A_{k,j+1} - A_{k-1,j-2} + \sum_{s=1}^{k-1} E_s A_{k-s,j}  \right] 
 \end{equation*}
 Tramite calcolo numerico, si vede che queste sono divergenti con $E_n \sim n!$.
 \end{frame}
@@ -115,7 +114,7 @@ Per $g<0$, il potenziale \`e
 	   $\Rightarrow $ Per quanto $g$ sia piccolo, la perturbazione non pu\`o mai essere considerata tale.\pause
 
 	   Questo si generalizza nel seguente.
-	   \begin{theorem}
+	   \begin{teorema}
 		   [Teorema di Kato-Rellich]
 		   Sia $\hat{H}(g)$ una famiglia di operatori con $g \in S \subset \mathbb{C}$ tale che:\pause
 		   \begin{enumerate}[1]
@@ -123,17 +122,17 @@ Per $g<0$, il potenziale \`e
 			\item $\forall \psi \in D(\hat{H}(g))$, la funzione $\braket{\psi |\hat{H}(g)|\psi } $ \`e analitica per $g \in S$.\pause
 		   \end{enumerate}  
 		   Allora $\forall g_0\in S, \forall E(g_0)$ autovalore isolato di $\hat{H}(g_0)$, esiste un intorno $I_{g_0} $ tale che $\hat{H}(g)$ ha un unico autovalore isolato $E(g)$; in questo intorno, $E(g)$ \`e analitica e esiste $\psi _g$ anch'essa analitica e tale che $\hat{H}(g) \psi _g = E(g) \psi _g$.
-	   \end{theorem}
+	   \end{teorema}
    \end{frame} 
    \begin{frame}
 	   Le due condizioni del teorema di Kato-Rellich possono essere verificate tramite la condizione posta dal seguente.\pause
-   	\begin{theorem}
+   	\begin{teorema}
 		[Teorema di Kato]
 Siano $a,b \in \mathbb{R}$ tali che $\forall \psi \in D(\hat{H}_0) \cap D(\hat{V})$, cio\`e $\forall \psi  \in D(\hat{H})$:\pause
 \begin{equation*}
 	\lVert \hat{V}\psi  \rVert \le  a \lVert \hat{H}_0 \psi  \rVert + b \lVert \psi  \rVert 
 \end{equation*}
-   	\end{theorem}\pause
+   	\end{teorema}\pause
 	Per l'oscillatore con $\hat{V} = \frac{1}{2} \hat{x}^2 + \frac{1}{2}g \hat{x}^4$ non \`e verificato il punto (1) del teorema di Kato-Rellich $\longrightarrow$ il dominio dipende da $g$.
    \end{frame}
 \end{document}
