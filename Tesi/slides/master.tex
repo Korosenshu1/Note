@@ -64,8 +64,7 @@ Si parte dal fondamentale, quindi $m\le 4$ e $\pi_m= +1$; il polinomio $B(x)$ si
 \begin{equation*}
 	B(x) = \sum_{k=0}^{+\infty} g^k B_k(x) \hspace{1cm} B_k(x)= \sum_{j=0}^{2k} A_{k,j} x^{2j} 
 \end{equation*}
-con $B_k(0)=1$ come scelta di normalizzazione $\Rightarrow A_{k,0} =1$.\pause
-Inserendo nell'equazione di Schr\"odinger, si trovano le seguenti relazioni ricorsive per determinare le energie:
+con $B_k(0)=1$ come scelta di normalizzazione $\Rightarrow A_{k,0} =1$.\pause \ Inserendo tutto nell'equazione di Schr\"odinger, si trovano le seguenti relazioni ricorsive per determinare le energie:
 \begin{equation*}
 		E_k = - 2A_{k,1}  - \sum_{s=1}^{k-1} E_s; \ A_{k,j} = \frac{1}{4j} \left[ (2j+2)(2j+1) A_{k,j+1} - A_{k-1,j-2} + \sum_{s=1}^{k-1} E_s A_{k-s,j}  \right] 
 \end{equation*}
@@ -92,7 +91,7 @@ Per $g<0$, il potenziale \`e
 	  Questo non \`e descrivibile perturbativamente.
   \end{minipage}
 \pause
-@{\hspace{2cm}}
+{\hspace{2cm}}
   Per evidenziare la divergenza, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:\pause
   \begin{equation*}
   	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2} \hat{H}(\alpha  \lambda ^4, g \lambda ^6)
@@ -104,8 +103,7 @@ Per $g<0$, il potenziale \`e
   \end{frame} 
    \begin{frame}
 	   \frametitle{Analiticit\`a del dominio}\pause
-	   $D(\hat{H}) \subset L^2$ \`e caratterizzato dalle funzioni che rendono $\hat{H}$ Hermitiano; in particolare, il valore medio del potenziale deve esistere.\pause
-	   Se $\psi \sim 1/x^2$:
+	   $D(\hat{H}) \subset L^2$ \`e caratterizzato dalle funzioni che rendono $\hat{H}$ Hermitiano; in particolare, il valore medio del potenziale deve esistere.\pause\ Se $\psi \sim 1/x^2$:
 	   \begin{equation*}
 	   	\int dx \ \lvert \psi (x) \rvert ^2 x^2 < \infty \hspace{1cm} \int dx\ \lvert \psi (x) \rvert ^2 x^4 \sim \int dx\  \frac{1}{x^4}x^4 \to \infty
 	   \end{equation*}\pause
