@@ -149,11 +149,11 @@
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
 \definecolor{asdf}{HTML}{4a7aa4}
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -258,7 +258,8 @@ Si dimostrano le due implicazioni.
 		f\big(B_{\delta (\varepsilon )}(x)\big) \subset B_\varepsilon \big(f(x)\big)
 		\] 
 	quindi $B_{\delta (\varepsilon )} (x) \subset f^{-1} (A)$. Valendo $\forall x \in f^{-1} (A)\Rightarrow f^{-1} (A)$ \`e aperto perch\'e per ogni suo elemento, esiste una palla tutta contenuta al suo interno.
-\item $(\Leftarrow)$ Si assume che $\forall A \subset Y$ aperto, la funzione $f$ sia tale che l'insieme $f^{-1} (A)$ \`e aperto. Per $f(x) \in Y$, esiste $B_\varepsilon \big(f(x)\big) \subset Y$; essendo questo aperto, deve essere aperto anche $f^{-1} \big[B_\varepsilon \big(f(x)\big) \big]$. Per costruzione $x \in f^{-1} \big[B_\varepsilon \big(f(x)\big) \big] $, perci\`o $\exists \delta (\varepsilon ) : B_{\delta (\varepsilon )} (x) \subset f^{-1} \big[B_\varepsilon \big(f(x)\big) \big]$, quindi vuol dire che $f\big(B_{\delta (\varepsilon )} (x)\big)\subset B_\varepsilon \big(f(x)\big)$, ossia:
+\item $(\Leftarrow)$ Si assume che $\forall A \subset Y$ aperto, la funzione $f$ sia tale che l'insieme $f^{-1} (A)$ \`e aperto. Per $f(x) \in Y$, esiste $B_\varepsilon \big(f(x)\big) \subset Y$; essendo questo aperto, deve essere aperto anche $f^{-1} \big[B_\varepsilon \big(f(x)\big) \big]$. 
+	Dunque, dato $x \in f^{-1} \big[B_\varepsilon \big(f(x)\big) \big] $, $\exists \delta (\varepsilon ) : B_{\delta (\varepsilon )} (x) \subset f^{-1} \big[B_\varepsilon \big(f(x)\big) \big]$, quindi vuol dire che $f\big(B_{\delta (\varepsilon )} (x)\big)\subset B_\varepsilon \big(f(x)\big)$, ossia:
 	\[
 	d_Y\big(f(x), f(x')\big) < \varepsilon , \ \forall d_X (x,x') < \delta (\varepsilon )
 	\] 
@@ -272,7 +273,7 @@ Valendo $\forall x \in X$, allora $f$ \`e continua.
 	{Distanze topologicamente equivalenti}{}
 	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se hanno gli stessi insiemi aperti, cio\`e se generano la stessa topologia.
 \end{definizione}
-\noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \epsilon >0$:
+\noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \varepsilon >0$:
 \[
 B_\varepsilon (x) = \overline{B}_{r\varepsilon } (x)
 \] 
@@ -296,7 +297,7 @@ sono equivalenti e si ha
 	\] 
 	La seconda, invece, \`e vera perch\'e:
 	\[
-	\left[ d_2(x,x') \right] ^2 = \sum_{i=1}^{n} (x-x'_i)^2 \le \left[ \sum_{i=1}^{n} \lvert x_i-x'_i \rvert  \right] ^2 = \left[ d_1(x,x') \right] 
+	\left[ d_2(x,x') \right] ^2 = \sum_{i=1}^{n} (x-x'_i)^2 \le \left[ \sum_{i=1}^{n} \lvert x_i-x'_i \rvert  \right] ^2 = \left[ d_1(x,x') \right]^2 
 	\] 
 L'ultima disuguaglianza \`e immediata.	
 \end{proof}
@@ -373,7 +374,6 @@ Anche gli omemorfismi definiscono una \textbf{relazione di equivalenza} tra spaz
 In $\mathbb{R}^n$, si definisce \textbf{topologia euclidea} (o \textbf{naturale}) $\mathcal{E}$ come quella indotta dalla distanza euclidea $d_2$. Su $\mathbb{C}$, la topologia euclidea $\mathcal{E}$ \`e quella indotta da $d(z,w) = \lvert z-w \rvert $; 
 questa conclusione si pu\`o ottenere identificando $\mathbb{C}$ con $\mathbb{R}^2$ da $z=x+iy \mapsto (x,y)$ e considerando la distanza euclidea di $\mathbb{R}^2$. 
 In modo del tutto analogo, si identifica $\mathbb{C}^n$ con $\mathbb{R}^{2n} $ e la distanza euclidea di $\mathbb{R}^{2n} $ definisce, su $\mathbb{C}^n$, una distanza e, quindi, una topologia che \`e la topologia naturale di $\mathbb{C}^n$, $\mathcal{E}$.
-scr
 Su un qualunque insieme non-vuoto $X$, si possono sempre definire due topologie:
 \begin{itemize}
 	\item la \textbf{topologia banale} $\mathcal{B}=\left\{ X, \varnothing \right\} $, con $(X,\mathcal{B})$ \textbf{spazio topologico banale};
