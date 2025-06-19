@@ -87,7 +87,7 @@ Particella 1D in potenziale
 Perturbativamente, le energie del fondamentale sono della forma $E = 1/2 + \sum_{}^{} g^n E_n$ e le funzioni d'onda degli stati eccitati si scrivono come $B(x) e^{-x^2 / 2} $. Se $\ket{n} , \ket{m} $ sono due autostati di $\hat{H}_0$:
 \begin{equation*}
 	\braket{n |\hat{x}^4|m} \neq 0 \iff \begin{cases}
-		\Delta n= |n-m| \le  4\\
+		\Delta n= |n-m| \le  4 \hspace{.25cm}\\
 		\pi_n = \pi_m
 	\end{cases}
 \end{equation*}
@@ -102,7 +102,15 @@ con $B_k(0)=1$ come scelta di normalizzazione $\Rightarrow A_{k,0} =1$. Dall'equ
   \begin{frame}
 \frametitle{Origine della divergenza e scaling di Symanzik}
 
-Divergenza $\Rightarrow $ non analiticit\`a di $E(g)$ in un intorno di $g=0$. 
+  Per evidenziare la divergenza, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
+  \begin{equation*}
+  	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2} \hat{H}(\alpha  \lambda ^4, g \lambda ^6)
+  \end{equation*}
+  Quindi, per $\lambda  = g^{- 1 / 6} $:
+  \[
+  E_n(1,g) = g^{1 / 3} E_n(g^{-2 / 3} , 1) \implies E_n(g) = g^{1 /3 }  \sum_{k}^{} a_k g^{-2k/3} \sim g^{1 / 3} \hspace{.25cm} \text{\color{red} (da controllare)}
+  \] 
+  Divergenza $\Rightarrow $ non analiticit\`a di $E(g)$ in un intorno di $g=0$ {\color{red} (da controllare)}. 
   \begin{minipage}{0.45\textwidth}
     	\centering
     	\includegraphics[width=\columnwidth]{f1.pdf}
@@ -118,14 +126,6 @@ Per $g<0$, il potenziale \`e
 	  Questo non \`e descrivibile perturbativamente.
   \end{minipage}
 {\hspace{2cm}}
-  Per evidenziare la divergenza, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
-  \begin{equation*}
-  	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2} \hat{H}(\alpha  \lambda ^4, g \lambda ^6)
-  \end{equation*}
-  Quindi, per $\lambda  = g^{- 1 / 6} $:
-  \[
-  E_n(1,g) = g^{1 / 3} E_n(g^{-2 / 3} , 1) \implies E_n(g) = g^{1 /3 }  \sum_{k}^{} a_k g^{-2k/3} \sim g^{1 / 3} 
-  \] 
   \end{frame} 
    \begin{frame}
 	   \frametitle{Analiticit\`a del dominio}
@@ -168,6 +168,11 @@ Per $g<0$, il potenziale \`e
 	   In generale, la convergenza dello sviluppo perturbativo pu\`o essere verificata dal teorema di Kato-Rellich.
 
 	   \vspace{.25cm}
-	   Si nota, per\`o, che questo non rende vano lo sviluppo: qualora la serie fosse asintotica come nel caso dell'oscillatore anarmonico, i primi termini dello sviluppo forniscono una buona approssimazione del problema per $g$ relativamente piccolo.	
+	   Si nota, per\`o, che questo non rende vano lo sviluppo: qualora la serie fosse asintotica, cio\`e soddisfa
+\[
+\left\lvert f(z) - \sum_{k=0}^{N} f_k z^k \right\rvert \le  C_{N+1} \lvert z \rvert ^{N+1} 
+\] 
+
+	   per $f(z)$ analitica, come nel caso dell'oscillatore anarmonico, i primi termini dello sviluppo forniscono una buona approssimazione del problema per $g$ relativamente piccolo; in particolare, necessitando di una precisione $\varepsilon $, si richiede $C_N \lvert z \rvert ^N < \varepsilon $.
    \end{frame}
 \end{document}
