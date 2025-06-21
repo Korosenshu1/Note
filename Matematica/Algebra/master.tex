@@ -424,34 +424,6 @@ dove ogni $p_i$ divide il prodotto\footnote{Per vederlo, \`e sufficiente prender
 	Come conseguenza, diretta del lemma, se esistessero due scomposizioni in primi $p_1 \ldots p_r $ e $p'_1 \ldots p'_s$, varrebbe $p_1 \ldots p_r = p'_1 \ldots p'_s\Rightarrow p_i = p'_i$ e $r = s$, da cui l'unicit\`a
 	\end{proof}
 \end{teorema}
-\subsection{Relazioni di equivalenza e congruenza}
-\begin{definizione}
-	{Relazione di equivalenza}{}
-	Sia $S$ un insieme.
-	Una relazione di equivalenza su $S$ \`e una relazione indicata con $x \sim y, \ x, y \in S$, tale che:
-	\begin{enumerate}[ER 1.]
-		\item $\forall x \in S, \ x \sim x$;
-		\item se $x \sim y$ e $y\sim z$, allora $x \sim z$;
-		\item se $x\sim y$, allora $y \sim x$.
-	\end{enumerate}
-\end{definizione}
-\noindent Se su $S$ \`e definita una relazione di equivalenza $\sim$, le classi di equivalenza sono insiemi $C_x : = \left\{ y \in S : y \sim x \right\} $ partizionano $S$ in insiemi disgiunti. 
-Inoltre, dati due elementi $r,s \in S$, si ha $C_r \equiv C_s$, oppure $C_r,\ C_s$ non hanno elementi in comune.
-Si sceglie un elemento che identifica la classe di equivalenza, ad esempio $x$ per $C_x$, e tale elemento si chiama rappresentante della classe di equivalenza. 
-Un esempio di relazione di equivalenza \`e la congruenza.
-\begin{definizione}
-	{Congruenza}{}
-	Sia $n$ un intero positivo e siano $x,y$ due interi. Si dice che $x$ \`e \textit{congruente} $y$ \textit{modulo} $n$ se $\exists m : x-y = mn$. In tal caso, si scriver\`a $x \equiv y  \pmod{n}  $.
-\end{definizione}
-\noindent La congruenza di $x,y$ come $x-y = mn$ implica automaticamente che $x-y$ appartiene all'ideale generato da $n$; inoltre, se $n\neq 0$, allora $x-y$ \`e divisibile per $n$.
-
-Oltre alle propriet\`a delle relazioni di equivalenza, la congruenza ne soddisfa anche altre due:
-\begin{itemize}
-	\item se $x\equiv y \pmod{n}$ e $z$ \`e un intero, allora $xz \equiv yz \pmod{n}  $;
-	\item se $x \equiv y \pmod{n} $ e $x'\equiv y' \pmod{n} $, allora $xx' \equiv yy' \pmod{n} $\footnote{Per dimostrare questa, basta notare che $xx' - yy' = x x' + x'y - x'y - y y ' = x' (x-y) + y ( x'-y')$.} e $x + x' \equiv y + y' \pmod{n} $.
-\end{itemize}
-Dalla definizione di congruenza, si definiscono gli interi \textbf{pari} come quelli che sono congruenti a $0 \pmod{2} $ (quindi $n = 2m$) e quelli \textbf{dispari} come gli interi che non sono pari, quindi della forma $2m + 1$, per qualche intero $m$.
-
 \subsection{Identit\`a di B\'ezout e equazioni diofantee}
 
 \subsubsection{Identit\`a di B\'ezout}
@@ -567,7 +539,7 @@ Si nota che $ax + by =0 \Rightarrow  axa = - by$; si risolve
 \] 
 Sia $(\gamma, \delta )$ una soluzione di questa; visto che $a/\operatorname{gcd}(a,b) $ e $b / \operatorname{gcd}(a,b) $ sono coprimi\footnote{Vedi corollario \ref{cor:c1}.}, il teorema \ref{th:d1} afferma che $a / \operatorname{gcd}(a,b) $ divide $\delta $, quindi $\delta $ \`e della forma $\frac{a}{\operatorname{gcd}(a,b)}  t$ e $\gamma$, analogamente, \`e della forma $- \frac{b}{\operatorname{gcd}(a,b)} t$.
 
-Al contrario, si nota facilmente che una qualunque coppia della forma $\left( - \frac{b}{\operatorname{gcd}(a,b) }t , \frac{a}{\operatorname{gcd}(a,b) }t\right), \ t \in \mathbb{Z} $ \`e una soluzione dell'omogenea associata. 
+Al contrario, si nota facilmente che una qualunque coppia della forma $\left( - \frac{b}{\operatorname{gcd}(a,b) }t , \frac{a}{\operatorname{gcd}(a,b) }t\right)$, con $ t \in \mathbb{Z} $ \`e una soluzione dell'omogenea associata. 
 Questo significa che le soluzioni dell'omogenea associata sono tutte di questa forma, pertanto sono infinite.
 
 Da questo discorso, si pu\`o concludere che anche le soluzioni dell'equazione diofantea iniziale $ax + by = c$ sono infinite. 
@@ -590,17 +562,234 @@ Il teorema di seguito permette di concludere, ulteriormente, che \textit{tutte} 
 
 
 
+\subsection{Relazioni di equivalenza e congruenza}
+\begin{definizione}
+	{Relazione di equivalenza}{}
+	Sia $S$ un insieme.
+	Una relazione di equivalenza su $S$ \`e una relazione indicata con $x \sim y, \ x, y \in S$, tale che:
+	\begin{enumerate}[ER 1.]
+		\item $\forall x \in S, \ x \sim x$;
+		\item se $x \sim y$ e $y\sim z$, allora $x \sim z$;
+		\item se $x\sim y$, allora $y \sim x$.
+	\end{enumerate}
+\end{definizione}
+\noindent Se su $S$ \`e definita una relazione di equivalenza $\sim$, le classi di equivalenza sono insiemi $C_x : = \left\{ y \in S : y \sim x \right\} $ partizionano $S$ in insiemi disgiunti. 
+Inoltre, dati due elementi $r,s \in S$, si ha $C_r \equiv C_s$, oppure $C_r,\ C_s$ non hanno elementi in comune.
+Si sceglie un elemento che identifica la classe di equivalenza, ad esempio $x$ per $C_x$, e tale elemento si chiama rappresentante della classe di equivalenza. 
+Un esempio di relazione di equivalenza \`e la congruenza.
+\begin{definizione}
+	{Congruenza}{}
+	Sia $m \in \mathbb{Z}^+$ e $a,b \in \mathbb{Z}$; si dice che $a$ \`e \textit{congruente} $b$ \textit{modulo} $m$ se $\exists k \in \mathbb{Z} : a-b = km$. In tal caso, si scriver\`a $a \equiv b  \pmod{m}  $.
+\end{definizione}
+\begin{obs}
+	La definizione pi\`u esplicativa di congruenza \`e che due numeri $a,b \in \mathbb{Z}$ di dicono congruenti modulo $m \in \mathbb{Z}^+$ se, divisi per $m$, restituiscono lo stesso resto.
+	Di fatto, da questa discende la definizione data sopra: se $a = qm + r, \ b = pm + r \Rightarrow a - b = (q-p)m$.
+\end{obs}
+\begin{definizione}
+	{Interi pari e dispari}{}
+Si definiscono gli interi \textbf{pari} come quelli che sono congruenti a $0 \pmod{2} $ (quindi $n = 2m$) e quelli \textbf{dispari} come gli interi che non sono pari, quindi della forma $2m + 1$, per qualche intero $m$.
+\end{definizione}
+\noindent Dalla definizione di congruenza, si ha che $a\equiv b \pmod{m}  \Rightarrow  a- b = qm$, quindi $a-b$ appartiene all'ideale generato da $m$.
 
+Inoltre, la stessa relazione implica che $m | (a-b)$; viceversa, se $a \not \equiv b \pmod{m} $, allora i due numeri divisi per $m$ avrebbero resti diversi: $a = k_1 m + r_a, \ b = k_2 m + r_b$, il che implica che $a-b = (k_1 - k_2)m + (r_a- r_b)$, che non \`e divisibile per $m$; allora is ha il seguente.
+\begin{prop}
+	{}{}
+	Siano $m \in \mathbb{Z}^+$ e $a,b \in \mathbb{Z}$; $a$ e $b$ sono congruenti se e soltanto se $m | (a-b)$.
+\end{prop}
+\begin{prop}
+	{Addizione e moltiplicazione in congruenza}{}
+	Dati $a\equiv a' \pmod{m} $ e $b\equiv b' \pmod{m} $, si ha:
+	\[
+		\begin{split}
+			&a + b \equiv a' + b' \pmod{m}  \\
+			& a b\equiv a'b' \pmod{m} 
+		\end{split}
+	\] 
+\begin{proof}
+	Per definizione, si ha $a ' = a + km$ e $b' = b + k'm $; quindi:
+	\[
+	a' + b ' = a+ b + (k+k') m\implies a' + b' \equiv a + b\pmod{m} 
+	\] 
+	Per la moltiplicazione, si nota che 
+	\[
+	a' b ' = a b + m(kb + k'a) +kk'm^2
+	\] 
+	da cui si vede che $a'b' - ab$ \`e divisibile per $m$, quindi $a'b' \equiv ab \pmod{m} $.
+\end{proof}	
+\end{prop}
+La divisione in congruenza funziona diversamente; infatti $2 \cdot  7 \equiv 2 \cdot  4 \pmod{6} $, ma $7 \not \equiv 4 \pmod{6} $. 
+Si ha il seguente.
+\begin{teorema}
+	{Divisione in congruenza}{}
+	Sia $m \in \mathbb{Z}^+$; $\forall a \in  \mathbb{Z} \setminus \left\{ 0 \right\} $ e dati $b_1,b_2 \in \mathbb{Z}$, vale
+	\[
+	ab_1 \equiv ab_2 \pmod{m} \iff b_1 \equiv b_2 \mod{\frac{m}{\operatorname{gcd}(a,m) }} 
+	\] 
+	Questo vuol dire che la divisione \`e ammessa a patto di dividere il modulo per $\operatorname{gcd}(a,m) $.
+	\begin{proof}
+		Si mostra l'implicazione verso destra.
+		Per definizione, $m  \mid  (ab_1- ab_2)$, quindi $\exists q \in \mathbb{Z} : mq = ab_1 - ab_2$.
+		Dividendo per $\operatorname{gcd}(a,m) $:
+		\[
+		\frac{a}{\operatorname{gcd}(a,m) } (b_1-b_2) = \frac{m}{\operatorname{gcd}(a,m) } q
+		\] 
+		Ma $a / \operatorname{gcd}(a,m) $ e $m / \operatorname{gcd}(a,m) $ sono coprimi, quindi $\big(m / \operatorname{gcd}(a,m) \big)  \mid (b_1-b_2)$, il che implica che
+		\[
+		b_1\equiv b_2 \mod \frac{m}{\operatorname{gcd}(a,m) }
+		\] 
+		Per l'implicazione inversa, si assume che
+		\[
+		b_1\equiv b_2 \mod \frac{m}{\operatorname{gcd}(a,m) }
+		\] 
+		per cui $\exists t \in \mathbb{Z}$ tale che 
+		\[
+		t \frac{m}{\operatorname{gcd}(a,m) } = b_1-b_2 \implies tm  = (b_1-b_2) \operatorname{gcd}(a,m) 
+		\] 
+		quindi $m  \mid (b_1 -b_2) \operatorname{gcd}(a,m) $. 
+		Usando che $\operatorname{gcd}(a,m) | a$, si ottiene che
+		\[
+		m | (b_1-b_2) a \implies ab_1 \equiv ab_2 \pmod{m} 
+		\] 
+	\end{proof}
+\end{teorema}
+\subsubsection{Inversi in congruenze}
+Gli unici inversi moltiplicativi in $\mathbb{Z}$ sono $+1, -1$; operando con le congruenze, si riescono a trovare altri inversi moltiplicativi a patto di definire correttamente cosa vuol dire.
+\begin{definizione}
+	{Inverso in congruenza}{}
+	Sia $m \in  \mathbb{Z}^+$; l'inverso di $a \in \mathbb{Z}$ \`e un certo $e \in \mathbb{Z}$ tale che
+	\[
+	e \cdot  a \equiv 1 \pmod{m} 
+	\] 
+\end{definizione}
+\begin{esempio}
+Per esempio, $2$ \`e l'inverso di $3 \operatorname{mod} 5$ perch\'e $2 \cdot 3 = 6 \equiv 1 \pmod{5} $.
+\end{esempio}
+\begin{obs}
+	Quando un numero ammette inverso in congruenza, ne ammette infiniti; infatti, se $a$ \`e l'inverso di $n \operatorname{mod} m$, allora
+	\[
+	n \cdot  ( a+km ) \equiv n\cdot a + knm \equiv 1 + knm \equiv 1 \pmod{m} 
+	\] 
+\end{obs}
+Non sempre un numero ammette un inverso moltiplicativo per qualche modulo; di seguito, \`e riportata una condizione necessaria e sufficiente per l'esistenza dell'inverso.
+\begin{teorema}
+	{}{}
+	Un numero $a \in \mathbb{Z}$ ha inverso $\operatorname{mod} m $ se e solo se $\operatorname{gcd}(a,m) = 1$.
+	\begin{proof}
+		Si assume che $\operatorname{gcd}(a,m) =1 $; per B\'ezout, si ha:
+		\[
+		a u + m v = 1 
+		\] 
+		per qualche coppia $u,v \in \mathbb{Z}$. 
+		Questa uguaglianza, letta modulo $m$, diventa:
+		\[
+		a u \equiv 1 \pmod{m} 
+		\] 
+		cio\`e $u$ \`e inverso di $a \operatorname{mod}m  $.
 
+		Per l'implicazione inversa, si assume che $a$ abbia inverso moltiplicativo $u$.
+		Questo implica che $au \equiv 1 \pmod{m} $, che, a sua volta, diventa:
+		\[
+		a u - mk =1
+		\] 
+		per qualche $k \in \mathbb{Z}$. 
+		Questo \`e sufficiente per affermare che $\operatorname{gcd}(a,m) =1$. 
+	\end{proof}
+\end{teorema}
 
+\subsubsection{Congruenze lineari in una incognita}
+Si cercano le soluzioni $x$ alla congruenza $ax \equiv b \pmod{m} $. 
+Si inizia col notare che se $\exists d \in \mathbb{Z}$ tale che $d | a$ e $d | m$, ma $d \not  \mid  b$ allora l'equazione non ha soluzioni.
+\begin{proof}
+	Se per assurdo ne avesse almeno una $\overline{x}$, allora sarebbe soddisfatta $a \overline{x} - b = q m $, per qualche $q \in \mathbb{Z}$. 
+	Ma, nonostante $m$ sia divisibile per $d$, l'altro membro non risulta tale per via di $b$, il che \`e assurdo. 
+\end{proof}
+Da quanto appena notato, si conclude la condizione necessaria perch\'e esista almeno una soluzione, ossia $\operatorname{gcd}(a,m) | b$.
+\begin{obs}
+	Se $k | a,b$, allora l'equazionoe 
+	\[
+	\frac{a}{k} x \equiv \frac{b}{k} \mod \frac{m}{\operatorname{gcd}(k,m) }
+	\] 
+	\`e equivalente a $a x \equiv b \pmod{m} $, cio\`e hanno le stesse soluzioni. 
+	Si nota in particolare che, se $s$ \`e un numero primo, allora l'equazione $sax \equiv sb \pmod{m} $ ha stesse soluzioni di quella di partenza.
+\end{obs}
+\begin{teorema}
+	{}{}
+	La congruenza $ax \equiv b \pmod{m} $ ha soluzione se e soltanto se $\operatorname{gcd}(a,m) | b$. 
+	Inoltre, il numero totale di soluzioni \`e $\operatorname{gcd}(a,m) $: le altre si ottengono sommandogli un multiplo di $m$.
+	\begin{proof}
+		La prima parte si \`e gi\`a dimostrata, quindi si dimostra solo quella relativa al numero di soluzioni.
+		Assumendo che effettivamente $\operatorname{gcd}(a,m) | b$, allora $\operatorname{gcd}(a,m) $ \`e il massimo divisore comune di $a,b,m$; allora, dividendo la congruenza per questo, si ha:
+		\[
+		a' x \equiv b ' \pmod{m'} 
+		\] 
+		dove 
+		\[
+		a' = \frac{a}{\operatorname{gcd}(a,m) }\hspace{1cm} b' = \frac{b}{\operatorname{gcd}(a,m) } \hspace{1cm} m' = \frac{m}{\operatorname{gcd}(a,m) }
+		\] 
+		dove $a'$ e $m'$ sono coprimi per costruzione. 
+		Essendo coprimi, significa che $a'$ ha inverso moltiplicativo $\operatorname{mod}m' $; sia questo $e'$, il quale soddisfa $a' e '\equiv 1 \pmod{m'} $. 
+		Si pu\`o guardare la relazione dal punto di vista per cui l'inverso moltiplicativo di $e'$ \`e $a'$ e $e' $ \`e coprimo con $m'$; in questo modo, si pu\`o moltiplicare per $e'$ senza modificare il modulo:
+		\[
+		e'a' x\equiv x \equiv e'b' \pmod{m'} 
+		\] 
+		quindi le soluzioni dell'equazione sono tutte e sole quelle della forma 
+		\[
+		x= e'b'+ qm' = e'b'+  \frac{q}{\operatorname{gcd}(a,m) } m
+		\] 
+		per qualche $q \in \mathbb{Z}$. 
+		Questa forma permette di notare che esistono esattamente $\operatorname{gcd}(a,m) $ interi che risolvono questa equazione che non sono multipli di $m$.
+	\end{proof}
+\end{teorema}
+\subsubsection{Il piccolo teorema di Fermat}
+\begin{teorema}
+	{Il piccolo teorema di Fermat}{}
+	Sia $p \in \mathbb{Z}$ un numero primo e $a \in \mathbb{Z}$ tale che $a \not\equiv 0 \pmod{p} $, cio\`e $a $ non \`e multiplo di $p$\footnote{Questo basta per affermare che i due sono coprimi.}; allora 
+	\[
+	a^{p-1} \equiv 1 \pmod{p} 
+	\] 
+	\begin{proof}
+		Per assunzione, $a\not \equiv 0 \pmod{p} $, quindi i numeri
+		\[
+		a, \ 2a, \ldots, (p-1) a
+		\] 
+		sono, a due a due, non congrui mod $p$ fra di loro; infatti, se cos\`i non fosse ed esistessero due numeri $i,j : 1\le  i<j\le p-1$ tali per cui $ia \equiv j a \pmod{p} $, allora $(i-j) a = q p$ per $q \in \mathbb{Z}$. 
+		Questo significa che, essendo $a $ e $p$ coprimi, per cui $a$ ha inverso moltiplicativo $b$: $iab \equiv jab \pmod{m} \Rightarrow i \equiv j \pmod{m} $; questo non \`e possibile perch\'e $i$ e $j$ erano stati assunti diversi e compresi tra $1 $ e $p-1$, quindi non possono avere stesso resto se divisi per $p$.
 
+		Allora, i resti dalla divisione per $p$ di questi numeri sono nell'insieme $\left\{ 1,2, \ldots, p-1 \right\} $ perch\'e il resto deve essere strettamente compreso da $1$ e $p-1$ e deve essere diverso per ciascuno di quei numeri, per quanto appena mostrato.
+Questo permette di scrivere la seguente congruenza:
+\[
+a \cdot (2a) \cdot \ldots\cdot \big((p-1) a\big) \equiv 1 \cdot 2 \cdot  \ldots \cdot (p-1) \pmod{p} 
+\] 
+Raccogliendo a sinistra tutti i fattori $a$:
+\[
+a^{p-1} \cdot 1 \cdot 2 \cdot \ldots\cdot (p-1) \equiv 1 \cdot 2 \cdot  \ldots \cdot (p-1) \pmod{p} 
+\] 
+Visto che ciascuno dei numeri \`e coprimo con $p$ perch\'e sono strettamente minori di $p$, si pu\`o moltiplicare questa congruenza per il loro inverso e arrivare a 
+\[
+a^{p-1} \equiv 1 \pmod{p} 
+\] 
 
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	{}{}
+	Se $p\in \mathbb{Z}$ \`e primo, allora $\forall a \in \mathbb{Z}$ vale
+	\[
+	a^p \equiv a \pmod{p} 
+	\] 
+	\begin{proof}
+		Nel caso $a\not \equiv 0 \pmod{p} $, allora vale $a^{p-1} \equiv 1 \pmod{p} $ per il teorema di Fermat; usando ancora che $a$ e $p$ sono coprimi, si ottiene direttamente per moltiplicazione $a^p \equiv a \pmod{p} $.
 
-
-
-
-
-
+		Nel caso in cui $a\equiv 0 \pmod{p} $, invece, anche $a^p \equiv 0 \pmod{p} $; quindi, per transitivit\`a, si ha $a^p \equiv a \pmod{p} $.
+	\end{proof}
+\end{corollario}
+\begin{corollario}
+	{}{}
+	Se $n \in \mathbb{Z}^{>1} $ \`e un intero tale che, per qualche $a \in \mathbb{Z}$, si ha $a^n \not \equiv a \pmod{n} $, allora $n$ non \`e primo.
+\end{corollario}
+\begin{obs}
+	I numeri $n \in \mathbb{Z}^{>1} $ che soddisfano $a^n \equiv a \pmod{n} $ non sono necessariamente primi; questi sono noti come \textit{falsi primi} e sono detti \textit{numeri di Carmichael}. 
+\end{obs}
 \subsection{Il teorema cinese del resto e classi di resto}
 \subsubsection{Il teorema cinese del resto}
 

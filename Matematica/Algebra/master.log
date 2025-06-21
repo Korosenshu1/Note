@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  12 JUN 2025 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  21 JUN 2025 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1509,7 +1509,9 @@ LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 (Font)              scaled to size 20.0pt on input line 211.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 212.
+(Font)              scaled to size 13.0pt on input line 212.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 13.0pt on input line 212.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 213.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
@@ -1546,32 +1548,35 @@ LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
 [6]
 
 [7]
+LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 429.
+
 
 [8]
-LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 457.
-LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 457.
-
 
 [9]
 
 [10]
-
-[11]
-Overfull \hbox (40.71196pt too wide) in paragraph at lines 570--572
-[]\T1/zpltosf/m/n/10.95 Al con-tra-rio, si no-ta fa-cil-men-te che una qua-lun-que cop-pia del-la for-ma $[] \OML/npxmi/m/it/10.95 ;  t \LMS/npxsy/m/n/10.95 2
+Overfull \hbox (20.80388pt too wide) in paragraph at lines 542--544
+[]\T1/zpltosf/m/n/10.95 Al con-tra-rio, si no-ta fa-cil-men-te che una qua-lun-que cop-pia del-la for-ma $[]$,
  []
 
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 579.
+(Font)              scaled to size 6.1pt on input line 551.
 
+
+[11]
 
 [12]
 
 [13]
 
 [14]
+Underfull \hbox (badness 1038) in paragraph at lines 758--760
+[]\T1/zpltosf/m/n/10.95 Allora, i re-sti dal-la di-vi-sio-ne per $\OML/npxmi/m/it/10.95 p$ \T1/zpltosf/m/n/10.95 di que-sti nu-me-ri so-no nel-l'in-sie-me
+ []
+
+
 
 [15]
 
@@ -1603,12 +1608,22 @@ LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
 
 [29]
 
+[30]
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
 Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[30] (./master.aux)
+[35] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1617,13 +1632,13 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 49989 strings out of 473190
- 1137781 string characters out of 5722593
- 1783274 words of memory out of 5000000
- 72274 multiletter control sequences out of 15000+600000
+ 50035 strings out of 473190
+ 1138471 string characters out of 5722593
+ 1784274 words of memory out of 5000000
+ 72297 multiletter control sequences out of 15000+600000
  656484 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 124i,19n,121p,10937b,1113s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,19n,121p,10937b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
 
@@ -1655,10 +1670,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (30 pages, 371081 bytes).
+Output written on master.pdf (35 pages, 387560 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 412 compressed objects within 5 object streams
- 166 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 
