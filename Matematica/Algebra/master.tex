@@ -192,18 +192,18 @@
 
 
 % Font
-\usepackage[osf]{newpxtext}
-\usepackage{newpxmath}
+\usepackage[osf]{newtxtext}
+\usepackage{newtxmath}
 \usepackage{sansiwona}
 
 
 
 \begin{document}
 \maketitle
-\vspace{9cm}
+\vspace{10cm}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1\columnwidth]{front.png}
+	\includegraphics[width=.8\columnwidth]{front.png}
 \end{figure}
 \newpage
 \tableofcontents 
@@ -846,22 +846,115 @@ x_0 + s \cdot \operatorname{lcm} (m_1,m_2) ,\ s \in \mathbb{Z}
 	\end{equation}
 	Si nota, infine, che esiste un'unica soluzione $x $ tale che $0\le  x < \operatorname{lcm} (m_1,m_2)$.
 \end{obs}
+Quando i moduli delle equazioni sono primi fra loro, cio\`e dato il sistema 
+\[
+\begin{cases}
+	x \equiv a \pmod{m_1} \\
+	x \equiv b \pmod{m_2} 
+\end{cases}
+\] 
+con $\operatorname{gcd}(m_1,m_2) =1$, il sistema ammette sempre soluzione e ne esiste un'unica $x_0$ tale che $0\le x_0\le m_1\cdot m_2$; tutte le altre sono i numeri della forma
+\begin{equation}
+x_0 + 1 \cdot m_1\cdot m_2, \ q \in \mathbb{Z}
+\end{equation}
+Il teorema cinese del resto \`e generalizzabile ed enunciabile nella sua forma pi\`u classica, che \`e la seguente.
+\begin{teorema}
+	{Teorema cinese del resto classico}{}
+Dato il sistema di congruenze
+\[
+\begin{cases}
+	x \equiv a_1 \pmod{m_1} \\
+	x \equiv a_2 \pmod{m_2} \\
+	\vdots\\
+	x\equiv a_n \pmod{m_n} 
+\end{cases}
+\] 
+dove i moduli sono, a due a due, coprimi, cio\`e $\operatorname{gcd}(m_i,m_j) =1, \ \forall i\neq j$.
+Il sistema ammette sempre soluzione ed esiste un'unica soluzione $x_0$ tale che $0\le x_0 < m_1 \cdot \ldots \cdot m_n$. 
+Tutte le altre soluzioni sono numeri della forma
+\[
+x_0 + q \cdot  m_1 \cdot  \ldots \cdot  m_n, \ q \in \mathbb{Z}
+\] 
+\begin{proof}
+Si mostra a partire dal caso di un sistema di due congruenze, procedendo per induzione.
+\end{proof}
+\end{teorema}
 
+\subsubsection{Classi di resto}
+I possibili resti della divisione euclidea per $10$ sono $0,1,2,\ldots, 9$; ad esempio, i numeri che danno resto $1$ sono $1,11,21,31,\ldots,-9,-19,29,\ldots$ e si indica con $[1]_{10} $ l'insieme di tutti questi numeri, cio\`e:
+\begin{equation}
+	[1]_{10} = \left\{ x \in \mathbb{Z}  \mid x\equiv 1 \pmod{10}  \right\} 
+\end{equation}
+In generale, si indica con $[i]_{10} $ l'insieme degli interi che danno $i$ come resto da divisione euclidea per $10$.
+Gli insiemi per $i=0,\ldots,9$ si chiamano \textit{classi di resto modulo 10} e la loro unione coincide con $\mathbb{Z} $. 
+L'insieme i cui elementi sono le classi di resto modulo $10$ si indica con 
+\begin{equation}
+	\mathbb{Z}_{10} = \left\{ [0]_{10} , [1]_{10} , \ldots, [9]_{10}  \right\} 
+\end{equation}
+Su questo insieme, si possono definire una somma e una moltiplicazione, ma prima \`e necessario estendere la notazione sviluppata finora perch\'e al momento $[11]_{10} $ non \`e ben definito.
+Si sceglie di prendere $[11]_{10} = [1]_{10} $, o anche $[127]_{10} = [7]_{10} $ e, pi\`u in generale, $[s]_{10} = [i]_{10} $ qualora $s\equiv i \pmod{10} $.
 
+In questo modo, la somma e il prodotto di elementi di $\mathbb{Z}_{10} $ sono definiti come:
+\begin{equation}
+	\begin{split}
+		&[a]_{10} \cdot [b] _{10}  = [ab]_{10} \\
+		& [a]_{10}  + [b] _{10}  = [ a+ b ] _{10} 
+	\end{split}
+\end{equation}
+\begin{esempio}
+Si ha:
+\[
+	\begin{split}
+		&[7]_{10} \cdot [5]_{10} = [35]_{10} = [5]_{10} \\
+		&[6]_{10} + [8]_{10} = [14]_{10} = [4]_{10} 
+	\end{split}
+\] 
+\end{esempio}
+In realt\`a, la verifica di avere definiti una buona somma e una buona moltiplicazione richiede la verifica che se $[a]_{10} = [a']_{10}, \ [b]_{10} = [b']_{10} $, allora
+\[
+	\begin{split}
+		&[a]_{10} \cdot [b]_{10} = [a']_{10} \cdot [b']_{10} \\
+		&[a]_{10} + [b]_{10} = [a']_{10} + [b']_{10} 
+	\end{split}
+\] 
+\begin{proof}
+{\color{red} DA DIMOSTRARE!} 
+\textit{Suggerimento:} da $[a']_{10} = [a]_{10} \Rightarrow a' = a+10k$ per qualche $k$ e l'analogo vale per $b'$. 
+Per la moltiplicazione, per esempio:
+\[
+	[a']_{10} \cdot [b']_{10} = [(a+10k)(b+10t)]_{10} = [ab + 10bk + 10at + 100 kt]_{10} = [ab]_{10} = [a]_{10} \cdot [b]_{10} 
+\] 
+\end{proof}
+Con queste operazioni, $\mathbb{Z}_{10} $ \`e un anello commutativo con unit\`a; si nota che tali operazioni soddisfano la propriet\`a commutativa, associativa, distributiva, esistenza dell'elemento neutro e dell'opposto rispetto alla somma, eccetera.
+Una novit\`a, invece, \`e che $[2]_{10} \cdot [5]_{10} = [10]_{10} = [0]_{10} $, cio\`e il prodotto di due numeri non-nulli pu\`o fare zero: in questo caso, ad esempio, si dir\`a che $[2]_{10} , [5]_{10} $ sono divisori dello zero in $\mathbb{Z}_{10} $.
 
+Questo discorso si pu\`o generalizzare per $m \in \mathbb{Z}^+$, cio\`e per $i = 0,1,\ldots,m-1$, si definisce la classe di resto $[i]_m = \left\{ x \in \mathbb{Z}  \mid x\equiv i \pmod{m}  \right\} $. 
+Come nel caso $m=10$, le classi di resto forniscono una partizione di $\mathbb{Z}$, cio\`e sono a due a due disgiunte e la loro unione restituisce proprio $\mathbb{Z}$.
+Si indica con $\mathbb{Z}_m$ o $\mathbb{Z} / m \mathbb{Z}$ l'insieme di queste classi:
+\begin{equation}
+	\mathbb{Z}_m = \left\{ [0]_m , [1]_m ,\ldots, [m-1]_{m}  \right\} 
+\end{equation}
+che ha, dunque, cardinalit\`a $m$.
+In modo del tutto analogo, si prende $[i]_m = [s]_m$ qualora $s\equiv i \pmod{m} $ e si definiscono le operazioni
+\[
+	\begin{split}
+		&[a]_{m} \cdot [b]_{m} = [a']_{m} \cdot [b']_{m} \\
+		&[a]_{m} + [b]_{m} = [a']_{m} + [b']_{m} 
+	\end{split}
+\] 
+Verificando come nel caso precedente che sono ben definite, si ottiene che $\mathbb{Z}_m$ \`e un anello commutativo con unit\`a.
 
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{obs}
+	Il piccolo teorema di Fermat si pu\`o esprimere in modo equivalente tramite le classi di resto: dato $p$ primo e la classe $[a]_p$ in $\mathbb{Z}_p$, con $[a]_p \neq [0]_p$, vale:
+	\begin{equation}
+		\big([a]_p\big)^{p-1} = [1]_p
+	\end{equation}
+\end{obs}
+Tramite questa osservazione, si vede che esiste un intero minimo $b \in \mathbb{Z}^+$ tale che $[a]^b_p = [1]_p$, con $b \le p-1$; in questo caso, $b$ sar\`a l'ordine moltiplicativo di $[a]_p$ in $\mathbb{Z}_p$.
+Questo $b$ ha la propriet\`a per cui se $m \in \mathbb{Z}^+$ tale che $[a]_p^m = [1]_p$, allora $b | m$; in particolare, $b | p-1$.
+\begin{proof}
+	Per vederlo, si usa la divisione euclidea per scrivere $m=qb +r$ e si ricava che $[a]_p^r = [1]_p$; a questo punto, si vede che deve essere $r=0$ altrimenti verrebbe contraddetta la minimalit\`a di $b$.
+\end{proof}
 \newpage
 
 \section{Teoria dei gruppi}
