@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{scrartcl}
+\documentclass[11pt, a4paper]{scrartcl}
 % Packages
 \usepackage[margin=1.25in]{geometry}
 \usepackage{index}
@@ -35,7 +35,7 @@
 \setstretch{1.2}
 
 % Titles 
-\title{Note di Analisi 2}
+\title{Note di Analisi}
 \author{Manuel Deodato}
 \date{}
 
@@ -103,6 +103,20 @@
 \tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
 
 \numberwithin{nota}{section}
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
 
 
 
@@ -136,18 +150,18 @@
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{15}{20}\sffamily\scshape}
-{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{\fontsize{17}{20}\sffamily\scshape}
+{\normalfont\bfseries\color{asdf}{\fontsize{17}{20}\selectfont\thesection}}
 {0.7em}
 {}
-\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
-\definecolor{asdf}{HTML}{4a7aa4}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{133,68,66}}
+\definecolor{asdf}{HTML}{854442}
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries\centering}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\fontsize{11}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries\centering}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -453,6 +467,126 @@ Allora vale il seguente.
 	\item se la matrice Hessiana \`e semidefinita, ma non definita, non si pu\`o concludere niente e bisogna esaminare cosa accade attorno a $x_0$.
 \end{itemize}
 
+\subsection{Convessit\`a}
+La nozione di convessit\`a in riferimento agli insiemi si svilupper\`a all'interno di spazi vettoriali in quanto \`e necessaria una struttura algebrica per combinazioni lineari.
+Questo discorso, comunque, \`e generalizzabile ad altri spazi rivedendo la definizione. 
+Inoltre, si parler\`a di convessit\`a per funzioni.
+\begin{definizione}
+	{Segmento}{}
+	Dati $x,y \in V$, con $V$ spazio vettoriale su $\mathbb{R}$, si indica con $[x,y] = [y,x]$ il \textit{segmento} che congiunge i due punti, ossia l'insieme:
+	\[
+		[x,y] = \left\{ x + t(y-x)  \mid t \in [0,1] \right\} 
+	\] 
+\end{definizione}
+\begin{definizione}
+	{Insieme convesso}{}
+	Sia $V$ uno spazio vettoriale su $\mathbb{R}$ e $C \subseteq V$; si dice che $C$ \`e convesso se $\forall x,y \in C, \ [x,y] \subseteq C$.
+\end{definizione}
+Si osserva che l'intersezione di convessi \`e ancora convessa perch\'e per $x,y \in A \cap B$, con $A, B$ convessi, si ha $[x,y] \subseteq A$ e $[x,y] \subseteq B \Rightarrow  [x,y] \subseteq A \cap B$.
+
+\begin{definizione}
+	{Combinazione convessa}{}
+	Siano $x_1,\ldots,x_n \in \mathbb{R}^n$; si definisce \textit{combinazione convessa} la somma $\sum_{i=1}^{n} \lambda _i x_i$, con $\lambda _1,\ldots,\lambda _n >0$ e $\sum_{i=1}^{n} \lambda _i = 1$.
+\end{definizione}
+
+\begin{prop}
+	{}{}
+	Un insieme $C$ \`e convesso se e soltanto se \`e chiuso per combinazioni convesse.
+	\begin{proof}
+			Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Leftarrow $) Se $C$ \`e chiuso per combinazioni convesse, significa che ogni combinazione convessa di due punti \`e contenuta all'interno di $C$, per ciascuna coppia di punti in $C$. 
+				Ma visto che l'insieme delle combinazioni convesse di due punti coincide con un segmento, significa che ogni segmento \`e contenuto in $C$, quindi, per definizione, $C$ \`e convesso.
+			\item ($\Rightarrow $) Si procede per induzione su $n$. Per $n=1, \ n=2$ la tesi vale per definizione; assumendo che valga per $n$, si mostra che vale anche per $n+1$.
+				Si considera, quindi, una combinazione convessa di $x_1,\ldots,x_{n+1} $:
+				\[
+				\sum_{i=1}^{n+1} \lambda _i x_i = \lambda _{n+1} x_{n+1}+ \sum_{i=1}^{n} \lambda _i x_i
+				\] 
+				Indicando con $\lambda_0 = \sum_{i=1}^{n} \lambda _i$, si nota che $\sum_{i=1}^{n} \lambda _i / \lambda _0 = 1$, quindi $\sum_{i=1}^{n} \frac{\lambda _i}{\lambda _0}x_i$ \`e una combinazione convessa di $n$ termini che, per ipotesi induttiva, restituisce un $y \in C$.
+				Usando questo e inserendolo nella combinazione convessa di $n+1$ termini, si trova che
+				\[
+				\sum_{i=1}^{n+1} \lambda _i x_i = \lambda _0 \sum_{i=1}^{n} \frac{\lambda _i}{\lambda _0} x_i + \lambda _{n+1} x_{n+1} = \lambda _0 y + \lambda _{n+1} x_{n+1} 
+				\] 
+			Ora, visto che $\lambda _0 + \lambda _{n+1} =1$ perch\'e la combinazione iniziale era convessa e visto che $y,x_{n+1} \in C$, si rimane con una combinazione convessa di $n=2$ punti, che \`e convessa.
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	{Inviluppo convesso}{}
+	Sia $S$ un insieme; il suo inviluppo convesso \`e definito come il pi\`u piccolo insieme convesso che contiene esse e si indica con $\mathrm{co} (S)$.
+\end{definizione}
+\noindent L'inviluppo convesso di un insieme si ottiene tramite unione di tutte le combinazioni convesse dei punti di $s$.
+\begin{definizione}
+	{Funzione convessa}{}
+	Sia $\Omega $ un insieme convesso; una funzione $f:\Omega \to \mathbb{R}$ \`e convessa se $\forall x,y \in \Omega $ e $\forall t \in [0,1]$, vale
+	\[
+	f(tx + (1-t)y)\le tf(x) +(1-t)f(y)
+	\] 
+\end{definizione}
+\noindent La seguente definizione e la seguente proposizione servono a dare un significato geometrico al concetto di convessit\`a.
+\begin{definizione}
+	{Epigrafico}{}
+	Data $f:\Omega \to\mathbb{R}$, il suo epigrafico \`e l'insieme definito come:
+	\[
+	\mathrm{Ep} (f) = \left\{ (x,a) \in \Omega \times \mathbb{R}  \mid f(x) \le  a \right\} 
+	\] 
+\end{definizione}
+\noindent Geometricamente parlando, l'epigrafico \`e la regione dello spazio che sta \textit{sopra} al grafico di $f$.
+\begin{prop}
+	{}{}
+	Una funzione $f:\Omega \to\mathbb{R}$, con $\Omega $ convesso, \`e convessa se e solo se $\mathrm{Ep} (f) \subseteq \Omega \times \mathbb{R}$ \`e convesso.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Siano $(x_0,a_0), (x_1,a_1) \in \mathrm{Ep} (f)$; queste sono due coppie di punti tali che $f(x_0) \le a_0$ e $f(x_1) \le  a_1$.
+				Visto che $f$ \`e convessa per assunzione, allora $\forall t \in [0,1]$:
+				\[
+				f(tx_1 + (1-t)x_0) \le t f(x_1) + (1-t)f(x_0) \le ta_1 +(1-t) a_0
+				\] 
+				Questo significa che ogni punto che congiunge $(x_0,a_0)$ e $(x_1,a_1)$ al variare di $t \in [0,1]$ sta al di sopra del grafico di $f$, pertanto \`e nel suo epigrafico.
+			\item ($\Leftarrow$) Siano $x_0,x_1 \in \Omega $; si nota che i punti $(x_0,f(x_0)), \ (x_1,f(x_1))$ appartengono al grafico di $f$, quindi anche al suo epigrafico.
+				Visto che, per assunzione, l'epigrafico \`e convesso, significa che $\forall t \in [0,1]$:
+				\[
+					(tx_0+(1-t) x_1, tf(x_0) + (1-t) f(x_1)) \in \mathrm{Ep} (f)
+				\] 
+			Questo implica che 
+			\[
+			f(tx_0 + (1-t)x_1) \le t f(x_0) + (1-t) f(x_1)
+			\] 
+			per cui $f$ \`e convessa.
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\begin{obs}
+	Al contrario della differenziabilit\`a, la convessit\`a \`e una propriet\`a unidimensionale, cio\`e se $\Omega $ \`e convesso e si considera una funzione su $\Omega $, $f:\Omega \to \mathbb{R}$, questa \`e convessa se e solo se la restrizione di $f$ a ciascuna retta di $\Omega$ \`e convessa.
+\end{obs}
+\noindent \`E possibile caratterizzare la convessit\`a di funzioni in base alle loro derivate; per questo, si hanno i due seguenti teoremi.
+\begin{teorema}
+	{}{}
+	Se $f \in C^1(\Omega )$, si ha che $f$ \`e convessa se e solo se $\forall x_0,x_1 \in \Omega $ vale
+	\[
+	\big(\nabla f(x_1) - \nabla f(x_0)\big)(x_1-x_0)\ge 0
+	\] 
+	\begin{proof}
+		Si considera $x_t = tx_1 + (1-t)x_0$ e $\varphi (t) = f(x_t)$.
+		Da questa definizione, $f$ \`e convessa se e solo se $\varphi (t)$ \`e convessa $\forall x_0,x_1$.
+		Inoltre, la derivata prima di $\varphi $ \`e:
+		\[
+		\varphi '(t) = \frac{d }{d t} f(x_t) = \nabla f(x_t) \frac{d }{d t} x_t = \nabla f(x_t)(x_1-x_0)
+		\] 
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Il fatto che $f$ sia convessa implica che $\varphi '$ \`e crescente, per quanto si sa sulle funzioni convesse di una variabile (infatti $f$ convessa $\iff \varphi $ convessa); in particolare $\varphi '(1) - \varphi '(0) \ge 0$, da cui
+				\[
+				0\le \nabla f(x_1) (x_1-x_0) - \nabla f(x_0)(x_1-x_0) = \big(\nabla f(x_1) - \nabla f(x_0)\big)(x_1-x_0)
+				\] 
+			\item ($\Leftarrow$) Sia $t>s$, con $t,s \in [0,1]$ e siano $x'_0 = x_s$, $x'_1 = x_t$.
+		\end{itemize}
+	\end{proof}
+\end{teorema}
+\begin{center}
+	\color{asdf} Riprendere da pagina 45 e integrare dimostrazione 1D per funzioni convesse
+\end{center}
 \newpage 
 
 \section{Calcolo integrale in pi\`u variabili}
@@ -2347,6 +2481,149 @@ Sia $A\subset \mathbb{R}^3$ un insieme semplicemente connesso; allora ogni forma
 	Per il teorema \ref{th:cce}, $\omega = Xdx + Ydy + Zdz$ \`e esatta.
 	\end{proof}
 \end{teorema}
+\newpage
+\section{Spazi metrici}
+\begin{center}
+	\textit{
+L'idea dietro gli spazi metrici \`e quella di avere uno spazio sul quale \`e possibile misurare le distanze tra gli elementi di tale spazio, replicando la misurazione in spazi euclidei.
+Si definir\`a la nozione di distanza, che sarebbe un'indicazione di quanto due elementi dello spazio sono lontani tra loro.}
+\end{center}
+\subsection{Nozioni introduttive}
+\begin{definizione}
+	{Spazio metrico}{}
+	Sia $X$ un insieme; si dice che $(X,d)$ \`e uno spazio metrico se $d$ \`e una distanza su $X$, ossia una funzione $d:X \times X\to [0,+\infty)$ tale che:
+	\begin{enumerate}[(d1).]
+		\item $d(x,y) = 0 \iff x= y, \ \forall  x,y \in X$;
+		\item $d(x,y) = d(y,x), \ \forall x,y \in X$;
+		\item $d(x,z) \le d(x,y) + d(y,z) , \ \forall x,y,z \in X$.
+	\end{enumerate}
+\end{definizione}
+\noindent Si nota che, dato $Y \subseteq X$, con $(X,d)$ spazio metrico, anche $(Y,d | _Y)$ \`e uno spazio metrico.
+Una classe importante di spazi metrici sono gli spazi normati.
+\begin{definizione}
+	{Spazio normato}{}
+	Uno spazio normato \`e uno spazio vettoriale $V$ su $\mathbb{K}$ sul quale \`e definita una norma $\left\lVert \cdot  \right\rVert $, cio\`e una funzione $\left\lVert \cdot  \right\rVert : V \to [0, + \infty)$ tale che:
+	\begin{enumerate}[(n1).]
+		\item $\left\lVert \mathbf{x}  \right\rVert = 0 \iff \mathbf{x} = 0 $;
+		\item $\left\lVert \lambda \mathbf{x}  \right\rVert = \lvert \lambda  \rvert \left\lVert \mathbf{x}  \right\rVert , \ \forall X \in V , \forall \lambda  \in \mathbb{K}$;
+		\item $\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert \le \left\lVert \mathbf{x}  \right\rVert + \left\lVert \mathbf{y}  \right\rVert , \ \forall \mathbf{x} ,\mathbf{y} \in V$.
+	\end{enumerate}
+	Uno spazio normato si indica con la notazione $(V,\left\lVert \cdot  \right\rVert )$.
+\end{definizione}
+\noindent Si pu\`o dimostrare che la distanza $D(\mathbf{x} ,\mathbf{y} ) = \left\lVert \mathbf{x} - \mathbf{y}  \right\rVert $ \`e ben definita e rende $(V, D)$ uno spazio metrico.
+Questo sta anche a significare che ogni spazio normato \`e anche uno spazio metrico con la distanza derivante dalla norma.
+\subsection{Le norme p}
+Seguono alcuni esempi di spazi normati.
+Sullo spazio vettoriale $\mathbb{K}^n$, con $\mathbb{K}$ campo generico, si pu\`o definire la norma
+\begin{boxenv}[]
+\begin{equation}
+	\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p}
+\end{equation}
+\end{boxenv}
+\noindent con $\mathbf{x} \in \mathbb{K}^n$ e $p\ge 1$. 
+Si pu\`o dimostrare che, nel limite $p \to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ diventa:
+\begin{boxenv}[]
+\begin{equation}
+	\left\lVert \mathbf{x}  \right\rVert _\infty = \max_{i=1,\ldots,n} \lvert x_i \rvert 
+\end{equation}
+\end{boxenv}
+\begin{prop}
+	{}{}
+	Dato lo spazio normato $(\mathbb{K}^n,\left\lVert \cdot  \right\rVert _p)$, nel limite $p\to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ coincide con $\left\lVert \cdot  \right\rVert _\infty$.
+	\begin{proof}
+		L'idea \`e di racchiudere $\left\lVert \mathbf{x}  \right\rVert _p$ tra due valori che, per $p\to +\infty$, coincidono con $\left\lVert \mathbf{x}  \right\rVert _\infty$.
+		Si nota che se $\left\lVert \mathbf{x}  \right\rVert _\infty = M \Rightarrow $ esiste una direzione lungo cui $\mathbf{x} $ raggiunge $\pm M$, cio\`e $|\mathbf{x} \cdot \mathbf{e} _i| = M$. 
+		Questo significa che:
+		\[
+			\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p} \le \left(\sum_{i=1}^{n} M^{p} \right) ^{1 / p} = \left(n M^p\right) ^{1 / p} = n^{1 / p} M
+		\] 
+		Allo stesso tempo 
+		\[
+		\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x _i\rvert ^p\right) ^{1 / p}  \ge \lvert x_i \rvert = M
+		\] 
+		Quindi si ottiene che $M \le \left\lVert \mathbf{x}  \right\rVert _p \le n^{1 / p} M$, dove $n$ \`e evidentemente una costante.
+		Ne segue che, nel limite $p\to +\infty$, si ha 
+		\[
+		M\le \lim_{p \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p \le  M \iff \lim_{x \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p = M = \max_{i=1 ,\ldots, n} \lvert x_i \rvert = \left\lVert \mathbf{x}  \right\rVert _\infty
+		\] 
+	\end{proof}
+\end{prop}
+Considerando lo spazio delle funzioni continue in $[a,b]$, $C\big([a,b]\big)$, si pu\`o definire la norma
+\begin{boxenv}[]
+\begin{equation}
+	\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p dx\right) ^{1 / p} , \ p\ge 1
+\end{equation}
+\end{boxenv}
+\noindent Anche in questo caso, per $p\to +\infty$, si ha la norma
+\begin{boxenv}[]
+\begin{equation}
+	\left\lVert f \right\rVert _\infty= \max _{x \in [a,b]}  \lvert f(x) \rvert 
+\end{equation}
+\end{boxenv}
+\begin{prop}
+	{}{}
+	Si consideri lo spazio normato $C\big([a,b]\big)$ con la norma $\left\lVert \cdot   \right\rVert _p$; per $p\to +\infty$, la norma p coincide con $\left\lVert \cdot  \right\rVert _\infty$.
+	\begin{proof}
+		Le funzioni $f \in C\big([a,b]\big)$ assumono massimo perch\'e sono continue in un compatto. 
+		Questo significa che $M = \displaystyle \max_{x \in [a,b]} \lvert f(x) \rvert $ \`e ben definito.
+		Trovare la stima superiore \`e facile:
+		\begin{equation*}
+			\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p\right) ^{1 / p} \le \left(\int_{a} ^b M^p dx \right) ^{1/p}  = (b-a)^{1/p} M
+		\end{equation*}
+		Per la stima inferiore, si sa che $\exists x_0 \in [a,b]:\lvert f(x) \rvert = M$; questo vuol dire che, essendo $f$ continua, $\forall \varepsilon $ esiste un intorno di $x_0$, $I_\varepsilon $, in cui $\lvert f(x) \rvert \ge M-\varepsilon $.
+		Secondo questo ragionamento:
+		\[
+		\left(\int_{a} ^b \lvert f(x) \rvert^{p}  dx\right) ^{1/p} \ge \left(\int_{I_\varepsilon } \lvert f(x) \rvert ^p dx\right) ^{1 / p} \ge \delta _\varepsilon ^{1 / p} (M-\varepsilon )
+		\] 
+		con $\delta _\varepsilon = \int_{I_\varepsilon } dx$.
+		Conseguentemente, nel limite $p\to +\infty$:
+		\[
+		\lim_{p \to +\infty} \delta _\varepsilon ^{1/p} (M-\varepsilon ) = M-\varepsilon \le \lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p \le \lim_{p \to +\infty} (b-a)^{1 / p} M= M
+		\] 
+		Visto che questo vale $\forall \varepsilon $, significa che, per $p\to +\infty$, $\left\lVert f(x) \right\rVert _p$ \`e arbitrariamente vicino a $M$, quindi:
+		\[
+			\lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p = M = \max_{x \in [a,b]} \lvert f(x) \rvert = \left\lVert f(x) \right\rVert _\infty
+		\] 
+	\end{proof}
+\end{prop}
+Ora si introducono alcune disuguaglianze come lemmi per poter dimostrare che le norme p sono effettivamente delle norme.
+\begin{lemma}
+	{Disuguaglianza di Young}{}
+	$\forall a,b \in \mathbb{R}, \ a,b>0$ e $\forall p,q>0 : 1 / p + 1 / q = 1$ si ha:
+	\[
+	ab \le \frac{1}{p}a^p + \frac{1}{q}b^q
+	\] 
+	\begin{proof}
+		Si procede per conto diretto usando le propriet\`a dell'esponenziale:
+		\[
+				ab = e^{\ln a} e^{\ln b} = e^{\frac{1}{p} \ln a^p} e^{\frac{1}{q} b^q} = e^{\frac{1}{p}\ln a^p + \frac{1}{q} \ln b^q} \le \frac{1}{p}e^{\ln a^p} + \frac{1}{q} e^{\ln b^q}= \frac{1}{p}a^p + \frac{1}{q}b^q
+		\] 
+		dove si \`e usato il fatto che $f(x) = e^x$ \`e una funzione convessa, visto che ha derivata seconda sempre positiva.
+	\end{proof}
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
