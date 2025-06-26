@@ -213,7 +213,304 @@ title=#1
 \end{figure}
 \newpage
 \tableofcontents 
+\newpage 
+
+\section{Spazi metrici}
+\begin{center}
+	\textit{
+L'idea dietro gli spazi metrici \`e quella di avere uno spazio sul quale \`e possibile misurare le distanze tra gli elementi di tale spazio, replicando la misurazione in spazi euclidei.
+Si definir\`a la nozione di distanza, che sarebbe un'indicazione di quanto due elementi dello spazio sono lontani tra loro.}
+\end{center}
+\subsection{Nozioni introduttive}
+\begin{definizione}
+	{Spazio metrico}{}
+	Sia $X$ un insieme; si dice che $(X,d)$ \`e uno spazio metrico se $d$ \`e una distanza su $X$, ossia una funzione $d:X \times X\to [0,+\infty)$ tale che:
+	\begin{enumerate}[(d1).]
+		\item $d(x,y) = 0 \iff x= y, \ \forall  x,y \in X$;
+		\item $d(x,y) = d(y,x), \ \forall x,y \in X$;
+		\item $d(x,z) \le d(x,y) + d(y,z) , \ \forall x,y,z \in X$.
+	\end{enumerate}
+\end{definizione}
+\noindent Si nota che, dato $Y \subseteq X$, con $(X,d)$ spazio metrico, anche $(Y,d | _Y)$ \`e uno spazio metrico.
+Una classe importante di spazi metrici sono gli spazi normati.
+\begin{definizione}
+	{Spazio normato}{}
+	Uno spazio normato \`e uno spazio vettoriale $V$ su $\mathbb{K}$ sul quale \`e definita una norma $\left\lVert \cdot  \right\rVert $, cio\`e una funzione $\left\lVert \cdot  \right\rVert : V \to [0, + \infty)$ tale che:
+	\begin{enumerate}[(n1).]
+		\item $\left\lVert \mathbf{x}  \right\rVert = 0 \iff \mathbf{x} = 0 $;
+		\item $\left\lVert \lambda \mathbf{x}  \right\rVert = \lvert \lambda  \rvert \left\lVert \mathbf{x}  \right\rVert , \ \forall X \in V , \forall \lambda  \in \mathbb{K}$;
+		\item $\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert \le \left\lVert \mathbf{x}  \right\rVert + \left\lVert \mathbf{y}  \right\rVert , \ \forall \mathbf{x} ,\mathbf{y} \in V$.
+	\end{enumerate}
+	Uno spazio normato si indica con la notazione $(V,\left\lVert \cdot  \right\rVert )$.
+\end{definizione}
+\noindent Si pu\`o dimostrare che la distanza $D(\mathbf{x} ,\mathbf{y} ) = \left\lVert \mathbf{x} - \mathbf{y}  \right\rVert $ \`e ben definita e rende $(V, D)$ uno spazio metrico.
+Questo sta anche a significare che ogni spazio normato \`e anche uno spazio metrico con la distanza derivante dalla norma.
+\subsection{Le norme p}
+Seguono alcuni esempi di spazi normati.
+Sullo spazio vettoriale $\mathbb{K}^n$, con $\mathbb{K}$ campo generico, si pu\`o definire la norma
+\begin{equation}
+	\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p}
+\end{equation}
+\noindent con $\mathbf{x} \in \mathbb{K}^n$ e $p\ge 1$. 
+Si pu\`o dimostrare che, nel limite $p \to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ diventa:
+\begin{equation}
+	\left\lVert \mathbf{x}  \right\rVert _\infty = \max_{i=1,\ldots,n} \lvert x_i \rvert 
+\end{equation}
+\begin{prop}
+	{}{}
+	Dato lo spazio normato $(\mathbb{K}^n,\left\lVert \cdot  \right\rVert _p)$, nel limite $p\to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ coincide con $\left\lVert \cdot  \right\rVert _\infty$.
+	\begin{proof}
+		L'idea \`e di racchiudere $\left\lVert \mathbf{x}  \right\rVert _p$ tra due valori che, per $p\to +\infty$, coincidono con $\left\lVert \mathbf{x}  \right\rVert _\infty$.
+		Si nota che se $\left\lVert \mathbf{x}  \right\rVert _\infty = M \Rightarrow $ esiste una direzione lungo cui $\mathbf{x} $ raggiunge $\pm M$, cio\`e $|\mathbf{x} \cdot \mathbf{e} _i| = M$. 
+		Questo significa che:
+		\[
+			\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p} \le \left(\sum_{i=1}^{n} M^{p} \right) ^{1 / p} = \left(n M^p\right) ^{1 / p} = n^{1 / p} M
+		\] 
+		Allo stesso tempo 
+		\[
+		\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x _i\rvert ^p\right) ^{1 / p}  \ge \lvert x_i \rvert = M
+		\] 
+		Quindi si ottiene che $M \le \left\lVert \mathbf{x}  \right\rVert _p \le n^{1 / p} M$, dove $n$ \`e evidentemente una costante.
+		Ne segue che, nel limite $p\to +\infty$, si ha 
+		\[
+		M\le \lim_{p \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p \le  M \iff \lim_{x \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p = M = \max_{i=1 ,\ldots, n} \lvert x_i \rvert = \left\lVert \mathbf{x}  \right\rVert _\infty
+		\] 
+	\end{proof}
+\end{prop}
+Considerando lo spazio delle funzioni continue in $[a,b]$, $C\big([a,b]\big)$, si pu\`o definire la norma
+\begin{equation}
+	\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p dx\right) ^{1 / p} , \ p\ge 1
+\end{equation}
+\noindent Anche in questo caso, per $p\to +\infty$, si ha la norma
+\begin{equation}
+	\left\lVert f \right\rVert _\infty= \max _{x \in [a,b]}  \lvert f(x) \rvert 
+\end{equation}
+\begin{prop}
+	{}{}
+	Si consideri lo spazio normato $C\big([a,b]\big)$ con la norma $\left\lVert \cdot   \right\rVert _p$; per $p\to +\infty$, la norma p coincide con $\left\lVert \cdot  \right\rVert _\infty$.
+	\begin{proof}
+		Le funzioni $f \in C\big([a,b]\big)$ assumono massimo perch\'e sono continue in un compatto. 
+		Questo significa che $M = \displaystyle \max_{x \in [a,b]} \lvert f(x) \rvert $ \`e ben definito.
+		Trovare la stima superiore \`e facile:
+		\begin{equation*}
+			\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p\right) ^{1 / p} \le \left(\int_{a} ^b M^p dx \right) ^{1/p}  = (b-a)^{1/p} M
+		\end{equation*}
+		Per la stima inferiore, si sa che $\exists x_0 \in [a,b]:\lvert f(x) \rvert = M$; questo vuol dire che, essendo $f$ continua, $\forall \varepsilon $ esiste un intorno di $x_0$, $I_\varepsilon $, in cui $\lvert f(x) \rvert \ge M-\varepsilon $.
+		Secondo questo ragionamento:
+		\[
+		\left(\int_{a} ^b \lvert f(x) \rvert^{p}  dx\right) ^{1/p} \ge \left(\int_{I_\varepsilon } \lvert f(x) \rvert ^p dx\right) ^{1 / p} \ge \delta _\varepsilon ^{1 / p} (M-\varepsilon )
+		\] 
+		con $\delta _\varepsilon = \int_{I_\varepsilon } dx$.
+		Conseguentemente, nel limite $p\to +\infty$:
+		\[
+		\lim_{p \to +\infty} \delta _\varepsilon ^{1/p} (M-\varepsilon ) = M-\varepsilon \le \lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p \le \lim_{p \to +\infty} (b-a)^{1 / p} M= M
+		\] 
+		Visto che questo vale $\forall \varepsilon $, significa che, per $p\to +\infty$, $\left\lVert f(x) \right\rVert _p$ \`e arbitrariamente vicino a $M$, quindi:
+		\[
+			\lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p = M = \max_{x \in [a,b]} \lvert f(x) \rvert = \left\lVert f(x) \right\rVert _\infty
+		\] 
+	\end{proof}
+\end{prop}
+Ora si introducono alcune disuguaglianze come lemmi per poter dimostrare che le norme p sono effettivamente delle norme.
+\begin{lemma}
+	{Disuguaglianza di Young}{}
+	$\forall a,b \in \mathbb{R}, \ a,b>0$ e $\forall p,q>0 : 1 / p + 1 / q = 1$ si ha:
+	\[
+	ab \le \frac{1}{p}a^p + \frac{1}{q}b^q
+	\] 
+	\begin{proof}
+		Si procede per conto diretto usando le propriet\`a dell'esponenziale:
+		\[
+				ab = e^{\ln a} e^{\ln b} = e^{\frac{1}{p} \ln a^p} e^{\frac{1}{q} b^q} = e^{\frac{1}{p}\ln a^p + \frac{1}{q} \ln b^q} \le \frac{1}{p}e^{\ln a^p} + \frac{1}{q} e^{\ln b^q}= \frac{1}{p}a^p + \frac{1}{q}b^q
+		\] 
+		dove si \`e usato il fatto che $f(x) = e^x$ \`e una funzione convessa, visto che ha derivata seconda sempre positiva.
+	\end{proof}
+\end{lemma}
+\begin{lemma}
+	{Disuguaglianza di H\"older}{}
+	Dati comunque $\mathbf{x} ,\mathbf{y} \in \mathbb{R}^n$ e dati $p,q>0$ tali che $1 / p + 1 / q = 1$, si ha:
+	\[
+	\lvert \mathbf{x} \cdot \mathbf{y}  \rvert \le \left\lVert \mathbf{x}  \right\rVert _p \left\lVert \mathbf{y}  \right\rVert _q
+	\] 
+	\begin{proof}
+		Si mostra che
+		\[
+		\sum_{i=1}^{n} \lvert x_i y_i \rvert \le \left\lVert \mathbf{x}  \right\rVert _p \left\lVert y \right\rVert _q \implies \sum_{i=1}^{n} \frac{\lvert x_i \rvert }{\left\lVert \mathbf{x}  \right\rVert _p} \frac{\lvert y_i \rvert }{\left\lVert \mathbf{y}  \right\rVert _q} \le  1
+		\] 
+		Si pu\`o usare la disuguaglianza di Young per i prodotti:
+		\[
+		\sum_{i=1}^{n} \frac{\lvert x_i \rvert }{\left\lVert \mathbf{x}  \right\rVert _p} \frac{\lvert y_i \rvert }{\left\lVert \mathbf{y}  \right\rVert _p} \le \sum_{i=1}^{n} \left(\frac{\lvert x_i \rvert ^p}{p \left\lVert \mathbf{x}  \right\rVert _p^p} + \frac{\lvert y_i \rvert ^q}{q\left\lVert \mathbf{y}  \right\rVert _q^q}\right) =\frac{1}{p} \frac{\sum_{i=1}^{n} \lvert x_i \rvert ^p}{\left\lVert \mathbf{x}  \right\rVert _p^p} + \frac{1}{q}\frac{\sum_{i=1}^{n} \lvert y_i \rvert ^q}{\left\lVert \mathbf{y}  \right\rVert _q^q}
+		\] 
+		\`E evidente che i termini al numeratore coincidono, rispettivamente, con $\left\lVert \mathbf{x}  \right\rVert _p^p$ e $\left\lVert \mathbf{y}  \right\rVert _q^q$, lasciando $1 /p + 1 / q$, che si sa essere pari a $1 $ per assunzione.
+		Questo dimostra la tesi.
+	\end{proof}
+\end{lemma}
+\begin{prop}
+	{Le norme p sono ben definite}{}
+	Le norme $\left\lVert \cdot  \right\rVert _p$ e $\left\lVert \cdot  \right\rVert _\infty$ sono effettivamente delle norme su $\mathbb{R}^n$.
+	\begin{proof}
+		Si deve dimostrare che entrambe le norme soddisfino la definizione.
+		Si nota che le prime due propriet\`a sono immediate per definizione, quindi si mostra la disuguaglianza triangolare.
+		Nel caso della norma infinito, questa \`e di facile verifica perch\'e
+		\[
+		\left\lVert \mathbf{x} + \mathbf{y}  \right\rVert _\infty = \max _i \lvert x_i +y _i \rvert \le  \max _i \left(\lvert x_i \rvert + \lvert y_i \rvert \right) = \left\lVert \mathbf{x}  \right\rVert _\infty + \left\lVert \mathbf{y}  \right\rVert _\infty
+		\] 
+		Per la generica norma $p$, con $1\le p< +\infty$:
+		\[
+		\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p^p = \sum_{i=1}^{n} \lvert x_i + y_i \rvert ^p = \sum_{i=1}^{n} \lvert x_i + y_i \rvert \lvert x_i + y_i\rvert ^{p-1} \le \sum_{i=1}^{n} \left(\lvert x_i \rvert +\lvert y_i \rvert \right) \lvert x_i + y_i \rvert ^{p-1} 
+		\] 
+		Si usa la disuguaglianza di H\"older all'ultimo termine; per farlo, si distribuisce il prodotto e la si applica separatamente alle due somme:
+		\[
+		\begin{split}
+			\sum_{i=1}^{n} \left(\lvert x_i \rvert + \lvert y_i \rvert \right) \lvert x_i+y_i \rvert^{p-1}  &= \sum_{i=1}^{n} \lvert x_i \rvert \lvert x_i+y_i \rvert ^{p-1} + \sum_{i=1}^{n} \lvert y_i \rvert \lvert x_i+y_i \rvert ^{p-1} \\
+			&\le \left(\left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p\right) \left\lVert \begin{pmatrix} \lvert x_1 + y_1 \rvert ^{p-1} \\ \vdots \\ \lvert x_n+y_n \rvert ^{p-1} \end{pmatrix}  \right\rVert _q\\
+			&= \left(\left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p\right)  \left(\sum_{i=1}^{n} \left(\lvert x_i+y_i \rvert^{p / q}    \right)^q \right) ^{1 / q} \\
+			&=\left(\left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p\right) \left\lVert \mathbf{x} +\mathbf{y}  \right\rVert ^{p / q} _p \\
+			&=\left(\left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p\right) \left\lVert \mathbf{x} + \mathbf{y}  \right\rVert _p^{p-1} 
+		\end{split}
+		\] 
+		dove si \`e usato che $p-1 = p / q$ alla terza riga.
+		Con questo, si \`e fatto vedere che
+		\[
+		\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p^p \le \left(\left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p\right) \left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p^{p-1} 
+		\] 
+		Se $\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p = 0$, la tesi \`e immediata, altrimenti si pu\`o semplificare per $\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p^{p-1} $ per ottenere che:
+		\[
+		\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert _p \le \left\lVert \mathbf{x}  \right\rVert _p + \left\lVert \mathbf{y}  \right\rVert _p
+		\] 
+		
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{Ordine delle norme}{}
+	La mappa $p\mapsto \left\lVert \cdot  \right\rVert _p$ \`e debolmente decrescente.
+	\begin{proof}
+		\`E sufficiente mostrarlo per il caso $\left\lVert \mathbf{x}  \right\rVert _p = 1$ per qualche $\mathbf{x} \in \mathbb{R}^n$ perch\'e il caso generico si ottiene tramite moltiplicazione per uno scalare.
+		Si fa vedere, dunque, che se $p' > p$, allora $\left\lVert \mathbf{x}  \right\rVert _{p'} \le 1$.
+		Per definizione:
+		\[
+		\left\lVert \mathbf{x}  \right\rVert _{p'} = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^{p'} \right) ^{1 / p'} \le \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p'} = 1^{p' / p}  = 1
+		\] 
+		visto che $\left\lVert \mathbf{x}  \right\rVert _p = 1 \implies \lvert x_i \rvert \le 1, \ \forall i$, da cui $p' > p \implies \lvert x_i \rvert ^{p'} \le \lvert x_i \rvert ^p$
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Per un generico $n \in \mathbb{N}$, valgono le seguenti disuguaglianze:
+	\begin{enumerate}[(a).]
+		\item $\left\lVert \mathbf{x}  \right\rVert _2 \le \sqrt{n} \left\lVert \mathbf{x}  \right\rVert _\infty$;
+		\item $\left\lVert \mathbf{x}  \right\rVert _1 \le \sqrt{n} \left\lVert \mathbf{x}  \right\rVert _2$.
+	\end{enumerate}
+	\begin{proof}
+		Si dimostrano i due punti.
+		\begin{enumerate}[(a).]
+			\item Per conto diretto:
+				\[
+				\left\lVert \mathbf{x}  \right\rVert _2 = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^2 \right) ^{1 / 2}  \le \left(\sum_{i=1}^{n} \left\lVert \mathbf{x}  \right\rVert _\infty^2\right) ^{1 / 2} = \sqrt{n} \left\lVert \mathbf{x}  \right\rVert _\infty
+				\] 
+			\item Si costruisce il vettore $\pmb{\sigma } $ composto dai segni delle varie componenti del vettore $\mathbf{x} $, cio\`e $\sigma _i = x_i / \lvert x_i \rvert $; in questo modo $\left\lVert \mathbf{x}  \right\rVert _1 = \sum_{i=1}^{n} \lvert x_i \rvert = \sum_{i=1}^{n} x_i \sigma _i = \mathbf{x}  \cdot \pmb{\sigma } $.
+				Usando la disuguaglianza di H\"older, si ha che $\mathbf{x} \cdot \pmb{\sigma } \le \left\lVert \mathbf{x}  \right\rVert _2 \left\lVert \pmb{\sigma }  \right\rVert_2 $; visto che
+				\[
+				\left\lVert \pmb{\sigma }  \right\rVert _2 = \left(\sum_{i=1}^{n} \sigma _i^2\right) ^{1 / 2} = \left(\sum_{i=1}^{n} (\pm 1)^2 \right) ^{1 / 2} = \sqrt{n} 
+				\] 
+			si ottiene la tesi.	
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\subsection{Nozioni di topologia}
+Dato uno spazio metrico $(X,d)$, si ricordano le definizioni di palla aperta di centro $x \in X$ e di raggio $r>0$:
+\[
+B_r(x) = \left\{ y \in X : d(x,y) < r \right\} 
+\] 
+\`E analogamente possibile dare la definizione di palla chiusa come l'insieme
+\[
+\overline{B}_r(x) = \left\{ y \in X : d(x,y) \le r \right\} 
+\] 
+che corrisponde alla palla aperta unita al suo bordo.
+A questo punto, si pu\`o dare una definizione di insieme aperto.
+\begin{definizione}
+	{Insieme aperto}{}
+	Dato $(X,d)$ spazio metrico, si dice che $A  \subset X$ \`e aperto se 
+	\[
+	\forall x \in A, \ \exists r > 0 : B_r (x) \subseteq A
+	\] 
+\end{definizione}
+\begin{definizione}
+	{Intorno}{}
+	Dato $U \subset X$, si dice che $U$ \`e un intorno di $x \in X$ se $\exists A$ aperto contenente $x$ e tale che $A \subseteq U$.
+\end{definizione}
+\noindent Gli insiemi aperti rimangono tali sotto unioni infinite e intersezioni finite, il che permette di dare una nozione pi\`u astratta e generale di cosa significhi per un insieme essere aperto. 
+Intanto si dimostrano queste propriet\`a.
+\begin{prop}
+	{}{}
+	Sia $F$ una famiglia di insiemi aperti; allora:
+	\begin{enumerate}[(a).]
+		\item l'unione, anche infinita, di elementi di $F$ \`e ancora un aperto;
+		\item l'intersezione di un numero finito di elementi di $F$ \`e ancora un aperto.
+	\end{enumerate}
+	\begin{proof}
+		Si dimostrano i due punti.
+		\begin{enumerate}[(a).]
+			\item $\forall A \in F$ e $x \in A$, si ha $r>0:B_r(x) \subseteq A$, il che implica che questa sar\`a contenuta, a maggior ragione, nell'unione indipendentemente se sia finita o infinita. 
+			\item Siano $A,B \in F$ e $x \in A \cap B$; visto che $A$ e $B$ sono aperti, esistono $r_1,r_2>0$ tale che $B_{r_1} (x) \subseteq A , \ B_{r_2} (x) \subseteq B$. 
+				Senza perdita di generalit\`a, si pu\`o assumere $r_1\le r_2$, da cui 
+				\[
+				A \supseteq B_{r_1} (x) \subseteq B_{r_2} (x) \subseteq B\implies B_{r_1} (x) \subseteq A\cap B
+				\] 
+				Visto che $x$ \`e un generico punto di $A \cap B$, questo vale per l'intera intersezione, quindi $A \cap B$ \`e aperto.
+				Per induzione, si ottiene che l'intersezione di un certo numero finito di insiemi aperti \`e ancora aperta.
+
+				Al contrario, considerando un'intersezione infinita, questo non \`e pi\`u vero: l'intersezione infinita della successione di insiemi $B_{1 / n} (x)$ converge al solo punto $\left\{ x \right\} $, che non \`e aperto in generale (cio\`e a meno di non considerare la topologia discreta).
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\noindent Per passaggio al complementare, si ottengono le seguenti propriet\`a per gli insiemi chiusi:
+\begin{itemize}
+	\item se $F$ \`e una famiglia finita di insiemi chiusi, allora $\bigcup _{B \in F}  B $ \`e chiuso;
+	\item se $F$ \`e una famiglia, anche infinita, di insiemi chiusi, allora $\bigcap _{B \in F}  B $ \`e chiuso;
+\end{itemize}
+Da queste considerazioni, si generalizza la concezione di insieme aperto con la definizione di topologia.
+\begin{definizione}
+	{Topologia}{}
+	Sia $X$ un insieme; un suo sottoinsieme $\tau $ \`e detto \textit{topologia} se:
+	\begin{enumerate}[(T1).]
+		\item $\varnothing,X \in \tau $;
+		\item $\forall F\subseteq \tau , \ \bigcup_{A \in F} A \in \tau $;
+		\item $\forall F\subseteq \tau : \lvert F \rvert \in \mathbb{N} \setminus \left\{ 0 \right\} $, si ha $\bigcap_{A \in F} A \in \tau $.
+	\end{enumerate}
+\end{definizione}
+\subsection{Compattezza e completezza}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
+
 \section{Calcolo differenziale in pi\`u variabili}
 \subsection{Derivate parziali}
 
@@ -513,7 +810,7 @@ Si osserva che l'intersezione di convessi \`e ancora convessa perch\'e per $x,y 
 \end{prop}
 \begin{definizione}
 	{Inviluppo convesso}{}
-	Sia $S$ un insieme; il suo inviluppo convesso \`e definito come il pi\`u piccolo insieme convesso che contiene esse e si indica con $\mathrm{co} (S)$.
+	Sia $S$ un insieme; il suo inviluppo convesso \`e definito come il pi\`u piccolo insieme convesso che contiene $S$ e si indica con $\mathrm{co} (S)$.
 \end{definizione}
 \noindent L'inviluppo convesso di un insieme si ottiene tramite unione di tutte le combinazioni convesse dei punti di $s$.
 \begin{definizione}
@@ -581,12 +878,130 @@ Si osserva che l'intersezione di convessi \`e ancora convessa perch\'e per $x,y 
 				0\le \nabla f(x_1) (x_1-x_0) - \nabla f(x_0)(x_1-x_0) = \big(\nabla f(x_1) - \nabla f(x_0)\big)(x_1-x_0)
 				\] 
 			\item ($\Leftarrow$) Sia $t>s$, con $t,s \in [0,1]$ e siano $x'_0 = x_s$, $x'_1 = x_t$.
+				Visto che 
+				\[
+					(\nabla f (x_1) - \nabla f(x_0))(x_1-x_0) \ge 0, \ \forall x_1,x_0 \in \Omega 
+				\] 
+				vale anche, in particolare, per $x'_0, x'_1$, quindi:
+				\[
+				\begin{split}
+					0&\le (\nabla f (x_t) - \nabla f(x_s))(x_t-x_s) = (\nabla f(x_t)-\nabla f(x_s))(x_1-x_0)(t-s)\\
+					 &\le (\nabla f(x_t) -\nabla f(x_s))(x_1-x_0)= \varphi '(t) - \varphi '(s)
+				\end{split}
+				\] 
+				dove si \`e usato che $1\ge t-s > 0$. Per arbitrariet\`a di $t$ ed $s$, con $t>s$, si conclude che $\varphi '(t)$ \`e crescente, quindi $\varphi (t)$ \`e convessa, quindi $f$ \`e convessa.
 		\end{itemize}
 	\end{proof}
 \end{teorema}
-\begin{center}
-	\color{asdf} Riprendere da pagina 45 e integrare dimostrazione 1D per funzioni convesse
-\end{center}
+\begin{teorema}
+	{}{}
+	Sia $f \in C^2(\Omega )$; allora sono equivalenti le seguenti affermazioni:
+	\begin{enumerate}[(a).]
+		\item $f$ \`e convessa;
+		\item $\forall x \in \Omega $, la matrice Hessiana in $x$ \`e semi-definita positiva;
+		\item $\forall x_0,x_1 \in \Omega , \ f(x_1)\ge f(x_0) + \nabla f(x_0)(x_1-x_0)	$.
+	\end{enumerate}
+	\begin{proof}
+		Si usano le stesse considerazioni fatte nel preambolo della dimostrazione del teorema precedente.
+
+		Visto che $f$ \`e di classe $C^2$, significa che $\varphi ''$ \`e ben definita e continua.
+		Per funzioni di una variabile, si sa che $f$ \`e convessa se e solo se $\varphi ''(t)\ge 0, \ \forall t \in [0,1]$ e $\forall x_0,x_1 \in \Omega $.
+		Si osserva che
+		\[
+			\begin{split}
+				\varphi '' &= \frac{d }{d t} \varphi '(t)=\frac{d }{d t} \nabla f(x_t)(x_1-x_0) = \nabla ^2 f(x_t) \frac{d x_t}{d t} (x_1-x_0) \\
+				&= \nabla ^2 f(x_t) (x_1-x_0)^2 = (x_1-x_0)^\top H_f (x_t) (x_1-x_0)
+			\end{split}
+		\] 
+		Si divide la dimostrazione nelle varie implicazioni.
+		\begin{itemize}
+			\item (a$\iff$b) Si osserva che,$\forall t \in [0,1], \ x_0,x_1 \in \Omega $, $f$ \`e convessa se e solo se $\varphi ''(t)\ge 0$ se e solo se $(x_1-x_0)^\top H_f(x_t)(x_1-x_0) \ge 0$ se e solo se $H_f(x_t) $ \`e semi-definita positiva se e solo se $H_f$ \`e semi-definita positiva su $\Omega $.
+				L'ultima \`e data dal fatto che per $x \in \Omega $, per cui $x = tx + (1-t)x\Rightarrow x_t \in \Omega $.
+			\item (b $\Rightarrow $ c) Si considera l'espansione in serie di Taylor con resto di Lagrange:
+				\[
+				f(x) = f(x_0) + \nabla f(x_0) (x-x_0) + \frac{1}{2} \nabla ^2 f(\xi ) (x-x_0)^2
+				\] 
+				con $\xi  \in [x,x_0]$.
+				Visto che $H_f$ \`e semi-definita positiva su $\Omega $, l'ultimo addendo \`e non-negativo, quindi:
+				\[
+				f(x) \ge f(x_0) + \nabla f(x_0) (x-x_0)
+				\] 
+				Per $x=x_1$, si ottiene l'implicazione voluta.
+			\item (c $\Rightarrow $ a) Si rammenta che $f$ \`e convessa se e solo se il suo epigrafico \`e convesso.
+				Definendo
+				\[
+				h_{x_0} (x) = f(x_0) + \nabla f(x_0) (x-x_0)
+				\] 
+				si nota che
+				\[
+				\mathrm{Ep} (f) = \bigcap_{x_0\in \Omega } \mathrm{Ep} \big(h_{x_0} (x)\big)
+				\] 
+				Infatti, se $(x_0,a)$ non appartiene all'epigrafico di $f$, l'iperpiano $h_{x_0} (x)$ ha epigrafico che lo esclude.
+				Visto che l'intersezione di convessi \`e convessa e visto che l'epigrafico di un iperpiano \`e convesso, allora $f$ \`e convessa.
+		\end{itemize}
+	\end{proof}
+\end{teorema}
+Ora si mette in relazione la convessit\`a e la continuit\`a di funzioni, cio\`e si cerca di capire quando \`e possibile dire che una funzione convessa \`e continua.
+\begin{definizione}
+	{Locale limitatezza}{}
+	Una funzione $f: \Omega \to \mathbb{R}$, con $\Omega $ aperto, si dice \textit{localmente limitata} se $\forall x \in \Omega , \ \exists \varepsilon >0 : B_\varepsilon (x) \subseteq \Omega $ e $f |_{B_\varepsilon (x)} $ \`e limitata.
+\end{definizione}
+\begin{teorema}
+	{}{loclip}
+	Se $\Omega $ \`e convesso e aperto e $f:\Omega \to \mathbb{R}$ \`e convessa e localmente limitata, allora $f$ \`e localmente lipschitiziana. 
+	\begin{proof}
+		Senza perdita di generalit\`a, si assume che $0 \in \Omega $ e $f(0) = 0$.
+		Per la locale limitatezza, esistono $r, M > 0$ tali che $\sup_{\lvert x \rvert \le  r} f(x) \le M$.
+		Sia $v \in \overline{B}_r(0)$ e 
+		\[
+		w = \begin{cases}
+			rv / \lvert v \rvert &\, \text{ se } v\neq 0\\
+			0 &\, \text{ se } v = 0
+		\end{cases}
+		\] 
+		Si nota che per $\lambda  = \lvert v \rvert  / r \in [0,1]$, si ha $v = \lambda w + (1-\lambda ) 0$, quindi, visto che $f$ \`e convessa, si trova che:
+		\[
+		f(v) \le \lambda f(w) + (1-\lambda ) f(0) = \frac{\lvert v \rvert }{r} f(w) \le \frac{M}{r} \lvert v \rvert 
+		\] 
+		Visto che $0 = \mu  v  + (1-\mu )(-w)$, con $\mu  = r / (\lvert v \rvert +r) \in (0,1]$, si ha, nuovamente, che:
+		\[
+		f(v) \ge - \frac{1-\mu }{\mu }f(-w) = \frac{\mu -1}{\mu } f(-w) = -\frac{\lvert v \rvert }{r} f(-w) \ge - \frac{M}{r}\lvert v \rvert 
+		\] 
+	In questo modo, si trova, dalle due disuguaglianze, che $\lvert f (v)\rvert \le \frac{M}{r} \lvert v \rvert  $, per cui:
+	\[
+	\lvert f(v_1-v_2) \rvert \le \frac{M}{r}\lvert v_1-v_2 \rvert 
+	\] 
+	il che vuol dire che $f$ \`e localmente lipschitiziana.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	{}{}
+	Sotto le ipotesi del teorema \ref{th:loclip}, il fatto che $f$ sia localmente lipschitiziana implica che $f$ \`e continua.
+\end{corollario}
+La locale limitatezza \`e una condizione necessaria perch\'e esistono spazi in cui le mappe lineari non sono continue, ma sono convesse per definizione.
+Si nota, inoltre, che se $f:\Omega \to\mathbb{R}$ \`e convessa e $B = \mathrm{co} (F)$, con $F$ finito, si ha
+\[
+\sup_{x \in B } f(x) = \max _{x \in F} f(x)
+\] 
+Se la dimensione dello spazio vettoriale in cui \`e contenuto $\Omega $ \`e finita, allora l'ipotesi di locale limitatezza non \`e pi\`u necessaria; infatti, si ha la seguente.
+\begin{prop}
+	{}{}
+	Se $\Omega \subseteq \mathbb{R}^n$ \`e un aperto convesso e $f:\Omega \to \mathbb{R}$ \`e convessa, allora $f$ \`e localmente limitata.
+	\begin{proof}
+		Visto che $\Omega $ \`e aperto, $\forall p \in \Omega , \ \exists r >0 : \overline{B}_r(p) \subset \Omega $.
+		Visto che tutte le norme sono equivalenti su $\mathbb{R}^n$, si considerano le palle in norma 1. 
+		Sia $F = \left\{ p, p\pm r e_j : 1\le j\le n \right\} $ l'insieme che contiene il punto $p$ e tutti i punti che distano da esso $r$ in ciascuna direzione di $\mathbb{R}^n$, positiva e negativa.
+		Si nota che $\forall x \in \overline{B}_r (p), \ x \in \mathrm{co} (F)$, cio\`e
+		\[
+		x = \sum_{i=1}^{\lvert F \rvert } \lambda _i \xi _i
+		\] 
+		per $\xi _i \in F$; per convessit\`a di $f$:
+		\[
+		f(x) \le \sum_{i=1}^{\lvert F \rvert } \lambda _i f(\xi _i) \le \max _{\xi \in F} f(\xi )
+		\] 
+		quindi $f$ \`e localmente limitata.
+	\end{proof}
+\end{prop}
 \newpage 
 
 \section{Calcolo integrale in pi\`u variabili}
@@ -2481,126 +2896,6 @@ Sia $A\subset \mathbb{R}^3$ un insieme semplicemente connesso; allora ogni forma
 	Per il teorema \ref{th:cce}, $\omega = Xdx + Ydy + Zdz$ \`e esatta.
 	\end{proof}
 \end{teorema}
-\newpage
-\section{Spazi metrici}
-\begin{center}
-	\textit{
-L'idea dietro gli spazi metrici \`e quella di avere uno spazio sul quale \`e possibile misurare le distanze tra gli elementi di tale spazio, replicando la misurazione in spazi euclidei.
-Si definir\`a la nozione di distanza, che sarebbe un'indicazione di quanto due elementi dello spazio sono lontani tra loro.}
-\end{center}
-\subsection{Nozioni introduttive}
-\begin{definizione}
-	{Spazio metrico}{}
-	Sia $X$ un insieme; si dice che $(X,d)$ \`e uno spazio metrico se $d$ \`e una distanza su $X$, ossia una funzione $d:X \times X\to [0,+\infty)$ tale che:
-	\begin{enumerate}[(d1).]
-		\item $d(x,y) = 0 \iff x= y, \ \forall  x,y \in X$;
-		\item $d(x,y) = d(y,x), \ \forall x,y \in X$;
-		\item $d(x,z) \le d(x,y) + d(y,z) , \ \forall x,y,z \in X$.
-	\end{enumerate}
-\end{definizione}
-\noindent Si nota che, dato $Y \subseteq X$, con $(X,d)$ spazio metrico, anche $(Y,d | _Y)$ \`e uno spazio metrico.
-Una classe importante di spazi metrici sono gli spazi normati.
-\begin{definizione}
-	{Spazio normato}{}
-	Uno spazio normato \`e uno spazio vettoriale $V$ su $\mathbb{K}$ sul quale \`e definita una norma $\left\lVert \cdot  \right\rVert $, cio\`e una funzione $\left\lVert \cdot  \right\rVert : V \to [0, + \infty)$ tale che:
-	\begin{enumerate}[(n1).]
-		\item $\left\lVert \mathbf{x}  \right\rVert = 0 \iff \mathbf{x} = 0 $;
-		\item $\left\lVert \lambda \mathbf{x}  \right\rVert = \lvert \lambda  \rvert \left\lVert \mathbf{x}  \right\rVert , \ \forall X \in V , \forall \lambda  \in \mathbb{K}$;
-		\item $\left\lVert \mathbf{x} +\mathbf{y}  \right\rVert \le \left\lVert \mathbf{x}  \right\rVert + \left\lVert \mathbf{y}  \right\rVert , \ \forall \mathbf{x} ,\mathbf{y} \in V$.
-	\end{enumerate}
-	Uno spazio normato si indica con la notazione $(V,\left\lVert \cdot  \right\rVert )$.
-\end{definizione}
-\noindent Si pu\`o dimostrare che la distanza $D(\mathbf{x} ,\mathbf{y} ) = \left\lVert \mathbf{x} - \mathbf{y}  \right\rVert $ \`e ben definita e rende $(V, D)$ uno spazio metrico.
-Questo sta anche a significare che ogni spazio normato \`e anche uno spazio metrico con la distanza derivante dalla norma.
-\subsection{Le norme p}
-Seguono alcuni esempi di spazi normati.
-Sullo spazio vettoriale $\mathbb{K}^n$, con $\mathbb{K}$ campo generico, si pu\`o definire la norma
-\begin{boxenv}[]
-\begin{equation}
-	\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p}
-\end{equation}
-\end{boxenv}
-\noindent con $\mathbf{x} \in \mathbb{K}^n$ e $p\ge 1$. 
-Si pu\`o dimostrare che, nel limite $p \to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ diventa:
-\begin{boxenv}[]
-\begin{equation}
-	\left\lVert \mathbf{x}  \right\rVert _\infty = \max_{i=1,\ldots,n} \lvert x_i \rvert 
-\end{equation}
-\end{boxenv}
-\begin{prop}
-	{}{}
-	Dato lo spazio normato $(\mathbb{K}^n,\left\lVert \cdot  \right\rVert _p)$, nel limite $p\to +\infty$, la norma $\left\lVert \cdot  \right\rVert _p$ coincide con $\left\lVert \cdot  \right\rVert _\infty$.
-	\begin{proof}
-		L'idea \`e di racchiudere $\left\lVert \mathbf{x}  \right\rVert _p$ tra due valori che, per $p\to +\infty$, coincidono con $\left\lVert \mathbf{x}  \right\rVert _\infty$.
-		Si nota che se $\left\lVert \mathbf{x}  \right\rVert _\infty = M \Rightarrow $ esiste una direzione lungo cui $\mathbf{x} $ raggiunge $\pm M$, cio\`e $|\mathbf{x} \cdot \mathbf{e} _i| = M$. 
-		Questo significa che:
-		\[
-			\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x_i \rvert ^p\right) ^{1 / p} \le \left(\sum_{i=1}^{n} M^{p} \right) ^{1 / p} = \left(n M^p\right) ^{1 / p} = n^{1 / p} M
-		\] 
-		Allo stesso tempo 
-		\[
-		\left\lVert \mathbf{x}  \right\rVert _p = \left(\sum_{i=1}^{n} \lvert x _i\rvert ^p\right) ^{1 / p}  \ge \lvert x_i \rvert = M
-		\] 
-		Quindi si ottiene che $M \le \left\lVert \mathbf{x}  \right\rVert _p \le n^{1 / p} M$, dove $n$ \`e evidentemente una costante.
-		Ne segue che, nel limite $p\to +\infty$, si ha 
-		\[
-		M\le \lim_{p \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p \le  M \iff \lim_{x \to +\infty} \left\lVert \mathbf{x}  \right\rVert _p = M = \max_{i=1 ,\ldots, n} \lvert x_i \rvert = \left\lVert \mathbf{x}  \right\rVert _\infty
-		\] 
-	\end{proof}
-\end{prop}
-Considerando lo spazio delle funzioni continue in $[a,b]$, $C\big([a,b]\big)$, si pu\`o definire la norma
-\begin{boxenv}[]
-\begin{equation}
-	\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p dx\right) ^{1 / p} , \ p\ge 1
-\end{equation}
-\end{boxenv}
-\noindent Anche in questo caso, per $p\to +\infty$, si ha la norma
-\begin{boxenv}[]
-\begin{equation}
-	\left\lVert f \right\rVert _\infty= \max _{x \in [a,b]}  \lvert f(x) \rvert 
-\end{equation}
-\end{boxenv}
-\begin{prop}
-	{}{}
-	Si consideri lo spazio normato $C\big([a,b]\big)$ con la norma $\left\lVert \cdot   \right\rVert _p$; per $p\to +\infty$, la norma p coincide con $\left\lVert \cdot  \right\rVert _\infty$.
-	\begin{proof}
-		Le funzioni $f \in C\big([a,b]\big)$ assumono massimo perch\'e sono continue in un compatto. 
-		Questo significa che $M = \displaystyle \max_{x \in [a,b]} \lvert f(x) \rvert $ \`e ben definito.
-		Trovare la stima superiore \`e facile:
-		\begin{equation*}
-			\left\lVert f \right\rVert _p = \left(\int_{a} ^b \lvert f(x) \rvert ^p\right) ^{1 / p} \le \left(\int_{a} ^b M^p dx \right) ^{1/p}  = (b-a)^{1/p} M
-		\end{equation*}
-		Per la stima inferiore, si sa che $\exists x_0 \in [a,b]:\lvert f(x) \rvert = M$; questo vuol dire che, essendo $f$ continua, $\forall \varepsilon $ esiste un intorno di $x_0$, $I_\varepsilon $, in cui $\lvert f(x) \rvert \ge M-\varepsilon $.
-		Secondo questo ragionamento:
-		\[
-		\left(\int_{a} ^b \lvert f(x) \rvert^{p}  dx\right) ^{1/p} \ge \left(\int_{I_\varepsilon } \lvert f(x) \rvert ^p dx\right) ^{1 / p} \ge \delta _\varepsilon ^{1 / p} (M-\varepsilon )
-		\] 
-		con $\delta _\varepsilon = \int_{I_\varepsilon } dx$.
-		Conseguentemente, nel limite $p\to +\infty$:
-		\[
-		\lim_{p \to +\infty} \delta _\varepsilon ^{1/p} (M-\varepsilon ) = M-\varepsilon \le \lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p \le \lim_{p \to +\infty} (b-a)^{1 / p} M= M
-		\] 
-		Visto che questo vale $\forall \varepsilon $, significa che, per $p\to +\infty$, $\left\lVert f(x) \right\rVert _p$ \`e arbitrariamente vicino a $M$, quindi:
-		\[
-			\lim_{p \to +\infty} \left\lVert f(x) \right\rVert _p = M = \max_{x \in [a,b]} \lvert f(x) \rvert = \left\lVert f(x) \right\rVert _\infty
-		\] 
-	\end{proof}
-\end{prop}
-Ora si introducono alcune disuguaglianze come lemmi per poter dimostrare che le norme p sono effettivamente delle norme.
-\begin{lemma}
-	{Disuguaglianza di Young}{}
-	$\forall a,b \in \mathbb{R}, \ a,b>0$ e $\forall p,q>0 : 1 / p + 1 / q = 1$ si ha:
-	\[
-	ab \le \frac{1}{p}a^p + \frac{1}{q}b^q
-	\] 
-	\begin{proof}
-		Si procede per conto diretto usando le propriet\`a dell'esponenziale:
-		\[
-				ab = e^{\ln a} e^{\ln b} = e^{\frac{1}{p} \ln a^p} e^{\frac{1}{q} b^q} = e^{\frac{1}{p}\ln a^p + \frac{1}{q} \ln b^q} \le \frac{1}{p}e^{\ln a^p} + \frac{1}{q} e^{\ln b^q}= \frac{1}{p}a^p + \frac{1}{q}b^q
-		\] 
-		dove si \`e usato il fatto che $f(x) = e^x$ \`e una funzione convessa, visto che ha derivata seconda sempre positiva.
-	\end{proof}
-\end{lemma}
 
 
 
