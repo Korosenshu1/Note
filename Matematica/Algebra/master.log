@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  23 JUN 2025 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.24)  1 JUL 2025 01:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1649,18 +1649,18 @@ Underfull \hbox (badness 2150) in paragraph at lines 774--776
 [19]
 
 [20]
-Underfull \hbox (badness 1210) in paragraph at lines 991--992
-[]\T1/jkp/m/n/10.95 Un in-sie-me $\OML/jkp/m/it/10.95 G$ \T1/jkp/m/n/10.95 è det-to \T1/jkp/m/it/10.95 grup-po com-mu-ta-ti-vo \T1/jkp/m/n/10.95 se è un grup-po e se sod-di-sfa
- []
-
-LaTeX Font Info:    Trying to load font information for U+jkpsyd on input line 1009.
-(/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyd.fd
-File: ujkpsyd.fd 2006/08/15 v1.0
-)
 
 [21]
 
 [22]
+Underfull \hbox (badness 1210) in paragraph at lines 1125--1126
+[]\T1/jkp/m/n/10.95 Un in-sie-me $\OML/jkp/m/it/10.95 G$ \T1/jkp/m/n/10.95 è det-to \T1/jkp/m/it/10.95 grup-po com-mu-ta-ti-vo \T1/jkp/m/n/10.95 se è un grup-po e se sod-di-sfa
+ []
+
+LaTeX Font Info:    Trying to load font information for U+jkpsyd on input line 1143.
+(/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyd.fd
+File: ujkpsyd.fd 2006/08/15 v1.0
+)
 
 [23]
 
@@ -1689,24 +1689,28 @@ File: ujkpsyd.fd 2006/08/15 v1.0
 [35]
 
 [36]
-Underfull \hbox (badness 1062) in paragraph at lines 1660--1661
+
+[37]
+
+[38]
+Underfull \hbox (badness 1062) in paragraph at lines 1795--1796
 []\T1/jkp/m/n/10.95 L'idea è di mo-stra-re che i due in-sie-mi so-no con-te-nu-ti uno
  []
 
 
 
-[37]
-
-[38]
-
 [39]
+
+[40]
+
+[41]
 
 Package caption Warning: Unused \captionsetup[table] on input line 157.
 See the caption package documentation for explanation.
 
 
 
-[40] (./master.aux)
+[42] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1715,10 +1719,10 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 48061 strings out of 473190
- 1108986 string characters out of 5722593
- 1764034 words of memory out of 5000000
- 70350 multiletter control sequences out of 15000+600000
+ 48081 strings out of 473190
+ 1109287 string characters out of 5722593
+ 1764033 words of memory out of 5000000
+ 70360 multiletter control sequences out of 15000+600000
  685870 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,19n,121p,10937b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1756,10 +1760,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsya.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsyd.pfb>
-Output written on master.pdf (40 pages, 336719 bytes).
+Output written on master.pdf (42 pages, 346732 bytes).
 PDF statistics:
- 600 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
- 218 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -971,6 +971,140 @@ Questo $b$ ha la propriet\`a per cui se $m \in \mathbb{Z}^+$ tale che $[a]_p^m =
 \begin{proof}
 	Per vederlo, si usa la divisione euclidea per scrivere $m=qb +r$ e si ricava che $[a]_p^r = [1]_p$; a questo punto, si vede che deve essere $r=0$ altrimenti verrebbe contraddetta la minimalit\`a di $b$.
 \end{proof}
+\subsection{La funzione di Eulero}
+\begin{definizione}
+	{Funzione di Eulero}{}
+	La funzione $\phi $ di Eulero \`e definita come
+	\[
+		\phi : \mathbb{N}^{>0} \to \mathbb{N}^{>0} \hspace{1cm} \phi (n) = \# \left\{ a \le n  \mid \operatorname{gcd}(a,n) =1 \right\} 
+	\] 
+	ossia rappresenta il numero degli interi positivi minori o uguali ad $n$ che sono anche coprimi con $n$ stesso.
+\end{definizione}
+\noindent Tramite questa, si enuncia un teorema che \`e la generalizzazione del piccolo teorema di Fermat.
+\begin{teorema}
+	{}{fgen}
+	Sia $m \in \mathbb{Z}^{>0} $ e $a \in \mathbb{Z}$ tale che $\operatorname{gcd}(a,m) = 1$; allora
+	\[
+	a^{\phi (m)} \equiv 1 \pmod{m} 
+	\] 
+\begin{proof}
+	Se $m=1$, \`e ovvio perch\'e tutti i numeri sono congrui fra loro modulo $1$.
+	Si pu\`o assumere, allora, $m\ge 2 $ e si considerano le classi di resto $[a^0], [a^1], \ldots$; visto che queste sono le classi di resto modulo $m$, devono essere tutte diverse fino a un certo $k$, che \`e il pi\`u piccolo numero per cui una classe di resto si ripete: $[a^j] = [a^k]\Rightarrow j=0$, altrimenti $[a^{j-1} ] = [a^{k-1} ]$ che \`e assurdo perch\'e $k$ era il pi\`u piccolo.
+	Quindi $[a^k] = [a^0]$, cio\`e $a^k\equiv 1\pmod{m} $.
+	Si nota che se $a$ \`e coprimo con $m$, allora anche tutte le sue potenze lo sono, il che vuol dire che le classi di resto distinte sono, al massimo, tante quante $\phi (m)$, cio\`e $k\le \phi (m)$.
+
+	Se $k=\phi (m)$, il teorema \`e dimostrato.
+	Si assume, altrimenti, che sia $k<\phi (m)$ e che sia $b<m$ un intero coprimo con $m$ tale che $[b]\not \in \left\{ [a^0], [a^1], \ldots, [a^{k-1} ] \right\} $; allora gli elementi $[ba^0], \ldots, [ba^{k-1} ]$ sono tutti distinti fra loro e dai precedenti perch\'e, essendo $b$ corpimo con $m$ per assunzione, se fosse $[ba^s] = [ba^t] $ per qualche $0\le s,  t<k$, si avrebbe $[a^s]=[a^t]$ per le regole di divisione delle congruenze, da cui $s=t$.
+	Invece, se fosse $[ba^s] = [a^t]$ per $s,t$ come prima, moltiplicando per $a^{k-s} $ (che \`e sempre coprimo con $m$), si ottiene $[b] = [a^{k-s+t} ]$, il che \`e assurdo per costruzione di $b$.
+
+	In questo modo, si hanno $2k$ elementi distinti fra le $\phi (m)$ classi di resto coprime con $m$; se $\phi (m) = 2k$, il teorema \`e dimostrato, altrimenti si ripete il procedimento finch\'e non si esauriscono le classi di resto, ottenendo $kd = \phi (m)$ per qualche intero $d > 0$.
+A questo punto: 
+\[
+a^{\phi (m)} \equiv a^{kd} \equiv (a^k)^d \equiv 1^d \equiv 1 \pmod{m} 
+\] 
+che dimostra il teorema.
+\end{proof}	
+\end{teorema}
+\begin{obs}
+	Si nota che per $m=p$ primo, si ritrova l'enunciato del piccolo teorema di Fermat, visto che $\phi (p) = p-1$.
+\end{obs}
+\noindent Vista l'importanza della funzione $\phi $, si cerca un modo per poterla calcolare efficacemente. 
+\begin{definizione}
+	{Funzione aritmetica moltiplicativa}{}
+	Una funzione $f: \mathbb{N}^{>0} \to \mathbb{N}^{>0}  $ si dice \textit{aritmetica moltiplicativa} se $\forall a,b \in \mathbb{Z} : \operatorname{gcd}(a,b) =1 \Rightarrow f(ab) = f(a)f(b)$.
+\end{definizione}
+\begin{prop}
+	{}{}
+	La funzione di Eulero $\phi $ \`e aritmetica moltiplicativa.
+	\begin{proof}
+		Si nota, preliminarmente, che dati $s,t,m $ interi, con $m>0$, tali che $s\equiv t \pmod{m} $, si ha che $s$ \`e coprimo con $m$ se e solo se lo \`e $t$, visto che la congruenza \`e una relazione di equivalenza.
+
+		Sia, ora, $u \in \mathbb{Z}^{>0} $ coprimo con $ab$ e $u<ab$; allora $u$ \`e, in particolare, coprimo sia con $a$ che con $b$, quindi risolve un sistema del tipo 
+		\[
+		\begin{cases}
+			x\equiv v \pmod{a} \\
+			x\equiv w \pmod{b} 
+		\end{cases}
+		\] 
+		con $v \in \mathbb{Z}^{>0} $ coprimo con $a$ e $v<a$ e $w \in \mathbb{Z}^{>0} $ coprimo con $b$ e $w<b$.
+		Viceversa, per il teorema cinese del resto, ogni sistema del genere ha una sola soluzione intera positiva minore di $ab$ e, essendo coprima con $a$ e con $b$, lo \`e anche con $ab$.
+		Quindi i numeri interi positivi coprimi con $ab$ e minori di $ab$ sono tanti quanti i sistemi della forma di quello sopra, che sono $\phi (a) \phi (b)$, cio\`e il prodotto delle possibili scelte di $v$ e $w$.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	{}{}
+	Sia $m \in \mathbb{Z}^{>0} $; se $m = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k} $ \`e la sua decomposizione in fattori primi, allora:
+	\[
+	\phi (m) = \left(p_1^{a_1} - p_1^{a_1-1} \right)  \cdots \left(p_k^{a_k} - p_k^{a_k-1} \right) 
+	\] 
+	\begin{proof}
+		Dalla proposizione precedente, si sa che $\phi (m)$ \`e il prodotto dei $\phi (p_i^{a_i} )$; si deve, dunque, capire quanto vale $\phi (p^n)$, con $p$ numero primo.
+		Si nota che gli interi positivi minori di $p^n$ sono tutti primi con $p^n$, tranne quelli che sono multipli di $p$; tuttavia, i multipli di $p$ minori di $p^n$ sono proprio $p^{n-1} $, quindi $\phi (p^n) = p^n - p^{n-1} $.
+	\end{proof}
+\end{teorema}
+\begin{esempio}
+	Con la teoria finora sviluppata, si pu\`o calcolare subito la classe di resto di $2^{365} $ modulo $225$; visto che $\phi (225) = (25-5)(9-3) =120$, per il teorema \ref{th:fgen}, si ha:
+	\[
+	2^{120} \equiv 1 \pmod{225} 
+	\] 
+	quindi 
+	\[
+	2^{365} \equiv (2^{120} )^3 \cdot 2^5 \equiv 2^5 \equiv 32 \pmod{225} 
+	\] 
+\end{esempio}
+Si nota che $\phi (m)$ non \`e il minimo intero che soddisfa il teorema \ref{th:fgen}; infatti, per questo teorema, si ha $2^{8}\equiv 1 \pmod{15} $, ma, d'altra parte, vale anche $2^4 \equiv 1 \pmod{15} $. 
+Questo si ha perch\'e $1^n$ \`e congruo a $1$ modulo $m$ per qualunque $n$; inoltre, se $m>2$, si ha $\phi (m) \neq 1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 
 \section{Teoria dei gruppi}
@@ -1274,10 +1408,12 @@ Questo \`e un esempio in cui le leggi di composizione di gruppo sono diverse per
 Si considera, ora, un gruppo $G$ e si prende un suo elemento $a \in G$; si nota che la mappa $n\mapsto a^n$ \`e un omomorfismo di $\mathbb{Z}$ in $G$. Questo \`e facile da dimostrare, ma pi\`u interessante \`e il fatto che il kernel di questo omomorfismo pu\`o essere composto o dal solo $0 \in \mathbb{Z}$, o \`e un sottogruppo generato dal periodo di $a$.
 \begin{prop}
 	{}{}
-	Sia $f : G\to G'$ un omomorfismo di gruppi; se $\mathrm{Ker} (f) = \left\{ e \right\} $, allora $f$ \`e iniettivo.
+	Sia $f : G\to G'$ un omomorfismo di gruppi; allora $\mathrm{Ker} (f) = \left\{ e \right\} $ se e solo se $f$ \`e iniettivo.
 	\begin{proof}
 		Si assume, quindi, che $\mathrm{Ker} (f) = \left\{ e \right\} $ e si mostra che $f$ \`e iniettiva. Dati $x,y \in G, \ x\neq y$, se per assurdo, si avesse $f(x) = f(y)$, allora $ e'=  f(x) * f(y)^{-1} = f(x * y^{-1} )\Rightarrow x*y^{-1}  \in \mathrm{Ker} (f)$, con $x*y^{-1}  \neq x * x^{-1} = e$ perch\'e, per assunzione, $x \neq y$.
 		Ne segue che $f$ \`e iniettiva.
+
+		Il viceversa \`e banale perch\'e se fosse $e\neq g \in \mathrm{Ker} (f)$, si avrebbe un assurdo dal momento che, per definizione di kernel, $f(g) = f(e) = e'$, dove $e$ \`e l'unit\`a di $G$ ed $e'$ \`e quella di $G'$.
 	\end{proof}
 \end{prop}
 \noindent Un omomorfismo iniettivo fra due gruppi $G\to G'$ \`e chiamato \textbf{embedding} (o \textbf{iniezione}) e, come l'inclusione, si indica con $G \hookrightarrow G'$.
@@ -1560,7 +1696,7 @@ Si nota che, essendo in generale $G$ non-commutativo, la scrittura $aH \neq Ha$;
 	\end{proof}
 \end{teorema}
 \`E possibile decomporre un gruppo in classi laterali. 
-Si considera il caso specifico di $G$ grupp[o finito; ogni elemento $x \in G$ appartiene ad una classe laterale, per esempio $xH$, con $H$ sottogruppo di $G$.
+Si considera il caso specifico di $G$ gruppo finito; ogni elemento $x \in G$ appartiene ad una classe laterale, per esempio $xH$, con $H$ sottogruppo di $G$.
 Allora, $G$ si pu\`o scrivere come unione finita di classi laterali di $H$\footnote{Il simbolo $\bigsqcup$ indica unione di insiemi disgiunti.}:
 \begin{equation}
 	G = \bigsqcup_{i=1} ^r a _i H
@@ -1626,7 +1762,6 @@ Allo stesso tempo, sempre per Lagrange, $|G| = (G:K) |K|$, quindi:
 
 Si considera d'esempio il gruppo $S_n$ delle permutazioni di $\left\{ 1, \ldots , n \right\} $. 
 Sia $H$ il sottogruppo di $S_n$ che contiene tutte le permutazioni $\sigma $ della forma $\sigma (n) = n $; questo, come sottogruppo, coincide con $S_{n-1} , n > 1$.
-
 Si studiano le classi laterali di $H$; pi\`u in dettaglio, vale il seguente.
 \begin{prop}
 	{}{permcoset}
@@ -1715,7 +1850,7 @@ Il poter trattare questo come un gruppo \`e dovuto all'assunzione $xH = Hx$.
 \end{obs}
 \begin{corollario}
 	{Omomorfismo canonico}{}
-	Sia $G$ un gruppo e sia $H$ un sottogruppo tale che $xH = Hx , \ \forall x \in G$. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
+	Sia $G$ un gruppo e sia $H$ un sottogruppo normale. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
 	\begin{proof}
 	\`E evidente che $f$ sia un omomorfismo dalla definizione di prodotto di classi laterali.
 	Per il kernel, si vede che ogni elemento di $H$ \`e automaticamente in $\mathrm{Ker} (f)$ perch\'e se $h \in H \Rightarrow  f(h) = hH \equiv H$.
@@ -1738,9 +1873,7 @@ In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da
 		\overline{f}(xHyH) = \overline{f}(xyH) = f(xy) = f(x)f(y) = \overline{f}(xH) \overline{f}(yH)
 		\] 
 \`E anche iniettiva perch\'e il suo nucleo sono quei laterali $xH$ tali che $f(xH) = e'$, quindi solamente $H$, che \`e l'unit\`a di $G / H$.
-
 Infine si ha $\mathrm{Im} (\overline{f}) = \mathrm{Im} (f)$ per definizione di $f$.
-
 Quest'ultima considerazione permette di concludere che $G / H \cong \mathrm{Im} (f)$.
 	\end{proof}
 \end{corollario}

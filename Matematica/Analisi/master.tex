@@ -481,15 +481,70 @@ Da queste considerazioni, si generalizza la concezione di insieme aperto con la 
 \end{definizione}
 \subsection{Compattezza e completezza}
 
+\begin{definizione}
+	{Successione convergente}{}
+	Una successione $\left\{ x_n \right\} _{n\in \mathbb{N}} \subset X$, con $(X,d)$ spazio metrico, \`e detta \textit{convergente} a $x$ se
+	\[
+	\forall \varepsilon >0, \ \exists n_\varepsilon \in \mathbb{N}: \forall n>n_\varepsilon , \ x_n \in B_\varepsilon (x)
+	\] 
+	Equivalentemente, si pu\`o dire che $\forall U$ intorno di $x$, esiste $n_0 \in \mathbb{N}$ tale che $\forall n>n_0, \ x_n \in U$.
+\end{definizione}
+\noindent In termini di distanza, si ha $x_n \to x \iff d(x_n,x) \to 0$.
+\begin{definizione}
+	{Successione uniformemente convergente}{}
+Dato uno spazio normato $(X,\left\lVert \cdot  \right\rVert )$, una successione di funzioni $\left\{ f_n \right\} _{n\in \mathbb{N}} $ a valori in $X$ \`e \textit{uniformemente convergente} a $f$ se:
+\[
+\forall \varepsilon >0, \ \exists N \in \mathbb{N} : \forall n > N, \forall x \in X, \ \left\lVert f_n(x) - f(x) \right\rVert < \varepsilon 
+\] 
+\end{definizione}
+\noindent Pi\`u in generale, data una successione di funzioni $f_n : X\to Y$, con $X$ insieme generico e $(Y,d)$ spazio metrico, si dice che questa \`e uniformemente convergente in $Y$ ad una certa funzione $f:X\to Y$ se:
+\[
+\forall \varepsilon >0, \exists N\in \mathbb{N} : \forall n > N, \ \forall x \in X, \  d\big(f_n(x), f(x)\big) < \varepsilon 
+\] 
+Cio\`e non \`e necessaria la struttura di spazio normato\footnote{In realt\`a, la nozione di convergenza uniforme \`e ancor pi\`u generalizzabile usando spazi uniformi.}.
+\begin{prop}
+	{Chiusura per successioni}{}
+	Un generico insieme $C$ \`e chiuso $\iff$ $\forall \left\{ x _n \right\}_{n \in \mathbb{N}} \subset C : x_n \to x$, si ha $x \in C$.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Si assume $C$ chiuso e si considera una certa successione $x_n \in C$, con $x_n \to x$.
+				Se non fosse $x \in C$, risulterebbe $x \in A=\mathcal{C} (C) $ (complementare di $C$), che \`e aperto per definizione, quindi si trova $B_r(x) \subset A$ che contiene anche punti della successione $x_n$ per definizione di convergenza, quindi si avrebbe anche $x_n \in A$ per qualche $n > N$.
+				Questo, per\`o, \`e assurdo perch\'e si \`e assunto che la successione fosse interamente contenuta in $C$.
+			\item ($\Leftarrow$) Si assume che $\forall x_n \in C : x_n \to x$ valga $x \in C$.
+				Si procede per assurdo, assumendo che $C$ non sia chiuso e si mostra che questo non \`e possibile; infatti, la successione $x_n$ che ha valori in $B_{1 / n} (x) \cap C$, dove $x \in \partial C$, \`e sempre contenuta in $C$ e converge ad un certo $x$, ma $x \not \in C$, il che \`e assurdo.
+				Dunque, si deve avere $C$ chiuso.
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	{Teorema di Bolzano-Weierstrass}{}
+	Ogni sottoinsieme infinito e limitato di $\mathbb{R}^n$ contiene almeno un punto di accumulazione, o, equivalentemente, ogni successione reale limitata ammette almeno una sotto-successione convergente.
+\end{teorema}
+\begin{definizione}
+	{Spazio compatto}{}
+	Uno spazio topologico $X$ \`e detto \textit{compatto} se:
+	\begin{itemize}
+		\item ogni ricoprimento aperto di $X$ ammette un sotto-ricoprimento finito;
+		\item ogni successione $x_n$ in $X$ ammette una sotto-successione $x_{n_k} $ convergente in $X$.
+	\end{itemize}
+\end{definizione}
+\begin{teorema}
+	{Teorema di Heine-Borel}{}
+	Ogni insieme $E \subseteq \mathbb{R}^n$ \`e compatto $\iff$ E \`e chiuso e limitato.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+\begin{itemize}
+	\item ($\Rightarrow $) Sia $x_n \in E$ convergente a $x \in X$, con $(X,d)$ spazio metrico generico.
+		$E$ \`e compatto, quindi $\exists x_{n_k} $ convergente a $y \in E$, ma, per unicit\`a del limite, si deve avere $y= x$, quindi ogni successione di $E$ converge in $E$, il che vuol dire che $E$ \`e chiuso.
 
-
-
-
-
-
-
-
-
+		Se $E$ non fosse limitato, esisterebbe una successione $x_n \in  E \setminus B_n(x)$; per compattezza di $E$, esiste una sotto-successione $x_{n_k} \to y \in E$.
+		Per costruzione, per\`o, $d(x_n,x) \to +\infty $ e, usando la disuguaglianza triangolare, si trova che $d(x_{n_k} ,x) \le d(x_{n_k} ,y) + d(x,y)$, ma questo \`e assurdo perch\'e se $d(x_n,x) \to +\infty \Rightarrow d(x_{n_k} ,x)\to +\infty$, con $d(x_{n_k} ,y) \to 0$, il che vuol dire che $d(x,y) \to +\infty$.
+	\item ($\Leftarrow$) Questa implicazione segue dal teorema di Bolzano-Weierstrass perch\'e se $E \subseteq \mathbb{R}^n$ limitato, si trova una successione limitata $x_n$ che ha sotto-successione $x_{n_k} $ convergente in $\mathbb{R}^n$; in particolare, se $E$ \`e chiuso, $x_{n_k} $ converge in $E$, quindi $E$ \`e compatto.
+\end{itemize}
+	\end{proof}
+\end{teorema}
+\noindent La dimostrazione appena terminata mostra che \`e valida una versione pi\`u debole del teorema di Heine-Borel, cio\`e compatto $\Rightarrow $ chiuso e limitato, ma il viceversa non \`e vero in generale perch\'e, nell'altra implicazione, si fa uso del teorema di Bolzano-Weierstrass, limitandone la validit\`a a $\mathbb{R}^n$.
 
 
 
