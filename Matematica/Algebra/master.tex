@@ -899,7 +899,7 @@ Si mostra a partire dal caso di un sistema di due congruenze, procedendo per ind
 \subsubsection{Classi di resto}
 I possibili resti della divisione euclidea per $10$ sono $0,1,2,\ldots, 9$; ad esempio, i numeri che danno resto $1$ sono $1,11,21,31,\ldots,-9,-19,29,\ldots$ e si indica con $[1]_{10} $ l'insieme di tutti questi numeri, cio\`e:
 \begin{equation}
-	[1]_{10} = \left\{ x \in \mathbb{Z}  \mid x\equiv 1 \pmod{10}  \right\} 
+	[1]_{10} = \left\{ x \in \mathbb{Z}  \mid x\equiv 1 \ \operatorname{mod} 10  \right\} 
 \end{equation}
 In generale, si indica con $[i]_{10} $ l'insieme degli interi che danno $i$ come resto da divisione euclidea per $10$.
 Gli insiemi per $i=0,\ldots,9$ si chiamano \textit{classi di resto modulo 10} e la loro unione coincide con $\mathbb{Z} $. 
@@ -1257,6 +1257,9 @@ allora, per definizione, $d$ \`e il pi\`u piccolo intero tale che $a^d = e$.
 Il pi\`u piccolo intero $d$ tale che $a^d = e$ viene chiamato \textbf{periodo} di $a$. 
 In quanto tale, se $a^n = e$ per qualche intero $n$, allora $n = ds$, per qualche intero $s$.
 \end{definizione}
+\begin{obs}
+Alcune volte, il periodo di un elemento di dice anche ordine e si indica con $o(g), \ g \in G$.
+\end{obs}
 \begin{teorema}
 	{}{}
 	Sia $G$ un gruppo e sia $a \in G$ un elemento di periodo $d$; allora $a$ genera il sottogruppo ciclico di ordine $d$, i cui elementi sono $e, a , \ldots, a^{d-1} $.
@@ -1807,6 +1810,147 @@ Sia ora $x \in \left\{ y \in G : f(y) = a' \right\} $; allora:
 cio\`e $a^{-1} x \in \mathrm{Ker} (f)$, per esempio $h = a^{-1} x$, quindi $x = ah\implies x \in a \mathrm{Ker} (f)$.
 	\end{proof}
 \end{teorema}
+\subsection{Gruppi ciclici finiti}
+
+Sia $o(x)$ l'ordine di un certo elemento $x \in G$, con $G$ gruppo; per definizione, $x^{o(x)} = e$ ed \`e il pi\`u piccolo $n \in \mathbb{N}^{>0}  : x^n = e$.
+Tutti gli elementi dell'insieme
+\[
+\langle x \rangle=\left\{ e , x ,x^2 ,\ldots, x^{o(x) -1}  \right\} 
+\] 
+sono diversi fra loro perch\'e, altrimenti, esisterebbe $x^k =e$ con $k<o(x)$ che \`e assurdo.
+Questo insieme \`e quello generato da $x$ ed \`e un sottogruppo ciclico di $G$, la cui cardinalit\`a coincide proprio con $o(x)$; per il teorema di Lagrange: $o(x) $ divide $ \lvert G \rvert $.\
+Come altro corollario del teorema di Lagrange, quindi, si ha il seguente.
+\begin{corollario}
+	{}{}
+	Se $x \in G$, con $|G| < \infty$, si ha $x^{|G|} =e $.
+	\begin{proof}
+		Visto che $o(x)$ deve dividere $|G|$, si pu\`o scrivere che $|G| =k o(x)$, per qualche$ k \in \mathbb{Z}$; da questo segue che: $x^{|G|}  = x ^{k o(x)} = \left(x^{o(x)} \right) ^k= e^k = e$.
+	\end{proof}
+\end{corollario}
+\begin{obs}
+Tramite questo, si pu\`o dare un'ulteriore dimostrazione del teorema \ref{th:fgen}; infatti, preso $a,m \in \mathbb{Z}^{>0} : \operatorname{gcd}(a,m) =1$, l'elemento $[a]_m \in \mathbb{Z}^*_m$, per il corollario appena mostrato, \`e tale per cui
+\[
+	[a]_m^{\phi (m)} = [1]_m
+\] 
+visto che $\mathbb{Z}^*_m$ ha esattamente $\phi (m)$ elementi.
+\end{obs}
+Dato, ora, un gruppo ciclico $G$, ci si chiede quanti elementi complessivamente esistano che siano tali da generare $G$ stesso, visto che, per definizione, ne \`e assicurato \textit{almeno uno}.
+\begin{prop}
+	{}{p17}
+	Sia $G$ un gruppo ciclico di $n$ elementi; allora ci sono esattamente $\phi (n)$ generatori.
+	\begin{proof}
+		Sia $g \in G$ un generatore; allora gli elementi di $g$ sono della forma $g^i, \ 0\le i <n $. 
+		Indicando con $d$ l'ordine di $g^i$, si sa per il teorema di Lagrange che $d  \mid n$ e si osserva che $(g^i)^d = g^{id} =e$, quindi $n$ divide $di$, visto che $n$ \`e l'ordine di $g$.
+		Se fosse $\operatorname{gcd}(i,n) =1$, allora si dovrebbe avere che $n  \mid  d$, ossia che $n = d$, visto che $n$ \`e l'ordine di $G$ e $d$ del sottogruppo generato da $g^i$.
+		Questo permette di concludere che tutti gli elementi della forma $g^i$ con $\operatorname{gcd}(i,n) =1$ sono generatori di $G$, visto che hanno ordine $n$.
+
+		Se, invece, fosse $\operatorname{gcd}(i,n) >1$, allora $g^i$ non sarebbe un generatore perch\'e non sarebbe possibile ottenere $g$ come potenza di $g^i$; infatti, se $(g^i)^s = g \Rightarrow  g^{is -1 }  = e$, allora risulterebbe che $n  \mid is -1$, cio\`e 
+		\[
+		is \equiv 1\pmod{m} 
+		\] 
+		Per\`o questo non \`e possibile perch\'e l'equazione 
+		\[
+		ix \equiv 1 \pmod{m} 
+		\] 
+		non ha soluzione, essendo che $\operatorname{gcd}(i,n) >1$.
+	\end{proof}
+\end{prop}
+\begin{lemma}
+	{}{}
+	Per ogni intero $n \in \mathbb{N}^{>0} $, si ha:
+	\[
+	\sum_{d \mid n}^{} \phi (d) = n
+	\] 
+	\begin{proof}
+		Si considera la seguente lista di $n$ frazioni:
+		\[
+		\frac{1}{n}, \frac{2}{n},\ldots, \frac{n}{n}
+		\] 
+		Si riducono queste frazioni ai minimi termini e si riportano in una lista separata; il numero di queste frazioni che rimane intatta \`e ottenuto dal numero di interi coprimi con $n$, quindi \`e esattamente $\phi (n)$.
+
+		Sia, ora, $d$ un divisore di $n$: il numero di frazioni che, ridotte ai minimi termini, saranno della forma $\frac{j}{d}$ sono tutte quelle in cui $\operatorname{gcd}(j,d) =1$, quindi sono $\phi (d)$.
+
+		Questo significa che le frazioni della lista originaria possono essere suddivise ed essere contate a gruppi a seconda del denominatore: per ogni gruppo individuato dal denominatore $d$, il numero di frazioni di questo gruppo \`e $\phi (d)$, il che vuol dire che $n$, cio\`e il numero totale di frazioni, \`e proprio ottenuto da $\sum_{d  \mid n}^{} \phi (d)$.
+	\end{proof}
+\end{lemma}
+\begin{prop}
+	{}{}
+	Sia $G$ un gruppo ciclico di $n$ elementi; in $G$, ci sono esattamente $\phi  (d)$ elementi di ordine $d$, con $d$ intero che divide $n$.
+	\begin{proof}
+	Il caso $d=n$ \`e gi\`a stato mostrato precedentemente.
+Sia, allora, $d< n$; se $g$ \`e un generatore di $G$, si considera l'elemento $g^{n /d } $ (con $d  \mid n$ per assunzione).
+Il sottogruppo generato da $g^{n  /d }  $ \`e, evidentemente, di ordine $d$: $(g^{n /d} )^d = g^n = e$; per la proposizione \ref{prop:p17}, questo sottogruppo ha esattamente $\phi (d)$ elementi di ordine $d$.
+
+Questa procedura si pu\`o ripetere per ogni $d<n : d  \mid n$, arrivando a scrivere un numero di elementi di $G$ pari a $\sum_{d  \mid n}^{} \phi (d)$; per il lemma precedente, si sa che questa somma \`e pari proprio a $n$, quindi si sono elencati tutti gli elementi di $G$.
+Questo significa che se $d$ divide $n$, il numero di elementi di ordine $d$ in $G$ sono esattamente quelli ottenuti dallo studio del sottogruppo $g^{ n / d} $, cio\`e non ve ne sono altri.
+\end{proof}
+\end{prop}
+La seguente proposizione, invece, permette una caratterizzazione anche dei gruppi ciclici infiniti.
+\begin{prop}
+	{}{}
+	Sia $G$ un gruppo ciclico e sia $H \subset G$ un suo sottogruppo; allora $H$ \`e ciclico.
+	\begin{proof}
+		Sia $\langle g \rangle= G$ e sia $k$ il minimo intero positivo tale che $g^k \in H$; allora, dato $g^a \in H$, per qualche $a \in \mathbb{Z}$, si ha $a = qk + r$ per divisione Euclidea.
+Si nota che: $(g^k)^{-q} g^a = (g^k)^{-q} g^{qk} g^r=g^r \in H$, visto che $H$ \`e un sottogruppo.
+Questo, per\`o, \`e assurdo perch\'e $r < k$ e $g^r \in H$, quindi deve essere $r = 0$, da cui $\forall a \in \mathbb{Z} : g^a\in H$, si ha $a = qk$, per qualche intero $q$.
+Sostanzialmente: $\langle g^k \rangle = H$.
+	\end{proof}
+\end{prop}
+Ora si torna a studiare i gruppi ciclici finiti con la seguente proposizione.
+\begin{prop}
+	{}{}
+	Sia $G$ un gruppo ciclico di $n$ elementi; allora $\forall d$ divisore di $n$, esiste esattamente un sottogruppo di cardinalit\`a $d$ in $G$.
+	\begin{proof}
+		Sia $\langle g \rangle= G$ e $d \mid n$; il sottogruppo $K$ generato da $g^{n / d} $ si sa avere esattamente $d$ elementi e si sa contenere esattamente $\phi (d)$ elementi di ordine $d$.
+		Sia, ora, $H $ un sottogruppo di $G$ con proprio $d$ elementi; per la precedente proposizione, si sa che $H$ \`e ciclico, quindi $\exists h \in G : \langle h \rangle=H$, con $h$ di ordine $d$.
+		Questo, per\`o, significa anche che $h \in K$ e, quindi $H \subseteq K$, visto che $K$ contiene tutte le potenze di $h$, essendo un sottogruppo.
+		Visto che $H \subseteq K$ e hanno lo stesso numero di elementi, allora deve essere $H = K$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Sia $G$ un gruppo ciclico con $n $ elementi e sia $g$ un suo generatore; allora $\forall k \in \mathbb{Z}$ si ha $\langle g^k \rangle= \langle g^{\operatorname{gcd}(k,n) }  \rangle$.
+	\begin{proof}
+		Sia $d = \operatorname{gcd}(k,n) $ e $k = cd$, per qualche $c \in \mathbb{Z}$; per il teorema di B\'ezout, esistono $x,y \in \mathbb{Z}$ tali che
+		\[
+		d = xk + yn
+		\] 
+		Per semplicit\`a di notazione, sia $K = \langle g^k \rangle$ e sia $D = \langle g^d \rangle$.
+		Visto che $g^k=(g^d)^c$, si ha $g^k \in D\implies K \subseteq D$; inoltre:
+		\[
+		g^d = (g^k)^x (g^n)^y = \big((g^k)^xe^y\big)=(g^k)^x
+		\] 
+		quindi $g^d \in K$, da cui $D \subseteq K$.
+		Complessivamente, si deve avere $D = K$.
+	\end{proof}
+\end{prop}
+\noindent Si riassumono tutte le propriet\`a dimostrate sui gruppi ciclici finiti.
+\begin{itemize}
+\item In un gruppo ciclico di $n$ elementi, si hanno $\phi (n)$ generatori.
+\item In un gruppo ciclico di $n$ elementi, ci sono $\phi (d)$ elementi di ordine $d$, con $d  \mid n$.
+\item Ogni sottogruppo di un gruppo ciclico \`e anch'esso ciclico.
+\item In un gruppo ciclico di $n$ elementi, per ciascun $d $ divisore di $n$, esiste un unico sottogruppo di ordine $d$.
+\item Dato $g$ il generatore di un gruppo $G$ di $n$ elementi, il sottogruppo ciclico generato da $g^k$ \`e lo stesso di quello generato da $g^{\operatorname{gcd}(k,n) } $.
+\end{itemize}
+Di seguito, una proposizione che permette di collegare la ciclicit\`a di un gruppo finito con la sua immagine attraverso un omomorfismo.
+\begin{prop}
+	{}{}
+	Siano $G,G'$ due gruppi e $\alpha  :G \to G'$ un omomorfismo. 
+	Se $g \in G$ \`e un elemento di ordine finito $o(g) = n$, allora $o(\alpha (g))$ \`e finito e divide $n$.
+	\begin{proof}
+		Visto che $\alpha $ \`e un omomorfismo, $\forall  k \in \mathbb{Z}$ si ha $\alpha (g^k) = \alpha (g)^k$.
+		Questo vuol dire che $\alpha (g) ^n = \alpha (g^n) = \alpha (e_G) = e_{G'} $.
+		Questo significa che $o(\alpha (g)) \le n$ e $o(\alpha (g))$ deve dividere $n$.
+	\end{proof}
+\end{prop}
+
+
+
+
+
+
+
+
 
 \subsection{Sottogruppi normali}
 \begin{definizione}
@@ -1821,7 +1965,7 @@ cio\`e $a^{-1} x \in \mathrm{Ker} (f)$, per esempio $h = a^{-1} x$, quindi $x = 
 \noindent Intanto si nota che la condizione NOR 1 non coincide con la condizione $x h x^{-1} = h, \ \forall h \in H$ quando $G$ non \`e commutativo.
 Nel caso di $G$ commutativo, ogni sottogruppo $H$ \`e normale e soddisfa la condizione pi\`u forte di NOR 1, cio\`e proprio $x^{-1} h x = h, \ \forall h \in H$.
 
-Ora si dimostra che NOR 1 $\iff$ NOR 2. L'implicazione NOR 1 $\implies$ NOR 2 si vede di seguito.
+Ora si dimostra che NOR 1 $\iff$ NOR 2. L'implicazione NOR 2 $\implies$ NOR 1 si vede di seguito.
 \begin{proof}
 	Sia $H\equiv \mathrm{Ker} (f)$, con $ \ f: G \to G'$ un omomorfismo di gruppi; allora:
 	\[
@@ -1850,7 +1994,7 @@ Il poter trattare questo come un gruppo \`e dovuto all'assunzione $xH = Hx$.
 \end{obs}
 \begin{corollario}
 	{Omomorfismo canonico}{}
-	Sia $G$ un gruppo e sia $H$ un sottogruppo normale. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
+	Sia $G$ un gruppo e sia $H\subset G : \forall x \in G, \ xH= Hx$ un sottogruppo normale di $G$. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
 	\begin{proof}
 	\`E evidente che $f$ sia un omomorfismo dalla definizione di prodotto di classi laterali.
 	Per il kernel, si vede che ogni elemento di $H$ \`e automaticamente in $\mathrm{Ker} (f)$ perch\'e se $h \in H \Rightarrow  f(h) = hH \equiv H$.
@@ -1863,8 +2007,8 @@ Sia $f:G\to G'$ un omomorfismo. Dato $x \in G$, allora, $\forall k \in \mathrm{K
 	f(xk) = f(x) f(k) = f(x) \implies f(x\mathrm{Ker} (f)) = f(x)
 \] 
 Questo significa che ogni elemento in un laterale di $\mathrm{Ker} (f)$ ha la stessa immagine sotto $f$.
-\begin{corollario}
-	{}{}
+\begin{teorema}
+	{Primo teorema di omomorfismo}{}
 	Sia $f:G\to G'$ un omomorfismo e sia $H= \mathrm{Ker} (f)$; allora la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo del gruppo quoziente $G / H$ con l'immagine di $f$, cio\`e $G/H \stackrel{\approx}{\longrightarrow}\mathrm{Im} (f)$.
 In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da $f$.
 	\begin{proof}
@@ -1876,7 +2020,7 @@ In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da
 Infine si ha $\mathrm{Im} (\overline{f}) = \mathrm{Im} (f)$ per definizione di $f$.
 Quest'ultima considerazione permette di concludere che $G / H \cong \mathrm{Im} (f)$.
 	\end{proof}
-\end{corollario}
+\end{teorema}
 \begin{esempio}
 Si considera, come esempio, $\mathbb{Z}$ come sottogruppo del gruppo additivo $(\mathbb{R}, + )$; il gruppo quoziente $\mathbb{R} / \mathbb{Z}$ \`e chiamato \textbf{gruppo circolare}. 
 
@@ -1890,11 +2034,24 @@ Dato $\alpha \in \mathbb{C}^*$, vale $\alpha  = ru$, con $r \in \mathbb{R}^+$ e 
 L'espressione di $u$ \`e sempre determinata e la mappa $\alpha \mapsto \alpha / \lvert \alpha  \rvert $ \`e un omomorfismo di $\mathbb{C}^*$ in $\mathbb{C}_1 := \left\{ x \in \mathbb{C} : \lvert x \rvert = 1 \right\} $.
 Essendo il nucleo di questo omomorfismo proprio $\mathbb{R}^+$, allora $\mathbb{C}^* / \mathbb{R}^+ \cong \mathbb{C}_1$.
 \end{esempio}
-\begin{center}
-	\color{asdf}Riprendere da pagina 48 dopo esempio 5
-\end{center}
+\begin{prop}
+	{Omomorfismo canonico}{}
+Dati $K \subset H \subset G$ sottogruppi normali di $G$, la mappa $xK \mapsto xH$, con $x \in G$ \`e un omomorfismo suriettivo $f: G / K \to G / H$ comunemente chiamato \textbf{omomorfismo canonico}; il suo kernel \`e $H / K$.
+\begin{proof}
+	Intanto \`e ben definito: se $xK = yK \Rightarrow xH = yH$ perch\'e $y^{-1} x K = K \Rightarrow  f(y^{-1} xK)= y^{-1} x H = f(K) = H$, da cui $y^{-1} x H = H \Rightarrow xH = yH$.
 
-
+	Ora si verifica che \`e suriettivo; $\forall xH \in G / H$, si pu\`o prendere $f(xK) = xH$.
+	Poi si verifica che \`e un omomorfismo; dati comunque $x,y \in G$:
+	\[
+	f(xK yK) = f(xyK) = xy H = xHyH = f(xK)f(yK)
+	\] 
+Il kernel \`e, infine, composto dagli elementi di $G / K$ che vengono mappati in $H$, quindi 
+\[
+\mathrm{Ker} (f) = \left\{ xK \in G / K : f(xK) = H\right\} = \left\{ xK \in G / K : x \in H \right\} =  H / K 
+\] 
+La forma del Kernel \`e anche il motivo per cui questo non \`e un isomorfismo (cio\`e perch\'e non \`e iniettivo).
+\end{proof}
+\end{prop}
 
 
 
