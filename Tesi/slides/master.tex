@@ -47,7 +47,7 @@ title=#1
 \title{Divergenza delle serie perturbative}
 \author{%
   \begin{tabular}{c @{\hspace{5cm}} c}
-	  \textit{\small Laurendo}  & \textit{\small Relatore}   \\
+	  \textit{\small Laureando}  & \textit{\small Relatore}   \\
 	  Manuel Deodato & Claudio Bonati
   \end{tabular}
 }
@@ -74,7 +74,7 @@ Cos\`i facendo, energie e stati si sviluppano in serie:
 	& \ket{\psi }  = \ket{\psi } ^{(0)} + \lambda \ket{\psi  } ^{(1)} + \lambda ^2 \ket{\psi } ^{(2)}  +\ldots
 \end{split}
 \] 
-In linea di principio, la condizione di \textit{perturbazione piccola} definita dalla richiesta $\lambda \ll 1$, assicura la validit\`a dello sviluppo, ma questo non \`e vero in generale: in molti casi, le serie perturbative divergono.
+In linea di principio, la condizione di \textit{perturbazione piccola}, definita dalla richiesta $\lambda \ll 1$, assicura la validit\`a dello sviluppo, ma questo non \`e vero in generale: in molti casi, le serie perturbative divergono.
 
 L'obiettivo \`e di capire cosa causa questa divergenza e trovare delle condizioni per cui la convergenza \`e assicurata; a tale scopo, si considerer\`a il caso specifico dell'oscillatore armonico perturbato da un potenziale quartico come riferimento per il caso generale.
 \end{frame}
@@ -84,7 +84,8 @@ Particella 1D in potenziale (prendendo $m=1,\omega =1$)
 \begin{equation*}
 	\hat{V} = \frac{1}{2}\hat{x}^2 + \frac{1}{2}g \hat{x}^4
 \end{equation*}
-Perturbativamente, le energie del fondamentale sono della forma $E = 1/2 + \sum_{}^{} g^n E_n$ e le funzioni d'onda degli stati eccitati si scrivono come $B(x) e^{-x^2 / 2} $. Se $\ket{n} , \ket{m} $ sono due autostati di $\hat{H}_0$:
+L'energia del fondamentale \`e della forma $E = 1/2 + \sum_{}^{} g^n E_n$; per studiare lo sviluppo, si nota che le funzioni d'onda degli stati eccitati dell'oscillatore armonico si scrivono come il prodotto di un polinomio per $e^{-x^2/2} $, quindi si cercano soluzioni all'equazione di Shr\"odinger della forma $B(x) e^{-x^2 / 2} $.
+Se $\ket{n}$, $\ket{m} $ sono due autostati di $\hat{H}_0$:
 \begin{equation*}
 	\braket{n |\hat{x}^4|m} \neq 0 \iff \begin{cases}
 		\Delta n= |n-m| \le  4 \hspace{.25cm}\\
@@ -109,11 +110,8 @@ Dall'equazione di Schr\"odinger, si trovano delle relazioni ricorsive che permet
   \end{minipage}%
   \hfill
   \begin{minipage}{0.5\textwidth}
-Per $g<0$, il potenziale \`e
-\begin{equation*}
-	V= \frac{1}{2}x^2 - \frac{1}{2}\lvert g \rvert x^4
-\end{equation*}
-	  Per $g<0$, lo stato fondamentale del sistema non esiste pi\`u.
+Per $g<0$, il potenziale \`e $V= \frac{1}{2}x^2 - \frac{1}{2}\lvert g \rvert x^4$ e lo stato fondamentale del sistema non esiste pi\`u: la particella pu\`o fuoriuscire dalla buca di potenziale per effetto tunnel, quindi lo stato in cui si trova pu\`o solo essere metastabile.
+Questo \`e, quindi, responsabile della non-analiticit\`a per $g<0$.
   \end{minipage}
 {\hspace{2cm}}
   Per evidenziare il problema in $g=0$, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
@@ -138,7 +136,7 @@ Ponendo $\lambda  = g^{- 1 / 6} $, si ottiene una forma analitica per ciascun or
 	   \begin{boxenv}[]
 	   \textbf{\textit{Teorema di Kato-Rellich.} } 
 
-		   Sia $\hat{H}(g)$ una famiglia di operatori con $g \in S \subset \mathbb{C}$ tale che:
+		   Sia $\hat{H}(g)$ una famiglia di operatori con $g \in S \subset \mathbb{C}$, con $S$ aperto, tale che:
 		   \begin{enumerate}[1]
 		   	\item $D(\hat{H}(g))$ \`e indipendente da $g$;
 			\item $\forall \psi \in D(\hat{H}(g))$, la funzione $\braket{\psi |\hat{H}(g)|\psi } $ \`e analitica per $g \in S$.
@@ -160,8 +158,8 @@ Ponendo $\lambda  = g^{- 1 / 6} $, si ottiene una forma analitica per ciascun or
 %   \end{frame}
    \begin{frame}
 	   \frametitle{Conclusioni}
-	   Il problema della divergenza \`e, quindi, legato alla presenza di effetti non descrivibili perturbativamente, come l'effetto tunnel.
-	   Questi effetti si manifestano nella differenza tra i domini dell'Hamiltoniano imperturbato e quello perturbato: nel caso specifico dell'oscillatore anarmonico, $D(\hat{H}(g))$ non \`e indipendente da $g$. 
+	   Il problema della divergenza \`e, quindi, legato alla presenza di effetti che alterano la forma degli stati del sistema imperturbato, come l'effetto tunnel.
+	   Matematicamente, questi effetti si manifestano nella differenza tra i domini dell'Hamiltoniano imperturbato e quello perturbato: nel caso specifico dell'oscillatore anarmonico, $D(\hat{H}(g))$ non \`e indipendente da $g$. 
 	   
 	   In generale, la convergenza dello sviluppo perturbativo pu\`o essere verificata dal teorema di Kato-Rellich.
 
@@ -170,7 +168,6 @@ Ponendo $\lambda  = g^{- 1 / 6} $, si ottiene una forma analitica per ciascun or
 \[
 \left\lvert f(z) - \sum_{k=0}^{N} f_k z^k \right\rvert \le  C_{N+1} \lvert z \rvert ^{N+1} , \ \forall N
 \] 
-
-	   in un dominio $D \subset \mathbb{C}$ e con $f(z)$ analitica in $D$, come nel caso dell'oscillatore anarmonico, i primi termini dello sviluppo forniscono una buona approssimazione del problema per $g$ relativamente piccolo.
+	   in un dominio $D \subset \mathbb{C}$ e con $f(z)$ analitica in $D$, come nel caso dell'oscillatore anarmonico, i primi termini dello sviluppo fornirebbero una buona approssimazione per $g$ relativamente piccolo.
    \end{frame}
 \end{document}
