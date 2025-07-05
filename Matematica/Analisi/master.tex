@@ -2952,29 +2952,144 @@ Sia $A\subset \mathbb{R}^3$ un insieme semplicemente connesso; allora ogni forma
 	\end{proof}
 \end{teorema}
 
+\newpage
+\section{Teoria della misura}
+\begin{center}
+	\textit{L’obiettivo \`e quello di fornire uno strumento che permetta di calcolare il volume di un insieme $E \subseteq \mathbb{R}^n$ o, equivalentemente, fornire una nozione di integrale per funzioni $f:\mathbb{R}^n\to \mathbb{R}^n $ che sia stabile quando si passa al
+limite.}
+\end{center}
+\subsection{Nozioni introduttive}
 
+\begin{definizione}
+	{$\sigma $-algebra}{}
+	Sia $X$ un insieme e $\mathcal{E} \subseteq \mathcal{P} (X)$; si dice che $\mathcal{E} $ \`e una $\sigma$-algebra se:
+	\begin{enumerate}[(s1).]
+		\item $\varnothing \in \mathcal{E} $;
+		\item $\forall E \in \mathcal{E} , \ X \setminus E=E^c \in \mathcal{E} $, quindi, in particolare, $X \in \mathcal{E} $;
+		\item comunque dati degli $E_i \in \mathcal{E} $, questi soddisfano $\bigcup_{i=1} ^{+\infty} E_i \in \mathcal{E} $.
+	\end{enumerate}
+\end{definizione}
+\noindent L'idea dietro una $\sigma $-algebra \`e di replicare un sottoanello con le operazioni di chiusura per unione e passaggio al complementare, cio\`e individuare quei sottoinsiemi di $X$ che sono stabili per le operazioni topologiche fondamentali.
+\begin{obs}
+	Si nota che, essendo una $\sigma $-algebra chiusa per passaggio al complementare e avendo richiesto che $\forall \left\{ E_i \right\} _{i \in \mathbb{N}} \subseteq \mathcal{E} $, risulti $\bigcup_{i=1} ^{+\infty} E_i \in \mathcal{E} $ allora segue anche che 
+	\begin{equation}
+		\bigcap_{i=1} ^{+\infty} E_i \in \mathcal{E} 
+	\end{equation}
+	Questo si dimostra usando le leggi di de Morgan.
+\end{obs}
+\noindent Si nota che l'intersezione, anche infinita di $\sigma $-algebre \`e ancora una $\sigma $-algebra; in particolare, dato $S \subseteq \mathcal{P} (X)$, si pu\`o definire la pi\`u piccola $\sigma $-algebra contenente $S$ come:
+\begin{equation}
+	\sigma (S) = \bigcap \left\{ \mathcal{E} : \mathcal{E} \text{ \`e una } \sigma\text{-algebra e } S \subseteq \mathcal{E} \right\} 
+\end{equation}
+In questo caso, si dice che $\sigma (S)$ \`e la $\sigma $-algebra generata da $S$.
+\begin{definizione}
+	{Algebra di Borel}{}
+	Sia $(X,\tau )$ uno spazio topologico; si dice $\sigma $-algebra di Borel la $\sigma $-algebra definita come:
+	\begin{equation*}
+		\mathcal{B} (X) = \sigma (\tau )
+	\end{equation*}
+\end{definizione}
+\begin{obs}
+Per differenza di cardinalit\`a, si ha che $\mathcal{B} (\mathbb{R}^n)\neq \mathcal{P} (X)$; infatti $|\mathcal{P} (\mathbb{R}^n)| = 2 ^{|\mathbb{R}^n|} = 2 ^{\mathfrak{c}} $, mentre $|\mathcal{B} (\mathbb{R}^n)| = \mathfrak{c}$.
+\end{obs}
+\begin{definizione}
+	{$\sigma $-additivit\`a e $\sigma $-subadditivit\`a}{}
+	Sia $\mathcal{E} $ una $\sigma $-algebra e $m:\mathcal{E} \to [0,+\infty]$. 
+	\begin{itemize}
+		\item Si dice che $m$ \`e $\sigma $-subadditiva se $\forall E_i \in \mathcal{E} $:
+			\begin{equation*}
+				m \left(\bigcup_i E_i\right) \le \sum_{i}^{} m(E_i)
+			\end{equation*}
+		\item Si dice che $m$ \`e $\sigma $-additiva se dato $\left\{ E_i \right\} _{i \in \mathbb{N}} \subseteq \mathcal{E} : i\neq j\Rightarrow E_i\cap E_j = \varnothing$, si ha
+			\begin{equation*}
+				m \left(\bigcup_{i\in \mathbb{N}} E_i\right) 	= \sum_{i=1}^{+\infty} m(E_i)
+			\end{equation*}
+	\end{itemize}
+\end{definizione}
 
+\begin{definizione}
+	{Misura e spazio di misura}{}
+	Data una $\sigma $-algebra $\mathcal{E} $ e $m:\mathcal{E} \to [0,+\infty]$, si dice che $m$ \`e una funzione di misura se \`e $\sigma $-additiva su $\mathcal{E} $.
+	In questo caso, si dice che $(X,\mathcal{E} ,m)$ \`e uno spazio di misura.
+\end{definizione}
+\noindent Una funzione di misura $m$ ha le seguenti propriet\`a.
+Intanto $m(\varnothing) = 0$ ed \`e subadditiva per definizione (visto che additiva $\Rightarrow $ subadditiva).
+\`E monotona perch\'e dati $A,B \in \mathcal{E} : A\subseteq B$, si ha $m(B) = m(A) + m(B \setminus A)\ge m(A)$.
+Infine, se $E_i \subseteq E_{i+1}$, vale
+\begin{equation}
+	m\left(\bigcup_{i} E_i\right) = \lim_{i} m(E_i) = \sup_i m(E_i)
+\end{equation}
+e se $E_i \supseteq E_{i+1} $, con $m(E_0) < +\infty$, vale
+\begin{equation}
+	m\left(\bigcap_i E_i\right) = \lim_{i} m(E_i) = \inf_i m(E_i)
+\end{equation}
+\begin{definizione}
+	{Insieme trascurabile}{}
+	Data una misura $m$ e dato $N \in \mathcal{E}$, si dice che $N$ \`e trascurabile se $m(N) = 0$.
+\end{definizione}
+\noindent Per monotonia delle funzioni di misura, segue che se $N' \subseteq N$, con $N$ insieme trascurabile, allora anche $N'$ \`e trascurabile.
+\begin{definizione}
+	{Spazio di misura completo}{}
+	Uno spazio di misura $(X,\mathcal{E} ,m)$ si dice completo se
+	\begin{equation*}
+		\forall N' \subseteq N\text{, con } m(N) = 0\implies N' \in \mathcal{E} 
+	\end{equation*}
+\end{definizione}
+\begin{definizione}
+	{Misura di Borel}{}
+	Dato lo spazio di misura $(X,\mathcal{E} ,m)$, se $\mathcal{B} (X) \subseteq \mathcal{E} $, cio\`e $m$ \`e definita sui Boreliani, allora si dice che $m$ \`e una misura di Borel.
+\end{definizione}
+\begin{definizione}
+	{Misura regolare}{}
+	Dato $(X,\mathcal{E} ,\mu )$ spazio di misura con $X$ spazio metrico e $\mu $ di Borel, si dice che $\mu $ \`e regolare se $\forall E \in \mathcal{E} $:
+	\[
+	\mu (E) = \inf \left\{ \mu (A)  \mid A\supseteq E \text{ aperto }\right\}  = \sup \left\{ \mu (K)  \mid K \subseteq E \text{ compatto} \right\} 
+	\] 
+\end{definizione}
+\begin{definizione}
+	{Misura $\sigma $-finita}{}
+	Sia $(X,\mathcal{E} ,\mu )$ uno spazio di misura; si dice che $\mu $ \`e $\sigma $-finita se esiste un insieme al pi\`u numerabile di insiemi misurabili $\left\{ A_i \right\} _{i\in \mathbb{N}} \subseteq \mathcal{E} $ tali che
+	\[
+	\forall i \in \mathbb{N}, \ \mu (A_i) \in \mathbb{R} \text{ e } \bigcup_{i\in \mathbb{N}} A_i = X
+	\] 
+\end{definizione}
+\subsection{Metodo di Carath\'eodory}
+\begin{center}
+	\textit{Questo \`e uno dei metodi per costruire spazi di misura a partire da una certa funzione di misura.}
+\end{center}
+\begin{definizione}
+	{Misura esterna}{}
+	Una mappa $m : \mathcal{P} (X) \to [0,+\infty) \cup \{+\infty\} = [0,+\infty]$ \`e detta misura esterna se \`e $\sigma $-subadditiva.
+\end{definizione}
+\begin{teorema}
+	{Teorema di Carath\'eodory}{}
+	Siano $X$ un insieme e $m$ una misura esterna; l'insieme definito come
+	\[
+	\mathcal{E} _m = \big\{ E\subseteq X  \mid \forall S \subseteq X , \ m(S) = m(S\cap E) + m(S\setminus E) \big\} 
+	\] 
+	gode delle seguenti propriet\`a:
+	\begin{enumerate}[(a).]
+		\item $\mathcal{E} _m$ \`e una $\sigma $-algebra;
+		\item $m | _{\mathcal{E} _m} $ \`e una misura;
+		\item $(X,\mathcal{E} _m, m | _{\mathcal{E} _m} )$ \`e uno spazio di misura completo.
+	\end{enumerate}
+\end{teorema}
+\begin{teorema}
+	{Metodo di Carath\'eodory}{}
+	Se $(X,\mathcal{E} ,m)$ \`e uno spazio di misura, allora la funzione $m^*:\mathcal{P} (X) \to [0,+\infty]$ e tale che $E\longmapsto \inf\left\{ m(F)  \mid F \supseteq E, \ F \in \mathcal{E}  \right\} $ \`e una misura esterna e $m^*|_{\mathcal{E} } = m$.
+\end{teorema}
+\begin{obs}
+In particolare, per il metodo di Carath\'eodory, si ha $\mathcal{E} \subseteq \mathcal{E} _{m^*} $ e $(X,\mathcal{E} _{m^*} , m^*|_{\mathcal{E} _{m^*} } )$ \`e uno spazio di misura completo che estende $(X,\mathcal{E},m )$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Questo significa che, con tale metodo, \`e possibile completare gli spazi di misura.
+\end{obs}
+\noindent Dato uno spazio di misura $(X,\mathcal{E} ,m)$, si pu\`o definire la $\sigma $-algebra
+\[
+	\overline{\mathcal{E} }=\left\{ E \cup N'  \mid E \in \mathcal{E} \text{ e } \exists N \text{ trascurabile} :N'\subseteq N \right\} 
+\] 
+che contiene $\mathcal{E} $ e tale che la misura $\overline{m}: \overline{\mathcal{E} }\to[0,+\infty]$, con $E \cup N' \longmapsto m(E)$ \`e una misura completa che estende $m$.
+Si nota che, in generale, $\overline{\mathcal{E} }\neq \mathcal{E} _{m^*} $, ma per il resto della trattazione, si ignorer\`a questo particolare.
+\subsection{Misura di Lebesgue}
 
 
 
