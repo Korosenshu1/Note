@@ -84,7 +84,7 @@ Particella 1D in potenziale (prendendo $m=1,\omega =1$)
 \begin{equation*}
 	\hat{V} = \frac{1}{2}\hat{x}^2 + \frac{1}{2}g \hat{x}^4
 \end{equation*}
-L'energia del fondamentale \`e della forma $E = 1/2 + \sum_{}^{} g^n E_n$; per studiare lo sviluppo, si nota che le funzioni d'onda degli stati eccitati dell'oscillatore armonico si scrivono come il prodotto di un polinomio per $e^{-x^2/2} $, quindi si cercano soluzioni all'equazione di Shr\"odinger della forma $B(x) e^{-x^2 / 2} $.
+L'energia del fondamentale \`e della forma $E = 1/2 + \sum_{}^{} g^n E^{(n)} $; per studiare lo sviluppo, si nota che le funzioni d'onda degli stati eccitati dell'oscillatore armonico si scrivono come il prodotto di un polinomio per $e^{-x^2/2} $, quindi si cercano soluzioni all'equazione di Shr\"odinger della forma $B(x) e^{-x^2 / 2} $.
 Se $\ket{n}$, $\ket{m} $ sono due autostati di $\hat{H}_0$:
 \begin{equation*}
 	\braket{n |\hat{x}^4|m} \neq 0 \iff \begin{cases}
@@ -96,7 +96,7 @@ Si parte dal fondamentale, quindi $m\le 4$ e $\pi_m= +1$; il polinomio $B(x)$ si
 \begin{equation*}
 	B(x) = \sum_{k=0}^{+\infty} g^k B_k(x) \hspace{1cm} B_k(x)= \sum_{j=0}^{2k} A_{k,j} x^{2j} 
 \end{equation*}
-Dall'equazione di Schr\"odinger, si trovano delle relazioni ricorsive che permettono di determinare le energie; tramite calcolo numerico, si vede che queste sono divergenti con $E_n \sim n!$.
+Dall'equazione di Schr\"odinger, si trovano delle relazioni ricorsive che permettono di determinare i coefficienti dello sviluppo dell'energia; tramite calcolo numerico, si vede che questi hanno un andamento del tipo $E^{(n)}  \sim n!$.
 \end{frame}
 
 
@@ -114,11 +114,11 @@ Per $g<0$, il potenziale \`e $V= \frac{1}{2}x^2 - \frac{1}{2}\lvert g \rvert x^4
 Questo \`e, quindi, responsabile della non-analiticit\`a per $g<0$.
   \end{minipage}
 {\hspace{2cm}}
-  Per evidenziare il problema in $g=0$, si considera la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
+  Nel caso dell'oscillatore armonico, i problemi di analiticit\`a delle autoenergie di $\hat{H}$ possono essere evidenziati considerando la trasformazione unitaria $\hat{U}(\lambda ) \psi (x) = \lambda ^{1 / 2} \psi (\lambda x)$ che, su $\hat{H}(\alpha ,g) = \hat{p}^2 / 2 + \alpha  \hat{x}^2 / 2 + g \hat{x}^4 / 2$, agisce come:
   \begin{equation*}
   	\hat{U}(\lambda ) \hat{H}(\alpha ,g) \hat{U}(\lambda ^{-1} ) = \lambda ^{-2} \hat{H}(\alpha  \lambda ^4, g \lambda ^6)
   \end{equation*}
-Ponendo $\lambda  = g^{- 1 / 6} $, si ottiene una forma analitica per ciascun ordine perturbativo $E_n$ in termini di una serie convergente:
+Ponendo $\lambda  = g^{- 1 / 6} $, si ottiene una forma analitica per le autoenergie $E_n$ in termini di una serie convergente:
   \[
   E_n(1,g) = g^{1 / 3} E_n(g^{-2 / 3} , 1) \implies E_n(g) = g^{1 /3 }  \sum_{k}^{} a_k g^{-2k/3}
 \] 
