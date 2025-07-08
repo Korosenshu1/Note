@@ -2123,11 +2123,48 @@ Quello che non cambia, per\`o, \`e la parit\`a del numero di trasposizioni usate
 	{}{}
 	Sia $\sigma \in S_n$, con $n\ge 2$; se $\sigma $ si decompone sia in $k$ trasposizioni che $k'$ trasposizioni, allora $k\equiv k' \pmod{2} $.
 	\begin{proof}
-		Riprendere da pagina 94
+		Si fa \textit{agire} $S_n$ su $\mathbb{R}[x_1,\ldots,x_n]$, cio\`e l'insieme dei polinomi a coefficienti reali in $n$ variabili nel seguente modo: presa $\sigma \in S_n$ e dato $f(x_1,\ldots,x_n)\in \mathbb{R}[x_1,\ldots,x_n]$ si ha:
+		\[
+		\sigma f(x_1,..,x_n) = f\big(x_{\sigma (1)} ,\ldots, x_{\sigma (n)} \big)
+		\] 
+		Si nota che l'identit\`a $e\in S_n$ \`e quella che lascia il polinomio invariato e si nota anche che $\forall \sigma ,\tau  \in S_n,\ f \in \mathbb{R}[x_1,\ldots,x_n]$:
+		\[
+			(\sigma \circ \tau )f(x_1,\ldots,x_n)= \sigma \left[ \tau f(x_1,\ldots,x_n) \right] 
+		\] 
+		Questo \`e un esempio di \textit{azione di gruppo su un insieme}.
+		In questo caso particolare, si considera il polinomio
+		\[
+		p(x_1,\ldots,x_n) = \prod_{1\le i<j\le n} (x_i- x_j)
+		\] 
+		Per esempio, se $n=3$, si ha $p(x_1,x_2,x_3) = (x_1-x_2)(x_1-x_3) (x_2-x_3)$.
+		Si considera la trasposizione $\tau  = (a,b), \ 1\le a<b\le n$ e si studia il risultato di $\tau  p(x_1,\ldots,x_n)$.
+		Si nota che l'azione di $\tau $ non modifica i fattori $x_i- x_j$ in cui $i,j\neq a,b$, mentre per gli altri che contengono almeno $a$ o $b$:
+		\begin{itemize}
+			\item $\forall i : 1\le i<a$, l'azione di $\tau $ scambia $(x_i-x_a)$ e $(x_i-x_b)$;
+			\item $\forall i : b<i \le n$, l'azione di $\tau $ scambia $(x_a-x_i)$ e $(x_b-x_i)$;
+			\item $\forall i : a<i<b$, l'azione di $\tau $ scambia i fattori $(x_a-x_i)$ e $(x_i-x_b)$, ma scambiandone anche il segno, quindi il segno del prodotto rimane invariato;
+			\item infine, l'azione di $\tau $ sul fattore $(x_a-x_b)$ ne cambia il segno.
+		\end{itemize}
+		Ne segue, dunque, che $\tau p(x_1,\ldots,x_n) = - p(x_1,\ldots,x_n), \ \forall \tau  \in S_n$, con $\tau $ trasposizione.
+		Sfruttando che ogni $\sigma \in S_n$ permutazione generica \`e scrivibile in termini di $k$ trasposizioni:
+		\[
+		\sigma p(x_1,\ldots,x_n) = (-1)^k p(x_1,\ldots,x_n)
+		\] 
+		Ma allora, se $\sigma $ si decompone anche in $k'$ trasposizioni, significa che 
+		\[
+		\sigma p(x_1,\ldots,x_n) = (-1)^{k'} p(x_1,\ldots,x_n)
+		\] 
+		il che implica che $(-1)^{k'} = (-1)^k \implies k\equiv k'\pmod{2} $.
 	\end{proof}
 \end{teorema}
-
-
+\noindent Questo teorema permette di dividere le permutazioni in due classi, a seconda della loro parit\`a, definita di seguito.
+\begin{definizione}
+	{Parit\`a di una permutazione}{}
+	Si dice che $\sigma \in S_n$ \`e \textbf{pari} se pu\`o essere scritta come prodotto di un numero pari di trasposizioni, altrimenti verr\`a detta \textbf{dispari} se potr\`a essere scritta come prodotto di un numero dispari di trasposizioni.
+\end{definizione}
+\begin{center}
+	Riprendere dal corollario 10.1.4, pagina 95.
+\end{center}
 
 
 

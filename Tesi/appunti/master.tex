@@ -348,5 +348,43 @@ Questa relazione permette di concludere che la singolarit\`a per $g = 0$ di $E(g
 E_n(g) = g^{1 / 3} \sum_{k}^{} a_k g^{ - 2k / 3} 
 \]
 \`e convergente e, asintoticamente, si ha $E_n(g) \sim g^{ 1/3} $.
+\newpage
+\section{Calcoli utili}
 
+\subsection{Teorema di Kato per potenziale quartico perturbato da potenziale quadratico}
+Si verifica che $\forall \psi \in \mathcal{D} (\hat{H}_0)\cup \mathcal{D} (\hat{V}) \subset L^2$, con $\hat{H}_0 = \hat{p}^2 / 2 + \hat{x}^4 / 2$ e $\hat{V} = \hat{x}^2 / 2$, vale
+\begin{equation}
+\left\lVert x^2 \psi (x)\right\rVert \le a \left\lVert \hat{x}^4 \psi (x) \right\rVert  + b \left\lVert \psi (x) \right\rVert 
+\end{equation}
+con $\left\lVert \cdot  \right\rVert = \left\lVert \cdot  \right\rVert _{L^2} $.
+\begin{proof}
+	Visto che $\hat{V}\propto \hat{x}^2$ e visto che (per $\hbar =1$) $\hat{p}^2\ge 0$ perch\'e, integrando per parti\footnote{Si nota che le $\psi \in \mathcal{D} (\hat{H}_0)$ devono avere valore finito quando si calcola il loro valore medio sulla parte cinetica perch\'e
+	\[
+	\braket{\psi |\hat{H}_0|\psi } \propto\int_{\mathbb{R}} \psi ^* \hat{p}^2 \psi (x) dx + \int_{\mathbb{R}} x^4\lvert \psi (x) \rvert ^2 dx \stackrel{!}{<} \infty
+	\] 
+Essendo il valore medio del potenziale quartico positivo, allora deve essere finito anche l'altro integrale.}\footnote{}:
+	\[
+		\begin{split}
+			\braket{\psi |\hat{p}^2|\psi }  &= -\int_{\mathbb{R}} \psi ^*(x) \psi ''(x)  dx = \left[ \psi ^*(x)\psi '(x) \right] _{+\infty} ^{-\infty} + \int_{\mathbb{R}} \lvert \psi '(x) \rvert ^2 dx\\
+							      &=\int_{\mathbb{R}} \lvert \psi '(x) \rvert ^2 dx \ge 0
+		\end{split}
+	\] 
+	si ha $\hat{H}_0 \ge \hat{x}^4 / 2$, quindi si pu\`o verificare la disuguaglianza in eq. 4.1 perch\'e, se vale quella, il teorema di Kato \`e automaticamente soddisfatto.
+	Allora si osserva che:
+	\[
+	\begin{split}
+		\left\lVert x^2 \psi \right\rVert ^2 &= \int_{-\infty} ^{+\infty} \lvert x^2 \psi (x) \rvert ^2dx = 2 \int_{0} ^{+\infty} x^4 \lvert \psi (x) \rvert ^2 dx\\
+						     &= 2 \int_{0} ^1 x^4 \lvert \psi (x) \rvert ^2 dx + 2 \int_{1} ^{+\infty} x^4 \lvert \psi (x) \rvert ^2 dx \\
+						     &\le 2 \int_{0} ^1 x^4 \lvert \psi (x) \rvert ^2 dx + 2 \int_{1} ^{+\infty} x^8 \lvert \psi (x) \rvert ^2 dx\\
+						     &\le 2 \int_{0} ^1 \lvert \psi (x) \rvert ^2 dx + 2 \int_{0} ^{+\infty} x^8 \lvert \psi (x) \rvert ^2 dx \\
+						     &\le 2 \int_{0} ^{+\infty} \lvert \psi (x) \rvert ^2 dx + 2 \int_{0} ^{+\infty} x^8 \lvert \psi (x) \rvert ^2 dx \\
+						     &= 2 \left\lVert \psi (x) \right\rVert ^2 + 2 \left\lVert x^4 \psi (x) \right\rVert ^2
+	\end{split}
+	\] 
+Allora si ottiene che:
+\[
+\left\lVert x^2 \psi (x) \right\rVert \le \sqrt{2}  \left(\left\lVert \psi (x) \right\rVert ^2 + \left\lVert x^4 \psi (x) \right\rVert ^2\right) ^{1 / 2} \le \sqrt{2} \left(\left\lVert \psi (x) \right\rVert + \left\lVert x^4 \psi (x) \right\rVert \right) 
+\] 
+dove si \`e completato il quadrato.
+\end{proof}
 \end{document}
