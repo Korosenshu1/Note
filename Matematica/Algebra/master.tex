@@ -1186,7 +1186,7 @@ Si nota che $\left\{ 1 \right\} $ \`e un generatore per il gruppo additivo degli
 	cio\`e \`e composto da tutti gli elementi di $G$ che commutano con tutti gli altri elementi di $G$.
 \end{definizione}
 \begin{prop}
-	{}{}
+	{}{zsg}
 	$Z(G)$ \`e un sottogruppo di $G$.
 	\begin{proof}
 		Intanto $e \in Z(G)$ perch\'e l'unit\`a rispetto all'operazione di $G$ commuta con tutti gli altri elementi del gruppo; poi si nota che $Z(G)$ \`e chiuso sotto tale operazione perch\'e se $h,k \in Z(G)$ e $g\in G$:
@@ -2120,7 +2120,7 @@ da cui si osserva anche che la decomposizione non \`e unica, come non lo \`e nea
 \] 
 Quello che non cambia, per\`o, \`e la parit\`a del numero di trasposizioni usate, che permette di definire il concetto di \textbf{parit\`a} di una permutazione.
 \begin{teorema}
-	{}{}
+	{}{pperm}
 	Sia $\sigma \in S_n$, con $n\ge 2$; se $\sigma $ si decompone sia in $k$ trasposizioni che $k'$ trasposizioni, allora $k\equiv k' \pmod{2} $.
 	\begin{proof}
 		Si fa \textit{agire} $S_n$ su $\mathbb{R}[x_1,\ldots,x_n]$, cio\`e l'insieme dei polinomi a coefficienti reali in $n$ variabili nel seguente modo: presa $\sigma \in S_n$ e dato $f(x_1,\ldots,x_n)\in \mathbb{R}[x_1,\ldots,x_n]$ si ha:
@@ -2162,21 +2162,91 @@ Quello che non cambia, per\`o, \`e la parit\`a del numero di trasposizioni usate
 	{Parit\`a di una permutazione}{}
 	Si dice che $\sigma \in S_n$ \`e \textbf{pari} se pu\`o essere scritta come prodotto di un numero pari di trasposizioni, altrimenti verr\`a detta \textbf{dispari} se potr\`a essere scritta come prodotto di un numero dispari di trasposizioni.
 \end{definizione}
+\noindent Da questo teorema e dalla definizione di parit\`a di una permutazione, si intende caratterizzare l'insieme delle permutazioni esclusivamente pari.
+\begin{definizione}
+	{Gruppo alterno}{}
+	Si definisce l'insieme delle permutazioni pari $A_n \subset S_n$ come \textit{gruppo alterno}.
+\end{definizione}
+\begin{corollario}
+	{}{}
+	Per $n\ge 2$, il gruppo alterno $A_n$ \`e un sottogruppo normale di $S_n$.
+	Inoltre, vale che $|A_n| = n! / 2$.
+	\begin{proof}
+		Si considera la funzione segno definita come $\operatorname{sgn} :S_n \to \{-1,+1\}$, dove $\operatorname{sgn} (\sigma ) = 1 \Rightarrow \sigma $ \`e pari, mentre $\operatorname{sgn} (\sigma )= -1\Rightarrow \sigma $ \`e dispari.
+		Come conseguenza del teorema \ref{th:pperm}, si ha che la funzione segno \`e un omomorfismo tra $S_n$ e il gruppo moltiplicativo $\{-1,+1\}$ (il quale \`e, a sua volta, isomorfo a $\mathbb{Z}_2$).
+		Allora il suo nucleo, che coincide proprio con $A_n$, \`e un sottogruppo normale di $S_n$.
+
+		Circa la cardinalit\`a, invece, si nota che la mappa $\sigma \mapsto (1,2)\sigma $ che va da $S_n$ in se stesso \`e una biezione e cambia di segno a $\sigma $; essendo una biezione e mandando le permutazioni pari in quelle dispari e viceversa (cio\`e ad ogni permutazione dispari se ne associa una pari e viceversa), significa che in $S_n$ ci sono tante permutazioni pari quante dispari, il che vuol dire che $|A_n| = n! / 2$.
+	\end{proof}
+\end{corollario}
+\noindent Si nota che la classe laterale $(1,2)A_n$ \`e composta da tutte le permutazioni dispari.
+
+Inoltre, ricordando che in questa sezione si \`e trovato un algoritmo per scrivere ciascun ciclo di lunghezza $j$ in termini del prodotto di $j-1$ trasposizioni, si riesce a capire immediatamente, data la decomposizione in cicli disgiunti di una permutazione, se essa \`e pari o dispari.
+Infatti, se $\sigma $ \`e una permutazione che si decompone in $r$ cicli di lunghezza dispari e $s$ di lunghezza pari, allora questa \`e pari se e solo se $s$ \`e pari.
+\subsubsection{Centralizzatore di un elemento}
+Si ricorda che $Z(G)$ \`e il sottogruppo di $G$ costituito da tutti gli elementi che commutano con tutti gli altri ed \`e anche facile convincersi che questo sia un suo sottogruppo normale per definizione.
+Fissato $\gamma \in G$, si considera, adesso, l'insieme di tutti gli elementi che commutano con tale $\gamma$.
+\begin{definizione}
+	{Centralizzatore}{}
+	Sia $G$ un gruppo e sia $\gamma\in G$; si indica il centralizzatore di $\gamma$ con $C(\gamma)$ ed \`e l'insieme definito come
+	\[
+	C(\gamma) = \left\{ g\in G  \mid g \gamma = \gamma g \right\} 
+	\] 
+	Si nota che, equivalentemente, si sarebbe potuto definire come
+	\[
+	C(\gamma) = \left\{ g \in G  \mid g \gamma g^{-1} = \gamma \right\} 
+	\] 
+\end{definizione}
+\begin{obs}
+	Si nota che la seconda definizione permette di individuare il centralizzatore di $\gamma$ come quell'insieme i cui elementi $g$ soddisfano $C_g(\gamma)=\gamma$.
+\end{obs}
+\noindent Si vede subito che se $\gamma \in Z(G)$, allora $G(\gamma) = G$.
+\begin{prop}
+	{}{}
+	Sia $G$ un gruppo con $\gamma\in G$; vale $C(\gamma) < G$ (cio\`e $C(\gamma)$ \`e un sottogruppo di $G$).
+	\begin{proof}
+		L'identit\`a vi appartiene perch\'e l'identit\`a commuta con tutti gli elementi di $G$, in particolare con $\gamma$.
+		Successivamente, se $g_1,g_{2}\in C(\gamma)$, allora:
+		\[
+g_1 g_2 \gamma = g_1\gamma g_2 = \gamma g_1g_2 \implies g_1,g_2 \in C(\gamma)
+		\] 
+		Infine, se $g \in C(\gamma)$, allora $g^{-1} \in C(\gamma)$ perch\'e
+		\[
+		\gamma=g^{-1}g \gamma = g^{-1} \gamma g\implies \gamma g^{-1} = g^{-1} \gamma
+		\] 
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	{}{}
+	Sia $G$ un gruppo e sia $\gamma\in G$; allora esiste una biezione tra $G / C(\gamma)$ e $\mathrm{Orb} (\gamma)$.
+	\begin{proof}
+		Si definisce la funzione
+		\[
+		\begin{split}
+			f:G / C(\gamma) \ &\longrightarrow \ \mathrm{Orb} (\gamma)\\
+			gC(\gamma) \ &\longmapsto \ g \gamma g^{-1} 
+		\end{split}
+		\] 
+		$f$ \`e ben definita perch\'e se $kC(\gamma) = g C(\gamma)$, allora $k = gs$, per qualche $s \in C(\gamma)$, per cui:
+		\[
+		f\big(kC(\gamma)\big) = k \gamma k^{-1} =(gs)\gamma(gs)^{-1} = gs \gamma s^{-1} g^{-1} =g \gamma g^{-1} 
+		\] 
+		Questo mostra che la mappa \`e ben definita.
+
+		Per la suriettivit\`a, invece, si nota che per $g_1 \gamma g_1^{-1}  \in \mathrm{Orb} (\gamma)$, basta prendere $g_1 C(\gamma)$ nel dominio.
+
+		Infine, per l'iniettivit\`a, si assume che $f\big(g C(\gamma)\big)= f\big(h C(\gamma)\big)$, cio\`e $g \gamma g^{-1} = h \gamma h^{-1} $; questo, per\`o, implica che $h^{-1} g \gamma g^{-1} h = \gamma$, da cui segue che $h^{-1} g \in C(\gamma)\implies hC(\gamma) = h h^{-1} g C(\gamma)=gC(\gamma)$, cio\`e stessi elementi dell'immagine corrispondono a stessi elementi nel dominio.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	Sia $G$ un gruppo; allora $\forall \gamma \in G$:
+	\[
+	|\mathrm{Orb} (\gamma)| = \frac{|G|}{|C(\gamma)|}
+	\] 
+\end{corollario}
 \begin{center}
-	Riprendere dal corollario 10.1.4, pagina 95.
+	Integrare il capitolo 11
 \end{center}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
