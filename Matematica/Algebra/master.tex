@@ -2265,7 +2265,26 @@ g_1 g_2 \gamma = g_1\gamma g_2 = \gamma g_1g_2 \implies g_1,g_2 \in C(\gamma)
 	|\mathrm{Orb} (\gamma)| = \frac{|G|}{|C(\gamma)|}
 	\] 
 \end{corollario}
+\subsubsection{Quoziente di un gruppo ciclico}
+Si considera un gruppo ciclico $C$ (finito o infinito) generato da un elemento $x$, cio\`e $C = \langle x \rangle$.
+Un suo sottogruppo $H$ sar\`a per forza normale, visto che $C$ \`e commutativo; si vuole studiare il gruppo quoziente $C / H$.
 
+A questo proposito, si considera l'omomorfismo canonico $\pi : C\to C / H$; visto che $x$ genera $C$, allora $\pi(x) = xH$ genera $C /H $.
+\begin{proof}
+	Usando che $\pi$ \`e una mappa suriettiva e il fatto che $\pi(x^j)=\pi(x) ^j$, visto che \`e un omomorfismo, si ottiene che una qualunque classe laterale $bH = x^k H$, per qualche intero $k$, \`e l'immagine di $\pi(x^k) = \pi(x)^k$, quindi si ottiene la tesi perch\'e ogni classe laterale si ottiene tramite elevazione a potenza di $\pi(x)$.
+\end{proof}
+Questo dimostra anche che $C / H$ \`e ciclico.
+In quanto tale, si analizzano i vari scenari possibili.
+\begin{enumerate}[(a).]
+	\item Se $H = \left\{ e \right\} $, allora $\pi$ \`e una mappa sia iniettiva che suriettiva, pertanto \`e un isomorfismo e vale $C \cong C / H$.
+	\item Se $H = C$ (che equivale a dire che $x \in H$), allora $C / H$ contiene la sola classe laterale $eH$.
+	\item Se $\left\{ e \right\} \subsetneq H \subsetneq C$, allora necessariamente $x \not \in H$; si considera $m$ come il pi\`u piccolo intero positivo tale che $x^m \in H$.
+		Usando quanto trovato sopra, cio\`e che $C/H$ \`e ciclico ed \`e generato da $xH$, e aggiungendo anche l'informazione per cui $x^mH = H$ perch\'e, per definizione, $x^m \in H$, si conclude che l'ordine di $xH$ \`e proprio $m$, quindi $C / H$ ha cardinalit\`a $m$ e i suoi elementi sono:
+		\[
+		H,\ xH,\ x^2 H, \ldots , \ x^{m-1} H
+		\] 
+		
+\end{enumerate}
 
 
 
