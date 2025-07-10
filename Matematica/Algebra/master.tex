@@ -1956,7 +1956,7 @@ Di seguito, una proposizione che permette di collegare la ciclicit\`a di un grup
 
 
 
-\subsection{Sottogruppi normali}
+\subsection{Sottogruppi normali e I teorema di omomorfismo}
 \begin{definizione}
 	{Sottogruppo normale}{}
 	Sia $G$ un gruppo e sia $H$ un suo sottogruppo. Si dice che $H $ \`e \textit{normale} se soddisfa una delle due, equivalenti, condizioni:
@@ -1996,51 +1996,25 @@ Il poter trattare questo come un gruppo \`e dovuto all'assunzione $xH = Hx$.
 
 	\`E chiaro che per essere vero che $G / H$ \`e un gruppo quoziente, $H$ deve per forza essere un sottogruppo normale di $G$, da qui il motivo per cui lo si sottintende.
 \end{obs}
+\begin{esempio}
+Si considera il gruppo $(\mathbb{Z},+)$ e il suo sottogruppo $ \langle m \rangle=m\mathbb{Z}$, per qualche intero $m \in \mathbb{Z}$.
+Il relativo gruppo quoziente \`e $\mathbb{Z} / m\mathbb{Z}$; questo \`e l'insieme delle classi laterali della forma $\left\{ z+km:k \in \mathbb{Z} \right\} $ al variare di $z \in \mathbb{Z}$, cio\`e ogni classe laterale corrisponde agli interi che hanno resto $z$ quando divisi per $m$.
+Questo gruppo quoziente \`e, pertanto, isomorfo a $\mathbb{Z}_m$: partendo dal gruppo infinito $\mathbb{Z}$, tramite quoziente si \`e ottenuto un gruppo finito $\mathbb{Z}_m$.
+\end{esempio}
 \begin{corollario}
 	{Omomorfismo canonico}{}
-	Sia $G$ un gruppo e sia $H\subset G : \forall x \in G, \ xH= Hx$ un sottogruppo normale di $G$. Sia $G / H$ il gruppo quoziente e $f:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $f(a) = aH$. Allora $f$ \`e un omomorfismo e $\mathrm{Ker} (f) \equiv H$.
+	Sia $G$ un gruppo e sia $H$ un suo sottogruppo normale. 
+	Sia $G / H$ il gruppo quoziente e $\pi:G\to G /H$ la mappa che, ad ogni $a\in G$, associa la classe laterale $aH$, cio\`e $\pi(a) = aH$. Allora $\pi$ \`e un omomorfismo e $\mathrm{Ker} (\pi) \equiv H$.
 	\begin{proof}
-	\`E evidente che $f$ sia un omomorfismo dalla definizione di prodotto di classi laterali.
-	Per il kernel, si vede che ogni elemento di $H$ \`e automaticamente in $\mathrm{Ker} (f)$ perch\'e se $h \in H \Rightarrow  f(h) = hH \equiv H$.
-Sia, invece, $x \in G:f(x) = xH $ sia l'elemento unit\`a di $G/H$, quindi coincidente con il laterale $H$ stesso: $xH = H$.
-Questo vuol dire che $xe = x$ \`e un elemento di $H$. Quindi $H$ coincide con il kernel di $f$.
+	\`E evidente che $\pi$ sia un omomorfismo dalla definizione di prodotto di classi laterali.
+	Per il kernel, si vede che ogni elemento di $H$ \`e automaticamente in $\mathrm{Ker} (\pi)$ perch\'e se $h \in H \Rightarrow  \pi(h) = hH \equiv H$.
+Sia, invece, $x \in G:\pi(x) = xH $ sia l'elemento unit\`a di $G/H$, quindi coincidente con il laterale $H$ stesso: $xH = H$.
+Questo vuol dire che $xe = x$ \`e un elemento di $H$. Quindi $H$ coincide con il kernel di $\pi$.
 	\end{proof}
 \end{corollario}
-Sia $f:G\to G'$ un omomorfismo. Dato $x \in G$, allora, $\forall k \in \mathrm{Ker} (f)$:
-\[
-	f(xk) = f(x) f(k) = f(x) \implies f(x\mathrm{Ker} (f)) = f(x)
-\] 
-Questo significa che ogni elemento in un laterale di $\mathrm{Ker} (f)$ ha la stessa immagine sotto $f$.
-\begin{teorema}
-	{Primo teorema di omomorfismo}{}
-	Sia $f:G\to G'$ un omomorfismo e sia $H= \mathrm{Ker} (f)$; allora la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo del gruppo quoziente $G / H$ con l'immagine di $f$, cio\`e $G/H \stackrel{\approx}{\longrightarrow}\mathrm{Im} (f)$.
-In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da $f$.
-	\begin{proof}
-		Si definisce $\overline{f}: G / H \to G' $ t.c. $ xH \mapsto f(xH)$. Ora si verifica che \`e un isomorfismo usando il teorema \ref{th:homism}. Intanto si ha che $\overline{f}$ \`e un omomorfismo, infatti:
-		\[
-		\overline{f}(xHyH) = \overline{f}(xyH) = f(xy) = f(x)f(y) = \overline{f}(xH) \overline{f}(yH)
-		\] 
-\`E anche iniettiva perch\'e il suo nucleo sono quei laterali $xH$ tali che $f(xH) = e'$, quindi solamente $H$, che \`e l'unit\`a di $G / H$.
-Infine si ha $\mathrm{Im} (\overline{f}) = \mathrm{Im} (f)$ per definizione di $f$.
-Quest'ultima considerazione permette di concludere che $G / H \cong \mathrm{Im} (f)$.
-	\end{proof}
-\end{teorema}
-\begin{esempio}
-Si considera, come esempio, $\mathbb{Z}$ come sottogruppo del gruppo additivo $(\mathbb{R}, + )$; il gruppo quoziente $\mathbb{R} / \mathbb{Z}$ \`e chiamato \textbf{gruppo circolare}. 
-
-Dati due numeri reali $x,y \in \mathbb{R}$, si dice che $x \equiv y \pmod{\mathbb{Z}}$ se $x - y \in \mathbb{Z}$; questa definisce una relazione di equivalenza, le cui classi di equivalenza sono esattamente i laterali di $\mathbb{Z}$ in $\mathbb{R}$. 
-Se \`e vero che $x \equiv y \pmod{\mathbb{Z}}$, allora $e^{2\pi i x} = e^{2\pi i y} $ e la mappa $x \mapsto e^{2\pi i x} $ definisce un isomorfismo di $\mathbb{R} / \mathbb{Z}$ nel gruppo moltiplicativo dei numeri complessi che hanno modulo unitario.
-\end{esempio}
-\begin{esempio}
-Siano $\mathbb{C}^*$ e $\mathbb{R}^+$, rispettivamente, il gruppo moltiplicativo dei numeri complessi non-nulli e il gruppo moltiplicativo dei reali positivi.
-
-Dato $\alpha \in \mathbb{C}^*$, vale $\alpha  = ru$, con $r \in \mathbb{R}^+$ e $\lvert u \rvert = 1$ (si prende $u = \alpha  / \lvert \alpha  \rvert $). 
-L'espressione di $u$ \`e sempre determinata e la mappa $\alpha \mapsto \alpha / \lvert \alpha  \rvert $ \`e un omomorfismo di $\mathbb{C}^*$ in $\mathbb{C}_1 := \left\{ x \in \mathbb{C} : \lvert x \rvert = 1 \right\} $.
-Essendo il nucleo di questo omomorfismo proprio $\mathbb{R}^+$, allora $\mathbb{C}^* / \mathbb{R}^+ \cong \mathbb{C}_1$.
-\end{esempio}
 \begin{prop}
-	{Omomorfismo canonico}{}
-Dati $K \subset H \subset G$ sottogruppi normali di $G$, la mappa $xK \mapsto xH$, con $x \in G$ \`e un omomorfismo suriettivo $f: G / K \to G / H$ comunemente chiamato \textbf{omomorfismo canonico}; il suo kernel \`e $H / K$.
+	{}{}
+Dati $K \subset H \subset G$ sottogruppi normali di $G$, la mappa $xK \mapsto xH$, con $x \in G$ \`e un omomorfismo suriettivo $f: G / K \to G / H$; il suo kernel \`e $H / K$.
 \begin{proof}
 	Intanto \`e ben definito: se $xK = yK \Rightarrow xH = yH$ perch\'e $y^{-1} x K = K \Rightarrow  f(y^{-1} xK)= y^{-1} x H = f(K) = H$, da cui $y^{-1} x H = H \Rightarrow xH = yH$.
 
@@ -2056,8 +2030,26 @@ Il kernel \`e, infine, composto dagli elementi di $G / K$ che vengono mappati in
 La forma del Kernel \`e anche il motivo per cui questo non \`e un isomorfismo (cio\`e perch\'e non \`e iniettivo).
 \end{proof}
 \end{prop}
-\noindent Un caso particolare di omomorfismo canonico \`e la \textbf{proiezione canonica} $\pi$ che, dati $G$ un gruppo e $N \subset G$ un suo sottogruppo normale, mappa $G \to G / N$.
-Questo permette di definire un diagramma commutativo come conseguenza del \textit{primo teorema di omomorfismo}; infatti, si ha:
+\noindent Sia $f:G\to G'$ un omomorfismo. Dato $x \in G$, allora, $\forall k \in \mathrm{Ker} (f)$:
+\[
+	f(xk) = f(x) f(k) = f(x) \implies f(x\mathrm{Ker} (f)) = f(x)
+\] 
+Quindi, ogni elemento in un laterale di $\mathrm{Ker} (f)$ ha la stessa immagine sotto $f$.
+\begin{teorema}
+	{Primo teorema di omomorfismo}{}
+	Sia $f:G\to G'$ un omomorfismo e sia $H= \mathrm{Ker} (f)$; allora la mappa $x \mathrm{Ker} (f) \mapsto f(x \mathrm{Ker} (f))$ \`e un isomorfismo del gruppo quoziente $G / H$ con l'immagine di $f$, cio\`e $G/H \stackrel{\approx}{\longrightarrow}\mathrm{Im} (f)$.
+In questo caso, si dice che l'isomorfismo $\overline{f}$ \`e \textbf{indotto} da $f$.
+	\begin{proof}
+		Si definisce $\overline{f}: G / H \to G' $ t.c. $ xH \mapsto f(xH)$. Ora si verifica che \`e un isomorfismo usando il teorema \ref{th:homism}. Intanto si ha che $\overline{f}$ \`e un omomorfismo, infatti:
+		\[
+		\overline{f}(xHyH) = \overline{f}(xyH) = f(xy) = f(x)f(y) = \overline{f}(xH) \overline{f}(yH)
+		\] 
+\`E anche iniettiva perch\'e il suo nucleo sono quei laterali $xH$ tali che $f(xH) = e'$, quindi solamente $H$, che \`e l'unit\`a di $G / H$.
+Infine si ha $\mathrm{Im} (\overline{f}) = \mathrm{Im} (f)$ per definizione di $f$.
+Quest'ultima considerazione permette di concludere che $G / H \cong \mathrm{Im} (f)$.
+	\end{proof}
+\end{teorema}
+\noindent Il primo teorema di omomorfismo si pu\`o esprimere in termini di un diagramma commutativo che permette di evidenziare le implicazioni del teorema.
 \[\begin{tikzcd}
 	G && {\operatorname{Im}f} \\
 	\\
@@ -2067,6 +2059,34 @@ Questo permette di definire un diagramma commutativo come conseguenza del \texti
 	\arrow["\displaystyle \cong"', from=3-1, to=1-3]
 \end{tikzcd}\]
 In questo modo, si ha $f = \overline{f}\circ \pi$.
+\begin{esempio}
+Si considera, come esempio, $\mathbb{Z}$ come sottogruppo del gruppo additivo $(\mathbb{R}, + )$; il gruppo quoziente $\mathbb{R} / \mathbb{Z}$ \`e chiamato \textbf{gruppo circolare}. 
+
+Dati due numeri reali $x,y \in \mathbb{R}$, si dice che $x \equiv y \pmod{\mathbb{Z}}$ se $x - y \in \mathbb{Z}$; questa definisce una relazione di equivalenza, le cui classi di equivalenza sono esattamente i laterali di $\mathbb{Z}$ in $\mathbb{R}$. 
+Se \`e vero che $x \equiv y \pmod{\mathbb{Z}}$, allora $e^{2\pi i x} = e^{2\pi i y} $ e la mappa $x \mapsto e^{2\pi i x} $ definisce un isomorfismo di $\mathbb{R} / \mathbb{Z}$ nel gruppo moltiplicativo dei numeri complessi che hanno modulo unitario.
+\end{esempio}
+\begin{esempio}
+Siano $\mathbb{C}^*$ e $\mathbb{R}^+$, rispettivamente, il gruppo moltiplicativo dei numeri complessi non-nulli e il gruppo moltiplicativo dei reali positivi.
+
+Dato $\alpha \in \mathbb{C}^*$, vale $\alpha  = ru$, con $r \in \mathbb{R}^+$ e $\lvert u \rvert = 1$ (si prende $u = \alpha  / \lvert \alpha  \rvert $). 
+L'espressione di $u$ \`e sempre determinata e la mappa $\alpha \mapsto \alpha / \lvert \alpha  \rvert $ \`e un omomorfismo di $\mathbb{C}^*$ in $\mathbb{C}_1 := \left\{ x \in \mathbb{C} : \lvert x \rvert = 1 \right\} $.
+Essendo il nucleo di questo omomorfismo proprio $\mathbb{R}^+$, allora $\mathbb{C}^* / \mathbb{R}^+ \cong \mathbb{C}_1$.
+\end{esempio}
+\noindent Dal primo teorema di omomorfismo, seguono immediatamente i due seguenti corollari.
+\begin{corollario}
+	{}{}
+	Sia $f:G_1\to G_2$ un omomorfismo suriettivo; allora 
+	\[
+	G_1 / \mathrm{Ker} f \cong G_2
+	\] 
+\end{corollario}
+\begin{corollario}
+	{}{}
+	Sia $f:G_1\to G_2$ un omomorfismo iniettivo; allora
+	\[
+	G_1 \cong \mathrm{Im} f
+	\] 
+\end{corollario}
 \subsection{Approfondimenti sui gruppi}
 \subsubsection{Il gruppo simmetrico e il gruppo alterno}
 Data una permutazione $\sigma \in S_n$, si indica con la tupla $\lambda (\sigma ) = (\lambda_1, \ldots, \lambda _k)$ la lunghezza di ciascuno dei $k$ cicli disgiunti in cui si decompone $\sigma $.
@@ -2239,17 +2259,12 @@ g_1 g_2 \gamma = g_1\gamma g_2 = \gamma g_1g_2 \implies g_1,g_2 \in C(\gamma)
 	\end{proof}
 \end{teorema}
 \begin{corollario}
+	{}{}
 	Sia $G$ un gruppo; allora $\forall \gamma \in G$:
 	\[
 	|\mathrm{Orb} (\gamma)| = \frac{|G|}{|C(\gamma)|}
 	\] 
 \end{corollario}
-\begin{center}
-	Integrare il capitolo 11
-\end{center}
-
-
-
 
 
 
