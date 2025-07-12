@@ -2283,10 +2283,200 @@ In quanto tale, si analizzano i vari scenari possibili.
 		\[
 		H,\ xH,\ x^2 H, \ldots , \ x^{m-1} H
 		\] 
-		
 \end{enumerate}
+\newpage
+\section{Teoria degli anelli}
+\subsection{Definizioni preliminari}
 
 
+\begin{definizione}
+	{Anello}{}
+	Un insieme $R$ \`e detto \textit{anello con unit\`a} se possiede due operazioni, $+$ (addizione) e $\cdot $ (moltiplicazione), che soddisfano le seguenti propriet\`a:
+	\begin{enumerate}[(r1).]
+		\item $R$ \`e un gruppo commutativo rispetto a $+$;
+		\item $\forall a,b,c \in R$, vale $a \cdot ( b\cdot c) = (a\cdot b) \cdot c$ (associativit\`a rispetto al prodotto);
+		\item $\exists 1 \in R  : \forall a \in R, \ a \cdot 1 = 1 \cdot a = a $;
+		\item $\forall a,b,c \in R, \ (a+b) \cdot c = a \cdot c + b \cdot  c$ e $a \cdot (b + c) = a \cdot b + a \cdot  c$ (distributivit\`a).
+	\end{enumerate}
+	Per anello, si inteder\`a sempre un anello con unit\`a, nonostante sia possibile una definizione anche senza unit\`a.	
+\end{definizione}
+\begin{obs}
+	La definizione ammette un anello della forma $A = \left\{ 0 \right\} $, in cui tutte le operazioni sono quelle banali e lo $0$ funziona sia da elemento neutro per la somma, che per la moltiplicazione.
+\end{obs}
+\begin{definizione}
+	{Anello commutativo}{}
+	Un anello $R$ tale che $\forall a,b \in R$
+	\[
+	a \cdot b = b \cdot a 
+	\] 
+	\`e detto commutativo.
+\end{definizione}
+\begin{definizione}
+	{Divisore dello zero}{}
+	Sia $R$ un anello commutativo. 
+	Si dice che $ a \in R$ \`e un \textit{divisore dello zero} se $\exists b \in R, \ b\neq 0$ tale che $ab = 0$.
+\end{definizione}
+\noindent In particolare, $0$ \`e sempre un divisore dello zero.
+Inoltre, un anello commutativo $R$ in cui $0\neq 1$ e in cui l'unico divisore dello zero \`e $0$ si dice \textbf{dominio} (o dominio di integrit\`a).
+\begin{definizione}
+	{Elemento invertibile}{}
+	Sia $u \in R$; $u$ si dice \textit{invertibile} se esiste $v \in R$ tale che $u\cdot  v = v \cdot u = 1$.
+	Si indica con $R^*$ l'insieme degli elementi invertibili in $R$.
+\end{definizione}
+\begin{prop}
+	{}{}	
+	Sia $R$ un anello; l'insieme $R^*$ \`e un gruppo rispetto alla moltiplicazione.
+	\begin{proof}
+		L'associativit\`a \`e soddisfatta dall'assioma (r2) degli anelli, visto che $R^* \subset R$.
+		Evidentemente esiste l'elemento neutro perch\'e esso \`e invertibile, infatti $1 \cdot 1 = 1$.
+		Infine, l'elemento inverso deve essere contenuto nell'insieme perch\'e $\forall a \in R^*, \ \exists a^{-1}  \in R : a\cdot a^{-1} = a^{-1} \cdot a = 1$, ma $a^{-1} $ \`e invertibile con inverso proprio $a$.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	{Elementi associati}{}
+	Siano $a,b \in R$ anello commutativo; questi si dicono \textit{associati} se $a = bu$, per $u \in R^*$.
+\end{definizione}
+\begin{definizione}
+	{Corpo}{}
+	Un anello $R$ in cui $0\neq 1$ e in cui $\forall  \in R \setminus \left\{ 0 \right\} $ \`e invertibile \`e detto \textit{corpo}.
+\end{definizione}
+\begin{definizione}
+	{Campo}{}
+	Un corpo \`e detto \textit{campo} se \`e commutativo.
+\end{definizione}
+Alcuni esempi di \textit{anelli commutativi} sono $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{Z}_m$ con $m>1$.
+Gli anelli $\mathbb{Q}$ e $\mathbb{R}$ sono anche dei \textit{campi}, mentre $\mathbb{Z}$ no perch\'e non possiede gli inversi rispetto alla moltiplicazione degli elementi diversi da $-1,1$.
+Tuttavia, $\mathbb{Z}$ \`e un esempio di \textit{dominio}.
+Se $R$ \`e un anello commutativo, anche l'\textit{insieme dei polinomi a coefficienti in} $R$, $R[x]$, \`e un anello commutativo.
+Inoltre, se $R$ \`e un dominio, anche $R[x]$ \`e un dominio.
+
+Un anello non commutativo \`e l'anello $\mathcal{M} _{n} (K)$ delle matrici $n \times  n, \ n\ge 2$ a coefficienti in un campo $K$.
+
+\subsubsection{I quaternioni}
+Un esempio di corpo che non \`e un campo sono i quaternioni $\mathbb{H}$.
+Per descriverlo, si parte dal gruppo dei quaternioni, dato da $(Q_8, \cdot )$
+\begin{equation}
+	Q_8 = \left\{ 1,-1,\mathbf{i} ,(-1)\mathbf{i} , \mathbf{j} , (-1)\mathbf{j}, \mathbf{k} , (-1)\mathbf{k}   \right\} 
+\end{equation}
+dove il prodotto \`e definito nel seguente modo:
+\begin{itemize}
+	\item $1$ \`e l'elemento neutro;
+	\item valgono le seguenti relazioni:
+		\[
+			\begin{split}
+				&(-1)^2 = 1 \hspace{1cm} i^2 = j^2 = k^2 = -1 \hspace{1cm} \mathbf{i} \mathbf{j} = (-1) \mathbf{j} \mathbf{i} = \mathbf{k}\\
+				& \mathbf{jk} = (-1) \mathbf{kj} = \mathbf{i} \hspace{1cm} \mathbf{ki} = (-1) \mathbf{ik} = \mathbf{j} 
+			\end{split}
+		\] 
+\end{itemize}
+Si pu\`o verificare che, con questo prodotto, $Q_8$ \`e un gruppo non-commutativo nel quale sono presenti tre elementi di ordine $4$; questo implica anche che non \`e isomorfo al gruppo diedrale di $8$ elementi $D_4$ perch\'e quest'ultimo ha solo due elementi di ordine $4$.
+
+Il corpo dei quaternioni \`e un'estensione del campo dei complessi.
+Per la sua costruzione, si parte dallo spazio vettoriale reale di dimensione $4$ con base $1,\mathbf{i} ,\mathbf{j} ,\mathbf{k} $
+\[
+\mathbb{H}=\left\{ a + b \mathbf{i} + c \mathbf{j}  + d \mathbf{k}  \mid a,b,c,d \in \mathbb{R} \right\} 
+\] 
+dove la somma \`e data da
+\[
+(a+b \mathbf{i} + c \mathbf{j} + d \mathbf{k} )+(a' +b'\mathbf{i} + c' \mathbf{j} + d' \mathbf{k} ) = (a+a') +(b+b')\mathbf{i} + (c+c') \mathbf{j} +(d+d')\mathbf{k} 
+\] 
+Per conferirgli una struttura di anello, si deve definire una moltiplicazione; questa \`e definita distribuendo ciascun termine dei due fattori e usando le relazioni stabilite dal prodotto per $Q_8$.
+In questo modo, $\mathbb{H}$ ha una struttura di anello con unit\`a ed \`e evidentemente non commutativo, visto che $Q_8$ non lo \`e.
+
+Si nota che ogni elemento di $\mathbb{H} \setminus \left\{ 0 \right\} $ ha un inverso; infatti, dato $a+b \mathbf{i} +c \mathbf{j} + d \mathbf{k} $, con $a,b,c,d$ non tutti nulli, il suo inverso \`e dato da:
+\[
+\frac{a - b \mathbf{i}  - c \mathbf{j} - d\mathbf{k} }{a^2 +b^2 + c^2 + d^2}
+\] 
+Se ne conclude, dunque, che $\mathbb{H}$ \`e un corpo, ma non un campo.
+\subsubsection{Gli anelli $\mathbb{Z}_m$}
+Si nota che se $m$ non \`e primo, allora $\mathbb{Z}_m$ ha dei divisori dello zero che sono diversi da $[0]_m$, per cui non \`e un dominio.
+Se $m$ non fosse primo, infatti, si potrebbe fattorizzare come $m = k \cdot  s$, con $1<k,s<m$ e varrebbe:
+\[
+	[k]_m[s]_m = [ks]_m = [m]_m = [0]_m
+\] 
+Ne segue che se $m$ non \`e primo, allora $\mathbb{Z}_m$ non \`e un campo perch\'e, come si mostrer\`a, un campo \`e automaticamente un dominio.
+\`E facile vedere, per\`o, che non esiste un inverso di $[k]_m$ e $[s]_m$.
+\begin{proof}
+	Prendendo d'esempio $k$, la condizione che deve verificare per avere inverso modulo $m$ \`e $\operatorname{gcd}(k,m) = 1$, ma chiaramente non sono coprimi perch\'e $m$ \`e, per definizione, un suo multiplo.
+\end{proof}
+\begin{teorema}
+	{}{}
+	Se $p$ \`e un numero primio, allora $\mathbb{Z}_p$ \`e un campo.
+\begin{proof}
+	Sia $[a]_p\neq [0]_p$ in $\mathbb{Z}_p$; visto che $p$ non divide $a$, allora $\operatorname{gcd}(a,p) = 1$, per cui $ax \equiv 1 \pmod{p}  $ ha soluzione, cio\`e $a$ ha un inverso modulo $p$; sia questo $b$.
+	Conseguentemente, $[a]_p[b]_p = [ab]_p = [1]_p$, il che vuol dire che $\exists [b]_p \in \mathbb{Z}_p$ inverso di $[a]_p$.
+	Pertanto, ogni elemento di $\mathbb{Z}_p$ ha inverso.
+\end{proof}
+\end{teorema}
+\subsection{Anelli di polinomi e algoritmo di Euclide}
+Sia $K$ un campo; si considera l'insieme $K[x]$ dei polinomi a coefficienti in $K$.
+Un generico $f(x) \in K[x]$ \`e della forma
+\[
+f(x) = a_n x^n + a_{n-1} x^{n-1} +\ldots+ a_1 x + a_0
+\] 
+con $a_i \in K, \forall i = 0,1,\ldots,n$.
+In questa notazione, dire che $f(x)$ \`e non-nullo equivale a richiedere che almeno $a_n \neq 0$, dove $a_n$ \`e chiamato \textit{coefficiente direttore} di $f(x)$ e $n$ \`e il grado del polinomio, indicato con $\operatorname{deg} f$.
+
+\begin{obs}
+	Per convenzione, il polinomio costante $0$ ha grado $-\infty$.
+\end{obs}
+\begin{prop}
+	{}{}
+	Dati $f,g \in K[x]$, vale
+	\[
+	\operatorname{deg} fg = \operatorname{deg} f + \operatorname{deg} g
+	\] 
+	\begin{proof}
+		Il grado di un polinomio \`e dato dal massimo esponente di $x$; evidentemente, il termine di massimo grado del prodotto \`e ottenuto dal prodotto dei termini di grado massimo, cio\`e da $x^{\operatorname{deg} f} \cdot x ^{\operatorname{deg} g} = x^{\operatorname{deg} f + \operatorname{deg} g} $, da cui segue la tesi.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	{Algoritmo di Euclide}{}
+	Siano $f,g \in K[x]$ due polinomi e sia $\operatorname{deg} g \ge  0$; allora esiste un'unica coppia di polinomi $q(x),r(x) \in K[x]$ tali che
+	\[
+	f(x) = q(x) g(x) + r(x)
+	\] 
+	con $\operatorname{deg} r < \operatorname{deg} g$.
+	\begin{proof}
+		Sia $m = \operatorname{deg} g \ge 0$; i polinomi $f,g$ sono della forma
+		\[
+		\begin{split}
+			&f(x) = a_nx^n + \ldots + a_0\\
+			&g(x) = b_m x^m + \ldots + b_0
+		\end{split}
+		\] 
+		con $b_m\neq 0 $.
+		Se $n < m$, allora si prende $q = 0$ e $r = f$ e il teorema \`e dimostrato.
+		Si considera, ora, il caso $n\ge  m$; sia, allora:
+		\[
+		f_1(x) = f(x) - a_n b_m^{-1} x^{n-m} g(x)\implies \operatorname{deg} f_1 < \operatorname{deg} f
+		\] 
+		Ripetendo il procedimento finch\'e non ci si trova nel caso $\operatorname{deg} f_k < \operatorname{deg} g$, caso in cui si prende $q=0 $ e $r=f_k$, si trovano dei polinomi $q_1, r$ tali che
+		\[
+		f_1(x) = q_1(x) g(x) + r(x), \ \operatorname{deg} r < \operatorname{deg} g
+		\] 
+		Allora:
+		\[
+		\begin{split}
+			f(x)&=a_nb_m^{-1} x^{n-m} g(x) + f_1(x)\\
+			    &=a_nb_m^{-1} x^{n-m} g(x) + q_1(x)g(x) + r(x)\\
+			    &=\big(a_nb_m^{-1} x^{n-m} +q_1(x)\big)g(x) + r(x)
+		\end{split}
+		\] 
+		Ora manca da mostrare l'unicit\`a di questa decomposizione.
+		Si suppone, allora, che valga
+		\[
+		f = q_1 (x) g(x) + r_1(x) = q_2 (x) g(x) + r_2(x)
+		\] 
+		con $\operatorname{deg} r_1, \operatorname{deg} r_2 < \operatorname{deg} g$.
+		Ma quindi si ha 
+		\[
+			(q_1-q_2)g  = r_2-r_1
+		\] 
+		Questo vuol dire che o il grado del membro di sinistra \`e $\ge \operatorname{deg} g$, oppure \`e nullo e, contemporaneamente, o il mmebro di destra \`e nullo, oppure \`e $< \operatorname{deg} g$.
+		Se ne conclude che l'unica possibilit\`a \`e che siano entrambi nulli, quindi $q_1=q_2$ e $r_1=r_2$.
+	\end{proof}
+\end{teorema}
 
 
 
