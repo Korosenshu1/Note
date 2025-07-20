@@ -2477,6 +2477,391 @@ In questa notazione, dire che $f(x)$ \`e non-nullo equivale a richiedere che alm
 		Se ne conclude che l'unica possibilit\`a \`e che siano entrambi nulli, quindi $q_1=q_2$ e $r_1=r_2$.
 	\end{proof}
 \end{teorema}
+\begin{definizione}
+	{Polinomio monico}{}
+	Un polinomio $f(x) \in K[x]$, con $\mathrm{deg} f(x) = n$, si dice \textit{monico} se $a_n = 1$.
+\end{definizione}
+\subsubsection{Il massimo comune divisore e il teorema di B\'ezout}
+Usando l'algoritmo di Euclide si pu\`o definire il \textbf{massimo comune divisore} per un polinomio, cio\`e dati $f(x),g(x) \in K[x]$, si costruisce $\operatorname{gcd}(f(x),g(x)) $.
+
+Si deve dimostrare che questo \`e ben definito; intanto, dati due polinomi e dato l'insieme dei loro divisori monici, se ne pu\`o sicuramente scegliere unico di grado maggiore; rimane da mostrare che questa scelta \`e unica.
+
+Si prendono due polinomi $f(x),g(x) \in K[x]$; per l'algoritmo di Euclide, esistono unici $r_1(x),q_1(x) \in K[x]$ tali che
+\[
+f(x) = q_1(x) g(x) + r_1(x), \ \operatorname{deg} g > \operatorname{deg} r_1
+\] 
+Se $r_1=0$, ci si ferma perch\'e $\operatorname{gcd}(f,g) = g(x)$, altrimenti $\exists ! q_2,r_2\in K[x]$ tali che
+\[
+g(x) = q_2(x) r_1(x) + r_2(x), \ \operatorname{deg} r_1 > \operatorname{deg} r_2
+\] 
+Se $r_2=0$, ci si ferma perch\'e $\operatorname{gcd}(f,g) = r_1(x)$, altrimenti si reitera. 
+In generale, identificando $f=r_{-1} $ e $g = r_0$, si possono trovare delle sequenze uniche di polinomi in $K[x]$ tali che
+\[
+r_{i-2} (x) = q_i r_{i-1} (x) + r_i(x) 
+\] 
+con $\operatorname{deg} r_{i} \le \operatorname{deg} r_{i-1}, \ \forall i$; proprio perch\'e $\forall i$, il grado di $r_i$ \`e minore strettamente di quello di $r_{i-1} $, allora esiste il pi\`u piccolo $k\ge 0: r_{k+1} (x) = 0$.
+Conseguentemente, $r_k(x)$ differir\`a da $\operatorname{gcd}(f,g) $ a meno di un multiplo perch\'e, ad ogni passaggio, ogni divisore comune di $r_{i-2} , r_{i-1} $ deve esserlo anche di $r_i$, quindi, un divisore comune di $f$ e $g$ lo sar\`a anche di $r_k$.
+In particolare, quindi, $\operatorname{gcd}(f,g)  \mid r_k(x)$.
+
+Per quanto detto sopra, nell'asunzione che $r_{k+1} = 0$, si ha $r_{k-1} (x) = q_{k+1} (x) r_k(x)\Rightarrow r_k(x)$ divide $r_{k-1} (x)$. 
+Inoltre si nota che $r_{k-2} (x) = q_k(x) r_{k-1} (x) + r_k(x)$, quindi $r_k$ divide anche $r_{k-2} $; iterando, si conclude che $r_k(x)$ divide tutti gli $r_i(x)$, quindi anche $r_{-1} (x) = f(x)$ e $r_0(x) = g(x)$.
+
+Sia, ora, $\gamma$ il coefficiente direttore di $r_k(x)$; questo vuol dire che $r_k(x) / \gamma$ ha coefficiente direttore unitario e divide $f(x)$ e $g(x)$.
+Allora, per definizione di massimo comune divisore, si ha 
+\[
+\operatorname{deg} \frac{r_k(x)}{\gamma} \le \operatorname{deg} \left(\operatorname{gcd}(f,g)\right)  
+\] 
+ma, allo stesso tempo, deve valere anche che
+\[
+\operatorname{deg} \frac{r_k(x)}{\gamma} \ge \operatorname{deg} \left(\operatorname{gcd}(f,g)\right)  
+\] 
+perch\'e il m.c.d. divide $r_k(x)$, quindi anche $r_k(x) / \gamma$.
+Allora, visto che i polinomi $\operatorname{gcd}(f,g) $ e $r_k(x) / \gamma$ sono entrambi monici e hanno stesso grado; inoltre, il primo divide il secondo, pertanto devono essere uguali.
+
+Per finire, bisogna dimostrare che tutti i polinomi che dividono $f(x),g(x)$ e hanno grado massimale sono associati fra loro, quindi differiscono per il prodotto per un valore di $K$, e che ne esiste uno solo che \`e monico.
+Per la prima, assumendo che $p(x),q(x)$ siano due divisori di grado massimale di $f$ e $g$, si ha, per esempio
+\[
+	f = a p(x) = bq(x) \implies p(x) = \frac{b}{a}q(x)
+\] 
+perch\'e $a^{-1} \in K$ (visto che $K$ \`e un campo), per cui $b / a \in K$ per chiusura sotto moltiplicazione, quindi $p(x)$ e $q(x)$ sono associati. Assumendo, ora, che siano entrambi monici, le costanti $a$ e $b$ devono essere uguali perch\'e, altrimenti, il termine di grado massimo nei due avrebbe due coefficienti diversi e non sarebbero uguali.
+Questo dimostra l'unicit\`a, quindi la buona definizione, del massimo comune divisore per polinomi.
+
+Anche per i polinomi, si ha un analogo del \textit{teorema di B\'ezout}; infatti, partendo dall'ultima relazione dell'algoritmo di Euclide, si trovano due polinomi $y(x), z(x) \in K[x]$ tali che 
+\[
+y(x) f(x) + z(x) g(x) = r_k(x)
+\] 
+A questo punto, dividendo per il coefficiente direttore $\gamma$ di $r_k(x)$, si trova proprio:
+\begin{equation}
+	\lambda (x) f(x) + \mu (x) g(x) = \operatorname{gcd}(f,g) 
+\end{equation}
+con $\lambda (x) = y (x) / \gamma$ e $\mu (x) = z(x) / \gamma$.
+\begin{esempio}
+Siano $f(x) = 2x^4 + 5x^3 + 10x^2 + 10x + 3$ e $g(x) = 2x^3 + x^2 + 4x + 2$ due polinomi.
+Si nota che, per l'algoritmo di Euclide:
+\[
+f_1(x) = f(x) - xg(x) = 4x^3 + 6x^2 + 8x +3
+\] 
+Essendo ancora $\operatorname{deg} f_1\ge  \operatorname{deg} g$, si reitera:
+\[
+f_2(x) = f_1 (x) - 2g(x) = f(x) - (x+2)g(x) = 4x^2 - 1
+\] 
+Visto che $\operatorname{deg} f_2 < \operatorname{deg} g\Rightarrow f_2$ \`e il resto; infatti:
+\[
+f_2(x) = f(x) - (x+2) g(x) \implies f(x) = (x+2)g(x) + f_2(x) = q_1(x) g(x) + r_1(x)
+\] 
+con $q_1(x) = x+2$ e $r_1(x) = 4x^2 -1$.
+Applicando, ora, lo stesso algoritmo per scrivere $g(x) = q_2(x)r_1(x) + r_2(x)$, si trovano
+\[
+q_2(x) = \frac{2x+1}{4}\hspace{1cm}r_2(x) = \frac{9(2x+1)}{4}
+\] 
+Applicando nuovamente l'algoritmo per scrivere $r_1(x) = q_3(x)r_2(x) + r_3(x)$, si trovano $q_3(x) = (8x-4) / 9$ e $r_3(x) = 0$.
+Ne segue che
+\[
+	\operatorname{gcd}(f,g) = \frac{4}{18}r_2(x) = \frac{2x+1}{2}
+\] 
+Ora, a partire dalla relazione
+\[
+	\begin{split}
+		r_2(x) &= g(x) - q_2(x) r_1(x) = g(x) - q_2(x) \big[ f(x) - q_1(x) g(x) \big] \\
+		       &=-q_2(x) f(x) + \big(1+q_1(x) q_2(x)\big) g(x)
+	\end{split}
+\] 
+Si trovano
+\[
+\lambda (x) = -\frac{4}{18}q_2(x) = - \frac{2x+1}{18} \hspace{1cm} \mu (x) =\frac{4}{18}\big(1+q_1(x) q_2(x)\big)=\frac{2x^2 + 5x + 6}{18}
+\] 
+\end{esempio}
+\subsubsection{Radici di un polinomio}
+\begin{definizione}
+	{Radice di un polinomio}{}
+	Sia $K$ un campo; una \textit{radice} di un polinomio 
+	\[
+		f(x) = a_nx^n + \ldots a_1x + a_0 \in K[x]
+	\] 
+	\`e un $x_0 \in K$ tale che $f(x_0) = 0$.
+\end{definizione}
+\begin{lemma}
+	{}{}
+	Sia $K$ un campo e sia $f(x) \in K[x]$, con $x_0 \in K$ una sua radice; allora
+	\[
+	f(x)= (x-x_0) g(x)
+	\] 
+	con $g(x) \in K[x]$ e tale che $\operatorname{deg} g = \operatorname{deg} f - 1$.
+	\begin{proof}
+		Per l'algoritmo di Euclide, dividendo per $x-x_0$, si trovano unici $q(x),r(x) \in K[x]$ tali che
+		\[
+		f(x) = q(x) (x- x_0) + r(x)
+		\] 
+		con $\operatorname{deg} r < \operatorname{deg} (x-x_0) = 1$.
+		Quest'ultima disuguaglianza implica che $r(x)$ \`e un polinomio costante. 
+		Inoltre, si nota che, valutando tale espressione in $x=x_0$:
+		\[
+		0 = q(x_0)(x_0-x_0) + r(x_0) \implies r(x_0)=r(x) = 0
+		\] 
+		pertanto $g(x) = q(x)$ \`e il polinomio cercato.
+	\end{proof}
+\end{lemma}
+\begin{teorema}
+	{}{csmfc}
+	Sia $L$ un campo e sia $f(x) \in L[x]$ un polinomio di grado $n>0$; allora $f$ ha, al pi\`u, $n$ radici distinte in $L$.
+	\begin{proof}
+		Se $f(x)$ non ha radici, allora l'enunciato \`e verificato.
+		Se $f(x)$ ha radice $\alpha _1 \in L$, allora si sa che
+		\[
+		f(x) = (x-\alpha _1) f_1(x)
+		\] 
+		Continuando questa decomposizione finch\'e non si arriva ad un polinomio $h(x)$ tale che
+		\[
+		f(x) = \prod_{i=1} ^t (x-\alpha _i) h(x)
+		\] 
+		con $h(x)$ che non ha radici in $L$, con $t\le n$ per questioni di grado e con eventuali ripetizioni, si \`e sicuri che non vi siano altre radici; infatti, se vi fosse una diversa scomposizione con $\beta _1$ radice diversa da tutte le precedenti, il che porterebbe alla fattorizzazione
+		\[
+			f(x) = \prod_{i=1} ^s (x-\beta _i) \gamma(x)
+		\] 
+		con $\gamma(x) \in L[x]$ polinomio senza radici, questo risulterebbe in un assurdo: valutando $f(x)$ in $\beta _1$, che si \`e assunta essere diversa da tutte le $\alpha _i, i=1,\ldots,t$, si ha una fattorizzazione per cui $f(x)=0$ e un'altra (quella con le $\alpha _i$) per cui $f(x) \neq 0$.
+	\end{proof}
+\end{teorema}
+\subsubsection{Ciclicit\`a dei sottogruppi moltiplicativi finiti di un campo}
+Il teorema \ref{th:csmfc} appena dimostrato permette di concludere il seguente.
+\begin{teorema}
+	{}{}
+	Sia $K$ un campo e sia $G$ un sottogruppo di $K^*$ (quindi \`e un sottogruppo moltiplicativo), con $|G|<\infty$; allora $G$ \`e ciclico.
+	\begin{proof}
+		Sia $|G| = n$; se $n=1$, l'enunciato \`e banale, quindi si assume $n>1$.
+		Visto che $\forall n \in \mathbb{Z}^{>0} $ vale 
+		\[
+		\sum_{d \mid n}^{} \phi (d) = n
+		\] 
+		con $d \in \mathbb{Z}^{>0} $, prendendo 
+		\[
+		X_d = \left\{ a \in G  \mid o(a) = d \right\} 
+		\] 
+	con $d  \mid n$, vale anche che
+	\[
+	\sum_{d \mid n}^{}  \lvert X_d \rvert =n
+	\] 
+	Se $G $ non fosse ciclico, allora $\lvert X_n \rvert =0$, per cui dovrebbe esistere un intero $d>0$ tale che $d  \mid n \Rightarrow  d < n$ e tale che $\lvert X_d \rvert > \phi (d) \ge 1$.
+	Sia, allora, $g \in X_d$, per cui $o(g) = d$ e tutti gli elementi di $\langle g \rangle$ (sottogruppo ciclico di $G$ generato da $g$) sono radici di $x^d - 1$.
+	In $\langle g \rangle$, ci sono esattamente $\phi (d)$ elementi di ordine $d$, quindi, essendo $\lvert X_d \rvert > \phi (d)$, si trova $h \in X_d : h \not \in \langle g \rangle$, con $h$ radice di $x^d - 1$. 
+	A questo punto, per\`o, $x^d - 1$ avrebbe $d+1$ radici in $K$, il che \`e assurdo.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	{}{}
+	Per ogni $p \in \mathbb{Z}$ numero primo, il gruppo $\mathbb{Z}^*_p$ \`e ciclico, visto che \`e un sottogruppo moltiplicativo del campo $\mathbb{Z}_p$.
+\end{corollario}
+
+\subsection{Propriet\`a di base degli anelli}
+\begin{lemma}
+	{}{}
+	Sia $A$ un anello; allora $\forall a,b \in A$ vale:
+	\begin{enumerate}[(a).]
+		\item $a \cdot 0 = 0 \cdot a = 0$;
+		\item $\exists ! -a \in A : a+(-a) = -a +a = 0$ e $-(-a) = a$;
+		\item $a \cdot (-b) = (-a)\cdot b = - (a\cdot b)$ e, in particolare, $(-1) \cdot a = a\cdot (-1) = -a$;
+		\item $(-a)\cdot (-b) = a \cdot b$ e, in particolare, $(-1)\cdot (-1)  = 1$.
+	\end{enumerate}
+	\begin{proof}
+		Si dimostrano i vari punti.
+		\begin{enumerate}[(a).]
+			\item Si nota che
+				\[
+				a \cdot  0 = a \cdot (0+0) = a \cdot 0 + a \cdot  0
+				\] 
+				Sottraendo $a \cdot 0$ ad ambo i membri, si rimane con $a \cdot  0 = 0$. 
+				L'altra si dimostra analogamente.
+			\item Gi\`a mostrato per i gruppi.
+			\item Per mostrare che $a \cdot (-b) = - (a\cdot b)$, si mostra che $a \cdot b + a\cdot (-b) = 0$.
+				Per la propriet\`a distributiva:
+				\[
+				a \cdot b + a \cdot  (-b) = a \cdot (b+(-b)) = a \cdot 0 = 0
+				\] 
+			\item Si applica due volte il punto (c):
+				\[
+					(-a) \cdot (-b) = -(a \cdot (-b)) = - (-(a \cdot b)) = a \cdot b
+				\] 
+				dove l'ultima deriva dal punto (b).
+		\end{enumerate}
+	\end{proof}
+\end{lemma}
+\begin{obs}
+	Si nota che, per la propriet\`a (a) appena dimostrata, nel momento in cui in un anello $A$ si verifichi $1 = 0$, allora $\forall a \in A, \ 0=a \cdot  0 = a \cdot  1 = a$. 
+	Questo vuol dire che $A$ \`e l'anello banale.
+\end{obs}
+\begin{prop}
+	{}{}
+	Un campo \`e automaticamente anche un dominio.
+	\begin{proof}
+		Sia $K$ un campo; se, per assurdo, fosse $br = 0 $ per $b,r \in K, \ b,r \neq 0$, allora si possono moltiplicare ambo i membri per l'inverso di $b$, per esempio, e trovare che $r =0$, il che \`e assurdo.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{Legge di cancellazione}{}
+	In ogni dominio $R$ vale la legge di cancellazione, cio\`e $\forall a \in R ,\ a \neq 0$:
+	\[
+	a b = ac \implies b = c
+	\] 
+	\begin{proof}
+		\`E sufficiente notare che $ab = ac \Rightarrow  a b - a c = 0 \Rightarrow a ( b- c) = 0$. 
+		Usando il fatto che $a\neq 0$ e che si \`e in un dominio, deve risultare $b- c = 0 \Rightarrow  b = c$.
+	\end{proof}
+\end{prop}
+\noindent La legge di cancellazione non vale in generale per qualunque anello, infatti, in $\mathbb{Z}_{12} $, $[3][4] = [3][8] \not\Rightarrow  [4] = [8]$.
+\begin{definizione}
+	{Sottoanello}{}
+	Sia $R$ un anello; un suo sottoinsieme $T \subseteq R$ \`e detto \textit{sottoanello} se:
+	\begin{enumerate}[(sr 1).]
+		\item $1\in T$;
+		\item $T$ \`e un sottogruppo di $R$ rispetto a $+$;
+		\item $\forall a,b \in T \Rightarrow ab \in T$.
+	\end{enumerate}
+\end{definizione}
+\subsubsection{Omomorfismi di anelli}
+\begin{definizione}
+	{Omomorfismo di anelli}{}
+	Siano $R,S$ due anelli; una mappa $\phi :R \to S$ \`e detta \textit{omomorfismo di anelli} se $\forall a,b \in R$:
+	\begin{enumerate}[(or 1).]
+		\item $\phi (a+b) = \phi (a) + \phi (b)$;
+		\item $\phi (ab) = \phi (a)\phi (b)$;
+		\item $\phi (1_R) = 1_S$.
+	\end{enumerate}
+	Se $\phi $ \`e biettiva, allora \`e un isomorfismo di anelli.
+\end{definizione}
+\begin{definizione}
+	{Kernel di un omomorfismo}{}
+	Il nucleo di $\phi :R\to S$ omomorfismo di anelli \`e definito come l'insieme
+	\[
+	\operatorname{ker} \phi = \left\{ a \in R  \mid \phi (a) = 0 _S \right\} 
+	\] 
+\end{definizione}
+\noindent Essendo gli omomorfismi di anelli un caso particolare di omomorfismo di gruppi, vale la seguente proposizione esattamente come valeva per i gruppi.
+\begin{prop}
+	{}{}
+	Il nucleo di un omomorfismo di anelli $\phi : R\to S$ \`e un sottogruppo additivo di $R$.
+\end{prop}
+\noindent In aggiunta a questa, il nucleo di un omomorfismo di anelli soddisfa anche la seguente propriet\`a, che lo render\`a quello che sar\`a noto come \textbf{ideale}.
+\begin{prop}
+	{}{}
+	Sia $\phi :R \to S$ un omomorfismo di anelli; allora $\forall a \in \operatorname{ker} \phi $, si ha $ar \in \operatorname{ker} \phi $ e $ra \in \operatorname{ker} \phi , \ \forall r \in R$.
+	\begin{proof}
+		Visto che $a \in \operatorname{ker} \phi \Rightarrow \phi (a) = 0_S$; allora 
+		\[
+		\phi (ar) = \phi (a) \phi (r) = 0_S \phi (r) = 0_S \implies ar \in \operatorname{ker} \phi 
+		\] 
+		Analogamente si verifica l'altro.
+	\end{proof}
+\end{prop}
+\noindent Sempre perch\'e un omomorfismo di anelli \`e un caso particolare di omomorfismo di gruppi, vale che $\phi:R\to S $ \`e iniettiva se e solo se $\operatorname{ker} \phi  = \left\{ 0_R \right\} $.
+Si nota, comunque, che il nucleo non \`e un sottoanello di $R$ in generale; infatti, dovendo soddisfare $\phi (1_R) = 1_S \Rightarrow 1_R \not\in \operatorname{ker} \phi $, quindi non ha una struttura di anello perch\'e non ha l'elemento neutro rispetto al prodotto.
+Tuttavia, vale la seguente.
+\begin{prop}
+	{}{}
+	Sia $\phi :R \to S$ un omomorfismo di anelli; allora $\phi (R)$ \`e un sottoanello di $S$.
+	\begin{proof}
+		Evidentemente $1_S \in \phi (R)$ per definizione di omomorfismo.
+		\`E anche verificato che $\phi (R)$ \`e un sottogruppo additivo di $S$ per quanto dimostrato sui gruppi.
+		Infine, $\forall a,b \in \phi (R) \Rightarrow ab \in \phi (R)$ perch\'e se $a = \phi (\alpha ) , \ b = \phi (\beta )$
+		\[
+		ab = \phi (\alpha ) \phi (\beta ) = \phi (\alpha \beta ) \implies ab \in \phi (R)
+		\] 
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Dati $\phi :R \to S, \ \psi :S \to T$ due omomorfismi di anelli, la loro composizione $\psi \circ \phi: R \to T $ \`e ancora un omomorfismo di anelli.
+\end{prop}
+\subsubsection{Ideali e generatori}
+\begin{definizione}
+	{Ideale}{}
+	Un sottoinsieme $I \subseteq R$, con $R$ anello, \`e detto \textit{ideale} se:
+	\begin{enumerate}[(D 1).]
+		\item $I$ \`e un sottogruppo additivo di $R$;
+		\item $\forall r \in R, \forall h \in I$ si ha $ hr \in I$ e $rh \in I$.
+	\end{enumerate}
+\end{definizione}
+\noindent La propriet\`a moltiplicativa che caratterizza gli ideali, quindi, \`e tale da \textit{assorbre} a destra e a sinistra gli elementi dell'anello di riferimento.
+\begin{obs}
+	Si nota che la definizione data \`e riferita in particolare all'oggetto noto come \textbf{ideale bilatero}; avendo solamente a che fare con anelli commutativi per il resto della trattazione, non si far\`a differenza con il concetto di ideale non-bilatero.	
+\end{obs}
+\begin{obs}
+	Si nota che un ideale $I$ non \`e un sottoanello di $R$ a parte il caso in cui $I = R$.
+	Infatti, se $1 \in I \Rightarrow  I =R$ per la propriet\`a di assorbimento.
+\end{obs}
+\begin{definizione}
+	{Ideale generato}{}
+Dato $R$ un anello commutativo e dato $a \in R$ un suo elemento, si definisce l'ideale generato da $a$ come l'insieme
+\[
+\langle a \rangle = \left\{ ra  \mid r \in R \right\} 
+\] 
+Pi\`u in generale, se $a_1,\ldots,a_k \in R$ sono $k$ suoi elementi, l'ideale da loro generato \`e:
+\[
+\langle a_1,\ldots,a_k \rangle = \left\{ r_1a_1 + \ldots + r_ka_k  \mid r_1, \ldots, r_k \in R \right\} 
+\] 
+\end{definizione}
+\begin{definizione}
+	{Ideale principale}{}
+	Sia $I \subseteq R$ un ideale di un anello $R$; si dice che $I$ \`e un \textit{ideale principale} se $\exists a \in R : I = \langle a \rangle$.
+\end{definizione}
+\begin{obs}
+	In generale, non \`e detto che ogni ideale di un anello $R$ sia principale; infatti in $\mathbb{Z}[x]$, l'ideale $\langle 3,x \rangle$ non \`e principale.
+\end{obs}
+\begin{obs}
+	Come accennato precedentemente, il nucleo di un omomorfismo $\phi :R\to S $ \`e un ideale bilatero di $R$.
+\end{obs}
+\begin{prop}
+	{}{}
+	Se $I$ e $J$ sono due ideali di $R$ anello (commutativo), allora anche $I+J = \left\{ i+j  \mid i \in I, j\in J \right\} $ e $I\cap J$ sono ideali di $R$.
+	\begin{proof}
+		Si \`e gi\`a dimostrato che somma ed intersezione di gruppi abeliani\footnote{Questa assunzione serve solo per la somma.} (ogni sottogruppo di un gruppo abeliano \`e ancora abeliano) restituisce ancora un gruppo.
+		Per finire, si nota che $\forall r \in R, \ \forall i \in I, \forall j \in J$
+		\[
+			 r(i+j) = ri +rj = i' + j' \in I+J 
+		\] 
+		dove $ri \in I$ e $rj \in J$ perch\'e $I,J$ sono ideali. 
+		Per l'intersezione, questa propriet\`a segue dalla definizione di intersezione stessa.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Se $I$ e $J$ ono due ideali dell'anello $R$, allora anche
+	\[
+	IJ = \big\{ i_1j_1 + \ldots+i_nj_n  \mid i_1,\ldots,i_n \in I , \ j_1,\ldots,j_n \in J\big\} 
+	\] 
+	\`e un ideale di $R$, con $IJ \subset I\cap J$. Inoltre, tale inclusione pu\`o essere stretta.
+	\begin{proof}
+		Sia $h = \sum_{k=1}^{n} i_kj_k$; evidentemente $\forall r \in R$
+		\[
+		r h = r \sum_{k=1}^{n} i_kj_k = \sum_{k=1}^{n} ri_k j_k= \sum_{k=1}^{n} i'_kj_k
+		\] 
+	con $i'_k \in I,\ \forall k=1,\ldots,n$ perch\'e $I$ \`e un ideale, quindi $r h \in IJ$.	 
+	\`E verificato che $IJ$ \`e un sottogruppo perch\'e $I$ e $J$ lo sono, infatti l'identit\`a \`e ottenuta dal prodotto delle identit\`a, l'elemento inverso di $ij \in IJ$ \`e dato da $-(ij)=(-i)j=i(-j)$ e la chiusura rispetto alla somma segue per costruzione di $IJ$.
+	\end{proof}
+\end{prop}
+\subsubsection{Anelli quoziente}
+Sia $I$ un ideale di un anello commutativo $R$; si indica con $R / I$ l'insieme delle classi laterali di $I$ in $R$, considerando $I$ come sottogruppo additivo di $R$.
+Allora gli elementi di $R / I$ saranno insiemi (classi laterali) della forma $a + I$ al variare di $a \in R$.
+
+Visto che $I$ \`e un sottogruppo additivo di $R$, che \`e anche normale perch\'e $R$ \`e abeliano, allora $R / I$ ha sicuramente una struttura da gruppo additivo, con somma data da
+\[
+	(a+I) + (b+I) = (a+b) + I
+\] 
+Per parlare di \textit{anello quoziente}, \`e necessario dotare $R / I$ di un prodotto; la scelta pi\`u naturale \`e:
+\[
+	(a+I)(b+I) = ab +I
+\] 
+
+\subsubsection{Omomorfismi di valutazione}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
