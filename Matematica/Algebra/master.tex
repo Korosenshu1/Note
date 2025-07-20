@@ -2810,9 +2810,9 @@ Pi\`u in generale, se $a_1,\ldots,a_k \in R$ sono $k$ suoi elementi, l'ideale da
 \end{obs}
 \begin{prop}
 	{}{}
-	Se $I$ e $J$ sono due ideali di $R$ anello (commutativo), allora anche $I+J = \left\{ i+j  \mid i \in I, j\in J \right\} $ e $I\cap J$ sono ideali di $R$.
+	Se $I$ e $J$ sono due ideali di $R$ anello, allora anche $I+J = \left\{ i+j  \mid i \in I, j\in J \right\} $ e $I\cap J$ sono ideali di $R$.
 	\begin{proof}
-		Si \`e gi\`a dimostrato che somma ed intersezione di gruppi abeliani\footnote{Questa assunzione serve solo per la somma.} (ogni sottogruppo di un gruppo abeliano \`e ancora abeliano) restituisce ancora un gruppo.
+		Si \`e gi\`a dimostrato che somma ed intersezione di gruppi abeliani (ogni sottogruppo di un gruppo abeliano \`e ancora abeliano) restituisce ancora un gruppo.
 		Per finire, si nota che $\forall r \in R, \ \forall i \in I, \forall j \in J$
 		\[
 			 r(i+j) = ri +rj = i' + j' \in I+J 
@@ -2838,10 +2838,10 @@ Pi\`u in generale, se $a_1,\ldots,a_k \in R$ sono $k$ suoi elementi, l'ideale da
 	\end{proof}
 \end{prop}
 \subsubsection{Anelli quoziente}
-Sia $I$ un ideale di un anello commutativo $R$; si indica con $R / I$ l'insieme delle classi laterali di $I$ in $R$, considerando $I$ come sottogruppo additivo di $R$.
+Sia $I$ un ideale di un anello $R$; si indica con $R / I$ l'insieme delle classi laterali di $I$ in $R$, considerando $I$ come sottogruppo additivo di $R$.
 Allora gli elementi di $R / I$ saranno insiemi (classi laterali) della forma $a + I$ al variare di $a \in R$.
 
-Visto che $I$ \`e un sottogruppo additivo di $R$, che \`e anche normale perch\'e $R$ \`e abeliano, allora $R / I$ ha sicuramente una struttura da gruppo additivo, con somma data da
+Visto che $I$ \`e un sottogruppo additivo di $R$, che \`e anche normale perch\'e $R$ \`e un gruppo additivo abeliano, allora $R / I$ ha sicuramente una struttura da gruppo additivo, con somma data da
 \[
 	(a+I) + (b+I) = (a+b) + I
 \] 
@@ -2849,10 +2849,102 @@ Per parlare di \textit{anello quoziente}, \`e necessario dotare $R / I$ di un pr
 \[
 	(a+I)(b+I) = ab +I
 \] 
-
+Per verificare che sia un'operazione ben definita, si mostra che se $a + I = a'+I$ e $b + I = b'+ I$, allora $ab + I = a'b' + I$.
+\begin{proof}
+	Il fatto che $a  + I = a' + I$ significa che $a' = a + i, \ i \in I$; analogamente $b + I = b'+I\Rightarrow b' = b + j , \ j \in I$.
+	Allora
+	\[
+	a'b'+I = (a+i)(b+j) + I = ab + aj + bi + ij + I 
+	\] 
+	Ricordando che $I$ \`e un ideale e che, quindi, possiede la propriet\`a di assorbimento, i termini $aj,bi,ij \in I$, quindi la classe laterale risultante \`e proprio $ab + I$.
+\end{proof}
+Rimane da dimostrare che, con tali operazioni, $R / I$ \`e un anello.
+\begin{proof}
+	La parte della somma si \`e gi\`a fatta per il gruppo quoziente in quanto $I$ \`e un sottogruppo additivo di $R$ anello commutativo.
+	Rimane da verificare che il prodotto appena definito rispetti le condizioni di prodotto per un anello.
+	\begin{itemize}
+		\item La propriet\`a associativa del prodotto \`e verificata da
+			\[
+				\big((a+I)(b+I)\big) (c+I)=(ab+I) (c+I) = abc+I=(a+I) \big((b+I)(c+I)\big)
+			\] 
+		\item L'elemento neutro \`e dato da $1+I$, infatti:
+			\[
+				(a+I)(1+I) = a+I
+			\] 
+		\item La distributivit\`a deriva da
+			\[
+				(a+I) \big[ (b+I) + (c+I) \big] =(a+I) \big[(b+c) + I\big] = a(b+c) + I = (ab + ac) + I = (ab+ I ) + (ac + I)
+			\] 
+			
+	\end{itemize}
+\end{proof}
+A questo punto, \`e possibile riportare in teoria degli anelli il primo teorema di omomorfismo.
+\begin{teorema}
+	{Primo teorema di omomorfismo}{}
+	Sia $\phi :R\to S$ un omomorfismo di anelli; allora
+	\[
+	R / \operatorname{ker} \phi \cong \operatorname{Im} \phi 
+	\] 
+	\begin{proof}
+		La dimostrazione \`e analoga al caso dei gruppi.
+	\end{proof}
+\end{teorema}
+\noindent Anche in questo caso \`e possibile definire l'omomorfismo canonico $\pi : R \to R / I$, con $R$ anello e $I \subseteq R$ un suo ideale; questo permette la costruzione di un diagramma commutativo analogo al caso dei gruppi.
+La costruzione di tale omomorfismo canonico permette anche di riportare ogni ideale come nucleo di un omomorfismo in base alla seguente.
+\begin{prop}
+	{}{}
+	Sia $R$ un anello; ogni suo ideale $I$ pu\`o essere visto come il nucleo di un omomorfismo.
+	\begin{proof}
+		Si considera la proiezione $\pi : R \to R / I$, cio\`e la mappa che ad ogni $r \in R$, associa la classe laterale di $I$, $r + I$.
+		Si verifica che $\pi$ \`e un omomorfismo di anelli e che $\operatorname{ker} \pi = I$.
+	\end{proof}
+\end{prop}
 \subsubsection{Omomorfismi di valutazione}
+Sia $R$ un anello tale che $\exists A \subset R$ con $A$ sottoanello commutativo di $R$.
+Allora, $\forall r \in R$ si pu\`o definire la mappa
+\[
+	V_r : A[x] \to R \hspace{1cm} V_r\big[f(x)\big] = f(r), \ \forall f(x) \in A[x]
+\] 
+Questo \`e un omomorfismo di anelli.
+\begin{proof}
+	Evidentemente
+	\[
+	\begin{split}
+		&V_r \big[f(x) g(x)\big]= f(r) g(r) = V_r\big[f(x)\big]V_r\big[g(x)\big]\\
+		&V_r \big[f(x) + g(x)\big] = f(r) + g(r) = V_r\big[f(x)\big] + V_r\big[g(x)\big]\\
+		&V_r\big[u(x)\big] = V_r\big[1_A\big] = 1_A
+	\end{split}
+	\] 
+\end{proof}
+Gli omomorfismi di valutazione possono aiutare la comprensione dei quozienti di anelli.
+Per capirne l'utilit\`a, si considera il seguente esempio.
+\begin{esempio}
+Si prendono $K = \mathbb{R}$ e $i \in \mathbb{C}$.
+Successivamente si considera l'omomorfismo di valutazione $V_i : \mathbb{R}[x] \to \mathbb{C}$.
+\`E evidente che tale omomorfismo \`e suriettivo perch\'e ogni numero complesso $a+ib \in \mathbb{C}$ \`e raggiunto da $V_i[f(x)]$ con $f(x) = a + bx$.
 
+Ora se ne studia il nucleo; intanto \`e ovvio che $x^2 + 1 \in \mathbb{R}[x]$ viene mappato in $0$ per costruzione, quindi $x^2 + 1 \in \operatorname{ker} V_i $.
+Conseguentemente, ogni multiplo di $x^2 + 1$ \`e anch'esso contenuto nel nucleo, quindi 
+\[
+\langle x^2 +1  \rangle \subseteq \operatorname{ker} V_i
+\] 
+\`E possibile mostrare che $\langle x^2 + 1 \rangle\supseteq \operatorname{ker} V_i$; per farlo, si prende un generico $f(x) \in \operatorname{ker} V_i$ (cio\`e un polinomio tale che $f(i) = 0$) e se ne considera la divisione Euclidea per $x^2 +1 $:
+\[
+f(x) = (x^2 +1) q(x) + r(x)
+\] 
+dove $r(x)=0$, oppure \`e un polinomio di grado $\le 1$, quindi, in generale, avr\`a la forma $r(x) = a +bx$, con $a,b \in \mathbb{R}$. 
+Applicando l'omomorfismo di valutazione a questa relazione, si trova
+\[
+f(i) = 0\cdot q(x) + a + ib = a+ib = 0 \implies a = b = 0
+\] 
+visto che $a,b$ sono reali.
+Questo mostra che $f(x) $ \`e multiplo di $x^2 + 1$, quindi $f(x) \in \langle x^2 + 1 \rangle$, pertanto $\operatorname{ker} V_i = \langle x^2 + 1 \rangle$.
 
+Per il primo teorema di omomorfismo, segue che 
+\[
+	\mathbb{R}[x] / \langle x^2 + 1 \rangle \cong \mathbb{C}
+\] 
+\end{esempio}
 
 
 
