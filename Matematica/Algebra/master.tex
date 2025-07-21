@@ -2903,16 +2903,16 @@ La costruzione di tale omomorfismo canonico permette anche di riportare ogni ide
 Sia $R$ un anello tale che $\exists A \subset R$ con $A$ sottoanello commutativo di $R$.
 Allora, $\forall r \in R$ si pu\`o definire la mappa
 \[
-	V_r : A[x] \to R \hspace{1cm} V_r\big[f(x)\big] = f(r), \ \forall f(x) \in A[x]
+	V_r : A[x] \to R \hspace{1cm} V_r[f(x)] = f(r), \ \forall f(x) \in A[x]
 \] 
 Questo \`e un omomorfismo di anelli.
 \begin{proof}
 	Evidentemente
 	\[
 	\begin{split}
-		&V_r \big[f(x) g(x)\big]= f(r) g(r) = V_r\big[f(x)\big]V_r\big[g(x)\big]\\
-		&V_r \big[f(x) + g(x)\big] = f(r) + g(r) = V_r\big[f(x)\big] + V_r\big[g(x)\big]\\
-		&V_r\big[u(x)\big] = V_r\big[1_A\big] = 1_A
+		&V_r [f(x) g(x)]= f(r) g(r) = V_r[f(x)]V_r[g(x)]\\
+		&V_r [f(x) + g(x)] = f(r) + g(r) = V_r[f(x)] + V_r[g(x)]\\
+		&V_r[u(x)] = V_r[1_A] = 1_A
 	\end{split}
 	\] 
 \end{proof}
@@ -2945,18 +2945,157 @@ Per il primo teorema di omomorfismo, segue che
 	\mathbb{R}[x] / \langle x^2 + 1 \rangle \cong \mathbb{C}
 \] 
 \end{esempio}
+\subsection{Quozienti di anelli di polinomi}
+\subsubsection{Il quoziente $K[x] / \langle f(x) \rangle$}
+Si studiano i quozienti della forma $K[x] / \langle f(x) \rangle$, con $K$ campo e $f(x) \in K[x]$.
+Se $f(x) = 0 \Rightarrow \langle f(x) \rangle= \left\{ 0 \right\} $, quindi $K[x] / \langle f(x) \rangle \cong K[x]$.
+Se, invece, $f(x) = a \in K$ costante, con $a \neq 0$, si ha $\langle a \rangle = K[x]$, quindi il quoziente \`e banale perch\'e \`e composto da una sola classe laterale coincidente con tutto l'anello.
 
+Si assume, allora, che $\operatorname{deg} f = n \ge 1$; l'idea \`e che nel quoziente si sta imponendo $f(x) = 0$ perch\'e ciascun polinomio che \`e multiplo di $f(x)$ viene identificato con la classe di resto $[0]$.
+Per capirlo meglio, si considera il seguente esempio.
+\begin{esempio}
+	Sia $K = \mathbb{R}$ e $f(x) = x^2 + 1 \in  \mathbb{R}[x]$; allora in $\mathbb{R}[x] / \langle x^2 + 1 \rangle $ vale la relazione $x^2 + 1 = 0$, cio\`e $x^2 = - 1$, perch\'e ogni multiplo di $x^2 + 1$ viene mandato in $0$ (o meglio, in $[0]$) dal quoziente, che si occupa di classificare in classi di resto separate i valori del resto per divisione Euclidea dei vari polinomio di $K[x]$ con $x^2 + 1$.
+	Considerando $p(x)=3x^4 - 5x^3 + x -\sqrt{3} \in \mathbb{R}[x]$, la sostituzione porta a:
+	\[
+	3x^4 - 5x^3 + x -\sqrt{3}  = -5x (-1) + 3 (-1)^2 + x - \sqrt{3}= 6x + (3 - \sqrt{3}) 
+	\] 
+	Questo vuol dire che $p(x) \equiv 6x + (3-\sqrt{3} ) \pmod{x^2 +1 } $.
+\end{esempio}
+\noindent Il discorso appare pi\`u evidente se si considera il processo appena svolto come applicato alla divisione Euclidea; dato $p(x) \in K[x]$, questo si scrive come $p(x) = q(x) f(x) + r(x)$, ma se $f(x) = 0$, allora si rimane con il rappresentante della classe di equivalenza $r(x)$.
 
+Questo permette di concludere che ogni elemento di $K[x] / \langle f(x) \rangle$ \`e il laterale di un polinomio di grado minore di quello di $f(x)$, analogamente a quanto succedeva per $\mathbb{Z} / m\mathbb{Z}$.
+\begin{prop}
+	{}{}
+	Sia $K$ un campo e $R$ un anello contenente $K$ come sottoanello; allora $R$ \`e uno spazio vettoriale su $K$ con le ovvie operazioni di somma e prodotto per scalare.
+	\begin{proof}
+		Per definizione, $R$ ha la struttura di gruppo additivo abeliano, perci\`o gli assiomi legati alla somma sono automaticamente soddisfatti.
 
+		Riguardo al prodotto per scalare, questo \`e definito come $\cdot : K \times R \to R$.
+		Essendo $K \subset R$, valgono tutte le propriet\`a richieste dagli assiomi perch\'e $R$ \`e un anello e contiene $K$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	{}{}
+	Sia $K$ un campo e $f(x) \in K[x]$ un polinomio con $\operatorname{deg} f = n\ge 1$. 
+	Sia, poi, $K[x] / \langle f(x) \rangle \supset K' = \left\{ c + \langle f(x) \rangle  \mid c \in K\right\} $ il sottoinsieme delle classi laterali dei polinomi costanti; allora $K'$ \`e un sottoanello di $K[x] / \langle f(x) \rangle$ che \`e isomorfo a $K$ e $K[x] / \langle f(x) \rangle$ \`e uno spazio vettoriale su $K'$ di dimensione $n$.
+	\begin{proof}
+		Si nota che la mappa $\phi : K' \to K $ tale che $\phi (c+ \langle f(x) \rangle) = c$ \`e un omomorfismo.
+		\`E, inoltre, possibile verificare che \`e suriettiva, in quanto $\forall c \in K, \ \phi (c + \langle f(x) \rangle) = c$, e che \`e iniettiva perch\'e $\phi (c_0+\langle f(x) \rangle) = 0 \iff c_0 = 0$ per definizione.
 
+		Visto che $K\cong K'$, significa che anche $K'$ ha una struttura di campo, pertanto \`e un sottoanello di $K[x] / \langle f(x) \rangle$; allora, per la proposizione precedente, $K[x] / \langle f(x) \rangle$ \`e uno spazio vettoriale su $K'$.
+		Quanto alla dimensione, si \`e dimostrato che in $K[x] / \langle f(x) \rangle$ ci sono polinomi di grado al massimo $n-1$ per l'algoritmo di Euclide; allora, visto che un polinomio di grado $n-1$ ha $n$ gradi di libert\`a, la dimensione dello spazio \`e proprio $n$.
+	\end{proof}
+\end{prop}
+\begin{esempio}
+	Sia $K = \mathbb{Z}_2$ e $f(x) = x^2 + x + 1 \in \mathbb{Z}_2[x]$.
+	Per quanto appena dimostrato, $\mathbb{Z}[2] / \langle x^2 + x + 1 \rangle$ \`e uno spazio vettoriale su $K = \left\{ c + \langle x^2 + x + 1 \rangle  \mid c \in \mathbb{Z}_2 \right\} \cong \mathbb{Z}_2$ ed \`e di dimensione $2$.
+	I suoi elementi sono $\overline{0}, \overline{1}, \overline{x}$ e $\overline{x+1}$; inoltre, \`e possibile verificare che
+	\[
+	\overline{x}(\overline{x+1}) = \overline{1}\iff x(x+1) \equiv 1 \pmod{x^2 + x +1} 
+	\] 
+	Segue che $\mathbb{F}_4 = \mathbb{Z}_2 / \langle x^2 + x + 1 \rangle$ \`e un campo con $4$ elementi.
+\end{esempio}
+\begin{obs}
+	Si scrive $\overline{g}(x)$ per indicare il laterale $g(x) + \langle f(x) \rangle \in K[x] / \langle f(x) \rangle$.
+	Si nota che $f(\overline{x}) = 0 \in K[x] / \langle f(x) \rangle$, infatti:
+	\[
+	\begin{split}
+		f(\overline{x}) &= a_n \overline{x}^n + \ldots + a_1 \overline{x} + a_0\\
+				&=a_n (x^n + \langle f(x) \rangle) + \ldots + a_1 (x + \langle f(x) \rangle) + a_0 (1 + \langle f(x) \rangle) = \sum_{i=0}^{n} a_i x^i + \sum_{j=0}^{n} a_j \langle f(x) \rangle\\
+				&= \sum_{i=0}^{n} a_ix^i + \langle f(x) \rangle = \overline{a_nx^n + \ldots + a_1 x + a_0}\\
+				&= \overline{f(x)}= \overline{0} \in K[x] / \langle f(x) \rangle
+	\end{split}
+	\] 
+	Questo vuol dire che l'anello costruito, cio\`e $K[x] / \langle f(x) \rangle$, contiene $K$\footnote{Come notato precedentemente, $K[x] / \langle f(x) \rangle$ contiene un sottoanello isomorfo a $K$, cio\`e quello delle classi laterali dei polinomi costanti.} e ha una radice di $f(x) \in K[x]$.
+\end{obs}
+\subsubsection{Polinomi irriducibili}
+\begin{definizione}
+	{Polinomio irriducibile}{}
+	Sia $K$ un campo e $f(x) \in K[x]$ un polinomio di grado $\ge 1$. Si dice che $f(x)$ \`e \textit{irriducibile} se gli unici divisori di $f(x)$ sono i polinomi costanti diversi da $0$ e i polinomi associati a $f(x)$.
+\end{definizione}
+\noindent Una maniera equivalente per definire l'irriducibilit\`a \`e dire che, quando in $K[x]$ si ha una relazione della forma
+\[
+f(x) = a(x) b(x)
+\] 
+significa che uno fra $a(x)$ e $b(x)$ \`e un polinomio costante diverso da $0$.
+\begin{teorema}
+	{}{}
+	Sia $K$ un campo e $f(x) \in K[x]$; allora il quoziente $K[x] / \langle f(x) \rangle$ \`e un campo se e solo se $f(x)$ \`e un polinomio irriducibile.
+	\begin{proof}
+		Si mostra l'implicazione $\Leftarrow $; siano, allora, $f(x) \in K[x]$ irriducibile e $I = \langle f(x) \rangle$.
+		Per mostrare che $K[x] / I$ \`e un campo, \`e sufficiente mostrare che se $a(x) + I$ \`e un elemento di $K[x] / I$ diverso da $0 + I$, allora ammette un inverso.
+		Si nota che $\operatorname{gcd}(a,f) =1$ perch\'e, essendo irriducibile, $f(x)$ ha $1$ e $f(x)$ come unici divisori, a meno di associati; di questi, solo $1$ divide anche $a(x)$, altrimenti $a(x) \equiv 0 \pmod{ f(x) } $ e $a(x) \in 0 + I$, contrario a quanto assunto.
+		Per B\'ezout
+		\[
+		\lambda (x)a(x) + \mu (x) f(x) = 1
+		\] 
+		Questa relazione, permette di concludere che $\lambda (x) + I$ \`e l'inverso di $a(x) + I$ in $K[x] / I$ perch\'e
+		\[
+			(a(x) + I ) (\lambda (x) + I ) = a(x) \lambda (x) + I = a(x) \lambda (x) + \mu (x) f(x) + I = 1 + I
+		\] 
+		visto che $\mu (x) f(x) + I = 0 + I$.
 
+		Per l'implicazione $\Rightarrow $, invece, si assume che $f(x)$ non sia irriducibile e si nota che ci si trova in uno dei seguenti casi.
+		\begin{itemize}
+			\item  $f(x) = 0$, quindi $K[x] / \langle 0 \rangle \cong K[x]$, quindi non \`e un campo.
+			\item $\operatorname{deg} f = 0 \Rightarrow  f(x) = k \in K^*$, quindi $\langle f(x) \rangle= K[x] \Rightarrow K[x] / \langle f(x) \rangle\cong \left\{ 0 \right\} $, che non \`e un campo.
+			\item $f(x)$ si fattorizza come $f(x)=g_1(x)g_2(x)$, con $1\le \operatorname{deg} g_1,\operatorname{deg} g_2 < \operatorname{deg} f$; in questo caso, le classi $g_1(x) + I$ e $g_2(x) + I$ sono entrambe diverse da $0+I$ per questioni di grado.
+				Inoltre
+				\[
+					(g_1(x) + I ) (g_2(x) + I) = f(x) + I = 0 + I
+				\] 
+				Visto che in $K[x]$ ci sono dei divisori di $0$ diversi da $0$, $K[x] / I$ non solo non \`e un campo, ma non \`e neanche un dominio.
+		\end{itemize}
+	\end{proof}
+\end{teorema}
+\subsubsection{Anelli Euclidei}
+L'anello $K[x]$ permette una divisione con resto in analogia con quanto possibile in $\mathbb{Z}$ con la divisione Euclidea.
+L'idea, ora, \`e di trovare una struttura per tutti quegli anelli che condividono tale analogia.
+\begin{definizione}
+	{Anello Euclideo}{}
+	Un dominio $D$ \`e detto \textit{anello Euclideo} se esiste una mappa $g : D \setminus\left\{ 0 \right\} \to \mathbb{N}$, detta \textit{grado}, tale che
+	\begin{enumerate}[(g 1).]
+		\item $\forall a,b \in D$, con $a,b\neq 0$, vale $g(a) \le g(ab)$;
+		\item $\forall a,b \in D$, con $b\neq 0$, esistono $q,r \in D : a = qb + r$, dove $r = 0$, oppure $g(r) < g(b)$.
+	\end{enumerate}
+\end{definizione}
+\noindent Evidentemente, il grado per gli interi $\mathbb{Z}$ \`e la funzione valore assoluto (dove si ignora il fatto che \`e ben definita anche per $0$, mentre la funzione grado generica non lo \`e), mentre per i polinomi di $K[x]$, tale funzione, \`e il relativo grado.
 
+\begin{lemma}
+	{}{}
+	In un anello Euclideo $D$, per $a,b \in D$ con $a,b \neq 0$, se $b  \mid a$ e $a \not  \mid b$, allora $g(b) < g(a)$.
+	\begin{proof}
+		Visto che $b  \mid a$ per assunzione, sia $a = bc$.
+		Se $a \not  \mid b$, allora $b = qa + r$, con $r\neq 0$ e $g(r) < g(a)$.
+		D'altra parte, $r = b - aq = b - bcq = b(1-cq)\Rightarrow g(r) \ge g(b)$, per cui $g(a) > g(b)$.
+	\end{proof}
+\end{lemma}
+\begin{prop}
+	{}{}
+Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
+\begin{proof}
+	Si divide la dimostrazione nelle due implicazioni.
+	\begin{itemize}
+		\item ($\Rightarrow $) Sia $b$ invertibile, cio\`e $b \in D^*$; allora $\forall d \in D, \ d = d b^{-1} b = r b$, per $r = db^{-1} \in D$.
+		\item ($\Leftarrow$) Sia $\langle b \rangle= D$; allora $\exists a \in D : a b = 1 \Rightarrow b$ \`e invertibile.
+	\end{itemize}
+\end{proof}
+\end{prop}
+\begin{lemma}
+	{}{}
+	In un anello Euclideo $D$, vale $g(1) \le g(b), \ \forall b \in D$ e $g(b) = g(1) \iff b \in D^*$.
+	\begin{proof}
+		Per la prima affermazione, si nota che $\forall b \in D$, $g(b)=g(1b) \ge g(1)$.
 
-
-
-
-
-
+		Per la seconda parte, invece, si usa che $b$ \`e invertibile $\iff \langle b \rangle=D$.
+		\begin{itemize}
+			\item ($\Rightarrow $) Sia $g(b) = g(1)$ e sia $a \in D$; allora $a = qb +r$, con $r = 0$ o $g(r) < g(b)$, ma $b$ ha grado minimo, quindi $r =0 $. 
+				Ne segue che $a \in \langle b \rangle, \ \forall a \in D\implies D = \langle b \rangle$.
+			\item ($\Leftarrow$) Sia $b \in D^*$; allora $\langle b \rangle= D$, quindi $\forall  a \in D$, si trova $r \in D$ tale che $a = rb$.
+				Da questo, segue che $\forall a \in D, \ g(a) \ge g(b)$, quindi $g(b)$ ha il grado minore fra tutti, per cui $g(b) = 1$.
+		\end{itemize}
+	\end{proof}
+\end{lemma}
 
 
 \end{document}

@@ -517,6 +517,7 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpbn8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn8r.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbne.tfm
 OUTPUT master.toc
+INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpmn8t.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpmn8t.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn8t.tfm
@@ -557,7 +558,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbne.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmit8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpmit8r.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpmite.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn7t.vf
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpmne.tfm
@@ -629,6 +629,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpsyd.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpsyd.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn7t.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn7t.tfm
 INPUT master.aux
 INPUT ./master.out
 INPUT ./master.out

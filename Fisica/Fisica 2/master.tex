@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{scrartcl}
+\documentclass[a4paper]{scrartcl}
 % Packages
 \usepackage{stix}
 \usepackage[margin=1.5in]{geometry}
@@ -30,6 +30,8 @@
 \usepackage{graphicx}
 \usepackage{lipsum}
 \usepackage[italian]{babel}
+\usepackage{setspace}
+\setstretch{1.2}
 
 
 %Captions
@@ -37,8 +39,8 @@
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{15}{20}\sffamily\scshape}
-{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{\fontsize{18}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{22}{20}\selectfont\thesection}}
 {0.7em}
 {}
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
@@ -51,11 +53,11 @@
 }
 \definecolor{asdf}{HTML}{4a7aa4}
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\fontsize{14}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\fontsize{10}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -186,7 +188,7 @@ title=#1
 
 \begin{document}
 \maketitle
-\vspace{15em}
+\vspace{9cm}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\columnwidth]{front.jpg}
