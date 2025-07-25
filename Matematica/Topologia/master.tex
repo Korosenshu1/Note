@@ -137,7 +137,7 @@ title=#1
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{11}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -176,10 +176,10 @@ title=#1
 
 
 % Font
-\usepackage[sfdefault]{FiraSans}
+\usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}	
-\usepackage{unicode-math}
-\setmathfont{STIX Two Math}
+\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
+\usepackage[noSTIXops,scaled=1.1]{newtxsf}
 
 \begin{document}
 \maketitle
@@ -193,30 +193,6 @@ title=#1
 \tableofcontents 
 \newpage
 \section{Geometria proiettiva}
-
-\subsection{Gli spazi affini}
-\begin{definizione}
-	[Sottospazio affine]
-	Sia $V$ un $\mathbb{K}$-spazio vettoriale; un sottoinsieme della forma
-	\[
-	S = \left\{ x+v  \mid v \in W \right\} = x + W
-	\] 
-	con $x\in V $ punto fissato e $W \subset V$ un sottospazio vettoriale di $V$ \`e detto \textit{sottospazio affine} di $V$.
-\end{definizione}
-\begin{prop}
-	Due spazi affini $x + W$ e $x' + W'$ coincidono se e solo se $W = W'$ e $x-x'\in W$.
-	\begin{proof}
-		Assumendo che $W = W'$ e $x-x' \in W$, allora ogni vettore della forma $x + v, \ v \in W$ si scrive come $x' + (x-x' + v)$, visto che $x - x' + v \in W$; viceversa, ogni vettore di $x' + W' = x ' + W$ si pu\`o riscrivere in modo analogo, quindi i due spazi coincidono.
-
-		Se, invece, si sapesse che i due spazi coincidono, cio\`e $x + W = x' +W'$, allora $W = x'-x + W'$, quindi $x' - x \in W$ (basta prendere il vettore $w = x - x' + 0$); analogamente, $x'-x \in W'$, quindi $W = x'-x + W' = W'$.
-	\end{proof}
-\end{prop}
-\noindent Nella definizione di $S = x + W$, quindi, lo spazio $W$ \`e univocamente determinato da tale definizione, mentre $x $ \`e un generico punto di $S$; in particolare, $W$ \`e detto \textit{giacitura} di $S$ e si indica con $\operatorname{giac} S$.
-\begin{definizione}
-	[Dimensione di uno spazio affine]
-	La dimensione di $S$ \`e la dimensione della sua giacitura $W$.
-\end{definizione}
-\noindent Si nota che un sottospazio affine di dimensione $0$ \`e un qualunque punto di $V$, mentre un sottospazio affine di dimensione $1$, o $2$ \`e detto, rispettivamente, \textit{retta affine}, o \textit{piano affine}.
 
 \subsection{Introduzione agli spazi proiettivi}
 
@@ -238,7 +214,7 @@ Si nota che $\mathbb{P} \left(\left\{ 0 \right\} \right) = \varnothing / {\sim} 
 dove $\left[ v \right] $ rappresenta la classe di equivalenza di $v$; questo significa che lo spazio proiettivo dello span di un elemento \`e composto da un solo punto.
 \end{esempio}
 \begin{definizione}
-	[Dimensione]
+	[Dimensione di uno spazio proiettivo]
 	La dimensione di uno spazio proiettivo \`e
 	\[
 	\dim_{\mathbb{K}} \mathbb{P}(V) = \dim_{\mathbb{K}} V - 1
@@ -289,16 +265,80 @@ Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che pre
 	\begin{proof}
 		Sia $f([v]) = f([w])$ e sia $\varphi $ l'applicazione lineare che induce $f$; allora l'uguaglianza si traduce in $[\varphi (v)]=[\varphi (w)]$, ma per come sono definite queste classi di equivalenza, questo vuol dire che $\varphi (v) = \lambda \varphi (w) = \varphi (\lambda w)$.
 		Essendo $\varphi $ iniettiva, per\`o, si ottiene che $v = \lambda w$, cio\`e $[v] = [\lambda w]$.
-		
 	\end{proof}
 \end{prop}
+\begin{prop}
+	La trasformazione $\operatorname{id} _{\mathbb{P}(V)}$ \`e proiettiva ed \`e indotta da $\operatorname{id} _V$.
+	\begin{proof}
+		Tale trasformazione deve essere tale per cui $\operatorname{id} _{\mathbb{P}(V)} ([v]) = [v] = [\operatorname{id} _V v]$, quindi \`e indotta da $\operatorname{id} _V$; essendo quest'ultima iniettiva, anche $\operatorname{id}_{\mathbb{P}(V)}  $ \`e iniettiva.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Siano $f : \mathbb{P}(V) \to \mathbb{P}(W)$ e $g:\mathbb{P}(W) \to \mathbb{P}(Z)$ due trasformazioni proiettive; allora $g\circ f:\mathbb{P}(V)\to \mathbb{P}(Z)$ \`e proiettiva.
+	\begin{proof}
+		Se $\varphi $ induce $f$ e $\psi $ induce $g$, allora $\psi \circ \varphi $ induce $g \circ f$:
+		\[
+		\left[ \psi \circ \varphi (v) \right] = g \left(\left[ \varphi (v) \right] \right) = g \circ f \left(\left[ v \right] \right) 
+		\] 
+	\end{proof}
+\end{prop}
+\noindent Si passa, ora, a caratterizzare gli isomorfismi di spazi proiettivi; il seguente teorema giustificher\`a la definizione di isomorfismo proiettivo.
+\begin{teorema}
+	Sia $f:\mathbb{P}(V)\to \mathbb{P}(W)$ una trasformazione proiettiva; allora, le seguenti affermazioni sono tutte equivalenti.
+	\begin{enumerate}[(a).]
+		\item $f$ \`e suriettiva.
+		\item $f$ \`e biettiva.
+		\item $\dim \mathbb{P}(V) = \dim\mathbb{P}(W)$.
+		\item $f$ \`e invertibile e $f^{-1} : \mathbb{P}(W) \to \mathbb{P}(V)$ \`e proiettiva.
+	\end{enumerate}
+	\begin{proof}
+		Il fatto che (a) $\iff$ (b) \`e dato dal fatto che $f$ \`e proiettiva, quindi \`e iniettiva.
 
-
-
-
-
-
-
+Per mostrare che (b) $\Rightarrow $ (c), si prende $\varphi $ che induce $f$ e si fa vedere che \`e suriettiva.
+Visto che $\varphi (0) = 0$, basta mostrare che $W\setminus \left\{ 0 \right\} \subset \operatorname{Im} \varphi $.
+Sia, dunque, $w \in W \setminus \left\{ 0 \right\} $, quindi $[w] \in \mathbb{P}(W)$; visto che $f$ \`e suriettiva, $\exists [v] \in \mathbb{P}(V) : f([v]) = [w] = [\varphi (v)]$. 
+Allora $w = \lambda \varphi (v) = \varphi (\lambda v) \Rightarrow w \in \operatorname{Im} \varphi $.
+Questo significa che $\varphi $ \`e un isomorfismo tra $V$ e $W$, per cui
+\[
+\dim \mathbb{P}(V) = \dim V - 1 = \dim W -1 = \dim \mathbb{P}(W)
+\] 
+Ora si mostra che (c) $\Rightarrow $ (d), quindi sia $\varphi $ lineare che induce $f$. 
+Si sa, dunque, che $\varphi $ \`e iniettiva e che $\dim \mathbb{P}(V) = \dim \mathbb{P}(W)$, il che implica che $\dim V = \dim W$, pertanto $\varphi $ \`e un isomorfismo; in quanto tale, $\varphi ^{-1} $ \`e ben definita ed \`e ancora un isomorfismo di spazi vettoriali.
+Rimane da mostrare che $\varphi ^{-1} $ induce $f$; a questo scopo, si nota che:
+\[
+\begin{split}
+	&[\varphi ^{-1} ] f([v]) = [\varphi ^{-1} ][\varphi (v)] = [\varphi ^{-1} \varphi (v)] = [v]\\
+	&f[\varphi ^{-1} ]([v]) = f \left([\varphi ^{-1} (v)]\right) =[\varphi \varphi ^{-1} (v)] = [v]
+\end{split}
+\] 
+Infine, (d) $\Rightarrow $ (a) perch\'e, essendo $f$ invertibile, \`e anche suriettiva.
+	\end{proof}
+\end{teorema}
+\begin{definizione}
+	[Isomorfismo proiettivo]
+	Una trasformazione proiettiva che sia anche suriettiva \`e detta \textit{isomorfismo proiettivo}.
+\end{definizione}
+\begin{definizione}
+[Proiettivit\`a]
+Ogni trasformazione proiettiva $f:\mathbb{P}(V) \to \mathbb{P}(V)$ \`e detta \textit{proiettivit\`a}; si indica con $\mathbb{P}GL(V)$ l'insieme delle proiettivit\`a di $V$.
+\end{definizione}
+\noindent Da questa definizione, si pu\`o notare che ogni proiettivit\`a \`e un isomorfismo perch\'e, se $f$ \`e indotta da $\varphi $, allora vale la formula della dimensione 
+\[
+	\dim \ker \varphi + \dim \operatorname{Im} \varphi = \dim V \implies \dim \operatorname{Im} \varphi  = \dim V
+\] 
+Inoltre, si pu\`o mostrare che equipaggiando $\mathbb{P}GL(V)$ con l'operazione di composizione, questo \`e un gruppo.
+\begin{osservazione}
+	[Punti fissi]
+	Sia $f$ una proiettivit\`a indotta da $\varphi $, con $[v]$ punto fisso, cio\`e
+	\[
+		[v]  = f([v]) = [\varphi (v)]
+	\] 
+	Allora $\lambda v = \varphi (v)$, cio\`e $v$ \`e un autovettore di $\varphi $, con autovalore $\lambda $; analogamente, se $v$ \`e un autovettore di $\varphi $, allora $[v]$ \`e un punto fisso per lo stesso motivo.
+\end{osservazione}
+\subsubsection{Sottospazi proiettivi}
+\begin{center}
+	Riprendere da pagina 7
+\end{center}
 
 
 

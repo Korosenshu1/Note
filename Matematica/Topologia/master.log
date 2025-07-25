@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  25 JUL 2025 13:31
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  25 JUL 2025 21:10
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1218,11 +1218,11 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen375
-) (/usr/share/texmf-dist/tex/latex/fira/FiraSans.sty
-Package: FiraSans 2022/09/17 (Bob Tennent and autoinst) Style file for Fira Sans fonts.
- (/usr/share/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+) (/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (/usr/share/texmf-dist/tex/latex/newtxsf/newtxsf.sty
+Package: newtxsf 2024/01/25 v1.056
+ `newtxsf' v1.056, 2024/01/25 Math macros based on STIX sans serif and txfonts (msharpe) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks62
@@ -1230,942 +1230,120 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 )
 \XKV@depth=\count399
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count400
-\l__fontspec_language_int=\count401
-\l__fontspec_strnum_int=\count402
-\l__fontspec_tmp_int=\count403
-\l__fontspec_tmpa_int=\count404
-\l__fontspec_tmpb_int=\count405
-\l__fontspec_tmpc_int=\count406
-\l__fontspec_em_int=\count407
-\l__fontspec_emdef_int=\count408
-\l__fontspec_strong_int=\count409
-\l__fontspec_strongdef_int=\count410
-\l__fontspec_tmpa_dim=\dimen376
-\l__fontspec_tmpb_dim=\dimen377
-\l__fontspec_tmpc_dim=\dimen378
- (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(0)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Ligatures=TeX,Numbers =
-(fontspec)             {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(1)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(2)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,Lining},UprightFont =
-(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+lnum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Italic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(3)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Monospaced,OldStyle},UprightFont =
-(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Regular scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Thin scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Thin scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Thin scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ThinItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ThinItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(4)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Thin,ItalicFont = *-ThinItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Thin.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Thin.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ThinItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ThinItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Light scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Light scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Light scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-LightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-LightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(5)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Light,ItalicFont = *-LightItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Light.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Light.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-LightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-LightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraLightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraLightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(6)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-ExtraLight,ItalicFont = *-ExtraLightItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraLight.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraLight.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraLightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraLightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-UltraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-UltraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-UltraLight scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-UltraLightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-UltraLightItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(7)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-UltraLight,ItalicFont = *-UltraLightItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-UltraLight.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-UltraLight.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-UltraLightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-UltraLightItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Medium scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Medium scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Medium scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-MediumItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-MediumItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(8)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Medium,ItalicFont = *-MediumItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Medium.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Medium.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-MediumItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-MediumItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Book scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Book scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Book scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Bold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BookItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BookItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-BoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(9)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Book,ItalicFont = *-BookItalic,BoldFont =
-(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BookItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BookItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-SemiBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-SemiBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-SemiBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-SemiBoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-SemiBoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(10)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-SemiBold,ItalicFont = *-SemiBoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-SemiBold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-SemiBold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-SemiBoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-SemiBoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraBold scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraBoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-ExtraBoldItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(11)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-ExtraBold,ItalicFont = *-ExtraBoldItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraBold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraBold.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraBoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-ExtraBoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Heavy scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Heavy scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-Heavy scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-HeavyItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             FiraSans-HeavyItalic scale = 1.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FiraSans(12)' created for font 'FiraSans'
-(fontspec)             with options [Ligatures = TeX,Scale = 1,Extension =
-(fontspec)             .otf,Numbers = {Proportional,OldStyle},UprightFont =
-(fontspec)             *-Heavy,ItalicFont = *-HeavyItalic].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Heavy.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-Heavy.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-HeavyItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[FiraSans-HeavyItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+pnum;+onum;+smcp;"
-
-) (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math.sty
-Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
-Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (/usr/share/texmf-dist/tex/latex/base/fix-cm.sty
-Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
- (/usr/share/texmf-dist/tex/latex/base/ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
-)) (/usr/share/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
-Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting with LuaLaTeX
-Lua module: lualatex-math 2013/08/03 v1.3 Patches for mathematics typesetting with LuaLaTeX)
-\g__um_fam_int=\count411
-\g__um_fonts_used_int=\count412
-\l__um_primecount_int=\count413
-\g__um_primekern_muskip=\muskip19
- (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
-luaotfload | cache : Lookup cache loaded from /home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STIX Two Math/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'STIXTwoMath(0)' created for font 'STIX Two
-(fontspec)             Math' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:STIX Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;"
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STIX Two Math/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'STIXTwoMath(1)' created for font 'STIX Two
-(fontspec)             Math' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.84375-9.3075,Font=STIX
-(fontspec)             Two Math,Style=MathScript},{Size=-6.84375,Font=STIX Two
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;"<6.84375-9.3075>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=0;"<-6.84375>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 183.
+)) (/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex)
+\tx@Isdigit=\count400
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 58.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/STIXTwoMath(1)/m/n on input line 183.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 183.
+(Font)                  OT1/cmr/m/n --> OT1/phv/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/STIXTwoMath(1)/b/n on input line 183.
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STIX Two Math/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'STIXTwoMath(2)' created for font 'STIX Two
-(fontspec)             Math' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.84375-9.3075,Font=STIX
-(fontspec)             Two Math,Style=MathScript},{Size=-6.84375,Font=STIX Two
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex2}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<6.84375-9.3075>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=0;"<-6.84375>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 183.
+(Font)                  OT1/cmr/bx/n --> OT1/phv/m/n on input line 58.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 59.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 65.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 66.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/phv/m/it on input line 66.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/phv/m/it on input line 66.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 67.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 67.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 69.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 71.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/b/n on input line 72.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 77.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ntxsfmi/m/it on input line 77.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ntxsfmi/m/it on input line 77.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ntxsfmi/m/it --> OML/ntxsfmi/b/it on input line 78.
+\symlettersA=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/ntxsfmia/m/it --> U/ntxsfmia/b/it on input line 85.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 87.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 95.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 95.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/STIXTwoMath(2)/m/n on input line 183.
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 183.
+(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 95.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 95.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/STIXTwoMath(2)/b/n on input line 183.
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STIX Two Math/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'STIXTwoMath(3)' created for font 'STIX Two
-(fontspec)             Math' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.84375-9.3075,Font=STIX
-(fontspec)             Two Math,Style=MathScript},{Size=-6.84375,Font=STIX Two
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex3}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<6.84375-9.3075>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=0;"<-6.84375>"name:STIX
-(fontspec)             Two
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 183.
+(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 95.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 96.
+\symAMSm=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 115.
+\symsymbolsC=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 137.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 150.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 150.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/m/n on input line 183.
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 183.
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 150.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 150.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/b/n on input line 183.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 183.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 150.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 151.
+\symlargesymbolsTXA=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 162.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 251.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 252.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 253.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 254.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 255.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 256.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 257.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 259.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 264.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 301.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 302.
+LaTeX Font Info:    Redeclaring math accent \check on input line 303.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 304.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 305.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 306.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 307.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 308.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 309.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 310.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 311.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1332.
+LaTeX Font Info:    Redeclaring math symbol \m@thbbch@rA on input line 1532.
+LaTeX Info: Redefining \not on input line 1786.
+LaTeX Info: Redefining \textsquare on input line 1807.
+LaTeX Info: Redefining \openbox on input line 1809.
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 183.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+esint on input line 183.
- (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
-File: uesint.fd 
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 183.
- (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 184.
- (./master.aux)
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 184.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    Checking defaults for OML/ntxsfmi/m/it on input line 184.
+LaTeX Font Info:    Trying to load font information for OML+ntxsfmi on input line 184.
+ (/usr/share/texmf-dist/tex/latex/newtxsf/omlntxsfmi.fd
+File: omlntxsfmi.fd 2014/11/16 Fontinst v1.933 font definitions for OML/ntxsfmi.
+)
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
@@ -2179,11 +1357,23 @@ LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 184.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 184.
+ (/usr/share/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 184.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 184.
+ (/usr/share/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
 
 *geometry* driver: auto-detecting
@@ -2222,23 +1412,31 @@ LaTeX Font Info:    ... okay on input line 184.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count414
-\scratchdimen=\dimen379
+\scratchcounter=\count401
+\scratchdimen=\dimen376
 \scratchbox=\box135
-\nofMPsegments=\count415
-\nofMParguments=\count416
+\nofMPsegments=\count402
+\nofMParguments=\count403
 \everyMPshowfont=\toks64
-\MPscratchCnt=\count417
-\MPscratchDim=\dimen380
-\MPnumerator=\count418
-\makeMPintoPDFobject=\count419
+\MPscratchCnt=\count404
+\MPscratchDim=\dimen377
+\MPnumerator=\count405
+\makeMPintoPDFobject=\count406
 \everyMPtoPDFconversion=\toks65
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
+LaTeX Info: Command `\dddot' is already robust on input line 184.
+LaTeX Info: Command `\ddddot' is already robust on input line 184.
 Package hyperref Info: Link coloring ON on input line 184.
  (./master.out) (./master.out)
 \@outlinefile=\write5
@@ -2256,7 +1454,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count420
+\BKM@id=\count407
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
@@ -2265,50 +1463,14 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen381
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen382
-\c__nicematrix_innersep_middle_dim=\dimen383
-\c@lstlisting=\count421
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen378
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen379
+\c__nicematrix_innersep_middle_dim=\dimen380
+\c@lstlisting=\count408
 Package tocbasic Info: setting babel extension for `lol' on input line 184.
 \scr@dte@lstlisting@maxnumwidth=\skip118
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  TU/STIXTwoMath(1)/m/n --> TU/lmr/m/n on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/FiraSans(0)/m/n on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/FiraSans(0)/bx/n on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 184.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 184.
-
-Package unicode-math Warning: Using \overbracket and \underbracket from
-(unicode-math)                `mathtools' package.
-(unicode-math)                 
-(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
-(unicode-math)                original `unicode-math' definition.
-
-
-Package unicode-math Warning: I'm going to overwrite the following commands
-(unicode-math)                from the `mathtools' package: 
-(unicode-math)                 
-(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
-(unicode-math)                
-(unicode-math)                 
-(unicode-math)                 Note that since I won't overwrite the other
-(unicode-math)                colon-like commands, using them will lead to
-(unicode-math)                inconsistencies.
-
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 20.0pt on input line 185.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 185.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 185.
+LaTeX Info: Redefining \it@ocap on input line 184.
+LaTeX Info: Redefining \it@ccap on input line 184.
 <front1.jpeg, id=7, 925.4575pt x 926.46124pt>
 File: front1.jpeg Graphic file (type jpg)
 <use front1.jpeg>
@@ -2318,14 +1480,81 @@ Package luatex.def Info: front1.jpeg  used on input line 189.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./front1.jpeg>]
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 18.0pt on input line 193.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 18.0pt on input line 193.
- (./master.toc
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 3.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./front1.jpeg>] (./master.toc
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 3.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+esint on input line 3.
+ (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsfmia on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newtxsf/untxsfmia.fd
+File: untxsfmia.fd 2014/11/16 Fontinst v1.933 font definitions for U/ntxsfmia.
+)
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 3.
+ (/usr/share/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.71004pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 12.04506pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.80005pt on input line 3.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.71004pt on input line 3.
 )
 \tf@toc=\write6
 
@@ -2333,21 +1562,15 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 
 
 [2]
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 14.0pt on input line 197.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 14.0pt on input line 197.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 199.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 204.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 201.
 
 
 [3]
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 11.0pt on input line 260.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 260.
+Overfull \hbox (0.15485pt too wide) in paragraph at lines 240--241
+[][][][]\T1/phv/m/sc/10.95 De-fi-ni-zio-ne 1.5 (Tra-sfor-ma-zio-ne pro-iet-ti-va).  [][]\T1/phv/m/n/10.95 Una map-pa $\OML/ntxsfmi/m/it/10.95 f \OT1/phv/m/n/10.95 : \U/ntxsfmia/m/it/10.95 Ð\LMS/ntxsy/m/n/10.95 ¹\OML/ntxsfmi/m/it/10.95 V\LMS/ntxsy/m/n/10.95 º ! \U/ntxsfmia/m/it/10.95 Ð\LMS/ntxsy/m/n/10.95 ¹\OML/ntxsfmi/m/it/10.95 W\LMS/ntxsy/m/n/10.95 º$
+ []
+
 
 
 [4]
@@ -2355,52 +1578,100 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 [5]
 
 [6]
+Overfull \hbox (3.07014pt too wide) in paragraph at lines 356--356
+|[]\T1/phv/m/sc/18 Spa-zi me-tri-ci, to-po-lo-gi-ci e ap-pli-ca-zio-ni con-
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 362.
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
 
 [7]
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 408.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 408.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 408.
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
-(Font)              scaled to size 9.0pt on input line 408.
-
 
 [8]
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 448.
 
-LaTeX Warning: Reference `prop:c11' on page 9 undefined on input line 427.
 
-LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 6.0225pt on input line 434.
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 448.
 
-LaTeX Warning: Reference `prop:c11' on page 9 undefined on input line 434.
-
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 448.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 448.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 448.
 
 
 [9]
 
-LaTeX Warning: Reference `prop:c11' on page 10 undefined on input line 451.
+LaTeX Warning: Reference `prop:c11' on page 10 undefined on input line 467.
 
 
-Overfull \hbox (6.16808pt too wide) in paragraph at lines 461--463
-\TU/FiraSans(0)/m/n/10.95 esem-pio, de-fi-nen-do $\TU/STIXTwoMath(1)/m/n/10.95 𝑒[] ∶ ℝ → (0, +∞)$\TU/FiraSans(0)/m/n/10.95 , que-sta ha un’in-ver-sa con-ti-nua $[]\TU/STIXTwoMath(1)/m/n/10.95 (𝑥) ∶ (0, +∞) →
- []
+LaTeX Warning: Reference `prop:c11' on page 10 undefined on input line 474.
 
 
 
 [10]
+
+LaTeX Warning: Reference `prop:c11' on page 11 undefined on input line 491.
+
+
+
+[11]
 
 Package caption Warning: Unused \captionsetup[table] on input line 122.
 See the caption package documentation for explanation.
 
 
 
-[11] (./master.aux)
+[12] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
 
 
 LaTeX Warning: There were undefined references.
@@ -2410,21 +1681,21 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 54059 strings out of 475506
- 100000,2373549 words of node,token memory allocated
- 1180 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 149 attribute, 104 glue_spec, 76 attribute_list, 2 write nodes
-   avail lists: 1:4,2:788,3:222,4:62,5:758,6:38,7:5429,8:50,9:614,10:20,11:680
- 75826 multiletter control sequences out of 65536+600000
- 135 fonts using 55677423 bytes
- 124i,19n,114p,10936b,561s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 49187 strings out of 475506
+ 100000,1977958 words of node,token memory allocated
+ 1365 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 3 glue, 24 kern, 1 glyph, 179 attribute, 103 glue_spec, 91 attribute_list, 2 write nodes
+   avail lists: 1:3,2:758,3:229,4:78,5:621,6:38,7:5436,8:52,9:594,10:25,11:680
+ 70778 multiletter control sequences out of 65536+600000
+ 190 fonts using 12530607 bytes
+ 124i,19n,114p,10936b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/fira/FiraSans-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/fira/FiraSans-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf>
-Output written on master.pdf (11 pages, 227971 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
+Output written on master.pdf (12 pages, 271477 bytes).
 
-PDF statistics: 207 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 131072)
+PDF statistics: 210 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 64 named destinations out of 1000 (max. 131072)
  112 words of extra memory for PDF output out of 10000 (max. 100000000)
 
