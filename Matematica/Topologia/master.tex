@@ -1,3 +1,4 @@
+%! TEX program = lualatex
 \documentclass[11pt, a4paper]{scrartcl}
 % Packages
 \usepackage[margin=1.25in]{geometry}
@@ -36,79 +37,58 @@
 \usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{setspace}
-\setstretch{1.3}
+\setstretch{1.2}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
+\usepackage{faktor}
 
 % Titles 
-\title{Appunti di Topologia}
+\title{Appunti di\\ \vspace{.1cm} Geometria}
 \author{Manuel Deodato}
 \date{}
 
 
-% svolgimento
+\definecolor{asdf}{HTML}{4a7aa4}
+\definecolor{verde}{HTML}{0D8000}
+
+
+\newtheoremstyle{style1}% name of the style to be used
+{15pt}% measure of space to leave above the theorem. E.g.: 3pt
+{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{15pt}% measure of space to indent
+{\color{verde}\sffamily\scshape}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
 \newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
 
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
 
-%%%%% tcolorbox setup
-
-% Teorema e proposizione
-\newtcbtheorem[number within=section]{teorema}{Teorema}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
-
-\newtcbtheorem[number within=section]{prop}{Proposizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
-
-
-
-
-
-% Definizione
-\definecolor{greendef}{HTML}{b8d8be}
-
-\newtcbtheorem[number within=section]{definizione}{Definizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
-
-
-% Esempio
-\theoremstyle{definition}
-\newtheorem{esempio}{Esempio}
-
-%\definecolor{empurple}{HTML}{6e5e89}
-
-%\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
-
-\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
-
-\numberwithin{esempio}{section}
-
-
-% Lemma e Corollario
-\definecolor{lemcor}{HTML}{a78d8a}
-
-\newtcbtheorem[number within=section]{lemma}{Lemma}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
-\newtcbtheorem[number within=section]{corollario}{Corollario}{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,left=0mm,arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
-
-
-
-% Osservazione
-\theoremstyle{definition}
-\newtheorem{obs}{Osservazione}
-
-\definecolor{coloros}{HTML}{6e5e89}
-
-\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
-
-\numberwithin{obs}{section}
-
-% Nota
-\newtheorem{nota}{Nota}
-
-\definecolor{ncol}{HTML}{f9ebbe}
-
-\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
-
-\numberwithin{nota}{section}
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
 
 
 
@@ -142,18 +122,22 @@
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{15}{20}\sffamily\scshape}
-{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{\fontsize{18}{20}\sffamily\scshape}
+{\normalfont\color{verde}{\fontsize{18}{20}\selectfont\thesection}}
 {0.7em}
 {}
-\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
-\definecolor{asdf}{HTML}{4a7aa4}
+\titlespacing*{\section}{0pt}{*2}{1cm}
+\titlespacing*{\subsection}{0pt}{*5}{.5cm}
+\titlespacing*{\subsubsection}{0pt}{*5}{.5cm}
+
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{13,128,0}}
+
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{11}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -192,26 +176,147 @@
 
 
 % Font
-\usepackage[osf]{newpxtext}
-\usepackage{sansiwona}
-
-
+\usepackage[sfdefault]{FiraSans}
+\renewcommand{\familydefault}{\sfdefault}	
+\usepackage{unicode-math}
+\setmathfont{STIX Two Math}
 
 \begin{document}
 \maketitle
-\vspace{10cm}
+\vspace{9cm}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.6\columnwidth]{front.jpg}
+	\includegraphics[width=.7\columnwidth]{front1.jpeg}
 \end{figure}
 
 \newpage
 \tableofcontents 
 \newpage
+\section{Geometria proiettiva}
+
+\subsection{Gli spazi affini}
+\begin{definizione}
+	[Sottospazio affine]
+	Sia $V$ un $\mathbb{K}$-spazio vettoriale; un sottoinsieme della forma
+	\[
+	S = \left\{ x+v  \mid v \in W \right\} = x + W
+	\] 
+	con $x\in V $ punto fissato e $W \subset V$ un sottospazio vettoriale di $V$ \`e detto \textit{sottospazio affine} di $V$.
+\end{definizione}
+\begin{prop}
+	Due spazi affini $x + W$ e $x' + W'$ coincidono se e solo se $W = W'$ e $x-x'\in W$.
+	\begin{proof}
+		Assumendo che $W = W'$ e $x-x' \in W$, allora ogni vettore della forma $x + v, \ v \in W$ si scrive come $x' + (x-x' + v)$, visto che $x - x' + v \in W$; viceversa, ogni vettore di $x' + W' = x ' + W$ si pu\`o riscrivere in modo analogo, quindi i due spazi coincidono.
+
+		Se, invece, si sapesse che i due spazi coincidono, cio\`e $x + W = x' +W'$, allora $W = x'-x + W'$, quindi $x' - x \in W$ (basta prendere il vettore $w = x - x' + 0$); analogamente, $x'-x \in W'$, quindi $W = x'-x + W' = W'$.
+	\end{proof}
+\end{prop}
+\noindent Nella definizione di $S = x + W$, quindi, lo spazio $W$ \`e univocamente determinato da tale definizione, mentre $x $ \`e un generico punto di $S$; in particolare, $W$ \`e detto \textit{giacitura} di $S$ e si indica con $\operatorname{giac} S$.
+\begin{definizione}
+	[Dimensione di uno spazio affine]
+	La dimensione di $S$ \`e la dimensione della sua giacitura $W$.
+\end{definizione}
+\noindent Si nota che un sottospazio affine di dimensione $0$ \`e un qualunque punto di $V$, mentre un sottospazio affine di dimensione $1$, o $2$ \`e detto, rispettivamente, \textit{retta affine}, o \textit{piano affine}.
+
+\subsection{Introduzione agli spazi proiettivi}
+
+\begin{definizione}
+	[Spazio proiettivo]
+	Sia $V$ uno spazio vettoriale su $\mathbb{K}$; il suo \textit{spazio proiettivo} \`e dato da:
+	\[
+		\mathbb{P}( V) = \faktor{V \setminus \left\{ 0 \right\} }{\sim}
+	\] 
+	dove $v\sim w \iff \exists \lambda \in \mathbb{K} : w = \lambda v$.
+\end{definizione}
+\noindent Dalla definizione, uno spazio proiettivo collassa tutti i vettori di uno spazio vettoriale che appartengono alla stessa retta in un punto.
+In questo senso, $\mathbb{P} (V)$ \`e l'insieme delle rette di $V$.
+\begin{esempio}
+Si nota che $\mathbb{P} \left(\left\{ 0 \right\} \right) = \varnothing / {\sim} = \varnothing$, mentre per $v\neq 0$, si ha:
+\[
+	\mathbb{P}\left(\operatorname{Span} v\right) = \faktor{\left\{ \lambda v  \mid \lambda \in \mathbb{K}\setminus 0 \right\} }{\sim} = \left\{ \left[ v \right]  \right\} 
+\] 
+dove $\left[ v \right] $ rappresenta la classe di equivalenza di $v$; questo significa che lo spazio proiettivo dello span di un elemento \`e composto da un solo punto.
+\end{esempio}
+\begin{definizione}
+	[Dimensione]
+	La dimensione di uno spazio proiettivo \`e
+	\[
+	\dim_{\mathbb{K}} \mathbb{P}(V) = \dim_{\mathbb{K}} V - 1
+	\] 
+\end{definizione}
+\noindent Intuitivamente, questa definizione \`e dovuta al fatto che gli spazi proiettivi collassano le rette in punti, abbassando di $1$ la dimensione dello spazio vettoriale.
+
+\begin{definizione}
+	[Punti, rette e piani proiettivi]
+	Si definisce \textit{punto proiettivo} uno spazio proiettivo di dimensione $0$, \textit{retta proiettiva} uno spazio di dimensione $1$ e \textit{piano proiettivo} uno spazio di dimensione $2$.
+\end{definizione}
+\begin{definizione}
+	[Spazio proiettivo standard]
+	Sia $\mathbb{K}$ un campo; si definisce lo \textit{spazio proiettivo standard} come
+	\[
+	\mathbb{P}(\mathbb{K}^{n+1} ) = \mathbb{P}^n(\mathbb{K}) = \mathbb{K}\mathbb{P}^n
+	\] 
+\end{definizione}
+\subsubsection{Trasformazioni proiettive}
+Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che preservano la struttura di spazio proiettivo.
+\begin{definizione}
+	[Trasformazione proiettiva]
+	Una mappa $f : \mathbb{P}(V)\to \mathbb{P}(W)$ \`e detta \textit{trasformazione proiettiva} se $\exists \varphi : V \to W$ applicazione lineare tale che
+	\[
+		f([v]) = [\varphi (v)]
+	\] 
+	In questa definizione, si dice che $f$ \`e \textit{indotta} da $\varphi $ e, talvolta, si scrive che $f = [\varphi ]$.
+\end{definizione}
+\begin{prop}
+	Se $f$ \`e una trasformazione proiettiva indotta da $\varphi $, allora $\varphi $ \`e iniettiva.
+	\begin{proof}
+		Per assurdo, $\operatorname{ker} \varphi  \neq \left\{ 0 \right\} $ e sia $v \in \operatorname{ker} \varphi \setminus \left\{ 0 \right\} $; allora $f([v]) = [0]$, ma $[0] \not \in \mathbb{P}(W)$ per definizione di spazio proiettivo, quindi $f$ non sarebbe ben definita.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Ogni applicazione lineare iniettiva $\varphi :V\to W$ induce una trasformazione proiettiva $f: \mathbb{P}(V) \to \mathbb{P}(W)$ tramite l'associazione $[v] \mapsto [\varphi (v)]$.
+	\begin{proof}
+		Se $v\neq 0$, allora $\varphi (v) \neq 0$ perch\'e $\varphi $ \`e iniettiva. 
+		Se, invece, $[v] = [w]$, allora, per definizione, $\exists \lambda  \in \mathbb{K}\setminus \left\{ 0 \right\}$
+		\[
+			[\varphi (v) ] = [\varphi (\lambda w)] = [\lambda \varphi (w)] = [\varphi (w)]
+		\] 
+		
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Tutte le trasformazioni proiettive sono iniettive.
+	\begin{proof}
+		Sia $f([v]) = f([w])$ e sia $\varphi $ l'applicazione lineare che induce $f$; allora l'uguaglianza si traduce in $[\varphi (v)]=[\varphi (w)]$, ma per come sono definite queste classi di equivalenza, questo vuol dire che $\varphi (v) = \lambda \varphi (w) = \varphi (\lambda w)$.
+		Essendo $\varphi $ iniettiva, per\`o, si ottiene che $v = \lambda w$, cio\`e $[v] = [\lambda w]$.
+		
+	\end{proof}
+\end{prop}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Spazi metrici, topologici e applicazioni continue}
 \subsection{Spazi metrici}
 \begin{definizione}
-	{Spazio metrico}{}
+	[Spazio metrico]
 Sia $X$ un insieme non vuoto; allora $X$ si dice spazio metrico se pu\`o essere equipaggiato con una \textit{distanza}, ossia una funzione $d : X \times X \to \mathbb{R}$ tale che:
 \begin{itemize}
 	\item $d(x,x') \ge  0 $ e $d(x,x') = 0 \iff x=x'$;
@@ -230,7 +335,7 @@ In uno spazio metrico $(X,d)$, si pu\`o definire un \textit{disco aperto} di rag
 B_r(x) := \left\{ x' \in X  \mid d(x,x') < r \right\} 
 \] 
 \begin{definizione}
-	{Insieme aperto}{}
+	[Insieme aperto]
 	Sia $(X,d)$ uno spazio metrico. Un suo sottoinsieme si dice aperto se \`e generato dall'unione di dischi aperti.
 \end{definizione}
 \subsubsection{Continuit\`a in spazi metrici}
@@ -240,7 +345,7 @@ Una funzione $f:\mathbb{R}\to \mathbb{R}$ si dice continua in $x \in \mathbb{R}$
 \] 
 \`E possibile generalizzare la definizione a spazi metrici usando la metrica definita su di essi.
 \begin{definizione}
-	{Continuit\`a in spazi metrici}{}
+	[Continuit\`a in spazi metrici]
 Sia $f : X\to Y$ un'applicazione, con $(X,d_X) , \ (Y,d_Y)$ spazi metrici. Si dice che $f$ \`e continua in $x \in X$ se $\forall \varepsilon , \ \exists \delta (\epsilon )$ tale che:
 \begin{equation}
 	d_Y \big(f(x), f(x')\big) < \varepsilon , \ \forall d_X(x,x')< \delta (\varepsilon )
@@ -248,7 +353,6 @@ Sia $f : X\to Y$ un'applicazione, con $(X,d_X) , \ (Y,d_Y)$ spazi metrici. Si di
 \end{definizione}
 \noindent Usando la nozione di insieme aperto, \`e possibile generalizzare ulteriormente la definizione di continuit\`a al solo concetto di apertura di un insieme.
 \begin{teorema}
-	{}{}
 Un'applicazione $f:X\to Y$ \`e continua $\iff\forall A \subset  Y$ aperto, l'insieme $f^{-1}(A)  $ \`e aperto.
 \begin{proof}
 Si dimostrano le due implicazioni.	
@@ -270,7 +374,7 @@ Valendo $\forall x \in X$, allora $f$ \`e continua.
 \noindent Questo permette di parlare di continuit\`a di applicazioni in insiemi su cui non \`e definita una distanza, ma solo i sottoinsiemi aperti.
 \subsubsection{Distanze equivalenti}
 \begin{definizione}
-	{Distanze topologicamente equivalenti}{}
+	[Distanze topologicamente equivalenti]
 	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se hanno gli stessi insiemi aperti, cio\`e se generano la stessa topologia.
 \end{definizione}
 \noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \varepsilon >0$:
@@ -308,7 +412,6 @@ Da questo segue direttamente che\footnote{Apparentemente, la distanza pi\`u gran
 Questo mostra che se $A$ \`e aperto rispetto ad una distanza, lo \`e anche rispetto alle altre.
 \subsubsection{Alcuni risultati sulla continuit\`a}
 \begin{prop}
-	{}{c11}
 Siano $(X,d_X), \ (Y,d_Y)$ due spazi metrici e $f:X\to Y$ un'applicazione. Dato $x \in X$, se esiste costante $M>0$ tale che
 \[
 d_Y\big(f(x'), f(x)\big) \le Md_X(x',x), \ \forall x ' \in X
@@ -319,7 +422,6 @@ allora $f$ \`e continua in $x$.
 \end{proof}
 \end{prop}
 \begin{prop}
-	{}{c12}
 	Ogni applicazione lineare $L : \mathbb{R}^n \to \mathbb{R}^m$ \`e continua rispetto alle distanze euclidee.
 	\begin{proof}
 		Si usa Prop. \ref{prop:c11} applicato alle distanze $d^{(1)} $, che sono topologicamente equivalenti alle distanze euclidee $d^{(2)} $. Inoltre, visto che ogni applicazione costante \`e continua, si esclude che $L$ sia nulla. Si denota con $(a_{ij} )_{1\le i\le m, \ 1\le j\le n} $ la matrice che rappresenta $L$; se $x, x' \in \mathbb{R}^n$ si ha:
@@ -343,25 +445,24 @@ allora $f$ \`e continua in $x$.
 che \`e lineare e, quindi, continua.
 \subsubsection{Isometrie e omeomorfismi}
 \begin{definizione}
-	{Isometria}{}
+	[Isometria]
 	Dati $X,Y$ spazi metrici, un'applicazione biettiva $f:X\to Y$ \`e un'isometria se $\forall x,x' \in X$, si ha $d_X(x,x') = d_Y\big(f(x),f(x')\big)$.
 \end{definizione}
 \noindent Da Prop \ref{prop:c11}, segue che un'isometria \`e un'applicazione continua. Se fra due spazi metrici $X,Y$ esiste un'isometria $f:X\to Y$, gli spazi si dicono \textbf{isometrici}. 
 
 Sono isometrie $\operatorname{Id} : X \to X$, cio\`e l'applicazione identit\`a, l'inversa di un'isometria e la composizione di isometrie. Questo porta al seguente.
 \begin{prop}
-	{}{}
 	Un'isometria fra due spazi metrici \`e una relazione di equivalenza.	
 \end{prop}
 \begin{definizione}
-	{Omeomorfismo}{}
+	[Omeomorfismo]
 	Dati $X,Y$ spazi metrici, un'applicazione biettiva $f:X\to Y$ \`e un \textit{omeomorfismo} se la sua inversa e $f$ stessa sono continue.
 \end{definizione}
 \noindent Ne segue che ogni isometria \`e un omeomorfismo, ma non \`e vero il viceversa. Per esempio, definendo $e^x : \mathbb{R} \to (0,+\infty)$, questa ha un'inversa continua $\log(x) : (0,+\infty) \to \mathbb{R}$, quindi \`e un omeomorfismo, ma non \`e un'isometria perch\'e manda $(-\infty,0]$ in $(0,1]$.
 Anche gli omemorfismi definiscono una \textbf{relazione di equivalenza} tra spazi metrici.
 \subsection{Spazi topologici}
 \begin{definizione}
-	{Topologia e spazio topologico}{}
+	[Topologia e spazio topologico]
 	Sia $X$ un insieme non-vuoto. Una \textit{topologia} su $X$ \`e una famiglia non-vuota $\tau $ di sottoinsiemi di $X$, chiamati \textit{insiemi aperti della topologia}. Questi soddisfano le seguenti condizioni:
 	\begin{itemize}
 		\item $\varnothing, \ X$ sono aperti;
@@ -380,7 +481,7 @@ Su un qualunque insieme non-vuoto $X$, si possono sempre definire due topologie:
 	\item la \textbf{topologia discreta} ottenuta prendendo $\tau  = \mathcal{P}(X)$, con $(X,\mathcal{P}(X))$ \textbf{spazio topologico discreto}.
 \end{itemize}
 \begin{definizione}
-	{Spazio metrizzabile}{}
+	[Spazio metrizzabile]
 	Uno spazio topologico $(X,\tau )$ \`e detto \textit{metrizzabile} se si pu\`o definire una distanza su $X$ che induce la topologia $\tau $.
 \end{definizione}
 \noindent Sia dato $Y$ sottoinsieme non-vuoto di uno spazio metrizzabile $(X,d_X)$; si sa gi\`a che $d_Y$, ottenuta come restrizione di $d_X$ a $Y$, \`e una distanza su $Y$.

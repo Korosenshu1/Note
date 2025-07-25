@@ -1894,7 +1894,7 @@ La seguente proposizione, invece, permette una caratterizzazione anche dei grupp
 	{}{}
 	Sia $G$ un gruppo ciclico e sia $H \subset G$ un suo sottogruppo; allora $H$ \`e ciclico.
 	\begin{proof}
-		Sia $\langle g \rangle= G$ e sia $k$ il minimo intero positivo tale che $g^k \in H$; allora, dato $g^a \in H$, per qualche $a \in \mathbb{Z}$, si ha $a = qk + r$ per divisione Euclidea.
+		Sia $\langle g \rangle= G$ e sia $k$ il minimo intero positivo tale che $g^k \in H$; allora, dato $g^a \in H$, per qualche $a \in \mathbb{Z}$, si ha $a = qk + r$ per divisione euclidea.
 Si nota che: $(g^k)^{-q} g^a = (g^k)^{-q} g^{qk} g^r=g^r \in H$, visto che $H$ \`e un sottogruppo.
 Questo, per\`o, \`e assurdo perch\'e $r < k$ e $g^r \in H$, quindi deve essere $r = 0$, da cui $\forall a \in \mathbb{Z} : g^a\in H$, si ha $a = qk$, per qualche intero $q$.
 Sostanzialmente: $\langle g^k \rangle = H$.
@@ -2928,7 +2928,7 @@ Conseguentemente, ogni multiplo di $x^2 + 1$ \`e anch'esso contenuto nel nucleo,
 \[
 \langle x^2 +1  \rangle \subseteq \operatorname{ker} V_i
 \] 
-\`E possibile mostrare che $\langle x^2 + 1 \rangle\supseteq \operatorname{ker} V_i$; per farlo, si prende un generico $f(x) \in \operatorname{ker} V_i$ (cio\`e un polinomio tale che $f(i) = 0$) e se ne considera la divisione Euclidea per $x^2 +1 $:
+\`E possibile mostrare che $\langle x^2 + 1 \rangle\supseteq \operatorname{ker} V_i$; per farlo, si prende un generico $f(x) \in \operatorname{ker} V_i$ (cio\`e un polinomio tale che $f(i) = 0$) e se ne considera la divisione euclidea per $x^2 +1 $:
 \[
 f(x) = (x^2 +1) q(x) + r(x)
 \] 
@@ -2954,14 +2954,14 @@ Se, invece, $f(x) = a \in K$ costante, con $a \neq 0$, si ha $\langle a \rangle 
 Si assume, allora, che $\operatorname{deg} f = n \ge 1$; l'idea \`e che nel quoziente si sta imponendo $f(x) = 0$ perch\'e ciascun polinomio che \`e multiplo di $f(x)$ viene identificato con la classe di resto $[0]$.
 Per capirlo meglio, si considera il seguente esempio.
 \begin{esempio}
-	Sia $K = \mathbb{R}$ e $f(x) = x^2 + 1 \in  \mathbb{R}[x]$; allora in $\mathbb{R}[x] / \langle x^2 + 1 \rangle $ vale la relazione $x^2 + 1 = 0$, cio\`e $x^2 = - 1$, perch\'e ogni multiplo di $x^2 + 1$ viene mandato in $0$ (o meglio, in $[0]$) dal quoziente, che si occupa di classificare in classi di resto separate i valori del resto per divisione Euclidea dei vari polinomio di $K[x]$ con $x^2 + 1$.
+	Sia $K = \mathbb{R}$ e $f(x) = x^2 + 1 \in  \mathbb{R}[x]$; allora in $\mathbb{R}[x] / \langle x^2 + 1 \rangle $ vale la relazione $x^2 + 1 = 0$, cio\`e $x^2 = - 1$, perch\'e ogni multiplo di $x^2 + 1$ viene mandato in $0$ (o meglio, in $[0]$) dal quoziente, che si occupa di classificare in classi di resto separate i valori del resto per divisione euclidea dei vari polinomio di $K[x]$ con $x^2 + 1$.
 	Considerando $p(x)=3x^4 - 5x^3 + x -\sqrt{3} \in \mathbb{R}[x]$, la sostituzione porta a:
 	\[
 	3x^4 - 5x^3 + x -\sqrt{3}  = -5x (-1) + 3 (-1)^2 + x - \sqrt{3}= 6x + (3 - \sqrt{3}) 
 	\] 
 	Questo vuol dire che $p(x) \equiv 6x + (3-\sqrt{3} ) \pmod{x^2 +1 } $.
 \end{esempio}
-\noindent Il discorso appare pi\`u evidente se si considera il processo appena svolto come applicato alla divisione Euclidea; dato $p(x) \in K[x]$, questo si scrive come $p(x) = q(x) f(x) + r(x)$, ma se $f(x) = 0$, allora si rimane con il rappresentante della classe di equivalenza $r(x)$.
+\noindent Il discorso appare pi\`u evidente se si considera il processo appena svolto come applicato alla divisione euclidea; dato $p(x) \in K[x]$, questo si scrive come $p(x) = q(x) f(x) + r(x)$, ma se $f(x) = 0$, allora si rimane con il rappresentante della classe di equivalenza $r(x)$.
 
 Questo permette di concludere che ogni elemento di $K[x] / \langle f(x) \rangle$ \`e il laterale di un polinomio di grado minore di quello di $f(x)$, analogamente a quanto succedeva per $\mathbb{Z} / m\mathbb{Z}$.
 \begin{prop}
@@ -3048,12 +3048,12 @@ significa che uno fra $a(x)$ e $b(x)$ \`e un polinomio costante diverso da $0$.
 		\end{itemize}
 	\end{proof}
 \end{teorema}
-\subsubsection{Anelli Euclidei}
-L'anello $K[x]$ permette una divisione con resto in analogia con quanto possibile in $\mathbb{Z}$ con la divisione Euclidea.
+\subsubsection{Anelli euclidei}
+L'anello $K[x]$ permette una divisione con resto in analogia con quanto possibile in $\mathbb{Z}$ con la divisione euclidea.
 L'idea, ora, \`e di trovare una struttura per tutti quegli anelli che condividono tale analogia.
 \begin{definizione}
-	{Anello Euclideo}{}
-	Un dominio $D$ \`e detto \textit{anello Euclideo} se esiste una mappa $g : D \setminus\left\{ 0 \right\} \to \mathbb{N}$, detta \textit{grado}, tale che
+	{Anello euclideo}{}
+	Un dominio $D$ \`e detto \textit{anello euclideo} se esiste una mappa $g : D \setminus\left\{ 0 \right\} \to \mathbb{N}$, detta \textit{grado}, tale che
 	\begin{enumerate}[(g 1).]
 		\item $\forall a,b \in D$, con $a,b\neq 0$, vale $g(a) \le g(ab)$;
 		\item $\forall a,b \in D$, con $b\neq 0$, esistono $q,r \in D : a = qb + r$, dove $r = 0$, oppure $g(r) < g(b)$.
@@ -3063,7 +3063,7 @@ L'idea, ora, \`e di trovare una struttura per tutti quegli anelli che condividon
 
 \begin{lemma}
 	{}{}
-	In un anello Euclideo $D$, per $a,b \in D$ con $a,b \neq 0$, se $b  \mid a$ e $a \not  \mid b$, allora $g(b) < g(a)$.
+	In un anello euclideo $D$, per $a,b \in D$ con $a,b \neq 0$, se $b  \mid a$ e $a \not  \mid b$, allora $g(b) < g(a)$.
 	\begin{proof}
 		Visto che $b  \mid a$ per assunzione, sia $a = bc$.
 		Se $a \not  \mid b$, allora $b = qa + r$, con $r\neq 0$ e $g(r) < g(a)$.
@@ -3083,7 +3083,7 @@ Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
 \end{prop}
 \begin{lemma}
 	{}{}
-	In un anello Euclideo $D$, vale $g(1) \le g(b), \ \forall b \in D$ e $g(b) = g(1) \iff b \in D^*$.
+	In un anello euclideo $D$, vale $g(1) \le g(b), \ \forall b \in D$ e $g(b) = g(1) \iff b \in D^*$.
 	\begin{proof}
 		Per la prima affermazione, si nota che $\forall b \in D$, $g(b)=g(1b) \ge g(1)$.
 
@@ -3096,6 +3096,19 @@ Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
 		\end{itemize}
 	\end{proof}
 \end{lemma}
+
+\subsection{Fattorizzazione negli anelli euclidei}
+\subsubsection{Propriet\`a di base}
+\begin{definizione}
+	{PID}{}
+	Un dominio \`e detto \textit{a ideali principali} (PID) se tutti i suoi ideali sono principali.
+\end{definizione}
+\begin{esempio}
+	L'anello dei polinomi a coefficienti costanti $K[x,y]$, con $K$ campo, non \`e a ideali principali perch\'e l'ideale $I = \langle x,y \rangle$ non pu\`o essere generato da un solo elemento.
+	\begin{center}
+		\color{red} Includere dimostrazione.
+	\end{center}
+\end{esempio}
 
 
 \end{document}
