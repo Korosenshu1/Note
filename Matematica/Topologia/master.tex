@@ -53,8 +53,8 @@
 
 
 \newtheoremstyle{style1}% name of the style to be used
-{15pt}% measure of space to leave above the theorem. E.g.: 3pt
-{15pt}% measure of space to leave below the theorem. E.g.: 3pt
+{20pt}% measure of space to leave above the theorem. E.g.: 3pt
+{20pt}% measure of space to leave below the theorem. E.g.: 3pt
 {\normalfont}% name of font to use in the body of the theorem
 {15pt}% measure of space to indent
 {\color{verde}\sffamily\scshape}% name of head font
@@ -336,9 +336,199 @@ Inoltre, si pu\`o mostrare che equipaggiando $\mathbb{P}GL(V)$ con l'operazione 
 	Allora $\lambda v = \varphi (v)$, cio\`e $v$ \`e un autovettore di $\varphi $, con autovalore $\lambda $; analogamente, se $v$ \`e un autovettore di $\varphi $, allora $[v]$ \`e un punto fisso per lo stesso motivo.
 \end{osservazione}
 \subsubsection{Sottospazi proiettivi}
-\begin{center}
-	Riprendere da pagina 7
-\end{center}
+Per semplicit\`a di notazione, si introduce la proiezione
+\begin{equation}
+	\pi : V \setminus \left\{ 0 \right\} \to \mathbb{P}(V)
+\end{equation}
+che manda $V \setminus \left\{ 0 \right\} $ sul suo quoziente con la relazione di equivalenza.
+\begin{definizione}
+	[Grassmanniana]
+	Sia $V$ uno spazio vettoriale tale che $\dim V = n$ e sia $k \in \left\{ 0,\ldots,n \right\}$; allora la \textit{grassmanniana} $k$ di $V$ \`e l'insieme di tutti i sottospazi di $V$ di dimensione $k$:
+	\[
+	\mathrm{Gr} _k (V) = \left\{ W \subseteq V  \mid W \text{ spazio vettoriale con } \dim W = k \right\} 
+	\] 
+Si user\`a, inoltre, la seguente notazione:
+\[
+\mathrm{Gr}  (k,n) = \mathrm{Gr}  _{k} (\mathbb{K}^{n} )
+\] 
+\end{definizione}
+
+\begin{definizione}
+	[Sottospazio proiettivo]
+	Sia $V$ uno spazio vettoriale; un \textit{sottospazio proiettivo} S di $\mathbb{P}(V)$ \`e un sottoinsieme di $\mathbb{P}(V)$ tale che
+	\[
+	S = \pi (H \setminus \left\{ 0 \right\} )
+	\] 
+	per qualche $H$ sottospazio vettoriale di $V$.
+\end{definizione}
+\begin{osservazione}
+Dalla definizione, si deduce che uno sottospazio proiettivo \`e esso stesso uno spazio proiettivo, cio\`e $\pi(H \setminus \left\{ 0 \right\} ) = \mathbb{P}(H)$.
+\end{osservazione}
+\begin{definizione}
+	[Iperpiano proiettivo]
+	Un iperpiano di $\mathbb{P}(V)$ \`e un sottospazio proiettivo di $\mathbb{P}(V)$ tale che 
+	\[
+	\dim S = \dim \mathbb{P}(V) - 1
+	\] 
+\end{definizione}
+\begin{teorema}
+	Siano $V$ uno spazio vettoriale e $H$ un suo sottospazio.
+	Sia $S=\pi(H\setminus\left\{ 0 \right\} ) = \mathbb{P}(H)$ un sottospazio proiettivo di $\mathbb{P}(V)$; allora $\pi^{-1} (S) = H \setminus \left\{ 0 \right\} $.
+	In sostanza, si ha una biezione tra i sottospazi vettoriali di $V$ e i sottospazi proiettivi di $\mathbb{P}(V)$.
+	\begin{proof}
+		Si nota che
+		\[
+			\pi^{-1} (S) = \bigcup_{[v] \in S} \pi^{-1} ([v]) = \bigcup _{v \in H \setminus\left\{ 0 \right\} } \pi^{-1} ([v])
+		\] 
+		Si dimostrer\`a il teorema per doppia inclusione.
+		Avendo $\pi(v) = [v]$, allora $v \in \pi^{-1} ([v])$, perci\`o
+		\[
+			\bigcup_{v \in H \setminus\left\{ 0 \right\} } \pi^{-1} ([v]) \supseteq H \setminus \left\{ 0 \right\} 
+		\] 
+		Si nota anche che
+		\[
+			\pi^{-1} ([v]) = \big\{ w   \mid [w] = [v] \big\} = \big\{ \lambda v  \mid  \lambda \in \mathbb{K}\setminus\left\{ 0 \right\}  \big\} 
+		\] 
+		pertanto $\forall w \in \pi^{-1} ([v])$, si ha $w = \lambda v \in H \setminus\left\{ 0 \right\} $, da cui segue che
+		\[
+			\bigcup_{v \in H \setminus\left\{ 0 \right\} } \pi^{-1} ([v]) \subseteq H \setminus\left\{ 0 \right\} 
+		\] 
+	\end{proof}
+\end{teorema}
+\noindent Il teorema appena mostrato permette di concludere che 
+\[
+\dim \mathbb{P}(H) = \dim H - 1 \iff \dim \pi^{-1} (S) \cup \left\{ 0 \right\}  = \dim S + 1
+\] 
+Dal punto di vista delle grassmanniane, si ha che
+\[
+\mathrm{Gr} _k (\mathbb{P}(V)) \cong \mathrm{Gr} _{k+1} (V)
+\] 
+dove le grassmanniane di uno spazio proiettivo sono ottenute tramite la definizione di dimensione per uno spazio proiettivo.
+
+Si passa, ora, allo studio di somme e intersezioni di sottospazi proiettivi; in particolare, si ha il seguente.
+\begin{prop}
+	Siano $S_i$, per $i \in I$ un certo insieme di indici, dei sottospazi proiettivi di $\mathbb{P}(V)$; allora l'intersezione $\bigcap_{i \in I} S_i$ \`e ancora un sottospazio di $\mathbb{P}(V)$.
+	\begin{proof}
+		Si indicano con $H_i$ i sottospazi vettoriali di $V$ tali che $S_i = \mathbb{P}(H_i)$.
+		Per conto diretto, si trova che:
+		\[
+		\begin{split}
+			\bigcap_{i \in I} S_i &= \bigcap _{i\in I} \pi(H_i \setminus\left\{ 0 \right\} ) = \big\{[v]  \mid \forall i \in I, \ [v] \in \pi (H_i \setminus \left\{ 0 \right\} ) \big\}\\
+					      &= \big\{[v]  \mid \forall i \in I, \ \exists w_i \in H_i \setminus\left\{ 0 \right\}\text{ t.c. } [w_i] = [v]\big\}\\
+					      &=\big\{[v]  \mid \forall i \in I, \ v \in H_i \setminus\left\{ 0 \right\} \big\} = \pi \left(\bigcap_{i \in I} \left(H_i \setminus\left\{ 0 \right\}\right)  \right) \\
+					      &= \pi \left(\left(\bigcap_{i \in I} H_i\right) \setminus\left\{ 0 \right\} \right) = \mathbb{P} \left(\bigcap_{i \in I} H_i\right) 
+		\end{split}
+		\] 
+	\end{proof}
+\end{prop}
+\noindent La proposizione appena dimostrata permette di concludere che
+\begin{equation}
+	\mathbb{P}(V) \cap \mathbb{P}(W) = \mathbb{P}(V \cap W)
+\end{equation}
+Come nel caso degli spazi vettoriali, l'unione di spazi proiettivi non \`e, in generale, uno spazio proiettivo; l'idea, allora, \`e quella di definire anche in questo caso un concetto di somma.
+\begin{definizione}
+	[Spazio proiettivo generato]
+	Sia $A \subseteq \mathbb{P}(V)$ un sottoinsieme di $\mathbb{P}(V)$.
+	A partire da $A$, si pu\`o definire il pi\`u piccolo sottospazio proiettivo di $\mathbb{P}(V)$ contenente $A$ come
+	\[
+		L(A) = \bigcap \left\{ S \subseteq \mathbb{P}(V)  \mid A\subseteq S \text{ e } S \text{ sottospazio proiettivo} \right\} 
+	\]
+\end{definizione}
+\noindent Si nota che, per definizione, tale intersezione \`e non vuota perch\'e $A \subseteq \mathbb{P}(V)$ e $\mathbb{P}(V)$ \`e un sottospazio proiettivo di se stesso.
+
+In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottospazi prendendo 
+\begin{equation}
+	L(S_1,S_2) = L(S_1\cup S_2)
+\end{equation}
+\begin{prop}
+	Siano $S_1 = \mathbb{P}(H_1)$ e $S_2 = \mathbb{P}(H_2)$ due sottospazi proiettivi di $\mathbb{P}(V)$, con $H_1,H_2$ sottospazi vettoriali di $V$; allora
+	\[
+	L(S_1,S_2) = \mathbb{P}(H_1+H_2)
+	\] 
+	\begin{proof}
+		Si procede per doppia inclusione. 
+		Si mostra prima che $L(S_1,S_2) \subseteq \mathbb{P}(H_1+H_2)$; per farlo, visto che $H_1 \subseteq H_1 +H_2$, si ha
+		\[
+		S_1 = \mathbb{P}(H_1) = \pi(H_1\setminus\left\{ 0 \right\} ) \subseteq \pi\big((H_1+H_2) \setminus\left\{ 0 \right\} \big) = \mathbb{P}(H_1+H_2)
+		\] 
+		In maniera del tutto analoga, si mostra che $S_2 \subseteq \mathbb{P}(H_1+H_2)$.
+		Questo significa che $\mathbb{P}(H_1+H_2)$ \`e un sottospazio proiettivo contenente sia $S_1$, che $S_2$, quindi, per la minimalit\`a di $L(S_1,S_2)$, deve valere $L(S_1,S_2) \subseteq \mathbb{P}(H_1+H_2)$.
+
+		Per l'inclusione inversa, visto che $L(S_1,S_2)$ \`e un sottospazio proiettivo, si prende $H$ sottospazio vettoriale di $V$ tale che $L(S_1,S_2) = \mathbb{P}(H)\Rightarrow H = \pi^{-1} (L(S_1,S_2)) \cup \left\{ 0 \right\} $.
+		Allora:
+		\[
+		S_1 \subseteq L(S_1,S_2) \implies H_1 = \pi^{-1} (S_1) \cup \left\{ 0 \right\} \subseteq \pi^{-1} (L(S_1,S_2)) \cup \left\{ 0  \right\} =H
+		\] 
+		Analogamente si mostra che $H_2\subseteq H$, quindi si ha $H_1+H_2 \subseteq H$, da cui $\mathbb{P}(H_1+H_2) \subseteq \mathbb{P}(H) = L(S_1,S_2)$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $S \subseteq \mathbb{P}(V)$ un sottoinsieme di $\mathbb{P}(V)$ e $f$ una trasformazione proiettiva; allora $f(L(S)) = L(f(S))$.
+	\begin{proof}
+		Siano $H = \pi^{-1} (S)$ un sottoinsieme di $V$ e $f = [\varphi ]$.
+		Si nota che $f(S) = f(\pi(H)) = \pi(\varphi (H))$, quindi
+		\[
+		\begin{split}
+			f(L(S)) &= f\big[\pi (\operatorname{Span} (H) \setminus \left\{ 0 \right\} )\big] = \pi\big[ \varphi (\operatorname{Span} (H)) \setminus\left\{ 0 \right\} \big]\\
+				&= \pi\big[\operatorname{Span} (\varphi (H))\setminus\left\{ 0 \right\}  \big]=\pi\big\{\operatorname{Span} [\pi^{-1} (f(S))] \setminus\left\{ 0 \right\} \big\}\\
+				&=L(f(S))
+		\end{split}
+		\] 
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	[Formula di Grassmann]
+	Siano $S_1,S_2$ due sottospazi proiettivi di $\mathbb{P}(V)$; allora
+	\[
+	\dim L(S_1,S_2) = \dim S_1 + \dim S_2 - \dim S_1\cap S_2
+	\] 
+	\begin{proof}
+		Siano $H_1,H_2$ i sottospazi di $V$ tali che $S_1 = \mathbb{P}(H_1)$ e $S_2 = \mathbb{P}(H_2)$.
+		Per la formula di Grassmann, si ha
+		\[
+		\dim H_1+H_2 = \dim H_1 + \dim H_2 - \dim H_1 \cap H_2
+		\] 
+		Dal punto di vista degli spazi proiettivi, questa si traduce in:
+		\[
+			\begin{split}
+				&\dim \mathbb{P}(H_1+H_2) +1 = (\dim \mathbb{P}(H_1 ) +1) + (\dim \mathbb{P}(H_2) +1) - \dim \mathbb{P}(H_1\cap H_2) - 1\\
+				&\Rightarrow \dim  L(S_1,S_2) = \dim S_1 + \dim S_2 - \dim S_1 \cap S_2
+			\end{split}
+		\] 
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	Se $S_1,S_2$ sono sottospazi proiettivi di $\mathbb{P}(V)$ tali che $\dim S_1+\dim S_2 \ge  \dim \mathbb{P}(V)$, allora $S_1 \cap S_2 \neq 0$.
+	\begin{proof}
+		Usando la formula di Grassmann:
+		\[
+		\dim S_1\cap S_2=\dim S_1 + \dim S_2 - \dim L(S_1,S_2) \ge \dim \mathbb{P}(V) - \dim L(S_1,S_2) \ge 0
+		\] 
+		Visto che, per convenzione, $\dim \varnothing = -1$, si ha $S_1 \cap S_2 \neq \varnothing$.
+	\end{proof}
+\end{corollario}
+
+\begin{teorema}
+	Sui piani proiettivi, non esistono \textit{rette parallele}.
+	Pi\`u precisamente, dati $r_1,r_2$ sottospazi proiettivi di $\mathbb{P}(V)$, con $\dim \mathbb{P}(V) = 2$ e $\dim r_1=\dim r_2 = 1$, si ha $r_1=r_2$, oppure $r_1\cap r_2 = \left\{ P \right\} $, dove $P$ \`e un punto proiettivo.
+	\begin{proof}
+		Sia $r_1\neq r_2$; allora $\dim L(r_1,r_2) = 2$ e 
+		\[
+		\dim  r_1 \cap r_2 = \dim r_1 \dim r_2 - \dim L(r_1,r_2) = 1 + 1 - 2 =0
+		\] 
+		quindi $r_1\cap r_2$ \`e un punto proiettivo.
+	\end{proof}
+\end{teorema}
+\subsubsection{Riferimenti proiettivi}
+
+L'idea \`e quella di estendere il concetto di indipendenza lineare e base agli spazi proiettivi.
+
+
+
+
+
+
+
 
 
 
