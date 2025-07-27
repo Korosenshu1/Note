@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  26 JUL 2025 15:06
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  27 JUL 2025 15:45
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -74,12 +74,6 @@ luaotfload | db : Font names database loaded from /home/manuel/.texlive/texmf-va
 Package: typearea 2024/10/24 v3.43 KOMA-Script package (type area)
 \ta@bcor=\skip50
 \ta@div=\count194
-Package typearea Info: You've used standard option `a4paper'.
-(typearea)             This is correct!
-(typearea)             Internally I'm using `paper=a4'.
-(typearea)             If you'd like to set the option with \KOMAoptions,
-(typearea)             you'd have to use `paper=a4' there
-(typearea)             instead of `a4paper', too.
 \ta@hblk=\skip51
 \ta@vblk=\skip52
 \ta@temp=\skip53
@@ -1380,16 +1374,16 @@ LaTeX Font Info:    ... okay on input line 184.
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
 * driver: luatex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(90.3375pt, 416.83289pt, 90.3375pt)
-* v-part:(T,H,B)=(90.3375pt, 664.37186pt, 90.3375pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=416.83289pt
-* \textheight=664.37186pt
+* h-part:(L,W,R)=(90.3375pt, 416.83295pt, 90.3375pt)
+* v-part:(T,H,B)=(90.3375pt, 664.37195pt, 90.3375pt)
+* \paperwidth=597.50793pt
+* \paperheight=845.04694pt
+* \textwidth=416.83295pt
+* \textheight=664.37195pt
 * \oddsidemargin=18.0675pt
 * \evensidemargin=18.0675pt
 * \topmargin=-19.3325pt
@@ -1475,7 +1469,7 @@ LaTeX Info: Redefining \it@ccap on input line 184.
 File: front1.jpeg Graphic file (type jpg)
 <use front1.jpeg>
 Package luatex.def Info: front1.jpeg  used on input line 189.
-(luatex.def)             Requested size: 291.78174pt x 292.0913pt.
+(luatex.def)             Requested size: 291.78178pt x 292.0913pt.
 
 
 [1
@@ -1567,7 +1561,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 
 
 [3]
-Overfull \hbox (0.15485pt too wide) in paragraph at lines 240--241
+Overfull \hbox (0.15479pt too wide) in paragraph at lines 240--241
 [][][][]\T1/phv/m/sc/10.95 De-fi-ni-zio-ne 1.5 (Tra-sfor-ma-zio-ne pro-iet-ti-va).  [][]\T1/phv/m/n/10.95 Una map-pa $\OML/ntxsfmi/m/it/10.95 f \OT1/phv/m/n/10.95 : \U/ntxsfmia/m/it/10.95 Ð\LMS/ntxsy/m/n/10.95 ¹\OML/ntxsfmi/m/it/10.95 V\LMS/ntxsy/m/n/10.95 º ! \U/ntxsfmia/m/it/10.95 Ð\LMS/ntxsy/m/n/10.95 ¹\OML/ntxsfmi/m/it/10.95 W\LMS/ntxsy/m/n/10.95 º$
  []
 
@@ -1578,7 +1572,7 @@ Overfull \hbox (0.15485pt too wide) in paragraph at lines 240--241
 [5]
 
 [6]
-Overfull \hbox (3.95128pt too wide) in paragraph at lines 382--385
+Overfull \hbox (3.95122pt too wide) in paragraph at lines 382--385
 \T1/phv/m/n/10.95 Si di-mo-stre-rà il teo-re-ma per dop-pia in-clu-sio-ne. Aven-do $\OML/ntxsfmi/m/it/10.95 \LMS/ntxsy/m/n/10.95 ¹\OML/ntxsfmi/m/it/10.95 v\LMS/ntxsy/m/n/10.95 º \U/ntxsfmia/m/it/10.95 = \LMS/ntxsy/m/n/10.95 »\OML/ntxsfmi/m/it/10.95 v\LMS/ntxsy/m/n/10.95 ¼$\T1/phv/m/n/10.95 , al-lo-ra $\OML/ntxsfmi/m/it/10.95 v \LMS/ntxsy/m/n/10.95 2 \OML/ntxsfmi/m/it/10.95 []\LMS/ntxsy/m/n/10.95 ¹»\OML/ntxsfmi/m/it/10.95 v\LMS/ntxsy/m/n/10.95 ¼º$\T1/phv/m/n/10.95 ,
  []
 
@@ -1591,92 +1585,108 @@ Overfull \hbox (3.95128pt too wide) in paragraph at lines 382--385
 [9]
 
 [10]
-Overfull \hbox (3.07014pt too wide) in paragraph at lines 546--546
-|[]\T1/phv/m/sc/18 Spa-zi me-tri-ci, to-po-lo-gi-ci e ap-pli-ca-zio-ni con-
+Overfull \hbox (2.56818pt too wide) in paragraph at lines 562--567
+\T1/phv/m/n/10.95 pli-ca che $\OML/ntxsfmi/m/it/10.95 w[] \U/ntxsfmia/m/it/10.95 = \OML/ntxsfmi/m/it/10.95 []w[] \LMS/ntxsy/m/n/10.95 Ï [] Ï \OML/ntxsfmi/m/it/10.95 []w[]$\T1/phv/m/n/10.95 , do-ve $\OML/ntxsfmi/m/it/10.95 [] \U/ntxsfmia/m/it/10.95 < \OT1/phv/m/n/10.95 0$\T1/phv/m/n/10.95 , al-tri-men-ti i $\OML/ntxsfmi/m/it/10.95 w[]; [] ; w[]; w[]; [] ; w[]$
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 552.
-(/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
+
 
 [11]
 
 [12]
-LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 638.
-
-LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.90005pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.03004pt on input line 638.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.05003pt on input line 638.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 638.
-
 
 [13]
-
-LaTeX Warning: Reference `prop:c11' on page 14 undefined on input line 657.
-
-
-LaTeX Warning: Reference `prop:c11' on page 14 undefined on input line 664.
-
-
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 667.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
 
 [14]
 
-LaTeX Warning: Reference `prop:c11' on page 15 undefined on input line 681.
-
-
-
 [15]
+Overfull \hbox (3.07008pt too wide) in paragraph at lines 720--720
+|[]\T1/phv/m/sc/18 Spa-zi me-tri-ci, to-po-lo-gi-ci e ap-pli-ca-zio-ni con-
+ []
+
+
+
+[16]
+
+[17]
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `OML/ntxsfmi/m/it' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 812.
+
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsfmia/m/it' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 9.90005pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.03004pt on input line 812.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.05003pt on input line 812.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 812.
+
+
+[18]
+
+LaTeX Warning: Reference `prop:c11' on page 19 undefined on input line 831.
+
+
+LaTeX Warning: Reference `prop:c11' on page 19 undefined on input line 838.
+
+
+
+[19]
+
+LaTeX Warning: Reference `prop:c11' on page 20 undefined on input line 855.
+
+
+
+[20]
 
 Package caption Warning: Unused \captionsetup[table] on input line 122.
 See the caption package documentation for explanation.
 
 
 
-[16] (./master.aux)
+[21] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1694,21 +1704,21 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49210 strings out of 475506
+ 49242 strings out of 475506
  100000,1977958 words of node,token memory allocated
- 1789 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 32 kern, 1 glyph, 307 attribute, 103 glue_spec, 155 attribute_list, 2 write nodes
-   avail lists: 1:3,2:776,3:211,4:72,5:601,6:41,7:5340,8:54,9:593,10:25,11:670
- 70781 multiletter control sequences out of 65536+600000
+ 2088 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 3 glue, 45 kern, 1 glyph, 385 attribute, 103 glue_spec, 194 attribute_list, 2 write nodes
+   avail lists: 1:5,2:776,3:211,4:76,5:633,6:48,7:6241,8:57,9:593,10:25,11:691
+ 70784 multiletter control sequences out of 65536+600000
  190 fonts using 12530607 bytes
- 124i,19n,114p,10936b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,19n,114p,10936b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
-Output written on master.pdf (16 pages, 291555 bytes).
+Output written on master.pdf (21 pages, 317821 bytes).
 
-PDF statistics: 248 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 131072)
- 120 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 306 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 113 named destinations out of 1000 (max. 131072)
+ 136 words of extra memory for PDF output out of 10000 (max. 100000000)
 

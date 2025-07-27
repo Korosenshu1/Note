@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[11pt, a4paper]{scrartcl}
+\documentclass[11pt]{scrartcl}
 % Packages
 \usepackage[margin=1.25in]{geometry}
 \usepackage{index}
@@ -43,7 +43,7 @@
 \usepackage{faktor}
 
 % Titles 
-\title{Appunti di\\ \vspace{.1cm} Geometria}
+\title{Appunti di\\ \vspace{.3cm} Geometria}
 \author{Manuel Deodato}
 \date{}
 
@@ -268,9 +268,9 @@ Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che pre
 	\end{proof}
 \end{prop}
 \begin{prop}
-	La trasformazione $\operatorname{id} _{\mathbb{P}(V)}$ \`e proiettiva ed \`e indotta da $\operatorname{id} _V$.
+	La trasformazione $\operatorname{Id} _{\mathbb{P}(V)}$ \`e proiettiva ed \`e indotta da $\operatorname{Id} _V$.
 	\begin{proof}
-		Tale trasformazione deve essere tale per cui $\operatorname{id} _{\mathbb{P}(V)} ([v]) = [v] = [\operatorname{id} _V v]$, quindi \`e indotta da $\operatorname{id} _V$; essendo quest'ultima iniettiva, anche $\operatorname{id}_{\mathbb{P}(V)}  $ \`e iniettiva.
+		Tale trasformazione deve essere tale per cui $\operatorname{Id} _{\mathbb{P}(V)} ([v]) = [v] = [\operatorname{Id} _V v]$, quindi \`e indotta da $\operatorname{Id} _V$; essendo quest'ultima iniettiva, anche $\operatorname{Id}_{\mathbb{P}(V)}  $ \`e iniettiva.
 	\end{proof}
 \end{prop}
 \begin{prop}
@@ -320,13 +320,13 @@ Infine, (d) $\Rightarrow $ (a) perch\'e, essendo $f$ invertibile, \`e anche suri
 \end{definizione}
 \begin{definizione}
 [Proiettivit\`a]
-Ogni trasformazione proiettiva $f:\mathbb{P}(V) \to \mathbb{P}(V)$ \`e detta \textit{proiettivit\`a}; si indica con $\mathbb{P}GL(V)$ l'insieme delle proiettivit\`a di $V$.
+Ogni trasformazione proiettiva $f:\mathbb{P}(V) \to \mathbb{P}(V)$ \`e detta \textit{proiettivit\`a}; si indica con $\mathbb{P}\mathrm{GL} (V)$ l'insieme delle proiettivit\`a di $V$.
 \end{definizione}
 \noindent Da questa definizione, si pu\`o notare che ogni proiettivit\`a \`e un isomorfismo perch\'e, se $f$ \`e indotta da $\varphi $, allora vale la formula della dimensione 
 \[
 	\dim \ker \varphi + \dim \operatorname{Im} \varphi = \dim V \implies \dim \operatorname{Im} \varphi  = \dim V
 \] 
-Inoltre, si pu\`o mostrare che equipaggiando $\mathbb{P}GL(V)$ con l'operazione di composizione, questo \`e un gruppo.
+Inoltre, si pu\`o mostrare che equipaggiando $\mathbb{P}\mathrm{GL} (V)$ con l'operazione di composizione, questo \`e un gruppo.
 \begin{osservazione}
 	[Punti fissi]
 	Sia $f$ una proiettivit\`a indotta da $\varphi $, con $[v]$ punto fisso, cio\`e
@@ -416,7 +416,7 @@ Si passa, ora, allo studio di somme e intersezioni di sottospazi proiettivi; in 
 			\bigcap_{i \in I} S_i &= \bigcap _{i\in I} \pi(H_i \setminus\left\{ 0 \right\} ) = \big\{[v]  \mid \forall i \in I, \ [v] \in \pi (H_i \setminus \left\{ 0 \right\} ) \big\}\\
 					      &= \big\{[v]  \mid \forall i \in I, \ \exists w_i \in H_i \setminus\left\{ 0 \right\}\text{ t.c. } [w_i] = [v]\big\}\\
 					      &=\big\{[v]  \mid \forall i \in I, \ v \in H_i \setminus\left\{ 0 \right\} \big\} = \pi \left(\bigcap_{i \in I} \left(H_i \setminus\left\{ 0 \right\}\right)  \right) \\
-					      &= \pi \left(\left(\bigcap_{i \in I} H_i\right) \setminus\left\{ 0 \right\} \right) = \mathbb{P} \left(\bigcap_{i \in I} H_i\right) 
+					      &= \pi \left[\left(\bigcap_{i \in I} H_i\right) \setminus\left\{ 0 \right\} \right] = \mathbb{P} \left(\bigcap_{i \in I} H_i\right) 
 		\end{split}
 		\] 
 	\end{proof}
@@ -523,17 +523,191 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 
 L'idea \`e quella di estendere il concetto di indipendenza lineare e base agli spazi proiettivi.
 
+\begin{definizione}
+	[Punti indipendenti]
+	Siano $P_1, \ldots, P_k \in \mathbb{P}(V)$; questi sono detti \textit{indipendenti} se per $v_1,\ldots,v_k \in V : [v_i] = P_i$, i $v_1,\ldots,v_k$ sono linearmente indipendenti.
+\end{definizione}
+\noindent \`E anche facile convincersi che tale definizione \`e indipendente dai rappresentati scelti, visto che $v_1,\ldots,v_k$ sono linearmente indipendenti $\iff \lambda _1 v_1,\ldots, \lambda _kv_k$ lo sono.
 
+Questa nozione di indipendenza per gli elementi di $\mathbb{P}(V)$ permette di individuare tutte quelle rette di $V$ che non si possono scrivere in combinazione lineare tra di loro.
 
+Si nota, inoltre, che gli elementi di $\mathbb{P}(V)$ sono, a due a due, sempre indipendenti per costruzione, mentre non \`e vero in generale per un insieme di $k$ punti, con $k>2$.
+Infatti, prendendo $V = \mathbb{R}^2$, si osserva che non si potr\`a mai costruire un insieme di punti di $\mathbb{P}(V)$ che sia indipendente e che abbia pi\`u di due elementi perch\'e $\mathbb{R}^2$ \`e ottenuto dallo span di esattamente due elementi indipendenti.
+\begin{definizione}
+	[Posizione generale]
+	Dati $P_1,\ldots,P_k \in \mathbb{P}(V)$, con $V$ spazio vettoriale di dimensione $n+1$, questi sono detti essere in \textit{posizione generale} se ogni loro sottoinsieme di $h\le n+1$ elementi distinti \`e indipendente.
+\end{definizione}
+\begin{osservazione}
+Se $k\le n+1$, allora la nozione di posizione generale coincide con quella di indipendenza, mentre se $k>n+1$, la definizione richiede l'indipendenza di tutte le $(n+1)$-uple di punti.
+\end{osservazione}
+\begin{definizione}
+	[Riferimento proiettivo]
+	Sia $V$ uno spazio vettoriale tale che $\mathbb{P}(V)$ \`e $n$-dimensionale.
+	Un \textit{riferimento proiettivo} di $\mathbb{P}(V)$ \`e una $(n+2)$-upla di punti in posizione generale.
 
+	L'ultimo punto nel riferimento \`e detto \textbf{punto unit\`a}, mentre gli altri sono detti \textbf{punti fondamentali}.
+\end{definizione}
+\begin{definizione}
+	[Base normalizzata]
+	Sia $\mathcal{R} =(P_0,\ldots,P_{n+1} )$ un riferimento di $\mathbb{P}^n(V)$.
+	Una \textit{base normalizzata} di $V$ associata a $\mathcal{R} $ \`e una base $\left\{ v_0,\ldots,v_n \right\} $ tale che
+	\[
+		\forall i \in \left\{ 0,\ldots,n \right\} , \ [v_i] = P_i \text{ e } P_{n+1} = [v_0+\ldots+v_n]
+	\] 
+\end{definizione}
+\begin{teorema}
+	Sia $V$ uno spazio vettoriale su $\mathbb{K}$ tale che $\mathbb{P}(V)$ abbia dimensione $n$ e sia $\mathcal{R} =(P_0,\ldots,P_{n+1} )$ un riferimento proiettivo di $\mathbb{P}(V)$.
+	Esiste sempre almeno una base normalizzata $\mathcal{B} = \left\{ v_0, \ldots,v_n\right\} $ e, se $\mathcal{B} ' = \left\{ u_0,\ldots,u_n \right\} $ \`e un'altra base, allora $\exists \lambda \in \mathbb{K}\setminus\left\{ 0 \right\} $ tale che $u_i = \lambda v_i$.
+	\begin{proof}
+		Sia $\left\{ w_0, \ldots,w_{n+1}  \right\} \subset V$ un insieme di vettori, con $[w_i] = P_i, \ i=0,\ldots,n+1$.
+		Visto che $\mathcal{R}$ \`e un riferimento proiettivo, i $w_0,\ldots,w_n$ sono $n+1$ vettori linearmente indipendenti in $V$ spazio $(n+1)$-dimensionale, quindi sono una base.
+		Questo implica che $w_{n+1} = \lambda _0 w_0 + \ldots + \lambda _n w_n$, dove $\lambda _i\neq 0$, altrimenti i $w_0,\ldots,w_{i-1} , w_{i+1} , \ldots, w_{n+1} $ non sarebbero indipendenti e $\mathcal{R} $ non sarebbe un riferimento proiettivo.
+		Si prendono, ora, $v_i = \lambda _i w_i, \ i =0,\ldots,n$, mentre $v_{n+1} =w_{n+1} $; in questo modo, $[v_i]=[w_i] = P_i$, mentre $v_{n+1} = \sum_{i=0}^{n} v_i$ per costruzione.
+		In questo modo, si \`e costruita $\mathcal{B} =\left\{ v_0,\ldots,v_n \right\} $ base normalizzata associata a $\mathcal{R} $.
 
+		Sia, ora, $\mathcal{B} ' = \left\{ u_0,\ldots,u_n \right\} $ un'altra base normalizzata di $\mathcal{R} $; essendo che $[u_i] = P_i = [v_i]$, allora $\exists \mu _i \in \mathbb{K}\setminus\left\{ 0 \right\} : v_i = \mu _i u_i, \ i =0,\ldots,n+1$.
+		Inoltre
+		\[
+			\begin{split}
+				&\mu _{n+1} \sum_{i=0}^{n} u_i = \mu _{n+1} u_{n+1} = v_{n+1} = \sum_{i=0}^{n} v_i = \sum_{i=0}^{n} \mu _i u_i\\
+				&\Rightarrow 0 = \sum_{i=0}^{n} (\mu _i-\mu _{n+1} ) u_i
+			\end{split}
+		\] 
+	Visto che gli $u_0,\ldots,u_n$ sono una base, per indipendenza lineare deve valere $\mu _i = \mu _{n+1} , \ \forall i$, cio\`e le due basi coincidono a meno di un fattore invertibile.
+	\end{proof}
+\end{teorema}
+\begin{osservazione}
+Si nota che rispetto all'algebra lineare, in geometria proiettiva non \`e possibile estendere riferimenti proiettivi di sottospazi proiettivi a riferimenti di sottospazi che li estendono.
 
+Sia, infatti, $\mathcal{R} = \left\{ P_0,\ldots,P_{n+1}  \right\}  $ un riferimento di un sottospazio $S $ di $H$; allora si nota che i $P_i$ non sono in posizione generale se visti come punti di $H$ perch\'e se la dimensione aumenta, le $(n+2)$-uple devono essere indipendenti, ma il punto unit\`a \`e scritto come combinazione degli altri.
+\end{osservazione}
+\noindent Con la teoria sviluppata finora, \`e possibile stabilire un criterio di uguaglianza per individuare trasformazioni proiettive uguali.
+\begin{teorema}\label{tpequiv}
+	Siano $f,g  : \mathbb{P}(V) \to \mathbb{P}(W)$ due trasformazioni proiettive indotte, rispettivamente, da $\varphi $ e da $\psi $ e sia, inoltre, $\mathcal{R}  $ un riferimento proiettivo di $\mathbb{P}(V)$; allora sono equivalenti le seguenti affermazioni.
+	\begin{enumerate}[(a).]
+		\item Si trova un coefficiente $ \lambda \in \mathbb{K} \setminus\left\{ 0 \right\} $ tale che $\varphi  = \lambda \psi $.
+		\item Le due trasformazioni proiettive sono identiche: $f = g$.
+		\item Per ogni punto $P \in \mathcal{R} $, si ha $f(P) = g(P)$.
+	\end{enumerate}
+	\begin{proof}
+		Si dimostra che (a) $\Rightarrow $ (b). 
+		Per conto diretto:
+		\[
+			f([v]) =[\varphi (v)] = [\lambda \psi (v)]=[\psi (v)] = g(v)
+		\] 
+		Ora si mostra che (b) $\Rightarrow $ (c).
+Questo, per\`o, \`e ovvio perch\'e $ f(P) = g(P), \ \forall P \in \mathbb{P}(V)$, incluso $\mathcal{R} \subset \mathbb{P}(V)$.
 
+Infine, si mostra (c) $\Rightarrow $ (a).
+Per farlo, si prende $\left\{ v_0,\ldots,v_n \right\} $ base normalizzata riferita a $\mathcal{R} $. 
+Si sa che
+\begin{equation}\label{t1.6rel}
+	[\varphi (v_i)]=f(P_i)=f(P_i)=[\psi (v_i)], \ \forall P_i \in \mathcal{R} 
+\end{equation}
+quindi $\exists \lambda _i \in \mathbb{K}\setminus\left\{ 0 \right\} : \varphi (v_i) = \lambda _i \psi (v_i)$.
+Per concludere, si considera cosa succede al punto unit\`a; per la relazione \ref{t1.6rel}, deve valere $\varphi (v_{n+1} )= \lambda _{n+1} \psi (v_{n+1} )$, per qualche $\lambda _{n+1} \in \mathbb{K}\setminus\left\{ 0 \right\} $, ma, al contempo:
+\[
+		\lambda _{n+1} \sum_{i=0}^{n} \psi (v_i) = \sum_{i=0}^{n} \varphi (v_i)= \sum_{i=0}^{n} \lambda _i\psi (v_i)\implies \sum_{i=0}^{n} (\lambda _i - \lambda _{n+1} ) \psi (v_i) = 0
+\] 
+Visto che $\psi $ \`e iniettiva, gli $\psi (v_0),\ldots,\psi (v_n)$ sono linearmente indipendenti, quindi $\forall i = 0,\ldots,n , \ \lambda _{n+1} = \lambda _i$, il che vuol dire che $\lambda _{n+1} \psi = \varphi $ sui $v_0,\ldots,v_n$; essendo questi una base, la relazione $\varphi  = \lambda _{n+1} \psi $ vale su tutti i vettori dello spazio.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	Si ha
+	\[
+		\mathbb{P}\mathrm{GL} (V) \cong \faktor{\mathrm{GL} (V)}{N}
+	\] 
+	con $N = \big\{ \lambda \operatorname{Id}  \mid \lambda \in \mathbb{K}\setminus\left\{ 0 \right\}  \big\}\lhd \mathrm{GL} (V) $.
+	\begin{proof}
+		Si considera la mappa $\varphi \mapsto [\varphi ] : \mathrm{GL} (V) \to \mathbb{P}\mathrm{GL} (V)$.
+		Questa mappa \`e un omomorfismo suriettivo di gruppi e, se $[\varphi ]= \operatorname{Id} _{\mathbb{P}(V)}=[\operatorname{Id}_V] $, allora $\varphi  = \lambda \operatorname{Id} _V$ per il teorema \ref{tpequiv} appena mostrato.
+		Questo implica che il nucleo di tale omomorfismo \`e proprio $N$, quindi la tesi segue applicando il primo teorema di omomorfismo.
+	\end{proof}
+\end{corollario}
+\begin{notazione}[Proiettivit\`a standard]
+	Le proiettivit\`a di $\mathbb{P}^n(\mathbb{K})$ formano un gruppo indicato da $\mathbb{P}\mathrm{GL} (\mathbb{K}^{n+1} ) = \mathbb{P}\mathrm{GL} _{n+1} (\mathbb{K})$.
+	L'$n+1$ come pedice indica la taglia delle matrici che rappresentano le proiettivit\`a, non la dimensione dello spazio su cui agiscono.
+\end{notazione}
+\begin{teorema}
+	[Teorema fondamentale delle trasformazioni proiettive]
+	Siano $\mathbb{P}(V)$ e $\mathbb{P}(W)$ due spazi proiettivi su $\mathbb{K}$ tali che $\dim \mathbb{P}(V) = \dim \mathbb{P}(W) = n$.
+	Fissati $\mathcal{R} = \left\{P_0,\ldots,P_{n+1}\right\} $ e $\mathcal{R} ' = \{P'_0,\ldots,P'_{n+1} \}$ due riferimenti proiettivi di $\mathbb{P}(V)$ e $\mathbb{P}(W)$ rispettivamente, esiste un'unica trasformazione proiettiva $f:\mathbb{P}(V)\to \mathbb{P}(W)$ tale che $f(P_i) = P_i', \ i=0,\ldots,n+1$. 
+	\begin{proof}
+		L'unicit\`a \`e diretta conseguenza del teorema \ref{tpequiv}. 
+		Rimane da mostrare l'esistenza.
 
+		Siano, allora, $\mathcal{B} = \left\{ v_0,\ldots,v_n \right\} $ e $\mathcal{B}' = \left\{ w_0,\ldots,w_n \right\} $ due basi normalizzate associate a $\mathcal{R} $ e $\mathcal{R} '$ rispettivamente e sia $\varphi  : V \to W$ la mappa tale che $\forall i, \ \varphi (v_i) = w_i$; si nota che $\varphi $ \`e iniettiva perch\'e ha rango massimo, quindi si pu\`o prendere $f = [\varphi ]$.
+		Per costruzione:
+		\[
+			f(P_i) = f([v_i]) = [\varphi (v_i)] = [w_i]=P'_i
+		\] 
+		mentre per i punti fondamentali:
+		\[
+			f(P_{n+1} ) = f([v_0+\ldots+v_n]) = [\varphi (v_0+\ldots+v_n]) = [w_0+\ldots+w_n] = P'_{n+1} 
+		\] 
+	\end{proof}
+\end{teorema}
 
+\subsubsection{Coordinate omogenee}
+Come per il caso degli spazi vettoriali, \`e utile ricorrere a sistemi di coordinate.
+Per capire come definirli, si considera il caso particolare di $\mathbb{P}^n(\mathbb{K})$; questo, per definizione, \`e:
+\[
+	\mathbb{P}^n(\mathbb{K}) = \faktor{\mathbb{K}^{n+1} \setminus\left\{ 0 \right\} }{\sim} = \left\{ [(x_0,\ldots,x_n)]  \mid \exists x_i \neq 0 \right\} 
+\] 
+\begin{definizione}
+	[Riferimento proiettivo canonico]
+	Il \textit{riferimento canonico} (o standard) di $\mathbb{P}^n(\mathbb{K})$ \`e quel riferimento proiettivo che ha, come base normalizzata, la base canonica di $\mathbb{K}^{n+1} $.
+\end{definizione}
+\noindent In questo caso, si dir\`a che $[(x_0,\ldots,x_n)]$ ha \textit{coordinate omogenee} $[x_0:\ldots :x_n]$ rispetto al riferimento canonico di $\mathbb{P}^n(\mathbb{K})$.
+Ora si estende questa definizione a spazi proiettivi generali.
+\begin{definizione}
+	[Coordinate omogenee]
+	Sia $\mathcal{R} = \left\{ P_0,\ldots,P_{n+1}  \right\} $ un riferimento proiettivo di $\mathbb{P}(V)$; dato $P \in \mathbb{P}(V)$, le sue \textit{coordinate omogenee} rispetto a $\mathcal{R} $ sono date da una delle seguenti definizioni.
+	\begin{itemize}
+		\item Se $f:\mathbb{P}(V)\to \mathbb{P}^n(\mathbb{K})$ \`e l'unico isomorfismo proiettivo che manda $\mathcal{R} $ nel riferimento canonico di $\mathbb{P}^n(\mathbb{K})$, allora le coordinate di omogenee di $P$ sono $f(P)$.
+		\item Se $\mathcal{B} = \left\{ v_0, \ldots ,v_n\right\} $ \`e una base normalizzata di $\mathcal{R} $ e $P = [v]$, si considera $v = \sum_{i=0}^{n} a_i v_i$; le coordinate omogenee di $P$ rispetto a $\mathcal{R}$, allora, sono $[a_0:\ldots:a_n]$.
+	\end{itemize}
+\end{definizione}
+\noindent Come per gli spazi vettoriali, \`e possibile rappresentare le trasformazioni proiettive come matrici e i sottospazi proiettivi come i luoghi di zeri di equazioni.
+\begin{definizione}
+	[Matrice associata]
+Sia $f:\mathbb{P}(V) \to \mathbb{P}(W)$ un isomorfismo proiettivo e siano $\mathcal{R} , \mathcal{R} '$ due riferimenti proiettivi di $\mathbb{P}(V)$ e $\mathbb{P}(W)$ rispettivamente, con $\mathcal{B} ,\mathcal{B} '$ le rispettive basi normalizzate.
+Se $\varphi $ induce $f$, allora $f$ \`e rappresentata da 
+\[
+M = M_{\mathcal{B} '} ^{\mathcal{B} } (\varphi ) \in \mathcal{M} (n+1,\mathbb{K})
+\] 
+\end{definizione}
+\begin{osservazione}
+	[Prodotto tra matrice e coordinate omogenee]
+	Siano $P=[v] \in \mathbb{P}(V)$ e $f:\mathbb{P}(V) \to \mathbb{P}(W)$, con $f=[\varphi ]$.
+	Sia $M$ la matrice che rappresenta $f$ e siano $\mathcal{R} ,\mathcal{R} '$ due riferimenti di $\mathbb{P}(V)$ e $\mathbb{P}(W)$, con basi $\mathcal{B} $ e $\mathcal{B}' $.
 
+	Indicando il passaggio a coordinate omogenee rispetto a $\mathcal{R} $ con $[\cdot ]_\mathcal{R} $ e il passaggio a coordinate rispetto a $\mathcal{B} $ con $[\cdot ]_\mathcal{B} $, si ha:
+\begin{equation}
+	\begin{split}
+		[f(P)]_{\mathcal{R} '} &= [[\varphi (v)]]_{\mathcal{R} '} = \Big[\big[[M[v]_{\mathcal{B} } ]_{\mathcal{B} '} ^{-1} \big]\Big]_{\mathcal{R} '} = \Big[\big[[[M[v]_\mathcal{B} ]]_{\mathcal{R} '} ^{-1} \big]\Big]_{\mathcal{R} '} \\
+				       &= [M[v]_\mathcal{B} ]
+	\end{split}
+\end{equation}	
+\end{osservazione}
+\begin{notazione}
+	Sia $M$ una matrice e sia $P =[v]\in \mathbb{P}(V)$; prendendo $\mathcal{R} $ un riferimento di $\mathbb{P}(V)$ e $\mathcal{B}$ sua base normalizzata, si pone
+	\[
+		M[P]_\mathcal{R}=[M][P]_\mathcal{R} \doteqdot \left[ M[v]_\mathcal{B}  \right] 
+	\] 
+\end{notazione}
+\begin{definizione}
+	[Equazioni cartesiane proiettive]
+	Sia $S\subset \mathbb{P}(V)$ un sottospazio proiettivo e $W$ il sottospazio di $V$ tale che $S = \mathbb{P}(W)$.
+	Fissato un riferimento $\mathcal{R} $ su $\mathbb{P}(V)$, si individua univocamente una base normalizzata di $V$, pertanto $W$ si esprime come luogo degli zeri di $\dim V - \dim W$ equazioni.
+	Queste equazioni si definiscono \textit{equazioni cartesiane} per $S$ rispetto a $\mathcal{R} $.
+\end{definizione}
+\noindent Si nota che il numero di equazioni cartesiane si pu\`o scrivere anche come
+\[
+\dim \mathbb{P}(V) - \dim S = \dim V - \dim W
+\] 
 
-
+\subsection{Spazi proiettivi e spazi affini}
 
 
 

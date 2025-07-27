@@ -55,10 +55,10 @@
 
 % Teorema e proposizione
 \newtcbtheorem[number within=section]{teorema}{Teorema}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart, before upper={\setlength{\parindent}{15pt} \noindent}}{th}
 
 \newtcbtheorem[number within=section]{prop}{Proposizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart, before upper={\setlength{\parindent}{15pt} \noindent}}{prop}
 
 
 
@@ -68,7 +68,7 @@
 \definecolor{greendef}{HTML}{b8d8be}
 
 \newtcbtheorem[number within=section]{definizione}{Definizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white, before upper={\setlength{\parindent}{15pt} \noindent}}{def}
 
 
 % Esempio
@@ -79,7 +79,7 @@
 
 %\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
 
-\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}, before upper={\setlength{\parindent}{15pt} \noindent}}
 
 \numberwithin{esempio}{section}
 
@@ -88,10 +88,10 @@
 \definecolor{lemcor}{HTML}{a78d8a}
 
 \newtcbtheorem[number within=section]{lemma}{Lemma}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white, before upper={\setlength{\parindent}{15pt} \noindent}}{lem}
 
 \newtcbtheorem[number within=section]{corollario}{Corollario}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white, before upper={\setlength{\parindent}{15pt} \noindent}}{cor}
 
 
 
@@ -101,7 +101,7 @@
 
 \definecolor{coloros}{HTML}{6e5e89}
 
-\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
+\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}, before upper={\setlength{\parindent}{15pt} \noindent}}
 
 \numberwithin{obs}{section}
 
@@ -110,7 +110,7 @@
 
 \definecolor{ncol}{HTML}{f9ebbe}
 
-\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
+\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}, before upper={\setlength{\parindent}{15pt} \noindent}}
 
 \numberwithin{nota}{section}
 
@@ -2401,7 +2401,7 @@ Ne segue che se $m$ non \`e primo, allora $\mathbb{Z}_m$ non \`e un campo perch\
 \end{proof}
 \begin{teorema}
 	{}{}
-	Se $p$ \`e un numero primio, allora $\mathbb{Z}_p$ \`e un campo.
+	Se $p$ \`e un numero primo, allora $\mathbb{Z}_p$ \`e un campo.
 \begin{proof}
 	Sia $[a]_p\neq [0]_p$ in $\mathbb{Z}_p$; visto che $p$ non divide $a$, allora $\operatorname{gcd}(a,p) = 1$, per cui $ax \equiv 1 \pmod{p}  $ ha soluzione, cio\`e $a$ ha un inverso modulo $p$; sia questo $b$.
 	Conseguentemente, $[a]_p[b]_p = [ab]_p = [1]_p$, il che vuol dire che $\exists [b]_p \in \mathbb{Z}_p$ inverso di $[a]_p$.
@@ -2774,7 +2774,7 @@ Tuttavia, vale la seguente.
 \begin{definizione}
 	{Ideale}{}
 	Un sottoinsieme $I \subseteq R$, con $R$ anello, \`e detto \textit{ideale} se:
-	\begin{enumerate}[(D 1).]
+	\begin{enumerate}[(D1).]
 		\item $I$ \`e un sottogruppo additivo di $R$;
 		\item $\forall r \in R, \forall h \in I$ si ha $ hr \in I$ e $rh \in I$.
 	\end{enumerate}
@@ -3054,7 +3054,7 @@ L'idea, ora, \`e di trovare una struttura per tutti quegli anelli che condividon
 \begin{definizione}
 	{Anello euclideo}{}
 	Un dominio $D$ \`e detto \textit{anello euclideo} se esiste una mappa $g : D \setminus\left\{ 0 \right\} \to \mathbb{N}$, detta \textit{grado}, tale che
-	\begin{enumerate}[(g 1).]
+	\begin{enumerate}[(a).]
 		\item $\forall a,b \in D$, con $a,b\neq 0$, vale $g(a) \le g(ab)$;
 		\item $\forall a,b \in D$, con $b\neq 0$, esistono $q,r \in D : a = qb + r$, dove $r = 0$, oppure $g(r) < g(b)$.
 	\end{enumerate}
@@ -3105,10 +3105,19 @@ Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
 \end{definizione}
 \begin{esempio}
 	L'anello dei polinomi a coefficienti costanti $K[x,y]$, con $K$ campo, non \`e a ideali principali perch\'e l'ideale $I = \langle x,y \rangle$ non pu\`o essere generato da un solo elemento.
-	\begin{center}
-		\color{red} Includere dimostrazione.
-	\end{center}
+	\begin{proof}
+		Sia $f \in K[x,y] : \langle f \rangle = I$.
+		Questo significa che $f$ divide ogni elemento di $I$, in particolare $x = gf$ e $y = hf$, per qualche coppia $g,h \in K[x,y]$.
+		Quindi $f$ divide contemporaneamente sia $x$, che $y$, ma questi due polinomi sono coprimi; allora $f$ deve essere al massimo una costante (cio\`e un elemento di $K$), il che significherebbe che \`e invertibile e, conseguentemente, che $1 \in I \Rightarrow I = K[x,y]$.
+
+		Tuttavia, quanto appena dimostrato \`e un assurdo perch\'e $\langle x,y \rangle \neq K[x,y]$, visto che $1 \not \in \langle x,y \rangle$.
+	\end{proof}
 \end{esempio}
-
-
+\begin{teorema}
+	{}{}
+	Sia $D$ un anello euclideo; allora $D$ \`e un dominio a ideali principali.
+	\begin{proof}
+		
+	\end{proof}
+\end{teorema}
 \end{document}
