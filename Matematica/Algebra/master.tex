@@ -79,7 +79,7 @@
 
 %\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
 
-\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}, before upper={\setlength{\parindent}{15pt} \noindent}}
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
 
 \numberwithin{esempio}{section}
 
@@ -101,7 +101,7 @@
 
 \definecolor{coloros}{HTML}{6e5e89}
 
-\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}, before upper={\setlength{\parindent}{15pt} \noindent}}
+\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
 
 \numberwithin{obs}{section}
 
@@ -3117,7 +3117,143 @@ Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
 	{}{}
 	Sia $D$ un anello euclideo; allora $D$ \`e un dominio a ideali principali.
 	\begin{proof}
-		
+	Sia $I$ un ideale di $D$; se $I = \left\{ 0 \right\} $, la tesi \`e vera perch\'e $I = \langle 0 \rangle$, quindi si considera solo il caso $I\neq \left\{ 0 \right\} $.	
+
+	Si considera l'insieme $S = \left\{ g(c)  \mid c \in I \setminus\left\{ 0 \right\}  \right\} $, con $g$ la funzione grado definita su $D$.
+	Questo insieme \`e non vuoto, quindi, per il principio del minimo, ne ammette uno; sia questo $m$.
+
+	Sia, quindi, $b \in I : g(b) = m$; si vuole dimostrare che $I = \langle b \rangle$. 
+	Per farlo, si osserva che $\forall \gamma \in I$, si pu\`o usare la divisione euclidea per scrivere $\gamma =  bq + r$, dove $r = 0$, oppure $g(r)<g(b)$.
+	Per\`o si vede che $r= \gamma-bq \in I$ perch\'e $\gamma\in I$ e $bq \in I$ per assorbimento, quindi $r = 0$ perch\'e altrimenti esisterebbe un elemento di $I$ di grado inferiore a $b$, il che sarebbe un assurdo.
+	Questo significa che ogni elemento di $I$ \`e multiplo di $b$.
 	\end{proof}
 \end{teorema}
+\begin{definizione}
+	{Massimo comune divisore per anelli euclidei}{}
+	Sia $D$ un anello euclideo e siano $a,b \in D$ due elementi non entrambi nulli.
+	Si definisce \textit{massimo comune divisore} di $a$ e $b$ come quell'elemento $d \in D$ tale che:
+	\begin{itemize}
+		\item $d  \mid a $ e $d \mid b$;
+		\item $\forall c \in D : c  \mid a$ e $c  \mid b$, si ha $c  \mid d$.
+	\end{itemize}
+\end{definizione}
+\noindent Al contrario del caso di $\mathbb{Z}$ e $\mathbb{K}[x]$, qui il massimo comune divisore non \`e unico  in generale e non c'\`e un modo privilegiato di sceglierlo. 
+Se $a,b$ sono non entrambi nulli, il procedimento per trovare operativamente un massimo comune divisore \`e eseguire l'algoritmo di Euclide fino ad arrivare all'ultimo resto non-nullo: questo sar\`a un massimo comune divisore di $a$ e $b$.
+Questo \`e dovuto al fatto che \`e possibile dimostrare un lemma analogo a quanto visto per $\mathbb{Z}$, dove l'insieme dei divisori comuni di $a,b$ \`e uguale a quello di $d,0$.
+
+Inoltre, ripercorrendo indietro l'algoritmo, si pu\`o esprimere $d = \lambda a + \mu b$, con $\lambda ,\mu \in D$.
+Per questa ragione, $d$ \`e nell'ideale $\langle a,b \rangle$ e ne \`e un generatore, visto che divide ogni suo elemento.
+
+Sia, ora, $d'$ un altro MCD di $a,b$; visto che sono entrambi dei massimi comuni divisori, deve valere contemporaneamente $d  \mid d'$ e $d' \mid d$, per cui, rispettivamente
+\[
+\begin{cases}
+	d' = sd\\
+	d = td'
+\end{cases}\implies d'=sd = std'\Rightarrow d'(1-st) = 0
+\] 
+Visto che $D$ \`e un dominio, deve valere $1-st = 0$, da cui $s,t$ sono invertibili.
+Questo implica che $d$ e $d'$ sono elementi associati.
+Visto che ciascun massimo comune divisore di $a,b$ \`e associato ad un altro e genera l'ideale $\langle a,b \rangle$, si pu\`o dare la seguente, equivalente, definizione di MCD.
+\begin{definizione}
+	{Massimo comune divisore per anelli euclidei}{dmcd2}
+	Sia $D$ un anello euclideo e siano $a,b \in D$ due elementi non entrambi nulli.
+	Sia, poi, $d$ un generatore dell'ideale $\langle a,b \rangle$; allora si dir\`a che $d$ \`e un massimo comune divisore di $a,b$.
+\end{definizione}
+\begin{obs}
+	Riprendendo quanto visto per i polinomi, cio\`e che dati $f(x),g(x) \in \mathbb{K}[x]$ su un campo $\mathbb{K}$, il loro MCD \`e l'unico polinomio monico che li divide e genera l'ideale $\langle f,g \rangle$ che, quindi, \`e principale.
+	Per quanto visto, ogni altro generatore di questo ideale \`e associato a $\operatorname{gcd}(f,g) $.
+\end{obs}
+\noindent Dalle considerazioni tratte finora, \`e possibile arrivare al seguente enunciato del teorema di B\'ezout.
+\begin{teorema}
+	{Teorema di B\'ezout per anelli euclidei}{}
+	Sia $D$ un anello euclideo. 
+	Dati $a,b \in D$ non entrambi nulli, sia $\operatorname{gcd}(a,b) $ un loro massimo comune divisore; allora esistono $\lambda ,\mu  \in D$ tali che
+	\[
+	\operatorname{gcd}(a,b) = \lambda a + \mu b
+	\] 
+\end{teorema}
+\begin{obs}
+	Pi\`u in generale, \`e possibile usare la definizione di MCD data in \ref{def:dmcd2} anche per PID e vale un analogo del teorema di B\'ezout.
+	Se il dominio non \`e euclideo, per\`o, non esiste, in generale, un algoritmo di Euclide per calcolare concretamente un MCD.
+\end{obs}
+\subsubsection{Elementi irriducibili ed elementi primi}
+\begin{definizione}
+	{Elemento irriducibile}{}
+	Sia $D$ un dominio e sia $\pi \in D$ un suo elemento.
+	Si dir\`a che $\pi$ \`e irriducibile se $\pi \neq 0, \ \pi\not \in D^*$ e se $\forall \gamma,\delta  \in D : \pi = \gamma \delta  \Rightarrow \gamma\in D^*$ o $\delta \in D^*$.
+\end{definizione}
+\begin{esempio}
+Per $D = \mathbb{Z}$, gli irriducibili sono gli elementi della forma $\pm p$, con $p$ primo.
+In $D = \mathbb{R}[x]$, invece, sono i polinomi di grado $1$ e i polinomi di grado $2$ che non hanno radici reali: questo \`e diretta conseguenza del teorema fondamentale dell'algebra.
+\end{esempio} 
+\begin{definizione}
+	{Elemento primo}{}
+	Un elemento $\pi$ di un dominio di integrit\`a $D$ si dice \textit{primo} se $\pi\neq 0, \ \pi\not\in D^*$ e se $\forall \gamma,\delta \in D : \pi  \mid \gamma\delta \Rightarrow  \pi  \mid  \gamma$, o $\pi  \mid  \delta $.
+\end{definizione}
+\noindent Per i domini, la condizione di essere primo \`e una condizione pi\`u forte di essere irriducibile.
+\begin{prop}
+	{}{}
+	Sia $D$ un dominio; se $\pi \in D$ \`e primo, allora \`e irriducibile.
+	\begin{proof}
+		Siano $\gamma, \delta \in D : \pi = \gamma\delta $; allora $\pi  \mid \gamma\delta $, perci\`o $\pi  \mid  \gamma$, o $\pi \mid \delta $.
+		Senza perdita di generalit\`a, si pu\`o assumere che $\pi  \mid  \gamma$; allora $\exists \nu \in D : \gamma = \pi \nu  \Rightarrow \pi \gamma \delta  = \pi \nu  \delta$.
+		Essendo $D$ un dominio, si pu\`o cancellare $\pi$ e ottenere che $1 = \nu  \delta \Rightarrow  \delta $ \`e invertibile.
+	\end{proof}
+\end{prop}
+\noindent 	In generale, il viceversa \`e falso, ma non nei dominio euclidei.
+\begin{prop}
+	{}{}
+	Sia $D$ un dominio euclideo; se $\pi \in D$ \`e irriducibile, allora \`e anche primo.
+	\begin{proof}
+		Siano $\gamma, \delta  \in D : \pi  \mid \gamma \delta $, quindi $\exists \kappa \in D : \gamma \delta  = \pi \kappa $.
+		Assumendo senza perdita di generalit\`a che $\pi$ non divida $\gamma$, si dimostra che $\pi  \mid \delta $.
+
+		Visto che $\pi$ \`e irriducibile, i suoi divisori sono tutti e soli gli elementi associati a $1$ (cio\`e gli invertibili) e a se stesso (ossia gli elementi della forma $\nu  \pi $ con $\nu \in D^*$) ({\color{red} da dimostrare}).
+		Per questo, gli MCD di $\pi$ e $\gamma$ sono gli associati di $1$ ({\color{red} da dimostrare}), quindi, per B\'ezout, $\exists y,z \in D : y \gamma + z \pi = 1$.
+		Moltiplicando per $\delta $:
+		\[
+		\delta  = y \gamma\delta + z \pi \delta  = y \pi \kappa  + z \pi \delta  = \pi(y\kappa +z\delta )
+		\] 
+		quindi $\pi \mid \delta $.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	{Esistenza e unicit\`a della scomposizione in fattori irriducibili}{}
+	Sia $D$ un anello euclideo e $a \in D : a\neq 0	$ e non invertibile; allora esistono $p_1,\ldots,p_r \in D$ irriducibili tali che $a = p_1p_2\cdots p_r$.
+
+	Inoltre, se si trovano altri $q_1,\ldots,q_s \in D$ irriducibili tali che $a = q_1\cdots q_s$, allora $ r=s $ e $\exists  \tau  \in S_r : p_i$ \`e associato a $q_{\tau (i)} , \ \forall  i= 1,2,\ldots,r$.
+	\begin{proof}
+		Per l'esistenza, si fa uso della funzione grado come visto per $\mathbb{Z}$ ({\color{red} da dimostrare}).
+
+		Per l'unicit\`a, invece, sia $r<s$; si procede per induzione su $r$.
+		Il passo base per $r=1$ \`e il seguente: $s=1$, altrimenti $a$ sarebbe contemporaneamente irriducibile ($a=p_1$) e non irriducibile ($a = q_1\cdots q_s$).
+		A questo punto, segue direttamente che $a = p_1 = q_1$.
+
+		Per il passo induttivo, si suppone $r>1$ e che l'enunciato sia vero quando la prima fattorizzazione ha $r-1$ fattori irriducibili.
+Visto che $p_1  \mid a = q_1q_2 \cdots q_s = q_1(q_2 \cdots q_s)$, deve valere $p_1  \mid q_1$, oppure $p_1  \mid (q_2 \cdots q_s)$; nel primo caso, essendo $p_1,q_1$ irriducibili e $p_1  \mid  q_1$, segue che sono associati, quindi $q_1 = kp_1, \ k \in D^*$.
+Allora, dividendo $a$ per $p_1$, si ottiene:
+\[
+p_2p_3 \cdots p_r = k q_2 \cdots q_s
+\] 
+A sinistra si ha il prodotto di $r-1$ fattori irriducibili e a destar il prodotto di $s-1$ fattori irriducibili\footnote{Il fattore $k$ non invalida tale affermazione perch\'e \`e invertibile e il teorema richiede che le due fattorizzazioni coincidano a meno di associati}. Per ipotesi induttiva, si sa che $r-1 = s-1$ e che queste due fattorizzazioni coincidono, quindi in questo caso il teorema \`e dimostrato. 
+
+Se, invece, valesse $p_1  \mid  (q_2 \cdots q_s)$, si pu\`o iterare il ragionamento e, in un numero finito di passi, si trova un indice $i$ tale che $p_1$ \`e associato a $q_i$: analogamente a prima, il teorema \`e dimostrato per induzione.
+	\end{proof}
+\end{teorema}
+\subsection{Gli interi di Gauss}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
