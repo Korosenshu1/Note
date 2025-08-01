@@ -810,6 +810,40 @@ a^{p-1} \equiv 1 \pmod{p}
 \begin{obs}
 	I numeri $n \in \mathbb{Z}^{>1} $ che soddisfano $a^n \equiv a \pmod{n} $ non sono necessariamente primi; questi sono noti come \textit{falsi primi} e sono detti \textit{numeri di Carmichael}. 
 \end{obs}
+\begin{teorema}
+	{Teorema di Wilson}{}
+	Sia $p>1$ un intero; allora $p$ \`e primo se e solo se $(p-1)! \equiv -1 \pmod{p} $.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Sia $p > 1$ un intero primo. 
+				Allora ogni elemento del gruppo $(Z_p, \cdot )$ ha inverso modulo $p$.
+				In questo gruppo, ogni elemento ha un inverso distinto, eccetto quegli elementi che sono inversi di loro stessi, ossia quegli $a : a^2 \equiv 1 \pmod{p} $.
+				Questa congruenza implica che
+				\[
+				a^2 - 1 \equiv 0 \pmod{p} \implies (a-1)(a+1) \equiv 0 \pmod{p} 
+				\] 
+				ossia $a \equiv \pm 1 \pmod{p} $.
+				Da questo, si ricava che gli unici elementi che sono inversi di loro stessi sono $1$ e $p-1$.
+				Ora, visto che 
+				\[
+					(p-1)! =1 \cdot 2 \cdot \ldots \cdot (p-1)
+				\] 
+				si ha che
+				\[
+					(p-1)! \equiv 1 \cdot (p-1) \cdot (a_1 a_1^{-1} ) \cdot \ldots \cdot (a_k a_k^{-1} )\equiv (p-1) \equiv -1 \pmod{p} 
+				\] 
+				dove si sono riorganizzati gli elementi di $Z_p$ a coppie di inversi.
+			\item ($\Leftarrow$) Si procede per controposizione, cio\`e dimostrando che $p$ non primo $\Rightarrow (p-1)! \not \equiv -1 \pmod{p}$.
+
+				Se $p$ non \`e primo, allora $\exists a,b \in \left\{ 2,\ldots,p-1 \right\} : p=ab$.
+				Essendo $a,b < p$, significa che questi compaiono in $(p-1)!$ e, quindi, $ab  \mid (p-1)!$, cio\`e $p  \mid (p-1)!$, quindi
+				\[
+					(p-1)! \equiv 0 \pmod{p} 
+				\] 
+		\end{itemize}
+	\end{proof}
+\end{teorema}
 \subsection{Il teorema cinese del resto e classi di resto}
 \subsubsection{Il teorema cinese del resto}
 
@@ -3082,7 +3116,7 @@ Sia $D$ un dominio; allora $b \in D^* \iff \langle b \rangle= D$.
 \end{proof}
 \end{prop}
 \begin{lemma}
-	{}{}
+	{}{gbg1}
 	In un anello euclideo $D$, vale $g(1) \le g(b), \ \forall b \in D$ e $g(b) = g(1) \iff b \in D^*$.
 	\begin{proof}
 		Per la prima affermazione, si nota che $\forall b \in D$, $g(b)=g(1b) \ge g(1)$.
@@ -3202,7 +3236,7 @@ In $D = \mathbb{R}[x]$, invece, sono i polinomi di grado $1$ e i polinomi di gra
 \end{prop}
 \noindent 	In generale, il viceversa \`e falso, ma non nei dominio euclidei.
 \begin{prop}
-	{}{}
+	{}{prop310}
 	Sia $D$ un dominio euclideo; se $\pi \in D$ \`e irriducibile, allora \`e anche primo.
 	\begin{proof}
 		Siano $\gamma, \delta  \in D : \pi  \mid \gamma \delta $, quindi $\exists \kappa \in D : \gamma \delta  = \pi \kappa $.
@@ -3241,13 +3275,117 @@ Se, invece, valesse $p_1  \mid  (q_2 \cdots q_s)$, si pu\`o iterare il ragioname
 	\end{proof}
 \end{teorema}
 \subsection{Gli interi di Gauss}
+\begin{definizione}
+	{Anello degli interi di Gauss}{}
+	L'insieme $\mathbb{Z}[i] = \left\{ a + ib  \mid a,b \in \mathbb{Z} \right\}\subset \mathbb{C} $ \`e chiamato \textit{anello degli interi di Gauss}.
+\end{definizione}
+\begin{prop}
+	{}{}
+	L'insieme $\mathbb{Z}[i]$ \`e un anello euclideo.
+	\begin{proof}
+		{\color{red}Dimostrare per esercizio che \`e un anello.}
 
+		L'anello $\mathbb{Z}[i]$ \`e un dominio, visto che \`e un sottoanello del campo $\mathbb{C}$.
+		Come funzione grado, si prende il modulo quadro:
+\[
+	g : \begin{array}{c c c}
+		\mathbb{Z}[i] \setminus\left\{ 0 \right\} & \longrightarrow & \mathbb{N}\\
+		a+ib & \longmapsto & \lvert a+ ib  \rvert ^2 = a^2 + b^2
+\end{array}
+\] 
+Per $z,w \in \mathbb{Z}[i] \setminus\left\{ 0 \right\} $, si ha $g(zw) \ge z$ perch\'e $\lvert zw \rvert ^2 \ge \lvert z \rvert ^2$, essendo $\lvert w \rvert \ge 1$ (perch\'e $a,b$ sono interi).
 
+Si considerano, ora, tutti i multipli di $w \in \mathbb{Z}[i]$, con $w\neq z$ e $w \neq 0$, per dimostrare che esiste la divisione euclidea di $z$ per $w$.
+Questi, nel piano complesso, formano un reticolo composto dai vertici di quadrati di lato $\lvert w \rvert $ e ogni punto del piano \`e in uno di questi quadrati, o pi\`u di uno se si trova al bordo.
+In particolare, $z$ star\`a sempre in uno di questi quadrarti. 
+Ora, preso $Q = w_0w$ un vertice che ha distanza minima da $z$, se ne pu\`o stimare la distanza nel caso peggiore in cui $z$ \`e nel centro del quadrato:
+\[
+\lvert z - w_0w \rvert \le  \frac{\lvert w \rvert }{\sqrt{2} }\implies g(z-w_0w) \le \frac{g(w)}{2}<g(w)
+\] 
+Questo permette di prendere $w_0$ come quoziente e $z-w_0w$ come resto della divisione, cio\`e $z = ww_0 + (z-w_0w)$.
+	\end{proof}
+\end{prop}
+\subsubsection{Fattorizzazione in $\mathbb{Z}[i]$}
+Si vogliono studiare gli elementi irriducibili nell'anello $\mathbb{Z}[i]$.
+\begin{lemma}
+	{}{l35}
+	Sia $p\in \mathbb{Z}$ un numero primo dispari che non \`e irriducibile in $\mathbb{Z}[i]$; allora $p$ si scrive come somma di due quadrati di numeri interi.
+	\begin{proof}
+		Sia, quindi, $p \in \mathbb{Z}$ un elemento non irriducibile in $\mathbb{Z}[i]$, per cui $p = (a+bi)(c + di)$, con $a+bi, c+di \in \mathbb{Z}[i]$ e non invertibili, quindi deve valere $g(a+ib) = a^2 + b ^2 > 1 $ e $c^2 + d^2 > 1$ per il lemma \ref{lem:gbg1}.
 
+		Visto che $p = \overline{p}$ (visto che \`e un intero), si ha $ p = (a-bi) (c-di)$, quindi, moltiplicando ambo i membri per le due relazioni, si ottiene $p^2 = (a^2 + b^2 )(c^2 + d^2)$. 
+		Dato che $a^2 + b^2 > 1 $ e $c^2+d^2 > 1$, allora $a^2 + b^2 = p$ e $c^2 + d^2= p$.
+	\end{proof}
+\end{lemma}
+\begin{lemma}
+	{}{}
+	Sia $p \in \mathbb{Z}$ un primo della forma $4 n + 1$; allora la congruenza $x^2 \equiv -1 \pmod{p} $ ammette soluzione in $\mathbb{Z}$.
+	\begin{proof}
+		Sia $x = 1 \cdot 2 \cdot 3 \cdot  \ldots \cdot (p-1) / 2$; visto che $p-1 = 4n$, nel prodotto precedente compare un numero pari di termini, quindi 
+		\[
+		x = (-1) (-2) \cdots  \left(-\frac{p-1}{2}\right) 
+		\] 
+		A questo punto, \`e sufficiente notare che
+		\[
+			\begin{split}
+				x^2 &= 1 \cdot 2 \cdot 3 \cdot \ldots\cdot \frac{p-1}{2} \cdot (-1)\cdot  (-2) \cdot \ldots \cdot \left(- \frac{p-1}{2}\right) \\
+				    &\equiv 1 \cdot 2 \cdot \ldots\cdot \frac{p-1}{2} \cdot \frac{p+1}{2}\cdot \ldots\cdot (p-1) \equiv (p-1)! \equiv -1 \pmod{p} 
+			\end{split}
+		\] 
+	dove l'ultima congruenza segue dal teorema di Wilson.	
+	\end{proof}
+\end{lemma}
+\begin{teorema}
+	{}{}
+	Sia $p \in \mathbb{Z}$ un numero primo della forma $4n +1$; allora $p$ non \`e irriducibile in $\mathbb{Z}[i]$ ed esistono $a,b \in \mathbb{Z} : p = a^2 + b^2$.
+	\begin{proof}
+		\`E sufficiente mostrare che $p$ non \`e irriducibile in $\mathbb{Z}[i]$; il resto deriva direttamente dal primo dei due precedenti lemmi.
 
-
-
-
+		Sia, allora, $x \in \mathbb{Z} : x^2 \equiv -1 \pmod{p} $ (questo $x$ esiste per il lemma precedente); allora $p  \mid (x^2 + 1) = (x-i)(x+i)$.
+		Se $p$ fosse irriducibile in $\mathbb{Z}[i]$, allora dovrebbe valere $p \mid (x+i)$ per esempio, per quanto affermato dal proposizione \ref{prop:prop310}.
+		Questo, per\`o, vorrebbe dire che esistono $c,d \in \mathbb{Z} : p(c+id) = x+i$ da cui, uguagliando le parti immaginarie, $ pd = 1$, il che \`e assurdo.
+	\end{proof}
+\end{teorema}
+\begin{teorema}
+	{}{}
+	Sia $p$ un primo dispari della forma $4n +3$; allora $p$ non pu\`o essere scritto come somma di due quadrati.
+	\begin{proof}
+		Sia $p = a^2 + b^2$, con $a,b \in \mathbb{Z}$; dato che $p$ \`e dispari, allora $a$ e $b$ devono essere uno pari e l'altro dispari necessariamente.
+		
+		Senza perdita di generalit\`a, si assume che sia $a$ pari e $b $ dispari, per cui $a^2 \equiv 0 \pmod{4}$ e $b^2 \equiv 1 \pmod{4} $ ({\color{red} da verificare}). 
+		Allora:
+		\[
+		p = a^2 + b^2 \equiv 1 + 0 \equiv 1 \pmod{4} 
+		\] 
+		che \`e assurdo perch\'e $p\equiv 3 \pmod{4} $.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	{}{}
+	I primi della forma $4n +3 $ sono irriducibili in $\mathbb{Z}[i]$.
+	\begin{proof}
+		Per il lemma \ref{lem:l35}, si sa che se un primo dispari non \`e irriducibile in $\mathbb{Z}[i]$, allora si scrive come somma di due quadrati.
+		Visto che i primi della forma $4n + 3$ non si possono scrivere in tal modo, segue che devono essere irriducibili in $\mathbb{Z}[i]$.
+	\end{proof}
+\end{corollario}
+\begin{teorema}
+	{}{}
+	Tutti e i soli elementi irriducibili di $\mathbb{Z}[i]$ sono, a meno di associati, i primi di $\mathbb{Z}$ nella forma $4n+3$ e gli $z \in \mathbb{Z}[i]: g(z) = \lvert z \rvert ^2$ \`e un primo di $\mathbb{Z}$.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Leftarrow$) Sia $p = 4n+3$ un primo; per il corollario precedente, si ha che \`e irriducibile in $\mathbb{Z}[i]$.
+				Se $g(z) = p$, con $p$ primo, allora $z $ \`e irriducibile perch\'e, scrivendo $z = w_1w_2$ e considerando i quadrati delle norme, si ha $p = \lvert w_1 \rvert ^2 \lvert w_2 \rvert ^2$, da cui una delle due norme deve essere pari a $1$, pertanto uno dei fattori di $z$ \`e invertibile.
+			\item ($\Rightarrow $) Sia $z \in \mathbb{Z}[i]$ irriducibile, quindi $z  \mid z \overline{z}= g(z) = q_1 \ldots q_s$, dove i $q_i$ sono primi di $\mathbb{Z}$ (si \`e fattorizzato $g(z)$ in $\mathbb{Z}$).
+				Per la prop. \ref{prop:prop310}, si deve avere che $z  \mid q_i$, per un certo $i$, pertanto $zw = q_i$, per $w \in \mathbb{Z}[i]$.
+				Ma allora $q_i$ \`e un primo della forma $4n + 3$, quindi $z$, a meno di associati, \`e un primo di tale tipo.
+				Se, invece, $w$ non \`e invertibile, allora $\lvert w \rvert ^2 \neq 1$ e, passando ai quadrati, si ha $\lvert z \rvert ^2 \lvert w \rvert ^2 = q_i^2$ e $\lvert z \rvert ^2= q_i$.
+		\end{itemize}
+	\end{proof}
+\end{teorema}
+\begin{center}
+	Riprendere da pagina 139, sezione 17.2
+\end{center}
 
 
 
