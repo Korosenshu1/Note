@@ -3783,7 +3783,7 @@ Da questa struttura di spazio vettoriale, si possono ottenere alcune informazion
 	Questo grado pu\`o essere infinito, se la dimensione \`e infinita, e si scrive $[K:F] = \infty$; in questo caso, si dice che $K$ \`e un'estensione infinita di $F$, altrimenti si dice che \`e un'estensione finita.
 \end{definizione}
 \begin{teorema}
-	{}{}
+	{}{efth}
 	Se $L$ \`e un'estensione finita di $K$ e $K$ \`e un'estensione finita di $F$, allora $L$ \`e un'estensione finita di $F$ e 
 	\[
 		[L:F] = [L:K][L:F]
@@ -3827,13 +3827,104 @@ Da questa relazione, usando l'indipendenza dei $w_j$, si ottiene che i $b_{ij} $
 \subsection{Approfondimenti sulle estensioni di campi}
 L'obiettivo \`e la creazione di un campo con tutte le radici di un dato polinomio.
 
+Si ricorda il teorema \ref{th:csmfc}, per cui un polinomio di grado $n>0$ in un campo $L$ ha al pi\`u $n$ radici distinte.
+Vista la possibilit\`a di decomporre univocamente gli irriducibili negli anelli euclidei, se ne pu\`o dare una formulazione pi\`u forte.
+\begin{teorema}
+	{}{}
+	Sia $L$ un campo e sia $f(x) \in L[x]$ un polinomio di grado $n > 0$; allora $f(x)$ ha al pi\`u $n$ radici in $L$, contate con molteplicit\`a.
+	\begin{proof}
+		Se $f(x)$ non ha radici, l'enunciato \`e vero.
+		Se, invece, $f(x)$ ha una radice $\alpha  _1$, si pu\`o scrivere 
+		\[
+		f(x) = (x-\alpha _1)f_1(x)
+		\] 
+		Se $f_1(x)$ ha radice $\alpha _2$, si pu\`o proseguire fino a trovare un polinomio $h(x) \in L[x]$ che non ha radici in $L$ e, quindi, che non ha fattori di primo grado in $L[x]$.
+		Questo permette di scrivere
+		\[
+		f(x) = (x-\alpha_1) (x-\alpha _2) \ldots (x-\alpha _t) h(x)
+		\] 
+		Per fattorizzare $f(x)$ in irriducibili, si deve fattorizzare $h(x)$, ma da questo non usciranno altri fattori di primo grado, per quanto detto prima.
 
+		Le $t$ radici evidenziate presentano eventuali ripetizioni, quindi vale $t \le  n$; in ogni fattorizzazione in irriducibili di $f(x)$ compariranno queste radici come unici fattori di primo grado, perci\`o sono determinati univocamente a meno di associati.
 
+		Questo vuol dire che le $\alpha _k, k =1,\ldots,t$ sono le uniche radici di $f(x)$ e ciascuna di queste comparir\`a in ogni fattorizzazione con la stessa molteplicit\`a.
+	\end{proof}
+\end{teorema}
+\noindent Si \`e visto che, dato un polinomio irriducibile di grado $\ge $ in $K[x]$, sia questo $f(x)$, questo non ha radici in $K$, ma ne ammette una in $K[x] / \langle f(x) \rangle$, campo che estende $K$.
 
+Si pu\`o pensare, allora, che, iterando il procedimento che aggiunge una radice al polinomio, sia possibile costruire un campo $E$, che estende $K$, tale per cui $f(x)$ si fattorizzi nel prodotto di polinomio di grado $1$ in $E[x]$.
+\begin{teorema}
+	{}{}
+	Sia $K$ un campo e sia $f(x) \in K[x]$ un polinomio di grado $n\ge 0$; allora esistono un campo $E \supseteq K$ e elementi $e_1,\ldots,e_n \in E$ (eventualmente con ripetizioni) tali che $f(x)$ si fattorizza, in $E[x]$, nel seguente modo:
+	\[
+	f(x) = \lambda (x-e_1)\ldots(x-e_n)
+	\] 
+	con $\lambda \in E$ costante.
+\end{teorema}
+\begin{definizione}
+	{Campo di spezzamento}{}
+	Siano $K\subseteq L$ due campi e sia $f(x) \in K[x]$ tale che $f(x)$ si fattorizza completamente in $L$ come prodotto di fattori di primo grado; allora il pi\`u piccolo campo $E \subseteq L$ tale che $K \subseteq E$ e tale che $f(x)$ abbia tutte le radici in $E$ si dice campo di spezzamento di $f$ su $K$.
+\end{definizione}
+\begin{obs}
+	Visto che l'intersezione di campi \`e ancora un campo, si pu\`o dimostrare che, in $L$, esiste ed \`e unico il campo di spezzamento di $f$ su $K$.
+\end{obs}
+\begin{esempio}
+	Si considera l'elemento $c = \sqrt{2}  + \sqrt[3]{2} \in \mathbb{R}$; si dimostra che \`e algebrico su $\mathbb{Q}$ di grado $6$, si trova il suo polinomio minimo e il suo campo di spezzamento.
+	\begin{svolgimento}
+		Si nota, preliminarmente, che $x^2 - 2$ non \`e riducibile in $\mathbb{Q}[x]$; infatti, se lo fosse, essendo di grado $2$, dovrebbe avere una radice in $\mathbb{Q}$, ma visto che si conoscono gi\`a le due radici $\sqrt{2} $ e $-\sqrt{2} $, che appartengono a $\mathbb{R} \setminus\mathbb{Q}$, il polinomio dovrebbe averne una terza reale, che \`e assurdo.
 
+		Si osserva lo stesso per il polinomio $x^3 - 2$, che risulta irriducibile in $\mathbb{Q}[x]$; per quanto visto precedentemente, vale che:
+		\[
+			\mathbb{Q}[\sqrt{2} ] \cong \mathbb{Q}[x] / \langle x^2 - 2 \rangle, \ \big[\mathbb{Q}[\sqrt{2} ] : \mathbb{Q}\big] = 2 \hspace{1cm}\mathbb{Q}[\sqrt[3]{2} ] \cong \mathbb{Q}[x] / \langle x^3 - 2 \rangle, \ \big[\mathbb{Q}[\sqrt[3]{2} : \mathbb{Q}\big]=3
+		\] 
+		Vista la catena di estensioni $\mathbb{Q}\subseteq \mathbb{Q}(\sqrt{2} ) \subseteq \mathbb{Q}(\sqrt{2} , \sqrt[3]{2} )$, per il teorema \ref{th:efth}, si ha che $[\mathbb{Q}[\sqrt{2}] :\mathbb{Q}] = 2 $ divide $[\mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} ) : \mathbb{Q}]$; analogamente notando la catena $\mathbb{Q}\subseteq \mathbb{Q}(\sqrt[3]{2} ) \subseteq \mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} )$, si ha che $3 $ divide $ [\mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} ) : \mathbb{Q}]$.
+		Considerando ancora l'ultima catena, visto che $\sqrt{2} $ \`e radice di $x^2 - 2$, il suo polinomio su $\mathbb{Q}(\sqrt[3]{2} )$ ha grado $\le 2$; ancora per il teorema \ref{th:efth}, si ha 
+		\[
+			[\mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} ):\mathbb{Q}]\le 6
+		\] 
+		Ne segue che $[\mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} ):\mathbb{Q}]$ \`e $\le 6$ ed \`e divisibile sia per $2$, che per $3$; allora $[\mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} ):\mathbb{Q}]=6$.
 
+		Ora si considera $c=\sqrt{2} +\sqrt[3]{2} \Rightarrow (c-\sqrt{2} )^3 = 2$, da cui
+		\[
+		c^3 + 6c - 2 = \sqrt{2} (3c^2  +2)
+		\] 
+		Da questa uguaglianza si ottiene che $\sqrt{2} \in \mathbb{Q}(c)$; elevando al quadrato, poi, si ha che:
+		\[
+			(c^3 + 6c - 2) ^2 = 2(3c^2 + 2)^2
+		\] 
+		Si \`e trovato, quindi, che $c$ \`e radice di $p(x) = x^6 - 6x^4 - 4 x^3 + 12x^2-24x - 4$.
+		Per capire se questo \`e irriducibile, quindi per capire se \`e polinomio minimo di $c$ su $\mathbb{Q}$, si pu\`o fare un'osservazione sui gradi delle estensioni coinvolte; infatti, visto che per il teorema \ref{th:efth} vale
+		\[
+			[\mathbb{Q}(c,\sqrt{2} ) : \mathbb{Q}(c)] [\mathbb{Q}(c):\mathbb{Q}] = [\mathbb{Q}(c,\sqrt{2} ) : \mathbb{Q}]
+		\] 
+		e che $\mathbb{Q}(c,\sqrt{2} ) = \mathbb{Q}(\sqrt{2} ,\sqrt[3]{2} )$ ({\color{red} da dimostrare}), si sa che
+\[
+[\mathbb{Q}(c,\sqrt{2} ) : \mathbb{Q}(c)] [\mathbb{Q}(c):\mathbb{Q}] =6
+\] 
+Inoltre, essendo che $\sqrt{2} \in \mathbb{Q}(c)$, si ha $[\mathbb{Q}(c,\sqrt{2} ) : \mathbb{Q}(c)] = 1$, cio\`e $\mathbb{Q}(c,\sqrt{2} ) = \mathbb{Q}(c)$.
+Ne segue che $[\mathbb{Q}(c) : \mathbb{Q}] = 6$, per cui il polinomio minimo di $c$ su $\mathbb{Q}$ \`e di grado $6$, e, pertanto, coincide con quello proposto sopra.
 
+Per finire, si cerca il campo di spezzamento su $\mathbb{Q}$ di $p(x)$. 
+Visto che $\sqrt[3]{2} + \sqrt{2} $ \`e ottenuto sommando una radice di $x^3 - 2$ ad una radice di $x^2 - 2$, \`e intuitivo pensare che le sue altre radici siano della stessa forma, cio\`e $\sqrt[3]{2}\omega^r \pm \sqrt{2} $, con $r = 0,1,2$ e $\omega$ radice dell'unit\`a.
 
+Per dimostrare che questo \`e vero, si inizia col notare che $\sqrt[3]{2} \omega + \sqrt{2} $ e $\sqrt[3]{2} \omega^2 + \sqrt{2} $ soddisfano la stessa identit\`a di $\sqrt[3]{2} +\sqrt{2} $, cio\`e $(c-\sqrt{2} )^3 = 2$; sviluppando questa relazione allo stesso modo, si trova che sono radici di $p(x)$.
+Per quanto riguarda, invece, gli elementi della forma $\sqrt[3]{2} \omega^r - \sqrt{2} $, invece, queste soddisfano
+\[
+	(c+\sqrt{2} )^3 = 2\implies c^3 + 6c - 2 = -\sqrt{2} (3c^2 + 2)
+\] 
+Elevando al quadrato, si ottiene nuovamente $(c^3 + 6c - 2)^2 = 2 (3c^2 +2)^2$, per cui anche queste sono radici di $p(x)$.
+Visto che il polinomio \`e di grado $6$, queste sono effettivamente tutte le sue radici.
+
+Segue che il campo di spezzamento \`e contenuto in $\mathbb{Q}(\sqrt[3]{2}, \sqrt{2} ,\omega) $.
+Per mostrare l'inclusione inversa, si osserva che, dovendo il campo di spezzamento contenere tutte le radici, dovr\`a contenere anche gli elementi 
+\[
+	\frac{1}{2}\left[ (\sqrt[3]{2} +\sqrt{2} ) - (\sqrt[3]{2} -\sqrt{2} )\right] = \sqrt{2} \hspace{1cm}\frac{1}{2}\left[ (\sqrt[3]{2} +\sqrt{2} ) + (\sqrt[3]{2} -\sqrt{2} )\right] = \sqrt[3]{2}
+\] 
+\[
+\frac{(\sqrt[3]{2}\omega +\sqrt{2} ) + (\sqrt[3]{2}\omega -\sqrt{2} )}{(\sqrt[3]{2} +\sqrt{2} ) + (\sqrt[3]{2} -\sqrt{2} )}=\omega
+\] 
+	\end{svolgimento}
+\end{esempio}
 
 
 
