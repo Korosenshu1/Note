@@ -3383,14 +3383,286 @@ Si vogliono studiare gli elementi irriducibili nell'anello $\mathbb{Z}[i]$.
 		\end{itemize}
 	\end{proof}
 \end{teorema}
-\begin{center}
-	Riprendere da pagina 139, sezione 17.2
-\end{center}
+\subsubsection{Fattorizzazione in $\mathbb{Z}[\sqrt{n}]$}
+Si studiano, ora, gli anelli della forma $\mathbb{Z}[\sqrt{n} ]$, dove anche $\mathbb{Z}[\sqrt{-m} ] = \mathbb{Z}[i\sqrt{m} ]$, con $m>0$ \`e ammesso.
+Gli interi di Gauss appena studiati fanno parte di questa famiglia di anelli.
+\begin{obs}
+Qualora $n$ fosse un quadrato, si avrebbe $\mathbb{Z}[\sqrt{n} ] = \mathbb{Z}$.
+\end{obs}
+\noindent Per questa osservazione, si considereranno solo gli $n$ detti \textit{square free}, cio\`e dati dal prodotto di due primi distinti, tutti con esponente pari a $1$.
 
+\`E possibile dimostrare che degli anelli cos\`i definiti non sono euclidei, ma \`e comunque possibile definire una \textit{seminorma} nel seguente modo:
+\begin{equation}
+	\ell : 
+	\begin{array}{c c c}
+		\mathbb{Z}[\sqrt{n} ] &\longrightarrow & \mathbb{Z}\\
+		a+b \sqrt{n} & \longmapsto & a^2 - nb^2
+	\end{array}
+\end{equation}
+\begin{lemma}
+	{}{}
+	L'applicazione $\ell $ \`e moltiplicativa.
+	\begin{proof}
+		Siano $a+b \sqrt{n} , c + d \sqrt{n} \in \mathbb{Z}[\sqrt{n} ]$; si nota che:
+		\[
+		\left(a + b\sqrt{n} \right) \left(c + d \sqrt{n} \right) = ac + bdn + (ad + bc ) \sqrt{n} 
+		\] 
+		Da questo, si ottiene che:
+\[
+	\begin{split}
+		\ell \left[ \left(a + b\sqrt{n} \right) \left(c+d\sqrt{n} \right)  \right] &= \left(ac + bdn\right) ^2 - n \left(ad + bc\right) ^2\\
+											   &=a^2c^2 + 2 abcdn + b^2 d^2 n^2 - a^2 d^2 n-2abcdn - b^2c^2 n\\
+											   &=c^2(a^2-nb^2) - nd^2 (a^2 - nb^2) = (a^2 - nb^2 )(c^2 - nd^2)\\
+											   &=\ell \left(a + b\sqrt{n} \right) \ell \left(c+d \sqrt{n} \right) 
+	\end{split}
+\] 
+	\end{proof}
+\end{lemma}
+\begin{lemma}
+	{}{}
+	Un elemento $z \in \mathbb{Z}[\sqrt{n} ]$ \`e invertibile se e solo se $\ell (z) \in  \left\{ -1,1 \right\} $.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Se $z \in \mathbb{Z}[\sqrt{n} ]$ ed \`e invertibile, allora $zw = 1$ per qualche $w \in \mathbb{Z}[\sqrt{n} ]$. 
+				Per il lemma precedente, si ha: $\ell (z) \ell (w) = \ell (1) = 1 \Rightarrow \ell (z) \in \left\{ -1,1 \right\} $.
+			\item ($\Leftarrow$) Sia $z = a + b \sqrt{n} $, con $\lvert \ell (z) \rvert = 1$; allora $\lvert a^2 - nb^2 \rvert = 1$, per cui
+				\[
+				\left(a + b \sqrt{n} \right) \left(a - b \sqrt{n} \right) =1 \text{ oppure } \left(a + b\sqrt{n} \right) \left(-a + b\sqrt{n} \right) =1
+				\] 
+				e, in ogni caso, $z$ risulta invertibile.
+		\end{itemize}
+	\end{proof}
+\end{lemma}
+\noindent Nello studio di anelli di questa forma, se ne possono trovare alcuni che non sono a fattorizzazione unica, come ad esempio $\mathbb{Z}[\sqrt{10} ]$.
+\begin{prop}
+	{}{}
+	L'anello $\mathbb{Z}[\sqrt{10} ]$ non \`e un dominio a fattorizzazione unica.
+	\begin{proof}
+		Si pu\`o direttamente osservare che $6$ pu\`o essere scritto come
+		\[
+		\left(4 + \sqrt{10} \right) \left(4 - \sqrt{10} \right) = 6 = 2\cdot 3
+		\] 
+		Per concludere che $\mathbb{Z}[\sqrt{10} ]$ non \`e a fattorizzazione unica, per\`o, \`e necessario mostrare che gli elementi che appaiono nelle due fattorizzazioni siano irriducibili.
 
+		Si mostra che $2$ e $3$ sono irriducibili.
+		Se $2 = \left(a + b \sqrt{10} \right) \left(c + d\sqrt{10} \right) $ fosse una fattorizzazione senza invertibili, allora
+		\[
+		\ell \left(a + b \sqrt{10} \right) \ell \left(c + d \sqrt{10} \right) = \ell (2) = 4
+		\] 
+		perci\`o le due seminorme a primo membro devono essere entrambe $2$ o $-2$ (non pu\`o essere che una delle due sia uguale a $\pm 1$, altrimenti l'elemento sarebbe invertibile).
+		Questo, per\`o, non \`e possibile perch\'e $a^2 - 10 b^2 = \pm 2$ non ha soluzioni intere.
+		In maniera del tutto analoga, si vede che $3$ \`e irriducibile, perch\'e l'equazione $a^2 - 10 b^2 = 3$ non ha soluzioni intere.
 
+		L'irriducibilit\`a di $4 + \sqrt{10} $ e $4 - \sqrt{10} $ \`e diretta conseguenza dei conti gi\`a svolti; infatti, visto che tali elementi hanno seminorma pari a $6$, perch\'e $4 + \sqrt{10} $ avesse una fattorizzazione senza invertibili, per esempio, dovrebbe avere fattori con seminorma pari a $2$ e $3$ rispettivamente, ma queste relazioni non sono possibili nell'anello, per quanto appena visto.
+	\end{proof}
+\end{prop}
+\noindent Una conseguenza diretta di questa proposizione \`e che $\mathbb{Z}[\sqrt{10} ]$ non \`e euclideo.
+\begin{obs}
+	Si nota che in $\mathbb{Z}[\sqrt{10} ]$, $2$ \`e irriducibile, ma non \`e primo; infatti, si ha che $2  \mid (4 + \sqrt{10} ) (4 - \sqrt{10} )$, ma non divide nessuno dei due fattori.
+	Un modo per vederlo \`e che se fosse $2 (a + b \sqrt{10} ) = 4 + \sqrt{10} $, allora $\ell (2)  \mid \ell (4 + \sqrt{10} ) $, che \`e falso perch\'e $4 \not  \mid 6$.
+\end{obs}
+\subsection{Approfondimenti sull'irriducibilit\`a}
+Si \`e visto che se $K$ \`e un campo, allora tutti gli ideali di $K[x]$ sono della forma $\langle f(x) \rangle$, per qualche $f(x) \in K[x]$.
+Inoltre, se $f$ \`e irriducibile, allora $K[x] / \langle f(x) \rangle$ \`e un campo contenente un sottoanello isomorfo a $K$ (dato dalle classi dei polinomi costanti) ed \`e uno spazio vettoriale su $K$, la cui dimensione \`e uguale al grado di $f(x)$.
+Inoltre, in questo campo, il polinomio $f(x)$ ha una radice data dalla classe di $x$.
 
+Il punto della sezione \`e affrontare le due seguenti domande.
+\begin{enumerate}[(a).]
+	\item Cosa succede se $f(x)$ non \`e irriducibile? Si \`e gi\`a visto che, in questo caso, $K[x] / \langle f(x) \rangle$ non \`e un campo, ma si svilupper\`a pi\`u in dettaglio l'argomento.
+	\item Che forma hanno i polinomi irriducibili di $K[x]$? Quanti sono e come si ricavano?
+\end{enumerate}
+Tali domande sono piuttosto complicate e non saranno sviluppate del tutto, ma si getteranno le basi per tale approfondimento.
+\subsubsection{Il teorema cinese del resto}
 
+Sia $K$ un campo e $f(x)$ un polinomio di $K[x]$. 
+Si denota con $\overline{b(x)} := b(x) + \langle f(x) \rangle \in K[x] / \langle f(x) \rangle$ la classe di resto di $b(x) \in K[x]$.
+
+Si assume che $f(x)$ sia irriducibile e si prendono $g(x), h(x) \in K[x]$ tali che $f(x) = g(x) h(x)$, con $\operatorname{deg} g, \operatorname{deg} h \ge  1$.
+In questo caso, $g$ e $h$ sono divisori non banali dello zero in $K[x] / \langle f(x) \rangle$.
+Per studiare meglio $K[x] / \langle f(x) \rangle$, si d\`a la seguente definizione e si studia un esempio analogo gi\`a affrontato.
+\begin{definizione}
+	{Prodotto diretto di anelli}{}
+	Siano $A_1,A_2$ due anelli; il loro prodotto diretto $A_1 \times  A_2$ \`e ottenuto definendo, su tale insieme, le operazioni
+	\[
+		(a_1,a_2) + (b_1, b_2) := (a_1+ b_1, a_2+b_2) \hspace{1cm} (a_1,a_2) \cdot (b_1,b_2) := (a_1b_1, a_2b_2)
+	\] 
+	
+\end{definizione}
+\noindent Con queste due operazioni, si pu\`o dimostrare che $A_1 \times A_2 $ \`e un anello ({\color{red} da dimostrare}).
+\`E, inoltre, possibile far vedere che se $A_1$ e $A_2$ sono non-banali, allora $A_1 \times A_2$ non \`e mai un campo ({\color{red} da dimostrare}).
+\begin{esempio}
+Una situazione analoga \`e gi\`a stata affrontata: sia $n \in \mathbb{Z} : n = ab\ge 2$, con $a,b > 1$ due interi. 
+Per studiare l'anello quoziente $\mathbb{Z} / n \mathbb{Z} = \mathbb{Z}/\langle n \rangle$, si osserva l'esistenza di una mappa
+\[
+f: 
+\begin{array}{c c c}
+	\mathbb{Z} / n\mathbb{Z} & \longrightarrow & \mathbb{Z}/a \mathbb{Z} \times  \mathbb{Z} / b \mathbb{Z}\\
+	\left[ c \right] _n & \longmapsto & \big([c]_a , [c]_b\big) 
+\end{array}
+\] 
+{\color{red} Dimostrare che $f$ \`e ben definita e che \`e un omomorfismo di anelli}. 
+
+Per il teorema cinese del resto, se $\operatorname{gcd}(a,b) =1$, allora $f$ \`e biettiva e, quindi, $\mathbb{Z} / ab \mathbb{Z} \cong \mathbb{Z} / a \mathbb{Z} \times  \mathbb{Z} / b \mathbb{Z}$.
+\end{esempio}
+\noindent Tornando a $K[x] / \langle f(x) \rangle$, con $f(x) = g(x) h(x) : \operatorname{deg} g ,\operatorname{deg} h	\ge 1$ , se $\operatorname{gcd}(h,g) =1$, tramite ragionamenti analoghi, si pu\`o dimostrare che
+\begin{equation}
+	\varphi : K[x] / \langle f(x) \rangle \longrightarrow K[x] / \langle g(x) \rangle\times K [x] / \langle h(x) \rangle
+\end{equation}
+\`e un isomorfismo di anelli.
+Per mostrare l'analogo di quanto visto per $\mathbb{Z} / n \mathbb{Z}$, si deve ricavare l'analogo del teorema cinese del resto per i polinomi, tramite il teorema di B\'ezout e la divisione euclidea ({\color{red} da dimostrare}).
+
+Queste considerazioni, possono essere estese pi\`u in generale, come mostrato dai due seguenti teoremi.
+\begin{teorema}
+	{Teorema cinese del resto generale}{}
+	Sia $R$ un anello e siano $I_1,I_2$ due ideali tali che $I_1 + I_2 = R$; allora $I_1I_2 = I_1 \cap I_2$ e l'omomorfismo 
+	\[
+\Gamma :
+\begin{array}{c c c}
+	R & \longrightarrow R / I_1 \times  R / I_2\\
+	r & \longmapsto \left(r + I_1 , r + I_2\right) 
+\end{array}
+	\] 
+	\`e suriettivo, quindi $R / I_1I_2 \cong R / I_1 \times  R / I_2$.
+\end{teorema}
+\begin{teorema}
+	{}{}
+	Sia $R$ un anello e siano $I_1,I_2, \ldots, I_n$ degli ideali tali che, per ogni coppia di indici $(i,j)$, vale $I_i + I_j = R$; allora $I_1I_2\ldots I_n = I_1\cap I_2\cap \ldots\cap I_n$ e l'omomorfismo 
+	\[
+\Gamma :
+\begin{array}{c c c}
+	R & \longrightarrow R / I_1 \times  R / I_2 \times  \ldots \times R / I_n\\
+	r & \longmapsto \left(r + I_1 , r + I_2,\ldots, r + I_n\right) 
+\end{array}
+	\] 
+	\`e suriettivo, quindi 
+	\[
+	R / I_1 I_2 \ldots I_n \cong R / I_1 \times  R / I_2 \times \ldots \times  R / I_n
+	\] 
+\end{teorema}
+\subsubsection{Irriducibilit\`a in $\mathbb{Z}_p[x]$ e $\mathbb{Z}[x]$}
+In generale, stabilire l'irriducibilit\`a di un polinomio \`e un problema difficile, ma c'\`e una classe di campi $K$ in cui questo problema in $K[x]$ \`e pi\`u semplice: tali campi sono i \textbf{campi finiti}. L'obiettivo sar\`a studiare i campi $\mathbb{Z}_p [x]$.
+
+La semplificazione \`e che, in questo campo, sono presenti un numero finito di polinomi monici di grado $d \in \mathbb{N}$, cio\`e $p^d$, e i possibili fattori propri di un polinomio di grado $n$ in $\mathbb{Z}_p[x]$ sono da cercare proprio fra questi per $1 \le d \le n-1$.
+\begin{esempio}
+	Si descrivono i polinomi irriducibili (monici) in $\mathbb{Z}_2[x]$ di grado piccolo. 
+	Oltre a $x$ e $x+1$, per trovare quelli per grado $\le 3$ \`e sufficiente verificare che non abbiano radice in $\mathbb{Z}_2$, cosa che richiede due verifiche immediate: le valutazioni in $[0]_2$ e $[1]_2$ devono essere nulle.
+
+	In questo modo, si trovano i polinomi irriducibili di ordine $2$ e $3$, che sono 
+	\[
+	x^2 + x + 1 \hspace{1cm} x^3 + x^2 + 1 \hspace{1cm} x^3 + x +1
+	\] 
+	Per quelli di grado $4$, bisogna verificare anche che non ci siano fattori di grado $2$; visto che esiste un solo irriducibile di grado due, non \`e difficile verificare che gli irriducibili di grado $4$ in $\mathbb{Z}_2 [x]$ sono
+	\[
+	x^4 + x^3 + x^2 + x +1 \hspace{1cm}x^4 + x^3 +1 \hspace{1cm}x^4 + x + 1
+	\] 
+\end{esempio}
+\noindent {\color{red}Dimostrare i due seguenti punti.}
+\begin{enumerate}[(a).]
+	\item Sia $f(x) = a_n x^n + \ldots + a_1 x + a_0 \in \mathbb{Z}[x]$ un polinomio con $a_n \neq 0 \neq a_0$ e sia $ p /q$ una sua radice, con $p,q \in \mathbb{Z}:q \neq 0$ e $\operatorname{gcd}(p,q) =1$; mostrare che $q  \mid a_n$ e $p  \mid a_0$.
+	\item Descrivere un algoritmo che, in un numero finito di passi, decide se un dato polinomio in $\mathbb{Q}[x]$ ha una radice razionale e, in tal caso, ne calcola una.
+\end{enumerate}
+\begin{prop}
+	{}{}
+	Siano $A_1, A_2$ due anelli e $\varphi : A_1 \to A_2$ un omomorfismo di anelli; mostrare che 
+	\[
+	\hat{\varphi } : 
+	\begin{array}{c c c}
+		A_1[x] & \longrightarrow & A_2[x]\\
+		f(x)  & \longmapsto & \varphi (a_n) x^n + \ldots + \varphi (a_1) x + \varphi (a_0) 	\end{array}
+	\] 
+	definisce un omomorfismo di anelli.
+\end{prop}
+\noindent Si usa questo omomorfismo nel caso della proiezione al quoziente $\varphi :\mathbb{Z} \to \mathbb{Z}_p$, con $p$ primo.
+\begin{definizione}
+	{Polinomio primitivo}{}
+	Un polinomio $f(x) \in \mathbb{Z}[x]$ \`e detto \textit{primitivo} se il MCD dei suoi coefficienti \`e $1$.
+\end{definizione}
+\begin{prop}
+	{}{}
+	Sia $p$ un primo e $\varphi  : \mathbb{Z}\to \mathbb{Z}_p$ la proiezione al quoziente. 
+	Sia, inoltre, $\hat{\varphi }: \mathbb{Z}[x] \to \mathbb{Z}_p [x]$ l'omomorfismo della proposizione precedente e sia $f(x) = a_n x^n + \ldots a_1 x + a_0 \in \mathbb{Z}[x]$ un polinomio primitivo con $n \ge 1 $ tale che $p  \not \mid a_n$; allora, se $\hat{\varphi }(f(x))$ \`e irriducibile in $\mathbb{Z}_p [x]$, si ha che $f(x)$ \`e irriducibile in $\mathbb{Z}[x]$.
+	\begin{proof}
+		Si procede per controposizione.
+		Sia, quindi, $f(x) = g(x) h(x)$ riducibile, con $g,h \in \mathbb{Z}[x]$; visto che $f$ \`e primitivo, si deve avere per forza $\operatorname{deg} g , \operatorname{deg} h \ge 1$\footnote{Il fatto che i coefficienti siano in $\mathbb{Z}$, porta l'esistenza di irriducibili di grado $0$; ad esempio $7$ non \`e invertibile, quindi \`e irriducibile: il polinomio $7x + 7$ si fattorizza in $7$ e $x+1$, che sono due irriducibili.}.
+		Si nota che
+		\[
+		\hat{\varphi }(f(x)) = \hat{\varphi }(g(x)) \hat{\varphi }(h(x))
+		\] 
+		e $\operatorname{deg} \hat{\varphi }(f(x)) = \operatorname{deg} f(x) = n$ perch\'e, per ipotesi, $\varphi (a_n) \neq [0]_p$.
+		Questo significa che deve anche valere $\operatorname{deg} \hat{\varphi }(g(x)), \operatorname{deg} \hat{\varphi }(h(x)) \ge 1$, il che dimostra che $\hat{\varphi }(f(x))$ \`e riducibile in $\mathbb{Z}_p[x]$.
+	\end{proof}
+\end{prop}
+\begin{obs}
+	L'ipotesi di primitivit\`a \`e necessaria perch\'e, per esempio, se $p=2$ e $f(x) = 3x + 3 = 3(x+1)$, si avrebbe $\hat{\varphi }(f(x))$ irriducibile, ma non $f$ irriducibile in $\mathbb{Z}[x]$.
+\end{obs}
+\begin{teorema}
+	{Criterio di Eisenstein}{}
+	Sia $p \in \mathbb{N}$ un numero primo e $f(x) = a_n x^n + \ldots + a_1 x + a_0 \in \mathbb{Z}[x]$ un polinomio primitivo con $n \ge  1$ tale che:
+	\begin{enumerate}[(a).]
+		\item $p$ non divide $a_n$;
+		\item $p$ divide $a_0, a_1, \ldots, a_{n-1} $;
+		\item $p^2$ non divide $a_0$.
+	\end{enumerate}
+	Allora $f(x)$ \`e irriducibile in $\mathbb{Z}[x]$.
+	\begin{proof} 
+
+		Se $n=1$, \`e verificato perch\'e un polinomio primitivo di grado $1$ \`e irriducibile.
+
+		Si procede per controposizione.
+		Si assume che $f(x)$ abbia grado $\ge 2$ e sia riducibile in $\mathbb{Z}[x]$, con $g,h \in \mathbb{Z}[x]$ non invertibili e tali che $f = g(x) h(x)$.
+		Visto che $f$ \`e primitivo, $g$ e $h$ saranno non-costanti; applicando l'omomorfismo $\hat{\varphi }:\mathbb{Z}[x]\to \mathbb{Z}_p[x]$, dalla precedente proposizione e dall'ipotesi (b), si ottiene che
+		\[
+			[a_n]_px^n= \hat{\varphi }(f(x)) = \hat{\varphi }(g(x)) \hat{\varphi }(h(x))
+		\] 
+		dove l'ipotesi (a) assicura $[a_n]_p \neq [0]_p$.
+		Si nota che, per polinomi a coefficienti in un campo, il prodotto di due polinomi \`e un monomio se e solo se entrambi i fattori sono monomi.
+Siccome $\operatorname{deg} \hat{\varphi }(f(x)) = \operatorname{deg} f(x) = n$, dovr\`a valere anche che $\operatorname{deg} \hat{\varphi }(g(x)) = \operatorname{deg} g(x) \ge 1$ e $\operatorname{deg} \hat{\varphi }(h(x)) = \operatorname{deg} h(x) \ge 1$, quindi $\hat{\varphi }(g(x))$ e $\hat{\varphi }(h(x))$ sono monomi di grado positivo e, in particolare, i termini costanti di $g$ e $h$ sono entrambi divisibili per $p$.
+
+Visto che $a_0$ \`e il prodotto di questi due coefficienti, per\`o, si dovrebbe avere che $p|^2  \mid a_0$, il che contraddice (c), quindi $f(x)$ non pu\`o essere riducibile in $\mathbb{Z}[x]$.
+	\end{proof}
+\end{teorema}
+\begin{esempio}
+	Per il criterio di Eisenstein, il polinomio $x^5 - 4x + 2 $ \`e irriducibile in $\mathbb{Z}[x]$; infatti, $x^k - 4x + 2 $ \`e irriducibile $\forall k\ge 2$, per cui in $\mathbb{Z}[x]$ ci sono polinomi irriducibili di ogni grado (a differenza di quello che succede in $\mathbb{C}[x]$, o in $\mathbb{R}[x]$).
+\end{esempio}
+\subsubsection{Irriducibilit\`a in $\mathbb{Q}[x]$}
+
+\begin{lemma}
+	{Teorema di Gauss}{}
+	Siano $f(x), g(x) \in \mathbb{Z}[x]$ due polinomi primitivi; allora il loro prodotto $f(x)g(x) \in \mathbb{Z}[x]$ \`e primitivo.
+	\begin{proof}
+		Siano
+		\[
+		f(x) = \sum_{i}^{} a_i x^i \hspace{1cm}g(x) = \sum_{j}^{} b_j x^j
+		\] 
+		con $a_i, b_j \in \mathbb{Z}, \ \forall i,j$.
+		Si assume che $f(x)g(x)$ non sia primitivo.
+		Sia, quindi, $p$ un primo che divide tutti i coefficienti di tale prodotto e $a_s x^s, \ b_r x^r$ i due termini di grado pi\`u alto in $f(x)$ e $g(x)$ rispettivamente, che non siano divisibili per $p$; allora il coefficiente di $x^{r+s} $ di $f(x)g(x)$ \`e
+		\[
+		\sum_{i+j = s+r}^{} a_i b_j
+		\] 
+		che deve essere divisibile per $p$.
+		Per\`o $p$ divide sicuramente tutti i termini della somma, ad eccezione di $a_s b_r$, quindi dunque dovr\`a dividere anche $a_s b_r$ e, in quanto primo, divider\`a uno tra $a_s$ e $b_r$.
+		Questa \`e una contraddizione, quindi $f(x) g(x)$ deve essere primitivo.
+	\end{proof}
+\end{lemma}
+\begin{corollario}
+	{}{}
+	Un polinomio in $\mathbb{Z}[x]$ di grado positivo \`e irriducibile in $\mathbb{Z}[x]$ se e solo se \`e primitivo e irriducibile in $\mathbb{Q}[x]$.
+	\begin{proof}
+		Se $f(x) \in \mathbb{Z}[x]$ \`e primitivo e irriducibile in $\mathbb{Q}[x]$, allora lo sar\`a anche in $\mathbb{Z}[x]$.
+
+		Per l'altra implicazione, invece, si nota che se $f(x) \in \mathbb{Z}[x]$ non \`e primitivo, non \`e irriducibile in $\mathbb{Z}[x]$, quindi si pu\`o assumere che $f(x) \in \mathbb{Z}[x]$ sia primitivo.
+		Si assume che $f(x) = a(x) b(x)$, con $a(x),b(x) \in \mathbb{Q}[x]$ entrambi di grado positivo e si mostra che $f(x)$ \`e riducibile in $\mathbb{Z}[x]$.
+
+		Si possono trovare $\alpha ,\beta \in \mathbb{Q}$ tali che $a'(x) = \alpha  a(x) \in \mathbb{Z}[x]$ e $b'(x) = \beta b(x) \in \mathbb{Z}[x]$, con $a',b'$ entrambi primitivi\footnote{Ad esempio, $\alpha $ si pu\`o ottenere moltiplicando $a(x)$ per il mcm dei denominatori e, poi, si divide, eventualmente, per un intero per rendere il polinomio primitivo.}. 
+		Per il lemma di Gauss, allora, anche $a'(x) b'(x) = \alpha  \beta  f(x) \in \mathbb{Z}[x]$ \`e primitivo.
+		Visto che $f(x)$ \`e primitivo, si deve avere $\alpha \beta  \in \mathbb{Z}$ e, visto che $\alpha \beta f(x)$ \`e primitivo, si deve anche avere $\alpha \beta = \pm 1$, per cui $f(x) = \pm a'(x) b'(x)$, che dimostra che $f(x)$ \`e riducibile in $\mathbb{Z}[x]$.
+	\end{proof}
+\end{corollario}
+\newpage
+\section{Teoria dei campi}
+\subsection{Introduzione ed estensioni semplici di campi}
 
 
 
