@@ -2658,7 +2658,7 @@ Si trovano
 \subsubsection{Ciclicit\`a dei sottogruppi moltiplicativi finiti di un campo}
 Il teorema \ref{th:csmfc} appena dimostrato permette di concludere il seguente.
 \begin{teorema}
-	{}{}
+	{}{gmfc}
 	Sia $K$ un campo e sia $G$ un sottogruppo di $K^*$ (quindi \`e un sottogruppo moltiplicativo), con $|G|<\infty$; allora $G$ \`e ciclico.
 	\begin{proof}
 		Sia $|G| = n$; se $n=1$, l'enunciato \`e banale, quindi si assume $n>1$.
@@ -2765,7 +2765,7 @@ Il teorema \ref{th:csmfc} appena dimostrato permette di concludere il seguente.
 	{Kernel di un omomorfismo}{}
 	Il nucleo di $\phi :R\to S$ omomorfismo di anelli \`e definito come l'insieme
 	\[
-	\operatorname{ker} \phi = \left\{ a \in R  \mid \phi (a) = 0 _S \right\} 
+	\operatorname{Ker} \phi = \left\{ a \in R  \mid \phi (a) = 0 _S \right\} 
 	\] 
 \end{definizione}
 \noindent Essendo gli omomorfismi di anelli un caso particolare di omomorfismo di gruppi, vale la seguente proposizione esattamente come valeva per i gruppi.
@@ -2776,17 +2776,17 @@ Il teorema \ref{th:csmfc} appena dimostrato permette di concludere il seguente.
 \noindent In aggiunta a questa, il nucleo di un omomorfismo di anelli soddisfa anche la seguente propriet\`a, che lo render\`a quello che sar\`a noto come \textbf{ideale}.
 \begin{prop}
 	{}{}
-	Sia $\phi :R \to S$ un omomorfismo di anelli; allora $\forall a \in \operatorname{ker} \phi $, si ha $ar \in \operatorname{ker} \phi $ e $ra \in \operatorname{ker} \phi , \ \forall r \in R$.
+	Sia $\phi :R \to S$ un omomorfismo di anelli; allora $\forall a \in \operatorname{Ker} \phi $, si ha $ar \in \operatorname{Ker} \phi $ e $ra \in \operatorname{Ker} \phi , \ \forall r \in R$.
 	\begin{proof}
-		Visto che $a \in \operatorname{ker} \phi \Rightarrow \phi (a) = 0_S$; allora 
+		Visto che $a \in \operatorname{Ker} \phi \Rightarrow \phi (a) = 0_S$; allora 
 		\[
-		\phi (ar) = \phi (a) \phi (r) = 0_S \phi (r) = 0_S \implies ar \in \operatorname{ker} \phi 
+		\phi (ar) = \phi (a) \phi (r) = 0_S \phi (r) = 0_S \implies ar \in \operatorname{Ker} \phi 
 		\] 
 		Analogamente si verifica l'altro.
 	\end{proof}
 \end{prop}
-\noindent Sempre perch\'e un omomorfismo di anelli \`e un caso particolare di omomorfismo di gruppi, vale che $\phi:R\to S $ \`e iniettiva se e solo se $\operatorname{ker} \phi  = \left\{ 0_R \right\} $.
-Si nota, comunque, che il nucleo non \`e un sottoanello di $R$ in generale; infatti, dovendo soddisfare $\phi (1_R) = 1_S \Rightarrow 1_R \not\in \operatorname{ker} \phi $, quindi non ha una struttura di anello perch\'e non ha l'elemento neutro rispetto al prodotto.
+\noindent Sempre perch\'e un omomorfismo di anelli \`e un caso particolare di omomorfismo di gruppi, vale che $\phi:R\to S $ \`e iniettiva se e solo se $\operatorname{Ker} \phi  = \left\{ 0_R \right\} $.
+Si nota, comunque, che il nucleo non \`e un sottoanello di $R$ in generale; infatti, dovendo soddisfare $\phi (1_R) = 1_S \Rightarrow 1_R \not\in \operatorname{Ker} \phi $, quindi non ha una struttura di anello perch\'e non ha l'elemento neutro rispetto al prodotto.
 Tuttavia, vale la seguente.
 \begin{prop}
 	{}{}
@@ -2917,7 +2917,7 @@ A questo punto, \`e possibile riportare in teoria degli anelli il primo teorema 
 	{Primo teorema di omomorfismo}{}
 	Sia $\phi :R\to S$ un omomorfismo di anelli; allora
 	\[
-	R / \operatorname{ker} \phi \cong \operatorname{Im} \phi 
+	R / \operatorname{Ker} \phi \cong \operatorname{Im} \phi 
 	\] 
 	\begin{proof}
 		La dimostrazione \`e analoga al caso dei gruppi.
@@ -2930,7 +2930,7 @@ La costruzione di tale omomorfismo canonico permette anche di riportare ogni ide
 	Sia $R$ un anello; ogni suo ideale $I$ pu\`o essere visto come il nucleo di un omomorfismo.
 	\begin{proof}
 		Si considera la proiezione $\pi : R \to R / I$, cio\`e la mappa che ad ogni $r \in R$, associa la classe laterale di $I$, $r + I$.
-		Si verifica che $\pi$ \`e un omomorfismo di anelli e che $\operatorname{ker} \pi = I$.
+		Si verifica che $\pi$ \`e un omomorfismo di anelli e che $\operatorname{Ker} \pi = I$.
 	\end{proof}
 \end{prop}
 \subsubsection{Omomorfismi di valutazione}
@@ -2957,12 +2957,12 @@ Si prendono $K = \mathbb{R}$ e $i \in \mathbb{C}$.
 Successivamente si considera l'omomorfismo di valutazione $V_i : \mathbb{R}[x] \to \mathbb{C}$.
 \`E evidente che tale omomorfismo \`e suriettivo perch\'e ogni numero complesso $a+ib \in \mathbb{C}$ \`e raggiunto da $V_i[f(x)]$ con $f(x) = a + bx$.
 
-Ora se ne studia il nucleo; intanto \`e ovvio che $x^2 + 1 \in \mathbb{R}[x]$ viene mappato in $0$ per costruzione, quindi $x^2 + 1 \in \operatorname{ker} V_i $.
+Ora se ne studia il nucleo; intanto \`e ovvio che $x^2 + 1 \in \mathbb{R}[x]$ viene mappato in $0$ per costruzione, quindi $x^2 + 1 \in \operatorname{Ker} V_i $.
 Conseguentemente, ogni multiplo di $x^2 + 1$ \`e anch'esso contenuto nel nucleo, quindi 
 \[
-\langle x^2 +1  \rangle \subseteq \operatorname{ker} V_i
+\langle x^2 +1  \rangle \subseteq \operatorname{Ker} V_i
 \] 
-\`E possibile mostrare che $\langle x^2 + 1 \rangle\supseteq \operatorname{ker} V_i$; per farlo, si prende un generico $f(x) \in \operatorname{ker} V_i$ (cio\`e un polinomio tale che $f(i) = 0$) e se ne considera la divisione euclidea per $x^2 +1 $:
+\`E possibile mostrare che $\langle x^2 + 1 \rangle\supseteq \operatorname{Ker} V_i$; per farlo, si prende un generico $f(x) \in \operatorname{Ker} V_i$ (cio\`e un polinomio tale che $f(i) = 0$) e se ne considera la divisione euclidea per $x^2 +1 $:
 \[
 f(x) = (x^2 +1) q(x) + r(x)
 \] 
@@ -2972,7 +2972,7 @@ Applicando l'omomorfismo di valutazione a questa relazione, si trova
 f(i) = 0\cdot q(x) + a + ib = a+ib = 0 \implies a = b = 0
 \] 
 visto che $a,b$ sono reali.
-Questo mostra che $f(x) $ \`e multiplo di $x^2 + 1$, quindi $f(x) \in \langle x^2 + 1 \rangle$, pertanto $\operatorname{ker} V_i = \langle x^2 + 1 \rangle$.
+Questo mostra che $f(x) $ \`e multiplo di $x^2 + 1$, quindi $f(x) \in \langle x^2 + 1 \rangle$, pertanto $\operatorname{Ker} V_i = \langle x^2 + 1 \rangle$.
 
 Per il primo teorema di omomorfismo, segue che 
 \[
@@ -3682,24 +3682,24 @@ Per costruzione, questa intersezione rappresenta il pi\`u piccolo campo contenen
 \noindent Dati $K \subseteq L$ e $\alpha  \in L$ come sopra, si pu\`o considerare l'omomorfismo di valutazione $\psi  : K[x] \to L $ tale per cui $\forall f(x) \in K[x], \ \psi (f(x)) = f(\alpha )$; si indicher\`a con $K[\alpha ]$ l'immagine di $\psi $ perch\'e \`e effettivamente possibile vedere gli elementi di $\operatorname{Im} \psi  $ come polinomi in $\alpha $ a coefficienti in $K$.
 
 Si nota che il kernel di $\psi $ \`e l'insieme di tutti i polinomi di $K[x]$ che hanno $\alpha $ come radice. 
-Sapendo che $\operatorname{ker} \psi $ \`e un ideale di $K[x]$ e che quest'ultimo \`e euclideo, segue che $\operatorname{ker} \psi $ \`e un ideale principale, quindi:
+Sapendo che $\operatorname{Ker} \psi $ \`e un ideale di $K[x]$ e che quest'ultimo \`e euclideo, segue che $\operatorname{Ker} \psi $ \`e un ideale principale, quindi:
 \[
-\operatorname{ker} \psi  = \langle f(x) \rangle
+\operatorname{Ker} \psi  = \langle f(x) \rangle
 \] 
 per qualche $f(x) \in K[x]$.
-Ora, ci sono due casi: o il nucleo \`e $\operatorname{ker} \psi  = \left\{ 0 \right\} $, relativo all'assenza di polinomi in $K[x]$ che abbiano $\alpha$ come radice (in tal caso si dir\`a che $\alpha $ \`e \textbf{trascendente} su $K$) e, per il primo teorema di omomorfismo, vale $K[x] \cong K[\alpha ] = \operatorname{Im} \psi $\footnote{In questo caso particolare, $K[\alpha ]$ non \`e un campo, quindi $K[\alpha ]\subsetneq K(\alpha )$.}, oppure $\operatorname{ker} \psi = \langle f(x) \rangle \neq \left\{ 0 \right\} $ e $\alpha $ si dice \textbf{algebrico} su $K$.
+Ora, ci sono due casi: o il nucleo \`e $\operatorname{Ker} \psi  = \left\{ 0 \right\} $, relativo all'assenza di polinomi in $K[x]$ che abbiano $\alpha$ come radice (in tal caso si dir\`a che $\alpha $ \`e \textbf{trascendente} su $K$) e, per il primo teorema di omomorfismo, vale $K[x] \cong K[\alpha ] = \operatorname{Im} \psi $\footnote{In questo caso particolare, $K[\alpha ]$ non \`e un campo, quindi $K[\alpha ]\subsetneq K(\alpha )$.}, oppure $\operatorname{Ker} \psi = \langle f(x) \rangle \neq \left\{ 0 \right\} $ e $\alpha $ si dice \textbf{algebrico} su $K$.
 \begin{definizione}
 	{Elemento algebrico e polinomio minimo}{}
 	Siano $K \subseteq L$ due campi e $\alpha \in L $ un suo elemento; si dice che $\alpha $ \`e \textit{algebrico} su $K$ se esiste $f(x) \in K[x] : f(x) \neq 0$ con $\alpha $ come radice.
-	In altre parole, $\operatorname{ker} \psi \neq \left\{ 0 \right\} $.
-	Un generatore di $ \operatorname{ker} \psi $ \`e detto \textit{polinomio minimo} di $\alpha $ su $K$.
+	In altre parole, $\operatorname{Ker} \psi \neq \left\{ 0 \right\} $.
+	Un generatore di $ \operatorname{Ker} \psi $ \`e detto \textit{polinomio minimo} di $\alpha $ su $K$.
 \end{definizione}
 \begin{obs}
 	Per definizione, un polinomio minimo di $\alpha $ su $K$ divide ogni altro polinomio di $K[x]$ che abbia $\alpha $ come radice; questo polinomio non \`e unico in senso stretto, ma lo \`e a meno di associati e l'aggettivo \textit{minimo} \`e riferito al fatto che ha grado minore di tutti i polinomi di $K[x]$ che hanno $\alpha $ come radice. 
 
 	A volte, viene usata la convenzione per cui IL polinomio minimo \`e quello che fra tutti i polinomi minimi ha coefficiente direttore unitario.
 \end{obs}
-\noindent Si procede nello studio del caso in cui $\alpha $ sia algebrico su $K$, quindi $\operatorname{ker} \psi = \langle f(x) \rangle\neq \left\{ 0 \right\} $.
+\noindent Si procede nello studio del caso in cui $\alpha $ sia algebrico su $K$, quindi $\operatorname{Ker} \psi = \langle f(x) \rangle\neq \left\{ 0 \right\} $.
 In questo caso, si nota che $f$ \`e irriducibile su $K[x]$: se $f(x)=h_1(x)h_2(x)$ fosse una fattorizzazione in $K[x]$, con $h_1,h_2$ non costanti, si avrebbe $f(\alpha ) = h_1(\alpha ) h_2(\alpha ) = 0\Rightarrow h_1(\alpha ) = 0$ oppure $h_2(\alpha ) = 0 $, con $\operatorname{deg}  f >\operatorname{deg} h_1, \operatorname{deg} h_2 $, il che \`e assurdo perch\'e $f(x)$ genera il nucleo, ma esistono polinomi di grado minore.
 
 Quindi, visto che $\operatorname{Ker} \psi  = \langle f(x) \rangle$, con $f$ irriducibile, tramite il primo teorema di omomorfismo, si ottiene che $\operatorname{Im} \psi  = K[\alpha ]$ \`e un campo: pi\`u esattamente, \`e un sottocampo di $L$ contenente $\alpha $ e $K$, quindi $K(\alpha )$.
@@ -3710,9 +3710,9 @@ Allo stesso tempo, si osserva che tutti polinomi in $\alpha $ devono appartenere
 	Per definizione, sia $1 + \sqrt[3]{2} $ che il suo inverso $1 / (1 + \sqrt[3]{2}) $ appartengono a $\mathbb{Q}(\sqrt[3]{2}) $, ma si \`e appena visto che $\mathbb{Q}(\sqrt[3]{2}) = Q [\sqrt[3]{2} ] $, perci\`o si vuole capire come pu\`o essere che $1 / (1 + \sqrt[3]{2}) \in Q [\sqrt[3]{2} ] $.
 
 	A questo scopo, si considera l'omomorfismo di valutazione $\psi : \mathbb{Q}[x] \to \mathbb{R}$ che valuta ogni polinomio in $\sqrt[3]{2} $.
-	Si nota che il polinomio minimo di $\sqrt[3]{2} $ \`e $x^3 - 2$, ossia che $\operatorname{ker} \psi  = \langle x^3 - 2 \rangle$, infatti $ \langle x^3 - 2 \rangle\subseteq \operatorname{ker} \psi $, ma si vede anche che $x^3 - 2$ \`e irriducibile in $\mathbb{Q}[x]$\footnote{Questo si pu\`o vedere sia notando che, essendo di grado $3$, dovrebbe avere un fattore di grado $1$, cio\`e ammettere una radice razionale e si osserva subito che $x^3 - 2$ non ne ammette, oppure si usa il criterio di Eisenstein con $p=2$.}, quindi genera $\operatorname{ker} \psi $.
+	Si nota che il polinomio minimo di $\sqrt[3]{2} $ \`e $x^3 - 2$, ossia che $\operatorname{Ker} \psi  = \langle x^3 - 2 \rangle$, infatti $ \langle x^3 - 2 \rangle\subseteq \operatorname{Ker} \psi $, ma si vede anche che $x^3 - 2$ \`e irriducibile in $\mathbb{Q}[x]$\footnote{Questo si pu\`o vedere sia notando che, essendo di grado $3$, dovrebbe avere un fattore di grado $1$, cio\`e ammettere una radice razionale e si osserva subito che $x^3 - 2$ non ne ammette, oppure si usa il criterio di Eisenstein con $p=2$.}, quindi genera $\operatorname{Ker} \psi $.
 
-	Sia, infatti, $g(x)$ un generatore di $\operatorname{ker} \psi $; allora deve dividere $x^3 - 2$, ma $x^3 -2$ \`e irriducibile, quindi, a meno di associati, si ha $g(x) = 1$, oppure $g(x) = f(x)$: il primo caso si esclude perch\'e implica $\operatorname{ker} \psi  = \mathbb{Q}[x]$, che \`e assurdo visto che $\psi (1) = 1$.
+	Sia, infatti, $g(x)$ un generatore di $\operatorname{Ker} \psi $; allora deve dividere $x^3 - 2$, ma $x^3 -2$ \`e irriducibile, quindi, a meno di associati, si ha $g(x) = 1$, oppure $g(x) = f(x)$: il primo caso si esclude perch\'e implica $\operatorname{Ker} \psi  = \mathbb{Q}[x]$, che \`e assurdo visto che $\psi (1) = 1$.
 	Allora:
 	\[
 		Q[\sqrt[3]{2}] \cong \mathbb{Q}[x] / \langle x^3 - 2 \rangle
@@ -3773,7 +3773,7 @@ Lo stesso discorso vale per $\mathbb{Q}[\sqrt[3]{2} \omega^2]$; in questo modo, 
 \noindent I campi $K[\alpha]$ e $K[\beta ]$ possono anche essere uguali, oltre che isomorfi, come succede nel caso di $K = \mathbb{Q}$ e $L = \mathbb{C}$, con $f(x) = x^2 +1$, per cui si trova che $\mathbb{Q}(i) = \mathbb{Q}(-i)$.
 In generale, per\`o, questi sono diversi.
 
-\subsubsection{Grado delle estensioni}
+\subsection{Grado delle estensioni}
 Come gi\`a accennato, dati due campi $F \subseteq K$, $K$ \`e un'estensione di $F$ e si pu\`o vedere come spazio vettoriale su $F$ stesso.
 Da questa struttura di spazio vettoriale, si possono ottenere alcune informazioni.
 \begin{definizione}
@@ -3925,18 +3925,212 @@ Per mostrare l'inclusione inversa, si osserva che, dovendo il campo di spezzamen
 \] 
 	\end{svolgimento}
 \end{esempio}
+\subsection{Approfondimenti sui campi finiti}
+Si studiano i campi da un diverso punto di vista: si cerca di capire se contenogno un sottoanello isomorfo a $\mathbb{Z}$, o meno.
 
+Si inizia col notare che, dato un campo $F$, c'\`e un solo omomorfismo di anelli $\phi : \mathbb{Z}\to F$ determinato dalla condizione $\phi (1) = 1$\footnote{Come preannunciato, si considerano esclusivamente anelli con unit\`a.}.
+Visto, inoltre, che $\mathbb{Z}$ \`e un anello a ideali principali, si ha che $\operatorname{Ker} \phi  = \langle d \rangle$, per qualche $d\ge 0$ intero.
+Per questo, si hanno i due seguenti casi possibili.
+\begin{enumerate}[(a).]
+	\item Il nucleo \`e banale, cio\`e $d=0$ e $\operatorname{Ker} \phi = \langle 0 \rangle$. 
+		In questo caso, $\operatorname{Im} \phi \cong \mathbb{Z}$, cio\`e $F$ contiene un sottoanello isomorfo a $\mathbb{Z}$, che si chiamer\`a ancora $\mathbb{Z}$ per semplicit\`a.
+		Visto, poi, che $F$ \`e un campo, questo deve contenere tutti gli inversi di $\mathbb{Z}$, perci\`o esister\`a anche un sottocampo isomorfo a $\mathbb{Q}$ (che si chiamer\`a ancora $\mathbb{Q}$).
+		In questo caso, si dice che $F$ \`e un campo di \textit{caratteristica} $0$.
+	\item Si ha $d=p$ primo\footnote{Se $d$ non fosse primo, allora $d=rs$, per $r,s$ interi con $1<s,r<d$, per cui $\phi (r)$ e $\phi (s)$ sarebbero diversi da $0$ nel campo $K$, ma $\phi (r)\phi (s) = \phi (rs) = \phi (d) = 0$, che \`e assurdo perch\'e in $K$ non ci sono divisori di $0$ non banali.}; allora $\operatorname{Ker} \phi = \langle p \rangle$, quindi, per il primo teorema di omomorfismo, si ha $\operatorname{Im} \phi \cong \mathbb{Z} /p\mathbb{Z} \cong \mathbb{Z}_p$, per cui $F$ contiene un campo isomorfo a $\mathbb{Z}_p$, che verr\`a ancora indicato con $\mathbb{Z}_p$.
+		In questo caso, si dir\`a che $F$ \`e un campo di \textit{caratteristica} $p$.
+\end{enumerate}
+\begin{obs}
+	Si nota che, nel caso di $d=p$ primo, la somma di $p$ addendi unitari \`e nulla:
+	\[
+		\underbracket{1+ 1+  \ldots + 1}_{p \text{ addendi}} = \phi (1) + \ldots + \phi (1) = \phi (1+\ldots+1) = \phi (p) = 0
+	\] 
+	Considerando $F$ come spazio vettoriale su $\mathbb{Z}_p$, si nota che $\forall v \in F$, la somma di $p$ addendi $v + \ldots + v$ \`e ancora nullo perch\'e
+	\[
+	v + \ldots + v = (1 + \ldots + 1) v = 0 v = 0
+	\] 
+\end{obs}
+\noindent Si considera, ora, un campo finito $L$ (cio\`e con un finito numero di elementi); si nota, intanto, che $L$ non pu\`o avere caratteristica $0$, altrimenti conterrebbe un sottocampo isomorfo a $\mathbb{Q}$, quindi infinito.
 
+Sia, allora, $d = p$ primo la caratteristica di $L$, per cui $L$ contiene un sottocampo isomorfo a $\mathbb{Z}_p$.
+Inoltre, il grado di $L$ su $\mathbb{Z}_p$ deve essere un numero finito, sia questo $n \in \mathbb{N}\setminus\left\{ 0 \right\} $, altrimenti $L$ avrebbe dimensione infinita come spazio su $\mathbb{Z}_p$, quindi avrebbe elementi infiniti.
 
+Sia $\left\{ v_1,\ldots,v_n \right\} $ una base di $L$ su $\mathbb{Z}_p$, quindi ogni elemento di $L$ si scrive, univocamente, come $\lambda _1 v_1 + \ldots + \lambda _n v_n$, con $\lambda _i \in \mathbb{Z}_p, \ i = 1,\ldots,n$.
+Visto che, per questi coefficienti, ci sono $p$ possibili scelte per ciascuno, si ottiene che gli elementi di $L$ sono $p^n$; da questa osservazione, si ottiene la seguente.
+\begin{prop}
+	{}{}
+	La cardinalit\`a di un capmo finito \`e un intero della forma $p^n$, per $p$ primo e $n \in \mathbb{N}\setminus\left\{ 0 \right\} $.
+\end{prop}
+\begin{esempio}
+	Si considera $x^3 + x + 1 \in \mathbb{Z}_2 [x]$\footnote{Si sottintende che $0 $ e $1$ siano identificati con le relative classi di equivalenza $[0]_2, \ [1]_2$.}; questo \`e irriducibile (cio\`e non ha radici in $\mathbb{Z}_2$), pertanto $K := \mathbb{Z}_2 [x] / \langle x^3 + x + 1 \rangle$ \`e un campo.
 
+	Indicando, per ciascun $f(x) \in \mathbb{Z}_2 [x]$, con $\overline{f(x)}$ il laterale $f(x) + \langle x^3 + x + 1 \rangle$, si ha
+	\[
+	K = \left\{ \overline{0}, \overline{1}, \overline{x}, \overline{x+1}, \overline{x^2}, \overline{x^2 + 1}, \overline{x^2 + x}, \overline{x^2 + x + 1} \right\} 
+	\] 
+	Quindi $K$ ha $2^3$ elementi.
+	Si nota che il sottocampo di $K$ che \`e isomorfo a $\mathbb{Z}_2$ \`e $\left\{ \overline{0}, \overline{1} \right\} $; chiamandolo, abusando della notazione, ancora $\mathbb{Z}_2$, si ha $\mathbb{Z}_2 \subset K$.
+	Visto, infine, che una base di $K$ su $\mathbb{Z}_2$ \`e, per esempio, $\left\{ \overline{1}, \overline{x}, \overline{x}^2 \right\} \subset K$, si ritrova proprio $|K|=2^3$.
+\end{esempio}
+\noindent Ora si dimostra l'esistenza di infiniti campi finiti.
+Per farlo, si inizia introducendo un importante omomorfismo.
+\begin{teorema}
+	{Omomorfismo di Frobenius}{}
+	Sia $p$ un numero primo e $K$ un campo di caratteristica $p$; la funzione $\mathcal{F} : K \to K$, definita da $\mathcal{F} (a) = a^p, \ \forall a \in K$, \`e un omomorfismo iniettivo.
+	\begin{proof}
+		Si mostra intanto che $\mathcal{F} $ \`e un omomorfismo.
+		Si ha $\mathcal{F} (1) = 1$ e, per ogni $a,b \in K$, $\mathcal{F} (ab) = (ab)^p = a^p b^p = \mathcal{F} (a) \mathcal{F} (b)$.
 
+		Quanto alla somma, bisogna mostrare la relazione $(a+b)^p = a^p + b^p$; questa relazione segue per lo stesso motivo della seconda dimostrazione del piccolo teorema di Fermat: l'uguaglianza si ha perch\'e \`e possibile sviluppare il primo membro tramite il binomio di Newton, per poi utilizzare che i coefficienti $\binom{p}{i}$, con $1 \le i\le p-1$, sono multipli di $p$, quindi sono nulli in un campo di caratteristica $p$.
 
+		Per l'iniettivit\`a, invece, si nota che $\operatorname{Ker} \mathcal{F} $ \`e un ideale proprio di $K$ perch\'e non pu\`o essere $\operatorname{Ker} \mathcal{F} = K$, visto che $\mathcal{F} (1) = 1$.
+		Essendo $K$ un campo, l'unico ideale proprio \`e $\langle 0 \rangle$.
+	\end{proof}
+\end{teorema}
+\begin{obs}
+	Per quanto appena dimostrato, anche tutte le potenze $\mathcal{F} ^j, \ j \in \mathbb{Z}^{>0} $ sono omomorfismi iniettivi.
+\end{obs}
+\begin{teorema}
+	{}{}
+	Sia $K$ un campo e sia $\psi :K \to K$ un omomorfismo; allora l'insieme
+	\[
+\operatorname{Fix} \psi = \left\{ k \in K  \mid \psi (k) = k \right\} 
+	\] 
+	degli elementi che rimangono invariati sotto $\psi $ forma un sottocampo di $K$.
+	\begin{proof}
+		Intanto si mostra che \`e un sottoanello di $K$. 
+		Si inizia con l'osservare che $0 \in \operatorname{Fix} \psi $; inoltre, per $r \in \operatorname{Fix} \psi $:
+		\[
+		\psi (-r) = -\psi (r) = -r\implies -r \in \operatorname{Fix} \psi 
+		\] 
+		Dati, poi, $r,s \in \operatorname{Fix} \psi $:
+		\[
+		\psi (r+s) = \psi (r) + \psi (s) = r + s
+		\] 
+		Quindi $\operatorname{Fix} \psi $ \`e un sottogruppo rispetto alla somma.
 
+		Analogamente, si dimostra che $rs \in \operatorname{Fix} \psi $ perch\'e $\psi (rs) = \psi (r) \psi (s) = rs$ e, per definizione, si ha $1 \in \operatorname{Fix} \psi $, quindi $\operatorname{Fix} \psi $ \`e un sottoanello di $K$.
 
+		Rimane da dimostrare l'esistenza dell'inverso moltiplicativo. Sia, quindi $r \in \operatorname{Fix} \psi , \ r \neq 0 $; allora
+		\[
+		\psi (r^{-1} ) = \psi (r)^{-1} = r^{-1} 
+		\] 
+		quindi anche $r ^{-1 } \in \operatorname{Fix} \psi $, per cui \`e effettivamente un sottocampo di $K$.
+	\end{proof}
+\end{teorema}
+\noindent Sia $L$ un campo finito con $p^n$ elementi.
+Il suo gruppo moltiplicativo $L^* = L \setminus \left\{ 0 \right\} $ ha, quindi, cardinalit\`a $p^n -1$, perci\`o, per un corollario del teorema di Lagrange, $\forall g \in L^*$: $g^{p^n - 1} = 1$\footnote{Questo perch\'e l'ordine di un elemento di un gruppo divide l'ordine del gruppo stesso, cio\`e $g ^{|G|} = g^{k \operatorname{ord}g } =(e)^k =e$.}.
+Considerando anche lo $0$, per $g \in L$, si ha $g^{p^n} = g$.
 
+Questo implica che il polinomio $x^{p^n} - x \in \mathbb{Z}_p[x]$ ha esattamente $p^n$ soluzioni in $L$.
+Pi\`u in particolare, tutti gli elementi di $L$ sono radici di $x^{p^n} -x$ e, questo, si fattorizza come prodotto di fattori di grado $1$ in $L[x]$.
+Allora $L$ \`e un capmo di spezzamento di $x^{p^n} -x$ su $\mathbb{Z}_p$.
 
+\begin{teorema}
+	{}{}
+	Ogni campo finito ha cardinalit\`a $p^n$, con $p$ numero primo e $n$ intero positivo.
+	Inoltre, $\forall p$ primo e $n \in \mathbb{Z}^{>0} $, esiste un campo finito di cardinalit\`a $p^n$.
+	\begin{proof}
+		Avendo gi\`a dimostrato che questa \`e una condizione necessaria, cio\`e un campo, per essere finito, deve avere cardinalit\`a $p^n$, si dimostra che questa \`e anche una condizione sufficiente.
+L'obiettivo \`e mostrare l'esistenza di un generico campo di $p^n$ elementi, a partire da $p$ primo e $n$ intero positivo generici.
 
+Per iniziare, si assume di avere un'estensione $E$ di $\mathbb{Z}_p$, ottenuta tramite opportuni quozienti, dove $x^{p^n} -x$ ha tutte le radici.
+Questa estensione ha grado finito\footnote{Seguendo il processo dei quozienti, si pu\`o stimare che il suo grado sar\`a $\le  n!$.}.
 
+In $E$, si considera il campo di spezzamento $R$ di $x^{p^n} -x$ su $\mathbb{Z}_p$; questo $R$ ha caratteristica $p$ e ha dimensione finita su $\mathbb{Z}_p$ (visto che \`e un sottocampo di $E$), quindi \`e, a sua volta, un campo finito.
 
+Sia, ora, $L = \left\{ r \in R  \mid \mathcal{F} ^n (r) = r \right\} $, con $\mathcal{F} :R \to R$ omomorfismo di Frobenius.
+Per quanto visto, l'insieme dei punti fissi di un omomorfismo \`e un sottocampo, di $R$ in questo caso.
+Ricordando la definizione di omomorfismo di Frobenius, si osserva che gli elementi di $L$ sono anche le radici di $x^{p^n} - x$.
+Queste sono $p^n$ in quanto sono tutte distinte fra loro\footnote{Per vedere questo, si usa il criterio della derivata: la derivata di $x^{p^n} -x$ \`e $-1$, visto che $R$ ha caratteristica $p$, quindi non ha radici in comune con $x^{p^n} -x$.}, da cui segue che $L$ \`e un campo con $p^n$ elementi.
+Si conclude, inoltre, che $L$ coincide con $R$.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	{}{}
+	Per ogni coppia di numeri $p,n$, con $p$ primo e $n \in \mathbb{Z}^{>0}$, esiste un polinomio irriducibile di grado $n$ in $\mathbb{Z}_p[x]$.
+	\begin{proof}
+		Sia $K$ un campo finito con $p^n$ elementi e sia $\alpha $ un generatore del gruppo moltiplicativo $K^*$, che \`e ciclico per il teorema \ref{th:gmfc}; il campo $\mathbb{Z}_p(\alpha )$, allora, coincide con $K$ perch\'e $\mathbb{Z}_p(\alpha )$ \`e un sottoinsieme di $K$ contenente $0$ e tutte le potenze di $\alpha $, cio\`e tutti gli elementi di $K$.
+
+		Ne segue che $\mathbb{Z}_p(\alpha ) = K$ \`e un'estensione di grado $n$ su $\mathbb{Z}_p$: chiamando $f(x)$ il polinomio minimo di $\alpha $, visto che $\mathbb{Z}_p(\alpha ) \cong \mathbb{Z}_p[x] / \langle f(x) \rangle$, si ha che $\operatorname{deg} f = n$.
+	\end{proof}
+\end{corollario}
+\begin{obs}
+	Si \`e mostrato che se un campo $L$ \`e finito, allora ha caratteristica $p$, ma il viceversa non \`e vero: esistono campi di caratteristica $p$ che non sono finiti, come, per esempio
+	\[
+		\mathbb{Z}_p(x) = \left\{ \frac{f(x)}{g(x)} \mid f(x),g(x) \in \mathbb{Z}_p[x], \ g(x) \neq 0 \right\} 
+	\] 
+	il campo delle funzioni razionali.
+\end{obs}
+\begin{teorema}
+	{}{}
+	Sia $f(x) \in \mathbb{Z}_p[x]$ irriducibile e di grado $n$; allora il campo $K = \mathbb{Z}_p[x] / \langle f(x) \rangle$ \`e un campo di spezzamento per $f(x)$ su $\mathbb{Z}_p$.
+	\begin{proof}
+		Si sa che il campo $K = \mathbb{Z}_p[x] / \langle f(x) \rangle$ ha $p^n$ elementi; in questo campo, $f(x)$ ha una radice $\alpha $, ma questa \`e anche radice di $x^{p^n} -x$, visto che ogni elemento di $K$ \`e radice di tale polinomio.
+		Quindi, essendo che $f(x)$ \`e irriducibile, questo \`e il polinomio minimo di $\alpha $, quindi $f(x)  \mid  x^{p^n} -x$.
+		Segue che le radici di $f(x)$ sono, in particolare, le radici di $x^{p^n} -x$, pertanto si trovano tutte in $K$.
+
+		Per concludere la dimostrazione, \`e sufficiente osservare che nessun sottocampo proprio di $K$ pu\`o contenere, per ragioni di grado, tutte le radici di $f(x)$: se esistesse un sottocampo contenente $\alpha $, questo conterrebbe anche $\mathbb{Z}_p(\alpha )$, che ha grado $n$ su $\mathbb{Z}_p$, quindi coinciderebbe con $K$, anch'esso di grado $n$ su $\mathbb{Z}_p$.
+	\end{proof}
+\end{teorema}
+\begin{teorema}
+	{}{}
+	Sia $p$ primo e $n \in \mathbb{Z}^{>0} $; allora $x^{p^n} -x$ \`e il prodotto di tutti i polinomi monici irriducibili di $\mathbb{Z}_p[x]$, il cui grado $d$ \`e divisore di $n$.
+	\begin{proof}
+		Sia $q(x)$ irriducibile in $\mathbb{Z}_p[x]$ e di grado $d$ tale che $d  \mid n$.
+		Si mostra che $q(x)  \mid x^{p^n} -x$.
+
+		Si considera il campo $L = \mathbb{Z}_p[x] / \langle q(x) \rangle$, che \`e un campo con $p^d$ elementi.
+		Per quanto visto, ogni elementi di $L$ soddisfa $y^{p^d} =y$ e, in $L$, si ha una radice $\alpha $ di $q(x)$.
+		Per tale $\alpha $, allora:
+		\[
+		\alpha ^{p^d} = \alpha 
+		\] 
+		Visto che $d  \mid n$, esiste un intero $s$ tale che $sd = n$, quindi
+		\[
+		\alpha ^{p^n} = (\alpha ^{p^d} ) ^{p^{(s-1)d} } = \alpha ^{p^{(s-1)d} } 
+		\] 
+		A partire da questa, si pu\`o mostrare, per induzione su $s$, che $\alpha ^{p^n} =\alpha $, per cui $\alpha $ \`e una radice di $x^{p^n} -x$.
+		Se ne conclude che $q(x)$ e $x^{p^n} -x$ hanno una radice in comune, $\alpha $, in $L$.
+		Essendo $q(x)$ irriducibile, esso \`e il polinomio minimo di $\alpha $ su $\mathbb{Z}_p[x]$, quindi deve valere $q(x)  \mid x^{p^n} -x$.
+
+		Ora si dimostra il viceversa, cio\`e che se $f(x)$ \`e un polinomio irriducibile di grado $d$ che divide $x^{p^n} -x$, allora $d  \mid  n$.
+
+		A questo proposito, sia $L$ un campo con $p^n$ elementi; questo si \`e visto essere un campo di spezzamento di $x^{p^n} -x$ e, visto che $f(x)  \mid x^{p^n} -x$, significa che $L$ contiene anche tutte le radici di $f(x)$.
+Sia $\beta $ una di queste radici; il polinomio minimo di $\beta $ su $\mathbb{Z}_p$ \`e proprio $f(x)$, visto che \`e irriducibile.
+Allora, il sottocampo $K' = \mathbb{Z}_p(\beta )$ di $L$ \`e isomorfo a $K = \mathbb{Z}_p[x] / \langle f(x) \rangle$, quindi $K'$ ha $p^d$ elementi e ha grado $d$ su $\mathbb{Z}_p$.
+Per\`o, $K'$ \`e un sottocampo di $L$, che ha grado $n$ su $\mathbb{Z}_p$, quindi, per il teorema \ref{th:efth}, segue che $d  \mid n$.
+
+Questo significa che, nella fattorizzazione in irriducibili di $x^{p^n} -x$ in $\mathbb{Z}_p[x]$, i fattori che compaiono sono, a meno di associati, tutti e soli i polinomi irriducibili monici di grado $d$ che divide $n$.
+Considerando, per finire, il coefficiente del termine di grado massimo, si nota che il prodotto di tutti i polinomi irriducibili monici di grado $d$ che divide $n$ \`e esattamente pari a $x^{p^n} -x$ (non a meno di associati).
+	\end{proof}
+\end{teorema}
+\noindent Per terminare, \`e possibile far vedere che, a meno di isomorfismi, esiste un solo campo finito con $p^n$ elementi.
+\begin{teorema}
+	{}{}
+	Due campi finiti con $p^n$ elementi sono isomorfi.
+	\begin{proof}
+		Siano $K_1,K_2$ due campi con $p^n$ elementi.
+		Sia $\alpha _1$ generatore di $K_1^*$ e $\alpha _2$ di $K_2^*$ (che sono due gruppi moltiplicativi ciclici).
+		Si nota che $K_1=\mathbb{Z}_p(\alpha _1)$ e $K_2 = \mathbb{Z}_p(\alpha _2)$, come osservato in precedenza.
+		Inoltre, se $f_1(x)$ \`e il polinomio minimo di $\alpha _1$ su $\mathbb{Z}_p$ e $f_2(x)$ \`e il minimo di $\alpha _2$ su $\mathbb{Z}_p$, allora
+		\[
+			K_1=\mathbb{Z}_p(\alpha _1) \cong \mathbb{Z}_p[x] / \langle f_1(x) \rangle \hspace{1cm}K_2 = \mathbb{Z}_p(\alpha _2) \cong \mathbb{Z}_p[x] / \langle f_2(x) \rangle
+		\] 
+		e i due polinomi sono entrambi irriducibili e di grado $n$.
+
+		Si sa, anche, che entrambi dividono $x^{p^n} -x$ per il teorema precedente, quindi, pensando, per esempio, a $K_1$ e ricordando che i suoi $p^n$ elementi sono tutte le radici di $x^{p^n} -x$, si conclude che $f_2(x)$ ha $n$ radici in $K_1$, visto che le sue radici sono anche radici di $x^{p^n} -x$.
+
+		Sia $\beta $ una tale radice; allora $\mathbb{Z}_p(\beta )$ \`e un sottocampo di $K_1$ e $\mathbb{Z}_p(\beta )\cong \mathbb{Z}_p[x] /\langle f_2(x) \rangle$.
+		Visto che $\mathbb{Z}_p(\beta )$ ha grado $n$, per ragioni dimensionali, deve coincidere con $K_1$, quindi $K_1 = \mathbb{Z}_p(\beta ) \cong \mathbb{Z}_p[x] / \langle f_2(x) \rangle$.
+		Per finire, si sapeva che $K_2\cong \mathbb{Z}_p[x] / \langle f_2(x) \rangle$; prendendo 
+		\[
+			\Gamma:K_1\to \mathbb{Z}_p[x] / \langle f_2(x) \rangle\hspace{1cm}\Theta :K_2 \to \mathbb{Z}_p [x] / \langle f_2(x) \rangle
+		\] 
+		i due isomorfismi in questione, si ha che $\Theta^{-1} \circ \Gamma:K_1\to K_2$ \`e un isomorfismo.
+	\end{proof}
+\end{teorema}
+\begin{obs}
+	Si nota che l'isomorfismo utilizzato nella precedente dimostrazione, $\Theta^{-1} \circ \Gamma$, visto che manda $1$ in $1$, si comporta come l'identit\`a sulla copia di $\mathbb{Z}_p$ contenuta in $K_1$ e $K_2$.
+\end{obs}
 
 \end{document}
