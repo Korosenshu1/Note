@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  10 AUG 2025 14:42
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  12 AUG 2025 00:20
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1616,12 +1616,33 @@ Overfull \hbox (13.69316pt too wide) in paragraph at lines 266--267
 
 [4]
 
+[5]
+
+[6]
+
+[7]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 461.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+
+[8]
+
+[9]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7.3> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 498.
+
+
+[10]
+
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
 
 
 
-[5] (./master.aux)
+[11] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1636,21 +1657,27 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49135 strings out of 475506
+ 49226 strings out of 475506
  100000,1977958 words of node,token memory allocated
- 910 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 6 glue, 9 kern, 1 glyph, 42 attribute, 103 glue_spec, 23 attribute_list, 2 write nodes
-   avail lists: 1:4,2:878,3:253,4:68,5:732,6:28,7:4642,8:61,9:453,10:8,11:435
- 70772 multiletter control sequences out of 65536+600000
- 183 fonts using 11985567 bytes
- 124i,10n,114p,10936b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1100 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 7 glue, 12 kern, 1 glyph, 98 attribute, 103 glue_spec, 51 attribute_list, 2 write nodes
+   avail lists: 1:3,2:892,3:327,4:68,5:821,6:32,7:5875,8:76,9:453,10:29,11:536
+ 70819 multiletter control sequences out of 65536+600000
+ 188 fonts using 12370047 bytes
+ 124i,10n,114p,10936b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.4'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.3'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
-Output written on master.pdf (5 pages, 942611 bytes).
+Output written on master.pdf (11 pages, 980680 bytes).
 
-PDF statistics: 119 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 131072)
- 40 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 198 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 131072)
+ 56 words of extra memory for PDF output out of 10000 (max. 100000000)
 

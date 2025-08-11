@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1754829755.41686 "master.tex" "master.pdf" "master" 1754829757.89935 0
+["lualatex"] 1754950820.00793 "master.tex" "master.pdf" "master" 1754950822.51833 0
   "/etc/texmf/tex/generic/config/language.dat" 1742770839.44044 5960 3d5d21f87da1c1249bc1ecea1895a000 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1753436444.92749 127314 9ecf3684c39cfc70af3bf4aa08c05ccb ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1753436444.75849 441534 f06c52b9820571f656d9c5ea12c73ddb ""
@@ -7,6 +7,7 @@
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm" 1742685315 6628 34c39492c0adc454c1c199922bba8363 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvbc8t.tfm" 1742685315 16004 6e60cc8746f074cea1a1905d84c1cd84 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm" 1742685315 2520 53e01eef820ca829e42c1333c3fd02b9 ""
+  "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm" 1742685315 1348 c311631dfec4123b7faa7f864709e626 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1742685315 4712 9ef4d7d106579d4b136e1529e1a4533c ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm" 1742685315 7040 b2bd27e2bfe6f6948cbc3239cae7444f ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvrc8t.tfm" 1742685315 16152 ab9d47b69dd04cab59fcf780bd0eed36 ""
@@ -55,6 +56,7 @@
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf" 1742685315 2340 0efed6a948c3c37d870e4e7ddb85c7c3 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvbc8t.vf" 1742685315 3612 e9d0fc85037b9bacac690560a2ad3462 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf" 1742685315 1372 dc841a9f00a1a11b1443367ae6c5588e ""
+  "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf" 1742685315 3556 570286160ebfdd10d887aaa718e2e64d ""
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf" 1742685315 2344 44ff28c9ef2fc97180cd884f900fee71 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvrc8t.vf" 1742685315 3612 a448b9c1ed57bed50ea118ae6680e645 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvro8t.vf" 1742685315 2348 717f0e01beff9c30c0df4945e471886f ""
@@ -303,6 +305,7 @@
   "/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty" 1742685315 1499 de0ad166b701b820e03588a29bb30798 ""
   "/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd" 1742685315 1679 51f99a09d5536398d3a0ad1d44df9625 ""
   "/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd" 1742685315 1483 47067fbe7c3ffed1ede7aaa7b8549d7a ""
+  "/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd" 1742685315 1181 ec0c641cd2e0fb69a449534a0279b5ca ""
   "/usr/share/texmf-dist/tex/latex/pythonhighlight/pythonhighlight.sty" 1742685315 5560 807e8d9b51a5f4dd2df70f3d463e6978 ""
   "/usr/share/texmf-dist/tex/latex/refcount/refcount.sty" 1742685315 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1742685315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
@@ -377,11 +380,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742771058 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1742770958 5585379 b0d68a936bd79e2b84048f25799faebe ""
   "front.jpeg" 1754820746.10745 862401 d3cac176f3807c38a376814a6cf66fb7 ""
-  "master.aux" 1754829757.73429 2007 90f509a6a3763e0ef473a38a1b97738d "lualatex"
+  "master.aux" 1754950822.35088 3051 2cecddea287d3ea3c93a6d402eb24fe7 "lualatex"
   "master.ind" 1754820767.83845 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1754829757.47829 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "master.tex" 1754829751.36629 13445 ff6533f7bbf998adb662841a56fd8cdc ""
-  "master.toc" 1754829757.73629 391 e7742403bd3eb55dba4b53171c820b0d "lualatex"
+  "master.out" 1754950822.00688 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "master.tex" 1754950817.97988 29562 792565738668f066aafb1cba2fb5aee5 ""
+  "master.toc" 1754950822.35403 546 5f192b91dc7e579f95a48da7c6c1aaab "lualatex"
   (generated)
   "master.aux"
   "master.idx"
@@ -390,8 +393,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1754820767.75659 "master.idx" "master.ind" "master" 1754829757.89923 0
-  "master.idx" 1754829756.37535 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1754820767.75659 "master.idx" "master.ind" "master" 1754950822.51821 0
+  "master.idx" 1754950820.94388 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"
