@@ -358,7 +358,10 @@ Come conseguenza del teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 	\] 
 \end{osservazione}
 
-\noindent Si considera, ora, l'azione di coniugio di un gruppo $G$ su $X = \left\{ H \subseteq G  \mid H< G \right\} $ e $\gamma(g) = \psi _g$ tale che $\psi_g (H) = gH g^{-1} $. 
+\subsubsection{Azione di coniugio}
+
+
+Si considera, ora, l'azione di coniugio di un gruppo $G$ su $X = \left\{ H \subseteq G  \mid H< G \right\} $ e $\gamma(g) = \psi _g$ tale che $\psi_g (H) = gH g^{-1} $. 
 Questa \`e un'azione ed \`e ben definita.
 \begin{proof}
 	Per dimostrare che \`e un'azione, si deve mostrare che la mappa $g \stackrel{\gamma}{\mapsto} \psi _g$ \`e un omomorfismo e che $\psi _g : X \to X$ sia biettiva.
@@ -382,7 +385,8 @@ Per il teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 	\lvert G \rvert  = \lvert N_G(H) \rvert \lvert \operatorname{Orb} (H) \rvert 
 \end{equation}
 da cui si ricava anche che $H \lhd G \iff N_G(H) = G \iff \operatorname{Orb} (H) = \left\{ H \right\} $.
-\subsection{Cardinalit\`a}
+\subsubsection{Formula delle classi}
+
 Si ricorda che le orbite definite da un'azione di un gruppo $G$ su un insieme $X$ formano una partizione di $X$ stesso, in quanto sono delle classi di equivalenza.
 Se $\lvert X \rvert < \infty$, si ha:
 \begin{equation}\label{ossclass}
@@ -446,8 +450,8 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 		Quindi deve essere $\lvert Z(G) \rvert  = p^2 = \lvert G \rvert \Rightarrow Z(G) = G$, da cui $G$ \`e abeliano.
 	\end{proof}
 \end{prop}
-\begin{lemma}\label{cab}
-	[Teorema di Cauchy abeliano]
+\subsection{Teoremi di Cauchy e Cayley}
+\begin{lemma}[Teorema di Cauchy abeliano]\label{cab}
 	Sia $p$ un primo e $G$ un gruppo abeliano finito; se $p  \mid  |G|$, allora $\exists x \in G : \operatorname{ord}(x) =p$.
 	\begin{proof}
 		Sia $\lvert G \rvert = pn$; si procede per induzione su $n$.
@@ -525,6 +529,9 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 		Da questo, segue che $S(G)$ contiene una copia isomorfa a $G$.
 	\end{proof}
 \end{teorema}
+\subsection{Commutatore e gruppo derivato}
+
+
 \begin{definizione}
 	Sia $G$ un gruppo e $S \subset G$ un suo sottoinsieme; allora $\langle S \rangle$ \`e il pi\`u piccolo sottogruppo di $G$ contenente anche $S$.
 \end{definizione}
@@ -555,13 +562,59 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 	\] 
 \end{definizione}
 \begin{definizione}
-	[Gruppo dei commutatori]
+	[Gruppo derivato]
 	Dato un gruppo $G$, si definisce \textit{gruppo dei commutatori}, o \textit{derivato} di $G$, il gruppo 
 	\[
 		G ' = \langle [g,h]  \mid g,h \in G \rangle = [G:G]
 	\] 
 \end{definizione}
-\begin{center}
-	Scrivere fine pagina 14	
-\end{center}
+\noindent Ora si caratterizza il gruppo derivato.
+Intanto, si ricorda che $\langle S \rangle$ \`e abeliano $\iff \forall s_1,s_2\in S , \  s_1s_2=s_2s_1$, $\langle S \rangle$ \`e normale $\iff \forall g \in G, \forall s \in S, \ gsg^{-1} \in \langle S \rangle$ e, infine, $\langle S \rangle$ \`e caratteristico $\iff \forall f \in \operatorname{Aut} (G) ,\ \forall s \in S$ si ha $f(s) \in S$.
+Applicando queste alla definizione di commutatore, si ottiene la seguente.
+\begin{prop}\label{propderiv}
+	[Propriet\`a del derivato]
+	Sia $G$ un gruppo e $G'$ il suo derivato; allora:
+	\begin{enumerate}[(a).]
+		\item $G ' = \left\{ e \right\}  \iff G$ \`e abeliano;
+		\item $G' \lhd G$;
+		\item $G'$ \`e caratteristico in $G$;
+		\item dato $H \lhd G$, se $G / H$ \`e abeliano, allora $G' \subset H$.
+	\end{enumerate}
+	\begin{proof}
+		La (a) \`e immediata perch\'e $G' = \left\{ e \right\} \iff \forall g_1,g_2 \in G, \ [g_1,g_2] = e $, cio\`e $g_1$ e $g_2$ commutano, da cui $G$ abeliano.
+
+		Per la (b), $\forall x \in G, \ \forall g,h \in G $, si ha 
+		\[
+			\begin{split}
+				x[g,h]x^{-1}  &= xghg^{-1}h^{-1}x^{-1}= xgx^{-1}xhx^{-1}xg^{-1}x^{-1}xh^{-1}x^{-1}\\
+					      &=[xgx^{-1}, xhx^{-1}] \in G'
+			\end{split}
+		\] 
+	Per la (c), si nota che $\forall f \in \operatorname{Aut} (G), \ \forall g,h \in G$, si ha:
+	\[
+		f([g,h]) = f(ghg^{-1}h^{-1}) = f(g) f(h) f(g)^{-1} f(h)^{-1} = [f(g), f(h)] \in G'
+	\] 
+	Infine, per la (d), se $H \lhd G$ e $G / H$ \`e abeliano, si ha $\forall x,y \in G$
+	\[
+		xHyH =yH xH\Rightarrow xyH = yxH \implies x^{-1}y^{-1}xy \in H \Rightarrow [x,y] \in H
+	\] 
+	da cui $H \supset G' $.
+	\end{proof}
+\end{prop}
+\begin{corollario}
+	Sia $G$ un gruppo e $G'$ il suo derivato; allora $G / G'$ \`e sempre abeliano ed \`e chiamato \textit{abelianizzazione} di $G$, nel senso che \`e il pi\`u grande quoziente abeliano di $G$.
+	\begin{proof}
+		Si mostra che $G / G'$ \`e sempre abeliano. 
+		Siano, quindi $gG', hG' \in G / G'$ due classi laterali; allora si osserva che
+		\[
+			(gG') (hG') = ghG' = hg [g^{-1},h^{-1}] G' = hg G'
+		\] 
+		visto che $g^{-1}h^{-1}gh=[g^{-1},h^{-1}] \in G'$.
+		Allora, dalla propriet\`a (d) della precedente proposizione (\ref{propderiv}), si ha $G' \subset H =G'$, cio\`e in questo caso si ha l'inclusione nell'insieme pi\`u piccolo, ovvero proprio $G'$. 
+		Questo vuol dire che $G /G'$ \`e il quoziente con pi\`u elementi che sia abeliano perch\'e ottenuto tramite quoziente con $G'$, che \`e l'insieme pi\`u piccolo che soddisfa la propriet\`a\footnote{Per controposizione, se $G'\not\subset H\implies G/H$ non abeliano.}.
+	\end{proof}
+\end{corollario}
+\subsection{Gruppi diedrali}
+
+
 \end{document}
