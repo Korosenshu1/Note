@@ -34,13 +34,13 @@
 \usepackage{pythonhighlight}
 \usepackage{enumerate}
 \usepackage{graphicx}
-\usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{setspace}
 \setstretch{1.2}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
 \usepackage{faktor}
+\usepackage{tikz-cd}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Algebra}
@@ -55,7 +55,8 @@
 {5pt}% measure of space to leave above the theorem. E.g.: 3pt
 {5pt}% measure of space to leave below the theorem. E.g.: 3pt
 {\normalfont}% name of font to use in the body of the theorem
-{15pt}% measure of space to indent
+%{15pt}% measure of space to indent
+{\parindent}% measure of space to indent
 {\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
@@ -175,10 +176,10 @@ title=#1
 
 
 % Font
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}	
-\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
-\usepackage[noSTIXops,scaled=1.1]{newtxsf}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}	
+%\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
+%\usepackage[noSTIXops,scaled=1.1]{newtxsf}
 
 
 \begin{document}
@@ -645,7 +646,7 @@ Si pu\`o, inoltre, verificare che $M_\rho ^n = \operatorname{Id} $, $M_\sigma ^2
 
 Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come elementi di $D_n$, non sono legati da alcuna relazione perch\'e, altrimenti, lo sarebbero anche le loro matrici associate, cosa che sarebbe assurda. 
 \end{osservazione}
-\begin{prop}
+\begin{prop}\label{dnitems}
 	Tutti gli elementi di $D_n$ si scrivono come $\sigma \rho ^i$, oppure $\rho ^i$, con $i \in \left\{ 0,\ldots,n-1 \right\} $.
 	\begin{proof}
 	Sia $g \in D_n$; allora $g$ sar\`a una generica composizione di riflessioni e rotazioni del tipo $g= \rho ^{a_1} \sigma ^{b_1} \ldots \rho ^{a_k} \sigma ^{b_k} $, dove $a_i \in \mathbb{Z}$ e $b_j \in \left\{ 0,1 \right\} $. 
@@ -660,7 +661,181 @@ Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come ele
 			Se, invece, $c_1 = 0$ (cio\`e la \textit{parola} inizia con $\sigma $), allora $g = \rho ^{-c_2}\ldots \rho^{-c_m}  = \rho ^{d'}  $, con $d ' \equiv -\sum_{i=2}^{m} c_i \pmod{n} $.
 			\end{proof}
 \end{prop}
-\noindent Da questa proposizione, segue direttamente che se $\rho ,\sigma  \in D_n$, allora $\langle \rho ,\sigma  \rangle< D_n$
+\noindent Grazie alla precedente proposizione, \`e possibile definire $\rho ^{[i]} = \rho ^i$, con $[i] \in \mathbb{Z} / n\mathbb{Z}$, visto che $\rho ^n = e$.
 
-Grazie alla precedente proposizione, \`e anche possibile definire $\rho ^{[i]} = \rho ^i$, con $[i] \in \mathbb{Z} / n\mathbb{Z}$, visto che $\rho ^n = e$.
+Inoltre, se $\rho ,\sigma  \in D_n$, allora $\langle \rho ,\sigma  \rangle< D_n$; per\`o, per quanto detto finora, si ha $\lvert \langle \rho ,\sigma  \rangle \rvert = 2n$ perch\'e $\rho ^n = e= \sigma ^2 $, quindi, per ragioni di cardinalit\`a, segue che $D_n = \langle \rho ,\sigma  \rangle$.
+
+\subsubsection{Sottogruppi di $D_n$}
+\hfill
+
+\textbf{Numero di elementi di ordine k.} 
+Sia $\rho $ una rotazione in $D_n$; si considera $\langle \rho  \rangle\cong C_n < D_n$\footnote{Qui, con $C_n$ si indica un generico gruppo ciclico di ordine $n$.}.
+
+Essendo $C_n$ ciclico, vi sono $\phi (k)$ elementi di ordine $k$, se $k  \mid  n$.
+Oltre alle $n$ rotazioni $\rho ^i$, in $D_n$ sono presenti anche le $n$ riflessioni $\sigma \rho ^i$; osservando che $\sigma \rho ^i \sigma \rho ^i = \rho ^{-i}\rho ^{i} = e $, si conclude che se $n$ \`e pari, vi sono $n+1$ elementi di ordine $2$ (cio\`e le $n$ riflessioni e $\rho ^{n / 2} $), mentre se $n$ \`e dispari, vi sono $n$ elementi di ordine $2$.
+Ricapitolando:
+\begin{equation}
+\# \left\{ \text{elementi di ordine } k \right\} = \begin{cases}
+	n + 1 &,\ \text{ se } k=2 \text{ e } n \text{ pari}\\
+	n  &,\  \text{ se }k=2 \text{ e } n \text{ dispari}\\
+	\phi (k)&,\ \text{ se } k \mid n\\
+	0 &,\ \text{ altrimenti }
+\end{cases}
+\end{equation}
+visto che le $n$ riflessioni sono tutte di ordine $2$ e l'esistenza di $\rho ^{n / 2} $ dipende dalla pairt\`a di $n$.
+\vspace*{5pt}
+
+ \textbf{I sottogruppi.} 
+Nel punto precedente, si \`e notato che $C_n$ \`e uno dei sottogruppi.
+Inoltre, i sottogruppi di $C_n$ sono noti: ne esiste uno per ogni divisore dell'ordine del gruppo, cio\`e $n$ in questo caso, per cui se $H < D_n$ e $H < C_n$, allora $H$ \`e l'unico sottogruppo di ordine $\lvert H \rvert $.
+Se, invece $H< D_n$ e $H \not < C_n$, allora $H$ contiene almeno una riflessione $\tau $.
+\begin{prop}
+	Si ha $(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$.
+	\begin{proof}
+		Si considera 
+	\[
+\begin{tikzcd}
+D_n \arrow[r, "\gamma"] 
+    \arrow[rr, bend right=30, "{\varphi }"'] & 
+\mathrm{GL}_2(\mathbb{R}) \arrow[r, "\det"] & \{\pm 1\}\cong \mathbb{Z}/2\mathbb{Z}
+\end{tikzcd}
+\]
+dove $\gamma$ \`e l'omomorfismo definito che a $\rho $ e $\sigma $ associa le relative matrici, mentre le matrici di $\mathrm{GL} _2(\mathbb{R})$ sono mappate a $\left\{ \pm 1 \right\} $ tramite il determinante: $\det M_\rho  = 1$ e $\det M_\sigma = -1$.
+La mappa $\phi = \gamma\circ \det$ \`e un omomorfismo suriettivo proprio per come \`e definita $\gamma$ (cio\`e \`e un omomorfismo) e per il teorema di Binet per cui $\det (M^i_\rho M^j_\sigma ) = \det(M_\rho )^i \det (M_\sigma )^j = 1 ^i (-1)^j = 1 \iff j= 0$.
+
+Considerando, quindi, $\varphi  :D_n \to \mathbb{Z} / 2\mathbb{Z}$, la sua restrizione $\varphi _H$ con $H < D_n$ e $H\not < C_n$ \`e suriettiva e il suo kernel \`e $H\cap C_n$; per il I teorema di omomorfismo, allora $H / (H\cap C_n) \cong \mathbb{Z} / 2\mathbb{Z}$.
+Per il teorema di Lagrange, poi, si ha $\lvert H \rvert / \lvert H\cap C_n \rvert = \lvert \mathbb{Z} / 2 \mathbb{Z} \rvert $, per cui $\lvert H \rvert  = 2 \lvert H\cap C_n \rvert $.
+
+Si nota che $\tau H \cap C_n \not \subset H \cap C_n$ perch\'e se $h \in H$, allora $\det (M_\tau M_h) = \det M_\tau \det M_h = -1$, per cui i due insiemi sono disgiunti; inoltre, $\tau h_1 = \tau h_2 \Rightarrow h_1=h_2$, per cui $\lvert \tau H \cap C_n \rvert = \lvert H \cap C_n \rvert $.
+Considerando, allora
+\[
+\psi  : 
+\begin{array}
+	{c c c}
+	H \cap C_n & \longrightarrow  & \tau  H \cap C_n\\
+	h & \longmapsto &\tau  h
+\end{array}
+\] 
+questa \`e biettiva.
+Ora, $H \cap C_n = \langle \rho ^m \rangle= \left\{ e ,\rho ^m , \rho ^{2m} ,\ldots,\rho ^{n - m}  \right\} $, con $m  \mid  n$; se $\tau  = \sigma  \rho ^i $, allora 
+\[
+\tau  H \cap C_n = \left\{ \sigma \rho ^i, \sigma \rho ^{i+m}, \ldots, \sigma \rho ^{i+n - m}   \right\} 
+\] 
+quindi, l'unione dei due restituisce tutto $H$.
+\end{proof}
+\end{prop}
+\noindent Segue che $H$ \`e composto da $m$ rotazioni e $m$ simmetrie; in particolare $H = \langle \rho ^m , \tau  \rangle\cong D_m$, quindi, se $m  \mid  n$, si hanno dei sottogruppi della forma $\mathbb{Z} / m \mathbb{Z}$ e $D_m$.
+\vspace{5pt}
+
+\textbf{Sottogruppi normali.} Per lo studio dei sottogruppi normali, si considerano le due seguenti proposizioni.
+\begin{prop}
+	Sia $G$ un gruppo e sia $H < G$; se $H$ ha indice $2$ in $G$, allora $H \lhd G$. 
+	\begin{proof}
+		Sia, quindi, $G / H = \left\{ H , \tau  H\right\} $, per qualche $\tau  \in G$; dato $g \in G$, allora, si ha $g = h_1$, oppure $g = \tau h_2$, con $h_1,h_2 \in H$. 
+		Sia, ora, $hg \in Hg$ per $g \in G \setminus H$; allora $g = \tau  h_3$, oppure $hg = \tau h_4 = \tau h_3h_3^{-1}h_4= gh_5$, per cui $Hg \subset gH$. 
+		Inoltre, $\lvert Hg \rvert =\lvert gH \rvert $, quindi deve essere $Hg = gH$ e, quindi, $H\lhd G$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Siano $H \lhd G$ e $K < H$, con $K$ caratteristico in $H$; allora $K \lhd G$.
+	\begin{proof}
+		Si considera, per $g \in G$, $\phi _g : G\to G$ con $\phi_g(x) = gxg^{-1}$; per definizione, si ha $\phi _g (H) = H$, quindi $\phi_g|_{H} $ \`e un automorfismo, quindi $\phi _g|_{H} (K) = K, \ \forall g \in G \Rightarrow gKg^{-1} = K$, pertanto $K \lhd G$.
+	\end{proof}
+\end{prop} 
+
+\noindent L'indice di $C_n$ in $D_n$ \`e $2$, quindi $C_n \lhd D_n$ per la prima proposizione.
+Visto che per $G$ ciclico di ordine $n$, esiste un unico $H $, con $\lvert H \rvert =m  \mid n$, allora ogni sottogruppo di un gruppo ciclico \`e caratteristico e, quindi, nel caso di $D_n$, ogni sottogruppo di $\langle \rho  \rangle\cong C_n$ \`e caratteristico.
+Per la seconda proposizione, questo significa che ogni sottogruppo di $C_n$ \`e normale; se $n$ \`e pari, allora $\langle \rho ^2  \rangle<C_n$ ha $n / 2$ elementi.
+
+Considerando $H < D_n$ e $H \not \subset C_n$, con $H\cap C_n = \langle \rho ^2 \rangle$, si ha
+\[
+H=\langle \rho ^2 \rangle \sqcup \tau  \langle \rho ^2 \rangle
+\] 
+quindi $[D_n : H] = 2$, per cui $H \lhd D_n$.
+
+Di sottogruppi di questa forma, se ne trovano due: $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$, ma non si sa se siano tutti i sottogruppi normali, quindi si cerca di caratterizzarli meglio.
+Si sa che $H \lhd G \iff gHg^{-1}= H , \ \forall g \in G$, quindi per ogni elemento di un sottogruppo normale, devono figurare anche tutti i suoi coniugati.
+Per la proposizione \ref{dnitems}, per capire come sono fatti i coniugati di $D_n$, \`e sufficiente studiare quali siano quelli di $\rho ^i$ e $\sigma \rho ^i$. 
+Si nota che:
+\[
+\rho ^i \rho ^i \rho ^{-i}= \rho ^i \hspace{1cm}\sigma \rho ^i \rho ^i \rho ^{-i}\sigma  = \sigma \rho ^i\sigma =\rho ^{-i}
+\] 
+quindi l'insieme dei coniugati di $\rho ^i$ \`e $\left\{ \rho ^i, \rho ^{-i} \right\} $; in particolare, se $i \in \left\{ 0 , n /2 \right\} $, tale insieme diventa $\left\{ e \right\} $, oppure $\left\{ \rho ^{ n / 2}  \right\} $ rispettivamente.
+Poi, si nota che:
+\[
+\rho ^i \sigma \rho ^j \rho ^{-i}= \sigma \rho ^{-i}\rho ^j\rho ^{-i}=\sigma \rho ^{j-2i} \hspace{1cm} \sigma \rho ^i\sigma \rho ^j \rho ^{-i} \sigma = \rho ^{-i}\rho ^j\rho ^{-i}\sigma =\sigma \rho ^{2i-j} 
+\] 
+quindi se $n$ \`e pari, allora $\sigma \rho ^s \sim \sigma \rho ^t\iff  \equiv t \pmod{2} $, quindi le riflessioni di spezzano in due classi di coniugio; se $n$ \`e dispari, invece, le riflessioni sono tutte coniugate.
+
+Ricapitolando: 
+\begin{itemize}
+	\item se $n$ \`e dispari e se un sottogruppo contiene una riflessione, allora le contiene tutte e tutte le riflessioni generano $D_n$, infatti $\sigma $ \`e dato e $\rho  = \sigma \sigma \rho $, quindi $H \lhd D_n \Rightarrow H = D_n$, mentre se non contiene alcuna riflessione, allora \`e un sottogruppo di $C_n$;
+	\item se $n$ \`e pari, oltre ai sottogruppi di $C_n$, si considerano gli $H\lhd D_n$ che sono tali che $\sigma \rho ^i \in H$, per cui $\sigma \rho ^{i+2} \in H$ e $\rho ^2 \in H$, pertanto, se $H \neq D_n$, devono essere della forma $\langle \rho ^2,\sigma  \rangle$, o $\langle \rho ^2,\sigma \rho  \rangle$.
+\end{itemize}
+
+\textbf{Sottogruppi caratteristici.}
+Usando quanto visto per i sottogruppi normali, si conclude che i possibili sottogruppi caratteristici sono i sottogruppi di $C_n$ e $\langle \rho ^2,\sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$. 
+Mentre si sa gi\`a che i sottogruppi di $C_n$ sono caratteristici, si osserva che, per gli altri due, la mappa $\tau : D_n \to D_n$ tale che $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $ ]`e un automorfismo che scambia $\langle \rho ^2,\sigma  \rangle$ con $\langle \rho ^2, \sigma \rho  \rangle$ e viceversa, quindi non sono caratteristici.
+\subsubsection{Centro, quozienti e automorfismi di $D_n$}
+\hfill
+
+\textbf{Il centro.} Si cercano tutti gli elementi $\tau  \in D_n$ tale che $\forall \rho  \in D_n, \ \rho \tau \rho ^{-1}=\tau $.
+Dal precedente studio dei coniugi nei sottogruppi normali, si conclude che $Z(D_n) = \left\{ e \right\} $ se $n$ \`e dispari e $Z(D_n)=\left\{ e, \rho ^{n / 2}  \right\}\cong \mathbb{Z} / 2\mathbb{Z}$ se $n$ \`e pari.
+
+\vspace{5pt}
+
+\textbf{Quozienti.} 
+Si sa che i quozienti sono in corrispondenza biunivoca con i sottogruppi normali, il che vuol dire che esiste un quoziente per ciascun $H \lhd G$.
+A meno di un automorfismo, i quozienti si ottengono come segue.
+Per quanto visto precedentemente, i sottogruppi normali sono i sottogruppi di $C_n$ e, se $n$ \`e pari, anche quelli della forma $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2, \sigma \rho  \rangle$. 
+Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \langle \rho ^m \rangle \rvert = 2n/m$.
+\begin{prop}
+	Si ha $D_n / \langle \rho ^m \rangle\cong D _{n / m} $.
+	\begin{proof}
+		Si considera 
+		\[
+		\gamma : 
+		\begin{array}
+			{c c c}
+			D_n & \longrightarrow& D_{ n / m } \\
+			\sigma &\longmapsto & \tau \\
+			\rho  &\longmapsto & \epsilon 
+		\end{array}
+		\] 
+		dove $D_n = \langle \sigma ,\rho  \mid \rho ^n = \sigma ^2 = e , \sigma \rho \sigma = \rho ^{-1} \rangle$ e $D_{n / m} = \langle \tau ,\epsilon  \mid \epsilon ^{ n / m} = \tau ^2 = e , \ \tau \epsilon \tau \epsilon ^{-1} \rangle$.
+		Si nota che questo \`e suriettivo e il suo nucleo \`e $\langle \rho ^m \rangle$, quindi si ha la tesi per il I teorema di omomorfismo.
+	\end{proof}
+\end{prop}
+\noindent Nel caso di $n$ pari, poi, vi sono gli altri due sottogruppi citati sopra, che hanno indice $2$ e, quindi, i cui quozienti sono isomorfi a $\mathbb{Z} / 2\mathbb{Z}$.
+
+\vspace{5pt}
+\textbf{Gli automorfismi.} 
+Si studia $\operatorname{Aut} (D_n)$. Per farlo, si cerca di calcolarne la cardinalit\`a.
+Per definire un automorfismo in $D_n$, lo si definisce sui generatori, che si sanno essere $\rho $ e $\sigma $.
+L'immagine di questi generatori deve essere un altro generatore: ad esempio, l'immagine di $\rho $, che ha ordine $n$, deve avere come immagine un elemento di ordine $n$; questi sono della forma $\rho ^i$, con $\operatorname{gcd}(i,n) =1$, quindi ci sono $\phi (n)$ possibili scelte.
+Poi, $\sigma $ ha ordine $2$ e deve avere, come immagine, un altro elemento di ordine $2$ che, insieme al $\rho ^i$ scelto prima, generi $D_n$; ci sono $n$ riflessioni della forma $\sigma \rho ^j$, quindi un totale di $n$ scelte possibili.
+Si nota che se $n$ \`e pari, anche $\rho ^{ n / 2} $ ha ordine $2$, ma la coppia $\rho ^i, \rho ^{n / 2} $ non genera $D_n$.
+
+Sia, allora 
+\[
+\gamma : 
+\begin{array}
+	{c c c}
+	D_n & \longrightarrow & D_n\\
+	\rho ^h & \longmapsto & \rho ^{ih} \\
+	\sigma \rho ^k & \longmapsto & \sigma \rho ^j \rho ^{ik} 
+\end{array}
+\] 
+con $\operatorname{gcd}(i,n) =1$ e $j$ qualsiasi; $\gamma$ \`e ben definita e 
+\[
+\gamma\left((\rho ^s)(\sigma \rho ^t)\right) = \gamma(\sigma \rho ^{t-s} )= \sigma \rho ^j \rho ^{i(t-s)} = \sigma \rho ^{-is} \rho ^j \rho ^{it} = \rho ^{is} \sigma \rho ^j\rho ^{it} = \gamma(\rho ^s)\gamma(\sigma \rho ^t)
+\] 
+per cui \`e un omomorfismo. 
+Inoltre, \`e biettiva per costruzione, quindi si ha $\lvert \operatorname{Aut} (D_n) \rvert = n \phi (n)$; da un punto di vista insiemistico, esiste una biezione tra $\operatorname{Aut} (D_n)$ e $\mathbb{Z} / n\mathbb{Z} \times \left(\mathbb{Z} / n\mathbb{Z}\right) ^*$.
+\begin{esercizio}
+	Studiare $D_4$ (risultati a pagina 19) e $D_6$.
+\end{esercizio}
+\subsection{Permutazioni}
+
+
 \end{document}
