@@ -571,8 +571,8 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 \noindent Ora si caratterizza il gruppo derivato.
 Intanto, si ricorda che $\langle S \rangle$ \`e abeliano $\iff \forall s_1,s_2\in S , \  s_1s_2=s_2s_1$, $\langle S \rangle$ \`e normale $\iff \forall g \in G, \forall s \in S, \ gsg^{-1} \in \langle S \rangle$ e, infine, $\langle S \rangle$ \`e caratteristico $\iff \forall f \in \operatorname{Aut} (G) ,\ \forall s \in S$ si ha $f(s) \in S$.
 Applicando queste alla definizione di commutatore, si ottiene la seguente.
-\begin{prop}\label{propderiv}
-	[Propriet\`a del derivato]
+\begin{prop}[Propriet\`a del derivato]\label{propderiv}
+	
 	Sia $G$ un gruppo e $G'$ il suo derivato; allora:
 	\begin{enumerate}[(a).]
 		\item $G ' = \left\{ e \right\}  \iff G$ \`e abeliano;
@@ -615,6 +615,52 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 	\end{proof}
 \end{corollario}
 \subsection{Gruppi diedrali}
+\begin{definizione}
+	[Gruppo diedrale]
+	Per $n \in \mathbb{N}$, si considera un $n$-agono regolare nel piano; l'insieme di tutte le isometrie del piano che mandano l'$n$-agono in se stesso \`e indicato con $D_n$ ed \`e noto col nome di \textit{gruppo diedrale}.
+\end{definizione}
+\begin{prop}
+	Per $n \in \mathbb{N}$, il gruppo diedrale $D_n$ ha cardinalit\`a $\lvert D_n \rvert = 2n$.
+	\begin{proof}
+		Un'isometria \`e univocamente determinata dall'immagine di un vertice e di un lato adiacente al vertice stesso; allora, l'immagine pu\`o essere pari a $n$ possibili vertici, con due, conseguenti, possibilit\`a per il lato, da cui $2n$ possibili isometrie.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $\rho $ una rotazione che sottende un lato\footnote{Cioè che manda un lato nel successivo.} e $\sigma $ una simmetria (riflessione) dell'$n$-agono regolare; allora $\rho ^n = e$, $\sigma ^2 =e$ e $\sigma \rho \sigma = \rho ^{-1} $.
+	\begin{proof}
+		Visto che $\rho $ manda un lato dell'$n$-agono regolare nella posizione del successivo, impiegher\`a $n$ iterazioni a far tornare il lato di partenza nella posizione originale; similmente, se $\sigma $ \`e una riflessione, sar\`a sufficiente riapplicarla per far tornare l'$n$-agono nella posizione originale.
 
+		Per l'ultima, si nota che, componendo una rotazione e una riflessione, si ottiene una riflessione; applicando la seconda propriet\`a, si ottiene $\sigma \rho \sigma \rho = e \Rightarrow \sigma \rho \sigma  = \rho ^{-1} $.
+	\end{proof}
+\end{prop}
+\begin{osservazione}
+Le isometrie del piano che agiscono su un $n$-agono, quindi gli elementi di $D_n$, si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, cio\`e possono essere rappresentate tramite matrici:
+\begin{equation}
+	\rho  \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \displaystyle \cos \left(2\pi / n\right) & \sin \left(2\pi / n\right) \\ - \sin \left( 2\pi / n\right) & \cos (2\pi / n) \end{pmatrix}=M_\rho  \hspace{1cm}\sigma \stackrel{\gamma}{\longmapsto} \begin{pmatrix} 1 & 0 \\ 0 & - 1 \end{pmatrix} = M_\sigma 
+\end{equation}
+Si nota, inoltre, che indicando con $\mathbb{D}_n$ il gruppo generato da queste matrici, allora la mappa $\gamma : \langle \rho ,\sigma  \rangle\to \mathbb{D}_n$ e notare che questo \`e un omomorfismo di gruppi; infatti, la composizione di isometrie che fissano un punto, sono ancora isometrie che fissano lo stesso punto (in questo caso, l'$n$-agono).
+Questo per dire che la mappa $\rho ^i \sigma ^j \mapsto M_\rho ^i M_\sigma ^j$ \`e ben definita.
 
+Si pu\`o, inoltre, verificare che $M_\rho ^n = \operatorname{Id} $, $M_\sigma ^2 = \operatorname{Id} $ e $M_\sigma M_\rho M_\sigma = M_\rho ^{-1}$, per cui si conclude che $\gamma$ \`e un omomorfismo.
+
+Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come elementi di $D_n$, non sono legati da alcuna relazione perch\'e, altrimenti, lo sarebbero anche le loro matrici associate, cosa che sarebbe assurda. 
+\end{osservazione}
+\begin{prop}
+	Tutti gli elementi di $D_n$ si scrivono come $\sigma \rho ^i$, oppure $\rho ^i$, con $i \in \left\{ 0,\ldots,n-1 \right\} $.
+	\begin{proof}
+	Sia $g \in D_n$; allora $g$ sar\`a una generica composizione di riflessioni e rotazioni del tipo $g= \rho ^{a_1} \sigma ^{b_1} \ldots \rho ^{a_k} \sigma ^{b_k} $, dove $a_i \in \mathbb{Z}$ e $b_j \in \left\{ 0,1 \right\} $. 
+	Usando le relazioni $\sigma ^2 = \rho ^n = e$, si riscalano gli esponenti per scrivere $g = \rho ^{c_1} \sigma \ldots \rho ^{c_m} \sigma $, dove si sono anche, eventualmente, uniti esponenti di rotazioni consecutive (quindi $m\le k$).
+
+	Usando $\sigma ^2 = e$ e assumendo $c_1\neq 0$, si pu\`o scrivere 
+	\[
+	g = \rho ^{c_1} \sigma \ldots \rho ^{c_m} \sigma = \sigma \sigma \rho ^{c_1} \sigma \sigma \sigma \rho ^{c_2} \ldots \sigma \rho ^{c_m} \sigma = \sigma \rho ^{-c_1} \rho ^{-c_2}  \ldots \rho ^{-c_m} = \sigma \rho ^{-d} 
+	\] 
+			dove si \`e fatto uso della relazione $\sigma \rho \sigma = \rho ^{-1} $ e con $d \equiv -\sum_{i=1}^{m} c_i \pmod{n} $.
+
+			Se, invece, $c_1 = 0$ (cio\`e la \textit{parola} inizia con $\sigma $), allora $g = \rho ^{-c_2}\ldots \rho^{-c_m}  = \rho ^{d'}  $, con $d ' \equiv -\sum_{i=2}^{m} c_i \pmod{n} $.
+			\end{proof}
+\end{prop}
+\noindent Da questa proposizione, segue direttamente che se $\rho ,\sigma  \in D_n$, allora $\langle \rho ,\sigma  \rangle< D_n$
+
+Grazie alla precedente proposizione, \`e anche possibile definire $\rho ^{[i]} = \rho ^i$, con $[i] \in \mathbb{Z} / n\mathbb{Z}$, visto che $\rho ^n = e$.
 \end{document}

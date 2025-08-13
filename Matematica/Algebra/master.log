@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  12 AUG 2025 12:50
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.24)  12 AUG 2025 21:00
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1639,12 +1639,16 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7.3> not available
 
 [11]
 
+[12]
+
+[13]
+
 Package caption Warning: Unused \captionsetup[table] on input line 121.
 See the caption package documentation for explanation.
 
 
 
-[12] (./master.aux)
+[14] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1659,14 +1663,16 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49254 strings out of 475506
+ 49266 strings out of 475506
  100000,1977958 words of node,token memory allocated
- 1109 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 5 glue, 12 kern, 1 glyph, 109 attribute, 103 glue_spec, 56 attribute_list, 2 write nodes
-   avail lists: 1:4,2:907,3:330,4:68,5:840,6:31,7:5971,8:76,9:454,10:29,11:542
- 70833 multiletter control sequences out of 65536+600000
+ 1134 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 6 glue, 12 kern, 1 glyph, 115 attribute, 103 glue_spec, 59 attribute_list, 2 write nodes
+   avail lists: 1:4,2:898,3:330,4:68,5:840,6:31,7:6344,8:76,9:497,10:29,11:732
+ 70836 multiletter control sequences out of 65536+600000
  190 fonts using 12530927 bytes
- 124i,15n,114p,10936b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,15n,114p,10936b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.6'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.5'
 
@@ -1678,10 +1684,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/share/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
-Output written on master.pdf (12 pages, 987887 bytes).
+Output written on master.pdf (14 pages, 996885 bytes).
 
-PDF statistics: 234 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 131072)
+PDF statistics: 251 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 131072)
  88 words of extra memory for PDF output out of 10000 (max. 100000000)
 
