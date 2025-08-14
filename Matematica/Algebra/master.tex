@@ -283,7 +283,17 @@ Per ogni elemento di $\operatorname{Int} (G)$, si ha $\phi _g (H) = H \iff gH g^
 		g & \longmapsto & \psi _g : \psi_g(x) = g \cdot x
 	\end{array}
 	\] 
+Pi\`u concretamente, si definisce \textit{azione} la mappa $\gamma : G \times  X\to X$ tale che
+\begin{enumerate}[(a).]
+	\item $e\cdot x = x$, per $e \in G$ e $x \in X$;
+	\item $h\cdot (g\cdot x) = (hg)\cdot x$, per $g, h\in G$ e $x \in X$.
+\end{enumerate}
 \end{definizione}
+\noindent Si verifica che una mappa $\gamma : G \times  X \to X$, con $G$ gruppo e $X$ insieme generico, che soddisfi le propriet\`a (a) e (b), \`e tale che $\gamma(g) (x) = \psi _g(x)$ (cio\`e a $g$ fissato) \`e biettiva.
+\begin{proof}
+	Per l'iniettivit\`a, si ha $\psi _g(x) = \psi _g(y) \iff g\cdot x = g\cdot y \iff x = y$, visto che si pu\`o applicare l'azione inversa $\gamma(g^{-1})$ ad entrambi i lati.
+	Per la suriettivit\`a, invece, si nota che $\forall x \in X$, si trova anche una $y\in X: y= g^{-1}\cdot x$ dovuta all'azione di $\gamma(g^{-1})$, per cui $\psi _g(y)= g \cdot \left(g^{-1}\cdot x\right) =(gg^{-1}) \cdot x = x$.
+\end{proof}
 \begin{esempio}
 Sia $G = \left\{ z \in \mathbb{C}^*  \mid  \lvert z \rvert =1 \right\} \cong S^1$ la circonferenza unitaria e $X = \mathbb{R}^2$.
 Un'azione di $G$ su $X$ \`e una rotazione definita da $\gamma(z) = R(\operatorname{arg} z)$.
@@ -317,13 +327,13 @@ Se, poi, $X$ ha cardinalit\`a finita, allora:
 	\] 	
 \end{definizione}
 \begin{lemma}\label{l111}
-Se due elementi di un'orbita sono uguali, allora appartengono alla stessa classe di equivalenza di $G / \operatorname{Stab} (x)$.
+	Sia $G$ un gruppo che agisce su un insieme $X$ e sia $x \in X$ un suo elemento. Dati anche $g\cdot x , h \cdot x \in \operatorname{Orb} (x)$ tali che $g \cdot x = h\cdot x$, allora $g$ e $h$ appartengono alla stessa classe di $G / \operatorname{Stab} (x)$.
 \begin{proof}
 	Se $g \cdot x, \ h\cdot x \in \operatorname{Orb} (x)$ sono uguali, allora $x =h^{-1} g \cdot x $, cio\`e $h^{-1} g \in G$ lascia invariato $x$, quindi \`e in $\operatorname{Stab} (x)$.
 	Da questo segue che $h \operatorname{Stab} (x) = h h^{-1} g \operatorname{Stab} (x) = g \operatorname{Stab} (x)$.
 \end{proof}
 \end{lemma}
-\begin{teorema}[Teorema di orbita-stbilizzatore]\label{osth}
+\begin{teorema}[Teorema di orbita-stabilizzatore]\label{osth}
 	Esiste una mappa biettiva $\Gamma : \operatorname{Orb} (x) \to G / \operatorname{Stab} (x)$ tale che $\Gamma(g \cdot x) = g \operatorname{Stab} (x)$.
 	\begin{proof}
 		$\Gamma$ \`e iniettiva come diretta conseguenza del lemma \ref{l111} ed \`e suriettiva perch\'e $\forall g \operatorname{Stab} (x) \in G / \operatorname{Stab} (x), \exists g\cdot x \in \operatorname{Orb} (x)$ tale che $\Gamma(g\cdot x) = g \operatorname{Stab} (x)$.
@@ -334,7 +344,9 @@ Se due elementi di un'orbita sono uguali, allora appartengono alla stessa classe
 Si osserva che, per il teorema di orbita-stabilizzatore, la cardinalit\`a di un'orbita indica il numero di classi laterali dello stabilizzatore nel gruppo che compie l'azione, cio\`e il teorema di orbita-stabilizzatore si pu\`o riscrivere come $\lvert \operatorname{Orb} (x) \rvert = [G: \operatorname{Stab} (x)] = \lvert G / \operatorname{Stab} (x) \rvert = \lvert G \rvert / \lvert \operatorname{Stab} (x) \rvert $.
 \end{osservazione}
 
-\noindent Un caso notevole di azione \`e il coniugio: per $X=G$, si definisce $\gamma : G \to \operatorname{Int} (G) \subset S(G)$.
+
+\subsubsection{Azione di coniugio}
+ Un caso notevole di azione \`e il coniugio: per $X=G$, si definisce $\gamma : G \to \operatorname{Int} (G) \subset S(G)$.
 Le orbite indotte da questa azione sono dette \textit{classi di coniugio} e si indicano con $\operatorname{cl} (x)$, mentre lo stabilizzatore \`e detto \textit{centralizzatore} e si indica con:
 \begin{equation}
 	Z(x) = \left\{ g \in G  \mid g \cdot x = gxg^{-1} = x \right\} 
@@ -360,10 +372,7 @@ Come conseguenza del teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 	\] 
 \end{osservazione}
 
-\subsubsection{Azione di coniugio}
-
-
-Si considera, ora, l'azione di coniugio di un gruppo $G$ su $X = \left\{ H \subseteq G  \mid H< G \right\} $ e $\gamma(g) = \psi _g$ tale che $\psi_g (H) = gH g^{-1} $. 
+\noindent Si considera, ora, l'azione di coniugio di un gruppo $G$ su $X = \left\{ H \subseteq G  \mid H< G \right\} $ e $\gamma(g) = \psi _g$ tale che $\psi_g (H) = gH g^{-1} $. 
 Questa \`e un'azione ed \`e ben definita.
 \begin{proof}
 	Per dimostrare che \`e un'azione, si deve mostrare che la mappa $g \stackrel{\gamma}{\mapsto} \psi _g$ \`e un omomorfismo e che $\psi _g : X \to X$ sia biettiva.
@@ -485,7 +494,7 @@ Per la formula delle classi
 \[
 pn - \sum_{x \in R\setminus Z(G)}^{} \frac{\lvert G \rvert }{|Z(x)|} = \lvert Z(G) \rvert 
 \] 
-Ora, visto che $Z(x) < G \Rightarrow p \not  \mid Z(x)$, quindi si ha la certezza che, essendo $p  \mid |G| = |Z(x)| |G|/|Z(x)|$, $p$ divide $|G|/|Z(x)|$. 
+Ora, visto che $Z(x) < G \Rightarrow p$ non divide $|Z(x)|$, quindi si ha la certezza che, essendo $p  \mid |G| = |Z(x)| |G|/|Z(x)|$, $p$ divide $|G|/|Z(x)|$. 
 Allora $p  \mid  |Z(G)|$, per cui $Z(G) =G$; infatti, se cos\`i non fosse, sarebbe un sottogruppo proprio di $G$ e $p$ non lo potrebbe dividere, il che \`e assurdo.
 
 Da questo, segue che $G$ \`e abeliano, quindi la tesi segue dal teorema di Cauchy per gruppi abeliani (lemma \ref{cab}).
@@ -837,6 +846,32 @@ Inoltre, \`e biettiva per costruzione, quindi si ha $\lvert \operatorname{Aut} (
 	Studiare $D_4$ (risultati a pagina 19) e $D_6$.
 \end{esercizio}
 \subsection{Permutazioni}
+\begin{definizione}
+	[Permutazione]	
+	Sia $X$ un insieme; una mappa $f : X \to X$ \`e detta \textit{permutazione} se \`e biettiva. 
+	Le permutazioni formano un gruppo rispetto alla composizione tra funzioni ed \`e indicato con
+	\[
+	S(X) = \left\{ f : X \to X  \mid  f \text{ \`e biettiva} \right\} 
+	\] 
+	Se $X = \left\{ 1,\ldots, n \right\} $, allora il gruppo delle permutazioni si indica con $S_n$ e $\lvert S_n \rvert  = n!$.
+\end{definizione}
+\noindent Una permutazione di $S_n$ pu\`o essere rappresentata tramite cicli, i quali sono disgiunti e, quindi, commutano fra loro.
 
-
+Ogni $k$-ciclo (ciclo di lunghezza $k$) ha $k$ scritture diverse, tutte equivalenti fra loro, dovute alla possibilit\`a di scegliere uno fra i $k$ elementi del ciclo come primo elemento; dopo questa scelta, tutti gli altri sono univocamente determinati.
+\begin{teorema}
+	I cicli di una permutazione di $S_n$ sono orbite degli elementi di $X = \left\{ 1,\ldots,n \right\} $ formate dall'azione indotta da tale permutazione.
+	\begin{proof}
+		Sia $\sigma \in S_n$ e sia $\langle \sigma  \rangle$ il sottogruppo ciclico generato da $\sigma $.
+		Si considera l'azione di $\langle \sigma  \rangle$ su $X$ secondo la legge $\sigma ^k \cdot x = \sigma ^k (x)$; l'orbita di ciascun elemento di $X$ \`e della forma
+		\[
+		\operatorname{Orb} (x) = \left\{ \sigma ^k(x)  \mid  k \in \mathbb{Z} \right\} 
+		\] 
+		Si nota che $\lvert X \rvert < \infty \Rightarrow  \lvert \operatorname{Orb} (x) \rvert < \infty, \ \forall x$. 
+		Sia, poi, $m\ge 1$ il pi\`u piccolo intero tale che $\sigma ^m(x) = x$\footnote{Questo esiste per forza, altrimenti si avrebbero orbite di infiniti elementi a partire da un insieme finito.}; allora gli elementi 
+		\[
+		x, \ \sigma (x) , \ \sigma ^2 (x) , \ldots,\ \sigma ^{m-1} (x)
+		\] 
+		sono tutti distinti (per definizione di $m$) e formano $\operatorname{Orb} (x)$.
+	\end{proof}
+\end{teorema}
 \end{document}
