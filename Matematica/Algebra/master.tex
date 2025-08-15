@@ -1101,7 +1101,7 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 		Allora, visto che $hkh^{-1}k^{-1}\in H\cap K$ e visto che $H\cap K = \left\{ e \right\} $ per assunzione, si ha $hkh^{-1}k^{-1}=e \Rightarrow hk=kh$.
 	\end{proof}
 \end{lemma}
-\begin{teorema}
+\begin{teorema}\label{t171}
 	Sia $G$ un gruppo e siano $H,K \lhd G$; se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G \cong H \times  K$.
 	\begin{proof}
 		Sia $\phi :H \times  K \to G$ tale che $\phi ((h,k))=hk$; allora $\phi $ \`e un omomorfismo per il lemma precedente (\ref{lemprec161}), \`e iniettiva per la seconda ipotesi ed \`e suriettiva per la prima.
@@ -1110,7 +1110,21 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 \begin{corollario}
 	In un prodotto diretto, i fattori commutano fra loro.
 \end{corollario}	
-\begin{center}
-	Riprendere da esempio 1.7.2 pagina 24
-\end{center}
+\begin{osservazione}
+	Sia $G = H \times K$; per il teorema precedente (\ref{t171}), $Z(H \times  K) \cong Z(H) \times Z(K)$, visto che $Z(H) \times \left\{ e_K \right\} $ e $\left\{ e_h \right\} \times Z_K$ sono sottogruppi normali di $Z(H\times K)$.
+	Inoltre
+	\[
+	\operatorname{Int} (H \times K) \cong (H\times K )/ Z(H\times K)\cong H / Z(H) \times K / Z(K)\cong \operatorname{Int} (H) \times \operatorname{Int} (K)
+	\] 
+	dove il penultimo isomorfismo \`e ottenuto definendo
+	\[
+	\gamma :
+	\begin{array}
+		{c c c}
+		H \times K & \longrightarrow &H / Z(H) \times K / Z(K)\\
+		(h,k) & \longmapsto & \left(h' + Z(H) , k' + Z(K)\right) 
+	\end{array}
+	\] 
+	e dal I teorema di omomorfismo.
+\end{osservazione}
 \end{document}
