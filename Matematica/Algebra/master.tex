@@ -962,10 +962,155 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 		\sigma & \longmapsto & \operatorname{sgn} \sigma =\displaystyle  \prod_{1\le i< j\le n} \frac{\sigma (i) - \sigma (j)}{i-j}
 	\end{array}
 	\] 
-	
+	\`e un omomorfismo di gruppi. 
+	Inoltre, se $\sigma $ \`e una trasposizione, si ha $\operatorname{sgn} \sigma = -1$.
+	\begin{proof}
+		\`E un omomorfismo perch\'e:
+		\[
+	\operatorname{sgn} (\sigma \tau )= \prod_{1\le i<j\le n} \frac{\sigma \tau (i)-\sigma \tau (j)}{i-j} =\prod_{1\le i<j\le n} \frac{\sigma \tau (i) - \sigma \tau (j)}{\tau (i) -\tau (j)}\prod_{1\le i<j\le n} \frac{\tau (i) - \tau (j)}{i - j} = \operatorname{sgn} (\sigma) \operatorname{sgn} (\tau)
+		\] 
+		dove si \`e moltiplicato sopra e sotto per $\tau (i)-\tau (j)$ e si sono separate le produttorie\footnote{La prima produttoria restituisce il $\operatorname{sgn} \sigma $ perch\'e al massimo applicare prima $\tau $ altera l'ordine dell'insieme, quindi non \`e garantito che $\tau (i)< \tau (j)$ se $i<j$; questo, per\`o, non importa perch\'e se $\tau (i)>\tau (j)$, allora l'espressione si pu\`o riscrivere come $\frac{\sigma \tau (j) - \sigma \tau (i)}{\tau (j)-\tau (i)}$. Prendendo $a=\tau (i)$ e $b=\tau (j)$, si potrebbe anche riscrivere la produttoria come $\prod_{1\le a<b\le n} \frac{\sigma (a)-\sigma (b)}{a-b}$.}.
+
+		Sia $\sigma =(a,b)$ una trasposizione; allora
+		\[
+		\operatorname{sgn} \sigma  = \prod_{1\le i<j\le n} \frac{t(i)-t(j)}{i-j}
+		\] 
+		Se $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \varnothing$, allora
+		\[
+		\frac{\sigma (i)-\sigma (j)}{i-j}=\frac{i-j}{i-j}=1
+		\] 
+		mentre se $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \left\{ i,a \right\} $, si trova
+		\[
+			\begin{cases}
+	\displaystyle 			\frac{\sigma (i) - \sigma (a)}{i-a} = \frac{i-b}{i-a}&,\ \text{ se } i<a\\
+	\\
+	\displaystyle \frac{\sigma (a) -\sigma (i)}{a-i}=\frac{b-i}{a-i}= \frac{i-b}{i-a}&,\ \text{ se } a < i
+			\end{cases}
+		\] 
+		Lo stesso vale per l'intersezione $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \left\{ i,b \right\} $:
+		\[
+		\frac{\sigma (i)-\sigma (b)}{i-b}=\frac{\sigma (b)-\sigma (i)}{b-i}=\frac{i-a}{i-b}
+		\] 
+		I fattori delle due intersezioni non vuote si semplificano a $1$, quindi rimane unicamente il caso in cui $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \left\{ a,b \right\} $; assumendo senza perdita di generalit\`a che $a<b$, si trova:
+		\[
+		\frac{\sigma (a)-\sigma (b)}{a-b}=\frac{b-a}{a-b}=-1
+		\] 
+		pertanto, nella produttoria, si ha un unico fattore pari a $-1$, il che implica che $\operatorname{sgn} \sigma =-1$.
+	\end{proof}
 \end{prop}
+\begin{corollario}
+	La mappa $\operatorname{sgn} \sigma $ restituisce la parit\`a di trasposizioni presenti in $\sigma $, quando decomposta in prodotto di trasposizioni.
+\end{corollario}
+
+\textbf{Nucleo del segno.} 
+Si nota che 
+\begin{equation}
+	\operatorname{Ker} (\mathrm{sgn}) = \left\{ \sigma \in S_n  \mid \operatorname{sgn} \sigma  = 1\right\} = A_n
+\end{equation}
+ed \`e noto come \textit{gruppo alterno}. 
+Alcune sue caratteristiche sono:
+\begin{enumerate}[(a).]
+	\item $A_n \lhd S_n$;
+	\item $S_n / A_n \cong \left\{ \pm 1 \right\} $.
+\end{enumerate}
+Visto che $S_n / A_n\cong \left\{ \pm 1 \right\} $, per il teorema di Lagrange, si ha:
+\[
+2 = \lvert S_n / A_n \rvert = \frac{S_n}{A_n} \implies \lvert A_n \rvert = \frac{\lvert S_n \rvert }{\lvert S_n / A_n \rvert } = \frac{n!}{2}
+\] 
+
+\vspace{5pt}
+
+\begin{teorema}
+	Due permutazioni di $S_n$ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Siano $\sigma , \tau \in S_n$; si considerano $\sigma = (a_1, \ldots, a_k)$ e $\tau \sigma \tau ^{-1}$.
+				Si nota che, se $\tau (a_i) = b_i\Rightarrow \tau \sigma \tau ^{-1}(b_i) = \tau \sigma (a_i) = \tau (a_{i+1} ) =b_{i+1} $; inoltre, se $x \neq b_i $ per ogni $i$:
+				\[
+				\tau ^{-1}(x) \neq a_i \implies \tau \sigma \tau ^{-1}(x) = \tau \sigma \left(\tau ^{-1}(x)\right) =\tau \tau ^{-1}(x) = x
+				\] 
+				pertanto il coniugato di un $k$-ciclo \`e ancora un $k$-ciclo.
+				Se la permutazione \`e composizione di cicli disgiunti, invece, si pu\`o scrivere 
+				\[
+				\sigma = \sigma _1 \ldots\sigma _k \implies \tau \sigma \tau ^{-1}= \tau \sigma _1\tau ^{-1}\ldots \tau \sigma _k\tau ^{-1}
+				\] 
+				quindi ci si pu\`o ricondurre al caso precedente.
+			\item ($\Leftarrow$) Siano $\sigma  = (a_1,\ldots,a_k)$ e $\rho =(b_1,\ldots,b_k)$ due $k$-cicli; si pu\`o prendere, allora, $\tau $ tale che $\tau (a_i) = b_i$, da cui $\tau \sigma \tau ^{-1}=\rho $. 
+				Nel caso di pi\`u cicli disgiunti, si mappa ciclo con ciclo:
+				\[
+				\begin{array}
+					{c c c c}
+					\sigma = &(x_{11} \ldots x_{1k_1} )&\cdots & (x_{r1} \ldots x_{rk_r} )\\
+						 &\downarrow &  & \downarrow\\
+					\rho = &(y_{11} \ldots y_{1k_1} ) & \cdots & (y_{r1} \ldots y_{r k_r} )
+				\end{array}
+				\] 
+				con $\tau (x_{ij} ) = y_{ij} $, quindi vale $\tau \sigma \tau ^{-1}=\rho $.
+		\end{itemize}
+	\end{proof}
+\end{teorema}
+\noindent Quanto al centralizzatore di $\sigma \in S_n$, si sa dal teorema orbita-stabilizzatore che
+\begin{equation}
+\lvert Z(\sigma ) \rvert \lvert \operatorname{cl} (\sigma ) \rvert = n!
+\end{equation}
+Per il teorema precedente, si sa calcolare $\lvert \operatorname{cl} (\sigma ) \rvert $, quindi \`e possibile ottenere $\lvert Z(\sigma ) \rvert $.
+\begin{esempio}
+Sia $\sigma = (1234)(56) \in S_{10}$; il numero possibile di permutazioni coniugate sono tutte quelle che si scrivono come un $4$-ciclo e un $2$-ciclo in $S_{10}$, numero ottenuto come
+\[
+	\lvert \operatorname{cl} (\sigma ) \rvert  = \binom{10}{4}\frac{4!}{4} \binom{6}{2}= \frac{10!}{192}\implies \lvert Z(\sigma ) \rvert = 192 = 4! 8
+\] 
+Sia
+\[
+H = \operatorname{Sym} \left(7,8,9,10\right) =\left\{ h \in S_{10}  \mid h(i) = i, \ \forall i \not \in \left\{ 7,8,9,10 \right\}  \right\} \cong S_4
+\] 
+e sia $K = \langle (1234),(56) \rangle$; allora $H,K < Z(\sigma )$, $H\cap K = \left\{ e \right\} $ e $HK=Z(\sigma )$, per cui
+\[
+Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z})
+\] 
+\begin{proof}
+	Si ha $H <Z(\sigma )$ perch\'e ogni permutazione di $H$ modifica solo l'insieme $\left\{ 7,8,9,10 \right\} $, quindi commuta con $\sigma $. Inoltre, $H \cong S_4 \Rightarrow \lvert H \rvert  = 4!$.
+
+	Si ha $K<Z(\sigma )$ perch\'e ogni elemento di $K$ \`e della forma $(1234)^j(56)^k$, quindi commuta sempre con $\sigma $.
+	Visto che $(1234)$ ha ordine $4$ e $(56)$ ha ordine $2$ e i due cicli sono disgiunti, si ha $\lvert K \rvert = 4 \cdot 2=8$.
+	Si nota, in particolare, che $\langle (1234) \rangle\cong C_4\cong\mathbb{Z}/4\mathbb{Z}$, cio\`e \`e isomorfo a un gruppo ciclico di ordine $4$; analogamente $\langle (56) \rangle\cong C_2\cong\mathbb{Z}/2\mathbb{Z}$.
+
+	Evidentemente la loro intersezione \`e banale perch\'e le permutazioni di $H$ agiscono esclusivamente su $\left\{ 7,8,9,10 \right\} $, mentre quelle di $K$ su $\left\{ 1,2,3,4,5,6 \right\} $, quindi deve essere $H\cap K = \left\{ e \right\} $.
+
+	Visto che $H,K < Z(\sigma )$ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert =192 $ (essendo $\lvert H\cap K \rvert = 1$), si ha $HK = Z(\sigma )$.
+	Sempre perch\'e $H\cap K$ \`e banale, si ha $HK \cong H \times K$, da cui
+	\[
+	Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times  \mathbb{Z}/2\mathbb{Z})
+	\] 
+\end{proof}
+\end{esempio}
 \subsection{Gruppi di Sylow e prodotti diretti}
-
-
-	
+\begin{definizione}
+	[Gruppo di Sylow]
+	Sia $G$ un gruppo finito con $\lvert G \rvert = p^m n$, con $p$ primo e $\operatorname{gcd}(p,n) =1$; se $H < G$ e $\lvert H \rvert = p^m$, allora $H$ \`e detto $p$-Sylow di $G$.
+\end{definizione}
+\begin{esempio}
+Si considera il gruppo diedrale $D_7$; si ha $\lvert D_7 \rvert = 14 = 7 \cdot 2$, con $\lvert \langle \rho  \rangle \rvert = 7$; allora $\langle \rho  \rangle$ \`e un $7$-Sylow di $D_7$ ed \`e unico.
+Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \rangle\subset D_7$ sono sette $2$-Sylow.
+\end{esempio}
+\begin{lemma}\label{lemprec161}
+	Siano $H,K\lhd G$, con $H \cap K = \left\{ e \right\} $; allora $hk = kh, \ \forall h\in H, \ \forall k \in K$.
+	\begin{proof}
+		Si ha $hkh^{-1}k^{-1}= (hkh^{-1})k^{-1}$; visto che $K$ \`e normale, allora $hkh^{-1}\in K$, quindi $hkh^{-1}k^{-1}\in K$.
+		Allo stesso tempo, $hkh^{-1}k^{-1}= h(kh^{-1}k^{-1})$ e, siccome anche $H$ \`e normale, si ha $kh^{-1}k^{-1}\Rightarrow hkh^{-1}k^{-1}\in H$.
+		Allora, visto che $hkh^{-1}k^{-1}\in H\cap K$ e visto che $H\cap K = \left\{ e \right\} $ per assunzione, si ha $hkh^{-1}k^{-1}=e \Rightarrow hk=kh$.
+	\end{proof}
+\end{lemma}
+\begin{teorema}
+	Sia $G$ un gruppo e siano $H,K \lhd G$; se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G \cong H \times  K$.
+	\begin{proof}
+		Sia $\phi :H \times  K \to G$ tale che $\phi ((h,k))=hk$; allora $\phi $ \`e un omomorfismo per il lemma precedente (\ref{lemprec161}), \`e iniettiva per la seconda ipotesi ed \`e suriettiva per la prima.
+	\end{proof}
+\end{teorema}
+\begin{corollario}
+	In un prodotto diretto, i fattori commutano fra loro.
+\end{corollario}	
+\begin{center}
+	Riprendere da esempio 1.7.2 pagina 24
+\end{center}
 \end{document}
