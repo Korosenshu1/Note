@@ -858,7 +858,7 @@ Inoltre, \`e biettiva per costruzione, quindi si ha $\lvert \operatorname{Aut} (
 \noindent Una permutazione di $S_n$ pu\`o essere rappresentata tramite cicli, i quali sono disgiunti e, quindi, commutano fra loro.
 
 Ogni $k$-ciclo (ciclo di lunghezza $k$) ha $k$ scritture diverse, tutte equivalenti fra loro, dovute alla possibilit\`a di scegliere uno fra i $k$ elementi del ciclo come primo elemento; dopo questa scelta, tutti gli altri sono univocamente determinati.
-\begin{teorema}
+\begin{prop}
 	I cicli di una permutazione di $S_n$ sono orbite degli elementi di $X = \left\{ 1,\ldots,n \right\} $ formate dall'azione indotta da tale permutazione.
 	\begin{proof}
 		Sia $\sigma \in S_n$ e sia $\langle \sigma  \rangle$ il sottogruppo ciclico generato da $\sigma $.
@@ -872,6 +872,100 @@ Ogni $k$-ciclo (ciclo di lunghezza $k$) ha $k$ scritture diverse, tutte equivale
 		x, \ \sigma (x) , \ \sigma ^2 (x) , \ldots,\ \sigma ^{m-1} (x)
 		\] 
 		sono tutti distinti (per definizione di $m$) e formano $\operatorname{Orb} (x)$.
+		Facendo agire $\sigma $ su $\operatorname{Orb} (x) \subset X$, si nota che 
+		\[
+		x \mapsto \sigma (x) , \ \sigma (x) \mapsto \sigma ^2(x) ,\ldots, \ \sigma ^{m-1} (x) \mapsto \sigma ^m(x) = x
+		\] 
+		L'azione di $\sigma $ ristretta a $\operatorname{Orb} (x)$, allora, si pu\`o vedere come la permutazione
+		\[
+			\begin{pmatrix} x & \sigma (x) & \sigma ^2 (x) & \cdots & \sigma ^{m-1} (x)\end{pmatrix} 
+		\] 
+		che \`e un $m$-ciclo. Se $O_1,\ldots,O_r$ sono le orbite non banali (cio\`e di lunghezza $>1$), $\sigma $ agisce su ciascuna $O_i$ come un $m_i$-ciclo, chiamato $c_i$ per ogni orbita, con $\lvert O_i \rvert = m_i$, mentre su quelle banali agisce come l'identit\`a.
+Visto che le orbite partizionano $X$, ciascun ciclo $c_i$ \`e disgiunto dagli altri e la loro composizione restituisce proprio $\sigma $, visto che per definizione sono la restrizione di $\sigma $ a partizioni di $X$.
 	\end{proof}
-\end{teorema}
+\end{prop}
+\begin{corollario}\label{sncic}
+	Il gruppo $S_n$ \`e generato dai cicli.
+	\begin{proof}
+		Il teorema precedente mostra come ciascuna permutazione $\sigma \in S_n$ si possa scrivere come composizione di un numero finito di cicli disgiunti, pertanto combinando l'insieme di tutti i possibili cicli, si ottiene $S_n$.
+	\end{proof}
+\end{corollario}
+
+\textbf{Numero di k-cicli di $\mathbf{S_n}$.} Si cerca quanti $k$-cicli, con $k\le n$, sono contenuti in $S_n$.
+Visto che un ciclo \`e una sequenza di $k$ numeri, il problema si riduce a trovare quanti $k$ numeri possono essere estratti da un insieme di $n$ numeri, che si sa essere dato da $\binom{n}{k}$.
+Queste, per\`o, non sono tutte perch\'e i $k$ numeri si possono scambiare in $k!$ modi diversi; allo stesso tempo, \`e possibile costruire $k$ $k$-cicli equivalenti, quindi il numero totale ammonta a $\binom{n}{k}\frac{k!}{k} = \binom{n}{k} (k-1)!$.
+
+\vspace{5pt}
+
+\textbf{Numero di permutazioni di $\mathbf{S_{12}} $ sono composizione di 2 3-cicli e 3 2-cicli disgiunti.} 
+Dal punto precedente, si sa che in $S_{12}$ si trovano $\binom{12}{3}\frac{3!}{3} $; fissato il primo $3$-ciclo, restano $12-3$ elementi liberi per gli altri cicli\footnote{I tre scelti vanno rimossi affinch\'e gli altri cicli siano disgiunti.}, quindi, per il secondo $3$-ciclo, si hanno $\binom{9}{3}\frac{3!}{3}$ scelte possibili.
+Continuando cos\`i per tutti i cicli rimanenti, si ottengono
+\[
+\binom{12}{3}\frac{3!}{3}  \binom{9}{3}\frac{3!}{3} \binom{6}{3}\frac{2!}{2} \binom{4}{3}\frac{2!}{2} \binom{2}{3}\frac{2!}{2} 
+\] 
+possibili permutazioni, dove si \`e modificata la formula per scegliere due $3$-cicli e tre $2$-cicli.
+Per\`o se ne sono contati troppi: prendendo d'esempio i due $3$-cicli, essendo disgiunti, questi possono commutare senza alterare la permutazione, per\`o col conto precedente si sono considerati distinti.
+Per risolvere, si deve dividere per tutti i possibili modi di commutare i $3$-cicli, cio\`e $2!$ in questo caso. 
+Lo stesso si deve fare per i tre $2$-cicli, i cui modi di permutarle sono $3!$.
+Complessivamente, si hanno un totale di 
+\[
+\binom{12}{3}\frac{3!}{3}  \binom{9}{3}\frac{3!}{3} \binom{6}{3}\frac{2!}{2} \binom{4}{3}\frac{2!}{2} \binom{2}{3}\frac{2!}{2} \frac{1}{3!2!}
+\] 
+possibili permutazioni.
+
+\vspace{5pt}
+\textbf{Ordine di una permutazione di $\mathbf{S_n}$.}  
+Un $k$-ciclo ha ordine $k$; infatti per $\sigma = (a_1 \ \cdots\ a_k)$, si ha
+\[
+	\sigma ^s(a_i)=a_j \hspace{.3cm} \text{con } j\equiv s+i\ (\operatorname{mod} k) \text{ e }j<k 
+\] 
+quindi $\sigma ^s (a_i) = a_{i+s } = a_i \iff s+i \equiv i \pmod{k}\iff s \equiv 0 \pmod{k}  $.
+
+Se la permutazione \`e formata da $\ell $ cicli disgiunti $\sigma _i$, invece, il suo ordine \`e 
+\[
+\operatorname{ord}(\sigma ) = \operatorname{mcm} (\operatorname{ord}(\sigma_1) , \ldots, \operatorname{ord}(\sigma _\ell ) )
+\] 
+perch\'e \`e il pi\`u piccolo numero tale che ogni ciclo torni al punto di partenza.
+Si nota, infatti, che se $m$ \`e tale che $\sigma ^m = e$, allora
+\[
+	e = \sigma  ^m  = \sigma_1 ^m \cdots \sigma _\ell ^m \implies \sigma _i^m = e , \ \forall i=1,\ldots,\ell 
+\] 
+quindi $\operatorname{ord}(\sigma _i)  \mid m, \ \forall i$ e, quindi, $m=\operatorname{mcm} (\operatorname{ord}(\sigma _1) ,\ldots,\operatorname{ord}(\sigma _\ell ) )$.
+\begin{definizione}
+	[Trasposizione]
+	Sia $\tau \in S_n$; se $\tau $ \`e della forma $(a_i,a_j)$, cio\`e \`e un $2$-ciclo, allora si dice \textit{trasposizione}.
+\end{definizione}
+\begin{prop}
+	Tutte le permutazioni di $S_n$ si scrivono come composizione di trasposizioni. 
+	\begin{proof}
+		Per il corollario \ref{sncic}, \`e sufficiente mostrare che vale per un $k$-ciclo generico. 
+		A questo proposito, si osserva che:
+		\[
+			(1,\ldots,k)= (1,k) (1,k-1)\cdots (1,2)
+		\] 
+	\end{proof}
+\end{prop}
+\begin{osservazione}
+La decomposizione in trasposizioni non \`e unica: per esempio:
+\[
+	(12) = (12)(34)(34) = (12)(34)(35)(67)(34)(35)(67)
+\] 
+\end{osservazione}
+\begin{prop}
+	L'applicazione 
+	\[
+	\operatorname{sgn} :
+	\begin{array}
+		{c c c}
+		S_n & \longrightarrow & \left\{ \pm 1 \right\} = \mathbb{Z}^*\\
+		\\
+		\sigma & \longmapsto & \operatorname{sgn} \sigma =\displaystyle  \prod_{1\le i< j\le n} \frac{\sigma (i) - \sigma (j)}{i-j}
+	\end{array}
+	\] 
+	
+\end{prop}
+\subsection{Gruppi di Sylow e prodotti diretti}
+
+
+	
 \end{document}

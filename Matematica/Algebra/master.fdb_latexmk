@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1755188248.58471 "master.tex" "master.pdf" "master" 1755188251.26522 0
+["lualatex"] 1755258292.20832 "master.tex" "master.pdf" "master" 1755258294.93344 0
   "/etc/texmf/tex/generic/config/language.dat" 1742770839.44044 5960 3d5d21f87da1c1249bc1ecea1895a000 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1753436444.92749 127314 9ecf3684c39cfc70af3bf4aa08c05ccb ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1753436444.75849 441534 f06c52b9820571f656d9c5ea12c73ddb ""
@@ -12,6 +12,11 @@
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1742685315 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1742685315 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1742685315 940 228d6584342e91276bf566bcf9716b83 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1742685315 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm" 1742685315 1332 f817c21a1ba54560425663374f1b651a ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1742685315 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1742685315 1332 1fde11373e221473104d6cc5993f046e ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1742685315 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1742685315 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1742685315 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1742685315 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -49,6 +54,8 @@
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1742685315 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1742685315 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1742685315 684 3a51bd4fd9600428d5264cf25f04bb9a ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1742685315 34811 78b52f49e893bcba91bd7581cdc144c0 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1742685315 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1742685315 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1742685315 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1742685315 36741 fa121aac0049305630cf160b86157ee4 ""
@@ -384,11 +391,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742771058 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1742770958 5585379 b0d68a936bd79e2b84048f25799faebe ""
   "front.jpeg" 1754820746.10745 862401 d3cac176f3807c38a376814a6cf66fb7 ""
-  "master.aux" 1755188251.08186 6927 4ceb4beaa5789c472229b69dd24b628a "lualatex"
+  "master.aux" 1755258294.74993 7645 529223314598a753302d8f919a75412b "lualatex"
   "master.ind" 1754820767.83845 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1755188250.66386 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "master.tex" 1755188247.84886 52012 7b4679a8d393b916fe59075db385837e ""
-  "master.toc" 1755188251.08686 1221 d8f83d22d9038d7406941cd457022dac "lualatex"
+  "master.out" 1755258294.30098 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "master.tex" 1755258287.74293 57216 84a871048fa34579c24bc514b68033bd ""
+  "master.toc" 1755258294.75632 1322 4d5eb8c2ccddc798fb67ca3d62a9048d "lualatex"
   (generated)
   "master.aux"
   "master.idx"
@@ -397,8 +404,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1754820767.75659 "master.idx" "master.ind" "master" 1755188251.2651 0
-  "master.idx" 1755188249.54386 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1754820767.75659 "master.idx" "master.ind" "master" 1755258294.93329 0
+  "master.idx" 1755258293.17693 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"
