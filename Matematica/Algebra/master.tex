@@ -1112,7 +1112,7 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 \end{corollario}	
 \begin{osservazione}
 	Sia $G = H \times K$; per il teorema precedente (\ref{t171}), $Z(H \times  K) \cong Z(H) \times Z(K)$, visto che $Z(H) \times \left\{ e_K \right\} $ e $\left\{ e_h \right\} \times Z_K$ sono sottogruppi normali di $Z(H\times K)$.
-	Inoltre
+	Conseguentemente, ricordando la proposizione \ref{intcar}, si trova:
 	\[
 	\operatorname{Int} (H \times K) \cong (H\times K )/ Z(H\times K)\cong H / Z(H) \times K / Z(K)\cong \operatorname{Int} (H) \times \operatorname{Int} (K)
 	\] 
@@ -1122,9 +1122,126 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 	\begin{array}
 		{c c c}
 		H \times K & \longrightarrow &H / Z(H) \times K / Z(K)\\
-		(h,k) & \longmapsto & \left(h' + Z(H) , k' + Z(K)\right) 
+		(h,k) & \longmapsto & \left(h + Z(H) , k + Z(K)\right) 
 	\end{array}
 	\] 
 	e dal I teorema di omomorfismo.
 \end{osservazione}
+\begin{teorema}
+	Sia
+	\[
+	\phi : 
+	\begin{array}
+		{c c c}
+		\operatorname{Aut} (H) \times \operatorname{Aut} (K) & \longrightarrow & \operatorname{Aut} (H \times K)\\
+		(f,g) & \longmapsto & \gamma = (f,g)
+	\end{array}
+	\] 
+	Allora $\phi $ \`e un omomorfismo iniettivo, mentre \`e suriettivo se e solo se $H \times \left\{ e_K \right\} $ e $\left\{ e_H \right\} \times K$ sono caratteristici in $H\times K$.
+	\begin{proof}
+		Intanto, $\gamma$ \`e ben definita perch\'e $\forall (f , g) \in \operatorname{Aut} (H ) \times \operatorname{Aut}(K) $, si ha $f(h) \in H, \ \forall h \in H$ e $g(k) \in K, \ \forall k \in K$, quindi $\gamma((h,k)) = (f(h),g(k)) \in H \times  K$.
+		
+		Poi, $\phi $ \`e ben definita perch\'e $\gamma$ \`e un automorfismo; infatti \`e un omomorfismo:
+		\[
+		\gamma((h,k)(h',k'))=\big(f(hh'),g(kk')\big) = \big(f(h)f(h') , g(k) g(k')\big) =\gamma((h,k)) \gamma(h',k')
+		\] 
+		\`E anche iniettiva perch\'e 
+\[
+	\begin{split}
+		\operatorname{Ker} \gamma &= \left\{ (h,k) \in H \times K  \mid \gamma((h,k)) = (e_H,e_K) \right\} = \left\{ (h,k) \in \operatorname{Ker} f \times \operatorname{Ker} g \right\} \\
+					  &= \left\{ (e_H,e_K) \right\} 
+	\end{split}
+\] 
+		ed \`e suriettiva perch\'e $\forall (h,k) \in H \times  K, \ \exists ! (h_0,k_0) \in H\times K : ((f(h_0),g(k_0)) = (h,k)$, dove si \`e usato, in tutte le dimostrazioni, che sia $f$ che $g$ sono automorfismi.
+		Segue che $\gamma$ \`e effettivamente un automorfismo di $H \times K$.
+
+Ora si verifica che $\phi $ \`e un omomorfismo ed \`e sempre iniettivo; la prima vale perch\'e 
+\[
+\phi ((f,g)(\varphi ,\psi )) = \phi (f\circ\varphi ,g\circ\psi ) = (f\circ\varphi , g \circ\psi )= (f,g)\circ(\varphi ,\psi )=\phi ((f,g))\circ \phi ((\varphi ,\psi ))
+\] 
+mentre \`e iniettivo perch\'e $\phi ((f,g))= \operatorname{Id} _{H\times K}  \iff f = \operatorname{Id} _H$ e $g = \operatorname{Id} _K$.
+
+Ora si dimostra che $\phi $ \`e suriettivo se e solo se $H \times \left\{ e_K \right\} $ e $\left\{ e_H \right\} \times K$ sono caratteristici in $H\times K$.
+\begin{itemize}
+	\item ($\Leftarrow $) Si assume che $H \times \left\{ e_K \right\} $ e $\left\{ e_H \right\} \times K$ siano caratteristici in $H \times K$ e si mostra che $\phi $ \`e suriettivo.
+		Per farlo, si considerano, $\forall \gamma \in  \operatorname{Aut} (H \times K)$, le mappe $f: H \to H$ e $g : K \to K $ tali che
+		\[
+		f(h) = \pi_H \gamma(h,e_K) \hspace{1cm} g(k) = \pi_K \gamma(e_H,k)
+		\] 
+		e si dimostra che $f \in \operatorname{Aut} (H), \ g\in \operatorname{Aut} (K)$ e $\gamma = \phi (f,g)$.
+		Si nota che, sia $f$ che $g$ sono composizioni di due omomorfismi, quindi sono, a loro volta, omomorfismi; inoltre
+		\[
+		\begin{split}
+				\operatorname{Ker} f &= \left\{ h \in H  \mid \pi _H \gamma(h,e_K) = e_H \right\} = \left\{ h \in H  \mid \pi_H ( h', e_K) = e_H \right\} \\
+						     &= \left\{ h \in H  \mid e_H = h'= \gamma(h) \right\} = \left\{ e_H \right\} 
+		\end{split}
+		\] 
+	Lo stesso vale per $g$, quindi entrambe le mappe sono omomorfismi iniettivi.
+	Usando il fato che $\gamma$ \`e suriettiva, si ha che $\forall h' \in  H , \ \exists h \in H : \gamma(h,e_K) = (h',e_K)$, quindi $f(h) = \pi_H \gamma(h,e_K) = \pi_H(h',e_K) = h'$ e lo stesso si pu\`o ripetere per $g$ quindi $f$ e $g$ sono automorfismi.
+	Per concludere, si nota che
+	\[
+	\phi (f,g)((h,k)) = \big(\pi_H \gamma((h,e_K)),\pi_K \gamma((e_H,k))\big) = (h',k') = \gamma(h,k)
+	\] 
+\item ($\Rightarrow $) Sia $\phi $ anche suriettivo, quindi \`e un isomorfismo; si mostra che $H \times \left\{ e_K \right\} $ e $\left\{ e_ H\right\}  \times  K$ sono caratteristici in $H \times K$.
+
+	Se $\phi  $ \`e suriettivo, significa che ogni automorfismo di $\operatorname{Aut} (H \times K) $ \`e della forma $(f,g) : f \in \operatorname{Aut} (H) , \ g \in \operatorname{Aut} (K)$, ma allora, per $\psi  \in  \operatorname{Aut}(H \times K )$, si ha:
+	\[
+	\psi (H \times \left\{ e_K \right\} ) = f(H) \times \left\{ e_K \right\} = H \times \left\{ e_K \right\} 
+	\] 
+	perch\'e $f$ \`e un automorfismo di $H$ e $\left\{ e_K \right\} \stackrel{g}{\longmapsto} \left\{ e_K \right\} $ perch\'e $g$ \`e un automorfismo di $K$.
+\end{itemize}
+	\end{proof}
+\end{teorema}
+\begin{prop}
+	Sia $G = H\times K$, con $\lvert H \rvert = n$ e $\lvert K \rvert = m$; se $\operatorname{gcd}(n,m) =1$, allora $H$ e $K$ sono caratteristici in $G$.
+	\begin{proof}
+		Sia $f \in \operatorname{Aut} (H \times K)$, con $f(h,e_K) = (h',k')$; visto che $\operatorname{ord}((h,e_K)) = \operatorname{ord}(h)  \mid n$, deve essere $\operatorname{ord}((h',k')) = \operatorname{mcm} (\operatorname{ord}(h') ,\operatorname{ord}(k') )  \mid n$, visto che $f$ \`e automorfismo e, in particolare $\operatorname{ord}(k')  \mid n$.
+		Per ipotesi, deve essere $\operatorname{ord}(k')  \mid m $, ma, visto che $\operatorname{gcd}(n,m) =1 $, deve essere $k' = e_K$, da cui $f(H \times \left\{ e_K \right\} ) \subset H \times \left\{ e_K \right\} $.
+		Lo stesso procedimento si pu\`o applicare a $f(e_H, k)$.
+	\end{proof}
+\end{prop}
+\subsection{Esercizi e complementi}
+\subsubsection{Complementi di teoria}
+\subsubsection{Esercizi}
+\begin{esercizio}
+Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
+\begin{svolgimento}
+	Si nota che $\mathbb{Z} / 20 \mathbb{Z}\cong \mathbb{Z}/4 \mathbb{Z} \times  \mathbb{Z} / 5 \mathbb{Z}$, quindi:
+	\[
+		\begin{split}
+			\operatorname{Aut} (\mathbb{Z}/20\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z})&\cong \operatorname{Aut} (\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z} / 4\mathbb{Z}) \times \operatorname{Aut} (\mathbb{Z}/5\mathbb{Z}) \\
+												 &\cong\operatorname{Aut} (\mathbb{Z}/4\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}) \times \mathbb{Z}/4\mathbb{Z}
+		\end{split}
+	\] 
+	dove si \`e usato che $(\mathbb{Z}/5\mathbb{Z})^*$ \`e ciclico di ordine $4$, quindi isomorfo a $\mathbb{Z}/4\mathbb{Z}$.
+	Rimane da studiare $\operatorname{Aut} (\mathbb{Z}/4\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z})$.
+
+	Il gruppo $G_2 = \mathbb{Z}/4\mathbb{Z} \times  \mathbb{Z}/2\mathbb{Z}$ ha, come generatori, $\langle (a,0),(0,b) \rangle$, con $\operatorname{ord}((a,0)) = 4$ e $\operatorname{ord}((0,b)) =2$; per studiare gli automorfismi di $G_2$, \`e necessario e sufficiente stabilire come si comportano su questi elementi, cio\`e imporre che vengano mandati in altri elementi di ordine $4$ e $2 $ rispettivamente.
+
+	Concretamente, siano $(1,0)$ e $(0,1)$ i generatori di ordine $4$ e $2 $ rispettivamente; il primo, allora, pu\`o essere mandato in un elemento di $\left\{ (1,0), (3,0),(1,1),(3,1) \right\} $, mentre il secondo in un elemento di $\left\{ (0,1), (2,0) , (2,1) \right\} $.
+
+	Ora, considerando $u \in \left\{ (1,0), (3,0),(1,1),(3,1) \right\} $, $\langle u \rangle$ \`e un gruppo ciclico di ordine 4, pertanto contiene un elemento di ordine $2$, che \`e proprio $u^2$; evidentemente, il gruppo $\langle u,u^2 \rangle\neq G_2$ perch\'e ha ordine $4$, quindi, fissato $u$, si deve rimuovere dalla lista degli elementi di ordine $2$ quello corrispondente a $u^2$.
+
+	A questo punto, le possibili scelte sono $4$ dall'insieme degli elementi di ordine $4$ e $2 $ da quelli di ordine $2$, per un totale di $8$ automorfismi.
+
+	Si \`e dimostrato che $|\operatorname{Aut} (G_2)| = 8$; ora si mostra che $\operatorname{Aut} (G_2) \cong D_4$.
+	Per farlo, si cercano due elementi $\alpha , \Gamma \in \operatorname{Aut} (G_2)$ tali che $\operatorname{ord}(\Gamma) = 4, \ \operatorname{ord}(\alpha ) = 2$ e $\alpha \Gamma \alpha = \Gamma^{-1}$.
+	Si prendono $\alpha ((1,0))= (1,0)$, $\alpha (0,1) = (2,1)$ e $\Gamma((0,1)) = (2,1)$ e $\Gamma((1,0)) = (1,1)$; si osserva che:
+	\[
+	\begin{split}
+		&\alpha ((x,y)) = \alpha (x(1,0)+y(0,1)) = x(1,0) + y (2,1) =(2y+x,y)\\
+		& \Gamma((x,y)) = \Gamma (x(1,0) + y (0,1)) = x (1,1) + y(2,1) = (2y+x,x+y)
+	\end{split}
+	\] 
+	\begin{center}
+		Da terminare
+	\end{center}
+\end{svolgimento}
+\end{esercizio}
+
+
+
+
+
+
 \end{document}
