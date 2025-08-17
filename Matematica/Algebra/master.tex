@@ -1233,12 +1233,45 @@ Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \
 		& \Gamma((x,y)) = \Gamma (x(1,0) + y (0,1)) = x (1,1) + y(2,1) = (2y+x,x+y)
 	\end{split}
 	\] 
-	\begin{center}
-		Da terminare
-	\end{center}
+	da cui si pu\`o verificare l'ordine di ciascun automorfismo e, conseguentemente, che $\alpha \Gamma\alpha = \Gamma^{-1}$.
 \end{svolgimento}
 \end{esercizio}
+\begin{esercizio}
+Sia $\rho = (1234)(56) \in S_{10}$; calcolare $Z(\rho )$ e 
+\[
+N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in \langle \rho  \rangle\right\} 
+\] 
+\begin{svolgimento}
+	Si nota, intanto, che $\lvert Z(\rho ) \rvert = \lvert S_{10} \rvert / \lvert \operatorname{cl} (\rho ) \rvert = 8 \cdot 4!$.
+	Si considerano, poi, $H = \langle (1234),(56) \rangle\cong \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ e $K = S_{\left\{ 7,8,9,10 \right\} } \cong S_4$; per il teorema \ref{t171}, visto che questi due sottogruppi sono normali, con $HK = Z(\rho )$ e hanno intersezione banale, si ha $Z(\rho ) \cong \mathbb{Z}/4\mathbb{Z} \times Z / 2\mathbb{Z} \times S_4$.
 
+	Per $N(\langle \rho  \rangle)$, visto che $\langle \rho  \rangle=\left\{ \operatorname{Id} , \rho ,\rho ^2, \rho ^{-1} \right\} $, si ha
+	\[
+		\begin{split}
+			N(\langle \rho  \rangle) &= \left\{ \tau  \in S_{10}  \mid  \tau \rho \tau ^{-1}= \rho  \text{ o } \tau \rho \tau ^{-1}=\rho ^{-1}\right\} \\
+						 &= Z(\rho )\cup \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}=\rho ^{-1}\right\} = Z(\rho) \times G_{-1}
+		\end{split}
+	\] 
+	cio\`e \`e necessario che l'immagine sotto coniugio di un generatore, in questo caso $\rho $, sia ancora un generatore.
+	Allora \`e sufficiente caratterizzare $G_{-1} $.
+	Si nota che $\rho ^{-1}= \rho ^{3}= (56)(2341)$, quindi una possibilit\`a \`e $\tau_0 = (24)$, oppure $\tau_1= (1,4)(2,3)(5,6)$; per trovarle tutte, si osserva che
+	\[
+	\tau _1^{-1}\tau _0 \rho \tau_0 ^{-1}\tau _1 = \tau _1^{-1}\rho ^{-1}\tau _1= \rho \implies \tau _1^{-1}\tau _0 \in Z(\rho ) \iff \tau _0 \in \tau _1 Z(\rho )
+	\] 
+	perci\`o $\tau \in G_{-1} \iff \tau \in \tau _0 Z(\rho )$. 
+	Ne consegue che $\lvert N(\langle \rho  \rangle) \rvert = 2 \lvert Z(\rho ) \rvert $; in generale:
+	\begin{equation}
+		\begin{split}
+			&N_{S_n} (\langle \rho  \rangle) = \left\{ \tau  \in S_n  \mid \tau \rho \tau ^{-1}=\rho ^{k}, \ \operatorname{gcd}(\operatorname{ord}(\rho ) ,k) =1 \right\} \\
+			&\Rightarrow \lvert N_{S_n} (\langle \rho \rangle ) \rvert = \lvert \left\{ k \in \mathbb{Z} \mid \operatorname{gcd}(k,\operatorname{ord}(\rho ) ) =1 \right\}  \rvert \lvert Z_{S_n} (\rho ) \rvert =\phi (\operatorname{ord}(\rho ) ) \lvert Z_{S_n} (\rho ) \rvert 
+		\end{split}
+	\end{equation}
+	cio\`e \`e il centralizzatore per il numero di equazioni della forma $\tau \rho \tau ^{-1}= \rho ^k$.
+\end{svolgimento}
+\end{esercizio}
+\begin{osservazione}
+	Si nota che il coniugio non cambia la forma della permutazione, quindi l'equazione $\tau \rho \tau ^{-1} = \rho ^k$ ha soluzione se e solo se $k$ \`e coprimo con $\operatorname{ord}(\rho ) $.
+\end{osservazione}
 
 
 
