@@ -645,9 +645,9 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 	\end{proof}
 \end{prop}
 \begin{osservazione}
-Le isometrie del piano che agiscono su un $n$-agono, quindi gli elementi di $D_n$, si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, cio\`e possono essere rappresentate tramite matrici:
+	Ponendo l'$n$-agono regolare nel piano $\mathbb{R}^2$ gli elementi di $D_n$, si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, visto che si possono vedere come applicazioni lineari da $\mathbb{R}^2$ in se stesso, cio\`e possono essere rappresentate tramite matrici\footnote{Le riflessioni cos\`i definite devono essere rispetto ad un asse opportuno, cio\`e che sia un asse di simmetria per l'$n$-agono in questione.}:
 \begin{equation}
-	\rho  \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \displaystyle \cos \left(2\pi / n\right) & \sin \left(2\pi / n\right) \\ - \sin \left( 2\pi / n\right) & \cos (2\pi / n) \end{pmatrix}=M_\rho  \hspace{1cm}\sigma \stackrel{\gamma}{\longmapsto} \begin{pmatrix} 1 & 0 \\ 0 & - 1 \end{pmatrix} = M_\sigma 
+	\rho  \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \displaystyle \cos \left(2k\pi / n\right) & \sin \left(2k\pi / n\right) \\ - \sin \left( 2k\pi / n\right) & \cos (2k\pi / n) \end{pmatrix}=M_\rho  \hspace{1cm}\sigma \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \cos 2 \theta  & \sin 2\theta  \\ \sin 2\theta  & - \cos 2\theta  \end{pmatrix} = M_\sigma 
 \end{equation}
 Si nota, inoltre, che indicando con $\mathbb{D}_n$ il gruppo generato da queste matrici, allora la mappa $\gamma : \langle \rho ,\sigma  \rangle\to \mathbb{D}_n$ e notare che questo \`e un omomorfismo di gruppi; infatti, la composizione di isometrie che fissano un punto, sono ancora isometrie che fissano lo stesso punto (in questo caso, l'$n$-agono).
 Questo per dire che la mappa $\rho ^i \sigma ^j \mapsto M_\rho ^i M_\sigma ^j$ \`e ben definita.
@@ -785,7 +785,7 @@ Ricapitolando:
 
 \textbf{Sottogruppi caratteristici.}
 Usando quanto visto per i sottogruppi normali, si conclude che i possibili sottogruppi caratteristici sono i sottogruppi di $C_n$ e $\langle \rho ^2,\sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$. 
-Mentre si sa gi\`a che i sottogruppi di $C_n$ sono caratteristici, si osserva che, per gli altri due, la mappa $\tau : D_n \to D_n$ tale che $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $ ]`e un automorfismo che scambia $\langle \rho ^2,\sigma  \rangle$ con $\langle \rho ^2, \sigma \rho  \rangle$ e viceversa, quindi non sono caratteristici.
+Mentre si sa gi\`a che i sottogruppi di $C_n$ sono caratteristici, si osserva che, per gli altri due, la mappa $\tau : D_n \to D_n$ tale che $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $ ] \`e un automorfismo che scambia $\langle \rho ^2,\sigma  \rangle$ con $\langle \rho ^2, \sigma \rho  \rangle$ e viceversa, quindi non sono caratteristici.
 \subsubsection{Centro, quozienti e automorfismi di $D_n$}
 \hfill
 
@@ -1200,6 +1200,123 @@ Ora si dimostra che $\phi $ \`e suriettivo se e solo se $H \times \left\{ e_K \r
 		Lo stesso procedimento si pu\`o applicare a $f(e_H, k)$.
 	\end{proof}
 \end{prop}
+\subsection{Prodotto semidiretto}
+\begin{definizione}
+	[Prodotto semidiretto]
+	Siano $H ,K$ dei gruppi e $\gamma : K \to \operatorname{Aut} (H)$ un omomorfismo tale che $\gamma(k)=\gamma_k \in \operatorname{Aut} (H)$, dove $\gamma_k : H\to H$ mappa $h\mapsto h' \in H$; si chiama \textit{prodotto semidiretto} di $H$ e $K$ via $\gamma$ il prodotto cartesiano $H\times K$ con l'operazione definita da
+	\[
+		(h,k) * (h',k') = (h \gamma_k(h'), kk')
+	\] 
+	e si indica con $(H\times K, *) = H\rtimes _\gamma K$.
+\end{definizione}
+\begin{prop}
+	Dati due gruppi $H,K$; il loro prodotto semidiretto $H \rtimes _\gamma K$ \`e un gruppo.
+	\begin{proof}
+		La chiusura dell'operazione deriva direttamente dal fatto che sono due gruppi.
+		Tale operazione \`e associativa:
+		\[
+			\begin{split}
+				(a,b)\left[ (c,d)(e,f) \right] &=(a,b)(c\gamma_d(e),df) = \big(a \gamma_b(c\gamma_d(e)),bdf\big)= \big(a\gamma_b(c) \gamma_b(\gamma_d(e)),bdf\big)\\
+				&=\big(a \gamma_b(c) \gamma_{bd} (e),bdf\big) = (a\gamma_b(c), bd)(e,f) = \left[ (a,b)(c,d) \right] (e,f)
+			\end{split}
+		\] 
+	L'elemento neutro \`e $(e_H,e_K)$:	
+\[
+	(a,b) (e_H,e_K) = (a \gamma_b(e_H) , be_K) = (a,b)
+\] 
+perch\'e $\gamma_b$ \`e un automorfismo.
+Infine, l'elemento inverso \`e dato da\footnote{Questo si pu\`o ottenere imponendo che $(a,b)(x,y) = (e_H,e_K)$, risolvendo per $x$ e $y$.}:
+\[
+(a,b) \big(\gamma_{b^{-1}} (a^{-1}), b^{-1}\big) = \big(a \gamma_{b} \circ \gamma_{b^{-1}}(a^{-1}) , e_K \big)=(a a^{-1},e_K) = (e_H,e_K)
+\] 
+	\end{proof}
+\end{prop}
+\begin{osservazione}
+Il prodotto semidiretto \`e un caso particolare di prodotto diretto: scegliendo $\gamma(K) = \operatorname{Id} _H \in \operatorname{Aut} (H)$, si ha, infatti, $(h,k)(h',k') = (h\operatorname{Id}_H(h'),kk') = (hh',k k'), \ \forall k \in K$.
+\end{osservazione}
+\begin{esempio}
+Si studia $\mathbb{Z}/ 7\mathbb{Z} \rtimes _\gamma \mathbb{Z}/7\mathbb{Z}$, con $\gamma : \mathbb{Z} / 7\mathbb{Z}\to \operatorname{Aut} (\mathbb{Z}/7\mathbb{Z})\cong(\mathbb{Z}/7\mathbb{Z})^*\cong \mathbb{Z}/6\mathbb{Z}$.
+Per questione di ordine, si ha $\gamma([1]_7) = [0]_6$, visto che $\gamma([1]_7)$, in quanto elemento di $\mathbb{Z}/6\mathbb{Z}$, deve avere $\operatorname{ord}(\gamma([1]_7))  \mid 6$ e, come immagine di $[1]_7$, che ha $\operatorname{ord}([1]_7) = 7$, deve essere tale che $\operatorname{ord}(\gamma([1]_7))  \mid 7$; l'unico elemento che divide sia $6$, che $7$ \`e $1$, per cui $\gamma$ deve mappare $[1]_7 $ in $[0]_6$.
+Visto che $[1]_7$ genera $\mathbb{Z}/7\mathbb{Z}$, significa che $\gamma(\mathbb{Z}/7\mathbb{Z})=\left\{ [0]_6 \right\} $, cio\`e \`e l'omomorfismo banale.
+In sostanza, $\mathbb{Z}/7\mathbb{Z}\rtimes _\gamma \mathbb{Z}/ 7\mathbb{Z} = \mathbb{Z}/7\mathbb{Z} \times \mathbb{Z}/7\mathbb{Z}$.
+\end{esempio}
+\begin{prop}
+	Siano $H,K$ due gruppi; si considera il loro prodotto semidiretto $H\rtimes _\gamma K$. 
+Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H \right\} \times K$, per i quali si sa che $\overline{K},\overline{H}\lhd H \times K$, vale $\overline{H}\lhd H \rtimes _\gamma K$ sempre e $\overline{K}\lhd H \rtimes _\gamma K \iff $ il prodotto \`e diretto.
+\begin{proof}
+	Si ha sempre $\overline{H}\lhd H\rtimes _\gamma K$ perch\'e $\pi_K : H \rtimes _\gamma K \to K$ tale che $\pi_K((h,k)) = k$ \`e un omomorfismo e $H = \operatorname{Ker} \pi_K$.
+	
+	Per $\overline{K}$, si assume prima che sia normale e si mostra che $\gamma$ deve essere per forza banale.
+	A questo scopo, si osserva che $\forall (e_H, k) \in \overline{K}$ ed un elemento generico $(h,e_K) \in \overline{H}\lhd H \rtimes _\gamma K$:
+	\[
+		(h,e_K)(e_H,k)(h,e_K)^{-1}=(h \gamma_{e_K} (e_H), e_K k)(h,e_K)^{-1} = (h \gamma_k(h^{-1}),k)
+	\] 
+	Il fatto che $\overline{K}$ sia normale, implica che $\forall k, \ (h\gamma_k(h^{-1}),k)=(e_H,k)$, cio\`e $\forall k, \ \gamma_k(h^{-1}) = h^{-1}$, pertanto $\gamma$ deve essere l'omomorfismo banale e, quindi, il prodotto \`e diretto.
+
+	Per l'implicazione inversa, cio\`e assumendo che il prodotto sia diretto, \`e possibile seguire la stessa dimostrazione fatta per $\overline{H}$.
+\end{proof}
+\end{prop}
+\begin{osservazione}
+	Sia $G$ un gruppo e $H,K < G$, con $H \lhd G$; allora $HK < G$.
+\end{osservazione}
+\begin{teorema}
+	[Teorema di scomposizione semidiretta]
+	Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$ due sottogruppi; se $HK = G$ e $H \cap K = \left\{ e_G \right\} $, allora $G \cong H \rtimes _\gamma K$, con $\gamma: K \to \operatorname{Aut} (H)$ e $\gamma(k) = k hk^{-1}$.
+	\begin{proof}
+		Prima si dimostra la buona definizione del prodotto semidiretto definito nella tesi.
+		\begin{itemize}
+			\item $\gamma(k)=\gamma_k$ \`e un automorfismo di $H$.
+
+				La mappa $\gamma(k):H\to H$ \`e ben definita, visto che $H\lhd G$; infatti, $\forall k \in  K, \ \forall h \in H$, si ha $k h k^{-1}\in H$.
+				Poi, $\gamma_k$ \`e un omomorfismo perch\'e
+				\[
+				\gamma_k (h_1h_2) = k (h_1h_2) k^{-1} = (kh_1k^{-1})(k h_2k^{-1}) = \gamma_k(h_1) \gamma_k(h_2)
+				\] 
+				Infine, \`e biettiva perch\'e ha inversa $\gamma(k)^{-1} =\gamma(k^{-1})= \gamma_{k^{-1}} $; infatti $\gamma_{k^{-1}} \circ \gamma_k = \gamma_{e_K}  = \operatorname{Id} _H$.
+			\item $\gamma : K \to \operatorname{Aut} (H)$ \`e un omomorfismo.
+
+				Dati $k_1,k_2 \in K$ e $h \in H$:
+\[
+\gamma(k_1k_2)(h) = (k_1k_2)h(k_1k_2)^{-1} = k_1(k_2hk_2^{-1})k_1^{-1}= (\gamma_{k_1} \circ \gamma_{k_2} )(h)
+\] 
+		\end{itemize}
+		Ora si introduce il prodotto semidiretto dei gruppi $H \rtimes _\gamma K$ con la legge $(h,k)(h',k') = (hkh'k^{-1},k k')$.
+		Si dimostra che $G \cong H \rtimes _\gamma K$.
+		Per farlo, si introduce $F : H \rtimes _\gamma K \to G$ tale che $F(h,k) = hk \in G$ e si mostra che \`e un isomorfismo di gruppi.
+		\begin{itemize}
+			\item $F$ \`e un omomorfismo.
+
+				Siano $(h,k), (h',k') \in H \times K$; si osserva che:
+				\[
+					\begin{split}
+						F\big((h,k)(h',k')\big) &= F\big((hkh'k^{-1},k k')\big) = hkh'k^{-1} k k'= (hk)(h'k')\\
+									&= F(h,k) F(h',k')
+					\end{split}
+				\] 
+			\item $F$ \`e biettivo.
+
+				Per la suriettivit\`a, si nota che, essendo $HK = G$ per ipotesi, allora ogni $g \in G$ si scrive come $g = hk$, con $h \in H$ e $k \in K$.
+				Ne consegue che $F(h,k) = hk$ \`e suriettivo.
+
+				Per l'iniettivit\`a, sia $(h,k) \in \operatorname{Ker} F$; allora $F(h,k) = hk = e_G \iff hk = e_G \iff h = k^{-1}$, ma visto che $H\cap K = \left\{ e_G \right\} $, deve essere $h=k = e_H$, quindi $\operatorname{Ker} F = \left\{ (e_G,e_G) \right\} $.
+		\end{itemize}
+	Allora $F: H\rtimes _\gamma K \to G$ \`e un isomorfismo di gruppi, per cui $G \cong H \rtimes _\gamma K$.
+	\end{proof}
+\end{teorema}
+\begin{esempio}
+Si ha $S_n \cong A_n \rtimes _\gamma \langle (1,2) \rangle$, con $\gamma_{(1,2)} (\sigma ) = (1,2) \sigma (1,2)$, poi $D_n \cong \langle \rho  \rangle\rtimes _\gamma \langle \sigma  \rangle$, con $\gamma_\sigma (\rho ) = \sigma \rho \sigma ^{-1}=\rho ^{-1}$.
+\end{esempio}
+\begin{center}
+	\color{red} Scrivere teorema sulla caratterizzazione di $\mathbb{Z}/m\mathbb{Z} \rtimes _\gamma \mathbb{Z}/ n \mathbb{Z}$
+\end{center}
+
+\textbf{Classificazione dei gruppi di ordine pq.} 
+\begin{center}
+	\color{red}Da svolgere
+\end{center}
+\subsection{Ancora sulle permutazioni}
+
+
 \subsection{Esercizi e complementi}
 \subsubsection{Complementi di teoria}
 \subsubsection{Esercizi}
