@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1755467099.98556 "master.tex" "master.pdf" "master" 1755467102.88208 0
+["lualatex"] 1755550923.23268 "master.tex" "master.pdf" "master" 1755550926.18216 0
   "/etc/texmf/tex/generic/config/language.dat" 1742770839.44044 5960 3d5d21f87da1c1249bc1ecea1895a000 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1753436444.92749 127314 9ecf3684c39cfc70af3bf4aa08c05ccb ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1753436444.75849 441534 f06c52b9820571f656d9c5ea12c73ddb ""
@@ -46,8 +46,6 @@
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1742685315 12064 a35db870f0b76c338d749c56dc030ef5 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm" 1742685315 12084 b7f5e4c003de6f57f07c7e9fee73a37c ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm" 1742685315 17148 9556e1b5f936b77a796f68d2d559ba99 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm" 1742685315 17168 78a37e395d0470967cfda94332b0716a ""
-  "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm" 1742685315 17152 c8240fef851c4991afefdae37a539ee1 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm" 1742685315 11176 53ebf7a171df1f9447b387b178768bb5 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm" 1742685315 11252 57c8b53a3aeebba8c17658d4221d47ec ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm" 1742685315 11168 06d87f5698fd1b642d96449b7c8d90b0 ""
@@ -86,8 +84,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1742685315 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb" 1742685315 121065 50bbfa703ce7e11638752ef5a6d120c7 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1742685315 112593 fda2373ba4420af33949610de4c28fe8 ""
-  "/usr/share/texmf-dist/fonts/type1/public/lm/lmri7.pfb" 1742685315 111437 74f3e490d3223b7d4352605020ac7fc2 ""
-  "/usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb" 1742685315 109952 3dd76c0c5c680d519bb6d59a066c0826 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmss17.pfb" 1742685315 97155 77b0a2ea02ee9c950117adae5f41f9c9 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb" 1742685315 119663 e82fa1a58f98ccd89bdbd77311ac9cf1 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1742685315 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -392,11 +388,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742771058 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1742770958 5585379 b0d68a936bd79e2b84048f25799faebe ""
   "front.jpeg" 1754820746.10745 862401 d3cac176f3807c38a376814a6cf66fb7 ""
-  "master.aux" 1755467102.67985 10146 48ff287623cc88918e140f710adcea4d "lualatex"
+  "master.aux" 1755550925.98186 10214 399a414c4d1af452004a7cedf5231dff "lualatex"
   "master.ind" 1755349262.20289 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1755467102.09885 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "master.tex" 1755467099.49985 85021 edddf61f3d0bc56b2f50dfbd84d64031 ""
-  "master.toc" 1755467102.69427 1781 626b1758712069122876ae77994e104e "lualatex"
+  "master.out" 1755550925.39524 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "master.tex" 1755550919.01186 84700 b591babc90849a9619e8877c62644537 ""
+  "master.toc" 1755550925.98886 1781 54f6c0a035c9155fdd4f5ac033cf4d6c "lualatex"
   (generated)
   "master.aux"
   "master.idx"
@@ -405,8 +401,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1755349262.10964 "master.idx" "master.ind" "master" 1755467102.88196 0
-  "master.idx" 1755467100.96885 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1755349262.10964 "master.idx" "master.ind" "master" 1755550926.18204 0
+  "master.idx" 1755550924.20681 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

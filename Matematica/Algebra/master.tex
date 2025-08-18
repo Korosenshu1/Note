@@ -431,11 +431,11 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 		\[
 		p^n = \lvert Z(G) \rvert  + \sum_{x \in R \setminus Z(G)}^{} \frac{\lvert G \rvert }{\lvert Z(x) \rvert }
 		\] 
-		Se $\lvert Z(G) \rvert  = p^n$, la tesi \`e verificata, altrimenti $\exists x \in R \setminus Z(G)$, quindi tale che $Z(x) \subsetneq G$; allora, per qualche intero $k>0$, si ha $\lvert G \rvert / \lvert Z(x) \rvert = p^k$, da cui
+		Se $\lvert Z(G) \rvert  = p^n$, la tesi \`e verificata, altrimenti $\exists x \in R \setminus Z(G)$, quindi tale che $Z(x) \subsetneq G$; allora, per $k_x\in \mathbb{N}$, si ha $\lvert G \rvert / \lvert Z(x) \rvert = p^{k_x} $, con almeno un $k_x > 0$, da cui:
 		\[
-		\lvert Z(G) \rvert =p^n - \sum_{x \in R \setminus Z(G)}^{} p^k\implies p  \mid \lvert Z(G) \rvert 
+		\lvert Z(G) \rvert =p^n - \sum_{x \in R \setminus Z(G)}^{} p^{k_x} \implies p  \mid \lvert Z(G) \rvert 
 		\] 
-		Visto che $e \in Z(G)$, deve risultare $\lvert Z(G) \rvert \ge 1$, da cui $\lvert Z(G) \rvert = p^s$, per qualche intero $s > 1$.
+		Visto che $e \in Z(G)$, deve risultare $\lvert Z(G) \rvert \ge 1$, pertanto $\lvert Z(G) \rvert = p^s$, per qualche intero $s > 1$.
 	\end{proof}
 \end{prop} 
 \begin{lemma}\label{GZGciffban}
@@ -508,18 +508,18 @@ Per la prima parte, \`e sufficiente osservare che per $hk \in HK$, l'elemento ne
 La seconda parte, invece, si verifica considerando l'applicazione $\gamma: H \times K\to HK$ tale che $\gamma((h,k)) = hk$, che \`e evidentemente suriettiva; inoltre, se $s \in H \cap K$, allora $(hs,s^{-1}k) \in H \times K\Rightarrow \gamma ((hs,s^{-1}k)) = hk$, il che vuol dire che $\forall hk \in HK$, si trovano $|H\cap K|$ coppie in $H \times K$ che hanno immagine $hk$, da cui la tesi.
 \end{proof}
 \end{prop}
-\begin{boxenv}[Classificazione dei gruppi di ordine 6]
+\begin{esempio}[Classificazione dei gruppi di ordine 6]
 Sia $G$ un gruppo di ordine $6$; per Cauchy, allora, esistono $x,y \in G$ tali che $\operatorname{ord}(x) = 2$ e $\operatorname{ord}(y) =3$. 
-Se $G$ \`e abeliano, poi, si ha $\operatorname{ord}(xy) = 6$\footnote{Si dimostra per calcolo diretto; per esempio: $(xy)^3 = xyxyxy=xx x yyy=x$.}, quindi $G = \langle xy \rangle\cong \mathbb{Z}/ 6\mathbb{Z}$.
+Se $G$ \`e abeliano, poi, si ha $\operatorname{ord}(xy) = 6$\footnote{$\langle x \rangle \cap \langle y \rangle e$ perch\'e sono generati da elementi diversi, altrimenti avrebbero stesso ordine.}, quindi $G = \langle xy \rangle\cong \mathbb{Z}/ 6\mathbb{Z}$.
 
 Se, invece, $G$ non \`e abeliano, si considera il sottogruppo $\langle x,y \rangle$ e si considera anche l'insieme $\langle x \rangle\langle y \rangle$ che, in generale, non \`e un sottogruppo.
 
-Applicando la proposizione precedente (\ref{tgen}), si ha che $\lvert \langle x,y \rangle \rvert = (3 \cdot 2) / 1= 6$\footnote{L'intersezione \`e solo l'unit\`a perch\'e i due elementi hanno ordini diversi, quindi generano gruppi disgiunti.}, da cui $G = \langle x \rangle\langle y \rangle$, con $\langle x \rangle= \left\{ e,x \right\} $ e $\langle y \rangle= \left\{ e,y,y^2 \right\} $, quindi $G = \left\{ e , x ,y, xy,y^2 , xy^2 \right\} $.
+Applicando la proposizione precedente (\ref{tgen}), si ha che $\lvert \langle x,y \rangle \rvert = (3 \cdot 2) / 1= 6$\footnote{Come gi\`a accennato, l'intersezione \`e solo l'unit\`a perch\'e i due elementi hanno ordini diversi, quindi generano gruppi disgiunti.}, da cui $G = \langle x \rangle\langle y \rangle$, con $\langle x \rangle= \left\{ e,x \right\} $ e $\langle y \rangle= \left\{ e,y,y^2 \right\} $, quindi $G = \left\{ e , x ,y, xy,y^2 , xy^2 \right\} $.
 
 Per finire, si mostra che $G \cong S_3$. 
 Per farlo, si definisce $\phi :G \to S_3=\left\{ e,\tau ,\rho ,\tau \rho ,\tau ^2,\rho \tau ^2 \right\} $ tale che $\phi (x) = \rho $ e $\phi (y) = \tau $, con $\tau =(1,2,3)$ e $\rho = (1,2)$.
 Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni di cardinalit\`a; inoltre, \`e un omomorfismo, da cui segue la tesi.
-\end{boxenv}
+\end{esempio}
 
 \begin{teorema}
 	[Teorema di Cayley]
@@ -533,10 +533,10 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 			{c c c}
 			G & \longrightarrow & S(G)\\
 			g & \longmapsto & \gamma_g
-		\end{array}, \ \text{ tale che } \gamma_g(x) = g\cdot x
+		\end{array}, \ \text{ tale che } \gamma_g(x) = g\cdot  x=gx
 		\] 
-		Questa \`e ben definita perch\'e $\gamma:G \to G$ \`e biettiva, infatti $\gamma_g(x) = \gamma_g(y) \iff g \cdot x = g \cdot y \iff x = y$ e $\forall y \in G , \ \exists \gamma_g(g^{-1} \cdot y) = y $, il che mostra che \`e rispettivamente iniettiva e suriettiva.
-		Inoltre, $\phi $ \`e un omomorfismo (ovvio) ed \`e anche iniettiva perch\'e $\operatorname{Ker} \phi = \left\{ g \in G  \mid \phi _g = \phi _e \right\} = \left\{ g \in G  \mid g \cdot x = x \right\} = \left\{ e \right\}$.
+		Questa \`e ben definita perch\'e $\gamma:G \to G$ \`e biettiva, infatti $\gamma_g(x) = \gamma_g(y) \iff g x = g y \iff x = y$ e $\forall y \in G , \ \exists \gamma_g(g^{-1} y) = y $, il che mostra che \`e rispettivamente iniettiva e suriettiva.
+		Inoltre, $\phi $ \`e un omomorfismo (ovvio) ed \`e anche iniettiva perch\'e $\operatorname{Ker} \phi = \left\{ g \in G  \mid \phi _g = \phi _e \right\} = \left\{ g \in G  \mid g x = x \right\} = \left\{ e \right\}$.
 		Da questo, segue che $S(G)$ contiene una copia isomorfa a $G$.
 	\end{proof}
 \end{teorema}
@@ -661,14 +661,7 @@ Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come ele
 	\begin{proof}
 	Sia $g \in D_n$; allora $g$ sar\`a una generica composizione di riflessioni e rotazioni del tipo $g= \rho ^{a_1} \sigma ^{b_1} \ldots \rho ^{a_k} \sigma ^{b_k} $, dove $a_i \in \mathbb{Z}$ e $b_j \in \left\{ 0,1 \right\} $. 
 	Usando le relazioni $\sigma ^2 = \rho ^n = e$, si riscalano gli esponenti per scrivere $g = \rho ^{c_1} \sigma \ldots \rho ^{c_m} \sigma $, dove si sono anche, eventualmente, uniti esponenti di rotazioni consecutive (quindi $m\le k$).
-
-	Usando $\sigma ^2 = e$ e assumendo $c_1\neq 0$, si pu\`o scrivere 
-	\[
-	g = \rho ^{c_1} \sigma \ldots \rho ^{c_m} \sigma = \sigma \sigma \rho ^{c_1} \sigma \sigma \sigma \rho ^{c_2} \ldots \sigma \rho ^{c_m} \sigma = \sigma \rho ^{-c_1} \rho ^{-c_2}  \ldots \rho ^{-c_m} = \sigma \rho ^{-d} 
-	\] 
-			dove si \`e fatto uso della relazione $\sigma \rho \sigma = \rho ^{-1} $ e con $d \equiv -\sum_{i=1}^{m} c_i \pmod{n} $.
-
-			Se, invece, $c_1 = 0$ (cio\`e la \textit{parola} inizia con $\sigma $), allora $g = \rho ^{-c_2}\ldots \rho^{-c_m}  = \rho ^{d'}  $, con $d ' \equiv -\sum_{i=2}^{m} c_i \pmod{n} $.
+	Ora, utilizzando la relazione $\rho \sigma =\sigma \rho ^{-1}$, \`e possibile spostare tutte le $\sigma$ verso l'estrema sinistra, cio\`e come primo termine della parola; cos\`i facendo, si vede che tale parola diventa o una potenza di $\rho $, oppure un termine del tipo $\sigma \rho ^d$, che \`e esattamente quello che si voleva dimostrare.
 			\end{proof}
 \end{prop}
 \noindent Grazie alla precedente proposizione, \`e possibile definire $\rho ^{[i]} = \rho ^i$, con $[i] \in \mathbb{Z} / n\mathbb{Z}$, visto che $\rho ^n = e$.
@@ -692,7 +685,7 @@ Ricapitolando:
 	0 &,\ \text{ altrimenti }
 \end{cases}
 \end{equation}
-visto che le $n$ riflessioni sono tutte di ordine $2$ e l'esistenza di $\rho ^{n / 2} $ dipende dalla pairt\`a di $n$.
+visto che le $n$ riflessioni sono tutte di ordine $2$ e l'esistenza di $\rho ^{n / 2} $ dipende dalla parit\`a di $n$.
 \vspace*{5pt}
 
  \textbf{I sottogruppi.} 
@@ -700,7 +693,7 @@ Nel punto precedente, si \`e notato che $C_n$ \`e uno dei sottogruppi.
 Inoltre, i sottogruppi di $C_n$ sono noti: ne esiste uno per ogni divisore dell'ordine del gruppo, cio\`e $n$ in questo caso, per cui se $H < D_n$ e $H < C_n$, allora $H$ \`e l'unico sottogruppo di ordine $\lvert H \rvert $.
 Se, invece $H< D_n$ e $H \not < C_n$, allora $H$ contiene almeno una riflessione $\tau $.
 \begin{prop}
-	Si ha $(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$.
+	Si ha $H=(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$.
 	\begin{proof}
 		Si considera 
 	\[
@@ -711,7 +704,7 @@ D_n \arrow[r, "\gamma"]
 \end{tikzcd}
 \]
 dove $\gamma$ \`e l'omomorfismo definito che a $\rho $ e $\sigma $ associa le relative matrici, mentre le matrici di $\mathrm{GL} _2(\mathbb{R})$ sono mappate a $\left\{ \pm 1 \right\} $ tramite il determinante: $\det M_\rho  = 1$ e $\det M_\sigma = -1$.
-La mappa $\phi = \gamma\circ \det$ \`e un omomorfismo suriettivo proprio per come \`e definita $\gamma$ (cio\`e \`e un omomorfismo) e per il teorema di Binet per cui $\det (M^i_\rho M^j_\sigma ) = \det(M_\rho )^i \det (M_\sigma )^j = 1 ^i (-1)^j = 1 \iff j= 0$.
+La mappa $\varphi = \gamma\circ \det$ \`e un omomorfismo suriettivo proprio per come \`e definita $\gamma$ (cio\`e \`e un omomorfismo) e per il teorema di Binet per cui $\det (M^i_\rho M^j_\sigma ) = \det(M_\rho )^i \det (M_\sigma )^j = 1 ^i (-1)^j = 1 \iff j= 0$.
 
 Considerando, quindi, $\varphi  :D_n \to \mathbb{Z} / 2\mathbb{Z}$, la sua restrizione $\varphi _H$ con $H < D_n$ e $H\not < C_n$ \`e suriettiva e il suo kernel \`e $H\cap C_n$; per il I teorema di omomorfismo, allora $H / (H\cap C_n) \cong \mathbb{Z} / 2\mathbb{Z}$.
 Per il teorema di Lagrange, poi, si ha $\lvert H \rvert / \lvert H\cap C_n \rvert = \lvert \mathbb{Z} / 2 \mathbb{Z} \rvert $, per cui $\lvert H \rvert  = 2 \lvert H\cap C_n \rvert $.
@@ -1306,10 +1299,6 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 \begin{esempio}
 Si ha $S_n \cong A_n \rtimes _\gamma \langle (1,2) \rangle$, con $\gamma_{(1,2)} (\sigma ) = (1,2) \sigma (1,2)$, poi $D_n \cong \langle \rho  \rangle\rtimes _\gamma \langle \sigma  \rangle$, con $\gamma_\sigma (\rho ) = \sigma \rho \sigma ^{-1}=\rho ^{-1}$.
 \end{esempio}
-\begin{center}
-	\color{red} Scrivere teorema sulla caratterizzazione di $\mathbb{Z}/m\mathbb{Z} \rtimes _\gamma \mathbb{Z}/ n \mathbb{Z}$
-\end{center}
-
 \textbf{Classificazione dei gruppi di ordine pq.} 
 \begin{center}
 	\color{red}Da svolgere
