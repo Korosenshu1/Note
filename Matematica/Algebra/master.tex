@@ -1253,7 +1253,7 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 	Sia $G$ un gruppo e $H,K < G$, con $H \lhd G$; allora $HK < G$.
 \end{osservazione}
 \begin{teorema}
-	[Teorema di scomposizione semidiretta]
+	[Teorema di scomposizione semidiretta]\label{scth}
 	Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$ due sottogruppi; se $HK = G$ e $H \cap K = \left\{ e_G \right\} $, allora $G \cong H \rtimes _\gamma K$, con $\gamma: K \to \operatorname{Aut} (H)$ e $\gamma(k) = k hk^{-1}$.
 	\begin{proof}
 		Prima si dimostra la buona definizione del prodotto semidiretto definito nella tesi.
@@ -1299,15 +1299,196 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 \begin{esempio}
 Si ha $S_n \cong A_n \rtimes _\gamma \langle (1,2) \rangle$, con $\gamma_{(1,2)} (\sigma ) = (1,2) \sigma (1,2)$, poi $D_n \cong \langle \rho  \rangle\rtimes _\gamma \langle \sigma  \rangle$, con $\gamma_\sigma (\rho ) = \sigma \rho \sigma ^{-1}=\rho ^{-1}$.
 \end{esempio}
-\textbf{Classificazione dei gruppi di ordine pq.} 
-\begin{center}
-	\color{red}Da svolgere
-\end{center}
+\begin{esempio}
+	[Classificazione dei gruppi di ordine pq.]
+	Si considera prima il caso $p=q$, da cui $\lvert G \rvert  = p^2$, per il quale si sa che le uniche possibilit\`a sono $G \cong \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z} / p \mathbb{Z}$, oppure $G\cong\mathbb{Z} / p ^2 \mathbb{Z}$.
+
+	Si assume, ora, $q>p$ e $\lvert G \rvert = pq$; per Cauchy, esistono due sottogruppi $H,K < G$ di ordine $q$ e $p$ rispettivamente; usando la proposizione \ref{propnlag}, si sa anche che $H \lhd G$\footnote{Perch\'e $[G:H] = \lvert G / H \rvert = \lvert G  \rvert / \lvert H \rvert = qp / q =p $.}
+	
+	Inoltre, si sa anche che $H$ \`e caratteristico perch\'e \`e l'unico sottogruppo di ordine $q$. 
+	Infatti, se esistesse $H'<G$ tale che $\lvert H' \rvert =q$, si avrebbe $\lvert H H' \rvert = \lvert H \rvert \lvert H' \rvert  / \lvert H \cap H' \rvert = q^2 / \lvert H\cap H' \rvert $. 
+	Visto che $\lvert H\cap H' \rvert $ pu\`o essere $1$, oppure $q$, quindi $\lvert H H' \rvert $ \`e $q$, o $q^2$, ma non pu\`o essere $q^2 $ perch\'e sarebbe maggiore di $\lvert G \rvert $, quindi $\lvert H\cap H' \rvert = q \Rightarrow H = H'$.
+
+	Usando il teorema di scomposizione (\ref{scth}), si conclude che $G = H \rtimes _\gamma K$ perch\'e, per una questione di ordine, $H\cap K = \left\{ e_G \right\} $ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert / \lvert H\cap K \rvert = \lvert H  \rvert \lvert K \rvert =pq$, quindi $G = HK$\footnote{Si ricorda che $H\lhd G$ implica che $HK$ \`e un gruppo).}.
+
+	Prendendo $H = \langle x \rangle$ e $ K = \langle y \rangle$, si ha
+	\[
+	\gamma : \langle y \rangle \longrightarrow \operatorname{Aut} (\langle x \rangle),  \ \gamma(y)(x) = \gamma_y(x) = yxy^{-1}= x^\ell 
+	\] 
+	Visto che $\gamma$ \`e un omomorfismo, deve valere $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) $, cio\`e $\operatorname{ord}(\gamma_y) \in \left\{ 1,p \right\} $ (visto che $p$ \`e primo), quindi se $p  \nmid  (q - 1)$\footnote{La richiesta deriva dal fatto che $\lvert \operatorname{Aut} (\langle x \rangle) \rvert = \lvert \operatorname{Aut} (\mathbb{Z}/q\mathbb{Z}) \rvert =\lvert (\mathbb{Z}/q\mathbb{Z})^* \rvert = q - 1$. La richiesta $p  \mid q-1$, invece, \`e legata alla necessit\`a che $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) =p$, cio\`e che in $(\mathbb{Z}/q\mathbb{Z})^*\cong \mathbb{Z}/(q-1)\mathbb{Z}$ esista un sottogruppo di ordine almeno $p$, cosa che \`e verificata se e solo se $p  \mid q-1$.}, allora $\operatorname{ord}(\gamma_y) =1$ e $\gamma_y = \operatorname{Id} _H$, quindi $G \cong \mathbb{Z}/(pq) \mathbb{Z}$.
+	Se, invece, $p \mid (q-1)$, allora esiste un sottogruppo di ordine $p$ in $\mathbb{Z}/(q-1)\mathbb{Z}$, il quale ha $p-1$ elementi di ordine $p$ (sempre perch\'e $p$ \`e primo), quindi ci sono $p-1$ possibili omomorfismi $\gamma$ che generano gruppi $H \rtimes _\gamma K$ diversi a seconda di dove mandano $y$; l'idea \`e di dimostrare che questi sono tutti isomorfi tra loro.
+
+	Siano, allora $\gamma, \gamma'$ due omomorfismi tali che $\gamma_y(x) = x^\ell $ e $\gamma'_y(x) = x^{\ell '} $, con $\ell ,\ell '$ coprimi con $q$\footnote{Perch\'e le mappe $\gamma_y$ e $\gamma_y'$ sono automorfismi di $\mathbb{Z} / q\mathbb{Z}$, quindi devono mappare un generatore ($x$ in questo caso) in un altro generatore.}; si ha:
+	\[
+		(\gamma_y)^p = \operatorname{Id} \implies x^{\ell ^p} =x\implies \ell ^p = 1
+	\] 
+	quindi $\operatorname{ord}(\ell ) = \operatorname{ord}(\ell ') =p$, per cui $\exists r \in \mathbb{N}$ tale che $\ell ' = \ell ^r $, con $0 < r < p-1$.
+	Questo significa che $\gamma'_y = \gamma_{y^r} $, infatti $\gamma_{y^r} (x) =( \gamma_y(x))^r = x^{\ell ^r} = x^{\ell '} $.
+Per conclude, si nota che $\psi : H \rtimes _\gamma K\longrightarrow H \rtimes _{\gamma'} K$ tale che $\psi ((x,y)) = (x,y^r)$ \`e un isomorfismo (facile verifica), quindi ogni prodotto semidiretto genera gruppi isomorfi.
+
+Se ne conclude che, nel caso $p  \mid  q-1$, ci sono solo due possibili gruppi distinti di ordine $pq$, a meno di isomorfismi.
+\end{esempio}
+\begin{osservazione}
+Si riassume e si d\`a un'idea qualitativa dei risultati sulla classificazione dei gruppi di ordine $pq$. 
+Nel caso in cui $p  \nmid q-1$, l'unico gruppo possibile di ordine $pq$ a meno di isomorfismi \`e $G \cong \mathbb{Z} / pq\mathbb{Z}$ perch\'e non esistono automorfismi di ordine $p$ in $\operatorname{Aut} (H)\cong \operatorname{Aut} (\mathbb{Z}/q\mathbb{Z})$.
+Se, invece, $p  \mid q-1$, si hanno due possibilit\`a: $G \cong \mathbb{Z}/ pq\mathbb{Z}$, oppure $G$ \`e isomorfo a un gruppo non-abeliano relativo ad un prodotto semidiretto non banale. 
+Tale gruppo non-abeliano \`e unico a meno di isomorfismo perch\'e $\operatorname{Aut} (\mathbb{Z}/q\mathbb{Z}) \cong \mathbb{Z}/(q-1)\mathbb{Z}$ \`e ciclico, quindi tutti gli elementi di ordine $p$ generano lo stesso sottogruppo, pertanto inducono lo stesso prodotto semidiretto.
+\end{osservazione}
 \subsection{Ancora sulle permutazioni}
+Per il teorema delle classi, si sa che $|Z_{S_n} (\sigma )| |\operatorname{Cl}_{S_n}  (\sigma )| = n!$; analogamente, se $\sigma  \in A_n$, allora $|Z_{A_n} (\sigma )| |\operatorname{Cl} _{A_n} (\sigma )| = n! / 2$, con
+\[
+Z_{A_n} (\sigma ) = \left\{ \rho \in A_n  \mid \rho \sigma \rho ^{-1}= \sigma  \right\} = Z_{S_n} (\sigma ) \cap A_n
+\] 
+\begin{osservazione}
+Dalla formula delle classi, appare che, passando da $S_n$ ad $A_n$, una classe di coniugio pu\`o rimanere uguale, oppure scindersi in due di uguale grandezza.
+La seconda eventualit\`a \`e relativa a quando il centralizzatore di $S_n$ del rappresentante \`e interamente contenuto in $A_n$; in questo caso, infatti, il centralizzatore di $A_n$ coincide con quello di $A_n$, quindi, per la formula delle classi:
+\[
+	\begin{split}
+		&\lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert \lvert Z_{A_n} (\sigma ) \rvert =\lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert \lvert Z_{S_n} (\sigma ) \rvert  =\lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert \frac{n!}{\lvert \operatorname{Cl} _{S_n} (\sigma ) \rvert}  =\frac{n!}{2} \\
+		&\implies \lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert=\frac{\lvert \operatorname{Cl} _{S_n} (\sigma ) \rvert}{2}
+	\end{split}
+\] 
+Nella prima eventualit\`a, invece, \`e l'ordine della classe a rimanere invariato nel passaggio da $S_n$ ad $A_n$.
+\end{osservazione}
+\begin{lemma}
+	Sia $H < S_n$; allora $ \lvert H \cap  A_n \rvert = |H|$, se $H \subset A_n$, altrimenti $\lvert H \cap A_n \rvert = H / 2$.
+	\begin{proof}
+		Si considera il seguente diagramma:
+	\[
+\begin{tikzcd}
+H \arrow[r, "\phi "] 
+    \arrow[rr, bend right=30, "{\gamma}"'] & 
+S_n(\mathbb{R}) \arrow[r, "\psi  "] & S_n / A_n \cong \left\{ \pm 1 \right\} 
+\end{tikzcd}
+\]
+con $\psi  $ omomorfismo suriettivo e $S_n / A_n \cong \left\{ \pm 1 \right\} $ per il I teorema di omomorfismo applicato all'omomorfismo suriettivo $S_n \stackrel{\operatorname{sgn} }{\longrightarrow} \left\{ \pm 1 \right\} $, dove $\operatorname{Ker} \operatorname{sgn}  = A_n$. 
+
+Ora, considerando la mappa $\gamma : H \to S_n / A_n \cong \left\{ \pm 1 \right\} $, si nota che se $H\cap A_n = H$, allora $H$ contiene unicamente permutazioni pari e $\gamma$ \`e l'applicazione banale perch\'e $\operatorname{Ker} \gamma = H$.
+Se, invece, $H \not\subset A_n$, significa che $H$ contiene almeno una permutazione dispari, per cui il quoziente $H / A_n$ ha indice $2$ e $\gamma$ \`e un omomorfismo suriettivo, pertanto $H / \operatorname{Ker} \gamma \cong \left\{ \pm 1 \right\} $.
+Si osserva che $\operatorname{Ker} \gamma = H \cap A_n$, quindi: nel primo caso, si ottiene $H\cap A_n= H$, quindi $\lvert H\cap A_n \rvert = \lvert H \rvert $; nel secondo caso, si ha $H / H\cap A_n \cong \left\{ \pm 1 \right\} $, quindi $\lvert H \rvert = 2 \lvert H \cap A_n \rvert $.
+	\end{proof}
+\end{lemma}
+\begin{esercizio}
+I $3$-cicli sono tutti coniugati in $A_n$, con $n\ge 5$.
+\begin{svolgimento}
+	Dato $\sigma =(a,b,c) \in S_5$ un $3$-ciclo, per $n\ge 5$ si ha $(d,e) \in Z_{S_n} (\sigma ) / Z_{A_n} (\sigma )$, con $d,e \not \in \left\{ a,b,c \right\} $; per il lemma precedente, quindi, $\lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert = \lvert \operatorname{Cl} _{S_n} (\sigma  )\rvert $.
+
+	Se, al contrario, si considera $n=3$, per esempio, $A_3 = \langle (1,2,3) \rangle=\left\{ \operatorname{Id} , (1,2,3), (1,3,2) \right\} $; se, per assurdo, $\operatorname{Cl} _{A_n} (1,2,3) = \left\{ (1,2,3),(1,3,2) \right\} $, si avrebbe $\lvert \operatorname{Cl} _{A_n} (1,2,3) \rvert = 2 \nmid 3 = \lvert A_3 \rvert $\footnote{Il fatto che l'ordine della classe di coniugio debba dividere l'ordine del gruppo \`e diretta conseguenza della formula delle classi.}, quindi $\operatorname{Cl} _{A_n} (1,2,3) = \left\{ (1,2,3) \right\} $.
+
+	Infine, per $n=4$, si ha $\lvert A_4 \rvert =12$ e $\lvert \operatorname{Cl} _{S_4} (a,b,c) \rvert = \binom{4}{3}2! = 8  \nmid  12$.
+\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+I $5$-cicli non sono tutti coniugati in $A_5$.
+\begin{svolgimento}
+	Le classi di coniugio di un $5$-ciclo di $S_5$ sono $4!$; se $\operatorname{Cl} _{A_5} (\sigma )$ avesse stessa cardinalit\`a, con $\sigma $ un $5$-ciclo, allora, per la formula delle classi:
+	\[
+	\lvert Z_{A_5} (\sigma ) \rvert  = \frac{\lvert A_5 \rvert }{|\operatorname{Cl} _{A_5} (\sigma )|}= \frac{5! /2 }{4!} = \frac{5}{2}
+	\] 
+	che \`e assurdo, quindi tale classe di equivalenza si scinde in due.
+\end{svolgimento}
+\end{esercizio}
+\begin{esercizio}
+$A_4$ non contiene sottogruppi di ordine $6$.
+\begin{svolgimento}
+	Poniamo caso che $\exists H < A_4$ con $|H| = 6$, allora $H \lhd A_4$\footnote{Si avrebbe $[A_4:H] = 2$, quindi risulterebbe $H\lhd A_4$.} e $\exists \sigma  \in H$ con $\operatorname{ord}(\sigma ) =2$ e $\sigma = (a,b)(c,d)$. 
+	Si nota che $\operatorname{Cl}_{S_4} (\sigma ) = \left\{ (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\} = \operatorname{Cl} _{A_4} (\sigma )$; inoltre, $K = \left\{e, (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\}\lhd S_4$, ma se $H$ \`e normale e $\sigma  \in H$, allora $\operatorname{Cl} _{A_4} (\sigma ) \subset H$, quindi $K \lhd H$, il che \`e assurdo perch\'e $\lvert K \rvert =4  \nmid 6 = \lvert H \rvert $.
+\end{svolgimento}
+\end{esercizio}
+\begin{prop}
+	Per ogni $n\ge 5$, $A_n$ \`e semplice, cio\`e non ha sottogruppi normali non-banali.
+	\begin{proof}
+Si procede per induzione su $n$.
+Per il passo base, si considera $n=5$. 
+In questo caso, $\lvert A_5 \rvert =60$; considerando $H \lhd A_5$, se $H$ contiene un $3$-ciclo, li contiene tutti, ma visto che questi generano $A_n$, allora $H = A_n$.
+Se contiene un $2\times 2$-ciclo, invece, per coniugio, contiene un $3$-ciclo\footnote{Per esempio, $((1,2)(3,4))((1,5)(3,4)) = (1,5,2)$.} e ci si ritrova nel caso precedente.
+Se $H$ contiene un $5$-ciclo, ancora per coniugio, contiene un $3$-ciclo\footnote{Per esempio, $(1,2,3,4,5) (1,5,3,4,2) = (3,4,5)$.} e, nuovamente, si \`e nel primo caso.
+Allora $H$ \`e banale.
+
+Ora si assume che la tesi sia vera $\forall m < n$ e si dimostra per $n$.
+Si considera, allora, per $n\ge 6$, $A_n \supset G_i = \left\{ \sigma \in A_n  \mid \sigma (i) = 1 \right\} \cong A_{n-1} $, dove ogni $G_i$ \`e coniugato di qualche altro.
+
+Sia, ora, $N \lhd A_n$, per cui $N\cap G_i \lhd G_i$; per induzione, dunque, si ha, per ogni $i$, $N\cap G_i = G_i$, oppure $N\cap G_i = \left\{ e \right\} $.
+Se $\forall i, \ N\cap G_i = G_i$, allora per un certo $i$, $G_i$ contiene un $3$-ciclo, pertanto $N = A_n$.
+
+Se, al contrario, $\forall i,\ N\cap G_i = \left\{ e \right\} $, allora $N$ \`e il sottogruppo degli elementi che non fissano alcun elemento.
+Siano $\sigma , \tau  \in N$; se $\sigma (i) = \tau  (i) \implies \sigma \tau ^{-1}(i) = i\implies \sigma =\tau $.
+Allora si scrive $\sigma $ come prodotto di cicli disgiunti di lunghezze $r_1,\ldots,r_k$ decrescenti: $\sigma  = C_1\cdots C_k$.
+Si assume $r_i \ge 3$ per un certo $i$, quindi $C_i= (i_1,i_2,i_3,\ldots)$; prendendo $\rho =(i_3,j,k)$ tale che $j,k \not \in \left\{ i_1,i_2,i_3 \right\} $, si ha $\rho \sigma \rho ^{-1}= \tau $ e $\sigma (i_1) = \tau (i_1)= i_2$, ma $\sigma \neq \tau $ che \`e assurdo.
+
+Si considera, ora, $\forall i, \ r_i=2$, quindi $\sigma = (i,j)(k,l)\ldots$ \`e prodotto di trasposizioni; scegliendo $\rho =(\ell ,p,q)$, con $p,q \not \in \left\{ i,j,k \right\} $, si ha che $\tau  = \rho \sigma \rho ^{-1}$ e $\sigma $ sono distinti, ma $\sigma (i) = \tau (i) = j$, il che \`e assurdo.
+
+Si conclude che $N$ \`e banale, pertanto $A_n$ \`e semplice.
+	\end{proof}
+\end{prop}
+
+\textbf{Sottogruppi normali di $\mathbf{S_n} $.} Per $n=4$, si hanno $A_4$ e $\langle (1,2)(3,4),(1,3)(2,4) \rangle$.
+Per $n=5$, $S_n$ ha un solo sottogruppo normale, cio\`e $A_5$; infatti, se $H\lhd S_n$ e $|H|\nmid |A_n|$, allora $H\cap A_n \lhd A_n$, per\`o $A_n$ \`e semplice, quindi $H\cap A_n = \left\{ e \right\} $.
+Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale.
+
+
+\subsection{Il teorema di Sylow}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Il teorema di struttura per gruppi abeliani finiti}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Esercizi e complementi}
+
 \subsubsection{Complementi di teoria}
+Di seguito, un criterio importante per stabilire se un sottogruppo \`e normale.
+\begin{prop}\label{propnlag}
+	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
+	\begin{proof}
+		L'insieme delle classi laterali \`e $G / H = \left\{ g_1H , \ldots, g_p H \right\} $, visto che $[G:H] = p$.
+		Si definisce l'azione $\gamma: G \to S(G / H)$ con $\gamma(g) = \pi _g$ e $\pi_G (g_i H) = gg_i H$, che consiste nella permutazione di tutte le classi di equivalenza.
+		Il nucleo di questo omomorfismo (\`e facile vedere che \`e un omomorfismo perch\'e consiste nella moltiplicazione per $g$) \`e dato da:
+		\[
+			\operatorname{Ker} \gamma = \left\{ g \in  G  \mid \forall i, \ g g_{i} H = g_i H \right\} = \left\{ g \in  G  \mid g \in \bigcap _{x \in G} \operatorname{Stab} (xH) \right\} 
+		\] 
+		Si nota che $g \in \operatorname{Stab} (xH) \Rightarrow gx H = xH \Rightarrow x^{-1}gx H = H$, che \`e vero se e solo se $x^{-1}g x \in H$, ossia $g \in  x H x^{-1}$.
+		Pertanto, il nucleo si pu\`o scrivere come:
+		\[
+		\operatorname{Ker} \gamma = \left\{ g \in  G  \mid g \in \bigcap_{x \in  G}  xH x^{-1}  \right\} \overset{\text{def}}{=}H_G
+		\] 
+		L'azione definita sopra consiste nella permutazione delle classi di equivalenza: ogni $\pi_g$ moltiplica ciascuna classe per $g$, rimappando ciascuna classe in un'altra (in modo univoco, visto che \`e un automorfismo). 
+		Allora $\gamma : G \to \mathcal{S} _p (G / H) \subset S(G/H)$, con $\mathcal{S}_p (G / H) \cong S_p$; qui $\mathcal{S}_p(G / H) $ \`e l'insieme degli automorfismi $\pi_g$, mentre $S_p$ \`e l'insieme delle permutazioni su $\left\{ 1, \ldots, p  \right\} $.
+
+		Per il I teorema di omomorfismo, $G / H_G \longrightarrow S_p$ \`e iniettiva\footnote{Non \`e detto che sia suriettiva, in generale sar\`a un isomorfismo se ristretta a un sottoinsieme di $S_p$.}, cio\`e $G / H_G \hookrightarrow S_p$; pertanto $\lvert G / H \rvert  \mid p !$ per Lagrange.
+		Allora ci sono due possibilit\`a: o $\lvert G / H \rvert  =1 $, oppure $\lvert G / H \rvert = p$, visto che $\lvert G / H \rvert $ deve dividere sia $n$ (che ha come primo pi\`u piccolo $p$), che $p!$ (che ha come primo pi\`u grande $p$).
+
+		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
+	\end{proof}
+\end{prop}
+
+
+
+
 \subsubsection{Esercizi}
 \begin{esercizio}
 Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
