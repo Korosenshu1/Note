@@ -645,14 +645,16 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 	\end{proof}
 \end{prop}
 \begin{osservazione}
-	Ponendo l'$n$-agono regolare nel piano $\mathbb{R}^2$ gli elementi di $D_n$, si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, visto che si possono vedere come applicazioni lineari da $\mathbb{R}^2$ in se stesso, cio\`e possono essere rappresentate tramite matrici\footnote{Le riflessioni cos\`i definite devono essere rispetto ad un asse opportuno, cio\`e che sia un asse di simmetria per l'$n$-agono in questione.}:
+	Ponendo l'$n$-agono regolare nel piano $\mathbb{R}^2$, gli elementi di $D_n$ si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, visto che si possono vedere come applicazioni lineari da $\mathbb{R}^2$ in se stesso, cio\`e possono essere rappresentate tramite matrici\footnote{Le riflessioni cos\`i definite devono essere rispetto ad un asse opportuno, cio\`e che sia un asse di simmetria per l'$n$-agono in questione. Nella matrice delle riflessioni, l'angolo $\theta $ \`e l'angolo dell'asse rispetto a cui si riflette ed \`e preso con riferimento all'asse $x$.}:
 \begin{equation}
 	\rho  \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \displaystyle \cos \left(2k\pi / n\right) & \sin \left(2k\pi / n\right) \\ - \sin \left( 2k\pi / n\right) & \cos (2k\pi / n) \end{pmatrix}=M_\rho  \hspace{1cm}\sigma \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \cos 2 \theta  & \sin 2\theta  \\ \sin 2\theta  & - \cos 2\theta  \end{pmatrix} = M_\sigma 
 \end{equation}
-Si nota, inoltre, che indicando con $\mathbb{D}_n$ il gruppo generato da queste matrici, allora la mappa $\gamma : \langle \rho ,\sigma  \rangle\to \mathbb{D}_n$ e notare che questo \`e un omomorfismo di gruppi; infatti, la composizione di isometrie che fissano un punto, sono ancora isometrie che fissano lo stesso punto (in questo caso, l'$n$-agono).
-Questo per dire che la mappa $\rho ^i \sigma ^j \mapsto M_\rho ^i M_\sigma ^j$ \`e ben definita.
-
-Si pu\`o, inoltre, verificare che $M_\rho ^n = \operatorname{Id} $, $M_\sigma ^2 = \operatorname{Id} $ e $M_\sigma M_\rho M_\sigma = M_\rho ^{-1}$, per cui si conclude che $\gamma$ \`e un omomorfismo.
+Si nota, inoltre, che indicando con $\mathbb{D}_n$ il gruppo generato da queste matrici, allora la mappa $\gamma : \langle \rho ,\sigma  \rangle\to \mathbb{D}_n$ \`e un omomorfismo di gruppi; infatti, dati due elementi $s_1,s_2 \in \langle \rho ,\sigma  \rangle$:
+\[
+\gamma(s_1s_2)v= M_{s_1s_2} v = (s_1s_2) (v) = s_1 (s_2 (v)) =M_{s_1} M_{s_2} v = \gamma(s_1)\gamma(s_2)v
+\] 
+con $v \in \mathbb{R}^2$ e $s(v)$ \`e l'applicazione della rotazione o riflessione $s \in \langle \rho ,\sigma  \rangle$ a tale vettore di $\mathbb{R}^2$.
+Conseguentemente, si ha $M_\rho ^n = \operatorname{Id}=M_\sigma ^2 $ e $M_\sigma M_\rho M_\sigma = M_\rho ^{-1}$.
 
 Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come elementi di $D_n$, non sono legati da alcuna relazione perch\'e, altrimenti, lo sarebbero anche le loro matrici associate, cosa che sarebbe assurda. 
 \end{osservazione}
@@ -693,24 +695,26 @@ Nel punto precedente, si \`e notato che $C_n$ \`e uno dei sottogruppi.
 Inoltre, i sottogruppi di $C_n$ sono noti: ne esiste uno per ogni divisore dell'ordine del gruppo, cio\`e $n$ in questo caso, per cui se $H < D_n$ e $H < C_n$, allora $H$ \`e l'unico sottogruppo di ordine $\lvert H \rvert $.
 Se, invece $H< D_n$ e $H \not < C_n$, allora $H$ contiene almeno una riflessione $\tau $.
 \begin{prop}
-	Si ha $H=(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$.
+	Per $H < D_n$ e $H\cap C_n \neq H$ (cio\`e $H$ contiene almeno una riflessione), si ha $H=(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$\footnote{Per $\tau H\cap C_n$, si intende $\tau (H\cap C_n)$.}.
 	\begin{proof}
 		Si considera 
 	\[
 \begin{tikzcd}
-D_n \arrow[r, "\gamma"] 
+H \arrow[r, "\gamma"] 
     \arrow[rr, bend right=30, "{\varphi }"'] & 
 \mathrm{GL}_2(\mathbb{R}) \arrow[r, "\det"] & \{\pm 1\}\cong \mathbb{Z}/2\mathbb{Z}
 \end{tikzcd}
 \]
-dove $\gamma$ \`e l'omomorfismo definito che a $\rho $ e $\sigma $ associa le relative matrici, mentre le matrici di $\mathrm{GL} _2(\mathbb{R})$ sono mappate a $\left\{ \pm 1 \right\} $ tramite il determinante: $\det M_\rho  = 1$ e $\det M_\sigma = -1$.
-La mappa $\varphi = \gamma\circ \det$ \`e un omomorfismo suriettivo proprio per come \`e definita $\gamma$ (cio\`e \`e un omomorfismo) e per il teorema di Binet per cui $\det (M^i_\rho M^j_\sigma ) = \det(M_\rho )^i \det (M_\sigma )^j = 1 ^i (-1)^j = 1 \iff j= 0$.
+dove $\gamma$ \`e l'omomorfismo che a $\rho $ e $\sigma $ associa le relative matrici, mentre le matrici di $\mathrm{GL} _2(\mathbb{R})$ sono mappate a $\left\{ \pm 1 \right\} $ tramite il determinante: $\det M_\rho  = 1$ e $\det M_\sigma = -1$.
+La mappa $\varphi = \gamma\circ \det$ \`e un omomorfismo suriettivo, infatti $\gamma$ \`e un omomorfismo e per il teorema di Binet per cui $\det (M^i_\rho M^j_\sigma ) = \det(M_\rho )^i \det (M_\sigma )^j = 1 ^i (-1)^j = 1 \iff j= 0$. 
+La suriettivit\`a \`e assicurata dal fatto che almeno una riflessione stia in $H$.
 
-Considerando, quindi, $\varphi  :D_n \to \mathbb{Z} / 2\mathbb{Z}$, la sua restrizione $\varphi _H$ con $H < D_n$ e $H\not < C_n$ \`e suriettiva e il suo kernel \`e $H\cap C_n$; per il I teorema di omomorfismo, allora $H / (H\cap C_n) \cong \mathbb{Z} / 2\mathbb{Z}$.
-Per il teorema di Lagrange, poi, si ha $\lvert H \rvert / \lvert H\cap C_n \rvert = \lvert \mathbb{Z} / 2 \mathbb{Z} \rvert $, per cui $\lvert H \rvert  = 2 \lvert H\cap C_n \rvert $.
+Considerando, quindi, $\varphi  :H \to \mathbb{Z} / 2\mathbb{Z}$, il suo kernel \`e $H\cap C_n$; per il I teorema di omomorfismo, allora, $H / (H\cap C_n) \cong \mathbb{Z} / 2\mathbb{Z}$, da cui $\lvert H \rvert / \lvert H\cap C_n \rvert = \lvert \mathbb{Z} / 2 \mathbb{Z} \rvert =2$.
 
-Si nota che $\tau H \cap C_n \not \subset H \cap C_n$ perch\'e se $h \in H$, allora $\det (M_\tau M_h) = \det M_\tau \det M_h = -1$, per cui i due insiemi sono disgiunti; inoltre, $\tau h_1 = \tau h_2 \Rightarrow h_1=h_2$, per cui $\lvert \tau H \cap C_n \rvert = \lvert H \cap C_n \rvert $.
-Considerando, allora
+Poi, $\tau H \cap C_n$ e $ H \cap C_n$ sono disgiunti perch\'e se $h \in H\cap C_n$ non potrebbe stare anche in $\tau H\cap C_n$, altrimenti sarebbe una rotazione e una riflessione allo stesso tempo.
+
+Rimane da mostrare solo che i due insiemi hanno stessa cardinalit\`a, quindi l'esistenza di una mappa biettiva che li colleghi.
+Sia, allora
 \[
 \psi  : 
 \begin{array}
@@ -719,38 +723,34 @@ Considerando, allora
 	h & \longmapsto &\tau  h
 \end{array}
 \] 
-questa \`e biettiva.
-Ora, $H \cap C_n = \langle \rho ^m \rangle= \left\{ e ,\rho ^m , \rho ^{2m} ,\ldots,\rho ^{n - m}  \right\} $, con $m  \mid  n$; se $\tau  = \sigma  \rho ^i $, allora 
-\[
-\tau  H \cap C_n = \left\{ \sigma \rho ^i, \sigma \rho ^{i+m}, \ldots, \sigma \rho ^{i+n - m}   \right\} 
-\] 
-quindi, l'unione dei due restituisce tutto $H$.
+questa \`e biettiva perch\'e $\tau h_1=\tau h_2 \iff h_1=h_2$ e $\forall \tau h\in \tau H \cap C_n$, si ha $\psi (h)=\tau h $.
 \end{proof}
 \end{prop}
-\noindent Segue che $H$ \`e composto da $m$ rotazioni e $m$ simmetrie; in particolare $H = \langle \rho ^m , \tau  \rangle\cong D_m$, quindi, se $m  \mid  n$, si hanno dei sottogruppi della forma $\mathbb{Z} / m \mathbb{Z}$ e $D_m$.
+\noindent Si osserva che, per qualche $m$, $H \cap C_n = \langle \rho ^m \rangle= \left\{ e ,\rho ^m , \rho ^{2m} ,\ldots,\rho ^{n - m}  \right\} $, con $m  \mid  n$; se $\tau  = \sigma  \rho ^i $, allora $\tau  H \cap C_n = \left\{ \sigma \rho ^i, \sigma \rho ^{i+m}, \ldots, \sigma \rho ^{i+n - m}   \right\}$ e si sa che l'unione dei due restituisce tutto $H$.
+Allora $H$ \`e composto da $m$ rotazioni e $m$ simmetrie; in particolare $H = \langle \rho ^m , \tau  \rangle\cong D_m$, quindi, se $m  \mid  n$, si hanno dei sottogruppi della forma $\mathbb{Z} / m \mathbb{Z}$ e $D_m$.
 \vspace{5pt}
 
 \textbf{Sottogruppi normali.} Per lo studio dei sottogruppi normali, si considerano le due seguenti proposizioni.
 \begin{prop}
-	Sia $G$ un gruppo e sia $H < G$; se $H$ ha indice $2$ in $G$, allora $H \lhd G$. 
+	Sia $H<G$ un sottogruppo tale che $[G:H] = 2$; allora $H\lhd G$.
 	\begin{proof}
-		Sia, quindi, $G / H = \left\{ H , \tau  H\right\} $, per qualche $\tau  \in G$; dato $g \in G$, allora, si ha $g = h_1$, oppure $g = \tau h_2$, con $h_1,h_2 \in H$. 
-		Sia, ora, $hg \in Hg$ per $g \in G \setminus H$; allora $g = \tau  h_3$, oppure $hg = \tau h_4 = \tau h_3h_3^{-1}h_4= gh_5$, per cui $Hg \subset gH$. 
-		Inoltre, $\lvert Hg \rvert =\lvert gH \rvert $, quindi deve essere $Hg = gH$ e, quindi, $H\lhd G$.
+		Si considerano gli insiemi $\left\{ H,gH \right\} $ e $\left\{ H,Hg \right\} $ delle classi laterali, rispettivamente, sinistre e destre di $H$ in $G$, con $g\not\in H$.
+		Ora, $\forall x \in H$, si ha direttamente $xH=H=Hx$; si mostra che lo stesso vale anche per elementi non in $H$.
+		Se $y \in G \setminus H$, allora $yH\neq H \neq Hy$; visto che entrambe le classi laterali formano una partizione di $G$, allora deve valere $yH = G \setminus H = Hy$, pertanto $yH=Hy, \ \forall y \in G \setminus H$.
+		Si conclude che $gH=Hg, \ \forall g \in G$, quindi $H\lhd G$.
 	\end{proof}
 \end{prop}
 \begin{prop}
 	Siano $H \lhd G$ e $K < H$, con $K$ caratteristico in $H$; allora $K \lhd G$.
 	\begin{proof}
-		Si considera, per $g \in G$, $\phi _g : G\to G$ con $\phi_g(x) = gxg^{-1}$; per definizione, si ha $\phi _g (H) = H$, quindi $\phi_g|_{H} $ \`e un automorfismo, quindi $\phi _g|_{H} (K) = K, \ \forall g \in G \Rightarrow gKg^{-1} = K$, pertanto $K \lhd G$.
+		Si considera, per $g \in G$, $\phi _g : G\to G$ con $\phi_g(x) = gxg^{-1}$; per definizione, si ha $\phi _g (H) = H$, quindi $\phi_g|_{H} $ \`e un automorfismo e, allora, $\phi _g|_{H} (K) = K, \ \forall g \in G \Rightarrow gKg^{-1} = K$, pertanto $K \lhd G$.
 	\end{proof}
 \end{prop} 
 
 \noindent L'indice di $C_n$ in $D_n$ \`e $2$, quindi $C_n \lhd D_n$ per la prima proposizione.
-Visto che per $G$ ciclico di ordine $n$, esiste un unico $H $, con $\lvert H \rvert =m  \mid n$, allora ogni sottogruppo di un gruppo ciclico \`e caratteristico e, quindi, nel caso di $D_n$, ogni sottogruppo di $\langle \rho  \rangle\cong C_n$ \`e caratteristico.
-Per la seconda proposizione, questo significa che ogni sottogruppo di $C_n$ \`e normale; se $n$ \`e pari, allora $\langle \rho ^2  \rangle<C_n$ ha $n / 2$ elementi.
+Per $G$ ciclico di ordine $n$, esiste un unico $H $, con $\lvert H \rvert =m  \mid n$; visto che ogni sottogruppo di un gruppo ciclico \`e caratteristico, allora, nel caso di $D_n$, ogni sottogruppo di $\langle \rho  \rangle\cong C_n$ \`e caratteristico, quindi normale.
 
-Considerando $H < D_n$ e $H \not \subset C_n$, con $H\cap C_n = \langle \rho ^2 \rangle$, si ha
+Se $n$ \`e pari, allora $\langle \rho ^2  \rangle<C_n$ ha $n / 2$ elementi; considerando $H < D_n$ e $H \not \subset C_n$, con $H\cap C_n = \langle \rho ^2 \rangle$, si ha
 \[
 H=\langle \rho ^2 \rangle \sqcup \tau  \langle \rho ^2 \rangle
 \] 
@@ -778,7 +778,7 @@ Ricapitolando:
 
 \textbf{Sottogruppi caratteristici.}
 Usando quanto visto per i sottogruppi normali, si conclude che i possibili sottogruppi caratteristici sono i sottogruppi di $C_n$ e $\langle \rho ^2,\sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$. 
-Mentre si sa gi\`a che i sottogruppi di $C_n$ sono caratteristici, si osserva che, per gli altri due, la mappa $\tau : D_n \to D_n$ tale che $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $ ] \`e un automorfismo che scambia $\langle \rho ^2,\sigma  \rangle$ con $\langle \rho ^2, \sigma \rho  \rangle$ e viceversa, quindi non sono caratteristici.
+Mentre si sa gi\`a che i sottogruppi di $C_n$ sono caratteristici, si osserva che, per gli altri due, la mappa $\tau : D_n \to D_n$ tale che $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $ \`e un automorfismo che scambia $\langle \rho ^2,\sigma  \rangle$ con $\langle \rho ^2, \sigma \rho  \rangle$ e viceversa, quindi non sono caratteristici.
 \subsubsection{Centro, quozienti e automorfismi di $D_n$}
 \hfill
 
@@ -1428,10 +1428,84 @@ Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale
 
 
 \subsection{Il teorema di Sylow}
+\begin{teorema}
+	[Teorema di Sylow]
+	Sia $G$ un gruppo finito e $p$ un numero primo tale che $\lvert G \rvert =p^n m$, con $\operatorname{gcd}(m,p) =1$; allora:
+	\begin{enumerate}[(a).]
+		\item \textit{esistenza}: $\forall \alpha \in \mathbb{N} : 0\le \alpha \le n, \ \exists H < G$ con $\lvert H \rvert = p^\alpha $;
+		\item \textit{inclusione}: ogni $p$-gruppo di $G$ \`e contenuto in un $p$-Sylow\footnote{Si intende che se $H < G$ con $\lvert H \rvert = p^\alpha $, con $0\le \alpha\le n $, allora $H$ \`e contenuto in un sottogruppo di $G$ di ordine $p^{\alpha  + 1} $.};
+		\item \textit{coniugio}: due qualsiasi $p$-Sylow sono coniugati;
+		\item \textit{numero}: indicando con $n_p$ il numero di $p$-Sylow di $G$, si ha che $n_p  \mid |G|$ e $n_p \equiv 1 \pmod{p} $.
+	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei vari punti.
+		\begin{enumerate}[(a).]
+			\item Si fissa $0\le \alpha \le n$. 
+				Sia $\mathcal{M} = \left\{ M \subset G  \mid \lvert M \rvert = p^\alpha  \right\} $; allora 
+				\[
+						\lvert \mathcal{M}  \rvert =\binom{p^n m}{p^\alpha } = \frac{(p^nm)!}{p^\alpha ! (p^nm-p^\alpha )!} = \frac{\displaystyle p^n m \prod_{i=1} ^{p^{\alpha -1} } (p^n m - i)}{p^\alpha \displaystyle \prod_{i=1} ^{p^{\alpha -1} } (p^{\alpha }-i) } = p^{n-\alpha } m \prod_{i=1} ^{p^{\alpha -1} } \frac{p^n m - i}{p^\alpha  -i}
+				\] 
+				Da questo, si osserva che $p^{n-\alpha }  \mid  |\mathcal{M} |$ e, per $i=1,\ldots,p^{\alpha -1} $, definendo $v_p(n):=\max \left\{ k \in \mathbb{N}  \mid p^k \text{ divide } n \right\} $, si ha che:
+				\[
+				v_p(p^nm - i) = v_p(p^\alpha -i)=v_p(i)\implies v_p\left(\frac{p^nm - i}{p^{\alpha } -i}\right) =v_p(p^nm-i) - v_p(p^\alpha  - i) = 0
+				\] 
+				essendo $i\le p^{\alpha -1} $ e $\alpha \le n$. Visto che $v_p$ conta l'esponente massimo per cui \`e possibile dividere il suo input, si conclude che $p^{n-\alpha } $ divide esattamente $\lvert \mathcal{M}  \rvert $ e $n-\alpha $ \`e il massimo esponente con cui $p$ pu\`o divide $\lvert \mathcal{M}  \rvert $\footnote{Per vederlo pi\`u chiaramente, si assume che qualche potenza di $p$ divida $i$, altrimenti $p^nm - i$ e $p^\alpha - i$ non sarebbero divisibili per alcuna potenza di i e si avrebbe la tesi. Allora, si pu\`o scrivere $i = p^s j$, con $\operatorname{gcd}(p,j) =1$, da cui $p^{n} m - i = p^s(p^{n-s} m - j)$ e $p^\alpha - i = p^s (p^{\alpha - s} - j)$. Il loro rapporto semplifica $p^s$ e rimane il rapporto di due termini non divisibili per alcuna potenza di $p$ perch\'e $(j,p) = 1$.}.
 
+				Ora si considera l'azione di $G$ su $\mathcal{M} $ data da $\phi : G \to S(\mathcal{M} )$, con $\phi (g) (M)= \phi _g(M)=gM$; per il teorema delle classi:
+				\[
+				|\mathcal{M} | = \sum_{M_i \in R}^{} \lvert \operatorname{Orb} (M_i) \rvert = \sum_{M_i \in R}^{} \frac{\lvert G \rvert }{\lvert \operatorname{Stab} (M_i) \rvert }
+				\] 
+				con $R$ insieme dei rappresentanti delle orbite.
+				Il fatto che $p^{n-\alpha }  \mid  \mid \lvert \mathcal{M}  \rvert $\footnote{La notazione $ \mid  \mid $ si usa per indicare divisione esatta, cio\`e nessun esponente maggiore \`e divisore.} implica che $\exists i$ tale per cui
+				\[
+				p^{n- \alpha  + 1}   \nmid \lvert \operatorname{Orb} (M_i) \rvert = \frac{\lvert G \rvert }{\lvert \operatorname{Stab} (M_i) \rvert }= \frac{p^n m }{\lvert \operatorname{Stab} (M_i) \rvert }
+				\] 
+				Ne segue anche che $p^\alpha  \mid \lvert \operatorname{Stab}(M_i)  \rvert =t$\footnote{Il fatto che $p^{n - \alpha }  \mid p^n m/ \lvert \operatorname{Stab} (M_i) \rvert $ implica che $p^\alpha  \mid \lvert \operatorname{Stab} (M_i) \rvert $, cosa che si vede scrivendo $p^n m / \lvert \operatorname{Stab}(M_i) \rvert = p^{n-\alpha } k$, per qualche intero $k$.}, per cui $t \ge p^\alpha $; si vuole mostrare che $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $.
 
+				D'altra parte, la mappa $\operatorname{Stab} (M_i) \longrightarrow M_i$ tale che $\operatorname{Stab}( M_i)\ni y\longmapsto yx$, per $x \in  M_i$, \`e iniettiva perch\'e $yx = y_1 x \iff y=  y_1$, quindi $\operatorname{Stab} (M_i) \le \lvert M_i\rvert =p^\alpha $, da cui $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $. 
+				Essendo $\operatorname{Stab} (M_i) < G$, significa che in $G$ esiste un sottogruppo di ordine $p^\alpha $.
+			\item Sia $S$ un $p$-Sylow di $G$, con $\lvert S \rvert = p^n$ e sia $H < G$ un sottogruppo con $\lvert H \rvert =p^\alpha $.
+				Si nota che $\lvert G / S \rvert = \lvert  G \rvert / \lvert S \rvert = p^n m/ p^n = m$.
 
+				Si considera l'azione di $H$ su $G / S = X$ definita da
+				\[
+					\varphi : 
+					\begin{array}
+						{c c c}
+						H &\longrightarrow & S(X)\\
+						h&\longmapsto & \varphi _h
+					\end{array}, \text{ con } \varphi _h(gS) = hgS
+				\] 
+				Per la formula delle classi:
+				\[
+				m = \lvert X \rvert = \sum_{g \in R}^{} \lvert \operatorname{Orb} (g S) \rvert = \sum_{g \in R}^{} \frac{\lvert H \rvert }{\lvert \operatorname{Stab} (gS) \rvert } = \sum_{g \in R}^{} p^{a _g} 
+				\] 
+				dove $R$ \`e l'insieme dei rappresentanti delle classi di $G/S$ e $a_g$ \`e un esponente dipendente dal $g$ in $R$.
+				Visto che $p  \nmid m $\footnote{Questo \`e per assunzione, cio\`e $\lvert G \rvert =p^n m $ con $(p,m) = 1$.}, deve esistere un $g \in R$ tale che $a_g=0$, per cui $\operatorname{Orb} (gS) = \left\{ gS \right\} \Rightarrow \operatorname{Stab} (gS) = H$.
+				Questo significa anche che $\forall h\in H, \ hgS = gS \Rightarrow H \subset gSg^{-1}$, ma $gSg^{-1}$ \`e un $p$-Sylow perch\'e $\lvert gSg^{-1} \rvert = \lvert S \rvert $, quindi $H$ \`e contenuto in un $p$-Sylow.
+			\item Quanto riportato in (b) dimostra anche la parte sul congiugio; infatti, se $H$ \`e un $p$-Sylow con $\lvert H\rvert = p^n$, allora \`e un $p$-gruppo, allora $H \subset gSg^{-1}$ e, visto che hanno stessa cardinalit\`a, segue che $H = g S g^{-1}$.
+			\item Sia $S$ un $p$-Sylow; allora $n_p = [G:N_G(S)]  \mid  |G|$.
+				Si considera, ora, l'azione di $S$ sull'insieme dei coniugati di $S$ in $G$, $Y$, definita da $\phi :S \to S(Y)$, con $\phi (g)(xSx^{-1}) = \gamma_g (xSx^{-1}) = gxSx^{-1}g^{-1}$; si vuole dimostrare che $\operatorname{Orb} (S)$ \`e l'unica orbita banale di questa azione.
 
+				Sia, allora, $H \in Y$ con $\operatorname{Orb} (H) = \left\{ H \right\} $, pertanto $S = \operatorname{Stab}(H) = \left\{ s \in S  \mid s H s^{-1} = H\right\}  $.
+				Questo, per\`o, \`e equivalente a richiedere che $S \subset  N_G(H) \iff SH = HS < G$.
+				Si ha $\lvert HS \rvert = \lvert H \rvert \lvert S \rvert  / \lvert H \cap S \rvert = p^np^n / \lvert H\cap S \rvert $, ma visto che $HS < G$, allora $\lvert HS \rvert  \mid |G| = p^nm$, per cui deve essere $\lvert H\cap S \rvert =p^n$, per cui $H = S$.
+
+				Per finire, si nota che
+				\[
+				\lvert Y \rvert =n_p = \sum_{H \in R}^{} \lvert \operatorname{Orb} (H) \rvert = \operatorname{Orb} (S) + \sum_{H \in R \setminus\left\{ S \right\} }^{} \operatorname{Orb} (H) = 1 + \sum_{H \in R \setminus\left\{ S \right\} }^{} \frac{\lvert S \rvert }{\lvert \operatorname{Stab} (H) \rvert }
+				\] 
+				da cui $n_p = 1 + \ell p^k$, che implica $n_p \equiv 1 \pmod{p} $, con $R$ insieme dei rappresentanti delle orbite.
+		\end{enumerate}
+		
+	\end{proof}
+\end{teorema}
+
+\textbf{Da fare:}
+\begin{itemize}
+	\item rivedere dimostrazione del teorema di Sylow e completare con lemma pagina 70;
+	\item aggiungere nota sull'uguaglianza $n_p = [G:N_G(S)]  \mid  |G|$.
+\end{itemize}
 
 
 
