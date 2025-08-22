@@ -681,49 +681,50 @@ il che prova che $\varphi $ \`e un omomorfismo.
 L'unicit\`a deriva dal fatto che $\varphi $ \`e univocamente determinato da come $f$ mappa gli elementi di $S$ in quelli di $G$; se, infatti, si avesse $\varphi (w) = \varphi (w')$, allora si avrebbe $f(x_i) = f(x'_i), \ \forall i$.
 	\end{proof}
 \end{prop}
-\begin{teorema}
+\begin{prop}
 	[Presentazione di un gruppo]
 	Sia $G$ un gruppo generato da $n$ elementi $g_1,\ldots,g_n$ e sia $F_n$ il gruppo libero su un insieme di $n$ elementi; allora $F_n / \operatorname{Ker} \varphi  \cong G$, con $F_n \stackrel{\varphi }{\longrightarrow} G$.
 	\begin{proof}
 		Per la precedente proposizione, esiste un omomorfismo $\varphi : F_n \to G$ tale che a ciascun $x_i \in F_n$ \`e associato il relativo generatore $g_i \in G$; visto che $\left\{ g_1,\ldots,g_n \right\} \subset \operatorname{Im} \varphi < G$, allora $\operatorname{Im} \varphi = G$, essendo che $\operatorname{Im} \varphi $ contiene tutti i generatori di $G$ ed ogni loro potenza.
 		Per il I teorema di omomorfismo, allora, $F_n / \operatorname{Ker} \varphi \cong G$.
 	\end{proof}
-\end{teorema}
+\end{prop}
 \begin{osservazione}
 Il nucleo dell'omomorfismo $\varphi $ definito sopra \`e composto da tutte quelle relazioni che mappano i generatori nell'elemento neutro.
 
+In realt\`a, il nucleo \`e il pi\`u piccolo sottogruppo normale ottenuto a partire dall'insieme delle relazioni, indicato con $\langle R \rangle_N$.
+Questo significa che se una relazione del tipo $r = 1$ vale in $G$, allora vale anche $xrx^{-1}=1$, visto che $\langle R \rangle_N$ \`e normale per definizione e, quindi, contiene tutti i suoi coniugati.
 \end{osservazione}
 \begin{esempio}
 Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \rangle\cong F_1 / \langle x^n \rangle$.
 \end{esempio}
-\begin{corollario}
-	Sia $H = \langle x_1,\ldots,x_n  \mid R \rangle$ un grupo, con $R$ insieme delle relazioni che mappano i generatori nell'elemento neutro e sia $K$ un altro gruppo; allora
+\begin{prop}
+	[Presentazione dei gruppi quoziente]
+	Sia $G$ un gruppo e sia $N \lhd G$. 
+	Si considera $G / N$, ottenuto tramite la proiezione $\pi : G \to G / N$, con $\pi(x) = \overline{x}=x N$, e si considera, dato un altro gruppo $G'$, $\varphi :G \to G'$ un omomorfismo tale che con $N < \operatorname{Ker} \varphi $; allora $\exists ! \overline{\varphi }: G / N \to G '$ tale che $\overline{\varphi }\circ \pi = \varphi $.
+\begin{proof}
+	Si dimostra che \`e soddisfatto il seguente diagramma:
 	\[
-	\mathrm{Hom} (H,K) \longleftrightarrow \left\{ f :\left\{ x_1,\ldots,x_n \right\} \to K  \mid f(x_1),\ldots,f(x_n) \text{ rispettano } R \right\} 
+	\begin{tikzcd}
+		G & & G '\\
+		\\
+		\\
+		 G / N
+		\arrow[from=1-1, to=1-3, "\displaystyle \varphi "]
+		\arrow[from=1-1, to=4-1, "\displaystyle \pi"']
+		\arrow[from=4-1, to=1-3, "\displaystyle \overline{\varphi}"']
+	\end{tikzcd}
 	\] 
-	Cio\`e ogni omomorfismo tra $H$ e $K$ deve rispettare le relazioni di $R$.
-	\begin{proof}
-Bisogna dimostrare solamente la freccia verso destra della biezione perch\'e quella verso sinistra \`e gi\`a stata dimostrata con il precedente teorema.
-
-		Sia $\left\{ w_1,\ldots,w_m\right\} $ l'insieme delle parole che in $H$ si traducono nelle $r_i$; per il teorema precedente $H \cong F_n / \langle w_1,\ldots,w_m \rangle_N$, dove il pedice $N$ indica la chiusura normale in modo che $\langle w_1,\ldots,w_m \rangle_N\lhd F_n$.
-		La dimostrazione \`e ultimata dal seguente diagramma:
-
-		\[
-		\begin{tikzcd}
-			F_n & & \langle f(x_1), \ldots, f(x_n) \rangle \le  K\\
-			\\
-			H \cong F_n / \langle r_1,\ldots,r_m \rangle_N
-			\arrow[from=1-1, to=1-3, "\displaystyle f"]
-			\arrow["\displaystyle \pi"',from=1-1, to=3-1]
-			\arrow[from=3-1, to=1-3,dashed,"\displaystyle \widetilde{f}"']
-		\end{tikzcd}
-		\] 
-dove $\widetilde{f}$ \`e l'unico omomorfismo, $\pi$ \`e la proiezione sul quoziente e $f = \pi \circ \widetilde{f}$ \`e l'omomorfismo da $F_n$ in $K$ che rispetta le relazioni $w_1,\ldots,w_m$.
-Si nota che l'esistenza e l'unicit\`a di $\widetilde{f}$ sono garantite dal I teorema di omomorfismo\footnote{Per l'unicit\`a, basta osservare che $\widetilde{f}_1(h) = \widetilde{f}(\pi(x)) = f(x) = \widetilde{f}_2(\pi(x)) = \widetilde{f}_2(h)$, quindi $\widetilde{f}_1 = \widetilde{f}_2 = \widetilde{f}$.}.
 \end{proof}
-\end{corollario}
-
-
+\end{prop}
+\begin{teorema}
+	Siano $H, K$ due gruppi, con $H = \langle x_1,\ldots,x_n  \mid R \rangle$, cio\`e \`e generato dagli $x_i$, i quali soddisfano anche le relazioni $R=\left\{ w_1,\ldots,w_m \right\} $; allora
+	\[
+		\mathrm{Hom} (H,K) \longleftrightarrow
+			\left\{ \left\{ x_1,\ldots,x_n \right\} \stackrel{f}{\longrightarrow} K \ \Big\lvert\ f(x_1),\ldots,f(x_n)\text{ soddisfano le relazioni di } R \right\} 
+	\] 
+	dove la doppia freccia indica una biezione.
+\end{teorema}
 
 \subsection{Gruppi diedrali}
 \begin{definizione}
