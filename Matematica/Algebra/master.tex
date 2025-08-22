@@ -625,6 +625,106 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 		Questo vuol dire che $G /G'$ \`e il quoziente con pi\`u elementi che sia abeliano perch\'e ottenuto tramite quoziente con $G'$, che \`e l'insieme pi\`u piccolo che soddisfa la propriet\`a\footnote{Per controposizione, se $G'\not\subset H\implies G/H$ non abeliano.}.
 	\end{proof}
 \end{corollario}
+\subsection{Gruppi liberi}
+Si definisce l'insieme $S=\left\{ x_1,x_2,x_3,\ldots \right\} $ di simboli arbitrari, che pu\`o essere finito o infinito, e si definisce \textit{parola} una qualunque loro concatenazione, in cui sono ammesse ripetizioni. 
+L'insieme delle parole ottenibili a partire dagli elementi di $S$ si indica con $W $.
+Le concatenazioni dello stesso simbolo si possono esprimere in notazione esponenziale: $x_1 x_1 \ldots x_1 = x_1^n$.
+
+Per arrivare alla costruzione di un gruppo, servono degli inversi ed un elemento neutro; l'elemento neutro si indica con $1$ ed \`e tale per cui
+\[
+1 \cdot \prod_{i} x_i^{a_i} = \prod_{i} x_i^{a_i} \cdot 1 = \prod_{i} x_i^{a_i} 
+\] 
+L'insieme degli elementi inversi, invece, si indica con $S^{-1}$ e si definisce $S' = S \cup S^{-1}$.
+Indicando, ora, con $W'$ l'insieme delle parole che si possono costruire in $S'$, si nota la possibilit\`a di trovare una sequenza della forma $\ldots x x^{-1}\ldots$, oppure $\ldots x^{-1}x \ldots$; questo indica che la parola pu\`o essere opportunamente ridotta cancellando tali simboli, cio\`e usando la definizione $x^{-1} x = x x^{-1}= 1$.
+\begin{definizione}
+	[Parola ridotta]
+	Una parola di $W'$ si dice \textit{ridotta} se non \`e possibile operare ulteriori cancellazioni.
+\end{definizione}
+\noindent A partire da una stessa parola, o dalle sue cancellazioni, \`e possibile operare la riduzione cancellando i termini in ordine diverso, ma giungendo sempre allo stesso risultato.
+Alla luce di questo, si ha la seguente definizione.
+\begin{definizione}
+	[Parole equivalenti]
+	Due parole $w, w' \in W'$ si dicono \textit{equivalenti}, e si scrive $w \sim w'$, se hanno la stessa forma ridotta $w_0$.
+\end{definizione}
+\begin{osservazione}
+	Si pu\`o dimostrare che $\sim$ \`e una relazione di equivalenza.
+\end{osservazione}
+\begin{prop}
+	Sia $F$ l'insieme delle classi di equivalenza di parole in $W'$; allora $F$ \`e un gruppo rispetto alla legge di composizione indotta $W'$.
+	\begin{proof}
+		La concatenazione di parole di $W'$ \`e associativa e la legge di composizione indotta da questa tra le parole che rappresentano una classe di equivalenza sar\`a altrettanto associativa.
+		Inoltre, la classe dell'elemento neutro $1$ \`e l'identit\`a e la classe della parola inversa di $w$ \`e l'inversa della classe di $w$.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	[Gruppo libero]
+	Si definisce \textit{gruppo libero sull'insieme} $S$ il gruppo $F$ con la composizione indotta da $W'$.
+\end{definizione}
+\noindent Si indica con $F_1$ il gruppo libero su $S = \left\{ x \right\} $, cio\`e \`e il gruppo generato da un singolo simbolo e da tutte le sue concatenazioni, quindi da tutte le sue potenze.
+Questo si sa caratterizzare bene perch\'e, evidentemente, $F_1 \cong \mathbb{Z}$; infatti basta definire $\phi :\mathbb{Z}\to F_1$, con $\phi (k) = x^k$.
+
+\begin{prop}
+	[Propriet\`a universale]
+	Sia $F_S$ il gruppo libero su un insieme $S$ e sia $G$ un gruppo; ogni applicazione tra insiemi $f: S \to G$ si estende in modo unico ad un omomorfismo di gruppi $\varphi : F_S \to G$.
+	\begin{proof} 
+Indicando con $\widetilde{x}=f(x)$, per $x \in S$, allora $\varphi $ mappa una parola di $S'$ nel corrispondente prodotto in $G$.
+
+Si nota che $f$ associa un simbolo ad un elemento di $G$; allora la mappa $\varphi $ associa, a ciascuna parola composta dai simboli di $S'$, la loro immagine tramite $f$: se $w = x_1 \cdots x_n$, allora $\varphi (w) = f(x_1) \ldots f(x_n)=\widetilde{x}_1 \cdots \widetilde{x}_n$, con $\varphi (x^{-1})=f(x)^{-1} = \widetilde{x}^{-1}$.
+
+Due parole equivalenti di $S'$, allora, vengono mappate nell'analogo prodotto in $G$, per cui risulteranno avere stessa immagine attraverso $\varphi $; questo perch\'e se $w$ e $w'$ si riducono a $w_0$, allora la loro immagine tramite $\varphi $ andr\`a in due elementi il cui prodotto si ridurr\`a al prodotto degli elementi immagine di $w_0$.
+
+Infine:
+\[
+w w'=x_1\cdots x_n x'_1\cdots x'_n\longmapsto \widetilde{x}_1 \cdots \widetilde{x}_n \widetilde{x}'_1 \cdots \widetilde{x}'_n= \varphi (w)\varphi (w')
+\] 
+il che prova che $\varphi $ \`e un omomorfismo.
+L'unicit\`a deriva dal fatto che $\varphi $ \`e univocamente determinato da come $f$ mappa gli elementi di $S$ in quelli di $G$; se, infatti, si avesse $\varphi (w) = \varphi (w')$, allora si avrebbe $f(x_i) = f(x'_i), \ \forall i$.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	[Presentazione di un gruppo]
+	Sia $G$ un gruppo generato da $n$ elementi $g_1,\ldots,g_n$ e sia $F_n$ il gruppo libero su un insieme di $n$ elementi; allora $F_n / \operatorname{Ker} \varphi  \cong G$, con $F_n \stackrel{\varphi }{\longrightarrow} G$.
+	\begin{proof}
+		Per la precedente proposizione, esiste un omomorfismo $\varphi : F_n \to G$ tale che a ciascun $x_i \in F_n$ \`e associato il relativo generatore $g_i \in G$; visto che $\left\{ g_1,\ldots,g_n \right\} \subset \operatorname{Im} \varphi < G$, allora $\operatorname{Im} \varphi = G$, essendo che $\operatorname{Im} \varphi $ contiene tutti i generatori di $G$ ed ogni loro potenza.
+		Per il I teorema di omomorfismo, allora, $F_n / \operatorname{Ker} \varphi \cong G$.
+	\end{proof}
+\end{teorema}
+\begin{osservazione}
+Il nucleo dell'omomorfismo $\varphi $ definito sopra \`e composto da tutte quelle relazioni che mappano i generatori nell'elemento neutro.
+
+\end{osservazione}
+\begin{esempio}
+Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \rangle\cong F_1 / \langle x^n \rangle$.
+\end{esempio}
+\begin{corollario}
+	Sia $H = \langle x_1,\ldots,x_n  \mid R \rangle$ un grupo, con $R$ insieme delle relazioni che mappano i generatori nell'elemento neutro e sia $K$ un altro gruppo; allora
+	\[
+	\mathrm{Hom} (H,K) \longleftrightarrow \left\{ f :\left\{ x_1,\ldots,x_n \right\} \to K  \mid f(x_1),\ldots,f(x_n) \text{ rispettano } R \right\} 
+	\] 
+	Cio\`e ogni omomorfismo tra $H$ e $K$ deve rispettare le relazioni di $R$.
+	\begin{proof}
+Bisogna dimostrare solamente la freccia verso destra della biezione perch\'e quella verso sinistra \`e gi\`a stata dimostrata con il precedente teorema.
+
+		Sia $\left\{ w_1,\ldots,w_m\right\} $ l'insieme delle parole che in $H$ si traducono nelle $r_i$; per il teorema precedente $H \cong F_n / \langle w_1,\ldots,w_m \rangle_N$, dove il pedice $N$ indica la chiusura normale in modo che $\langle w_1,\ldots,w_m \rangle_N\lhd F_n$.
+		La dimostrazione \`e ultimata dal seguente diagramma:
+
+		\[
+		\begin{tikzcd}
+			F_n & & \langle f(x_1), \ldots, f(x_n) \rangle \le  K\\
+			\\
+			H \cong F_n / \langle r_1,\ldots,r_m \rangle_N
+			\arrow[from=1-1, to=1-3, "\displaystyle f"]
+			\arrow["\displaystyle \pi"',from=1-1, to=3-1]
+			\arrow[from=3-1, to=1-3,dashed,"\displaystyle \widetilde{f}"']
+		\end{tikzcd}
+		\] 
+dove $\widetilde{f}$ \`e l'unico omomorfismo, $\pi$ \`e la proiezione sul quoziente e $f = \pi \circ \widetilde{f}$ \`e l'omomorfismo da $F_n$ in $K$ che rispetta le relazioni $w_1,\ldots,w_m$.
+Si nota che l'esistenza e l'unicit\`a di $\widetilde{f}$ sono garantite dal I teorema di omomorfismo\footnote{Per l'unicit\`a, basta osservare che $\widetilde{f}_1(h) = \widetilde{f}(\pi(x)) = f(x) = \widetilde{f}_2(\pi(x)) = \widetilde{f}_2(h)$, quindi $\widetilde{f}_1 = \widetilde{f}_2 = \widetilde{f}$.}.
+\end{proof}
+\end{corollario}
+
+
+
 \subsection{Gruppi diedrali}
 \begin{definizione}
 	[Gruppo diedrale]
@@ -646,9 +746,9 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 \end{prop}
 \begin{osservazione}
 	Ponendo l'$n$-agono regolare nel piano $\mathbb{R}^2$, gli elementi di $D_n$ si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, visto che si possono vedere come applicazioni lineari da $\mathbb{R}^2$ in se stesso, cio\`e possono essere rappresentate tramite matrici\footnote{Le riflessioni cos\`i definite devono essere rispetto ad un asse opportuno, cio\`e che sia un asse di simmetria per l'$n$-agono in questione. Nella matrice delle riflessioni, l'angolo $\theta $ \`e l'angolo dell'asse rispetto a cui si riflette ed \`e preso con riferimento all'asse $x$.}:
-\begin{equation}
+\begin{equation*}
 	\rho  \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \displaystyle \cos \left(2k\pi / n\right) & \sin \left(2k\pi / n\right) \\ - \sin \left( 2k\pi / n\right) & \cos (2k\pi / n) \end{pmatrix}=M_\rho  \hspace{1cm}\sigma \stackrel{\gamma}{\longmapsto} \begin{pmatrix} \cos 2 \theta  & \sin 2\theta  \\ \sin 2\theta  & - \cos 2\theta  \end{pmatrix} = M_\sigma 
-\end{equation}
+\end{equation*}
 Si nota, inoltre, che indicando con $\mathbb{D}_n$ il gruppo generato da queste matrici, allora la mappa $\gamma : \langle \rho ,\sigma  \rangle\to \mathbb{D}_n$ \`e un omomorfismo di gruppi; infatti, dati due elementi $s_1,s_2 \in \langle \rho ,\sigma  \rangle$:
 \[
 \gamma(s_1s_2)v= M_{s_1s_2} v = (s_1s_2) (v) = s_1 (s_2 (v)) =M_{s_1} M_{s_2} v = \gamma(s_1)\gamma(s_2)v
@@ -755,24 +855,24 @@ Se $n$ \`e pari, allora $\langle \rho ^2  \rangle<C_n$ ha $n / 2$ elementi; cons
 H=\langle \rho ^2 \rangle \sqcup \tau  \langle \rho ^2 \rangle
 \] 
 quindi $[D_n : H] = 2$, per cui $H \lhd D_n$.
+Di sottogruppi di questa forma, se ne trovano due: $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$; tuttavia non si sa se siano tutti i sottogruppi normali, quindi si cerca di caratterizzarli meglio.
 
-Di sottogruppi di questa forma, se ne trovano due: $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$, ma non si sa se siano tutti i sottogruppi normali, quindi si cerca di caratterizzarli meglio.
 Si sa che $H \lhd G \iff gHg^{-1}= H , \ \forall g \in G$, quindi per ogni elemento di un sottogruppo normale, devono figurare anche tutti i suoi coniugati.
 Per la proposizione \ref{dnitems}, per capire come sono fatti i coniugati di $D_n$, \`e sufficiente studiare quali siano quelli di $\rho ^i$ e $\sigma \rho ^i$. 
 Si nota che:
 \[
-\rho ^i \rho ^i \rho ^{-i}= \rho ^i \hspace{1cm}\sigma \rho ^i \rho ^i \rho ^{-i}\sigma  = \sigma \rho ^i\sigma =\rho ^{-i}
+	\rho ^j \rho ^i \rho ^{-j}= \rho ^i \hspace{1cm}\sigma \rho ^j \rho ^i \rho ^{-j}\sigma  = \sigma \rho ^i\sigma =\rho ^{-i}
 \] 
 quindi l'insieme dei coniugati di $\rho ^i$ \`e $\left\{ \rho ^i, \rho ^{-i} \right\} $; in particolare, se $i \in \left\{ 0 , n /2 \right\} $, tale insieme diventa $\left\{ e \right\} $, oppure $\left\{ \rho ^{ n / 2}  \right\} $ rispettivamente.
 Poi, si nota che:
 \[
 \rho ^i \sigma \rho ^j \rho ^{-i}= \sigma \rho ^{-i}\rho ^j\rho ^{-i}=\sigma \rho ^{j-2i} \hspace{1cm} \sigma \rho ^i\sigma \rho ^j \rho ^{-i} \sigma = \rho ^{-i}\rho ^j\rho ^{-i}\sigma =\sigma \rho ^{2i-j} 
 \] 
-quindi se $n$ \`e pari, allora $\sigma \rho ^s \sim \sigma \rho ^t\iff  \equiv t \pmod{2} $, quindi le riflessioni di spezzano in due classi di coniugio; se $n$ \`e dispari, invece, le riflessioni sono tutte coniugate.
+quindi se $n$ \`e pari, allora $\sigma \rho ^s \sim \sigma \rho ^t\iff  s\equiv t \pmod{2} $, quindi le riflessioni di spezzano in due classi di coniugio; se $n$ \`e dispari, invece, le riflessioni sono tutte coniugate\footnote{Questo \`e dato dal fatto che, visto che $i$ compare con un $2$ davanti all'esponente, se $n$ \`e pari, allora, variando $i$, si ottengono solo permutazioni pari perch\'e l'esponente fa salti di due andando di pari in pari; se $n$ \`e dispari, l'esponente non pu\`o fare salti di due in due: arrivato ad un certo punto, aumentando di $2$, si finisce in un numero dispari e si raggiungono tutte le riflessioni. Questo permette di concludere che, quando $n$ \`e pari, le riflessioni si dividono in due classi diverse, mentre quando $n$ \`e dispari, sono tutte coniugate fra loro.}.
 
 Ricapitolando: 
 \begin{itemize}
-	\item se $n$ \`e dispari e se un sottogruppo contiene una riflessione, allora le contiene tutte e tutte le riflessioni generano $D_n$, infatti $\sigma $ \`e dato e $\rho  = \sigma \sigma \rho $, quindi $H \lhd D_n \Rightarrow H = D_n$, mentre se non contiene alcuna riflessione, allora \`e un sottogruppo di $C_n$;
+	\item se $n$ \`e dispari e se un sottogruppo contiene una riflessione, allora, per essere normale, le deve contenere tutte e tutte le riflessioni generano $D_n$, infatti $\sigma $ e $\sigma \rho $ sono dati, dai quali si ottiene $\rho  = (\sigma )(\sigma \rho) $, quindi $H \lhd D_n \Rightarrow H = D_n$, mentre se non contiene alcuna riflessione, allora \`e un sottogruppo di $C_n$;
 	\item se $n$ \`e pari, oltre ai sottogruppi di $C_n$, si considerano gli $H\lhd D_n$ che sono tali che $\sigma \rho ^i \in H$, per cui $\sigma \rho ^{i+2} \in H$ e $\rho ^2 \in H$, pertanto, se $H \neq D_n$, devono essere della forma $\langle \rho ^2,\sigma  \rangle$, o $\langle \rho ^2,\sigma \rho  \rangle$.
 \end{itemize}
 
@@ -791,9 +891,9 @@ Dal precedente studio dei coniugi nei sottogruppi normali, si conclude che $Z(D_
 Si sa che i quozienti sono in corrispondenza biunivoca con i sottogruppi normali, il che vuol dire che esiste un quoziente per ciascun $H \lhd G$.
 A meno di un automorfismo, i quozienti si ottengono come segue.
 Per quanto visto precedentemente, i sottogruppi normali sono i sottogruppi di $C_n$ e, se $n$ \`e pari, anche quelli della forma $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2, \sigma \rho  \rangle$. 
-Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \langle \rho ^m \rangle \rvert = 2n/m$.
+Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \langle \rho ^m \rangle \rvert = 2n/(n / m) = 2m$.
 \begin{prop}
-	Si ha $D_n / \langle \rho ^m \rangle\cong D _{n / m} $.
+	Si ha $D_n / \langle \rho ^m \rangle\cong D _{m} $.
 	\begin{proof}
 		Si considera 
 		\[
@@ -801,11 +901,13 @@ Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \lan
 		\begin{array}
 			{c c c}
 			D_n & \longrightarrow& D_{ n / m } \\
-			\sigma &\longmapsto & \tau \\
-			\rho  &\longmapsto & \epsilon 
+			\sigma & \longmapsto & \tau \\
+			\rho & \longmapsto & \epsilon 
 		\end{array}
 		\] 
-		dove $D_n = \langle \sigma ,\rho  \mid \rho ^n = \sigma ^2 = e , \sigma \rho \sigma = \rho ^{-1} \rangle$ e $D_{n / m} = \langle \tau ,\epsilon  \mid \epsilon ^{ n / m} = \tau ^2 = e , \ \tau \epsilon \tau \epsilon ^{-1} \rangle$.
+		dove $D_n = \langle \sigma ,\rho  \mid \rho ^n = \sigma ^2 = e , \sigma \rho \sigma = \rho ^{-1} \rangle$ e $D_{m} = \langle \tau ,\epsilon  \mid \epsilon ^{ m} = \tau ^2 = e , \ \tau \epsilon \tau = \epsilon ^{-1} \rangle$.
+		Per verificare che si tratta di un omomorfismo ben definito, si mostra che soddisfa
+
 		Si nota che questo \`e suriettivo e il suo nucleo \`e $\langle \rho ^m \rangle$, quindi si ha la tesi per il I teorema di omomorfismo.
 	\end{proof}
 \end{prop}
@@ -1077,6 +1179,8 @@ Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mat
 	\] 
 \end{proof}
 \end{esempio}
+\subsection{I teoremi di omomorfismo}
+Prova
 \subsection{Gruppi di Sylow e prodotti diretti}
 \begin{definizione}
 	[Gruppo di Sylow]
@@ -1633,7 +1737,6 @@ N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in 
 \begin{osservazione}
 	Si nota che il coniugio non cambia la forma della permutazione, quindi l'equazione $\tau \rho \tau ^{-1} = \rho ^k$ ha soluzione se e solo se $k$ \`e coprimo con $\operatorname{ord}(\rho ) $.
 \end{osservazione}
-
 
 
 
