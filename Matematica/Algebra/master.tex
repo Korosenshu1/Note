@@ -715,16 +715,59 @@ Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \
 		\arrow[from=4-1, to=1-3, "\displaystyle \overline{\varphi}"']
 	\end{tikzcd}
 	\] 
+	con $\overline{\varphi }(\overline{a}) = \varphi (a)$.
+
+	Per poter definire $\overline{\varphi } : G / N \to G$, bisogna definire $\overline{\varphi }(\alpha ), \ \forall \alpha \in G / N$; per farlo, si sceglie $a \in G : \pi (a) = \alpha $, per cui $\alpha  = \overline{a}$. 
+	Volendo che $\overline{\varphi }(\pi(a)) = \varphi (a)$, si deve definire $\overline{\varphi }$ tramite la relazione $\overline{\varphi }(\alpha ) = \varphi (a)$.
+
+	Ora si fa vedere che, in questo modo, $\overline{\varphi }$ \`e ben definito, cio\`e si mostra che il valore $\overline{\varphi }(\alpha )$, cio\`e $\varphi (a)$, non dipende dalla scelta del rappresentante della classe di equivalenza.
+	Siano, allora, $a,a' \in G : \overline{a}= \overline{a}' = \alpha $; l'uguaglianza $\overline{a}=\overline{a}'$ implica che $a' = an$, per qualche $n \in N$ e, visto che $N\subset\operatorname{Ker} \varphi $, si ha $\varphi (a')=\varphi (a)\varphi (n)=\varphi (a)$.
+
+	Per finire, si ha che $\overline{\varphi }$ \`e un omomorfismo perch\'e $\overline{\varphi }(\overline{a})\overline{\varphi }(\overline{b}) = \varphi (a)\varphi (b) = \varphi (ab) = \overline{\varphi }(\overline{ab})$, mentre l'unicit\`a deriva dal fatto che, se $\exists \overline{\psi }$ tale che $\varphi = \overline{\psi }\circ\pi$, allora $\overline{\psi }(\alpha ) = \overline{\psi }(\pi(a)) = \varphi (a) = \overline{\varphi }(\pi(a))=\overline{\varphi }(\alpha ), \ \forall \alpha $.
 \end{proof}
 \end{prop}
 \begin{teorema}
-	Siano $H, K$ due gruppi, con $H = \langle x_1,\ldots,x_n  \mid R \rangle$, cio\`e \`e generato dagli $x_i$, i quali soddisfano anche le relazioni $R=\left\{ w_1,\ldots,w_m \right\} $; allora
+	Siano $H, K$ due gruppi, con $H = \langle x_1,\ldots,x_n  \mid R \rangle$, cio\`e \`e generato dagli $x_i$, i quali soddisfano anche le relazioni $R=\left\{ w_1,\ldots,w_m \right\} $; allora:
 	\[
 		\mathrm{Hom} (H,K) \longleftrightarrow
 			\left\{ \left\{ x_1,\ldots,x_n \right\} \stackrel{f}{\longrightarrow} K \ \Big\lvert\ f(x_1),\ldots,f(x_n)\text{ soddisfano le relazioni di } R \right\} 
 	\] 
 	dove la doppia freccia indica una biezione.
+	\begin{proof}
+Sia \(F=\langle x_1,\dots,x_n\rangle\) il gruppo libero sui generatori \(x_1,\dots,x_n\) e sia \(N\) la chiusura normale di \(R\) in \(F\); allora, per la presentazione dei gruppi quoziente, si ha $F / N \cong H$. 
+Sia, ora:
+\[
+\Phi:\operatorname{Hom}(H,K)\longrightarrow \{(k_1,\dots,k_n)\in K^n:\ k_i=f(x_i)\text{ soddisfano }R\}
+\]
+che mappa ciascun omomorfismo $f \in \mathrm{Hom} (H,K)$ nella $n$-upla \((f(x_1),\dots,f(x_n)) \in K^n\).
+
+\begin{enumerate}[(a).]
+	\item $\Phi$ \`e ben definita.
+
+Se $f \in \mathrm{Hom} (H,K)$, allora ogni parola \(w\in R\) rappresenta l'identità in \(H\), quindi la sua immagine tramite \(f\) è l'identità in \(K\). 
+Pertanto le componenti \(f(x_i)\) soddisfano le relazioni di \(R\).
+
+\item $\Phi$ \`e iniettiva.
+
+Siano \(f,g \in \mathrm{Hom} (H,K)\) tali che \(\Phi(f)=\Phi(g)\); allora \(\forall i, f(x_i)=g(x_i)\).
+Visto che gli \(x_i\) generano \(H\), allora ogni elemento di \(H\) è una parola nei generatori; dato che \(f\) e \(g\) coincidono sui generatori, ne segue che coincidono su tutto \(H\), quindi \(f=g\).
+
+\item $\Phi$ \`e suriettiva.
+
+Sia \((k_1,\dots,k_n)\in K^n\) una \(n\)-upla che soddisfa le relazioni di \(R\); allora esiste un unico omomorfismo $f : F \to K$ che manda \(x_i\longmapsto k_i\).
+Le ipotesi sulle relazioni implicano che ogni \(w\in R\) viene mandata nell'identità di \(K\), cioè $N < \operatorname{Ker} f$; per la presentazione dei gruppi quoziente, allora, si ha $\overline{f}:F / N \cong H \longrightarrow K$ che mappa la classe di $x_i$ in $k_i$.
+Quindi la \(n\)-upla data è l'immagine di \(\bar f\) tramite \(\Phi\).
+\end{enumerate}
+Se ne conclude che \(\Phi\) è una biezione, quindi esiste una corrispondenza biunivoca tra gli omomorfismi \(H\to K\) e le \(n\)-uple di elementi di \(K\) che soddisfano le relazioni \(R\). 
+\end{proof}
 \end{teorema}
+\begin{osservazione}
+Si nota che nella formulazione del teorema si può usare indifferentemente l'insieme delle funzioni \(f:\{x_1,\dots,x_n\}\longrightarrow K\), che mappano \(x_i\) in elementi di \(K\) che soddisfano \(R\), oppure l'insieme delle \(n\)-uple \(\{(k_1,\dots,k_n)\in K^n:k_i \text{ soddisfano } R\}\).
+Questo perché, fissato l'ordinamento dei generatori \(x_1,\dots,x_n\), esiste una biezione 
+\[
+\left\{ f:\{x_1,\dots,x_n\}\longrightarrow  K\right\}\xrightarrow{\ \cong\ }K^n,\qquad f\longmapsto\big(f(x_1),\dots,f(x_n)\big)
+\]
+\end{osservazione}
 
 \subsection{Gruppi diedrali}
 \begin{definizione}
@@ -1180,7 +1223,7 @@ Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mat
 	\] 
 \end{proof}
 \end{esempio}
-\subsection{I teoremi di omomorfismo}
+\subsection{Teoremi di omomorfismo}
 Prova
 \subsection{Gruppi di Sylow e prodotti diretti}
 \begin{definizione}
