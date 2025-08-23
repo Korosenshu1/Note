@@ -1580,7 +1580,8 @@ Per $n=5$, $S_n$ ha un solo sottogruppo normale, cio\`e $A_5$; infatti, se $H\lh
 Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale.
 
 
-\subsection{Il teorema di Sylow}
+\subsection{I teoremi di Sylow}
+Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrisponde al punto (a), il secondo ai punti (b) e (c) e il terzo al punto (d).
 \begin{teorema}
 	[Teorema di Sylow]
 	Sia $G$ un gruppo finito e $p$ un numero primo tale che $\lvert G \rvert =p^n m$, con $\operatorname{gcd}(m,p) =1$; allora:
@@ -1613,7 +1614,7 @@ Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale
 				\[
 				p^{n- \alpha  + 1}   \nmid \lvert \operatorname{Orb} (M_i) \rvert = \frac{\lvert G \rvert }{\lvert \operatorname{Stab} (M_i) \rvert }= \frac{p^n m }{\lvert \operatorname{Stab} (M_i) \rvert }
 				\] 
-				Ne segue anche che $p^\alpha  \mid \lvert \operatorname{Stab}(M_i)  \rvert =t$\footnote{Il fatto che $p^{n - \alpha }  \mid p^n m/ \lvert \operatorname{Stab} (M_i) \rvert $ implica che $p^\alpha  \mid \lvert \operatorname{Stab} (M_i) \rvert $, cosa che si vede scrivendo $p^n m / \lvert \operatorname{Stab}(M_i) \rvert = p^{n-\alpha } k$, per qualche intero $k$.}, per cui $t \ge p^\alpha $; si vuole mostrare che $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $.
+				Ne segue anche che $p^\alpha  \mid \lvert \operatorname{Stab}(M_i)  \rvert$\footnote{Il fatto che $p^{n - \alpha }  \mid p^n m/ \lvert \operatorname{Stab} (M_i) \rvert $ implica che $p^\alpha  \mid \lvert \operatorname{Stab} (M_i) \rvert $, cosa che si vede scrivendo $p^n m / \lvert \operatorname{Stab}(M_i) \rvert = p^{n-\alpha } k$, per qualche intero $k$.}, per cui $\lvert \operatorname{Stab}(M_i)  \rvert \ge p^\alpha $; si vuole mostrare che $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $.
 
 				D'altra parte, la mappa $\operatorname{Stab} (M_i) \longrightarrow M_i$ tale che $\operatorname{Stab}( M_i)\ni y\longmapsto yx$, per $x \in  M_i$, \`e iniettiva perch\'e $yx = y_1 x \iff y=  y_1$, quindi $\operatorname{Stab} (M_i) \le \lvert M_i\rvert =p^\alpha $, da cui $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $. 
 				Essendo $\operatorname{Stab} (M_i) < G$, significa che in $G$ esiste un sottogruppo di ordine $p^\alpha $.
