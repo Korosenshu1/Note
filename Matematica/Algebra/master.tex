@@ -726,7 +726,7 @@ Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \
 	Per finire, si ha che $\overline{\varphi }$ \`e un omomorfismo perch\'e $\overline{\varphi }(\overline{a})\overline{\varphi }(\overline{b}) = \varphi (a)\varphi (b) = \varphi (ab) = \overline{\varphi }(\overline{ab})$, mentre l'unicit\`a deriva dal fatto che, se $\exists \overline{\psi }$ tale che $\varphi = \overline{\psi }\circ\pi$, allora $\overline{\psi }(\alpha ) = \overline{\psi }(\pi(a)) = \varphi (a) = \overline{\varphi }(\pi(a))=\overline{\varphi }(\alpha ), \ \forall \alpha $.
 \end{proof}
 \end{prop}
-\begin{teorema}
+\begin{teorema}\label{mitoat}
 	Siano $H, K$ due gruppi, con $H = \langle x_1,\ldots,x_n  \mid R \rangle$, cio\`e \`e generato dagli $x_i$, i quali soddisfano anche le relazioni $R=\left\{ w_1,\ldots,w_m \right\} $; allora:
 	\[
 		\mathrm{Hom} (H,K) \longleftrightarrow
@@ -950,8 +950,15 @@ Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \lan
 		\end{array}
 		\] 
 		dove $D_n = \langle \sigma ,\rho  \mid \rho ^n = \sigma ^2 = e , \sigma \rho \sigma = \rho ^{-1} \rangle$ e $D_{m} = \langle \tau ,\epsilon  \mid \epsilon ^{ m} = \tau ^2 = e , \ \tau \epsilon \tau = \epsilon ^{-1} \rangle$.
-		Per verificare che si tratta di un omomorfismo ben definito, si mostra che soddisfa
-
+		Per verificare che si tratta di un omomorfismo ben definito, \`e sufficiente far vedere che rispetta le relazioni di $D_n$ (th. \ref{mitoat}):
+		\[
+			\begin{split}
+				&\gamma(\rho )^n=\epsilon ^n = (\epsilon ^m)^k =e \hspace{1cm} (\text{visto che }m  \mid  n)\\
+				&\gamma(\sigma )^2 = \tau ^2 = e\\
+				&\gamma(\sigma )\gamma(\rho )\gamma(\sigma ) = \tau \epsilon \tau =\epsilon ^{-1}= \gamma(\rho )^{-1}
+			\end{split}
+		\] 
+		quindi \`e effettivamente un omomorfismo.
 		Si nota che questo \`e suriettivo e il suo nucleo \`e $\langle \rho ^m \rangle$, quindi si ha la tesi per il I teorema di omomorfismo.
 	\end{proof}
 \end{prop}
@@ -964,7 +971,6 @@ Per definire un automorfismo in $D_n$, lo si definisce sui generatori, che si sa
 L'immagine di questi generatori deve essere un altro generatore: ad esempio, l'immagine di $\rho $, che ha ordine $n$, deve avere come immagine un elemento di ordine $n$; questi sono della forma $\rho ^i$, con $\operatorname{gcd}(i,n) =1$, quindi ci sono $\phi (n)$ possibili scelte.
 Poi, $\sigma $ ha ordine $2$ e deve avere, come immagine, un altro elemento di ordine $2$ che, insieme al $\rho ^i$ scelto prima, generi $D_n$; ci sono $n$ riflessioni della forma $\sigma \rho ^j$, quindi un totale di $n$ scelte possibili.
 Si nota che se $n$ \`e pari, anche $\rho ^{ n / 2} $ ha ordine $2$, ma la coppia $\rho ^i, \rho ^{n / 2} $ non genera $D_n$.
-
 Sia, allora 
 \[
 \gamma : 
@@ -1223,8 +1229,7 @@ Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mat
 	\] 
 \end{proof}
 \end{esempio}
-\subsection{Teoremi di omomorfismo}
-Prova
+
 \subsection{Gruppi di Sylow e prodotti diretti}
 \begin{definizione}
 	[Gruppo di Sylow]
