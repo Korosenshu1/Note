@@ -57,7 +57,7 @@
 {\normalfont}% name of font to use in the body of the theorem
 %{15pt}% measure of space to indent
 {\parindent}% measure of space to indent
-{\sffamily\scshape\bfseries}% name of head font
+{\color{mastercolor}\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
@@ -122,7 +122,7 @@ title=#1
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{18}{20}\sffamily\scshape}
+{\fontsize{18}{20}\scshape}
 {\normalfont\color{mastercolor}{\fontsize{18}{20}\selectfont\thesection}}
 {0.7em}
 {}
@@ -133,11 +133,11 @@ title=#1
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{86, 102, 168}}
 
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{mastercolor}\normalfont\S\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\color{mastercolor}\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -147,7 +147,7 @@ title=#1
 
 \vspace{0.2in}
 
-{\large\scshape\sffamily\theauthor}
+{\large\scshape\theauthor}
 \end{center}
 }
 
@@ -181,6 +181,9 @@ title=#1
 %\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
 %\usepackage[noSTIXops,scaled=1.1]{newtxsf}
 \renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+\usepackage[osf]{newpxtext}
+\usepackage[euler-digits,euler-hat-accent]{eulervm}
+
 
 
 \begin{document}
@@ -756,7 +759,7 @@ Visto che gli \(x_i\) generano \(H\), allora ogni elemento di \(H\) è una parol
 
 Sia \((k_1,\dots,k_n)\in K^n\) una \(n\)-upla che soddisfa le relazioni di \(R\); allora esiste un unico omomorfismo $f : F \to K$ che manda \(x_i\longmapsto k_i\).
 Le ipotesi sulle relazioni implicano che ogni \(w\in R\) viene mandata nell'identità di \(K\), cioè $N < \operatorname{Ker} f$; per la presentazione dei gruppi quoziente, allora, si ha $\overline{f}:F / N \cong H \longrightarrow K$ che mappa la classe di $x_i$ in $k_i$.
-Quindi la \(n\)-upla data è l'immagine di \(\bar f\) tramite \(\Phi\).
+Quindi la $n$-upla data è l'immagine di $\overline{f}$ tramite \(\Phi\).
 \end{enumerate}
 Se ne conclude che \(\Phi\) è una biezione, quindi esiste una corrispondenza biunivoca tra gli omomorfismi \(H\to K\) e le \(n\)-uple di elementi di \(K\) che soddisfano le relazioni \(R\). 
 \end{proof}
@@ -977,15 +980,14 @@ Sia, allora
 \begin{array}
 	{c c c}
 	D_n & \longrightarrow & D_n\\
-	\rho ^h & \longmapsto & \rho ^{ih} \\
-	\sigma \rho ^k & \longmapsto & \sigma \rho ^j \rho ^{ik} 
+	\rho & \longmapsto & \rho ^{i} \\
+	\sigma & \longmapsto & \sigma \rho ^j 
 \end{array}
 \] 
-con $\operatorname{gcd}(i,n) =1$ e $j$ qualsiasi; $\gamma$ \`e ben definita e 
+con $\operatorname{gcd}(i,n) =1$ e $j$ qualsiasi; $\gamma$ \`e ben definita (si pu\`o verificare che \`e un omomorfismo vedendo che soddisfa le relazioni del gruppo) e si nota che:
 \[
 \gamma\left((\rho ^s)(\sigma \rho ^t)\right) = \gamma(\sigma \rho ^{t-s} )= \sigma \rho ^j \rho ^{i(t-s)} = \sigma \rho ^{-is} \rho ^j \rho ^{it} = \rho ^{is} \sigma \rho ^j\rho ^{it} = \gamma(\rho ^s)\gamma(\sigma \rho ^t)
 \] 
-per cui \`e un omomorfismo. 
 Inoltre, \`e biettiva per costruzione, quindi si ha $\lvert \operatorname{Aut} (D_n) \rvert = n \phi (n)$; da un punto di vista insiemistico, esiste una biezione tra $\operatorname{Aut} (D_n)$ e $\mathbb{Z} / n\mathbb{Z} \times \left(\mathbb{Z} / n\mathbb{Z}\right) ^*$.
 \begin{esercizio}
 	Studiare $D_4$ (risultati a pagina 19) e $D_6$.
@@ -1406,7 +1408,7 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 	Sia $G$ un gruppo e $H,K < G$, con $H \lhd G$; allora $HK < G$.
 \end{osservazione}
 \begin{teorema}
-	[Teorema di scomposizione semidiretta]\label{scth}
+	[Teorema di decomposizione semidiretta]\label{scth}
 	Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$ due sottogruppi; se $HK = G$ e $H \cap K = \left\{ e_G \right\} $, allora $G \cong H \rtimes _\gamma K$, con $\gamma: K \to \operatorname{Aut} (H)$ e $\gamma(k) = k hk^{-1}$.
 	\begin{proof}
 		Prima si dimostra la buona definizione del prodotto semidiretto definito nella tesi.
@@ -1449,9 +1451,23 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 	Allora $F: H\rtimes _\gamma K \to G$ \`e un isomorfismo di gruppi, per cui $G \cong H \rtimes _\gamma K$.
 	\end{proof}
 \end{teorema}
-\begin{esempio}
-Si ha $S_n \cong A_n \rtimes _\gamma \langle (1,2) \rangle$, con $\gamma_{(1,2)} (\sigma ) = (1,2) \sigma (1,2)$, poi $D_n \cong \langle \rho  \rangle\rtimes _\gamma \langle \sigma  \rangle$, con $\gamma_\sigma (\rho ) = \sigma \rho \sigma ^{-1}=\rho ^{-1}$.
-\end{esempio}
+\begin{esercizio}
+Dimostrare che $D_n \cong \mathbb{Z}/ n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/ 2\mathbb{Z}$.
+\begin{svolgimento}
+	Sia $D_n = \langle \rho , \sigma   \mid \rho ^n = \sigma ^2 = e, \ \sigma \rho \sigma = \rho ^{-1} \rangle$. 
+	Notando che $\langle \rho  \rangle\cong \mathbb{Z} / n \mathbb{Z}$ e che $\langle \sigma  \rangle\cong \mathbb{Z} / 2 \mathbb{Z}$, si mostra sostanzialmente che $D_n\cong \langle \rho  \rangle\rtimes_\varphi  \langle \sigma  \rangle$.
+	Per poter applicare il teorema di decomposizione, si nota che $\langle \rho  \rangle \lhd D_n$ perch\'e ha indice $2$, poi $\langle \rho  \rangle\cap \langle \sigma  \rangle = \left\{ e \right\} $ e, infine, $\lvert \langle \rho  \rangle\langle \sigma  \rangle \rvert = \lvert D_n \rvert $ perch\'e
+\[
+\lvert \langle \rho  \rangle\langle \sigma  \rangle \rvert = \frac{\lvert \langle \rho  \rangle \rvert \lvert \langle \sigma  \rangle \rvert }{\lvert \langle \rho  \rangle\cap\langle \sigma  \rangle \rvert } = 2n
+\] 
+Allora $D_n \cong \mathbb{Z}/n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/2\mathbb{Z}$.
+
+	Il prodotto semidiretto, in questo caso, \`e definito da $\varphi : \langle \sigma  \rangle\to \operatorname{Aut} (\langle \rho  \rangle)$ tale che $\sigma \longmapsto \varphi _\sigma  $ e $\varphi _\sigma (\rho ) = \sigma \rho \sigma = \rho ^{-1}$.
+	Visto che $\varphi$ \`e un omomorfismo, deve valere $\operatorname{ord}(\varphi _\sigma )  \mid \operatorname{ord}(\sigma  ) =2$, quindi ci sono due possibilit\`a: o $\varphi _\sigma  = \operatorname{Id} $, oppure \`e tale che $\rho \longmapsto \rho ^{-1}$; nel primo caso, si ha il prodotto diretto, mentre nel secondo caso si ha il prodotto semidiretto che definisce $D_n$.
+
+	Se, poi, in $\operatorname{Aut} (\mathbb{Z}/n\mathbb{Z})$ sono presenti altri elementi di ordine $2$, come nel caso di $\operatorname{Aut} (\mathbb{Z}/8\mathbb{Z})\cong (\mathbb{Z}/8\mathbb{Z})^* \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$, si possono definire altri prodotti semidiretti, che potrebbero risultare isomorfi al caso dell'identit\`a o a $\rho \longmapsto \rho ^{-1}$.
+\end{svolgimento}
+\end{esercizio}
 \begin{esempio}
 	[Classificazione dei gruppi di ordine pq.]
 	Si considera prima il caso $p=q$, da cui $\lvert G \rvert  = p^2$, per il quale si sa che le uniche possibilit\`a sono $G \cong \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z} / p \mathbb{Z}$, oppure $G\cong\mathbb{Z} / p ^2 \mathbb{Z}$.
@@ -1579,7 +1595,44 @@ Si conclude che $N$ \`e banale, pertanto $A_n$ \`e semplice.
 Per $n=5$, $S_n$ ha un solo sottogruppo normale, cio\`e $A_5$; infatti, se $H\lhd S_n$ e $|H|\nmid |A_n|$, allora $H\cap A_n \lhd A_n$, per\`o $A_n$ \`e semplice, quindi $H\cap A_n = \left\{ e \right\} $.
 Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale.
 
+\begin{esercizio}
+Dimostrare che $S_n \cong A_n \rtimes _\varphi \langle (1 \ 2) \rangle$.
+\begin{svolgimento}
+	Visto che $[S_n : A_n] = 2$, allora $A_n \lhd S_n$; inoltre, essendo $\lvert A_n \rvert = n! / 2$, per questione di cardinalit\`a, si ha $A_n \langle (1 \ 2) \rangle = S_n$\footnote{Si nota che $\langle (1 \ 2) \rangle=\big\{ (2\ 1) = e , (1\ 2) \big\} $, quindi $\lvert \langle (1\ 2) \rangle \rvert =2$.}.
+	Ora, ricordando che $A_ n = \operatorname{Ker} \mathrm{sgn} $ e che $\langle (1\ 2) \rangle$ contiene solo trasposizioni (il cui segno \`e $-1$), deve valere $A_n \cap \langle (1\ 2) \rangle = \left\{ e \right\} $.
+	In questo modo, le ipotesi del teorema di decomposizione semidiretta (th. \ref{scth}) sono soddisfatte, pertanto $S_n \cong A_n \rtimes _\varphi \langle (1 \ 2) \rangle$.
+\end{svolgimento}
+\end{esercizio}
+\subsection{Teorema di struttura per gruppi abeliani finiti}
+\begin{definizione}
+	[$\mathbf{p}$-torsione]
+Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \textit{componente di $p$-torsione} l'insieme $G(p) = \left\{ g \in  G  \mid \operatorname{ord}(g) =p^k, \ k \in \mathbb{N} \right\} $.
+\end{definizione}
+\begin{prop}
+	Dato $G$ abeliano e finito; allora $G(p) < G$ \`e un $p$-sottogruppo e $G(p) \operatorname{char} G$ (cio\`e \`e un sottogruppo caratteristico).
+	\begin{proof}
+		$G(p) < G$ perch\'e se $x,y \in G : \operatorname{ord}(x) =p^m,\  \operatorname{ord}(y) =p^n$, con $m.n \in \mathbb{N}$, allora $\operatorname{ord}(xy)  \mid [\operatorname{ord}(x) , \operatorname{ord}(y) ]$, il che vuol dire che $\operatorname{ord}(xy) = p^s$, per qualche $s \in  \mathbb{N}$.
+		Inoltre, l'ordine del prodotto di qualsiasi coppaia di elementi di $G$ \`e sempre finito, quindi sempre nella forma di potenze di $p$, perch\'e $\lvert G \rvert < \infty$ per assunzione.
+		Per dimostrare che \`e un $p$-gruppo, si nota che 
 
+		Infine, $G(p)$ \`e caratteristico perch\'e gli automorfismi conservano l'ordine degli elementi, pertanto $G(p)$ viene mandato in se stesso.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	[Teorema di struttura]
+	Sia $G$ un gruppo abeliano finito; allora $G$ \`e prodotto diretto di gruppi ciclici, cio\`e:
+	\[
+	G \cong \mathbb{Z}/n_1\mathbb{Z} \times  \ldots \times \mathbb{Z} / n_s \mathbb{Z}
+	\] 
+	Questa scrittura, inoltre, \`e unica se $n_{i+1}  \mid n_i, \ \forall i \in \left\{ 1, \ldots, s-1 \right\} $.
+\end{teorema}
+\begin{teorema}
+	Sia $G$ un gruppo abeliano con $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ tutti primi e $p_i\neq p_j, \ \forall i\neq j$; allora
+	\[
+	G \cong G(p_1) \times \ldots G(p_s)
+	\] 
+	Inoltre, la decomposizione di $G$ come prodotto di $p$-gruppi tra loro coprimi \`e unica.
+\end{teorema}
 \subsection{I teoremi di Sylow}
 Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrisponde al punto (a), il secondo ai punti (b) e (c) e il terzo al punto (d).
 \begin{teorema}
@@ -1638,11 +1691,10 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 				Visto che $p  \nmid m $\footnote{Questo \`e per assunzione, cio\`e $\lvert G \rvert =p^n m $ con $(p,m) = 1$.}, deve esistere un $g \in R$ tale che $a_g=0$, per cui $\operatorname{Orb} (gS) = \left\{ gS \right\} \Rightarrow \operatorname{Stab} (gS) = H$.
 				Questo significa anche che $\forall h\in H, \ hgS = gS \Rightarrow H \subset gSg^{-1}$, ma $gSg^{-1}$ \`e un $p$-Sylow perch\'e $\lvert gSg^{-1} \rvert = \lvert S \rvert $, quindi $H$ \`e contenuto in un $p$-Sylow.
 			\item Quanto riportato in (b) dimostra anche la parte sul congiugio; infatti, se $H$ \`e un $p$-Sylow con $\lvert H\rvert = p^n$, allora \`e un $p$-gruppo, allora $H \subset gSg^{-1}$ e, visto che hanno stessa cardinalit\`a, segue che $H = g S g^{-1}$.
-			\item Sia $S$ un $p$-Sylow; allora $n_p = [G:N_G(S)]  \mid  |G|$.
+			\item Sia $S$ un $p$-Sylow; visto che tutti i $p$-Sylow sono coniugati, per un certo $p$ fissato, significa che il loro numero \`e pari all'ordine della classe di coniugio di $S$, pertanto $n_p = \lvert \operatorname{Cl} (S) \rvert  = [G:N_G(S)]  \mid  |G|$.
 				Si considera, ora, l'azione di $S$ sull'insieme dei coniugati di $S$ in $G$, $Y$, definita da $\phi :S \to S(Y)$, con $\phi (g)(xSx^{-1}) = \gamma_g (xSx^{-1}) = gxSx^{-1}g^{-1}$; si vuole dimostrare che $\operatorname{Orb} (S)$ \`e l'unica orbita banale di questa azione.
 
-				Sia, allora, $H \in Y$ con $\operatorname{Orb} (H) = \left\{ H \right\} $, pertanto $S = \operatorname{Stab}(H) = \left\{ s \in S  \mid s H s^{-1} = H\right\}  $.
-				Questo, per\`o, \`e equivalente a richiedere che $S \subset  N_G(H) \iff SH = HS < G$.
+				Per dimostrarlo, si considera, allora, $H \in Y$ con $\operatorname{Orb} (H) = \left\{ H \right\} $, per cui $S = \operatorname{Stab}(H) = \left\{ s \in S  \mid s H s^{-1} = H\right\}  $; questo, per\`o, \`e equivalente a richiedere che $S \subset  N_G(H) \iff SH = HS < G$.
 				Si ha $\lvert HS \rvert = \lvert H \rvert \lvert S \rvert  / \lvert H \cap S \rvert = p^np^n / \lvert H\cap S \rvert $, ma visto che $HS < G$, allora $\lvert HS \rvert  \mid |G| = p^nm$, per cui deve essere $\lvert H\cap S \rvert =p^n$, per cui $H = S$.
 
 				Per finire, si nota che
@@ -1651,28 +1703,11 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 				\] 
 				da cui $n_p = 1 + \ell p^k$, che implica $n_p \equiv 1 \pmod{p} $, con $R$ insieme dei rappresentanti delle orbite.
 		\end{enumerate}
-		
 	\end{proof}
 \end{teorema}
-
-\textbf{Da fare:}
-\begin{itemize}
-	\item rivedere dimostrazione del teorema di Sylow e completare con lemma pagina 70;
-	\item aggiungere nota sull'uguaglianza $n_p = [G:N_G(S)]  \mid  |G|$.
-\end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Il teorema di struttura per gruppi abeliani finiti}
+\begin{esempio}
+Sia $G = S_4$; visto che $\lvert S_4 \rvert = 2^3 \cdot 3$, esiste un $2$-Sylow, sia questo $P$, con $\lvert P \rvert  = 2^3 = 8$.
+\end{esempio}
 
 
 
@@ -1686,6 +1721,18 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \subsection{Esercizi e complementi}
 
 \subsubsection{Complementi di teoria}
@@ -1787,6 +1834,173 @@ N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in 
 \begin{osservazione}
 	Si nota che il coniugio non cambia la forma della permutazione, quindi l'equazione $\tau \rho \tau ^{-1} = \rho ^k$ ha soluzione se e solo se $k$ \`e coprimo con $\operatorname{ord}(\rho ) $.
 \end{osservazione}
+
+
+\newpage
+\section{Teoria degli anelli}
+\subsection{Introduzione}
+
+\begin{definizione}
+	[Anello]
+	Un insieme $A$ non vuoto si dice \textit{anello} se sono definite due operazioni, una somma $+$ e un prodotto $\cdot $, tali che:
+	\begin{enumerate}[(a).]
+		\item $(A,+)$ \`e un gruppo abeliano;
+		\item la moltiplicazione \`e associativa;
+		\item le due sono distributive a destra e a sinistra.
+	\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[Anello con identit\`a]
+	Un anello $A$ \`e detto \textit{con identit\`a} quando \`e definito anche l'elemento neutro rispetto al prodotto.
+\end{definizione}
+\begin{definizione}
+	[Anello commutativo]
+	Un anello $A$ \`e detto \textit{commutativo} quando anche il prodotto \`e commutativo.
+\end{definizione}
+\begin{definizione}
+	[Divisore dello zero]
+	Sia $A$ un anello; un suo \textit{divisore dello zero} \`e un elemento $a \in A$ tale che $\exists b \in A, \ b\neq 0$ per cui $ab = 0$.
+	L'insieme dei divisori dello zero \`e indicato con $D(A)$.
+\end{definizione}
+\begin{definizione}
+	[Dominio]
+	Un anello $A$ in cui l'unico divisore dello zero \`e $0$ \`e detto \textit{dominio}.
+\end{definizione}
+\begin{definizione}
+	[Campo]
+	Un anello $A$ in cui ciascun elemento eccetto $0$ ha un inverso \`e detto \textit{corpo}; si parla di \textit{campo}, invece, quando $A$ \`e anche commutativo.
+\end{definizione}
+\begin{definizione}
+	[Elemento nilpotente]
+	Sia $A$ un anello e sia $x \in A$; allora $x$ \`e detto \textit{nilpotente} se $\exists n\in \mathbb{N} : x^n = 0$.
+	L'insieme degli elementi nilpotenti si indica con $\mathcal{N} (A)$.
+\end{definizione}
+\begin{prop}
+	Sia $A $ un anello commutativo con identit\`a; allora:
+	\begin{enumerate}[(a).]
+		\item $(A^*,\cdot )$ \`e un gruppo abeliano;
+		\item $A^* \cap D(A) = \varnothing$;
+		\item se $A$ \`e finito, allora $A = D(A) \cup A^*$\footnote{Si nota che, quindi, un dominio finito \`e un campo.}.
+	\end{enumerate}
+	\begin{proof}Si divide la dimostrazione nei vari punti.
+		\begin{enumerate}[(a).]
+			\item \`E chiuso rispetto al prodotto perch\'e se $x,y \in A^*$, allora $(xy)^{-1}=y^{-1}x^{-1}$ \`e il suo inverso, \`e presente l'elemento neutro perch\'e $1 $ \`e invertibile, il prodotto \`e associativo per definizione, ogni elemento ha un inverso perch\'e l'inverso di ogni elemento \`e, a sua volta, invertibile ed \`e commutativo perch\'e l'intero anello lo \`e.
+			\item Se, per assurdo, $x \in A^* \cap D(A)$, allora, in $A$, si ha sia il suo inverso $x^{-1}$, sia un elemento $y\neq 0$ tale che $xy = 0$; ma allora $y = y x x^{-1} = 0$, che \`e assurdo.
+			\item Evidentemente $D(A) \cup A^* \subseteq A$, visto che $D(A)$ e $A^*$ sono sottoinsiemi di $A$.
+				Per l'inclusione inversa, invece, se $x \in A$ e $x \in D(A)$, allora la tesi \`e dimostrata, altrimenti (cio\`e $x \in A \setminus D(A)$, si definisce l'omomorfismo di gruppi $\varphi _x : A \to A$ tale $a\longmapsto xa$; il suo nucleo \`e $\operatorname{Ker} \varphi_x  = \left\{ y \in  A  \mid \varphi _x(y) = xy = 0 \right\} = \left\{ 0 \right\} $, visto che $x$ non \`e un divisore dello zero.
+				Essendo $|A|<+\infty$, l'omomorfismo \`e anche suriettivo, quindi \`e un isomorfismo, quindi $1 \in \operatorname{Im} \varphi _x$ e, perci\`o, $\exists a \in A$ tale che $\varphi _x (a) = xa = 1\implies x \in A^*$.
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	[Sottoanello]
+	Sia $A$ un anello e $B \subseteq A$; si dice che $B$ \`e un \textit{sottoanello} di $A$ se \`e chiuso rispetto a somma e prodotto.
+\end{definizione}
+\subsection{Ideali}
+
+
+\begin{definizione}
+	[Ideale]
+	Sia $A $ un anello e sia $I \subseteq A$ un suo sottoinsieme; si dice che $I$ \`e un ideale di $A$ se:
+	\begin{enumerate}[(a).]
+		\item $(I,+) < (A,+)$;
+		\item \`e soddisfatta la propriet\`a di assorbimento $aI \subset I$ e $Ia \subset I$, $\forall a \in A$\footnote{Un ideale che le soddisfa entrambe \`e detto \textit{bilatero}, altrimenti \`e detto \textit{ideale destro}, o \textit{sinistro} a seconda di quella che soddisfa.}.
+	\end{enumerate}
+\end{definizione}
+\begin{boxenv}[]
+\centering	In generale, si assumer\`a che gli anelli siano con identit\`a e commutativi.
+\end{boxenv}
+\begin{osservazione}
+Per verificare che un sottoinsieme di un anello commutativo con identit\`a \`e un ideale, \`e sufficiente mostrare che $(I,+)$ \`e chiuso e che valga la propriet\`a di assorbimento perch\'e, da queste, segue che $(-1)a \in I$, visto che $-1$ deve appartenere ad $(A,+)$.
+\end{osservazione}
+\begin{definizione}
+	[Ideale generato]
+	Sia $A$ un anello e $S=\left\{ s_1,\ldots,s_n \right\}  \subset A$ un sottoinsieme non vuoto; si definisce l'\textit{ideale generato} da $S$ come:
+	\[
+	\langle S \rangle= \left\{ \sum_{i=1}^{n} a_i s_i  \ \Bigg\lvert\ a_i \in A, \ s_i \in S \right\} 
+	\] 
+\end{definizione}
+\noindent Ora si giustifica la precedente definizione, mostrando che \`e effettivamente un ideale.
+\begin{proof}
+	$\langle S \rangle$ \`e chiuso rispetto alla somma; infatti, dati due suoi elementi $x = \sum_{i=1}^{n} a_i s_i$ e $ y = \sum_{i=1}^{n} a'_i s_i$, si ha:
+\[
+x+y = \sum_{i=1}^{n} a_is_i + \sum_{i=1}^{n} a'_i s_i = \sum_{i=1}^{n} (a_i + a'_i) s_i \in \langle S \rangle
+\] 
+Inoltre, $\forall a \in A$, si ha:
+\[
+ax = \sum_{i=1}^{n}( a a_i) s_i \in S
+\] 
+quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
+\end{proof}
+\begin{prop}
+	[Operazioni tra ideali]
+	Sia $A$ un anello e siano $I,J \subset A$ due ideali; allora i seguenti insiemi sono ideali:
+	\begin{enumerate}[(a).]
+		\item $I\cap J$;
+		\item $I+J = \langle I,J \rangle = \left\{ i + j  \mid i \in I, \ j \in J \right\} $;
+		\item $IJ = \left\{ \sum_{k=1}^{n} i_k j_k\ \Big\lvert\ n\ge 1,\ i_k \in I, \ j_k \in J \right\} $;
+		\item $\sqrt{I} = \left\{ x \in A  \mid \exists n \in \mathbb{N} : x^n \in I \right\} $;
+		\item $(I:J) = \left\{ x \in A  \mid  xJ \subseteq I \right\} $.
+	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei vari punti.
+		\begin{enumerate}[(a).]
+			\item Si sa gi\`a che l'intersezione di sottogruppi \`e un sottogruppo, quindi rimane da mostrare l'assorbimento.
+				Dato $a \in A$ e $x \in I \cap J$, allora $ax \in I$ perch\'e $I$ \`e un ideale, ma $ax \in J$ perch\'e anche $J$ lo \`e, quindi $ax \in I \cap J$.
+			\item Visto che vale la propriet\`a commutativa (si sta sempre assumendo che $A$ sia commutativo con identit\`a), allora dati $x, y \in I+J$ tali che $x = i_1 + j_1$ e $y = i_2+j_2$, allora
+				\[
+				x + y = (i_1+i_2)+(j_1+j_2) \in I+J
+				\] 
+				Per l'assorbimento, si nota che $ax = ai_1 + aj_1 = i_1' + j_1'$, visto che $I$ e $J$ sono ideali.
+			\item La chiusura \`e data dal fatto che la somma di due elementi \`e ancora una somma della stessa forma, mentre l'assorbimento a destra e sinistra \`e ovvio.
+			\item Siano $x,y \in \sqrt{I} $, ossia $x^n , y ^m \in I$, per qualche $n,m\in \mathbb{N}$; si nota che:
+				\[
+					(x+y)^{n+m} = \sum_{i=0}^{n+m} \binom{n+m}{i} x^i y^{m+n - i}
+				\] 
+				dove, per ogni $i= 0,\ldots,m+n$, si ha o che $i\ge n$, quindi $x^i \in I$, oppure che $n+m -i \ge m$, quindi $y^{n+m-i } \in I$.
+				Ne segue che tutti i termini di $(x+y)^{n+m} $ stanno in $I$ e, quindi, $x+y \in \sqrt{I} $.
+				Infine, $\forall  a \in A$, $(ax^n) = a^n x^n$ appartiene ad $I$ perch\'e $x^n \in I$ e vale la propriet\`a di assorbimento; allora $ax \in \sqrt{I} $.
+			\item Siano $x,y \in (I:J)$; allora $(x+y) J = xJ + yJ \implies x+y \in (I:J)$ visto che $xJ \subseteq I$ e $yJ \subseteq I$ per assunzione.
+				Infine, $\forall  \in A$, si ha $axJ = a(xJ) \subseteq aI \subseteq I \implies ax \in (I:J)$.
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $A$ un anello e siano $I,J$ due suoi ideali; in generale, $IJ\subseteq  I\cap J$ e vale l'uguaglianza quando $I+J = A$.
+	\begin{proof}
+		Siano $x \in I$ e $y \in J$; per assorbimento, visto che $x,y$ appartengono anche ad $A$, si ha $xy \in I$ (considerando $y \in A$) e $xy \in J$ (considerando $x \in A$), quindi $xy \in I\cap J$.
+
+		Infine, assumendo che $I + J = A$, allora vale che $i + j = 1$, per qualche $i \in I$ e $j \in J$; ne segue che $I\cap J \subseteq IJ$ perch\'e, dato un generico $x \in I\cap J$, si ha:
+		\[
+		x \cdot 1 = x (i + j) = xi  + xj \in IJ
+		\] 
+		visto che \`e somma di due elementi di $IJ$, il quale \`e un gruppo additivo.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	[Ideale proprio]
+	Sia $A$ un anello; un suo ideale $I$ \`e detto \textit{proprio} se $I \subsetneq A$.
+\end{definizione}
+\begin{prop}\label{idprop}
+	Sia $A$ un ideale; allora un suo ideale $I \subset A$ \`e proprio se e solo se $I \cap A^* = \varnothing$.
+	\begin{proof}
+		Sia $I\cap A^* = \varnothing$; visto che $1 \in A^*$ sempre, allora $\exists a \in A : a \not\in I$, per cui $I \subsetneq A$.
+
+		Per l'implicazione inversa, sia $I \subsetneq A$ un ideale proprio e sia, per assurdo, $x \in I \cap A^*$; allora $x$ \`e invertibile, quindi $\exists x^{-1} \in A$ tale che $x x^{-1} = 1$, quindi $1= x^{-1} x \in I \Rightarrow 1 \in I \Leftarrow I = A$ per assorbimento, da cui l'assurdo.
+	\end{proof}
+\end{prop}
+\begin{corollario}
+	Sia $A$ un anello; allora $A$ \`e un campo se e solo se i suoi unici ideali sono $\left\{ 0 \right\} $ e $A$.
+	\begin{proof}
+		Visto che $A$ \`e un campo se e solo se $A^* = A \setminus\left\{ 0 \right\} $, ne segue che l'unico elemento fuori $A$ \`e $0$, quindi, per la proposizione precedente (\ref{idprop}), si conclude che gli unici ideali ammissibili sono $I=\left\{ 0 \right\} $ e $I=A$.
+	\end{proof}
+\end{corollario}
+\subsection{Omomorfismi di anelli e anelli quoziente}
+
+
+
+
+
 
 
 
