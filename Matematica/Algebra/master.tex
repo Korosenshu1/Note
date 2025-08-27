@@ -185,7 +185,7 @@ title=#1
 \usepackage[euler-digits,euler-hat-accent]{eulervm}
 
 
-
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 \begin{document}
 \maketitle
 \vspace{9cm}
@@ -2222,6 +2222,296 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 	\end{proof}
 \end{corollario}
 \subsection{Omomorfismi di anelli e anelli quoziente}
+\begin{definizione}
+	[Omomorfismo di anelli]
+	Siano $A ,B$ due anelli\footnote{Non necessariamente commutativi e con unit\`a.}; si dice che $f : A \to B$ \`e un omomorfismo di anelli se, per ogni $a,a' \in A$:
+	\begin{enumerate}[(a).]
+		\item$f(aa') = f(a)f(a')$;
+		\item $f(a+a') = f(a) + f(a')$.
+	\end{enumerate}
+	Se gli anelli sono commutativi e con identit\`a, generalmente, si assume anche che $f(1_A) = 1_B$.
+\end{definizione}
+\begin{osservazione}
+In generale, $f(1_A) = 1_B$ non \`e assicurata; infatti:
+\[
+f(a) = f(1_A a) = f(1_A a) \implies f(a) - f(1_A) f(a) = (1_B - f(1_A))f(a) = 0
+\] 
+ma la legge di cancellazione non \`e garantita in quanto non \`e detto che $A$ sia un dominio. 
+Se $B$ \`e un dominio e $f(a) \neq 0$, allora segue $f(1_A) = 1_B$, ma se $f(A) \subset D(B)$, allora non \`e assicurato.
+\end{osservazione}
+\begin{definizione}
+	[Anello quoziente]
+	Sia $A$ un anello e $I \subseteq A$ un suo ideale; si definisce \textit{anello quoziente} la struttura $(A / I, +, \cdot )$, dove la moltiplicazione \`e definita da
+	\[
+		(a+I)\cdot (b+I) = ab + I
+	\] 
+	Il quoziente \`e inteso rispetto alla somma, visto che $I$ \`e un gruppo additivo.
+\end{definizione}
+\noindent Si verifica che l'operazione \`e ben definita: dati $a+I = a'+I$ e $b+I = b'+I$, allora
+\[
+	(a'+I)(b'+I) = a'b' + I = (a+I)(b+I) = ab + I 
+\] 
+Da questo si pu\`o, poi, verificare che questo prodotto sul gruppo quoziente $(A/I, +)$ definisca, effettivamente, una struttura di anello.
+
+Analogamente al caso dei gruppi, si definisce la proiezione al quoziente come l'omomorfismo di anelli
+\begin{equation}
+	\pi _I : 
+	\begin{array}
+		{c c c}
+		A &\longrightarrow & A / I\\
+		a&\longmapsto & a + I 
+	\end{array}
+\end{equation}
+Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e anche suriettivo, con $\operatorname{Ker} \pi_I = I $.
+
+\begin{prop}
+	Sia $A$ un anello; i suoi ideali sono tutti e soli i nuclei degli omomorfismi di anello definiti su $A$.
+	\begin{proof}
+		Si dimostra l'implicazione verso sinistra; sia, quindi, $\varphi  : A \to B$ un omomorfismo di anelli.
+		Si ha che $\operatorname{Ker} \varphi $ \`e un ideale di $A$ perch\'e $\operatorname{Ker} \varphi <  A$, visto che $\varphi $ \`e anche un omomorfismo di gruppi, e $\forall a \in A$, si ha $ax \in \operatorname{Ker} \varphi $, essendo che $\varphi (ax) = \varphi (a) \varphi (x) = \varphi (a) \cdot 0 = 0$.
+		Quindi i nuclei degli omomorfismi sono ideali.
+
+		Viceversa, tutti gli ideali sono i nuclei degli omomorfismi di proiezione al relativo quoziente, come visto poco sopra.
+	\end{proof}
+\end{prop}
+\begin{teorema}
+	[I teorema di omomorfismo di anelli]
+	Siano $A,B$ due anelli e sia $f: A \to B$ un omomorfismo di anelli; allora esiste un unico omomorfismo di anelli $\varphi $ che rispetta il diagramma\footnote{La freccia con due teste indica una suriezione, mentre la freccia tratteggiata indica che tale mappa deve esistere. In questo caso, le mappe in gioco si sottintendono essere omomorfismi di anelli.}:
+\[
+\begin{tikzcd}
+	A & & B\\
+	\\
+	A / \operatorname{Ker} f
+	\arrow[from=1-1,to=1-3,"\displaystyle f"]
+	\arrow[from=1-1,to=3-1,"\displaystyle \pi"',two heads]
+	\arrow[from=3-1,to=1-3,"\displaystyle \varphi "',dashed]
+\end{tikzcd}
+\] 
+	cio\`e tale che $f = \varphi \circ \pi$, con $\varphi $ iniettivo e $\operatorname{Im} \varphi  = \operatorname{Im} f$.
+	\begin{proof}
+		Per il I teorema di omomorfismo di gruppi, visto che $f$ \`e, in particolare, un omomorfismo di gruppi, si ha l'esistenza e l'unicit\`a di 
+		\[
+		\varphi  : \faktor{A}{I} \to B
+		\] 
+		con $I = \operatorname{Ker} f$.
+		Inoltre, sempre per lo stesso motivo, si sa che tale mappa soddisfa $f = \varphi  \circ \pi$ ed \`e iniettiva, con $\operatorname{Im} \varphi = \operatorname{Im} f$.
+		
+		Rimane da verificare che $\varphi $ \`e anche un omomorfismo di anelli; a questo proposito, si nota che:
+		\[
+			\varphi \big((a+I)(b+I)\big)=\varphi (ab + I) = f(ab) =f(a)f(b) = \varphi (a+I) \varphi (b+I)
+		\] 
+		per ogni $a,b \in A$.
+	\end{proof}
+\end{teorema}
+\begin{lemma}
+	Sia $f: A\to B$ un omomorfismo di anelli; allora valgono le due seguenti affermazioni:
+\begin{enumerate}[(a).]
+	\item $\forall J \subset B$ ideale, si ha che $f^{-1}(J)$ \`e un ideale di $A$;
+	\item se $f$ \`e suriettiva, allora $\forall I \subset A$ ideale, si ha che $f(I)$ \`e un ideale di $B$.
+\end{enumerate}
+		\begin{proof}
+			Si divide la dimostrazione nei due punti.
+			\begin{enumerate}[(a).]
+				\item Visto che $J$ \`e un ideale di $B$, \`e anche un sottogruppo di $B$, quindi l'immagine attraverso l'omomorfismo\footnote{L'inversa di un omomorfismo \`e un omomorfismo perch\'e se $f(ab) = f(a)f(b)$, allora $f^{-1}(f(a)) f^{-1}(f(b)) =ab= f^{-1}(f(ab))$.} $f^{-1}$ sar\`a un sottogruppo di $A$.
+					Inoltre, vale la propriet\`a di assorbimento perch\'e se $x \in f^{-1}(J)$, allora $f(x) \in J$, quindi:
+					\[
+						\underbracket{f(a)}_{\in B} \underbracket{f(x)}_{\in J}  = f(ax) \in J, \ \forall x \in f^{-1}(J)
+					\] 
+					da cui $ax \in f^{-1}(J)$.
+				\item Si sa che $f(I)$ \`e un sottogruppo di $B$; si verifica, allora, l'assorbimento. 
+					Per farlo, sia $b \in B$; visto che $f$ \`e suriettiva, allora esiste $a \in A $ tale che $b = f(a)$ e, quindi:
+					\[
+						b f(x) = f(a) f(x) = f(\underbracket{ax}_{\in I} ) \in f(I)
+					\] 
+			\end{enumerate}
+		\end{proof}
+\end{lemma}
+\begin{teorema}
+	[Teorema di corrispondenza tra ideali]
+	Sia $I \subset A$ un ideale di $A$ anello e sia $\pi_I$ la proiezione al quoziente; allora $\pi_I$ induca una corrispondenza biunivoca tra gli ideali dell'anello quoziente $A / I$ e gli ideali di $A$ che contengono $I$.
+	\begin{proof}
+		Siano $X = \left\{ J \subseteq A  \mid J \text{ ideale e } I \subseteq J\right\} $ e $Y = \left\{ \mathcal{J} \subseteq A / I  \mid \mathcal{J} \text{ ideale} \right\} $; la corrispondenza biunivoca \`e data dal teorema di corrispondenza tra gruppi. 
+		Rimane da dimostrare che, restringendo tale corrispondenza agli ideali, questa associ un ideale di $A$ ad un ideale di $A / I$ e viceversa.
+
+		Per il precedente lemma, si sa che, essendo $\pi_I$ suriettivo, allora le immagini e le controimmagini via $\pi_I$, cio\`e $J \longmapsto \pi_I (J)$ e $ \mathcal{J} \longmapsto \pi^{-1}_I(\mathcal{J} )$, sono ideali, il che conclude la dimostrazione.
+	\end{proof}
+\end{teorema}
+\begin{definizione}
+	[Estensione e contrazione]
+	Sia $f: A\to B$ un omomorfismo di anelli e siano $I\subset A$ e $J \subset B$ un ideale, rispettivamente, di $A$ e di $B$; allora si dice \textit{estensione} di $I$ a $B$ via $f$ l'ideale generato da $f(I)$, mentre si dice \textit{contrazione} di $J$ ad $A$ via $f$ l'ideale generato da $f^{-1}(J)$.
+\end{definizione}
+\begin{osservazione}
+Generalmente, per indicare l'estensione, ad esempio, si utilizza il l'abuso di notazione $f(I)B = IB$.
+\end{osservazione}
+\noindent Gli omomorfismi sono \textit{inclusioni a meno di isomrfismo}; infatti se l'omomorfismo $\varphi : R\longrightarrow R'$ non fosse iniettivo, si potrebbe passare al quoziente e trovare che $R / \operatorname{Ker} \varphi \longhookrightarrow R'$.
+Allora si pu\`o restringere lo studio degli omomorfismi allo studio di quelli iniettivi. 
+
+Conoscendo la corrispondenza tra ideali indotta da $\pi_I$, si nota che le mappe $I \longmapsto IB$ e $J\longmapsto J\cap A$ fanno si che 
+\[
+	\varphi  :A \longhookrightarrow B \longrightarrow \faktor{B}{J}
+\] 
+sia tale per cui
+\[
+\operatorname{Ker} \varphi = \left\{ a \in A  \mid \varphi (a) = a+J = J \right\} = \left\{ a \in A  \mid a \in J \right\} = J\cap A = \pi^{-1}_I(J)
+\] 
+da cui si ottiene 
+\begin{equation}
+	\frac{A}{J\cap A}\longhookrightarrow \faktor{B}{J}
+\end{equation}
+per il I teorema di omomorfismo.
+\subsection{Prodotto diretto di anelli}
+\begin{definizione}
+	[Anello prodotto]
+	Siano $A,B$ due anelli; il loro prodotto cartesiano $A\times B$ pu\`o essere dotato di una struttura di anello tramite le operazioni
+	\[
+	\begin{split}
+		&(a_1,b_1)+(a_2,b_2) = (a_1+a_2,b_1+b_2) \\
+		& (a_1,b_1) \cdot (a_2,b_2) = (a_1\cdot a_2, b_1\cdot b_2)
+	\end{split}
+	\] 
+	con $a_1,a_2\in A$ e $b_1,b_2 \in B$.
+\end{definizione}
+\begin{teorema}
+	[Teorema cinese del resto per anelli]
+	Sia $A$ un anello commutativo con unit\`a e siano $I,J$ due suoi ideali; allora la mappa di doppia proiezione
+	\[
+	f :
+	\begin{array}
+		{c c c}
+		A&\longrightarrow & \faktor{A}{I} \times \faktor{A}{J}\\
+		a&\longmapsto &(a+I,a+J)
+	\end{array}
+	\] 
+	\`e un omomorfismo di anelli, con $\operatorname{Ker} f = I\cap J$.
+	Inoltre, $I+J = A$ se e solo se $f$ \`e suriettiva e, in tal caso, si ottiene
+	\[
+		\faktor{A}{IJ} \cong \faktor{A}{I} \times \faktor{A}{J}
+	\] 
+	\begin{proof}
+		Si verifica intanto che $f$ \`e un omomorfismo di anelli:
+		\[
+		f(a+b) = \big((a+b) +I, (a+b) + J\big) = (a+I,a+J) + (b+I,b+J) = f(a)+f(b)
+		\] 
+		dove la terza uguaglianza \`e assicurata dalla struttura di anello quoziente. 
+		Analogamente:
+		\[
+		f(ab) = (ab + I, ab+ J)  = (a+I,a+J)(b+I,b+J) = f(a)f(b)
+		\] 
+	Ora si nota che 
+	\[
+	\operatorname{Ker} f=\left\{ a \in A  \mid f(a) = (a+I,a+J) = (I,J) \right\} =\left\{ a \in A  \mid a \in I\text{ e } a \in J \right\} = I\cap J
+	\] 
+	Ora si verifica la doppia implicazione.
+	\begin{itemize}
+		\item ($\Rightarrow $) Sia $I+J = A$, quindi $\exists i\in I, \ j \in J : i+j = 1$ (visto che l'identit\`a \`e in $I+J$, essendo $I+J=A$); si vuole mostrare che $f$ \`e suriettiva, cio\`e che $\forall a,b \in A, \ \exists x \in A $ tale che $f(x) = (a+I,b+J)$.
+
+			Visto che $x \in A= I+J$, allora si pu\`o scrivere come $x = bi + aj$, per qualche $i \in I$ e $j\in J$, quindi:
+			\[
+				f(x) = (\underbracket{bi}_{\in I}  + aj + I, bi+ \underbracket{aj}_{\in J}  + j) = (aj+I,bi+J)
+			\] 
+			Notando, poi, che $1 = i + j\Leftarrow i= 1-j$ e $j=1-i$, si ha:
+			\[
+				(aj +I , bi+J) = (a(1-i) + I, b(1-j) + J) = (a+I,b_J)
+			\] 
+			pertanto $f$ \`e suriettiva.
+		\item ($\Leftarrow $) Si assume, ora, che $f$ sia suriettiva e si mostra che $I+J = A$.
+			Dalla suriettivit\`a, si ricava che $\exists i \in A : f(i) = (I,1+J)$; per tale $i$, allora, deve valere $i \in I$ e $i\equiv 1 \pmod{J} $, perci\`o $i = 1+j$, il che implica che $1 \in I+J$ e, quindi, $I+J=A$,
+	\end{itemize}
+	Per il I teorema di omomorfismo, infine, si ha che, se $f$ \`e suriettiva (ed equivalentemente $I+J = A$), allora:
+	\[
+		\faktor{A}{\operatorname{Ker} f}=\faktor{A}{I\cap J}=\faktor{A}{I J}\cong \faktor{A}{I} \times \faktor{A}{J}
+	\] 
+	dove la seconda uguaglianza \`e giustificata dal fatto che $I+J = A \implies IJ = I\cap J$.
+	\end{proof}
+\end{teorema}
+\begin{osservazione}
+Per il teorema cinese del resto fra gruppi, si sapeva gi\`a che 
+\[
+\mathbb{Z}/mn\mathbb{Z} \cong \mathbb{Z} / m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z} \iff (m,n) = 1
+\] 
+Ora, usando il teorema cinese del resto tra anelli, si sa che, data $f:\mathbb{Z}\longrightarrow \mathbb{Z}/ m \mathbb{Z} \times  \mathbb{Z}/ n \mathbb{Z}$, con $\operatorname{Ker} f = m\mathbb{Z} \cap n \mathbb{Z} = [m,n]\mathbb{Z}$, vale
+\[
+	\mathbb{Z}/[m,n]\mathbb{Z}\longhookrightarrow \mathbb{Z}/ m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}
+\] 
+Si \`e visto che $f$ \`e suriettiva se e solo se $(m,n) = 1$; in questo modo, $[m,n] = mn$, quindi $n\mathbb{Z}+m\mathbb{Z}= (n,m)\mathbb{Z}=\mathbb{Z}$ e, pertanto:
+\[
+	\mathbb{Z}/ [m,n]\mathbb{Z}= \mathbb{Z}/ mn\mathbb{Z}\cong \mathbb{Z}/ m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}
+\] 
+Questa versione del teorema cinese del resto, quindi, generalizza la precedente.
+\end{osservazione}
+\subsection{Ideali primi e massimali}
+\begin{definizione}
+	[Maggiorante]
+	Sia $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato e sia $X \subset \mathcal{F} $ un suo sottoinsieme; allora si dice che $M \in \mathcal{F} $ \`e un \textit{maggiorante} per $X$ se $\forall A\in X , \ A\le M$.
+\end{definizione}
+\begin{definizione}
+	[Elemento massimale]
+	Sia $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato; si dice che $A \in \mathcal{F} $ \`e un \textit{elemento massimale} per $\mathcal{F} $ se $\forall B \in \mathcal{F} : A\le B \implies A= B$.
+\end{definizione}
+\begin{definizione}
+	[Massimo]
+	Sia $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato; si dice che $A \in \mathcal{F} $ \`e un \textit{massimo} per $\mathcal{F} $ se $\forall B \in \mathcal{F} $, si ha $B \le A$.
+\end{definizione}
+\begin{definizione}
+	[Catena]
+	Sia $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato; una \textit{catena} di $\mathcal{F} $ \`e un suo sottoinsieme totalmente ordinato.
+\end{definizione}
+\begin{definizione}
+	[Insieme induttivo]
+		Sia $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato; allora si dice che $\mathcal{F} $ \`e \textit{induttivo} se ogni sua catena ammette maggiorante al suo interno.
+\end{definizione}
+\begin{lemma}
+	[Lemma di Zorn]
+	Sia $(\mathcal{F},\le ) $ un insieme parzialmente ordinato e induttivo; allora $\mathcal{F} $ contiene elementi massimali.
+\end{lemma}
+\noindent Spesso, il lemma di Zorn si usa su famiglie $\mathcal{F} $ di ideali ordinati secondo la relazione di inclusione $\subseteq$.
+
+\begin{definizione}
+	[Ideale primo]
+	Sia $I \subsetneq A$ un ideale di $A$ anello; $I$ si dice \textit{primo} se:
+	\[
+	xy \in I \implies x \in I \text{ oppure } y\in I, \ \forall x,y \in A
+	\] 
+	cio\`e se ogni volta che contiene un prodotto, allora contiene uno dei due fattori.
+\end{definizione}
+\begin{definizione}
+	[Ideale massimale]
+	Sia $A$ un anello e $I$ un suo ideale; si dice che $I$ \`e \textit{massimale} se \`e un elemento massimale della famiglia $\mathcal{F} $ di tutti gli ideali propri di $A$, cio\`e
+	\[
+	I \text{ massimale }\iff\forall J\subsetneq A : I \subseteq J \implies I = J
+	\] 
+\end{definizione}
+\begin{prop}
+	Ogni anello unitario ammette ideali massimali.
+	\begin{proof}
+		Sia $\mathcal{F} = \left\{ I \subsetneq A  \mid I \text{ ideale} \right\}  $; si ha che $(\mathcal{F} ,\subseteq)$ \`e un insieme parzialmente ordinato e induttivo.
+		Sia, poi, $\mathcal{C} = \left\{ I_\lambda , \ \lambda \in \Lambda  \right\} $ una catena di $\mathcal{F} $; si nota che
+		\[
+		I = \bigcup_{\lambda \in \Lambda } I_\lambda 
+		\] 
+		\`e un maggiorante per $\mathcal{C} $ ed \`e un ideale di $A$, visto che gli ideali si contengono e, il fatto che $1 \not\in A\Leftarrow I\neq A$, essendo che $1\not \in I_\lambda , \ \forall \lambda \in \Lambda $.
+		Ne segue che $I \in \mathcal{F} $ implica che $\mathcal{F} $ \`e induttivo e, per il lemma di Zorn, ammette elementi massimali.
+	\end{proof}
+\end{prop}
+\begin{esempio}
+Gli ideali primi di $\mathbb{Z}$ sono quelli della forma $\langle p \rangle$, con $p$ primo; infatti:
+\[
+xy \in \langle p \rangle \iffp  \mid xy \iff p \mid x \text{ oppure }p  \mid y
+\] 
+ossia se $x \in \langle p \rangle$, oppure se $y \in \langle p \rangle$.
+
+Considerando, invece, $\langle m \rangle$ con $m$ non primo, allora si pu\`o scrivere $m = ab$, dove $a,b \in \mathbb{Z}$ sono tali che $1<a,b<m$, e, quindi, $ab \in \langle m \rangle$, ma $a \not \in \langle m \rangle$ e $b \not \in \langle m \rangle$, per cui $\langle m \rangle$ non \`e primo.
+\end{esempio}
+\begin{prop}
+	[Propriet\`a degli ideali massimali]
+	Sia $A$ un anello; allora:
+	\begin{enumerate}[(a).]
+		\item ogni ideale proprio di $A$ \`e contenuto in un ideale massimale;
+		\item ogni elemento non invertibile di $A$ \`e contenuto in un ideale massimale.
+	\end{enumerate}
+\end{prop}
+
+
 
 
 
