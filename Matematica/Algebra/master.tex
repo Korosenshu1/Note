@@ -2496,7 +2496,7 @@ Questa versione del teorema cinese del resto, quindi, generalizza la precedente.
 \begin{esempio}
 Gli ideali primi di $\mathbb{Z}$ sono quelli della forma $\langle p \rangle$, con $p$ primo; infatti:
 \[
-xy \in \langle p \rangle \iffp  \mid xy \iff p \mid x \text{ oppure }p  \mid y
+xy \in \langle p \rangle \iff p  \mid xy \iff p \mid x \text{ oppure }p  \mid y
 \] 
 ossia se $x \in \langle p \rangle$, oppure se $y \in \langle p \rangle$.
 
@@ -2509,10 +2509,71 @@ Considerando, invece, $\langle m \rangle$ con $m$ non primo, allora si pu\`o scr
 		\item ogni ideale proprio di $A$ \`e contenuto in un ideale massimale;
 		\item ogni elemento non invertibile di $A$ \`e contenuto in un ideale massimale.
 	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei due punti.
+		\begin{enumerate}[(a).]
+			\item Sia $I \subsetneq A$ un ideale proprio e sia $\mathcal{F} $ la famiglia di tutti gli ideali propri che lo contengono:
+				\[
+				\mathcal{F} =\left\{ J\subsetneq A  \mid I \subseteq J \right\} 
+				\] 
+				Si nota che, essendo $I \in \mathcal{F} $, implica che $\mathcal{F } \neq \varnothing$; inoltre, $(\mathcal{F} ,\subseteq )$ \`e induttivo, infatti, data $\mathcal{C} $ una catena, questa sar\`a un sottoinsieme totalmente ordinato di $\mathcal{F} $ della forma $\mathcal{C} =\left\{ J_n \right\} \subseteq \mathcal{F} $, dove ciascun $J_n$ \`e contenuto nell'altro a catena.
+				Allora, preso $J = \bigcup J_n \in \mathcal{F} $\footnote{In realt\`a, andrebbe dimostrato che l'unione di ideali a catena, proprio come nel caso dei sottogruppi, \`e ancora un ideale.}, si verifica che \`e un maggiorante (in realt\`a si vedr\`a che \`e un massimo).
+				Per farlo, si notano i due seguenti punti.
+				\begin{itemize}
+					\item $\forall J_n \in \mathcal{C} $ si ha $ J_n\subseteq J$ per definizione di $J$.
+					\item Si ha $J \in \mathcal{F} $ perch\'e $I \subset J_n \subset J, \ \forall J_n \in \mathcal{F} $ e, infine, $J$ \`e un ideale proprio; infatti, se per assurdo si avesse $1 \in  J = \bigcup J_n$, allora esiste un certo $n$ per cui $1 \in J_n \subsetneq A$, che \`e assurdo.
+				\end{itemize}
+				Quindi $\mathcal{F} $ \`e induttivo e, per il lemma di Zorn, ammette almeno un elemento massimale $M$.
+Rimane da verificare che tale elemento massimale $M$ sia un ideale massimale dell'anello, visto che al momento, si \`e dimostrato che \`e massimale per la famiglia degli ideali che ne contengono uno proprio, che non \`e ovviamente la famiglia di tutti gli ideali propri di $A$.
+Questo, per\`o, segue direttamente osservando che, per $L \subsetneq A$ ideale proprio con $M \subseteq L$, si ha $I \subseteq M \subseteq L \implies L \in \mathcal{F} $ e, quindi, per massimalit\`a di $M$, si ha $L = M$.
+\item Segue direttamente dal punto precedente.
+	Sia, infatti, $x \in A \setminus A^*$; allora l'ideale generato da $\langle x \rangle$ \`e proprio (prop. \ref{idprop}) e, quindi, vale il punto (a): $\langle x \rangle\subseteq M \implies x \in M$, con $M$ ideale massimale di $A$.
+		\end{enumerate}
+	\end{proof}
 \end{prop}
-
-
-
+\begin{prop}
+	[Caratterizzazione degli ideali primi e massimali]
+\label{idprmaxchar}
+	Sia $A$ un anello e $I\subsetneq A$ un suo ideale proprio; allora valgono i seguenti punti.
+	\begin{enumerate}[(a).]
+		\item $I$ \`e primo se e solo se $A / I$ \`e un dominio.
+		\item $I$ \`e massimale se e solo se $A / I$ \`e un campo.
+		\item $A$ \`e un dominio se e solo se $\langle 0 \rangle$ \`e un ideale primo.
+		\item $A$ \`e un campo se e solo se $\langle 0 \rangle$ \`e un ideale massimale.
+		\item $I$ massimale $\implies I$ primo.
+	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei vari punti.
+		\begin{enumerate}[(a).]
+			\item Siano $x,y \in A$; per definizione, si ha che $I$ \`e primo se e solo se $xy \in I\Rightarrow x \in I$, oppure $y \in I$.
+				D'altra parte, $A / I $ \`e un dominio se e solo se 
+				\[
+					(x+I)(y+I) = xy + I = I \iff xy \in I \implies x \in I \text{ oppure }y\in I
+				\] 
+				Questo \`e equivalente a richiedere che, quando un prodotto di elementi si annulla (cio\`e appartiene alla classe laterale neutra, in questo caso), allora uno dei due elementi \`e gi\`a nella classe laterale neutra del quoziente, il che equivale a richiedere che $I$ \`e primo.
+			\item Per il secondo punto della prop. \ref{idprop}, si ha che $A / I $ \`e un campo se e solo se i suoi unici ideali sono impropri, cio\`e $\overline{\langle 0 \rangle}$, oppure $A / I$; per il teorema di corrispondenza, allora, questo \`e equivalente a richiedere che gli ideali di $A$ che contengono $I$ sono soltanto $A$ e $I$ stesso, pertanto $I$ \`e un ideale massimale di $A$.
+			\item Per il punto (a) appena mostrato, si sa che $\langle 0 \rangle$ \`e primo se e solo se $A / \langle 0 \rangle$ \`e un dominio, ma $A / \langle 0 \rangle\cong A$, quindi $A$ \`e un dominio.
+			\item Per il punto (b) appena mostrato, si sa che $\langle 0 \rangle$ \`e massimale se e solo se $A / \langle 0 \rangle$ \`e un campo, ma $A / \langle 0 \rangle\cong A$, pertanto $A$ \`e un campo.
+			\item Per il punto (b) appena mostrato, $I$ \`e massimale se e solo se $A / I$ \`e un campo; in particolare, questo significa che $A / I$ \`e un dominio, ma per il punto (a) appena mostrato, ci\`o equivale a dire che $I$ \`e primo.
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\begin{esempio}
+Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che $xy \in \langle 0 \rangle \iff xy = 0\implies x \in \langle 0 \rangle$, oppure $y \in \langle 0 \rangle$, ma non \`e massimale perch\'e $\langle 0 \rangle\subset \langle m \rangle  , \ \forall m \in \mathbb{Z}$.
+\end{esempio}
+\begin{prop}
+	La biezione tra ideali $\pi_I : A \to A/I$ conserva ideali primi e massimali (che contengono $I$).
+	\begin{proof}
+		Si nota, intanto, che $I \subseteq J \subseteq A$ per assunzione, e $J\longmapsto \pi_I(J) = J / I$.
+		Si deve mostrare che $J$ \`e primo (massimale) in $A$ se e solo se $J / I$ \`e primo (massimale) in $A / I$.
+		Per quanto visto nella prop. \ref{idprmaxchar}, richiederer che $J $ sia primo \`e equivalente a richiedere che $A / J$ sia un dominio (campo) e, analogamente, deve risultare che $\frac{A / I}{J / I}$ \`e un dominio (campo).
+		Per il II teorema di omomorfismo, per\`o, si ha che
+		\[
+			\frac{A / I }{J / I}\cong \faktor{A}{J}
+		\] 
+		da cui segue la tesi.
+	\end{proof}
+\end{prop}
 
 
 
