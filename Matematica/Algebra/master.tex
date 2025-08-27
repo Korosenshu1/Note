@@ -5,7 +5,7 @@
 \usepackage{index}
 \usepackage{amsbsy} % Bold math symbols
 \makeindex
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
@@ -1249,7 +1249,7 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 		Allora, visto che $hkh^{-1}k^{-1}\in H\cap K$ e visto che $H\cap K = \left\{ e \right\} $ per assunzione, si ha $hkh^{-1}k^{-1}=e \Rightarrow hk=kh$.
 	\end{proof}
 \end{lemma}
-\begin{teorema}\label{t171}
+\begin{teorema}[Teorema di decomposizione diretta]\label{t171}
 	Sia $G$ un gruppo e siano $H,K \lhd G$; se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G \cong H \times  K$.
 	\begin{proof}
 		Sia $\phi :H \times  K \to G$ tale che $\phi ((h,k))=hk$; allora $\phi $ \`e un omomorfismo per il lemma precedente (\ref{lemprec161}), \`e iniettiva per la seconda ipotesi ed \`e suriettiva per la prima.
@@ -1618,6 +1618,182 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		Infine, $G(p)$ \`e caratteristico perch\'e gli automorfismi conservano l'ordine degli elementi, pertanto $G(p)$ viene mandato in se stesso.
 	\end{proof}
 \end{prop}
+\begin{teorema}\label{corts1}
+	Sia $G$ un gruppo abeliano con $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ tutti primi e $p_i\neq p_j, \ \forall i\neq j$; allora
+	\[
+	G \cong G(p_1) \times \ldots G(p_s)
+	\] 
+	Inoltre, la decomposizione di $G$ come prodotto di $p$-gruppi tra loro coprimi \`e unica.
+	\begin{proof}
+		Per l'esistenza, si considera $\lvert G \rvert =n$, con $n= p_1^{e_1}\cdots p_s^{e_s}$; si procede per induzione su $s$.
+
+		Se $s=1$, allora $\lvert G \rvert =p_1^{e_1}\Rightarrow G=G(p_1)$.
+		Si assume che la tesi sia versa $\forall 2\le m<n$ e si verifica per $n$, che pu\`o essere scritto come $n = m m'$, con $(m,m') = 1$ e $m,m' < n$.
+		
+		Si verifica prima (in notazione additiva) che $G \cong mG \times m' G$.
+		Intanto si osserva che $mG,m'G < G$ e, visto che $G$ \`e abeliano per assunzione, si ha anche che $mG,m'G\lhd G$.
+		Inoltre, visto che $(m,m') = 1$, allora $\exists h,k \in \mathbb{Z}$ tali che 
+		\[
+		mh + m'k =1 \implies m(gh) +m'(gk) =g, \ \forall g
+		\] 
+		da cui $G \subseteq mG + m'G$, mentre l'inclusione inversa segue direttamente dalla chiusura di $G$. 
+		Allora $mG + m'G = G$.
+		Sia, ora, $x \in mG \cap m'G$, cio\`e $x = mg = m'g'$; allora si nota che $m'x m'mg = ng = 0$ e $mx=mm'g' = ng' = 0$, pertanto $\operatorname{ord}(x)  \mid m$ e $\operatorname{ord}(x)  \mid m'$, quindi $\operatorname{ord}(x)  \mid (m,m') = 1$, da cui $x=0$.
+		Questo implica che $mG\cap m'G = \left\{ e \right\} $, il che completa le verifiche per le ipotesi del teorema \ref{t171} e permette di concludere che $G \cong mG \times m'G$.
+
+		Ora si fa vedere che 
+		\[
+		mG = G_{m'} = \left\{ g \in G  \mid m'g=0 \right\} \hspace{1cm} m'G = G_m = \left\{ g \in G \mid mg = 0 \right\} 
+		\] 
+		Si mostra che $m'G = G_m$, cio\`e che l'insieme dei multipli di $m'$ in $G$ \`e uguale a quello degli elementi di $G$ il cui ordine divide $m$, mostrando la doppia inclusione insiemistica.
+		Per $m'G \subseteq G_m$, si prende $m'x \in m'G$; visto che $mm'x = n x = 0$, allora $\operatorname{ord}(x)  \mid m$\footnote{Non si considera $m'$ perch\'e, per ipotesi, $m'x\neq 0$.}, quindi $m'x \in G_m$.
+		Viceversa, dato $x \in G_m$, cio\`e tale che $mx = 0$, si osserva che
+		\[
+			\underbracket{mx}_{=0} h + m'kx = x \implies x = m'(kx) \implies x \in  m'G
+		\] 
+		quindi $G_m \subseteq m'G$ e, allora, $m'G = G_m$.
+		Questo permette di scrivere che 
+		\[
+		G \cong G_m \times G_{m'} 
+		\] 
+		Visto che $G_m$ contiene tutti e soli gli elementi di $G$ il cui ordine divide $m$ (analogo per $G_{m'} $, allora $\lvert G_m \rvert ,\lvert G_{m'}  \rvert < \lvert G \rvert $; inoltre, $G_{m} , G_{m'} \neq \left\{ 0 \right\} $ per Cauchy, visto che $1<m<n$, per cui $G_{m'},G_m \lneq G $.
+		Avendo concluso che i due sottogruppi sono proprio, si pu\`o applicare l'ipotesi induttiva per scrivere che:
+		\[
+		G_m = \prod _{i\in I} G(p_i) \hspace{1cm}G_{m'} =\prod_{j \in J} G(p_j)
+		\] 
+		con $I\cup J = \left\{ 1, \ldots, s \right\} $ e $I\cap J = \varnothing$ (visto che $(m,m')=1$).
+
+		Per l'unicit\`a, la scrittuura come prodotto di $p$-componenti deve essere unica, altrimenti, se $G$ fosse isomorfo ad altri $p$-gruppi, si avrebbe
+		\[
+		G \cong H_1\times \ldots\times H_n
+		\] 
+		con $H_i<G$ $p_i$-gruppo; allora $H_i \subseteq G(p_i)$, visto che $G(p_i)$ contiene tutti gli elementi il cui ordine \`e una potenza di $p_i$, ma essendo che
+		\[
+		\lvert G \rvert =\lvert H_1 \rvert \cdots \lvert H_s \rvert = \lvert G(p_1) \rvert \cdots\lvert G(p_s) \rvert \implies \lvert H_i \rvert =\lvert G(p_i) \rvert , \ \forall i
+		\] 
+		visto che, per coprimalit\`a tra gli altri fattori, $\lvert G(p_i) \rvert  $ divide $ \lvert H_i \rvert $ e viceversa. Quindi $H_i = G(p_i), \ \forall i = 1,\ldots,s$.
+\end{proof}
+\end{teorema}
+\begin{lemma}
+	Sia $G$ un $p$-gruppo e sia $x_1\in G$ un elemento di ordine massimo; preso $\overline{x} \in G / \langle x_1 \rangle$, si trova $y \in \pi^{-1}_{\langle x_1 \rangle} (\overline{x})$ tale che $\operatorname{ord}_G(y)= \operatorname{ord}_{G/\langle x_1 \rangle} ( \overline{x})  $, cio\`e preso un elemento nel quoziente, se ne trova sempre un nella sua fibra con lo stesso ordine.
+	\begin{proof}
+		Sia, allora, $\overline{x}\in G / \langle x_1 \rangle$, quindi della forma $\overline{x}= x + \langle x_1 \rangle$; si vuole calcolare $\pi^{-1}_{\langle x_1 \rangle} (\overline{x}) = \pi^{-1}_{\langle x_1 \rangle} (x+\langle x_1 \rangle)$, per cui $y  \in \pi^{-1}(\overline{x})$ sar\`a della forma $y = x + ax_1$.
+		Visto che $x$ e $y$ sono nella stessa classe laterale di $G / \langle x_1 \rangle$, allora $\pi_{\langle x_1 \rangle} (y) = \pi_{\langle x_1 \rangle} (x)= \overline{x}$.
+		Inoltre, il quoziente \`e ancora un $p$-gruppo, quindi sia
+		\[
+		p^r = \operatorname{ord}_{\langle x_1 \rangle} (\pi_{\langle x_1 \rangle} (y)) =\operatorname{ord}_{\langle x_1 \rangle} (\overline{x})  \mid \operatorname{ord}_G(y) 
+		\] 
+		visto che $\pi$ \`e un omomorfismo.
+		Per questo, si pu\`o scegliere $y$ (al variare di $a$ in $x+ ax_1$ perch\'e $x$ \`e fissato dalla scelta di $\overline{x}$) in modo che il suo ordine sia esattamente $p^r$:
+		\[
+		p^r y = p^r x + p^r ax_1 = 0 \iff p^r x = - p^r ax_1
+		\] 
+		dove, essendo $\operatorname{ord}_{\langle x_1 \rangle} (\overline{x}) =p^r$, allora $p^r x \in \langle x_1 \rangle$, cio\`e la sua proiezione modulo $\langle x_1 \rangle$ \`e nella classe laterale banale, quindi $p^rx = bx_1$.
+		Per ipotesi, si era assunto che $x_1$ ha ordine massimo, sia questo $p^{r_1} $; allora deve risultare che $r\le r_1$, ma 
+		\[
+		0 = p^{r_1} x \iff p^{r_1-r} p^r x = 0 \iff p^{r_1-r} bx_1=0
+		\] 
+		dove si \`e moltiplicato e diviso per $p^r$. 
+		L'ultima uguaglianza \`e versa se e solo se $p^{r_1}  \mid p^{r_1-r} b$ (visto che $\operatorname{ord}_G(x_1) =p^{r_1} $), quindi se e solo se $p^r  \mid b \implies b = p^r b_1$.
+		Per finire, scegliendo $a = -b_1$  e sostituendo nell'espressione iniziale, si ottiene 
+		\[
+			p^r y = p^r x - p^r b_1x_1=bx_1 - \underbracket{p^r b_1}_{=b}  x_1 = 0
+		\] 
+		perci\`o $y= x - b_1 x_1 \in G$ realizza la richiesta.
+	\end{proof}
+\end{lemma}
+\begin{teorema}\label{corts2}
+	Sia $G$ un $p$-gruppo abeliano; allora esistono e sono univocamente determinati $r_1,\ldots,r_t \in \mathbb{N}$, con $r_1\ge r_2\ge \ldots\ge r_t$, tali che:
+	\[
+	G \cong \mathbb{Z}/p^{r_1}\mathbb{Z} \times  \ldots \times \mathbb{Z} / p^{r_t}\mathbb{Z}
+	\] 
+	\begin{proof}
+		Sia, quindi, $\lvert G \rvert =p^{n}$; si dimostra per induzione su $n$.
+		Se $n=1$, allora $\lvert G \rvert = p$, per cui $G \cong \mathbb{Z} / p\mathbb{Z}$ e la tesi \`e verificata.
+
+		Si assume che la tesi sia versa per $1 \le m < n $ e si dimostra per $n$. 
+		Sia, allora, $x_1 \in G$ un elemento di ordine massimo, sia questo $\operatorname{ord}(x_1) =p^{r_1} $; si hanno due possibili casi: $r_1 = n$ e $r_1<n$.
+		Il primo caso \`e banale: $r_1=n \Rightarrow G$ ciclico, per cui $G \cong \mathbb{Z}/p^n\mathbb{Z}$.
+
+		Si considera, ora, il caso in cui $r_1<n$.
+		Essendo $G$ abeliano, si ha $\langle x_1 \rangle \lhd G$, per cui si pu\`o considerare che $G / \langle x_1 \rangle$ ha ordine $p^{n-r_1} < p^n$; allora vale la tesi induttiva e il gruppo quoziente si pu\`o fattorizzare come prodotto di gruppi ciclici:
+		\[
+		G / \langle x_1 \rangle \cong \langle \overline{x}_2 \rangle\times \ldots\times \langle \overline{x}_t \rangle
+		\] 
+		con $\operatorname{ord}(\overline{x}_i) = p^{r_i} $ e, complessivamente, $\lvert \langle \overline{x}_2 \rangle\times \ldots\times \langle \overline{x}_t \rangle \rvert=p^{n-r_1}  $.
+		Si assume che tale decomposizione sia gi\`a ordinata con $r_2\ge \ldots\ge r_t$ e si considera la seguente proiezione al quoziente:
+		\[
+		\pi : G \to G / \langle x_1 \rangle \cong \langle \overline{x}_2 \rangle\times \ldots\times \langle \overline{x}_t \rangle
+		\] 
+		Per il lemma precedente, dunque, si trovano $x_2,\ldots,x_t \in G$ tali che 
+		\[
+		\operatorname{ord}_G(x_i) =\operatorname{ord}_{G/\langle x_1 \rangle} (\overline{x}_i) = p^{r_i} 
+		\] 
+		Ora, si vuole mostrare che:
+\[
+H = \langle x_1,\ldots,x_t \rangle\cong \langle x_2 \rangle\times \ldots\times \langle x_t \rangle
+\] 
+La proiezione al quoziente ristretta ad $H$ \`e data da:
+\[
+\pi|_{H}  : 
+	\begin{array}
+		{c c c}
+		H &\longrightarrow& G / \langle x_1 \rangle\cong \langle \overline{x}_2 \rangle\times \ldots\times \langle \overline{x}_t \rangle\\
+		a_2x_2+\ldots+a_tx_t&\longmapsto& (a_2\overline{x}_2,\ldots,a_t \overline{x}_t)
+	\end{array}
+\] 
+Questo \`e un isomorfismo, infatti $\pi$ \`e un omomorfismo suriettivo perch\'e i generatori di $H$ si possono mappare nelle tuple  di generatori di $G / \langle x_1 \rangle$ e, per l'iniettivit\`a, si osserva che:
+\[
+\pi(a_2x_2+ \ldots+a_t x_t) = (a_2\overline{x}_2,\ldots,a_t \overline{x}_t)= (0,\ldots,0) \iff a_i \overline{x}_i = 0, \ \forall i
+\] 
+cio\`e se e solo se $\operatorname{ord}_{G/\langle x_1 \rangle} (\overline{x}_i) = p^{r_i}  \mid a_i $\footnote{L'uguaglianza deriva dal lemma precedente.}.
+Per\`o, valendo anche $\operatorname{ord}(x_i) =p^{r_i} $, allora quanto appena detto \`e equivalente a richiedere che $a_i x_ i= 0 , \ \forall i$.
+Allora $\pi|_{H} $ \`e un isomorfismo e, quindi, vale che:
+\[
+H \cong \langle \overline{x}_2 \rangle\times \ldots \times \langle \overline{x}_t \rangle \cong \langle x_2 \rangle\times \ldots\times \langle x_t \rangle
+\] 
+dove l'ultimo isomorfismo deriva dal fatto che si sono scelti elementi di ordini uguali, che, quindi, generano gli stessi gruppi ciclici a meno di isomorfismo.
+
+Si dimostra, infine, che $G \cong \langle x_1  \rangle\times H $; per farlo, si verificano le ipotesi del teorema \ref{t171}.
+Si inizia col far vedere che l'intersezione \`e banale; questo \`e dato dal fatto che ogni suo elemento si scrive come $a_1x_1 = a_2x_2+ \ldots + a_t x_t$, con $a_1$ e $a_2,\ldots,a_t$ fissati; applicando $\pi_{\langle x_1 \rangle} $ ad entrambi i membri, si ottiene
+\[
+\overline{0} = a_2 \overline{x}_2 + \ldots + a_t \overline{x}_t \iff (a_2 \overline{x}_2,\ldots, a_t \overline{x}_t) = (\overline{0},\ldots,\overline{0})
+\] 
+quindi si deve avere $x_i = 0$ nel gruppo di partenza e $a_1 x_1=0$, da cui $\langle x_1 \rangle\cap H = \left\{ 0 \right\} $.
+Per  mostrare che $\langle x_1 \rangle+  H = G$, si nota che $\langle x_1 \rangle+ H \subseteq G$ e che
+\[
+\lvert \langle x_1 \rangle+ H  \rvert = \frac{\lvert \langle x_1 \rangle \rvert \lvert H \rvert }{\lvert \langle x_1 \rangle \cap H\rvert } = \frac{p^{r_1} \cdot p^{n-r_1} }{1}=p^n
+\] 
+quindi le ipotesi sono soddisfatte e $G \cong \langle x_1 \rangle\times H \cong \langle x_1 \rangle \times  \ldots \times\langle x_t \rangle $.
+
+Quanto all'unicit\`a, si procede ancora per induzione su $n$ in $\lvert G \rvert  = p^n$.
+Se $n=1$, la tesi \`e sempre verificata dal fatto che $G \cong \mathbb{Z} / p\mathbb{Z}$.
+Si assume, quindi, la tesi vera $\forall m < n$ e si dimostra per $n$.
+
+Sia 
+\[
+G \cong \mathbb{Z}/ p^{r_1} \mathbb{Z} \times \ldots \times \mathbb{Z}/ p^{r_t} \mathbb{Z} \cong \mathbb{Z}/ p^{k_1} \mathbb{Z}\times \ldots\mathbb{Z}/p^{k_s} \mathbb{Z}
+\] 
+dove si assume che siano ordinati in modo tale da avere $r_1\ge \ldots\ge r_t $ e $k_1\ge \ldots\ge k_s$.
+Intanto deve valere $s=t$ perch\'e, considerando $G_p = \left\{ g \in G  \mid gp = 0 \right\} $ (sottogruppo degli elementi di $G$ il cui ordine divide $p$), che \`e caratteristico (perch\'e gli omomorfismi conservano l'ordine), si nota che gli elementi di $G$ di ordine tale da dividere $p$ stanno tutti in $G_p$, quindi $G_p$ \`e isomorfo a un sottogruppo della forma $(\mathbb{Z} / p\mathbb{Z})^\ell $, con $\ell $ numero dei fattori $\mathbb{Z} / p^h \mathbb{Z}$ distinti:
+\[
+G_p \cong (\mathbb{Z}/p\mathbb{Z})^t \cong (\mathbb{Z}/p\mathbb{Z})^s \iff t= s
+\] 
+Per concludere, si mostra che sono uguagli anche le potenze di ciascun fattore.
+A questo scopo, si pu\`o applicare l'ipotesi induttiva al gruppo $pG$ (con $\lvert pG \rvert =p^{n-t} $):
+\[
+	\begin{split}
+		pG &\cong \frac{p\mathbb{Z}}{p^{r_1} \mathbb{Z}} \times \ldots\times \frac{p\mathbb{Z}}{p^{r_t} \mathbb{Z}}\cong \mathbb{Z}/p^{r_1-1} \mathbb{Z} \times  \ldots \times \mathbb{Z}/p^{r_t - 1} \mathbb{Z}\\
+		   &\cong \mathbb{Z}/p^{k_1-1} \mathbb{Z}\times \ldots\times \mathbb{Z}/p^{k_t-1} \mathbb{Z}\cong \frac{p\mathbb{Z}}{p^{k_1} \mathbb{Z}}\times \ldots \times \frac{p\mathbb{Z}}{p^{k_t} \mathbb{Z}}
+	\end{split}
+\] 
+dove la sequenza di isomorfismi \`e giustificata dall'assunzione che vi siano pi\`u fattorizzazioni per $G$, quindi anche per $pG$, ma $pG$ deve avere decomposizione unica per ipotesi induttiva, quindi:
+\[
+r_1-1=k_1-1, \ldots, r_t - 1 = k_t - 1 \iff r_1=k_1,\ldots,r_t = k_t
+\] 
+e quindi i singoli fattori hanno stesse potenze.
+	\end{proof}
+\end{teorema}
 \begin{teorema}
 	[Teorema di struttura]
 	Sia $G$ un gruppo abeliano finito; allora $G$ \`e prodotto diretto di gruppi ciclici, cio\`e:
@@ -1625,14 +1801,62 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 	G \cong \mathbb{Z}/n_1\mathbb{Z} \times  \ldots \times \mathbb{Z} / n_s \mathbb{Z}
 	\] 
 	Questa scrittura, inoltre, \`e unica se $n_{i+1}  \mid n_i, \ \forall i \in \left\{ 1, \ldots, s-1 \right\} $.
+	\begin{proof}
+		Si inizia col dimostrare l'esistenza. 
+		Facendo uso del teorema \ref{corts1}, allora $G \cong G(p_1) \times \ldots \times G(p_s)$. 
+		Applicando, poi, il teorema \ref{corts2} a ciascun $G(p_i)$, si ottiene:
+		\[
+			\begin{split}
+				G &\cong G(p_1) \times  \ldots \times G(p_s) \\
+				  &\cong \Big(\mathbb{Z}/p_1^{r_{11} }\mathbb{Z} \times \ldots \times \mathbb{Z}/ p_1^{r_{1t_1} }\mathbb{Z}\Big) \times  \ldots \times \Big(\mathbb{Z}/ p_s^{r_{s1} }\mathbb{Z}\times  \ldots\times \mathbb{Z}/p_s^{r_{st_s} }\mathbb{Z}  \Big) 
+			\end{split}
+		\] 
+		con $r_{i 1} \ge r_{i t_i} $. 
+		Per il teorema cinese del resto, si possono ricomporre i termini formati da primi distinti:
+		\[
+			G\cong \frac{\mathbb{Z}}{\underbracket{\big(p_1^{r_{11}} \cdots p_s^{r_{s 1} } \big)}_{n_1} \mathbb{Z}} \times  \ldots \times \frac{\mathbb{Z}}{ \underbracket{\big(p_1^{r_{1t} }\cdots p_s^{r_{st} } \big)}_{n_t} \mathbb{Z}}
+		\] 
+	dove si \`e imposto $r_{ih} =0$ se $h>t_i$ e con $t = \max \left\{ t_1,\ldots,t_s \right\} $.
+	Per come si \`e riscritta la fattorizzazione, vale $n_t  \mid  n_{t-1} , \ n_{t-1}  \mid n_{t-2} , \ldots, n_2 \mid n_1$.
+
+	Infine, l'unicit\`a deriva direttamente dai teoremi \ref{corts1} e \ref{corts2}; infatti, se ci fossero due decomposizioni di $G$ diverse con ordini che si dividono a catena, ripercorrendo gli isomorfismi, si ritroverebbero due decomposizioni diverse per $G(p)$ (o per $G$ come prodotto di $p$-componenti).
+	\end{proof}
 \end{teorema}
-\begin{teorema}
-	Sia $G$ un gruppo abeliano con $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ tutti primi e $p_i\neq p_j, \ \forall i\neq j$; allora
+\begin{esempio}
+	Sia 
 	\[
-	G \cong G(p_1) \times \ldots G(p_s)
+		\begin{split}
+			G &\cong \mathbb{Z}/100\mathbb{Z} \times \mathbb{Z}/8\mathbb{Z} \times \mathbb{Z}/6\mathbb{Z} \times  \mathbb{Z}/15\mathbb{Z}\\
+			  &\cong \mathbb{Z}/2^2\mathbb{Z} \times \mathbb{Z}/5^2\mathbb{Z}\times \mathbb{Z}/2^3 \mathbb{Z}\times \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/5\mathbb{Z}
+		\end{split}
 	\] 
-	Inoltre, la decomposizione di $G$ come prodotto di $p$-gruppi tra loro coprimi \`e unica.
-\end{teorema}
+	Raggruppando ciascun termine in base all'ordine degli elementi, si ottengono i $p$-sottogruppi:
+	\[
+		G\cong \underbracket{\left(\mathbb{Z}/2^3 \mathbb{Z}\times \mathbb{Z}/2^2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}\right)}_{G(2)}  \times \underbracket{\left(\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}\right) }_{G(3)} \times \underbracket{\left(\mathbb{Z}/5^2 \mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}\right) }_{G(5)} 
+	\] 
+	Infine, per il teorema di struttura, si pu\`o riscrivere il prodotto in ordine decrescente, rimettendo insieme i $p$-gruppi ciclici di ordine massimo:
+	\[
+	G\cong \mathbb{Z}/\left(2^3 \cdot 3\cdot 5^{2}\right) \mathbb{Z} \times \mathbb{Z}/\left(2^2 \cdot 3\cdot 5\right) \times \mathbb{Z}/2\mathbb{Z}
+	\] 
+\end{esempio}
+\begin{esempio}
+	[Classificazione dei gruppi di ordine 1000]
+Si classificano i gruppi abeliani di ordine $1000$.
+Per farlo, si inizia col notare che $1000 = 2^3 \cdot 5^3$, quindi $G \cong G(2) \times G(5)$, con $\lvert G(2) \rvert = 2^3$ e $\lvert G(5) \rvert =5^3$.
+Ne segue che le $p$-componenti si possono riscrivere nei seguenti modi:
+\[
+G(2) \cong \begin{cases}
+	\mathbb{Z}/2^3\mathbb{Z}\\
+	\mathbb{Z}/2^2 \mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}\\
+	\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}
+\end{cases}\hspace{1cm}G(5) \cong \begin{cases}
+	\mathbb{Z}/5^3\mathbb{Z}\\
+	\mathbb{Z}/5^2 \mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}\\
+	\mathbb{Z}/5\mathbb{Z} \times \mathbb{Z}/5\mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}
+\end{cases}
+\] 
+Ne segue che i gruppi abeliani di ordine $1000$, a meno di isomorfismo, sono $3\cdot 3 = 9$, visto che, per il teorema di struttura, si ha una fattorizzazione unica come prodotto di gruppi ciclici finiti e, per tale fattorizzazione, si hanno tre scelte per la $2$-componente e tre scelte per la $5$-componente.
+\end{esempio}
 \subsection{I teoremi di Sylow}
 Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrisponde al punto (a), il secondo ai punti (b) e (c) e il terzo al punto (d).
 \begin{teorema}
@@ -1708,6 +1932,8 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 \begin{esempio}
 Sia $G = S_4$; visto che $\lvert S_4 \rvert = 2^3 \cdot 3$, esiste un $2$-Sylow, sia questo $P$, con $\lvert P \rvert  = 2^3 = 8$.
 \end{esempio}
+
+\subsection{I quaternioni}
 
 
 
