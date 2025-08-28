@@ -2842,16 +2842,116 @@ Visto anche che $P$ \`e primo, si deve avere $a \in P$, o $b \in P$, quindi la f
 
 \subsection{Divisibilit\`a nei domini}
 
+\begin{definizione}
+	[Divisibilit\`a]
+	Sia $A$ un dominio e siano $a,b \in A$, con $a\neq 0$; si dice che $a$ \textit{divide} $b$ se $\exists c \in A$ tale che $b=ac$.
+\end{definizione}
+\begin{osservazione}
+Si nota che $a  \mid b \iff \langle b \rangle\subseteq \langle a \rangle$, infatti:
+\[
+a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle b \rangle\subseteq \langle a \rangle
+\] 
+\end{osservazione}
+\begin{definizione}
+	[Elementi associati]
+	Sia $A$ un dominio e siano $a, a' \in A$ due suoi elementi; si dice che $a$ e $a'$ sono \textit{associati}, scrivendo $a \sim a'$, se vale una delle seguenti tre condizioni:
+	\begin{enumerate}[(a).]
+		\item $a \mid a'$ e $a'  \mid a$;
+		\item $\exists u \in A^*$ tale che $ a= ua'$;
+		\item $\langle a \rangle=\langle a' \rangle$.
+	\end{enumerate}
+\end{definizione}
+\noindent Si dimostra, ora, che le tre propriet\`a che definisco l'associativit\`a tra elementi di un dominio sono equivalenti.
+\begin{proof}
+	Si divide la dimostrazione nelle tre implicazioni.
+	\begin{itemize}
+		\item (a$\Leftrightarrow$c) Si ha:
+			\[
+			a  \mid a' \iff \langle a' \rangle\subseteq \langle a \rangle \hspace{.5cm}  \text{ e } \hspace{.5cm} a' \mid a \iff\langle a \rangle\subseteq \langle a' \rangle
+			\] 
+			Quindi $a \mid a'$ e $a' \mid a$ se e solo se $\langle a \rangle=\langle a' \rangle$.
+		\item (a$\Rightarrow $b) Se $a  \mid a'$ e $a'  \mid a$ al contempo, allora:
+			\[
+			a'=xa \hspace{.25cm} \text{ e } \hspace{.25cm} a = y a' \implies a = yxa \implies a (1-xy) = 0
+			\] 
+			Visto che $A$ \`e un dominio e $a\in A$ con $a\neq 0$, allora $xy=  1$, quindi $y \in A^*$, che coincide con il punto (b).
+		\item (b$\Rightarrow $c) Si assume che $\exists u \in A^* $ tale che $ a=ua'$, quindi $a \in \langle a' \rangle$ e, allora, $\langle a' \rangle\subseteq \langle a \rangle$.
+			Visto che $u\in A^*$, allora $\exists v \in A^*$ tale che $uv=  1$, per cui $a'= va$ e $\langle a \rangle\subseteq \langle a' \rangle$.
+			Questo permette di concludere che $\langle a \rangle=\langle a' \rangle$.
+	\end{itemize}
+\end{proof}
+\begin{definizione}
+	[Massimo comune divisore]
+	Siano $a,b \in A$ dominio non entrambi nulli; si dice che $d \in A$ \`e un \textit{massimo comune divisore} per $a$ e $b$ se valgono entrambe le seguenti condizioni:
+	\begin{enumerate}[(a).]
+		\item $d  \mid a$ e $d \mid b$;
+		\item $\forall x \in A$ tale che $x \mid a$ e $x \mid b$, vale $x \mid d$.
+	\end{enumerate}
+\end{definizione}
+\begin{prop}
+	Due elementi $d,d' \in A$ dominio sono due massimi comuni divisori di una stessa coppia di elementi $a,b\in A$ se e solo se sono associati ($d \sim d'$).
+	\begin{proof}
+		Se $d$ e $d'$ sono due massimi comuni divisori di $a$ e $b$, allora:
+		\[
+		\begin{split}
+			&d \mid a, \ d  \mid b \hspace{.5cm} \text{ e } \hspace{.5cm} x \mid a, \ x  \mid b \implies x \mid d\\
+			&d' \mid a, \ d'  \mid b \hspace{.5cm} \text{ e } \hspace{.5cm} x \mid a, \ x  \mid b \implies x \mid d'
+		\end{split}
+		\] 
+		quindi sono associati per definizione.
+		Per il viceversa, basta notare che se $d \sim d'$, allora dividono e sono divisi dagli stessi elementi.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	[Elemento primo]	
+	Sia $A$ un dominio e $x \in A$, con $x \not \in A^* \cup \left\{ 0 \right\} $; allora $x$ \`e detto \textit{primo} se, $\forall a,b\in A$, vale $x  \mid ab \implies x  \mid a$ oppure $x \mid b$.
+\end{definizione}
+\begin{definizione}
+	[Elemento irriducibile]
+	Sia $A$ un dominio e $x \in A$, con $x \not \in A^* \cup \left\{ 0 \right\} $; allora $x$ si dice \textit{irriducibile} se, $\forall a,b \in A$, vale $x = ab\implies a \in A^*$ oppure $b \in A^*$.
+\end{definizione}
+\begin{prop}
+	Sia $A$ un dominio; se $x \in A$ \`e primo, allora \`e irriducibile.
+	\begin{proof}
+	Si assume che $x = ab$; essendo primo per assunzione, allora $x \mid a$, oppure $x  \mid b$.
+	Senza perdita di generalit\`a, si assume che $x  \mid a$, perci\`o:
+	\[
+	a = xc \implies x= bcx\implies x(1-bc) = 0
+	\] 
+	Visto che $A$ \`e un dominio e $x \neq 0$ per ipotesi, allora deve valere $bc = 1$, quindi $b,c \in A^*$.
+	In particolare, questo implica che $x$ \`e irriducibile perch\'e, scrivendolo come $x = ab$, si \`e verificato che $b \in A^*$.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $A$ un dominio; allora valgono i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $x$ \`e primo se e solo se $\langle x \rangle$ \`e un ideale primo non nullo;
+		\item $x$ \`e irriducibile se e solo se $\langle x \rangle$ \`e un ideale massimale nell'insieme degli ideali principali.
+	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei due punti.
+		\begin{enumerate}[(a).]
+			\item Sia $\langle x \rangle$ un ideale primo, cio\`e:
+		\[
+		ab \in \langle x \rangle \iff a \in \langle x \rangle \text{ oppure } b \in \langle x \rangle
+		\] 
+		che equivale a richiedere $x  \mid a$, oppure $x \mid b$, cio\`e $x$ primo in $A$.
+	\item Si dimostrano separatamente le due implicazioni.
+Per iniziare, si assume che $x$ sia irriducibile e che $\langle x \rangle\subseteq \langle y \rangle\subsetneq A$, quindi $\exists z \in A$ tale che $x = yz$. 
+Inoltre, deve valere $y \not\in A^*$, altrimenti si avrebbe $\langle y \rangle= A$ e, visto che $x$ \`e irriducibile, si deve necessariamente avere $z \in A^*$, quindi $x\sim y$, ossia $\langle x \rangle = \langle y \rangle$.
+Questo significa che $\langle x \rangle$ \`e massimale tra gli ideali principali.
 
+Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x = yz$ con $y,z \not \in A^*$; per quanto detto, si a $\langle x \rangle\subsetneq \langle y \rangle\subsetneq A$, dove la seconda inclusione non pu\`o essere un'uguaglianza per il fatto che $y\not \in A^*$, per cui $1\not \in \langle y \rangle$, mentre la prima \`e data dal fatto che $z \not \in A^*$ (quindi $x$ e $y$ non sono associati), da cui $\langle x \rangle$ non \`e massimale tra gli ideali principali.
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+\begin{esempio}
+	Se $x$ \`e primo in nel dominio $A = K[x,y]$, allora $A / \langle x \rangle\cong K[y]$, che si sa essere un dominio; per la prop. \ref{idprmaxchar}, segue che $\langle x \rangle$ \`e primo.
 
-
-
-
-
-
-
-
-
+	Visto che $x$ \`e primo, allora \`e anche irriducibile, quindi $\langle x \rangle$ \`e massimale tra gli ideali principali di $A$, ma non \`e un ideale massimale di $A$ perch\'e $K[y]$ non \`e un campo. 
+	Infatti, si verifica che $\langle x  \rangle\subsetneq \langle x,y \rangle \subsetneq A$, cio\`e $\langle x \rangle$ non \`e massimale, in quanto \`e contenuto nell'ideale proprio $\langle x,y \rangle$.
+\end{esempio}
+\subsection{Domini euclidei}
 
 
 
