@@ -2303,6 +2303,43 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 		per ogni $a,b \in A$.
 	\end{proof}
 \end{teorema}
+\noindent Di seguito si riportano il II e il III teorema di omomorfismo, i quali sono diretta conseguenza del primo e si dimostrano a partire da un'opportuna scelta di un omomorfismo suriettivo.
+La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con le dovute precisazioni, cio\`e sostituendo gli ideali con i sottogruppi normali e i sottoanelli con i sottogruppi.
+\begin{teorema}
+	[II teorema di omomorfismo]
+	Siano $A$ un anello, $I\subseteq A$ un suo ideale e sia $R$ un suo sottoanello; allora 
+	\[
+	\frac{R+I}{I}\cong \frac{R}{R\cap I}
+	\] 
+	\begin{proof}
+		Si considera la proiezione $\pi : A \to A / I$, con $\pi(a) = a + I$; la sua restrizione ad $R$ \`e data da $\pi|_R : R \to A / I$.
+		Si nota che la sua immagine e il suo nucleo sono: 
+		\[
+			\begin{split}
+				&\operatorname{Im} \pi|_R = \left\{ r + I  \mid r \in R \right\} = \faktor{R+I}{I}\\
+				&\operatorname{Ker} \pi|_R = \left\{ r \in R  \mid r \in I \right\}  = R \cap I 
+			\end{split}
+		\] 
+		da cui, per il I teorema di omomorfismo, si ha la tesi.
+	\end{proof}
+\end{teorema}
+\begin{teorema}
+	[III teorema di omomorfismo]
+	Sia $A $ un anello e $I,J$ due suoi ideali, con $I \subseteq J$; allora:
+	\[
+		\frac{A / I }{J / I}\cong \faktor{A}{J}
+	\] 
+	\begin{proof}
+		Si considera la proiezione $\pi : A / I \to A / J$, con $\pi(a+ I) = a + J $.
+	Intanto si nota che tale mappa \`e ben definita perch\'e se $a + I = a' + I$, allora $a-a' \in I \subseteq J$, da cui $a + J = a'+ J$.
+Inoltre, \`e suriettiva: $\forall a + J \in A / J$, si trova $a +I \in A / I$ tale che $\pi(a+I) = a + J$.
+Infine, il suo nucleo \`e 
+\[
+\operatorname{Ker} \pi = \left\{ a+ I \in A / I  \mid a \in J \right\} = J / I
+\] 
+da cui, per il I teorema di omomorfismo, si ottiene la tesi.
+	\end{proof}
+\end{teorema}
 \begin{lemma}
 	Sia $f: A\to B$ un omomorfismo di anelli; allora valgono le due seguenti affermazioni:
 \begin{enumerate}[(a).]
@@ -2574,6 +2611,245 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 		da cui segue la tesi.
 	\end{proof}
 \end{prop}
+\subsection{Anello delle frazioni di un dominio}
+\begin{definizione}
+	[Parte moltiplicativa]
+	Sia $A$ un anello (commutativo con identit\`a) che sia anche un dominio e sia $S \subset A$ tale che:
+	\begin{enumerate}[(a).]
+		\item $0 \not \in S$;
+		\item $1 \in S$;
+		\item $S$ \`e chiuso sotto moltiplicazione, cio\`e $xy \in S, \ \forall x,y \in S$.
+	\end{enumerate}
+	Allora il sottoinsieme $S$ si dice \textit{parte moltiplicativa} di $A$.
+\end{definizione}
+\begin{definizione}
+	[Insieme delle frazioni di un dominio]
+	Sia $A$ un anello\footnote{\`E ancora richiesto, per questa trattazione, che sia commutativo con identit\`a.} e che sia un dominio.
+	Sia $S$ la sua parte moltiplicativa; allora, si definisce il suo \textit{insieme delle frazioni} come
+	\[
+		S^{-1}A = \faktor{\left\{ \frac{a}{s}\ \Big\lvert \  a \in A ,\ s \in S \right\}}{\sim} = \faktor{A\times S}{\sim}
+	\] 
+	dove la relazione di equivalenza \`e data da $a / s \sim b / t \iff at = bs$.
+\end{definizione}
+\begin{prop}
+	L'insieme delle frazioni di un dominio, munito con le operazioni
+	\[
+	\frac{a}{s}+\frac{b}{t}=\frac{at + bs}{st} \hspace{1cm} \frac{a}{s}\cdot \frac{b}{t} = \frac{ab}{st}
+	\] 
+	\`e un anello commutativo con identit\`a (quest'ultima corrispondente a $1 / 1$).
+	\begin{proof}
+		Si mostra che le operazioni sono ben definite, avendole definite tra classi di equivalenza. 
+		Siano, allora $a / s \sim a' / s' $ e $ b/t \sim b' / t'$; si mostra che prodotto e somma di queste restituiscano lo stesso.
+
+		Per la somma, si ha:
+		\[
+		\frac{a}{s}+\frac{b}{t}=\frac{at + bs}{st}\hspace{1cm}\frac{a'}{s'}+\frac{b'}{t'}=\frac{a't' + b's'}{s't'}
+		\] 
+		Per ipotesi, si ha $as' = a' s $ e $bt' = b' t$; allora si vede che l'uguaglianza tra le due somme \`e vera se e solo se 
+		\[
+			\begin{split}
+				&(at + bs ) s ' t' = (a't'+b's') st\\
+				&\Rightarrow att's' + bs s't' = a'st t ' + b't s s' = (a't'+b's') st
+			\end{split}
+		\] 
+		Quindi la somma \`e ben definita.
+		In maniera analoga, si verifica il prodotto.
+
+		Inoltre, si nota che somma e prodotto di due frazioni restituiscono ancora un elemento della forma $a / s$, visto che il numeratore \`e il prodotto o la somma di due elementi di $A$, mentre il denominatore \`e sempre il prodotto di elementi di $S$, il quale \`e chiuso rispetto alla moltiplicazione.
+		
+		Rimane da verificare che sono soddisfatti gli assiomi di anello.
+	\end{proof}
+\end{prop}
+\begin{esempio}
+	[Anello delle frazioni di $\mathbb{Z}$]
+	Si prende $A = \mathbb{Z}$ e $S = \left\{ 10^k \right\} _{k\ge 0} $ (si verifica ad occhio che $S$ rispetta le propriet\`a richieste).
+	L'anello delle frazioni, allora, \`e dato da:
+	\[
+	S^{-1} A = \left\{ \frac{z}{10^k} \ \Big\lvert \ z \in \mathbb{Z}, \ k\ge 0 \right\} 
+	\] 
+	dove, per esempio, $\displaystyle \frac{5}{10}\sim \frac{1}{2} \in S^{-1}A$.
+	Inoltre, si pu\`o osservare che $\displaystyle \frac{2}{1} \in S^{-1}$ ed \`e invertibile:
+	\[
+	\frac{2}{1}\cdot \frac{5}{10} = \frac{1}{1}
+	\] 
+\end{esempio}
+\begin{prop}\label{aext}
+	Sia $A$ un dominio e $S ^{-1}A$ il suo anello delle frazioni; l'applicazione
+	\[
+f : 
+		\begin{array}
+			{c c c}
+			A &\longrightarrow& S^{-1}A\\
+			a &\longmapsto & a / 1
+		\end{array}
+	\] 
+	\`e un omomorfismo iniettivo di anelli.
+	\begin{proof}
+		Si inizia col mostrare che $f$ \`e un omomorfismo:
+		\[
+			\begin{split}
+				&f(a + b) = \frac{a+b}{1} = \frac{a}{1}+\frac{b}{1} = f(a) + f(b) \\
+				&f(ab)  = \frac{ab}{1} = \frac{a}{1} \cdot \frac{b}{1} = f(a) f(b)
+			\end{split} \hspace{.15cm} , \hspace{.3cm} \forall a,b \in A
+		\] 
+	Inoltre, \`e iniettiva perch\'e:
+	\[
+	\operatorname{Ker} f = \left\{ a \in  A \ \Big\lvert \ f(a) = \frac{a}{1} = \frac{0}{1} \right\} = \left\{ a \in A  \mid a \cdot 1 = 0\cdot 1 = 0 \right\} = \left\{ 0 \right\} 
+	\] 
+	quindi $f$ \`e iniettiva.
+	\end{proof}
+\end{prop}
+\begin{osservazione}
+Quanto appena dimostrato implica che $A \longhookrightarrow  S^{-1}A$, cio\`e $A \subset S^{-1}A$, quindi che l'anello delle frazioni \`e un'estensione di $A$.
+\end{osservazione}
+\begin{osservazione}
+Si nota, inoltre, che se $A$ \`e un dominio, allora $S = A \setminus\left\{ 0 \right\} $ \`e una parte moltiplicativa perch\'e $\forall x,y \in S$, cio\`e $x,y\neq 0$, si ha ancora $xy \in S$, ovvero $xy \neq 0$.
+\end{osservazione}
+\begin{prop}
+	Sia $A$ un dominio e $S = A \setminus\left\{ 0 \right\} $ la sua parte moltiplicativa; allora l'anello delle frazioni $S^{-1}A=Q(A)$ \`e il pi\`u piccolo campo contenente $A$.
+	\begin{proof}
+		Si verifica intanto che $Q(A)$ \`e un campo, per cui \`e sufficiente mostrare che esistono gli inverso moltiplicativi, cosa che segue direttamente dal fatto che, $\forall a \in A \setminus \left\{ 0 \right\} $, si ha $1 / a \in Q(A)$; in questo modo, ciascun elemento di $A\setminus\left\{ 0 \right\} $ si pu\`p scrivere come $1 / a$ e, quindi:
+		\[
+		\frac{a}{1}\cdot \frac{1}{a} = \frac{1}{1}
+		\] 
+		Per dimostrare che \`e il pi\`u piccolo campo contenente $A$, si ricorda la proposizione precedente (\ref{aext}); questa permette di concludere gi\`a che $A \subset S^{-1}A$ e, dal punto precedente, si sa che $S^{-1}A$ \`e un campo.
+		Quindi rimane da mostrare solo che \`e il pi\`u piccolo.
+
+		Per farlo, sia $K$ un campo tale che $A \subset K$; allora $1 / a \in K , \ \forall a \in A \setminus\left\{ 0 \right\} $, quindi $K$ contiene tutti gli elementi della forma $b / a$ di $S^{-1}A$, con $b \in A$ e $a \in A \setminus\left\{ 0 \right\} $, da cui $S^{-1}A \subset K$.
+		Questo implica la tesi.
+	\end{proof}
+\end{prop}
+\begin{esempio}
+	Si considerano alcuni esempio di anelli delle frazioni.
+	\begin{itemize}
+		\item Se $A = \mathbb{Z}$, $S_1 = \left\{ 10^k \right\} _{k\ge 0} $ e $S_0 = A \setminus\left\{ 0 \right\} $, allora:
+			\[
+			\mathbb{Z} \subset S_1^{-1}\mathbb{Z}\subset S_0^{-1}\mathbb{Z}= Q(\mathbb{Z}) =  \mathbb{Q}
+			\] 
+		\item Se $A = K[x]$, allora:
+			\[
+				Q(A)= K(x) = \left\{ \frac{f(x)}{g(x)}\ \bigg\lvert \ f(x) , g(x) \in K[x]  , \ g(x) \neq 0\right\}
+			\] 
+	\end{itemize}
+\end{esempio}
+\begin{definizione}
+	[Localizzato]
+		Dato un dominio $A$ e $P \subset A$ un suo ideale primo, si pu\`o considerare $S = A\setminus P$, che \`e una parte moltiplicativa perch\'e $0 \not \in S, \ 1 \in S$ e $\forall x,y \in S$, vale $x,y \not \in P \implies xy \not \in P$, visto che $P$ primo implica che se non contiene due elementi, non ne contiene neanche il prodotto (per controposizione), quindi il prodotto \`e nel complementare: $xy \in A \setminus P = S$.
+			In questo caso, si usa la notazione $S^{-1}A = A_p$ e si dice \textit{localizzato} di $A$ a $P$.
+\end{definizione}
+\begin{osservazione}
+Il localizzato $A_p$ \`e anche un \textbf{anello locale}, cio\`e un anello che ha un unico ideale massimale.
+\end{osservazione}
+\begin{esempio}
+Sia $A = \mathbb{Z}$ e $P = 2\mathbb{Z}$; allora la parte moltiplicativa $S = \mathbb{Z} \setminus 2\mathbb{Z}$ (i numeri dispari) permette di definire
+\[
+S^{-1}\mathbb{Z} = \mathbb{Z}_{(2)} = \left\{ \frac{a}{b} \ \bigg\lvert \ a, b\in \mathbb{Z}, \ b \equiv 1  \pmod{2}  \right\} 
+\] 
+\end{esempio}
+\begin{esercizio}
+	Dati $A = \mathbb{Z}$ e $P =2\mathbb{Z}$, con $S = \mathbb{Z} \setminus 2\mathbb{Z}$, verificare che $\langle 2 \rangle\mathbb{Z}_{(2)}$ \`e l'unico ideale massimale di $\mathbb{Z}_{(2)} $.
+	\begin{svolgimento}
+		La tesi \`e equivalente a richiedere che $\mathbb{Z}_{(2)} ^* = \mathbb{Z}_{(2)} \setminus\langle 2 \rangle\mathbb{Z}_{(2)} $; infatti, si sa gi\`a che $\langle 2 \rangle\mathbb{Z}_{(2)} $ \`e un ideale, mentre ciascun ideale non in esso contenuto deve contenere un elemento invertibile, quindi \`e improprio.
+
+		Se $a / b \not \in \langle 2 \rangle\mathbb{Z}_{(2)} $, allora sia $a$ che $b$ sono dispari, per cui $b/a \in \mathbb{Z}_{(2)} $, che \`e evidentemente l'inverso di $a / b$.
+		Viceversa, se $a / b$ \`e invertibile, allora esiste $ \frac{c}{ d} \in \mathbb{Z}_(2)$ tale che $ac / (bd) =1 \Rightarrow ac = bd$; se uno tra $a$ e $c$ fosse pari, allora lo sarebbe anche $bd$ e, visto che $2$ \`e primo, uno tra $b$ e $d$ sarebbe pari, contraddicendo la definizione di $\mathbb{Z}_{(2)} $.
+		Allora, $a / b \in \mathbb{Z}_{(2)} \setminus \langle 2 \rangle\mathbb{Z}_{(2)} $.
+	\end{svolgimento}
+\end{esercizio}
+
+\textbf{Elementi invertibili di $\mathbf{S^{-1}A} $.} 
+Si nota che gli invertibili di $S^{-1}A$ sono dati da:
+\[
+	(S^{-1}A)^* = \left\{ \frac{a}{s} \ \bigg\lvert \ \frac{s}{a} \in S^{-1}A \right\} 
+\] 
+cio\`e esistono $b \in A$ e $t \in S$ tali che $st =  ab \in S$; visto che non \`e assicurato $a \in S$, cosa che \`e sempre vera nel campo dei quozienti, si richiede che almeno un suo multiplo stia in $S$.
+Ne segue che 
+\[
+	(S^{-1}A) ^* = \left\{ \frac{a}{s} \ \bigg\lvert \ \exists b \in A : ab \in S \right\} 
+\] 
+\begin{esempio}
+Se $A = \mathbb{Z}$ e $S = \left\{ 10^k \right\} _{k\ge 0} $, allora 
+\[
+\frac{5}{10}= \frac{1}{2}\in (S^{-1}A)^*
+\] 
+ma $2 \not \in S$, quindi $2 \in (S^{-1}A)^*$, visto che il suo inverso ha una scrittura che rispetta la propriet\`a richiesta dall'insieme.
+\end{esempio}
+
+\textbf{Ideali di $\mathbf{S^{-1}A} $.} 
+Sia $I \subset A$ un ideale di $A$; si pu\`o costruire l'insieme 
+\begin{equation}
+	S^{-1}I = \faktor{\left\{ \frac{x}{s} \in S^{-1}A \ \bigg\lvert\ x \in I, \ s \in S \right\} }{\sim} \cong \faktor{I \times S}{\sim}
+\end{equation}
+Per questo oggetto valgono le seguenti propriet\`a.
+\begin{prop}
+	Sia $I \subset A$ un ideale e sia $S^{-1}A$ l'anello delle frazioni di $A$; allora:
+	\begin{enumerate}[(a).]
+		\item $S^{-1}I$ \`e un ideale di $S^{-1}A$;
+		\item $\forall J \subset S^{-1}A, \ \exists I\subset A$ tale che $J = S^{-1}I$;
+		\item $S^{-1}I$ \`e un ideale proprio di $S^{-1}A$ se e solo se $I \cap S = \varnothing$;
+		\item dato $P$ ideale primo di $A$, con $P\cap S = \varnothing$, allora $S^{-1}P$ \`e un ideale primo di $S^{-1}A$.
+	\end{enumerate}
+	\begin{proof}
+		Si divide la dimostrazione nei vari punti.
+		\begin{enumerate}[(a).]
+			\item Si dimostra la chiusura rispetto alla somma:
+				\[
+					\frac{x}{s} + \frac{y}{t} = \frac{\overbracket{xt + ys}^{\in I} }{\underbracket{st}_{\in S} }\in S^{-1}I, \ \forall x,y \in I
+				\] 
+				visto che $x,y$ sono elementi di un ideale.
+				Per l'assorbimento, invece:
+\[
+	\frac{a}{s}\cdot \frac{x}{t} = \frac{\overbracket{ax}^{\in I} }{\underbracket{st}_{\in S} } \in S^{-1}I , \ \forall \frac{a}{s}\in S^{-1}A
+\] 
+\item Sia $J \subset S^{-1}A$ un ideale; per quanto affermato dalla prop. \ref{aext}, si sa che $S^{-1}A$ \`e un'estensione di $A$.
+	Inoltre, considerando $f^{-1}(J)$, si sa che questo \`e un ideale e, in particolare, \`e una contrazione di $J$ ad $A$; quindi:
+	\[
+	f^{-1}(J) = J\cap A = I \subset A
+	\] 
+	Ora si vuole mostrare che $J = S^{-1}I$.
+	Si nota che $\forall x \in I$, vale $f(X) = x / 1 \in J$, quindi:
+	\[
+		\underbracket{\frac{1}{s} }_{\in S^{-1}A} \cdot \frac{x}{1}= \frac{x}{s} \in J\implies S^{-1}I \subseteq J
+	\] 
+	per la propriet\`a di assorbimento di $J$.
+	Viceversa, si ha, $\forall x / s \in J$:
+	\[
+	\frac{x}{1} = \frac{x}{s} \cdot \frac{s}{1} \in J\implies x = f^{-1}\left(\frac{x}{1}\right) \in I
+	\] 
+	cio\`e il numeratore di ogni elemento di $J$ \`e un elemento di $I$.
+	Allora, considerando $S^{-1}I$, questo contiene tutte le frazioni di $J$, per cui $x /s \in S^{-1}J \implies J \subseteq S^{-1}I$.
+\item Si dimostra per controposizione, cio\`e $S^{-1}I$ non-proprio equivale a $S^{-1}I = S^{-1}A$.
+	Visto che $S^{-1}I$ \`e un ideale, allora questo \`e vero se e solo se 
+	\[
+	\frac{1}{1} \in S^{-1}I \iff \exists x \in I, \ \exists s \in S : \frac{1}{1} = \frac{x}{s}
+	\] 
+	che, per la relazione definita sugli anelli di frazioni, equivale a richiedere che $I \supset x = s \in S \iff I \cap S \neq \varnothing$.
+\item Sia $P$ un ideale primo; se fosse $P\cap S \neq \varnothing$, allora, per il punto (c), non sarebbe proprio (quindi neanche primo).
+	Viceversa, se $P \cap S = \varnothing$, si dimostra che $S^{-1}P$ \`e primo in $S^{-1}A$; a questo proposito, si considera che
+\[
+\frac{a}{s}\cdot \frac{b}{t} \in S^{-1}P
+\] 
+che \`e equivalente a dire che $\exists \sigma \in S, \ \exists p \in P$ tali che:
+\[
+\frac{ab}{st} = \frac{p}{\sigma } \iff ab\sigma = p st t\in P \implies ab \sigma  \in P
+\] 
+visto che $p \in P$.
+Visto che, per ipotesi, $\sigma \in S$ e $P\cap S = \varnothing$, allora $ab \in P$.
+Visto anche che $P$ \`e primo, si deve avere $a \in P$, o $b \in P$, quindi la frazione di uno dei due deve appartenere a $S^{-1}P$, cio\`e $a / s \in S^{-1}P$, oppure $b / t \in S^{-1}P$, quindi $S^{-1}P$ \`e primo.
+		\end{enumerate}
+	\end{proof}
+\end{prop}
+
+\subsection{Divisibilit\`a nei domini}
+
+
+
+
+
+
+
+
+
 
 
 
