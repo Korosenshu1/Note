@@ -2627,7 +2627,7 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 	Sia $A$ un anello\footnote{\`E ancora richiesto, per questa trattazione, che sia commutativo con identit\`a.} e che sia un dominio.
 	Sia $S$ la sua parte moltiplicativa; allora, si definisce il suo \textit{insieme delle frazioni} come
 	\[
-		S^{-1}A = \faktor{\left\{ \frac{a}{s}\ \Big\lvert \  a \in A ,\ s \in S \right\}}{\sim} = \faktor{A\times S}{\sim}
+		S^{-1}A = \faktor{\left\{ \frac{a}{s}\ \Big\lvert \  a \in A ,\ s \in S \right\}}{\sim} \cong \faktor{A\times S}{\sim}
 	\] 
 	dove la relazione di equivalenza \`e data da $a / s \sim b / t \iff at = bs$.
 \end{definizione}
@@ -2910,7 +2910,7 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 	[Elemento irriducibile]
 	Sia $A$ un dominio e $x \in A$, con $x \not \in A^* \cup \left\{ 0 \right\} $; allora $x$ si dice \textit{irriducibile} se, $\forall a,b \in A$, vale $x = ab\implies a \in A^*$ oppure $b \in A^*$.
 \end{definizione}
-\begin{prop}
+\begin{prop}\label{pimpp}
 	Sia $A$ un dominio; se $x \in A$ \`e primo, allora \`e irriducibile.
 	\begin{proof}
 	Si assume che $x = ab$; essendo primo per assunzione, allora $x \mid a$, oppure $x  \mid b$.
@@ -2922,7 +2922,7 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 	In particolare, questo implica che $x$ \`e irriducibile perch\'e, scrivendolo come $x = ab$, si \`e verificato che $b \in A^*$.
 	\end{proof}
 \end{prop}
-\begin{prop}
+\begin{prop}\label{prid}
 	Sia $A$ un dominio; allora valgono i seguenti punti:
 	\begin{enumerate}[(a).]
 		\item $x$ \`e primo se e solo se $\langle x \rangle$ \`e un ideale primo non nullo;
@@ -2951,7 +2951,130 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 	Visto che $x$ \`e primo, allora \`e anche irriducibile, quindi $\langle x \rangle$ \`e massimale tra gli ideali principali di $A$, ma non \`e un ideale massimale di $A$ perch\'e $K[y]$ non \`e un campo. 
 	Infatti, si verifica che $\langle x  \rangle\subsetneq \langle x,y \rangle \subsetneq A$, cio\`e $\langle x \rangle$ non \`e massimale, in quanto \`e contenuto nell'ideale proprio $\langle x,y \rangle$.
 \end{esempio}
-\subsection{Domini euclidei}
+\subsection{Domini euclidei e PID}
+\begin{definizione}
+	[Dominio euclideo]
+	Un dominio $A$ \`e detto \textit{dominio euclideo} se esiste una mappa
+	\[
+	d : A \setminus\left\{ 0 \right\} \longrightarrow \mathbb{N}
+	\] 
+	detta \textit{grado}, che soddisfa le seguenti propriet\`a:
+	\begin{enumerate}[(a).]
+		\item $d(x) \le d(xy), \ \forall x,y \in A\setminus\left\{ 0 \right\} $;
+		\item $\forall x \in A, \ \forall y \in A\setminus\left\{ 0 \right\} $, si trovano $q,r \in A$ tali che $x = yq + r$, con $d(r)<d(y)$ oppure $r=0$.
+	\end{enumerate}
+\end{definizione}
+\begin{esempio}
+	Oltre agli interi con il valore assoluto e ai polinomi su un campo $K$ con il grado, un altro esempio di dominio euclideo sono gli interi di Gauss $\mathbb{Z}[i] = \left\{ a + ib  \mid a,b \in \mathbb{Z} \right\} $ con la norma data da
+	\[
+	N :
+	\begin{array}
+		{c c c}
+		\mathbb{Z}[i] &\longrightarrow & \mathbb{N}\\
+		\alpha = a+ib &\longmapsto & N(\alpha ) = \alpha  \overline{\alpha }=a^2 + b^2
+	\end{array}
+	\] 
+\end{esempio}
+\begin{prop}
+	[Algoritmo di Euclide]
+	Sia $A$ un dominio; allora $\forall a,b \in A$, non entrambi nulli, esiste il loro massimo comune divisore, ottenuto tramite l'algoritmo di Euclide.
+	\begin{proof}
+		Visto che \`e definita una funzione grado come generalizzazione del modulo per gli interi, l'esistenza dell'algoritmo di Euclide segue la stessa dimostrazione del caso degli interi, visto anche che negli anelli euclidei \`e, per costruzione, prevista una divisione euclidea.
+
+		L'algoritmo di Euclide termina perch\'e la successione dei resti $r_n$ \`e una successione a indici in $\mathbb{N}$ strettamente decrescente (visto che deve valere $d(r_n) < d(y_n)$ ogni volta che si fa una divisione); questo significa che ci sar\`a un $n$ per cui $r_n = 0$.
+
+		Ora si dimostra l'algoritmo per induzione sul numero degli $N$ passi richiesti a completarlo.
+		Se l'algoritmo termina per $N=1$ passo, si deve avere $a = qb + 0$, cio\`e $b \mid a$ e, pertanto, il loro massimo comune divisore \`e $(a,b) = b$.
+
+		Per ipotesi induttiva, si assume che l'algoritmo funzioni per ogni $m < N-1$ e si mostra che \`e vero per $N$.
+		Sia:
+		\[
+		\begin{cases}
+			a = q_0b +r_1 = qr_0+r_1 &,\ 0\le r_1<\lvert b \rvert \\
+			r_0 = q_1r_1 + r_2 &,\ 0\le r_2<r_1\\
+			\vdots\\
+			r_{n-2} =q_{n-1} r_{n-1} +r_n &,\ 0\le n < r_{n-1} \\
+			r_{n-1} = q_nr_n + 0
+		\end{cases}
+		\] 
+		Allora si pu\`o applicare l'algoritmo di Euclide per $(r_0,r_1)$ e, in questo modo, si trova una sequenza di $N-1$ passi, per ottenere $r _ n =(b,r_1)=(b,a-q_0b)=(a,b)$, dove l'ultima uguaglianza \`e giustificata dalla propriet\`a del massimo comune divisore.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $A$ un dominio euclideo; gli elementi di $A$ che hanno grado minimo sono tutti e soli gli elementi di $A^*$.
+	\begin{proof}
+		Si considera l'immagine della funzione grado dell'intero dominio eccetto lo zero: $d ( A\setminus\left\{ 0 \right\} ) \subset \mathbb{N}$; per il principio del minimo, questo insieme, essendo un sottoinsieme di $\mathbb{N}$, ammette un elemento minimo $d_0$.
+		Sia, allora, $x \in A\setminus\left\{ 0 \right\} $ un elemento tale che $d(x) = d_0$, cio\`e un elemento di grado minimo. 
+		Si vuole dimostrare che questo \`e invertibile.
+		Per farlo, si osserva che $\forall y \in A\setminus\left\{ 0 \right\} $ si pu\`o calcolare la divisione euclidea per $x$:
+		\[
+		 y = qx +r
+		\] 
+		In questo caso, non pu\`o essere $d(r) < d(x) = d_0$ perch\'e, per definizione, $d_0$ \`e il grado minimo, quindi deve essere $r= 0$ e, allora, $y= qx$.
+		Considerando il caso particolare di $y = 1$, allora $\exists q \in A$ tale che $1 = qx$, per cui $x \in A^*$.
+
+		Viceversa, sia $x \in A^*$; allora $\langle x \rangle = A$ e, conseguentemente, $\forall a \in A$, si ha $a=qx$ per qualche $ q \in A$.
+		Visto che la funzione grado deve soddisfare $d(x) \le d(qx), \ \forall q \in A \setminus\left\{ 0 \right\} $, allora $x$ deve avere grado minimo.
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $A$ un dominio euclideo; allora tutti gli ideali di $A$ sono principali (per cui ogni dominio euclideo \`e un PID) e sono generati da un elemento di grado minimo.
+	\begin{proof}
+		Sia $I \subset A$ un ideale; se $I=\left\{ 0 \right\} $, allora \`e principale, altrimenti si mostra che $I$ \`e generato da un singolo elemento di grado minimo.
+
+		Sia $x \in I$ un elemento di grado minimo (che esiste perch\'e $d(I) \subset \mathbb{N}$), quindi $\langle x \rangle\subseteq I$.
+		Viceversa, $\forall a \in I$, si pu\`o calcolare la divisione euclidea per $x$:
+		\[
+		a = qx + r , \hspace{.5cm} d(r) < d(x) \text{ oppure } r=0
+		\] 
+		da cui deve valere $r=0$ perch\'e $x$ \`e di grado minimo, quindi $a=qx \in \langle x \rangle \implies I \subseteq \langle x \rangle$.
+	\end{proof}
+\end{prop}
+\begin{definizione}
+	[PID]
+	Un dominio $A$ si dice \textit{a ideali principali} se ogni suo ideale \`e principale, cio\`e $\forall I \subseteq A$, con $I$ ideale, $\exists x \in I $ tale che $I = \langle x \rangle$.
+\end{definizione}
+\begin{prop}
+	Sia $A$ un PID; i suoi unici ideali primi sono $\langle 0 \rangle$ e gli ideali massimali.
+	\begin{proof}
+		Dal punto (c) della prop. \ref{idprmaxchar}, si sa che $A$ dominio $\iff \langle 0 \rangle$ \`e un ideale primo; inoltre, dal punto (e) della stessa proposizione, si sa anche che tutti gli ideali massimali di un anelo sono primi.
+
+		Viceversa, si dimostra che gli ideali diversi da $\langle 0 \rangle $ in un PID sono solo quelli massimali.
+		Per farlo, sia $P$ un ideale primo diverso da $\langle 0 \rangle$; essendo  in un PID, vale $P=\langle x \rangle$.
+		Per verificare che $P$ \`e massimale, si nota che, essendo $A$ un dominio, per il punto (a) della prop. \ref{prid}, si ha che $P$ \`e massimale se e solo se $x$ \`e primo, quindi $x$ irriducibile (visto che primo $\Rightarrow $ irriducibile in ogni dominio per la prop. \ref{pimpp}).
+		Ora, visto che $x$ \`e irriducibile, segue che $\langle x \rangle$ \`e massimale tra gli ideali principali di $A$, visto il punto (b) della prop. \ref{idprmaxchar}.
+		Unitamente al fatto che $A$ \`e un PID (quindi tutti i suoi ideali sono principali), segue che $\langle x \rangle$ \`e un ideale massimale per $A$.
+	\end{proof}
+\end{prop}
+
+\textbf{MCD nei PID.} Se $A$ \`e un PID e $x,y \in A$ non entrambi nulli, si osserva che l'ideale generato da $x$ e $y$ deve essere tale che $\langle x,y \rangle=\langle d \rangle$, dove $d = (x,y)$.
+Infatti, se $x \in \langle d \rangle$ e $y \in \langle d \rangle$, allora $d  \mid x $ e $d \mid y$; inoltre, se $c  \mid x $ e $c \mid y$, si ha $x,y \in \langle c \rangle$, quindi $\langle d \rangle=\langle x,y \rangle \subseteq \langle c \rangle$ implica che $d \in \langle c \rangle$ e, quindi, che $c \mid d$.
+Questo significa che $d$ \`e un MCD di $x$ e $y$.
+
+\subsection{Domini a fattorizzazione unica}
+\begin{definizione}
+	[UFD]
+	Sia $A$ un dominio; questo si dice essere \textit{a fattorizzazione unica} se ogni $ x \in A$ tale che $x\not\in A^* \cup \left\{ 0 \right\} $ si scrive in modo unico, a meno dell'ordine di fattori e di moltiplicazione per elementi invertibili, come prodotto di elementi irriducibili.
+\end{definizione}
+\begin{prop}
+	Se $A$ \`e un dominio a fattorizzazione unica, allora $\forall a,b \in A$ non entrambi nulli esiste il loro massimo comune divisore.
+	\begin{proof}
+		Sia $d$ il prodotto dei fattori irriducibili comuni ad $a$ e $b$ presi con il minimo esponente con cui compaiono; allora, questo \`e un massimo comune divisore perch\'e \`e possibile verificare direttamente la sua definizione.
+	\end{proof}
+\end{prop}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
