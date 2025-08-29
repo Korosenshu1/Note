@@ -3034,7 +3034,7 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 	[PID]
 	Un dominio $A$ si dice \textit{a ideali principali} se ogni suo ideale \`e principale, cio\`e $\forall I \subseteq A$, con $I$ ideale, $\exists x \in I $ tale che $I = \langle x \rangle$.
 \end{definizione}
-\begin{prop}
+\begin{prop}\label{pideals}
 	Sia $A$ un PID; i suoi unici ideali primi sono $\langle 0 \rangle$ e gli ideali massimali.
 	\begin{proof}
 		Dal punto (c) della prop. \ref{idprmaxchar}, si sa che $A$ dominio $\iff \langle 0 \rangle$ \`e un ideale primo; inoltre, dal punto (e) della stessa proposizione, si sa anche che tutti gli ideali massimali di un anelo sono primi.
@@ -3063,15 +3063,337 @@ Questo significa che $d$ \`e un MCD di $x$ e $y$.
 	\end{proof}
 \end{prop}
 
+\noindent Nei tre tipi di domini analizzati finora, si trova sempre l'MCD, ma con le opportune differenze.
+\begin{itemize}
+	\item Se $A$ \`e un dominio euclideo, allora si determina $d = (a,b)$ tramite l'algoritmo di Euclide e si ottengono i due coefficienti per cui \`e soddisfatta l'identti\`a di B\'ezout: $d = ax_0 + by_0$.
+	\item Se $A$ \`e un dominio a ideali principali, si sa che presi due elementi $a,b \in A$, deve valere $\langle a,b \rangle= \langle d \rangle$, con $d$ MCD di $a$ e $b$, ma non esiste un algoritmo che permetta di poterlo determinare.
+		In ogni caso, esistono ancora $x_0,y_0 \in A$ tali per cui \`e soddisfatta la relazione $d = ax_0+by_0$, derivante direttamente dal fatto che $d \in  \langle a,b \rangle$.
+	\item Se $A$ \`e un dominio a fattorizzazione unica, infine, allora si trova $d = \operatorname{gcd}(a,b) $, ma non \`e assicurato che $\langle d \rangle=\langle a,b \rangle$, quindi non \`e neanche assicurato trovare $x_0,y_0\in A$ tali che $d = ax_0+by_0$.
+		Questo perch\'e mentre \`e effettivamente verificato che $\langle a,b \rangle\subset \langle d \rangle$, non \`e detto che valga anche il contenimento opposto.
+
+			Considerando, per esempio, l'UFD $\mathbb{Z}[x]$, allora l'ideale $I = \langle 2,x \rangle$ \`e tale per cui $\operatorname{gcd}(2,x)=1$, ma $1 \not \in \langle 2,x \rangle$, altrimenti si avrebbe $1 =  2a(x) + xb(x)$ che implica $1 = 2a(0) + 0 b(0)\Rightarrow 1 = 2a(0)$, cio\`e $2  \mid 1$, che \`e assurdo.
+\end{itemize}
+\begin{teorema}
+	[Caratterizzazione degli UFD]
+	Sia $A$ un dominio; allora sono equivalenti le seguenti affermazioni.
+	\begin{enumerate}[(a).]
+		\item $A$ \`e un UFD.
+		\item Valgono le due seguenti condizioni:
+			\begin{enumerate}[(i).]
+				\item ogni elemento irriducibile \`e primo;
+				\item ogni catena discendente di divisibilit\`a \`e stazionaria, cio\`e se $\left\{ a_i \right\}_{i\ge 0}  \subset A$, con $a_{i+1}  \mid a_i, \ \forall i\ge 0$, allora $\exists n_0 \in \mathbb{N}$ tale che $a_i \sim a_{n_0} , \ \forall i\ge n_0$.
+			\end{enumerate}
+	\end{enumerate}
+\end{teorema}
+\begin{osservazione}
+La condizione (i) permette di dimostrare che la fattorizzazione in primi \`e unica, mentre la condizione (ii) permette di dimostrare l'esistenza della fattorizzazione.
+
+Il teorema sopra, pertanto, permette di concludere che la condizione di UFD per un dominio consiste nella validit\`a del teorema di fattorizzazione unica.
+\end{osservazione}
+\begin{osservazione}
+La condizione (ii) pu\`o essere riformulata nel seguente modo: ogni catena ascendente di ideali principali \`e stazionaria, ossia considerata $\left\{ \langle a_i \rangle \right\} _{i\ge 0} $ una catena ascendente di ideali di $A$ tale che $\langle a_1 \rangle\subseteq \langle a_2 \rangle\subseteq \ldots$, allora $\exists n_0 \in \mathbb{N}$ tale per cui $\langle a_i \rangle= \langle a_{n_0}  \rangle, \ \forall i\ge n_0$.
+\end{osservazione}
+\begin{corollario}
+	Se $A$ \`e un PID, allora \`e anche un UFD.
+	\begin{proof}
+		Preso $A$ un PID, si dimostra la validit\`a dei punti (i) e (ii) del teorema precedente.
+		Sia, quindi, $x \in A$ un suo elemento irriducibile; per quanto affermato dalla proposizione \ref{pideals}, l'ideale $\langle x \rangle$ \`e massimale in $A$, ma, dal punto (e) della prop. \ref{idprmaxchar}, si sa che $\langle x \rangle$ \`e primo.
+		Inoltre, essendo in un dominio, vale il punto (a) della prop. \ref{prid}, per cui si conclude che $x$ \`e primo e, quindi, vale il punto (i).
+
+		Si considera, ora, una catena ascendente di ideali principali principali $\langle a_1 \rangle\subset \langle a_2 \rangle\subset \ldots$ e si prende $I = \bigcup _{i\ge 0} \langle a_i \rangle$; tale unione \`e ancora un ideale di $A$, quindi \`e principale e, allora, $I = \langle a \rangle$.
+		Tale elemento $a$ deve appartenere all'unione, quindi si trover\`a un $a_{n_0} $ tale che $a \in \langle a_{n_0}  \rangle$, quindi $I = \langle a \rangle\subseteq \langle a_{n_0}  \rangle$.
+		D'altra parte, $I$ \`e l'unione di tutti gli ideali principali di $A$, quindi $\langle a_{n_0}  \rangle\subseteq \langle a \rangle= I \implies I = \langle a_{n_0}  \rangle$.
+		Per definizione di $I$, allora, $\langle a_i \rangle\subseteq \langle a_{n_0}  \rangle, \ \forall i\ge 0$, mentre il contenimento opposto (e quindi l'uguaglianza) \`e verificato quando $i\ge n_0$ perch\'e si stanno considerando ideali in catena.
+		Questo implica che $\left\{ \langle a_i \rangle \right\} _{i\ge 0} $ \`e stazionaria e, allora, \`e verificato anche il punto (ii).
+	\end{proof}
+\end{corollario}
+\begin{osservazione}
+Questo corollario permette di mettere in relazione i vari tipi di domini:
+\[
+\text{ED} \subset \text{PID}\subset UFD
+\] 
+\end{osservazione}
+\noindent Si possono trovare degli anelli che non soddisfano il punto (i), oppure il punto (ii).
+Come esempio di anello senza la propriet\`a (ii), si considera $K[\left\{ x^{1 / n}  \right\} _{n\ge 1} ]$; questa estensione non \`e un UFD perch\'e la catena
+\[
+x^{1/2^{n+1} }  \mid x^{1 / 2^n}  \mid \ldots  \mid x^{1 / 4}  \mid x ^{ 1 / 2}   \mid  x
+\] 
+non \`e definitivamente stazionaria, infatti il successivo pu\`o sempre dividere il precedente.
+Ne segue che non esiste la fattorizzazione di $x$.
+
+Ora, invece, si considera $\mathbb{Z}[\sqrt{-5} ] = \left\{ a + b\sqrt{-5}  \mid a,b \in \mathbb{Z} \right\} \subset \mathbb{Q}(\sqrt{-5} ) \subset \mathbb{C}$.
+In questo anello, la propriet\`a (i) viene meno perch\'e $2$ \`e irriducibile, ma non primo\footnote{Qui, $N$ indica la funzione grado.}:
+\[
+2 = (a + b\sqrt{-5} )(c+d\sqrt{-5} ) \implies N(2) = (a^2 + 5b^2 ) (c^2 + 5d^2)
+\] 
+da cui le uniche possibilit\`a sono $a = \pm 2, \ c= \pm 1, \ b = d = 0$, quindi, effettivamente, $2$ \`e irriducibile, ma non primo, in quanto 
+\[
+2  \mid 6 = (1 + \sqrt{-5} ) ( 1-\sqrt{-5} ) \hspace{.5cm} \text{ ma } \hspace{.5cm} 2 \nmid (1+\sqrt{-5} ) , (1-\sqrt{-5} )
+\] 
+Infatti:
+\[
+	\alpha  = \frac{1\pm\sqrt{-5} }{2} = \frac{1}{2} \pm \frac{\sqrt{-5} }{2}\not \in \mathbb{Z}[\sqrt{-5} ]
+\] 
+In $\mathbb{Z}[\sqrt{-5} ]$, allora, si hanno due fattorizzazioni distinte per $6$:
+\[
+6 = 2\cdot 3 = (1+\sqrt{-5} ) (1-\sqrt{-5} )
+\] 
+Questo dimostra che $\mathbb{Z}[\sqrt{-5} ]$ non \`e un UFD; per questo motivo, non \`e neanche un PID e questo si pu\`o dimostrare notando l'ideale $(2, 1+\sqrt{-5} )$ non \`e principale.
+\subsection{Anelli di polinomi}
+Dato un dominio $A$, si studiano gli anelli dei polinomi $A[x]$; in particolare, segue una loro caratterizzazione come UFD.
+Per procedere con tale caratterizzazione, sar\`a prima necessario introdurre altra teoria.
+\begin{definizione}
+	[Contenuto di un elemento]
+	Sia $A$ un UFD e $f(x) \in A[x]$, con $f(x) = \sum_{i=0}^{n} a_ix^i$; si definisce \textit{contenuto} di $f(x)$ il MCD dei suoi coefficienti:
+	\[
+	c(f(x))=\operatorname{gcd}(a_0,\ldots,a_n) 
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Elemento primitivo]
+	Sia $A$ un UFD e $f(x) \in A[x]$; si dice che $f(x)$ \`e \textit{primitivo} se $c(f(x)) \sim 1$.
+\end{definizione}
+\begin{osservazione}
+	Dato $f(x) \in A[x]$, si ha che:
+	\[
+	f(x) = c(f(x)) f'(x)
+	\] 
+	con $f'(x) \in A[x]$ tale che 
+\[
+f'(x) = \sum_{i=0}^{n} \frac{a_i}{d}x^i \hspace{.5cm} \frac{a_i}{d} \in A \text{ con } \operatorname{gcd}\left(\frac{a_0}{d},\ldots, \frac{a_n}{d}\right) = 1
+\] 
+	cio\`e $c(f'(x)) = 1$.
+\end{osservazione}
+\begin{lemma}
+	[Lemma di Gauss]
+	Siano $f(x), g(x) \in A[x]$; allora
+	\[
+		c\big(f(x)g(x)\big) = c(f(x)) c(g(x))
+	\] 
+	\begin{proof}
+		Per dimostrare questo, si considerano due possibili scenari.
+		\begin{itemize}
+			\item Si ha $c(f(x))=c(g(x)) = 1$.
+
+				In questo caso, $f(x) $ e $g(x)$ sono primitivi; si vuole verificare che $c\big(f(x) g(x)\big) = 1$.
+				Se $f(x) g(x)$ non fosse primitivo, allora $c\big(f(x)g(x)\big)$ non sarebbe invertibile, cio\`e non esisterebbe $p$ primo tale che $p  \mid c\big(f(x)g(x)\big)$.
+				Si considera, allora, la proiezione modulo $p$:
+				\[
+				\pi_{p} :
+				\begin{array}
+					{c c c}
+					A[x] &\longrightarrow & A / \langle p \rangle [x] \\
+					f(x) &\longmapsto & \overline{f(x)}
+				\end{array}
+				\] 
+				Visto che $p \nmid c(f(x))$, allora $\overline{f(x)}\neq 0$; analogamente $\overline{g(x)}\neq 0$.
+				Tuttavia, si ha $\pi_p (f(x)g(x)) = \overline{f(x)}\overline{g(x)} = 0$ perch\'e si era assunto che $p \mid c(f(x)g(x))$, ma questo \`e assurdo perch\'e $A / \langle p \rangle$ \`e un dominio (visto che $\langle p \rangle$ \`e un ideale primo).
+				Allora $A$ dominio $\implies A[x]$ dominio, da cui $A / \langle p \rangle [x]$ dominio, perci\`o $c(f(x)g(x)) = 1$.
+			\item Caso generale.
+				
+				Per il caso generale, si prendono $f'(x),g'(x)$ primitivi e si considerano $f(x) = c(f(x)) f'(x)$ e $g(x) = c(g(x)) g'(x)$.
+				Sia
+				\[
+				h(x) = f(x)g(x) = c(f(x)) c(g(x)) g'(x) f'(x)=c(h(x)) h'(x)
+				\] 
+Dalla relazione sopra, si ottiene che
+\[
+	c(h(x))=c\big[c(h(x)) h'(x)\big]= c(f(x)g(x))=c\big[c(f(x)) c(g(x)) g'(x) f'(x)\big]
+\] 
+I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati fuori; inoltre, notando che il prodotto di polinomi primitivi \`e primitivo (per il punto precedente), si ha:
+\[
+	c(h(x)) = c(h(x)) \underbracket{c(h'(x))}_{=1} =c(f(x))c(g(x)) \underbracket{c(g'(x)f'(x))}_{=1} 
+\] 
+ da cui la tesi:
+ \[
+ c(f(x)g(x)) = c(h(x)) = c(f(x))c(g(x))
+ \] 
+		\end{itemize}
+	\end{proof}
+\end{lemma}
+\begin{corollario}\label{corufd1}
+	Siano $f(x),g(x) \in A[x]$, con $c(f(x)) =1 $ e $f(x)  \mid g(x)$ in $K[x]$, con $K$ campo dei quozienti di $A$; allora $f(x)  \mid g(x)$ in $A[x]$.
+	\begin{proof}
+		Per ipotesi, si sa che $f(x)  \mid g(x)$ in $K[x]$, cio\`e che esiste $h(x) \in K[x]$ tale per cui $g(x) = f(x) h(x)$; quindi $\exists d \in A$ tale che:
+		\[
+			h_1(x) = dh(x) \in A[x]
+		\] 
+		Quello che si sta facendo \`e cancellare il denominatore per portare la relazione data dalla divisione da $K[x]$ a $A[x]$.
+		Ne segue che:
+		\[
+			dg(x) = f(x) h_1(x) \in A[x]
+		\] 
+		Applicando il lemma di Gauss, si ha:
+		\[
+		dc(g(x)) = c(f(x)h_1(x)) = c(f(x)) c(h_1(x)) = c(h_1(x)) \implies d  \mid c(h_1(x))
+		\] 
+		dove si \`e usato il fatto che $c(f(x)) = 1$. 
+		Per quanto appena visto, si conclude che $h_1(x) / d = h(x) \in A[x]$, quindi la divisibilit\`a assunta inizialmente \`e valida anche in $A[x]$.
+	\end{proof}
+\end{corollario}
+\begin{corollario}\label{corufd2}
+	Sia $f(x) \in A[x]$ e $f(x) = g(x) h(x) $ in $K[x]$ (con $K$ campo dei quozienti di $A$), dove $\operatorname{deg} g(x) , \operatorname{deg} h(x) \ge 1$ (cio\`e $f$ \`e riducibile in $K[x]$); allora $\exists \delta \in K^*$ tale che $g_1(x) = \delta g(x) \in A[x]$ e $h_1(x) = \delta ^{-1}h(x)\in A[x]$, per cui $f(x) = g_1(x) h_1(x)$ in $A[x]$.
+	\begin{proof}
+		Analogamente al corollario precedente, si sa che $\exists d \in A$ tale che $g_1(x) = dg(x) \in A[x]$, quindi:
+		\[
+		f(x) = dg(x) d^{-1}h(x) = d_1(x) \left(d^{-1} h(x)\right) = c(g_1(x)) g'_1(x) (d^{-1}h(x))
+		\] 
+		con $g_1'(x) \in A[x] $ primitivo.
+		Inoltre, si ha:
+		\[
+			f(x) = g'_1(x) \underbracket{\left(c(g_1(x)) d^{-1}h(x)\right) }_{\in K[x]} 
+		\] 
+		cio\`e $g_1'(x)  \mid g(x)$ in $K[x]$.
+		Per il corollario precedente, allora, si ha che $g_1'(x)  \mid f(x)$ anche in $A[x]$, per cui 
+		\[
+			h_1(x) = \underbracket{\frac{c(g_1(x))}{d}}_{=\delta ^{-1}} h(x)
+		\] 
+		 da cui segue la tesi.
+	\end{proof}
+\end{corollario}
+\begin{teorema}
+	Sia $A$ un UFD; gli elementi irriducibili di $A[x]$ sono tutti e soli quelli che soddisfano una tra le seguenti condizioni:
+	\begin{enumerate}[(a).]
+		\item $f(x) \in A$ e irriducibile in $A$;
+		\item $f(x) \in A[x]$, con $\operatorname{deg} f(x) \ge 1$, $c(f(x)) = 1$ e $f(x)$ irriducibile in $K[x]$\footnote{Qui, $K[x]$ \`e l'anello dei polinomi a coefficienti nel campo dei quozienti di $A$}.
+	\end{enumerate}
+			\begin{proof}
+				Si distinguono due casi.	
+				\begin{itemize}
+					\item Si ha $f(x) \in A$.
+
+						In questo caso, come gi\`a osservato prima, $f(x)$ \`e costante e 
+						\[
+						f(x) = g(x) h(x) \implies \operatorname{deg} g(x) + \operatorname{deg} h(x) = \operatorname{deg} f(x) = 0 
+						\] 
+						dove l'implicazione \`e giustificata dal fatto che si sta operando in un dominio.
+						Pertanto, si ha $\operatorname{deg} g(x) = \operatorname{deg} h(x) = 0$ e, allora, anche $g(x) ,h(x) \in A$.
+						Questo significa che $f(x)$ \`e irriducibile in $A[x]$ se e solo se $f$ \`e irriducibile in $A$ (visto che $(A[x])^* = A^*$ e uno tra $g$ e $h$ deve essere invertibile).
+					\item Si ha $f(x)$ generico.
+
+						Sia, allora, $f(x)$ con $\operatorname{deg} f(x) \ge 1$.
+						Si assume che sia irriducibile in $A[x]$, per cui $f(x) = c(f(x)) f'(x)$, con $c(f(x))$ invertibile in $A[x]$, il che implica che $c(f(x)) \in (A[x])^* = A^*$, cio\`e $f(x)$ \`e primitivo.
+						D'altra parte, si prende $f(x) = g(x) h(x)$ in $K[x]$; per il corollario precedente, si pu\`o scrivere come prodotto di polinomi dello stesso grado in $A[x]$:
+						\[
+						f(x) = g_1(x) h_1(x) \hspace{.25cm}  \text{ con  } \hspace{.25cm} \operatorname{deg} g_1(x) = \operatorname{deg} g(x) , \ \operatorname{deg} h_1(x) = \operatorname{deg} h(x)
+						\] 
+						Essendo $f(x)$ irriducibile in $A[x]$, deve essere $g_1(x)$ invertibile, oppure $h_1(x)$ invertibile; ne segue che $\operatorname{deg} g_1(x) = 0$, oppure $\operatorname{deg} h_1(x) = 0$.
+						Sempre per il corollario precedente, si ha $\operatorname{deg} g(x) = 0 $, oppure $\operatorname{deg} h(x) = 0$, il che vuol dire che $g(x) \in (K[x])^*$, oppure $h(x) \in (K[x])^*$. 
+						Questo significa che $f(x)$ \`e irriducibile in $K[x]$.
+
+						Ora si mostra il viceversa. 
+						Sia $f$ primitivo e irriducibile in $K[x]$ (per cui $c(f(x)) \sim 1$) e sia $f(x) = g(x) h(x) $ in $A[x]$ (e anche in $K[x]$); visto che $f$ \`e irriducibile in $K[x]$, si ha che $g(x)$, o $h(x)$ sono invertibili in $K[x]$, quindi costanti.
+						Assumendo senza perdita di generalit\`a che $g(x) \in A$, allora
+						\[
+						1 = c(f(x)) = c(g(x) h(x)) = c(g(x)) c(h(x)) = gc(h(x))
+						\] 
+						quindi $g \in A^* = (A[x])^*$, da cui $f$ \`e irriducibile in $A[x]$.
+				\end{itemize}
+			\end{proof}
+\end{teorema}
+\noindent Terminati i prerequisiti teorici, \`e ora possibile caratterizzare gli anelli di polinomi di UFD; la teoria sopra sviluppata servir\`a per completare gli ultimi due punti della dimostrazione.
+\begin{teorema}\label{th1an}
+	Se $A$ \`e un UFD, allora $A[x]$ \`e un anello a fattorizzazione unica.
+	\begin{proof}
+		La dimostrazione di questo si articola nei seguenti tre punti.
+		\begin{enumerate}[(a).]
+			\item $A[x]$ \`e un dominio.
+
+				Siano $f(x), g(x) \in A[x] \setminus\left\{ 0 \right\} $, con $\operatorname{deg} f(x) = n$ e $\operatorname{deg} f(x) = m$.
+				Visto che, per questioni di grado, $a_n,b_m\neq 0$, allora $a_nb_m \neq 0$, essendo $A$ un dominio per ipotesi.
+				Ne segue che $f(x) g(x) \neq 0$ se $f(x),g(x) \neq 0$, per cui $A[x]$ \`e un dominio.
+			\item Ogni irriducibile di $A[x]$ \`e primo (condizione (i)).
+
+				Sia $f(x) \in A[x]$ irriducibile; per dimostrare che \`e primo, si deve verficiare che $\forall g(x),h(x) \in A[x]$, si ha:
+				\[
+				f(x)  \mid g(x) h(x) \implies f(x)  \mid g(x) \hspace{.25cm} \text{ o } \hspace{.25cm} f(x)  \mid h(x)
+				\] 
+				in $A[x]$.
+				Si distinguono gli stessi due casi visti nel teorema precedente.
+				\begin{itemize}
+					\item Se $\operatorname{deg} f(x) = 0 $, ovvero $f(x)  \in A$ (cio\`e \`e costante), con $f(x)$ irriducibile per assunzione, visto che $A$ \`e un UFD, si ha $f$ primo in $A$; infatti:
+						\[
+						f \mid gh \implies f=c(f)  \mid c(gh) = c(g) c(h) \implies f \mid c(g)  \mid g(x) \hspace{.15cm} \text{ o }\hspace{.15cm} f  \mid c(h)  \mid h(x)
+						\] 
+					\item Se $f(x)$ \`e primitivo e irriducibile in $K[x]$, con $\operatorname{deg} f(x) \ge 1$, notando che $K[x]$ \`e un dominio euclideo (essendo $K$ campo), si conclude che $f(x)$ \`e anche primo in $K[x]$ (essendo $\text{ED}\subset \text{UFD}$).
+						Ne segue che se $f(x)  \mid g(x) h(x)$ in $A[x]$, allora $f(x)  \mid g(x)$, oppure $f(x)  \mid h(x)$ in $K[x]$; avendo assunto che $f(x)$ \`e primitivo, vale il corollario \ref{corufd1}, quindi la divisibilit\`a in $K[x]$ implica quella in $A[x]$, da cui $f(x)$ primo in $A[x]$.
+						
+				\end{itemize}
 
 
 
+			\item Ogni catena discendente di divisibilit\`a \`e stazionaria (condizione (ii)).
 
+				Si dimostrer\`a che, data $\left\{ f_n(x) \right\} $ una successione di elementi di $A[x]$ tale che $f_{i+1} (x)  \mid f_i(x)$, allora \`e stazionaria, cio\`e $\exists n_0 \in \mathbb{N}$ tale che $f_i(x) \sim f_{n_0} (x) , \ \forall i\ge 0$.
 
+				Per farlo, si osserva che, per il lemma di Gauss, si ha $f(x)  \mid g(x) \implies c(f(x))  \mid c(g(x)) $ e $f'(x)  \mid g'(x)$; infatti, se $g(x) = f(X) h(x)$, allora
+				\[
+				c(g(x))g'(x) = c(f(x)) f'(x) c(h(x)) h'(x)
+				\] 
+				ma, per quanto detto, $c(g(x)) = c(f(x) h(x))= c(f(x)) c(h(x))$, per cui $f'(x)  \mid g'(x)$.
 
+				Per questo motivo, alla successione $\left\{ f_i(x) \right\} $ si possono associare le successioni $\left\{ c(f_i(x)) \right\} $ e $\left\{ f'_i(x) \right\} $ e si ha:
+				\[
+				c(f_{i+1} (x)) \mid c(f_i(x)) \hspace{.25cm} \text{ e } \hspace{.25cm} f'_{i+1} (x)  \mid f'_i(x) , \ \forall i\ge 0
+				\] 
+				dove la successione $\left\{ c(f_i(x)) \right\} $ \`e stazionaria, visto che c'\`e una catena discendente di divisibilit\`a di $A$ UFD, pertanto $\exists m_0 \in \mathbb{N} : c(f_i(x)) \sim c(f_{m_0} (x)) , \ \forall i\ge m_0 $.
 
+				Ora si considera $\left\{ f'_i(x) \right\} $ e le si associa la successione $\left\{ \operatorname{deg} f'_i(x) \right\} $.
+				Dalla condizione $f'_{i+1} (x)  \mid f'_i(x)  $, si ha $\operatorname{deg} f'_{i+1} (x)  \le \operatorname{deg} f'_i(x)$, per cui $\left\{ \operatorname{deg} f'_i(x) \right\} $ \`e una successione di numeri naturali decrescente che, dunque, si stabilizza: $\exists d_0 \in \mathbb{N} : \operatorname{deg} f'_i(x) = \operatorname{deg} f'_{d_0} (x) ,\ \forall i \ge d_0$.
+				Da questo, si conclude che $\forall i\ge d_0$, i polinomi $f'_i(x)$ e $f'_{i+1} (x)$ hanno stesso grado e $f'_i(x)  \mid f'_{i+1} (x)$, cio\`e differiscono per una costante; essendo entrambi primitivi, per\`o, la costante deve essere un'unit\`a, perci\`o:
+				\[
+				f'_i(x) \sim f'_{d_0} (x), \ \forall i \ge d_0
+				\] 
+				Per finire, sia dato $n_0 = \max \left\{ m_0,d_0 \right\}$; allora $\forall i\ge n_0$, vale contemporaneamente che:
+				\[
+				c(f_i(x)) \sim c(f_{m_0} (x)) \hspace{.25cm} \text{ e } \hspace{.25cm} f'_i(x) \sim f'_{d_0} (x)
+				\] 
+				da cui la tesi:
+				\[
+				f_i(x) = c(f_i(x)) f'_i(x) \sim c(f_{n_0} (x)) f'_{n_0} (x) , \ \forall i\ge n_0
+				\] 
+		\end{enumerate}
+		La dimostrazione, allora, segue per il teorema di caratterizzazione degli UFD.
+	\end{proof}
+\end{teorema}
+\begin{osservazione}
+	Dal punto (a) della dimostrazione del teorema precedente, segue anche che $(A[x])^* = A^*$; infatti, considerando $f(x) \in (A[x])^*$, si ha che $\exists g(x) \in A[x]$ tale che 
+	\[
+	f(x) g(x) = 1\implies \operatorname{deg} f(x) + \operatorname{deg} g(x) = 0\implies \operatorname{deg} f(x) = \operatorname{deg} g(x) = 0
+	\] 
+	per cui $f(x), g(x) \in A$ e, in particolare, $f(x) = a$ e $g(x) = b$, da cui $ab =1\implies f(x) \in A^*$.
+\end{osservazione}
+\begin{corollario}\label{corufdcat}
+	Se $A$ \`e un UFD, allora $A[x_1,\ldots,x_n]$ \`e un anello a fattorizzazione unica.
+	\begin{proof}
+		Dal teorema precedente, la dimostrazione segue per induzione; infatti, tale teorema assicura il caso base per $A[x]$, mentre, assumendo vera la tesi per $A [x_1,\ldots,x_{n-1} ] = B$, si arriva alla fine della dimostrazione considerando $B[x_n]$, il quale risulta un UFD per il caso iniziale.
+	\end{proof}
+\end{corollario}
+\begin{osservazione}
+	Si nota che, in generale, se $A$ \`e un PID, allora non \`e sempre vero che $A[x]$ \`e un PID; per esempio, nel caso di $\mathbb{Z}$ si saa che $\mathbb{Z}[x]$ non \`e un PID perch\'e l'ideale $I = \langle 2,x \rangle$ non \`e principale.
 
-
+	Analogamente, se $A$ \`e un ED, allora non \`e sempre vero che $A[x]$ \`e un ED; come esempio, si pu\`o sempre considerare il caso di $\mathbb{Z}$ e $\mathbb{Z}[x]$.
+\end{osservazione}
+\begin{osservazione}
+	Se $K$ \`e un campo, allora $K[x]$ \`e euclideo, mentre $K[x,y]$ \`e un UFD (visto il corollario \ref{corufdcat}), mentre non \`e un PID perch\'e, per esempio, $I =\langle x,y \rangle$ non \`e principale.
+\end{osservazione}
+\begin{esercizio}
+	Dimostrare che, dato $K[x,y]$ campo, allora l'ideale $I=\langle x,y \rangle$ non \`e principale.
+	\begin{svolgimento}
+		Risolto a pagina 100 della teoria.
+	\end{svolgimento}
+\end{esercizio}
+\begin{prop}
+	[Criterio di irriducibilit\`a di Eisenstein]
+	Sia $A$ un UFD e $f(x) \in A[x]$ primitivo, con $f(x) = \sum_{i=0}^{n} a_ix^i$.
+	Sia, poi, $p \in A$ un primo tale che:
+	\begin{enumerate}[(a).]
+		\item $p\nmid a_n$;
+		\item $p  \mid a_i , \ \forall i \in \left\{ 0,\ldots,n-1 \right\} $;
+		\item $p^2 \nmid a_0$.
+	\end{enumerate}
+	Allora $f(x)$ \`e irriducibile in $A[x]$ (e in $K[x]$, con $K$ campo dei quozienti di $A$).
+\end{prop}
 
 
 
