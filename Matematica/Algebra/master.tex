@@ -350,13 +350,13 @@ Si osserva che, per il teorema di orbita-stabilizzatore, la cardinalit\`a di un'
 
 \subsubsection{Azione di coniugio}
  Un caso notevole di azione \`e il coniugio: per $X=G$, si definisce $\gamma : G \to \operatorname{Int} (G) \subset S(G)$.
-Le orbite indotte da questa azione sono dette \textit{classi di coniugio} e si indicano con $\operatorname{cl} (x)$, mentre lo stabilizzatore \`e detto \textit{centralizzatore} e si indica con:
+Le orbite indotte da questa azione sono dette \textit{classi di coniugio} e si indicano con $\operatorname{Cl} (x)$, mentre lo stabilizzatore \`e detto \textit{centralizzatore} e si indica con:
 \begin{equation}
 	Z(x) = \left\{ g \in G  \mid g \cdot x = gxg^{-1} = x \right\} 
 \end{equation}
 Come conseguenza del teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 \begin{equation}
-	\lvert G \rvert  = \lvert \operatorname{cl} (x)  \rvert  \lvert Z(x) \rvert , \ \forall x \in G
+	\lvert G \rvert  = \lvert \operatorname{Cl} (x)  \rvert  \lvert Z(x) \rvert , \ \forall x \in G
 \end{equation}
 \begin{prop}
 	Sia $G$ un gruppo e $\gamma$ l'azione di coniugio su di esso; allora
@@ -1120,9 +1120,9 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 
 		Sia $\sigma =(a,b)$ una trasposizione; allora
 		\[
-		\operatorname{sgn} \sigma  = \prod_{1\le i<j\le n} \frac{t(i)-t(j)}{i-j}
+		\operatorname{sgn} \sigma  = \prod_{1\le i<j\le n} \frac{\sigma (i)-\sigma (j)}{i-j}
 		\] 
-		Se $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \varnothing$, allora
+		Se uno solo tra $i$ e $j$ \`e uguale a $a$ oppure $b$, allora
 		\[
 		\frac{\sigma (i)-\sigma (j)}{i-j}=\frac{i-j}{i-j}=1
 		\] 
@@ -1138,7 +1138,7 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 		\[
 		\frac{\sigma (i)-\sigma (b)}{i-b}=\frac{\sigma (b)-\sigma (i)}{b-i}=\frac{i-a}{i-b}
 		\] 
-		I fattori delle due intersezioni non vuote si semplificano a $1$, quindi rimane unicamente il caso in cui $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \left\{ a,b \right\} $; assumendo senza perdita di generalit\`a che $a<b$, si trova:
+		I fattori del caso precedente si semplificano a $1$, quindi rimane unicamente il caso in cui $\left\{ i,j \right\} \cap \left\{ a,b \right\} = \left\{ a,b \right\} $; assumendo senza perdita di generalit\`a che $a<b$, si trova:
 		\[
 		\frac{\sigma (a)-\sigma (b)}{a-b}=\frac{b-a}{a-b}=-1
 		\] 
@@ -1155,16 +1155,11 @@ Si nota che
 	\operatorname{Ker} (\mathrm{sgn}) = \left\{ \sigma \in S_n  \mid \operatorname{sgn} \sigma  = 1\right\} = A_n
 \end{equation}
 ed \`e noto come \textit{gruppo alterno}. 
-Alcune sue caratteristiche sono:
-\begin{enumerate}[(a).]
-	\item $A_n \lhd S_n$;
-	\item $S_n / A_n \cong \left\{ \pm 1 \right\} $.
-\end{enumerate}
-Visto che $S_n / A_n\cong \left\{ \pm 1 \right\} $, per il teorema di Lagrange, si ha:
+Si nota, intanto, che $S_n / A_n \cong \left\{ \pm \right\} \cong \mathbb{Z}^*$ per il I teorema di omomorfismo; poi si nota che, essendo, $S_n / A_n\cong \left\{ \pm 1 \right\} $, si ha:
 \[
 2 = \lvert S_n / A_n \rvert = \frac{S_n}{A_n} \implies \lvert A_n \rvert = \frac{\lvert S_n \rvert }{\lvert S_n / A_n \rvert } = \frac{n!}{2}
 \] 
-
+Infine, visto che $A_n$ ha indice $2$ in $S_n$, se ne conclude che $A_ n \lhd S_n$.
 \vspace{5pt}
 
 \begin{teorema}
@@ -1197,30 +1192,32 @@ Visto che $S_n / A_n\cong \left\{ \pm 1 \right\} $, per il teorema di Lagrange, 
 		\end{itemize}
 	\end{proof}
 \end{teorema}
-\noindent Quanto al centralizzatore di $\sigma \in S_n$, si sa dal teorema orbita-stabilizzatore che
+
+\textbf{Centralizzatore di una permutazione.} Quanto al centralizzatore di $\sigma \in S_n$, si sa, dal teorema orbita-stabilizzatore, che:
 \begin{equation}
-\lvert Z(\sigma ) \rvert \lvert \operatorname{cl} (\sigma ) \rvert = n!
+\lvert Z(\sigma ) \rvert \lvert \operatorname{Cl} (\sigma ) \rvert = n!
 \end{equation}
-Per il teorema precedente, si sa calcolare $\lvert \operatorname{cl} (\sigma ) \rvert $, quindi \`e possibile ottenere $\lvert Z(\sigma ) \rvert $.
+Per il teorema precedente, si sa calcolare $\lvert \operatorname{Cl} (\sigma ) \rvert $, quindi \`e possibile ottenere $\lvert Z(\sigma ) \rvert $.
 \begin{esempio}
 Sia $\sigma = (1234)(56) \in S_{10}$; il numero possibile di permutazioni coniugate sono tutte quelle che si scrivono come un $4$-ciclo e un $2$-ciclo in $S_{10}$, numero ottenuto come
 \[
-	\lvert \operatorname{cl} (\sigma ) \rvert  = \binom{10}{4}\frac{4!}{4} \binom{6}{2}= \frac{10!}{192}\implies \lvert Z(\sigma ) \rvert = 192 = 4! 8
+	\lvert \operatorname{Cl} (\sigma ) \rvert  = \binom{10}{4}\frac{4!}{4} \binom{6}{2}= \frac{10!}{192}\implies \lvert Z(\sigma ) \rvert = 192 = 4! 8
 \] 
 Sia
 \[
 H = \operatorname{Sym} \left(7,8,9,10\right) =\left\{ h \in S_{10}  \mid h(i) = i, \ \forall i \not \in \left\{ 7,8,9,10 \right\}  \right\} \cong S_4
 \] 
-e sia $K = \langle (1234),(56) \rangle$; allora $H,K < Z(\sigma )$, $H\cap K = \left\{ e \right\} $ e $HK=Z(\sigma )$, per cui
+e sia $K = \langle (1234),(56) \rangle$; allora $H,K \lhd Z(\sigma )$, $H\cap K = \left\{ e \right\} $ e $HK=Z(\sigma )$, per cui
 \[
 Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z})
 \] 
 \begin{proof}
 	Si ha $H <Z(\sigma )$ perch\'e ogni permutazione di $H$ modifica solo l'insieme $\left\{ 7,8,9,10 \right\} $, quindi commuta con $\sigma $. Inoltre, $H \cong S_4 \Rightarrow \lvert H \rvert  = 4!$.
-
 	Si ha $K<Z(\sigma )$ perch\'e ogni elemento di $K$ \`e della forma $(1234)^j(56)^k$, quindi commuta sempre con $\sigma $.
 	Visto che $(1234)$ ha ordine $4$ e $(56)$ ha ordine $2$ e i due cicli sono disgiunti, si ha $\lvert K \rvert = 4 \cdot 2=8$.
 	Si nota, in particolare, che $\langle (1234) \rangle\cong C_4\cong\mathbb{Z}/4\mathbb{Z}$, cio\`e \`e isomorfo a un gruppo ciclico di ordine $4$; analogamente $\langle (56) \rangle\cong C_2\cong\mathbb{Z}/2\mathbb{Z}$.
+	Infine, questi due sono sottogruppi normali perch\'e le permutazioni di $Z(\sigma )$ sono quelle che hanno cicli disgiunti con quelli di $\sigma $, quindi sono quelle di $H$, oppure sono quelle che commutano con i cicli di $\sigma $, cio\`e proprio quelle di $H$.
+	Questo significa che ciascuna permutazione di $Z(\sigma )$ commuta sia con gli elementi di $H$, che con quelli di $K$, rendendoli entrambi sottogruppi normali di $Z(\sigma )$.
 
 	Evidentemente la loro intersezione \`e banale perch\'e le permutazioni di $H$ agiscono esclusivamente su $\left\{ 7,8,9,10 \right\} $, mentre quelle di $K$ su $\left\{ 1,2,3,4,5,6 \right\} $, quindi deve essere $H\cap K = \left\{ e \right\} $.
 
@@ -2030,7 +2027,7 @@ Sia $\rho = (1234)(56) \in S_{10}$; calcolare $Z(\rho )$ e
 N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in \langle \rho  \rangle\right\} 
 \] 
 \begin{svolgimento}
-	Si nota, intanto, che $\lvert Z(\rho ) \rvert = \lvert S_{10} \rvert / \lvert \operatorname{cl} (\rho ) \rvert = 8 \cdot 4!$.
+	Si nota, intanto, che $\lvert Z(\rho ) \rvert = \lvert S_{10} \rvert / \lvert \operatorname{Cl} (\rho ) \rvert = 8 \cdot 4!$.
 	Si considerano, poi, $H = \langle (1234),(56) \rangle\cong \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ e $K = S_{\left\{ 7,8,9,10 \right\} } \cong S_4$; per il teorema \ref{t171}, visto che questi due sottogruppi sono normali, con $HK = Z(\rho )$ e hanno intersezione banale, si ha $Z(\rho ) \cong \mathbb{Z}/4\mathbb{Z} \times Z / 2\mathbb{Z} \times S_4$.
 
 	Per $N(\langle \rho  \rangle)$, visto che $\langle \rho  \rangle=\left\{ \operatorname{Id} , \rho ,\rho ^2, \rho ^{-1} \right\} $, si ha
