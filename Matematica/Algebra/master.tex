@@ -1389,7 +1389,7 @@ In sostanza, $\mathbb{Z}/7\mathbb{Z}\rtimes _\gamma \mathbb{Z}/ 7\mathbb{Z} = \m
 	Siano $H,K$ due gruppi; si considera il loro prodotto semidiretto $H\rtimes _\gamma K$. 
 Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H \right\} \times K$, per i quali si sa che $\overline{K},\overline{H}\lhd H \times K$, vale $\overline{H}\lhd H \rtimes _\gamma K$ sempre e $\overline{K}\lhd H \rtimes _\gamma K \iff $ il prodotto \`e diretto.
 \begin{proof}
-	Si ha sempre $\overline{H}\lhd H\rtimes _\gamma K$ perch\'e $\pi_K : H \rtimes _\gamma K \to K$ tale che $\pi_K((h,k)) = k$ \`e un omomorfismo e $H = \operatorname{Ker} \pi_K$.
+	Si ha sempre $\overline{H}\lhd H\rtimes _\gamma K$ perch\'e $\pi_K : H \rtimes _\gamma K \to K$ tale che $\pi_K((h,k)) = k$ \`e un omomorfismo e $\overline{H} = \operatorname{Ker} \pi_K$.
 	
 	Per $\overline{K}$, si assume prima che sia normale e si mostra che $\gamma$ deve essere per forza banale.
 	A questo scopo, si osserva che $\forall (e_H, k) \in \overline{K}$ ed un elemento generico $(h,e_K) \in \overline{H}\lhd H \rtimes _\gamma K$:
@@ -1475,13 +1475,13 @@ Allora $D_n \cong \mathbb{Z}/n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/2\mathbb{Z}$
 	Infatti, se esistesse $H'<G$ tale che $\lvert H' \rvert =q$, si avrebbe $\lvert H H' \rvert = \lvert H \rvert \lvert H' \rvert  / \lvert H \cap H' \rvert = q^2 / \lvert H\cap H' \rvert $. 
 	Visto che $\lvert H\cap H' \rvert $ pu\`o essere $1$, oppure $q$, quindi $\lvert H H' \rvert $ \`e $q$, o $q^2$, ma non pu\`o essere $q^2 $ perch\'e sarebbe maggiore di $\lvert G \rvert $, quindi $\lvert H\cap H' \rvert = q \Rightarrow H = H'$.
 
-	Usando il teorema di scomposizione (\ref{scth}), si conclude che $G = H \rtimes _\gamma K$ perch\'e, per una questione di ordine, $H\cap K = \left\{ e_G \right\} $ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert / \lvert H\cap K \rvert = \lvert H  \rvert \lvert K \rvert =pq$, quindi $G = HK$\footnote{Si ricorda che $H\lhd G$ implica che $HK$ \`e un gruppo).}.
+	Usando il teorema di scomposizione (\ref{scth}), si conclude che $G = H \rtimes _\gamma K$ perch\'e, per una questione di ordine, $H\cap K = \left\{ e_G \right\} $ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert / \lvert H\cap K \rvert = \lvert H  \rvert \lvert K \rvert =pq$, quindi $G = HK$\footnote{Si ricorda che $H\lhd G$ implica che $HK$ \`e un gruppo.}.
 
 	Prendendo $H = \langle x \rangle$ e $ K = \langle y \rangle$, si ha
 	\[
 	\gamma : \langle y \rangle \longrightarrow \operatorname{Aut} (\langle x \rangle),  \ \gamma(y)(x) = \gamma_y(x) = yxy^{-1}= x^\ell 
 	\] 
-	Visto che $\gamma$ \`e un omomorfismo, deve valere $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) $, cio\`e $\operatorname{ord}(\gamma_y) \in \left\{ 1,p \right\} $ (visto che $p$ \`e primo), quindi se $p  \nmid  (q - 1)$\footnote{La richiesta deriva dal fatto che $\lvert \operatorname{Aut} (\langle x \rangle) \rvert = \lvert \operatorname{Aut} (\mathbb{Z}/q\mathbb{Z}) \rvert =\lvert (\mathbb{Z}/q\mathbb{Z})^* \rvert = q - 1$. La richiesta $p  \mid q-1$, invece, \`e legata alla necessit\`a che $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) =p$, cio\`e che in $(\mathbb{Z}/q\mathbb{Z})^*\cong \mathbb{Z}/(q-1)\mathbb{Z}$ esista un sottogruppo di ordine almeno $p$, cosa che \`e verificata se e solo se $p  \mid q-1$.}, allora $\operatorname{ord}(\gamma_y) =1$ e $\gamma_y = \operatorname{Id} _H$, quindi $G \cong \mathbb{Z}/(pq) \mathbb{Z}$.
+	Visto che $\gamma$ \`e un omomorfismo, deve valere $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) $, cio\`e $\operatorname{ord}(\gamma_y) \in \left\{ 1,p \right\} $ (visto che $p$ \`e primo), quindi se $p  \nmid  (q - 1)$\footnote{La richiesta deriva dal fatto che $\lvert \operatorname{Aut} (\langle x \rangle) \rvert = \lvert \operatorname{Aut} (\mathbb{Z}/q\mathbb{Z}) \rvert =\lvert (\mathbb{Z}/q\mathbb{Z})^* \rvert = q - 1$. La richiesta $p  \mid q-1$, invece, \`e legata alla necessit\`a che $\operatorname{ord}(\gamma_y)  \mid \operatorname{ord}(y) =p$, cio\`e che in $(\mathbb{Z}/q\mathbb{Z})^*\cong \mathbb{Z}/(q-1)\mathbb{Z}$ esista un sottogruppo di ordine esattamente $p$ (visto che $p$ \`e primo), cosa che \`e verificata se e solo se $p  \mid q-1$.}, allora $\operatorname{ord}(\gamma_y) =1$ e $\gamma_y = \operatorname{Id} _H$, quindi $G \cong \mathbb{Z}/(pq) \mathbb{Z}$.
 	Se, invece, $p \mid (q-1)$, allora esiste un sottogruppo di ordine $p$ in $\mathbb{Z}/(q-1)\mathbb{Z}$, il quale ha $p-1$ elementi di ordine $p$ (sempre perch\'e $p$ \`e primo), quindi ci sono $p-1$ possibili omomorfismi $\gamma$ che generano gruppi $H \rtimes _\gamma K$ diversi a seconda di dove mandano $y$; l'idea \`e di dimostrare che questi sono tutti isomorfi tra loro.
 
 	Siano, allora $\gamma, \gamma'$ due omomorfismi tali che $\gamma_y(x) = x^\ell $ e $\gamma'_y(x) = x^{\ell '} $, con $\ell ,\ell '$ coprimi con $q$\footnote{Perch\'e le mappe $\gamma_y$ e $\gamma_y'$ sono automorfismi di $\mathbb{Z} / q\mathbb{Z}$, quindi devono mappare un generatore ($x$ in questo caso) in un altro generatore.}; si ha:
@@ -1608,9 +1608,10 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 \begin{prop}
 	Dato $G$ abeliano e finito; allora $G(p) < G$ \`e un $p$-sottogruppo e $G(p) \operatorname{char} G$ (cio\`e \`e un sottogruppo caratteristico).
 	\begin{proof}
-		$G(p) < G$ perch\'e se $x,y \in G : \operatorname{ord}(x) =p^m,\  \operatorname{ord}(y) =p^n$, con $m.n \in \mathbb{N}$, allora $\operatorname{ord}(xy)  \mid [\operatorname{ord}(x) , \operatorname{ord}(y) ]$, il che vuol dire che $\operatorname{ord}(xy) = p^s$, per qualche $s \in  \mathbb{N}$.
-		Inoltre, l'ordine del prodotto di qualsiasi coppaia di elementi di $G$ \`e sempre finito, quindi sempre nella forma di potenze di $p$, perch\'e $\lvert G \rvert < \infty$ per assunzione.
-		Per dimostrare che \`e un $p$-gruppo, si nota che 
+		$G(p) < G$ perch\'e se $x,y \in G : \operatorname{ord}(x) =p^m,\  \operatorname{ord}(y) =p^n$, con $m,n \in \mathbb{N}$, allora $\operatorname{ord}(xy)  \mid [\operatorname{ord}(x) , \operatorname{ord}(y) ]$, il che vuol dire che $\operatorname{ord}(xy) = p^s$, per qualche $s \in  \mathbb{N}$.
+		Inoltre, l'ordine del prodotto di qualsiasi coppia di elementi di $G$ \`e sempre finito, quindi sempre nella forma di potenze di $p$, perch\'e $\lvert G \rvert < \infty$ per assunzione.
+
+		Il fatto che sia un $p$-gruppo deriva direttamente dal teorema di Cauchy: se fosse $\lvert G(p) \rvert = p^\ell m $, con $m \in \mathbb{N}$ generico, questo si decompone in una serie di numeri primi; il fatto che l'ordine di $G(p)$ possa essere diviso per un numero primo $q\neq p$, implica l'esistenza di un elemento di ordine $q$ in $G(p)$, che \`e assurdo.
 
 		Infine, $G(p)$ \`e caratteristico perch\'e gli automorfismi conservano l'ordine degli elementi, pertanto $G(p)$ viene mandato in se stesso.
 	\end{proof}
@@ -1635,7 +1636,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		\] 
 		da cui $G \subseteq mG + m'G$, mentre l'inclusione inversa segue direttamente dalla chiusura di $G$. 
 		Allora $mG + m'G = G$.
-		Sia, ora, $x \in mG \cap m'G$, cio\`e $x = mg = m'g'$; allora si nota che $m'x m'mg = ng = 0$ e $mx=mm'g' = ng' = 0$, pertanto $\operatorname{ord}(x)  \mid m$ e $\operatorname{ord}(x)  \mid m'$, quindi $\operatorname{ord}(x)  \mid (m,m') = 1$, da cui $x=0$.
+		Sia, ora, $x \in mG \cap m'G$, cio\`e $x = mg = m'g'$; allora si nota che $m'x= m'mg = ng = 0$ e $mx=mm'g' = ng' = 0$, pertanto $\operatorname{ord}(x)  \mid m$ e $\operatorname{ord}(x)  \mid m'$, quindi $\operatorname{ord}(x)  \mid (m,m') = 1$, da cui $x=0$.
 		Questo implica che $mG\cap m'G = \left\{ e \right\} $, il che completa le verifiche per le ipotesi del teorema \ref{t171} e permette di concludere che $G \cong mG \times m'G$.
 
 		Ora si fa vedere che 
@@ -1653,14 +1654,14 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		\[
 		G \cong G_m \times G_{m'} 
 		\] 
-		Visto che $G_m$ contiene tutti e soli gli elementi di $G$ il cui ordine divide $m$ (analogo per $G_{m'} $, allora $\lvert G_m \rvert ,\lvert G_{m'}  \rvert < \lvert G \rvert $; inoltre, $G_{m} , G_{m'} \neq \left\{ 0 \right\} $ per Cauchy, visto che $1<m<n$, per cui $G_{m'},G_m \lneq G $.
-		Avendo concluso che i due sottogruppi sono proprio, si pu\`o applicare l'ipotesi induttiva per scrivere che:
+		Visto che $G_m$ contiene tutti e soli gli elementi di $G$ il cui ordine divide $m$ (analogo per $G_{m'} $), allora $\lvert G_m \rvert ,\lvert G_{m'}  \rvert < \lvert G \rvert $; inoltre, $G_{m} , G_{m'} \neq \left\{ 0 \right\} $ per Cauchy, quindi $G_{m'},G_m \lneq G $.
+		Avendo concluso che i due sottogruppi sono propri, si pu\`o applicare l'ipotesi induttiva per scrivere che:
 		\[
 		G_m = \prod _{i\in I} G(p_i) \hspace{1cm}G_{m'} =\prod_{j \in J} G(p_j)
 		\] 
 		con $I\cup J = \left\{ 1, \ldots, s \right\} $ e $I\cap J = \varnothing$ (visto che $(m,m')=1$).
 
-		Per l'unicit\`a, la scrittuura come prodotto di $p$-componenti deve essere unica, altrimenti, se $G$ fosse isomorfo ad altri $p$-gruppi, si avrebbe
+		Per l'unicit\`a, la scrittura come prodotto di $p$-componenti deve essere unica, altrimenti, se $G$ fosse isomorfo ad altri $p$-gruppi, si avrebbe
 		\[
 		G \cong H_1\times \ldots\times H_n
 		\] 
@@ -1708,7 +1709,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		Sia, quindi, $\lvert G \rvert =p^{n}$; si dimostra per induzione su $n$.
 		Se $n=1$, allora $\lvert G \rvert = p$, per cui $G \cong \mathbb{Z} / p\mathbb{Z}$ e la tesi \`e verificata.
 
-		Si assume che la tesi sia versa per $1 \le m < n $ e si dimostra per $n$. 
+		Si assume che la tesi sia vera per $1 \le m < n $ e si dimostra per $n$. 
 		Sia, allora, $x_1 \in G$ un elemento di ordine massimo, sia questo $\operatorname{ord}(x_1) =p^{r_1} $; si hanno due possibili casi: $r_1 = n$ e $r_1<n$.
 		Il primo caso \`e banale: $r_1=n \Rightarrow G$ ciclico, per cui $G \cong \mathbb{Z}/p^n\mathbb{Z}$.
 
@@ -1776,7 +1777,7 @@ Intanto deve valere $s=t$ perch\'e, considerando $G_p = \left\{ g \in G  \mid gp
 \[
 G_p \cong (\mathbb{Z}/p\mathbb{Z})^t \cong (\mathbb{Z}/p\mathbb{Z})^s \iff t= s
 \] 
-Per concludere, si mostra che sono uguagli anche le potenze di ciascun fattore.
+Per concludere, si mostra che sono uguali anche le potenze di ciascun fattore.
 A questo scopo, si pu\`o applicare l'ipotesi induttiva al gruppo $pG$ (con $\lvert pG \rvert =p^{n-t} $):
 \[
 	\begin{split}
@@ -1871,13 +1872,13 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 			\item Si fissa $0\le \alpha \le n$. 
 				Sia $\mathcal{M} = \left\{ M \subset G  \mid \lvert M \rvert = p^\alpha  \right\} $; allora 
 				\[
-						\lvert \mathcal{M}  \rvert =\binom{p^n m}{p^\alpha } = \frac{(p^nm)!}{p^\alpha ! (p^nm-p^\alpha )!} = \frac{\displaystyle p^n m \prod_{i=1} ^{p^{\alpha -1} } (p^n m - i)}{p^\alpha \displaystyle \prod_{i=1} ^{p^{\alpha -1} } (p^{\alpha }-i) } = p^{n-\alpha } m \prod_{i=1} ^{p^{\alpha -1} } \frac{p^n m - i}{p^\alpha  -i}
+						\lvert \mathcal{M}  \rvert =\binom{p^n m}{p^\alpha } = \frac{(p^nm)!}{p^\alpha ! (p^nm-p^\alpha )!} = \frac{\displaystyle p^n m \prod_{i=1} ^{p^{\alpha }-1 } (p^n m - i)}{p^\alpha \displaystyle \prod_{i=1} ^{p^{\alpha }-1 } (p^{\alpha }-i) } = p^{n-\alpha } m \prod_{i=1} ^{p^{\alpha }-1 } \frac{p^n m - i}{p^\alpha  -i}
 				\] 
-				Da questo, si osserva che $p^{n-\alpha }  \mid  |\mathcal{M} |$ e, per $i=1,\ldots,p^{\alpha -1} $, definendo $v_p(n):=\max \left\{ k \in \mathbb{N}  \mid p^k \text{ divide } n \right\} $, si ha che:
+				Da questo, si osserva che $p^{n-\alpha }  \mid  |\mathcal{M} |$ e, per $i=1,\ldots,p^{\alpha }-1 $, definendo $v_p(n):=\max \left\{ k \in \mathbb{N}  \mid p^k \text{ divide } n \right\} $, si ha che:
 				\[
 				v_p(p^nm - i) = v_p(p^\alpha -i)=v_p(i)\implies v_p\left(\frac{p^nm - i}{p^{\alpha } -i}\right) =v_p(p^nm-i) - v_p(p^\alpha  - i) = 0
 				\] 
-				essendo $i\le p^{\alpha -1} $ e $\alpha \le n$. Visto che $v_p$ conta l'esponente massimo per cui \`e possibile dividere il suo input, si conclude che $p^{n-\alpha } $ divide esattamente $\lvert \mathcal{M}  \rvert $ e $n-\alpha $ \`e il massimo esponente con cui $p$ pu\`o divide $\lvert \mathcal{M}  \rvert $\footnote{Per vederlo pi\`u chiaramente, si assume che qualche potenza di $p$ divida $i$, altrimenti $p^nm - i$ e $p^\alpha - i$ non sarebbero divisibili per alcuna potenza di i e si avrebbe la tesi. Allora, si pu\`o scrivere $i = p^s j$, con $\operatorname{gcd}(p,j) =1$, da cui $p^{n} m - i = p^s(p^{n-s} m - j)$ e $p^\alpha - i = p^s (p^{\alpha - s} - j)$. Il loro rapporto semplifica $p^s$ e rimane il rapporto di due termini non divisibili per alcuna potenza di $p$ perch\'e $(j,p) = 1$.}.
+				essendo $i\le p^{\alpha }-1 $ e $\alpha \le n$. Visto che $v_p$ conta l'esponente massimo per cui \`e possibile dividere il suo input, si conclude che $p^{n-\alpha } $ divide esattamente $\lvert \mathcal{M}  \rvert $ e $n-\alpha $ \`e il massimo esponente con cui $p$ pu\`o divide $\lvert \mathcal{M}  \rvert $\footnote{Per vederlo pi\`u chiaramente, si assume che qualche potenza di $p$ divida $i$, altrimenti $p^nm - i$ e $p^\alpha - i$ non sarebbero divisibili per alcuna potenza di i e si avrebbe la tesi. Allora, si pu\`o scrivere $i = p^s j$, con $\operatorname{gcd}(p,j) =1$, da cui $p^{n} m - i = p^s(p^{n-s} m - j)$ e $p^\alpha - i = p^s (p^{\alpha - s} - j)$. Il loro rapporto semplifica $p^s$ e rimane il rapporto di due termini non divisibili per alcuna potenza di $p$ perch\'e $(j,p) = 1$.}.
 
 				Ora si considera l'azione di $G$ su $\mathcal{M} $ data da $\phi : G \to S(\mathcal{M} )$, con $\phi (g) (M)= \phi _g(M)=gM$; per il teorema delle classi:
 				\[
@@ -1888,9 +1889,10 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 				\[
 				p^{n- \alpha  + 1}   \nmid \lvert \operatorname{Orb} (M_i) \rvert = \frac{\lvert G \rvert }{\lvert \operatorname{Stab} (M_i) \rvert }= \frac{p^n m }{\lvert \operatorname{Stab} (M_i) \rvert }
 				\] 
-				Ne segue anche che $p^\alpha  \mid \lvert \operatorname{Stab}(M_i)  \rvert$\footnote{Il fatto che $p^{n - \alpha }  \mid p^n m/ \lvert \operatorname{Stab} (M_i) \rvert $ implica che $p^\alpha  \mid \lvert \operatorname{Stab} (M_i) \rvert $, cosa che si vede scrivendo $p^n m / \lvert \operatorname{Stab}(M_i) \rvert = p^{n-\alpha } k$, per qualche intero $k$.}, per cui $\lvert \operatorname{Stab}(M_i)  \rvert \ge p^\alpha $; si vuole mostrare che $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $.
+				Ne segue che $p^\alpha  \mid \lvert \operatorname{Stab}(M_i)  \rvert$, perch\'e se ogni potenza di $p$ con esponente maggiore di $n-\alpha $ non deve dividere l'ordine dell'orbita, allora, al denominatore, deve essere presente una potenza di $p$ con esponente $\ge \alpha $. 
 
-				D'altra parte, la mappa $\operatorname{Stab} (M_i) \longrightarrow M_i$ tale che $\operatorname{Stab}( M_i)\ni y\longmapsto yx$, per $x \in  M_i$, \`e iniettiva perch\'e $yx = y_1 x \iff y=  y_1$, quindi $\operatorname{Stab} (M_i) \le \lvert M_i\rvert =p^\alpha $, da cui $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $. 
+				Quindi, si ha $\lvert \operatorname{Stab}(M_i)  \rvert \ge p^\alpha $ e si dimostra che $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $.
+				Per farlo, si considera la mappa $\operatorname{Stab} (M_i) \longrightarrow M_i$ tale che $\operatorname{Stab}( M_i)\ni y\longmapsto yx$, per $x \in  M_i$, \`e iniettiva perch\'e $yx = y_1 x \iff y=  y_1$, quindi $\operatorname{Stab} (M_i) \le \lvert M_i\rvert =p^\alpha $, da cui $\lvert \operatorname{Stab} (M_i) \rvert = p^\alpha $. 
 				Essendo $\operatorname{Stab} (M_i) < G$, significa che in $G$ esiste un sottogruppo di ordine $p^\alpha $.
 			\item Sia $S$ un $p$-Sylow di $G$, con $\lvert S \rvert = p^n$ e sia $H < G$ un sottogruppo con $\lvert H \rvert =p^\alpha $.
 				Si nota che $\lvert G / S \rvert = \lvert  G \rvert / \lvert S \rvert = p^n m/ p^n = m$.
@@ -1926,9 +1928,6 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 		\end{enumerate}
 	\end{proof}
 \end{teorema}
-\begin{esempio}
-Sia $G = S_4$; visto che $\lvert S_4 \rvert = 2^3 \cdot 3$, esiste un $2$-Sylow, sia questo $P$, con $\lvert P \rvert  = 2^3 = 8$.
-\end{esempio}
 
 \subsection{I quaternioni}
 
