@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  4 SEP 2025 12:43
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  5 SEP 2025 21:19
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1654,6 +1654,11 @@ Overfull \hbox (1.99057pt too wide) in paragraph at lines 1920--1922
 [46]
 
 [47]
+Overfull \hbox (19.90138pt too wide) in paragraph at lines 2100--2101
+[]\TU/TeXGyrePagellaX(0)/m/n/10.95 Ri-sul-ta-ti ti-pi-ci: teo-re-mi di Sy-low (nu-me-ro di $\U/zeur/m/n/10.95 p$\TU/TeXGyrePagellaX(0)/m/n/10.95 -sottogruppi con-gruo a $\U/zeur/m/n/10.95 1\U/zeus/m/n/10.95 ¨[]\U/zeur/m/n/10.95 p\U/zeus/m/n/10.95 ©$\TU/TeXGyrePagellaX(0)/m/n/10.95 ). 
+ []
+
+
 
 [48]
 
@@ -1666,11 +1671,6 @@ Overfull \hbox (1.99057pt too wide) in paragraph at lines 1920--1922
 [52]
 
 [53]
-Underfull \hbox (badness 6775) in paragraph at lines 2348--2348
-[][]\TU/TeXGyrePagellaX(0)/m/n/9 L’in-ver-sa di un omo-mor-fi-smo è un omo-mor-fi-smo per-ché se $\U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 ab\U/zeus/m/n/9 © ½ \U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 a\U/zeus/m/n/9 ©\U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 b\U/zeus/m/n/9 ©$\TU/TeXGyrePagellaX(0)/m/n/9 , al-lo-ra
- []
-
-
 
 [54]
 
@@ -1679,6 +1679,11 @@ Underfull \hbox (badness 6775) in paragraph at lines 2348--2348
 [56]
 
 [57]
+Underfull \hbox (badness 6775) in paragraph at lines 2499--2499
+[][]\TU/TeXGyrePagellaX(0)/m/n/9 L’in-ver-sa di un omo-mor-fi-smo è un omo-mor-fi-smo per-ché se $\U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 ab\U/zeus/m/n/9 © ½ \U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 a\U/zeus/m/n/9 ©\U/zeur/m/n/9 f\U/zeus/m/n/9 ¨\U/zeur/m/n/9 b\U/zeus/m/n/9 ©$\TU/TeXGyrePagellaX(0)/m/n/9 , al-lo-ra
+ []
+
+
 
 [58]
 
@@ -1717,25 +1722,33 @@ Underfull \hbox (badness 6775) in paragraph at lines 2348--2348
 [75]
 
 [76]
-Overfull \hbox (11.46683pt too wide) in paragraph at lines 3331--3332
+
+[77]
+
+[78]
+
+[79]
+
+[80]
+Overfull \hbox (11.46683pt too wide) in paragraph at lines 3482--3483
 []\TU/TeXGyrePagellaX(0)/m/n/10.95 Per que-sto mo-ti-vo, al-la suc-ces-sio-ne $[]$ si pos-so-no as-so-cia-re le suc-ces-sio-ni $[]$
  []
 
 
-Overfull \hbox (33.84727pt too wide) in paragraph at lines 3365--3366
+Overfull \hbox (33.84727pt too wide) in paragraph at lines 3516--3517
 \TU/TeXGyrePagellaX(0)/m/n/10.95 ta-le teo-re-ma as-si-cu-ra il ca-so ba-se per $\U/zeur/m/n/10.95 A\U/zeus/m/n/10.95 Û\U/zeur/m/n/10.95 x\U/zeus/m/n/10.95 Ý$\TU/TeXGyrePagellaX(0)/m/n/10.95 , men-tre, as-su-men-do ve-ra la te-si per $\U/zeur/m/n/10.95 A\U/zeus/m/n/10.95 Û\U/zeur/m/n/10.95 x[]; [] ; x[]\U/zeus/m/n/10.95 Ý ½
  []
 
 
 
-[77]
+[81]
 
 Package caption Warning: Unused \captionsetup[table] on input line 122.
 See the caption package documentation for explanation.
 
 
 
-[78] (./master.aux)
+[82] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1749,14 +1762,18 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52187 strings out of 475506
+ 52206 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 4399 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 41 glue, 4 kern, 1 glyph, 1135 attribute, 103 glue_spec, 569 attribute_list, 2 write nodes
-   avail lists: 1:4,2:971,3:428,4:148,5:488,6:101,7:7185,8:109,9:1171,10:21,11:844
- 73419 multiletter control sequences out of 65536+600000
+ 4515 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 43 glue, 4 kern, 1 glyph, 1169 attribute, 103 glue_spec, 586 attribute_list, 2 write nodes
+   avail lists: 1:3,2:971,3:428,4:157,5:496,6:107,7:7183,8:109,9:1171,10:21,11:844
+ 73423 multiletter control sequences out of 65536+600000
  146 fonts using 13376103 bytes
  124i,21n,114p,10936b,1232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.41'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.40'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.39'
 
@@ -1836,10 +1853,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (78 pages, 1435314 bytes).
+Output written on master.pdf (82 pages, 1451849 bytes).
 
-PDF statistics: 1144 PDF objects out of 1200 (max. 8388607)
- 1007 compressed objects within 11 object streams
- 463 named destinations out of 1000 (max. 131072)
- 280 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1184 PDF objects out of 1200 (max. 8388607)
+ 1043 compressed objects within 11 object streams
+ 478 named destinations out of 1000 (max. 131072)
+ 296 words of extra memory for PDF output out of 10000 (max. 100000000)
 

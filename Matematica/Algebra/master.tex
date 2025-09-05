@@ -137,7 +137,7 @@ title=#1
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\color{mastercolor}\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\color{mastercolor}\normalfont\S\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -1928,6 +1928,108 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 		\end{enumerate}
 	\end{proof}
 \end{teorema}
+\begin{osservazione}
+Sia $G$ un gruppo tale che $\lvert G \rvert =p^n m $, con $(p,m)= 1$ e $p$ primo. L'ultimo teorema di Sylow afferma che $n_p  \mid \lvert G \rvert$, oltre che $n_p \equiv 1 \pmod{p} $.
+Il fatto che $n_p  \mid |G|$, in realt\`a, si pu\`o migliorare notando che $n_p  \mid  m$ perch\'e se $S$ \`e un $p$-Sylow (quindi $\lvert S \rvert =p^n$), allora il $S < N_G(S)$\footnote{Questo perch\'e ogni elemento di $S$ \`e tale da normalizzare $S$, visto che il gruppo \`e chiuso sotto relativa operazione.} e, quindi, $\lvert S \rvert = p^n  \mid \lvert N_G(S) \rvert \implies \lvert N_G(S) \rvert = p^n q$.
+Ne segue che, per il teorema di orbita-stabilizzatore:
+\[
+\lvert G \rvert  = \lvert \operatorname{Cl} _G(S)  \rvert \lvert N_G(S) \rvert \implies n_p = \lvert \operatorname{Cl} _G(S) \rvert = \frac{p^n m}{p^n q} = \frac{m}{q}
+\] 
+cio\`e $n_p  \mid m$.
+\end{osservazione}
+\subsubsection{Classificazione dei sottogruppi di ordine 12}
+	Sia $\lvert G \rvert = 12 = 2^2 \cdot 3$. 
+	Per Sylow, devono esistere un $2$-Sylow $P_2$ e un $3$-Sylow $P_3$, con $\lvert P_2 \rvert =4$ e $\lvert P_3 \rvert =3$; essendo $p$-gruppi distinti, deve valere anche $P_2\cap P_3 = \left\{ e \right\} $.
+	Si nota, inoltre, che:
+	\[
+	\lvert P_2P_3 \rvert = \frac{\lvert P_2 \rvert \lvert P_3 \rvert }{\lvert P_2 \cap P_3\rvert} = 12
+	\] 
+	quindi $G = P_2P_3$.
+	
+	Ora si conta il numero dei sottogruppi di Sylow.
+	Dovendo valere $n_2\equiv 1 \pmod{2} $ e $n_2  \mid |G| / 4 = 3$, si ha $n_2 = 1, 3$; analogamente, si pu\`o avere $n_3 = 1,4$.
+	Questo significa anche che almeno uno fra $P_2$ e $ P_3$ deve essere normale, altrimenti $G$ conterrebbe pi\`u elementi di quanti effettivamente ne contiene: se $n_2 = 3$ e $n_3=4$, ci sarebbero $12$ elementi all'interno dei $2$-Sylow e altri $12$ all'interno dei $3$-Sylow, per un totale di $24-7 = 17$ elementi distinti di $G$ (il $-7$ \`e relativo all'unit\`a, elemento che \`e condiviso da tutti).
+
+	Avendo almeno uno fra i due sottogruppi che \`e normale, sono soddisfatte le ipotesi del teorema di decomposizione semidiretta, per cui si pu\`o avere
+	\[
+	G\cong P_2 \rtimes _\varphi P_3 \hspace{.5cm} \text{ oppure }\hspace{.5cm}G\cong P_3 \rtimes _\varphi P_2
+	\] 
+	Si studiano separatamente i due casi.
+\begin{itemize}
+	\item Caso $G \cong P_2 \rtimes _\varphi  P_3$.
+
+		In questo caso, si ha $P_2 \lhd G$, con $\lvert P_2 \rvert =4$, per cui si ha $P_2\cong \mathbb{Z}/4\mathbb{Z}$, oppure $P_2\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$.
+
+		Il primo caso \`e relativo al prodotto $\mathbb{Z}/4\mathbb{Z} \rtimes _\varphi \mathbb{Z}/3\mathbb{Z}$, con
+		\[
+			\varphi : \mathbb{Z}/3\mathbb{Z}\longrightarrow \operatorname{Aut} (\mathbb{Z}/4\mathbb{Z}) \cong \mathbb{Z}/2\mathbb{Z}
+		\] 
+		In questo caso, si pu\`o solo avere $[1]_3 \mapsto \operatorname{Id} $, quindi il prodotto semidiretto diventa il prodotto diretto $\mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z} \cong \mathbb{Z}/12\mathbb{Z}$.
+
+		Nel secondo caso, invece, si ha $(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z})\rtimes _\varphi  \mathbb{Z}/3\mathbb{Z}$, con
+		\[
+		\varphi :\mathbb{Z}/3\mathbb{Z} \longrightarrow \operatorname{Aut} (\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z})\cong S_3
+		\] 
+		Allora si pu\`o mappare $[1]_3\mapsto \operatorname{Id} $, per avere il prodotto diretto 
+		\[
+		\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/6\mathbb{Z}
+		\] 
+		oppure si pu\`o mappare $[1]_3$ in qualunque altro elemento, il cui ordine divida $3$, cio\`e uno dei due $3$-cicli in questo caso, per cui si hanno altre due possibilit\`a per $\varphi ([1]_3)$.
+		In realt\`a, si vede che queste due possibilit\`a portano a due prodotti semidiretti che originano gruppi isomorfi (come nel caso dei gruppi di ordine $pq$).
+
+		Si nota, infine, che 
+		\[
+		G = (\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z})\rtimes _\varphi \mathbb{Z}/3\mathbb{Z} \longhookrightarrow S_4
+		\] 
+		perch\'e $G$ agisce per coniugio sull'insieme $X=\left\{ P_3,P_3',P_3'',P_3''' \right\} $ dei suoi quattro $3$-Sylow, pertanto si ha l'azione $\phi :G \longrightarrow S(X) \cong S_4$, con $\operatorname{Ker} \phi  = \left\{ \operatorname{Id}  \right\} $.
+		Allora \`e possibile dimostrare che $G\cong A_4$, cio\`e al gruppo alternante di $4$ elementi.
+	\item Caso $G \cong P_3 \rtimes _\varphi  P_2$.
+
+		In questo caso, si ha $P_3 \lhd G$.
+		Come prima, essendo che $|P_2| = 4$, per il teorema di struttura, si ha:
+		\[
+		P_2\cong \begin{cases}
+			\mathbb{Z} / 4 \mathbb{Z}\\
+			\mathbb{Z} / 2\mathbb{Z} \times  \mathbb{Z} / 2\mathbb{Z}
+		\end{cases}
+		\hspace{.5cm} \text{ e } \hspace{.5cm} P_3\cong \mathbb{Z}/3\mathbb{Z}
+		\] 
+		Il primo caso possibile \`e il prodotto $\mathbb{Z} / 3\mathbb{Z} \rtimes _\varphi \mathbb{Z}/ 4 \mathbb{Z}$, con $\varphi : \mathbb{Z}/ 4\mathbb{Z} \longmapsto \operatorname{Aut} (\mathbb{Z}/3\mathbb{Z})\cong \mathbb{Z} / 2\mathbb{Z}$, per cui $[1]_4 \longmapsto \operatorname{Id} , -\operatorname{Id}$; se $[1]_4 \mapsto \operatorname{Id} $, si ha il prodotto diretto $\mathbb{Z} / 3\mathbb{Z} \times \mathbb{Z} / 4\mathbb{Z} \cong \mathbb{Z}/12\mathbb{Z}$, altrimenti si ha il gruppo risultante da $\mathbb{Z}/ 3\mathbb{Z}\rtimes _\varphi \mathbb{Z}/4\mathbb{Z}$.
+
+		Considerando, ora, il caso in cui $P_2 \cong \mathbb{Z} /2 \mathbb{Z} \times  \mathbb{Z}/2\mathbb{Z}$, allora si considera il prodotto semidiretto con 
+		\[
+		\varphi : \mathbb{Z} / 2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \longrightarrow \operatorname{Aut} (\mathbb{Z}/3\mathbb{Z}) \cong \mathbb{Z}/2\mathbb{Z}
+		\] 
+		Mappando gli elementi di $\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$ nell'identit\`a di $\operatorname{Aut} (\mathbb{Z}/3\mathbb{Z})$, si avrebbe il prodotto diretto $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$.
+
+		Per l'altro caso, si nota che in $\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$, si hanno due elementi di ordine $2$ che vanno in $-\operatorname{Id} $ e un altro elemento di ordine $2$ che va in $\operatorname{Id} $\footnote{Questo \`e dovuto al fatto che, escludendo di mandare entrambi gli elementi dell'insieme generatore in $\operatorname{Id} $, che corrisponderebbe al caso del prodotto diretto, si trova che quando uno dei due generatori va in $-\operatorname{Id} $ e l'altro va in $\operatorname{Id} $, allora il terzo elemento di ordine $2$ va in $-\operatorname{Id} $, mentre se entrambi vanno in $-\operatorname{Id} $, il terzo va in $\operatorname{Id} $.}; in questo modo, si costruiscono tre prodotti semidiretti che originano gruppi isomorfi tra loro.
+Assumendo, senza perdita di generalit\`a, che 
+\[
+\varphi _x = \operatorname{Id} \hspace{1cm} \varphi _y = -\operatorname{Id} \hspace{1cm} \varphi _{xy} = - \operatorname{Id} 
+\] 
+con $\langle x \rangle\times \langle y \rangle\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$ e $\langle z \rangle\cong \mathbb{Z}/3\mathbb{Z}$, allora:
+\[
+\varphi _x (z) = x z x^{-1} = \operatorname{Id} (z) = z 
+\] 
+cio\`e $x $ e $z$ commutano.
+Similmente
+\[
+\varphi _y (z) =yzy^{-1} =- \operatorname{Id} (z) = - z
+\] 
+A questo punto, si pu\`o concludere che il sottogruppo generato da $y $ e $z$ soddisfa la seguente presentazione:
+\[
+\langle y,z  \mid y^2 = z^3 = 1 , \ yzy^{-1} = z^{-1}\rangle
+\] 
+cio\`e \`e isomorfo a $D_3$.
+Infine, visto che $x$ commuta sia con $y$, che con $z$, si ha il prodotto diretto tra $\langle x \rangle \cong \mathbb{Z}/2\mathbb{Z}$ e $\langle y,z \rangle\cong D_3$, cio\`e:
+\[
+\mathbb{Z}/2\mathbb{Z}\times D_3 \cong D_6
+\] 
+\end{itemize}
+In questo modo, si sono classificati tutti i gruppi di ordine $12$, che sono:
+\[
+\mathbb{Z}/12\mathbb{Z} \hspace{.5cm} \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/6\mathbb{Z} \hspace{.5cm} A_4 \hspace{.5cm} \mathbb{Z}/3\mathbb{Z} \rtimes _\varphi \mathbb{Z}/4\mathbb{Z} \hspace{.5cm} D_6
+\] 
 
 \subsection{I quaternioni}
 
@@ -1956,9 +2058,58 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 
 \newpage
 \subsection{Esercizi e complementi}
+\subsubsection{Utilizzo delle varie azioni di gruppo}
+\begin{enumerate}
+  \item \textbf{Azione su classi laterali (traslazione a sinistra/destra)}  
+  Definizione: \(g \cdot (xH) = (gx)H\).  
+  \begin{itemize}
+    \item Si usa quando compare l’indice \([G:H]\).  
+    \item Induce un omomorfismo \(G \to S_{[G:H]}\).  
+    \item Il nucleo è il \emph{core} di \(H\): \(\bigcap_{g \in G} gHg^{-1}\).  
+    \item Risultati tipici: un sottogruppo di indice primo (o il più piccolo primo che divide \(|G|\)) è normale.
+  \end{itemize}
+
+  \item \textbf{Azione per coniugio su elementi del gruppo}  
+  Definizione: \(g \cdot x = gxg^{-1}\).  
+  \begin{itemize}
+    \item Si usa per studiare centro, classi di coniugio, centralizzatori e normalizzatori.  
+    \item Porta alla \emph{class equation}: \(|G| = |Z(G)| + \sum [G:C_G(x)]\).  
+    \item Risultato tipico: il centro di un \(p\)-gruppo è non banale.
+  \end{itemize}
+
+  \item \textbf{Azione per coniugio su sottogruppi}  
+  Definizione: \(g \cdot H = gHg^{-1}\).  
+  \begin{itemize}
+    \item Si usa per studiare la normalità di \(H\).  
+    \item L’orbita di \(H\) è l’insieme delle sue coniugate.  
+    \item Il numero di coniugate divide \([G:H]\).  
+    \item L’intersezione delle coniugate è un sottogruppo normale (il \emph{core}).  
+  \end{itemize}
+
+  \item \textbf{Azione regolare (su se stesso per moltiplicazione)}  
+  Definizione: \(g \cdot x = gx\).  
+  \begin{itemize}
+    \item Ogni gruppo si immerge in \(S_{|G|}\) (Lemma di Cayley).  
+    \item Risultato tipico: ogni gruppo è isomorfo a un sottogruppo di un simmetrico.
+  \end{itemize}
+
+  \item \textbf{Azione su insiemi di sottogruppi o sottostrutture}  
+  Esempi: su sottogruppi di ordine fissato, su \(p\)-sottogruppi, su insiemi di generatori.  
+  \begin{itemize}
+    \item Utile per applicare orbit-stabilizer e contare.  
+    \item Risultati tipici: teoremi di Sylow (numero di \(p\)-sottogruppi congruo a \(1 \pmod p\)).
+  \end{itemize}
+
+  \item \textbf{Azione su strutture esterne} (spazi, radici di polinomi, grafi, ecc.)  
+  \begin{itemize}
+    \item Contesto più avanzato (es. teoria di Galois).  
+    \item Esempio tipico: gruppo di Galois che agisce sulle radici di un polinomio.
+  \end{itemize}
+\end{enumerate}
+
 
 \subsubsection{Complementi di teoria}
-Di seguito, un criterio importante per stabilire se un sottogruppo \`e normale.
+
 \begin{prop}\label{propnlag}
 	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
 	\begin{proof}
