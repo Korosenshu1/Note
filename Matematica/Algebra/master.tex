@@ -2027,17 +2027,170 @@ Infine, visto che $x$ commuta sia con $y$, che con $z$, si ha il prodotto dirett
 \] 
 \end{itemize}
 In questo modo, si sono classificati tutti i gruppi di ordine $12$, che sono:
+\begin{boxenv}[]
 \[
 \mathbb{Z}/12\mathbb{Z} \hspace{.5cm} \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/6\mathbb{Z} \hspace{.5cm} A_4 \hspace{.5cm} \mathbb{Z}/3\mathbb{Z} \rtimes _\varphi \mathbb{Z}/4\mathbb{Z} \hspace{.5cm} D_6
 \] 
+\end{boxenv}
 
 \subsection{I quaternioni}
+\begin{definizione}
+	[Gruppo dei quaternioni]
+Il gruppo dei quaternioni \`e definito tramite la seguente presentazione:
+\begin{equation*}
+	Q_8 = \langle i,j  \mid i^4 = 1 , \ i^2 = j^2 , \ ij = j^3 i  \rangle
+\end{equation*}
+\end{definizione}
+\begin{osservazione}
+Visto che $i^4 = 1$ e che $i^2 = j^2$, allora $j^4 = 1$, per cui $\operatorname{ord}(j)  \mid 4$; considerando anche che
+\[
+\operatorname{ord}(j^2) = \frac{\operatorname{ord}(j) }{(2,\operatorname{ord}(j) )} = \operatorname{ord}(i^2)  = 2 \implies \operatorname{ord}(j) = 4
+\] 
+\end{osservazione}
+\noindent Questo significa che $Q_8$ contiene due gruppi ciclici di ordine $4$, rispettivamente $\langle i \rangle$ e $ \langle j \rangle$, con 
+\[
+\langle i \rangle\cap \langle j \rangle = \left\{ 1 , i^2 = j^2 \right\} 
+\] 
+Dalle regole di presentazione del gruppo, si vede che $Q_8 = \langle i \rangle\langle j \rangle$, visto che una relazione permette di scambiare $i$ con $j$; allora:
+\[
+\lvert Q_8 \rvert  = \lvert \langle i \rangle\langle j \rangle \rvert = \frac{\lvert \langle i \rangle \rvert \lvert \langle j \rangle \rvert }{\lvert \langle i \rangle\cap \langle j \rangle \rvert } = \frac{16}{2}=8
+\] 
+In effetti, gli elementi del gruppo sono:
+\[
+Q_8 = \left\{ 1 ,\ i ,\ i ^2 = j^2 ,\ i^3 ,\ j,\ j^3,\ ij,\ i^3j \right\} 
+\] 
+Dalle relazioni del gruppo, si nota, inoltre, che non \`e abeliano:
+\[
+ij = j^3 i = j^{-1}i\neq ji
+\] 
+\subsubsection{Sottogruppi di $\mathbf{Q_8}$}
+Si vede che $\langle i \rangle, \langle j \rangle\lhd Q_8$, visto che hanno indice $2$.
+\begin{prop}
+	
+Si ha $\langle i^2 \rangle,\langle j^2 \rangle \lhd Q_8$.
+\begin{proof}
+Dalla presentazione del gruppo, si ha $ij=j^3i=j^{-1}i$, ossia $j^{-1}ij=j^{-2}i = j^2 i = i^3=i^{-1}$, quindi $j^{-1}ij = i^{-1}$.
+Ora si pu\`o osservare che:
+\[
+j^{-1}i^2 j = (j^{-1}ij)^2 = i^{-2}=i^2
+\] 
+cio\`e $i^2$ commuta con i generatori $i$ e $j$, quindi commuta con tutto $Q_8$, dunque \`e normale.
+Dalla relazione $i^2 = j^2$ segue che $\langle i^2 \rangle=\langle j^2 \rangle$, quindi si ha anche $\langle j^2 \rangle$.
+\end{proof}
+\end{prop}
+\begin{lemma}
+	Un sottogruppo $H<G$ di ordine $2$ \`e normale se e solo se \`e un sottogruppo di $Z(G)$.
+	\begin{proof}
+		Dato $H = \left\{ e , h \right\} \lhd G$, allora $g H g^{-1}= H , \ \forall g \in G$ per assunzione. 
+		Questo, per\`o, \`e vero se e solo se $ghg^{-1}\in H \iff ghg^{-1}=h \iff gh=hg, \ \forall g \in G$, quindi $h \in Z(G)$, pertanto $H \le  Z(G)$.
+	\end{proof}
+\end{lemma}
+\begin{prop}
+	Si ha $\langle i^2 \rangle = Z(Q_8)$.
+	\begin{proof}
+		Per quanto detto nel lemma precedente, si deve avere $\langle i^2 \rangle \le Z(Q_8)$; inoltre, $Q_8$ \`e un $p$-gruppo non abeliano, essendo $\lvert Q_8 \rvert =2^3$, quindi sicuramente non pu\`o avere centro banale.
+		Le altre possibilit\`a sono:
+		\begin{itemize}
+			\item $\lvert Z(Q_8) \rvert = 2$;
+			\item $\lvert Z(Q_8) \rvert = 4$, ma si avrebbe $Q_8 / Z(Q_8) = 2$, che \`e primo, quindi sarebbe ciclico e, conseguentemente, $Q_8$ abeliano, che \`e assurdo;
+			\item $\lvert Z(Q_8) \rvert = 8$, cio\`e $Z(Q_8) = Q_8$, da cui risulterebbe $Q_8$ abeliano, che \`e assurdo.
+		\end{itemize}
+		L'unica possibilit\`a \`e che $Z(Q_8)$ abbia ordine $2$, quindi coincide con $\langle i ^2\rangle = \langle j^2 \rangle$.
+	\end{proof}
+\end{prop}
 
+\textbf{Prodotto in $\mathbf{Q_8} $.} Convenzionalmente, si definisce $ij =k$; in questo modo, gli elementi del gruppo si possono riscrivere come:
+\[
+Q_8 = \left\{ \pm 1 , \pm i, \pm j, \pm k \right\} 
+\] 
+con $i^2 = -1$, $i^3 = -i$, $j^3 = -j$ e $i^3 j = - ij = - k$.
+	In questo modo, si vede che i prodotti tra gli elementi di $Q_8$ soddisfano il seguente $3$-ciclo:
+	\begin{center}
+		
+	\begin{tikzpicture}[->, >=stealth, thick, node distance=3cm]
+  % Nodi
+  \node (i) at (90:1.25) {$i$};
+  \node (j) at (210:1.25) {$j$};
+  \node (k) at (330:1.25) {$k$};
 
+  % Frecce
+  \draw[bend right=50] (i) to (j);
+  \draw[bend right=50] (j) to (k);
+  \draw[bend right=50] (k) to (i);
+\end{tikzpicture}
+	\end{center}
+Percorrendo il ciclo in senso antiorario, si ha:
+\[
+ij =k \hspace{1cm}jk = i \hspace{1cm}ki = j
+\] 
+In senso orario, invece:
+\[
+ji = -k \hspace{1cm} ik = -j \hspace{1cm} kj = -i
+\] 
+Inoltre, si nota che:
+\[
+k^2 = (ij)^2 = ijij=i^2
+\] 
+Ne segue, quindi, che $\operatorname{ord}(1) = 1$ e $\operatorname{ord}(-1) =2$, mentre l'ordine di $\pm i, \pm j, \pm k$ \`e $4$.
 
+Per motivi di ordine degli elementi, quindi, nonostante $Q_8$ abbia ordine $8$ e non sia abeliano, non si ha un isomorfismo con $D_4$, visto che quest'ultimo ha un solo elemento di ordine $4$.
 
+\textbf{Sottogruppi di $\mathbf{Q_8}$.} 
+Quanto ai sottogruppi di $Q_8$, si vede, intanto, che $\langle -1 \rangle= Z(Q_8)$ ed \`e caratteristico, visto che \`e il centro (oppure si pu\`o concludere osservando che \`e l'unico sottogruppo di ordine $2$).
+Al contrario, $\langle i \rangle$, $\langle j \rangle$ e $\langle k \rangle$ sono sottogruppi di ordine $4$ e, come accennato, sono normali.
+Questo permette di concludere che ogni sottogruppo di $Q_8$ \`e normale.
 
+\textbf{Prodotto semidiretto.} Infine, si osserva che $Q_8$ non pu\`o essere ottenuto come prodotto semidiretto di alcun suo sottogruppo; infatti, $\forall H_1,H_2<Q_8$, si ha $H_1\cap H_2 \neq \left\{ 1 \right\} $ perch\'e l'intersezione contiene sempre anche $-1$.
+\subsubsection{Classificazione dei gruppi di ordine 8}
+Si considera $\lvert G \rvert  = 8 = 2^3$.
+Si distingue, anzitutto, il caso in cui $G$ risulta abeliano; in questo caso, infatti, si pu\`o fare uso del teorema di struttura per concludere le varie possibilit\`a:
+\[
+\mathbb{Z}/8\mathbb{Z} \hspace{1cm} \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}\hspace{1cm}\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}
+\] 
+Considerando, adesso, il caso in cui $G$ non sia abeliano, si nota che $G$ deve contenere almeno un elemento di ordine $4$; infatti, se contenesse solo elementi di ordine $2$, sarebbe isomorfo a $(\mathbb{Z}/2\mathbb{Z})^3$, che \`e abeliano.
+Sia, dunque, $a \in G $ tale che $\operatorname{ord}(a) = 4$.
+Visto che $\langle a \rangle$ ha indice $2$ in $G$, si ha $\langle a \rangle\lhd G$ e 
+\[
+	\faktor{G}{\langle a \rangle} = \left\{ \langle a \rangle, b \langle a \rangle \right\} 
+\] 
+con $b \in G \setminus \langle a \rangle$.
+Quanto all'elemento $b\langle a \rangle \in G / \langle a \rangle$, si nota che $b^2 \langle a \rangle = \langle a \rangle$, altrimenti si avrebbe $b^2 \langle a \rangle= b\langle a \rangle\implies b\langle a \rangle = \langle a \rangle$, che \`e assurdo.
+Dunque:
+\[
+b^2 \langle a \rangle = \langle a \rangle\implies b^2 \in \langle a \rangle = \left\{ e , a , a^2 , a^3 \right\} 
+\] 
+per\`o non pu\`o essere $b^2 = a$, oppure $b=a^3$ perch\'e $b$ avrebbe ordine $8$ (quindi $b\in G\Rightarrow G$ abeliano perch\'e generato da $b$), quindi rimangono solamente $b^2 = 1$, oppure $b^2 = a^2$.
 
+\begin{itemize}
+	\item Caso $b^2 = 1$.
+
+		Ricordando che $a^4 = 1$ perch\'e $\operatorname{ord}(a) = 4$ e avendo $b^2 = 1$ per assunzione, il gruppo $G$ \`e composto dai seguenti elementi:
+		\[
+		G = \left\{ 1 , a , a^2 , a^3, b , ba , ba^2 , ba^3 \right\}  = \langle a \rangle\langle b \rangle
+		\] 
+		da cui si vede che $\langle a \rangle$ e $\langle b \rangle$  soddisfano le condizioni per il teorema di decomposizione semidiretta, quindi
+		\[
+			G \cong \langle a \rangle \rtimes_\varphi  \langle b \rangle\cong D_{4} , \ \varphi : \langle b \rangle \longmapsto \operatorname{Aut} (\langle a \rangle)\cong \mathbb{Z}/2\mathbb{Z} 
+		\] 
+		dove $b\mapsto -\operatorname{Id} $, altrimenti si avrebbe uno dei prodotti diretti visti sopra.
+	\item Caso $b^2 = a^2$.
+
+		In questo caso, si ha $a^4 = 1 $ e $b^2 = a^2$
+		Si ha che $bab^{-1}\in \langle a \rangle$, essendo $\langle a \rangle\lhd G$; inoltre, non pu\`o valere $bab^{-1}=1$, altrimenti si avrebbe $a=1$, ma neanche $bab^{-1}=a^2$ perch\'e il coniugio conserva l'ordine degli elementi e nemmeno $bab^{-1}=a$ perch\'e si assunto che $G$ non sia commutativo.
+		Per esclusione, l'unica possibilit\`a \`e $baab^{-1}= a^3$, cio\`e $ba= a^3 b$, per cui $G$ soddisfa la presentazione del gruppo dei quaternioni e, dunque:
+		\[
+		G \cong Q_8
+		\] 
+		dove l'isomorfismo mappa $a \mapsto i$ e $b\mapsto j$.
+\end{itemize}
+Ricapitolando, un gruppo di ordine $8$ pu\`o uno fra i seguenti:
+\begin{boxenv}[]
+\[
+\mathbb{Z}/8\mathbb{Z} \hspace{1cm} \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \hspace{1cm} (\mathbb{Z}/2\mathbb{Z})^3 \hspace{1cm} D_4 \hspace{1cm}Q_8
+\] 
+\end{boxenv}
+
+\subsubsection{Classificazione dei gruppi di ordine 30}
 
 
 
@@ -2207,6 +2360,50 @@ N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in 
 \begin{osservazione}
 	Si nota che il coniugio non cambia la forma della permutazione, quindi l'equazione $\tau \rho \tau ^{-1} = \rho ^k$ ha soluzione se e solo se $k$ \`e coprimo con $\operatorname{ord}(\rho ) $.
 \end{osservazione}
+
+\begin{esercizio}
+Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
+\begin{svolgimento}
+	Per il teorema di Cayley, si conclude immediatamente che $n\le 8$; inoltre, per il teorema di Lagrange, si deve avere $n \ge 4$ perch\'e $\lvert S_n \rvert  = n!$ e l'immagine di $Q_8$ attraverso l'immersione deve avere ancora ordine $8$, per cui Lagrange implica che $8  \mid  n!$, cosa che si verifica unicamente da $n = 4$.
+	In questo modo, si \`e ridotto il problema a considerare le seguenti cinque possibilit\`a: $S_4,S_5,S_6,S_7,S_8$.
+	\begin{itemize}
+		\item Caso $S_4$.
+
+			Se $Q_8$ si immergesse in $S_4$, con $\lvert S_4 \rvert =2^3 \cdot 3$, sarebbe un suo $2$-Sylow, per\`o si sa che $D_n \hookrightarrow S_n , \ \forall n$, quindi $D_4$ sarebbe un $2$-Sylow di $S_4$.
+			Per i teoremi di Sylow, si sa che ciascuna coppia di gruppi di Sylow deve essere coniugata, ma $Q_8$ e $D_4$ non lo sono, perci\`o $Q_8$ non si pu\`o immergere in $S_4$.
+		\item Caso $S_5$.
+
+			Si procede analogamente al caso precedente.
+			Anche nel caso di $S_5$, $Q_8$ sarebbe un suo $2$-Sylow, ma visto che $D_4 \subset S_4 \subset S_5$, significa che i $2$-Sylow di $S_4$ sono anche i $2$-Sylow di $S_5$ (cio\`e sono collegati tramite isomorfismo), quindi, per le stesse ragioni di prima, $Q_8$ non si pu\`o immergere in $S_5$.
+		\item Caso $S_6$.
+
+			In questo caso, $\lvert S_6 \rvert = 2^4 \cdot 3^2 \cdot 5$.
+			Se fosse $Q_8\hookrightarrow S_6$, si dovrebbe avere 
+			\[
+			i\longmapsto \sigma  \hspace{1cm} j \longmapsto \rho  \hspace{1cm}k \longmapsto \sigma \rho  = \eta
+			\] 
+			con $\operatorname{ord}(\sigma ) =\operatorname{ord}(\rho ) =4$ e $\sigma ^2 = \rho ^2 = \eta^2$, dove $\operatorname{ord}(\sigma ^2) =\operatorname{ord}(\rho ^2) = \operatorname{ord}(\eta^2) = 2$.
+			Si nota che le permutazioni di ordine $4$ in $S_6$ possono soltanto essere $4$-cicli, oppure $4$-cicli uniti a $2$-cicli, mentre le permutazioni di ordine $2$ sono prodotto di trasposizioni (al massimo tre, essendo in $S_6$).
+	\end{itemize}
+\end{svolgimento}
+\end{esercizio}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage

@@ -432,6 +432,7 @@ INPUT /usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromandemi10-regular.luc
 OUTPUT master.toc
 INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
 INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-bold.luc
@@ -492,7 +493,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromandemi10-regular.luc
 INPUT ./master.aux
 INPUT ./master.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
