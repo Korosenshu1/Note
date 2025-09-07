@@ -146,7 +146,7 @@ title=#1
 %Titlesec
 \titleformat{\section}
 {\fontsize{20}{20}\scshape}
-{\normalfont\color{lightgray}{\fontsize{80}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
+{\normalfont\color{gray}{\fontsize{80}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
 {0.7em}
 {}
 \titlespacing*{\section}{0pt}{*2}{1cm}
@@ -2226,22 +2226,64 @@ Nel primo caso, per il teorema di struttura, si ha la seguente, unica, possibili
 \[
 G \cong \mathbb{Z}/2\mathbb{Z}\times  \mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/5\mathbb{Z} \cong \mathbb{Z}/30\mathbb{Z}
 \] 
-Nel caso in cui $G$ non sia abeliano, invece, \ldots
+Ora si considera il caso in cui $G$ non sia abeliano.
+Si nota che $G$ deve contenere un sottogruppo di ordine $15$; infatti, dati un suo $3$-Sylow $P_3$ e un suo $5$-Sylow $P_5$, almeno uno fra questi due deve avere $n_p =1$, quindi essere normale.
+Prima di dimostrare questo, si osserva che se uno di questi due \`e normale, sia questo $P_5$ senza perdita di generalit\`a, si ha $P_3P_5=P_5P_3$, per cui $P_3P_5 < G$; inoltre, avendo questi due intersezione nulla, visto che i rispettivi ordini sono coprimi, si ha 
+\[
+\lvert P_3P_5 \rvert = \frac{\lvert P_3 \rvert \lvert P_5 \rvert }{\lvert P_3\cap P_5 \rvert } = \lvert P_3 \rvert \lvert P_5 \rvert =15
+\] 
+Ora si dimostra la proposizione anticipata, che far\`a riferimento al caso di gruppi non abeliani perch\'e il caso abeliano \`e ovvio: $\mathbb{Z}/15\mathbb{Z}$ \`e un sottogruppo di $G$.
+\begin{prop}
+	Sia $G$ un gruppo di ordine $30$ non abeliano; allora $G$ contiene un sottogruppo di ordine $15$.
+	\begin{proof}
+		\`E sufficiente mostrare che uno fra $P_3$ o $P_5$ \`e normale perch\'e il discorso fatto sopra risulti coerente.
+		Per l'ultimo teorema di Sylow, si sa che $n_3 \equiv 1 \pmod{3} $ e $n_3  \mid 10$, quindi $n_3 \in \left\{ 1,10 \right\} $, mentre $n_5 \equiv 1 \pmod{5} $ e $n_5  \mid 6$, quindi $n_5 \in \left\{ 1,6 \right\} $.
 
+		Ammettendo che entrambi siano maggiori di $1$, si avrebbero un totale di dieci $3$-Sylow e sei $5$-Sylow, per un totale di $45$ elementi distinti, un numero ben maggiore dell'ordine di $G$.
+		Questo significa che almeno uno dei due deve essere normale, da cui deriva la tesi.
+	\end{proof}
+\end{prop}
+\noindent Si nota, inoltre, che questo gruppo di ordine $15$ \`e un gruppo di ordine $pq$, con $p \nmid q-1$, pertanto \`e isomorfo a $\mathbb{Z}/15\mathbb{Z}$ ed \`e ciclico; per altro, avendo indice $2$, \`e anche normale.
 
+Per Cauchy, $G$ contiene un elemento di ordine $2$ che \`e, dunque, isomorfo a $\mathbb{Z}/2\mathbb{Z}$; questi due sottogruppi soddisfano le ipotesi di decomposizione semidiretta, permettendo di scrivere che:
+\[
+G \cong \mathbb{Z}/15\mathbb{Z} \rtimes _\varphi  \mathbb{Z}/2\mathbb{Z}
+\] 
+con
+\[
+\varphi :\mathbb{Z}/2\mathbb{Z} \longrightarrow \operatorname{Aut} (\mathbb{Z}/15\mathbb{Z}) \cong (\mathbb{Z}/15\mathbb{Z})^*\cong (\mathbb{Z}/3\mathbb{Z})^* \times (\mathbb{Z}/5\mathbb{Z})^*\cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/4\mathbb{Z}
+\] 
+Quindi $[1]_2\mapsto \varphi _y:\mathbb{Z}/15\mathbb{Z}\longrightarrow \mathbb{Z}/15\mathbb{Z} : x\longmapsto x^{l}$, in notazione moltiplicativa. 
+Deve risultare $\operatorname{ord}(\varphi _y)  \mid 2$, quindi ci sono due possibilit\`a: o $\varphi _y = \operatorname{Id} $ (cio\`e $l=1$, oppure $\varphi _y^2 = \operatorname{Id} $, che corrisponde a $\varphi ^2_y (x) = (x^l)^l= x^{l^2} \stackrel{!}{=} x$, da cui, essendo $x$ un generatore di $\mathbb{Z}/15\mathbb{Z}$, deve risultare 
+\[
+l^2 \equiv 1 \pmod{15} \implies l \equiv \pm 1, \ \pm 4 \pmod{15} 
+\] 
+Se $l=1$, si ha il prodotto diretto gi\`a trovato sopra, mentre negli altri tre casi si hanno tre gruppi non isomorfi tra loro.
+\begin{itemize}
+	\item Caso $l=-1$.
 
+		In questo caso, si nota che $\varphi _y(x) = x^{-1}$, che \`e equivalente a richiedere $yxy^{-1} = x^{-1}$, quindi $\mathbb{Z}/15\mathbb{Z}\rtimes _\varphi \mathbb{Z}/2\mathbb{Z}\cong D_{15}$.
+	\item Caso $l = 4$.
 
+		Si trova che l'azione data dal coniugio soddisfa $yxy^{-1}=x^4$.
+		Se $x$ \`e un elemento di ordine $3$, allora si ha $x = x^4$, pertanto si conclude che $y$ commuta con tutti gli elementi di ordine $3$, il che significa che l'azione \`e banale solo sul fattore $\mathbb{Z}/3\mathbb{Z}$, il quale risulta normale di conseguenza e, pertanto, si pu\`o portare fuori dal prodotto semidiretto.
+		La parte rimanente soddisfa le stesse condizioni di $D_5$, pertanto, se $l=4$, risulta $G\cong D_5\times \mathbb{Z}/3\mathbb{Z}$.
+	\item Caso $l=-4$.
 
-
-
-
-
-
-
-
-
-
-
+		In questo caso, si ottiene che $y$ commuta con $x$ se e solo se $x$ ha ordine $5$, visto che \`e soddisfatta la relazione $yxy^{-1}=x^{-4}$.
+		Come nel caso precedente, questo significa che $\mathbb{Z}/5\mathbb{Z}$ \`e invariante sotto $\varphi _y$, quindi \`e normale e pu\`o essere portato fuori dal prodotto semidiretto, lasciando un gruppo che soddisfa le relazioni di $D_3$.
+In questo caso, si ha $G \cong D_3 \times \mathbb{Z}/5\mathbb{Z}$.
+\end{itemize}
+I gruppi trovati non sono isomorfi anche per via del fatto che hanno centri diversi:
+\[
+Z(D_{15}) = \langle Id \rangle \hspace{.5cm}Z(D_5\times \mathbb{Z}/3\mathbb{Z}) = Z(D_5) \times Z(\mathbb{Z}/3\mathbb{Z}) \cong \mathbb{Z}/3\mathbb{Z} \hspace{.5cm}Z(D_3\times \mathbb{Z}/5\mathbb{Z}) \cong \mathbb{Z}/5\mathbb{Z}
+\] 
+Riassumendo, i gruppi di ordine $30$ sono i seguenti:
+\begin{boxenv}[]
+\[
+\mathbb{Z}/30\mathbb{Z} \hspace{1cm}D_{15}\hspace{1cm}D_5 \times \mathbb{Z}/3\mathbb{Z} \hspace{1cm}D_3 \times \mathbb{Z}/5\mathbb{Z}
+\] 
+\end{boxenv}
 
 \newpage
 \subsection{Complementi di teoria}
