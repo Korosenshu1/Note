@@ -1,7 +1,7 @@
 %! TEX program = lualatex
-\documentclass[11pt]{scrartcl}
+\documentclass[12pt]{scrartcl}
 % Packages
-\usepackage[margin=1.25in]{geometry}
+%\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
 \usepackage{amsbsy} % Bold math symbols
 \makeindex
@@ -41,6 +41,11 @@
 \usepackage[perpage]{footmisc}
 \usepackage{faktor}
 \usepackage{tikz-cd}
+\definecolor{mastercolor}{HTML}{5666a8}
+\definecolor{nred}{HTML}{bf0040}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Algebra}
@@ -48,32 +53,50 @@
 \date{}
 
 
-\definecolor{mastercolor}{HTML}{5666a8}
 
 
-\newtheoremstyle{style1}% name of the style to be used
+\newtheoremstyle{style}% name of the style to be used
 {5pt}% measure of space to leave above the theorem. E.g.: 3pt
 {5pt}% measure of space to leave below the theorem. E.g.: 3pt
 {\normalfont}% name of font to use in the body of the theorem
 %{15pt}% measure of space to indent
-{\parindent}% measure of space to indent
-{\color{mastercolor}\sffamily\scshape\bfseries}% name of head font
+{0pt}% measure of space to indent
+{\noindent\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
 
-\theoremstyle{style1}
-\newtheorem{osservazione}{Osservazione}[section]
-\newtheorem{teorema}{Teorema}[section]
-\newtheorem{prop}{Proposizione}[section]
-\newtheorem{corollario}{Corollario}[teorema]
-\newtheorem{lemma}{Lemma}[teorema]
-\newtheorem{definizione}{Definizione}[section]
-\newtheorem{notazione}{Notazione}[section]
+
+\theoremstyle{style}
 \newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
 \newtheorem{esercizio}{Esercizio}[section]
 
+
+
+
+
+
+
+\tcolorboxenvironment{definizione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{lemma}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{teorema}{enhanced,blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{corollario}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{prop}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esercizio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+
 \newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
 
 %% Generic box
 \newtcolorbox{eqbox}[1][]
@@ -122,8 +145,8 @@ title=#1
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{18}{20}\scshape}
-{\normalfont\color{mastercolor}{\fontsize{18}{20}\selectfont\thesection}}
+{\fontsize{20}{20}\scshape}
+{\normalfont\color{lightgray}{\fontsize{80}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
 {0.7em}
 {}
 \titlespacing*{\section}{0pt}{*2}{1cm}
@@ -133,11 +156,11 @@ title=#1
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{86, 102, 168}}
 
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{mastercolor}\normalfont\S\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\centering\fontsize{15}{20}\bfseries}{\color{nred}\normalfont\S\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\color{mastercolor}\normalfont\S\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -187,6 +210,7 @@ title=#1
 
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 \begin{document}
+\pagestyle{plain}
 \maketitle
 \vspace{9cm}
 \begin{figure}[h!]
@@ -195,8 +219,10 @@ title=#1
 \end{figure}
 
 \newpage
+\pagestyle{plain}
 \tableofcontents 
 \newpage
+\pagestyle{fancy}
 \section{Teoria dei gruppi}
 \subsection{Il gruppo degli automorfismi}
 \begin{lemma}
@@ -1114,7 +1140,11 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 	\begin{proof}
 		\`E un omomorfismo perch\'e:
 		\[
-	\operatorname{sgn} (\sigma \tau )= \prod_{1\le i<j\le n} \frac{\sigma \tau (i)-\sigma \tau (j)}{i-j} =\prod_{1\le i<j\le n} \frac{\sigma \tau (i) - \sigma \tau (j)}{\tau (i) -\tau (j)}\prod_{1\le i<j\le n} \frac{\tau (i) - \tau (j)}{i - j} = \operatorname{sgn} (\sigma) \operatorname{sgn} (\tau)
+			\begin{split}
+				\operatorname{sgn} (\sigma \tau )&= \prod_{1\le i<j\le n} \frac{\sigma \tau (i)-\sigma \tau (j)}{i-j} \\
+								 &=\prod_{1\le i<j\le n} \frac{\sigma \tau (i) - \sigma \tau (j)}{\tau (i) -\tau (j)}\prod_{1\le i<j\le n} \frac{\tau (i) - \tau (j)}{i - j}\\
+								 &= \operatorname{sgn} (\sigma) \operatorname{sgn} (\tau)
+			\end{split}
 		\] 
 		dove si \`e moltiplicato sopra e sotto per $\tau (i)-\tau (j)$ e si sono separate le produttorie\footnote{La prima produttoria restituisce il $\operatorname{sgn} \sigma $ perch\'e al massimo applicare prima $\tau $ altera l'ordine dell'insieme, quindi non \`e garantito che $\tau (i)< \tau (j)$ se $i<j$; questo, per\`o, non importa perch\'e se $\tau (i)>\tau (j)$, allora l'espressione si pu\`o riscrivere come $\frac{\sigma \tau (j) - \sigma \tau (i)}{\tau (j)-\tau (i)}$. Prendendo $a=\tau (i)$ e $b=\tau (j)$, si potrebbe anche riscrivere la produttoria come $\prod_{1\le a<b\le n} \frac{\sigma (a)-\sigma (b)}{a-b}$.}.
 
@@ -2063,7 +2093,7 @@ Dalle relazioni del gruppo, si nota, inoltre, che non \`e abeliano:
 \[
 ij = j^3 i = j^{-1}i\neq ji
 \] 
-\subsubsection{Sottogruppi di $\mathbf{Q_8}$}
+\subsubsection{Sottogruppi di $Q_8$}
 Si vede che $\langle i \rangle, \langle j \rangle\lhd Q_8$, visto che hanno indice $2$.
 \begin{prop}
 	
@@ -2191,8 +2221,12 @@ Ricapitolando, un gruppo di ordine $8$ pu\`o uno fra i seguenti:
 \end{boxenv}
 
 \subsubsection{Classificazione dei gruppi di ordine 30}
-
-
+Sia $\lvert G \rvert  = 30 = 2\cdot 3\cdot 5$ e, nuovamente, si distinguono i due casi in cui $G$ \`e abeliano, oppure non lo \`e.
+Nel primo caso, per il teorema di struttura, si ha la seguente, unica, possibilit\`a:
+\[
+G \cong \mathbb{Z}/2\mathbb{Z}\times  \mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/5\mathbb{Z} \cong \mathbb{Z}/30\mathbb{Z}
+\] 
+Nel caso in cui $G$ non sia abeliano, invece, \ldots
 
 
 
@@ -2210,7 +2244,60 @@ Ricapitolando, un gruppo di ordine $8$ pu\`o uno fra i seguenti:
 
 
 \newpage
-\subsection{Esercizi e complementi}
+\subsection{Complementi di teoria}
+\begin{prop}[Quadrato di permutazioni]\label{qperm}
+	Una permutazione \`e un quadrato se e solo se i cicli di lunghezza pari compaiono a coppie.
+	\begin{proof}
+		Si nota che se $\eta$ \`e un $k$-ciclo, con $k$ dispari, allora si pu\`o scrivere
+		\[
+		\eta = \eta^{k+1} = \left(\eta^{\frac{k+1}{2}}\right) ^2
+		\] 
+		cio\`e un $k$-ciclo con $k$ dispari \`e il quadrato di un altro $k$-ciclo.
+		Nel caso in cui $k$ sia pari, invece, allora \`e verificata la relazione
+		\[
+			(a_1 \ b_1 \ \ldots \ a_k\ b_k)^2 = (a_1\ \ldots\ a_k) (b_1\ \ldots \ b_k)
+		\] 
+	cio\`e il risultato del quadrato di una permutazione restituisce una decomposizione in due cicli di lunghezza pari disgiunti.	
+
+	A partire da questi risultati, il caso di una permutazione generica $x^2= (\eta_1 \ \ldots\ \eta_s)^2=\eta_1^2 \cdots \eta_s^2$ \`e dimostrato di conseguenza: la decomposizione di questo quadrato sar\`a formata da cicli di lunghezza dispari e da coppie di cicli di lunghezza pari per quanto detto sopra.
+\end{proof}
+\end{prop}
+\begin{esempio}
+Si considera il caso di una coppia di $3$-cicli in $S_6$; questa si pu\`o scrivere sia come il quadrato di un ciclo di lunghezza pari, sia come il quadrato di due cicli di lunghezza dispari:
+\[
+	(123)(456) = (142536)^2 = ((132)(465))^2
+\] 
+dove la prima uguaglianza \`e dimostrabile per conto diretto: il prodotto di due cicli $(a_1\ \ldots\ a_m)(b_1\ \ldots\ b_m)$ di lunghezza dispari $m$ si pu\`o sempre scrivere come il quadrato di un ciclo di lunghezza $2m$ $(a_1\ b_1\ \ldots\ a_m\ b_m)$.
+
+Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il quadrato di un $4$-ciclo:
+\[
+	(12)(34) = (1423)^2 = (1324)^2
+\] 
+
+\end{esempio}
+\begin{prop}\label{propnlag}
+	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
+	\begin{proof}
+		L'insieme delle classi laterali \`e $G / H = \left\{ g_1H , \ldots, g_p H \right\} $, visto che $[G:H] = p$.
+		Si definisce l'azione $\gamma: G \to S(G / H)$ con $\gamma(g) = \pi _g$ e $\pi_G (g_i H) = gg_i H$, che consiste nella permutazione di tutte le classi di equivalenza.
+		Il nucleo di questo omomorfismo (\`e facile vedere che \`e un omomorfismo perch\'e consiste nella moltiplicazione per $g$) \`e dato da:
+		\[
+			\operatorname{Ker} \gamma = \left\{ g \in  G  \mid \forall i, \ g g_{i} H = g_i H \right\} = \left\{ g \in  G  \mid g \in \bigcap _{x \in G} \operatorname{Stab} (xH) \right\} 
+		\] 
+		Si nota che $g \in \operatorname{Stab} (xH) \Rightarrow gx H = xH \Rightarrow x^{-1}gx H = H$, che \`e vero se e solo se $x^{-1}g x \in H$, ossia $g \in  x H x^{-1}$.
+		Pertanto, il nucleo si pu\`o scrivere come:
+		\[
+		\operatorname{Ker} \gamma = \left\{ g \in  G  \mid g \in \bigcap_{x \in  G}  xH x^{-1}  \right\} \overset{\text{def}}{=}H_G
+		\] 
+		L'azione definita sopra consiste nella permutazione delle classi di equivalenza: ogni $\pi_g$ moltiplica ciascuna classe per $g$, rimappando ciascuna classe in un'altra (in modo univoco, visto che \`e un automorfismo). 
+		Allora $\gamma : G \to \mathcal{S} _p (G / H) \subset S(G/H)$, con $\mathcal{S}_p (G / H) \cong S_p$; qui $\mathcal{S}_p(G / H) $ \`e l'insieme degli automorfismi $\pi_g$, mentre $S_p$ \`e l'insieme delle permutazioni su $\left\{ 1, \ldots, p  \right\} $.
+
+		Per il I teorema di omomorfismo, $G / H_G \longrightarrow S_p$ \`e iniettiva\footnote{Non \`e detto che sia suriettiva, in generale sar\`a un isomorfismo se ristretta a un sottoinsieme di $S_p$.}, cio\`e $G / H_G \hookrightarrow S_p$; pertanto $\lvert G / H \rvert  \mid p !$ per Lagrange.
+		Allora ci sono due possibilit\`a: o $\lvert G / H \rvert  =1 $, oppure $\lvert G / H \rvert = p$, visto che $\lvert G / H \rvert $ deve dividere sia $n$ (che ha come primo pi\`u piccolo $p$), che $p!$ (che ha come primo pi\`u grande $p$).
+
+		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
+	\end{proof}
+\end{prop}
 \subsubsection{Utilizzo delle varie azioni di gruppo}
 \begin{enumerate}
   \item \textbf{Azione su classi laterali (traslazione a sinistra/destra)}  
@@ -2261,36 +2348,12 @@ Ricapitolando, un gruppo di ordine $8$ pu\`o uno fra i seguenti:
 \end{enumerate}
 
 
-\subsubsection{Complementi di teoria}
-
-\begin{prop}\label{propnlag}
-	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
-	\begin{proof}
-		L'insieme delle classi laterali \`e $G / H = \left\{ g_1H , \ldots, g_p H \right\} $, visto che $[G:H] = p$.
-		Si definisce l'azione $\gamma: G \to S(G / H)$ con $\gamma(g) = \pi _g$ e $\pi_G (g_i H) = gg_i H$, che consiste nella permutazione di tutte le classi di equivalenza.
-		Il nucleo di questo omomorfismo (\`e facile vedere che \`e un omomorfismo perch\'e consiste nella moltiplicazione per $g$) \`e dato da:
-		\[
-			\operatorname{Ker} \gamma = \left\{ g \in  G  \mid \forall i, \ g g_{i} H = g_i H \right\} = \left\{ g \in  G  \mid g \in \bigcap _{x \in G} \operatorname{Stab} (xH) \right\} 
-		\] 
-		Si nota che $g \in \operatorname{Stab} (xH) \Rightarrow gx H = xH \Rightarrow x^{-1}gx H = H$, che \`e vero se e solo se $x^{-1}g x \in H$, ossia $g \in  x H x^{-1}$.
-		Pertanto, il nucleo si pu\`o scrivere come:
-		\[
-		\operatorname{Ker} \gamma = \left\{ g \in  G  \mid g \in \bigcap_{x \in  G}  xH x^{-1}  \right\} \overset{\text{def}}{=}H_G
-		\] 
-		L'azione definita sopra consiste nella permutazione delle classi di equivalenza: ogni $\pi_g$ moltiplica ciascuna classe per $g$, rimappando ciascuna classe in un'altra (in modo univoco, visto che \`e un automorfismo). 
-		Allora $\gamma : G \to \mathcal{S} _p (G / H) \subset S(G/H)$, con $\mathcal{S}_p (G / H) \cong S_p$; qui $\mathcal{S}_p(G / H) $ \`e l'insieme degli automorfismi $\pi_g$, mentre $S_p$ \`e l'insieme delle permutazioni su $\left\{ 1, \ldots, p  \right\} $.
-
-		Per il I teorema di omomorfismo, $G / H_G \longrightarrow S_p$ \`e iniettiva\footnote{Non \`e detto che sia suriettiva, in generale sar\`a un isomorfismo se ristretta a un sottoinsieme di $S_p$.}, cio\`e $G / H_G \hookrightarrow S_p$; pertanto $\lvert G / H \rvert  \mid p !$ per Lagrange.
-		Allora ci sono due possibilit\`a: o $\lvert G / H \rvert  =1 $, oppure $\lvert G / H \rvert = p$, visto che $\lvert G / H \rvert $ deve dividere sia $n$ (che ha come primo pi\`u piccolo $p$), che $p!$ (che ha come primo pi\`u grande $p$).
-
-		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
-	\end{proof}
-\end{prop}
 
 
 
 
-\subsubsection{Esercizi}
+
+\subsection{Esercizi}
 \begin{esercizio}
 Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
 \begin{svolgimento}
@@ -2384,6 +2447,48 @@ Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
 			\] 
 			con $\operatorname{ord}(\sigma ) =\operatorname{ord}(\rho ) =4$ e $\sigma ^2 = \rho ^2 = \eta^2$, dove $\operatorname{ord}(\sigma ^2) =\operatorname{ord}(\rho ^2) = \operatorname{ord}(\eta^2) = 2$.
 			Si nota che le permutazioni di ordine $4$ in $S_6$ possono soltanto essere $4$-cicli, oppure $4$-cicli uniti a $2$-cicli, mentre le permutazioni di ordine $2$ sono prodotto di trasposizioni (al massimo tre, essendo in $S_6$).
+
+			Usando la proposizione \ref{qperm}, il fatto che $\sigma ^2 = \rho ^2 =\eta^2$ abbiano ordine $2$, cio\`e sono composte solo da trasposizioni, e che sono quadrati permette di concludere che si scrivono come il prodotto di trasposizioni; essendo in $S_6$, l'unica possibilit\`a \`e che
+			\[
+			\sigma ^2 = \rho ^2 = \eta^2 = (a\ b) ( c \ d)
+			\] 
+			perch\'e, in $S_6$, non esistono due coppie di trasposizioni tutte disgiunte.
+			Ora si risolve $x^2 = (12)(34)$, che restituisce le seguenti possibilit\`a:
+		\[
+		x_1 = (1324) \hspace{1cm}x_2 = (1423) \hspace{1cm} x_3 = (1324)(56) \hspace{1cm} x_4 = (1423)(56)
+		\] 
+		visto che la trasposizione $(56)$ scompare se elevata al quadrato.
+		In questo modo, si vede che le soluzioni possibili sono $4$ in $S_6$, mentre in $Q_8$ se ne avevano $6$ di elementi di ordine $4$ con uguale quadrato.
+	\item Caso $S_7$.
+
+		Come nel caso di $S_5$, i $2$-Sylow di $S_7$ sono isomorfi a quelli di $S_6$, pertanto anche $S_7$ non va bene.
+	\item Caso $S_8$.
+
+		Questo deve essere il caso corretto.
+		Per Cayley, l'immersione $Q_8 \longhookrightarrow S(Q_8)$ \`e realizzata dall'azione di moltiplicazione a sinistra:
+		\[
+		i\longmapsto \varphi _i \hspace{.5cm} \text{ con } \hspace{.5cm} \varphi _i : Q_8 \longrightarrow Q_8 : x \longmapsto ix
+		\] 
+		e lo stesso vale per gli altri elementi di $Q_8$.
+		In particolare, usando la notazione dei cicli, si ha che l'immagine di $\varphi _i$ in $Q_8$ \`e data da:
+		\[
+		\underbracket{(1\ i \ {- 1}\ {- i} )}_{4\text{-ciclo}} (j\ k\ {-j}\ {-k})
+		\] 
+	Infatti, attraverso $\varphi _i$, $1\mapsto i \mapsto -1\mapsto -i\mapsto 1$ e l'analogo avviene sull'insieme $\left\{ \pm j, \pm k \right\} $, i quali formano due cicli disgiunti.
+
+	In maniera del tutto analoga, $\varphi _j(Q_8)$ \`e data da
+	\[
+		(1\ j\ {-1}\ {-j})(k \ i \ {-k} \ {-i})
+	\] 
+	In questo modo, si sono costruiti i cicli di $S_8$ in cui vengono mappati i generatori di $Q_8$; assegnando dei numeri a ciascun elemento di $Q_8$, si possono riscrivere i cicli esposti sopra in una forma pi\`u convenzionale: per l'azione di $\varphi _i$ su $Q_8$, ad esempio, si potrebbe avere
+	\[
+		(1234)(5678)
+	\] 
+	mentre per l'azione di $\varphi _j$, si avrebbe, di conseguenza:
+	\[
+		(1537)(2846)
+	\] 
+	
 	\end{itemize}
 \end{svolgimento}
 \end{esercizio}
