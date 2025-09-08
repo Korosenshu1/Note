@@ -82,8 +82,6 @@
 
 
 
-
-
 \tcolorboxenvironment{definizione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
 \tcolorboxenvironment{lemma}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
 \tcolorboxenvironment{teorema}{enhanced,blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
@@ -92,6 +90,7 @@
 \tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
 \tcolorboxenvironment{esercizio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
 \tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+
 
 \newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
 
@@ -2664,19 +2663,20 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 		\begin{enumerate}[(a).]
 			\item Si sa gi\`a che l'intersezione di sottogruppi \`e un sottogruppo, quindi rimane da mostrare l'assorbimento.
 				Dato $a \in A$ e $x \in I \cap J$, allora $ax \in I$ perch\'e $I$ \`e un ideale, ma $ax \in J$ perch\'e anche $J$ lo \`e, quindi $ax \in I \cap J$.
-			\item Visto che vale la propriet\`a commutativa (si sta sempre assumendo che $A$ sia commutativo con identit\`a), allora dati $x, y \in I+J$ tali che $x = i_1 + j_1$ e $y = i_2+j_2$, allora
+			\item Visto che vale la propriet\`a commutativa (per definizione, gli ideali sono gruppi commutativi rispetto alla somma), allora dati $x, y \in I+J$ tali che $x = i_1 + j_1$ e $y = i_2+j_2$, allora
 				\[
 				x + y = (i_1+i_2)+(j_1+j_2) \in I+J
 				\] 
 				Per l'assorbimento, si nota che $ax = ai_1 + aj_1 = i_1' + j_1'$, visto che $I$ e $J$ sono ideali.
 			\item La chiusura \`e data dal fatto che la somma di due elementi \`e ancora una somma della stessa forma, mentre l'assorbimento a destra e sinistra \`e ovvio.
-			\item Siano $x,y \in \sqrt{I} $, ossia $x^n , y ^m \in I$, per qualche $n,m\in \mathbb{N}$; si nota che:
+			\item Si nota che questo caso \`e valido esclusivamente per $A$ commutativo con identit\`a.
+				Siano $x,y \in \sqrt{I} $, ossia $x^n , y ^m \in I$, per qualche $n,m\in \mathbb{N}$; si nota che:
 				\[
 					(x+y)^{n+m} = \sum_{i=0}^{n+m} \binom{n+m}{i} x^i y^{m+n - i}
 				\] 
 				dove, per ogni $i= 0,\ldots,m+n$, si ha o che $i\ge n$, quindi $x^i \in I$, oppure che $n+m -i \ge m$, quindi $y^{n+m-i } \in I$.
 				Ne segue che tutti i termini di $(x+y)^{n+m} $ stanno in $I$ e, quindi, $x+y \in \sqrt{I} $.
-				Infine, $\forall  a \in A$, $(ax^n) = a^n x^n$ appartiene ad $I$ perch\'e $x^n \in I$ e vale la propriet\`a di assorbimento; allora $ax \in \sqrt{I} $.
+				Infine, $\forall  a \in A,\ (ax)^n = a^n x^n \in I$ perch\'e $x^n \in I$ e vale la propriet\`a di assorbimento, quindi $ax \in \sqrt{I} $.
 			\item Siano $x,y \in (I:J)$; allora $(x+y) J = xJ + yJ \implies x+y \in (I:J)$ visto che $xJ \subseteq I$ e $yJ \subseteq I$ per assunzione.
 				Infine, $\forall  \in A$, si ha $axJ = a(xJ) \subseteq aI \subseteq I \implies ax \in (I:J)$.
 		\end{enumerate}
@@ -2691,7 +2691,8 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 		\[
 		x \cdot 1 = x (i + j) = xi  + xj \in IJ
 		\] 
-		visto che \`e somma di due elementi di $IJ$, il quale \`e un gruppo additivo.
+		visto che \`e somma di due elementi di $IJ$, il quale \`e un gruppo additivo. 
+		Evidentemente, si \`e usata la commutativit\`a del prodotto per scrivere $x i = i x$ in modo da avere un elemento di $I$ per un elemento di $J$.
 	\end{proof}
 \end{prop}
 \begin{definizione}
@@ -2701,9 +2702,9 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 \begin{prop}\label{idprop}
 	Sia $A$ un ideale; allora un suo ideale $I \subset A$ \`e proprio se e solo se $I \cap A^* = \varnothing$.
 	\begin{proof}
-		Sia $I\cap A^* = \varnothing$; visto che $1 \in A^*$ sempre, allora $\exists a \in A : a \not\in I$, per cui $I \subsetneq A$.
+		Se $I\cap A^* = \varnothing$, allora $I$ \`e proprio perch\'e non possiede gli elementi invertibili di $A$.
 
-		Per l'implicazione inversa, sia $I \subsetneq A$ un ideale proprio e sia, per assurdo, $x \in I \cap A^*$; allora $x$ \`e invertibile, quindi $\exists x^{-1} \in A$ tale che $x x^{-1} = 1$, quindi $1= x^{-1} x \in I \Rightarrow 1 \in I \Leftarrow I = A$ per assorbimento, da cui l'assurdo.
+		L'implicazione verso destra si dimostra per controposizione: sia $x \in I\cap A^*$; allora $\exists x^{-1}\in A$ tale per cui $1=x^{-1}x \in I$ per assorbimento, ma $\forall a \in A, \ a = a \cdot 1 \in I$ per assorbimento, quindi $I=A$.
 	\end{proof}
 \end{prop}
 \begin{corollario}
@@ -2782,7 +2783,7 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 	\begin{proof}
 		Per il I teorema di omomorfismo di gruppi, visto che $f$ \`e, in particolare, un omomorfismo di gruppi, si ha l'esistenza e l'unicit\`a di 
 		\[
-		\varphi  : \faktor{A}{I} \to B
+		\varphi  : \faktor{A}{I} \longrightarrow B
 		\] 
 		con $I = \operatorname{Ker} f$.
 		Inoltre, sempre per lo stesso motivo, si sa che tale mappa soddisfa $f = \varphi  \circ \pi$ ed \`e iniettiva, con $\operatorname{Im} \varphi = \operatorname{Im} f$.
@@ -2800,7 +2801,7 @@ La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con 
 	[II teorema di omomorfismo]
 	Siano $A$ un anello, $I\subseteq A$ un suo ideale e sia $R$ un suo sottoanello; allora 
 	\[
-	\frac{R+I}{I}\cong \frac{R}{R\cap I}
+	 \frac{R}{R\cap I}\cong\frac{R+I}{I}
 	\] 
 	\begin{proof}
 		Si considera la proiezione $\pi : A \to A / I$, con $\pi(a) = a + I$; la sua restrizione ad $R$ \`e data da $\pi|_R : R \to A / I$.
@@ -2812,6 +2813,8 @@ La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con 
 			\end{split}
 		\] 
 		da cui, per il I teorema di omomorfismo, si ha la tesi.
+		Si nota che l'immagine della restrizione \`e $R+I$, che \`e il pi\`u piccolo sottoanello generato da $R$ e da $I$, perch\'e il quoziente $R / I$ non \`e, in generale, ben definito; infatti, sarebbe necessario che $I$ fosse un ideale di $R$, ma visto che si sta considerando un sottoanello generico, non \`e detto che $I \subseteq R$. 
+		Se cos\`i fosse, si avrebbe $R + I = R$.
 	\end{proof}
 \end{teorema}
 \begin{teorema}
@@ -2856,7 +2859,7 @@ da cui, per il I teorema di omomorfismo, si ottiene la tesi.
 \end{lemma}
 \begin{teorema}
 	[Teorema di corrispondenza tra ideali]
-	Sia $I \subset A$ un ideale di $A$ anello e sia $\pi_I$ la proiezione al quoziente; allora $\pi_I$ induca una corrispondenza biunivoca tra gli ideali dell'anello quoziente $A / I$ e gli ideali di $A$ che contengono $I$.
+	Sia $I \subset A$ un ideale di $A$ anello e sia $\pi_I$ la proiezione al quoziente; allora $\pi_I$ induce una corrispondenza biunivoca tra gli ideali dell'anello quoziente $A / I$ e gli ideali di $A$ che contengono $I$.
 	\begin{proof}
 		Siano $X = \left\{ J \subseteq A  \mid J \text{ ideale e } I \subseteq J\right\} $ e $Y = \left\{ \mathcal{J} \subseteq A / I  \mid \mathcal{J} \text{ ideale} \right\} $; la corrispondenza biunivoca \`e data dal teorema di corrispondenza tra gruppi. 
 		Rimane da dimostrare che, restringendo tale corrispondenza agli ideali, questa associ un ideale di $A$ ad un ideale di $A / I$ e viceversa.
