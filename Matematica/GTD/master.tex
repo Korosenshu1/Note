@@ -207,7 +207,6 @@ title=#1
 \end{definizione}
 \begin{osservazione}
 La necessit\`a di definire la curva su un aperto, o quantomeno di poter estendere l'intervallo di definizione ad un aperto, deriva dal fatto che, in questo modo, si pu\`o effettivamente parlare di derivata piena anche per gli estremi, potendo trovare, infatti, un aperto che contiene interamente i punti di frontiera dell'intervallo di definizione.
-
 Se non si avesse questa possibilit\`a, nel caso di $\alpha :[a,b] \subset \mathbb{R}\to \mathbb{R}^3$, per esempio, non si potrebbe calcolare la derivata tradizionale in $a$, o $b$, perch\'e si potrebbe solamente calcolare il limite destro o sinistro.
 \end{osservazione}
 \noindent Si nota che, nel caso in cui $I$ non fosse aperto, si estende l'intervallo di definizione ad $A \supset I$ aperto.
@@ -242,7 +241,7 @@ La traccia corrisponde ad una circonferenza nel piano $z=0$, di centro l'origine
 \end{definizione}
 \begin{definizione}
 	[Lunghezza d'arco]
-	Sia $\alpha  : [a,b] \subset \mathbb{R}\to \mathbb{R}^3$ una curva regolare; si definisce \textit{lunghezza d'arco} la funzione
+	Sia $\alpha  : [a,b] \subset \mathbb{R}\to \mathbb{R}^3$ una curva; si definisce \textit{lunghezza d'arco} la funzione
 	\[
 	s :
 	\begin{array}
@@ -267,7 +266,7 @@ Si nota, dunque, che la lunghezza effettiva della curva coincide con
 \begin{equation}
 	\sup_{P \in \mathcal{P}([a,b]) } L(\alpha ,P) = \int_{a} ^b \left\lVert \alpha' (u) \right\rVert du
 \end{equation}
-Si considera, ancora una curva $\alpha :[a,b] \to \mathbb{R}^3$; visto che $s(t) = \int_{a} ^t \left\lVert \alpha '(u) \right\rVert du$, allora $s'(t) = \left\lVert \alpha '(t) \right\rVert >0$.
+Si considera, una curva regolare $\alpha :[a,b] \to \mathbb{R}^3$; visto che $s(t) = \int_{a} ^t \left\lVert \alpha '(u) \right\rVert du$, allora $s'(t) = \left\lVert \alpha '(t) \right\rVert >0$.
 Si pu\`o pensare alla lunghezza d'arco come $s : [a,b] \to [0, L(\alpha )]$, che, essendo monotona perch\'e si \`e appena osservato che $s'(t) > 0$, allora ha anche inversa $t : [0,L(\alpha )]\to [a,b]$.
 \`E, quindi, possibile definire la funzione 
 \begin{equation}
@@ -309,12 +308,12 @@ Si nota che
 da cui $\alpha $ \`e regolare. 
 Restringendola a $[0,+\infty)$, cio\`e considerando $\alpha : [0,+\infty) \to \mathbb{R}^{3} $, si ha:
 \[
-	s(t) = \int_{0} ^t \sqrt{a^2 + b^2 }  du = t(s) \sqrt{a^2 + b^2} \implies t(s) = \frac{s}{\sqrt{a^2} +b^2}
+	s(t) = \int_{0} ^t \sqrt{a^2 + b^2 }  du = t(s) \sqrt{a^2 + b^2} \implies t(s) = \frac{s}{\sqrt{a^2 +b^2}}
 \] 
 quindi:
 \[
 \begin{split}
-		 \beta (s) &= \alpha (t(s)) = a \left(\frac{s}{\sqrt{a^2 + b^2} }\right) \\
+		 \beta (s) &= \alpha (t(s)) = \alpha  \left(\frac{s}{\sqrt{a^2 + b^2} }\right) \\
 	&= \left(a \cos \left(\frac{s}{\sqrt{a^2+b^2} }\right) , a\sin \left(\frac{s}{\sqrt{a^2 + b^2} }\right),\frac{bs}{\sqrt{a^2 + b^2} } \right)
 	\end{split} 
 \] 
@@ -364,7 +363,7 @@ Sia
 \] 
 Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \mathcal{C} $.
 \begin{svolgimento}
-	Si considera, come prima, $y=tx $, da cui $x^3 + x^2(1-t^2) = 0$, da cui si vede che $x = t^2 - 1$ e $y=t^3 -t$, quindi $\alpha (t) = (t^2 - 1, t^3-t,0)$ ({\color{red} da controllare}).
+	Si considera, come prima, $y=tx $, da cui $x^3 + x^2(1-t^2) = 0$, e si vede che $x = t^2 - 1$ e $y=t^3 -t$, quindi $\alpha (t) = (t^2 - 1, t^3-t,0)$.
 \end{svolgimento}
 \end{esempio}
 \begin{lemma}\label{lemdif}
@@ -387,7 +386,7 @@ Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \ma
 	[Versore tangente]
 	Data una curva riparametrizzabile $\alpha :I \to \mathbb{R}^3$ e la sua riparametrizzazione tramite lunghezza d'arco $\beta (s)$, si definisce il \textit{versore tangente} ad $\alpha $ come $T(s) = \beta '(s)$.
 \end{definizione}
-\begin{prop}
+\begin{prop}\label{ezprop}
 	Se $\beta :I \to\mathbb{R}^3$ \`e una curva pla, allora $T'(s) \cdot T(s) = 0$.
 	\begin{proof}
 		Per quanto visto, $\left\lVert T(s) \right\rVert ^2 = T(s) \cdot T(s) = 1$; per il lemma precedente \ref{lemdif}, si ha $2 T'(s) \cdot T(s) = (T(s)\cdot T(s))' = 0 $.
@@ -400,7 +399,164 @@ Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \ma
 	k (s) = \left\lVert T'(s) \right\rVert 
 	\] 
 \end{definizione}
-\subsection{Riferimento di Frenet}
+\subsection{Riferimento ed equazioni di Frenet}
+\begin{definizione}
+	[Curva di Frenet]
+	Una curva regolare $\alpha:[a,b]\to\mathbb{R}^3 $ \`e detta \textit{di Frenet} se la sua pla $\beta = \alpha  \circ t:[0,L(\alpha )]\to \mathbb{R}^3$ \`e tale che $k(s) >0, \ \forall s \in [0,L(\alpha )]$.
+\end{definizione}
+\noindent Visto che $k(s) = \left\lVert T'(s) \right\rVert $, allora si pu\`o scrivere 
+\begin{boxenv}[]
+\begin{equation}
+	T'(s) = k(s)N(s)
+\end{equation}
+\end{boxenv}
+\noindent che \`e nota come \textbf{I equazione di Frenet}. 
+Si nota che $N(s)$ deve avere norma unitaria perch\'e la norma di $T'(s)$ \`e data interamente da $k(s)$; inoltre, $N(s)$ \`e un versore ortogonale a $T(s)$ perch\'e si \`e dimostrato (prop. \ref{ezprop}) che $T(s) \perp T'(s)$.
+Se ne ricava la seguente definizione.
+\begin{definizione}
+	[Versori normale e binormale]
+	Dato $T(s)$ versore tangente di una certa curva regolare $\alpha : I \to \mathbb{R}^3$, si definiscono $N(s)$ \textit{versore normale principale} e $B(s) = T(s) \times N(s)$ \textit{versore binormale}.
+\end{definizione}
+\noindent Evidentemente, si ha $\left\lVert N(s) \right\rVert =\left\lVert B(s) \right\rVert  = 1 $ e $T(s) \cdot N(s) = T(s) \cdot B(s) = N(s) \cdot B(s) =  0 $.
+Ne segue che $\big(T(s),N(s),B(s)\big), \ \forall s \in I$ forma una base ortonormale di $\mathbb{R}^3$, nota col nome di \textbf{riferimento di Frenet}.
+
+Si nota che, essendo un versore, si ha $N(s) \cdot N(s) = 1$, quindi $N'(s) \cdot N(s) = 0$ (per lo stesso ragionamento della prop. \ref{ezprop}), dunque $N'(s) \in \langle T(s) , B(s) \rangle$; inoltre, essendo $T(s)\cdot N(s) = 0$, si ha 
+\[
+	T'(s) \cdot N(s) +T(s)\cdot  N'(s)=k(s) \underbracket{N(s) \cdot N(s)}_{=1}  +T(s)\cdot  N'(s) = 0 
+\] 
+perci\`o si trova $ \tau (s)$ tale per cui 
+\begin{boxenv}[]
+\begin{equation}
+	N'(s) = -k(s)  T(s) + \tau (s)  B(s)
+\end{equation}
+\end{boxenv}
+\noindent Questa \`e nota come \textbf{II equazione di Frenet}.
+\begin{definizione}
+	[Torsione]
+	Data una curva regolare $\alpha :I\to\mathbb{R}^3$ e $\beta $ la sua pla, si definisce $\tau (s)$ come la \textit{torsione} di $\beta $ nel punto $s$.
+\end{definizione}
+\noindent Ripetendo lo stesso ragionamento, si ha $B(s) \cdot B(s) = 1 \Rightarrow B'(s) \cdot B(s) = 0$, da cui $B'(s) \in \langle T(s),N(s) \rangle$ e, essendo $N(s) \cdot B(s) = 0$, dalla derivata di $T(s) \cdot B(s) = 0$, si ha
+\[
+	T'(s) \cdot B(s) + T(s) \cdot B'(s) = k(s) \underbracket{N(s) \cdot B(s)}_{=0}  + T(s) \cdot B'(s) = 0
+\] 
+quindi $B'(s) \in \langle N(s) \rangle$.
+Usando $T(s) \cdot B(s) = 0 $ e derivando $N(s) \cdot B(s) = 0$, si ottiene
+\[
+	\begin{split}
+		N'(s) \cdot B(s) + N(s) \cdot B'(s) &= (- k(s) T(s) + \tau (s) B(s) )\cdot B(s) + N(s) \cdot B'(s) \\
+		&= \tau (s) \underbracket{B(s)\cdot B(s)}_{=1}  + N(s)\cdot B'(s) = 0 
+	\end{split}
+\] 
+cio\`e
+\begin{boxenv}[]
+\begin{equation}
+	B'(s) = - \tau (s) N(s)
+\end{equation}
+\end{boxenv}
+\noindent che \`e nota come \textbf{III equazione di Frenet}.
+Ricapitolando, le equazioni di Frenet stabiliscono delle relazioni tra le derivate dei versori ortonormali del riferimento di Frenet e i versori stessi e sono:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{cases}
+		T'(s) = k(s) N(s)\\
+		N'(s) = - k(s) T(s) + \tau (s) B(s)\\
+		B'(s)=-\tau (s) N(s)
+	\end{cases}
+\end{equation}
+\end{boxenv}
+\noindent Ora si applicano i concetti visti alle curve studiate nella sezione precedente.
+\begin{esempio}
+	Sia $\alpha (t) = P + t \overrightarrow{PQ}$ una curva parametrizzata (con $P,Q \in \mathbb{R}^3$ e $P\neq Q$). 
+	Si ha $\alpha '(t) = \overrightarrow{PQ}$, quindi la curva \`e regolare, quindi se ne pu\`o trovare una pla:
+	\[
+		s(t) = \int_{a} ^t \lVert \overrightarrow{PQ} \rVert du= t \lVert \overrightarrow{PQ} \rVert \implies t = \frac{s}{\lVert \overrightarrow{PQ} \rVert }
+	\] 
+	quindi si ha $\beta (s) = P + s \frac{\overrightarrow{PQ}}{\lVert \overrightarrow{PQ} \rVert }$. 
+	Allora il versore tangente \`e dato da 
+	\[
+	T(s) = \beta '(s) = \frac{\overrightarrow{PQ}}{\lVert \overrightarrow{PQ} \rVert } \implies T'(s) = 0 
+	\] 
+	perci\`o $k(s) = 0$ e, quindi, $\alpha $ non \`e una curva di Frenet perch\'e non ha curvatura positiva.
+\end{esempio}
+\begin{esempio}
+Per $a>0$, sia $\alpha (t) = (a \cos t, a \sin t, 0)$ una circonferenza parametrizzata di raggio $a$.
+Evidentemente, si pu\`o vedere come un caso particolare di elica parametrizzata per $b=0$, quindi si pu\`o fare uso del risultato trovato in precedenza:
+\[
+	\begin{split}
+		&\beta (s) = \left(a \cos \left(\frac{s}{a}\right) , a\sin \left(\frac{s}{a}\right),0 \right)\implies T(s) = \left(- \sin \frac{s}{a}, \cos \frac{s}{a},0 \right) \\
+		&\Rightarrow T'(s) = \underbracket{\frac{1}{a}}_{k(s)}  \underbracket{\left(-\cos \frac{s}{a},- \sin \frac{s}{a},0\right) }_{N(s)} 
+	\end{split}
+\] 
+Si conclude che $N(s)\perp z$ e punta proprio verso $z$; inoltre, la circonferenza parametrizzata \`e una curva di Frenet perch\'e ha curvatura positiva, essendo $1 / a > 0 $ perch\'e $a > 0 $ per assunzione.
+Infine:
+\[
+	\begin{split}
+		&B(s) = \begin{pmatrix} -\sin s / a \\ \cos s / a \\ 0  \end{pmatrix} \times \begin{pmatrix} - \cos s / a\\ - \sin s / a \\ 0  \end{pmatrix} = \begin{pmatrix} 0 \\0 \\ 1 \end{pmatrix} \\
+		&\Rightarrow -\tau (s) N(s) = B'(s) = 0 \implies \tau (s) = 0 
+	\end{split}
+\] 
+\end{esempio}
+\begin{esempio}
+Si considera l'elica parametrizzata $\alpha = (a\cos t , a \sin t, bt)$, con raggio $a\in \mathbb{R}^{>0} $ e passo $b \in \mathbb{R}$.
+La sua pla \`e gi\`a stata ricava; dato $c = \sqrt{a^2 + b^2} $, si ottiene:
+\[
+	\beta (s)= \left(a \cos \left(\frac{s}{\sqrt{c} }\right) , a\sin \left(\frac{s}{\sqrt{c} }\right),\frac{b}{\sqrt{c} } s\right)
+\] 
+da cui
+\[
+	T(s) = \frac{1}{c}\left(-a \sin \frac{s}{c}, a \cos \frac{s}{c}, b\right) \implies T'(s) = \underbracket{\frac{a}{c^2}}_{k(s)} \underbracket{\left(-\cos \frac{s}{c},- \sin \frac{s}{c},0\right) }_{N(s)} 
+\] 
+quindi, come nel caso della circonferenza, $N(s)\perp z$ e punta verso di esso.
+Si ha:
+\[
+B(s) = \frac{1}{c} \begin{pmatrix} - a \sin s / c\\ a \cos s / c\\ b  \end{pmatrix} \times \begin{pmatrix} - \cos s / c \\ - \sin s / c \\ 0  \end{pmatrix} = \frac{1}{c} \begin{pmatrix} b \sin s / c \\ - b \cos  s / c \\ a  \end{pmatrix} 
+\] 
+Inoltre:
+\[
+	N'(s) = - k(s) T(s) +\tau (s) B(s) \implies \tau (s) = N'(s) \cdot B(s) =  \frac{b}{c^2}
+\] 
+Da questo, si vede che
+\begin{itemize}
+	\item se $b>0$, allora l'elica \`e destrorsa e $\tau (s) >0$,
+	\item se $b<0$, allora l'elica \`e sinistrorsa e $\tau (s) < 0 $,
+	\item se $b=0$, si ha una circonferenza e $\tau (s) = 0 $, con $k(s) = 1 / a$.
+\end{itemize}
+Fissando $a$, si nota che, per $b \to \pm \infty$, si ha $\tau (s) \to 0$ e $k(s) = a / (a^2 + b^2) \to 0 $.
+\end{esempio}
+\begin{prop}
+	Sia $\alpha  : I \to \mathbb{R}^3$ una curva regolare; allora $k_\alpha = 0 \iff \alpha (I)$ \`e contenuta in una retta.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Leftarrow$) Se $\alpha (I) \subseteq P+ \langle v \rangle$, per $v$ versore generico, si considera il diagramma
+				\[
+				\begin{tikzcd}
+					J & & I & & \mathbb{R}^3
+					\arrow[from=1-1, to=1-5, bend right=30, "\displaystyle \beta "']
+					\arrow[from=1-3, to=1-1, "\displaystyle s"']
+					\arrow[from=1-3, to=1-5,"\displaystyle \alpha "]
+				\end{tikzcd}
+				\] 
+				cio\`e $\alpha (I) = \beta (J) \subseteq P+\langle v \rangle$, con $\beta $ pla di $\alpha $ (continuare \ldots).
+		\end{itemize}
+	\end{proof}
+\end{prop}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
