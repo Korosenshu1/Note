@@ -528,21 +528,63 @@ Fissando $a$, si nota che, per $b \to \pm \infty$, si ha $\tau (s) \to 0$ e $k(s
 	\begin{proof}
 		Si divide la dimostrazione nelle due implicazioni.
 		\begin{itemize}
-			\item ($\Leftarrow$) Se $\alpha (I) \subseteq P+ \langle v \rangle$, per $v$ versore generico, si considera il diagramma
+			\item ($\Leftarrow$) Se $\alpha (I) \subseteq P+ \langle v \rangle$, per $v$ versore generico, si considera la sua versione pla $\alpha (I) = \beta (J) \subseteq P+\langle v \rangle$; allora $\beta = P + f(s) v$ e $\beta '=f'(s) v$, con $f'(s)=\pm 1$ perch\'e $\left\lVert \beta ' \right\rVert = 1$. 
+				Ne segue che:
 				\[
-				\begin{tikzcd}
-					J & & I & & \mathbb{R}^3
-					\arrow[from=1-1, to=1-5, bend right=30, "\displaystyle \beta "']
-					\arrow[from=1-3, to=1-1, "\displaystyle s"']
-					\arrow[from=1-3, to=1-5,"\displaystyle \alpha "]
-				\end{tikzcd}
+				T(s) = \beta '(s) = f'(s) v = \pm v \implies T'(s) = 0 \implies k_\alpha(s) = 0 
 				\] 
-				cio\`e $\alpha (I) = \beta (J) \subseteq P+\langle v \rangle$, con $\beta $ pla di $\alpha $ (continuare \ldots).
+			\item ($\Rightarrow $) Sia $\left\lVert T'(s) \right\rVert = k_\alpha (s) = 0 $, quindi $T(s) = \beta '(s) = v $, per qualche $v \in \mathbb{R}^3$.
+				Allora si deve avere $\beta (s) =  \beta (0)+ s v \in \beta (0) +\langle v \rangle$.
 		\end{itemize}
 	\end{proof}
 \end{prop}
-
-
+\begin{esercizio}
+Sia $\beta :I \to \mathbb{R}^3$ una curva pla tale che
+\[
+\beta (I) \subseteq S_r^2(P) = \left\{ x \in \mathbb{R}^3 \ \big\lvert\ \left\lVert x- P \right\rVert = r\right\} 
+\] 
+Mostrare che $\beta  $ \`e di Frenet.
+\begin{svolgimento}
+	Se $\beta (I) \subseteq S_r^2(P)$, allora $\left\lVert \beta (s) - P \right\rVert ^2 = r^2$; derivando due volte rispetto a $s$, si ottiene:
+	\[
+		\begin{split}
+			&\frac{d }{d s}\left[  T(s) \cdot (\beta (s) - P )  \right] = 0 \implies T'(s) \cdot (\beta (s) - P) + T(s) \cdot T(s) = 0 \\
+			&\Rightarrow T'(s) \cdot (\beta (s) - P) = -1 \implies k(s) \left[ N(s) \cdot (\beta (s) - P) \right] = - 1
+		\end{split}
+	\] 
+	Quindi $k(s) \neq 0$ e, pertanto $\beta $ \`e di Frenet.
+\end{svolgimento}
+\end{esercizio}
+\begin{prop}
+	Sia $\alpha  : I \to \mathbb{R}^3$ una curva di Frenet; allora $\tau _\alpha = 0 \iff \alpha (I)$ \`e contenuta in un piano.
+	\begin{proof}
+		Si divide la dimostrazione nelle due implicazioni.
+		\begin{itemize}
+			\item ($\Rightarrow $) Si assume, senza perdita di generalit\`a, che $\alpha $ sia pla\footnote{Altrimenti, $\alpha $ ammette una versione pla perch\'e \`e una curva di Frenet.}.
+				Allora 
+				\[
+				\tau _\alpha  = 0 \implies B'_\alpha (s) = - \tau _\alpha (s) N_\alpha (s) = 0 
+				\] 
+				quindi $B_\alpha $ \`e costante; sia $B_\alpha (s) = B_0$, per qualche $B_0\in \mathbb{R}^3$ tale che $\left\lVert B_0 \right\rVert =1$.
+				Ne segue, allora, che
+				\[
+				T(s) \cdot B_0 = \alpha '(s) \cdot B_0\implies (\alpha (s) \cdot B_0)' = 0
+				\] 
+				quindi $\alpha (s)\cdot B_0 = c \in \mathbb{R}$, dunque $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid x\cdot B_0 = c \right\} $.
+			\item ($\Leftarrow$) Sia $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid  x \cdot B_0 = c \right\} $, per qualche $B_0 \in \mathbb{R}^3$ tale che $\left\lVert B_0 \right\rVert =1$.
+			\item Sia $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid x\cdot B_0 =c  \right\} $, per qualche $B_0 \in \mathbb{R}^3$ tale che $\left\lVert B_0  \right\rVert  = 1$ e $c \in \mathbb{R}$; allora $\forall s, \ \alpha (s) \cdot B_0 = c$.
+				Ne segue che
+				\[
+				T(s) \cdot B_0 = 0 \implies k(s) (N(s) \cdot B_0) = 0 \implies N(s) \cdot B_0 = 0
+				\] 
+				dove la seconda implicazione \`e giustificata dal fatto che $\alpha $ \`e di Frenet, quindi $k(s) > 0 $.
+				Visto che $B_\alpha (s) = T(s) \times N(s)$, considerando (continuare \ldots).
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\begin{prop}
+	Sia $\alpha : I \to \mathbb{R}^3$ una curva di Frenet; se $\tau _\alpha  = 0$, allora $k_\alpha $ \`e costante $\iff \alpha (I)$ \`e contenuta in una circonferenza.
+\end{prop}
 
 
 

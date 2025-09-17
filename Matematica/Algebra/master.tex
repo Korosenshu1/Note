@@ -145,7 +145,7 @@ title=#1
 %Titlesec
 \titleformat{\section}
 {\fontsize{20}{20}\scshape}
-{\normalfont\color{gray}{\fontsize{80}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
+{\color{gray}{\fontsize{50}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
 {0.7em}
 {}
 \titlespacing*{\section}{0pt}{*2}{1cm}
@@ -202,9 +202,9 @@ title=#1
 %\renewcommand{\familydefault}{\sfdefault}	
 %\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
 %\usepackage[noSTIXops,scaled=1.1]{newtxsf}
-\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
-\usepackage[osf]{newpxtext}
-\usepackage[euler-digits,euler-hat-accent]{eulervm}
+%\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+%\usepackage[osf]{newpxtext}
+%\usepackage[euler-digits,euler-hat-accent]{eulervm}
 
 
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
@@ -299,6 +299,9 @@ Per ogni elemento di $\operatorname{Int} (G)$, si ha $\phi _g (H) = H \iff gH g^
 	Sia $G$ un gruppo; per la proposizione \ref{intcar} e l'osservazione \ref{ossnorm} se $H$ \`e caratteristico, allora $H \lhd G$.
 \end{corollario}
 \noindent Il viceversa \`e falso, cio\`e normale $\not\Rightarrow $ caratteristico; infatti, in $\mathbb{Z} / 2\mathbb{Z} \times  \mathbb{Z} / 2\mathbb{Z}$, il sottogruppo $\langle (1,0) \rangle$ \`e normale, ma non caratteristico perch\'e l'automorfismo che scambia le coordinate \`e tale per cui $\langle (1,0) \rangle\mapsto \langle (0,1) \rangle\neq \langle (1,0) \rangle$.
+
+
+
 \subsection{Azioni di gruppo}
 \begin{definizione}
 	[Azione]
@@ -2388,6 +2391,35 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
   \end{itemize}
 \end{enumerate}
 
+\subsubsection{Automorfismi di $(\mathbb{Z}/p\mathbb{Z})^n$}
+
+Si vuole caratterizzare $\operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big)$, con $p$ primo.
+Per farlo, si inizia col notare che $\mathbb{Z}/p\mathbb{Z} \cong \mathbb{F}_p$ \`e un campo e che, conseguentemente, $(\mathbb{Z}/p\mathbb{Z})^n$ \`e uno spazio vettoriale su $\mathbb{F}_p$, dove il prodotto per scalari \`e tale che
+\[
+\begin{array}
+	{c c c} 
+	\mathbb{Z}/p\mathbb{Z}\times (\mathbb{Z}/p\mathbb{Z})^n &\longrightarrow & (\mathbb{Z}/p\mathbb{Z})^n\\
+	(\overline{\lambda },v) &\longmapsto & \overline{\lambda }v = \underbracket{v + v+ \ldots+v}_{\widetilde{\lambda }} 
+\end{array}
+\] 
+con $\widetilde{\lambda }$ un qualsiasi elemento della classe di equivalenza di $\overline{\lambda }$.
+Questo prodotto \`e ben definito perch\'e se $\lambda , \lambda ' \in \mathbb{Z}$ sono tali che $\overline{\lambda } = \overline{\lambda '}$, ossia $\exists k \in \mathbb{Z} : \lambda  = \lambda ' + kp$, allora
+\[
+\overline{\lambda '} v = \underbracket{v + v+ \ldots+v}_{\lambda '}= \underbracket{v + v+ \ldots+v}_{\lambda +kp} = \underbracket{v + v+ \ldots+v}_{\lambda}
+\] 
+Allora, per come si \`e definito il prodotto per scalare, \`e facile convincersi che $\forall \lambda \in \mathbb{Z}/p\mathbb{Z},\ \forall \varphi \in \operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big)$ vale $\varphi (\lambda v) = \lambda \varphi (v)$, essendo $\varphi $ un omomorfismo rispetto alla somma definita in $(\mathbb{Z}/p\mathbb{Z})^n$. 
+Da questo, si conclude che richiedere che una mappa $(\mathbb{Z}/p\mathbb{Z})^n \to (\mathbb{Z}/p\mathbb{Z})^n$ sia un automorfismo \`e equivalente a richiedere che sia un isomorfismo di spazi vettoriali, quindi $\operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big) \cong \mathrm{GL} \big((\mathbb{Z}/p\mathbb{Z})^n\big)\cong \mathrm{GL} _n (\mathbb{Z}/p\mathbb{Z})$.
+\begin{prop}
+	Sia $p$ un primo; allora
+	\[
+	\big\lvert \operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big) \big\rvert = \prod_{i=0} ^{n-1} (p^n- p^i)
+	\] 
+	\begin{proof}
+		Sia $\varphi $ un automorfismo di $(\mathbb{Z}/p\mathbb{Z})^n$; allora questo \`e univocamente determinato da come agisce su una base di tale spazio vettoriale. 
+		Data $\left\{ v_1,\ldots,v_n \right\} $ una base, allora $\varphi (v_1)$ pu\`o essere un qualunque vettore non-nullo di $(\mathbb{Z}/p\mathbb{Z})^n$, quindi si hanno $p^n-1$ possibilit\`a; analogamente, $v_2$ potr\`a essere mappato in qualunque elemento, eccetto l'elemento neutro e un multiplo $\varphi (v_1)$, quindi si hanno $p^n-p $ elementi. 
+		Continuando col ragionamento, si conclude che $v_k$ potr\`a essere mappato in un qualsiasi elemento eccetto l'elemento neutro e un multiplo degli elementi gi\`a assegnati, per un totale di $p^n - p^{k-1} $ possibilit\`a.
+	\end{proof}
+\end{prop}
 
 
 
@@ -2395,6 +2427,14 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
 
 
 \subsection{Esercizi}
+\begin{esercizio}
+Studiare il gruppo $\operatorname{Aut} ( \mathbb{Z}\times \mathbb{Z}/n\mathbb{Z})$.
+\begin{svolgimento}
+	Il sottogruppo $\left\{ 0 \right\} \times \mathbb{Z}/n\mathbb{Z}$ \`e caratteristico perch\'e un automorfismo deve conservare gli ordini degli elementi e se la prima coordinata non fosse nulla, l'elemento avrebbe ordine infinito.
+
+	Ora si considera l'immagine $(a,b)$ dell'elemento $(1,0)$ attraverso un automorfismo $\varphi $.
+\end{svolgimento}
+\end{esercizio}
 \begin{esercizio}
 Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
 \begin{svolgimento}

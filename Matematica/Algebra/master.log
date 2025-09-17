@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  8 SEP 2025 23:33
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  17 SEP 2025 17:26
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1232,113 +1232,7 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen371
-) (/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
-Package: newpxtext 2025/02/10 v1.541(Michael Sharpe) latex and unicode latex support for TeXGyrePagellaX
- `newpxtext' v1.541, 2025/02/10 Text macros taking advantage of TeXGyre Pagella and its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks60
-\XKV@tempa@toks=\toks61
-)
-\XKV@depth=\count396
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count397
-\xs_countb=\count398
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-\zpl@cnt=\count399
- (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count400
-\l__fontspec_language_int=\count401
-\l__fontspec_strnum_int=\count402
-\l__fontspec_tmp_int=\count403
-\l__fontspec_tmpa_int=\count404
-\l__fontspec_tmpb_int=\count405
-\l__fontspec_tmpc_int=\count406
-\l__fontspec_em_int=\count407
-\l__fontspec_emdef_int=\count408
-\l__fontspec_strong_int=\count409
-\l__fontspec_strongdef_int=\count410
-\l__fontspec_tmpa_dim=\dimen372
-\l__fontspec_tmpb_dim=\dimen373
-\l__fontspec_tmpc_dim=\dimen374
- (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-\zpl@sixem=\dimen375
-\zpl@y=\dimen376
-\zpl@x=\dimen377
-\zpl@tmpdima=\dimen378
-\zpl@tmpdimb=\dimen379
-\zpl@tmpdimc=\dimen380
-\zpl@tmpdimd=\dimen381
-\zpl@tmpdime=\dimen382
-\zpl@tmpdimf=\dimen383
-\zpl@dimA=\dimen384
-\zpl@dimAA=\dimen385
-\zpl@dimB=\dimen386
-\zpl@dimBB=\dimen387
-\zpl@dimC=\dimen388
-LaTeX Info: Redefining \oldstylenums on input line 798.
-LaTeX Info: Redefining \liningnums on input line 800.
-) (/usr/share/texmf-dist/tex/latex/eulervm/eulervm.sty
-Package: eulervm 2005/01/11 v4.0 (WaS)
-
-
-Package eulervm Warning: Unknown Operator Encoding!
-(eulervm)                Math accents may be wrong: assuming OT1 positions.
-
-) (/usr/share/texmf-dist/tex/latex/newpx/TeXGyrePagellaX.fontspec)
-
-Package fontspec Info: 
-(fontspec)             Font family 'TeXGyrePagellaX(0)' created for font
-(fontspec)             'TeXGyrePagellaX' with options [Ligatures=TeX,Extension
-(fontspec)             = .otf,UprightFont = TeXGyrePagellaX-Regular,BoldFont =
-(fontspec)             TeXGyrePagellaX-Bold,ItalicFont =
-(fontspec)             TeXGyrePagellaX-Italic,BoldItalicFont =
-(fontspec)             TeXGyrePagellaX-BoldItalic,SlantedFont =
-(fontspec)             TeXGyrePagellaX-Slanted,BoldSlantedFont =
-(fontspec)             TeXGyrePagellaX-BoldSlanted,Numbers =
-(fontspec)             {Monospaced,OldStyle}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Regular.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Italic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Slanted.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-Slanted.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-BoldSlanted.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;"
-(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
-(fontspec)             <->"[TeXGyrePagellaX-BoldSlanted.otf]:mode=node;script=latn;language=dflt;+tlig;+tnum;+onum;+smcp;"
-
- (./master.aux)
+) (./master.aux)
 \openout1 = master.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
@@ -1363,26 +1257,20 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 211.
 LaTeX Font Info:    ... okay on input line 211.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count411
-\scratchdimen=\dimen389
+\scratchcounter=\count396
+\scratchdimen=\dimen372
 \scratchbox=\box135
-\nofMPsegments=\count412
-\nofMParguments=\count413
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count414
-\MPscratchDim=\dimen390
-\MPnumerator=\count415
-\makeMPintoPDFobject=\count416
-\everyMPtoPDFconversion=\toks63
+\nofMPsegments=\count397
+\nofMParguments=\count398
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count399
+\MPscratchDim=\dimen373
+\MPnumerator=\count400
+\makeMPintoPDFobject=\count401
+\everyMPtoPDFconversion=\toks61
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
@@ -1403,7 +1291,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count417
+\BKM@id=\count402
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
@@ -1412,12 +1300,18 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen391
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen392
-\c__nicematrix_innersep_middle_dim=\dimen393
-\c@lstlisting=\count418
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen374
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen375
+\c__nicematrix_innersep_middle_dim=\dimen376
+\c@lstlisting=\count403
 Package tocbasic Info: setting babel extension for `lol' on input line 211.
 \scr@dte@lstlisting@maxnumwidth=\skip132
+LaTeX Info: Redefining \it@ocap on input line 211.
+LaTeX Info: Redefining \it@ccap on input line 211.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 213.
+(/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 <front.jpeg, id=7, 4008.9775pt x 2667.9675pt>
 File: front.jpeg Graphic file (type jpg)
 <use front.jpeg>
@@ -1428,17 +1322,13 @@ Package luatex.def Info: front.jpeg  used on input line 217.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./front.jpeg>] (./master.toc
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 3.
- (/usr/share/texmf-dist/tex/latex/eulervm/uzeur.fd
-File: uzeur.fd 2005/01/11 v4.0 (WaS)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 3.
- (/usr/share/texmf-dist/tex/latex/eulervm/uzeus.fd
-File: uzeus.fd 2005/01/11 v4.0 (WaS)
-)
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 3.
- (/usr/share/texmf-dist/tex/latex/eulervm/uzeuex.fd
-File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esint on input line 3.
  (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
@@ -1457,12 +1347,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 [3]
 
-LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 228.
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <12> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 228.
 
 
-LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
-(Font)              using `TU/lmss/bx/n' instead on input line 228.
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 228.
 
 
 
@@ -1491,25 +1381,30 @@ LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
 [15]
 
 [16]
+Overfull \hbox (7.42903pt too wide) detected at line 765
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H; K\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  []! []
+ []
+
+
 
 [17]
 
 [18]
 
 [19]
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 845.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 845.
+(hyperref)                removing `math shift' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 845.
+(hyperref)                removing `subscript' on input line 848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 845.
+(hyperref)                removing `math shift' on input line 848.
 
 
 
@@ -1520,15 +1415,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 954.
+(hyperref)                removing `math shift' on input line 957.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 954.
+(hyperref)                removing `subscript' on input line 957.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 954.
+(hyperref)                removing `math shift' on input line 957.
 
 
 
@@ -1539,11 +1434,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [25]
 
 [26]
-Overfull \hbox (3.03555pt too wide) in paragraph at lines 1089--1091
-[]\TU/lmss/bx/sc/12 Or-di-ne di una per-mu-ta-zio-ne di $[]$. \TU/TeXGyrePagellaX(0)/m/n/12 Un $\U/zeur/m/n/12 k$\TU/TeXGyrePagellaX(0)/m/n/12 -ciclo ha or-di-ne $\U/zeur/m/n/12 k$\TU/TeXGyrePagellaX(0)/m/n/12 ; in-fat-ti per $\U/zeur/m/n/12  \U/zeus/m/n/12 ½ ¨\U/zeur/m/n/12 a[]  []  a[]\U/zeus/m/n/12 ©$\TU/TeXGyrePagellaX(0)/m/n/12 ,
- []
-
-
 
 [27]
 
@@ -1558,62 +1448,47 @@ Overfull \hbox (3.03555pt too wide) in paragraph at lines 1089--1091
 [32]
 
 [33]
-Overfull \hbox (20.07867pt too wide) detected at line 1396
-[]
- []
-
-
 
 [34]
-Underfull \hbox (badness 2065) in paragraph at lines 1427--1429
-\TU/TeXGyrePagellaX(0)/m/n/12 Il fat-to che $[]$ sia nor-ma-le, im-pli-ca che $\U/zeus/m/n/12 8\U/zeur/m/n/12 k;  \U/zeus/m/n/12 ¨\U/zeur/m/n/12 h[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 h[]\U/zeus/m/n/12 ©\U/zeur/m/n/12 ; k\U/zeus/m/n/12 © ½ ¨\U/zeur/m/n/12 e[]; k\U/zeus/m/n/12 ©$\TU/TeXGyrePagellaX(0)/m/n/12 , cioè
- []
-
-
 
 [35]
-Underfull \hbox (badness 2856) in paragraph at lines 1457--1460
-\TU/TeXGyrePagellaX(0)/m/n/12 Ora si in-tro-du-ce il pro-dot-to se-mi-di-ret-to dei grup-pi $\U/zeur/m/n/12 H \U/msb/m/n/12 o[] \U/zeur/m/n/12 K$ \TU/TeXGyrePagellaX(0)/m/n/12 con la leg-ge
- []
-
-
 
 [36]
 
 [37]
 
 [38]
-Underfull \hbox (badness 1342) in paragraph at lines 1571--1572
-[]\TU/TeXGyrePagellaX(0)/m/n/12 Se, al con-tra-rio, si con-si-de-ra $\U/zeur/m/n/12 n \U/zeus/m/n/12 ½ \U/zeur/m/n/12 3$\TU/TeXGyrePagellaX(0)/m/n/12 , per esem-pio, $\U/zeur/m/n/12 A[] \U/zeus/m/n/12 ½ h¨\U/zeur/m/n/12 1; 2; 3\U/zeus/m/n/12 ©i ½
+Underfull \hbox (badness 1158) in paragraph at lines 1574--1575
+[]\T1/lmr/m/n/12 Se, al con-tra-rio, si con-si-de-ra $\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 = 3$\T1/lmr/m/n/12 , per esem-pio, $\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 h\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3)\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 1592--1594
+[]\T1/lmr/m/n/12 Po-nia-mo ca-so che $\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 H < A[]$ \T1/lmr/m/n/12 con $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 H\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = 6$\T1/lmr/m/n/12 , al-lo-ra $\OML/cmm/m/it/12 H \U/msa/m/n/12 C
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 1592--1594
+\OML/cmm/m/it/12 A[]$[][][][][] \T1/lmr/m/n/12 e $\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 H$ \T1/lmr/m/n/12 con $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) = 2$ \T1/lmr/m/n/12 e $\OML/cmm/m/it/12  \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 c; d\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 . Si no-ta che
+ []
+
+
+Underfull \hbox (badness 3930) in paragraph at lines 1592--1594
+[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) = [] = [][](\OML/cmm/m/it/12 \OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 ; inol-tre, $\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 =
  []
 
 
 
 [39]
-Underfull \hbox (badness 5924) in paragraph at lines 1589--1591
-[]\TU/TeXGyrePagellaX(0)/m/n/12 Po-nia-mo ca-so che $\U/zeus/m/n/12 9\U/zeur/m/n/12 H < A[]$ \TU/TeXGyrePagellaX(0)/m/n/12 con $\U/zeus/m/n/12 j\U/zeur/m/n/12 H\U/zeus/m/n/12 j ½ \U/zeur/m/n/12 6$\TU/TeXGyrePagellaX(0)/m/n/12 , al-lo-ra $\U/zeur/m/n/12 H \U/msa/m/n/12 C
- []
-
-
-Underfull \hbox (badness 4454) in paragraph at lines 1589--1591
-\U/zeur/m/n/12 A[]$[][][][][] \TU/TeXGyrePagellaX(0)/m/n/12 e $\U/zeus/m/n/12 9\U/zeur/m/n/12  \U/zeus/m/n/12 2 \U/zeur/m/n/12 H$ \TU/TeXGyrePagellaX(0)/m/n/12 con $[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 \U/zeus/m/n/12 © ½ \U/zeur/m/n/12 2$ \TU/TeXGyrePagellaX(0)/m/n/12 e $\U/zeur/m/n/12  \U/zeus/m/n/12 ½ ¨\U/zeur/m/n/12 a; b\U/zeus/m/n/12 ©¨\U/zeur/m/n/12 c; d\U/zeus/m/n/12 ©$\TU/TeXGyrePagellaX(0)/m/n/12 . Si no-ta che
- []
-
-
-Underfull \hbox (badness 5175) in paragraph at lines 1589--1591
-[][]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 \U/zeus/m/n/12 © ½ [] ½ [][]¨\U/zeur/m/n/12 \U/zeus/m/n/12 ©$\TU/TeXGyrePagellaX(0)/m/n/12 ; inol-tre, $\U/zeur/m/n/12 K \U/zeus/m/n/12 ½
- []
-
-
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1635--1636
-[][]\TU/lmss/bx/sc/12 De-fi-ni-zio-ne 1.19 ($\TU/lmr/b/n/12 p$\TU/lmss/bx/sc/12 -torsione).  []\TU/TeXGyrePagellaX(0)/m/n/12 Sia $\U/zeur/m/n/12 G$ \TU/TeXGyrePagellaX(0)/m/n/12 un grup-po abe-lia-no fi-ni-to; si
+Underfull \hbox (badness 10000) in paragraph at lines 1638--1639
+[][]\T1/lmss/bx/sc/12 De-fi-ni-zio-ne 1.19 ($\OT1/cmr/bx/n/12 p$\T1/lmss/bx/sc/12 -torsione).  []\T1/lmr/m/n/12 Sia $\OML/cmm/m/it/12 G$ \T1/lmr/m/n/12 un grup-po abe-lia-no fi-ni-to; si
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1635--1636
-\TU/TeXGyrePagellaX(0)/m/n/12 de-fi-ni-sce $\U/zeur/m/n/12 p$\TU/TeXGyrePagellaX(0)/m/it/12 -componente \TU/TeXGyrePagellaX(0)/m/n/12 o \TU/TeXGyrePagellaX(0)/m/it/12 com-po-nen-te di $\U/zeur/m/n/12 p$\TU/TeXGyrePagellaX(0)/m/it/12 -torsione \TU/TeXGyrePagellaX(0)/m/n/12 l’in-sie-me $\U/zeur/m/n/12 G\U/zeus/m/n/12 ¨\U/zeur/m/n/12 p\U/zeus/m/n/12 © ½
+Underfull \hbox (badness 10000) in paragraph at lines 1638--1639
+\T1/lmr/m/n/12 de-fi-ni-sce $\OML/cmm/m/it/12 p$\T1/lmr/m/it/12 -componente \T1/lmr/m/n/12 o \T1/lmr/m/it/12 com-po-nen-te di $\OML/cmm/m/it/12 p$\T1/lmr/m/it/12 -torsione \T1/lmr/m/n/12 l'in-sie-me $\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 ) =
  []
 
 
@@ -1631,16 +1506,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1635--1636
 [46]
 
 [47]
-Overfull \hbox (15.74928pt too wide) detected at line 1905
-\U/zeus/m/n/12 jMj ½ [] ½ [] ½ [] ½ \U/zeur/m/n/12 p[]m [] []
- []
-
-
-Overfull \hbox (22.66388pt too wide) detected at line 1909
-\U/zeur/m/n/12 v[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 p[]m \U/zeus/m/n/12 ^^@ \U/zeur/m/n/12 i\U/zeus/m/n/12 © ½ \U/zeur/m/n/12 v[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 p[] \U/zeus/m/n/12 ^^@ \U/zeur/m/n/12 i\U/zeus/m/n/12 © ½ \U/zeur/m/n/12 v[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 i\U/zeus/m/n/12 ©  \U/zeur/m/n/12 []\U/zeus/m/n/12 )  \U/zeur/m/n/12 v[] [] \U/zeus/m/n/12 ½ \U/zeur/m/n/12 v[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 p[]m \U/zeus/m/n/12 ^^@ \U/zeur/m/n/12 i\U/zeus/m/n/12 © ^^@ \U/zeur/m/n/12 v[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 p[] \U/zeus/m/n/12 ^^@ \U/zeur/m/n/12 i\U/zeus/m/n/12 © ½ \U/zeur/m/n/12 0
- []
-
-
 
 [48]
 
@@ -1651,28 +1516,23 @@ Overfull \hbox (22.66388pt too wide) detected at line 1909
 [51]
 
 [52]
-Overfull \hbox (6.405pt too wide) in paragraph at lines 2025--2027
-\TU/TeXGyrePagellaX(0)/m/n/12 Il pri-mo ca-so pos-si-bi-le è il pro-dot-to $\U/msb/m/n/12 Z\U/zeur/m/n/12 =3\U/msb/m/n/12 Z o[] Z\U/zeur/m/n/12 =4\U/msb/m/n/12 Z$\TU/TeXGyrePagellaX(0)/m/n/12 , con $\U/zeur/m/n/12 ' \U/zeus/m/n/12 º \U/msb/m/n/12 Z\U/zeur/m/n/12 =4\U/msb/m/n/12 Z \U/zeus/m/n/12 7[][]! []¨\U/msb/m/n/12 Z\U/zeur/m/n/12 =3\U/msb/m/n/12 Z\U/zeus/m/n/12 © []
- []
-
-
 
 [53]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2098.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2098.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2098.
+
+
+
 [54]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2095.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2095.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2095.
-
-
 
 [55]
 
@@ -1685,20 +1545,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [59]
 
 [60]
-Underfull \hbox (badness 1253) in paragraph at lines 2303--2304
-[]\TU/TeXGyrePagellaX(0)/m/n/12 A par-ti-re da que-sti ri-sul-ta-ti, il ca-so di una per-mu-ta-zio-ne ge-ne-ri-ca $\U/zeur/m/n/12 x[] \U/zeus/m/n/12 ½
- []
+
+[61
+Missing character: There is no ’ (U+2019) in font ec-lmr12!
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2394.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2394.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2394.
 
 
 
-[61]
-
-[62]
-Underfull \hbox (badness 1881) in paragraph at lines 2411--2412
-[]\TU/TeXGyrePagellaX(0)/m/n/12 Il grup-po $\U/zeur/m/n/12 G[] \U/zeus/m/n/12 ½ \U/msb/m/n/12 Z\U/zeur/m/n/12 =4\U/msb/m/n/12 Z \U/zeus/m/n/12  \U/msb/m/n/12 Z\U/zeur/m/n/12 =2\U/msb/m/n/12 Z$ \TU/TeXGyrePagellaX(0)/m/n/12 ha, co-me ge-ne-ra-to-ri, $\U/zeus/m/n/12 h¨\U/zeur/m/n/12 a; 0\U/zeus/m/n/12 ©\U/zeur/m/n/12 ; \U/zeus/m/n/12 ¨\U/zeur/m/n/12 0; b\U/zeus/m/n/12 ©i$\TU/TeXGyrePagellaX(0)/m/n/12 , con
- []
-
-
+[62
+Missing character: There is no ’ (U+2019) in font ec-lmr12!
+Missing character: There is no ’ (U+2019) in font ec-lmr12!
+Missing character: There is no ’ (U+2019) in font ec-lmr12!
+]
 
 [63]
 
@@ -1719,44 +1588,29 @@ Underfull \hbox (badness 1881) in paragraph at lines 2411--2412
 [71]
 
 [72]
-Underfull \hbox (badness 1137) in paragraph at lines 2784--2785
-[]\TU/TeXGyrePagellaX(0)/m/n/12 Per il I teo-re-ma di omo-mor-fi-smo di grup-pi, vi-sto che $\U/zeur/m/n/12 f$ \TU/TeXGyrePagellaX(0)/m/n/12 è, in
- []
-
-
-Underfull \hbox (badness 1127) in paragraph at lines 2791--2792
-[]\TU/TeXGyrePagellaX(0)/m/n/12 Ri-ma-ne da ve-ri-fi-ca-re che $\U/zeur/m/n/12 '$ \TU/TeXGyrePagellaX(0)/m/n/12 è an-che un omo-mor-fi-smo di anel-li; a que-sto
- []
-
-
 
 [73]
 
 [74]
-Underfull \hbox (badness 1609) in paragraph at lines 2846--2846
-[][]\TU/TeXGyrePagellaX(0)/m/n/10 L’in-ver-sa di un omo-mor-fi-smo è un omo-mor-fi-smo per-ché se $\U/zeur/m/n/10 f\U/zeus/m/n/10 ¨\U/zeur/m/n/10 ab\U/zeus/m/n/10 © ½ \U/zeur/m/n/10 f\U/zeus/m/n/10 ¨\U/zeur/m/n/10 a\U/zeus/m/n/10 ©\U/zeur/m/n/10 f\U/zeus/m/n/10 ¨\U/zeur/m/n/10 b\U/zeus/m/n/10 ©$\TU/TeXGyrePagellaX(0)/m/n/10 , al-lo-ra
+Underfull \hbox (badness 1107) in paragraph at lines 2886--2886
+[][]\T1/lmr/m/n/10 L'in-ver-sa di un omo-mor-fi-smo è un omo-mor-fi-smo per-ché se $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ab\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )$\T1/lmr/m/n/10 , al-lo-ra
  []
 
 
 
 [75]
-Overfull \hbox (2.78587pt too wide) in paragraph at lines 2877--2879
-\U/zeur/m/n/12 R [][]\U/zeus/m/n/12 ! \U/zeur/m/n/12 R[]$ \TU/TeXGyrePagellaX(0)/m/n/12 non fos-se iniet-ti-vo, si po-treb-be pas-sa-re al quo-zien-te e tro-va-re che $\U/zeur/m/n/12 R= [] ' ,[][][]\U/zeus/m/n/12 !
+Underfull \hbox (badness 2512) in paragraph at lines 2965--2968
+\T1/lmr/m/n/12 do-ve la ter-za ugua-glian-za è as-si-cu-ra-ta dal-la strut-tu-ra di anel-lo quo-zien-te.
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 2991--2992
+\T1/lmr/m/n/12 Per il I teo-re-ma di omo-mor-fi-smo, in-fi-ne, si ha che, se $\OML/cmm/m/it/12 f$ \T1/lmr/m/n/12 è su-riet-ti-va (ed
  []
 
 
 
 [76]
-Underfull \hbox (badness 3058) in paragraph at lines 2925--2928
-\TU/TeXGyrePagellaX(0)/m/n/12 do-ve la ter-za ugua-glian-za è as-si-cu-ra-ta dal-la strut-tu-ra di anel-lo quo-zien-te.
- []
-
-
-Underfull \hbox (badness 2735) in paragraph at lines 2951--2952
-\TU/TeXGyrePagellaX(0)/m/n/12 Per il I teo-re-ma di omo-mor-fi-smo, in-fi-ne, si ha che, se $\U/zeur/m/n/12 f$ \TU/TeXGyrePagellaX(0)/m/n/12 è su-riet-ti-va (ed
- []
-
-
 
 [77]
 
@@ -1769,13 +1623,8 @@ Underfull \hbox (badness 2735) in paragraph at lines 2951--2952
 [81]
 
 [82]
-Underfull \hbox (badness 1845) in paragraph at lines 3129--3130
-[][]\TU/lmss/bx/sc/12 Pro-po-si-zio-ne 2.10.  []\TU/TeXGyrePagellaX(0)/m/n/12 L’in-sie-me del-le fra-zio-ni di un do-mi-nio, mu-ni-to con le
- []
-
-
-Underfull \hbox (badness 1596) in paragraph at lines 3171--3172
-[][]\TU/lmss/bx/sc/12 Pro-po-si-zio-ne 2.11.  []\TU/TeXGyrePagellaX(0)/m/n/12 Sia $\U/zeur/m/n/12 A$ \TU/TeXGyrePagellaX(0)/m/n/12 un do-mi-nio e $\U/zeur/m/n/12 S[]A$ \TU/TeXGyrePagellaX(0)/m/n/12 il suo anel-lo del-le fra-zio-ni;
+Underfull \hbox (badness 1189) in paragraph at lines 3211--3212
+[][]\T1/lmss/bx/sc/12 Pro-po-si-zio-ne 2.11.  []\T1/lmr/m/n/12 Sia $\OML/cmm/m/it/12 A$ \T1/lmr/m/n/12 un do-mi-nio e $\OML/cmm/m/it/12 S[]A$ \T1/lmr/m/n/12 il suo anel-lo del-le fra-zio-ni;
  []
 
 
@@ -1811,13 +1660,13 @@ Underfull \hbox (badness 1596) in paragraph at lines 3171--3172
 [97]
 
 [98]
-
-[99]
-Overfull \hbox (8.43353pt too wide) detected at line 3811
-\U/zeur/m/n/12 f \U/zeus/m/n/12 j \U/zeur/m/n/12 gh  []\U/zeus/m/n/12 )  \U/zeur/m/n/12 f \U/zeus/m/n/12 ½ \U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 f\U/zeus/m/n/12 © j \U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 gh\U/zeus/m/n/12 © ½ \U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 g\U/zeus/m/n/12 ©\U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 h\U/zeus/m/n/12 ©  \U/zeur/m/n/12 []\U/zeus/m/n/12 )  \U/zeur/m/n/12 f \U/zeus/m/n/12 j \U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 g\U/zeus/m/n/12 © j \U/zeur/m/n/12 g\U/zeus/m/n/12 ¨\U/zeur/m/n/12 x\U/zeus/m/n/12 © [] \U/zeur/m/n/12 f \U/zeus/m/n/12 j \U/zeur/m/n/12 c\U/zeus/m/n/12 ¨\U/zeur/m/n/12 h\U/zeus/m/n/12 © j \U/zeur/m/n/12 h\U/zeus/m/n/12 ¨\U/zeur/m/n/12 x\U/zeus/m/n/12 ©
+Overfull \hbox (11.84431pt too wide) detected at line 3851
+\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 gh  \OT1/cmr/m/n/12 =[]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 f \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 gh\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 )  =[]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )
  []
 
 
+
+[99]
 
 [100]
 
@@ -1842,13 +1691,13 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52594 strings out of 475506
- 125007,2373549 words of node,token memory allocated
- 4279 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 7 glue, 4 kern, 1 glyph, 1171 attribute, 105 glue_spec, 587 attribute_list, 2 write nodes
-   avail lists: 1:5,2:2959,3:1142,4:221,5:644,6:102,7:9668,8:109,9:1216,10:33,11:818
- 73757 multiletter control sequences out of 65536+600000
- 182 fonts using 16886695 bytes
+ 49468 strings out of 475506
+ 100000,1977958 words of node,token memory allocated
+ 4369 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 7 glue, 4 kern, 1 glyph, 1201 attribute, 105 glue_spec, 602 attribute_list, 2 write nodes
+   avail lists: 1:3,2:2842,3:1100,4:221,5:626,6:101,7:8392,8:109,9:1138,10:35,11:814
+ 70818 multiletter control sequences out of 65536+600000
+ 111 fonts using 6906887 bytes
  124i,22n,114p,10918b,1497s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.41'
@@ -1932,11 +1781,12 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.3'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Slanted.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (102 pages, 1544253 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr
+i7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (102 pages, 1891866 bytes).
 
-PDF statistics: 1298 PDF objects out of 1440 (max. 8388607)
- 1133 compressed objects within 12 object streams
- 509 named destinations out of 1000 (max. 131072)
- 312 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1316 PDF objects out of 1440 (max. 8388607)
+ 1162 compressed objects within 12 object streams
+ 512 named destinations out of 1000 (max. 131072)
+ 320 words of extra memory for PDF output out of 10000 (max. 100000000)
 
