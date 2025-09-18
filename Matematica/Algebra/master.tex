@@ -644,7 +644,7 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 	\end{proof}
 \end{prop}
 \begin{corollario}
-	Sia $G$ un gruppo e $G'$ il suo derivato; allora $G / G'$ \`e sempre abeliano ed \`e chiamato \textit{abelianizzazione} di $G$, nel senso che \`e il pi\`u grande quoziente abeliano di $G$.
+	Sia $G$ un gruppo e $G'$ il suo derivato; allora $G_\text{ab}= G / G'$ \`e sempre abeliano ed \`e chiamato \textit{abelianizzazione} di $G$, nel senso che \`e il pi\`u grande quoziente abeliano di $G$.
 	\begin{proof}
 		Si mostra che $G / G'$ \`e sempre abeliano. 
 		Siano, quindi $gG', hG' \in G / G'$ due classi laterali; allora si osserva che
@@ -656,6 +656,38 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 		Questo vuol dire che $G /G'$ \`e il quoziente con pi\`u elementi che sia abeliano perch\'e ottenuto tramite quoziente con $G'$, che \`e l'insieme pi\`u piccolo che soddisfa la propriet\`a\footnote{Per controposizione, se $G'\not\subset H\implies G/H$ non abeliano.}.
 	\end{proof}
 \end{corollario}
+\noindent \`E possibile reiterare la costruzione di $G'$ per ottenere $(G')'$ e cos\`i via. 
+Questo permette di creare la \textbf{serie derivata}, cio\`e una serie di inclusioni di ciascun derivato, della forma
+\begin{equation}
+	G^{(n)} \lhd G^{(n-1)} \lhd \ldots\lhd G^{(1)} \lhd G
+\end{equation}
+Per il principio della discesa infinita, questa serie si arresta ad un certo $n$ finito, dopo il quale si stabilizza; infatti la cardinalit\`a di ciascun derivato \`e sempre minore o uguale a quella del precedente.
+Lo studio di una serie del genere \`e utile in teoria di Galois: un gruppo, infatti, \`e detto \textit{risolubile} se la sua serie derivata termina nel gruppo banale $\left\{ e_G \right\} $.
+
+\begin{prop}
+	Sia $G$ un gruppo e $A$ un generico gruppo abeliano; allora $\operatorname{Hom} (G,A) \longleftrightarrow \operatorname{Hom} (G_\text{ab},A)$.
+	\begin{proof}
+		Sia $\varphi \in \operatorname{Hom} (G,A)$; per quanto detto, si sa che $G' \subseteq \operatorname{Ker} \varphi $, quindi, per il I teorema di omomorfismo e per $\pi_{G'}:G\to G / G' = G_\text{ab} $, si ha un'unica $\overline{\varphi }:G_\text{ab}\to A$ che soddisfa il seguente diagramma:
+		\[
+		\begin{tikzcd}
+			G & & A \\
+			\\
+G_\text{ab}
+\arrow[from=1-1, to=1-3,"\displaystyle \varphi"]
+\arrow[from=1-1, to=3-1,"\displaystyle \pi_{G'} "',two heads]
+\arrow[from=3-1, to=1-3, "\displaystyle \overline{\varphi }"',hook]
+		\end{tikzcd}
+		\] 
+		Viceversa, dato un omomorfismo $\overline{\varphi }:G_\text{ab}\to A$, per il I teorema di omomorfismo, esiste un unico omomorfismo $\varphi = \overline{\varphi }\circ \pi_{G'} $ che fa commutare lo stesso diagramma, da cui la biezione.
+	\end{proof}
+\end{prop}
+\begin{esempio}
+Si considera il gruppo $S_3$; sicuramente $S_3'\neq \left\{ \operatorname{Id}  \right\} $ perch\'e $S_3$ non \`e abeliano; le possibilit\`a sono che $S_3' = S_3$, oppure $S_3' = \langle (123) \rangle = A_3$.
+D'altra parte, si nota che $S_3 / \langle (123) \rangle \cong \mathbb{Z}/2\mathbb{Z}$, che \`e abeliano, dunque $S_3' \subseteq \langle (123) \rangle$ e, dunque, $S_3 = A_3$.
+Ne segue immediatamente che $\lvert (S_3)_\text{ab} \rvert = S_3 / A_3 \cong \mathbb{Z}/2\mathbb{Z}$, per cui $\operatorname{Hom} (S_3 , A) \longleftrightarrow \operatorname{Hom} (\mathbb{Z}/2\mathbb{Z},A)$, con $A$ gruppo abeliano generico.
+\end{esempio}
+
+
 \subsection{Gruppi liberi}
 Si definisce l'insieme $S=\left\{ x_1,x_2,x_3,\ldots \right\} $ di simboli arbitrari, che pu\`o essere finito o infinito, e si definisce \textit{parola} una qualunque loro concatenazione, in cui sono ammesse ripetizioni. 
 L'insieme delle parole ottenibili a partire dagli elementi di $S$ si indica con $W $.
@@ -2432,9 +2464,39 @@ Studiare il gruppo $\operatorname{Aut} ( \mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}
 \begin{svolgimento}
 	Il sottogruppo $\left\{ 0 \right\} \times \mathbb{Z}/n\mathbb{Z}$ \`e caratteristico perch\'e un automorfismo deve conservare gli ordini degli elementi e se la prima coordinata non fosse nulla, l'elemento avrebbe ordine infinito.
 
-	Ora si considera l'immagine $(a,b)$ dell'elemento $(1,0)$ attraverso un automorfismo $\varphi $.
+	Ora si nota che, perch\'e $\varphi $ sia un automorfismo, deve essere suriettivo; questo significa che se $\varphi (1,0) = (a,b)$, allora si trova anche $(x,y) \in \mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}$ tale che $\varphi (x,y) = (1,0)$. Immaginando che $\varphi (0,1) = (0,d)$, con $(d,n) = 1$, si ha:
+	\[
+		\begin{split}
+			(1,0) &= \varphi (x,y) = \varphi (x (1,0) + y (0,1)) = x\varphi (1,0) + y \varphi (0,1) = (xa,xb) + (0,yd)\\
+													       &= (xa, xb + yd)
+		\end{split}
+	\] 
+	Perch\'e questo sia vero, \`e necessario che $a \in \mathbb{Z}^* = \left\{ \pm 1 \right\} $.
+Posto $a = 1$, si vede che $\varphi $ \`e suriettiva perch\'e dato $(x_0,y_0) \in \mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}$, si possono scegliere $x = x_0 a$ e $y \equiv d^{-1}(y_0 - x_0 ab)\pmod{n} $ per cui
+\[
+\varphi (x,y) = \big(x_0a^{2} ,x_0 ab +dd^{-1}(y_0-x_0ab)\big)=(x_0,y_0)
+\] 
+	Per l'iniettivit\`a, si vede che $\varphi $ \`e iniettiva se $a=1$ e $b$ qualsiasi:
+	\[
+	\varphi (x,y) = (0,0) \iff \begin{cases}
+		ax = 0\Rightarrow x=0 \\
+		xb + yd \equiv 0 \pmod{n} 
+	\end{cases}\implies yd \equiv 0 \pmod{n}
+	\] 
+	quindi $y \equiv 0 \pmod{n} $ perch\'e $d$ \`e un invertibile modulo $n$ per assunzione.
+
+	Tuttavia, si nota che se $b \not \equiv 0 \pmod{n} $, allora $\varphi (1,0)\not\in \mathbb{Z}\times \left\{ 0 \right\} $, perci\`o quest'ultimo non risulta caratteristico in $\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}$ e si ha 
+	\[
+	\operatorname{Aut} \mathbb{Z} \times \operatorname{Aut} (\mathbb{Z}/n\mathbb{Z}) \longhookrightarrow \operatorname{Aut} (\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z})
+	\] 
+	ma non sono isomorfi.
 \end{svolgimento}
 \end{esercizio}
+
+
+
+
+
 \begin{esercizio}
 Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
 \begin{svolgimento}
