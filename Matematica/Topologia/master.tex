@@ -1,11 +1,11 @@
 %! TEX program = lualatex
-\documentclass[11pt]{scrartcl}
+\documentclass[12pt]{scrartcl}
 % Packages
-\usepackage[margin=1.25in]{geometry}
+%\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
 \usepackage{amsbsy} % Bold math symbols
 \makeindex
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
@@ -31,49 +31,70 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 %\usepackage{parskip}
-\usepackage{pythonhighlight}
 \usepackage{enumerate}
 \usepackage{graphicx}
-\usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{setspace}
 \setstretch{1.2}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
 \usepackage{faktor}
+\usepackage{tikz-cd}
+\definecolor{mastercolor}{HTML}{92a8d1}
+\definecolor{nred}{HTML}{bf0040}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 % Titles 
-\title{Appunti di\\ \vspace{.3cm} Geometria}
+\title{Appunti di\\ \vspace{.3cm} Geometria proiettiva e topologia}
 \author{Manuel Deodato}
 \date{}
 
 
-\definecolor{asdf}{HTML}{4a7aa4}
-\definecolor{verde}{HTML}{0D8000}
 
 
-\newtheoremstyle{style1}% name of the style to be used
-{20pt}% measure of space to leave above the theorem. E.g.: 3pt
-{20pt}% measure of space to leave below the theorem. E.g.: 3pt
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
 {\normalfont}% name of font to use in the body of the theorem
-{15pt}% measure of space to indent
-{\color{verde}\sffamily\scshape}% name of head font
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\sffamily\scshape\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
 
-\theoremstyle{style1}
-\newtheorem{osservazione}{Osservazione}[section]
-\newtheorem{teorema}{Teorema}[section]
-\newtheorem{prop}{Proposizione}[section]
-\newtheorem{corollario}{Corollario}[teorema]
-\newtheorem{lemma}{Lemma}[teorema]
-\newtheorem{definizione}{Definizione}[section]
-\newtheorem{notazione}{Notazione}[section]
+
+\theoremstyle{style}
 \newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
 \newtheorem{esercizio}{Esercizio}[section]
 
+
+
+
+
+\tcolorboxenvironment{definizione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{lemma}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{teorema}{enhanced,blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{corollario}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{prop}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esercizio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+
+
 \newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
 
 %% Generic box
 \newtcolorbox{eqbox}[1][]
@@ -92,52 +113,27 @@ title=#1
 
 
 
-%%%%%%%%%% Medie con integrali multipli
-\def\Yint#1{\mathchoice
-    {\YYint\displaystyle\textstyle{#1}}%
-    {\YYint\textstyle\scriptstyle{#1}}%
-    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
-    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
-      \!\iint}
-\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
-    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
-\def\longdash{{-}\mkern-3.5mu{-}} 
-   % consider using "\mkern-7.5mu" if esint package is loaded
-\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
-\def\fiint{\Yint\tiltlongdash}
-
-\def\Zint#1{\mathchoice
-    {\YYint\displaystyle\textstyle{#1}}%
-    {\YYint\textstyle\scriptstyle{#1}}%
-    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
-    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
-      \!\iiint}
-      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
-   % consider using "\mkern-7.5mu" if esint package is loaded
-\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
-\def\fiiint{\Zint\titiltlongdash}
-
 %Captions
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
 \captionsetup[table]{font=footnotesize,labelfont=footnotesize}
 %Titlesec
 \titleformat{\section}
-{\fontsize{18}{20}\sffamily\scshape}
-{\normalfont\color{verde}{\fontsize{18}{20}\selectfont\thesection}}
+{\fontsize{20}{20}\scshape}
+{\color{gray}{\fontsize{50}{20}\selectfont\thesection\hspace{.2cm}\color{gray}{\vrule width 1pt}}}
 {0.7em}
 {}
 \titlespacing*{\section}{0pt}{*2}{1cm}
 \titlespacing*{\subsection}{0pt}{*5}{.5cm}
 \titlespacing*{\subsubsection}{0pt}{*5}{.5cm}
 
-\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{13,128,0}}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{146,168,209}}
 
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\centering\fontsize{15}{20}\bfseries}{\color{nred}\normalfont\S\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -147,7 +143,7 @@ title=#1
 
 \vspace{0.2in}
 
-{\large\scshape\sffamily\theauthor}
+{\large\scshape\theauthor}
 \end{center}
 }
 
@@ -176,14 +172,18 @@ title=#1
 
 
 % Font
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}	
-\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
-\usepackage[noSTIXops,scaled=1.1]{newtxsf}
+\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+%\usepackage[osf]{newpxtext}
+%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+%\usepackage{fontspec}
+%\DeclareSymbolFont{operators}{OT1}{EBGaramond-TLF}{m}{n}
 
+
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 \begin{document}
+\pagestyle{plain}
 \maketitle
-\vspace{9cm}
+\vspace{6cm}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=.7\columnwidth]{front1.jpeg}
@@ -755,7 +755,7 @@ M = M_{\mathcal{B} '} ^{\mathcal{B} } (\varphi ) \in \mathcal{M} (n+1,\mathbb{K}
 
 
 \newpage
-\section{Spazi metrici, topologici e applicazioni continue}
+\section{Topologia generale}
 \subsection{Spazi metrici}
 \begin{definizione}
 	[Spazio metrico]
@@ -771,7 +771,6 @@ Sia $X$ un insieme non vuoto; allora $X$ si dice spazio metrico se pu\`o essere 
 d_Y (y,y') := d_X(y,y'), \ \forall y,y' \in Y
 \] 
 Quindi $(Y,d_Y)$ \`e a sua volta uno spazio metrico, sottospazio di $(X,d_X)$, il quale \`e detto \textit{spazio ambiente} di $Y$.
-\subsubsection{Insiemi aperti}
 In uno spazio metrico $(X,d)$, si pu\`o definire un \textit{disco aperto} di raggio $r$ e centro $x$ come
 \[
 B_r(x) := \left\{ x' \in X  \mid d(x,x') < r \right\} 
@@ -780,6 +779,10 @@ B_r(x) := \left\{ x' \in X  \mid d(x,x') < r \right\}
 	[Insieme aperto]
 	Sia $(X,d)$ uno spazio metrico. Un suo sottoinsieme si dice aperto se \`e generato dall'unione di dischi aperti.
 \end{definizione}
+\noindent Nello stesso spazio metrico, \`e possibile definire la distanza tra un punto $x \in X$ con un sottoinsieme $A \subseteq X$ come:
+\begin{equation}
+	d_A(x) = \inf \left\{ d(x,a)  \mid a \in A \right\}   
+\end{equation}
 \subsubsection{Continuit\`a in spazi metrici}
 Una funzione $f:\mathbb{R}\to \mathbb{R}$ si dice continua in $x \in \mathbb{R}$ se $\forall \varepsilon , \ \exists \delta (\varepsilon )$ tale che:
 \[
@@ -866,7 +869,7 @@ allora $f$ \`e continua in $x$.
 \begin{prop}
 	Ogni applicazione lineare $L : \mathbb{R}^n \to \mathbb{R}^m$ \`e continua rispetto alle distanze euclidee.
 	\begin{proof}
-		Si usa Prop. \ref{prop:c11} applicato alle distanze $d^{(1)} $, che sono topologicamente equivalenti alle distanze euclidee $d^{(2)} $. Inoltre, visto che ogni applicazione costante \`e continua, si esclude che $L$ sia nulla. Si denota con $(a_{ij} )_{1\le i\le m, \ 1\le j\le n} $ la matrice che rappresenta $L$; se $x, x' \in \mathbb{R}^n$ si ha:
+		Si usa Prop. \ref{c11} applicato alle distanze $d^{(1)} $, che sono topologicamente equivalenti alle distanze euclidee $d^{(2)} $. Inoltre, visto che ogni applicazione costante \`e continua, si esclude che $L$ sia nulla. Si denota con $(a_{ij} )_{1\le i\le m, \ 1\le j\le n} $ la matrice che rappresenta $L$; se $x, x' \in \mathbb{R}^n$ si ha:
 		\[
 			\begin{split}
 				d^{(1)} \big(L(x) , L(x')\big)&= \left\lvert \sum_{j=1}^{n} a_{1j} (x_j-x'_j) \right\rvert + \ldots+ \left\lvert  \sum_{j=1}^{n} a_{mj} (x_j - x'_j) \right\rvert \\
