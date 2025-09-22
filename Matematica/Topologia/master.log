@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  21 SEP 2025 22:45
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  22 SEP 2025 16:19
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1361,27 +1361,18 @@ Underfull \hbox (badness 1248) in paragraph at lines 358--359
 
 [18]
 
-LaTeX Warning: Reference `c11' on page 19 undefined on input line 872.
-
-
-LaTeX Warning: Reference `prop:c11' on page 19 undefined on input line 879.
-
-
-
 [19]
 
-LaTeX Warning: Reference `prop:c11' on page 20 undefined on input line 896.
-
-
-
 [20]
+
+[21]
 
 Package caption Warning: Unused \captionsetup[table] on input line 118.
 See the caption package documentation for explanation.
 
 
 
-[21] (./master.aux)
+[22] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1390,29 +1381,26 @@ L3 programming layer <2020/03/25>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47115 strings out of 475506
+ 47129 strings out of 475506
  100000,1977958 words of node,token memory allocated
- 1793 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 355 attribute, 103 glue_spec, 179 attribute_list, 2 write nodes
-   avail lists: 1:6,2:2347,3:905,4:166,5:447,6:52,7:6658,8:57,9:778,10:28,11:660
- 68884 multiletter control sequences out of 65536+600000
- 86 fonts using 5393839 bytes
- 124i,21n,114p,10918b,1157s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1727 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 333 attribute, 103 glue_spec, 168 attribute_list, 2 write nodes
+   avail lists: 1:5,2:2380,3:905,4:166,5:448,6:52,7:6658,8:57,9:778,10:28,11:727
+ 68888 multiletter control sequences out of 65536+600000
+ 84 fonts using 5228479 bytes
+ 124i,21n,114p,10918b,1153s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (21 pages, 603907 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (22 pages, 600135 bytes).
 
-PDF statistics: 371 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 118 named destinations out of 1000 (max. 131072)
- 136 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 372 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
+ 128 named destinations out of 1000 (max. 131072)
+ 120 words of extra memory for PDF output out of 10000 (max. 100000000)
 
