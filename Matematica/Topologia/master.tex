@@ -943,11 +943,34 @@ questa conclusione si pu\`o ottenere identificando $\mathbb{C}$ con $\mathbb{R}^
 \begin{osservazione}
 Se $y \in Y$: $B_\varepsilon ^{(Y)} (y) = B_\varepsilon ^{(X)} (y) \cap Y$; questo significa che gli aperti di $Y$ sono della forma $A \cap Y$, con $A $ aperto di $X$.
 \end{osservazione}
+\noindent Visto che la topologia di uno spazio $(X,\tau )$ permette di individuare gli insiemi aperti di $X$, allora si ha la seguente definizione.
+\begin{definizione}
+	[Insieme chiuso]
+	Sia $(X,\tau )$ uno spazio topologico; si dice che $C \subseteq X$ \`e chiuso se $X \setminus C \in \tau $.
+\end{definizione}
+\noindent Infine, avendo la possibilit\`a di definire pi\`u topologie per uno spazio topologico $X$, \`e possibile metterle in relazione a seconda degli elementi che contengono.
+\begin{definizione}
+	[Finezza di una topologia]
+	Date $\tau _1, \tau _2$ due topologie dello spazio $X$, si dice che $\tau _1$ \`e pi\`u fine di $\tau _2$ se $\tau _2 \subseteq \tau _1$.
+\end{definizione}
+\noindent La finezza induce un ordinamento parziale nell'insieme delle topologie di uno spazio topologico, dove la topologia discreta rappresenta la topologia pi\`u fine possibile, mentre la topologia banale quella meno fina.
 \subsubsection{Distanze equivalenti}
 \begin{definizione}
 	[Distanze topologicamente equivalenti]
-	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se hanno gli stessi insiemi aperti, cio\`e se generano la stessa topologia.
+	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se generano la stessa topologia.
 \end{definizione}
+\begin{prop}
+	Siano $d_1,d_2$ due metriche definite nello spazio $X$, che inducono le topologie $\tau _1$ e $\tau _2$ rispettivamente; se $\exists k>0$ tale che $d_1(x,y) \le kd_2(x,y)$, allora $\tau _2$ \`e pi\`u fine di $\tau _1$.
+	\begin{proof}
+		Sia $A$ un aperto secondo $d_1$, quindi $\forall x \in A, \ \exists B_{d_1} (x,r) \subseteq A$.
+		Ora, se $d_2(x,y) < r / k$, si ha 
+		\[
+		d_1(x,y) \le k d_2(x,y) < r \implies y \in B_{d_1} (x,r)
+		\] 
+		da cui si conclude che $B_{d_2} (x,r / k) \subseteq B_{d_1} (x,r) \subseteq A$, e, allora, $A$ \`e aperto anche rispetto a $d_2$, cio\`e $A \in \tau _2$.
+		
+	\end{proof}
+\end{prop}
 \noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \varepsilon >0$:
 \[
 B_\varepsilon (x) = \overline{B}_{r\varepsilon } (x)
