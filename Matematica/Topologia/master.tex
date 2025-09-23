@@ -178,8 +178,10 @@ title=#1
 %\usepackage{fontspec}
 %\DeclareSymbolFont{operators}{OT1}{EBGaramond-TLF}{m}{n}
 
-
+%%% Hook
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
+
+
 \begin{document}
 \pagestyle{plain}
 \maketitle
@@ -959,7 +961,7 @@ Se $y \in Y$: $B_\varepsilon ^{(Y)} (y) = B_\varepsilon ^{(X)} (y) \cap Y$; ques
 	[Distanze topologicamente equivalenti]
 	Due distanze $d,\overline{d}$ su $X$ si dicono \textit{topologicamente equivalenti} se generano la stessa topologia.
 \end{definizione}
-\begin{prop}
+\begin{prop}\label{dfin}
 	Siano $d_1,d_2$ due metriche definite nello spazio $X$, che inducono le topologie $\tau _1$ e $\tau _2$ rispettivamente; se $\exists k>0$ tale che $d_1(x,y) \le kd_2(x,y)$, allora $\tau _2$ \`e pi\`u fine di $\tau _1$.
 	\begin{proof}
 		Sia $A$ un aperto secondo $d_1$, quindi $\forall x \in A, \ \exists B_{d_1} (x,r) \subseteq A$.
@@ -976,6 +978,18 @@ Se $y \in Y$: $B_\varepsilon ^{(Y)} (y) = B_\varepsilon ^{(X)} (y) \cap Y$; ques
 B_\varepsilon (x) = \overline{B}_{r\varepsilon } (x)
 \] 
 cio\`e le due distanze $d,\overline{d}$ identificano le stesse palle aperte, quindi gli stessi insiemi aperti.
+\begin{corollario}
+	Siano $d_1,d_2$ due distanze su $X$ per cui $\exists h,k>0$ tali che 
+	\[
+	d_1(x,y) \le kd_2(x,y) \hspace{1cm} d_2(x,y) \le hd_1(x,y)
+	\] 
+	$\forall x,y \in X$; allora $d_1$ e $d_2$ sono topologicamente equivalenti.
+	\begin{proof}
+		\`E sufficiente applicare la proposizione \ref{dfin} due volte: dalla prima maggiorazione, si ha $\tau _1 \subseteq \tau _2$, mentre dalla seconda si ha $\tau _2 \subseteq \tau _1$, quindi $\tau _1 = \tau _2$.
+	\end{proof}
+\end{corollario}
+\noindent Due funzioni come le distanze $d_1,d_2$ della tesi si dicono \textit{bilipschitiziane} fra loro.
+\begin{corollario}
 In $\mathbb{R}^n$, le distanze 
 \begin{equation}
 	\begin{split}
@@ -999,13 +1013,60 @@ sono equivalenti e si ha
 	\] 
 L'ultima disuguaglianza \`e immediata.	
 \end{proof}
-Da questo segue direttamente che\footnote{Apparentemente, la distanza pi\`u grande dovrebbe includere pi\`u elementi, quindi i simboli $\supset$ dovrebbero essere dei $\subset$, invece, avendo fissato il raggio $\varepsilon $, quella che permette di creare la palla pi\`u grande \`e la distanza pi\`u piccola perch\'e \textit{avvicina} i punti tra di loro, quindi pi\`u elementi rientreranno in tale raggio.}
+\end{corollario}
+\noindent Da questo segue direttamente che\footnote{Apparentemente, la distanza pi\`u grande dovrebbe includere pi\`u elementi, quindi i simboli $\supset$ dovrebbero essere dei $\subset$, invece, avendo fissato il raggio $\varepsilon $, quella che permette di creare la palla pi\`u grande \`e la distanza pi\`u piccola perch\'e \textit{avvicina} i punti tra di loro, quindi pi\`u elementi rientreranno in tale raggio.}
 \begin{equation}
 	B^{(\infty)} _\varepsilon (x) \supset B^{(2)} _\varepsilon (x) \supset B^{(1)} _{\varepsilon } (x) \supset B^{(\infty)} _{\varepsilon  / n} (x)
 \end{equation}
 Questo mostra che se $A$ \`e aperto rispetto ad una distanza, lo \`e anche rispetto alle altre.
-
-
+\begin{osservazione}
+Non tutte le distanze su uno spazio sono equivalenti. 
+Ad esempio, considerando $d_1$ e $d_\infty$ su $C([0,1])$, si ha, per $M = \left\lVert f \right\rVert _\infty$:
+\[
+	\left\lVert f \right\rVert _1 = \int_{0} ^1 \lvert f \rvert\ d x \le  \int_{0} ^1 M \ dx = M = \left\lVert f \right\rVert _\infty
+\] 
+Quindi $\tau _1 \subseteq \tau _\infty$.
+Si nota anche che l'insieme $B_\infty(0,1)$, cio\`e l'insieme delle funzioni che si discostano dalla funzione identicamente nulla al massimo $1$, risulta aperto per $d_\infty$, ma non per $d_1$.
+Infatti, la funzione
+\[
+f(x) = \begin{cases}
+	2 - 2x / \varepsilon &,\ x \in [0,\varepsilon ]\\
+	0 &,\ \text{altrimenti}
+\end{cases}
+\] 
+ha integrale $\varepsilon $, ma $\left\lVert f \right\rVert _\infty = 2$, cio\`e $f \not \in B_\infty(0,1)$, quindi $B_1(0,\varepsilon ) \not\subseteq B_\infty(0,1)$.
+\end{osservazione}
+\begin{definizione}
+	[Limitatezza]
+	Sia $(X,d)$ uno spazio metrico e $Y \subseteq X$; allora $Y$ \`e detto \textit{limitato} se esistono $x \in X, \ R \in \mathbb{R}$ tali per cui $Y \subseteq B_R(x)$.
+\end{definizione}
+\begin{prop}
+	Sia $(X,d)$ uno spazio metrico; allora esiste una metrica $d'$ su $X$ tale che $d$ e $d'$ sono equivalenti e $d'(x,y)\le 1, \ \forall x,y \in X$.
+	Inoltre, $X$ risulta limitato in $(X,d')$.
+	\begin{proof}
+		Si definisce 
+		\[
+		d'(x,y) = \min\left\{ d(x,y) , 1 \right\} 
+		\] 
+		Per verificare che sono equivalenti, si osserva che:
+		\begin{itemize}
+			\item $\tau _{d'} \subseteq \tau _d$ perch\'e $d'(x,y) \le 1 \cdot d(x,y)$ per definizione;
+			\item $\tau _{d} \subseteq \tau _{d'} $ perch\'e se $A$ \`e un aperto di $(X,d)$, allora $\forall x \in A, \ \exists \varepsilon _x > 0 : B_d(x,\varepsilon _x) \subseteq A$, per cui
+				\[
+				A = \bigcup _{x \in A} B_d(x,\varepsilon _x)
+				\] 
+				ma prendendo $\varepsilon _x ' = \min \left\{ \varepsilon _x , 1 \right\} $, si trova che
+				\[
+				A = \bigcup _{x \in A}  B_d (x,\varepsilon '_x) = \bigcup _{x \in A} B_{d'} (x,\varepsilon '_x)
+				\] 
+				cio\`e $A$ \`e aperto anche per $\tau _{d'} $.
+		\end{itemize}
+	\end{proof}
+\end{prop}
+\subsubsection{Continuit\`a in spazi topologici}
+\begin{center}
+	\textbf{Riprendere da pagina 51, sezione 2.2.2} 
+\end{center}
 
 
 
