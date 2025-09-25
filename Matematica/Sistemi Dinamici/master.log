@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  24 SEP 2025 19:15
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  25 SEP 2025 11:55
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1098,38 +1098,6 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowwidth=\dimen365
 \pgfarrowlinewidth=\dimen366
 )))
-
-Class scrartcl Warning: Usage of package `fancyhdr' together
-(scrartcl)              with a KOMA-Script class is not recommended.
-(scrartcl)              I'd suggest to use 
-(scrartcl)              package `scrlayer' or `scrlayer-scrpage', because
-(scrartcl)              they support KOMA-Script classes.
-(scrartcl)              With `fancyhdr' several features of class `scrartcl'
-(scrartcl)              like options `headsepline', `footsepline' or command
-(scrartcl)              `\MakeMarkcase' and the commands `\setkomafont' and
-(scrartcl)              `\addtokomafont' for the page style elements need
-(scrartcl)              explicite user intervention to work.
-(scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 47.
-
-(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-\f@nch@headwidth=\skip87
-\f@nch@offset@elh=\skip88
-\f@nch@offset@erh=\skip89
-\f@nch@offset@olh=\skip90
-\f@nch@offset@orh=\skip91
-\f@nch@offset@elf=\skip92
-\f@nch@offset@erf=\skip93
-\f@nch@offset@olf=\skip94
-\f@nch@offset@orf=\skip95
-\f@nch@height=\skip96
-\f@nch@footalignment=\skip97
-\f@nch@widthL=\skip98
-\f@nch@widthC=\skip99
-\f@nch@widthR=\skip100
-\@temptokenb=\toks58
-)
 \c@esempio=\count377
 \c@definizione=\count378
 \c@prop=\count379
@@ -1139,8 +1107,8 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \c@osservazione=\count383
 \c@notazione=\count384
 \c@esercizio=\count385
-Package hyperref Info: Option `colorlinks' set `true' on input line 129.
-Package hyperref Info: Option `breaklinks' set `true' on input line 129.
+Package hyperref Info: Option `colorlinks' set `true' on input line 127.
+Package hyperref Info: Option `breaklinks' set `true' on input line 127.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1161,44 +1129,44 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 164.
+(scrartcl)              package `tocloft' on input line 162.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip101
-\cftbeforetoctitleskip=\skip102
-\cftaftertoctitleskip=\skip103
-\cftbeforepartskip=\skip104
-\cftpartnumwidth=\skip105
-\cftpartindent=\skip106
-\cftbeforesecskip=\skip107
-\cftsecindent=\skip108
-\cftsecnumwidth=\skip109
-\cftbeforesubsecskip=\skip110
-\cftsubsecindent=\skip111
-\cftsubsecnumwidth=\skip112
-\cftbeforesubsubsecskip=\skip113
-\cftsubsubsecindent=\skip114
-\cftsubsubsecnumwidth=\skip115
-\cftbeforeparaskip=\skip116
-\cftparaindent=\skip117
-\cftparanumwidth=\skip118
-\cftbeforesubparaskip=\skip119
-\cftsubparaindent=\skip120
-\cftsubparanumwidth=\skip121
-\cftbeforeloftitleskip=\skip122
-\cftafterloftitleskip=\skip123
-\cftbeforefigskip=\skip124
-\cftfigindent=\skip125
-\cftfignumwidth=\skip126
+\cftparskip=\skip87
+\cftbeforetoctitleskip=\skip88
+\cftaftertoctitleskip=\skip89
+\cftbeforepartskip=\skip90
+\cftpartnumwidth=\skip91
+\cftpartindent=\skip92
+\cftbeforesecskip=\skip93
+\cftsecindent=\skip94
+\cftsecnumwidth=\skip95
+\cftbeforesubsecskip=\skip96
+\cftsubsecindent=\skip97
+\cftsubsecnumwidth=\skip98
+\cftbeforesubsubsecskip=\skip99
+\cftsubsubsecindent=\skip100
+\cftsubsubsecnumwidth=\skip101
+\cftbeforeparaskip=\skip102
+\cftparaindent=\skip103
+\cftparanumwidth=\skip104
+\cftbeforesubparaskip=\skip105
+\cftsubparaindent=\skip106
+\cftsubparanumwidth=\skip107
+\cftbeforeloftitleskip=\skip108
+\cftafterloftitleskip=\skip109
+\cftbeforefigskip=\skip110
+\cftfigindent=\skip111
+\cftfignumwidth=\skip112
 \c@lofdepth=\count386
 \c@lotdepth=\count387
-\cftbeforelottitleskip=\skip127
-\cftafterlottitleskip=\skip128
-\cftbeforetabskip=\skip129
-\cfttabindent=\skip130
-\cfttabnumwidth=\skip131
+\cftbeforelottitleskip=\skip113
+\cftafterlottitleskip=\skip114
+\cftbeforetabskip=\skip115
+\cfttabindent=\skip116
+\cfttabnumwidth=\skip117
 
 
 Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing out. on input line 1156.
@@ -1213,8 +1181,8 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks59
-\XKV@tempa@toks=\toks60
+\XKV@toks=\toks58
+\XKV@tempa@toks=\toks59
 )
 \XKV@depth=\count388
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -1315,26 +1283,26 @@ Package fontspec Info:
  (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 185.
-LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count403
@@ -1342,12 +1310,12 @@ LaTeX Font Info:    ... okay on input line 185.
 \scratchbox=\box133
 \nofMPsegments=\count404
 \nofMParguments=\count405
-\everyMPshowfont=\toks61
+\everyMPshowfont=\toks60
 \MPscratchCnt=\count406
 \MPscratchDim=\dimen386
 \MPnumerator=\count407
 \makeMPintoPDFobject=\count408
-\everyMPtoPDFconversion=\toks62
+\everyMPtoPDFconversion=\toks61
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
@@ -1360,7 +1328,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 185.
+Package hyperref Info: Link coloring ON on input line 183.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 
@@ -1372,7 +1340,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 185.
+(scrartcl)           before \begin{document} on input line 183.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1381,7 +1349,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 185.
+ on input line 183.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1391,7 +1359,7 @@ Package caption Info: End \AtBeginDocument code.
 <front.jpeg, id=7, 1003.75pt x 1003.75pt>
 File: front.jpeg Graphic file (type jpg)
 <use front.jpeg>
-Package luatex.def Info: front.jpeg  used on input line 191.
+Package luatex.def Info: front.jpeg  used on input line 188.
 (luatex.def)             Requested size: 268.8813pt x 268.8872pt.
 
 
@@ -1426,11 +1394,11 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [2]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 203.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 198.
 
 
 LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
-(Font)              using `TU/lmss/bx/n' instead on input line 203.
+(Font)              using `TU/lmss/bx/n' instead on input line 198.
 
 
 
@@ -1438,12 +1406,14 @@ LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
 
 [4]
 
-Package caption Warning: Unused \captionsetup[table] on input line 118.
+[5]
+
+Package caption Warning: Unused \captionsetup[table] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[5] (./master.aux)
+[6] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1457,19 +1427,19 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49968 strings out of 475506
+ 49635 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 907 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 50 attribute, 104 glue_spec, 27 attribute_list, 2 write nodes
-   avail lists: 1:3,2:1114,3:330,4:64,5:220,6:35,7:3659,8:36,9:454,10:28,11:445
- 71720 multiletter control sequences out of 65536+600000
- 89 fonts using 8772967 bytes
- 124i,11n,114p,10918b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Slanted.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (5 pages, 486541 bytes).
+ 915 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 56 attribute, 102 glue_spec, 30 attribute_list, 2 write nodes
+   avail lists: 1:2,2:1575,3:560,4:104,5:209,6:31,7:3878,8:36,9:525,10:28,11:427
+ 71387 multiletter control sequences out of 65536+600000
+ 88 fonts using 8535359 bytes
+ 124i,10n,114p,10918b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (6 pages, 495409 bytes).
 
-PDF statistics: 150 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 131072)
- 32 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 159 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 131072)
+ 40 words of extra memory for PDF output out of 10000 (max. 100000000)
 

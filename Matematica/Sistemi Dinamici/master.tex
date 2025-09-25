@@ -43,8 +43,6 @@
 \definecolor{mastercolor}{HTML}{854442}
 \definecolor{nred}{HTML}{bf0040}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Sistemi dinamici}
@@ -183,7 +181,6 @@ title=#1
 
 
 \begin{document}
-\pagestyle{plain}
 \maketitle
 \vspace{6cm}
 \begin{figure}[h!]
@@ -192,10 +189,8 @@ title=#1
 \end{figure}
 
 \newpage
-\pagestyle{plain}
 \tableofcontents 
 \newpage
-\pagestyle{fancy}
 \section{Equazioni differenziali ordinarie}
 \subsection{Introduzione}
 
@@ -269,25 +264,66 @@ I_a = (x_0-a,x_0+a)
 \] 
 \end{boxenv}
 \begin{definizione}
-		[Funzione uniformemente lipschitziana]
-		Una funzione $f(x,y) : I_a \times B_r(y_0)\to \mathbb{R}^n$ \`e detta \textit{uniformemente $L$-lipschitziana} in $y$ se $\exists L>0$ tale che $\forall (x,y_1), (x,y_2) \in I_a \times B_r(y_0)$ \`e soddisfatta la relazione
+		[Funzione lipschitziana]
+		Una funzione $f(x,y) : I_a \times B_r(y_0)\to \mathbb{R}^n$ \`e detta \textit{$L$-lipschitziana} in $y$ se $\exists L>0$ tale che $\forall (x,y_1), (x,y_2) \in I_a \times B_r(y_0)$ \`e soddisfatta la relazione
 		\[
 		\lvert f(x,y_1) - f(x,y_2) \rvert \le L\lvert y_1-y_2 \rvert 
 		\] 
 \end{definizione}
 \begin{teorema}
 	[Teorema di Cauchy-Lipschitz]
-	Sia $f : I_a \times B_r(y_0)\to \mathbb{R}^n$ una funzione continua, limitata e uniformemente $L$-lipschitziana nelle $y$; allora $\exists \delta \in (0,a]$ e $\exists ! y \in C^1(I_\delta ,\mathbb{R}^n)$ soluzione del problema di Cauchy con dato iniziale $(x_0,y_0)$.
-	\begin{proof}
-		Sia $\delta >0$ e sia $X = \big(C(I_\delta ,\mathbb{R}^n),\left\lVert \cdot  \right\rVert _\infty\big)$, con $I_\delta = [x_0-\delta ,x_0+\delta ]$.
-		Sia, inoltre
-		\[
-		X_{\delta ,r} = \left\{ y \in C(I_\delta ,\mathbb{R}^n) \mid y(x) \in \overline{B_r}(y_0), \ \forall x \in I_\delta  \right\} 
-		\] 
-		che \`e chiuso in $C(I_\delta ,\mathbb{R}^n)$; in particolare, $X_{\delta ,r} $ \`e uno spazio metrico completo.
-	\end{proof}
+	Sia $f : I_a \times B_r(y_0)\to \mathbb{R}^n$ una funzione limitata, continua e $L$-lipschitziana nelle $y$; allora $\exists \delta \in (0,a]$ e $\exists ! y \in C^1(I_\delta ,\mathbb{R}^n)$ soluzione del problema di Cauchy con dato iniziale $(x_0,y_0)$.
 \end{teorema}
-
+\noindent La richiesta per $f$ di essere lipschitziana \`e necessaria altrimenti non si avrebbe l'unicit\`a della soluzione; questo fenomeno \`e noto col nome di \textit{baffo di Peano}.
+Al contrario, l'esistenza \`e ancora valida e si concretizza nel \textit{teorema di Peano}.
+\begin{esempio}
+	[Baffo di Peano]
+	Si considera il problema 
+	\[
+	\begin{cases}
+		y' = \sqrt{\lvert y \rvert } \\
+		y (0) = 0
+	\end{cases}
+	\] 
+Le soluzioni di questo problema non sono uniche; infatti sono:
+\[
+y(x) = 0 \hspace{1cm} y(x) = \begin{cases}
+	0 &,\ x\le x_0\\
+	\displaystyle \frac{(x-x_0)^2}{4} &,\ x \ge x_0
+\end{cases}
+\] 
+\end{esempio}
+\subsection{Soluzioni massimali}
+\begin{definizione}
+	[Soluzione massimale]
+	Sia dato un problema di Cauchy; una sua soluzione 
+	\[
+	y : (x_0-\delta _1 , x_0+\delta _2) \to B_r(x_0)
+	\] 
+	\`e \textit{massimale} se
+	\begin{itemize}
+		\item $\delta _2<a \implies \displaystyle \lim_{x \to x_0+\delta _2} y(x) \in \partial B_r(y_0)$;
+		\item $\delta _1<a \implies \displaystyle \lim_{x \to x_0-\delta _1} y(x) \in \partial B_r(y_0)$.
+	\end{itemize}
+\end{definizione}
+\noindent Questa definizione \`e motivata dal seguente ragionamento.
+Una soluzione $y : I_\delta \to B_r(y_0)$ \`e lipschitziana perch\'e, per $M = \left\lVert f \right\rVert _\infty$, si ha 
+\[
+\lvert y'(x) \rvert = \lvert f(x,y(x)) \rvert \le \left\lVert f \right\rVert _\infty= M
+\] 
+Essendo lipschitziana, \`e uniformemente continua e, ed essendo definita su un aperto, pu\`o essere univocamente estesa a valori sulla chiusura del dominio. 
+In questo senso, ammetter\`a necessariamente i limiti
+\[
+\lim_{x \to x_0\pm\delta } y(x) = y^{\pm} 
+\] 
+Questo vuol dire che se $y^+\in B_r(y_0)$, applicando il teorema di Cauchy-Lipschitz, si pu\`o estendere la soluzione all'intervallo $(x_0-\delta ,x_0+\delta +\delta ')$, dove $\delta ' > 0$, e lo stesso discorso si pu\`o ripetere per $y^-$.
+\begin{osservazione}
+Se $a = r = +\infty$ e $y$ \`e una soluzione massimale del problema di Cauchy su $(x_0-\delta _1,x_0+\delta _2)$, allora $\operatorname{Dom} f = \mathbb{R} \times \mathbb{R}^n	$ implica che se $\delta _1$ \`e finito, allora
+\[
+\lim_{x \to x_0-\delta _1} \lvert y(x) \rvert =  +\infty
+\] 
+e, analogamente, si ha un asintoto anche per $\delta _2$ finito.
+\end{osservazione}
 
 
 

@@ -957,6 +957,18 @@ Se $y \in Y$: $B_\varepsilon ^{(Y)} (y) = B_\varepsilon ^{(X)} (y) \cap Y$; ques
 	Date $\tau _1, \tau _2$ due topologie dello spazio $X$, si dice che $\tau _1$ \`e pi\`u fine di $\tau _2$ se $\tau _2 \subseteq \tau _1$.
 \end{definizione}
 \noindent La finezza induce un ordinamento parziale nell'insieme delle topologie di uno spazio topologico, dove la topologia discreta rappresenta la topologia pi\`u fine possibile, mentre la topologia banale quella meno fina.
+
+\begin{definizione}
+	[Funzione continua]
+	Una mappa fra spazi topologici $f : X \to Y$ si dice \textit{continua} se $\forall A \in \tau _Y$, si ha $f^{-1}(A) \in \tau _X$.
+\end{definizione}
+\begin{definizione}
+	[Omeomorfismo]
+	Sia $f:X\to Y$ una mappa continua; si dice che $f$ \`e un \textit{omeomorfismo} se \`e biunivoca e $f^{-1}$ \`e continua.
+\end{definizione}
+\begin{osservazione}
+Gli omeomorfismi e le funzioni continue biettive non coincidono; per esempio, dato $X$ uno spazio topologico con $\tau _1$ e $\tau _2$ due sue topologie tali che $\tau _2 \subsetneq \tau _1$, allora $\operatorname{Id} :(X,\tau _1)\to (X,\tau _2)$ \`e continua, ma $\operatorname{Id} : (X,\tau _2) \to (X,\tau _1)$ no.
+\end{osservazione}
 \subsubsection{Distanze equivalenti}
 \begin{definizione}
 	[Distanze topologicamente equivalenti]
@@ -1064,18 +1076,56 @@ ha integrale $\varepsilon $, ma $\left\lVert f \right\rVert _\infty = 2$, cio\`e
 		\end{itemize}
 	\end{proof}
 \end{prop}
-\subsubsection{Continuit\`a in spazi topologici}
-\begin{center}
-	\textbf{Riprendere da pagina 51, sezione 2.2.2} 
-\end{center}
+\subsubsection{Chiusura e parte interna}
+\begin{definizione}
+	[Chiusura]
+	Sia $(X,\tau )$ uno spazio topologico e sia $Y\subseteq X$ un suo sottoinsieme.
+	Si definisce la \textit{chiusura} di $Y$ in $X$ come il pi\`u piccolo chiuso che contiene $Y$, ossia
+	\[
+		\overline{Y}=\bigcap_{\substack{Y \subseteq C\\ C \text{ chiuso}}} C
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Parte interna]
+Sia $(X,\tau )$ uno spazio topologico e $Y\subseteq X$ un suo sottoinsieme.
+Si definisce \textit{parte interna} di $Y$ in $X$ come il pi\`u grande aperto contenuto in $Y$, ossia
+\[
+	\operatorname{Int} Y = \bigcup_{\substack{A \in \tau \\ A\subseteq Y}} A
+\] 
+\end{definizione}
+\noindent Visto che l'intersezione arbitraria di chiusi \`e chiusa e l'unione arbitraria di aperti \`e aperta, le definizioni di parte interna e chiusura sono sensate.
 
-
-
-
-
-
-
-
+\begin{osservazione}
+	Valgono le due seguenti relazioni:
+\begin{equation}
+	\begin{split}
+		&\operatorname{Int} Z = X \setminus \overline{(X\setminus Z)}\\
+		&\overline{Z} = X \setminus \operatorname{Int} (X \setminus Z)
+	\end{split}
+\end{equation}
+Inoltre, $Z$ coincide con la sua parte interna se e solo se \`e aperto, mentre coincide con la sua chiusura se e solo se \`e chiuso.
+\end{osservazione}
+\begin{definizione}
+	[Frontiera]
+	La \textit{frontiera} di un insieme $Z \subset X$ \`e definita come
+	\[
+	\partial Z = \overline{Z }\setminus\operatorname{Int} Z
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Punti aderenti e di accumulazione]
+	Siano $P \in X$ e $Z \subseteq X$. Si dice che:
+\begin{itemize}
+	\item $P$ \`e \textit{aderente} a $Z$ se $P\in \overline{Z}$;
+	\item $P$ \`e \textit{di accumulazione} per $Z$ se $P \in \overline{Z \setminus\left\{ P \right\} }$.
+\end{itemize}
+\end{definizione}
+\begin{prop}
+	Sia $X$ uno spazio topologico e $Z \subseteq X$; allora $P \in \overline{Z}$ se e solo se $\forall A \subseteq X$ aperto \`e tale che $P \in A\implies A\cap Z \neq \varnothing$.
+	\begin{proof}
+		
+	\end{proof}
+\end{prop}
 
 
 

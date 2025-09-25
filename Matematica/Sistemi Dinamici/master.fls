@@ -317,7 +317,6 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
-INPUT /usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 INPUT /usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 INPUT /usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
@@ -432,6 +431,7 @@ INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-bo
 INPUT ./master.aux
 INPUT ./master.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb
