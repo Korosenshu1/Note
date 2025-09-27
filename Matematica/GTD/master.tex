@@ -329,6 +329,18 @@ per cui $\left\lVert \beta '(s) \right\rVert =1$.
 \begin{osservazione}
 In base a quanto detto prima, ogni curva regolare \`e \textit{riparametrizzabile tramite lunghezza d'arco}.
 \end{osservazione}
+\begin{osservazione}
+	[Non unicit\`a della versione pla]
+	Data una curva regolare $\alpha  : I \to \mathbb{R}^3$, la riparametrizzazione tramite lunghezza d'arco non \`e univoca ma dipende dall'estremo inferiore di integrazione della lunghezza d'arco $s(t)$; se, infatti, $a,b \in I$ con $a < b$:
+	\[
+	s_a (t) = \int_{a} ^t \left\lVert \alpha '(u) \right\rVert du \hspace{1cm}s_b (t) \int_{b} ^t \left\lVert \alpha '(u) \right\rVert du
+	\] 
+	Le due, per\`o, differiscono solo per una costante perch\'e
+	\[
+	s_a(t) = \int_{a} ^b \left\lVert \alpha '(u) \right\rVert du + \int_{b} ^t \left\lVert \alpha '(u) \right\rVert du = \text{cost.} + s_b(t)
+	\] 
+	Questa differenza per una costante non influir\`a sulla trattazione del riferimento di Frenet perch\'e si lavora con derivate e la costante sparisce.
+\end{osservazione}
 \begin{esempio}
 	[Elica]
 Sia $a > 0$; allora la mappa
@@ -411,6 +423,29 @@ Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \ma
 	Si considera, come prima, $y=tx $, da cui $x^3 + x^2(1-t^2) = 0$, e si vede che $x = t^2 - 1$ e $y=t^3 -t$, quindi $\alpha (t) = (t^2 - 1, t^3-t,0)$.
 \end{svolgimento}
 \end{esempio}
+\noindent Per quanto in linea teorica se $\alpha $ \`e una curva regolare, allora si pu\`o riparametrizzare tramite lunghezza d'arco, questo non \`e praticamente fattibile in ogni singolo caso; se, per esempio, si considera $\alpha (t) = (t,t^2,t^3)$, si ha $\alpha '(t) = (1,2t,3t^2)$, che, dunque, \`e regolare, ma data
+\[
+s(t) = \int_{0} ^t \sqrt{1 + 4u^2 + 9u^4} du
+\] 
+non si \`e in grado di trovare un'espressione per $t(s)$ perch\'e la primitiva di $s$ non \`e scrivibile in termini di funzioni elementari.
+\subsection{Riferimento ed equazioni di Frenet}
+\begin{definizione}
+	[Versore tangente]
+	Data una curva riparametrizzabile $\alpha :I \to \mathbb{R}^3$ e la sua riparametrizzazione tramite lunghezza d'arco $\beta (s)$, si definisce il \textit{versore tangente} ad $\alpha $ come $T(s) = \beta '(s)$.
+\end{definizione}
+\begin{definizione}
+	[Curvatura]
+	Data una curva pla $\beta :I\to \mathbb{R}^3$ e il suo versore tangente $T(s)$, allora se ne definisce la \textit{curvatura} come
+	\[
+	k (s) = \left\lVert T'(s) \right\rVert 
+	\] 
+\end{definizione}
+\noindent Ora si ricavano il riferimento di Frenet e le equazioni di Frenet.
+Per poter definire il riferimento di Frenet e ricavare, conseguentemente, le equazioni di Frenet, \`e necessario imporre ulteriori condizioni sulle curve in esame; la condizione operativa necessaria \`e la seguente.
+\begin{definizione}
+	[Curva di Frenet]
+	Una curva regolare $\alpha:[a,b]\to\mathbb{R}^3 $ \`e detta \textit{di Frenet} se la sua pla $\beta = \alpha  \circ t:[0,L(\alpha )]\to \mathbb{R}^3$ \`e tale che $k(s) >0, \ \forall s \in [0,L(\alpha )]$.
+\end{definizione}
 \begin{lemma}\label{lemdif}
 	Se $f, g : I \to \mathbb{R}^{3} $ sono due mappe, allora 
 	\[
@@ -427,50 +462,25 @@ Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \ma
 	\] 
 	\end{proof}
 \end{lemma}
-\noindent Per quanto in linea teorica se $\alpha $ \`e una curva regolare, allora si pu\`o riparametrizzare tramite lunghezza d'arco, questo non \`e praticamente fattibile in ogni singolo caso; se, per esempio, si considera $\alpha (t) = (t,t^2,t^3)$, si ha $\alpha '(t) = (1,2t,3t^2)$, che, dunque, \`e regolare, ma data
+\noindent Data $\alpha : I \to \mathbb{R}^3$ una curva di Frenet e $T(s) = \beta '(s)	$ il suo versore normale, con $\beta $ versione pla di $\alpha $, si nota che $T'(s)$ non \`e, in generale un versore e 
 \[
-s(t) = \int_{0} ^t \sqrt{1 + 4u^2 + 9u^4} du
+1 = \left\lVert T(s) \right\rVert ^2 = T(s) \cdot T(s) \implies \left[ T(s) \cdot T(s) \right] ' = 2T'(s) \cdot T(s) = 0 \implies T'(s) \perp T(s) 
 \] 
-non si \`e in grado di trovare un'espressione per $t(s)$ perch\'e la primitiva di $s$ non \`e scrivibile in termini di funzioni elementari.
-\subsection{Riferimento ed equazioni di Frenet}
-\begin{definizione}
-	[Versore tangente]
-	Data una curva riparametrizzabile $\alpha :I \to \mathbb{R}^3$ e la sua riparametrizzazione tramite lunghezza d'arco $\beta (s)$, si definisce il \textit{versore tangente} ad $\alpha $ come $T(s) = \beta '(s)$.
-\end{definizione}
-\begin{prop}\label{ezprop}
-	Se $\beta :I \to\mathbb{R}^3$ \`e una curva pla, allora $T'(s) \cdot T(s) = 0$.
-	\begin{proof}
-		Per quanto visto, $\left\lVert T(s) \right\rVert ^2 = T(s) \cdot T(s) = 1$; per il lemma precedente \ref{lemdif}, si ha $2 T'(s) \cdot T(s) = (T(s)\cdot T(s))' = 0 $.
-	\end{proof}
-\end{prop}
-\begin{definizione}
-	[Curvatura]
-	Data una curva pla $\beta :I\to \mathbb{R}^3$ e il suo versore tangente $T(s)$, allora se ne definisce la \textit{curvatura} come
-	\[
-	k (s) = \left\lVert T'(s) \right\rVert 
-	\] 
-\end{definizione}
-\begin{definizione}
-	[Curva di Frenet]
-	Una curva regolare $\alpha:[a,b]\to\mathbb{R}^3 $ \`e detta \textit{di Frenet} se la sua pla $\beta = \alpha  \circ t:[0,L(\alpha )]\to \mathbb{R}^3$ \`e tale che $k(s) >0, \ \forall s \in [0,L(\alpha )]$.
-\end{definizione}
-\noindent Visto che $k(s) = \left\lVert T'(s) \right\rVert $, allora si pu\`o scrivere 
-\begin{boxenv}[]
-\begin{equation}
-	T'(s) = k(s)N(s)
-\end{equation}
-\end{boxenv}
-\noindent che \`e nota come \textbf{I equazione di Frenet}. 
-Si nota che $N(s)$ deve avere norma unitaria perch\'e la norma di $T'(s)$ \`e data interamente da $k(s)$; inoltre, $N(s)$ \`e un versore ortogonale a $T(s)$ perch\'e si \`e dimostrato (prop. \ref{ezprop}) che $T(s) \perp T'(s)$.
-Se ne ricava la seguente definizione.
+Avendo assunto $\alpha $ di Frenet, significa che $k_\alpha  (s) \neq 0$, quindi $T'(s)$ \`e normalizzabile e si ottiene un versore ortogonale a $T(s)$.
+Usando questo versore e $T(s)$, tramite il prodotto vettore, se ne pu\`o definire un terzo; allora si ha la seguente definizione.
 \begin{definizione}
 	[Versori normale e binormale]
-	Dato $T(s)$ versore tangente di una certa curva regolare $\alpha : I \to \mathbb{R}^3$, si definiscono $N(s)$ \textit{versore normale principale} e $B(s) = T(s) \times N(s)$ \textit{versore binormale}.
+	Dato $T(s)$ versore tangente di una curva di Frenet $\alpha : I \to \mathbb{R}^3$, si definiscono $N(s) = T'(s) / \left\lVert T'(s) \right\rVert $ \textit{versore normale principale} e $B(s) = T(s) \times N(s)$ \textit{versore binormale}.
 \end{definizione}
 \noindent Evidentemente, si ha $\left\lVert N(s) \right\rVert =\left\lVert B(s) \right\rVert  = 1 $ e $T(s) \cdot N(s) = T(s) \cdot B(s) = N(s) \cdot B(s) =  0 $.
 Ne segue che $\big(T(s),N(s),B(s)\big), \ \forall s \in I$ forma una base ortonormale di $\mathbb{R}^3$, nota col nome di \textbf{riferimento di Frenet}.
-
-Si nota che, essendo un versore, si ha $N(s) \cdot N(s) = 1$, quindi $N'(s) \cdot N(s) = 0$ (per lo stesso ragionamento della prop. \ref{ezprop}), dunque $N'(s) \in \langle T(s) , B(s) \rangle$; inoltre, essendo $T(s)\cdot N(s) = 0$, si ha 
+Per definizione di $N(s)$, si ottiene la \textbf{I equazione di Frenet}:
+\begin{boxenv}[]
+\begin{equation}
+	T'(s) = k(s) N(s)
+\end{equation}
+\end{boxenv}
+\noindent Si nota che, essendo un versore, si ha $N(s) \cdot N(s) = 1$, quindi $N'(s) \cdot N(s) = 0$ (per lo stesso ragionamento fatto per $T(s)$), dunque $N'(s) \in \langle T(s) , B(s) \rangle$; inoltre, essendo $T(s)\cdot N(s) = 0$, si ha 
 \[
 	T'(s) \cdot N(s) +T(s)\cdot  N'(s)=k(s) \underbracket{N(s) \cdot N(s)}_{=1}  +T(s)\cdot  N'(s) = 0 
 \] 
