@@ -1,0 +1,259 @@
+% !TeX program = lualatex
+\documentclass[12pt]{article}
+% Packages
+%\usepackage[margin=1.5in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{unicode-math}
+\usepackage{fontspec}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+%\usepackage{parskip}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage{setspace}
+\setstretch{1.2}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{133,68,66}}
+\definecolor{mastercolor}{HTML}{854442}
+\definecolor{nred}{HTML}{bf0040}
+
+
+% Titles 
+\title{Appunti di\\ \vspace{.3cm} Analisi 3}
+\author{Manuel Deodato}
+\date{}
+
+
+
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{20}{20}\scshape}
+{{\color{mastercolor}\fontsize{30}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\titlespacing*{\section}{0pt}{*2}{1cm}
+\titlespacing*{\subsection}{0pt}{*5}{.25cm}
+\titlespacing*{\subsubsection}{0pt}{*4.5}{.25cm}
+
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{15}{20}\bfseries}{\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{13}{10}\bfseries}{\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage{microtype}
+\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+\usepackage{newcomputermodern}
+
+%%% Hook
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Teoria della misura}
+\subsection{Introduzione}
+Si cerca un modo per misurare i sottoinsiemi di $\mathbb{R}^d$ (la maggior parte).
+La misura di questi corrisponde al volume, per $d=3$, l'area per $d=2$, eccetera.
+
+L'idea principale \`e quella di approssimare i sottoinsiemi dei quali si vuole ottenere la misura tramite l'unione di altri insiemi la cui geometria \`e nota e di cui, dunque, si sa gi\`a calcolare il volume.
+Perci\`o, si useranno gli intervalli $[a,b]$ per sottoinsiemi di $\mathbb{R}$, la cui misura \`e data da $b- a$, mentre per il caso generale di $\mathbb{R}^d$, si user\`a il prodotto di intervalli.
+\subsubsection{Definizioni preliminari}
+
+Un punto $x \in \mathbb{R}^d$ \`e indicato tramite la $d$-upla $x = (x_1,\ldots,x_d)$ e la sua norma \`e data da
+\[
+\lvert x \rvert  = \sqrt{x_1^2 + \ldots+ x_d^2} 
+\] 
+La distanza euclidea che ne deriva tra due punti $x,y \in \mathbb{R}^d$ \`e, quindi, indicata tramite $\lvert x-y \rvert $. 
+\begin{definizione}
+	[Distanza tra insiemi]
+	Siano $E,F \subseteq \mathbb{R}^d$; la loro distanza \`e definita come
+	\[
+		d(E,F) = \inf_{\substack{x \in E\\ y \in F}} \lvert x - y \rvert 
+	\] 
+\end{definizione}
+Una palla aperta di centro $x$ e raggio $r$ in $\mathbb{R}^d$ si indica con
+\[
+B_r(x) = \left\{ y \in \mathbb{R}^d  \mid \lvert x-y \rvert <r \right\} 
+\] 
+\begin{definizione}
+	[Insieme aperto]
+	Sia $E\subseteq \mathbb{R}^d$; si dice che $E$ \`e \textit{aperto} se $\forall x \in E, \ \exists B_\epsilon (x) \subset E$.
+\end{definizione}
+Per definizione, un insieme si dice \textit{chiuso} se il suo complementare \`e aperto, mentre \`e \textit{limitato} se pu\`o essere contenuto in una qualche palla aperta.
+\begin{definizione}
+	[Insieme compatto]
+	Un insieme $E \subseteq \mathbb{R}^d$ tale che $E \subseteq \bigcup_{i \in I} U_i$ \`e compatto se $\exists J \subset I$ finito tale che $E \subseteq \bigcup_{j \in J} U_j $.
+\end{definizione}
+Per il teorema di Heine-Borel, ogni insieme chiuso e limitato \`e anche compatto.
+
+	Un punto $x \in \mathbb{R}^d$ \`e detto \textit{di accumulazione} per $E \subseteq \mathbb{R}^d$ se $\forall r > 0$, la palla $B_r(x)$ contiene almeno un punto di $E$.
+	Questo significa che ci sono punti di $E$ arbitrariamente vicini a $x$.
+Un punto $x \in E$, invece, \`e detto \textit{isolato} se $\exists r > 0 : B_r(x) \cap E \left\{ x \right\} $.
+L'insieme $E$ si dice \textit{perfetto} se non contiene punti isolati.
+\subsubsection{Cubi e rettangoli}
+\begin{definizione}
+	[Rettangolo chiuso]
+	Un rettangolo chiuso in $\mathbb{R}^d$ \`e ottenuto dal prodotto di $d$ intervalli unidimensionali chiusi e limitati:
+	\[
+		R = [a_1,b_1] \times \ldots [a_d,b_d]
+	\] 
+	con $a_j,b_j, \ j=1,\ldots,d$ sono numeri reali. 
+	Questo si pu\`o scrivere come:
+	\[
+	R = \left\{ (x_1,\ldots,x_d) \in \mathbb{R}^d  \mid  a_j \le x_j \le b_j, \ j =1,...,d\right\} 
+	\] 
+\end{definizione}
+Per questa definizione, il rettangolo \`e, appunto, chiuso e i suoi lati sono paralleli agli assi; il suo volume \`e dato da
+\[
+\lvert R  \rvert = \prod_{j=1} ^{d} b_j - a_j
+\] 
+Un rettangolo aperto, invece, \`e ottenuto come prodotto cartesiano di intervalli unidimensionali aperti $(a_1,b_1) \times  \ldots \times (a_d,b_d)$.
+\begin{definizione}
+	Un'unione di rettangoli \`e detta \textit{quasi disgiunta} se le parti interne di ciascuno di questi rettangoli sono disgiunte.
+\end{definizione}
+\begin{lemma}
+	Se un rettangolo \`e l'unione quasi disgiunta di un numero finito di altri rettangoli, quindi della forma $R = \bigcup_{k=1} ^N R_k$, allora 
+	\[
+	\lvert R \rvert  = \sum_{k=1}^{N} \lvert R_k \rvert 
+	\] 
+	\begin{proof}
+		\textit{Da scrivere\ldots}
+	\end{proof}
+\end{lemma}
+\begin{lemma}
+	Se $R, R_1,\ldots,R_N$ sono rettangoli e $R \subset \bigcup _{k=1} ^N R_k$, allora 
+	\[
+	\lvert R \rvert \le \sum_{k=1}^{N} \lvert R_k \rvert 
+	\] 
+	\begin{proof}
+		\textit{Da scrivere\ldots}
+	\end{proof}
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+\end{document}
