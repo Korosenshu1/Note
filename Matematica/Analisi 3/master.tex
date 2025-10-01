@@ -1,14 +1,11 @@
-% !TeX program = lualatex
-\documentclass[12pt]{article}
+%! TEX program = lualatex
+\documentclass[11pt]{article}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
 \usepackage{amsbsy} % Bold math symbols
 \makeindex
 %\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{unicode-math}
-\usepackage{fontspec}
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
 \tcbuselibrary{skins}
@@ -154,9 +151,12 @@ title=#1
 
 
 % Font
-\usepackage{microtype}
 \renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
-\usepackage{newcomputermodern}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[default]{fontsetup}
+
+
 
 %%% Hook
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
@@ -169,83 +169,116 @@ title=#1
 \newpage
 \section{Teoria della misura}
 \subsection{Introduzione}
-Si cerca un modo per misurare i sottoinsiemi di $\mathbb{R}^d$ (la maggior parte).
-La misura di questi corrisponde al volume, per $d=3$, l'area per $d=2$, eccetera.
+	L'obiettivo \`e arrivare a costruire una funzione che permetta di misurare i sottoinsiemi di $\mathbb{R}^d$, o quantomeno la maggior parte, e una conseguente teoria dell'integrazione che abbia un buon comportamento rispetto al passaggio al limite.
 
-L'idea principale \`e quella di approssimare i sottoinsiemi dei quali si vuole ottenere la misura tramite l'unione di altri insiemi la cui geometria \`e nota e di cui, dunque, si sa gi\`a calcolare il volume.
-Perci\`o, si useranno gli intervalli $[a,b]$ per sottoinsiemi di $\mathbb{R}$, la cui misura \`e data da $b- a$, mentre per il caso generale di $\mathbb{R}^d$, si user\`a il prodotto di intervalli.
-\subsubsection{Definizioni preliminari}
-
-Un punto $x \in \mathbb{R}^d$ \`e indicato tramite la $d$-upla $x = (x_1,\ldots,x_d)$ e la sua norma \`e data da
+	Per ottenere il volume di generici sottoinsiemi di $\mathbb{R}^d$ \`e opportuno partire da oggetti la cui geometria sia nota e \textit{rivestire} tali sottoinsiemi con questi oggetti in modo tale da approssimarne arbitrariamente bene la misura.
+	A questo scopo, si definisce il seguente oggetto fondamentale.
+	\begin{definizione}
+		[Plurintervallo]
+	Si definisce \textit{plurintervallo} un sottoinsieme di $I \subseteq \mathbb{R}^d$ tale per cui esistono degli intervalli $I_k \subseteq \mathbb{R}$ tali che
+	\[
+	I = \prod_{k=1} ^d I_k
+	\] 
+	dove il prodotto \`e il prodotto cartesiano.
+	In altri termini, un plurintervallo $I$ \`e della forma
+	\[
+	I = \prod_{k=1} ^d (a_k,b_k)
+	\] 
+	con $-\infty < a_k < b_k <+\infty, \ \forall k$.
+	\end{definizione}
+	\begin{osservazione}
+	Fondamentalmente, un plurintervallo \`e un rettangolo per $d=2$, un parallelepipedo per $d=3$, eccetera.
+	\end{osservazione}
+	La geometria di questi oggetti \`e nota perch\'e la loro misura\footnote{Cio\`e il loro volume per $d=3$, la loro area per $d=2$, eccetera.} \`e nota ed \`e data da:
+	\[
+	\lvert I \rvert  = \prod_{k=1} ^d (b_k - a_k) = \prod_{k=1} ^d \lvert I_k \rvert 
+	\] 
+	Per definire una misura, si parte col definire una misura esterna, cio\`e una funzione $\mu^*  : \mathcal{P} (\mathbb{R}^d) \to [0,+\infty]$ tale che
+	\begin{enumerate}[(a).]
+		\item $\mu^* (\varnothing)=0$;
+		\item se $A \subseteq B \subseteq \mathbb{R}^d$, allora $\mu^* (A) \le \mu^* (B)$;
+		\item data $\left\{ E_i \right\} _{i=1} ^{+\infty} $ famiglia numerabile di insiemi, vale
+			\[
+			\mu^* \left(\bigcup_{i=1} ^{+\infty} E_i\right) \le \sum_{i=1}^{+\infty} \mu^* (E_i)
+			\] 
+	\end{enumerate}
+	Inoltre, si richiede che se $I \subseteq \mathbb{R}^d$ \`e un plurintervallo, allora $\mu^* (I) = \lvert I \rvert $.
+	\subsection{Misura esterna}
+	Si d\`a la seguente definizione.
+	\begin{definizione}
+		[Misura esterna di Lebesgue]
+	Sia $E \subseteq \mathbb{R}^d$ e sia $S$ un suo ricoprimento, tale che
+	\[
+	E \subseteq \bigcup_{k=1} ^{+\infty} I_k
+	\] 
+	con $I_k \subseteq \mathbb{R}^d$ plurintervalli. Sia, inoltre
+	\[
+	\sigma (S) = \sum_{k=1}^{+\infty} \lvert I_k \rvert 
+	\] 
+	il volume totale\footnote{Cio\`e si conta anche il volume condiviso tra pi\`u plurintervalli.} del ricoprimento; allora si definisce la \textit{misura esterna} di $E$ come:
+	\[
+	\mu^* (E) := \inf_S \sigma 
+	\] 
+	\end{definizione}
+Ai fini della teoria, si assume che la frontiera degli insiemi sia a misura nulla, cio\`e si dice che due plurintervalli $I_k, I_j \subseteq \mathbb{R}^d$ \textit{non sono sovrapposti} se
 \[
-\lvert x \rvert  = \sqrt{x_1^2 + \ldots+ x_d^2} 
+	\mathring{I}_k \cap \mathring{I}_j = \varnothing, \ \text{ per } k \neq j
 \] 
-La distanza euclidea che ne deriva tra due punti $x,y \in \mathbb{R}^d$ \`e, quindi, indicata tramite $\lvert x-y \rvert $. 
-\begin{definizione}
-	[Distanza tra insiemi]
-	Siano $E,F \subseteq \mathbb{R}^d$; la loro distanza \`e definita come
-	\[
-		d(E,F) = \inf_{\substack{x \in E\\ y \in F}} \lvert x - y \rvert 
-	\] 
-\end{definizione}
-Una palla aperta di centro $x$ e raggio $r$ in $\mathbb{R}^d$ si indica con
-\[
-B_r(x) = \left\{ y \in \mathbb{R}^d  \mid \lvert x-y \rvert <r \right\} 
-\] 
-\begin{definizione}
-	[Insieme aperto]
-	Sia $E\subseteq \mathbb{R}^d$; si dice che $E$ \`e \textit{aperto} se $\forall x \in E, \ \exists B_\epsilon (x) \subset E$.
-\end{definizione}
-Per definizione, un insieme si dice \textit{chiuso} se il suo complementare \`e aperto, mentre \`e \textit{limitato} se pu\`o essere contenuto in una qualche palla aperta.
-\begin{definizione}
-	[Insieme compatto]
-	Un insieme $E \subseteq \mathbb{R}^d$ tale che $E \subseteq \bigcup_{i \in I} U_i$ \`e compatto se $\exists J \subset I$ finito tale che $E \subseteq \bigcup_{j \in J} U_j $.
-\end{definizione}
-Per il teorema di Heine-Borel, ogni insieme chiuso e limitato \`e anche compatto.
-
-	Un punto $x \in \mathbb{R}^d$ \`e detto \textit{di accumulazione} per $E \subseteq \mathbb{R}^d$ se $\forall r > 0$, la palla $B_r(x)$ contiene almeno un punto di $E$.
-	Questo significa che ci sono punti di $E$ arbitrariamente vicini a $x$.
-Un punto $x \in E$, invece, \`e detto \textit{isolato} se $\exists r > 0 : B_r(x) \cap E \left\{ x \right\} $.
-L'insieme $E$ si dice \textit{perfetto} se non contiene punti isolati.
-\subsubsection{Cubi e rettangoli}
-\begin{definizione}
-	[Rettangolo chiuso]
-	Un rettangolo chiuso in $\mathbb{R}^d$ \`e ottenuto dal prodotto di $d$ intervalli unidimensionali chiusi e limitati:
-	\[
-		R = [a_1,b_1] \times \ldots [a_d,b_d]
-	\] 
-	con $a_j,b_j, \ j=1,\ldots,d$ sono numeri reali. 
-	Questo si pu\`o scrivere come:
-	\[
-	R = \left\{ (x_1,\ldots,x_d) \in \mathbb{R}^d  \mid  a_j \le x_j \le b_j, \ j =1,...,d\right\} 
-	\] 
-\end{definizione}
-Per questa definizione, il rettangolo \`e, appunto, chiuso e i suoi lati sono paralleli agli assi; il suo volume \`e dato da
-\[
-\lvert R  \rvert = \prod_{j=1} ^{d} b_j - a_j
-\] 
-Un rettangolo aperto, invece, \`e ottenuto come prodotto cartesiano di intervalli unidimensionali aperti $(a_1,b_1) \times  \ldots \times (a_d,b_d)$.
-\begin{definizione}
-	Un'unione di rettangoli \`e detta \textit{quasi disgiunta} se le parti interne di ciascuno di questi rettangoli sono disgiunte.
-\end{definizione}
-\begin{lemma}
-	Se un rettangolo \`e l'unione quasi disgiunta di un numero finito di altri rettangoli, quindi della forma $R = \bigcup_{k=1} ^N R_k$, allora 
-	\[
-	\lvert R \rvert  = \sum_{k=1}^{N} \lvert R_k \rvert 
-	\] 
+\begin{teorema}
+	Sia $I \subseteq \mathbb{R}^d$ un plurintervallo; allora $\mu^* (I) = \lvert I \rvert $.
+\end{teorema}
 	\begin{proof}
-		\textit{Da scrivere\ldots}
+		Evidentemente $I$ \`e il pi\`u piccolo ricoprimento di se stesso che, quindi, minimizza $\sigma (S)$, pertanto, per definizione, si ha $\mu^* (I) = \lvert I \rvert $.
 	\end{proof}
-\end{lemma}
-\begin{lemma}
-	Se $R, R_1,\ldots,R_N$ sono rettangoli e $R \subset \bigcup _{k=1} ^N R_k$, allora 
-	\[
-	\lvert R \rvert \le \sum_{k=1}^{N} \lvert R_k \rvert 
-	\] 
+\begin{teorema}
+	Siano $A,B \subseteq \mathbb{R}^d$ tali che $A \subseteq B$; allora $\mu^* (A) \le \mu^* (B)$.
+\end{teorema}
 	\begin{proof}
-		\textit{Da scrivere\ldots}
+		Applicando direttamente la definizione, si nota che:
+		\[
+		\mu^* (A) = \inf_{S_A} \sigma (S_A) \le \inf_{S_B} \sigma (S_B) = \mu^* (B)  
+		\] 
+		visto che ogni ricoprimento $S_B$ di $B$ ricopre anche $A$.
 	\end{proof}
-\end{lemma}
+\begin{corollario}
+	Siano $E \subseteq E' \subseteq \mathbb{R}^d$, con $\mu^* (E') = 0$; $\mu^* (E) = 0$.
+\end{corollario}
+\begin{teorema}
+	Sia $E \subseteq \mathbb{R}^d$; allora $\forall \varepsilon >0, \ \exists G \subseteq \mathbb{R}^d$ aperto tale che $E \subset G$ e $\mu^* (G) < \mu^* (E) + \varepsilon $.
+\end{teorema}
+\begin{proof}
+	Sia $\left\{ I_k \right\} _{k=1} ^{+\infty} $ una famiglia numerabile di plurintervalli chiusi di $\mathbb{R}^d$ tali che
+	\[
+	E \subset \bigcup _{k=1} ^{+\infty}I_k \hspace{1cm} \sum_{k=1}^{+\infty}\lvert I_k \rvert  \le \mu^* (E) + \varepsilon  
+	\] 
+	Allora si costruiscono dei nuovi intervalli $I_k^*$ tali che $I_k \subset \mathring{I}_k^*$ e $\lvert I_k^* \rvert \le \lvert I_k \rvert + \varepsilon / 2^{k} $; allora il relativo insieme $G$ aperto \`e dato da
+	\[
+		G = \bigcup_{k=1} ^{+\infty} \mathring{I}_k^*
+	\] 
+	Infatti
+	\[
+	\mu^* (G) = \sum_{k=1}^{+\infty} \lvert I_k^* \rvert \le  \sum_{k=1}^{+\infty}\left( \lvert I_k \rvert + \frac{\varepsilon }{2^{k} }\right) \le \mu^* (E)+\varepsilon 
+	\] 
+	
+\end{proof}
+\begin{osservazione}
+Relativamente al teorema precedente, si notano due cose: intanto fa uso della topologia di $\mathbb{R}^d$ e poi afferma che un generico insieme $E \subseteq \mathbb{R}^d$ \`e approssimabile arbitrariamente bene tramite un aperto $G$.
+\end{osservazione}
+
+\begin{teorema}
+	Sia $E \subseteq \mathbb{R}^d$; allora $\exists H = \bigcap_{j=1} ^{+\infty} G_j$, con $G_j$ aperti, tale che $E \subset H$ e $\mu ^*(E) = \mu ^*(H)$.
+\end{teorema}
+	\begin{proof}
+		
+	\end{proof}
+\subsection{Misurabilit\`a}
+
+
+
+
+
+
+
 
 
 
