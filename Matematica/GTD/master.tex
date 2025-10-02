@@ -383,6 +383,7 @@ con $\beta $ pla e, conseguentemente, $\beta (\mathbb{R}) = \operatorname{Tr} (\
 	\mathcal{E} _{a,b} = \left\{ (x,y,0) \in \mathbb{R}^3  \ \bigg\lvert \ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\right\} \subset \mathbb{R}^3
 	\] 
 	Si vuole definire una curva $\alpha $ tale che $\operatorname{Tr} \alpha = \mathcal{E} _{a,b} $
+\end{esempio}
 	\begin{svolgimento}
 		Si nota che $(x /  a , y / b) \in S^1$, cio\`e
 	\[
@@ -401,28 +402,27 @@ con $\beta $ pla e, conseguentemente, $\beta (\mathbb{R}) = \operatorname{Tr} (\
  e si vede che $\operatorname{Tr} \alpha  = \mathcal{E} _{a,b} $.
 
 	\end{svolgimento}
-\end{esempio}
 \begin{esempio}
 Sia 
 \[
 \mathcal{C}  = \left\{ (x,y,0) \in \mathbb{R}^3  \mid y^2 = x^3 \right\}  \subset \mathbb{R}^3
 \] 
 Si vuole costruire $\alpha $ tale che $\operatorname{Tr}\alpha  = \mathcal{C} $.
+\end{esempio}
 \begin{svolgimento}
 	Se si considera la secante $y = tx$, allora $t^2 x^2 = x^3$, ossia $x= t^2$ e $y = t^3$.
 	Ne segue che la curva che soddisfa la richiesta \`e $\alpha (t) = (t^2 , t^3,0)$.
 \end{svolgimento}
-\end{esempio}
 \begin{esempio}
 Sia 
 \[
 \mathcal{C}  = \left\{ (x,y,0)  \mid y^2 = x^3 + x^2 \right\} \subset \mathbb{R}^3
 \] 
 Si vuole costruire una curva $\alpha $ tale che $\operatorname{Tr} \alpha  = \mathcal{C} $.
+\end{esempio}
 \begin{svolgimento}
 	Si considera, come prima, $y=tx $, da cui $x^3 + x^2(1-t^2) = 0$, e si vede che $x = t^2 - 1$ e $y=t^3 -t$, quindi $\alpha (t) = (t^2 - 1, t^3-t,0)$.
 \end{svolgimento}
-\end{esempio}
 \noindent Per quanto in linea teorica se $\alpha $ \`e una curva regolare, allora si pu\`o riparametrizzare tramite lunghezza d'arco, questo non \`e praticamente fattibile in ogni singolo caso; se, per esempio, si considera $\alpha (t) = (t,t^2,t^3)$, si ha $\alpha '(t) = (1,2t,3t^2)$, che, dunque, \`e regolare, ma data
 \[
 s(t) = \int_{0} ^t \sqrt{1 + 4u^2 + 9u^4} du
@@ -604,6 +604,7 @@ Sia $\beta :I \to \mathbb{R}^3$ una curva pla tale che
 \beta (I) \subseteq S_r^2(P) = \left\{ x \in \mathbb{R}^3 \ \big\lvert\ \left\lVert x- P \right\rVert = r\right\} 
 \] 
 Mostrare che $\beta  $ \`e di Frenet.
+\end{esercizio}
 \begin{svolgimento}
 	Se $\beta (I) \subseteq S_r^2(P)$, allora $\left\lVert \beta (s) - P \right\rVert ^2 = r^2$; derivando due volte rispetto a $s$, si ottiene:
 	\[
@@ -614,7 +615,6 @@ Mostrare che $\beta  $ \`e di Frenet.
 	\] 
 	Quindi $k(s) \neq 0$ e, pertanto $\beta $ \`e di Frenet.
 \end{svolgimento}
-\end{esercizio}
 \begin{prop}
 	Sia $\alpha  : I \to \mathbb{R}^3$ una curva di Frenet; allora $\tau _\alpha = 0 \iff \alpha (I)$ \`e contenuta in un piano.
 \end{prop}
@@ -632,8 +632,7 @@ Mostrare che $\beta  $ \`e di Frenet.
 				T(s) \cdot B_0 = \alpha '(s) \cdot B_0\implies (\alpha (s) \cdot B_0)' = 0
 				\] 
 				quindi $\alpha (s)\cdot B_0 = c \in \mathbb{R}$, dunque $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid x\cdot B_0 = c \right\} $.
-			\item ($\Leftarrow$) Sia $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid  x \cdot B_0 = c \right\} $, per qualche $B_0 \in \mathbb{R}^3$ tale che $\left\lVert B_0 \right\rVert =1$.
-			\item Sia $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid x\cdot B_0 =c  \right\} $, per qualche $B_0 \in \mathbb{R}^3$ tale che $\left\lVert B_0  \right\rVert  = 1$ e $c \in \mathbb{R}$; allora $\forall s, \ \alpha (s) \cdot B_0 = c$.
+			\item ($\Leftarrow$) Sia $\alpha (I) \subseteq \left\{ x \in \mathbb{R}^3  \mid x\cdot B_0 =c  \right\} $, per qualche $B_0 \in \mathbb{R}^3$ tale che $\left\lVert B_0  \right\rVert  = 1$ e $c \in \mathbb{R}$; allora $\forall s, \ \alpha (s) \cdot B_0 = c$.
 				Ne segue che
 				\[
 				T(s) \cdot B_0 = 0 \implies k(s) (N(s) \cdot B_0) = 0 \implies N(s) \cdot B_0 = 0
@@ -645,6 +644,31 @@ Mostrare che $\beta  $ \`e di Frenet.
 \begin{prop}
 	Sia $\alpha : I \to \mathbb{R}^3$ una curva di Frenet; se $\tau _\alpha  = 0$, allora $k_\alpha $ \`e costante $\iff \alpha (I)$ \`e contenuta in una circonferenza.
 \end{prop}
+\begin{proof}
+{\color{nred} Da scrivere\ldots}
+\end{proof}
+\begin{prop}
+	Sia $\alpha : I \to \mathbb{R}^3$ una curva regolare; se $\alpha (I) \subseteq \mathbb{S}_R(P) = \left\{ x \in \mathbb{R}^3  \mid \left\lVert x - P \right\rVert = R \right\} $, allora $\alpha $ \`e di Frenet e $k_\alpha \ge 1 / R > 0$.
+\end{prop}
+\begin{proof}
+	Sia $\beta $ la versione pla di $\alpha $. Assumendo che $\operatorname{Tr} (\beta ) \subseteq \mathbb{S}_R(P)$, si ha:
+	\[
+		(\beta (s) - P) \cdot (\beta (s) - P) = \left\lVert \beta (s) - P \right\rVert ^2 = R^2
+	\] 
+	Derivando questa relazione, si ha:
+	\[
+	\beta '(s) \cdot (\beta (s) - P) = 0
+	\] 
+	Derivando nuovamente:
+	\[
+		T'(s) \cdot (\beta (s)-P) + \underbracket{\beta '(s) \cdot \beta '(s)}_{=1}  = 0 
+	\] 
+	Passando alla norma, si vede che:
+	\[
+	1=\left\lVert T'(s) \cdot (\beta (s) - P) \right\rVert \le \left\lVert T'(s) \right\rVert \left\lVert \beta (s) - P \right\rVert = k_\alpha (s) R
+\] 
+	da cui $k_\alpha (s) \ge 1 / R > 0$, quindi $\alpha $ \`e di Frenet.
+\end{proof}
 \subsection{Riferimento di Frenet senza lunghezza d'arco}
 Come accennato, la possibilit\`a di ottenere la versione pla di una curva regolare, anche se ammissibile in teoria, non sempre \`e concreta in pratica.
 
@@ -663,11 +687,11 @@ da cui si ottiene la relazione
 	s'(t) T(s(t)) = \alpha '(t)
 \end{equation}
 e, derivando:
-\[
+\begin{equation}\label{e1}
 s'' (t) T(s(t)) + s'^2(t) T'(s(t)) = \alpha ''(t)
-\] 
+\end{equation}
 A questo punto, si vede che, facendo il prodotto vettore $\alpha ' \times \alpha ''$, il termine $T' \times T' = 0$, quindi:
-\begin{equation}
+\begin{equation}\label{e2}
 	\alpha ' \times \alpha '' = s'^3 T\times T'
 \end{equation}
 Si nota che, essendo $T ' \perp T $ e $\left\lVert T \right\rVert = 1$, si ha $\left\lVert T ' \times T \right\rVert = \left\lVert T' \right\rVert = k$, perci\`o
@@ -692,6 +716,62 @@ B=\frac{\alpha '\times \alpha ''}{\left\lVert \alpha ' \right\rVert ^3 k} =\frac
 N = B \times T = \frac{\alpha ' \times \alpha '' \times \alpha '}{\left\lVert \alpha '\times \alpha '' \right\rVert \left\lVert \alpha ' \right\rVert }
 \] 
 \end{boxenv}
+\noindent Infine, si calcola la torsione. 
+Per farlo, si deriva la I equazione di Frenet:
+\[
+s'T'' = s'k'N + s'k N'  \implies T'' = k'N + kN'
+\] 
+dove $s' \neq 0$ perch\'e la curva \`e regolare e, quindi, si cancella.
+Vista la III equazione di Frenet $B'  = -\tau N $, si ha $\tau  = - B' \cdot N$; in realt\`a, si nota che
+\[
+	0=(\underbracket{B\cdot N}_{=0} )'= B' \cdot N + B \cdot N'\implies B' \cdot N = - B\cdot N'
+\] 
+da cui $\tau  = B \cdot N'$.
+Derivando l'equazione \ref{e1}:
+\[
+\alpha '''= T'' s'^3 + 3T's's'' + Ts''' 
+\] 
+Ora, visto che $T' \propto N$ e $T,N \perp B$, dal prodotto scalare per $B$ si ha:
+\[
+\alpha ''' \cdot B = s'^3T '' \cdot B = s'^3k N' \cdot B= s'^3 k \tau 
+\] 
+Ricordando l'espressione per $B$, si ha:
+\begin{boxenv}[]
+\[
+\tau = \frac{\alpha ''' \cdot (\alpha ' \times \alpha '')}{\left\lVert \alpha ' \times \alpha '' \right\rVert ^2 } 
+\] 
+\end{boxenv}
+\begin{osservazione}
+L'esistenza di queste formule implica l'indipendenza di curvatura, torsione e intero riferimento di Frenet dalla scelta della lunghezza d'arco per la riparametrizzazione.
+\end{osservazione}
+\subsection{Teorema fondamentale della teoria delle curve}
+Siano $\beta , \widetilde{\beta }:I\to \mathbb{R}^3$ due curve pla di Frenet, con $\widetilde{\beta }$ ottenuta tramite roto-traslazione di $\beta $, cio\`e
+\[
+\widetilde{\beta }(s) = A \beta (s) + b
+\] 
+con $A \in \mathrm{SO} (3)$ e $b \in \mathbb{R}^3$.
+Quello che si vuole verificare ora \`e che le due curve abbiano uguali curvatura e torsione.
+Per farlo, si nota che, essendo $A$ un operatore lineare, \`e anche continuo (visto che opera su uno spazio finito-dimensionale), dunque:
+\[
+\widetilde{T}(s) = A T(s)  \hspace{1cm} \widetilde{T}' (s) = T'(s) \implies \widetilde{k}(s) \widetilde{N}(s) = k(s) A N(s)
+\] 
+$\forall s \in I $.
+Passando alle norme, visto che $A$ le preserva si ha $\left\lVert A N(s) \right\rVert = 1, \ \forall s \in I $, dunque $\widetilde{k}(s) = k(s), \ \forall s \in I$.
+
+Per la torsione, invece, si ha:
+\[
+\widetilde{B}(s) = \widetilde{T}(s) \times \widetilde{N}(s) = (AT(s)) \times (AN(s)) = A\left[ T(s) \times N(s) \right] = A B(s)
+\] 
+Per passaggi analoghi a prima, si vede che 
+\[
+\widetilde{B}'(s) = A B'(s) \implies -\widetilde{\tau }(s) \widetilde{N}(s) = - \tau (s) A N(s)
+\] 
+da cui $\widetilde{\tau }(s) = \tau (s)$.
+Ora ci si chiede il viceversa: date due curve con uguale curvatura e torsione, \`e vero che una \`e la versione roto-traslata dell'altra?
+Per rispondere, si ha il seguente.
+\begin{teorema}
+	Se $\beta ,\widetilde{\beta }:I\to\mathbb{R}^3$ sono due pla di Frenet con $k(s) = \widetilde{k}(s)$ e $\tau (s)= \widetilde{\tau }(s)$, allora $\exists A \in \mathrm{SO} (3), \ \exists b \in \mathbb{R}^3$ tali che $\widetilde{\beta }(s) = A \beta (s) + b , \ \forall s \in I$.
+\end{teorema}
 \subsection{Esercizi}
 \begin{esercizio}
 Sia data la curva
