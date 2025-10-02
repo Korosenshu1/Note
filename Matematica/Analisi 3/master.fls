@@ -357,6 +357,8 @@ INPUT ./master.out
 OUTPUT master.pdf
 INPUT ./master.out
 OUTPUT master.out
+INPUT ./front.jpg
+INPUT ./front.jpg
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./master.toc
 OUTPUT master.toc

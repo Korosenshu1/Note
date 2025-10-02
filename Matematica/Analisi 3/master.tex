@@ -118,11 +118,11 @@ title=#1
 \renewcommand{\maketitle}{
 \begin{center}
 {\sffamily
-{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+{\fontsize{20}{20}\selectfont\MakeUppercase{\thetitle}}}
 
 \vspace{0.2in}
 
-{\large\scshape\theauthor}
+{\large\MakeUppercase{\theauthor}}
 \end{center}
 }
 
@@ -164,6 +164,10 @@ title=#1
 
 \begin{document}
 \maketitle
+\vspace{5cm}
+\begin{center}
+		\includegraphics[width=.9\columnwidth]{front.jpg}
+\end{center}
 \newpage
 \tableofcontents
 \newpage
@@ -193,6 +197,7 @@ title=#1
 	\[
 	\lvert I \rvert  = \prod_{k=1} ^d (b_k - a_k) = \prod_{k=1} ^d \lvert I_k \rvert 
 	\] 
+	\subsection{Misura esterna}
 	Per definire una misura, si parte col definire una misura esterna, cio\`e una funzione $\mu^*  : \mathcal{P} (\mathbb{R}^d) \to [0,+\infty]$ tale che
 	\begin{enumerate}[(a).]
 		\item $\mu^* (\varnothing)=0$;
@@ -203,8 +208,7 @@ title=#1
 			\] 
 	\end{enumerate}
 	Inoltre, si richiede che se $I \subseteq \mathbb{R}^d$ \`e un plurintervallo, allora $\mu^* (I) = \lvert I \rvert $.
-	\subsection{Misura esterna}
-	Si d\`a la seguente definizione.
+	Si d\`a, allora, la seguente definizione e se ne verificano le propriet\`a.
 	\begin{definizione}
 		[Misura esterna di Lebesgue]
 	Sia $E \subseteq \mathbb{R}^d$ e sia $S$ un suo ricoprimento, tale che
@@ -243,7 +247,7 @@ Ai fini della teoria, si assume che la frontiera degli insiemi sia a misura null
 \begin{corollario}
 	Siano $E \subseteq E' \subseteq \mathbb{R}^d$, con $\mu^* (E') = 0$; $\mu^* (E) = 0$.
 \end{corollario}
-\begin{teorema}
+\begin{teorema}\label{thfond}
 	Sia $E \subseteq \mathbb{R}^d$; allora $\forall \varepsilon >0, \ \exists G \subseteq \mathbb{R}^d$ aperto tale che $E \subset G$ e $\mu^* (G) < \mu^* (E) + \varepsilon $.
 \end{teorema}
 \begin{proof}
@@ -269,21 +273,128 @@ Relativamente al teorema precedente, si notano due cose: intanto fa uso della to
 	Sia $E \subseteq \mathbb{R}^d$; allora $\exists H = \bigcap_{j=1} ^{+\infty} G_j$, con $G_j$ aperti, tale che $E \subset H$ e $\mu ^*(E) = \mu ^*(H)$.
 \end{teorema}
 	\begin{proof}
-		
+		Dalla definizione di misura esterna di $E$, si sa che
+		\[
+		\mu ^*(E) = \inf \left\{ \mu ^*(F)  \mid F \text{ aperto e } E \subseteq F \right\} 
+		\] 
+		Di conseguenza, per definizione di estremo inferiore, devono esistere degli aperti $G_n \supseteq E$ tali per cui
+		\[
+		\mu ^*(G_n) < \mu ^*(E) + \frac{1}{n}
+		\] 
+		con $n \in \mathbb{N}$.
+		Allora si vede che, preso 
+		\[
+		H = \bigcap _{n=1} ^{+\infty} G_n 
+	\]
+	si ha $E \subset H$ perch\'e ogni $G_n$ contiene $E$, quindi $\mu ^*(H)\ge \mu ^*(E)$, ma, allo stesso tempo
+	\[
+	\mu ^*(H)\le \mu ^*(E) + \frac{1}{n}, \ \forall n
+	\] 
+	quindi, passando al limite per $n\to +\infty$, si rimane con la disuguaglianza
+	\[
+	\mu ^*(E) \le \mu^* (H) \le \mu ^*(E)
+	\] 
+	da cui $\mu^* (H) = \mu ^*(E)$.
+\end{proof}
+Gli insiemi che sono intersezione numerabile di aperti sono detti $G_\delta $, mentre quelli che sono unione numerabile di chiusi sono detti $F_\sigma $; in questo caso, l'$H$ del teorema \`e un $G_\delta $.
+\begin{teorema}
+	Se $\left\{ E_n \right\} _{n\in \mathbb{N}} \subseteq \mathbb{R}^d$, allora
+	\[
+	\mu ^*\left(\bigcup_{n=1}^{+\infty} E_n \right) \le \sum_{n=1}^{+\infty} \mu ^*(E_n)
+	\] 
+\end{teorema}
+\begin{proof}
+	Se la somma diverge, la tesi \`e verificata, quindi si assume che $\sum_{n}^{} \mu ^*(E_n)<+\infty$.
+Visto che $\mu ^*(E_n)$ \`e definita come l'estremo inferiore sulla somma delle misure dei plurintervalli di un ricoprimento, $\forall \varepsilon >0$ si pu\`o trovare un ricoprimento $\left\{ Q_{n,k}  \right\} _{k\in \mathbb{N}} $ di $E_n$ tale che
+\[
+\sum_{k=1}^{+\infty} \lvert Q_{n,k}  \rvert \le \mu ^*(E_n) + \frac{\varepsilon }{2^n}
+\] 
+Visto che l'unione di questi ricoprimenti al variare di $n$ forma un ricoprimento anche di $\bigcup_{n\in \mathbb{N}} E_n$, allora
+\[
+\mu ^*\left(\bigcup_{n=1} ^{+\infty} E_n\right) \le \sum_{n=1}^{+\infty} \sum_{k=1}^{+\infty} \lvert Q_{n,k}  \rvert \le \sum_{n=1}^{+\infty}\left( \mu ^*(E_n) + \frac{\varepsilon }{2^n}\right) = \sum_{n=1}^{+\infty} \mu ^*(E_n) + \varepsilon 
+\] 
+Per l'arbitrariet\`a di $\varepsilon $, si ha la tesi.
+\end{proof}
+\begin{lemma}
+	Siano $E_1, E_2\subseteq \mathbb{R}^d$ tali che $d(E_1,E_2) > 0$, con
+	\[
+	d(E_1,E_2) = \inf_{\substack{x \in E_1 \\ y \in E_2}} d(x,y) 
+	\] 
+	Allora $\mu ^*(E_1\cup E_2) = \mu ^*(E_1) + \mu ^*(E_2)$.
+\end{lemma}
+	\begin{proof}
+		Per la propriet\`a di sub-additivit\`a della misura esterna, la disuguaglianza $\mu ^*(E_1\cup E_2) \le \mu ^*(E_1) + \mu ^*(E_2)$ \`e gi\`a verificata, quindi si verifica la disuguaglianza inversa.
+		Sia $\delta = d(E_1,E_2)$ e sia $\left\{ Q_k \right\} _{k \in \mathbb{N}} $ una famiglia di plurintervalli di $\mathbb{R}^d$ che ricopre $E_1\cup E_2$, con 
+		\[
+			\sum_{k=1}^{+\infty} \lvert Q_k \rvert \le \mu ^*(E_1\cup E_2) + \varepsilon 
+		\] 
+		Si pu\`o spezzare ciascun plurintervallo $Q_k$ in sotto-plurintervalli $Q_{k,n} $ di diametro $\delta / 2$. La loro unione ricostruire ciascun $Q_k$ e, quindi, ricopre $E_1\cup E_2$:
+		\[
+		Q_k = \bigcup_{n} Q_{k,n} \hspace{1cm} E_1 \cup E_2 \subset \bigcup_{k=1} ^{+\infty}Q_k = \bigcup_{k=1} ^{+\infty} \bigcup_{n} Q_{k,n} 
+	\] 
+	Si indica questo nuovo ricoprimento con $\left\{ Q'_k \right\} _{k \in \mathbb{N}} $ e soddisfa
+	\[
+	\sum_{k=1}^{+\infty} \lvert Q'_k \rvert =\sum_{k=1}^{+\infty} \lvert Q_k \rvert \le \mu ^*(E_1\cup E_2) + \varepsilon 
+	\] 
+con il vantaggio che ogni $Q'_k$ \`e spesso $\delta / 2$.
+Questo significa che la somma $\sum_{}^{} \lvert Q'_k \rvert $ si pu\`o spezzare nel volume che contiene punti di $E_1$ e nel volume che contiene punti di $E_2$; chiaramente non ci potr\`a essere alcun $Q'_k$ che contenga punti di entrambi per la condizione sullo spessore.
+Cos\`i facendo, si nota che:
+\[
+\sum_{k=1}^{+\infty} \lvert Q'_k \rvert = \sum_{i : Q'_i\cap E_1 \neq \varnothing}^{} \lvert Q'_i \rvert + \sum_{i : Q'_i \cap E_2\neq \varnothing}^{} \lvert Q'_i \rvert \ge \mu ^*(E_1) + \mu ^*(E_2)
+\] 
+Unendo le disuguaglianze, si trova che
+\[
+\mu ^*(E_1) + \mu ^*(E_2) \le \mu ^*(E_1\cup E_2) + \varepsilon 
+\] 
+Visto che $\varepsilon $ \`e arbitrario, allora si ottiene che $\mu ^*(E_1) + \mu ^*(E_2) \le \mu ^*(E_1\cup E_2)$ che, insieme alla disuguaglianza opposta trovata prima, permette di concludere l'uguaglianza e, quindi, la tesi.
 	\end{proof}
 \subsection{Misurabilit\`a}
-
-
-
-
-
-
-
-
-
-
-
-
+La misura esterna \`e definita su tutti i possibili sottoinsiemi di $\mathbb{R}^d$, cio\`e $\mu ^* : \mathcal{P} (\mathbb{R}^d) \to [0,+\infty]$; adesso si introduce il concetto di misurabilit\`a e la nuova funzione misura sar\`a definita sulla classe degli insiemi misurabili di $\mathbb{R}^d$.
+\begin{definizione}
+	[Insieme misurabile]
+	Sia $E \subseteq \mathbb{R}^d$; si dice che $E$ \`e \textit{misurabile} se $\forall \varepsilon >0$, si trova un $G \subseteq \mathbb{R}^d$ aperto, con $E \subset G$, tale che $\mu ^*(G \setminus E) < \varepsilon $.
+\end{definizione}
+Per definizione, se $E \subseteq \mathbb{R}^d$ \`e misurabile, allora la sua misura \`e definita da:
+\[
+\mu (E) := \mu ^*(E)
+\] 
+dove $\mu:\mathscr{L} \to [0,+\infty] $ \`e definita sulla classe degli insiemi misurabili secondo Lebesgue, indicata con $\mathscr{L} \subseteq \mathcal{P} (\mathbb{R}^d)$.
+Da questa definizione, discendono le seguenti propriet\`a.
+\begin{prop}
+	Se $A \subseteq \mathbb{R}^d$ \`e un aperto, allora $A$ \`e misurabile.
+\end{prop}
+	\begin{proof}
+		Per definizione diretta di misurabilit\`a, si pu\`o prendere proprio $A$ come aperto, per cui $\mu ^*(A \setminus A) = \mu ^* (\varnothing)=0 < \varepsilon , \ \forall \varepsilon >0$.
+	\end{proof}
+\begin{prop}
+	Se $E \subseteq \mathbb{R}^d$ tale che $\mu ^*(E) = 0$, allora $E$ \`e misurabile.
+\end{prop}
+	\begin{proof}
+		Per il teorema \ref{thfond}, $\forall \varepsilon >0$, si pu\`o prendere un aperto $G \supseteq E$ tale che $\mu ^*(G) \le \mu ^*(E) + \varepsilon = \varepsilon $, quindi $\mu ^*(G\setminus E) \le \mu ^*(G) < \varepsilon $, quindi $E$ \`e misurabile.
+	\end{proof}
+Si nota che la propriet\`a di misurabilit\`a di insieme \`e nettamente pi\`u forte del teorema \ref{thfond}; infatti, se $E \subseteq \mathbb{R}^d$ e $G \supset E$ \`e un aperto tale che $\mu ^*(G) < \mu ^*(E) + \varepsilon $, allora si nota che 
+\[
+G = E \cup (G\setminus E) \implies \mu ^*(G) \le \mu ^*(E) + \mu ^*(G\setminus E)
+\] 
+cio\`e non \`e possibile dedurre che $\mu ^*(G\setminus E) < \varepsilon $ dal fatto che $\mu ^*(G) <\mu ^*(E) + \varepsilon $.
+\begin{lemma}
+	Siano $\left\{ I_k \right\} _{k=1} ^{+\infty} $ dei plurintervalli di $\mathbb{R}^d$ tali che $\mathring{I}_k \cap \mathring{I}_j = 0, \ k\neq j$; allora $\bigcup_k I_k$ \`e misurabile e 
+	\[
+ \left\lvert \bigcup_{k=1} ^{+\infty} I_k \right\rvert = \sum_{k=1}^{+\infty} \lvert I_k \rvert 
+	\] 
+\end{lemma}
+\begin{teorema}
+	La classe degli insiemi misurabili $\mathscr{L} \subset \mathbb{R}^d$ \`e una $\sigma $-algebra.
+\end{teorema}
+\begin{teorema}
+	Se $\left\{ E_k \right\} _{k=1} ^{+\infty} \subseteq \mathbb{R}^d$ \`e una famiglia di insiemi misurabili, allora $\bigcup_k E_k$ \`e misurabile.
+\end{teorema}
+\begin{teorema}
+	Se $F\subseteq \mathbb{R}^d$ \`e chiuso, allora \`e misurabile.
+\end{teorema}
+\begin{teorema}
+	Se $I$ \`e un plurintervallo chiuso, si ha $\mu (\partial I) = 0$.
+\end{teorema}
 
 
 
