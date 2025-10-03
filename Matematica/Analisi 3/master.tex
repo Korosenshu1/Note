@@ -360,7 +360,7 @@ Per definizione, se $E \subseteq \mathbb{R}^d$ \`e misurabile, allora la sua mis
 \] 
 dove $\mu:\mathscr{L} \to [0,+\infty] $ \`e definita sulla classe degli insiemi misurabili secondo Lebesgue, indicata con $\mathscr{L} \subseteq \mathcal{P} (\mathbb{R}^d)$.
 Da questa definizione, discendono le seguenti propriet\`a.
-\begin{prop}
+\begin{prop}\label{apmis}
 	Se $A \subseteq \mathbb{R}^d$ \`e un aperto, allora $A$ \`e misurabile.
 \end{prop}
 	\begin{proof}
@@ -389,12 +389,49 @@ cio\`e non \`e possibile dedurre che $\mu ^*(G\setminus E) < \varepsilon $ dal f
 \begin{teorema}
 	Se $\left\{ E_k \right\} _{k=1} ^{+\infty} \subseteq \mathbb{R}^d$ \`e una famiglia di insiemi misurabili, allora $\bigcup_k E_k$ \`e misurabile.
 \end{teorema}
+\begin{proof}
+	Per definizione, $E_k$ misurabile implica l'esistenza di un aperto $G_k$ tale che $\mu^* ( G_k \setminus E_k )< \varepsilon / 2^k$.
+	Allora, prendendo $G= \bigcup_k G_k$, si trova che
+	\[
+		\begin{split}
+			\mu^*  \left(\bigcup_{k=1}^{+\infty}   G_k \setminus \bigcup_{k=1}^{+\infty}   E_k\right)   &\le \mu^* \left(\bigcup_{k=1}^{+\infty}   G_k \setminus E_k\right) \le \sum_{k=1}^{+\infty} \mu^* (G_k\setminus E_k) \\
+														  &< \sum_{k=1}^{+\infty} \frac{\varepsilon}{2^k} = \varepsilon 
+		\end{split}
+	\] 
+\end{proof}
 \begin{teorema}
 	Se $F\subseteq \mathbb{R}^d$ \`e chiuso, allora \`e misurabile.
 \end{teorema}
+	\begin{proof}
+		Per il teorema \ref{thfond}, fissato $\varepsilon >0$, si trova un aperto $G \supset F$ tale che $\mu ^*(G)< \mu ^*(F) + \varepsilon $.
+		Si considera preliminarmente il caso in cui $F$ \`e compatto.
+	Visto che $G$ \`e un aperto contenente $F$, che \`e chiuso, $G \setminus F$ \`e aperto e si pu\`o scrivere in termini di un ricoprimento disgiunto $\left\{ I_k \right\} _{k=1} ^{+\infty} $:
+		\[
+		G \setminus F = \bigcup_{k=1} ^{+\infty} I_k \implies \mu ^*(G\setminus F) \le  \sum_{k=1}^{+\infty} \mu^* (I_k)
+		\] 
+		Allora si nota che:
+		\[
+		G = F \cup \left(\bigcup_{k=1} ^{+\infty} I_k\right) \supseteq F \cup \left(\bigcup_{k=1} ^N I_k\right) 
+		\] 
+		quindi, usando il fatto che $F$ e $\bigcup_{k} I_k$ sono disgiunti, si trova che:
+		\[
+		\mu^* (G) \ge \mu ^*\left( F \cup \left(\bigcup_{k=1} ^{N} I_k\right)  \right) = \mu ^*(F) + \mu ^*\left(\bigcup_{k=1} ^N I_k\right)  = \mu ^*(F) + \sum_{k=1}^{N} \mu ^*(I_k)
+		\] 
+		Ora, usando il fatto che $\mu ^*(G) < \mu ^*(F) + \varepsilon $, si trova che:
+		\[
+		\sum_{k=1}^{N} \mu ^*(I_k) \le  \mu ^*(G) - \mu ^*(F) < \varepsilon  \implies \mu ^*(G\setminus F) < \varepsilon 
+		\] 
+		Se $F$ non fosse compatto, invece, si potrebbe scrivere
+		\[
+			F = \bigcup _{k=1} ^{+\infty} F_k := \bigcup_{k=1} ^{+\infty} \left(F \cap \overline{B}(0,k)\right) 
+		\] 
+	\end{proof}
 \begin{teorema}
 	Se $I$ \`e un plurintervallo chiuso, si ha $\mu (\partial I) = 0$.
 \end{teorema}
+\begin{proof}
+	Da scrivere\ldots
+\end{proof}
 
 
 
