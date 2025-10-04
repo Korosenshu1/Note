@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[12pt]{scrartcl}
+\documentclass[11pt]{article}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -13,7 +13,7 @@
 \tcbuselibrary{breakable}
 \usepackage{varwidth}
 \usepackage{textcomp}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath,amssymb}
 \usepackage{esint}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -44,8 +44,6 @@
 \definecolor{mastercolor}{HTML}{5666a8}
 \definecolor{nred}{HTML}{bf0040}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Algebra}
@@ -155,11 +153,11 @@ title=#1
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{86, 102, 168}}
 
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\centering\fontsize{15}{20}\bfseries}{\color{nred}\normalfont\S\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -198,30 +196,24 @@ title=#1
 
 
 % Font
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}	
-%\renewcommand{\operatorname}[1]{\mathop{\mathrm{\textsf{#1}}}}
-%\usepackage[noSTIXops,scaled=1.1]{newtxsf}
-%\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
-%\usepackage[osf]{newpxtext}
-%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[default]{fontsetup}
 
 
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 \begin{document}
-\pagestyle{plain}
 \maketitle
-\vspace{9cm}
+\vspace{7cm}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=.8\columnwidth]{front.jpeg}
 \end{figure}
 
 \newpage
-\pagestyle{plain}
 \tableofcontents 
 \newpage
-\pagestyle{fancy}
 \section{Teoria dei gruppi}
 \subsection{Il gruppo degli automorfismi}
 \begin{lemma}
@@ -248,12 +240,12 @@ Se $g_0^n = e_G$, allora $e_H = \varphi (g_0^n) = \varphi (g_0)^n = \overline{h}
 \end{definizione}
 \begin{esempio}
 	Si calcola $\operatorname{Aut} (\mathbb{Z})$. 
+\end{esempio}
 	\begin{svolgimento}
 		Il gruppo $(\mathbb{Z},+)$ \`e ciclico, quindi un omomorfismo \`e determinato in base a come agisce su un generatore.
 		Prendendo, per esempio $1$, si definisce $q_a :\mathbb{Z}\to \mathbb{Z} $ tale che $ q_a (1 ) = a$; perch\'e $\langle q_a(1) \rangle = \mathbb{Z}$\footnote{Richiesto dal fatto che $q_a$ sia suriettivo.}, \`e necessario che $a$ sia un generatore di $\mathbb{Z}$, perci\`o sono ammessi $a = \pm 1$. 
 		In questo caso, $\operatorname{Aut} (\mathbb{Z})=\left\{ \pm \operatorname{Id} _{\mathbb{Z}}  \right\} \cong \left(\mathbb{Z} / 2\mathbb{Z}, +\right) $.
 	\end{svolgimento}
-\end{esempio}
 \begin{teorema}
 $\operatorname{Aut} (\mathbb{Z} / m \mathbb{Z}) \cong (\mathbb{Z} / m \mathbb{Z})^*$.
 \begin{proof}
@@ -427,6 +419,13 @@ Per il teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 	\lvert G \rvert  = \lvert N_G(H) \rvert \lvert \operatorname{Orb} (H) \rvert 
 \end{equation}
 da cui si ricava anche che $H \lhd G \iff N_G(H) = G \iff \operatorname{Orb} (H) = \left\{ H \right\} $.
+\begin{osservazione}
+Visto che $H \lhd G \iff N_G(H) = G$, allora $N_G(H)$ deve contenere tutti i generatori $g_1,\ldots,g_n$ di $G$.
+A sua volta, questo equivale a dire che 
+\[
+g_i H g_i^{-1} = H , \ \forall i=1,\ldots,n
+\] 
+\end{osservazione}
 \subsubsection{Formula delle classi}
 
 Si ricorda che le orbite definite da un'azione di un gruppo $G$ su un insieme $X$ formano una partizione di $X$ stesso, in quanto sono delle classi di equivalenza.
@@ -1514,6 +1513,7 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 \end{teorema}
 \begin{esercizio}
 Dimostrare che $D_n \cong \mathbb{Z}/ n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/ 2\mathbb{Z}$.
+\end{esercizio}
 \begin{svolgimento}
 	Sia $D_n = \langle \rho , \sigma   \mid \rho ^n = \sigma ^2 = e, \ \sigma \rho \sigma = \rho ^{-1} \rangle$. 
 	Notando che $\langle \rho  \rangle\cong \mathbb{Z} / n \mathbb{Z}$ e che $\langle \sigma  \rangle\cong \mathbb{Z} / 2 \mathbb{Z}$, si mostra sostanzialmente che $D_n\cong \langle \rho  \rangle\rtimes_\varphi  \langle \sigma  \rangle$.
@@ -1528,7 +1528,6 @@ Allora $D_n \cong \mathbb{Z}/n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/2\mathbb{Z}$
 
 	Se, poi, in $\operatorname{Aut} (\mathbb{Z}/n\mathbb{Z})$ sono presenti altri elementi di ordine $2$, come nel caso di $\operatorname{Aut} (\mathbb{Z}/8\mathbb{Z})\cong (\mathbb{Z}/8\mathbb{Z})^* \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$, si possono definire altri prodotti semidiretti, che potrebbero risultare isomorfi al caso dell'identit\`a o a $\rho \longmapsto \rho ^{-1}$.
 \end{svolgimento}
-\end{esercizio}
 \begin{esempio}
 	[Classificazione dei gruppi di ordine pq.]
 	Si considera prima il caso $p=q$, da cui $\lvert G \rvert  = p^2$, per il quale si sa che le uniche possibilit\`a sono $G \cong \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z} / p \mathbb{Z}$, oppure $G\cong\mathbb{Z} / p ^2 \mathbb{Z}$.
@@ -1600,6 +1599,7 @@ Si osserva che $\operatorname{Ker} \gamma = H \cap A_n$, quindi: nel primo caso,
 \end{lemma}
 \begin{esercizio}
 I $3$-cicli sono tutti coniugati in $A_n$, con $n\ge 5$.
+\end{esercizio}
 \begin{svolgimento}
 	Dato $\sigma =(a,b,c) \in S_5$ un $3$-ciclo, per $n\ge 5$ si ha $(d,e) \in Z_{S_n} (\sigma ) / Z_{A_n} (\sigma )$, con $d,e \not \in \left\{ a,b,c \right\} $; per il lemma precedente, quindi, $\lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert = \lvert \operatorname{Cl} _{S_n} (\sigma  )\rvert $.
 
@@ -1607,9 +1607,9 @@ I $3$-cicli sono tutti coniugati in $A_n$, con $n\ge 5$.
 
 	Infine, per $n=4$, si ha $\lvert A_4 \rvert =12$ e $\lvert \operatorname{Cl} _{S_4} (a,b,c) \rvert = \binom{4}{3}2! = 8  \nmid  12$.
 \end{svolgimento}
-\end{esercizio}
 \begin{esercizio}
 I $5$-cicli non sono tutti coniugati in $A_5$.
+\end{esercizio}
 \begin{svolgimento}
 	Le classi di coniugio di un $5$-ciclo di $S_5$ sono $4!$; se $\operatorname{Cl} _{A_5} (\sigma )$ avesse stessa cardinalit\`a, con $\sigma $ un $5$-ciclo, allora, per la formula delle classi:
 	\[
@@ -1617,14 +1617,13 @@ I $5$-cicli non sono tutti coniugati in $A_5$.
 	\] 
 	che \`e assurdo, quindi tale classe di equivalenza si scinde in due.
 \end{svolgimento}
-\end{esercizio}
 \begin{esercizio}
 $A_4$ non contiene sottogruppi di ordine $6$.
+\end{esercizio}
 \begin{svolgimento}
 	Poniamo caso che $\exists H < A_4$ con $|H| = 6$, allora $H \lhd A_4$\footnote{Si avrebbe $[A_4:H] = 2$, quindi risulterebbe $H\lhd A_4$.} e $\exists \sigma  \in H$ con $\operatorname{ord}(\sigma ) =2$ e $\sigma = (a,b)(c,d)$. 
 	Si nota che $\operatorname{Cl}_{S_4} (\sigma ) = \left\{ (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\} = \operatorname{Cl} _{A_4} (\sigma )$; inoltre, $K = \left\{e, (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\}\lhd S_4$, ma se $H$ \`e normale e $\sigma  \in H$, allora $\operatorname{Cl} _{A_4} (\sigma ) \subset H$, quindi $K \lhd H$, il che \`e assurdo perch\'e $\lvert K \rvert =4  \nmid 6 = \lvert H \rvert $.
 \end{svolgimento}
-\end{esercizio}
 \begin{prop}
 	Per ogni $n\ge 5$, $A_n$ \`e semplice, cio\`e non ha sottogruppi normali non-banali.
 	\begin{proof}
@@ -1658,12 +1657,12 @@ Questo implica che $H$ \`e generato da una trasposizione, quindi non \`e normale
 
 \begin{esercizio}
 Dimostrare che $S_n \cong A_n \rtimes _\varphi \langle (1 \ 2) \rangle$.
+\end{esercizio}
 \begin{svolgimento}
 	Visto che $[S_n : A_n] = 2$, allora $A_n \lhd S_n$; inoltre, essendo $\lvert A_n \rvert = n! / 2$, per questione di cardinalit\`a, si ha $A_n \langle (1 \ 2) \rangle = S_n$\footnote{Si nota che $\langle (1 \ 2) \rangle=\big\{ (2\ 1) = e , (1\ 2) \big\} $, quindi $\lvert \langle (1\ 2) \rangle \rvert =2$.}.
 	Ora, ricordando che $A_ n = \operatorname{Ker} \mathrm{sgn} $ e che $\langle (1\ 2) \rangle$ contiene solo trasposizioni (il cui segno \`e $-1$), deve valere $A_n \cap \langle (1\ 2) \rangle = \left\{ e \right\} $.
 	In questo modo, le ipotesi del teorema di decomposizione semidiretta (th. \ref{scth}) sono soddisfatte, pertanto $S_n \cong A_n \rtimes _\varphi \langle (1 \ 2) \rangle$.
 \end{svolgimento}
-\end{esercizio}
 \subsection{Teorema di struttura per gruppi abeliani finiti}
 \begin{definizione}
 	[$\mathbf{p}$-torsione]
@@ -2321,6 +2320,7 @@ Riassumendo, i gruppi di ordine $30$ sono i seguenti:
 
 \newpage
 \subsection{Complementi di teoria}
+
 \begin{prop}[Quadrato di permutazioni]\label{qperm}
 	Una permutazione \`e un quadrato se e solo se i cicli di lunghezza pari compaiono a coppie.
 	\begin{proof}
@@ -2459,8 +2459,97 @@ Da questo, si conclude che richiedere che una mappa $(\mathbb{Z}/p\mathbb{Z})^n 
 
 
 \subsection{Esercizi}
+\begin{esercizio}\label{exdl2}
+	Sia $G$ un gruppo finito e sia $H < G$. 
+	Mostrare che 
+	\[
+	\bigcup_{g \in G} \left(g H g^{-1}\right) \neq G
+	\] 
+	tranne che per $H = G$.
+\end{esercizio}
+\begin{svolgimento}
+	Per prima cosa, si cerca di capire che oggetto si sta studiando.
+	Questo \`e l'unione di tutti i coniugati del sottogruppo $H$, ma \`e possibile che si stanno unendo elementi uguali. 
+	Si vede che dati $g_1,g_2 \in G$, allora 
+	\[
+	g_1H g_1^{-1} = g_2Hg_2^{-1}\iff g_2^{-1}g_1H g_1^{-1} g_2 =g_2^{-1}g_1H(g_2^{-1}g_1)^{-1}=H 
+	\] 
+	cio\`e $g_2^{-1}g_1 \in N_G(H) \iff g_1 \in g_2N_G(H)$, il che vuol dire che $g_1$ e $g_2$ si trovano nella stessa classe laterale di $N_G(H)$ in $G$, quindi $g_1 N_G(H) = g_2N_G(H)$.
+Dunque, detto $\mathcal{R} $ l'insieme dei rappresentanti delle classi laterali di $N_G(H)$ in $G$, l'unione diventa:
+\[
+	\bigcup_{g \in G} \left(g H g^{-1}\right)= \bigcup_{g \in \mathcal{R} } (gHg^{-1})
+\] 
+Viso che $\lvert \mathcal{R}  \rvert  = \lvert G \rvert / \lvert N_G(H) \rvert $, si hanno le seguenti disuguaglianze:
+\[
+\left\lvert \bigcup_{g \in  \mathcal{R} } (gHg^{-1}) \right\rvert \le \frac{\lvert G \rvert }{\lvert N_G(H) \rvert } \lvert H \rvert \le G
+\] 
+dove l'ultima disuguaglianza \`e data dal fatto che $N_G(H)$ contiene $H$, quindi $\lvert N_G(H)\rvert \ge \lvert H \rvert   $.
+La prima uguaglianza \`e verificata se e solo se l'unione \`e disgiunta, ma visto che ogni coniugato contiene l'identit\`a, questo si verifica se e solo se $|\mathcal{R} |= 1\iff N_G(H) = G \iff H \lhd G$.
+In questo caso, allora, si ottiene la disuguaglianza $\frac{\lvert G \rvert }{\lvert G \rvert } \lvert H \rvert \le \lvert G \rvert $ e l'unica possibilit\`a perch\'e questa sia verificata \`e che $H = G$.
+\end{svolgimento}
+\begin{esercizio}
+	[Azione transitiva]
+	Sia $G$ un gruppo che agisce transitivamente su un insieme $X$, cio\`e esiste una sola orbita, quindi $\forall x,y\in X, \ \exists g \in G : g \cdot x = y$.
+	\begin{enumerate}[(a).]
+		\item Mostrare che $\forall x,y \in G$, vale $\operatorname{Stab} x \cong \operatorname{Stab} y$.
+		\item Se $\lvert X \rvert \ge 2$, dimostrare che $\exists g \in G$ che agisce su $X$ senza punti fissi, cio\`e $g \cdot x \neq x, \ \forall x \in X$.
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Si divide lo svolgimento nei due punti.
+	\begin{enumerate}[(a).]
+		\item Sia $y = g_0\cdot x$, per qualche $g_0 \in G$ e $x,y \in X$; allora 
+			\[
+			\begin{split}
+				\operatorname{Stab} y &= \left\{ g\in G  \mid g \cdot y= y  \right\} = \left\{ g\in G \mid gg_0 \cdot x = g_0 \cdot x \right\} \\
+						      &= \left\{ g \in G  \mid g_0^{-1}g g_0 \cdot x =x \right\} = \left\{ g \in G  \mid g_0^{-1}g g_0 \in \operatorname{Stab} x \right\} \\
+						      &= \left\{ g \in G  \mid g \in g_0 (\operatorname{Stab} x) g_0^{-1} \right\} = g_0 (\operatorname{Stab} x) g_0^{-1}
+			\end{split}
+			\] 
+			Quindi i due non sono solo isomorfi, ma sono coniugati.
+		\item Sia $g \in G$ tale che $g\cdot x \neq x, \ \forall x \in X$, che \`e vero se e solo se
+			\[
+			g \not \in \bigcup_{x \in X} \operatorname{Stab} x
+			\] 
+			In realt\`a, visto che c'\`e solo un'orbita e tutti gli $x$ sono ottenibili tramite un elemento di $G$, fissato $x_0 \in X$, la condizione sopra si pu\`o scrivere come
+			\[
+			g\not \in \bigcup_{h \in G} \operatorname{Stab} (h\cdot x_0) \iff g \not \in \bigcup_{h \in G} h(\operatorname{Stab} x_0)h^{-1}
+			\] 
+			dove l'equivalenza \`e data dal fatto che $h(\operatorname{Stab} x_0)h^{-1} \cdot (h\cdot x_0) = h \operatorname{Stab} x_0 \cdot x_0 = h \cdot x_0$.
+			Questo \`e vero se e solo se 
+			\[
+			\bigcup_{h \in G} h(\operatorname{Stab} x_0) h^{-1}\neq G
+			\] 
+			Per l'esercizio \ref{exdl2}, questo si riduce a dimostrare che $\operatorname{Stab} x_0 \neq G$.
+			Ma per vedere questo, si pu\`o usare il teorema di orbita-stabilizzatore: se fosse $\operatorname{Stab} x_0 = G$, allora si avrebbe
+			\[
+			\lvert G \rvert  = \lvert \operatorname{Stab} x_0 \rvert \lvert \operatorname{Orb} x_0 \rvert \iff \lvert \operatorname{Orb} x_0 \rvert =1
+			\] 
+			Per\`o l'azione \`e transitiva, quindi esiste un'unica orbita e, dunque, $1=\lvert \operatorname{Orb} x_0 \rvert  = \lvert X \rvert $.
+			Quindi, se $\lvert X \rvert  \ge 2$, l'esistenza di un $g \in G$ che non ha punti fissi \`e verificata.
+	\end{enumerate}
+\end{svolgimento}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{esercizio}
 Studiare il gruppo $\operatorname{Aut} ( \mathbb{Z}\times \mathbb{Z}/n\mathbb{Z})$.
+\end{esercizio}
 \begin{svolgimento}
 	Il sottogruppo $\left\{ 0 \right\} \times \mathbb{Z}/n\mathbb{Z}$ \`e caratteristico perch\'e un automorfismo deve conservare gli ordini degli elementi e se la prima coordinata non fosse nulla, l'elemento avrebbe ordine infinito.
 
@@ -2491,7 +2580,6 @@ Posto $a = 1$, si vede che $\varphi $ \`e suriettiva perch\'e dato $(x_0,y_0) \i
 	\] 
 	ma non sono isomorfi.
 \end{svolgimento}
-\end{esercizio}
 
 
 
@@ -2499,6 +2587,7 @@ Posto $a = 1$, si vede che $\varphi $ \`e suriettiva perch\'e dato $(x_0,y_0) \i
 
 \begin{esercizio}
 Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z})$.
+\end{esercizio}
 \begin{svolgimento}
 	Si nota che $\mathbb{Z} / 20 \mathbb{Z}\cong \mathbb{Z}/4 \mathbb{Z} \times  \mathbb{Z} / 5 \mathbb{Z}$, quindi:
 	\[
@@ -2529,12 +2618,12 @@ Studiare $\operatorname{Aut} (\mathbb{Z} / 20 \mathbb{Z} \times \mathbb{Z} / 2 \
 	\] 
 	da cui si pu\`o verificare l'ordine di ciascun automorfismo e, conseguentemente, che $\alpha \Gamma\alpha = \Gamma^{-1}$.
 \end{svolgimento}
-\end{esercizio}
 \begin{esercizio}
 Sia $\rho = (1234)(56) \in S_{10}$; calcolare $Z(\rho )$ e 
 \[
 N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in \langle \rho  \rangle\right\} 
 \] 
+\end{esercizio}
 \begin{svolgimento}
 	Si nota, intanto, che $\lvert Z(\rho ) \rvert = \lvert S_{10} \rvert / \lvert \operatorname{Cl} (\rho ) \rvert = 8 \cdot 4!$.
 	Si considerano, poi, $H = \langle (1234),(56) \rangle\cong \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ e $K = S_{\left\{ 7,8,9,10 \right\} } \cong S_4$; per il teorema \ref{t171}, visto che questi due sottogruppi sono normali, con $HK = Z(\rho )$ e hanno intersezione banale, si ha $Z(\rho ) \cong \mathbb{Z}/4\mathbb{Z} \times Z / 2\mathbb{Z} \times S_4$.
@@ -2554,21 +2643,21 @@ N(\langle \rho  \rangle)= \left\{ \tau \in S_{10}  \mid \tau \rho \tau ^{-1}\in 
 	\] 
 	perci\`o $\tau \in G_{-1} \iff \tau \in \tau _0 Z(\rho )$. 
 	Ne consegue che $\lvert N(\langle \rho  \rangle) \rvert = 2 \lvert Z(\rho ) \rvert $; in generale:
-	\begin{equation}
+	\begin{equation*}
 		\begin{split}
 			&N_{S_n} (\langle \rho  \rangle) = \left\{ \tau  \in S_n  \mid \tau \rho \tau ^{-1}=\rho ^{k}, \ \operatorname{gcd}(\operatorname{ord}(\rho ) ,k) =1 \right\} \\
 			&\Rightarrow \lvert N_{S_n} (\langle \rho \rangle ) \rvert = \lvert \left\{ k \in \mathbb{Z} \mid \operatorname{gcd}(k,\operatorname{ord}(\rho ) ) =1 \right\}  \rvert \lvert Z_{S_n} (\rho ) \rvert =\phi (\operatorname{ord}(\rho ) ) \lvert Z_{S_n} (\rho ) \rvert 
 		\end{split}
-	\end{equation}
+	\end{equation*}
 	cio\`e \`e il centralizzatore per il numero di equazioni della forma $\tau \rho \tau ^{-1}= \rho ^k$.
 \end{svolgimento}
-\end{esercizio}
 \begin{osservazione}
 	Si nota che il coniugio non cambia la forma della permutazione, quindi l'equazione $\tau \rho \tau ^{-1} = \rho ^k$ ha soluzione se e solo se $k$ \`e coprimo con $\operatorname{ord}(\rho ) $.
 \end{osservazione}
 
 \begin{esercizio}
 Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
+\end{esercizio}
 \begin{svolgimento}
 	Per il teorema di Cayley, si conclude immediatamente che $n\le 8$; inoltre, per il teorema di Lagrange, si deve avere $n \ge 4$ perch\'e $\lvert S_n \rvert  = n!$ e l'immagine di $Q_8$ attraverso l'immersione deve avere ancora ordine $8$, per cui Lagrange implica che $8  \mid  n!$, cosa che si verifica unicamente da $n = 4$.
 	In questo modo, si \`e ridotto il problema a considerare le seguenti cinque possibilit\`a: $S_4,S_5,S_6,S_7,S_8$.
@@ -2598,7 +2687,10 @@ Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
 			perch\'e, in $S_6$, non esistono due coppie di trasposizioni tutte disgiunte.
 			Ora si risolve $x^2 = (12)(34)$, che restituisce le seguenti possibilit\`a:
 		\[
-		x_1 = (1324) \hspace{1cm}x_2 = (1423) \hspace{1cm} x_3 = (1324)(56) \hspace{1cm} x_4 = (1423)(56)
+			\begin{array}{l l}
+				x_1 = (1324)  &x_2 = (1423)\\
+				x_3 = (1324)(56) & x_4 = (1423)(56)
+			\end{array}
 		\] 
 		visto che la trasposizione $(56)$ scompare se elevata al quadrato.
 		In questo modo, si vede che le soluzioni possibili sono $4$ in $S_6$, mentre in $Q_8$ se ne avevano $6$ di elementi di ordine $4$ con uguale quadrato.
@@ -2634,7 +2726,6 @@ Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
 	
 	\end{itemize}
 \end{svolgimento}
-\end{esercizio}
 
 
 
@@ -3344,6 +3435,7 @@ S^{-1}\mathbb{Z} = \mathbb{Z}_{(2)} = \left\{ \frac{a}{b} \ \bigg\lvert \ a, b\i
 \end{esempio}
 \begin{esercizio}
 	Dati $A = \mathbb{Z}$ e $P =2\mathbb{Z}$, con $S = \mathbb{Z} \setminus 2\mathbb{Z}$, verificare che $\langle 2 \rangle\mathbb{Z}_{(2)}$ \`e l'unico ideale massimale di $\mathbb{Z}_{(2)} $.
+\end{esercizio}
 	\begin{svolgimento}
 		La tesi \`e equivalente a richiedere che $\mathbb{Z}_{(2)} ^* = \mathbb{Z}_{(2)} \setminus\langle 2 \rangle\mathbb{Z}_{(2)} $; infatti, si sa gi\`a che $\langle 2 \rangle\mathbb{Z}_{(2)} $ \`e un ideale, mentre ciascun ideale non in esso contenuto deve contenere un elemento invertibile, quindi \`e improprio.
 
@@ -3351,7 +3443,6 @@ S^{-1}\mathbb{Z} = \mathbb{Z}_{(2)} = \left\{ \frac{a}{b} \ \bigg\lvert \ a, b\i
 		Viceversa, se $a / b$ \`e invertibile, allora esiste $ \frac{c}{ d} \in \mathbb{Z}_(2)$ tale che $ac / (bd) =1 \Rightarrow ac = bd$; se uno tra $a$ e $c$ fosse pari, allora lo sarebbe anche $bd$ e, visto che $2$ \`e primo, uno tra $b$ e $d$ sarebbe pari, contraddicendo la definizione di $\mathbb{Z}_{(2)} $.
 		Allora, $a / b \in \mathbb{Z}_{(2)} \setminus \langle 2 \rangle\mathbb{Z}_{(2)} $.
 	\end{svolgimento}
-\end{esercizio}
 
 \textbf{Elementi invertibili di $\mathbf{S^{-1}A} $.} 
 Si nota che gli invertibili di $S^{-1}A$ sono dati da:
@@ -3975,10 +4066,10 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 \end{osservazione}
 \begin{esercizio}
 	Dimostrare che, dato $K[x,y]$ campo, allora l'ideale $I=\langle x,y \rangle$ non \`e principale.
+\end{esercizio}
 	\begin{svolgimento}
 		Risolto a pagina 100 della teoria.
 	\end{svolgimento}
-\end{esercizio}
 \begin{prop}
 	[Criterio di irriducibilit\`a di Eisenstein]
 	Sia $A$ un UFD e $f(x) \in A[x]$ primitivo, con $f(x) = \sum_{i=0}^{n} a_ix^i$.
