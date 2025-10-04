@@ -772,6 +772,68 @@ Per rispondere, si ha il seguente.
 \begin{teorema}
 	Se $\beta ,\widetilde{\beta }:I\to\mathbb{R}^3$ sono due pla di Frenet con $k(s) = \widetilde{k}(s)$ e $\tau (s)= \widetilde{\tau }(s)$, allora $\exists A \in \mathrm{SO} (3), \ \exists b \in \mathbb{R}^3$ tali che $\widetilde{\beta }(s) = A \beta (s) + b , \ \forall s \in I$.
 \end{teorema}
+\begin{proof}
+	Si fissa un punto $s_0 \in I$; in questo punto, si possono calcolare i valori del riferimento di Frenet di ciascuna curva, ottenendo un totale di sei vettori.
+	Si possono costruire $M=\big(T(s_0), N(s_0),B(s_0)\big)$ e $\widetilde{M}=\big(\widetilde{T}(s_0),\widetilde{N}(s_0),\widetilde{B}(s_0)\big) $, che sono due  due matrici di $\mathrm{SO}(3) $\footnote{Evidentemente, il riferimento di Frenet restituisce un elemento di $O(3)$ perch\'e la relazione $M^T M = \operatorname{Id} $ corrisponde a moltiplicare i vettori del riferimento tra loro. Inoltre, usando $\det M = T \cdot (N \times (T \times N)) = T\cdot [(N\cdot N)T-(N\cdot T)N]=\left\lVert T \right\rVert =1$.} e, a partire da queste, si pu\`o costruire la matrice $A = \widetilde{M}M^{-1}$ che permette di passare dal riferimento di $\beta $ a quello di $\widetilde{\beta }$ nel punto $s_0$.
+
+	Ora bisogna mostrare che $A$ permette il passaggio da un riferimento all'altro e bisogna trovare la costante di traslazione.
+	Per farlo, si definisce $\beta ^*(s) = A\beta (s) + b$; si mostra che $\beta ^*(s) = \widetilde{\beta }(s), \ \forall s \in I$.
+	Intanto si trova $b$: \`e sufficiente notare che
+	\[
+	\beta ^*(s_0) = \widetilde{\beta }(s_0) = A \beta (s_0) + b \implies b = \widetilde{\beta }(s_0) - A \beta (s_0)
+	\] 
+Si nota che, dimostrando l'uguaglianza delle terne del riferimento di $\beta ^*$ e $\widetilde{\beta }$ per ogni $s \in I$, unito al fatto che $\beta ^*(s_0) = \widetilde{\beta }(s_0)$, si ottiene il sistema
+\[
+\begin{cases}
+	T^*(s) = \widetilde{T}(s)\\
+	\beta ^*(s_0) = \widetilde{\beta }(s_0)
+\end{cases}\iff \begin{cases}
+(\beta ^*)'(s) = \widetilde{\beta }'(s)\\
+	\beta ^*(s_0) = \widetilde{\beta }(s_0)
+\end{cases}
+\] 
+da cui, integrando, si ha $\beta ^*(s) = \widetilde{\beta} (s), \ \forall s \in I$.
+
+Per dimostrarlo, si definisce la funzione
+\[
+f(s) = T^*(s) \cdot \widetilde{T}(s) + N^*(s) \cdot \widetilde{N}(s) + B^*(s) \cdot \widetilde{B}(s)
+\] 
+che \`e sempre minore o uguale a $3$ perch\'e ciascun termine \`e minore o uguale ad $1$ e l'uguaglianza vale quando il riferimento di $\beta ^*$ e quello di $\widetilde{\beta }$ coincidono; in particolare, quindi, $f(s_0) = 3$.
+Basta mostrare che questa \`e costante per mostrare che i due riferimenti coincidono ovunque su $I$.
+Allora si vede che:
+\[
+f'(s) = k N^* \cdot \widetilde{T} + k T^* \cdot \widetilde{N} +(-kT^*+\tau B^*)\cdot  \widetilde{N} + N^* \cdot (-k\widetilde{T}+\tau \widetilde{B}) - \tau N^* \cdot \widetilde{B}- \tau B^*\cdot \widetilde{N}=0
+\] 
+dove si \`e usato che $k^*(s) = \widetilde{k}(s) = k(s)$ e $\tau ^*(s) = \widetilde{\tau }(s) = \tau (s)$ per quanto dimostrato all'inizio della sezione, essendo che $\beta ^*$ \`e la roto-traslata di $\beta $ e le uguaglianze tra $\widetilde{\beta }$ e $\beta $ valgono per assunzione.
+\end{proof}
+\noindent A questo punto, ci si pu\`o chiedere se, date comunque $\tau ,k : I \to \mathbb{R}$, di classe $C^\infty(I)$ e con $k>0$, si pu\`o trovare una pla di Frenet $\beta :I\to \mathbb{R}^3$ con $k_\beta = k$ e $\tau _\beta = \tau $.
+Questo si dimostra essere vero, ma non si dimostra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Esercizi}
 \begin{esercizio}
 Sia data la curva
