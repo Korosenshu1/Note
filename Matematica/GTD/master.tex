@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[12pt]{scrartcl}
+\documentclass[12pt]{article}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -42,9 +42,6 @@
 \usepackage{tikz-cd}
 \definecolor{mastercolor}{HTML}{0c800f}
 \definecolor{nred}{HTML}{bf0040}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Geometria e topologia differenziale}
@@ -181,7 +178,6 @@ title=#1
 
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 \begin{document}
-\pagestyle{plain}
 \maketitle
 \vspace{7cm}
 \begin{figure}[h!]
@@ -190,10 +186,8 @@ title=#1
 \end{figure}
 
 \newpage
-\pagestyle{plain}
 \tableofcontents 
 \newpage
-\pagestyle{fancy}
 \section{Teoria delle curve}
 \subsection{Introduzione}
 \begin{definizione}
@@ -902,11 +896,89 @@ Rispondere ai seguenti punti.
 	\] 
 	\end{enumerate}
 \end{svolgimento}
+\begin{definizione}
+	[Piano osculatore]
+	Sia $\gamma:I\to\mathbb{R}^3$ una pla di Frenet. 
+	Dato $s_0 \in I$, il \textit{piano osculatore} di $\gamma$ in $\gamma(s_0)$ \`e il piano affine descritto da
+	\[
+	\gamma(s_0) + \mathrm{Span} \big(T(s_0),N(s_0)\big)
+	\] 
+	Il piano generato da $N$ e $B$ \`e detto \textit{normale}, mentre quello generato da $T$ e $B$ \`e detto \textit{rettificante}.
+\end{definizione}
+\begin{esercizio}
+	[Cerchio osculatore]	
+	Sia $\gamma : I \to \mathbb{R}^3$ una pla di Frenet; il suo \textit{cerchio osculatore} in $\gamma(s_0)$ \`e l'unico cerchio $C$ di raggio $R$ e centro $P$ tale che:
+	\begin{enumerate}[(a).]
+		\item $C$ \`e contenuto nel piano osculatore in $\gamma(s_0)$;
+		\item $\gamma(s_0) \in C$;
+		\item data $f(s) := \left\lVert \gamma(s) - P \right\rVert ^2 - R^2$, si ha $f'(s_0) = f''(s_0)$ (cio\`e il cerchio \`e sufficientemente vicino alla curva).
+	\end{enumerate}
+	Dimostrare che $C$ cos\`i definito esiste ed \`e unico, esprimendo $P$ ed $R$ in termini di $\gamma$.
+\end{esercizio}
+\begin{svolgimento}
+	Si inizia col mostrare l'unicit\`a, assumendo che siano verificati i punti (a), (b) e (c).
+	Si nota che $f(s) = (\gamma(s) - P) \cdot (\gamma(s) - P) - R^2$, quindi
+	\[
+	0=f'(s_0) = T(s_0) \cdot (\gamma(s_0) - P) 
+	\] 
+	da cui $T(s_0) \perp (\gamma(s_0) - P)$, quindi $\gamma(s_0) - P = \lambda N(s_0)$, visto che sia $\gamma(s_0)$ che $P$ appartengono al cerchio.
+	Derivando nuovamente:
+	\[
+		\begin{split}
+			0&=f''(s_0) = T'(s_0) \cdot (\gamma(s_0) - P) + T(s_0) \cdot T(s_0) \\
+			 &= k(s_0) N(s_0) \cdot (\gamma(s_0) - P) +1=k(s_0) \lambda +1
+		\end{split}
+	\] 
+	da cui $\lambda =-1/k(s_0)$.
+	Allora si possono ricavare $R$ e $P$:
+	\[
+		\begin{split}
+			&R = \left\lVert \gamma(s_0) - P \right\rVert = \left\lVert - \frac{1}{k(s_0)}N(s_0) \right\rVert  = \frac{1}{k(s_0)}\\
+			&P = \gamma(s_0) + \frac{1}{k(s_0)}N(s_0)
+		\end{split}
+	\] 
+	Visto che il cerchio ha raggio e centro descritti esclusivamente tramite le propriet\`a della curva $\gamma$, significa che, in $\gamma(s_0)$, questo \`e unico.
 
+	Quando all'esistenza, si pu\`o costruire il cerchio scegliendo $R$ e $P$ come sopra in modo tale da avere soddisfatte le relazioni $f'(s_0) = f''(s_0) =0$ usate per ricavarle in principio e in modo tale da essere contenuto nel piano osculatore.
+	In questo modo, \`e anche verificato il punto (b) perch\'e, valendo $\left\lVert \gamma(s_0) - P \right\rVert = R$, $\gamma(s_0)$ \`e contenuto nel cerchio.
+\end{svolgimento}
 
+\newpage
+\section{Superfici}
+\subsection{Introduzione}
 
-
-
+Si d\`a inizialmente una definizione intuitiva di superifici come sottoinsiemi di $\mathbb{R}^3$.
+Per analogie con le curve, si parte da un aperto $U \subseteq \mathbb{R}^2$ e da una mappa \textit{buona} $\underline{x}:U\to \mathbb{R}^3$, per poi definire la superficie come $S = \underline{x}(U)$.
+Questo approccio permetter\`a esclusivamente una definizione locale di cosa sia una superficie e non ne consentir\`a una trattazione globale.
+Ora si cerca di caratterizzare la bont\`a accennata per $\underline{x}$, provando a capire quali sono le situazioni che \textit{non} devono verificarsi.
+\begin{enumerate}[(a).]
+	\item L'aperto $U\subseteq \mathbb{R}^2$ non deve essere mappato in una superficie che si interseca, cio\`e $\underline{x}$ deve essere iniettiva, altrimenti non si ha modo di capire quale sia il piano tangente nell'intersezione.
+	\item Si vogliono evitare piani tangenti multipli, ad esempio come succede nel caso del vertice di un cono.
+		
+		Scrivendo $\underline{x}(u,v) = \big(x(u,v),y(u,v),z(u,v)\big)$, con
+		\[
+		\begin{split}
+			&\underline{x}_u = \left(\frac{\partial x}{\partial u} (u,v), \frac{\partial y}{\partial u} (u,v), \frac{\partial z}{\partial u} (u,v)\right) \\
+			&\underline{x}_v = \left(\frac{\partial x}{\partial v} (u,v), \frac{\partial y}{\partial v} (u,v), \frac{\partial z}{\partial v} (u,v)\right)
+		\end{split}
+		\] 
+		con $x,y,z : U \to \mathbb{R}$ mappe di classe $C^\infty(U)$, si richiede che $\underline{x}_u \times \underline{x}_v \neq 0, \ \forall u,v \in U$, cio\`e che $\mathrm{rk} (J(\underline{x})) = 2$, cos\`i da avere un piano tangente ben definito, essendo $\underline{x}_u$ e $\underline{x}_v$ linearmente indipendenti.
+	\item Si vuole evitare che una successione non convergente in $U$ possa convergere in $\underline{x}(U)$, quindi si richiede che $\underline{x}$ sia un omeomorfismo, richiedendo, dunque, che $\underline{x}^{-1}$ sia continua.
+\end{enumerate}
+\begin{definizione}
+	[Parametrizzazione regolare]
+	Sia $\underline{x}:U\subseteq \mathbb{R}^2 \to \mathbb{R}^3$ una mappa di classe $C^\infty(U)$.
+	Si dice che $\underline{x}$ \`e una \textit{parametrizzazione regolare} se:
+	\begin{enumerate}[(a).]
+		\item $\underline{x}$ \`e iniettiva;
+		\item $\underline{x}_u \times \underline{x}_v \neq 0$ in $U$;
+		\item $\underline{x}^{-1}$ \`e continua.
+	\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[Superficie]
+	Un sottoinsieme $S \subseteq \mathbb{R}^3$ si dice \textit{superficie} se, $\forall p \in S$, si trova una parametrizzazione regolare $\underline{x}:U\subseteq \mathbb{R}^2 \to \mathbb{R}^3$ tale che $\underline{x}(U) \subseteq S$ \`e un intorno di $p$.
+\end{definizione}
 
 
 
