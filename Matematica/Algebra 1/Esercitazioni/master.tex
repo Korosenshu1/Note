@@ -1,0 +1,184 @@
+%! TEX program = lualatex
+\documentclass[11pt]{article}
+% Packages
+%\usepackage[margin=1.5in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+%\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+%\usepackage{parskip}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage{setspace}
+\setstretch{1.2}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{133,68,66}}
+\definecolor{mastercolor}{HTML}{854442}
+\definecolor{nred}{HTML}{bf0040}
+
+
+% Titles 
+\title{Esercizi di Algebra 1}
+\author{Manuel Deodato}
+\date{}
+
+
+
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{20}{20}\scshape}
+{{\color{mastercolor}\fontsize{30}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\titlespacing*{\section}{0pt}{*2}{1cm}
+\titlespacing*{\subsection}{0pt}{*5}{.25cm}
+\titlespacing*{\subsubsection}{0pt}{*4.5}{.25cm}
+
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{15}{20}\bfseries}{\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{13}{10}\bfseries}{\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase{\thetitle}}}
+
+\vspace{0.2in}
+
+{\large\MakeUppercase{\theauthor}}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[default]{fontsetup}
+
+
+
+%%% Hook
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Gruppi}
+\subsection{Azioni di gruppo}
+Si inizia col dimostrare il teorema di Cauchy e il piccolo teorema di Fermat usando le azioni di gruppo.
+\begin{teorema}
+	[Teorema di Cauchy]
+	Sia $G$ un gruppo finito, con $p$ primo tale che $p  \mid \lvert G \rvert $; allora $\exists x \in G : \operatorname{ord}(x) =p$.
+\end{teorema}
+	\begin{proof}
+		
+	\end{proof}
+
+
+
+
+\end{document}

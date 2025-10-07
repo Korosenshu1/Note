@@ -980,10 +980,200 @@ Ora si cerca di caratterizzare la bont\`a accennata per $\underline{x}$, provand
 	Un sottoinsieme $S \subseteq \mathbb{R}^3$ si dice \textit{superficie} se, $\forall p \in S$, si trova una parametrizzazione regolare $\underline{x}:U\subseteq \mathbb{R}^2 \to \mathbb{R}^3$ tale che $\underline{x}(U) \subseteq S$ \`e un intorno di $p$.
 \end{definizione}
 
+\subsection{Alcuni esempi di superficie}
+\begin{esempio}
+	[Grafico di una funzione]
+	Si considera una funzione $f:U \subseteq \mathbb{R}^2 \to \mathbb{R}^3$, con $U$ aperto e $f \in C^\infty(U)$.
+	Il suo grafico \`e definito da
+	\[
+	\Gamma_f = \left\{ (x,y,z) \in \mathbb{R}^3  \mid z= f(x,y) \right\} \subseteq \mathbb{R}^3
+	\] 
+	Si vuole parametrizzare $\Gamma_f$ tramite una superficie.
+	Una possibile parametrizzazione \`e 
+	\[
+		\underline{x}:
+	\begin{array}
+		{c c c}
+		U & \longrightarrow & \mathbb{R}^3\\
+		(u,v) &\longmapsto & \big(u,v,f(u,v)\big)
+	\end{array}
+	\] 
+	In questo modo, $\underline{x} \in C^\infty(U)$ perch\'e ogni sua componente lo \`e e $\underline{x}(U) = \Gamma_f$.
+	Si dimostra che \`e effettivamente una parametrizzazione regolare.
+\end{esempio}
+\begin{proof}
+	Si divide la dimostrazione nei tre punti da verificare per una parametrizzazione regolare.
+	\begin{enumerate}[(a).]
+		\item La mappa scelta \`e sicuramente iniettiva perch\'e ad ogni punto del dominio $U$, corrisponde un solo punto $f(u,v)$, altrimenti $f$ non sarebbe una buona funzione.
+			Si pu\`o, allora, definire la proiezione 
+			\[
+				\pi : 
+			\begin{array}
+				{c c c}
+				\mathbb{R}^3& \longrightarrow& \mathbb{R}^2\\
+				(x,y,z) &\longmapsto & (x,y)
+			\end{array}
+			\] 
+		in modo tale da verificare la relazione $\pi(\underline{x}(u,v)) = (u,v)$.
+		L'esistenza dell'inversa implica necessariamente la biezione $U \longleftrightarrow \underline{x}(U)$.
+	\item Ora si mostra che $\underline{x}_u \times \underline{x}_v \neq 0$. 
+		Calcolando le derivate, si vede facilmente che:
+		\[
+		\underline{x}_u \times \underline{x}_v = \begin{pmatrix} 1 \\ 0 \\ f_u  \end{pmatrix} \times \begin{pmatrix} 0 \\ 1 \\ f_v \end{pmatrix} = \begin{pmatrix} * \\ *\\ 1 \end{pmatrix} \neq 0
+		\] 
+		dove le prime due componenti non importano perch\'e tanto l'ultima \`e costante e non-nulla $\forall u,v \in U$.
+\item Infine, si dimostra la continuit\`a dell'inversa. 
+	Una candidata per l'inversa, come visto al punto (a), \`e ovviamente $\underline{x}^{-1} = \pi|_{\underline{x}(U)}  : \underline{x}(U) \to \mathbb{R}^2$.
+	La proiezione \`e una mappa continua, quindi l'inversa \`e continua.
+	\end{enumerate}
+\end{proof}
+\begin{esempio}
+	[Superficie elicoidale]
+	Si definisce la mappa, nota come \textit{superficie elicoidale}:
+	\[
+	\underline{x}:
+	\begin{array}
+		{c c c}
+		U&\longrightarrow & \mathbb{R}^3\\
+		(u,v) & \longmapsto & (u \cos v, u \sin v , b v)
+	\end{array}
+	\] 
+	dove $U = \mathbb{R}^{>0} \times \mathbb{R} = \left\{ (u,v)\in \mathbb{R}^2  \mid  u >0 \right\} $ e $b \neq 0$.
+	Per vedere la superficie generata, si pu\`o notare che:
+	\begin{itemize}
+		\item fissando $u_0$, si fissa il raggio e, al variare di $v$, si ottiene un'elica;
+		\item fissando $v_0$, si fissa un'altezza e un punto su un'elica e, il variare di $u$, si incontrano tutte le eliche di raggio sempre maggiore.
+	\end{itemize}
+	La superficie \`e l'unione di questi due sottoinsiemi di $\mathbb{R}^3$ descritti e, pertanto, si ottiene una scalinata di spessore pari al massimo $u_0$ in $U$, la cui altezza dipende dai valori di $v$ contenuti in $U$.
+	Di seguito, si dimostra che \`e effettivamente una superficie.
+\end{esempio}
+\begin{proof}
+	Come prima, si divide la dimostrazione nei vari punti da far vedere.
+	\begin{enumerate}[(a).]
+		\item Per l'iniettivit\`a, si cerca di definire un'inversa.
+			Dalla relazione $\underline{x}(u,v) = (u \cos v , u \sin v , b v ) = (x,y,z)$, si possono provare a ricavare $u$ e $v$:
+			\[
+			u = \sqrt{x^2 + y^2} \hspace{1cm}v = \frac{z}{b}
+			\] 
+			Quindi si pu\`o definire la mappa 
+			\[
+			\varphi : 
+			\begin{array}
+				{c c c}
+				\mathbb{R}^3 \setminus \left\{ \text{asse } z \right\} & \longrightarrow & \mathbb{R}^{>0} \times \mathbb{R}\\
+				(x,y,z) & \longmapsto & \big(\sqrt{x^2 + y^2} , z / b\big)
+			\end{array}
+			\] 
+			Per definizione, allora, si ha $\varphi (\underline{x}(u,v)) = (u,v)$, per cui $\underline{x}$ \`e iniettiva.
+		\item Per definizione, la mappa \`e $C^\infty$ perch\'e ogni sua componente lo \`e e le sue derivate parziali prime sono:
+			\[
+			\underline{x}_u = (\cos v, \sin v , 0) \hspace{1cm}\underline{x}_v = (- u \sin v , u \cos v , b)
+			\] 
+			Visto che $\underline{x}_u \cdot \underline{x}_u = 1$, $\underline{x}_v \cdot  \underline{x}_v \neq 0$ perch\'e $v\neq 0$ e $\underline{x}_u \cdot \underline{x}_v = 0$ (cio\`e i due sono ortogonali), allora deve valere $\underline{x}_u \times \underline{x}_v \neq 0$.
+		\item Per la continuit\`a dell'inversa, si vede che la mappa $\underline{x}^{-1} = \varphi |_{\underline{x}(U)} $ \`e continua perch\'e le sue componenti lo sono.
+	\end{enumerate}
+\end{proof}
+\begin{esempio}
+	[Sfera]
+	Si indica con 
+	\[
+	S^2_a = \left\{ (x,y,z) \in \mathbb{R}^3  \mid x^2 + y^2 + z^2 = a^2 \right\} 
+	\] 
+	Di seguito, si dimostra che \`e una superficie ben definita con un metodo alternativo.
+\end{esempio}
+\begin{proof}
+	L'idea \`e mostrare che \`e il grafico di una funzione, ma, per come \`e, non sarebbe il grafico di alcuna funzione, visto che ad un punto del dominio, ne corrispondono due.
+	Per risolvere il problema, si seziona la sfera in calotte sferiche, due per ogni asse; ad esempio:
+	\[
+		\begin{split}
+			A_z^+ &= \left\{ (x,y,z) \in S_a^2  \mid z >0 \right\} \\
+			      &= \left\{ (x,y,\sqrt{a^2 - x^2 - y^2}  \mid 0 \le x^2 + y^2 < a^2 \right\} 
+		\end{split}
+	\] 
+	Questa \`e la calotta sferica superiore ed \`e il grafico di $f (u,v) = \sqrt{a^2 - u ^2 - v^2} $, il cui dominio \`e $D^2 _a = \left\{ (u,v) \in \mathbb{R}^2  \mid u^2 + v^2 < a^2 \right\} $ e che \`e liscia.
+	In maniera analoga, ma cambiando il segno di $z$, si definisce $A^-_z$ e, sempre allo stesso modo, ma cambiando la coordinata per cui si risolve, si definiscono anche $A^{\pm} _x$ e $A^{\pm} _y$.
+	L'unione di queste restituisce $S^2_a$ e la loro intersezione non crea punti di discontinuit\`a, quindi $S^2_a$ \`e una superficie.
+\end{proof}
+\noindent Un altro esempio di superficie sono le cosiddette \textit{superfici di rotazione}.
+Queste sono tutte ottenute a partire dalla traccia di una curva nel piano e a seguito di un'opportuna rotazione attorno a qualche asse.
+L'obiettivo, ora, \`e capire quando questo procedimento genera, effettivamente, una superficie.
+Formalmente, si considera una curva 
+\[
+\alpha : 
+\begin{array}
+	{c c c}
+	\mathbb{R} & \longrightarrow & \mathbb{R}^3\\
+	u&\longmapsto & \big(f(u) , 0 , g(u)\big)
+\end{array}
+\] 
+dove $f,g \in C^\infty$ e $f(u) > 0,  \forall u$.
+La conseguente superficie \`e data dalla parametrizzazione
+\[
+\underline{x}:
+\begin{array}
+	{c c c}
+	\mathbb{R}^2 & \longrightarrow & \mathbb{R}^3\\
+	(u,v) &\longmapsto & \big(f(u) \cos v, f(u) \sin v , g(u)\big)
+\end{array}
+\] 
+\begin{osservazione}
+Si nota che, da queste definizioni, $\underline{x}$ non \`e mai iniettiva perch\'e bisognerebbe opportunamente restringere il dominio nel piano in modo tale che $v$ spazi in un intervallo in cui le funzioni trigonometriche compiano un solo giro.
+Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che si interseca su se stessa infinite volte.
+\end{osservazione}
+\noindent Ora si considera il caso particolare del toro ottenuto come superficie di rotazione e si dimostra che \`e una superficie.
+\begin{esempio}
+	[Toro]
+	Si considera una circonferenza parametrizzata nel piano $(x,z)$:
+	\[
+	\alpha (u) = (a + b\cos u , 0 , b \sin u)
+	\] 
+	dove $a$ serve a distanziarla dall'asse $z$ in modo che la rotazione attorno allo stesso asse possa creare una superficie con un buco al centro; di fatto, si prende $a > b > 0$.
+	Si dimostra che \`e una superficie.
+\end{esempio}
+\begin{proof}
+	Quello che si vuole mostrare \`e che $\forall p \in S$, si ha $p = \underline{x}(u_0,v_0)$, per $(u_0,v_0) \in \mathbb{R}^2$.
+	Per costruire correttamente il dominio della parametrizzazione, si parte col considerare un intervallo $I \subseteq \mathbb{R}$, contenente $u_0$, tale per cui $\alpha |_I:I\to\mathbb{R}^3$ risulti iniettiva e si prova a mostrare che $\underline{x}|_{I \times (v_0-\pi,v_0+\pi)} $ \`e una parametrizzazione regolare.
 
+	Se $(u,v), (u',v') \in I \times (v_0-\pi,v_0+\pi)$ e $\underline{x}(u,v) = \underline{x}(u',v')$, si vede che, data
+	\[
+	\varphi : \mathbb{R}^3 \to \mathbb{R}^2 \text{ tale che } \varphi (x,y,z) = \big(\sqrt{x^2 + y^2 } ,0,z\big)
+	\] 
+	si ha $\varphi (\underline{x}(u,v)) = (f(u),0,g(u)) = \alpha (u)$, pertanto 
+	\[
+	\alpha (u) = \varphi (\underline{x}(u,v)) = \varphi (\underline{x}(u',v')) = \alpha (u')
+	\] 
+	da cui $u = u'$ perch\'e $\alpha $ \`e iniettiva per $u \in I$.
+	Per quanto riguarda $v$, si vede che $\underline{x}(u,v) = \underline{x}(u,v')$ implica uguaglianza componente per componente:
+	\[
+	f(u) \cos v =  f (u ) \cos v' \hspace{1cm}f(u) \sin v = f(u) \sin v ' 
+	\] 
+	da cui $(\cos v , \sin v ) = (\cos v',\sin v')$. 
+	Visto che $v , v' \in (v_0 - \pi, v_0 + \pi)$, allora deve risultare per forza $v = v'$ perch\'e le funzioni trigonometriche sono iniettive su questo intervallo.
 
-
-
+	\begin{osservazione}
+	L'iniettivit\`a appena dimostrata \`e solamente una relazione locale, imposta per ciascuno specifico punto $p \in S$; questo non baster\`a e si dovr\`a estendere con ulteriori ipotesi.
+	\end{osservazione}
+	\noindent Quanto alla regolarit\`a, si vede che
+	\[
+	\underline{x}_u = (f ' \cos v, f ' \sin v , g') \hspace{1cm} \underline{x}_v = (-f \sin v , f \cos v , 0)
+	\] 
+	e, essendo $\underline{x}_v \cdot \underline{x}_v = f'^2 > 0$, $\underline{x}_u \cdot \underline{x}_v =0$ e $\underline{x}_u \cdot  \underline{x}_u = f'^2 + g'^2 = \left\lVert \alpha '(u) \right\rVert ^2$, dall'imposizione che $\alpha $ sia regolare, si ottiene la regolarit\`a della parametrizzazione.
+	\begin{osservazione}
+	La regolarit\`a di $\alpha $ serve ad evitare casi in cui la superficie presenta cuspidi, o altre irregolarit\`a; inoltre, questo garantisce anche la regolarit\`a della parametrizzazione.
+	\end{osservazione}
+	\noindent Infine, si mostra che $\underline{x}^{-1}|_{\underline{x}(I \times (v_0-\pi,v_0+\pi))}  $ \`e continua.
+	Per farlo, si prende la relazione $(f(u) \cos v , f(u) \sin v, g(u)) = (x,y,z)$ e la si prova ad invertire.
+	Visto che $\alpha $ \`e iniettiva, ammette inversa nell'immagine di $I$, quindi si ha
+	\[
+	u = \alpha ^{-1}(\sqrt{x^2 + y^2 , 0 , z)} 
+	\] 
+	Perch\'e questa sia continua, serve richiedere esplicitamente che $\alpha ^{-1}|_{\alpha (I)} : \alpha (I) \to I$ sia continua.
+	Quanto a $v$, invece, se $v_0 \not \in \pi \mathbb{Z}$ (cio\`e non \`e un multiplo di $\mathbb{Z}$), in un opportuno intervallo $J$ attorno a $v_0$, si pu\`o ricavare
+	\[
+	x^{-1}(x,y,z) = \left(\alpha ^{-1}(\sqrt{x^2 + y^2 } ,0,z) , \arccos \left(\frac{x}{\sqrt{x^2 + y^2} }\right) \right) 
+	\] 
+	Se, invece, $v \in \pi \mathbb{Z}$, si pu\`o usare l'arcoseno.
+\end{proof}
 
 \end{document}
 
