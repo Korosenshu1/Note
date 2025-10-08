@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[11pt]{article}
+\documentclass[11pt]{scrartcl}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -12,7 +12,7 @@
 \tcbuselibrary{breakable}
 \usepackage{varwidth}
 \usepackage{textcomp}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{esint}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -168,15 +168,171 @@ title=#1
 \tableofcontents
 \newpage
 \section{Gruppi}
-\subsection{Azioni di gruppo}
+\subsection{Lezione 3 [10-10-2023]}
 Si inizia col dimostrare il teorema di Cauchy e il piccolo teorema di Fermat usando le azioni di gruppo.
 \begin{teorema}
 	[Teorema di Cauchy]
 	Sia $G$ un gruppo finito, con $p$ primo tale che $p  \mid \lvert G \rvert $; allora $\exists x \in G : \operatorname{ord}(x) =p$.
 \end{teorema}
 	\begin{proof}
+		Si considera l'azione di $\mathbb{Z} / p\mathbb{Z}$ sull'insieme
+		\[
+		X = \left\{ (g_1,\ldots,g_p) \in G^p  \ \bigg  \lvert \ \prod_{i=1} ^p g_i = e_G\right\} 
+		\] 
+		dove l'elemento $i \in \mathbb{Z}/ p\mathbb{Z}$ agisce mandando
+		\[
+			(g_1,\ldots,g_p)\longmapsto (g_{1+i},g_{2+i}  ,\ldots,g_{p+i} )
+		\] 
+		dove l'indice di ciascun $g_i$ \`e letto modulo $p$. Ad esempio, l'elemento $1 \in \mathbb{Z}/p\mathbb{Z}$ agisce come 
+		\[
+			(g_1,\ldots,g_p)\longmapsto (g_{2},g_{3}  ,\ldots,g_{p+1} )
+		\] 
+		Da questa definizione, \`e facile convincersi un'azione corrisponde ad una rotazione delle componenti di ogni $p$-upla di $X$, pertanto il prodotto restituisce sempre $e_G$, quindi \`e ben definita come biezione di $X$.
+		\begin{osservazione}
+		Si pu\`o osservare che se $i \in \mathbb{Z} /p \mathbb{Z}$ agisce su una $p$-upla, essendo che 
+		\[
+		e_G= g_1 \cdots g_p=(g_1 g_2 \cdots g_i) g_{i+1} \cdots g_p \implies g_1 g_2 \cdots g_i = (g_{i+1} \cdots g_p)^{-1}
+		\] 
+		quindi, a seguito della rotazione tramite $i$, si ha il prodotto
+		\[
+			(g_{i+1} \cdots g_p) (g_1 g_2 \cdots g_i)= e_G
+		\] 
+		\end{osservazione}
+		Si nota immediatamente che $\lvert X \rvert = n^{p-1} $ perch\'e ogni componente della $p$-upla pu\`o essere scelta arbitrariamente tra gli $n$ elementi di $G$, mentre l'ultima, la $p$-esima, \`e fissata dalla condizione che sia l'inverso del prodotto delle $p-1$ componenti precedenti.
 		
+		Ora si studiano le orbite dell'azione.
+		Per il teorema di orbita-stabilizzatore
+		\[
+			\lvert \mathrm{Orb} (x) \rvert  \mid \lvert \mathbb{Z}/ p \mathbb{Z} \rvert \implies \lvert \mathrm{Orb} (x)  \rvert  = \left\{ 1,p \right\} 
+		\] 
+		Le orbite di lunghezza $1$ sono date da tutti gli elementi di $X$ che hanno ogni componente uguale perch\'e sotto rotazione di ogni $i \in \mathbb{Z}/p\mathbb{Z}$ non devono cambiare.
+		Un elemento $g \in G$ che ha un corrispondente vettore in $X$ con tutte le componenti uguali deve necessariamente soddisfare
+		\[
+			e_G=\underbracket{g g \cdots g}_{p \text{ volte}} = g^p \implies \operatorname{ord}(g) \in \left\{ 1,p \right\} 
+		\] 
+		Un'orbita del genere esiste sicuramente ed \`e data proprio dall'elemento neutro di $G$, $e_{G} $ ed \`e corrispondente proprio a $\operatorname{ord}(g) =1$; poi le altre eventuali orbite del genere sono date dagli elementi di $G$ che hanno ordine $p$.
+		L'idea \`e dimostrare che ne esiste almeno uno.
+		Ora, visto che le orbite partizionano l'insieme, si ha:
+		\[
+		\lvert X \rvert  = \bigsqcup_{x \in X} \mathrm{Orb} (x) \implies \lvert X \rvert  = \sum_{x \in \mathcal{R} }^{} \lvert \mathrm{Orb}(x)  \rvert 
+		\] 
+		dove $\mathcal{R} $ \`e l'insieme dei rappresentanti delle orbite.
+		La somma si pu\`o spezzare separando le orbite che hanno lunghezza $1$, da quelle che hanno lunghezza $p$:
+		\[
+			\lvert X \rvert  = 1 + \left\{ \substack{\displaystyle \text{elementi di}\\\displaystyle  \text{ordine } p} \right\} + p \cdot \# \left\{ \substack{\displaystyle \text{elementi con}\\ \displaystyle \text{orbita lunga } p} \right\}
+		\] 
+		da cui, passando in modulo $p$, si ottiene che
+		\[
+		n^{p-1} - 1 \equiv  \# \left\{ \substack{\displaystyle \text{elementi di}\\\displaystyle  \text{ordine } p} \right\} \pmod{p} 
+		\] 
+		Per assunzione, per\`o, $p  \mid  n$, per cui $n^{p-1} - 1 \equiv -1 \pmod{p} $ e, pertanto
+		\[
+		 \# \left\{ \substack{\displaystyle \text{elementi di}\\\displaystyle  \text{ordine } p} \right\}\equiv -1 \pmod{p}
+		\] 
+	Ma questo significa che il numero di elementi di ordine $p$ non \`e nullo perch\'e $0 \not \equiv -1 \pmod{p} $.
 	\end{proof}
+In maniera del tutto analoga si dimostra il piccolo teorema di Fermat.
+\begin{teorema}
+	[Piccolo teorema di Fermat]
+	Sia $n \in \mathbb{Z}$ un intero non divisibile per $p$; allora $n^{p-1} \equiv 1 \pmod{p} $.
+\end{teorema}
+	\begin{proof}
+		Si considera $G = \mathbb{Z}/ n \mathbb{Z}$, con $p  \nmid n$ e 
+		\[
+		X = \left\{ (g_1,\ldots,g_p) \in G^p  \mid g_1+ \ldots+ g_p = 0 \right\} 
+		\] 
+		Allora si considera l'azione di $\mathbb{Z} / p \mathbb{Z}$ su $X$ come sopra e, analogamente, si ha $\lvert X \rvert  = n^{p-1} $.
+		Visto che $p \nmid n$, non ci possono essere elementi di ordine $p$ in $G$ e, quindi, vi \`e un'unica orbita di ordine $1$ data dall'elemento neutro $0$.
+		Ne segue che:
+		\[
+		n^{p-1} = \lvert X \rvert  = 1 + p \cdot \# \left\{ \substack{\displaystyle \text{elementi con}\\ \displaystyle \text{orbita lunga } p} \right\} \equiv 1 \pmod{p} 
+		\] 
+		da cui la tesi.
+	\end{proof}
+	Il seguente teorema ha come conseguenza il fatto che se un sottogruppo di un gruppo finito ha indice $2$, allora \`e normale.
+	\begin{boxenv}[]
+	\begin{teorema}
+	Sia $G$	un gruppo finito di ordine $n$ e sia $N<G$. 
+	Se $[G:N]=p$, con $p$ il pi\`u piccolo primo che divide $n$, allora $N \lhd G$.
+	\end{teorema}
+	\end{boxenv}
+\begin{proof}
+	Si considera l'azione di $G$ sul quoziente $G / N$ data da 
+	\[
+	g' \cdot (gN) = g'gN
+	\] 
+	Si pu\`o dimostrare facilmente che questa \`e una buona azione e, quindi, si ha un omomorfismo $G \stackrel{\phi }{\longrightarrow } S(G/N) \cong S_p$, visto che $\lvert G / N \rvert = p$ per assunzione. 
+Si vuole dimostrare che il suo nucleo coincide con $N$, da cui $N \lhd G$.
+
+Si inizia col notare che $\lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert S(G/N) \rvert = \lvert S_p \rvert =p!$; allo stesso tempo, per il primo teorema di omomorfismo, si ha 
+\[
+	\frac{G}{\mathrm{Ker} (\phi )}\cong \mathrm{Im} (\phi )\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \frac{\lvert G \rvert  }{\lvert \mathrm{Ker} (\phi ) \rvert }\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert G \rvert 
+\] 
+Visto che $\lvert \mathrm{Im} (\phi ) \rvert  $ deve dividere $p!$, che contiene tutti primi minori o pari a $p$, e deve dividere anche $\lvert G \rvert $, che contiene tutti primi maggiori o uguali a $p$, significa che $\lvert \mathrm{Im} (\phi ) \rvert = \left\{ 1,p \right\} $.
+Per\`o non pu\`o essere $|\mathrm{Im} (\phi )| =1$ perch\'e, prendendo $g \in G \setminus N$ e prendendo $n \in N$, si ottengono due mappe $\phi _g,\phi _n \in S(G / N)$ diverse fra loro: $\phi _g (N) = gN \neq N = nN=\phi _n(N)$.
+Allora $\lvert \mathrm{Im} (\phi ) \rvert =p = [G : \mathrm{Ker} (\phi )] = [ G : N ]$, quindi $\mathrm{Ker} (\phi )$ e $ N$ hanno stessa cardinalit\`a in un gruppo finito $G$.
+Per concludere che $\mathrm{Ker}( \phi) = N$, quindi che $N \lhd G$, \`e sufficiente mostrare un'inclusione; a questo proposito, si nota che se $g \in \mathrm{Ker} (\phi )$, allora $g \cdot N = gN = N \iff g \in N$, cio\`e $\mathrm{Ker} (\phi ) \subseteq N\implies \mathrm{Ker}( \phi ) = N$.
+\end{proof}	
+	Facendo uso di questo risultato, \`e possibile dimostrare che ogni gruppo di ordine $15$ \`e ciclico.	
+\begin{prop}
+	Ogni gruppo $G$ di ordine $15$ \`e ciclico.
+\end{prop}
+\begin{proof}
+	Si dimostra tramite i seguenti punti.
+	\begin{enumerate}[(a).]
+		\item $\exists N \lhd G$ tale che $\lvert N \rvert  = 5$.
+		\item $N \subseteq Z(G)$.
+		\item $G$ abeliano $\Rightarrow  G $ ciclico.
+	\end{enumerate}
+	Il punto (a) si dimostra direttamente applicando il teorema di Cauchy e il teorema appena visto; dal primo, si conclude che $\exists g \in G: \langle g \rangle= N < G$ tale che $\lvert N \rvert  = 5=\operatorname{ord}(g)$, mentre dal teorema precedente, visto che $\lvert G \rvert  / \lvert N \rvert  = 3$, che \`e il pi\`u piccolo primo che divide $\lvert G \rvert $, si conclude che $N$ \`e normale in $G$.
+
+	Per il punto (b), $N$ \`e normale in $G$, quindi la mappa 
+	\[
+\phi : 
+		\begin{array}
+			{c c c}
+			\mathrm{Int} (G)& \longrightarrow &\mathrm{Aut} (N)\\
+			\varphi _x &\longmapsto& \varphi _x |_{N} 
+		\end{array}
+	\] 
+	\`e ben definita.
+	Allora basta mostrare che che $\mathrm{Im} (\phi ) = \left\{ \mathrm{Id}  \right\} $ per far vedere che $N$ \`e normale.
+	Intanto si ricorda che $\mathrm{Int} (G) \cong G / Z(G)$, quindi $\lvert \mathrm{Int} (G) \rvert  \mid 15$; inoltre $\mathrm{Aut} (N) \cong \mathrm{Aut} (\mathbb{Z}/5\mathbb{Z}) \cong (\mathbb{Z}/5\mathbb{Z})^* \cong \mathbb{Z}/4\mathbb{Z}$.
+	Ma allora $|\mathrm{Im} (\phi )|  \mid (4,15)  \mid  1$, da cui $\mathrm{Im} (\phi ) = \left\{ \mathrm{Id}  \right\} $ e, quindi, $N \subseteq Z(G)$.
+
+	Infine, per il punto (c), si pu\`o osservare che $\lvert G / Z(G) \rvert = \left\{ 1,3 \right\} $ perch\'e $N \subseteq Z(G) \implies \lvert Z(G) \rvert \ge 5$, da cui $G / Z(G)$ \`e ciclico in entrambi i casi; ricordando che $G / Z(G)$ ciclico $\Rightarrow  G$ abeliano, si conclude la dimostrazione.
+\end{proof}
+\begin{center}
+	Continuare 56:00\ldots
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
