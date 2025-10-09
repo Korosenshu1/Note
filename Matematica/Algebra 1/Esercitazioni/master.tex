@@ -249,31 +249,7 @@ In maniera del tutto analoga si dimostra il piccolo teorema di Fermat.
 		\] 
 		da cui la tesi.
 	\end{proof}
-	Il seguente teorema ha come conseguenza il fatto che se un sottogruppo di un gruppo finito ha indice $2$, allora \`e normale.
-	\begin{boxenv}[]
-	\begin{teorema}
-	Sia $G$	un gruppo finito di ordine $n$ e sia $N<G$. 
-	Se $[G:N]=p$, con $p$ il pi\`u piccolo primo che divide $n$, allora $N \lhd G$.
-	\end{teorema}
-	\end{boxenv}
-\begin{proof}
-	Si considera l'azione di $G$ sul quoziente $G / N$ data da 
-	\[
-	g' \cdot (gN) = g'gN
-	\] 
-	Si pu\`o dimostrare facilmente che questa \`e una buona azione e, quindi, si ha un omomorfismo $G \stackrel{\phi }{\longrightarrow } S(G/N) \cong S_p$, visto che $\lvert G / N \rvert = p$ per assunzione. 
-Si vuole dimostrare che il suo nucleo coincide con $N$, da cui $N \lhd G$.
-
-Si inizia col notare che $\lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert S(G/N) \rvert = \lvert S_p \rvert =p!$; allo stesso tempo, per il primo teorema di omomorfismo, si ha 
-\[
-	\frac{G}{\mathrm{Ker} (\phi )}\cong \mathrm{Im} (\phi )\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \frac{\lvert G \rvert  }{\lvert \mathrm{Ker} (\phi ) \rvert }\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert G \rvert 
-\] 
-Visto che $\lvert \mathrm{Im} (\phi ) \rvert  $ deve dividere $p!$, che contiene tutti primi minori o pari a $p$, e deve dividere anche $\lvert G \rvert $, che contiene tutti primi maggiori o uguali a $p$, significa che $\lvert \mathrm{Im} (\phi ) \rvert = \left\{ 1,p \right\} $.
-Per\`o non pu\`o essere $|\mathrm{Im} (\phi )| =1$ perch\'e, prendendo $g \in G \setminus N$ e prendendo $n \in N$, si ottengono due mappe $\phi _g,\phi _n \in S(G / N)$ diverse fra loro: $\phi _g (N) = gN \neq N = nN=\phi _n(N)$.
-Allora $\lvert \mathrm{Im} (\phi ) \rvert =p = [G : \mathrm{Ker} (\phi )] = [ G : N ]$, quindi $\mathrm{Ker} (\phi )$ e $ N$ hanno stessa cardinalit\`a in un gruppo finito $G$.
-Per concludere che $\mathrm{Ker}( \phi) = N$, quindi che $N \lhd G$, \`e sufficiente mostrare un'inclusione; a questo proposito, si nota che se $g \in \mathrm{Ker} (\phi )$, allora $g \cdot N = gN = N \iff g \in N$, cio\`e $\mathrm{Ker} (\phi ) \subseteq N\implies \mathrm{Ker}( \phi ) = N$.
-\end{proof}	
-	Facendo uso di questo risultato, \`e possibile dimostrare che ogni gruppo di ordine $15$ \`e ciclico.	
+	Facendo uso di quanto affermato dal teorema \ref{snorm1}, \`e possibile dimostrare che ogni gruppo di ordine $15$ \`e ciclico.	
 \begin{prop}
 	Ogni gruppo $G$ di ordine $15$ \`e ciclico.
 \end{prop}
@@ -302,24 +278,150 @@ Per concludere che $\mathrm{Ker}( \phi) = N$, quindi che $N \lhd G$, \`e suffici
 
 	Infine, per il punto (c), si pu\`o osservare che $\lvert G / Z(G) \rvert = \left\{ 1,3 \right\} $ perch\'e $N \subseteq Z(G) \implies \lvert Z(G) \rvert \ge 5$, da cui $G / Z(G)$ \`e ciclico in entrambi i casi; ricordando che $G / Z(G)$ ciclico $\Rightarrow  G$ abeliano, si conclude la dimostrazione.
 \end{proof}
-\begin{center}
-	Continuare 56:00\ldots
-\end{center}
+Un modo alternativo di dimostrare il punto (c) dell'esercizio precedente \`e tramite il seguente lemma.
+\begin{lemma} 
+	Siano $g_1,g_2 \in G$ tali che $\operatorname{ord}(g_1) = m $ e $ \operatorname{ord}(g_2) =n$.
+	Se $g_1g_2=g_2g_1$ e $(m,n)=1$, allora $\operatorname{ord}(g_1g_2) = m \cdot n$.
+	\begin{proof}
+	Si cerca di capire quando il prodotto $(g_1g_2)^k = e$, cio\`e per quali $k$ vale la relazione.
+	Visto che $g_1$ e $g_2$ commutano per assunzione, questo si pu\`o riformulare pi\`u chiaramente come $g_1^k g_2^k = e \iff g_1^k = g_2^{-k} $.
+	Quest'ultima uguaglianza in particolare implica che $g_1^k, g_2^k \in \langle g_1 \rangle\cap \langle g_2 \rangle$, che \`e un sottogruppo sia di $\langle g_1 \rangle$, che di $\langle g_2 \rangle$.
+	In quanto tale, per Lagrange, deve dividere l'ordine dei due che, essendo coprimi, permette di concludere automaticamente che $\lvert \langle g_1 \rangle\cap \langle g_2 \rangle \rvert =1$, cio\`e $\langle g_1 \rangle\cap \langle g_2 \rangle= \left\{ e \right\} $, quindi $g_1^k = e=g_2^k$.
+	Ma allora $m,n  \mid k$, cio\`e $k$ deve essere un multiplo sia dell'ordine di $g_1$, che di quello di $g_2$, quindi il pi\`u piccolo fra questi che soddisfa la richiesta \`e proprio $m \cdot n$, visto che $m$ e $n$ sono coprimi.
+	\end{proof}
+\end{lemma}
+\begin{osservazione}
+Il lemma dimostra il punto (c) perch\'e, per Cauchy, si hanno elementi di ordine $3$ e di ordine $5$; inoltre, avendo dimostrato che $N \subseteq Z(G)$, si ha anche che l'elemento di ordine $5$ commuta, in particolare, con quello di ordine $3$ e i rispettivi ordini sono coprimi, quindi il prodotto tra i due genera un sottogruppo di ordine $15$. 
+Per ragioni di ordine, questo sottogruppo coincide proprio con $G$, il quale risulta, dunque, ciclico.
+\end{osservazione}
+\begin{esercizio}
+Studiare il gruppo $\mathrm{Aut} \big((\mathbb{Z}/ p\mathbb{Z})^n\big)$, con $p$ numero primo.
+\end{esercizio}
+\begin{svolgimento}
+	Si nota che il gruppo $G = (\mathbb{Z}/p\mathbb{Z})^n$ ha una struttura di spazio vettoriale sul campo $\mathbb{F}_p$, dove la somma \`e quella coordinata per coordinata, mentre il prodotto per scalare \`e nuovamente quello coordinata per coordinata e deriva direttamente dalla somma: il prodotto per uno scalare $\overline{n} \in \mathbb{F}_p$ consiste nel sommare $\overline{n}$ volte il vettore di $G$ che si sta moltiplicando.
 
+	Per il seguito, si far\`a uso della proposizione \ref{homlin}; da questa, segue immediatamente che le mappe di $\mathrm{Aut} (G)$ sono tutte e sole le applicazioni lineari $G \to G$ invertibili.
+	Per caratterizzare questi automorfismi, allora, \`e sufficiente specificare come agiscono su una base $e_1, \ldots, e_n$, richiedendo che $\varphi (e_1),\ldots, \varphi (e_n)$ sia ancora una base\footnote{In realt\`a, \`e sufficiente che siano linearmente indipendenti, visto che sono gi\`a in numero per essere una base.} di $G$ cos\`i che $\varphi $ sia effettivamente un'applicazione lineare suriettiva e iniettiva, quindi invertibile.
+	Seguendo questo ragionamento, si pu\`o calcolare la cardinalit\`a di $\mathrm{Aut} (G)$:
+	\begin{itemize}
+		\item $\varphi (v_1)$ pu\`o essere un qualunque vettore di $\mathbb{F}_p^n \setminus \left\{ \underline{0} \right\} $, quindi si hanno $p^{n}-1$ possibilit\`a;
+		\item $\varphi (v_2)$ pu\`o essere mappato in un qualunque elemento di $\mathbb{F}_p^n$ che non sia linearmente indipendente con $\varphi (v_1)$, cio\`e $\varphi (v_2) \in \mathbb{F}_p^n \setminus \mathrm{Span} (v_1)$, da cui si hanno $p^n - p$ possibilit\`a;
+		\item $\varphi (v_k)$ deve essere mappato in un qualunque elemento di $\mathbb{F}_p^n \setminus \mathrm{Span} (v_1,\ldots,v_{k-1} )$, per un totale di $p^n - p^{k-1}$.
+	\end{itemize}
+	Per questo ragionamento, si ha la seguente formula:
+	\begin{equation}
+		\lvert \mathrm{Aut} (G) \rvert = (p^n - 1) (p^n - p) \ldots (p^n - p^{n-1})
+	\end{equation}
+	Visto che gli automorfismi di $\mathbb{F}_p^n$ sono tutte e sole le applicazioni lineari $n \times n$ a coefficienti in $\mathbb{F}_p$ e invertibili, si individua con $\mathrm{GL} _n(\mathbb{F}_p)$.
+\end{svolgimento}
+\begin{prop}
+	\label{homlin}
+Sia $G = (\mathbb{Z}/p\mathbb{Z})^n$, con $p$ numero primo; una mappa $\varphi  : G \to G$ \`e un omomorfismo di gruppi se e solo se \`e un'applicazione lineare.
+\end{prop}
+\begin{proof}
+	Sia $\varphi  : G \to G$ un omomorfismo di gruppi; si dimostra che un'applicazione lineare.
+	Per farlo, bisogna far vedere che $\varphi (v_1+v_2) = \varphi (v_1) + \varphi (v_2), \ \forall v_1,v_2 \in G$, ma questo deriva direttamente dall'assunzione di $\varphi $ omomorfismo di gruppi, e che $\varphi (\lambda v) = \lambda \varphi (v), \ \forall \lambda \in \mathbb{F}_p, \ \forall v \in G$.
+	Per dimostrare quest'ultima, si usa che $\lambda v = v + v + \ldots +v $ per $\lambda $ volte, quindi, per la propriet\`a di omomorfismo, si conclude che $\varphi (\lambda v) = \lambda \varphi (v)$.
 
+	L'implicazione opposta \`e diretta conseguenza della propriet\`a $\varphi (v_1+v_2) = \varphi (v_1)+\varphi (v_2)$ che deriva dall'assunzione di $\varphi $ applicazione lineare.
+\end{proof}
+\begin{osservazione}
+Come diretta conseguenza dell'esercizio precedente, si pu\`o dimostrare facilmente che $\mathrm{Aut} \big((\mathbb{Z}/2\mathbb{Z})^2\big) \cong S_3$.
+Infatti, gli elementi di $(\mathbb{Z}/2\mathbb{Z})^2$ sono 
+\[
+	(0,0) \hspace{1cm} (1,0) \hspace{1cm}(0,1) \hspace{1cm}(1,1)
+\] 
+Per $\varphi  \in\mathrm{Aut} \big((\mathbb{Z}/2\mathbb{Z})^2\big) $, si deve necessariamente avere $\varphi (0,0) = (0,0)$, altrimenti si perderebbe la suriettivit\`a.
+Quindi, un automorfismo \`e fondamentalmente individuato a seconda di come permuta i tre elementi rimanenti; per esempio, se $(1,0) \mapsto (1,1)$ e $(1,1) \mapsto (1,0)$, allora $(0,1) \mapsto (0,1)$.
+\end{osservazione}
 
+\begin{esercizio}
+	Si considerano $\sigma = (12345), \tau =(2,5)(3,4) \in S_5$; si vuole studiare il gruppo $G = \langle \sigma ,\tau  \rangle$.
+	\begin{svolgimento}
+		Per cominciare, si vuole capire come si comportano le potenze di $\sigma $ e $\tau $, nel senso che se i due commutassero, capire cosa rappresenta $(\sigma \tau )^k$ sarebbe molto pi\`u semplice.
+		Tuttavia, piuttosto che calcolare il commutatore, in questo caso, ci si pu\`o limitare al seguente (usando la proposizione \ref{congperm}):
+		\[
+		\tau \sigma \tau ^{-1} = (1,5,4,3,2) = \sigma ^{-1}
+		\] 
+		Ma quindi $\sigma $ e $\tau $ soddisfano la presentazione di $D_5$, da cui $G \cong D_5$.
+	\end{svolgimento}
+\end{esercizio}
+\begin{osservazione}
+L'idea geometria alla base di questo \`e che $\tau $ \`e la riflessione rispetto all'asse passante per il centro del pentagono; infatti, numerandone i vertici in senso antiorario, si vede che $2\leftrightarrow 5$ e $3\leftrightarrow 4$ corrisponde proprio a tale riflessione.
+Inoltre, ovviamente, $\sigma $ rappresenta una rotazione di angolo $2\pi / 5$, che manda un vertice nel successivo (sempre in verso antiorario).
+\end{osservazione}
+\begin{prop}
+	\label{congperm}
+	Siano $c ,\tau \in S_n$ due permutazioni, con $c = (a_1, \ldots, a_k)$ ciclo; allora $\tau c \tau ^{-1}= (\tau (a_1),\ldots, \tau (a_k))$.
+\end{prop}
+	\begin{proof}
+		Per dimostrarlo, \`e sufficiente osservare che:
+		\[
+			(\tau c \tau ^{-1}) \tau (a_j) = \tau c (a_j)= \tau (a_{j+1} )
+		\] 
+		quindi $\tau c \tau ^{-1}$ consiste nel ciclo $(\tau (a_1), \tau (a_2) ,\ldots, \tau (a_k))$.
+	\end{proof}
+\begin{osservazione}
+Chiaramente, se $\sigma \in S_n$ \`e decomposta in cicli $\sigma = c_1\ldots c_m$, allora:
+\[
+\tau \sigma \tau ^{-1}=\tau c_1 \ldots c_m \tau ^{-1}=\tau c_1 \tau ^{-1}\ldots \tau c_m \tau ^{-1}
+\] 
+semplicemente moltiplicando per $\tau ^{-1}\tau $ in mezzo ad ogni ciclo, quindi si pu\`o applicare la formula sopra.
+\end{osservazione}
+\subsubsection{Studiare l'esistenza di sottogruppi normali}
 
+\begin{teorema}\label{snorm1}
+	Sia $G$	un gruppo finito di ordine $n$ e sia $N<G$. 
+	Se $[G:N]=p$, con $p$ il pi\`u piccolo primo che divide $n$, allora $N \lhd G$.
+	\end{teorema}
+\begin{proof}
+	Si considera l'azione di $G$ sul quoziente $G / N$ data da 
+	\[
+	g' \cdot (gN) = g'gN
+	\] 
+	Si pu\`o dimostrare facilmente che questa \`e una buona azione e, quindi, si ha un omomorfismo $G \stackrel{\phi }{\longrightarrow } S(G/N) \cong S_p$, visto che $\lvert G / N \rvert = p$ per assunzione. 
+Si vuole dimostrare che il suo nucleo coincide con $N$, da cui $N \lhd G$.
 
-
-
-
-
-
-
-
-
-
-
+Si inizia col notare che $\lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert S(G/N) \rvert = \lvert S_p \rvert =p!$; allo stesso tempo, per il primo teorema di omomorfismo, si ha 
+\[
+	\frac{G}{\mathrm{Ker} (\phi )}\cong \mathrm{Im} (\phi )\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \frac{\lvert G \rvert  }{\lvert \mathrm{Ker} (\phi ) \rvert }\implies \lvert \mathrm{Im} (\phi ) \rvert  \mid \lvert G \rvert 
+\] 
+Visto che $\lvert \mathrm{Im} (\phi ) \rvert  $ deve dividere $p!$, che contiene tutti primi minori o pari a $p$, e deve dividere anche $\lvert G \rvert $, che contiene tutti primi maggiori o uguali a $p$, significa che $\lvert \mathrm{Im} (\phi ) \rvert = \left\{ 1,p \right\} $.
+Per\`o non pu\`o essere $|\mathrm{Im} (\phi )| =1$ perch\'e, prendendo $g \in G \setminus N$ e prendendo $n \in N$, si ottengono due mappe $\phi _g,\phi _n \in S(G / N)$ diverse fra loro: $\phi _g (N) = gN \neq N = nN=\phi _n(N)$.
+Allora $\lvert \mathrm{Im} (\phi ) \rvert =p = [G : \mathrm{Ker} (\phi )] = [ G : N ]$, quindi $\mathrm{Ker} (\phi )$ e $ N$ hanno stessa cardinalit\`a in un gruppo finito $G$.
+Per concludere che $\mathrm{Ker}( \phi) = N$, quindi che $N \lhd G$, \`e sufficiente mostrare un'inclusione; a questo proposito, si nota che se $g \in \mathrm{Ker} (\phi )$, allora $g \cdot N = gN = N \iff g \in N$, cio\`e $\mathrm{Ker} (\phi ) \subseteq N\implies \mathrm{Ker}( \phi ) = N$.
+\end{proof}	
+\begin{esercizio}
+	Studiare l'azione considerata sopra, cio\`e definita da $\phi (g) = \phi _g : g'H \mapsto gg'H$, nel caso in cui $ H < G$ non \`e normale.
+\end{esercizio}
+\begin{svolgimento}
+	Si nota anzitutto che, come prima $\phi : G \to S(G / H) \cong S_{\lvert G / H \rvert } $ e, per definizione, $\mathrm{Ker} (\phi )\lhd G$.
+	Inoltre, analogamente al caso precedente, si conclude che $\mathrm{Ker} (\phi )\subseteq H$ perch\'e $\forall  g \in \mathrm{Ker} (\phi )$ si ha, in particolare, che $g\cdot  H=gH = H \iff g \in H $, pertanto si ha la catena
+	\[
+	\mathrm{Ker} (\phi ) \subseteq H \subseteq G
+	\] 
+	Ora, se $[G:H] = n$, si vuole capire cosa \`e possibile affermare riguardo a $[G : \mathrm{Ker} (\phi )]$.
+	Per il primo teorema di omomorfismo, si ha
+	\[
+		[G:\mathrm{Ker} (\phi )] = \lvert G / \mathrm{Ker}(\phi )  \rvert = \lvert \mathrm{Im} (\phi ) \rvert  \mid n! = \lvert S _{\lvert G / H \rvert }  \rvert 
+	\] 
+	Per la stessa relazione, si sa anche che 
+	\[
+		[G : \mathrm{Ker} (\phi )]  \mid \lvert G \rvert 
+	\] 
+Inoltre, per un corollario del teorema di Lagrange, si pu\`o anche affermare che 
+\[
+	[G : \mathrm{Ker} (\phi )] = [G : H] [H:\mathrm{Ker} (\phi )] = n [H : \mathrm{Ker} (\phi )]\implies n  \mid [G : \mathrm{Ker} (\phi )]
+\] 
+\end{svolgimento}
+\begin{esercizio}
+	Usando i risultati dell'esercizio precedente, studiare l'esistenza di sottogruppi normali di un gruppo $G$ di ordine $3\cdot 5 \cdot 7$, con l'assunzione che $\exists  H < G$ di ordine $21$.
+\end{esercizio}
+\begin{svolgimento}
+	Si assume che $N$ sia un potenziale sottogruppo normale di $G$; allora $[G:N]  \mid \lvert G / H  \rvert ! = 5!$.
+	Unito al fatto che $[G:N] \mid \lvert G \rvert $, si ha che $[G : N] \in  \left\{ 1,3,5,15 \right\} $.
+	Infine, usando anche la condizione per cui $[G:H] = 5 \mid [G : N]$, quindi le possibilit\`a si riducono a $[G:N] = \left\{ 5,15 \right\} $; in particolare, $N$ non pu\`o essere banale, quindi $G$ ammette almeno un sottogruppo normale non-banale.
+\end{svolgimento}
 
 
 

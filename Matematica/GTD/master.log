@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  7 OCT 2025 23:01
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  8 OCT 2025 22:36
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1201,7 +1201,7 @@ Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen385
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen386
 \c__nicematrix_innersep_middle_dim=\dimen387
-<front.jpg, id=47, 650.43pt x 650.43pt>
+<front.jpg, id=51, 650.43pt x 650.43pt>
 File: front.jpg Graphic file (type jpg)
 <use front.jpg>
 Package luatex.def Info: front.jpg  used on input line 185.
@@ -1326,7 +1326,7 @@ Overfull \hbox (5.87305pt too wide) in paragraph at lines 1092--1096
 
 
 [30]
-Overfull \hbox (4.36908pt too wide) in paragraph at lines 1134--1136
+Overfull \hbox (4.36908pt too wide) in paragraph at lines 1127--1129
 []\TU/TeXGyrePagellaX(0)/m/n/12 Quel-lo che si vuo-le mo-stra-re è che $\U/zeus/m/n/12 8\U/zeur/m/n/12 p \U/zeus/m/n/12 2 \U/zeur/m/n/12 S$\TU/TeXGyrePagellaX(0)/m/n/12 , si ha $\U/zeur/m/n/12 p \U/zeus/m/n/12 ½ []¨\U/zeur/m/n/12 u[]; v[]\U/zeus/m/n/12 ©$\TU/TeXGyrePagellaX(0)/m/n/12 ,
  []
 
@@ -1334,12 +1334,14 @@ Overfull \hbox (4.36908pt too wide) in paragraph at lines 1134--1136
 
 [31]
 
+[32]
+
 Package caption Warning: Unused \captionsetup[table] on input line 115.
 See the caption package documentation for explanation.
 
 
 
-[32] (./master.aux)
+[33] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1349,17 +1351,17 @@ L3 programming layer <2020/03/25>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 1BB5E2112BBC1D8E7ABC659FE8C73158;1814.
+(rerunfilecheck)             Checksum: 91462050528EE4405CF51A7FB5F30E15;1998.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46983 strings out of 475506
+ 46991 strings out of 475506
  125129,1977958 words of node,token memory allocated
- 1674 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 319 attribute, 98 glue_spec, 161 attribute_list, 2 write nodes
-   avail lists: 1:2,2:1570,3:604,4:104,5:385,6:33,7:4343,8:74,9:933,10:30,11:467
- 68638 multiletter control sequences out of 65536+600000
- 138 fonts using 12718071 bytes
+ 1680 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 321 attribute, 98 glue_spec, 162 attribute_list, 2 write nodes
+   avail lists: 1:1,2:1567,3:604,4:104,5:385,6:36,7:4343,8:74,9:933,10:30,11:427
+ 68644 multiletter control sequences out of 65536+600000
+ 140 fonts using 13188327 bytes
  116i,25n,114p,738b,1158s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.4'
@@ -1370,10 +1372,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 {/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (32 pages, 465447 bytes).
+Output written on master.pdf (33 pages, 466860 bytes).
 
-PDF statistics: 391 PDF objects out of 1000 (max. 8388607)
- 321 compressed objects within 4 object streams
- 120 named destinations out of 1000 (max. 131072)
- 96 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 400 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 122 named destinations out of 1000 (max. 131072)
+ 104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1094,7 +1094,9 @@ Ora si cerca di caratterizzare la bont\`a accennata per $\underline{x}$, provand
 	In maniera analoga, ma cambiando il segno di $z$, si definisce $A^-_z$ e, sempre allo stesso modo, ma cambiando la coordinata per cui si risolve, si definiscono anche $A^{\pm} _x$ e $A^{\pm} _y$.
 	L'unione di queste restituisce $S^2_a$ e la loro intersezione non crea punti di discontinuit\`a, quindi $S^2_a$ \`e una superficie.
 \end{proof}
-\noindent Un altro esempio di superficie sono le cosiddette \textit{superfici di rotazione}.
+\subsubsection{Superfici di rotazione}
+
+Un altro esempio di superficie sono le cosiddette \textit{superfici di rotazione}.
 Queste sono tutte ottenute a partire dalla traccia di una curva nel piano e a seguito di un'opportuna rotazione attorno a qualche asse.
 L'obiettivo, ora, \`e capire quando questo procedimento genera, effettivamente, una superficie.
 Formalmente, si considera una curva 
@@ -1120,16 +1122,7 @@ La conseguente superficie \`e data dalla parametrizzazione
 Si nota che, da queste definizioni, $\underline{x}$ non \`e mai iniettiva perch\'e bisognerebbe opportunamente restringere il dominio nel piano in modo tale che $v$ spazi in un intervallo in cui le funzioni trigonometriche compiano un solo giro.
 Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che si interseca su se stessa infinite volte.
 \end{osservazione}
-\noindent Ora si considera il caso particolare del toro ottenuto come superficie di rotazione e si dimostra che \`e una superficie.
-\begin{esempio}
-	[Toro]
-	Si considera una circonferenza parametrizzata nel piano $(x,z)$:
-	\[
-	\alpha (u) = (a + b\cos u , 0 , b \sin u)
-	\] 
-	dove $a$ serve a distanziarla dall'asse $z$ in modo che la rotazione attorno allo stesso asse possa creare una superficie con un buco al centro; di fatto, si prende $a > b > 0$.
-	Si dimostra che \`e una superficie.
-\end{esempio}
+\noindent Ora si dimostra che superfici cos\`i costruite sono effettivamente delle superfici e, nella trattazione, si stabiliranno le condizioni necessarie che deve rispettare la curva $\alpha $ perch\'e il risultato sia una buona superficie.
 \begin{proof}
 	Quello che si vuole mostrare \`e che $\forall p \in S$, si ha $p = \underline{x}(u_0,v_0)$, per $(u_0,v_0) \in \mathbb{R}^2$.
 	Per costruire correttamente il dominio della parametrizzazione, si parte col considerare un intervallo $I \subseteq \mathbb{R}$, contenente $u_0$, tale per cui $\alpha |_I:I\to\mathbb{R}^3$ risulti iniettiva e si prova a mostrare che $\underline{x}|_{I \times (v_0-\pi,v_0+\pi)} $ \`e una parametrizzazione regolare.
@@ -1165,15 +1158,27 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	Per farlo, si prende la relazione $(f(u) \cos v , f(u) \sin v, g(u)) = (x,y,z)$ e la si prova ad invertire.
 	Visto che $\alpha $ \`e iniettiva, ammette inversa nell'immagine di $I$, quindi si ha
 	\[
-	u = \alpha ^{-1}(\sqrt{x^2 + y^2 , 0 , z)} 
+	u = \alpha ^{-1}\left(\sqrt{x^2 + y^2 , 0 , z}\right) 
 	\] 
 	Perch\'e questa sia continua, serve richiedere esplicitamente che $\alpha ^{-1}|_{\alpha (I)} : \alpha (I) \to I$ sia continua.
 	Quanto a $v$, invece, se $v_0 \not \in \pi \mathbb{Z}$ (cio\`e non \`e un multiplo di $\mathbb{Z}$), in un opportuno intervallo $J$ attorno a $v_0$, si pu\`o ricavare
 	\[
-	x^{-1}(x,y,z) = \left(\alpha ^{-1}(\sqrt{x^2 + y^2 } ,0,z) , \arccos \left(\frac{x}{\sqrt{x^2 + y^2} }\right) \right) 
+	x^{-1}(x,y,z) = \left(\alpha ^{-1}\left(\sqrt{x^2 + y^2 } ,0,z\right)  , \arccos \left(\frac{x}{\sqrt{x^2 + y^2} }\right) \right) 
 	\] 
-	Se, invece, $v \in \pi \mathbb{Z}$, si pu\`o usare l'arcoseno.
+	Se, invece $v_0 \not \in \pi / 2 + \pi \mathbb{Z}$ si pu\`o invertire il seno e ottenere
+	\[
+	x^{-1}(x,y,z) = \left(\alpha ^{-1}\left(\sqrt{x^2 + y^2 } ,0,z\right)  , \arcsin \left(\frac{y}{\sqrt{x^2 + y^2} }\right) \right) 
+	\] 
 \end{proof}
+\begin{esempio}
+	[Toro]
+	Si considera una circonferenza parametrizzata nel piano $(x,z)$:
+	\[
+	\alpha (u) = (a + b\cos u , 0 , b \sin u)
+	\] 
+	dove $a$ serve a distanziarla dall'asse $z$ in modo che la rotazione attorno allo stesso asse possa creare una superficie con un buco al centro; di fatto, si prende $a > b > 0$.
+	Si dimostra che \`e una superficie.
+\end{esempio}
 
 \end{document}
 
