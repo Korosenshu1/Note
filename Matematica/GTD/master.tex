@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -39,6 +39,8 @@
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
 \usepackage{faktor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, patterns}
 \usepackage{tikz-cd}
 \definecolor{mastercolor}{HTML}{0c800f}
 \definecolor{nred}{HTML}{bf0040}
@@ -1124,9 +1126,9 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 \end{osservazione}
 \noindent Ora si dimostra che superfici cos\`i costruite sono effettivamente delle superfici e, nella trattazione, si stabiliranno le condizioni necessarie che deve rispettare la curva $\alpha $ perch\'e il risultato sia una buona superficie.
 \begin{proof}
-	Quello che si vuole mostrare \`e che $\forall p \in S$, si ha $p = \underline{x}(u_0,v_0)$, per $(u_0,v_0) \in \mathbb{R}^2$.
-	Per costruire correttamente il dominio della parametrizzazione, si parte col considerare un intervallo $I \subseteq \mathbb{R}$, contenente $u_0$, tale per cui $\alpha |_I:I\to\mathbb{R}^3$ risulti iniettiva e si prova a mostrare che $\underline{x}|_{I \times (v_0-\pi,v_0+\pi)} $ \`e una parametrizzazione regolare.
+	Quello che si vuole mostrare \`e che $\forall p \in S$, si ha $p = \underline{x}(u_0,v_0)$, per $(u_0,v_0) \in \mathbb{R}^2$ e, per tale $\underline{x}(u_0,v_0)$, si vuole trovare un aperto $U \subseteq \mathbb{R}^2$ di $(u_0,v_0)$ tale che $\underline{x}|_U : U \to \mathbb{R}^3$ sia una parametrizzazione regolare.
 
+	Per costruire correttamente il dominio della parametrizzazione, si parte col considerare un intervallo $I \subseteq \mathbb{R}$, contenente $u_0$, tale per cui $\alpha |_I:I\to\mathbb{R}^3$ risulti iniettiva e si prova a mostrare che $\underline{x}|_{I \times (v_0-\pi,v_0+\pi)} $ \`e una parametrizzazione regolare.
 	Se $(u,v), (u',v') \in I \times (v_0-\pi,v_0+\pi)$ e $\underline{x}(u,v) = \underline{x}(u',v')$, si vede che, data
 	\[
 	\varphi : \mathbb{R}^3 \to \mathbb{R}^2 \text{ tale che } \varphi (x,y,z) = \big(\sqrt{x^2 + y^2 } ,0,z\big)
@@ -1161,7 +1163,7 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	u = \alpha ^{-1}\left(\sqrt{x^2 + y^2 , 0 , z}\right) 
 	\] 
 	Perch\'e questa sia continua, serve richiedere esplicitamente che $\alpha ^{-1}|_{\alpha (I)} : \alpha (I) \to I$ sia continua.
-	Quanto a $v$, invece, se $v_0 \not \in \pi \mathbb{Z}$ (cio\`e non \`e un multiplo di $\mathbb{Z}$), in un opportuno intervallo $J$ attorno a $v_0$, si pu\`o ricavare
+	Quanto a $v$, invece, se $v_0 \not \in \pi \mathbb{Z}$ (cio\`e non \`e un multiplo di $\mathbb{Z}$), in un intorno di $v_0$, si pu\`o ricavare
 	\[
 	x^{-1}(x,y,z) = \left(\alpha ^{-1}\left(\sqrt{x^2 + y^2 } ,0,z\right)  , \arccos \left(\frac{x}{\sqrt{x^2 + y^2} }\right) \right) 
 	\] 
@@ -1169,6 +1171,7 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	\[
 	x^{-1}(x,y,z) = \left(\alpha ^{-1}\left(\sqrt{x^2 + y^2 } ,0,z\right)  , \arcsin \left(\frac{y}{\sqrt{x^2 + y^2} }\right) \right) 
 	\] 
+	In entrambi i casi, si riesce a trovare un opportuno intervallo $J \subseteq (v_0 - \pi  , v_0+\pi)$ tale che $v_0 \in J$ e $\underline{x}^{-1}|_{\underline{x}(I \times J)} $ \`e continua.
 \end{proof}
 \begin{esempio}
 	[Toro]
@@ -1177,8 +1180,147 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	\alpha (u) = (a + b\cos u , 0 , b \sin u)
 	\] 
 	dove $a$ serve a distanziarla dall'asse $z$ in modo che la rotazione attorno allo stesso asse possa creare una superficie con un buco al centro; di fatto, si prende $a > b > 0$.
-	Si dimostra che \`e una superficie.
 \end{esempio}
+\noindent In realt\`a, per le superfici di rotazione, ma anche per la sfera, non si \`e verificato che la parametrizzazione locale fosse tale che $p \in \underline{x}(U)$ \`e un intorno di $p$ nella topologia indotta su $S$ da $\mathbb{R}^3$.
+Quindi si verifica $\underline{x}(I\times J)$ \`e un intorno di $\underline{x}(u_0,v_0), \ \forall (u_0,v_0) \in I \times J$.
 
+Per farlo, si considera una successione $\left\{ \underline{x}(u_i,v_i) \right\} \subseteq S$ tale che $\underline{x}(u_i,v_i)\to \underline{x}(u_0,v_0)$ e si fa vedere che, per $i$ arbitrariamente grande, $\underline{x}(u_i,v_i) \in \underline{x}(I \times J)$.
+Ricordando la definizione della mappa $\varphi : \mathbb{R}^3 \setminus\left\{ \text{asse }z \right\}\to \mathbb{R}^2 $, tale che $\varphi (x,y,z) = (\sqrt{x^2 + y^2} ,z)$ e $\varphi \circ \underline{x}(u,v) = \alpha (u)$, si ha
+\[
+	\varphi (\underline{x}(u_i,v_i)) = \alpha (u_i) \stackrel{!}{\to} \alpha (u) \implies u_i \to u_0
+\] 
+per cui \`e necessario richiedere che $\alpha (I)$ sia un intorno di $\alpha (\mathbb{R})$.
+Definendo, poi
+\[
+\psi (x,y,z) = \begin{cases}
+	\arccos \left(\displaystyle \frac{x}{x^2 + y^2}\right) &,\ \text{ se } v_0 \not\in \pi\mathbb{Z}\\
+	\arcsin \left(\displaystyle \frac{y}{x^2 + y^2}\right) &,\ \text{ se } v_0 \not\in \pi / 2 + \pi\mathbb{Z}
+\end{cases}
+\] 
+la mappa tale che $\psi \circ \underline{x}(u,v) = v$ definita sopra, si nota che $\psi \circ \underline{x}(u_i,v_i) = v_i \to v_0$.
+Quindi, per avere la tesi, bisogna solo richiedere che $\alpha(I)$ sia un intorno di $\alpha (u_0), \ \forall u_0\in \mathbb{R}$, con $I$ un qualche intorno di $u_0$.
+\subsection{Metodo del gradiente}
+Questo \`e un altro metodo di costruzione di superfici che passa per il teorema della funzione implicita.
+\begin{definizione}
+	[Valore regolare]
+Sia $U \subseteq \mathbb{R}^3$ un aperto e sia $f : U \to \mathbb{R}$, di classe $C^\infty(U)$, una funzione. Si dice che $a \in \mathbb{R}$ \`e un \textit{valore regolare} per $f$ se vale una delle due seguenti condizioni:
+\begin{enumerate}[(a).]
+	\item $f^{-1}(a) \neq \varnothing$;
+	\item $\nabla _p f \neq 0, \ \forall  p\in f^{-1}(a)$, dove $\nabla _p f$ \`e il gradiente di $f$ nel punto $p$.
+\end{enumerate}
+\end{definizione}
+\noindent L'idea \`e che se $f^{-1}(a) \neq \varnothing$, allora $S := f^{-1}(a)$ \`e una superficie.
+\begin{proof}
+	Sia $p \in f^{-1}(a)$. 
+	Per ipotesi, $\nabla _p f \neq 0$; si assume, senza perdita di generalit\`a, che sia $f_z (p) \neq 0$.
+	Dato, allora, $p = (x_0,y_0,z_0)$ e $\pi: \mathbb{R}^3 \to \mathbb{R}^2$ la proiezione sul piano $(x,y)$, cio\`e tale che $\pi(x,y,z) = (x,y)$, allora, per il teorema della funzione implicita, si trovano un intorno aperto $U\ni (x_0,y_0)$ e $\varphi :U\to \mathbb{R}$, di classe $C^\infty(U)$, tali per cui $\pi^{-1}(U)\cap f^{-1}(a) = \Gamma_\varphi $, cio\`e:
+	\[
+	\pi^{-1}(U) \cap f^{-1}(a) = \left\{ \big(u,v,\varphi (u,v)\big) \in \mathbb{R}^3\mid (u,v) \in U \right\} 
+	\] 
+	Allora, la mappa $\underline{x}: U \to \mathbb{R}^3$ tale che $\underline{x}(u,v) = \big(u,v,\varphi (u,v)\big)$ definisce una parametrizzazione regolare perch\'e \`e il grafico di una mappa $C^\infty$.
+	Lo stesso discorso si applica nel caso in cui $f_x(p) \neq 0$, oppure $f_y(p) \neq 0$, scegliendo, rispettivamente, la proiezione sul piano $yz$, oppure sul piano $xz$.
+	Complessivamente, $f^{-1}(a)$ \`e, allora, una superficie.
+\end{proof}
+\begin{esempio}
+	[Sfera]
+	Data $f : \mathbb{R}^3 \to \mathbb{R}$ tale che $f(x,y,z) = x^2 + y^2 + z^2$, allora $S^2_a = f^{-1}(a^2)$.
+	Si vede che questa \`e una superficie perch\'e, dato $\nabla_p f = (2x_0,2y_0,2z_0)$ relativo $p = (x_0,y_0,z_0) \in S^2_a$, questo \`e sempre non-nullo perch\'e $(0,0,0) \not \in S_a^2$.
+\end{esempio}
+\begin{esempio}
+	[Toro]
+	Come per la sfera, si deve cercare di capire qual \`e la relazione che descrive tutti i punti appartenenti al toro.
+	Se $(x,y,z) = p \in \mathbb{T}_{a,b} $, indicando con $q$ il centro della circonferenza che contiene $p$\footnote{Prendendo un piano contenente l'asse $z$ e un asse contenuto nel piano $x,y$ che forma un angolo $\varphi $ con l'asse $y$, al variare dello stesso $\varphi $, si ottengono diversi cerchi del toro intersecando questo piano col toro stesso. 
+	Si assume, allora, di scegliere $\varphi $ di modo che l'intersezione tra il piano e il toro restituisca un cerchio contenente $p$ al suo interno e il cui centro sia proprio $q$.}, allora deve essere rispettata la relazione
+	\[
+	d^2(p,q) = (\sqrt{x^2 + y^2} -a)^2 + z^2 = b^2
+	\] 
+	da cui $\mathbb{T}_{a,b} :=f^{-1}(b^2)$, con $f(x,y,z) = (\sqrt{x^2 + y^2} -a)^2 + z^2$.
+	Si vede, allora, che
+	\[
+		\nabla f = \left(\frac{2 (\sqrt{x^2 + y^2} -a) \cancel{2}x}{\cancel{2} \sqrt{x^2 +y^2} }, \frac{\cancel{2} y 2 (\sqrt{x^2 + y^2} - a)}{\cancel{2} \sqrt{x^2 + y^2} } ,2z\right) 
+	\] 
+	Preso $p = (x,y,z) \in f^{-1}(b^2)$, l'assunzione $\nabla _pf = 0$ implica, in particolare, $z=0$, da cui deve risultare $f(x,y,0) = b^2$, che \`e vero se e solo se $(\sqrt{x^2 + y^2} -a)^2 = b^2 \neq 0$.
+	Quindi, l'assunzione $\nabla _p f= 0$ implica anche $x=y=0$, ma $(0,0,0) \not \in \mathbb{T}_{a,b} $, quindi si ha un assurdo e se ne conclude che $\nabla f |_{f^{-1}(b^2)} \neq 0 $ sempre e, dunque, $\mathbb{T}_{a,b} $ \`e una superficie.
+\end{esempio}
+\subsection{Piano tangente}
+\begin{definizione}
+	[Piano tangente]
+	Sia $S$ una superficie e sia $p \in S$ un suo punto.
+	Data $\underline{x}:U\to \mathbb{R}^3$ una parametrizzazione regolare di $S$ tale che $\underline{x}(U)\subseteq S$ sia un intorno di $p = \underline{x}(u_0,v_0)$, il piano tangente di $S$ nel punto $p$ \`e dato da
+	\[
+	T _p S := p + \mathrm{Span} \big(\underline{x}_u (p) , \underline{x}_v(p)\big)
+	\] 
+\end{definizione}
+\noindent Le assunzioni su $\underline{x}$ sono state pensate per avere un piano tangente ad una superficie definito in ogni suo punto; si vuole verificare che queste assunzioni siano sufficienti a garantire l'unicit\`a del piano, visto la sua esistenza \`e gi\`a garantita dalla non linearit\`a dei vettori $\underline{x}_u$ e $\underline{x}_v$ in un dato punto della superficie.
+\begin{proof}
+	Sia $\underline{y} : V \to S^3$ un'altra parametrizzazione, con $\underline{y}(V) \subseteq S$ intorno di $p=\underline{y}(s_0,t_0)$.
+	Si vuole dimostrare che deve valere
+	\[
+	\mathrm{Span} \big(\underline{y}_s (s_0,t_0), \underline{y}_t (s_0,t_0)\big)=\mathrm{Span} \big(\underline{x}_u (u_0,v_0), \underline{x}_v (u_0,v_0)\big)
+	\] 
+	\begin{center}
+	\begin{tikzpicture}[scale=1.1,>=Stealth]
+
+% Stile per le aree ombreggiate
+\tikzset{shadearea/.style={pattern=north east lines, pattern color=gray!70}}
+
+% --- Parte superiore: spazi immagine ---
+% Cerchi
+\draw (0,2) circle (1.2cm) node[above left=2pt] {$\underline{x}(U)$};
+\draw (2,2) circle (1.2cm) node[above right=2pt] {$\underline{y}(V)$};
+
+% Intersezione ombreggiata
+\begin{scope}
+  \clip (0,2) circle (1.2cm);
+  \fill[shadearea] (2,2) circle (1.2cm);
+\end{scope}
+
+% Punto p
+\fill (1,2) circle (1.2pt) node[right=2pt] {$p$};
+
+% Frecce verso il basso
+\draw[->] (-1.6,0.2) to[bend left=20] node[left] {$x$} (-1.1,1.4);
+\draw[->] (3.6,0.2) to[bend right=20] node[right] {$y$} (3.1,1.4);
+
+% --- Parte inferiore: domini ---
+% Cerchi U e V
+\draw (-1,-1) circle (1.2cm) node[below left=2pt] {$U$};
+\draw (3,-1) circle (1.2cm) node[below right=2pt] {$V$};
+
+% Aree ombreggiate nei domini
+\begin{scope}
+  \clip (-1,-1) circle (1.2cm);
+  \fill[shadearea] (-0.3,0) circle (1.2cm);
+\end{scope}
+
+\begin{scope}
+  \clip (3,-1) circle (1.2cm);
+  \fill[shadearea] (2.3,0) circle (1.2cm);
+\end{scope}
+
+% Frecce di transizione
+\draw[->] (-0.5,-0.3) to[bend left=20] node[above] {$x^{-1}\!\circ y$} (2.5,-0.3);
+\draw[->] (2.5,-0.8) to[bend left=20] node[below] {$y^{-1}\!\circ x$} (-0.5,-0.8);
+
+
+\end{tikzpicture}
+	\end{center}
+Se si avesse $f := \underline{x}^{-1}\circ \underline{y}$ di classe $C^\infty$, visto che soddisfa
+\[
+f(s,t) = \big(u(s,t),v(s,t)\big)\implies f(s_0,t_0) = (u_0,v_0)
+\] 
+quindi $\underline{x} (f(s,t)) = \underline{y}(s,t)$, allora si potrebbe derivare per ottenere 
+\[
+\begin{cases}
+	\underline{y}_s = u_s \underline{x}_u \cdot f + v_s \underline{x}_v \cdot f\\
+	\underline{y}_t = u_t \underline{x}_u \cdot f + v_t \underline{x}_v \cdot f
+\end{cases}
+\] 
+Ma allora $\underline{y}_s, \ \underline{y}_{t} \in \mathrm{Span} (\underline{x}_u,\underline{x}_v)  $, quindi
+\[
+ \mathrm{Span} \big(\underline{y}_u(s_0,t_0),\underline{y}_v(s_0,t_0)\big) \subseteq \mathrm{Span} \big(\underline{x}_u(u_0,v_0),\underline{x}_v(u_0,v_0)\big) 
+\] 
+Per\`o entrambi gli spazi vettoriali generati da questi span hanno dimensione $2$ e uno \`e contenuto nell'altro, quindi coincidono.
+\end{proof}
 \end{document}
 
