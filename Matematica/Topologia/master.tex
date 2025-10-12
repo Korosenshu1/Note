@@ -43,8 +43,6 @@
 \definecolor{mastercolor}{HTML}{92a8d1}
 \definecolor{nred}{HTML}{bf0040}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 % Titles 
 \title{Appunti di\\ \vspace{.3cm} Geometria proiettiva e topologia}
@@ -129,11 +127,11 @@ title=#1
 \hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{146,168,209}}
 
 % Personalizza la formattazione della subsection
-\titleformat{\subsection}[block]{\centering\fontsize{15}{20}\bfseries}{\color{nred}\normalfont\S\thesubsection}{.5em}{}
+\titleformat{\subsection}[block]{\fontsize{15}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\fontsize{14}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -173,17 +171,16 @@ title=#1
 
 % Font
 \renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
-%\usepackage[osf]{newpxtext}
-%\usepackage[euler-digits,euler-hat-accent]{eulervm}
-%\usepackage{fontspec}
-%\DeclareSymbolFont{operators}{OT1}{EBGaramond-TLF}{m}{n}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[default]{fontsetup}
+
 
 %%% Hook
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
 
 
 \begin{document}
-\pagestyle{plain}
 \maketitle
 \vspace{6cm}
 \begin{figure}[h!]
@@ -194,7 +191,6 @@ title=#1
 \newpage
 \tableofcontents 
 \newpage
-\pagestyle{fancy}
 \section{Geometria proiettiva}
 
 \subsection{Introduzione agli spazi proiettivi}
@@ -248,12 +244,13 @@ Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che pre
 \end{definizione}
 \begin{prop}
 	Se $f$ \`e una trasformazione proiettiva indotta da $\varphi $, allora $\varphi $ \`e iniettiva.
+\end{prop}
 	\begin{proof}
 		Per assurdo, $\operatorname{ker} \varphi  \neq \left\{ 0 \right\} $ e sia $v \in \operatorname{ker} \varphi \setminus \left\{ 0 \right\} $; allora $f([v]) = [0]$, ma $[0] \not \in \mathbb{P}(W)$ per definizione di spazio proiettivo, quindi $f$ non sarebbe ben definita.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Ogni applicazione lineare iniettiva $\varphi :V\to W$ induce una trasformazione proiettiva $f: \mathbb{P}(V) \to \mathbb{P}(W)$ tramite l'associazione $[v] \mapsto [\varphi (v)]$.
+\end{prop}
 	\begin{proof}
 		Se $v\neq 0$, allora $\varphi (v) \neq 0$ perch\'e $\varphi $ \`e iniettiva. 
 		Se, invece, $[v] = [w]$, allora, per definizione, $\exists \lambda  \in \mathbb{K}\setminus \left\{ 0 \right\}$
@@ -262,29 +259,28 @@ Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che pre
 		\] 
 		
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Tutte le trasformazioni proiettive sono iniettive.
+\end{prop}
 	\begin{proof}
 		Sia $f([v]) = f([w])$ e sia $\varphi $ l'applicazione lineare che induce $f$; allora l'uguaglianza si traduce in $[\varphi (v)]=[\varphi (w)]$, ma per come sono definite queste classi di equivalenza, questo vuol dire che $\varphi (v) = \lambda \varphi (w) = \varphi (\lambda w)$.
 		Essendo $\varphi $ iniettiva, per\`o, si ottiene che $v = \lambda w$, cio\`e $[v] = [\lambda w]$.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	La trasformazione $\operatorname{Id} _{\mathbb{P}(V)}$ \`e proiettiva ed \`e indotta da $\operatorname{Id} _V$.
+\end{prop}
 	\begin{proof}
 		Tale trasformazione deve essere tale per cui $\operatorname{Id} _{\mathbb{P}(V)} ([v]) = [v] = [\operatorname{Id} _V v]$, quindi \`e indotta da $\operatorname{Id} _V$; essendo quest'ultima iniettiva, anche $\operatorname{Id}_{\mathbb{P}(V)}  $ \`e iniettiva.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Siano $f : \mathbb{P}(V) \to \mathbb{P}(W)$ e $g:\mathbb{P}(W) \to \mathbb{P}(Z)$ due trasformazioni proiettive; allora $g\circ f:\mathbb{P}(V)\to \mathbb{P}(Z)$ \`e proiettiva.
+\end{prop}
 	\begin{proof}
 		Se $\varphi $ induce $f$ e $\psi $ induce $g$, allora $\psi \circ \varphi $ induce $g \circ f$:
 		\[
 		\left[ \psi \circ \varphi (v) \right] = g \left(\left[ \varphi (v) \right] \right) = g \circ f \left(\left[ v \right] \right) 
 		\] 
 	\end{proof}
-\end{prop}
 \noindent Si passa, ora, a caratterizzare gli isomorfismi di spazi proiettivi; il seguente teorema giustificher\`a la definizione di isomorfismo proiettivo.
 \begin{teorema}
 	Sia $f:\mathbb{P}(V)\to \mathbb{P}(W)$ una trasformazione proiettiva; allora, le seguenti affermazioni sono tutte equivalenti.
@@ -294,6 +290,7 @@ Analogamente al caso dei gruppi e degli anelli, si studiano quelle mappe che pre
 		\item $\dim \mathbb{P}(V) = \dim\mathbb{P}(W)$.
 		\item $f$ \`e invertibile e $f^{-1} : \mathbb{P}(W) \to \mathbb{P}(V)$ \`e proiettiva.
 	\end{enumerate}
+\end{teorema}
 	\begin{proof}
 		Il fatto che (a) $\iff$ (b) \`e dato dal fatto che $f$ \`e proiettiva, quindi \`e iniettiva.
 
@@ -316,7 +313,6 @@ Rimane da mostrare che $\varphi ^{-1} $ induce $f$; a questo scopo, si nota che:
 \] 
 Infine, (d) $\Rightarrow $ (a) perch\'e, essendo $f$ invertibile, \`e anche suriettiva.
 	\end{proof}
-\end{teorema}
 \begin{definizione}
 	[Isomorfismo proiettivo]
 	Una trasformazione proiettiva che sia anche suriettiva \`e detta \textit{isomorfismo proiettivo}.
@@ -378,6 +374,7 @@ Dalla definizione, si deduce che uno sottospazio proiettivo \`e esso stesso uno 
 	Siano $V$ uno spazio vettoriale e $H$ un suo sottospazio.
 	Sia $S=\pi(H\setminus\left\{ 0 \right\} ) = \mathbb{P}(H)$ un sottospazio proiettivo di $\mathbb{P}(V)$; allora $\pi^{-1} (S) = H \setminus \left\{ 0 \right\} $.
 	In sostanza, si ha una biezione tra i sottospazi vettoriali di $V$ e i sottospazi proiettivi di $\mathbb{P}(V)$.
+\end{teorema}
 	\begin{proof}
 		Si nota che
 		\[
@@ -397,7 +394,6 @@ Dalla definizione, si deduce che uno sottospazio proiettivo \`e esso stesso uno 
 			\bigcup_{v \in H \setminus\left\{ 0 \right\} } \pi^{-1} ([v]) \subseteq H \setminus\left\{ 0 \right\} 
 		\] 
 	\end{proof}
-\end{teorema}
 \noindent Il teorema appena mostrato permette di concludere che 
 \[
 \dim \mathbb{P}(H) = \dim H - 1 \iff \dim \pi^{-1} (S) \cup \left\{ 0 \right\}  = \dim S + 1
@@ -411,6 +407,7 @@ dove le grassmanniane di uno spazio proiettivo sono ottenute tramite la definizi
 Si passa, ora, allo studio di somme e intersezioni di sottospazi proiettivi; in particolare, si ha il seguente.
 \begin{prop}
 	Siano $S_i$, per $i \in I$ un certo insieme di indici, dei sottospazi proiettivi di $\mathbb{P}(V)$; allora l'intersezione $\bigcap_{i \in I} S_i$ \`e ancora un sottospazio di $\mathbb{P}(V)$.
+\end{prop}
 	\begin{proof}
 		Si indicano con $H_i$ i sottospazi vettoriali di $V$ tali che $S_i = \mathbb{P}(H_i)$.
 		Per conto diretto, si trova che:
@@ -423,7 +420,6 @@ Si passa, ora, allo studio di somme e intersezioni di sottospazi proiettivi; in 
 		\end{split}
 		\] 
 	\end{proof}
-\end{prop}
 \noindent La proposizione appena dimostrata permette di concludere che
 \begin{equation}
 	\mathbb{P}(V) \cap \mathbb{P}(W) = \mathbb{P}(V \cap W)
@@ -448,6 +444,7 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 	\[
 	L(S_1,S_2) = \mathbb{P}(H_1+H_2)
 	\] 
+\end{prop}
 	\begin{proof}
 		Si procede per doppia inclusione. 
 		Si mostra prima che $L(S_1,S_2) \subseteq \mathbb{P}(H_1+H_2)$; per farlo, visto che $H_1 \subseteq H_1 +H_2$, si ha
@@ -464,9 +461,9 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 		\] 
 		Analogamente si mostra che $H_2\subseteq H$, quindi si ha $H_1+H_2 \subseteq H$, da cui $\mathbb{P}(H_1+H_2) \subseteq \mathbb{P}(H) = L(S_1,S_2)$.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Sia $S \subseteq \mathbb{P}(V)$ un sottoinsieme di $\mathbb{P}(V)$ e $f$ una trasformazione proiettiva; allora $f(L(S)) = L(f(S))$.
+\end{prop}
 	\begin{proof}
 		Siano $H = \pi^{-1} (S)$ un sottoinsieme di $V$ e $f = [\varphi ]$.
 		Si nota che $f(S) = f(\pi(H)) = \pi(\varphi (H))$, quindi
@@ -478,13 +475,13 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 		\end{split}
 		\] 
 	\end{proof}
-\end{prop}
 \begin{teorema}
 	[Formula di Grassmann]
 	Siano $S_1,S_2$ due sottospazi proiettivi di $\mathbb{P}(V)$; allora
 	\[
 	\dim L(S_1,S_2) = \dim S_1 + \dim S_2 - \dim S_1\cap S_2
 	\] 
+\end{teorema}
 	\begin{proof}
 		Siano $H_1,H_2$ i sottospazi di $V$ tali che $S_1 = \mathbb{P}(H_1)$ e $S_2 = \mathbb{P}(H_2)$.
 		Per la formula di Grassmann, si ha
@@ -499,9 +496,9 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 			\end{split}
 		\] 
 	\end{proof}
-\end{teorema}
 \begin{corollario}
 	Se $S_1,S_2$ sono sottospazi proiettivi di $\mathbb{P}(V)$ tali che $\dim S_1+\dim S_2 \ge  \dim \mathbb{P}(V)$, allora $S_1 \cap S_2 \neq 0$.
+\end{corollario}
 	\begin{proof}
 		Usando la formula di Grassmann:
 		\[
@@ -509,11 +506,11 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 		\] 
 		Visto che, per convenzione, $\dim \varnothing = -1$, si ha $S_1 \cap S_2 \neq \varnothing$.
 	\end{proof}
-\end{corollario}
 
 \begin{teorema}
 	Sui piani proiettivi, non esistono \textit{rette parallele}.
 	Pi\`u precisamente, dati $r_1,r_2$ sottospazi proiettivi di $\mathbb{P}(V)$, con $\dim \mathbb{P}(V) = 2$ e $\dim r_1=\dim r_2 = 1$, si ha $r_1=r_2$, oppure $r_1\cap r_2 = \left\{ P \right\} $, dove $P$ \`e un punto proiettivo.
+\end{teorema}
 	\begin{proof}
 		Sia $r_1\neq r_2$; allora $\dim L(r_1,r_2) = 2$ e 
 		\[
@@ -521,7 +518,6 @@ In questo modo, si pu\`o trovare lo spazio proiettivo della somma di due sottosp
 		\] 
 		quindi $r_1\cap r_2$ \`e un punto proiettivo.
 	\end{proof}
-\end{teorema}
 \subsubsection{Riferimenti proiettivi}
 
 L'idea \`e quella di estendere il concetto di indipendenza lineare e base agli spazi proiettivi.
@@ -561,6 +557,7 @@ Se $k\le n+1$, allora la nozione di posizione generale coincide con quella di in
 \begin{teorema}
 	Sia $V$ uno spazio vettoriale su $\mathbb{K}$ tale che $\mathbb{P}(V)$ abbia dimensione $n$ e sia $\mathcal{R} =(P_0,\ldots,P_{n+1} )$ un riferimento proiettivo di $\mathbb{P}(V)$.
 	Esiste sempre almeno una base normalizzata $\mathcal{B} = \left\{ v_0, \ldots,v_n\right\} $ e, se $\mathcal{B} ' = \left\{ u_0,\ldots,u_n \right\} $ \`e un'altra base, allora $\exists \lambda \in \mathbb{K}\setminus\left\{ 0 \right\} $ tale che $u_i = \lambda v_i$.
+\end{teorema}
 	\begin{proof}
 		Sia $\left\{ w_0, \ldots,w_{n+1}  \right\} \subset V$ un insieme di vettori, con $[w_i] = P_i, \ i=0,\ldots,n+1$.
 		Visto che $\mathcal{R}$ \`e un riferimento proiettivo, i $w_0,\ldots,w_n$ sono $n+1$ vettori linearmente indipendenti in $V$ spazio $(n+1)$-dimensionale, quindi sono una base.
@@ -578,7 +575,6 @@ Se $k\le n+1$, allora la nozione di posizione generale coincide con quella di in
 		\] 
 	Visto che gli $u_0,\ldots,u_n$ sono una base, per indipendenza lineare deve valere $\mu _i = \mu _{n+1} , \ \forall i$, cio\`e le due basi coincidono a meno di un fattore invertibile.
 	\end{proof}
-\end{teorema}
 \begin{osservazione}
 Si nota che rispetto all'algebra lineare, in geometria proiettiva non \`e possibile estendere riferimenti proiettivi di sottospazi proiettivi a riferimenti di sottospazi che li estendono.
 
@@ -592,6 +588,7 @@ Sia, infatti, $\mathcal{R} = \left\{ P_0,\ldots,P_{n+1}  \right\}  $ un riferime
 		\item Le due trasformazioni proiettive sono identiche: $f = g$.
 		\item Per ogni punto $P \in \mathcal{R} $, si ha $f(P) = g(P)$.
 	\end{enumerate}
+\end{teorema}
 	\begin{proof}
 		Si dimostra che (a) $\Rightarrow $ (b). 
 		Per conto diretto:
@@ -614,19 +611,18 @@ Per concludere, si considera cosa succede al punto unit\`a; per la relazione \re
 \] 
 Visto che $\psi $ \`e iniettiva, gli $\psi (v_0),\ldots,\psi (v_n)$ sono linearmente indipendenti, quindi $\forall i = 0,\ldots,n , \ \lambda _{n+1} = \lambda _i$, il che vuol dire che $\lambda _{n+1} \psi = \varphi $ sui $v_0,\ldots,v_n$; essendo questi una base, la relazione $\varphi  = \lambda _{n+1} \psi $ vale su tutti i vettori dello spazio.
 	\end{proof}
-\end{teorema}
 \begin{corollario}
 	Si ha
 	\[
 		\mathbb{P}\mathrm{GL} (V) \cong \faktor{\mathrm{GL} (V)}{N}
 	\] 
 	con $N = \big\{ \lambda \operatorname{Id}  \mid \lambda \in \mathbb{K}\setminus\left\{ 0 \right\}  \big\}\lhd \mathrm{GL} (V) $.
+\end{corollario}
 	\begin{proof}
 		Si considera la mappa $\varphi \mapsto [\varphi ] : \mathrm{GL} (V) \to \mathbb{P}\mathrm{GL} (V)$.
 		Questa mappa \`e un omomorfismo suriettivo di gruppi e, se $[\varphi ]= \operatorname{Id} _{\mathbb{P}(V)}=[\operatorname{Id}_V] $, allora $\varphi  = \lambda \operatorname{Id} _V$ per il teorema \ref{tpequiv} appena mostrato.
 		Questo implica che il nucleo di tale omomorfismo \`e proprio $N$, quindi la tesi segue applicando il primo teorema di omomorfismo.
 	\end{proof}
-\end{corollario}
 \begin{notazione}[Proiettivit\`a standard]
 	Le proiettivit\`a di $\mathbb{P}^n(\mathbb{K})$ formano un gruppo indicato da $\mathbb{P}\mathrm{GL} (\mathbb{K}^{n+1} ) = \mathbb{P}\mathrm{GL} _{n+1} (\mathbb{K})$.
 	L'$n+1$ come pedice indica la taglia delle matrici che rappresentano le proiettivit\`a, non la dimensione dello spazio su cui agiscono.
@@ -635,6 +631,7 @@ Visto che $\psi $ \`e iniettiva, gli $\psi (v_0),\ldots,\psi (v_n)$ sono linearm
 	[Teorema fondamentale delle trasformazioni proiettive]
 	Siano $\mathbb{P}(V)$ e $\mathbb{P}(W)$ due spazi proiettivi su $\mathbb{K}$ tali che $\dim \mathbb{P}(V) = \dim \mathbb{P}(W) = n$.
 	Fissati $\mathcal{R} = \left\{P_0,\ldots,P_{n+1}\right\} $ e $\mathcal{R} ' = \{P'_0,\ldots,P'_{n+1} \}$ due riferimenti proiettivi di $\mathbb{P}(V)$ e $\mathbb{P}(W)$ rispettivamente, esiste un'unica trasformazione proiettiva $f:\mathbb{P}(V)\to \mathbb{P}(W)$ tale che $f(P_i) = P_i', \ i=0,\ldots,n+1$. 
+\end{teorema}
 	\begin{proof}
 		L'unicit\`a \`e diretta conseguenza del teorema \ref{tpequiv}. 
 		Rimane da mostrare l'esistenza.
@@ -649,7 +646,6 @@ Visto che $\psi $ \`e iniettiva, gli $\psi (v_0),\ldots,\psi (v_n)$ sono linearm
 			f(P_{n+1} ) = f([v_0+\ldots+v_n]) = [\varphi (v_0+\ldots+v_n]) = [w_0+\ldots+w_n] = P'_{n+1} 
 		\] 
 	\end{proof}
-\end{teorema}
 
 \subsubsection{Coordinate omogenee}
 Come per il caso degli spazi vettoriali, \`e utile ricorrere a sistemi di coordinate.
@@ -685,18 +681,18 @@ M = M_{\mathcal{B} '} ^{\mathcal{B} } (\varphi ) \in \mathcal{M} (n+1,\mathbb{K}
 	Siano $P=[v] \in \mathbb{P}(V)$ e $f:\mathbb{P}(V) \to \mathbb{P}(W)$, con $f=[\varphi ]$.
 	Sia $M$ la matrice che rappresenta $f$ e siano $\mathcal{R} ,\mathcal{R} '$ due riferimenti di $\mathbb{P}(V)$ e $\mathbb{P}(W)$, con basi $\mathcal{B} $ e $\mathcal{B}' $.
 
-	Indicando il passaggio a coordinate omogenee rispetto a $\mathcal{R} $ con $[\cdot ]_\mathcal{R} $ e il passaggio a coordinate rispetto a $\mathcal{B} $ con $[\cdot ]_\mathcal{B} $, si ha:
+	Indicando il passaggio a coordinate omogenee rispetto a $\mathcal{R} $ con $[\cdot ]_{\mathcal{R}} $ e il passaggio a coordinate rispetto a $\mathcal{B} $ con $[\cdot ]_{\mathcal{B}} $, si ha:
 \begin{equation}
 	\begin{split}
-		[f(P)]_{\mathcal{R} '} &= [[\varphi (v)]]_{\mathcal{R} '} = \Big[\big[[M[v]_{\mathcal{B} } ]_{\mathcal{B} '} ^{-1} \big]\Big]_{\mathcal{R} '} = \Big[\big[[[M[v]_\mathcal{B} ]]_{\mathcal{R} '} ^{-1} \big]\Big]_{\mathcal{R} '} \\
-				       &= [M[v]_\mathcal{B} ]
+		[f(P)]_{\mathcal{R} '} &= [[\varphi (v)]]_{\mathcal{R} '} = \Big[\big[[M[v]_{\mathcal{B} } ]_{\mathcal{B} '} ^{-1} \big]\Big]_{\mathcal{R} '} = \Big[\big[[[M[v]_{\mathcal{B}} ]]_{\mathcal{R} '} ^{-1} \big]\Big]_{\mathcal{R} '} \\
+				       &= [M[v]_{\mathcal{B}} ]
 	\end{split}
 \end{equation}	
 \end{osservazione}
 \begin{notazione}
 	Sia $M$ una matrice e sia $P =[v]\in \mathbb{P}(V)$; prendendo $\mathcal{R} $ un riferimento di $\mathbb{P}(V)$ e $\mathcal{B}$ sua base normalizzata, si pone
 	\[
-		M[P]_\mathcal{R}=[M][P]_\mathcal{R} \doteqdot \left[ M[v]_\mathcal{B}  \right] 
+		M[P]_{\mathcal{R}} =[M][P]_{\mathcal{R}}  := \left[ M[v]_{\mathcal{B}}   \right] 
 	\] 
 \end{notazione}
 \begin{definizione}
@@ -734,11 +730,10 @@ M = M_{\mathcal{B} '} ^{\mathcal{B} } (\varphi ) \in \mathcal{M} (n+1,\mathbb{K}
 \end{definizione}
 \begin{prop}
 	Esiste una mappa biettiva tra $U_i$ e $\mathbb{K}^n$, $\forall i=0,\ldots,n$.
-	\begin{proof}
-	\end{proof}
 \end{prop}
 
-
+	\begin{proof}
+	\end{proof}
 
 
 
@@ -786,6 +781,7 @@ B_r(x) := \left\{ x' \in X  \mid d(x,x') < r \right\}
 \end{definizione}
 \begin{lemma}
 	Le palle aperte sono insiemi aperti relativamente alla metrica che le definisce.
+\end{lemma}
 	\begin{proof}
 		Sia $(X,d)$ uno spazio metrico e $x_0 \in X$; si dimostra che la palla $B_r(x_0) = \left\{ x \in X  \mid d(x_0,x) < r \right\} $ \`e aperto rispetto a $d$.
 		Si nota che, $\forall x \in B_r(x_0)$, \`e possibile definire $\delta = r - d(x,x_0)$ tale che $B_\delta (x) \subseteq B_r(x_0)$; infatti tutti i punti di $B_\delta (x)$ sono a distanza minore di $\varepsilon $ da $x$, quindi, per disuguaglianza triangolare:
@@ -794,7 +790,6 @@ B_r(x) := \left\{ x' \in X  \mid d(x,x') < r \right\}
 		\] 
 		per definizione di $\delta $.
 	\end{proof}
-\end{lemma}
 \noindent Nello stesso spazio metrico, \`e possibile definire la distanza tra un punto $x \in X$ con un sottoinsieme $A \subseteq X$ come:
 \begin{equation}
 	d_A(x) = \inf \left\{ d(x,a)  \mid a \in A \right\}   
@@ -820,6 +815,7 @@ Questo si esprime equivalentemente come:
 \noindent Usando la nozione di insieme aperto, \`e possibile generalizzare ulteriormente la definizione di continuit\`a al solo concetto di apertura di un insieme.
 \begin{teorema}
 Un'applicazione $f:X\to Y$ \`e continua $\iff\forall A \subset  Y$ aperto, l'insieme $f^{-1}(A)  $ \`e aperto.
+\end{teorema}
 \begin{proof}
 Si dimostrano le due implicazioni.	
 \begin{itemize}
@@ -836,7 +832,6 @@ Si dimostrano le due implicazioni.
 Valendo $\forall x \in X$, allora $f$ \`e continua.
 \end{itemize}
 \end{proof}
-\end{teorema}
 \noindent Questo permette di parlare di continuit\`a di applicazioni in insiemi su cui non \`e definita una distanza, ma solo i sottoinsiemi aperti.
 
 Negli spazi metrici, \`e possibile caratterizzare delle mappe che preservano le distanze; queste sono note come \textit{immersioni isometriche}.
@@ -872,6 +867,7 @@ Anche gli omemorfismi definiscono una \textbf{relazione di equivalenza} tra spaz
 \end{definizione}
 \begin{prop}
 	Se $f:X\to Y$ \`e lipschitizana, allora \`e continua.
+\end{prop}
 	\begin{proof}
 		Sia $f$ una funzione $k$-lipschitziana; si fissa $\varepsilon > 0 $ e si prende $\delta = \varepsilon / k$, per cui $\forall x' \in X$ tale che $d_X (x,x') < \delta $, si ha
 		\[
@@ -879,7 +875,6 @@ Anche gli omemorfismi definiscono una \textbf{relazione di equivalenza} tra spaz
 		\] 
 		
 	\end{proof}
-\end{prop}
 \subsection{Spazi topologici}
 Allo scopo di giustificare la definizione e lo studio di spazi topologici, si considera il seguente risultato.
 \begin{prop}
@@ -889,6 +884,7 @@ Allo scopo di giustificare la definizione e lo studio di spazi topologici, si co
 		\item se $A,B$ sono aperti, allora $A\cap B$ \`e aperto;
 		\item se $\left\{ A_i \right\} _{i\in I} $ \`e una famiglia di aperti, allora $\bigcup_{i \in I} A_i$ \`e aperto.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
@@ -898,7 +894,6 @@ Allo scopo di giustificare la definizione e lo studio di spazi topologici, si co
 			\item Evidentemente $\exists j \in I : x_0 \in A_j \implies \exists \epsilon : B_\epsilon (x_0) \subseteq A_j \subseteq \bigcup_{i \in I} A_i$.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \noindent Si nota che l'intersezione arbitraria di aperit pu\`o non risultare aperta, come nel caso della famiglia $B_{1 / n} (0)$ in $\mathbb{R}$.
 
 Dalla precedente proposizione, \`e possibile giustificare la seguente definizione di topologia.
@@ -976,6 +971,7 @@ Gli omeomorfismi e le funzioni continue biettive non coincidono; per esempio, da
 \end{definizione}
 \begin{prop}\label{dfin}
 	Siano $d_1,d_2$ due metriche definite nello spazio $X$, che inducono le topologie $\tau _1$ e $\tau _2$ rispettivamente; se $\exists k>0$ tale che $d_1(x,y) \le kd_2(x,y)$, allora $\tau _2$ \`e pi\`u fine di $\tau _1$.
+\end{prop}
 	\begin{proof}
 		Sia $A$ un aperto secondo $d_1$, quindi $\forall x \in A, \ \exists B_{d_1} (x,r) \subseteq A$.
 		Ora, se $d_2(x,y) < r / k$, si ha 
@@ -985,7 +981,6 @@ Gli omeomorfismi e le funzioni continue biettive non coincidono; per esempio, da
 		da cui si conclude che $B_{d_2} (x,r / k) \subseteq B_{d_1} (x,r) \subseteq A$, e, allora, $A$ \`e aperto anche rispetto a $d_2$, cio\`e $A \in \tau _2$.
 		
 	\end{proof}
-\end{prop}
 \noindent Se $d(x,y) = r\overline{d}(x,y)$, per $r>0$, si hanno due distanze equivalenti perch\'e, evidentemente, $\forall \varepsilon >0$:
 \[
 B_\varepsilon (x) = \overline{B}_{r\varepsilon } (x)
@@ -997,10 +992,10 @@ cio\`e le due distanze $d,\overline{d}$ identificano le stesse palle aperte, qui
 	d_1(x,y) \le kd_2(x,y) \hspace{1cm} d_2(x,y) \le hd_1(x,y)
 	\] 
 	$\forall x,y \in X$; allora $d_1$ e $d_2$ sono topologicamente equivalenti.
+\end{corollario}
 	\begin{proof}
 		\`E sufficiente applicare la proposizione \ref{dfin} due volte: dalla prima maggiorazione, si ha $\tau _1 \subseteq \tau _2$, mentre dalla seconda si ha $\tau _2 \subseteq \tau _1$, quindi $\tau _1 = \tau _2$.
 	\end{proof}
-\end{corollario}
 \noindent Due funzioni come le distanze $d_1,d_2$ della tesi si dicono \textit{bilipschitiziane} fra loro.
 \begin{corollario}
 In $\mathbb{R}^n$, le distanze 
@@ -1015,6 +1010,7 @@ sono equivalenti e si ha
 \begin{equation}
 	d_{\infty} (x,x') \le d_2(x,x') \le d_1 (x,x') \le n d_\infty(x,x')
 \end{equation}
+\end{corollario}
 \begin{proof}
 	La prima disuguaglianza \`e giustificata da:
 	\[
@@ -1026,7 +1022,6 @@ sono equivalenti e si ha
 	\] 
 L'ultima disuguaglianza \`e immediata.	
 \end{proof}
-\end{corollario}
 \noindent Da questo segue direttamente che\footnote{Apparentemente, la distanza pi\`u grande dovrebbe includere pi\`u elementi, quindi i simboli $\supset$ dovrebbero essere dei $\subset$, invece, avendo fissato il raggio $\varepsilon $, quella che permette di creare la palla pi\`u grande \`e la distanza pi\`u piccola perch\'e \textit{avvicina} i punti tra di loro, quindi pi\`u elementi rientreranno in tale raggio.}
 \begin{equation}
 	B^{(\infty)} _\varepsilon (x) \supset B^{(2)} _\varepsilon (x) \supset B^{(1)} _{\varepsilon } (x) \supset B^{(\infty)} _{\varepsilon  / n} (x)
@@ -1056,6 +1051,7 @@ ha integrale $\varepsilon $, ma $\left\lVert f \right\rVert _\infty = 2$, cio\`e
 \begin{prop}
 	Sia $(X,d)$ uno spazio metrico; allora esiste una metrica $d'$ su $X$ tale che $d$ e $d'$ sono equivalenti e $d'(x,y)\le 1, \ \forall x,y \in X$.
 	Inoltre, $X$ risulta limitato in $(X,d')$.
+\end{prop}
 	\begin{proof}
 		Si definisce 
 		\[
@@ -1075,7 +1071,6 @@ ha integrale $\varepsilon $, ma $\left\lVert f \right\rVert _\infty = 2$, cio\`e
 				cio\`e $A$ \`e aperto anche per $\tau _{d'} $.
 		\end{itemize}
 	\end{proof}
-\end{prop}
 \subsubsection{Chiusura e parte interna}
 \begin{definizione}
 	[Chiusura]
@@ -1122,10 +1117,10 @@ Inoltre, $Z$ coincide con la sua parte interna se e solo se \`e aperto, mentre c
 \end{definizione}
 \begin{prop}
 	Sia $X$ uno spazio topologico e $Z \subseteq X$; allora $P \in \overline{Z}$ se e solo se $\forall A \subseteq X$ aperto \`e tale che $P \in A\implies A\cap Z \neq \varnothing$.
-	\begin{proof}
-		
-	\end{proof}
 \end{prop}
+	\begin{proof}
+		Da dimostrare\ldots
+	\end{proof}
 
 
 
