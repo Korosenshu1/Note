@@ -1096,7 +1096,7 @@ Ora si cerca di caratterizzare la bont\`a accennata per $\underline{x}$, provand
 	In maniera analoga, ma cambiando il segno di $z$, si definisce $A^-_z$ e, sempre allo stesso modo, ma cambiando la coordinata per cui si risolve, si definiscono anche $A^{\pm} _x$ e $A^{\pm} _y$.
 	L'unione di queste restituisce $S^2_a$ e la loro intersezione non crea punti di discontinuit\`a, quindi $S^2_a$ \`e una superficie.
 \end{proof}
-\subsubsection{Superfici di rotazione}
+\subsection{Superfici di rotazione}
 
 Un altro esempio di superficie sono le cosiddette \textit{superfici di rotazione}.
 Queste sono tutte ottenute a partire dalla traccia di una curva nel piano e a seguito di un'opportuna rotazione attorno a qualche asse.
@@ -1243,6 +1243,9 @@ Sia $U \subseteq \mathbb{R}^3$ un aperto e sia $f : U \to \mathbb{R}$, di classe
 	Quindi, l'assunzione $\nabla _p f= 0$ implica anche $x=y=0$, ma $(0,0,0) \not \in \mathbb{T}_{a,b} $, quindi si ha un assurdo e se ne conclude che $\nabla f |_{f^{-1}(b^2)} \neq 0 $ sempre e, dunque, $\mathbb{T}_{a,b} $ \`e una superficie.
 \end{esempio}
 \subsection{Piano tangente}
+\subsubsection{Esistenza e unicit\`a}
+
+
 \begin{definizione}
 	[Piano tangente]
 	Sia $S$ una superficie e sia $p \in S$ un suo punto.
@@ -1322,5 +1325,200 @@ Ma allora $\underline{y}_s, \ \underline{y}_{t} \in \mathrm{Span} (\underline{x}
 \] 
 Per\`o entrambi gli spazi vettoriali generati da questi span hanno dimensione $2$ e uno \`e contenuto nell'altro, quindi coincidono.
 \end{proof}
+\begin{osservazione}
+La richiesta di $\underline{x}^{-1}\circ \underline{y} \in C^\infty$ non \`e espressamente necessaria in questo caso: avere $\underline{x}^{-1}\circ \underline{y} \in C^1$ \`e pi\`u che sufficiente, ma questa l'appartenenza a $C^\infty$ seguir\`a dall'assunzione di $\underline{x}, \underline{y}\in C^\infty$ che, a sua volta, \`e legata esclusivamente ad una comodit\`a teorica e sarebbe sufficiente $C^2$.
+\end{osservazione}
+\begin{lemma}
+	Siano $\underline{x} : U \subseteq \mathbb{R}^2 \to \mathbb{R}^3$ e $\underline{y} : V \subseteq \mathbb{R}^2 \to \mathbb{R}^3$ due parametrizzazioni regolari, quindi di classe $C^\infty(U)$ e $C^\infty(V)$ rispettivamente; allora la \textit{funzione di transizione} 
+	\[
+	\underline{x}^{-1}\circ \underline{y} : \underline{y}^{-1}\big(\underline{x}(U) \cap \underline{y}(V)\big) \longrightarrow \underline{x}^{-1}\big(\underline{x}(U) \cap \underline{y}(V)\big)
+	\] 
+	\`e di classe $C^\infty$.
+\end{lemma}
+\begin{proof}
+	Data $\underline{x}(u,v) = \big(x(u,v) , y(u,v) ,z(u,v)\big)$, il suo jacobiano \`e dato da
+	\[
+		J(\underline{x}) = \begin{pmatrix} x_u & x_v\\y_u & y_v\\ z_u & z_v \end{pmatrix} 
+	\] 
+	da cui $\underline{x}_u \times \underline{x}_v \neq 0 \iff \operatorname{rk}  \big(J(\underline{x})\big)  =2$.
+	Sia, ora, $S \ni p = \underline{x}(u_0,v_0)$; dovendo risultare $\underline{x}_u \times \underline{x}_v \neq 0$ in $(u_0,v_0) \in U$ visto che $\underline{x}$ \`e una parametrizzazione regolare, si pu\`o assumere, senza perdita di generalit\`a, valga
+	\[
+		\det \begin{pmatrix} x_u & x_v \\ y_u & y_v \end{pmatrix} \neq 0 \text{ in } (u_0,v_0)
+	\] 
+	Quindi, data
+	\[
+	\pi_{xy}  :
+	\begin{array}
+		{c c c}
+		\mathbb{R}^3& \longrightarrow & \mathbb{R}^2\\
+		(x,y,z) & \longmapsto &(x,y)
+	\end{array}
+	\] 
+	la proiezione sul piano $xy$, si ha $(\pi_{xy} \circ \underline{x}) (u,v) = \big(x(u,v) , y(u,v)\big)$ e $\operatorname{rk} \big(J(\pi_{xy} \circ \underline{x})\big) = 2$ in $(u_0,v_0)$.
+	Allora, per il teorema della funzione inversa, $\pi\circ \underline{x}$ \`e un diffeomorfismo di classe $C^\infty$ intorno a $(u_0,v_0)$.
+	Se $(x_0,y_0,z_0) = \underline{x}(u_0,v_0)$ e $(x,y)$ sta in un intorno di $(x_0,y_0)$, si ha: 
+	\[
+		(\pi_{xy} \circ \underline{x}) \circ (\pi_{xy} \circ \underline{x})^{-1}(x,y) = (x,y) \implies \underline{x}\circ (\pi_{xy} \circ \underline{x}) ^{-1}(x,y) = \big(x,y,z(x,y)\big)
+	\] 
+cio\`e un intorno di $(x_0,y_0,z_0)$ \`e un grafico.
+Ne segue che, localmente, \textit{una superficie \`e un grafico rispetto ad una delle proiezioni} $\pi_{xy} $, $ \pi_{xz} $, o $\pi_{yz} $.
+Infine, si osserva che
+\[
+\underline{x}^{-1} \circ \underline{y} = (\pi \circ \underline{x})^{-1}\circ (\pi\circ \underline{x}) \circ \underline{x}^{-1}\circ \underline{y}= (\pi \circ \underline{x})^{-1} \circ \pi \circ y
+\] 
+\`e di classe $C^\infty$ perch\'e composizione di mappe $C^\infty$, dove $\pi$ indica una delle tre proiezioni.
+Questo discorso si pu\`o ripetere per dimostrare che anche $\underline{y}^{-1}\circ \underline{x}$ \`e di classe $C^\infty$.
+\end{proof}
+\subsubsection{Versore normale}
+\begin{osservazione}
+Se $S \subseteq \mathbb{R}^3$ \`e una superficie, con $p \in \underline{x}(U) \subseteq S$ e $\underline{x}: U \to \mathbb{R}^3$ parametrizzazione regolare, si pu\`o sempre scegliere $U = D_\varepsilon (\underline{0})$ e $\underline{x}(\underline{0}) = p $.
+Se, infatti, $\underline{x}(u_0,v_0) = p$ con $(0,0)\neq (u_0,v_0) \in U$, si pu\`o definire la traslazione
+\[
+t_{(u_0,v_0)} :
+\begin{array}
+	{c c c}
+	\mathbb{R}^2 & \longrightarrow & \mathbb{R}^2\\
+	(u,v) & \longmapsto & (u+u_0, v + v_0)
+\end{array}
+\] 
+tramite cui l'aperto $V: = t _{(u_0,v_{0})} ^{-1}(U)$ contiene $(0,0)$ e la parametrizzazione regolare $\underline{x}\circ t_{(u_0,v_0)} :V \to \mathbb{R}^3$ soddisfa la propriet\`a richiesta.
+Inoltre, dato che $V$ \`e un aperto contenente $(0,0)$, $\exists \varepsilon >0$ tale che $D_\varepsilon (\underline{0}) \subseteq V$ e la restrizione
+\[
+\underline{x}\circ t_{(u_0,v_0)} |_{D_\varepsilon (\underline{0})} : D_\varepsilon (\underline{0}) \longrightarrow \mathbb{R}^3
+\] 
+\`e ancora una parametrizzazione regolare attorno a $p \in S$.
+\end{osservazione}
+\begin{definizione}
+	[Versore normale]
+	Sia $\underline{x}:D_\varepsilon(\underline{0})\to \mathbb{R}^3$ una parametrizzazione regolare attorno ad un punto $p = \underline{x}(u_0,v_0) \in S \subseteq \mathbb{R}^3$ superficie; allora, si definisce \textit{versore normale} 
+	\[
+	\underline{n}(p) = \frac{\underline{x}_u (u_0,v_0) \times \underline{x}_v (u_0,v_0)}{\left\lVert \underline{x}_u (u_0,v_0) \times \underline{x}_v (u_0,v_0) \right\rVert }
+	\] 
+\end{definizione}
+\noindent Per definizione, questo \`e un vettore di norma unitaria che \`e sempre ortogonale al piano tangente passante per il punto $p$.
+Si nota, inoltre, che il versore normale dipende dalla scelta della parametrizzazione; infatti, data un'altra parametrizzazione $\underline{y}:D_\varepsilon (\underline{0}) \to \mathbb{R}^3$ tale che $\underline{y}(u,v) := \underline{x}(u,-v)$, si ha
+\[
+	 \underline{y}_u = \underline{x}_u, \ \underline{y}_v = - \underline{x}_v \implies \underline{y}_u \times \underline{y}_v = - \underline{x}_u \times \underline{x}_v
+\] 
+da cui $\underline{n}_{\underline{x}}(p) = - \underline{n}_{\underline{y}}(p) $.
+
+Questa arbitrariet\`a nel segno \`e, in qualche modo, legata all'impossibilit\`a di stabilire una parte esterna e una interna della superficie: per una sfera, distinguere i due lati \`e immediato, mentre per un nastro di M\"obius non si pu\`o.
+\subsection{Orientabilit\`a}
+Come accennato precedentemente, l'orientabilit\`a di una superficie \`e legata alla possibilit\`a di distinguere un suo lato interno e un suo lato esterno.
+Ora si cerca di formalizzare questa idea qualitativa.
+
+Sia $p \in S \subseteq \mathbb{R}^3$ una superficie e sia $\underline{x}:U \to \mathbb{R}^3$ una parametrizzazione regolare attorno a $p=\underline{x}(u_0,v_0)$; sia, inoltre, $\underline{y}:V \to \mathbb{R}^3$ un'altra parametrizzazione regolare attorno a $p=\underline{y}(s_0,t_0)$ e siano $\underline{n}_{\underline{x}}(p)$ e $\underline{n}_{\underline{y}}(p) $ i due versori normali al piano tangente $T_pS$ relativi alle due parametrizzazioni.
+Come gi\`a detto, la funzione di transizione
+\[
+f = \underline{x}^{-1}\circ \underline{y}: \underline{y}^{-1}\big(\underline{x}(U)\cap\underline{y}(V)\big)\longrightarrow \underline{x}^{-1}\big(\underline{x}(U)\cap\underline{y}(V)\big)
+\] 
+\`e di classe $C^\infty$ e tale che $f(s,t) = \big(u(s,t),v(s,t)\big)$.
+Visto che $\underline{y}=\underline{x}\circ f$, si ha:
+\[
+\begin{cases}
+	\underline{y}_s = u_s \underline{x}_u\circ f + v_s \underline{x}_v\circ f\\
+	\underline{y}_t = u_t \underline{x}_u\circ f + v_t \underline{x}_v\circ f\\
+\end{cases}
+\] 
+da cui
+\[
+\begin{split}
+	\underline{y}_s \times \underline{y}_t&=(u_s \underline{x}_u\circ f + v_s \underline{x}_v\circ f)\times (u_t \underline{x}_u\circ f + v_t \underline{x}_v\circ f)\\
+					      &=u_sv_t \underline{x}_u \times \underline{x}_v \circ f - v_su_t \underline{x}_u \times \underline{x}_V \circ f= \det (Jf) \underline{x}_u \times \underline{x}_v \circ f
+\end{split}
+\] 
+dove 
+\[
+	Jf(s_0,t_0) = \begin{pmatrix} u_s(s_0,t_0) & u_t (s_0,t_0)\\ v_s(s_0,t_0) & v_t (s_0,t_0)\end{pmatrix} 
+\] 
+\`e lo jacobiano di $f$ nel pnuto $(s_0,t_0)$.
+Da questo, se ne conclude che 
+\begin{equation}
+	\underline{n}_{\underline{y}} (p) = \operatorname{sgn} \big(\det Jf(s_0,t_0)\big) \underline{n}_{\underline{x}} (p)
+\end{equation}
+quindi se $\det Jf > 0$, allora $\underline{n}_{\underline{x}} = \underline{n}_{\underline{y}} $ su $\underline{x}(U) \cap \underline{y}(V)$ e le due parametrizzazioni si dicono \textit{compatibili}.
+Se ne ricava la seguente definizione.
+\begin{definizione}
+	[Orientabilit\`a] Una superficie $S \subseteq \mathbb{R}^3$ \`e detta \textit{orientabile} se \`e ricoperta dalle immagini $\underline{x}(U)$ di un insieme di parametrizzazioni regolari tali che tutte le funzioni di transizione abbiano $\det Jf > 0$.
+\end{definizione}
+\begin{esempio}
+I grafici di funzione e le elicoidi sono superfici orientabili perch\'e sono ricoperte dall'immagine di una singola parametrizzazione regolare.
+\end{esempio}
+\begin{lemma}
+	Sia $S \subseteq \mathbb{R}^3$ una superficie; allora la funzione $f : S \to \mathbb{R}$ \`e continua se e solo se date $\left\{ \underline{x}:U\to\mathbb{R}^3 \right\} $ parametrizzazioni regolari con $\left\{ \underline{x}(U) \right\} $ ricoprimento di $S$, vale che $f\circ \underline{x}: U \to \mathbb{R}$ \`e continua.
+\end{lemma}
+\begin{proof}
+	Se $f$ \`e continua, allora $f\circ \underline{x}$ \`e composizione di funzioni continue, quindi \`e continua.
+
+	Al contrario, assumendo $f\circ \underline{x} $ continua per ogni parametrizzazione regolare del ricoprimento di $S$, si ha che $f |_{\underline{x}(U)} = (f\circ \underline{x}) \circ \underline{x}^{-1}$ \`e continua e, quindi, $f$ risulta continua in ogni punto di $S$, da cui $f$ \`e continua.
+\end{proof}
+\begin{prop}
+	Una superficie $S \subseteq \mathbb{R}^3$ \`e orientabile se e solo se esiste un'applicazione continua $\underline{n} : S \to \mathbb{R}^3$ tale che $\left\lVert \underline{n}(p) \right\rVert =1 $ e $\mathrm{Span} \big(\underline{n}(p)\big)^\perp = T_pS, \ \forall p \in S$.
+\end{prop}
+\begin{proof}
+	Si divide la dimostrazione nelle due implicazioni.
+	\begin{itemize}
+		\item ($\Rightarrow $) Sia $\left\{ \underline{x}:U \to \mathbb{R}^3 \right\} $ una collezione di parametrizzazioni regolari compatibili, le cui immagini ricoprono $S$.
+			Sia, poi, $\underline{x}(u_0,v_0) = p \in \underline{x}(U) \subseteq S$ un punto; allora si definisce 
+			\[
+			\underline{n}(p):= \underline{n}_{\underline{x}} (p) = \frac{\underline{x}_u (u_0,v_0) \times \underline{x}_v (u_0,v_0)}{\left\lVert \underline{x}_u (u_0,v_0) \times \underline{x}_v (u_0,v_0) \right\rVert }
+			\] 
+			Ora, se $p \in \underline{y}(V)$, essendo $\underline{x}$ e $\underline{y}$ compatibili, si ha anche $\underline{n}_{\underline{x}} (p)= \underline{n}_{\underline{y}}(p )$.
+			Rimane da mostrarne la continuit\`a.
+			Per questo, si considera una parametrizzazione $\underline{x}:U\to \mathbb{R}^3$ del solito ricoprimento e si osserva che
+			\[
+			\underline{n}\circ \underline{x}(u,v) = \underline{n}\big(\underline{x}(u,v)\big)=\frac{\underline{x}_u (u,v) \times \underline{x}_v (u,v)}{\left\lVert \underline{x}_u (u,v) \times \underline{x}_v (u,v) \right\rVert }
+			\] 
+		che \`e una mappa $C^\infty(U)$	e, in particolare, continua, quindi $\underline{n}$ \`e continua.
+	\item ($\Leftarrow$) Sia $\underline{n}:S\to\mathbb{R}^3$ come da tesi.
+		Dato $p \in S$, sia $\underline{x}:D_\varepsilon (\underline{0}) \to \mathbb{R}^3$ una parametrizzazione regolare attorno a $p=\underline{x}(\underline{0})$.
+		Se $\underline{n}_x(p) = \underline{n}(p)$, allora si tiene $\underline{x}$, altrimenti la si cambia componendola con la mappa $D_\varepsilon (\underline{0}) \to D_\epsilon (\underline{0}):(u,v)\longmapsto (u,-v)$.
+		La mappa 
+		\[
+		\varphi :
+		\begin{array}
+			{c c c}
+			D_\varepsilon (\underline{0})&\longrightarrow& \left\{ \pm 1 \right\} \\
+			(u,v) &\longmapsto & \underline{n}_{\underline{x}} \big(\underline{x}(u,v)\big)\cdot  \underline{n} \big(\underline{x}(u,v)\big)
+		\end{array}
+		\] 
+		\`e continua perch\'e $\underline{n}_{\underline{x}} $ e $\underline{n}$ hanno componenti continue (essendo esse stesse continue).
+		Ne segue che se il prodotto scalare \`e pari a $+1$, come stabilito dalla scelta precedente di $\underline{x}$, allora $\varphi (D_\varepsilon (\underline{0})) = \left\{ 1 \right\} $; infatti, se saltasse a $-1$, perderebbe la continuit\`a, quindi $\underline{n}_{\underline{x}} = \underline{n}$ in ogni punto di $\underline{x}(D_\varepsilon (\underline{0}))$.
+		Applicando lo stesso ragionamento ad ogni punto di $S$, si ottiene una collezione di parametrizzazioni regolari compatibili, le cui immagini ricoprono $S$, quindi $S$ \`e orientabile.
+	\end{itemize}
+\end{proof}
+\begin{prop}
+	Le superfici di livello sono orientabili.
+\end{prop}
+\begin{proof}
+	Sia $U \subseteq \mathbb{R}^3$ aperto e sia $f:U\to \mathbb{R}$ di classe $C^\infty(U)$ tale che $a \in \mathbb{R}$ sia un suo valore regolare e, quindi, $S := f^{-1}(a)$ sia una superficie.
+	Si prende 
+	\[
+	\underline{n}:
+	\begin{array}
+		{c c c}
+		S &\longrightarrow& \mathbb{R}^3\\
+		p & \longmapsto & \nabla _p f / \left\lVert \nabla _p f \right\rVert 
+	\end{array}
+	\] 
+	Per costruzione, si ha $\left\lVert \underline{n} \right\rVert =1$; si verifica che \`e continua e che $\mathrm{Span} (\underline{n}(p)) = T_p S^\perp, \ \forall p \in S$.
+	Per la continuit\`a, si vede che
+	\[
+	\underline{n}\circ \underline{x}(u,v) = \underline{n}(\underline{x}(u,v)) = \nabla _{\underline{x}(u,v)} f / \left\lVert \nabla _{\underline{x}(u,v)} f \right\rVert \in C^\infty(U)
+	\] 
+	Sia, ora, $\underline{x}:U\to \mathbb{R}^3 $ una parametrizzazione regolare attorno a $p \in S$ con $\underline{x}(u,v) = \big(x(u,v) , y(u,v) ,z(u,v)\big)$; per definizione $f(\underline{x}(u,v)) = a, \ \forall (u,v) \in U$, quindi:
+	\[
+		\begin{cases}
+	f_x x_u + f_y y_u + f_z z_u = \nabla _{\underline{x}(u,v)} f \cdot \underline{x}_u(u,v) = 0\\
+	f_x x_v + f_y y_v + f_z z_v = \nabla _{\underline{x}(u,v)} f \cdot \underline{x}_v(u,v) = 0
+		\end{cases}
+	\] 
+	quindi $\nabla _p f \perp T_p S, \ \forall p \in \underline{x}(U)$.
+\end{proof}
+\newpage
+\section{Curve su superfici}
+
+
+
 \end{document}
 
