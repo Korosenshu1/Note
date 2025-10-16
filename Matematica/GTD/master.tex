@@ -1517,8 +1517,157 @@ I grafici di funzione e le elicoidi sono superfici orientabili perch\'e sono ric
 \end{proof}
 \newpage
 \section{Curve su superfici}
+Lo studio di curve su superfici serve ad capire meglio la geometria della superficie in questione; in particolare, tramite le curve, si possono definire distanze (geodetiche), analizzare la forma locale della superficie, o la sua curvatura gaussiana eccetera.
+\subsection{Introduzione}
+Una curva regolare su una superficie ha sempre velocit\`a contenuta nel piano tangente; per vederlo, si considera la seguente dimostrazione.
+\begin{proof}
+Sia data una curva regolare $\alpha  : I \to \mathbb{R}^3$ con $0 \in I$ e $\operatorname{Tr} \alpha \subseteq S$, con $S$ superficie.
+Sia $\alpha (0) = p \in S$; se $\underline{x} : U \subseteq \mathbb{R}^2 \to \mathbb{R}^3$ \`e una parametrizzazione regolare di $S$ intorno a $p = \underline{x}(u_0,v_0)$, allora $\exists \varepsilon >0$ tale che $\alpha (-\varepsilon ,\varepsilon ) \subseteq \underline{x}(U)$ e la mappa
+\[
+\underline{x}^{-1}\circ \alpha (t):
+\begin{array}
+	{c c c}
+	(-\varepsilon ,\varepsilon )&\longrightarrow & \mathbb{R}^2\\
+t&\longmapsto &\big(u(t) , v(t)\big)
+\end{array}
+\] 
+\`e ben definita.
+Sia, ora, $\pi: \mathbb{R}^3 \to \mathbb{R}^2$ una proiezione\footnote{Visto che $\underline{x}$ \`e una parametrizzazione regolare, come le dimostrazioni precedenti, deve avere un minore non-nullo; volendo trattare il caso pi\`u generale possibile, non si assume che $\pi$ sia una proiezione in particolare, ma ci si limita ad assumere che sia quella proiezione sul piano per cui il minore del prodotto vettore $\underline{x}_u \times \underline{x}_v$ sia non-nullo.} tale che $\pi\circ \underline{x}$ ha inversa $(\pi\circ \underline{x})^{-1}$ di classe $C^\infty$ intorno a $(u_0,v_0)$; allora:
+\[
+\underline{x}^{-1}\circ \alpha  = (\pi\circ \underline{x})^{-1}\circ (\pi\circ \underline{x}) \circ \underline{x}^{-1}\circ \alpha  = (\pi\circ \underline{x})^{-1} \circ \pi \circ \alpha  
+\] 
+\`e di classe $C^\infty$ perch\'e composizione di funzioni di classe $C^\infty$.
+Ne segue che la curva si pu\`o scrivere come $\alpha (t) = \underline{x}\big(u(t),v(t)\big)$, con $u(t), v(t) \in C^\infty$ per quanto appena detto, perci\`o:
+\[
+\alpha '(0) = u'(0) \underline{x}_u(u_0,v_0) + v'(0) \underline{x}_v(u_0,v_0) \in  T_p S
+\] 
+\end{proof}
+Questa osservazione servir\`a alla dimostrazione della seguente proposizione.
+\begin{prop}
+	Data $S$ una superficie e $p \in S$ un suo punto; allora
+	\[
+	T_pS = \left\{ \alpha '(0)  \mid \alpha :(-\varepsilon , \varepsilon ) \to \mathbb{R}^3 \text{ curva regolare}:\operatorname{Tr} \alpha \subseteq S \text{ e } \alpha (0) = p \right\} 
+	\] 
+\end{prop}
+\begin{proof}
+	L'inclusione $\supseteq$ \`e gi\`a stata dimostrata dal discorso iniziale, quindi si dimostra l'inclusione opposta.
+	Sia, dunque, $v = a \underline{x}_u(u_0,v_0) + b \underline{x}_v (u_0,v_0) \in T_pS$; allora $v = \alpha '(0)$ per $\alpha (t) = \underline{x}\big(u_0+ at, v_0+bt\big)$, che soddisfa $\alpha (0) = \underline{x}(u_0,v_0) = p$.
+\end{proof}
+\subsection{L'operatore forma}
+L’operatore forma è uno strumento che consente di descrivere in modo quantitativo come una superficie si piega nello spazio circostante.
+\begin{definizione}
+	Se $S \subseteq \mathbb{R}^3$ \`e una superficie, si dice che un'applicazione $f : S \to \mathbb{R}$ \`e $C^\infty$ su $S$ se $f\circ \underline{x}$ \`e di classe $C^\infty$, per ogni parametrizzazione regolare $\underline{x} : U \to \mathbb{R}^3$ su $S$.
+\end{definizione}
+\begin{osservazione}
+Se $\underline{n} : S \to \mathbb{R}^3$ \`e una normale unitaria e continua, per ogni parametrizzazione regolare $\underline{x}:U\to \mathbb{R}^3$ su $S$, l'applicazione $n \circ X:U\to \mathbb{R}^3$ coincide con $\underline{n}_{\underline{x}} $, o con $- \underline{n}_{\underline{x}} $, quindi \`e di classe $C^\infty$.
+\end{osservazione}
+\noindent Data $f : S \to \mathbb{R}^3 \in C^\infty$ e preso $\xi  \in T_p S$, si vuole, ora, definire il concetto di \textit{derivata} nella direzione $\xi $.
+Se $\xi = \alpha '(0)$, per $\alpha  : (-\varepsilon ,\varepsilon ) \to \mathbb{R}^3$ curva regolare su $S$, con $\alpha (0)= p$, si definisce
+\begin{equation}
+	D_\xi f  := (f\circ \alpha )'(0)
+\end{equation}
+\begin{prop}
+	L'oggetto $D_\xi f$ definito come sopra dipende solo da $f$ e da $\xi $.
+\end{prop}
+\begin{proof}
+	Sia $\underline{x} : U \to S$ una parametrizzazione regolare intorno a $p = \underline{x}(u_0,v_0)$, da cui $\alpha  (t) = \underline{x}(u(t),v(t))$, per $t \in  (-\varepsilon ,\varepsilon )$ e $u(t),v(t) \in C^\infty$.
+	Allora:
+	\[
+	\xi  = \alpha '(0) = u'(0) \underline{x}_u(p) + v'(0) \underline{x}_v(p)
+	\] 
+	e, visto che $(f\circ \alpha ) (t) = f\circ \underline{x}(u(t),v(t))$, si trova:
+	\begin{equation}\label{star}
+		(f\circ \alpha )' (0) = u'(0) (f\circ \underline{x})_u (u_0,v_0) + v'(0) (f\circ \underline{x})_v (u_0,v_0)
+\end{equation}	
+Si vede che il membro sinistro non dipende da $\underline{x}$, mentre il membro destro dipende da $\alpha $ solo tramite le coordinate $u'(0)$ e $v'(0)$ di $\xi $, quindi la dipendenza \`e esclusivamente legata a $f$ e $\xi $.
+\end{proof}
+\begin{osservazione}
+	Per la proposizione precedente, $D_\xi f$ \`e ben definito e, per l'equazione \ref{star}, \`e lineare in $\xi $.
+\end{osservazione}
+\noindent Ora si definisce l'operatore forma.
+Sia $\xi \in T_pS$ un vettore tangente in $p$ alla superficie $S$ dotata di versore normale $\underline{n}:S\to \mathbb{R}^3$.
+Data anche una curva su $S$, $\alpha : (-\varepsilon ,\varepsilon )\to S$, con $\alpha (0) = p$ e $\alpha '(0) = \xi $, deve valere $\underline{n}(\alpha (t)) \cdot \underline{n}(\alpha (t)) = 1$; allora, derivando rispetto a $t$:
+\[
+	0 = 2 (n\circ \alpha )' (t) \cdot \underline{n}(\alpha (t)) \stackrel{t=0}{\implies} 0 = D_\xi \underline{n}\cdot \underline{n}(p)
+\] 
+perci\`o $D_\xi \underline{n} \in T_p S = \underline{n}(p)^\perp$.
+\begin{definizione}
+	[Operatore forma]
+	Sia $\Sigma \subseteq\mathbb{R}^3$ una superficie orientabile e $n : \Sigma \to \mathbb{R}^3$ un versore normale unitario.
+	Si definisce \textit{operatore forma} di $\Sigma$ nel punto $p$ come la mappa
+	\[
+	S_p :
+	\begin{array}
+		{c c c}
+		T_p\Sigma & \longrightarrow & T_p \Sigma\\
+		\xi & \longmapsto& - D_\xi \underline{n}
+	\end{array}
+	\] 
+\end{definizione}
+\begin{esempio}
+	[Operatore forma della sfera]
+	Si considera una superficie sferica $S^2_a(0) \subseteq \mathbb{R}^3$, con versore normale
+	\[
+	\underline{n}:
+	\begin{array}
+		{c c c}
+		S_a^2(0) &\longrightarrow & \mathbb{R}^3\\
+		p & \longmapsto & p / a
+	\end{array}
+	\] 
+	Per $\alpha :(-\varepsilon ,\varepsilon ) \to S_a^2 (0)$, con $\alpha (0) = p$ e $\alpha '(0) = \xi $, si ha $n(\alpha (t)) = \alpha (t) / a$, da cui
+	\[
+		\begin{split}
+			&S_p (\xi ) = - \Eval{\frac{d }{d t} }{t=0}{}\underline{n}(\alpha (t)) = -\frac{1}{a} \xi \\
+			&\Rightarrow S_p = -\frac{1}{a} \operatorname{Id} _{T_pS^2_a(0)} , \ \forall p \in S_a^2 (0)
+		\end{split}
+	\] 
+\end{esempio}
+\begin{prop}
+	Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie e $\underline{n}:\Sigma \to \mathbb{R}^3$ un versore normale; allora
+	\[
+	S_p\xi  \cdot \eta = \xi \cdot S_p \eta , \ \forall p \in \Sigma, \ \forall \xi ,\eta \in T_p\Sigma
+	\] 
+	cio\`e $S_p$ \`e autoaggiunto rispetto al prodotto scalare standard.
+\end{prop}
+\begin{proof}
+	Visto che $S_p$ \`e lineare (essendolo $D_\xi $), \`e sufficiente verificare che, data una parametrizzazione regolare $\underline{x}:U\to S$ intorno a $p=\underline{x}(u_0,v_0)$, vale
+	\[
+	S_p \underline{x}_u(p) \cdot \underline{x}_v (p) = \underline{x}_u(p) \cdot S_p \underline{x}_v(p)
+	\] 
+Per definizione
+\[
+	S_p \underline{x}_u = - \Eval{\frac{d }{d u} }{u = u_0}{}\underline{n}(\underline{x}(u,v_0))
+\] 
+quindi, essendo $\underline{n}(\underline{x}(u,v_0)) \cdot \underline{x}_v(u,v_0) = 0$, derivando rispetto a $u$ e calcolando il risultato in $u_0$, si ottiene:
+\[
+-S_p(\underline{x}_u(p)) \cdot \underline{x}_v (p) + \underline{n}(p) \cdot \underline{x}_{vu} (p) = 0
+\] 
+Allo stesso modo, si parte da $\underline{n}(\underline{x}(u_0,v)) \cdot \underline{x}_u(u_0,v)$ e, calcolando la derivata rispetto a $v$ in $v_0$, si ottiene:
+\[
+-S_p(\underline{x}_v(p) \cdot \underline{x}_u(p) + \underline{n}(p) \cdot \underline{x}_{uv} (u_0,v_0) = 0 
+\] 
+Facendo uso del fatto che le derivate parziali sono miste, essendo $\underline{x}$ in $C^\infty$, unendo le due relazioni ottenute, si ha: 
+\[
+S_p(\underline{x}_u(p)) \cdot \underline{x}_v(p) = \underline{x}_u(p) \cdot S_p(\underline{x}_v(p))
+\] 
+\end{proof}
+\subsection{Il piano affine (da rivedere)}
+Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie, $\underline{n}:\Sigma \to \mathbb{R}^3$ un versore normale e $\underline{x}:U\to \underline{x}(U) \subseteq \Sigma$ una parametrizzazione regolare compatibile, con $p = \underline{x}(u_0,v_0)$.
+Si prende $w \in T_p\Sigma$, con $\left\lVert w \right\rVert =1$, e si prende il piano affine $\pi$ passante per $p$ e contenente la retta $p + \operatorname{Span} (w)$; si vuole studiare $\pi \cap \underline{x}(U)$.
 
-
-
+	Sia, allora, $\pi= \left\{ X \in \mathbb{R}^3  \mid (a,b,c) \cdot X = d \right\} $, con $(a,b,c) \perp w$, e sia $f(u,v) = (a,b,c) \cdot \underline{x}(u,v) : U \to \mathbb{R}$.
+	In questo modo, la condizione che un punto della superficie stia nel piano diventa $f(u,v) = d$, quindi
+	\[
+	\underline{x}^{-1}\big(\pi\cap \underline{x}(U)\big) = \left\{ (u,v) \in U  \mid f(u,v) = d \right\} 
+	\] 
+	Essendo che
+	\[
+	\begin{cases}
+		f_u(u_0,v_0) = (a,b,c) \cdot \underline{x}_u(p)\\
+		f_v(u_0,v_0) = (a,b,c) \cdot \underline{x}_v(p)
+	\end{cases}
+	\] 
+	allora $\pi \neq T_p \Sigma\iff \big(f_u(u_0,v_0) , f_v(u_0,v_0)\big)\neq (0,0)$.
 \end{document}
 
