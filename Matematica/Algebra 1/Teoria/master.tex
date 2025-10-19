@@ -218,6 +218,7 @@ title=#1
 \subsection{Il gruppo degli automorfismi}
 \begin{lemma}
 	Siano $H,G$ due gruppi ciclici; un omomorfismo $\varphi : G \to H$ \`e univocamente determinato da come agisce su un generatore di $G$.
+\end{lemma}
 	\begin{proof}
 		Sia $g_0\in G$ tale che $\langle g_0 \rangle = G$ e sia $\varphi (g_0) = \overline{h}\in H$.
 		Per $g \in G$ generico, per cui $g_0^k = g$ per qualche intero $k$, si ha:
@@ -226,7 +227,6 @@ title=#1
 		\] 
 		Cio\`e tutti gli elementi di $\operatorname{Im} \varphi $ sono esprimibili come potenze di $\overline{h}$.
 	\end{proof}
-\end{lemma}
 \begin{osservazione}
 Non ogni scelta di $\overline{h} \in H$ \`e ammissibile, ma bisogna rispettare l'ordine di $g_0$.
 Se $g_0^n = e_G$, allora $e_H = \varphi (g_0^n) = \varphi (g_0)^n = \overline{h}^n$. Questa condizione, impone che $\operatorname{ord}(\overline{h})  \mid \operatorname{ord}(g_0) $.
@@ -248,11 +248,11 @@ Se $g_0^n = e_G$, allora $e_H = \varphi (g_0^n) = \varphi (g_0)^n = \overline{h}
 	\end{svolgimento}
 \begin{teorema}
 $\operatorname{Aut} (\mathbb{Z} / m \mathbb{Z}) \cong (\mathbb{Z} / m \mathbb{Z})^*$.
+\end{teorema}
 \begin{proof}
 	$(\mathbb{Z} / m\mathbb{Z}, + )$ \`e ciclico, quindi si stabilisce l'azione di $f:\mathbb{Z} / m\mathbb{Z}\to \mathbb{Z}/ m\mathbb{Z}$ su un generatore.
 	Preso, allora, $\overline{k} \in \mathbb{Z} / m\mathbb{Z} $ tale che $\operatorname{gcd}(k,m) =1$ e scelto $f(\overline{k}) = \overline{a}$, si ha che $\langle f(\overline{k}) \rangle= \langle \overline{a} \rangle= \mathbb{Z} / m\mathbb{Z} \iff \operatorname{gcd}(a,m) =1	\iff \overline{a} \in \left(\mathbb{Z} / m\mathbb{Z}\right) ^* $.
 \end{proof}
-\end{teorema}
 \begin{definizione}
 	[Automorfismo interno]
 	Sia $G$ un gruppo; si definisce $\phi _g :G\to G$, $ \forall g \in G$, come $\phi_g (x) =gxg^{-1} $ ed \`e detto \textit{automorfismo interno}. 
@@ -263,6 +263,7 @@ $\operatorname{Aut} (\mathbb{Z} / m \mathbb{Z}) \cong (\mathbb{Z} / m \mathbb{Z}
 \end{definizione}
 \begin{prop}\label{intcar}
 	Sia $G$ un gruppo; allora $\operatorname{Int} (G) \lhd \operatorname{Aut} (G)$ e $\operatorname{Int} (G) \cong G / Z(G)$.
+\end{prop}
 	\begin{proof}
 		$\operatorname{Int} (G)$ \`e un sottogruppo di $\operatorname{Aut} (G)$ perch\'e $\operatorname{Id} (x) = exe^{-1} = x  \Rightarrow \operatorname{Id} \in \operatorname{Int} (G)$.
 		Inoltre, $\phi _g \circ \phi _h (x) = ghxh^{-1}g^{-1}=\phi _{gh} (x) \in \operatorname{Int} (G)$ e $\phi _{g^{-1} } \circ \phi _g (x) = x \Rightarrow \phi _g^{-1} = \phi _{g^{-1}} \in \operatorname{Int}(G)  $.
@@ -276,13 +277,12 @@ $\operatorname{Aut} (\mathbb{Z} / m \mathbb{Z}) \cong (\mathbb{Z} / m \mathbb{Z}
 		\`E, inoltre, suriettivo perch\'e ogni automorfismo interno \`e associato ad un elemento di $G$, cio\`e $\forall \phi _g \in \operatorname{Int} (G), \ \exists g \in G : \Phi(g) = \phi _g$.
 		Allora, la tesi deriva dal I teorema di omomorfismo, visto che $\operatorname{Ker} \Phi = Z(G)$.
 	\end{proof}
-\end{prop}
 \begin{osservazione}\label{ossnorm}
 	$H \lhd G \iff \phi _g(H) = H, \ \forall \phi _g \in \operatorname{Int} (G)$.
+	\end{osservazione}
 	\begin{proof}
 Per ogni elemento di $\operatorname{Int} (G)$, si ha $\phi _g (H) = H \iff gH g^{-1} = H \iff H \lhd G$.
 	\end{proof}
-	\end{osservazione}
 \begin{definizione}
 	[Sottogruppo caratteristico]
 	Sia $G$ un gruppo e $H < G$. Si dice che $H$ \`e \textit{caratteristico} se \`e invariante per automorfismo, cio\`e $\forall f \in \operatorname{Aut} (G), \ f(H) = H$.
@@ -351,18 +351,18 @@ Se, poi, $X$ ha cardinalit\`a finita, allora:
 \end{definizione}
 \begin{lemma}\label{l111}
 	Sia $G$ un gruppo che agisce su un insieme $X$ e sia $x \in X$ un suo elemento. Dati anche $g\cdot x , h \cdot x \in \operatorname{Orb} (x)$ tali che $g \cdot x = h\cdot x$, allora $g$ e $h$ appartengono alla stessa classe di $G / \operatorname{Stab} (x)$.
+\end{lemma}
 \begin{proof}
 	Se $g \cdot x, \ h\cdot x \in \operatorname{Orb} (x)$ sono uguali, allora $x =h^{-1} g \cdot x $, cio\`e $h^{-1} g \in G$ lascia invariato $x$, quindi \`e in $\operatorname{Stab} (x)$.
 	Da questo segue che $h \operatorname{Stab} (x) = h h^{-1} g \operatorname{Stab} (x) = g \operatorname{Stab} (x)$.
 \end{proof}
-\end{lemma}
 \begin{teorema}[Teorema di orbita-stabilizzatore]\label{osth}
 	Esiste una mappa biettiva $\Gamma : \operatorname{Orb} (x) \to G / \operatorname{Stab} (x)$ tale che $\Gamma(g \cdot x) = g \operatorname{Stab} (x)$.
+\end{teorema}
 	\begin{proof}
 		$\Gamma$ \`e iniettiva come diretta conseguenza del lemma \ref{l111} ed \`e suriettiva perch\'e $\forall g \operatorname{Stab} (x) \in G / \operatorname{Stab} (x), \exists g\cdot x \in \operatorname{Orb} (x)$ tale che $\Gamma(g\cdot x) = g \operatorname{Stab} (x)$.
 		Segue che $\lvert \operatorname{Orb} (x)  \rvert = \lvert G \rvert / \lvert \operatorname{Stab} (x) \rvert $.
 	\end{proof}
-\end{teorema}
 \begin{osservazione}
 Si osserva che, per il teorema di orbita-stabilizzatore, la cardinalit\`a di un'orbita indica il numero di classi laterali dello stabilizzatore nel gruppo che compie l'azione, cio\`e il teorema di orbita-stabilizzatore si pu\`o riscrivere come $\lvert \operatorname{Orb} (x) \rvert = [G: \operatorname{Stab} (x)] = \lvert G / \operatorname{Stab} (x) \rvert = \lvert G \rvert / \lvert \operatorname{Stab} (x) \rvert $.
 \end{osservazione}
@@ -383,10 +383,10 @@ Come conseguenza del teorema di orbita-stabilizzatore (\ref{osth}), si ha:
 	\[
 	\bigcap_{x \in G} Z(x) = Z(G)
 	\] 
+\end{prop}
 	\begin{proof}
 		Si ha $g \in Z(x), \ \forall x \iff gxg^{-1} =x , \ \forall x \in G \iff g \in Z(G)$.
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 	[Centro di un sottogruppo]
 	Sia $G$ un gruppo e $H < G$; allora il centro di $H$ \`e definito come 
@@ -440,6 +440,7 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 	\begin{equation*}
 		\lvert G \rvert  = |Z(G)| + \sum_{x \in R \setminus Z(G)}^{} \frac{\lvert G \rvert }{\lvert Z(x) \rvert }
 	\end{equation*}
+\end{teorema}
 	\begin{proof}
 		Segue per quanto appena detto e dall'osservazione che
 		\[
@@ -448,7 +449,6 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 		Visto che ogni orbita del genere contiene un solo elemento, i rappresentanti delle orbite sono esattamente tutti gli elementi di $Z(G)$, cio\`e un elemento $x \in Z(G)$ non pu\`o essere contenuto in nessun'altra orbita, se non nel singoletto $\left\{ x \right\} $.
 		Perci\`o, la relazione in eq. \ref{ossclass}, avendo $X=G$, conferma la tesi.
 	\end{proof}
-\end{teorema}
 \subsection{I p-gruppi}
 \begin{definizione}
 	[p-gruppo]
@@ -456,6 +456,7 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 \end{definizione}
 \begin{prop}\label{pnb}
 	Il centro di un $p$-gruppo \`e non-banale.
+\end{prop} 
 	\begin{proof}
 		Per la formula delle classi, si ha:
 		\[
@@ -467,9 +468,9 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 		\] 
 		Visto che $e \in Z(G)$, deve risultare $\lvert Z(G) \rvert \ge 1$, pertanto $\lvert Z(G) \rvert = p^s$, per qualche intero $s > 1$.
 	\end{proof}
-\end{prop} 
 \begin{lemma}\label{GZGciffban}
 	Vale $G / Z(G)$ ciclico $\iff G$ \`e abeliano.
+\end{lemma}
 	\begin{proof}
 		Sia $G / Z(G)$ ciclico e sia $x_0 Z(G)$ il suo generatore.
 		Date due classi laterali distinte $xZ(G), yZ(G) \in G / Z(G)$ e visto che $x_0Z(G)$ genera, si avr\`a $x_0^m Z(G)= x Z(G)$ e $x_0^nZ(G) = yZ(G)$, ossia, per $z,w \in Z(G)$, $x = x_0^m z,\ y = x_0^n w$. 
@@ -481,19 +482,19 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 
 	Per l'implicazione inversa, sia $G$ abeliano; allora $Z(G) = G$ e $G / Z(G) = \left\{ e \right\} $, che \`e ovviamente ciclico.
 	\end{proof}
-\end{lemma}
 \begin{prop}
 	Un gruppo di ordine $p^2$ \`e abeliano.
+\end{prop}
 	\begin{proof}
 		Sia $G$ un $p$-gruppo tale che $\lvert G \rvert  = p^2$. Per mostrare che \`e abeliano, si fa vedere che $Z(G) = G$, ossia $\lvert Z(G) \rvert  = p^2$.
 		Per la proposizione \ref{pnb}, si pu\`o avere solamente $\lvert Z(G) \rvert = p$, oppure $\lvert Z(G) \rvert = p ^2$.
 		Se, per assurdo, fosse $\lvert Z(G) \rvert =p$, allora $\lvert G \rvert / \lvert Z(G) \rvert = p$, quindi $G / Z(G)$ avrebbe ordine primo e, quindi, sarebbe ciclico; per il lemma precedente (\ref{GZGciffban}), per\`o, questo \`e assurdo perch\'e risulterebbe anche abeliano al contempo, ma senza avere $\lvert Z(G) \rvert  = \lvert G \rvert $.
 		Quindi deve essere $\lvert Z(G) \rvert  = p^2 = \lvert G \rvert \Rightarrow Z(G) = G$, da cui $G$ \`e abeliano.
 	\end{proof}
-\end{prop}
 \subsection{Teoremi di Cauchy e Cayley}
 \begin{lemma}[Teorema di Cauchy abeliano]\label{cab}
 	Sia $p$ un primo e $G$ un gruppo abeliano finito; se $p  \mid  |G|$, allora $\exists x \in G : \operatorname{ord}(x) =p$.
+\end{lemma}
 	\begin{proof}
 		Sia $\lvert G \rvert = pn$; si procede per induzione su $n$.
 		Il passo base \`e ovvio: se $\lvert G \rvert =p$, allora \`e ciclico e, quindi, contiene un elemento di ordine $p$.
@@ -508,10 +509,10 @@ con $R$ insieme dei rappresentanti delle orbite e $R'$ insieme dei rappresentati
 				Considerando la proiezione $\pi_H : G \to G / H$ tale che $x \mapsto xH$ e ricordando che \`e un omomorfismo, si ha che, per questo motivo, $\operatorname{ord}(zH)  \mid \operatorname{ord}(z)\Rightarrow \operatorname{ord}(z) = pk$; se $k = n$, allora $G$ \`e ciclico e $z^n$ ha ordine $p$, altrimenti, se $k<n$, si ha la tesi per induzione.
 		\end{itemize}
 	\end{proof}
-\end{lemma}
 \begin{teorema}
 	[Teorema di Cauchy]
 	Sia $p$ un numero primo e $G$ un gruppo finito; se $p  \mid |G|$, allora esiste $x \in G : \operatorname{ord}(x) = p $.
+\end{teorema}
 	\begin{proof}
 		Sia $|G| = pn$, con $p$ primo e $n \in \mathbb{N}$; si procede per induzione su $n$.
 		Se $n=1$, $|G| = p \Rightarrow G$ \`e ciclico, quindi $\exists x \in G : \langle x \rangle=G$ e $\operatorname{ord}(x) = p$.
@@ -529,15 +530,14 @@ Allora $p  \mid  |Z(G)|$, per cui $Z(G) =G$; infatti, se cos\`i non fosse, sareb
 
 Da questo, segue che $G$ \`e abeliano, quindi la tesi segue dal teorema di Cauchy per gruppi abeliani (lemma \ref{cab}).
 	\end{proof}
-\end{teorema}
 \begin{prop}\label{tgen}
 Siano $H,K < G$; allora $HK < G \iff HK = KH$ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert / \lvert H \cap K \rvert $.
+\end{prop}
 \begin{proof}
 Per la prima parte, \`e sufficiente osservare che per $hk \in HK$, l'elemento neutro $(hk)^{-1} = k^{-1} h^{-1} $ sta in $HK$ se e solo se $HK = KH$, e, allo stesso modo, il prodotto \`e chiuso cio\`e $hkh'k' = hh''k''k' \in HK$ solamente se $HK = KH$ cos\`i da poter trovare un elemento di $HK$ che sia uguale a $kh'\in KH$ che compare in tale prodotto.
 
 La seconda parte, invece, si verifica considerando l'applicazione $\gamma: H \times K\to HK$ tale che $\gamma((h,k)) = hk$, che \`e evidentemente suriettiva; inoltre, se $s \in H \cap K$, allora $(hs,s^{-1}k) \in H \times K\Rightarrow \gamma ((hs,s^{-1}k)) = hk$, il che vuol dire che $\forall hk \in HK$, si trovano $|H\cap K|$ coppie in $H \times K$ che hanno immagine $hk$, da cui la tesi.
 \end{proof}
-\end{prop}
 \begin{esempio}[Classificazione dei gruppi di ordine 6]
 Sia $G$ un gruppo di ordine $6$; per Cauchy, allora, esistono $x,y \in G$ tali che $\operatorname{ord}(x) = 2$ e $\operatorname{ord}(y) =3$. 
 Se $G$ \`e abeliano, poi, si ha $\operatorname{ord}(xy) = 6$\footnote{$\langle x \rangle \cap \langle y \rangle e$ perch\'e sono generati da elementi diversi, altrimenti avrebbero stesso ordine.}, quindi $G = \langle xy \rangle\cong \mathbb{Z}/ 6\mathbb{Z}$.
@@ -555,6 +555,7 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 	[Teorema di Cayley]
 	Sia $G$ un gruppo; allora $G$ \`e isomorfo a un sottogruppo di $S(G)$.
 	In particolare, se $|G| = n$, allora $G$ \`e isomorfo a un sottogruppo di $S_n$.
+\end{teorema}
 	\begin{proof}
 		Si definisce l'azione
 		\[
@@ -569,7 +570,6 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 		Inoltre, $\phi $ \`e un omomorfismo (ovvio) ed \`e anche iniettiva perch\'e $\operatorname{Ker} \phi = \left\{ g \in G  \mid \phi _g = \phi _e \right\} = \left\{ g \in G  \mid g x = x \right\} = \left\{ e \right\}$.
 		Da questo, segue che $S(G)$ contiene una copia isomorfa a $G$.
 	\end{proof}
-\end{teorema}
 \subsection{Commutatore e gruppo derivato}
 
 
@@ -582,6 +582,7 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 	\langle S \rangle= \left\{ s_1s_2 \ldots s_k  \mid k \in \mathbb{N}, \ s_i \in S \cup S^{-1} \right\} = X
 	\] 
 	con $S^{-1}= \left\{ s^{-1}  \mid  s \in S \right\} $.
+\end{prop}
 	\begin{proof}
 		Per definizione
 		\[
@@ -594,7 +595,6 @@ Questa mappa \`e suriettiva per costruzione, quindi \`e biettiva per questioni d
 
 		Allo stesso tempo, $X$ \`e evidentemente un sottogruppo di $G$ e contiene $S$ per costruzione, quindi $X \supset \langle S \rangle$, da cui la tesi.
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[Commutatore]
 	Sia $G$ un gruppo; dati $g,h \in G$, il loro \textit{commutatore} \`e definito come
@@ -621,6 +621,7 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 		\item $G'$ \`e caratteristico in $G$;
 		\item dato $H \lhd G$, se $G / H$ \`e abeliano, allora $G' \subset H$.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		La (a) \`e immediata perch\'e $G' = \left\{ e \right\} \iff \forall g_1,g_2 \in G, \ [g_1,g_2] = e $, cio\`e $g_1$ e $g_2$ commutano, da cui $G$ abeliano.
 
@@ -641,9 +642,9 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 	\] 
 	da cui $H \supset G' $.
 	\end{proof}
-\end{prop}
 \begin{corollario}
 	Sia $G$ un gruppo e $G'$ il suo derivato; allora $G_\text{ab}= G / G'$ \`e sempre abeliano ed \`e chiamato \textit{abelianizzazione} di $G$, nel senso che \`e il pi\`u grande quoziente abeliano di $G$.
+\end{corollario}
 	\begin{proof}
 		Si mostra che $G / G'$ \`e sempre abeliano. 
 		Siano, quindi $gG', hG' \in G / G'$ due classi laterali; allora si osserva che
@@ -654,7 +655,6 @@ Applicando queste alla definizione di commutatore, si ottiene la seguente.
 		Allora, dalla propriet\`a (d) della precedente proposizione (\ref{propderiv}), si ha $G' \subset H =G'$, cio\`e in questo caso si ha l'inclusione nell'insieme pi\`u piccolo, ovvero proprio $G'$. 
 		Questo vuol dire che $G /G'$ \`e il quoziente con pi\`u elementi che sia abeliano perch\'e ottenuto tramite quoziente con $G'$, che \`e l'insieme pi\`u piccolo che soddisfa la propriet\`a\footnote{Per controposizione, se $G'\not\subset H\implies G/H$ non abeliano.}.
 	\end{proof}
-\end{corollario}
 \noindent \`E possibile reiterare la costruzione di $G'$ per ottenere $(G')'$ e cos\`i via. 
 Questo permette di creare la \textbf{serie derivata}, cio\`e una serie di inclusioni di ciascun derivato, della forma
 \begin{equation}
@@ -665,6 +665,7 @@ Lo studio di una serie del genere \`e utile in teoria di Galois: un gruppo, infa
 
 \begin{prop}
 	Sia $G$ un gruppo e $A$ un generico gruppo abeliano; allora $\operatorname{Hom} (G,A) \longleftrightarrow \operatorname{Hom} (G_\text{ab},A)$.
+\end{prop}
 	\begin{proof}
 		Sia $\varphi \in \operatorname{Hom} (G,A)$; per quanto detto, si sa che $G' \subseteq \operatorname{Ker} \varphi $, quindi, per il I teorema di omomorfismo e per $\pi_{G'}:G\to G / G' = G_\text{ab} $, si ha un'unica $\overline{\varphi }:G_\text{ab}\to A$ che soddisfa il seguente diagramma:
 		\[
@@ -679,7 +680,6 @@ G_\text{ab}
 		\] 
 		Viceversa, dato un omomorfismo $\overline{\varphi }:G_\text{ab}\to A$, per il I teorema di omomorfismo, esiste un unico omomorfismo $\varphi = \overline{\varphi }\circ \pi_{G'} $ che fa commutare lo stesso diagramma, da cui la biezione.
 	\end{proof}
-\end{prop}
 \begin{esempio}
 Si considera il gruppo $S_3$; sicuramente $S_3'\neq \left\{ \operatorname{Id}  \right\} $ perch\'e $S_3$ non \`e abeliano; le possibilit\`a sono che $S_3' = S_3$, oppure $S_3' = \langle (123) \rangle = A_3$.
 D'altra parte, si nota che $S_3 / \langle (123) \rangle \cong \mathbb{Z}/2\mathbb{Z}$, che \`e abeliano, dunque $S_3' \subseteq \langle (123) \rangle$ e, dunque, $S_3 = A_3$.
@@ -713,11 +713,11 @@ Alla luce di questo, si ha la seguente definizione.
 \end{osservazione}
 \begin{prop}
 	Sia $F$ l'insieme delle classi di equivalenza di parole in $W'$; allora $F$ \`e un gruppo rispetto alla legge di composizione indotta $W'$.
+\end{prop}
 	\begin{proof}
 		La concatenazione di parole di $W'$ \`e associativa e la legge di composizione indotta da questa tra le parole che rappresentano una classe di equivalenza sar\`a altrettanto associativa.
 		Inoltre, la classe dell'elemento neutro $1$ \`e l'identit\`a e la classe della parola inversa di $w$ \`e l'inversa della classe di $w$.
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[Gruppo libero]
 	Si definisce \textit{gruppo libero sull'insieme} $S$ il gruppo $F$ con la composizione indotta da $W'$.
@@ -728,6 +728,7 @@ Questo si sa caratterizzare bene perch\'e, evidentemente, $F_1 \cong \mathbb{Z}$
 \begin{prop}
 	[Propriet\`a universale]
 	Sia $F_S$ il gruppo libero su un insieme $S$ e sia $G$ un gruppo; ogni applicazione tra insiemi $f: S \to G$ si estende in modo unico ad un omomorfismo di gruppi $\varphi : F_S \to G$.
+\end{prop}
 	\begin{proof} 
 Indicando con $\widetilde{x}=f(x)$, per $x \in S$, allora $\varphi $ mappa una parola di $S'$ nel corrispondente prodotto in $G$.
 
@@ -742,15 +743,14 @@ w w'=x_1\cdots x_n x'_1\cdots x'_n\longmapsto \widetilde{x}_1 \cdots \widetilde{
 il che prova che $\varphi $ \`e un omomorfismo.
 L'unicit\`a deriva dal fatto che $\varphi $ \`e univocamente determinato da come $f$ mappa gli elementi di $S$ in quelli di $G$; se, infatti, si avesse $\varphi (w) = \varphi (w')$, allora si avrebbe $f(x_i) = f(x'_i), \ \forall i$.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	[Presentazione di un gruppo]
 	Sia $G$ un gruppo generato da $n$ elementi $g_1,\ldots,g_n$ e sia $F_n$ il gruppo libero su un insieme di $n$ elementi; allora $F_n / \operatorname{Ker} \varphi  \cong G$, con $F_n \stackrel{\varphi }{\longrightarrow} G$.
+\end{prop}
 	\begin{proof}
 		Per la precedente proposizione, esiste un omomorfismo $\varphi : F_n \to G$ tale che a ciascun $x_i \in F_n$ \`e associato il relativo generatore $g_i \in G$; visto che $\left\{ g_1,\ldots,g_n \right\} \subset \operatorname{Im} \varphi < G$, allora $\operatorname{Im} \varphi = G$, essendo che $\operatorname{Im} \varphi $ contiene tutti i generatori di $G$ ed ogni loro potenza.
 		Per il I teorema di omomorfismo, allora, $F_n / \operatorname{Ker} \varphi \cong G$.
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 Il nucleo dell'omomorfismo $\varphi $ definito sopra \`e composto da tutte quelle relazioni che mappano i generatori nell'elemento neutro.
 
@@ -764,6 +764,7 @@ Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \
 	[Presentazione dei gruppi quoziente]
 	Sia $G$ un gruppo e sia $N \lhd G$. 
 	Si considera $G / N$, ottenuto tramite la proiezione $\pi : G \to G / N$, con $\pi(x) = \overline{x}=x N$, e si considera, dato un altro gruppo $G'$, $\varphi :G \to G'$ un omomorfismo tale che con $N < \operatorname{Ker} \varphi $; allora $\exists ! \overline{\varphi }: G / N \to G '$ tale che $\overline{\varphi }\circ \pi = \varphi $.
+\end{prop}
 \begin{proof}
 	Si dimostra che \`e soddisfatto il seguente diagramma:
 	\[
@@ -787,7 +788,6 @@ Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \
 
 	Per finire, si ha che $\overline{\varphi }$ \`e un omomorfismo perch\'e $\overline{\varphi }(\overline{a})\overline{\varphi }(\overline{b}) = \varphi (a)\varphi (b) = \varphi (ab) = \overline{\varphi }(\overline{ab})$, mentre l'unicit\`a deriva dal fatto che, se $\exists \overline{\psi }$ tale che $\varphi = \overline{\psi }\circ\pi$, allora $\overline{\psi }(\alpha ) = \overline{\psi }(\pi(a)) = \varphi (a) = \overline{\varphi }(\pi(a))=\overline{\varphi }(\alpha ), \ \forall \alpha $.
 \end{proof}
-\end{prop}
 \begin{teorema}\label{mitoat}
 	Siano $H, K$ due gruppi, con $H = \langle x_1,\ldots,x_n  \mid R \rangle$, cio\`e \`e generato dagli $x_i$, i quali soddisfano anche le relazioni $R=\left\{ w_1,\ldots,w_m \right\} $; allora:
 	\[
@@ -795,6 +795,7 @@ Si ha $\mathbb{Z} / n\mathbb{Z} = \langle x  \mid (x,n) = 1 \text{ e } x^n = 0 \
 			\left\{ \left\{ x_1,\ldots,x_n \right\} \stackrel{f}{\longrightarrow} K \ \Big\lvert\ f(x_1),\ldots,f(x_n)\text{ soddisfano le relazioni di } R \right\} 
 	\] 
 	dove la doppia freccia indica una biezione.
+\end{teorema}
 	\begin{proof}
 Sia \(F=\langle x_1,\dots,x_n\rangle\) il gruppo libero sui generatori \(x_1,\dots,x_n\) e sia \(N\) la chiusura normale di \(R\) in \(F\); allora, per la presentazione dei gruppi quoziente, si ha $F / N \cong H$. 
 Sia, ora:
@@ -822,7 +823,6 @@ Quindi la $n$-upla data è l'immagine di $\overline{f}$ tramite \(\Phi\).
 \end{enumerate}
 Se ne conclude che \(\Phi\) è una biezione, quindi esiste una corrispondenza biunivoca tra gli omomorfismi \(H\to K\) e le \(n\)-uple di elementi di \(K\) che soddisfano le relazioni \(R\). 
 \end{proof}
-\end{teorema}
 \begin{osservazione}
 Si nota che nella formulazione del teorema si può usare indifferentemente l'insieme delle funzioni \(f:\{x_1,\dots,x_n\}\longrightarrow K\), che mappano \(x_i\) in elementi di \(K\) che soddisfano \(R\), oppure l'insieme delle \(n\)-uple \(\{(k_1,\dots,k_n)\in K^n:k_i \text{ soddisfano } R\}\).
 Questo perché, fissato l'ordinamento dei generatori \(x_1,\dots,x_n\), esiste una biezione 
@@ -838,18 +838,18 @@ Questo perché, fissato l'ordinamento dei generatori \(x_1,\dots,x_n\), esiste u
 \end{definizione}
 \begin{prop}
 	Per $n \in \mathbb{N}$, il gruppo diedrale $D_n$ ha cardinalit\`a $\lvert D_n \rvert = 2n$.
+\end{prop}
 	\begin{proof}
 		Un'isometria \`e univocamente determinata dall'immagine di un vertice e di un lato adiacente al vertice stesso; allora, l'immagine pu\`o essere pari a $n$ possibili vertici, con due, conseguenti, possibilit\`a per il lato, da cui $2n$ possibili isometrie.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Sia $\rho $ una rotazione che sottende un lato\footnote{Cioè che manda un lato nel successivo.} e $\sigma $ una simmetria (riflessione) dell'$n$-agono regolare; allora $\rho ^n = e$, $\sigma ^2 =e$ e $\sigma \rho \sigma = \rho ^{-1} $.
+\end{prop}
 	\begin{proof}
 		Visto che $\rho $ manda un lato dell'$n$-agono regolare nella posizione del successivo, impiegher\`a $n$ iterazioni a far tornare il lato di partenza nella posizione originale; similmente, se $\sigma $ \`e una riflessione, sar\`a sufficiente riapplicarla per far tornare l'$n$-agono nella posizione originale.
 
 		Per l'ultima, si nota che, componendo una rotazione e una riflessione, si ottiene una riflessione; applicando la seconda propriet\`a, si ottiene $\sigma \rho \sigma \rho = e \Rightarrow \sigma \rho \sigma  = \rho ^{-1} $.
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 	Ponendo l'$n$-agono regolare nel piano $\mathbb{R}^2$, gli elementi di $D_n$ si possono mettere in relazione con $\mathrm{GL} _2(\mathbb{R})$, visto che si possono vedere come applicazioni lineari da $\mathbb{R}^2$ in se stesso, cio\`e possono essere rappresentate tramite matrici\footnote{Le riflessioni cos\`i definite devono essere rispetto ad un asse opportuno, cio\`e che sia un asse di simmetria per l'$n$-agono in questione. Nella matrice delle riflessioni, l'angolo $\theta $ \`e l'angolo dell'asse rispetto a cui si riflette ed \`e preso con riferimento all'asse $x$.}:
 \begin{equation*}
@@ -866,12 +866,12 @@ Essendo $\gamma$ un omomorfismo, si vede anche che $\rho $ e $\sigma $, come ele
 \end{osservazione}
 \begin{prop}\label{dnitems}
 	Tutti gli elementi di $D_n$ si scrivono come $\sigma \rho ^i$, oppure $\rho ^i$, con $i \in \left\{ 0,\ldots,n-1 \right\} $.
+\end{prop}
 	\begin{proof}
 	Sia $g \in D_n$; allora $g$ sar\`a una generica composizione di riflessioni e rotazioni del tipo $g= \rho ^{a_1} \sigma ^{b_1} \ldots \rho ^{a_k} \sigma ^{b_k} $, dove $a_i \in \mathbb{Z}$ e $b_j \in \left\{ 0,1 \right\} $. 
 	Usando le relazioni $\sigma ^2 = \rho ^n = e$, si riscalano gli esponenti per scrivere $g = \rho ^{c_1} \sigma \ldots \rho ^{c_m} \sigma $, dove si sono anche, eventualmente, uniti esponenti di rotazioni consecutive (quindi $m\le k$).
 	Ora, utilizzando la relazione $\rho \sigma =\sigma \rho ^{-1}$, \`e possibile spostare tutte le $\sigma$ verso l'estrema sinistra, cio\`e come primo termine della parola; cos\`i facendo, si vede che tale parola diventa o una potenza di $\rho $, oppure un termine del tipo $\sigma \rho ^d$, che \`e esattamente quello che si voleva dimostrare.
 			\end{proof}
-\end{prop}
 \noindent Grazie alla precedente proposizione, \`e possibile definire $\rho ^{[i]} = \rho ^i$, con $[i] \in \mathbb{Z} / n\mathbb{Z}$, visto che $\rho ^n = e$.
 
 Inoltre, se $\rho ,\sigma  \in D_n$, allora $\langle \rho ,\sigma  \rangle< D_n$; per\`o, per quanto detto finora, si ha $\lvert \langle \rho ,\sigma  \rangle \rvert = 2n$ perch\'e $\rho ^n = e= \sigma ^2 $, quindi, per ragioni di cardinalit\`a, segue che $D_n = \langle \rho ,\sigma  \rangle$.
@@ -902,6 +902,7 @@ Inoltre, i sottogruppi di $C_n$ sono noti: ne esiste uno per ogni divisore dell'
 Se, invece $H< D_n$ e $H \not < C_n$, allora $H$ contiene almeno una riflessione $\tau $.
 \begin{prop}
 	Per $H < D_n$ e $H\cap C_n \neq H$ (cio\`e $H$ contiene almeno una riflessione), si ha $H=(H \cap C_n) \bigsqcup (\tau H \cap C_n) $ ed esiste una mappa biettiva tra $(H\cap C_n)$ e $(\tau H\cap C_n)$\footnote{Per $\tau H\cap C_n$, si intende $\tau (H\cap C_n)$.}.
+\end{prop}
 	\begin{proof}
 		Si considera 
 	\[
@@ -931,7 +932,6 @@ Sia, allora
 \] 
 questa \`e biettiva perch\'e $\tau h_1=\tau h_2 \iff h_1=h_2$ e $\forall \tau h\in \tau H \cap C_n$, si ha $\psi (h)=\tau h $.
 \end{proof}
-\end{prop}
 \noindent Si osserva che, per qualche $m$, $H \cap C_n = \langle \rho ^m \rangle= \left\{ e ,\rho ^m , \rho ^{2m} ,\ldots,\rho ^{n - m}  \right\} $, con $m  \mid  n$; se $\tau  = \sigma  \rho ^i $, allora $\tau  H \cap C_n = \left\{ \sigma \rho ^i, \sigma \rho ^{i+m}, \ldots, \sigma \rho ^{i+n - m}   \right\}$ e si sa che l'unione dei due restituisce tutto $H$.
 Allora $H$ \`e composto da $m$ rotazioni e $m$ simmetrie; in particolare $H = \langle \rho ^m , \tau  \rangle\cong D_m$, quindi, se $m  \mid  n$, si hanno dei sottogruppi della forma $\mathbb{Z} / m \mathbb{Z}$ e $D_m$.
 \vspace{5pt}
@@ -939,19 +939,19 @@ Allora $H$ \`e composto da $m$ rotazioni e $m$ simmetrie; in particolare $H = \l
 \textbf{Sottogruppi normali.} Per lo studio dei sottogruppi normali, si considerano le due seguenti proposizioni.
 \begin{prop}
 	Sia $H<G$ un sottogruppo tale che $[G:H] = 2$; allora $H\lhd G$.
+\end{prop}
 	\begin{proof}
 		Si considerano gli insiemi $\left\{ H,gH \right\} $ e $\left\{ H,Hg \right\} $ delle classi laterali, rispettivamente, sinistre e destre di $H$ in $G$, con $g\not\in H$.
 		Ora, $\forall x \in H$, si ha direttamente $xH=H=Hx$; si mostra che lo stesso vale anche per elementi non in $H$.
 		Se $y \in G \setminus H$, allora $yH\neq H \neq Hy$; visto che entrambe le classi laterali formano una partizione di $G$, allora deve valere $yH = G \setminus H = Hy$, pertanto $yH=Hy, \ \forall y \in G \setminus H$.
 		Si conclude che $gH=Hg, \ \forall g \in G$, quindi $H\lhd G$.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Siano $H \lhd G$ e $K < H$, con $K$ caratteristico in $H$; allora $K \lhd G$.
+\end{prop} 
 	\begin{proof}
 		Si considera, per $g \in G$, $\phi _g : G\to G$ con $\phi_g(x) = gxg^{-1}$; per definizione, si ha $\phi _g (H) = H$, quindi $\phi_g|_{H} $ \`e un automorfismo e, allora, $\phi _g|_{H} (K) = K, \ \forall g \in G \Rightarrow gKg^{-1} = K$, pertanto $K \lhd G$.
 	\end{proof}
-\end{prop} 
 
 \noindent L'indice di $C_n$ in $D_n$ \`e $2$, quindi $C_n \lhd D_n$ per la prima proposizione.
 Per $G$ ciclico di ordine $n$, esiste un unico $H $, con $\lvert H \rvert =m  \mid n$; visto che ogni sottogruppo di un gruppo ciclico \`e caratteristico, allora, nel caso di $D_n$, ogni sottogruppo di $\langle \rho  \rangle\cong C_n$ \`e caratteristico, quindi normale.
@@ -1000,6 +1000,7 @@ Per quanto visto precedentemente, i sottogruppi normali sono i sottogruppi di $C
 Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \langle \rho ^m \rangle \rvert = 2n/(n / m) = 2m$.
 \begin{prop}
 	Si ha $D_n / \langle \rho ^m \rangle\cong D _{m} $.
+\end{prop}
 	\begin{proof}
 		Si considera 
 		\[
@@ -1023,7 +1024,6 @@ Sia, $\langle \rho ^m \rangle< C_n$, con $ m \mid n$, per cui $\lvert D_n / \lan
 		quindi \`e effettivamente un omomorfismo.
 		Si nota che questo \`e suriettivo e il suo nucleo \`e $\langle \rho ^m \rangle$, quindi si ha la tesi per il I teorema di omomorfismo.
 	\end{proof}
-\end{prop}
 \noindent Nel caso di $n$ pari, poi, vi sono gli altri due sottogruppi citati sopra, che hanno indice $2$ e, quindi, i cui quozienti sono isomorfi a $\mathbb{Z} / 2\mathbb{Z}$.
 
 \vspace{5pt}
@@ -1066,6 +1066,7 @@ Inoltre, \`e biettiva per costruzione, quindi si ha $\lvert \operatorname{Aut} (
 Ogni $k$-ciclo (ciclo di lunghezza $k$) ha $k$ scritture diverse, tutte equivalenti fra loro, dovute alla possibilit\`a di scegliere uno fra i $k$ elementi del ciclo come primo elemento; dopo questa scelta, tutti gli altri sono univocamente determinati.
 \begin{prop}
 	I cicli di una permutazione di $S_n$ sono orbite degli elementi di $X = \left\{ 1,\ldots,n \right\} $ formate dall'azione indotta da tale permutazione.
+\end{prop}
 	\begin{proof}
 		Sia $\sigma \in S_n$ e sia $\langle \sigma  \rangle$ il sottogruppo ciclico generato da $\sigma $.
 		Si considera l'azione di $\langle \sigma  \rangle$ su $X$ secondo la legge $\sigma ^k \cdot x = \sigma ^k (x)$; l'orbita di ciascun elemento di $X$ \`e della forma
@@ -1089,13 +1090,12 @@ Ogni $k$-ciclo (ciclo di lunghezza $k$) ha $k$ scritture diverse, tutte equivale
 		che \`e un $m$-ciclo. Se $O_1,\ldots,O_r$ sono le orbite non banali (cio\`e di lunghezza $>1$), $\sigma $ agisce su ciascuna $O_i$ come un $m_i$-ciclo, chiamato $c_i$ per ogni orbita, con $\lvert O_i \rvert = m_i$, mentre su quelle banali agisce come l'identit\`a.
 Visto che le orbite partizionano $X$, ciascun ciclo $c_i$ \`e disgiunto dagli altri e la loro composizione restituisce proprio $\sigma $, visto che per definizione sono la restrizione di $\sigma $ a partizioni di $X$.
 	\end{proof}
-\end{prop}
 \begin{corollario}\label{sncic}
 	Il gruppo $S_n$ \`e generato dai cicli.
+\end{corollario}
 	\begin{proof}
 		Il teorema precedente mostra come ciascuna permutazione $\sigma \in S_n$ si possa scrivere come composizione di un numero finito di cicli disgiunti, pertanto combinando l'insieme di tutti i possibili cicli, si ottiene $S_n$.
 	\end{proof}
-\end{corollario}
 
 \textbf{Numero di k-cicli di $\mathbf{S_n}$.} Si cerca quanti $k$-cicli, con $k\le n$, sono contenuti in $S_n$.
 Visto che un ciclo \`e una sequenza di $k$ numeri, il problema si riduce a trovare quanti $k$ numeri possono essere estratti da un insieme di $n$ numeri, che si sa essere dato da $\binom{n}{k}$.
@@ -1143,6 +1143,7 @@ quindi $\operatorname{ord}(\sigma _i)  \mid m, \ \forall i$ e, quindi, $m=\opera
 \end{definizione}
 \begin{prop}
 	Tutte le permutazioni di $S_n$ si scrivono come composizione di trasposizioni. 
+\end{prop}
 	\begin{proof}
 		Per il corollario \ref{sncic}, \`e sufficiente mostrare che vale per un $k$-ciclo generico. 
 		A questo proposito, si osserva che:
@@ -1150,7 +1151,6 @@ quindi $\operatorname{ord}(\sigma _i)  \mid m, \ \forall i$ e, quindi, $m=\opera
 			(1,\ldots,k)= (1,k) (1,k-1)\cdots (1,2)
 		\] 
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 La decomposizione in trasposizioni non \`e unica: per esempio:
 \[
@@ -1170,6 +1170,7 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 	\] 
 	\`e un omomorfismo di gruppi. 
 	Inoltre, se $\sigma $ \`e una trasposizione, si ha $\operatorname{sgn} \sigma = -1$.
+\end{prop}
 	\begin{proof}
 		\`E un omomorfismo perch\'e:
 		\[
@@ -1207,7 +1208,6 @@ La decomposizione in trasposizioni non \`e unica: per esempio:
 		\] 
 		pertanto, nella produttoria, si ha un unico fattore pari a $-1$, il che implica che $\operatorname{sgn} \sigma =-1$.
 	\end{proof}
-\end{prop}
 \begin{corollario}
 	La mappa $\operatorname{sgn} \sigma $ restituisce la parit\`a di trasposizioni presenti in $\sigma $, quando decomposta in prodotto di trasposizioni.
 \end{corollario}
@@ -1227,6 +1227,7 @@ Infine, visto che $A_n$ ha indice $2$ in $S_n$, se ne conclude che $A_ n \lhd S_
 
 \begin{teorema}
 	Due permutazioni di $S_n$ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti.
+\end{teorema}
 	\begin{proof}
 		Si divide la dimostrazione nelle due implicazioni.
 		\begin{itemize}
@@ -1254,7 +1255,6 @@ Infine, visto che $A_n$ ha indice $2$ in $S_n$, se ne conclude che $A_ n \lhd S_
 				con $\tau (x_{ij} ) = y_{ij} $, quindi vale $\tau \sigma \tau ^{-1}=\rho $.
 		\end{itemize}
 	\end{proof}
-\end{teorema}
 
 \textbf{Centralizzatore di una permutazione.} Quanto al centralizzatore di $\sigma \in S_n$, si sa, dal teorema orbita-stabilizzatore, che:
 \begin{equation}
@@ -1274,6 +1274,7 @@ e sia $K = \langle (1234),(56) \rangle$; allora $H,K \lhd Z(\sigma )$, $H\cap K 
 \[
 Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z})
 \] 
+\end{esempio}
 \begin{proof}
 	Si ha $H <Z(\sigma )$ perch\'e ogni permutazione di $H$ modifica solo l'insieme $\left\{ 7,8,9,10 \right\} $, quindi commuta con $\sigma $. Inoltre, $H \cong S_4 \Rightarrow \lvert H \rvert  = 4!$.
 	Si ha $K<Z(\sigma )$ perch\'e ogni elemento di $K$ \`e della forma $(1234)^j(56)^k$, quindi commuta sempre con $\sigma $.
@@ -1285,12 +1286,8 @@ Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times \mat
 	Evidentemente la loro intersezione \`e banale perch\'e le permutazioni di $H$ agiscono esclusivamente su $\left\{ 7,8,9,10 \right\} $, mentre quelle di $K$ su $\left\{ 1,2,3,4,5,6 \right\} $, quindi deve essere $H\cap K = \left\{ e \right\} $.
 
 	Visto che $H,K < Z(\sigma )$ e $\lvert HK \rvert = \lvert H \rvert \lvert K \rvert =192 $ (essendo $\lvert H\cap K \rvert = 1$), si ha $HK = Z(\sigma )$.
-	Sempre perch\'e $H\cap K$ \`e banale, si ha $HK \cong H \times K$, da cui
-	\[
-	Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times  \mathbb{Z}/2\mathbb{Z})
-	\] 
+	Sempre perch\'e $H\cap K$ \`e banale, si ha $HK \cong H \times K$, da cui $Z(\sigma ) \cong H \times K \cong S_4 \times (\mathbb{Z}/4\mathbb{Z} \times  \mathbb{Z}/2\mathbb{Z})$.
 \end{proof}
-\end{esempio}
 
 \subsection{Gruppi di Sylow e prodotti diretti}
 \begin{definizione}
@@ -1303,18 +1300,18 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 \end{esempio}
 \begin{lemma}\label{lemprec161}
 	Siano $H,K\lhd G$, con $H \cap K = \left\{ e \right\} $; allora $hk = kh, \ \forall h\in H, \ \forall k \in K$.
+\end{lemma}
 	\begin{proof}
 		Si ha $hkh^{-1}k^{-1}= (hkh^{-1})k^{-1}$; visto che $K$ \`e normale, allora $hkh^{-1}\in K$, quindi $hkh^{-1}k^{-1}\in K$.
 		Allo stesso tempo, $hkh^{-1}k^{-1}= h(kh^{-1}k^{-1})$ e, siccome anche $H$ \`e normale, si ha $kh^{-1}k^{-1}\Rightarrow hkh^{-1}k^{-1}\in H$.
 		Allora, visto che $hkh^{-1}k^{-1}\in H\cap K$ e visto che $H\cap K = \left\{ e \right\} $ per assunzione, si ha $hkh^{-1}k^{-1}=e \Rightarrow hk=kh$.
 	\end{proof}
-\end{lemma}
 \begin{teorema}[Teorema di decomposizione diretta]\label{t171}
 	Sia $G$ un gruppo e siano $H,K \lhd G$; se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G \cong H \times  K$.
+\end{teorema}
 	\begin{proof}
 		Sia $\phi :H \times  K \to G$ tale che $\phi ((h,k))=hk$; allora $\phi $ \`e un omomorfismo per il lemma precedente (\ref{lemprec161}), \`e iniettiva per la seconda ipotesi ed \`e suriettiva per la prima.
 	\end{proof}
-\end{teorema}
 \begin{corollario}
 	In un prodotto diretto, i fattori commutano fra loro.
 \end{corollario}	
@@ -1346,6 +1343,7 @@ Tuttavia, i $p$-Sylow non sono unici; per esempio, i $\langle \rho ^i \sigma \ra
 	\end{array}
 	\] 
 	Allora $\phi $ \`e un omomorfismo iniettivo, mentre \`e suriettivo se e solo se $H \times \left\{ e_K \right\} $ e $\left\{ e_H \right\} \times K$ sono caratteristici in $H\times K$.
+\end{teorema}
 	\begin{proof}
 		Intanto, $\gamma$ \`e ben definita perch\'e $\forall (f , g) \in \operatorname{Aut} (H ) \times \operatorname{Aut}(K) $, si ha $f(h) \in H, \ \forall h \in H$ e $g(k) \in K, \ \forall k \in K$, quindi $\gamma((h,k)) = (f(h),g(k)) \in H \times  K$.
 		
@@ -1399,15 +1397,14 @@ Ora si dimostra che $\phi $ \`e suriettivo se e solo se $H \times \left\{ e_K \r
 	perch\'e $f$ \`e un automorfismo di $H$ e $\left\{ e_K \right\} \stackrel{g}{\longmapsto} \left\{ e_K \right\} $ perch\'e $g$ \`e un automorfismo di $K$.
 \end{itemize}
 	\end{proof}
-\end{teorema}
 \begin{prop}
 	Sia $G = H\times K$, con $\lvert H \rvert = n$ e $\lvert K \rvert = m$; se $\operatorname{gcd}(n,m) =1$, allora $H$ e $K$ sono caratteristici in $G$.
+\end{prop}
 	\begin{proof}
 		Sia $f \in \operatorname{Aut} (H \times K)$, con $f(h,e_K) = (h',k')$; visto che $\operatorname{ord}((h,e_K)) = \operatorname{ord}(h)  \mid n$, deve essere $\operatorname{ord}((h',k')) = \operatorname{mcm} (\operatorname{ord}(h') ,\operatorname{ord}(k') )  \mid n$, visto che $f$ \`e automorfismo e, in particolare $\operatorname{ord}(k')  \mid n$.
 		Per ipotesi, deve essere $\operatorname{ord}(k')  \mid m $, ma, visto che $\operatorname{gcd}(n,m) =1 $, deve essere $k' = e_K$, da cui $f(H \times \left\{ e_K \right\} ) \subset H \times \left\{ e_K \right\} $.
 		Lo stesso procedimento si pu\`o applicare a $f(e_H, k)$.
 	\end{proof}
-\end{prop}
 \subsection{Prodotto semidiretto}
 \begin{definizione}
 	[Prodotto semidiretto]
@@ -1419,6 +1416,7 @@ Ora si dimostra che $\phi $ \`e suriettivo se e solo se $H \times \left\{ e_K \r
 \end{definizione}
 \begin{prop}
 	Dati due gruppi $H,K$; il loro prodotto semidiretto $H \rtimes _\gamma K$ \`e un gruppo.
+\end{prop}
 	\begin{proof}
 		La chiusura dell'operazione deriva direttamente dal fatto che sono due gruppi.
 		Tale operazione \`e associativa:
@@ -1438,7 +1436,6 @@ Infine, l'elemento inverso \`e dato da\footnote{Questo si pu\`o ottenere imponen
 (a,b) \big(\gamma_{b^{-1}} (a^{-1}), b^{-1}\big) = \big(a \gamma_{b} \circ \gamma_{b^{-1}}(a^{-1}) , e_K \big)=(a a^{-1},e_K) = (e_H,e_K)
 \] 
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 Il prodotto semidiretto \`e un caso particolare di prodotto diretto: scegliendo $\gamma(K) = \operatorname{Id} _H \in \operatorname{Aut} (H)$, si ha, infatti, $(h,k)(h',k') = (h\operatorname{Id}_H(h'),kk') = (hh',k k'), \ \forall k \in K$.
 \end{osservazione}
@@ -1451,6 +1448,7 @@ In sostanza, $\mathbb{Z}/7\mathbb{Z}\rtimes _\gamma \mathbb{Z}/ 7\mathbb{Z} = \m
 \begin{prop}
 	Siano $H,K$ due gruppi; si considera il loro prodotto semidiretto $H\rtimes _\gamma K$. 
 Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H \right\} \times K$, per i quali si sa che $\overline{K},\overline{H}\lhd H \times K$, vale $\overline{H}\lhd H \rtimes _\gamma K$ sempre e $\overline{K}\lhd H \rtimes _\gamma K \iff $ il prodotto \`e diretto.
+\end{prop}
 \begin{proof}
 	Si ha sempre $\overline{H}\lhd H\rtimes _\gamma K$ perch\'e $\pi_K : H \rtimes _\gamma K \to K$ tale che $\pi_K((h,k)) = k$ \`e un omomorfismo e $\overline{H} = \operatorname{Ker} \pi_K$.
 	
@@ -1463,13 +1461,13 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 
 	Per l'implicazione inversa, cio\`e assumendo che il prodotto sia diretto, \`e possibile seguire la stessa dimostrazione fatta per $\overline{H}$.
 \end{proof}
-\end{prop}
 \begin{osservazione}
 	Sia $G$ un gruppo e $H,K < G$, con $H \lhd G$; allora $HK < G$.
 \end{osservazione}
 \begin{teorema}
 	[Teorema di decomposizione semidiretta]\label{scth}
 	Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$ due sottogruppi; se $HK = G$ e $H \cap K = \left\{ e_G \right\} $, allora $G \cong H \rtimes _\gamma K$, con $\gamma: K \to \operatorname{Aut} (H)$ e $\gamma(k) = k hk^{-1}$.
+\end{teorema}
 	\begin{proof}
 		Prima si dimostra la buona definizione del prodotto semidiretto definito nella tesi.
 		\begin{itemize}
@@ -1510,7 +1508,6 @@ Dati $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K}= \left\{ e_H
 		\end{itemize}
 	Allora $F: H\rtimes _\gamma K \to G$ \`e un isomorfismo di gruppi, per cui $G \cong H \rtimes _\gamma K$.
 	\end{proof}
-\end{teorema}
 \begin{esercizio}
 Dimostrare che $D_n \cong \mathbb{Z}/ n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/ 2\mathbb{Z}$.
 \end{esercizio}
@@ -1581,6 +1578,7 @@ Nella prima eventualit\`a, invece, \`e l'ordine della classe a rimanere invariat
 \end{osservazione}
 \begin{lemma}
 	Sia $H < S_n$; allora $ \lvert H \cap  A_n \rvert = |H|$, se $H \subset A_n$, altrimenti $\lvert H \cap A_n \rvert = H / 2$.
+\end{lemma}
 	\begin{proof}
 		Si considera il seguente diagramma:
 	\[
@@ -1596,7 +1594,6 @@ Ora, considerando la mappa $\gamma : H \to S_n / A_n \cong \left\{ \pm 1 \right\
 Se, invece, $H \not\subset A_n$, significa che $H$ contiene almeno una permutazione dispari, per cui il quoziente $H / A_n$ ha indice $2$ e $\gamma$ \`e un omomorfismo suriettivo, pertanto $H / \operatorname{Ker} \gamma \cong \left\{ \pm 1 \right\} $.
 Si osserva che $\operatorname{Ker} \gamma = H \cap A_n$, quindi: nel primo caso, si ottiene $H\cap A_n= H$, quindi $\lvert H\cap A_n \rvert = \lvert H \rvert $; nel secondo caso, si ha $H / H\cap A_n \cong \left\{ \pm 1 \right\} $, quindi $\lvert H \rvert = 2 \lvert H \cap A_n \rvert $.
 	\end{proof}
-\end{lemma}
 \begin{esercizio}
 I $3$-cicli sono tutti coniugati in $A_n$, con $n\ge 5$.
 \end{esercizio}
@@ -1622,10 +1619,15 @@ $A_4$ non contiene sottogruppi di ordine $6$.
 \end{esercizio}
 \begin{svolgimento}
 	Poniamo caso che $\exists H < A_4$ con $|H| = 6$, allora $H \lhd A_4$\footnote{Si avrebbe $[A_4:H] = 2$, quindi risulterebbe $H\lhd A_4$.} e $\exists \sigma  \in H$ con $\operatorname{ord}(\sigma ) =2$ e $\sigma = (a,b)(c,d)$. 
-	Si nota che $\operatorname{Cl}_{S_4} (\sigma ) = \left\{ (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\} = \operatorname{Cl} _{A_4} (\sigma )$; inoltre, $K = \left\{e, (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\}\lhd S_4$, ma se $H$ \`e normale e $\sigma  \in H$, allora $\operatorname{Cl} _{A_4} (\sigma ) \subset H$, quindi $K \lhd H$, il che \`e assurdo perch\'e $\lvert K \rvert =4  \nmid 6 = \lvert H \rvert $.
+	Si nota che $\operatorname{Cl}_{S_4} (\sigma ) = \left\{ (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\} = \operatorname{Cl} _{A_4} (\sigma )$; inoltre,
+\[
+K = \left\{e, (1,2)(3,4),(1,3)(2,4),(1,4)(2,3) \right\}\lhd S_4
+\] 
+	ma se $H$ \`e normale e $\sigma  \in H$, allora $\operatorname{Cl} _{A_4} (\sigma ) \subset H$, quindi $K \lhd H$, il che \`e assurdo perch\'e $\lvert K \rvert =4  \nmid 6 = \lvert H \rvert $.
 \end{svolgimento}
 \begin{prop}
 	Per ogni $n\ge 5$, $A_n$ \`e semplice, cio\`e non ha sottogruppi normali non-banali.
+\end{prop}
 	\begin{proof}
 Si procede per induzione su $n$.
 Per il passo base, si considera $n=5$. 
@@ -1649,7 +1651,6 @@ Si considera, ora, $\forall i, \ r_i=2$, quindi $\sigma = (i,j)(k,l)\ldots$ \`e 
 
 Si conclude che $N$ \`e banale, pertanto $A_n$ \`e semplice.
 	\end{proof}
-\end{prop}
 
 \textbf{Sottogruppi normali di $\mathbf{S_n} $.} Per $n=4$, si hanno $A_4$ e $\langle (1,2)(3,4),(1,3)(2,4) \rangle$.
 Per $n=5$, $S_n$ ha un solo sottogruppo normale, cio\`e $A_5$; infatti, se $H\lhd S_n$ e $|H|\nmid |A_n|$, allora $H\cap A_n \lhd A_n$, per\`o $A_n$ \`e semplice, quindi $H\cap A_n = \left\{ e \right\} $.
@@ -1670,6 +1671,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 \end{definizione}
 \begin{prop}
 	Dato $G$ abeliano e finito; allora $G(p) < G$ \`e un $p$-sottogruppo e $G(p) \operatorname{char} G$ (cio\`e \`e un sottogruppo caratteristico).
+\end{prop}
 	\begin{proof}
 		$G(p) < G$ perch\'e se $x,y \in G : \operatorname{ord}(x) =p^m,\  \operatorname{ord}(y) =p^n$, con $m,n \in \mathbb{N}$, allora $\operatorname{ord}(xy)  \mid [\operatorname{ord}(x) , \operatorname{ord}(y) ]$, il che vuol dire che $\operatorname{ord}(xy) = p^s$, per qualche $s \in  \mathbb{N}$.
 		Inoltre, l'ordine del prodotto di qualsiasi coppia di elementi di $G$ \`e sempre finito, quindi sempre nella forma di potenze di $p$, perch\'e $\lvert G \rvert < \infty$ per assunzione.
@@ -1678,13 +1680,13 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 
 		Infine, $G(p)$ \`e caratteristico perch\'e gli automorfismi conservano l'ordine degli elementi, pertanto $G(p)$ viene mandato in se stesso.
 	\end{proof}
-\end{prop}
 \begin{teorema}\label{corts1}
 	Sia $G$ un gruppo abeliano con $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ tutti primi e $p_i\neq p_j, \ \forall i\neq j$; allora
 	\[
 	G \cong G(p_1) \times \ldots G(p_s)
 	\] 
 	Inoltre, la decomposizione di $G$ come prodotto di $p$-gruppi tra loro coprimi \`e unica.
+\end{teorema}
 	\begin{proof}
 		Per l'esistenza, si considera $\lvert G \rvert =n$, con $n= p_1^{e_1}\cdots p_s^{e_s}$; si procede per induzione su $s$.
 
@@ -1734,9 +1736,9 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		\] 
 		visto che, per coprimalit\`a tra gli altri fattori, $\lvert G(p_i) \rvert  $ divide $ \lvert H_i \rvert $ e viceversa. Quindi $H_i = G(p_i), \ \forall i = 1,\ldots,s$.
 \end{proof}
-\end{teorema}
 \begin{lemma}
 	Sia $G$ un $p$-gruppo e sia $x_1\in G$ un elemento di ordine massimo; preso $\overline{x} \in G / \langle x_1 \rangle$, si trova $y \in \pi^{-1}_{\langle x_1 \rangle} (\overline{x})$ tale che $\operatorname{ord}_G(y)= \operatorname{ord}_{G/\langle x_1 \rangle} ( \overline{x})  $, cio\`e preso un elemento nel quoziente, se ne trova sempre un nella sua fibra con lo stesso ordine.
+\end{lemma}
 	\begin{proof}
 		Sia, allora, $\overline{x}\in G / \langle x_1 \rangle$, quindi della forma $\overline{x}= x + \langle x_1 \rangle$; si vuole calcolare $\pi^{-1}_{\langle x_1 \rangle} (\overline{x}) = \pi^{-1}_{\langle x_1 \rangle} (x+\langle x_1 \rangle)$, per cui $y  \in \pi^{-1}(\overline{x})$ sar\`a della forma $y = x + ax_1$.
 		Visto che $x$ e $y$ sono nella stessa classe laterale di $G / \langle x_1 \rangle$, allora $\pi_{\langle x_1 \rangle} (y) = \pi_{\langle x_1 \rangle} (x)= \overline{x}$.
@@ -1762,12 +1764,12 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		\] 
 		perci\`o $y= x - b_1 x_1 \in G$ realizza la richiesta.
 	\end{proof}
-\end{lemma}
 \begin{teorema}\label{corts2}
 	Sia $G$ un $p$-gruppo abeliano; allora esistono e sono univocamente determinati $r_1,\ldots,r_t \in \mathbb{N}$, con $r_1\ge r_2\ge \ldots\ge r_t$, tali che:
 	\[
 	G \cong \mathbb{Z}/p^{r_1}\mathbb{Z} \times  \ldots \times \mathbb{Z} / p^{r_t}\mathbb{Z}
 	\] 
+\end{teorema}
 	\begin{proof}
 		Sia, quindi, $\lvert G \rvert =p^{n}$; si dimostra per induzione su $n$.
 		Se $n=1$, allora $\lvert G \rvert = p$, per cui $G \cong \mathbb{Z} / p\mathbb{Z}$ e la tesi \`e verificata.
@@ -1854,7 +1856,6 @@ r_1-1=k_1-1, \ldots, r_t - 1 = k_t - 1 \iff r_1=k_1,\ldots,r_t = k_t
 \] 
 e quindi i singoli fattori hanno stesse potenze.
 	\end{proof}
-\end{teorema}
 \begin{teorema}
 	[Teorema di struttura]
 	Sia $G$ un gruppo abeliano finito; allora $G$ \`e prodotto diretto di gruppi ciclici, cio\`e:
@@ -1862,6 +1863,7 @@ e quindi i singoli fattori hanno stesse potenze.
 	G \cong \mathbb{Z}/n_1\mathbb{Z} \times  \ldots \times \mathbb{Z} / n_s \mathbb{Z}
 	\] 
 	Questa scrittura, inoltre, \`e unica se $n_{i+1}  \mid n_i, \ \forall i \in \left\{ 1, \ldots, s-1 \right\} $.
+\end{teorema}
 	\begin{proof}
 		Si inizia col dimostrare l'esistenza. 
 		Facendo uso del teorema \ref{corts1}, allora $G \cong G(p_1) \times \ldots \times G(p_s)$. 
@@ -1882,7 +1884,6 @@ e quindi i singoli fattori hanno stesse potenze.
 
 	Infine, l'unicit\`a deriva direttamente dai teoremi \ref{corts1} e \ref{corts2}; infatti, se ci fossero due decomposizioni di $G$ diverse con ordini che si dividono a catena, ripercorrendo gli isomorfismi, si ritroverebbero due decomposizioni diverse per $G(p)$ (o per $G$ come prodotto di $p$-componenti).
 	\end{proof}
-\end{teorema}
 \begin{esempio}
 	Sia 
 	\[
@@ -1929,6 +1930,7 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 		\item \textit{coniugio}: due qualsiasi $p$-Sylow sono coniugati;
 		\item \textit{numero}: indicando con $n_p$ il numero di $p$-Sylow di $G$, si ha che $n_p  \mid |G|$ e $n_p \equiv 1 \pmod{p} $.
 	\end{enumerate}
+\end{teorema}
 	\begin{proof}
 		Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
@@ -1985,12 +1987,14 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 
 				Per finire, si nota che
 				\[
-				\lvert Y \rvert =n_p = \sum_{H \in R}^{} \lvert \operatorname{Orb} (H) \rvert = \operatorname{Orb} (S) + \sum_{H \in R \setminus\left\{ S \right\} }^{} \operatorname{Orb} (H) = 1 + \sum_{H \in R \setminus\left\{ S \right\} }^{} \frac{\lvert S \rvert }{\lvert \operatorname{Stab} (H) \rvert }
+					\begin{split}
+						\lvert Y \rvert &=n_p = \sum_{H \in R}^{} \lvert \operatorname{Orb} (H) \rvert = \operatorname{Orb} (S) + \sum_{H \in R \setminus\left\{ S \right\} }^{} \operatorname{Orb} (H) \\
+								&= 1 + \sum_{H \in R \setminus\left\{ S \right\} }^{} \frac{\lvert S \rvert }{\lvert \operatorname{Stab} (H) \rvert }
+					\end{split}
 				\] 
 				da cui $n_p = 1 + \ell p^k$, che implica $n_p \equiv 1 \pmod{p} $, con $R$ insieme dei rappresentanti delle orbite.
 		\end{enumerate}
 	\end{proof}
-\end{teorema}
 \begin{osservazione}
 Sia $G$ un gruppo tale che $\lvert G \rvert =p^n m $, con $(p,m)= 1$ e $p$ primo. L'ultimo teorema di Sylow afferma che $n_p  \mid \lvert G \rvert$, oltre che $n_p \equiv 1 \pmod{p} $.
 Il fatto che $n_p  \mid |G|$, in realt\`a, si pu\`o migliorare notando che $n_p  \mid  m$ perch\'e se $S$ \`e un $p$-Sylow (quindi $\lvert S \rvert =p^n$), allora il $S < N_G(S)$\footnote{Questo perch\'e ogni elemento di $S$ \`e tale da normalizzare $S$, visto che il gruppo \`e chiuso sotto relativa operazione.} e, quindi, $\lvert S \rvert = p^n  \mid \lvert N_G(S) \rvert \implies \lvert N_G(S) \rvert = p^n q$.
@@ -2131,6 +2135,7 @@ Si vede che $\langle i \rangle, \langle j \rangle\lhd Q_8$, visto che hanno indi
 \begin{prop}
 	
 Si ha $\langle i^2 \rangle,\langle j^2 \rangle \lhd Q_8$.
+\end{prop}
 \begin{proof}
 Dalla presentazione del gruppo, si ha $ij=j^3i=j^{-1}i$, ossia $j^{-1}ij=j^{-2}i = j^2 i = i^3=i^{-1}$, quindi $j^{-1}ij = i^{-1}$.
 Ora si pu\`o osservare che:
@@ -2140,16 +2145,16 @@ j^{-1}i^2 j = (j^{-1}ij)^2 = i^{-2}=i^2
 cio\`e $i^2$ commuta con i generatori $i$ e $j$, quindi commuta con tutto $Q_8$, dunque \`e normale.
 Dalla relazione $i^2 = j^2$ segue che $\langle i^2 \rangle=\langle j^2 \rangle$, quindi si ha anche $\langle j^2 \rangle$.
 \end{proof}
-\end{prop}
 \begin{lemma}
 	Un sottogruppo $H<G$ di ordine $2$ \`e normale se e solo se \`e un sottogruppo di $Z(G)$.
+\end{lemma}
 	\begin{proof}
 		Dato $H = \left\{ e , h \right\} \lhd G$, allora $g H g^{-1}= H , \ \forall g \in G$ per assunzione. 
 		Questo, per\`o, \`e vero se e solo se $ghg^{-1}\in H \iff ghg^{-1}=h \iff gh=hg, \ \forall g \in G$, quindi $h \in Z(G)$, pertanto $H \le  Z(G)$.
 	\end{proof}
-\end{lemma}
 \begin{prop}
 	Si ha $\langle i^2 \rangle = Z(Q_8)$.
+\end{prop}
 	\begin{proof}
 		Per quanto detto nel lemma precedente, si deve avere $\langle i^2 \rangle \le Z(Q_8)$; inoltre, $Q_8$ \`e un $p$-gruppo non abeliano, essendo $\lvert Q_8 \rvert =2^3$, quindi sicuramente non pu\`o avere centro banale.
 		Le altre possibilit\`a sono:
@@ -2160,7 +2165,6 @@ Dalla relazione $i^2 = j^2$ segue che $\langle i^2 \rangle=\langle j^2 \rangle$,
 		\end{itemize}
 		L'unica possibilit\`a \`e che $Z(Q_8)$ abbia ordine $2$, quindi coincide con $\langle i ^2\rangle = \langle j^2 \rangle$.
 	\end{proof}
-\end{prop}
 
 \textbf{Prodotto in $\mathbf{Q_8} $.} Convenzionalmente, si definisce $ij =k$; in questo modo, gli elementi del gruppo si possono riscrivere come:
 \[
@@ -2268,6 +2272,7 @@ Prima di dimostrare questo, si osserva che se uno di questi due \`e normale, sia
 Ora si dimostra la proposizione anticipata, che far\`a riferimento al caso di gruppi non abeliani perch\'e il caso abeliano \`e ovvio: $\mathbb{Z}/15\mathbb{Z}$ \`e un sottogruppo di $G$.
 \begin{prop}
 	Sia $G$ un gruppo di ordine $30$ non abeliano; allora $G$ contiene un sottogruppo di ordine $15$.
+\end{prop}
 	\begin{proof}
 		\`E sufficiente mostrare che uno fra $P_3$ o $P_5$ \`e normale perch\'e il discorso fatto sopra risulti coerente.
 		Per l'ultimo teorema di Sylow, si sa che $n_3 \equiv 1 \pmod{3} $ e $n_3  \mid 10$, quindi $n_3 \in \left\{ 1,10 \right\} $, mentre $n_5 \equiv 1 \pmod{5} $ e $n_5  \mid 6$, quindi $n_5 \in \left\{ 1,6 \right\} $.
@@ -2275,7 +2280,6 @@ Ora si dimostra la proposizione anticipata, che far\`a riferimento al caso di gr
 		Ammettendo che entrambi siano maggiori di $1$, si avrebbero un totale di dieci $3$-Sylow e sei $5$-Sylow, per un totale di $45$ elementi distinti, un numero ben maggiore dell'ordine di $G$.
 		Questo significa che almeno uno dei due deve essere normale, da cui deriva la tesi.
 	\end{proof}
-\end{prop}
 \noindent Si nota, inoltre, che questo gruppo di ordine $15$ \`e un gruppo di ordine $pq$, con $p \nmid q-1$, pertanto \`e isomorfo a $\mathbb{Z}/15\mathbb{Z}$ ed \`e ciclico; per altro, avendo indice $2$, \`e anche normale.
 
 Per Cauchy, $G$ contiene un elemento di ordine $2$ che \`e, dunque, isomorfo a $\mathbb{Z}/2\mathbb{Z}$; questi due sottogruppi soddisfano le ipotesi di decomposizione semidiretta, permettendo di scrivere che:
@@ -2323,6 +2327,7 @@ Riassumendo, i gruppi di ordine $30$ sono i seguenti:
 
 \begin{prop}[Quadrato di permutazioni]\label{qperm}
 	Una permutazione \`e un quadrato se e solo se i cicli di lunghezza pari compaiono a coppie.
+\end{prop}
 	\begin{proof}
 		Si nota che se $\eta$ \`e un $k$-ciclo, con $k$ dispari, allora si pu\`o scrivere
 		\[
@@ -2337,7 +2342,6 @@ Riassumendo, i gruppi di ordine $30$ sono i seguenti:
 
 	A partire da questi risultati, il caso di una permutazione generica $x^2= (\eta_1 \ \ldots\ \eta_s)^2=\eta_1^2 \cdots \eta_s^2$ \`e dimostrato di conseguenza: la decomposizione di questo quadrato sar\`a formata da cicli di lunghezza dispari e da coppie di cicli di lunghezza pari per quanto detto sopra.
 \end{proof}
-\end{prop}
 \begin{esempio}
 Si considera il caso di una coppia di $3$-cicli in $S_6$; questa si pu\`o scrivere sia come il quadrato di un ciclo di lunghezza pari, sia come il quadrato di due cicli di lunghezza dispari:
 \[
@@ -2353,6 +2357,7 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
 \end{esempio}
 \begin{prop}\label{propnlag}
 	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
+\end{prop}
 	\begin{proof}
 		L'insieme delle classi laterali \`e $G / H = \left\{ g_1H , \ldots, g_p H \right\} $, visto che $[G:H] = p$.
 		Si definisce l'azione $\gamma: G \to S(G / H)$ con $\gamma(g) = \pi _g$ e $\pi_G (g_i H) = gg_i H$, che consiste nella permutazione di tutte le classi di equivalenza.
@@ -2373,7 +2378,6 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
 
 		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
 	\end{proof}
-\end{prop}
 \subsubsection{Utilizzo delle varie azioni di gruppo}
 \begin{enumerate}
   \item \textbf{Azione su classi laterali (traslazione a sinistra/destra)}  
@@ -2446,12 +2450,12 @@ Da questo, si conclude che richiedere che una mappa $(\mathbb{Z}/p\mathbb{Z})^n 
 	\[
 	\big\lvert \operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big) \big\rvert = \prod_{i=0} ^{n-1} (p^n- p^i)
 	\] 
+\end{prop}
 	\begin{proof}
 		Sia $\varphi $ un automorfismo di $(\mathbb{Z}/p\mathbb{Z})^n$; allora questo \`e univocamente determinato da come agisce su una base di tale spazio vettoriale. 
 		Data $\left\{ v_1,\ldots,v_n \right\} $ una base, allora $\varphi (v_1)$ pu\`o essere un qualunque vettore non-nullo di $(\mathbb{Z}/p\mathbb{Z})^n$, quindi si hanno $p^n-1$ possibilit\`a; analogamente, $v_2$ potr\`a essere mappato in qualunque elemento, eccetto l'elemento neutro e un multiplo $\varphi (v_1)$, quindi si hanno $p^n-p $ elementi. 
 		Continuando col ragionamento, si conclude che $v_k$ potr\`a essere mappato in un qualsiasi elemento eccetto l'elemento neutro e un multiplo degli elementi gi\`a assegnati, per un totale di $p^n - p^{k-1} $ possibilit\`a.
 	\end{proof}
-\end{prop}
 
 
 
@@ -2791,6 +2795,7 @@ Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
 		\item $A^* \cap D(A) = \varnothing$;
 		\item se $A$ \`e finito, allora $A = D(A) \cup A^*$\footnote{Si nota che, quindi, un dominio finito \`e un campo.}.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
 			\item \`E chiuso rispetto al prodotto perch\'e se $x,y \in A^*$, allora $(xy)^{-1}=y^{-1}x^{-1}$ \`e il suo inverso, \`e presente l'elemento neutro perch\'e $1 $ \`e invertibile, il prodotto \`e associativo per definizione, ogni elemento ha un inverso perch\'e l'inverso di ogni elemento \`e, a sua volta, invertibile ed \`e commutativo perch\'e l'intero anello lo \`e.
@@ -2800,7 +2805,6 @@ Determinare il minimo $n$ tale che $ Q_8 \longhookrightarrow S_n$.
 				Essendo $|A|<+\infty$, l'omomorfismo \`e anche suriettivo, quindi \`e un isomorfismo, quindi $1 \in \operatorname{Im} \varphi _x$ e, perci\`o, $\exists a \in A$ tale che $\varphi _x (a) = xa = 1\implies x \in A^*$.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[Sottoanello]
 	Sia $A$ un anello e $B \subseteq A$; si dice che $B$ \`e un \textit{sottoanello} di $A$ se \`e chiuso rispetto a somma e prodotto.
@@ -2830,6 +2834,7 @@ Per verificare che un sottoinsieme di un anello commutativo con identit\`a \`e u
 	\] 
 \end{definizione}
 \noindent Ora si giustifica la precedente definizione, mostrando che \`e effettivamente un ideale.
+\begin{prop}
 \begin{proof}
 	$\langle S \rangle$ \`e chiuso rispetto alla somma; infatti, dati due suoi elementi $x = \sum_{i=1}^{n} a_i s_i$ e $ y = \sum_{i=1}^{n} a'_i s_i$, si ha:
 \[
@@ -2841,7 +2846,6 @@ ax = \sum_{i=1}^{n}( a a_i) s_i \in S
 \] 
 quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 \end{proof}
-\begin{prop}
 	[Operazioni tra ideali]
 	Sia $A$ un anello e siano $I,J \subset A$ due ideali; allora i seguenti insiemi sono ideali:
 	\begin{enumerate}[(a).]
@@ -2851,6 +2855,7 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 		\item $\sqrt{I} = \left\{ x \in A  \mid \exists n \in \mathbb{N} : x^n \in I \right\} $;
 		\item $(I:J) = \left\{ x \in A  \mid  xJ \subseteq I \right\} $.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
@@ -2874,9 +2879,9 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 				Infine, $\forall  \in A$, si ha $axJ = a(xJ) \subseteq aI \subseteq I \implies ax \in (I:J)$.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Sia $A$ un anello e siano $I,J$ due suoi ideali; in generale, $IJ\subseteq  I\cap J$ e vale l'uguaglianza quando $I+J = A$.
+\end{prop}
 	\begin{proof}
 		Siano $x \in I$ e $y \in J$; per assorbimento, visto che $x,y$ appartengono anche ad $A$, si ha $xy \in I$ (considerando $y \in A$) e $xy \in J$ (considerando $x \in A$), quindi $xy \in I\cap J$.
 
@@ -2887,25 +2892,24 @@ quindi vale anche la propriet\`a di assorbimento e la tesi \`e dimostrata.
 		visto che \`e somma di due elementi di $IJ$, il quale \`e un gruppo additivo. 
 		Evidentemente, si \`e usata la commutativit\`a del prodotto per scrivere $x i = i x$ in modo da avere un elemento di $I$ per un elemento di $J$.
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[Ideale proprio]
 	Sia $A$ un anello; un suo ideale $I$ \`e detto \textit{proprio} se $I \subsetneq A$.
 \end{definizione}
 \begin{prop}\label{idprop}
 	Sia $A$ un ideale; allora un suo ideale $I \subset A$ \`e proprio se e solo se $I \cap A^* = \varnothing$.
+\end{prop}
 	\begin{proof}
 		Se $I\cap A^* = \varnothing$, allora $I$ \`e proprio perch\'e non possiede gli elementi invertibili di $A$.
 
 		L'implicazione verso destra si dimostra per controposizione: sia $x \in I\cap A^*$; allora $\exists x^{-1}\in A$ tale per cui $1=x^{-1}x \in I$ per assorbimento, ma $\forall a \in A, \ a = a \cdot 1 \in I$ per assorbimento, quindi $I=A$.
 	\end{proof}
-\end{prop}
 \begin{corollario}
 	Sia $A$ un anello; allora $A$ \`e un campo se e solo se i suoi unici ideali sono $\left\{ 0 \right\} $ e $A$.
+\end{corollario}
 	\begin{proof}
 		Visto che $A$ \`e un campo se e solo se $A^* = A \setminus\left\{ 0 \right\} $, ne segue che l'unico elemento fuori $A$ \`e $0$, quindi, per la proposizione precedente (\ref{idprop}), si conclude che gli unici ideali ammissibili sono $I=\left\{ 0 \right\} $ e $I=A$.
 	\end{proof}
-\end{corollario}
 \subsection{Omomorfismi di anelli e anelli quoziente}
 \begin{definizione}
 	[Omomorfismo di anelli]
@@ -2951,6 +2955,7 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 
 \begin{prop}
 	Sia $A$ un anello; i suoi ideali sono tutti e soli i nuclei degli omomorfismi di anello definiti su $A$.
+\end{prop}
 	\begin{proof}
 		Si dimostra l'implicazione verso sinistra; sia, quindi, $\varphi  : A \to B$ un omomorfismo di anelli.
 		Si ha che $\operatorname{Ker} \varphi $ \`e un ideale di $A$ perch\'e $\operatorname{Ker} \varphi <  A$, visto che $\varphi $ \`e anche un omomorfismo di gruppi, e $\forall a \in A$, si ha $ax \in \operatorname{Ker} \varphi $, essendo che $\varphi (ax) = \varphi (a) \varphi (x) = \varphi (a) \cdot 0 = 0$.
@@ -2958,7 +2963,6 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 
 		Viceversa, tutti gli ideali sono i nuclei degli omomorfismi di proiezione al relativo quoziente, come visto poco sopra.
 	\end{proof}
-\end{prop}
 \begin{teorema}
 	[I teorema di omomorfismo di anelli]
 	Siano $A,B$ due anelli e sia $f: A \to B$ un omomorfismo di anelli; allora esiste un unico omomorfismo di anelli $\varphi $ che rispetta il diagramma\footnote{La freccia con due teste indica una suriezione, mentre la freccia tratteggiata indica che tale mappa deve esistere. In questo caso, le mappe in gioco si sottintendono essere omomorfismi di anelli.}:
@@ -2973,6 +2977,7 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 \end{tikzcd}
 \] 
 	cio\`e tale che $f = \varphi \circ \pi$, con $\varphi $ iniettivo e $\operatorname{Im} \varphi  = \operatorname{Im} f$.
+\end{teorema}
 	\begin{proof}
 		Per il I teorema di omomorfismo di gruppi, visto che $f$ \`e, in particolare, un omomorfismo di gruppi, si ha l'esistenza e l'unicit\`a di 
 		\[
@@ -2987,7 +2992,6 @@ Essendo un caso particolare di omomorfismo di gruppi, segue direttamente che \`e
 		\] 
 		per ogni $a,b \in A$.
 	\end{proof}
-\end{teorema}
 \noindent Di seguito si riportano il II e il III teorema di omomorfismo, i quali sono diretta conseguenza del primo e si dimostrano a partire da un'opportuna scelta di un omomorfismo suriettivo.
 La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con le dovute precisazioni, cio\`e sostituendo gli ideali con i sottogruppi normali e i sottoanelli con i sottogruppi.
 \begin{teorema}
@@ -2996,6 +3000,7 @@ La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con 
 	\[
 	 \frac{R}{R\cap I}\cong\frac{R+I}{I}
 	\] 
+\end{teorema}
 	\begin{proof}
 		Si considera la proiezione $\pi : A \to A / I$, con $\pi(a) = a + I$; la sua restrizione ad $R$ \`e data da $\pi|_R : R \to A / I$.
 		Si nota che la sua immagine e il suo nucleo sono: 
@@ -3009,13 +3014,13 @@ La dimostrazione e l'enunciato sono validi in maniera analoga per i gruppi, con 
 		Si nota che l'immagine della restrizione \`e $R+I$, che \`e il pi\`u piccolo sottoanello generato da $R$ e da $I$, perch\'e il quoziente $R / I$ non \`e, in generale, ben definito; infatti, sarebbe necessario che $I$ fosse un ideale di $R$, ma visto che si sta considerando un sottoanello generico, non \`e detto che $I \subseteq R$. 
 		Se cos\`i fosse, si avrebbe $R + I = R$.
 	\end{proof}
-\end{teorema}
 \begin{teorema}
 	[III teorema di omomorfismo]
 	Sia $A $ un anello e $I,J$ due suoi ideali, con $I \subseteq J$; allora:
 	\[
 		\frac{A / I }{J / I}\cong \faktor{A}{J}
 	\] 
+\end{teorema}
 	\begin{proof}
 		Si considera la proiezione $\pi : A / I \to A / J$, con $\pi(a+ I) = a + J $.
 	Intanto si nota che tale mappa \`e ben definita perch\'e se $a + I = a' + I$, allora $a-a' \in I \subseteq J$, da cui $a + J = a'+ J$.
@@ -3026,13 +3031,13 @@ Infine, il suo nucleo \`e
 \] 
 da cui, per il I teorema di omomorfismo, si ottiene la tesi.
 	\end{proof}
-\end{teorema}
 \begin{lemma}
 	Sia $f: A\to B$ un omomorfismo di anelli; allora valgono le due seguenti affermazioni:
 \begin{enumerate}[(a).]
 	\item $\forall J \subset B$ ideale, si ha che $f^{-1}(J)$ \`e un ideale di $A$;
 	\item se $f$ \`e suriettiva, allora $\forall I \subset A$ ideale, si ha che $f(I)$ \`e un ideale di $B$.
 \end{enumerate}
+\end{lemma}
 		\begin{proof}
 			Si divide la dimostrazione nei due punti.
 			\begin{enumerate}[(a).]
@@ -3049,17 +3054,20 @@ da cui, per il I teorema di omomorfismo, si ottiene la tesi.
 					\] 
 			\end{enumerate}
 		\end{proof}
-\end{lemma}
 \begin{teorema}
 	[Teorema di corrispondenza tra ideali]
 	Sia $I \subset A$ un ideale di $A$ anello e sia $\pi_I$ la proiezione al quoziente; allora $\pi_I$ induce una corrispondenza biunivoca tra gli ideali dell'anello quoziente $A / I$ e gli ideali di $A$ che contengono $I$.
+\end{teorema}
 	\begin{proof}
-		Siano $X = \left\{ J \subseteq A  \mid J \text{ ideale e } I \subseteq J\right\} $ e $Y = \left\{ \mathcal{J} \subseteq A / I  \mid \mathcal{J} \text{ ideale} \right\} $; la corrispondenza biunivoca \`e data dal teorema di corrispondenza tra gruppi. 
+		Si definiscono gli insiemi 
+		\[
+		X = \left\{ J \subseteq A  \mid J \text{ ideale e } I \subseteq J\right\} \hspace{1cm}Y = \left\{ \mathcal{J} \subseteq A / I  \mid \mathcal{J} \text{ ideale} \right\} 
+		\] 
+		La corrispondenza biunivoca \`e data dal teorema di corrispondenza tra gruppi. 
 		Rimane da dimostrare che, restringendo tale corrispondenza agli ideali, questa associ un ideale di $A$ ad un ideale di $A / I$ e viceversa.
 
 		Per il precedente lemma, si sa che, essendo $\pi_I$ suriettivo, allora le immagini e le controimmagini via $\pi_I$, cio\`e $J \longmapsto \pi_I (J)$ e $ \mathcal{J} \longmapsto \pi^{-1}_I(\mathcal{J} )$, sono ideali, il che conclude la dimostrazione.
 	\end{proof}
-\end{teorema}
 \begin{definizione}
 	[Estensione e contrazione]
 	Sia $f: A\to B$ un omomorfismo di anelli e siano $I\subset A$ e $J \subset B$ un ideale, rispettivamente, di $A$ e di $B$; allora si dice \textit{estensione} di $I$ a $B$ via $f$ l'ideale generato da $f(I)$, mentre si dice \textit{contrazione} di $J$ ad $A$ via $f$ l'ideale generato da $f^{-1}(J)$.
@@ -3111,6 +3119,7 @@ per il I teorema di omomorfismo.
 	\[
 		\faktor{A}{IJ} \cong \faktor{A}{I} \times \faktor{A}{J}
 	\] 
+\end{teorema}
 	\begin{proof}
 		Si verifica intanto che $f$ \`e un omomorfismo di anelli:
 		\[
@@ -3123,7 +3132,10 @@ per il I teorema di omomorfismo.
 		\] 
 	Ora si nota che 
 	\[
-	\operatorname{Ker} f=\left\{ a \in A  \mid f(a) = (a+I,a+J) = (I,J) \right\} =\left\{ a \in A  \mid a \in I\text{ e } a \in J \right\} = I\cap J
+		\begin{split}
+			\operatorname{Ker} f&=\left\{ a \in A  \mid f(a) = (a+I,a+J) = (I,J) \right\} \\
+					    &=\left\{ a \in A  \mid a \in I\text{ e } a \in J \right\} = I\cap J
+		\end{split}
 	\] 
 	Ora si verifica la doppia implicazione.
 	\begin{itemize}
@@ -3147,7 +3159,6 @@ per il I teorema di omomorfismo.
 	\] 
 	dove la seconda uguaglianza \`e giustificata dal fatto che $I+J = A \implies IJ = I\cap J$.
 	\end{proof}
-\end{teorema}
 \begin{osservazione}
 Per il teorema cinese del resto fra gruppi, si sapeva gi\`a che 
 \[
@@ -3207,6 +3218,7 @@ Questa versione del teorema cinese del resto, quindi, generalizza la precedente.
 \end{definizione}
 \begin{prop}
 	Ogni anello unitario ammette ideali massimali.
+\end{prop}
 	\begin{proof}
 		Sia $\mathcal{F} = \left\{ I \subsetneq A  \mid I \text{ ideale} \right\}  $; si ha che $(\mathcal{F} ,\subseteq)$ \`e un insieme parzialmente ordinato e induttivo.
 		Sia, poi, $\mathcal{C} = \left\{ I_\lambda , \ \lambda \in \Lambda  \right\} $ una catena di $\mathcal{F} $; si nota che
@@ -3216,7 +3228,6 @@ Questa versione del teorema cinese del resto, quindi, generalizza la precedente.
 		\`e un maggiorante per $\mathcal{C} $ ed \`e un ideale di $A$, visto che gli ideali si contengono e, il fatto che $1 \not\in A\Leftarrow I\neq A$, essendo che $1\not \in I_\lambda , \ \forall \lambda \in \Lambda $.
 		Ne segue che $I \in \mathcal{F} $ implica che $\mathcal{F} $ \`e induttivo e, per il lemma di Zorn, ammette elementi massimali.
 	\end{proof}
-\end{prop}
 \begin{esempio}
 Gli ideali primi di $\mathbb{Z}$ sono quelli della forma $\langle p \rangle$, con $p$ primo; infatti:
 \[
@@ -3233,6 +3244,7 @@ Considerando, invece, $\langle m \rangle$ con $m$ non primo, allora si pu\`o scr
 		\item ogni ideale proprio di $A$ \`e contenuto in un ideale massimale;
 		\item ogni elemento non invertibile di $A$ \`e contenuto in un ideale massimale.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei due punti.
 		\begin{enumerate}[(a).]
@@ -3254,7 +3266,6 @@ Questo, per\`o, segue direttamente osservando che, per $L \subsetneq A$ ideale p
 	Sia, infatti, $x \in A \setminus A^*$; allora l'ideale generato da $\langle x \rangle$ \`e proprio (prop. \ref{idprop}) e, quindi, vale il punto (a): $\langle x \rangle\subseteq M \implies x \in M$, con $M$ ideale massimale di $A$.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \begin{prop}
 	[Caratterizzazione degli ideali primi e massimali]
 \label{idprmaxchar}
@@ -3266,6 +3277,7 @@ Questo, per\`o, segue direttamente osservando che, per $L \subsetneq A$ ideale p
 		\item $A$ \`e un campo se e solo se $\langle 0 \rangle$ \`e un ideale massimale.
 		\item $I$ massimale $\implies I$ primo.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
@@ -3281,12 +3293,12 @@ Questo, per\`o, segue direttamente osservando che, per $L \subsetneq A$ ideale p
 			\item Per il punto (b) appena mostrato, $I$ \`e massimale se e solo se $A / I$ \`e un campo; in particolare, questo significa che $A / I$ \`e un dominio, ma per il punto (a) appena mostrato, ci\`o equivale a dire che $I$ \`e primo.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \begin{esempio}
 Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che $xy \in \langle 0 \rangle \iff xy = 0\implies x \in \langle 0 \rangle$, oppure $y \in \langle 0 \rangle$, ma non \`e massimale perch\'e $\langle 0 \rangle\subset \langle m \rangle  , \ \forall m \in \mathbb{Z}$.
 \end{esempio}
 \begin{prop}
 	La biezione tra ideali $\pi_I : A \to A/I$ conserva ideali primi e massimali (che contengono $I$).
+\end{prop}
 	\begin{proof}
 		Si nota, intanto, che $I \subseteq J \subseteq A$ per assunzione, e $J\longmapsto \pi_I(J) = J / I$.
 		Si deve mostrare che $J$ \`e primo (massimale) in $A$ se e solo se $J / I$ \`e primo (massimale) in $A / I$.
@@ -3297,7 +3309,6 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 		\] 
 		da cui segue la tesi.
 	\end{proof}
-\end{prop}
 \subsection{Anello delle frazioni di un dominio}
 \begin{definizione}
 	[Parte moltiplicativa]
@@ -3324,6 +3335,7 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 	\frac{a}{s}+\frac{b}{t}=\frac{at + bs}{st} \hspace{1cm} \frac{a}{s}\cdot \frac{b}{t} = \frac{ab}{st}
 	\] 
 	\`e un anello commutativo con identit\`a (quest'ultima corrispondente a $1 / 1$).
+\end{prop}
 	\begin{proof}
 		Si mostra che le operazioni sono ben definite, avendole definite tra classi di equivalenza. 
 		Siano, allora $a / s \sim a' / s' $ e $ b/t \sim b' / t'$; si mostra che prodotto e somma di queste restituiscano lo stesso.
@@ -3346,7 +3358,6 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 		
 		Rimane da verificare che sono soddisfatti gli assiomi di anello.
 	\end{proof}
-\end{prop}
 \begin{esempio}
 	[Anello delle frazioni di $\mathbb{Z}$]
 	Si prende $A = \mathbb{Z}$ e $S = \left\{ 10^k \right\} _{k\ge 0} $ (si verifica ad occhio che $S$ rispetta le propriet\`a richieste).
@@ -3371,6 +3382,7 @@ f :
 		\end{array}
 	\] 
 	\`e un omomorfismo iniettivo di anelli.
+\end{prop}
 	\begin{proof}
 		Si inizia col mostrare che $f$ \`e un omomorfismo:
 		\[
@@ -3385,7 +3397,6 @@ f :
 	\] 
 	quindi $f$ \`e iniettiva.
 	\end{proof}
-\end{prop}
 \begin{osservazione}
 Quanto appena dimostrato implica che $A \longhookrightarrow  S^{-1}A$, cio\`e $A \subset S^{-1}A$, quindi che l'anello delle frazioni \`e un'estensione di $A$.
 \end{osservazione}
@@ -3394,6 +3405,7 @@ Si nota, inoltre, che se $A$ \`e un dominio, allora $S = A \setminus\left\{ 0 \r
 \end{osservazione}
 \begin{prop}
 	Sia $A$ un dominio e $S = A \setminus\left\{ 0 \right\} $ la sua parte moltiplicativa; allora l'anello delle frazioni $S^{-1}A=Q(A)$ \`e il pi\`u piccolo campo contenente $A$.
+\end{prop}
 	\begin{proof}
 		Si verifica intanto che $Q(A)$ \`e un campo, per cui \`e sufficiente mostrare che esistono gli inverso moltiplicativi, cosa che segue direttamente dal fatto che, $\forall a \in A \setminus \left\{ 0 \right\} $, si ha $1 / a \in Q(A)$; in questo modo, ciascun elemento di $A\setminus\left\{ 0 \right\} $ si pu\`p scrivere come $1 / a$ e, quindi:
 		\[
@@ -3405,7 +3417,6 @@ Si nota, inoltre, che se $A$ \`e un dominio, allora $S = A \setminus\left\{ 0 \r
 		Per farlo, sia $K$ un campo tale che $A \subset K$; allora $1 / a \in K , \ \forall a \in A \setminus\left\{ 0 \right\} $, quindi $K$ contiene tutti gli elementi della forma $b / a$ di $S^{-1}A$, con $b \in A$ e $a \in A \setminus\left\{ 0 \right\} $, da cui $S^{-1}A \subset K$.
 		Questo implica la tesi.
 	\end{proof}
-\end{prop}
 \begin{esempio}
 	Si considerano alcuni esempio di anelli delle frazioni.
 	\begin{itemize}
@@ -3476,6 +3487,7 @@ Per questo oggetto valgono le seguenti propriet\`a.
 		\item $S^{-1}I$ \`e un ideale proprio di $S^{-1}A$ se e solo se $I \cap S = \varnothing$;
 		\item dato $P$ ideale primo di $A$, con $P\cap S = \varnothing$, allora $S^{-1}P$ \`e un ideale primo di $S^{-1}A$.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei vari punti.
 		\begin{enumerate}[(a).]
@@ -3525,7 +3537,6 @@ Visto che, per ipotesi, $\sigma \in S$ e $P\cap S = \varnothing$, allora $ab \in
 Visto anche che $P$ \`e primo, si deve avere $a \in P$, o $b \in P$, quindi la frazione di uno dei due deve appartenere a $S^{-1}P$, cio\`e $a / s \in S^{-1}P$, oppure $b / t \in S^{-1}P$, quindi $S^{-1}P$ \`e primo.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 
 \subsection{Divisibilit\`a nei domini}
 
@@ -3577,6 +3588,7 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 \end{definizione}
 \begin{prop}
 	Due elementi $d,d' \in A$ dominio sono due massimi comuni divisori di una stessa coppia di elementi $a,b\in A$ se e solo se sono associati ($d \sim d'$).
+\end{prop}
 	\begin{proof}
 		Se $d$ e $d'$ sono due massimi comuni divisori di $a$ e $b$, allora:
 		\[
@@ -3588,7 +3600,6 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 		quindi sono associati per definizione.
 		Per il viceversa, basta notare che se $d \sim d'$, allora dividono e sono divisi dagli stessi elementi.
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[Elemento primo]	
 	Sia $A$ un dominio e $x \in A$, con $x \not \in A^* \cup \left\{ 0 \right\} $; allora $x$ \`e detto \textit{primo} se, $\forall a,b\in A$, vale $x  \mid ab \implies x  \mid a$ oppure $x \mid b$.
@@ -3599,6 +3610,7 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 \end{definizione}
 \begin{prop}\label{pimpp}
 	Sia $A$ un dominio; se $x \in A$ \`e primo, allora \`e irriducibile.
+\end{prop}
 	\begin{proof}
 	Si assume che $x = ab$; essendo primo per assunzione, allora $x \mid a$, oppure $x  \mid b$.
 	Senza perdita di generalit\`a, si assume che $x  \mid a$, perci\`o:
@@ -3608,13 +3620,13 @@ a \mid b \iff\exists c \in A : b = ac \iff b \in \langle a \rangle \iff \langle 
 	Visto che $A$ \`e un dominio e $x \neq 0$ per ipotesi, allora deve valere $bc = 1$, quindi $b,c \in A^*$.
 	In particolare, questo implica che $x$ \`e irriducibile perch\'e, scrivendolo come $x = ab$, si \`e verificato che $b \in A^*$.
 	\end{proof}
-\end{prop}
 \begin{prop}\label{prid}
 	Sia $A$ un dominio; allora valgono i seguenti punti:
 	\begin{enumerate}[(a).]
 		\item $x$ \`e primo se e solo se $\langle x \rangle$ \`e un ideale primo non nullo;
 		\item $x$ \`e irriducibile se e solo se $\langle x \rangle$ \`e un ideale massimale nell'insieme degli ideali principali.
 	\end{enumerate}
+\end{prop}
 	\begin{proof}
 		Si divide la dimostrazione nei due punti.
 		\begin{enumerate}[(a).]
@@ -3631,7 +3643,6 @@ Questo significa che $\langle x \rangle$ \`e massimale tra gli ideali principali
 Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x = yz$ con $y,z \not \in A^*$; per quanto detto, si a $\langle x \rangle\subsetneq \langle y \rangle\subsetneq A$, dove la seconda inclusione non pu\`o essere un'uguaglianza per il fatto che $y\not \in A^*$, per cui $1\not \in \langle y \rangle$, mentre la prima \`e data dal fatto che $z \not \in A^*$ (quindi $x$ e $y$ non sono associati), da cui $\langle x \rangle$ non \`e massimale tra gli ideali principali.
 		\end{enumerate}
 	\end{proof}
-\end{prop}
 \begin{esempio}
 	Se $x$ \`e primo in nel dominio $A = K[x,y]$, allora $A / \langle x \rangle\cong K[y]$, che si sa essere un dominio; per la prop. \ref{idprmaxchar}, segue che $\langle x \rangle$ \`e primo.
 
@@ -3665,6 +3676,7 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 \begin{prop}
 	[Algoritmo di Euclide]
 	Sia $A$ un dominio; allora $\forall a,b \in A$, non entrambi nulli, esiste il loro massimo comune divisore, ottenuto tramite l'algoritmo di Euclide.
+\end{prop}
 	\begin{proof}
 		Visto che \`e definita una funzione grado come generalizzazione del modulo per gli interi, l'esistenza dell'algoritmo di Euclide segue la stessa dimostrazione del caso degli interi, visto anche che negli anelli euclidei \`e, per costruzione, prevista una divisione euclidea.
 
@@ -3686,9 +3698,9 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 		\] 
 		Allora si pu\`o applicare l'algoritmo di Euclide per $(r_0,r_1)$ e, in questo modo, si trova una sequenza di $N-1$ passi, per ottenere $r _ n =(b,r_1)=(b,a-q_0b)=(a,b)$, dove l'ultima uguaglianza \`e giustificata dalla propriet\`a del massimo comune divisore.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Sia $A$ un dominio euclideo; gli elementi di $A$ che hanno grado minimo sono tutti e soli gli elementi di $A^*$.
+\end{prop}
 	\begin{proof}
 		Si considera l'immagine della funzione grado dell'intero dominio eccetto lo zero: $d ( A\setminus\left\{ 0 \right\} ) \subset \mathbb{N}$; per il principio del minimo, questo insieme, essendo un sottoinsieme di $\mathbb{N}$, ammette un elemento minimo $d_0$.
 		Sia, allora, $x \in A\setminus\left\{ 0 \right\} $ un elemento tale che $d(x) = d_0$, cio\`e un elemento di grado minimo. 
@@ -3703,9 +3715,9 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 		Viceversa, sia $x \in A^*$; allora $\langle x \rangle = A$ e, conseguentemente, $\forall a \in A$, si ha $a=qx$ per qualche $ q \in A$.
 		Visto che la funzione grado deve soddisfare $d(x) \le d(qx), \ \forall q \in A \setminus\left\{ 0 \right\} $, allora $x$ deve avere grado minimo.
 	\end{proof}
-\end{prop}
 \begin{prop}
 	Sia $A$ un dominio euclideo; allora tutti gli ideali di $A$ sono principali (per cui ogni dominio euclideo \`e un PID) e sono generati da un elemento di grado minimo.
+\end{prop}
 	\begin{proof}
 		Sia $I \subset A$ un ideale; se $I=\left\{ 0 \right\} $, allora \`e principale, altrimenti si mostra che $I$ \`e generato da un singolo elemento di grado minimo.
 
@@ -3716,13 +3728,13 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 		\] 
 		da cui deve valere $r=0$ perch\'e $x$ \`e di grado minimo, quindi $a=qx \in \langle x \rangle \implies I \subseteq \langle x \rangle$.
 	\end{proof}
-\end{prop}
 \begin{definizione}
 	[PID]
 	Un dominio $A$ si dice \textit{a ideali principali} se ogni suo ideale \`e principale, cio\`e $\forall I \subseteq A$, con $I$ ideale, $\exists x \in I $ tale che $I = \langle x \rangle$.
 \end{definizione}
 \begin{prop}\label{pideals}
 	Sia $A$ un PID; i suoi unici ideali primi sono $\langle 0 \rangle$ e gli ideali massimali.
+\end{prop}
 	\begin{proof}
 		Dal punto (c) della prop. \ref{idprmaxchar}, si sa che $A$ dominio $\iff \langle 0 \rangle$ \`e un ideale primo; inoltre, dal punto (e) della stessa proposizione, si sa anche che tutti gli ideali massimali di un anelo sono primi.
 
@@ -3732,7 +3744,6 @@ Per il viceversa, si dimostra la contropositiva: sia $x$ riducibile, quindi $x =
 		Ora, visto che $x$ \`e irriducibile, segue che $\langle x \rangle$ \`e massimale tra gli ideali principali di $A$, visto il punto (b) della prop. \ref{idprmaxchar}.
 		Unitamente al fatto che $A$ \`e un PID (quindi tutti i suoi ideali sono principali), segue che $\langle x \rangle$ \`e un ideale massimale per $A$.
 	\end{proof}
-\end{prop}
 
 \textbf{MCD nei PID.} Se $A$ \`e un PID e $x,y \in A$ non entrambi nulli, si osserva che l'ideale generato da $x$ e $y$ deve essere tale che $\langle x,y \rangle=\langle d \rangle$, dove $d = (x,y)$.
 Infatti, se $x \in \langle d \rangle$ e $y \in \langle d \rangle$, allora $d  \mid x $ e $d \mid y$; inoltre, se $c  \mid x $ e $c \mid y$, si ha $x,y \in \langle c \rangle$, quindi $\langle d \rangle=\langle x,y \rangle \subseteq \langle c \rangle$ implica che $d \in \langle c \rangle$ e, quindi, che $c \mid d$.
@@ -3745,10 +3756,10 @@ Questo significa che $d$ \`e un MCD di $x$ e $y$.
 \end{definizione}
 \begin{prop}
 	Se $A$ \`e un dominio a fattorizzazione unica, allora $\forall a,b \in A$ non entrambi nulli esiste il loro massimo comune divisore.
+\end{prop}
 	\begin{proof}
 		Sia $d$ il prodotto dei fattori irriducibili comuni ad $a$ e $b$ presi con il minimo esponente con cui compaiono; allora, questo \`e un massimo comune divisore perch\'e \`e possibile verificare direttamente la sua definizione.
 	\end{proof}
-\end{prop}
 
 \noindent Nei tre tipi di domini analizzati finora, si trova sempre l'MCD, ma con le opportune differenze.
 \begin{itemize}
@@ -3782,6 +3793,7 @@ La condizione (ii) pu\`o essere riformulata nel seguente modo: ogni catena ascen
 \end{osservazione}
 \begin{corollario}
 	Se $A$ \`e un PID, allora \`e anche un UFD.
+\end{corollario}
 	\begin{proof}
 		Preso $A$ un PID, si dimostra la validit\`a dei punti (i) e (ii) del teorema precedente.
 		Sia, quindi, $x \in A$ un suo elemento irriducibile; per quanto affermato dalla proposizione \ref{pideals}, l'ideale $\langle x \rangle$ \`e massimale in $A$, ma, dal punto (e) della prop. \ref{idprmaxchar}, si sa che $\langle x \rangle$ \`e primo.
@@ -3793,7 +3805,6 @@ La condizione (ii) pu\`o essere riformulata nel seguente modo: ogni catena ascen
 		Per definizione di $I$, allora, $\langle a_i \rangle\subseteq \langle a_{n_0}  \rangle, \ \forall i\ge 0$, mentre il contenimento opposto (e quindi l'uguaglianza) \`e verificato quando $i\ge n_0$ perch\'e si stanno considerando ideali in catena.
 		Questo implica che $\left\{ \langle a_i \rangle \right\} _{i\ge 0} $ \`e stazionaria e, allora, \`e verificato anche il punto (ii).
 	\end{proof}
-\end{corollario}
 \begin{osservazione}
 Questo corollario permette di mettere in relazione i vari tipi di domini:
 \[
@@ -3857,6 +3868,7 @@ f'(x) = \sum_{i=0}^{n} \frac{a_i}{d}x^i \hspace{.5cm} \frac{a_i}{d} \in A \text{
 	\[
 		c\big(f(x)g(x)\big) = c(f(x)) c(g(x))
 	\] 
+\end{lemma}
 	\begin{proof}
 		Per dimostrare questo, si considerano due possibili scenari.
 		\begin{itemize}
@@ -3897,9 +3909,9 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
  \] 
 		\end{itemize}
 	\end{proof}
-\end{lemma}
 \begin{corollario}\label{corufd1}
 	Siano $f(x),g(x) \in A[x]$, con $c(f(x)) =1 $ e $f(x)  \mid g(x)$ in $K[x]$, con $K$ campo dei quozienti di $A$; allora $f(x)  \mid g(x)$ in $A[x]$.
+\end{corollario}
 	\begin{proof}
 		Per ipotesi, si sa che $f(x)  \mid g(x)$ in $K[x]$, cio\`e che esiste $h(x) \in K[x]$ tale per cui $g(x) = f(x) h(x)$; quindi $\exists d \in A$ tale che:
 		\[
@@ -3917,9 +3929,9 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 		dove si \`e usato il fatto che $c(f(x)) = 1$. 
 		Per quanto appena visto, si conclude che $h_1(x) / d = h(x) \in A[x]$, quindi la divisibilit\`a assunta inizialmente \`e valida anche in $A[x]$.
 	\end{proof}
-\end{corollario}
 \begin{corollario}\label{corufd2}
 	Sia $f(x) \in A[x]$ e $f(x) = g(x) h(x) $ in $K[x]$ (con $K$ campo dei quozienti di $A$), dove $\operatorname{deg} g(x) , \operatorname{deg} h(x) \ge 1$ (cio\`e $f$ \`e riducibile in $K[x]$); allora $\exists \delta \in K^*$ tale che $g_1(x) = \delta g(x) \in A[x]$ e $h_1(x) = \delta ^{-1}h(x)\in A[x]$, per cui $f(x) = g_1(x) h_1(x)$ in $A[x]$.
+\end{corollario}
 	\begin{proof}
 		Analogamente al corollario precedente, si sa che $\exists d \in A$ tale che $g_1(x) = dg(x) \in A[x]$, quindi:
 		\[
@@ -3937,13 +3949,13 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 		\] 
 		 da cui segue la tesi.
 	\end{proof}
-\end{corollario}
 \begin{teorema}
 	Sia $A$ un UFD; gli elementi irriducibili di $A[x]$ sono tutti e soli quelli che soddisfano una tra le seguenti condizioni:
 	\begin{enumerate}[(a).]
 		\item $f(x) \in A$ e irriducibile in $A$;
 		\item $f(x) \in A[x]$, con $\operatorname{deg} f(x) \ge 1$, $c(f(x)) = 1$ e $f(x)$ irriducibile in $K[x]$\footnote{Qui, $K[x]$ \`e l'anello dei polinomi a coefficienti nel campo dei quozienti di $A$}.
 	\end{enumerate}
+\end{teorema}
 			\begin{proof}
 				Si distinguono due casi.	
 				\begin{itemize}
@@ -3977,10 +3989,10 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 						quindi $g \in A^* = (A[x])^*$, da cui $f$ \`e irriducibile in $A[x]$.
 				\end{itemize}
 			\end{proof}
-\end{teorema}
 \noindent Terminati i prerequisiti teorici, \`e ora possibile caratterizzare gli anelli di polinomi di UFD; la teoria sopra sviluppata servir\`a per completare gli ultimi due punti della dimostrazione.
 \begin{teorema}\label{th1an}
 	Se $A$ \`e un UFD, allora $A[x]$ \`e un anello a fattorizzazione unica.
+\end{teorema}
 	\begin{proof}
 		La dimostrazione di questo si articola nei seguenti tre punti.
 		\begin{enumerate}[(a).]
@@ -4000,7 +4012,10 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 				\begin{itemize}
 					\item Se $\operatorname{deg} f(x) = 0 $, ovvero $f(x)  \in A$ (cio\`e \`e costante), con $f(x)$ irriducibile per assunzione, visto che $A$ \`e un UFD, si ha $f$ primo in $A$; infatti:
 						\[
-						f \mid gh \implies f=c(f)  \mid c(gh) = c(g) c(h) \implies f \mid c(g)  \mid g(x) \hspace{.15cm} \text{ o }\hspace{.15cm} f  \mid c(h)  \mid h(x)
+							\begin{split}
+								&f \mid gh \implies f=c(f)  \mid c(gh) = c(g) c(h) \\
+						&\Rightarrow f \mid c(g)  \mid g(x) \hspace{.15cm} \text{ o }\hspace{.15cm} f  \mid c(h)  \mid h(x)
+							\end{split}
 						\] 
 					\item Se $f(x)$ \`e primitivo e irriducibile in $K[x]$, con $\operatorname{deg} f(x) \ge 1$, notando che $K[x]$ \`e un dominio euclideo (essendo $K$ campo), si conclude che $f(x)$ \`e anche primo in $K[x]$ (essendo $\text{ED}\subset \text{UFD}$).
 						Ne segue che se $f(x)  \mid g(x) h(x)$ in $A[x]$, allora $f(x)  \mid g(x)$, oppure $f(x)  \mid h(x)$ in $K[x]$; avendo assunto che $f(x)$ \`e primitivo, vale il corollario \ref{corufd1}, quindi la divisibilit\`a in $K[x]$ implica quella in $A[x]$, da cui $f(x)$ primo in $A[x]$.
@@ -4042,7 +4057,6 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 		\end{enumerate}
 		La dimostrazione, allora, segue per il teorema di caratterizzazione degli UFD.
 	\end{proof}
-\end{teorema}
 \begin{osservazione}
 	Dal punto (a) della dimostrazione del teorema precedente, segue anche che $(A[x])^* = A^*$; infatti, considerando $f(x) \in (A[x])^*$, si ha che $\exists g(x) \in A[x]$ tale che 
 	\[
@@ -4052,10 +4066,10 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 \end{osservazione}
 \begin{corollario}\label{corufdcat}
 	Se $A$ \`e un UFD, allora $A[x_1,\ldots,x_n]$ \`e un anello a fattorizzazione unica.
+\end{corollario}
 	\begin{proof}
 		Dal teorema precedente, la dimostrazione segue per induzione; infatti, tale teorema assicura il caso base per $A[x]$, mentre, assumendo vera la tesi per $A [x_1,\ldots,x_{n-1} ] = B$, si arriva alla fine della dimostrazione considerando $B[x_n]$, il quale risulta un UFD per il caso iniziale.
 	\end{proof}
-\end{corollario}
 \begin{osservazione}
 	Si nota che, in generale, se $A$ \`e un PID, allora non \`e sempre vero che $A[x]$ \`e un PID; per esempio, nel caso di $\mathbb{Z}$ si saa che $\mathbb{Z}[x]$ non \`e un PID perch\'e l'ideale $I = \langle 2,x \rangle$ non \`e principale.
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  4 OCT 2025 19:47
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  19 OCT 2025 10:50
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1681,8 +1681,18 @@ Package luatex.def Info: front.jpeg  used on input line 211.
 
 
 [3]
+Overfull \hbox (10.75789pt too wide) in paragraph at lines 253--255
+[]$\TU/NewCMMath-Book.otf(1)/m/n/10.95 (ℤ/𝑚ℤ, +)$ \TU/NewCM10-Book.otf(0)/m/n/10.95 è ci-cli-co, quin-di si sta-bi-li-sce l’a-zio-ne di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓 ∶ ℤ/𝑚ℤ →
+ []
+
+
 
 [4]
+Overfull \hbox (2.44824pt too wide) in paragraph at lines 284--285
+[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Per ogni ele-men-to di $[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 (𝐺)$\TU/NewCM10-Book.otf(0)/m/n/10.95 , si ha $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝜙[](𝐻) = 𝐻  ⟺  𝑔𝐻𝑔[] =
+ []
+
+
 
 [5]
 
@@ -1710,11 +1720,6 @@ Overfull \hbox (0.65334pt too wide) in paragraph at lines 406--408
 [9]
 
 [10]
-Underfull \hbox (badness 1609) in paragraph at lines 479--481
-\TU/NewCM10-Book.otf(0)/m/n/10.95 Es-sen-do que-sto va-li-do per $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑥, 𝑦 ∈ 𝐺$ \TU/NewCM10-Book.otf(0)/m/n/10.95 ge-ne-ri-che, si è di-mo-stra-ta
- []
-
-
 
 [11]
 
@@ -1725,6 +1730,11 @@ Underfull \hbox (badness 1609) in paragraph at lines 479--481
 [14]
 
 [15]
+Overfull \hbox (17.91003pt too wide) in paragraph at lines 649--651
+[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Si mo-stra che $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐺/𝐺[]$ \TU/NewCM10-Book.otf(0)/m/n/10.95 è sem-pre abe-lia-no. Sia-no, quin-di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑔𝐺[], ℎ𝐺[] ∈
+ []
+
+
 
 [16]
 
@@ -1740,8 +1750,8 @@ Overfull \hbox (53.23047pt too wide) detected at line 796
  []
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 803--805
-\TU/NewCM10-Book.otf(0)/m/n/10.95 che map-pa cia-scun omo-mor-fi-smo $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓 ∈ [](𝐻, 𝐾)$ \TU/NewCM10-Book.otf(0)/m/n/10.95 nel-la $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑛$\TU/NewCM10-Book.otf(0)/m/n/10.95 -upla
+Overfull \hbox (24.79907pt too wide) in paragraph at lines 804--806
+\TU/NewCM10-Book.otf(0)/m/n/10.95 che map-pa cia-scun omo-mor-fi-smo $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓 ∈ [](𝐻, 𝐾)$ \TU/NewCM10-Book.otf(0)/m/n/10.95 nel-la $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑛$\TU/NewCM10-Book.otf(0)/m/n/10.95 -upla $\TU/NewCMMath-Book.otf(1)/m/n/10.95 (𝑓(𝑥[]), … , 𝑓(𝑥[])) ∈
  []
 
 
@@ -1757,8 +1767,6 @@ Overfull \hbox (40.9735pt too wide) detected at line 857
 
 [23]
 
-[24]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 879.
 
@@ -1771,6 +1779,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 879.
 
 
+
+[24]
 
 [25]
 
@@ -1792,75 +1802,70 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [28]
-
-[29]
 Overfull \hbox (8.3393pt too wide) detected at line 1049
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝛾 [] = 𝛾(𝜎𝜌[]) = 𝜎𝜌[]𝜌[] = 𝜎𝜌[]𝜌[]𝜌[] = 𝜌[]𝜎𝜌[]𝜌[] = 𝛾(𝜌[])𝛾(𝜎𝜌[])
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 1084--1086
-\TU/NewCM10-Book.otf(0)/m/n/10.95 L’a-zio-ne di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝜎$ \TU/NewCM10-Book.otf(0)/m/n/10.95 ri-stret-ta a $[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 (𝑥)$\TU/NewCM10-Book.otf(0)/m/n/10.95 , al-lo-ra, si può ve-de-re co-me la
- []
 
-
+[29]
 
 [30]
 
 [31]
-
-[32]
-Underfull \hbox (badness 1082) in paragraph at lines 1145--1147
+Underfull \hbox (badness 1082) in paragraph at lines 1145--1146
 [][]\TU/NewCMSans10-Book.otf(0)/b/sc/10.95 Pro-po-si-zio-ne ..  []\TU/NewCM10-Book.otf(0)/m/n/10.95 Tut-te le per-mu-ta-zio-ni di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑆[]$ \TU/NewCM10-Book.otf(0)/m/n/10.95 si scri-vo-no co-me
  []
 
 
+
+[32]
 
 [33]
 
 [34]
 
 [35]
+Overfull \hbox (0.53436pt too wide) in paragraph at lines 1286--1287
+\TU/NewCM10-Book.otf(0)/m/n/10.95 agi-sco-no esclu-si-va-men-te su $[]$, men-tre quel-le di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐾$ \TU/NewCM10-Book.otf(0)/m/n/10.95 su $[]$,
+ []
+
+
 
 [36]
-
-[37]
-Overfull \hbox (3.30838pt too wide) detected at line 1326
+Overfull \hbox (3.30838pt too wide) detected at line 1323
 []\TU/NewCMMath-Book.otf(1)/m/n/10.95 (𝐻 × 𝐾) ≅ (𝐻 × 𝐾)/𝑍(𝐻 × 𝐾) ≅ 𝐻/𝑍(𝐻) × 𝐾/𝑍(𝐾) ≅ [](𝐻) × [](𝐾)
  []
 
 
 
-[38]
-Overfull \hbox (29.53563pt too wide) detected at line 1355
+[37]
+Overfull \hbox (15.30927pt too wide) detected at line 1353
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝛾((ℎ, 𝑘)(ℎ[], 𝑘[])) = []𝑓(ℎℎ[]), 𝑔(𝑘𝑘[])[] = []𝑓(ℎ)𝑓(ℎ[]), 𝑔(𝑘)𝑔(𝑘[])[] = 𝛾((ℎ, 𝑘))𝛾(ℎ[], 𝑘[])
  []
 
 
-Overfull \hbox (10.77252pt too wide) detected at line 1362
-[]
- []
-
-
-Overfull \hbox (30.03564pt too wide) detected at line 1369
+Overfull \hbox (15.80928pt too wide) detected at line 1367
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝜙((𝑓, 𝑔)(𝜑, 𝜓)) = 𝜙(𝑓 ∘ 𝜑, 𝑔 ∘ 𝜓) = (𝑓 ∘ 𝜑, 𝑔 ∘ 𝜓) = (𝑓, 𝑔) ∘ (𝜑, 𝜓) = 𝜙((𝑓, 𝑔)) ∘ 𝜙((𝜑, 𝜓))
  []
 
 
 
-[39]
+[38]
 
-[40]
-Underfull \hbox (badness 1325) in paragraph at lines 1406--1409
-\TU/NewCM10-Book.otf(0)/m/n/10.95 sto che $[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 ((ℎ, 𝑒[])) = [](ℎ) ∣ 𝑛$\TU/NewCM10-Book.otf(0)/m/n/10.95 , de-ve es-se-re $[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 ((ℎ[], 𝑘[])) =
+[39]
+Overfull \hbox (0.83653pt too wide) in paragraph at lines 1404--1407
+[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 ((ℎ, 𝑒[])) = [](ℎ) ∣ 𝑛$\TU/NewCM10-Book.otf(0)/m/n/10.95 , de-ve es-se-re $[]\TU/NewCMMath-Book.otf(1)/m/n/10.95 ((ℎ[], 𝑘[])) = []([](ℎ[]), [](𝑘[])) ∣
  []
 
 
-Overfull \hbox (47.68663pt too wide) detected at line 1430
+Overfull \hbox (33.46027pt too wide) detected at line 1428
 []
  []
 
 
+
+[40]
 
 [41]
 
@@ -1871,27 +1876,22 @@ Overfull \hbox (47.68663pt too wide) detected at line 1430
 [44]
 
 [45]
-
-[46]
-Overfull \hbox (18.90297pt too wide) in paragraph at lines 1604--1605
+Overfull \hbox (18.90297pt too wide) in paragraph at lines 1601--1602
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑍[](𝜎)/𝑍[](𝜎)$\TU/NewCM10-Book.otf(0)/m/n/10.95 , con $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑑, 𝑒 ∉ []$\TU/NewCM10-Book.otf(0)/m/n/10.95 ; per il lem-ma pre-ce-den-te, quin-di, $\TU/NewCMMath-Book.otf(1)/m/n/10.95 |[][](𝜎)| =
  []
 
 
 
+[46]
+
 [47]
-Overfull \hbox (111.1716pt too wide) in paragraph at lines 1624--1626
-[] \TU/NewCMMath-Book.otf(1)/m/n/10.95 = [][](𝜎)$\TU/NewCM10-Book.otf(0)/m/n/10.95 ; inol-tre, $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐾 = [] \U/msa/m/n/10.95 C
+Overfull \hbox (13.36403pt too wide) in paragraph at lines 1655--1658
+[]\TU/NewCMSans10-Book.otf(0)/b/n/10.95 Sot-to-grup-pi nor-ma-li di $[]$. \TU/NewCM10-Book.otf(0)/m/n/10.95 Per $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑛 = 4$\TU/NewCM10-Book.otf(0)/m/n/10.95 , si han-no $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐴[]$ \TU/NewCM10-Book.otf(0)/m/n/10.95 e $\TU/NewCMMath-Book.otf(1)/m/n/10.95 ⟨(1, 2)(3, 4), (1, 3)(2, 4)⟩$\TU/NewCM10-Book.otf(0)/m/n/10.95 .
  []
 
 
 
 [48]
-Overfull \hbox (13.36403pt too wide) in paragraph at lines 1654--1657
-[]\TU/NewCMSans10-Book.otf(0)/b/n/10.95 Sot-to-grup-pi nor-ma-li di $[]$. \TU/NewCM10-Book.otf(0)/m/n/10.95 Per $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑛 = 4$\TU/NewCM10-Book.otf(0)/m/n/10.95 , si han-no $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐴[]$ \TU/NewCM10-Book.otf(0)/m/n/10.95 e $\TU/NewCMMath-Book.otf(1)/m/n/10.95 ⟨(1, 2)(3, 4), (1, 3)(2, 4)⟩$\TU/NewCM10-Book.otf(0)/m/n/10.95 .
- []
-
-
 
 [49]
 
@@ -1904,27 +1904,22 @@ Overfull \hbox (13.36403pt too wide) in paragraph at lines 1654--1657
 [53]
 
 [54]
-
-[55]
-
-[56]
-Overfull \hbox (9.71928pt too wide) detected at line 1918
+Overfull \hbox (9.71928pt too wide) detected at line 1919
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐺(2) ≅ []  𝐺(5) ≅ []
  []
 
 
-Overfull \hbox (60.51405pt too wide) detected at line 1939
+
+[55]
+Overfull \hbox (46.28769pt too wide) detected at line 1941
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 |ℳ| = [] = [] = [] = 𝑝[]𝑚 [] []
  []
 
 
-Overfull \hbox (59.25749pt too wide) detected at line 1943
+
+[56]
+Overfull \hbox (45.03113pt too wide) detected at line 1945
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑣[](𝑝[]𝑚 − 𝑖) = 𝑣[](𝑝[] − 𝑖) = 𝑣[](𝑖)  ⟹  𝑣[] [] = 𝑣[](𝑝[]𝑚 − 𝑖) − 𝑣[](𝑝[] − 𝑖) = 0
- []
-
-
-Overfull \hbox (45.81566pt too wide) detected at line 1989
-\TU/NewCMMath-Book.otf(1)/m/n/10.95 |𝑌| = 𝑛[] = []|[](𝐻)| = [](𝑆) + [] [](𝐻) = 1 + [] []
  []
 
 
@@ -1941,22 +1936,22 @@ Overfull \hbox (45.81566pt too wide) detected at line 1989
 
 [62]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2133.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2133.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2133.
+
+
+
 [63]
 
 [64]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2129.
-
-
 
 [65]
 
@@ -1965,69 +1960,74 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [67]
 
 [68]
-
-[69]
-
-[70]
-Overfull \hbox (41.05585pt too wide) detected at line 2313
+Overfull \hbox (41.05585pt too wide) detected at line 2317
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑍(𝐷[]) = ⟨𝐼𝑑⟩ 𝑍(𝐷[] × ℤ/3ℤ) = 𝑍(𝐷[]) × 𝑍(ℤ/3ℤ) ≅ ℤ/3ℤ 𝑍(𝐷[] × ℤ/5ℤ) ≅ ℤ/5ℤ
  []
 
 
 
+[69]
+
+[70]
+
 [71]
+Overfull \hbox (1.68639pt too wide) in paragraph at lines 2376--2378
+[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Per il I teo-re-ma di omo-mor-fi-smo, $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐺/𝐻[] ⟶ 𝑆[]$ \TU/NewCM10-Book.otf(0)/m/n/10.95 è iniet-ti-va[][][][][][], cioè $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐺/𝐻[] ↪
+ []
+
+
 
 [72]
 
 [73]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 2430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 2430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2430.
+
+
+
 [74]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 2426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 2426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2426.
-
-
 
 [75]
 
 [76]
-
-[77]
-Overfull \hbox (1.00325pt too wide) in paragraph at lines 2517--2520
+Overfull \hbox (1.00325pt too wide) in paragraph at lines 2521--2524
 \TU/NewCM10-Book.otf(0)/m/n/10.95 do-ve l’e-qui-va-len-za è da-ta dal fat-to che $\TU/NewCMMath-Book.otf(1)/m/n/10.95 ℎ([] 𝑥[])ℎ[] ⋅ (ℎ ⋅ 𝑥[]) = ℎ [] 𝑥[] ⋅
  []
 
 
-Overfull \hbox (13.66661pt too wide) detected at line 2562
+Overfull \hbox (13.66661pt too wide) detected at line 2566
 []
  []
 
 
 
-[78]
+[77]
 
-[79]
-Overfull \hbox (52.3666pt too wide) in paragraph at lines 2604--2605
+[78]
+Overfull \hbox (52.3666pt too wide) in paragraph at lines 2608--2609
 \TU/NewCM10-Book.otf(0)/m/n/10.95 men-te; il pri-mo, al-lo-ra, può es-se-re man-da-to in un ele-men-to di $[]$,
  []
 
 
+
+[79]
 
 [80]
 
@@ -2054,31 +2054,21 @@ Overfull \hbox (52.3666pt too wide) in paragraph at lines 2604--2605
 [91]
 
 [92]
-Underfull \hbox (badness 5008) in paragraph at lines 3057--3059
-[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Sia-no $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑋 = []$ \TU/NewCM10-Book.otf(0)/m/n/10.95 e $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑌 =
- []
-
-
 
 [93]
-Overfull \hbox (41.83296pt too wide) detected at line 3127
-[] \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓 = [] = [] = 𝐼 ∩ 𝐽
- []
-
-
 
 [94]
 
 [95]
 
 [96]
-
-[97]
-Underfull \hbox (badness 1158) in paragraph at lines 3234--3235
+Underfull \hbox (badness 1158) in paragraph at lines 3245--3246
 []\TU/NewCM10-Book.otf(0)/m/n/10.95 ogni ele-men-to non in-ver-ti-bi-le di $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝐴$ \TU/NewCM10-Book.otf(0)/m/n/10.95 è con-te-nu-to in un idea-le
  []
 
 
+
+[97]
 
 [98]
 
@@ -2093,6 +2083,11 @@ Underfull \hbox (badness 1158) in paragraph at lines 3234--3235
 [103]
 
 [104]
+Overfull \hbox (6.20924pt too wide) in paragraph at lines 3520--3522
+[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Si di-mo-stra per con-tro-po-si-zio-ne, cioè $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑆[]𝐼$ \TU/NewCM10-Book.otf(0)/m/n/10.95 non-proprio equi-va-le a $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑆[]𝐼 =
+ []
+
+
 
 [105]
 
@@ -2117,17 +2112,7 @@ Underfull \hbox (badness 1158) in paragraph at lines 3234--3235
 [115]
 
 [116]
-Underfull \hbox (badness 1173) in paragraph at lines 3861--3862
-[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Per di-mo-stra-re que-sto, si con-si-de-ra-no due pos-si-bi-li
- []
-
-
-Underfull \hbox (badness 1490) in paragraph at lines 3881--3883
-[]\TU/NewCM10-Book.otf(0)/m/n/10.95 Per il ca-so ge-ne-ra-le, si pren-do-no $\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓[](𝑥), 𝑔[](𝑥)$ \TU/NewCM10-Book.otf(0)/m/n/10.95 pri-mi-ti-vi e si
- []
-
-
-Overfull \hbox (16.70782pt too wide) detected at line 3889
+Overfull \hbox (2.48146pt too wide) detected at line 3901
 \TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑐(ℎ(𝑥)) = 𝑐[]𝑐(ℎ(𝑥))ℎ[](𝑥)[] = 𝑐(𝑓(𝑥)𝑔(𝑥)) = 𝑐[]𝑐(𝑓(𝑥))𝑐(𝑔(𝑥))𝑔[](𝑥)𝑓[](𝑥)[]
  []
 
@@ -2138,31 +2123,19 @@ Overfull \hbox (16.70782pt too wide) detected at line 3889
 [118]
 
 [119]
-Overfull \hbox (10.06879pt too wide) detected at line 3966
-\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓(𝑥) = 𝑔[](𝑥)ℎ[](𝑥) []  [] 𝑔[](𝑥) = [] 𝑔(𝑥),  [] ℎ[](𝑥) = [] ℎ(𝑥)
- []
-
-
 
 [120]
-Overfull \hbox (63.88805pt too wide) detected at line 4004
-\TU/NewCMMath-Book.otf(1)/m/n/10.95 𝑓 ∣ 𝑔ℎ  ⟹  𝑓 = 𝑐(𝑓) ∣ 𝑐(𝑔ℎ) = 𝑐(𝑔)𝑐(ℎ)  ⟹  𝑓 ∣ 𝑐(𝑔) ∣ 𝑔(𝑥) [] 𝑓 ∣ 𝑐(ℎ) ∣ ℎ(𝑥)
- []
-
-
 
 [121]
 
 [122]
-
-[123]
 
 Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[124] (./master.aux)
+[123] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2177,14 +2150,14 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52600 strings out of 475506
+ 52560 strings out of 475506
  125129,2373549 words of node,token memory allocated
- 4505 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 11 glue, 4 kern, 1 glyph, 1247 attribute, 99 glue_spec, 625 attribute_list, 2 write nodes
-   avail lists: 1:1,2:2686,3:1070,4:213,5:701,6:93,7:9934,8:109,9:1162,10:31,11:821
- 73899 multiletter control sequences out of 65536+600000
+ 4706 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 26 glue, 4 kern, 1 glyph, 1279 attribute, 99 glue_spec, 641 attribute_list, 2 write nodes
+   avail lists: 1:1,2:2437,3:1017,4:205,5:616,6:93,7:7096,8:109,9:853,10:29,11:700
+ 73860 multiletter control sequences out of 65536+600000
  178 fonts using 92792135 bytes
- 116i,21n,125p,941b,3296s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,19n,125p,941b,3296s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.41'
 
@@ -2268,10 +2241,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM08-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM08-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-BookItalic.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Book.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (124 pages, 1400570 bytes).
+Output written on master.pdf (123 pages, 1394617 bytes).
 
-PDF statistics: 1360 PDF objects out of 1440 (max. 8388607)
- 1183 compressed objects within 12 object streams
- 543 named destinations out of 1000 (max. 131072)
+PDF statistics: 1356 PDF objects out of 1440 (max. 8388607)
+ 1180 compressed objects within 12 object streams
+ 542 named destinations out of 1000 (max. 131072)
  320 words of extra memory for PDF output out of 10000 (max. 100000000)
 
