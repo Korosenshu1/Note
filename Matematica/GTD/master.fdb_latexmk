@@ -1,9 +1,10 @@
 # Fdb version 4
-["lualatex"] 1760617026.47076 "master.tex" "master.pdf" "master" 1760617030.72859 0
+["lualatex"] 1760957549.73843 "master.tex" "master.pdf" "master" 1760957556.0807 0
   "/etc/texmf/tex/generic/config/language.dat" 1756293479.83859 5960 3d5d21f87da1c1249bc1ecea1895a000 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1757239702.82896 128286 1fa77e329d9b541d812716dd3bc09cda ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1756293460.99059 127657 4f777f3dd503fb095890a1470864ea05 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc" 1756293459.80059 120234 ad9c0c086ece3245fd38693803116b6c ""
+  "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromandemi10-regular.luc" 1756293461.43459 127547 42299df9ef7d080d6c887a06384347ad ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-bold.luc" 1756293459.89837 128091 b9b2fce16d1009278e5c339db0b45bd6 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc" 1757239703.18796 128152 45a5be7d7358830ab33e383eb6664f0c ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans17-regular.luc" 1756293459.23159 127849 ebb6ee1493ab92634bfabfbbe1e7cb89 ""
@@ -14,6 +15,7 @@
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/texgyrepagellax-regular.luc" 1756293457.82859 301373 7c97197bea1d15674127ffb56cd18dec ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/texgyrepagellax-slanted.luc" 1756293458.51697 271819 5338518cf75263461fd6e349ab8f8304 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1759228749.72398 441013 fc1f83b3ae732bb947ed2474ff4005c8 ""
+  "/usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf" 1755987285 111892 bcd3166022befea094c973b521411001 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf" 1755987285 107448 a9e5b7aaaf5f74194deee407f2fd1552 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf" 1755987285 94828 113f623892fb158753639cc67f23e192 ""
   "/usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf" 1755987285 206544 f096f4ad8dcbd65d59e8268d5eac9f4c ""
@@ -394,11 +396,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756293690 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1756293594 5586740 2e6203b42f993d13a43173e2a666b399 ""
   "front.jpg" 1757669160.62298 216378 d77dcb7722f72aa8425cd244075185fe ""
-  "master.aux" 1760617030.4289 10317 d6f2b59cc1daa8bfcec249396d0586a2 "lualatex"
+  "master.aux" 1760957555.62399 11887 c0e7684ca624cea3d12f5fde319426bf "lualatex"
   "master.ind" 1757666313.44795 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1760617028.6489 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "master.tex" 1760617019.45698 90865 a99ff46f420ede659182c212d87bc289 ""
-  "master.toc" 1760617030.43745 1892 6889e235046c3717cb0c9b04dfb8fc07 "lualatex"
+  "master.out" 1760957552.89699 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "master.tex" 1760957544.57799 99623 67bed1c09f9e80785ba8c66835eb32c4 ""
+  "master.toc" 1760957555.63558 2190 d130589f123e443ad340845ace5fb0a6 "lualatex"
   (generated)
   "master.aux"
   "master.idx"
@@ -407,8 +409,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1757666313.34438 "master.idx" "master.ind" "master" 1760617030.72848 0
-  "master.idx" 1760617027.3409 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1757666313.34438 "master.idx" "master.ind" "master" 1760957556.08054 0
+  "master.idx" 1760957551.02399 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

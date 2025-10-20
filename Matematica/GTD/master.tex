@@ -1652,11 +1652,11 @@ Facendo uso del fatto che le derivate parziali sono miste, essendo $\underline{x
 S_p(\underline{x}_u(p)) \cdot \underline{x}_v(p) = \underline{x}_u(p) \cdot S_p(\underline{x}_v(p))
 \] 
 \end{proof}
-\subsection{Il piano affine (da rivedere)}
+\subsection{Curvature e direzioni principali}
 Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie, $\underline{n}:\Sigma \to \mathbb{R}^3$ un versore normale e $\underline{x}:U\to \underline{x}(U) \subseteq \Sigma$ una parametrizzazione regolare compatibile, con $p = \underline{x}(u_0,v_0)$.
 Si prende $w \in T_p\Sigma$, con $\left\lVert w \right\rVert =1$, e si prende il piano affine $\pi$ passante per $p$ e contenente la retta $p + \operatorname{Span} (w)$; si vuole studiare $\pi \cap \underline{x}(U)$.
 
-	Sia, allora, $\pi= \left\{ X \in \mathbb{R}^3  \mid (a,b,c) \cdot X = d \right\} $, con $(a,b,c) \perp w$, e sia $f(u,v) = (a,b,c) \cdot \underline{x}(u,v) : U \to \mathbb{R}$.
+	Sia, allora, $\pi= \left\{ X \in \mathbb{R}^3  \mid (a,b,c) \cdot X = d \right\} $ e sia $f(u,v) = (a,b,c) \cdot \underline{x}(u,v) : U \to \mathbb{R}$.
 	In questo modo, la condizione che un punto della superficie stia nel piano diventa $f(u,v) = d$, quindi
 	\[
 	\underline{x}^{-1}\big(\pi\cap \underline{x}(U)\big) = \left\{ (u,v) \in U  \mid f(u,v) = d \right\} 
@@ -1669,5 +1669,168 @@ Si prende $w \in T_p\Sigma$, con $\left\lVert w \right\rVert =1$, e si prende il
 	\end{cases}
 	\] 
 	allora $\pi \neq T_p \Sigma\iff \big(f_u(u_0,v_0) , f_v(u_0,v_0)\big)\neq (0,0)$.
+	Assumendo, per esempio, $f_v (u_0,v_0) \neq 0$, per il teorema della funzione implicita, si trova $v = v(u)$, con $(u,v)$ valori attorno a $(u_0,v_0)$, tale che la curva $t \longmapsto (t ,v(t))$ parametrizza $\underline{x}^{-1}(\pi\cap \Sigma)$ in questo intorno; allora la curva $\alpha (u) = \underline{x}(u,v(u))$ parametrizza $\pi \cap \Sigma$ intorno a $p$.
+
+	Si nota, inoltre, che $\alpha $ \`e regolare perch\'e:
+	\[
+	\alpha '(u) = \underline{x}_u + v'(u) \underline{x}_v \neq 0 
+	\] 
+	essendo $\underline{x}_u$ e $\underline{x}_v$ indipendenti. 
+Allora si pu\`o assumere che $\alpha $ sia pla\footnote{Allora si usa $s$ per la variabile in modo da evidenziare che \`e una pla.}, per esempio con $\alpha '(s_0) = w \in T_p\Sigma$, dove $\left\lVert w \right\rVert =1$.
+Dato, ora, il versore normale alla superficie $\underline{n} : \underline{x}(U) \to \mathbb{R}^3$, si ha:
+\[
+\underline{n}(\alpha (s)) \cdot \alpha '(s) = 0 , \ \forall s \in I
+\] 
+dove $I$ \`e un certo intervallo che realizza tale condizione, non meglio specificato per semplicit\`a.
+Assumendo che $\exists s_0 \in I : \alpha (s_0) = p$, allora:
+\[
+		0=\Eval{\frac{d }{d s} }{s = s_0}{} \underline{n}(\alpha (s)) \cdot \alpha '(s) = - S_p w \cdot w + \underline{n}(p) \cdot T'(s_0) 
+\] 
+da cui
+\begin{boxenv}[]
+	\begin{equation}
+	 k_n(p,w):=S_p w \cdot w= \underline{n}(p) \cdot T'(s_0)
+	\end{equation}
+\end{boxenv}
+Si nota che la quantit\`a $S_p w \cdot w$ non dipende dalla scelta della curva, motivo per cui la dipendenza \`e esclusivamente legata a $w$ e $p$; in questo modo, la quantit\`a $k_n(p,w)$ \`e ben definita e, visto che lega l'operatore forma alla curvatura di $\alpha $ (essendoci un $T'$ a secondo membro), \`e chiamata \textit{curvatura normale} (da cui il pedice $n$).
+\begin{osservazione}
+Si nota che se $\underline{n}(p) \in \pi$, allora $T'(s_0)$ e $\underline{n}(p)$ sono allineati, per cui 
+\[
+\lvert k_n(p,w) \rvert =\left\lVert T'(s_0) \right\rVert 
+\] 
+cio\`e la curvatura normale coincide con la curvatura della curva $\pi \cap \Sigma$ in $p$.
+\end{osservazione}
+\noindent Visto che $S_p$ \`e autoaggiunto, \`e diagonalizzabile, pertanto possono esistere due autospazi distinti e ortogonali fra loro in $T_p\Sigma$ legati ai suoi autovalori: questi sono chiamati \textbf{direzioni principali}, mentre i suoi autovalori sono chiamati \textbf{curvature principali}.
+\begin{osservazione}
+Si vede che, se $w \in T_p\Sigma$, con $\left\lVert w \right\rVert =1$ e $S_p w = \lambda w$, si ha
+\[
+k_n(p,w) = \lambda 
+\] 
+\end{osservazione}
+\begin{prop}
+	[Formula di Eulero]
+	Sia $\Sigma$ una superficie, con $ p \in \Sigma$, e siano $e_1, e_2 \in T_p\Sigma$ due versori tangenti che generano le direzioni principali (cio\`e una base ortonormale di $T_p\Sigma$ ottenuta da $S_p$), quindi con $S_p e_i = k_i e_i ,\  i=1,2$.
+	Allora, dato un versore $w \in T_p\Sigma$, si ha $w = \cos \theta e_1 + \sin \theta  e_2$ e 
+	\[
+	k_n(p,w) = \cos^2 \theta k_1+\sin^2 \theta k_2
+	\] 
+\end{prop}
+\begin{proof}
+	Per conto diretto:
+	\[
+	S_p (\cos \theta  e_1 + \sin \theta e_2) \cdot (\cos \theta e_1 + \sin \theta e_2) = (\cos \theta k_1 e _1 + \sin \theta k_2 e_2) \cdot (\cos \theta e_1  +\sin \theta e_2)
+	\] 
+\end{proof}
+\begin{corollario}
+	Se $k_1 \le k_2$ sono le curvature principali di $\Sigma$ in $p \in \Sigma$, allora
+	\[
+		\left\{ k_n(p,w)  \mid \left\lVert w \right\rVert =1, \ w \in T_p\Sigma \right\}  = [k_1,k_2] \subset \mathbb{R}
+	\] 
+\end{corollario}
+\begin{proof}
+	Per la formula di Eulero:
+	\[
+	k_n(p,w) = (1- \sin ^2 \theta ) k_1 + \sin^2 \theta  k_2 = k_1 + (k_1-k_2)\sin^2 \theta 
+	\] 
+	quindi, al variare di $\theta $, si raggiungono tutti i valori compresi tra $k_1$ e $k_2$.
+\end{proof}
+\begin{definizione}
+	[Curvatura gaussiana]
+	Data $\Sigma \subseteq \mathbb{R}^3$ superficie con versore normale $\underline{n}:\Sigma \to \mathbb{R}^3$; si definisce \textit{curvatura gaussiana} di $\Sigma$ in $p \in \Sigma$ come
+	\[
+	K(p) := \det S_p
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Curvatura media]
+		Data $\Sigma \subseteq \mathbb{R}^3$ superficie con versore normale $\underline{n}:\Sigma \to \mathbb{R}^3$; si definisce \textit{curvatura media} di $\Sigma$ in $p \in \Sigma$ come
+	\[
+	H(p) := \frac{1}{2} \operatorname{Tr} S_p
+\]
+\end{definizione}
+\begin{osservazione}
+Si nota che per $\Sigma \subseteq \mathbb{R}^3$ superficie e $\underline{n} : \Sigma \to \mathbb{R}^3$ versore normale, allora anche $- \underline{n} :\Sigma \to \mathbb{R}^3$ \`e un versore normale; operando la sostituzione $\underline{n} \to - \underline{n}$, tutte le curvature normali $k_n (p,w)$ e la curvatura media cambiano segno, mentre la curvatura gaussiana rimane invariata.
+\end{osservazione}
+\begin{definizione}
+	[Superficie piatta e minima]
+	Una superficie $\Sigma$ si dice \textit{piatta} se $K = 0, \ \forall p$ e si dice \textit{minima} se $H = 0,\ \forall p$.
+\end{definizione}
+\noindent Tramite queste due curvature, si possono classificare i punti di una superficie nei seguenti modi:
+\begin{itemize}
+	\item un punto $p$ \`e detto \textit{ellittico} se $K(p) > 0$;
+	\item $p$ \`e \textit{iperbolico} se $K(p) <0$;
+	\item $p$ \`e \textit{parabolico}  se $K(p) = 0$ e $S_p \neq 0$;
+	\item $p$ \`e \textit{planare} se $S_p = 0$.
+\end{itemize}
+\subsection{Forme fondamentali}
+\begin{definizione}
+	[I forma fondamentale]
+	Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie; si definisce la \textit{I forma fondamentale} come la famiglia
+	\[
+		\left\{ \mathbf{I} _p : T_p \Sigma \times T_p \Sigma \to \mathbb{R} \right\} _{p \in \Sigma} 
+	\] 
+	di applicazioni lineari simmetriche date da
+	\[
+	\mathbf{I} _p (\xi ,\eta) := \xi \cdot \eta, \ \forall \xi ,\eta \in T_p\Sigma
+	\] 
+\end{definizione}
+\begin{definizione}
+	[II forma fondamentale]
+	Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie e $\underline{n}:\Sigma \to \mathbb{R}^3$ una mappa versore normale; si definisce la \textit{II forma fondamentale} come la famiglia
+	\[
+	\left\{ \mathbf{II}_p : T_p\Sigma \times T_p\Sigma \to \mathbb{R}  \right\} _{p \in \Sigma} 
+	\] 
+	di applicazioni lineari simmetriche date da 
+	\[
+	\mathbf{II} _p(\xi ,\eta) := S_p \xi \cdot \eta, \ \forall \xi ,\eta \in T_p\Sigma
+	\] 
+\end{definizione}	
+\subsubsection{Formula per la curvatura di Gauss}
+
+
+Tramite queste, \`e possibile ricavare una formula per la curvatura gaussiana.
+Sia $\Sigma \subseteq \mathbb{R}^3$ una superficie, con versore normale $\underline{n}:\Sigma \to \mathbb{R}^3$; fissata una parametrizzazione regolare $\underline{x}: U \to \underline{X}(U) \subseteq \Sigma$ tale che $\underline{x}(u_0,v_0) = p$, si possono scrivere la prima e la seconda forma fondamentale in termini della base di $T_p \Sigma$ data da $\underline{x}_u$ e $\underline{x}_v$:
+\[
+	\mathbf{I} : \begin{pmatrix} E & F  \\ F & G\end{pmatrix} \hspace{1cm} \mathbf{II} : \begin{pmatrix} \ell & m \\ m & n  \end{pmatrix} 
+\] 
+Inoltre, si pu\`o scrivere in forma matriciale anche l'operatore forma:
+\[
+	S : \begin{pmatrix} a & c \\ b & d \end{pmatrix} 
+\] 
+Se $\xi , \eta \in T_p \Sigma$ hanno coordinate $X,Y$ rispetto alla base $(\underline{x}_u(p) , \underline{x}_v(p))$, si trova:
+\[
+	\begin{split}
+		&\mathbf{II} (\xi ,\eta) = X^\top \begin{pmatrix} \ell & m \\ m & n  \end{pmatrix} Y = \xi  \cdot S\eta = \mathbf{I} (\xi ,S(\eta)) = X^\top \begin{pmatrix} E & F \\ F & G \end{pmatrix}   \begin{pmatrix} a & c \\ b & d \end{pmatrix} Y \\
+		&\Rightarrow \begin{pmatrix} \ell & m \\ m & n \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix} \begin{pmatrix} a & c \\ b & d \end{pmatrix} 
+	\end{split}
+\] 
+da cui
+\begin{boxenv}[]
+\begin{equation}
+	K = \frac{\ell n - m^2 }{EG - F^2}
+\end{equation}
+\end{boxenv}
+\subsubsection{Formula per $\ell ,m,n$}
+Si prende $\Sigma \subseteq \mathbb{R}^3$ una superficie e $\underline{n}: \Sigma \to \mathbb{R}^3$ versore normale.
+Sia $\underline{x}(U) \subseteq \Sigma$ una parametrizzazione regolare con $p = \underline{x}(u_0,v_0)$; si nota che $\underline{n}(\underline{x}(u,v_0)) \cdot \underline{x}_u(u,v_0) = 0 $, quindi, derivando rispetto ad $u$ e calcolando in $u_0$:
+\[
+-S_p (\underline{x}_u (p)) \cdot \underline{x}_u (p) + \underline{n}(p) \cdot \underline{x}_{uu} (u_0,v_0) = 0 
+\] 
+da cui
+\begin{boxenv}[]
+\begin{equation}
+	\ell (u_0,v_0) = \mathbf{I I} _p (\underline{x}_u(p), \underline{x}_u(p)) = \underline{n}(p) \cdot \underline{x}_{u u } (u_0,v_0)
+\end{equation}
+\end{boxenv}
+In modo del tutto analogo, si ricavano gli altri coefficienti:
+\begin{boxenv}[]
+\begin{equation}
+	\begin{cases}
+		m(u_0,v_0) = \mathbf{II} _p (\underline{x}_u(p),\underline{x}_v(p)) = \underline{n}(p) \cdot \underline{x}_{uv} (u_0,v_0)\\
+		n (u_0,v_0) = \mathbf{I I} _p (\underline{x}_v(p),\underline{x}_v(p)) = \underline{n}(p) \cdot \underline{x}_{v v } (u_0,v_0)
+	\end{cases}
+\end{equation}
+\end{boxenv}
+
 \end{document}
 
