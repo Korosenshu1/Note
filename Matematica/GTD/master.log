@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  20 OCT 2025 12:52
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  20 OCT 2025 14:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1534,12 +1534,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1813.
 
 
+
+[43]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
 Package caption Warning: Unused \captionsetup[table] on input line 117.
 See the caption package documentation for explanation.
 
 
 
-[43] (./master.aux)
+[48] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1553,14 +1564,16 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 50507 strings out of 475506
+ 50526 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 2566 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 7 glue, 4 kern, 1 glyph, 605 attribute, 102 glue_spec, 304 attribute_list, 2 write nodes
-   avail lists: 1:5,2:2163,3:795,4:142,5:451,6:71,7:5670,8:74,9:988,10:36,11:601
- 72003 multiletter control sequences out of 65536+600000
- 180 fonts using 15964375 bytes
+ 2753 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 glyph, 665 attribute, 102 glue_spec, 334 attribute_list, 2 write nodes
+   avail lists: 1:5,2:2073,3:795,4:142,5:451,6:74,7:5669,8:74,9:988,10:36,11:601
+ 72011 multiletter control sequences out of 65536+600000
+ 182 fonts using 16227751 bytes
  124i,25n,114p,10918b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.8'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.7'
 
@@ -1576,10 +1589,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (43 pages, 558958 bytes).
+Output written on master.pdf (48 pages, 577514 bytes).
 
-PDF statistics: 567 PDF objects out of 1000 (max. 8388607)
- 480 compressed objects within 5 object streams
- 187 named destinations out of 1000 (max. 131072)
- 205 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 601 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 198 named destinations out of 1000 (max. 131072)
+ 213 words of extra memory for PDF output out of 10000 (max. 100000000)
 

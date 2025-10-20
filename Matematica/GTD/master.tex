@@ -1692,7 +1692,7 @@ da cui
 	 k_n(p,w):=S_p w \cdot w= \underline{n}(p) \cdot T'(s_0)
 	\end{equation}
 \end{boxenv}
-Si nota che la quantit\`a $S_p w \cdot w$ non dipende dalla scelta della curva, motivo per cui la dipendenza \`e esclusivamente legata a $w$ e $p$; in questo modo, la quantit\`a $k_n(p,w)$ \`e ben definita e, visto che lega l'operatore forma alla curvatura di $\alpha $ (essendoci un $T'$ a secondo membro), \`e chiamata \textit{curvatura normale} (da cui il pedice $n$).
+\noindent Si nota che la quantit\`a $S_p w \cdot w$ non dipende dalla scelta della curva, motivo per cui la dipendenza \`e esclusivamente legata a $w$ e $p$; in questo modo, la quantit\`a $k_n(p,w)$ \`e ben definita e, visto che lega l'operatore forma alla curvatura di $\alpha $ (essendoci un $T'$ a secondo membro), \`e chiamata \textit{curvatura normale} (da cui il pedice $n$).
 \begin{osservazione}
 Si nota che se $\underline{n}(p) \in \pi$, allora $T'(s_0)$ e $\underline{n}(p)$ sono allineati, per cui 
 \[
@@ -1822,7 +1822,7 @@ da cui
 	\ell (u_0,v_0) = \mathbf{I I} _p (\underline{x}_u(p), \underline{x}_u(p)) = \underline{n}(p) \cdot \underline{x}_{u u } (u_0,v_0)
 \end{equation}
 \end{boxenv}
-In modo del tutto analogo, si ricavano gli altri coefficienti:
+\noindent In modo del tutto analogo, si ricavano gli altri coefficienti:
 \begin{boxenv}[]
 \begin{equation}
 	\begin{cases}
@@ -1831,6 +1831,184 @@ In modo del tutto analogo, si ricavano gli altri coefficienti:
 	\end{cases}
 \end{equation}
 \end{boxenv}
+\subsection{Esercizi}
+\begin{esercizio}
+	[Classificazione del cilindro]
+	Classificare tutti i punti di un cilindro retto di raggio $R$.
+\end{esercizio}
+\begin{svolgimento}
+	Il cilindro si pu\`o ottenere tramite la rotazione di una retta verticale nel piano $xz$ a distanza $R$ dall'asse $z$.
+	La sua parametrizzazione sar\`a:
+	\[
+	\underline{x}(u,v) = (R \cos u, R\cos v , v)
+	\] 
+	Si ha
+	\[
+	\begin{cases}
+		\underline{x}_u = (-R \sin u , R \cos v, 0 )\\
+		\underline{x}_v = (0,0,1)
+	\end{cases}\implies \underline{x}_u \times \underline{x}_v = \begin{pmatrix} R \cos u\\ R \sin u \\ 0 \end{pmatrix} 
+	\] 
+Allora la prima forma fondamentale in forma matriciale tramite la base composta da $\underline{x}_u$ e $\underline{x}_v$ \`e data da
+\[
+	\mathbf{I} _{\underline{x}(u,v)} : \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} R^2 & 0 \\ 0 & 1 \end{pmatrix} 
+\] 
+Per scrivere la seconda forma fondamentale, bisogna arrivare alle derivate seconde:
+\[
+\begin{cases}
+	\underline{x}_{uu} = - R (\cos u, \sin u ,0)\\
+	\underline{x}_{uv} = (0,0,0) \Rightarrow m = 0\\
+	\underline{x}_{v v } = (0,0,0) \Rightarrow n =0
+\end{cases}\implies \ell = \underline{n}\cdot \underline{x}_{uu}  = - R
+\] 
+dove $\underline{n} = \underline{x}_u \times \underline{x}_v / \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert $, da cui
+\[
+	\mathbf{I I} _{\underline{x}(u,v)} = \begin{pmatrix} -R & 0 \\ 0 & 0  \end{pmatrix} 
+\] 
+Infine, la matrice dell'operatore forma si ottiene invertendo quella della prima forma fondamentale (che essendo diagonale, corrisponde alla matrice con gli inversi dei termini diagonali) e si ha:
+\[
+	S_{\underline{x}(u,v)} : \begin{pmatrix} a & c \\ b & d \end{pmatrix}  = \begin{pmatrix} 1/R^2 & 0 \\ 0 & 1  \end{pmatrix} \begin{pmatrix} -R & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} - 1 / R & 0 \\ 0& 0 \end{pmatrix} 
+\] 
+Essendo diagonale, i suoi autovalori, cio\`e le curvature principali, sono $k_1 =- 1 / R$ e $ k_2 = 0$, da cui le curvature normali varieranno nell'intervallo $[-1 / R , 0]$.
+\end{svolgimento}
+\begin{esercizio}
+	[Classificazione dell'elicoide]
+	Classificare tutti i punti dell'elicoide di passo $b > 0$.
+\end{esercizio}
+\begin{svolgimento}
+	Si considera la parametrizzazione regolare
+	\[
+	\underline{x}: 
+	\begin{array}
+		{c c c}
+		\mathbb{R}^{>0} \times \mathbb{R} & \longrightarrow & \mathbb{R}^3\\
+		(u,v) &\longmapsto & (u \cos v , u \sin v , bv)
+	\end{array}
+	\] 
+	per cui l'elicoide \`e data da $\mathcal{E} = \underline{x}(\mathbb{R}^{>0} \times \mathbb{R})$.
+	Si ha:
+	\[
+	\begin{cases}
+		\underline{x}_u = (\cos v, \sin v,0)\\
+		\underline{x}_v = (-u \sin v , u \cos v, b)
+		\end{cases} \implies \begin{pmatrix} E & F \\ F & G \end{pmatrix}^{-1}  = \begin{pmatrix} 1 & 0 \\ 0 & 1 / (u^2 + b^2) \end{pmatrix} 
+	\] 
+Il versore normale \`e dato da 
+\[
+\underline{n} = \frac{\underline{x}_u \times \underline{x}_v}{\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert }= \frac{1}{\sqrt{u^2 + b^2 } } \begin{pmatrix} b \sin v \\ -b \cos v \\ 0 \end{pmatrix} 
+\] 
+I coefficienti della seconda forma normale, invece, sono dati da:
+\[
+\begin{split}
+	& \ell  = \underline{n} \cdot  \underline{x}_{u u } = \underline{n} \cdot (0,0,0) = 0 \\
+	& m = \underline{n} \cdot \underline{x}_{uv}  = \underline{n} \cdot (\sin v , \cos v,0)  =- \frac{b}{ \sqrt{u^2 + b^2} }\\
+	& n = \underline{n} \cdot \underline{x}_{v v }  = \underline{n} \cdot (-u) (\cos v , \sin v,0) = 0 
+\end{split}
+\] 
+da cui
+\[
+	\begin{split}
+		\begin{pmatrix} a & c \\b & d \end{pmatrix} &= \begin{pmatrix} 1 & 0 \\ 0 & 1 / (u^2 + b^2) \end{pmatrix} \begin{pmatrix} 0 &-b /\sqrt{u^2 + b^2}\\ -b /\sqrt{u^2 + b^2} & 0   \end{pmatrix} \\
+				  &= \begin{pmatrix} 0 & -\frac{b}{\sqrt{u^2 + b^2} } \\ -\frac{b}{(u^2 + b^2 )^{3 / 2} } \end{pmatrix} 
+	\end{split}
+\] 
+Allora si trova $H = 0$, da cui si conclude che $\mathcal{E} $ \`e una superficie \textit{minima}, e 
+\[
+K(p) = \det S_p =- \frac{b^2}{(u^2 + b^2 )}< 0
+\] 
+quindi tutti i punti dell'elicoide sono iperbolici.
+Per le curvature principali, invece, si usa che $H \propto k_1 + k_2 = 0 $ e che $K = k_1k_2 =- \frac{b^2 }{u^2 + b^2}$, da cui
+\[
+\begin{cases}
+	k_1 = \displaystyle -\frac{b}{u^2 + b^2}\\
+	k_2 = \displaystyle  \frac{b}{u^2 + b^2}
+\end{cases}
+\] 
+da cui si ricava anche il range per le curvature normali, come da corollario della formula di Eulero.
+\end{svolgimento}
+\begin{esercizio}
+	[Classificazione del toro]
+	Classificare tutti i punti del toro $\mathbb{T}_{a,b}$.
+\end{esercizio}
+\begin{svolgimento}
+	In questo caso, si parte con l'osservare che i punti pi\`u esterni saranno ellittici, mentre quelli vicini al buco interno saranno iperbolici, viste le curvature principali in quelle regioni.
 
+	Dalla scrittura del toro come superficie di rotazione, si trova che 
+	\[
+	\underline{x}(u,v) = \big( (a + b \cos u) \cos v, (a+b\cos u ) \sin v , b \sin u\big)
+	\] 
+	da cui
+	\[
+	\begin{cases}
+		 \underline{x}_u = - b ( \sin u \cos v , \sin u \sin v, - \cos u)\\
+		 \underline{x}_v = (a+b \cos u) (- \sin v , \cos ,0)
+	\end{cases}
+	\] 
+	I coefficienti della prima forma sono:
+	\[
+	E = b^2 (\sin^2 u + \cos^2 u ) = b^2 \hspace{1cm} F = 0 \hspace{1cm}G = (a+b \cos u)^2
+	\] 
+	da cui
+	\[
+		\begin{pmatrix} E & F \\ F & G \end{pmatrix} ^{-1} = \begin{pmatrix} 1 / b^2 & 0 \\ 0 & \frac{1}{(a +b \cos u)^2} \end{pmatrix} 
+	\] 
+Visto che 
+\[
+	\underline{x}_u\times \underline{x}_v = -b \underbracket{( a + b \cos u )}_{\text{sempre }\neq 0 }  \underbracket{( \cos u \cos v , \cos u \sin v , \sin u)}_{\text{versore}} 
+\] 
+si ottiene
+\[
+\underline{n} = \frac{\underline{x}_u \times \underline{x}_v}{\left\lVert \underline{x}_u \times \underline{x}_v  \right\rVert } =- \begin{pmatrix} \cos u \cos v \\ \cos u \sin v \\ \sin u \end{pmatrix} 
+\] 
+I coefficienti della seconda forma, quindi, sono:
+\[
+\begin{split}
+	&\ell  = \underline{n} \cdot \underline{x}_{uu} = - b \underline{n} \cdot \underbracket{(\cos u \cos v , \cos u \sin v , \sin u)}_{= \underline{n}}  = v\\
+	& m = \underline{n}\cdot \underline{x}_{uv} = - b \sin u (- \sin v , \cos v , 0) = 0\\
+	& n = \underline{n}\cdot \underline{x}_{v v } = - (a+ b \cos u) \underline{n}\cdot (\cos v , \sin v , 0 ) = (a + b \cos u) \cos u
+\end{split}
+\] 
+Quindi, la matrice dell'operatore forma \`e data da
+\[
+	\begin{pmatrix} a & c \\ b & d \end{pmatrix} = \begin{pmatrix} 1 / b^2 & 0 \\ 0 & \frac{1}{(a+b\cos u)^2} \end{pmatrix} \begin{pmatrix} b & 0 \\ 0 & (a+ b \cos u) \cos u \end{pmatrix} = \begin{pmatrix} 1 / b & 0 \\ 0 & \frac{\cos u}{a + b \cos u} \end{pmatrix} 
+\] 
+che \`e diagonale e, quindi, si ottengono subito le curvature principali:
+\[
+\begin{cases}
+	 k_1 =1 / b > 0 , \ \forall p\\
+	 \\
+	 k_2 = \displaystyle \frac{\cos u }{a + b \cos u}
+\end{cases}
+\] 
+Si vede che $k_1$ \`e costante, mentre $k_2$ dipende da $u$, che sarebbe l'angolo della circonferenza nel piano $xz$ a partire da cui si ottiene, tramite rotazione, il toro.
+Allora si conclude che i punti per $u \in (- \pi / 2, \pi / 2)$ sono ellittici, quelli con $u = \pm\pi / 2 $ sono parabolici, mentre gli altri sono iperbolici.
+\end{svolgimento}
+\begin{esercizio}
+Mostrare che se $\Sigma \subseteq \mathbb{R}^3$ \`e una superficie compatta, allora ha punti ellittici.
+\end{esercizio}
+\begin{svolgimento}
+	Si considera la funzione 
+	\[
+	f : \Sigma \to \mathbb{R} : p \longmapsto p \cdot p
+	\] 
+	Sia $p_0 \in \Sigma$ un punto di massimo\footnote{Assicurato dalla compattezza della superficie} per $f$; si vuole studiare il segno di $k_n(p_0,w) := T' _\alpha \cdot \underline{n}(p_0)$, con $\alpha :(-\varepsilon ,\varepsilon ) \to \Sigma$ curva pla tale che $\alpha  (0) = p_0$ e $\alpha '(0) = w \in T_{p_0} \Sigma$.
+	Dall'assunzione di $p_0$ massimo per $f$, si ha:
+	\[
+	\varphi (s) = f(\alpha (s)) \le f(\alpha (0)) = f(p_0)
+	\] 
+	Usando che $\varphi (s) = \alpha (s) \cdot \alpha (s)$, con $\varphi '(0) = 0$ e $\varphi ''(0) \le 0$, si ha:
+	\[
+	\varphi '(0) = 2 \alpha '(0) \cdot \alpha (0) = 2 w \cdot p_0 = 0, \ \forall w \in T_{p_0} \Sigma
+	\] 
+quindi $\mathbb{T}_{p_0}\Sigma$, e
+\[
+\varphi ''(0) = 2 [T'_\alpha (0) \cdot p_0 + \underbracket{T_\alpha (0) \cdot T_\alpha (0)}_{=1} ]
+\] 
+Scegliendo un versore normale $\underline{n}$ definito attorno a $p_0$ tale che $\underline{n}(p_0) = p_0 / \left\lVert p_0 \right\rVert $, si ha:
+\[
+	\varphi ''(0) = 2 [\underbracket{T ' _\alpha (0) \cdot \left\lVert p_0 \right\rVert \underline{n}(p_0)}_{= \left\lVert p_0 \right\rVert k_n(p_0,w)} +1]\le 0 \implies k_n(p_0,w) \le - \frac{1}{\left\lVert p_0 \right\rVert} <0
+\] 
+da cui $K(p_0) > 0$.
+\end{svolgimento}
 \end{document}
 
