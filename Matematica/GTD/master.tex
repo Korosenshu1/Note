@@ -828,8 +828,6 @@ Questo si dimostra essere vero, ma non si dimostra.
 
 
 
-
-
 \subsection{Esercizi}
 \begin{esercizio}
 Sia data la curva
@@ -1831,6 +1829,78 @@ da cui
 	\end{cases}
 \end{equation}
 \end{boxenv}
+
+
+\subsection{Il teorema Egregium}
+
+Nasce dal problema di creare carte geografiche che conservassero le lunhgezze, cio\`e dalla possibilit\`a di definire un'isometria tra la sfera e il piano.
+
+Per formalizzare questa richiesta, si considera una superficie $\Sigma$ e una parametrizzazione regolare $\underline{x}: U \to \underline{x}(U) \subseteq \Sigma$.
+Si cerca di capire che condizioni imporre su $\underline{x}$ in modo che, per ogni curva $\overline{\alpha }:[a,b] \to U$, posto $\alpha  = \underline{x}\circ \overline{\alpha } : U \to \Sigma$, sia soddisfatta la relazione $L(\alpha ) = L(\overline{\alpha })$.
+Si nota che
+\[
+	\int_{a} ^t \left\lVert \overline{\alpha }'(u) \right\rVert du = \int_{a} ^t \left\lVert \alpha '(u) \right\rVert du,\ \forall t \in [a,b]
+\] 
+implica che, derivando rispetto a $t$, si abbia $\left\lVert \alpha '(t) \right\rVert =\left\lVert \overline{\alpha }'(t) \right\rVert , \ \forall t \in [a,b]$.
+Sia, ora, $t_0 \in [a,b]$, con $\alpha (t_0) = p$; per costruzione, $\overline{\alpha } = (u(t),v(t))\Rightarrow \overline{\alpha }'(t) = (u'(t),v'(t))$, mentre
+\[
+\alpha '(t) = u'(t) \underline{x}_u(\alpha (t)) + v'(t) \underline{x}_v(\alpha (t))
+\] 
+Allora, per la richiesta $\left\lVert \alpha '(t) \right\rVert =\left\lVert \overline{\alpha }'(t) \right\rVert , \ \forall t \in [a,b]$, si ha che la mappa 
+\[
+\begin{array}
+	{c c c}
+	(\mathbb{R}^2, \cdot )&\longrightarrow &\big(T_{\alpha (t)} \Sigma, \mathbf{I} _{\alpha (t)} \big)\\
+	(a,b)  & \longmapsto & a \underline{x}_u (\alpha (t)) + b \underline{x}_v (\alpha (t))
+\end{array}
+\] 
+\`e un'isometria $\forall t \in [a,b]$ quindi $E = G = 1$ e $F = 0$; infatti $\alpha ' (t)\cdot \alpha '(t) = \overline{\alpha }'(t) \cdot \overline{\alpha }'(t)$ se e solo se
+\[
+	u'^2(t) + v'^2(t) = (u'(t) , v'(t)) \begin{pmatrix} E & F \\ F &  G \end{pmatrix} \begin{pmatrix} u'(t) \\ v'(t) \end{pmatrix} \iff \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} 
+\] 
+Viceversa, \`e ovvio che se la matrice associata alla prima forma fondamentale \`e l'identit\`a nel riferimento provvisto da $\underline{x}$ parametrizzazione regolare, allora le lunghezze delle curve sono conservate.
+Allora si ha la seguente definizione.
+\begin{definizione}
+	Una superficie $\Sigma$ si dice \textit{localmente isometrica} al piano se, $\forall p \in \Sigma$, esiste una parametrizzazione regolare $\underline{x}: U \to \Sigma$ attorno a $p$ tale che $E = G = 1 $ e $F=0$.
+\end{definizione}
+\begin{teorema}
+	[Teorema Egregium]
+	Sia $\Sigma$ una superficie e $\underline{x}: U \to \Sigma$ una parametrizzazione regolare; allora la curvatura gaussiana di $\Sigma$ si esprime, in ogni punto di $\underline{x}(U) \subseteq \Sigma$, in termini di $E,F,G$ e delle loro derivate.
+\end{teorema}
+\begin{corollario}
+	Le sfere non sono localmente isometriche a $\mathbb{R}^2$.
+\end{corollario}
+	\begin{proof}
+		La sfera $S^2_a$ ha curvatura gaussiana costante $K = 1 / a^2  > 0$, mentre il piano ha $E,G = 1$ e $F = 0$, con $K = 0$.
+	\end{proof}
+\noindent Ora si cerca di generalizzare il concetto di isometria locale a due superfici generiche.
+A tale scopo, si considera il seguente diagramma.
+\[
+\begin{tikzcd}
+	& & & &  \underline{x}(U) \subset \Sigma\\
+	\\
+	\left[ a,b \right]  & & U \\
+	\\
+	& & & &  \underline{x}^*(U) \subset \Sigma^*
+	\arrow[from=3-1, to=3-3, "\displaystyle \overline{\alpha}"]
+	\arrow[from=3-3, to=1-5, "\displaystyle \underline{x}"']
+	\arrow[from=3-3, to=5-5, "\displaystyle \underline{x}^*"]
+	\arrow[from=3-1, to=1-5, bend left,"\displaystyle \alpha = \underline{x}\circ \overline{\alpha }"] 
+	\arrow[from=3-1, to=5-5, bend right, "\displaystyle \alpha^* = \underline{x}^*\circ \overline{\alpha }"'] 
+	\arrow[from=1-5, to=5-5, "\displaystyle f=\underline{x}\circ \underline{x}^{-1}"]
+\end{tikzcd}
+\] 
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Esercizi}
 \begin{esercizio}
 	[Classificazione del cilindro]
@@ -2009,6 +2079,92 @@ Scegliendo un versore normale $\underline{n}$ definito attorno a $p_0$ tale che 
 	\varphi ''(0) = 2 [\underbracket{T ' _\alpha (0) \cdot \left\lVert p_0 \right\rVert \underline{n}(p_0)}_{= \left\lVert p_0 \right\rVert k_n(p_0,w)} +1]\le 0 \implies k_n(p_0,w) \le - \frac{1}{\left\lVert p_0 \right\rVert} <0
 \] 
 da cui $K(p_0) > 0$.
+\end{svolgimento}
+\begin{esercizio}
+Sia $p \in \Sigma \subseteq \mathbb{R}^3$ un punto di una superficie $\Sigma$; dimostrare i seguenti punti.
+\begin{enumerate}[(a).]
+	\item Se $p$ \`e ellittico, tutti i punti di un intorno di $p$ sono dalla stessa parte del piano affine $p + T_p \Sigma$.
+	\item Se $p$ \`e iperbolico, allora non esiste un intorno come al punto (a).
+	\item Se $p$ \`e parabolico o planare, allora si possono verificare sia (a), che (b).
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Si usa preliminarmente il fatto che le roto-traslazioni $R: \mathbb{R}^3 \to \mathbb{R}^3$ conservano le curvature delle curve sulla superficie, quindi le curvature normali di $\Sigma$ in $p$ sono le stesse di quelle di $R(\Sigma)$ nel punto $R(p)$ (a meno di un cambio di segno).
+	Allora si assume che:
+	\begin{itemize}
+		\item $p$ \`e nell'origine (cio\`e $p = (0,0,0) = 0 \in \mathbb{R}^3$);
+		\item $p+ T_p\Sigma = \left\{ z=0 \right\} $, cio\`e il piano tangente in $p$ coincide col piano $xy$;
+		\item le direzioni principali nel punto $p$ coincidono con gli assi $x,y$.
+	\end{itemize}
+	Si considera, allora, una parametrizzazione regolare $\underline{x}: U \to \Sigma$ attorno al punto $p= 0$; si ha:
+	\[
+	T_0 \Sigma = \left\{ z=0 \right\} = \mathrm{Span} \big(\underline{x}_u (0), \underline{x}_v (0)\big)
+	\] 
+	dove sia $\underline{x}_u$ che $\underline{x}_v$ hanno coordinata $z=0$ perch\'e sono contenuti nel piano $xy$. 
+	Ne segue che la matrice delle componenti di $\underline{x}_u, \underline{x}_v$ \`e della forma
+	\[
+		\begin{pmatrix} * & *\\ *&*\\0&0 \end{pmatrix} 
+	\] 
+	dove il determinante del blocco $2 \times 2$ deve essere non-nullo.
+	Per ragionamenti simili a quelli svolti in precedenza, si conclude che $\Sigma$ \`e parametrizzata dal grafico di una funzione in un intorno $V$ di $(0,0)$, cio\`e si trova una parametrizzazione $\underline{y}: V \to \Sigma : (u,v) \longmapsto \big(u,v,f(u,v)\big)$, da cui
+	\[
+	\underline{y}_u(0) = \begin{pmatrix} 1 \\ 0 \\ f_u(0) \end{pmatrix} \hspace{1cm} \underline{y}_v = \begin{pmatrix} 0 \\ 1 \\ f_v(0) \end{pmatrix} 
+	\] 
+	Visto che anche questi devono appartenere al piano $xy$, deve valere $f_u(0) = f_v(0) = 0$, cos\`i come $f(0) = 0$, visto che il punto $p$ corrisponde con l'origine.
+	Allora, sviluppando in serie di Taylor attorno a $p$:
+	\[
+		f(u,v) = f(0) + f_u(0)u + f_v(0) v+ \frac{1}{2} \big(f_{uu} (0)u^2 + f_{vv} (0) v^2 + 2f_{uv} (0) uv\big) + \underbracket{\varepsilon (u,v)}_{\text{resto}} 
+	\] 
+con $\frac{\varepsilon (u,v)}{u^2 + v^2}\to 0$, per $(u,v) \to (0,0)$.	
+Si cercano i valori delle derivate seconde di $f$.
+Si calcola, preliminarmente, la I forma fondamentale, che \`e data da:
+\[
+	\begin{split}
+		&E(0) = \underline{y}_u (0) \cdot \underline{y}_u (0) = 1 \hspace{1cm}F(0) = \underline{y}_u(0) \cdot \underline{y}_v(0) = 0 \hspace{1cm}G(0) = \underline{y}_v(0) \cdot \underline{y}_v(0) = 1\\
+		&\Eval{\Rightarrow \begin{pmatrix} E & F \\  F&G \end{pmatrix} }{(u,v)=(0,0)}{} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \mathrm{Id} 
+	\end{split}
+\] 
+Inoltre, visto che si sono prese le curvature principali coincidenti con gli assi $x$ e $y$, si ha che la matrice dell'operatore forma in $p$ \`e data da:
+\[
+	\Eval{\begin{pmatrix} a & c \\ b & d \end{pmatrix} }{(0,0)}{} = \begin{pmatrix} k_1 & 0 \\ 0 & k_2 \end{pmatrix} 
+\] 
+Sfruttando il fatto che la matrice associata alla I forma fondamentale \`e l'identit\`a, si trova che quella associata alla seconda coincide con quella associata all'operatore forma:
+\[
+	\Eval{\begin{pmatrix} \ell & m \\ m & n \end{pmatrix} }{(0,0)}{}= \begin{pmatrix} k_1 & 0 \\ 0 & k_2 \end{pmatrix} 
+\] 
+da cui, usando che $\underline{n}(0) = (0,0,1)$ (per come si sono scelti gli assi), si ha:
+\[
+\begin{split}
+	&k_1=\ell (0) = \underline{n}(0)  \cdot \underline{y}_{uu} (0)= f_{uu} (0) \hspace{1cm}0=m(0)= f_{uv} (0) \hspace{1cm} k_2 = n(0) = f_{vv} (0)
+\end{split}
+\] 
+Se ne conclude che:
+\[
+f(u,v) = \frac{1}{2}\big(k_1 u^2 + k_2 v^2\big)+\varepsilon (u,v)
+\] 
+Per capire cosa succede in ciascun caso, quindi, si studia $\frac{f(u,v)}{u^2 + v^2}$.
+\begin{enumerate}[(a).]
+	\item Si considera $p$ ellittico, quindi si hanno due casi: $k_1\ge k_2 > 0$ (1), oppure $k_2 \le  k_1 < 0$.
+		Nel caso (1):
+		\[
+		\frac{f(u,v)}{u^2 + v^2} = \frac{1}{2(u^2 + v^2 )} (k_1u^2 + k_2v^2) + \frac{\varepsilon (u,v)}{u^2 + v^2} \ge \frac{1}{2}k_2 + \frac{\varepsilon }{u^2 + v^2} > 0 
+		\] 
+		per $(u,v) \sim (0,0)$ e $(u,v) \neq (0,0)$.
+		Nel secondo caso, invece:
+		\[
+		\frac{f(u,v)}{u^2 + v^2} \le  \frac{1}{2} k_1 + \frac{\varepsilon (u,v)}{u^2 + v^2}< 0
+		\] 
+		per $(u,v) \sim (0,0)$.
+	\item Si considera, senza perdita di generalit\`a, $k_1 > 0 > k_2$; allora:
+		\[
+		\frac{f(u,v)}{u^2 + v^2} = \frac{1}{2} \frac{k_1u^2 + k_2 v^2}{u^2+ v^2} + \frac{\varepsilon (u,v)}{u^2 + v^2}
+		\] 
+		Mettendosi arbitrariamente vicino a $(0,0)$, senza raggiungerlo, cio\`e considerando $(u,v) \sim (0,0)$, ci si pu\`o restringere ad uno dei due assi e ottenere $v=0$, oppure $u=0$, cio\`e, rispettivamente, $k_1 / 2 > 0$ e $k_2 / 2 < 0 $, da cui la tesi.
+	\item Se $p$ \`e parabolico, si pu\`o considerare un cilindro; in questo caso, tutti i punti sulla sua superficie laterale sono dalla stessa parte del piano tangente.
+		Al contrario, considerando la superficie ottenuta come grafico di $z = x^2 + y^3$, si vede che il piano tangente spezza la superficie in due regioni, quindi i punti non sono tutti dalla stessa parte.
+
+		Nel caso di $p$ planare, invece, si possono considerare le curve ottenute come grafici di $z= y^{3}$ (entrambe le parti) e $z = y^4$ (da una parte).
+\end{enumerate}
 \end{svolgimento}
 \end{document}
 
