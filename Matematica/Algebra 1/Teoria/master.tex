@@ -3302,7 +3302,7 @@ Si nota che $\langle 0 \rangle $ \`e un ideale primo in $\mathbb{Z}$, visto che 
 	\begin{proof}
 		Si nota, intanto, che $I \subseteq J \subseteq A$ per assunzione, e $J\longmapsto \pi_I(J) = J / I$.
 		Si deve mostrare che $J$ \`e primo (massimale) in $A$ se e solo se $J / I$ \`e primo (massimale) in $A / I$.
-		Per quanto visto nella prop. \ref{idprmaxchar}, richiederer che $J $ sia primo \`e equivalente a richiedere che $A / J$ sia un dominio (campo) e, analogamente, deve risultare che $\frac{A / I}{J / I}$ \`e un dominio (campo).
+		Per quanto visto nella prop. \ref{idprmaxchar}, richiedere che $J $ sia primo \`e equivalente a richiedere che $A / J$ sia un dominio (campo) e, analogamente, deve risultare che $\frac{A / I}{J / I}$ \`e un dominio (campo).
 		Per il II teorema di omomorfismo, per\`o, si ha che
 		\[
 			\frac{A / I }{J / I}\cong \faktor{A}{J}
@@ -3407,7 +3407,7 @@ Si nota, inoltre, che se $A$ \`e un dominio, allora $S = A \setminus\left\{ 0 \r
 	Sia $A$ un dominio e $S = A \setminus\left\{ 0 \right\} $ la sua parte moltiplicativa; allora l'anello delle frazioni $S^{-1}A=Q(A)$ \`e il pi\`u piccolo campo contenente $A$.
 \end{prop}
 	\begin{proof}
-		Si verifica intanto che $Q(A)$ \`e un campo, per cui \`e sufficiente mostrare che esistono gli inverso moltiplicativi, cosa che segue direttamente dal fatto che, $\forall a \in A \setminus \left\{ 0 \right\} $, si ha $1 / a \in Q(A)$; in questo modo, ciascun elemento di $A\setminus\left\{ 0 \right\} $ si pu\`p scrivere come $1 / a$ e, quindi:
+		Si verifica intanto che $Q(A)$ \`e un campo, per cui \`e sufficiente mostrare che esistono gli inverso moltiplicativi, cosa che segue direttamente dal fatto che, $\forall a \in A \setminus \left\{ 0 \right\} $, si ha $1 / a \in Q(A)$; in questo modo, ciascun elemento di $A\setminus\left\{ 0 \right\} $ si pu\`o scrivere come $1 / a$ e, quindi:
 		\[
 		\frac{a}{1}\cdot \frac{1}{a} = \frac{1}{1}
 		\] 
@@ -3430,10 +3430,10 @@ Si nota, inoltre, che se $A$ \`e un dominio, allora $S = A \setminus\left\{ 0 \r
 			\] 
 	\end{itemize}
 \end{esempio}
+\noindent Si nota che se $A$ \`e un dominio e $P$ \`e un suo ideale primo, allora $S = A \setminus P$ \`e una parte moltiplicativa; infatti: $0 \not \in S, \ 1 \in S$ e $\forall x,y \in S$, vale $x,y \not \in P \implies xy \not \in P$, visto che $P$ primo implica che se non contiene due elementi, non ne contiene neanche il prodotto (per controposizione), quindi il prodotto \`e nel complementare: $xy \in A \setminus P = S$.
 \begin{definizione}
 	[Localizzato]
-		Dato un dominio $A$ e $P \subset A$ un suo ideale primo, si pu\`o considerare $S = A\setminus P$, che \`e una parte moltiplicativa perch\'e $0 \not \in S, \ 1 \in S$ e $\forall x,y \in S$, vale $x,y \not \in P \implies xy \not \in P$, visto che $P$ primo implica che se non contiene due elementi, non ne contiene neanche il prodotto (per controposizione), quindi il prodotto \`e nel complementare: $xy \in A \setminus P = S$.
-			In questo caso, si usa la notazione $S^{-1}A = A_p$ e si dice \textit{localizzato} di $A$ a $P$.
+		Dato un dominio $A$ e $P \subset A$ un suo ideale primo, si pu\`o considerare $S = A\setminus P$; allora si definisce $S^{-1}A = A_p$ il \textit{localizzato} di $A$ a $P$.
 \end{definizione}
 \begin{osservazione}
 Il localizzato $A_p$ \`e anche un \textbf{anello locale}, cio\`e un anello che ha un unico ideale massimale.

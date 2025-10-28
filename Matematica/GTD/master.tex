@@ -1867,14 +1867,85 @@ Allora si ha la seguente definizione.
 	[Teorema Egregium]
 	Sia $\Sigma$ una superficie e $\underline{x}: U \to \Sigma$ una parametrizzazione regolare; allora la curvatura gaussiana di $\Sigma$ si esprime, in ogni punto di $\underline{x}(U) \subseteq \Sigma$, in termini di $E,F,G$ e delle loro derivate.
 \end{teorema}
+	\begin{proof}
+		Si fissa una parametrizzazione $\underline{x}:U\to \Sigma$; tramite questa, la tripla $(\underline{x}_u,\underline{x}_v, \underline{n})$ \`e una base di $\mathbb{R}^3$, per ogni punto $p \in \Sigma$.
+		Allora \`e possibile esprimere le derivate seconde di $\underline{x}$ tramite questa base; i coefficienti di $\underline{x}_u$ e $\underline{x}_v$ sono dati dai cosiddetti \textit{simboli di Christoffel} $\Gamma_{ij} ^k$ e si ha:
+		\[
+			\begin{split}
+		&\underline{x}_{uu} = \Gamma_{uu} ^u \underline{x}_u + \Gamma_{uu} ^v \underline{x}_v + \ell  \underline{n}\\
+		&\underline{x}_{uv} = \Gamma_{uv} ^u \underline{x}_u + \Gamma_{uv} ^v \underline{x}_v + m \underline{n}\\
+		&\underline{x}_{uu} = \Gamma_{vv} ^u \underline{x}_u + \Gamma_{vv} ^v \underline{x}_v + n  \underline{n}
+			\end{split}
+		\] 
+		La dimostrazione viene portata a termine passando per i seguenti tre punti.
+		\begin{enumerate}[(1).]
+			\item I simboli di Christoffel si esprimono come funzione di $E,F,G$. 
+				Per vederlo, si nota che
+				\[
+				\begin{split}
+					&\underline{x}_u \cdot \underline{x}_{uu}  = E \Gamma^u _{uu} + F \Gamma_{uu} ^v\\
+					&\underline{x}_v \cdot \underline{x}_{uu} = F \Gamma^u_{uu}  + G \Gamma_{uu} ^v
+					\end{split}\iff\begin{pmatrix} \underline{x}_u \cdot \underline{x}_{uu}\\ \underline{x}_v \cdot \underline{x}_{uu}   \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}  \begin{pmatrix} \Gamma^u_{uu} \\\Gamma^v_{uu}  \end{pmatrix} 
+				\] 
+			La matrice della I forma \`e invertibile, quindi si dimostra che le componenti del vettore del membro di sinistra si possono esprimere in termini di $E,F,G$. 
+			Questo \`e vero perch\'e
+			\[
+			\begin{split}
+				&\underline{x}_u \cdot \underline{x}_{uu} = \frac{1}{2} (\underline{x}_u \cdot \underline{x}_u) = \frac{1}{2} \frac{\partial E}{\partial u} = \frac{1}{2}E_u\\
+				&\underline{x}_v \cdot \underline{x}_{uu} = (\underbracket{\underline{x}_v \cdot \underline{x}_u}_{=F} )_u - \underbracket{\underline{x}_{uv} \cdot \underline{x}_u}_{=\frac{1}{2}(\underline{x}_u \cdot \underline{x}_u)_v} = F_u - \frac{1}{2}E_v
+			\end{split}
+			\] 
+			Visto che per gli altri simboli, il discorso \`e analogo, il punto (1) \`e verificato.
+		\item Si ricorda che
+			\[
+			\begin{split}
+				&\begin{pmatrix} a & c \\ b & d \end{pmatrix}  = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ^{-1} \begin{pmatrix} \ell & m \\ m &n  \end{pmatrix}  = \frac{1}{EG - F^2} \begin{pmatrix} G & - F \\ -F & E \end{pmatrix}  \begin{pmatrix} \ell & m \\ m & n  \end{pmatrix} \\
+				&\Rightarrow \ell d - m b = \frac{1}{EG - F^2} \big[\ell (\cancel{-mF} + nE ) - m (\cancel{-\ell F}+mE)\big]= E \frac{\ell n - m ^2 }{EG-F^2}= EK
+			\end{split}
+			\] 
+		\item Per finire, si mostra che $\ell d - m b$ si esprime in termini di $E,F,G$.
+			Si pu\`o sfruttare l'equivalenza delle derivate miste; per esempio, si considera che $\underline{x}_{uuv} = \underline{x}_{uvu} $. 
+			Indicando con $[\cdot ]_v$ il coefficiente di $\underline{x}_v$ di un vettore, si nota che
+			\[
+			\begin{split}
+				\big[(\underline{x}_{uu} )_v\big]_v &= \big[(\Gamma^u_{uu} \underline{x}_u + \Gamma_{uu}^u \underline{x}_v + \ell \underline{n})_v \big]_v\\
+								    &=\Gamma^u_{uu} \Gamma^v_{uv} + (\Gamma^v_{uu} )_v + \Gamma_{uu} ^v \Gamma^v_{vv}  + \ell (-d)
+			\end{split}
+			\] 
+			dove si \`e usato il fatto che 
+			\[
+				\underline{n}_v = - S(\underline{x}_v) = - \begin{pmatrix} a & c \\ b &d \end{pmatrix} \begin{pmatrix} 0\\1 \end{pmatrix}  = \begin{pmatrix} -c \\ - d \end{pmatrix} = - c\underline{x}_u - d\underline{x}_v
+			\] 
+		Analogamente, si calcola l'altra derivata parziale e si ottiene che
+		\[
+			\big[(\underline{x}_{uv} )_u\big]_v = \Gamma^u_{uv} \Gamma^v_{uu} +(\Gamma^v_{uu} )_u + \Gamma^{v} _{uv} \Gamma^v _{uv} + m(-b)
+		\] 
+	Calcolando la differenza di queste due, si ottiene la relazione
+	\[
+	- \ell d + bm + f (\Gamma_{ij} ^k) = 0 
+	\] 
+	da cui si ottiene la tesi, con $f(\Gamma_{ij} ^k)$ \`e una funzione dei simboli di Christoffel e delle loro derivate.
+		\end{enumerate}
+	\end{proof}
 \begin{corollario}
 	Le sfere non sono localmente isometriche a $\mathbb{R}^2$.
 \end{corollario}
 	\begin{proof}
 		La sfera $S^2_a$ ha curvatura gaussiana costante $K = 1 / a^2  > 0$, mentre il piano ha $E,G = 1$ e $F = 0$, con $K = 0$.
 	\end{proof}
-\noindent Ora si cerca di generalizzare il concetto di isometria locale a due superfici generiche.
-A tale scopo, si considera il seguente diagramma.
+\noindent Ora si generalizza il concetto di isometria locale a due superfici generiche.
+\begin{definizione}
+	[Superfici localmente isometriche]
+	Siano $\Sigma, \Sigma ^*$ due superfici; queste si dicono \textit{localmente isometriche} intorno ai punti $p \in \Sigma$ e $p^* \in \Sigma^*$ se si trovano due parametrizzazioni regolari
+	\[
+	\begin{split}
+		&\underline{x}:U\to \Sigma \text{ attorno a } p\\
+		&\underline{x}^*:U\to \Sigma ^* \text{ attorno a } p^*\\
+	\end{split}
+	\] 
+	tali che $E = E^*$, $F = F^*$ e $G = G*$ come funzioni su $U$.
+\end{definizione}
+\noindent Si considera il seguente diagramma.
 \[
 \begin{tikzcd}
 	& & & &  \underline{x}(U) \subset \Sigma\\
@@ -1887,9 +1958,92 @@ A tale scopo, si considera il seguente diagramma.
 	\arrow[from=3-3, to=5-5, "\displaystyle \underline{x}^*"]
 	\arrow[from=3-1, to=1-5, bend left,"\displaystyle \alpha = \underline{x}\circ \overline{\alpha }"] 
 	\arrow[from=3-1, to=5-5, bend right, "\displaystyle \alpha^* = \underline{x}^*\circ \overline{\alpha }"'] 
-	\arrow[from=1-5, to=5-5, "\displaystyle f=\underline{x}\circ \underline{x}^{-1}"]
+	\arrow[from=1-5, to=5-5, "\displaystyle f=\underline{x}^*\circ \underline{x}^{-1}"]
 \end{tikzcd}
 \] 
+da cui $f \circ \alpha  = \underline{x}^* \circ \overline{\alpha } = \alpha ^*$.
+Si vede che f \`e una biezione e conserva le lunghezze delle curve; infatti, conserva le velocit\`a. 
+Per vederlo, si procede come nel caso specifico di superfici isometriche al piano; si nota che $\alpha (t) = \underline{x}(u(t),v(t))$, da cui
+\[
+\alpha '(t) = u'(t) \underline{x}_u(\alpha (t)) + v'(t) \underline{x}_v(\alpha (t)) \in T_{\alpha (t)} \Sigma
+\] 
+quindi
+\[
+	\left\lVert \alpha '(t) \right\rVert ^2 =\alpha '(t) \cdot \alpha '(t) = (u'(t),v'(t)) \Eval{\begin{pmatrix} E&F \\F&G \end{pmatrix}}{(u(t),v(t))}{} \begin{pmatrix} u'(t) \\ v'(t) \end{pmatrix} 
+\] 
+Al contempo
+\[
+\left\lVert (\alpha ^*)'(t) \right\rVert^2 = (u'(t),v'(t)) \Eval{\begin{pmatrix} E^*&F^* \\F^*&G^* \end{pmatrix}}{(u(t),v(t))}{} \begin{pmatrix} u'(t) \\ v'(t) \end{pmatrix} = \left\lVert \alpha '(t) \right\rVert ^2
+\] 
+visto che i coefficienti della prima forma sono uguali per assunzione.
+Quindi si ha:
+\[
+L(\alpha ) = \int_{a} ^b \left\lVert \alpha '(t) \right\rVert dt = \int_{a} ^b \left\lVert (\alpha ^*)'(t) \right\rVert  dt = L(\alpha ^*)
+\] 
+Ripercorrendo i passaggi all'indietro, si vede che se $f = \underline{x}^* \circ \underline{x}^{-1}$ conserva le lunghezze delle curve, allora ne conserva la velocit\`a e, per le formule appena viste, i coefficienti della prima forma devono coincidere.
+
+
+\begin{esempio}
+	[Applicazioni del teorema Egregium]
+Come applicazioni del teorema Egregium, si nota anche che:
+\begin{itemize}
+	\item gli elicoidi ($K<0$) non sono localmente isometrico n\'e alle sfere, n\'e al piano;
+	\item il cilindro \`e localmente isometrico al piano tramite
+		\[
+		\underline{x}:
+		\begin{array}
+			{c c c}
+			\mathbb{R}^2 & \longrightarrow & \mathbb{R}^3\\
+			(u,v) & \longmapsto & \left(R \cos \left(\frac{u}{R}\right) , R \sin \left(\frac{u}{R}\right) , v\right) 
+		\end{array}
+		\] 
+		perch\'e $\underline{x}_u= \big(- \sin (u / R), \cos ( u / R) , 0\big)$ e $\underline{x}_v = (0,0,1)$, quindi $E =G=1$ e $F=0$.
+\end{itemize}
+\end{esempio}
+
+
+\subsection{Trasporto parallelo}
+
+\begin{definizione}
+	[Campo vettoriale]
+	Data $\Sigma \subseteq \mathbb{R}^3$, una mappa $X:\Sigma \to \mathbb{R}^3$ \`e detta \textit{campo vettoriale} su $\Sigma$ se \`e di classe $C^\infty$ e soddisfa $X(p) \in T_p\Sigma, \ \forall p \in \Sigma$.
+\end{definizione}
+\begin{definizione}
+	[Derivata covariante]
+	Sia $X$ un campo vettoriale su $\Sigma$ e siano $p \in \Sigma$ e $v \in T_p\Sigma$ un punto sulla superficie e un vettore nel piano tangente a $p$.
+	La \textit{derivata covariante} di $X$ in $p$ nella direzione $v$ \`e definita da\footnote{L'apice $| |$ indica la componente parallela.}
+	\[
+		\nabla _v X = (D_v X)^{| |}  = D_v X - \big[D_v X \cdot \underline{n}(p)\big]\underline{n}(p)
+	\]
+	con $\underline{n}$ versore normale attorno a $p$ e 
+	\[
+		D_v X = \Eval{\frac{d }{d t} X(\alpha (t))}{t=0}{}, \ \alpha :(-\varepsilon ,\varepsilon )\to \Sigma \text{ tale che } \alpha (0) =p , \ \alpha '(0) = v
+	\] 
+\end{definizione}
+	\begin{definizione}
+		[Campo parallelo]
+		Un campo vettoriale $X : \Sigma \to \mathbb{R}^3$ \`e detto \textit{parallelo} lungo una curva regolare $\alpha : I \to \Sigma$ se $\nabla _{\alpha '(t)} X = 0, \ \forall t \in I$.
+	\end{definizione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
