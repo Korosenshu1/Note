@@ -2024,14 +2024,92 @@ Come applicazioni del teorema Egregium, si nota anche che:
 		[Campo parallelo]
 		Un campo vettoriale $X : \Sigma \to \mathbb{R}^3$ \`e detto \textit{parallelo} lungo una curva regolare $\alpha : I \to \Sigma$ se $\nabla _{\alpha '(t)} X = 0, \ \forall t \in I$.
 	\end{definizione}
+\begin{esempio}
+	[Cerchio massimo]
+	Si considera la curva ottenuta come l'intersezione di una sfera $S^2_a$ e un piano passante per il centro della sfera: questa intersezione \`e nota come \textit{cerchio massimo} in quanto individua una circonferenza di raggio massimo possibile tracciabile sulla sfera.
+	\`E possibile costruire tale piano introducendo la mappa versore normale $\underline{n}$ a $S_a^2$; cos\`i facendo, il piano $\pi$ \`e dato dalla regione di spazio individuata da $\underline{n}^\perp$.
 
+	Si individua il cerchio massimo $\mathcal{C}$ tramite la curva $\alpha : I \to S^2_a$, con $\alpha (I) = \mathcal{C} $, che si assume avere velocit\`a costante; a partire da questa, si definisce il campo vettoriale $X(\alpha (s)) = \alpha '(s), \ \forall s \in I$.
+	Si vede che
+	\[
+	\alpha (s) \cdot \alpha (s) = \text{cost}. \implies 2 \alpha ''(s) \cdot \alpha '(s) = 0 \implies \alpha ''(s) \perp \alpha ' (s), \ \forall s \in I
+	\] 
+	Visto che il versore normale $\underline{n}$ al piano $\pi$ \`e costante, allora:
+\[
+\underline{n}(s) \cdot \alpha '(s) = 0 \implies \underline{n}(s) \cdot \alpha ''(s) = 0
+\] 
+Se ne conclude, allora, che $\alpha ''(s) \perp \underline{n}$ e $\alpha ''(s) \perp \alpha '(s)$, quindi $\alpha ''(s) \in \underline{n}^\perp \cap \alpha '(s) ^\perp$.
+Visto che sia $\alpha '(s)$ che $\underline{n}$ sono normali ad $\alpha (s)$ (perch\'e $\alpha (s)$ appartiene a $\pi$), si ha che $\alpha ''(s) \in \mathrm{Span} (\alpha (s)) = \left(T_{\alpha (s)} S^2_a\right) ^\perp$.
+Tramite queste informazioni, si pu\`o calcolare la derivata covariante del campo $X$:
+\[
+D_{\alpha '(s)} X = \Eval{\frac{d }{d t} \big(\alpha '(s+t)\big)}{t=0}{} = \alpha '' (s) \perp T_{\alpha (s)} S^2_a \implies \nabla _{\alpha '(s)} X = 0 
+\] 
+quindi $X$ \`e parallelo alla superficie lungo $\alpha $.
+\end{esempio}
 
-
-
-
-
-
-
+\begin{teorema}
+	Sia $\alpha : [0,1] \to \Sigma \subseteq \mathbb{R}^3$ una curva regolare, con $X_0 \in T_{\alpha (0)} \Sigma$; allora $\exists ! X$ campo vettoriale parallelo lungo $\alpha $ tale che $X(\alpha (0)) = X_0$.
+\end{teorema}
+\begin{proof}
+	La traccia di $\alpha $ \`e contenuta nell'immagine di un numero finito di parametrizzazioni regolari $\underline{x}_k(U_k)$, quindi, a meno di prenderne l'unione, si pu\`o affermare che $\mathrm{Tr} (\alpha ) \subseteq \underline{x}(U)$, cio\`e la traccia della curva \`e contenuta nell'immagine di un'unica parametrizzazione regolare.
+	Ora, per $\alpha  (t) = \underline{x}(u(t),v(t))$, si sceglie
+	\[
+	X(\alpha (t)) = a(t) \underline{x}_u (u(t) ,v(t)) + b(t) \underline{x}_v (u(t),v(t))
+	\] 
+	da cui
+	\[
+	\begin{split}
+		\displaystyle \nabla _{\alpha '(t)} X &=\Eval{\frac{d }{d s}X(\alpha (t+s))^\top}{s=0}{}  = \frac{d }{d t} X(\alpha (t))^\top\\
+						      &\begin{split}
+							      \text{}=\text{}&a' \underline{x}_u + b ' \underline{x}_v +a \big[u'(\Gamma_{uu} ^{u} \underline{x}_u + \Gamma_{uu} ^v \underline{x}_v) + v ' (\Gamma^u_{uv} \underline{x}_u + \Gamma_{uv} ^v \underline{x}_v)\big]\\
+								      &\text{}+ b \big[u'(\Gamma_{uv} ^u \underline{x}_u + \Gamma_{uv} ^v \underline{x}_v) + v' (\Gamma_{vv} ^u \underline{x}_u + \Gamma_{vv} ^v\underline{x}_v\big]
+						      \end{split}\\
+						      &\begin{split}
+							      \text{}=\text{}&\big[a' + a(u' \Gamma_{uu} ^u + v' \Gamma_{uv} ^u) + b(u'\Gamma_{uv} ^u + v'\Gamma_{vv} ^u)\big]\underline{x}_u\\
+								      &\text{}+ \big[b' + a(u'\Gamma_{uu} ^v + v' \Gamma_{uv} ^v) + b (u' \Gamma_{uv} ^v + v' \Gamma_{vv} ^v)\big]\underline{x}_v
+						      \end{split}
+	\end{split}
+	\] 
+Allora la condizione $\nabla _{\alpha '(t)}X=0$ \`e equivalente al seguente sistema di equazioni differenziali:
+\begin{equation}\label{sisdif}
+	\begin{cases}
+		a' + a(u' \Gamma_{uu} ^u + v' \Gamma_{uv} ^u) + b(u'\Gamma_{uv} ^u + v'\Gamma_{vv} ^u)=0\\
+		b' + a(u'\Gamma_{uu} ^v + v' \Gamma_{uv} ^v) + b (u' \Gamma_{uv} ^v + v' \Gamma_{vv} ^v)=0
+	\end{cases}
+\end{equation}
+Essendo questo un sistema di due EDO del primo ordine, omogenee, ordinarie e lineari nelle incognite $a$, $b$; visto che i dati iniziali sono relativi ad $a(0)$, $b(0)$ imposti dalla condizione $X(0) = X_0$, allora la soluzione \`e unica su $[0,1]$.
+\end{proof}
+\noindent Tramite il precedente teorema, si pu\`o dare una definizione coerente di \textit{trasporto parallelo}.
+\begin{definizione}
+	[Trasporto parallelo]
+	Sia $\Sigma \subseteq \mathbb{R}^{3}$ una superficie e sia $\alpha :[0,1] \to \Sigma$ una curva sulla superficie, con $\alpha (0) = p$ e $\alpha (1) = q$.
+	Allora, $\forall X_0\in T_p\Sigma $, si definisce il \textit{trasportato} di $X_0$ in $q$ come il valore $X(\alpha (1))$, con $X$ unico campo parallelo lungo $\alpha $ tale che $X(\alpha (0)) = X_0$.
+\end{definizione}
+\begin{osservazione}
+	Essendo il sistema \ref{sisdif} lineare e omogeneo, allora la somma di due soluzioni uniche relative a due condizioni iniziali diverse permette di costruire una nuova soluzione, data dalla somma delle soluzioni e relativa alla somma dei dati iniziali.
+	In questo senso, l'applicazione trasporto parallelo lungo $\alpha $, $\varphi _\alpha :T_p\Sigma \to T_q \Sigma$, \`e lineare.
+\end{osservazione}
+\begin{prop}
+	Il trasporto parallelo conserva i prodotti scalari, cio\`e
+	\[
+	\varphi _\alpha (X_0) \cdot \varphi _\alpha (Y_0) = X_0\cdot Y_0
+	\] 
+\end{prop}
+\begin{proof}
+	Siano $X_0,Y_0\in T_p \Sigma$ paralleli alla curva $\alpha : [0,1] \to \Sigma$, con $\alpha (0) = p$ e $\alpha (1) = q$; allora si ha:
+	\[
+		\begin{split}
+			\frac{d }{d t} \big[X(\alpha (t)) \cdot Y(\alpha (t))\big] &= D_{\alpha '(t)} X \cdot Y(\alpha (t)) + X(\alpha (t)) \cdot D_{\alpha '(t)} Y(\alpha (t))\\
+										   &=\nabla _{\alpha '(t)} X \cdot Y(\alpha (t)) + X(\alpha (t)) \cdot \nabla _{\alpha '(t)} Y(\alpha (t)) = 0
+		\end{split}
+	\] 
+	dove si \`e usato che $X,Y$ sono paralleli ad $\alpha $, quindi $D_{\alpha '(t)} X = \nabla _{\alpha '(t)} X$ e che
+	\[
+		D_{\alpha '(t)} X = \Eval{\frac{d }{d s} X(\alpha (t+s))}{s=0}{} = \frac{d }{d t} X(\alpha (t))
+	\] 
+	Allora i prodotti scalari sono costanti e, quindi, risulta conservato.
+\end{proof}
+\noindent Il trasporto paralello, conservando il prodotto scalare, conserva anche le norme, quindi risulta essere un isomorfismo lineare tra $T_p\Sigma$ e $T_q \Sigma$.
 
 
 

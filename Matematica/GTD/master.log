@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  28 OCT 2025 23:43
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  1 NOV 2025 09:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1559,12 +1559,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [54]
 
+[55]
+
+[56]
+
+[57]
+
 Package caption Warning: Unused \captionsetup[table] on input line 117.
 See the caption package documentation for explanation.
 
 
 
-[55] (./master.aux)
+[58] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1578,12 +1584,12 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 50636 strings out of 475506
+ 50652 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 3131 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 glyph, 791 attribute, 102 glue_spec, 397 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2378,3:795,4:142,5:456,6:80,7:5669,8:74,9:1398,10:36,11:601
- 72093 multiletter control sequences out of 65536+600000
+ 3348 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 2 glyph, 861 attribute, 102 glue_spec, 432 attribute_list, 2 write nodes
+   avail lists: 1:4,2:2273,3:795,4:142,5:456,6:80,7:5668,8:74,9:1398,10:36,11:601
+ 72100 multiletter control sequences out of 65536+600000
  182 fonts using 16227751 bytes
  124i,25n,114p,10918b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1605,10 +1611,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (55 pages, 612318 bytes).
+Output written on master.pdf (58 pages, 625925 bytes).
 
-PDF statistics: 662 PDF objects out of 1000 (max. 8388607)
- 562 compressed objects within 6 object streams
- 226 named destinations out of 1000 (max. 131072)
+PDF statistics: 682 PDF objects out of 1000 (max. 8388607)
+ 579 compressed objects within 6 object streams
+ 235 named destinations out of 1000 (max. 131072)
  229 words of extra memory for PDF output out of 10000 (max. 100000000)
 
