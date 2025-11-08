@@ -1891,7 +1891,7 @@ Allora si ha la seguente definizione.
 			Questo \`e vero perch\'e
 			\[
 			\begin{split}
-				&\underline{x}_u \cdot \underline{x}_{uu} = \frac{1}{2} (\underline{x}_u \cdot \underline{x}_u) = \frac{1}{2} \frac{\partial E}{\partial u} = \frac{1}{2}E_u\\
+				&\underline{x}_u \cdot \underline{x}_{uu} = \frac{1}{2} (\underline{x}_u \cdot \underline{x}_u)_u = \frac{1}{2} \frac{\partial E}{\partial u} = \frac{1}{2}E_u\\
 				&\underline{x}_v \cdot \underline{x}_{uu} = (\underbracket{\underline{x}_v \cdot \underline{x}_u}_{=F} )_u - \underbracket{\underline{x}_{uv} \cdot \underline{x}_u}_{=\frac{1}{2}(\underline{x}_u \cdot \underline{x}_u)_v} = F_u - \frac{1}{2}E_v
 			\end{split}
 			\] 
@@ -2032,7 +2032,7 @@ Come applicazioni del teorema Egregium, si nota anche che:
 	Si individua il cerchio massimo $\mathcal{C}$ tramite la curva $\alpha : I \to S^2_a$, con $\alpha (I) = \mathcal{C} $, che si assume avere velocit\`a costante; a partire da questa, si definisce il campo vettoriale $X(\alpha (s)) = \alpha '(s), \ \forall s \in I$.
 	Si vede che
 	\[
-	\alpha (s) \cdot \alpha (s) = \text{cost}. \implies 2 \alpha ''(s) \cdot \alpha '(s) = 0 \implies \alpha ''(s) \perp \alpha ' (s), \ \forall s \in I
+	\alpha' (s) \cdot \alpha' (s) = \text{cost}. \implies 2 \alpha ''(s) \cdot \alpha '(s) = 0 \implies \alpha ''(s) \perp \alpha ' (s), \ \forall s \in I
 	\] 
 	Visto che il versore normale $\underline{n}$ al piano $\pi$ \`e costante, allora:
 \[
@@ -2048,7 +2048,7 @@ quindi $X$ \`e parallelo alla superficie lungo $\alpha $.
 \end{esempio}
 
 \begin{teorema}
-	Sia $\alpha : [0,1] \to \Sigma \subseteq \mathbb{R}^3$ una curva regolare, con $X_0 \in T_{\alpha (0)} \Sigma$; allora $\exists ! X$ campo vettoriale parallelo lungo $\alpha $ tale che $X(\alpha (0)) = X_0$.
+	Sia $\alpha : [0,1] \to \Sigma \subseteq \mathbb{R}^3$ una curva regolare, con $X_0 \in T_{\alpha (0)} \Sigma$; allora $\exists ! X$ campo vettoriale parallelo lungo $\alpha $ tale che $X(\alpha (0)) = X_0$ e $X(\alpha (t)) \in T_{\alpha (t)} \Sigma, \ \forall t \in [0,1]$.
 \end{teorema}
 \begin{proof}
 	La traccia di $\alpha $ \`e contenuta nell'immagine di un numero finito di parametrizzazioni regolari $\underline{x}_k(U_k)$, quindi, a meno di prenderne l'unione, si pu\`o affermare che $\mathrm{Tr} (\alpha ) \subseteq \underline{x}(U)$, cio\`e la traccia della curva \`e contenuta nell'immagine di un'unica parametrizzazione regolare.
@@ -2077,7 +2077,7 @@ Allora la condizione $\nabla _{\alpha '(t)}X=0$ \`e equivalente al seguente sist
 		b' + a(u'\Gamma_{uu} ^v + v' \Gamma_{uv} ^v) + b (u' \Gamma_{uv} ^v + v' \Gamma_{vv} ^v)=0
 	\end{cases}
 \end{equation}
-Essendo questo un sistema di due EDO del primo ordine, omogenee, ordinarie e lineari nelle incognite $a$, $b$; visto che i dati iniziali sono relativi ad $a(0)$, $b(0)$ imposti dalla condizione $X(0) = X_0$, allora la soluzione \`e unica su $[0,1]$.
+Essendo questo un sistema di due EDO del primo ordine, omogenee, ordinarie e lineari nelle incognite $a$, $b$ e visto che i dati iniziali sono relativi ad $a(0)$, $b(0)$ imposti dalla condizione $X(0) = X_0$, la soluzione \`e unica su $[0,1]$.
 \end{proof}
 \noindent Tramite il precedente teorema, si pu\`o dare una definizione coerente di \textit{trasporto parallelo}.
 \begin{definizione}
@@ -2096,24 +2096,35 @@ Essendo questo un sistema di due EDO del primo ordine, omogenee, ordinarie e lin
 	\] 
 \end{prop}
 \begin{proof}
-	Siano $X_0,Y_0\in T_p \Sigma$ paralleli alla curva $\alpha : [0,1] \to \Sigma$, con $\alpha (0) = p$ e $\alpha (1) = q$; allora si ha:
+	Siano $X_0,Y_0\in T_p \Sigma$ e sia $\alpha : [0,1] \to \Sigma$ una curva regolare, con $\alpha (0) = p$ e $\alpha (1) = q$; indicando con $X$ e $Y$ gli unici campi vettoriali paralleli lungo $\alpha $ e tali che $X(\alpha (t)), Y(\alpha (t)) \in T_{\alpha (t)} \Sigma,\ \forall t\in [0,1]$, allora si ha:
 	\[
 		\begin{split}
 			\frac{d }{d t} \big[X(\alpha (t)) \cdot Y(\alpha (t))\big] &= D_{\alpha '(t)} X \cdot Y(\alpha (t)) + X(\alpha (t)) \cdot D_{\alpha '(t)} Y(\alpha (t))\\
 										   &=\nabla _{\alpha '(t)} X \cdot Y(\alpha (t)) + X(\alpha (t)) \cdot \nabla _{\alpha '(t)} Y(\alpha (t)) = 0
 		\end{split}
 	\] 
-	dove si \`e usato che $X,Y$ sono paralleli ad $\alpha $, quindi $D_{\alpha '(t)} X = \nabla _{\alpha '(t)} X$ e che
-	\[
-		D_{\alpha '(t)} X = \Eval{\frac{d }{d s} X(\alpha (t+s))}{s=0}{} = \frac{d }{d t} X(\alpha (t))
-	\] 
-	Allora i prodotti scalari sono costanti e, quindi, risulta conservato.
+	Infatti, visto che $X,Y \in T_{\alpha (t)} \Sigma$, si ha, per esempio
+\[
+	D_{\alpha '(t)} X\cdot Y=(D_{\alpha '(t)} X)^\top\cdot Y + \underbracket{(D_{\alpha '(t)} X)^\perp\cdot Y}_{=0} = \nabla _{\alpha '(t)} X \cdot Y = 0
+\] 
+perch\'e $X$ \`e parallelo e, quindi, $\nabla _{\alpha '(t)} X = 0$.
+	Allora i prodotti scalari sono costanti e, quindi, conservati dal trasporto parallelo.
 \end{proof}
-\noindent Il trasporto paralello, conservando il prodotto scalare, conserva anche le norme, quindi risulta essere un isomorfismo lineare tra $T_p\Sigma$ e $T_q \Sigma$.
-
-
-
-
+\begin{corollario}
+Il trasporto parallelo conserva le norme, quindi risulta essere un isomorfismo lineare tra $T_p\Sigma$ e $T_q \Sigma$.
+\end{corollario}
+\begin{prop}
+	Sia $\alpha:[0,1] \to \Sigma $ una curva regolare e sia $\left\{ v_1,v_2 \right\} \subseteq T_{\alpha (0)} \Sigma$ una base positiva (cio\`e $(v_1\times v_2)\cdot \underline{n} > 0$) dello spazio tangente a $\Sigma$, superficie orientabile, in $\alpha (0)$. Dati $X,Y$ campi vettoriali tali che $X(\alpha (0)) = v_1, \ Y(\alpha (0)) = v_2$, allora $[X(\alpha (1)) \times Y(\alpha (1))] \cdot \underline{n}>0$.
+	Cio\`e $\varphi _\alpha $ mappa basi positive in basi positive.	
+\end{prop}
+\begin{proof}
+	Si considera la quantit\`a
+	\[
+		\psi_\alpha (t) = \big[X(\alpha (t))\times Y(\alpha (t))\big] \cdot \underline{n}(\alpha (t))
+	\] 
+	Visto che $\psi _\alpha (0) > 0$ per assunzione e visto che $X(\alpha (t))$ e $Y(\alpha (t))$, per conservazione del prodotto scalare, devono sempre rimanere indipendenti, allora $\psi _\alpha (t) \neq 0,\ \forall t \in [0,1]$. 
+	Per\`o $\psi (t)$ \`e continua e non si annulla mai, quindi non pu\`o cambiare segno e, conseguentemente, la base in $T_{\alpha (1)} \Sigma$ \`e ancora positiva.
+\end{proof}
 
 
 
@@ -2397,6 +2408,55 @@ Per capire cosa succede in ciascun caso, quindi, si studia $\frac{f(u,v)}{u^2 + 
 
 		Nel caso di $p$ planare, invece, si possono considerare le curve ottenute come grafici di $z= y^{3}$ (entrambe le parti) e $z = y^4$ (da una parte).
 \end{enumerate}
+\end{svolgimento}
+\begin{esercizio}
+	[Trasporto parallelo su cilindro]
+	Calcolare il trasporto parallelo del vettore $(0,0,1)$ lungo il cerchio $\left\{ z=0 \right\} $ del cilindro $\left\{ x^2 + y^2 = a^2 \right\} \subseteq \mathbb{R}^3$.
+\end{esercizio}
+\begin{svolgimento}
+	Il vettore $(0,0,1)$ \`e parallelo alla superficie lungo tutta la circonferenza; per unicit\`a del trasporto parallelo, dunque, $(0,0,1)$ \`e il trasportato di se stesso.
+\end{svolgimento}
+\begin{esercizio}
+	[Trasporto parallelo lungo i paralleli di una sfera]
+	Si considera una superficie sferica $S^2$. 
+	Si individua un cerchio massimo e si considerano due circonferenze ad esso parallele: una nella calotta superiore e una in quella inferiore.
+	Dati tre vettori, ciascuno tangente alla relativa circonferenza in un dato punto, studiarne il trasportato.
+\end{esercizio}
+\begin{svolgimento}
+	Si pu\`o costruire la sfera $S^2$ senza i poli come rotazione, attorno all'asse $z$, della semicirconferenza $(\sin u, 0 , \cos u), \ u \in (0,\pi)$ nel piano $xz$, dove $u$ rappresenta l'angolo di apertura con l'asse $z$.
+	Allora la sua parametrizzazione regolare \`e data da $\underline{x}(u,v) = (\sin u \cos v, \sin u \sin v, \cos u)$ e, dunque $S^2 \setminus \left\{ \text{poli} \right\} = \underline{x}\big((0,\pi) \times \mathbb{R}\big)$.
+
+	Data $\alpha (t) = \underline{x}(u_0,t), \ t \in \mathbb{R}$, questa \`e una curva sulla circonferenza che parametrizza un parallelo; allora si prende un campo vettoriale lungo $\alpha $, della forma\footnote{Si prende come condizione iniziale il vettore $X_0$ relativo al campo $X$ calcolato in $\alpha (t_0) = \underline{x}(u_0,v_0)$.}
+	\[
+	\begin{cases}
+		X(\alpha (t)) = a (t ) \underline{x}(u_0,t) + b(t) \underline{x}_v (u_0,t)\\
+		X (\alpha (t_0))= X_0 = \underline{x}_v(u_0,v_0)
+	\end{cases}
+	\] 
+	Imponendo che i coefficienti $a(t),b(t)$ soddisfino le equazioni del trasporto parallelo \ref{sisdif}, allora devono soddisfare
+	\[
+	\begin{cases}
+		a' + a \Gamma_{uv} ^u + b \Gamma_{vv} ^u =0 \\
+		b' + a \Gamma_{uv} ^v + b \Gamma_{vv} ^v =0 
+	\end{cases}
+	\] 
+	visto che $u'(t) = 0$ e $v'(t) = 1$.
+	Ora si calcolano i simboli di Christoffel; per farlo, serve calcolare le derivate di $\underline{x}$.
+	\[
+		\begin{split}
+			& \underline{x}_u = (\cos u \cos v , \cos u \sin v , - \sin u ) \Rightarrow E = \underline{x}_u \cdot \underline{x}_u = 1\\
+			&\underline{x}_v = \sin u(- \sin v , \cos v , 0) \Rightarrow F = \underline{x}_u \cdot \underline{x}_v = 0, \ G = \underline{x}_v \cdot  \underline{x}_v = \sin ^2 u\\
+			& \underline{x}_{uv} = \cos u ( -\sin v , \cos v , 0)\\
+			& \underline{x}_{vv} = - \sin u (\cos v , \sin v , 0 )
+		\end{split}
+	\] 
+	Allora
+	\[
+	\begin{split}
+		&\Gamma_{uv} ^u = E \Gamma_{uv} ^u = \underline{x}_{uv} \cdot \underline{x}_u = 0
+	\end{split}
+	\] 
+	
 \end{svolgimento}
 \end{document}
 
