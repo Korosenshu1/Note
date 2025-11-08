@@ -2125,6 +2125,8 @@ Il trasporto parallelo conserva le norme, quindi risulta essere un isomorfismo l
 	Visto che $\psi _\alpha (0) > 0$ per assunzione e visto che $X(\alpha (t))$ e $Y(\alpha (t))$, per conservazione del prodotto scalare, devono sempre rimanere indipendenti, allora $\psi _\alpha (t) \neq 0,\ \forall t \in [0,1]$. 
 	Per\`o $\psi (t)$ \`e continua e non si annulla mai, quindi non pu\`o cambiare segno e, conseguentemente, la base in $T_{\alpha (1)} \Sigma$ \`e ancora positiva.
 \end{proof}
+\subsection{Geodetiche}
+
 
 
 
@@ -2453,10 +2455,35 @@ Per capire cosa succede in ciascun caso, quindi, si studia $\frac{f(u,v)}{u^2 + 
 	Allora
 	\[
 	\begin{split}
-		&\Gamma_{uv} ^u = E \Gamma_{uv} ^u = \underline{x}_{uv} \cdot \underline{x}_u = 0
+		&\Gamma_{uv} ^u = E \Gamma_{uv} ^u = \underline{x}_{uv} \cdot \underline{x}_u = 0\\
+		&\Gamma_{uv} ^v = \frac{1}{\sin^2 u} \underline{x}_{uv} \cdot \underline{x}_v = \frac{1}{\sin^2u}\sin u \cos u = \frac{\cos u}{\sin u}\\
+		&\Gamma^u_{vv} = \underline{x}_{vv} \cdot \underline{x}_u = - \cos u \sin u\\
+		&\Gamma_{vv} ^v = \frac{1}{\sin^2 u} \underline{x}_{vv} \cdot \underline{x}_v = \frac{1}{\sin^2 u } 0 = 0
 	\end{split}
 	\] 
-	
+	Pertanto il sistema \`e dato da
+	\[
+	\begin{cases}
+		a' = \sin u_0 \cos u_0b\\
+		\displaystyle b ' = - \frac{\cos u_0}{\sin u_0} a
+	\end{cases}
+	\] 
+	\begin{itemize}
+		\item Se $\cos u_0 =0$, cio\`e il parallelo considerato coincide con l'equatore, allora il sistema si riduce a $a' = b' = 0$, per cui $X(\alpha (t)) = \underline{x}_v (\alpha (t)) = \alpha '(t) , \ \forall t$.
+		\item Se $\cos u_0\neq 0$, invece, si trova che
+			\[
+				b'' = - \frac{\cos u_0}{\cancel{\sin u_0}} \cancel{\sin u_0} \cos u_0 b \implies b'' + k^2 b = 0
+			\] 
+			per $k=\cos u_0$. 
+			La soluzione generale di questa \`e $b(t) = c_1 \cos(kt) + c_2 \sin(kt)$; imponendo le condizioni iniziali, si trova:
+			\[
+			1 = b(0) = c_1 \hspace{1cm}0 = a(0) = -\frac{\sin u_0}{\cos u_0} b'(0) = -\sin u_0 c_2 \Rightarrow c_2=0
+			\] 
+			ossia $b(t) = \cos(\cos u_0 t)$, da cui 
+			\[
+			a(t) =- \frac{\sin u_0}{\cos u_0}b'(t) = \sin u_0 \sin(\cos u_0 t)
+			\] 
+	\end{itemize}
 \end{svolgimento}
 \end{document}
 

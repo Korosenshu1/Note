@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  8 NOV 2025 19:12
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  8 NOV 2025 23:40
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1567,12 +1567,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [58]
 
+[59]
+
 Package caption Warning: Unused \captionsetup[table] on input line 117.
 See the caption package documentation for explanation.
 
 
 
-[59] (./master.aux)
+[60] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1586,12 +1588,12 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 50663 strings out of 475506
+ 50666 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 3415 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 9 glue, 4 kern, 2 glyph, 881 attribute, 102 glue_spec, 442 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2243,3:795,4:142,5:456,6:80,7:5894,8:74,9:1400,10:36,11:699
- 72105 multiletter control sequences out of 65536+600000
+ 3439 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 9 glue, 4 kern, 2 glyph, 889 attribute, 102 glue_spec, 446 attribute_list, 2 write nodes
+   avail lists: 1:5,2:2231,3:795,4:142,5:457,6:83,7:5894,8:74,9:1400,10:36,11:699
+ 72106 multiletter control sequences out of 65536+600000
  182 fonts using 16227751 bytes
  124i,25n,114p,10918b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1615,10 +1617,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (59 pages, 634222 bytes).
+Output written on master.pdf (60 pages, 637473 bytes).
 
-PDF statistics: 695 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
- 241 named destinations out of 1000 (max. 131072)
- 229 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 704 PDF objects out of 1000 (max. 8388607)
+ 599 compressed objects within 6 object streams
+ 243 named destinations out of 1000 (max. 131072)
+ 237 words of extra memory for PDF output out of 10000 (max. 100000000)
 
