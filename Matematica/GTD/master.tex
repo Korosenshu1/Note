@@ -2126,6 +2126,106 @@ Il trasporto parallelo conserva le norme, quindi risulta essere un isomorfismo l
 	Per\`o $\psi (t)$ \`e continua e non si annulla mai, quindi non pu\`o cambiare segno e, conseguentemente, la base in $T_{\alpha (1)} \Sigma$ \`e ancora positiva.
 \end{proof}
 \subsection{Geodetiche}
+\begin{definizione}
+	Una curva regolare $\alpha  : I \to \Sigma$ \`e una \textit{geodetica} se soddisfa
+	\[
+	\nabla _{\alpha '} \alpha ' = (\alpha '')^\top = 0
+	\] 
+\end{definizione}
+\noindent Si nota che la velocit\`a di una geodetica \`e costante; infatti, visto che $\alpha'$ \`e tangente alla curva e $(\alpha '')^\top=0$ per definizione di geodetica:
+\[
+	(\alpha ' \cdot \alpha ')' = 2 \alpha '' \cdot \alpha ' = 0 
+\] 
+cio\`e $\left\lVert \alpha ' \right\rVert $ \`e costante.
+\begin{esempio}
+	[Geodetiche su una sfera]
+	Si \`e visto che i cerchi massimi su una superficie sferica, parametrizzati a velocit\`a costante, sono geodetiche; si cerca di capire se sono gli unici tipi di geodetica ottenibile su $S^2_a$.
+\end{esempio}
+\begin{svolgimento}
+	Sia $\alpha  : I \to S^2_a$ regolare e tale che $\left\lVert \alpha ' \right\rVert = \text{cost.}$; da questa ipotesi, si ha $\alpha '' \perp T_{\alpha (t)} S^2_a$, che \`e equivalente a dire che $\alpha '' \times \alpha = 0$. 
+	Ne segue che
+	\[
+		(\alpha ' \times \alpha )' = \alpha '' \times  \alpha  + \cancel{\alpha ' \times \alpha '} = 0 \implies \alpha ' \times \alpha = v_0 \text{ costante}
+	\] 
+	perci\`o $\alpha (t) \cdot v_0 = 0 , \ \forall t \in I$, che \`e vero se e solo se $\alpha (t) \in v_0^\perp \cap S^2_a$, che coincide proprio con un cerchio massimo.
+\end{svolgimento}
+\subsubsection{Esistenza locale e mappa esponenziale}
+
+In coordinate locali su una superficie, una curva $\alpha (t) = \underline{x}(u(t),v(t))$ ha velocit\`a data da $\alpha '(t) = u'(t) \underline{x}_u + v' \underline{x}_v$; visto che un campo vettoriale parallelo lungo $\alpha $ si scrive come $X(\alpha (t)) = a(t) \underline{x}_u(\alpha (t)) + b(t) \underline{x}_v (\alpha (t))$, quello coincidente con $\alpha '$ lungo $\alpha $ dovr\`a avere $a(t) = u'(t)$ e $b(t) = v'(t)$. 
+Pertanto dovr\`a soddisfare 
+\[
+\begin{cases}
+	u'' + (u')^2 \Gamma^u_{uu} + 2 u'v' \Gamma_{uv} ^u + (v')^2 \Gamma^u_{vv} =0\\
+	v'' + (u')^2 \Gamma_{uu} ^v + 2 u' v' \Gamma^v_{uv} + (v')^2 \Gamma^{v} _{vv} = 0
+\end{cases}
+\] 
+che \`e un sistema di EDO del secondo ordine non lineari.
+Per $\alpha :(-\varepsilon ,\varepsilon ) \to \Sigma$, date le condizioni iniziali $\alpha (0) = p$, che impone i valori per $u(0)$ e $v(0)$, e $\alpha '(0)=v $, che impone i valori su $u'(0)$ e $v'(0)$, la soluzione esiste ed \`e unica su un intervallo $(-\delta ,\delta ) \subset (-\varepsilon ,\varepsilon )$.
+Allora si ha il seguente.
+\begin{teorema}
+	Se $\Sigma \subseteq \mathbb{R}^3$ \`e una superficie e $p \in \Sigma$ un suo punto, con $v \in T_p\Sigma$ un vettore nel piano tangente, allora $\exists \varepsilon >0$ ed esiste un'unica geodetica $\gamma_v:(-\varepsilon ,\varepsilon ) \to \Sigma$ tale che $\gamma_v(0) = p$ e $\gamma'_v(0) = v$.
+\end{teorema}
+\noindent Sia $\gamma_v :(-\varepsilon ,\varepsilon )\to\Sigma$ la geodetica relativa a $\gamma_v(0) = p$ e $\gamma'_v(0) = v$; fissato $0 \le t \le 1$, la curva $\gamma_v(ts)$ \`e ben definita per ogni $s \in (-\varepsilon ,\varepsilon )$.
+Inoltre, lasciando $s$ fisso e facendo variare $t$, si ottiene la curva
+\[
+	[0,1] \longrightarrow \Sigma : t \longmapsto \gamma_v (ts)
+\] 
+Si vuole capire se \`e ancora una geodetica, quindi se ne studiano le derivate:
+\[
+\begin{split}
+	&\Eval{\frac{d }{d t} \gamma_v(ts)}{t=0}{} = s \gamma'_v (0) = sv\\
+	&\frac{d ^2}{d t^2} \gamma_v(ts) = s^2 \gamma_v''(ts)
+\end{split}
+\] 
+ma $\gamma_v''(ts) \perp T_{\gamma_v(ts)} \Sigma$ perch\'e $\gamma_v (s)$ \`e una geodetica, quindi anche $\gamma_v(ts)$ \`e una geodetica.
+In quanto tale, per unicit\`a, questa sar\`a l'unica geodetica che parte con velocit\`a $sv$: $\gamma_v(st) = \gamma_{sv} (t)$, con $t \in [0,1]$.
+\begin{osservazione}
+	Il parametro $\varepsilon $ che individua il dominio di definizione della geodetica a fissati $p\in \Sigma$ e $v \in T_p\Sigma	$ dipende sia da $p$, che da $v$.
+	Allora si nota che, fissato $p \in \Sigma$ e preso un insieme $\left\{ v \in T_p\Sigma  \mid \left\lVert v \right\rVert =1 \right\} $ nel piano tangente a $p$, dal fatto che questo insieme \`e compatto e dalle propriet\`a di regolarit\`a della dipendenza delle soluzioni delle EDO dai dati iniziali, si trova un valore $\epsilon > 0$ tale che $(-\epsilon ,\epsilon )$ \`e un dominio comune a tutte le geodetiche $\gamma_v$ che partono da $p$ con velocit\`a $\left\lVert v \right\rVert =1$, ma direzione diversa.
+\end{osservazione}
+\noindent Questo significa che, scegliendo $\varepsilon $ sufficientemente piccolo in modo tale che $(-\varepsilon ,\varepsilon )$ sia dominio comune di tutte le geodetiche che partono da $p$ con velocit\`a unitaria, allora $\forall v \in T_p\Sigma : \left\lVert v \right\rVert <\varepsilon $, la geodetica $\gamma_v(t)$ \`e definita almeno\footnote{In realt\`a, come si intuisce dal ragionamento, il dominio di una geodetica pu\`o essere anche maggiore di $[0,1]$; l'obiettivo di questa trattazione \`e far vedere che \`e quantomeno possibile che ogni geodetica abbia un dominio contenente $[0,1]$.} sul dominio $[0,1]$.
+
+A questo punto, si pu\`o definire la \textbf{mappa esponenziale}:
+\begin{equation}
+	\exp_p :
+	\begin{array}
+		{c c c}
+		U_p = \left\{ v \in T_p\Sigma  \mid \left\lVert v \right\rVert <\varepsilon  \right\} & \longrightarrow & \Sigma\\
+		v &\longmapsto & \exp_p(v) : = \gamma_v (1)
+	\end{array}
+\end{equation}
+Ora, fissata una base $\left\{ e_1,e_2 \right\} \subset T_p\Sigma$, si ha la biezione $\mathbb{R}^2 \longleftrightarrow T_p\Sigma$; questa permette di individuare un aperto $U'p \subseteq \mathbb{R}^2$ che \`e in biezione con $U_p \subseteq T_p\Sigma$.
+Pertanto si pu\`o definire la mappa
+\[
+	\underline{x}:
+\begin{array}
+	{c c c c c}
+	U'p &\longrightarrow&U_p &\longrightarrow & \Sigma\\
+	(u,v) &\longmapsto & ue_1+ve_2&\longmapsto& \exp_p (ue_1+ve_2)
+\end{array}
+\] 
+Ora si dimostra che $\underline{x}$ \`e una parametrizzazione regolare.
+\begin{proof}
+	Visto che la mappa esponenziale \`e $C^\infty$ grazie alla regolarit\`a delle soluzioni del sistema di EDO rispetto ai dati iniziali, anche $\underline{x}$ \`e di classe $C^\infty$.
+	Poi si nota che
+	\[
+		\Eval{\frac{d }{d t} \underline{x}(t,0)}{t=0}{} = \Eval{\frac{d }{d t} \exp_p(te_1)}{t=0}{} = \Eval{\frac{d }{d t} \gamma_{te_1} (1)}{t=0}{}= \Eval{\frac{d }{d t} \gamma_{e_1} (t)}{t=0}{} = e_1
+	\] 
+	quindi $\underline{x}_u (0,0) = e_1$ e, analogamente, $\underline{x}_v(0,0) = e_2$.
+	Visto che $e_1,e_2$ sono una base, $\underline{x}_u(0,0) \times \underline{x}_v(0,0) = e_1\times e_2 \neq 0$, pertanto il prodotto vettore \`e non nullo in un intorno.
+	Rimane da verificare la continuit\`a dell'inversa; a questo proposito, prendendo una proiezione $\pi :\Sigma \to \mathbb{R}^2$ rispetto a cui $\Sigma$ \`e il grafico di una funzione attorno a $p$ (che esiste a meno di scegliere un $\varepsilon > 0$ pi\`u piccolo), si ha
+	\[
+	\operatorname{rk} J(\pi\circ \underline{x})_{(0,0)} = 2
+	\] 
+	pertanto $\pi\circ \underline{x}:U'_q\to \mathbb{R}^2$ \`e un diffeomorfismo attorno a $\underline{0}$ e, quindi, $\underline{x}$ \`e iniettiva, con inversa continua data da $(\pi\circ \underline{x})^{-1}\circ \pi$.
+	Quindi, a meno di restringere ulteriormente $U'_p$ (che dipende dall'estensione di $U_p$, a sua volta dipendente da $\varepsilon $), si ha che $\underline{x}$ \`e una parametrizzazione regolare attorno a $p$.
+\end{proof}
+\noindent A questo punto, si pu\`o definire 
+\begin{equation}
+	N_{p} := \underline{x}(U'_p) = \exp_p(U_p)
+\end{equation}
+che \`e noto come \textbf{intorno normale} di $p$.
+
 
 
 
