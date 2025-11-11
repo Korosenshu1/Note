@@ -2225,12 +2225,95 @@ Ora si dimostra che $\underline{x}$ \`e una parametrizzazione regolare.
 	N_{p} := \underline{x}(U'_p) = \exp_p(U_p)
 \end{equation}
 che \`e noto come \textbf{intorno normale} di $p$.
+\subsubsection{Minimizzazione delle distanze}
 
+Si fissa $e_1,e_2$ base ortonormale di $T_q \Sigma$, con $\Sigma$ superficie, e si considera la curva 
+\[
+	v: 
+\begin{array}
+	{c c c}
+	\mathbb{R}& \longrightarrow& T_q\Sigma\\
+	t & \longmapsto & k (e_1 \cos t + e_2 \sin t)
+\end{array}
+\] 
+Questa \`e tale che $\mathrm{Tr} (v) = \left\{ v \in T_q\Sigma  \mid \left\lVert v \right\rVert  = k \right\} $.
+\begin{lemma}
+	[Lemma di Gauss]
+Sia $\exp_q : U_q = \left\{ v \in T_q \Sigma  \mid \left\lVert v \right\rVert <\varepsilon  \right\} \to N_q \subset \Sigma$ la mappa esponenziale.
+Le geodetiche $\gamma_v : [0,1]\to \Sigma$, con $v \in U_q$, sono ortogonali alle curve $t\longmapsto \exp_q (v(t)), \ \forall 0<k< \varepsilon $.
+\end{lemma}
+\begin{proof}
+	Sia
+	\[
+\alpha :
+	\begin{array}
+		{c c l}
+		 [0,1] \times \mathbb{R}& \longrightarrow& \Sigma\\
+		 (u,t) & \longmapsto & \exp_q \big(u v(t)\big) = \gamma_{uv(t)} (1) = \gamma_{v(t)} (u)
+	\end{array}
+	\] 
+	Si verifica che $\alpha _u \cdot \alpha _t = 0$.
+	Intanto si nota che
+	\begin{equation}\label{ein}
+		(\alpha _u \cdot \alpha _t) _u = \alpha _{uu} \cdot \alpha _t + \alpha _u \cdot \alpha _{tu} 
+\end{equation}	
+Visto che $\gamma_{v(t)} (u)$ \`e una geodetica, allora
+\[
+\alpha _{uu} = \gamma''_{v(t)} (u) \perp T_{\gamma_{v(t)} (u)} \Sigma \implies \alpha _{uu} \cdot \alpha _t =0
+\] 
+e
+\[
+	\begin{split}
+		&\alpha _u = \gamma'_{v(t)} (u) \implies \alpha _{u} \cdot \alpha _u = v(t) \cdot  v(t) = k^2 \text{ cost.}\\
+		&\Rightarrow 0 = (\alpha _u\cdot \alpha _u) _t =  2 \alpha _{ut} \cdot \alpha _u
+	\end{split}
+\] 
+Allora, riprendendo l'equazione \ref{ein}, si ottiene che $(\alpha _u \cdot \alpha _t) _u = 0$, per cui $\alpha _u \cdot \alpha _t$ non dipende da $u$.
+Per\`o, $\alpha (0,t) = \exp_q(0) = q, \ \forall t$, quindi $\alpha _t(0,t) = 0$ e, pertanto, $\alpha _u \cdot \alpha _t = 0$.
+\end{proof}
+\begin{corollario}
+	Se $q' = \exp_q(v) \in N_q \setminus\left\{ q \right\} \subset \Sigma$ e $c:[0,1] \to N_q$ una curva regolare da $c(0)=q$ a $c(1)=q'$, allora
+	\[
+	L(c) \ge L(\gamma_v) 
+	\] 
+\end{corollario}
+\begin{proof}
+	Intanto si nota che
+	\[
+	L(\gamma_v) = \int_{0} ^1 \left\lVert \gamma'_v(t) \right\rVert dt = \int_{0} ^1 \left\lVert v \right\rVert dt = \left\lVert v \right\rVert 
+	\] 
+	Si dimostra la disuguaglianza assumendo che $c(t) = 0 \iff t =0$\footnote{Il caso pi\`u generale, cio\`e quello in cui la curva percorre un tratto per poi ritornare al punto di partenza e procedere verso il punto di arrivo $q'$, segue direttamente dal fatto che il tratto percorso prima di ritornare a $q$ ne aumenta la lunghezza senza farla avvicinare a $q'$.}.
 
+	Ora, visto che $c(t)$ \`e una curva interamente contenuta in $N_q$, si pu\`o esprimere in termini di $\exp_q$ tramite una funzione radiale e una funzione angolare:
+	\[
+	c(t) = \exp_q (u(t) v(\tau (t)) = \alpha (u(t),\tau (t))
+	\] 
+	dove $\alpha (u,t) = \exp_q(u v(t))$ \`e la funzione usata nel lemma precedente e $\tau (t)$ \`e una funzione ausiliare permette di controllare la direzione angolare in generale (e non vincolarla ad essere lineare).
+	Dal lemma precedente, si ricorda che $\left\lVert \alpha _u \right\rVert = \lVert \gamma_{v(t)} '(u) \rVert  = \left\lVert v(t) \right\rVert = \left\lVert v \right\rVert $. 
+	Allora, usando che $\alpha _u \cdot \alpha _t = 0$ per il lemma di Gauss:
+	\[
+	c'(t) = u'(t) \alpha _u + \tau '(t) \alpha _t \implies \left\lVert c'(t) \right\rVert ^2 = u'(t) ^2 \left\lVert v \right\rVert ^2 + \tau '(t)^2 \left\lVert \alpha _t \right\rVert ^2 \ge u'(t) ^2 \left\lVert v \right\rVert ^2
+	\] 
+	Integrando, si ottiene:
+\[
+L(c) = \int_{0} ^1 \left\lVert c' \right\rVert dt \ge \left\lVert v \right\rVert \int_{0} ^1 \lvert u' \rvert dt = \left\lVert v \right\rVert \int_{0} ^1 u'(t) dt = \left\lVert v \right\rVert (u(1)-u(0)) =\left\lVert v \right\rVert 
+\] 
+dove si \`e usato che $u(1) = 1$ perch\'e deve valere $c(1) = q' = \exp_q(v)$.
+\end{proof}
 
-
-
-
+\subsubsection{Geodetiche su superfici di rotazione}
+\begin{teorema}
+	[Teorema di Clairaut]
+Valgono i due seguenti punti.
+\begin{enumerate}[(a).]
+	\item Le geodetiche su una superficie di rotazione soddisfano la relazione
+		\begin{equation}\label{clai}
+			r \cos \phi = \text{cost.}
+		\end{equation}
+		con $r$ distanza dall'asse di rotazione e $\phi $ angolo tra la geodetica e i paralleli.
+	\item Una curva parametrizzata a velocit\`a costante che soddisfa l'equazione \ref{clai} e non \`e un parallelo, \`e una geodetica.
+\end{enumerate}
+\end{teorema}
 
 
 
@@ -2584,6 +2667,20 @@ Per capire cosa succede in ciascun caso, quindi, si studia $\frac{f(u,v)}{u^2 + 
 			a(t) =- \frac{\sin u_0}{\cos u_0}b'(t) = \sin u_0 \sin(\cos u_0 t)
 			\] 
 	\end{itemize}
+\end{svolgimento}
+\begin{esercizio}
+Determinare le geodetiche del piano $\left\{ z=0 \right\} $.
+\end{esercizio}
+\begin{svolgimento}
+	Il piano $\left\{ z=0 \right\} $ \`e parametrizzato da $\underline{x}(u,v) = (u,v,0)$, quindi $\underline{x}_{uu} =\underline{x}_{uv} = \underline{x}_{vv} = 0$, da cui $\Gamma_{ij} ^k = 0$.
+	Pertanto, il sistema di EDO che definisce le geodetiche si riduce a 
+	\[
+	\begin{cases}
+		u'' = 0\\
+		v'' = 0
+	\end{cases} \implies \alpha (t)  = (a_1t + b_1 , a_2 t +b_2, 0 )
+	\] 
+	Questo vuol dire che tutte e sole le geodetiche di $\left\{ z=0 \right\} $ sono porzioni di rette parametrizzate a velocit\`a costante.
 \end{svolgimento}
 \end{document}
 
