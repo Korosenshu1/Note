@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  11 NOV 2025 14:54
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  11 NOV 2025 22:34
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1565,6 +1565,22 @@ Overfull \hbox (0.90076pt too wide) in paragraph at lines 2322--2324
  []
 
 
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 2338.
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 2344.
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 2355.
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 2361.
+
+
 
 [56]
 
@@ -1607,14 +1623,16 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 50708 strings out of 475506
+ 50712 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 3687 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 11 glue, 4 kern, 2 glyph, 967 attribute, 102 glue_spec, 485 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2114,3:795,4:142,5:459,6:93,7:5665,8:74,9:1400,10:36,11:601
- 72122 multiletter control sequences out of 65536+600000
+ 3742 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 12 glue, 4 kern, 2 glyph, 983 attribute, 102 glue_spec, 493 attribute_list, 2 write nodes
+   avail lists: 1:4,2:2090,3:795,4:142,5:460,6:93,7:5894,8:74,9:1400,10:36,11:699
+ 72125 multiletter control sequences out of 65536+600000
  182 fonts using 16227751 bytes
  124i,25n,114p,10918b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.13'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.12'
 
@@ -1640,10 +1658,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (67 pages, 672510 bytes).
+Output written on master.pdf (67 pages, 676103 bytes).
 
-PDF statistics: 772 PDF objects out of 1000 (max. 8388607)
- 659 compressed objects within 7 object streams
- 269 named destinations out of 1000 (max. 131072)
+PDF statistics: 776 PDF objects out of 1000 (max. 8388607)
+ 663 compressed objects within 7 object streams
+ 270 named destinations out of 1000 (max. 131072)
  261 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -2330,24 +2330,36 @@ Valgono i due seguenti punti.
 	\] 
 Si calcolano i simboli di Christoffel; per farlo, si calcolano le derivate di $\underline{x}$:
 \[
+	\begin{array}
+		{c c}
 \begin{split}
 	&\underline{x}_u = (f' \cos v , f' \sin v , g')\\
 	& \underline{x}_v = (-f \sin v , f \cos v , 0 )\\
+\end{split} 
+& \hspace{1cm}
+\begin{split}
 	&\underline{x}_{uu}  = (f'' \cos v , f'' \sin v, g'')\\
 	& \underline{x}_{uv}  = (-f' \sin v , f' \cos v , 0)\\
 	& \underline{x}_{vv}  = ( -f \cos v , - f \sin v ,0)
 \end{split}
+	\end{array}
 \] 
 da cui $E = (f')^2 + (g')^2 = 1$, $F = 0 $ e $G = f^2$ e
 \[
+	\begin{array}
+		{c c}
 \begin{split}
 	&\Gamma_{uu} ^u = \frac{1}{E}\underline{x}_{uu} \cdot \underline{x}_u = \frac{1}{2}(\underline{x}_u \cdot \underline{x}_u )_u = \frac{1}{2}E_u = 0\\
 	&\Gamma_{uv} ^u = \frac{1}{E} \underline{x}_{uv} \cdot \underline{x}_u= 0\\
 	&\Gamma_{vv} ^u = \frac{1}{E} \underline{x}_{vv} \cdot \underline{x}_u = - f f'\\
+\end{split}
+&\hspace{1cm}
+\begin{split}
 	& \Gamma_{uu} ^v = \frac{1}{G}\underline{x}_{uu} \cdot \underline{x}_v = 0\\
 	& \Gamma_{uv} ^v = \frac{1}{G} \underline{x}_{uv} \cdot \underline{x}_v = \frac{1}{f^2} ff' = f / f'\\
 	& \Gamma_{vv} ^v = \frac{1}{G}\underline{x}_{vv} \cdot \underline{x}_v=0
 \end{split}
+	\end{array}
 \] 
 Allora il sistema di EDO diventa:
 \[
@@ -2360,15 +2372,41 @@ Le soluzioni del sistema sono determinate dalle condizioni iniziali a $t=t_0$, i
 \begin{itemize}
 	\item Caso 1: $v'(t_0)\neq 0$.
 
-		In questo caso, la soluzione $v(t)\neq 0$ per ogni $t$ in un intorno di $t_0$, quindi la seconda equazione implica che
+		In questo caso, la soluzione soddisfa $v'(t)\neq 0$ per ogni $t$ in un intorno di $t_0$, quindi la seconda equazione implica che
 		\[
 		\frac{v''}{v'}= 2 \frac{f'(u)}{f(u)}u' \iff \ln v' = -2 \ln f(u) + \text{cost.} \iff v' = \frac{c}{f(u)^2}
 		\] 
-		Ora, se $\gamma$ \`e una geodetica, $\gamma' = u' \underline{x}_u + v' \underline{x}_v$; usando il valore di $v'$ appena ottenuto dalla condizione $v(t)\neq 0$, si trova che:
+		Ora, se $\gamma$ \`e una geodetica, $\gamma' = u' \underline{x}_u + v' \underline{x}_v$; usando il valore di $v'$ appena ottenuto dalla condizione $v(t)\neq 0$, si pu\`o calcolare il prodotto scalare tra $\gamma$ e $\underline{x}_v$ in quanto quest'ultimo \`e tangente ad un parallelo:
 		\[
-			\gamma ' \cdot \underline{x}_v = v'G = v' f(u)^2 = \text{cost.}
+			\gamma ' \cdot \underline{x}_v = v'G = v' f(u)^2 = \text{cost.} 
 		\] 
-		con $\underline{x}_v$ tangente ad un parallelo.
+		Ma il prodotto scalare dei due \`e anche pari a
+		\[
+		\text{cost.} = \left\lVert \gamma' \right\rVert \left\lVert \underline{x}_v \right\rVert \cos \phi = \left\lVert \gamma' \right\rVert f(u) \cos \phi =\left\lVert \gamma' \right\rVert  r \cos \phi 
+		\] 
+		Per\`o si pu\`o dividere per $\left\lVert \gamma' \right\rVert $ e ottenere ancora una costante perch\'e quest'ultimo \`e costante, per cui $r \cos \phi  = \text{cost.}$ e si ha la tesi.
+	\item Caso 2: $v'(t_0) = 0$.
+
+		Per unicit\`a, in un intorno di $t_0$, la soluzione del sistema \`e data da
+		\[
+			\big(u(t), v(t)\big) = \big(u(t_0) + u'(t_0) t , v(t_0)\big)
+		\] 
+		In questo caso, $\gamma(t) = \underline{x}(u(t),v(t))$ parametrizza il meridiano relativo a $v=v(t_0)$, per cui $\cos \phi  = 0$ e, allora, la relazione di Clairaut \`e automaticamente verificata perch\'e $r \cos \phi  = 0 = \text{cost.}$ e si ha nuovamente la tesi.
+\end{itemize}
+Resta da dimostrare il punto (b).
+Sia, quindi, $\gamma(t)=\underline{x}(u(t),v(t))$ una curva parametrizzata a velocit\`a costante che soddisfa $r \cos \phi  = \text{costante}$; si fa vedere che \`e una geodetica attorno ad ogni punto con $u'\neq 0$\footnote{Quest'ultima condizione serve a evitare che ci si ritrovi nel caso di un parallelo.}.
+Anche in questo caso si distinguono due casi.
+\begin{itemize}
+	\item Caso 1: $r \cos \phi  = 0$.
+
+In questo caso, $\cos\phi = 0 \Rightarrow \phi  = \pm \pi / 2$, quindi $v' = 0$.
+Inoltre, $\gamma' = u' \underline{x}_u + v' \underline{x}_v= u' \underline{x}_u$, da cui $\left\lVert \gamma ' \right\rVert = u'E$, ma $E = 1$ perch\'e la superficie \`e ottenuta da una curva pla:
+\[
+E = \underline{x}_u \cdot \underline{x}_u = (f')^2 + (g')^2 = \left\lVert \alpha (u) \right\rVert ^2 = 1
+\] 
+In definitiva, $\left\lVert \gamma ' \right\rVert = u' = \text{cost.}\neq 0\Rightarrow u'' = 0$.
+Allora $\gamma(t)= \underline{x}(u(t),v(t))$ \`e una curva che soddisfa $u'' = 0$ e $v' = 0$ (quindi $v'' =0 $ perch\'e $\gamma(t)$ soddisfa $\cos \phi  =0 $ per ogni $t$); inserendo queste due condizioni nel sistema di EDO, si vede che \`e soddisfatto e, quindi, \`e una geodetica.
+\item Caso 2: $r \cos \phi = \text{cost.}\neq 0$.
 \end{itemize}
 \end{proof}
 
