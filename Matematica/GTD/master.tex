@@ -2302,6 +2302,10 @@ dove si \`e usato che $u(1) = 1$ perch\'e deve valere $c(1) = q' = \exp_q(v)$.
 \end{proof}
 
 \subsubsection{Geodetiche su superfici di rotazione}
+Se una superficie di rotazione \`e ottenuta dalla rotazione del profilo $r =r (u)$, $z=z(u)$ attorno all'asse $z$, allora ogni valore fissato di $u$ descrive un cerchio nel piano $z= z(u)$, di raggio $r(u)$.
+Ciascuno di questi cerchi \`e ci\`o che si definisce \textit{parallelo} della superficie.
+
+
 \begin{teorema}
 	[Teorema di Clairaut]
 Valgono i due seguenti punti.
@@ -2314,6 +2318,80 @@ Valgono i due seguenti punti.
 	\item Una curva parametrizzata a velocit\`a costante che soddisfa l'equazione \ref{clai} e non \`e un parallelo, \`e una geodetica.
 \end{enumerate}
 \end{teorema}
+\begin{proof}
+	Si considera una curva regolare pla $\alpha (u) = (f(u), 0, g(u))$, con $\underline{x}(u,v) = (f(u) \cos v, f(u) \sin v , g(u))$ parametrizzazione per la superficie.
+	Le equazioni delle geodetiche sono date da 
+	\[
+	\begin{cases}
+		u'' + \displaystyle (u',v') \begin{pmatrix} \Gamma^u_{uu} & \Gamma_{uv} ^u\\ \Gamma_{uv} ^u & \Gamma^u_{vv}  \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} =0\\
+		\\
+		v'' + (u',v') \begin{pmatrix} \Gamma_{uu} ^v & \Gamma^v_{uv} \\ \Gamma_{uv} ^v & \Gamma_{vv} ^v \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} = 0
+	\end{cases}
+	\] 
+Si calcolano i simboli di Christoffel; per farlo, si calcolano le derivate di $\underline{x}$:
+\[
+\begin{split}
+	&\underline{x}_u = (f' \cos v , f' \sin v , g')\\
+	& \underline{x}_v = (-f \sin v , f \cos v , 0 )\\
+	&\underline{x}_{uu}  = (f'' \cos v , f'' \sin v, g'')\\
+	& \underline{x}_{uv}  = (-f' \sin v , f' \cos v , 0)\\
+	& \underline{x}_{vv}  = ( -f \cos v , - f \sin v ,0)
+\end{split}
+\] 
+da cui $E = (f')^2 + (g')^2 = 1$, $F = 0 $ e $G = f^2$ e
+\[
+\begin{split}
+	&\Gamma_{uu} ^u = \frac{1}{E}\underline{x}_{uu} \cdot \underline{x}_u = \frac{1}{2}(\underline{x}_u \cdot \underline{x}_u )_u = \frac{1}{2}E_u = 0\\
+	&\Gamma_{uv} ^u = \frac{1}{E} \underline{x}_{uv} \cdot \underline{x}_u= 0\\
+	&\Gamma_{vv} ^u = \frac{1}{E} \underline{x}_{vv} \cdot \underline{x}_u = - f f'\\
+	& \Gamma_{uu} ^v = \frac{1}{G}\underline{x}_{uu} \cdot \underline{x}_v = 0\\
+	& \Gamma_{uv} ^v = \frac{1}{G} \underline{x}_{uv} \cdot \underline{x}_v = \frac{1}{f^2} ff' = f / f'\\
+	& \Gamma_{vv} ^v = \frac{1}{G}\underline{x}_{vv} \cdot \underline{x}_v=0
+\end{split}
+\] 
+Allora il sistema di EDO diventa:
+\[
+\begin{cases}
+	u'' - f f' (v')^2 = 0\\
+	v'' + 2 \frac{f}{f'}u'v'=0
+\end{cases}
+\] 
+Le soluzioni del sistema sono determinate dalle condizioni iniziali a $t=t_0$, indicate con $(u(t_0),v(t_0))$ e $(u'(t_0),v'(t_0))$; ora si considerano casi diversi a seconda del valore di $v'(t_0)$.
+\begin{itemize}
+	\item Caso 1: $v'(t_0)\neq 0$.
+
+		In questo caso, la soluzione $v(t)\neq 0$ per ogni $t$ in un intorno di $t_0$, quindi la seconda equazione implica che
+		\[
+		\frac{v''}{v'}= 2 \frac{f'(u)}{f(u)}u' \iff \ln v' = -2 \ln f(u) + \text{cost.} \iff v' = \frac{c}{f(u)^2}
+		\] 
+		Ora, se $\gamma$ \`e una geodetica, $\gamma' = u' \underline{x}_u + v' \underline{x}_v$; usando il valore di $v'$ appena ottenuto dalla condizione $v(t)\neq 0$, si trova che:
+		\[
+			\gamma ' \cdot \underline{x}_v = v'G = v' f(u)^2 = \text{cost.}
+		\] 
+		con $\underline{x}_v$ tangente ad un parallelo.
+\end{itemize}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
