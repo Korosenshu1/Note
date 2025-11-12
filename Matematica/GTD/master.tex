@@ -40,7 +40,8 @@
 \usepackage[perpage]{footmisc}
 \usepackage{faktor}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, decorations.pathmorphing, patterns}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, patterns, calc,decorations.pathreplacing,shadows}
+\usetikzlibrary{}
 \usepackage{tikz-cd}
 \definecolor{mastercolor}{HTML}{0c800f}
 \definecolor{nred}{HTML}{bf0040}
@@ -2395,7 +2396,7 @@ Le soluzioni del sistema sono determinate dalle condizioni iniziali a $t=t_0$, i
 \end{itemize}
 Resta da dimostrare il punto (b).
 Sia, quindi, $\gamma(t)=\underline{x}(u(t),v(t))$ una curva parametrizzata a velocit\`a costante che soddisfa $r \cos \phi  = \text{costante}$; si fa vedere che \`e una geodetica attorno ad ogni punto con $u'\neq 0$\footnote{Quest'ultima condizione serve a evitare che ci si ritrovi nel caso di un parallelo.}.
-Anche in questo caso si distinguono due casi.
+Anche per questo punto si distinguono due casi.
 \begin{itemize}
 	\item Caso 1: $r \cos \phi  = 0$.
 
@@ -2407,20 +2408,173 @@ E = \underline{x}_u \cdot \underline{x}_u = (f')^2 + (g')^2 = \left\lVert \alpha
 In definitiva, $\left\lVert \gamma ' \right\rVert = u' = \text{cost.}\neq 0\Rightarrow u'' = 0$.
 Allora $\gamma(t)= \underline{x}(u(t),v(t))$ \`e una curva che soddisfa $u'' = 0$ e $v' = 0$ (quindi $v'' =0 $ perch\'e $\gamma(t)$ soddisfa $\cos \phi  =0 $ per ogni $t$); inserendo queste due condizioni nel sistema di EDO, si vede che \`e soddisfatto e, quindi, \`e una geodetica.
 \item Caso 2: $r \cos \phi = \text{cost.}\neq 0$.
+
+	Si ha sempre $\gamma' = u' \underline{x}_u + v' \underline{x}_v$, da cui
+	\[
+	0\neq \left\lVert \gamma' \right\rVert f \cos \phi  = \gamma ' \cdot \underline{x}_v = v ' G = v' f^2 \implies v' \neq 0
+	\] 
+	Si sa che $\gamma(t)=\underline{x}(u(t),v(t))$ \`e una geodetica se e solo se soddisfa il sistema di EDO
+	\[
+	\begin{cases}
+		u'' - f f' (v')^2 = 0\\
+		v'' + 2 \frac{f'}{f}u'v'=0
+	\end{cases}
+	\] 
+	Si nota, per\`o, che se $v' \neq 0$ e $\left\lVert \gamma' \right\rVert$ \`e costante (come in questo caso), allora la seconda equazione del sistema \`e soddisfatta se e solo se vale la relazione di Clairaut. 
+	Infatti, mettendo insieme tutte queste cose, si sa che $r \cos \phi  = \text{cost.} \Rightarrow \left\lVert \underline{x}_v \right\rVert \cos \phi = \text{cost.}$, ma visto che $\left\lVert \gamma' \right\rVert $ \`e costante, allora
+	\[
+	\gamma' \cdot \underline{x}_v = \left\lVert \gamma' \right\rVert \left\lVert \underline{x}_v \right\rVert \cos \phi  = \text{cost.} \implies \frac{d }{d t} \gamma' \cdot \underline{x}_v = 0
+	\] 
+	cio\`e, usando che $f=f(u)=f(u(t))$
+	\[
+	\frac{d }{d t} (v' f^2) = v'' f^2 + v' 2ff'u' =0 \implies v'' + 2u'v' \frac{f'}{f}=0
+	\] 
+	che coincide proprio con la seconda equazione del sistema.
+	Per terminare questo caso, allora, si verifica che $\gamma$ soddisfa la prima equazione. 
+	A questo scopo, si usa il fatto che $\left\lVert \gamma' \right\rVert = 0$ e si deriva.
+	\[
+		\begin{split}
+	&\left\lVert \gamma' \right\rVert = (u')^2 + (v')^2 f^2 = \text{cost.}\\
+	&\Rightarrow \frac{d }{d t} \left\lVert \gamma' \right\rVert = 2u'u'' + 2v'v''f^2 + 2(v')^2 f f'u' = 0\\
+	&\Rightarrow u'u'' + v'v''f^2 + (v')^2 f f'u' = 0\Rightarrow \frac{1}{f^2}u'u'' + v'\left(v'' + v'u' \frac{f'}{f}\right)  = 0
+		\end{split}
+	\] 
+	Si nota che il termine tra parentesi assomiglia alla seconda EDO del sistema; aggiungendo e sottraendo $(v')^2 u' f' /f$, infatti, si ottiene:
+	\[
+		\begin{split}
+		&\frac{1}{f^2}u'u'' + v'\bigg(\underbracket{v'' + 2v'u' \frac{f'}{f}}_{=0} \bigg) - (v')^2 u' f' /f = 0\\
+		&\Rightarrow u'\left[u'' - (v')^2f'f\right]=0
+		\end{split}
+	\] 
+	Visto che $u'\neq 0$ per assunzione, deve risultare $u'' - (v')^2 f'f = 0$, per cui $\gamma$ soddisfa il sistema ed \`e, dunque, una geodetica.
 \end{itemize}
 \end{proof}
+\begin{osservazione}
+Se $f'(u_0) = 0$, la curva 
+\[
+\gamma(t) = \underline{x}(u_0,v_0+tv'_0)
+\] 
+soddisfa il sistema di EDO e parametrizza il parallelo $u=u_0$.
 
+Sostanzialmente, in ogni punto $u_0$ in cui la curva $(f(u),0,g(u))$ ha $f'(u_0) =0$, si ha una geodetica della forma riportata sopra.
+Questi punti, per la superficie di rotazione, corrispondono a zone ad altezza fissata in cui il raggio $f(u)$ ha punto di minimo, o di massimo locale; in questo caso, il parallelo $u=u_0$, parametrizzato dalla curva $\gamma$ riportata sopra, quindi, \`e una geodetica.
+\end{osservazione}
+\subsection{Teorema di Gauss-Bonnet}
 
-
-
-
-
-
-
-
-
-
-
+\subsubsection{Integrazione su superfici}
+\begin{definizione}
+	[Curva semplice e regolare a tratti]
+	Sia $\alpha :[a,b] \to \Sigma$ una curva chiusa su $\Sigma$ superficie.
+	Si dice che $\alpha $ \`e \textit{semplice e regolare a tratti} se valgono i due seguenti punti:
+	\begin{enumerate}[(a).]
+		\item se $t\neq t'$, allora $\alpha (t) = \alpha (t') \iff \left\{ t,t' \right\} =\left\{ a,b \right\} $;
+		\item dati $a=t_0<t_1<\ldots<t_{\ell -1} <t_\ell  = b$, si ha $\alpha |_{[t_{i-1} ,t_i]} $ regolare, $\forall i = 1 ,\ldots,\ell $.
+	\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[Regione di superficie]
+	Una \textit{regione} $R$ di una superficie $\Sigma$ \`e la chiusura di un aperto $\mathring{R} \subset R$ tale che $\partial R = R \setminus \mathring{R}$ \`e la traccia di una curva semplice, chiusa e regolare a tratti.
+\end{definizione}
+\begin{definizione}
+	[Area di una superficie]
+	Se $R \subseteq \underline{x}(U) \subseteq S$ \`e una regione di una superficie $S$, parametrizzata localmente da $\underline{x}$, si definisce l'\textit{area} di $R$ come:
+	\[
+	A(R) = \iint_{\underline{x}^{-1}(R)} \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert dudv
+	\] 
+\end{definizione}
+\begin{prop}
+	L'area $A(R)$ non dipende dalla parametrizzazione regolare usata.
+\end{prop}
+\begin{proof}
+	Si considera una superficie $S$ e una regione $R$ contenuta all'interno di due parametrizzazioni regolari $\underline{x}(U)$ e $\underline{y}(V)$.
+	Si definisce $f = \underline{x}^{-1}\circ y$, che permette di passare da $\underline{y}^{-1}\big(\underline{x}(U) \cap \underline{y}(V)\big)\longrightarrow \underline{x}^{-1}\big(\underline{y}(V) \cap \underline{x}(U)\big)$.
+	Visto che 
+	\[
+	f(s,t) = \big(u(s,t) , v(s,t)\big) \iff y(s,t) = \underline{x}\big(u(s,t), v(s,t)\big)
+	\] 
+	si ha
+	\[
+		\begin{split}
+			&\begin{cases}
+		\underline{y}_s = u_s \underline{x}_u \circ f + v_s \underline{x}_v \circ f\\
+		\underline{y}_t = u_t \underline{x}_u \circ f + v_t \underline{x}_v \circ f
+	\end{cases}\\
+			&\Rightarrow \underline{y}_s \times \underline{y}_t = (u_sv_t - u_t v_s)\underline{x}_u \times \underline{x}_v \circ f
+		\end{split}
+	\] 
+Integrando, si ottiene
+\[
+	\begin{split}
+		\iint_{\underline{y}^{-1}(R)} \lVert \underline{y}_s \times \underline{y}_t \rVert dsdt &= \iint_{\underline{y}^{-1}(R)} \lvert u_s v_t - u_t v_s \rvert \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert \circ f\ dsdt\\
+													&= \iint_{\underline{y}^{-1}(R)	} \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert \circ f \lvert \det Jf \rvert ds dt \\
+													&= \iint_{\underline{x}^{-1}(R)} \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert dudv
+	\end{split}
+\] 
+dove si \`e usato che $\det Jf =u_s v_t - u_tv_s$.
+\end{proof}
+\begin{prop}
+	Data $\Sigma$ una superficie e $\underline{x}:U\to \Sigma$ una sua parametrizzazione regolare, allora vale
+	\[
+	\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert  = \sqrt{EG - F^2} 
+	\] 
+\end{prop}
+\begin{proof}
+	Si ha
+	\[
+		\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert = \underline{n} \cdot (\underline{x}_u \times \underline{x}_v) = \det \begin{pmatrix} -\underline{n}-\\ -\underline{x}_u-\\-\underline{x}_v-\end{pmatrix} 
+	\] 
+	Quindi
+	\[
+		\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert ^2 = \det \begin{pmatrix} -\underline{n}-\\ -\underline{x}_u-\\-\underline{x}_v-\end{pmatrix} \det\begin{pmatrix} | & | &|\\ \underline{n} &\underline{x}_u & \underline{x}_v \\ | & | &|\end{pmatrix} = \det \begin{pmatrix} 1 & 0 & 0\\ 0 & E & F \\ 0 & F & G \end{pmatrix} = EG - F^2
+	\] 
+	da cui la tesi.
+\end{proof}
+\begin{corollario}
+	L'integrale di area di una regione $R \subset \Sigma$ \`e dato da
+	\[
+	A(R) = \iint_{\underline{x}^{-1}(R)} \sqrt{EG-F^2} dudv
+	\] 
+\end{corollario}
+\begin{definizione}
+	Se $R \subseteq \underline{x}(U) \subseteq \Sigma$ e $\varphi:U\to \mathbb{R} $ \`e una funzione $C^\infty(U)$, con $U\supset R$ aperto, allora si definisce
+	\[
+	\int_{R} \varphi dA := \int_{\underline{x}^{-1}(R)} \varphi \circ \underline{x} \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert dudv
+	\] 
+\end{definizione}
+\noindent Si dimostra che la definizione data sopra \`e una buona definizione.
+\begin{proof}
+	Se $R \subset \underline{x}(U)\cap \underline{y}(V)$, si definisce $f = \underline{x}^{-1}\circ \underline{y}$, da cui
+	\[
+	\begin{split}
+		\int_{\underline{y}^{-1}(R)} \varphi \circ \underline{y}\lVert \underline{y}_s \times \underline{y}_t \rVert dsdt &= \int_{\underline{y}^{-1}(R)} 	(\varphi \circ \underline{x})\circ f \left\lVert \underline{x}_u \times \underline{x}_v \right\rVert \circ f  \det (Jf) \ dsdt\\
+																  &=\int_{\underline{x}^{-1}(R)} \varphi \circ \underline{x}\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert dudv
+	\end{split}
+	\] 
+\end{proof}
+\subsubsection{Teorema di Gauss-Bonnet locale}
+\begin{definizione}
+	[Angoli esterni]
+Sia $R \subseteq \Sigma$ una regione su una superficie orientata $\Sigma$.
+Gli \textit{angoli esterni} di $\partial R$ sono dati dagli angoli misurati nei punti suoi irregolari.
+La misurazione degli angoli avviene in senso anti-orario, con $\partial R$ orientato in modo che $\mathring{R}$ sia a sinistra.
+\end{definizione}
+\begin{definizione}
+	[Curvatura geodetica]
+	Sia $\alpha :[a,b] \to \Sigma$ una curva pla regolare a tratti; allora, per ogni intervallo in cui $\alpha $ \`e regolare, si definisce la sua \textit{curvatura geodetica} come
+	\[
+	k_g = T'_\alpha \cdot (\underline{n}\times T_\alpha ) 
+	\] 
+	
+\end{definizione}
+\begin{teorema}
+	[Teorema di Gauss-Bonnet locale]
+Sia $R \subseteq \underline{x}(U) \subseteq \Sigma$ una regione semplicemente connessa, quindi con $\partial R$ ottenuta come traccia di una curva semplice, chiusa e regolare a tratti.
+Siano, inoltre, $\varepsilon _1,\ldots,\varepsilon _\ell $ gli angoli esterni di $\partial R$.
+Allora si ha:
+\[
+\int_{\partial R} k_g ds + \int_{R} KdA + \sum_{j=1}^{\ell } \varepsilon _j = 2\pi
+\] 
+\end{teorema}
 
 
 
@@ -2797,6 +2951,36 @@ Determinare le geodetiche del piano $\left\{ z=0 \right\} $.
 	\end{cases} \implies \alpha (t)  = (a_1t + b_1 , a_2 t +b_2, 0 )
 	\] 
 	Questo vuol dire che tutte e sole le geodetiche di $\left\{ z=0 \right\} $ sono porzioni di rette parametrizzate a velocit\`a costante.
+\end{svolgimento}
+\begin{esercizio}
+	[Area del toro]
+	Si vuole verificare che, per la definizione data di integrale, l'area del toro $\mathbb{T}_{a,b}\subset \mathbb{R}^3 $, con $a> b > 0$, \`e coerente con quella data dalla geometria euclidea: $A(\mathbb{T}_{a,b} ) = (2\pi a)(2\pi b)$.
+	Per farlo, si considera il rettangolo $[0,2\pi-\varepsilon ] \times [0, 2\pi -\varepsilon ]\subset \mathbb{R}^2$ e la corrispondente regione sul toro $R_\varepsilon = \underline{x}\big([0,2\pi-\varepsilon ] \times [0,2\pi -\varepsilon ]\big)\subset \mathbb{T}_{a,b} $.
+	Dimostrare, allora, che
+	\[
+	\lim_{\varepsilon  \to 0} A(R_\varepsilon ) = (2\pi a) (2\pi b)
+	\] 
+\end{esercizio}
+\begin{svolgimento}
+	Visto che $\mathbb{T}_{a,b} =\underline{x}(\mathbb{R}^2)$, con
+	\[
+	\underline{x}(u,v) = \big((a+b \cos u) \cos v , (a+b \cos u) \sin v, b\sin v\big)
+	\] 
+	allora
+	\[
+	\begin{split}
+		&\underline{x}_u = (-b \sin u \cos v, - b \sin u \sin v, b \cos u )\\
+		& \underline{x}_v = \big(- (a+b \cos u ) \sin v , (a+ b \cos u ) \cos v , 0\big)
+	\end{split}
+	\] 
+	Da queste, si ottengono $E = b^2$, $F=0$ e $G = (a+b \cos u)^2$, quindi
+	\[
+		\begin{split}
+			A(R_\varepsilon ) &= b \int_{0} ^{2\pi - \varepsilon } (a+ b \cos u ) du \int_{0} ^{2\pi - \varepsilon } dv \\
+					  &= b (2\pi -\varepsilon ) \big[a (2\pi - \varepsilon ) + b \sin (2\pi-\varepsilon )\big]\to (2\pi a ) (2\pi b)
+		\end{split}
+	\] 
+	per $\varepsilon \to 0$.
 \end{svolgimento}
 \end{document}
 

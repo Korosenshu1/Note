@@ -314,6 +314,15 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+OUTPUT master.pdf
 INPUT /usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 INPUT /usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
@@ -356,7 +365,6 @@ INPUT ./master.out
 INPUT ./master.out
 INPUT ./master.out
 OUTPUT master.out
-OUTPUT master.pdf
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 INPUT /home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc
