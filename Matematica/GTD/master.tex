@@ -2575,6 +2575,157 @@ Allora si ha:
 \int_{\partial R} k_g ds + \int_{R} KdA + \sum_{j=1}^{\ell } \varepsilon _j = 2\pi
 \] 
 \end{teorema}
+\begin{osservazione}
+	[Inversione dell'orientazione]
+	Si nota che la formula di Gauss-Bonnet locale non dipende dall'orientazione della superficie, cio\`e mandando $\underline{n}\to -\underline{n}$, resta invariata.
+	Infatti, dovendo rispettare la convezione secondo cui il verso di percorrenza deve essere tale da lasciare l'interno di $R$ sinistra, allora per $\underline{n}\to - \underline{n}$, bisogna invertire il verso di percorrenza (perch\'e si passa dal vedere la superficie da ``sopra'' a vederla da ``sotto''), quindi $T_\alpha \to -T_\alpha $, mentre $T'_\alpha \to T'_\alpha $ perch\'e $T' = \frac{d T}{d s} \to \frac{d (-T)}{d (-s)} = \frac{d T}{d s} = T'$, visto che il parametro lunghezza d'arco deve aumentare in verso opposto (che \`e anche il motivo per cui $T\to -T$).
+	Pertanto, visto che $K$ \`e indipendente dal segno (entrambe le curvature principali cambiano segno e nel loro prodotto, tale cambiamento si annulla) e che $k_g = T'_\alpha \cdot (\underline{n}\times T_\alpha )\to T'_\alpha \big[(-\underline{n})\times (-T_\alpha )\big] = T'_\alpha (\underline{n}\times T_\alpha ) = k_g$, la formula \`e invariante, essendo gli angoli esterni sempre gli stessi (mantenendo la loro misurazione coerente col verso di percorrenza di $\partial R$).
+\end{osservazione}
+\begin{definizione}
+	[Triangolo geodetico]
+	Su una superficie $\Sigma$, un \textit{triangolo geodetico} \`e una regione $\mathcal{T}$ delimitata dall'intersezione di tre geodetiche della superficie in tre punti distinti, che formano i \textit{vertici} del triangolo.
+	Tali geodetiche che formano il bordo del rettangolo sono chiamate \textit{lati geodetici}.
+\end{definizione}
+\begin{corollario}
+	Sia $\mathcal{T}\subseteq \underline{x}(U) \subseteq \Sigma$ un triangolo geodetico con bordo orientato in senso anti-orario e angoli interni $i_k, \ k=1,2,3$; allora
+	\[
+	\int_{\mathcal{T} } K dA = \sum_{k=1}^{3} i_k - \pi
+	\] 
+\end{corollario}
+\begin{proof}
+	Essendo $\partial \mathcal{T} $ composto da geodetiche, allora $T' \in T\Sigma^\perp$, mentre $\underline{n}\times T \in T\Sigma$, pertanto $k_g = 0$. 
+	Inoltre, $i_k + \varepsilon _k = \pi ,\ \forall k$, quindi
+	\[
+	\int_{T} KdA + 3\pi - \sum_{k=1}^{3} i_k = 2\pi
+	\] 
+	da cui la tesi.
+\end{proof}
+\subsubsection{Curvatura normale e curvatura geodetica}
+Sia $\Sigma$ una superficie orientata, con versore normale $\underline{n}$, e sia $\alpha  : I \to \Sigma$ una curva pla.
+Si nota che la terna $(T_\alpha ,\underline{n}\times T_\alpha ,\underline{n})$ forma una base ortonormale di $\mathbb{R}^3$ per ogni $t \in I$, visto che $T_\alpha (t) = \alpha '(t) \in T_{\alpha (t)} \Sigma, \ \forall t \in I$.
+Ora, visto che $T'_\alpha \perp T_\alpha $, si pu\`o scrivere
+\[
+T'_\alpha  = (T'_\alpha \cdot \underline{n}\times T_\alpha )\underline{n}\times T_\alpha  + (T'_\alpha \cdot \underline{n}) \underline{n} 
+\] 
+dove $T'_\alpha \cdot \underline{n}= k_n(\alpha (t))$ \`e la curvatura normale.
+Si nota, poi, che $T'_\alpha  = D_{\alpha '} \alpha '$, quindi
+\[
+D_{\alpha '} \alpha ' \cdot \underline{n}\times T_\alpha  = (D_{\alpha '} \alpha ')^\top \cdot \underline{n}\times T_\alpha  = \nabla _{\alpha '} \alpha ' \cdot \underline{n}\times T_\alpha := k_g(\alpha (t))
+\] 
+dove, nella seconda uguaglianza, si \`e usato il fatto che $\underline{n}\times T_\alpha \in T_{\alpha (t)} \Sigma$, quindi la componente che sopravvive al prodotto scalare \`e solamente quella parallela alla superficie, cio\`e $\nabla _{\alpha '} \alpha '$.
+Allora si ha la seguente.
+\begin{prop}
+	Data una curva $\alpha :I\to\Sigma$, con $\Sigma$ superficie orientabile, allora $k_g(\alpha (t)) = 0, \ \forall t \in I \iff \alpha (t)$ \`e una geodetica su $I$.
+\end{prop}
+\noindent Inoltre, dalla scomposizione di $T'_\alpha $, si ricava la seguente relazione:
+\begin{boxenv}[]
+\begin{equation}
+	k_\alpha ^2 = k_g^2 + k_n^2
+\end{equation}
+\end{boxenv}
+\noindent La condizione di $\alpha $ geodetica, allora, \`e equivalente a $k_\alpha  = \lvert k_n \rvert $\footnote{Si ha $k_\alpha > 0$ per definizione, mentre $k_n$ pu\`o essere negativa e bisogna usare il modulo dopo la radice.}, che, a sua volta, \`e equivalente a richiedere $T'_\alpha  = \alpha '' \perp T_{\alpha (t)} \Sigma$.
+\subsubsection{Teorema di Gauss-Bonnet globale}
+\begin{definizione}
+	[Superficie con bordo]
+	Sia $\hat{\Sigma}\subseteq \mathbb{R}^3$  una superficie orientata e compatta, con $\partial \hat{\Sigma} = \varnothing$ (senza bordo).
+	Sia, poi, $R\subseteq \hat{\Sigma}$ una regione (o unione di pi\`u regioni), con $\partial R$ traccia di una curva chiusa, semplice e regolare a tratti (o unione di curve del genere); allora una \textit{superficie orientata con bordo} \`e della forma $\Sigma = \overline{\hat{\Sigma}\setminus R}$, il cui bordo pu\`o anche essere sconnesso.
+\end{definizione}
+\begin{definizione}
+	[Triangolazione]
+	Sia $\Sigma$ una superficie orientata con bordo $\partial \Sigma$.
+	Una \textit{triangolazione} di $\Sigma$ \`e una famiglia $\mathcal{T} =\left\{ \Delta _\lambda  \right\} _{\lambda =1} ^m$ tale che:
+	\begin{enumerate}[(a).]
+		\item $\Sigma = \bigcup_{\lambda =1} ^m \Delta _\lambda $;
+		\item $\Delta _\lambda $ \`e l'immagine di un triangolo Euclideo tramite una parametrizzazione regolare di $\Sigma$ compatibile con la sua orientazione;
+		\item se $\lambda \neq \mu $, allora
+			\[
+			\Delta _\lambda \cap \Delta _\mu =\begin{cases}
+				\varnothing\\
+				\text{1 vertice}\\
+				\text{1 lato}
+			\end{cases}
+			\] 
+			cio\`e i $\Delta _\lambda $ si intersecano ``bene'';
+		\item se $\Delta _\lambda \cap \Delta_ \mu $ \`e un alto, allora le orientazioni su quest'ultimo sono opposte;
+		\item per ogni $\lambda $
+			\[
+			\Delta _\lambda \cap \partial \Sigma = \begin{cases}
+				\varnothing\\
+				\text{1 vertice}\\
+				\text{1 lato}
+			\end{cases}
+			\] 
+			cio\`e i $\Delta _\lambda $ intersecano ``bene'' il bordo.
+	\end{enumerate}
+\end{definizione}
+\begin{teorema}
+	[Teorema di Rad\'o]
+	Sia $\Sigma$ una superficie orientata con bordo $\partial \Sigma$; allora $\Sigma$ ammette una \textit{triangolazione}.
+Se $\partial \Sigma =\varnothing$, invece, $\Sigma$ continua ad ammettere una triangolazione, ma senza il punto (e).
+\end{teorema}
+\noindent L'obiettivo \`e estendere il teorema di Gauss-Bonnet a tutta la superficie, piuttosto che ad una regione.
+Per farlo, si deve ottenere un termine correttivo che mantenga l'enunciato vero globalmente.
+\begin{definizione}
+	[Caratteristica di Eulero]
+	Sia $\mathcal{T} $ una triangolazione di $\Sigma$, superficie orientata con bordo.
+	Dati $V$ il numero di vertici, $L$ il numero di lati e $T$ il numero di triangoli su $\Sigma$ generati dalla triangolazione, allora si definisce la \textit{caratteristica di Eulero} della superficie come
+	\[
+	\chi (\Sigma) = V-L+T \in \mathbb{Z}
+	\] 
+\end{definizione}
+\noindent Per poter enunciare il teorema globale, \`e prima necessario chiarire cosa vuol dire integrare su tutta la superficie.
+Facendo uso del teorema di Rad\'o e assumendo che $\Sigma$ sia triangolata da $\left\{ \Delta _\lambda  \right\} _{\lambda =1} ^m$, allora si definisce
+\[
+\int_{\Sigma} KdA := \sum_{\lambda =1}^{m} \int_{\Delta _\lambda } KdA
+\] 
+\begin{teorema}
+	[Teorema di Gauss-Bonnet globale]
+	Sia $\Sigma$ una superficie compatta, orientata e con bordo regolare a tratti, semplice e chiuso (anche sconnesso).
+	Siano, inoltre, $\varepsilon _1,\ldots,\varepsilon _\ell $ gli angoli esterni del bordo e sia $\mathcal{T} =\left\{ \Delta _1,\ldots,\Delta _m \right\} $ una sua triangolazione.
+	Allora
+	\[
+	\int_{\partial \Sigma} k_g ds + \int_{\Sigma} KdA + \sum_{k=1}^{\ell } \varepsilon _k = 2\pi\chi (\Sigma)
+	\] 
+\end{teorema}
+\begin{proof}
+	Si fornisce un'idea della dimostrazione.
+	Per il teorema di Gauss-Bonnet locale, si sa che
+	\[
+	\int_{\partial \Delta_ \lambda } k_g ds + \int_{\Delta _\lambda } KdA + \sum_{j=1}^{3} \varepsilon _{\lambda _j} = 2\pi
+	\] 
+	Sommando su $\lambda $, si ha:
+	\begin{itemize}
+		\item $\sum_{\lambda =1}^{m} \int_{\Delta _\lambda } KdA = \int_{\Sigma} KdA$ per definizione;
+		\item $\sum_{\lambda =1}^{m} \int_{\partial \Delta _\lambda } k_gds = \int_{\partial \Sigma} k_g ds$ perch\'e, per definizione di triangolazione, il verso di percorrenza su lati comuni a pi\`u triangoli \`e opposto, quindi i contributi ``non di bordo'' si annullano;
+		\item $\sum_{\lambda , j}^{} \varepsilon _{\lambda _j} = 2\pi (L-V)$ per arrangiamento combinatorio;
+		\item $\sum_{\lambda =1}^{m} 2\pi = 2\pi T$, cio\`e $m$ sarebbe il numero di triangoli su $\Sigma$.
+	\end{itemize}
+\end{proof}
+\begin{corollario}
+	Se $\partial \Sigma = \varnothing$, allora
+	\[
+	\int_{\Sigma} KdA = 2\pi \chi (\Sigma)
+	\] 
+\end{corollario}
+\noindent Per finire la sezione, si lascia il seguente fatto: \textit{le superfici chiuse (senza bordo), connesse e orientabili, a meno di omomorfismi, sono la sfera, il toro, il toro con due buchi e, pi\`u in generale, il toro con $g$ buchi}.
+Il numero di buchi $g$ prende il nome di \textbf{genere} e, indicando una superficie simile di genere $g$ con $F_g$, vale
+\begin{equation}
+	\chi (F_g) = 2 - 2g
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2981,6 +3132,18 @@ Determinare le geodetiche del piano $\left\{ z=0 \right\} $.
 		\end{split}
 	\] 
 	per $\varepsilon \to 0$.
+\end{svolgimento}
+\begin{esercizio}
+Verificare il teorema di Gauss-Bonnet globale per il cilindro.
+\end{esercizio}
+\begin{svolgimento}
+	Si nota che un cilindro \`e una superficie ricoperta da geodetiche: i suoi paralleli sono ottenuti ruotando punti critici della distanza dal centro del profilo.
+	Considerando anche il fatto che \`e una superficie piatta e che non ha angoli, si ha, rispettivamente
+	\[
+	\int_{\partial \Sigma} k_g ds = 0  \hspace{1cm} \int_{\Sigma} KdA = 0 \hspace{1cm} \sum_{j,\lambda }^{} \varepsilon _{\lambda _j} = 0
+	\] 
+	Pertanto, si deve far vedere che $\chi (\Sigma) = 0$.
+	Visto che, come spazio topologico, $\Sigma \cong A$ anello, il quale ha $\chi (A) = 0$, e che $\chi (\Sigma)$ \`e invariante sotto omotopia, allora il teorema \`e verificato.
 \end{svolgimento}
 \end{document}
 
