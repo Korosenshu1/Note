@@ -3145,5 +3145,297 @@ Verificare il teorema di Gauss-Bonnet globale per il cilindro.
 	Pertanto, si deve far vedere che $\chi (\Sigma) = 0$.
 	Visto che, come spazio topologico, $\Sigma \cong A$ anello, il quale ha $\chi (A) = 0$, e che $\chi (\Sigma)$ \`e invariante sotto omotopia, allora il teorema \`e verificato.
 \end{svolgimento}
+\begin{esercizio}
+Se $\Sigma \subseteq \mathbb{R}^3$ \`e una superficie connessa, orientabile e compatta, con $\partial \Sigma = \varnothing$ e $\Sigma \not\cong S^2$, allora ha punti in cui $K>0$, punti in cui $K = 0$ e punti in cui $K<0$.
+\end{esercizio}
+\begin{svolgimento}
+	Essendo una superficie compatta, si \`e gi\`a mostrato che deve possedere punti in cui $K>0$.
+	Se fosse $K\ge 0$ ovunque, si avrebbe
+	\[
+	2\pi \chi (\Sigma ) = 2\pi(2-2g) = \int_{\Sigma } KdA \ge 0 \iff g \le 1
+	\] 
+	Visto che si \`e escluso il caso della sfera, deve essere $g>0$, quindi si ha $g=1$. 
+	Per\`o questo implica che 
+	\[
+	0 = 2\pi\chi (\Sigma ) = \int_{\Sigma } KdA
+	\] 
+	ma \`e assurdo perch\'e esistono punti in cui $K>0$, quindi l'integrale non pu\`o essere nullo.
+	Questo permette di concludere che devono esistere punti in cui $K<0$ e, per continuit\`a di $K$, si devono anche avere dei punti in cui $K=0$.
+\end{svolgimento}
+\begin{esercizio}
+Stabilire quando pu\`o esistere una geodetica semplice e chiusa su una generica superficie $\Sigma $ in ciascuno dei seguenti casi:
+\begin{enumerate}[(1).]
+	\item $\forall p \in \Sigma , \ K(p)>0$;
+	\item $\forall p \in \Sigma , \ K(p) < 0$;
+	\item $\forall p \in \Sigma , \ K(p) = 0$.
+\end{enumerate}
+In ciascuno di questi casi, inoltre, dire se tale geodetica pu\`o essere il bordo di una regione semplicemente connessa.
+\end{esercizio}
+\begin{svolgimento}
+	Si considera il caso (1). Si pu\`o considerare il caso di una superficie sferica, in cui ogni suo cerchio massimo parametrizzato a velocit\`a costante \`e una geodetica.
+	In questo caso, $R$ coincide con una calotta, che si pu\`o mostrare essere semplicemente connessa.
+
+	Ora si considera il caso (2), con $K(p) < 0, \ \forall p \in \Sigma $.
+	In questo caso, si pu\`o considerare la superficie di rotazione ottenuta ruotando mezza circonferenza aperta verso destra, fondamentalmente a formare la parte interna di un toro.
+	Anche in questo caso, evidentemente, l'equatore \`e una geodetica chiusa.
+	Si assume per assurdo che la regione $R$ che delimita sia semplicemente connessa; usando il teorema di Gauss-Bonnet locale, unitamente al fatto che $K(p)<0, \ \forall p$, si ha:
+	\[
+	0 > \int_{R} KdA= 2\pi >0
+	\] 
+	Per il caso (3), infine, si pu\`o considerare un qualunque parallelo ad altezza fissata di un cilindro. 
+	Per lo stesso ragionamento usato sopra con Gauss-Bonnet, anche in questo caso, la regione $R$ delimitata da una tale geodetica non pu\`o essere semplicemente connessa.
+\end{svolgimento}
+\begin{esercizio}
+	Calcolare la curvatura geodetica di un parallelo di $S^2$.
+\end{esercizio}
+\begin{svolgimento}
+	La sfera senza i poli \`e parametrizzata da 
+	\[
+	\underline{x}(u,v) = (\sin u \cos v , \sin u \sin v , \cos u ) , \ 0<u<\pi
+	\] 
+	quindi $E = 1$, $F=0$ e $G = \sin ^2 u$, come gi\`a visto.
+La curva $\alpha (t) = \underline{x}(u_0,t)$ parametrizza il parallelo $u=u_0$ e soddisfa $\alpha '(t) = \underline{x}_v (u_0,t)$, per cui $\left\lVert \alpha '(t)  \right\rVert = \sqrt{G(u_0,t)} = \sin u_0$, perci\`o la sua versione pla \`e data da $\beta (s) := \alpha (s / \sin u_0)$.
+Con la versione pla, si possono calcolare versore tangente e derivata, mentre, per versore normale, si usa quello fornito dalla parametrizzazione:
+\[
+\begin{split}
+	&T_\beta (s) = \frac{1}{\sin u_0}\alpha '\left(\frac{s}{\sin u_0}\right)  = \frac{\underline{x}_v (u_0, s / sin u_0)}{\sin u_0}\\
+	&T'_\beta (s) = \frac{1}{\sin^2 u_0}\alpha '' \left(\frac{s}{\sin u_ 0}\right) = \frac{1}{\sin ^2 u_0} \underline{x}_{vv} \left(u_0,\frac{s}{\sin u_0}\right) =- \frac{1}{\sin^{\cancel{2}}  u_0} \cancel{\sin u_0} \begin{pmatrix} \cos (s / \sin u_0)\\ \sin (s / \sin u_0) \\ 0 \end{pmatrix} \\
+	& \underline{n}\left(u_0, s / \sin u_ 0\right)  = \frac{\underline{x}_u \times \underline{x}_v }{\sqrt{EG - F^2} }= \underline{x}_u \times \frac{\underline{x}_v(u_0, s / \sin u_0)}{\sin u_0} = \underline{x}_u \times T_\beta\\
+	&\Rightarrow \underline{n} \times T_\beta = - \underline{x}_u = - \begin{pmatrix} \cos u_0 \cos (s / \sin u_ 0) \\ cos u_0 \sin (s / \sin u_0) \\ - \sin u_0\end{pmatrix} 
+\end{split}
+\] 
+Unendo tutto, si ottiene
+\[
+	k_g(s) = T'_\beta \cdot (\underline{n}\times T_\beta ) = \frac{\cos u_0}{\sin u_0} = \operatorname{cotan}  u _0
+\] 
+\end{svolgimento}
+\begin{esercizio}
+	Verificare il teorema di Gauss-Bonnet per una calotta sferica di $S^2$.
+\end{esercizio}
+\begin{svolgimento}
+	Si indica con $\varphi $ l'angolo formato tra l'asse $z$ e la posizione del parallelo che delimita la calotta, e si considera $0 < \varphi < \pi / 2$.
+	Per parametrizzare $S^2$, si prende
+	\[
+	\underline{x}:
+	\begin{array}
+		{c c c}
+		U = \left\{ (u,v) \in \mathbb{R}^2  \mid u^2 + v^2 < 1 \right\} & \longrightarrow & \mathbb{R}^3\\
+		(u,v) & \longmapsto & (u,v\sqrt{1-u^2 - v^2} )
+	\end{array}
+	\] 
+	quindi la calotta \`e data da 
+	\[
+	R = \underline{x} \left(\left\{ (u,v) \in \mathbb{R}^2 \mid u^2 + v^2 < \sin^2 \varphi  \right\}\right)  \subseteq \underline{x}(U)
+	\] 
+	Visto che $R$ \`e omeomorfa ad un disco, \`e semplicemente connessa, quindi si pu\`o usare Gauss-Bonnet. 
+	Si ha che:
+	\[
+	\int_{\partial R} k_gds = \operatorname{cotan} \varphi L(\partial R) = \frac{\cos\varphi }{\sin \varphi }\sin \varphi  2\pi=2\pi \cos \varphi 
+	\] 
+	Sapendo che, per la sfera, $K=1$:
+	\[
+	\int_{R} KdA = \int_{R} dA = A(R)= \int_{\underline{x}^{-1}(R)} \sqrt{EG - F^2} dudv
+	\] 
+	Si devono calcolare $E,F,G$ relativi a questa parametrizzazione.
+	Visto che
+	\[
+		\underline{x}_u = \left(1,0,- \frac{u}{\sqrt{1-u^2-v^2} }\right) \hspace{1cm} \underline{x}_v = \left(0,1,- \frac{v}{\sqrt{1-u^2 - v^2} }\right) 
+	\] 
+	si trova che
+	\[
+	\begin{split}
+		&E = \underline{x}_u \cdot \underline{x}_u = 1 + \frac{u^2}{1-r^2}\\
+		&F=\frac{uv}{1-r^2}\hspace{1cm}G = 1-\frac{v^2}{1-r^2}
+	\end{split}
+	\] 
+	con $r = u^2 + v^2$, cio\`e prendendo $u = r \cos \theta $ e $v = r \sin \theta $.
+	Quindi $EG-F^2 = \frac{1}{1-r^2}$, da cui
+	\[
+		\int_{\underline{x}^{-1}(R)} \frac{1}{\sqrt{1-u^2-v^2} } du dv= \int_{0} ^{\sin \varphi } \int_{0} ^{2\pi} \frac{r}{\sqrt{1-r^2} } dr d\theta = 2 \pi (1- \cos \varphi )
+	\] 
+	Allora, visto che la regione non ha contributi dovuti a spigoli, il teorema \`e verificato perch\'e la somma dei due integrali restituisce $2\pi$.
+\end{svolgimento}
+\begin{esercizio}
+Dato il toro $\mathbb{T}_{5,2} = \underline{x}(\mathbb{R}^2)$, con 
+\[
+\underline{x}(u,v) = \big((5+2 \cos u) \cos v, (5+2\cos u)) \sin v , \sin u\big)
+\] 
+e data la regione $R = \underline{x}\big([0,\pi / 2] \times [0, \pi]\big)$, verificare il teorema di Gauss-Bonnet:
+\[
+\int_{\partial R} k_g ds + \int_{R} KdA + \sum_{i=1}^{4} \varepsilon _i = 2\pi \chi (R)
+\] 
+\end{esercizio}
+\begin{svolgimento}
+	La definizione di $R$ tramite immagine di $\underline{x}$ implica che $R$ \`e omeomorfo ad un rettangolo, quindi \`e semplicemente connesso.
+	Prendendo la normale esterna, l'orientazione di questo pezzo di toro \`e data da $A_1\to A_2 \to A_3\to A_4$, dove
+	\[
+	\begin{split}
+		&A_1 = \left\{ \underline{x}(0,t), \ 0\le t \le \pi \right\} \\
+		&A_2 = \left\{ \underline{x}(t,\pi) , \ 0\le t\le \pi / 2 \right\} \\
+		&A_3 = \left\{ \underline{x}(\pi / 2 , \pi - t) , \ 0\le t\le \pi \right\} \\
+		&A_4 = \left\{ \underline{x}(\pi / 2 - t,0) , \ 0\le t \le \pi / 2 \right\} 
+	\end{split}
+	\] 
+	Si nota, intanto, che gli angoli formati dal bordo sono tutti pari a $\pi / 2$, quindi $\sum_{k=1}^{4} \varepsilon _k = 2\pi$.
+	Si vede, poi, che $A_1$ \`e la rotazione di un punto critico della funzione distanza nel profilo della superficie, pertanto \`e traccia di una geodetica, cos\`i come lo sono anche $A_2$ e $A_4$, corrispondenti ai tratti di salita e discesa rispettivamente.
+	Questo significa che $A_3$ \`e l'unico tratto di bordo che non pu\`o essere ottenuto tramite traccia di una geodetica\footnote{Chiaramente non soddisfa $\nabla _{\alpha '} \alpha ' = 0$, visto che si pu\`o prendere un piano tangente che restituisce una circonferenza, parte di cui \`e $A_3$, dall'intersezione con la superficie e questa ha curvatura che punta verso il centro.}, pertanto 
+	\[
+	\int_{\partial R} k_g ds = \int_{A_3} k_g ds
+	\] 
+	Per calcolare questo integrale, si calcola $k_g$; per farlo, si costruisce una curva la cui traccia coincide con $A_3$ e la si parametrizza tramite lunghezza d'arco per arrivare al vettore tangente.
+Per la parametrizzazione data, $A_3 = \mathrm{Tr} (\alpha )$, con
+\[
+\alpha (t) = \big(5 \cos(\pi-t) , 5 \sin (\pi-t), 2\big), \ 0\le t \le  \pi
+\] 
+per cui $\alpha '(t) = \big(5 \sin (\pi-t) , -5 \cos (\pi - t), 0 \big)$. Allora la versione pla \`e
+\[
+\beta (s) = \left(5 \cos \left(\pi - \frac{s}{5}\right) , 5 \sin \left(\pi - \frac{s}{5}\right) , 2\right) 
+\] 
+da cui
+\[
+\begin{split}
+	&T_\beta (s) = \left(\sin \left(\pi - \frac{s}{5}\right) , - \cos \left(\pi - \frac{s}{5}\right) ,0\right) \\
+	& T'_\beta (s) = -\frac{1}{5}\left(\cos \left(\pi - \frac{s}{5}\right), \sin \left(\pi - \frac{s}{5}\right) ,0 \right) 
+\end{split}
+\] 
+Il versore normale lungo $A_3$ \`e dato da $\underline{n}= (0,0,1)$, perci\`o:
+\[
+	k_g = -\frac{1}{5}\det \begin{pmatrix} \cos(\pi - s/5) & \sin (\pi - s / 5) & 0 \\  0&0&1\\ \sin (\pi - s / 5) & - \cos (\pi - s / 5) & 0  \end{pmatrix} = - \frac{1}{5}
+\] 
+Visto che $L(A_3) = 5 \pi$, si ottiene
+\[
+\int_{A_3} k_g ds = -\frac{5\pi}{5}  = - \pi
+\] 
+Riprendendo le formule ricavate per i coefficienti della prima forma fondamentale e della curvatura gaussiana nel caso del toro, si ha
+\[
+E = 4 \hspace{1cm} F= 0 \hspace{1cm}G = (5+2 \cos u)^2 \hspace{1cm}K = \frac{\cos u}{2(5 +2 \cos u)}
+\] 
+Quindi, visto che $\sqrt{EG - F^2} = \sqrt{EG} = 2 (5 +2 \cos u)$:
+\[
+	\int_{R}  K dA = \int_{0} ^{\pi / 2}  \int_{0} ^\pi \frac{\cos u}{\cancel{2 (5 +2 \cos u)}} \cancel{\sqrt{EG-F^2} } du dv = \pi \big[\sin u\big]_{0} ^{\pi / 2}  = \pi 
+\] 
+Allora i due integrali si elidono a vicenda e rimane la somma sugli angoli, che coincide proprio con $2\pi$.
+\end{svolgimento}
+\begin{esercizio}
+	[Esercizio di riepilogo]
+	Sia $\Sigma = \underline{x}(U) \subseteq \mathbb{R}^3$, con 
+	\[
+	\underline{x}: 
+	\begin{array}
+		{c c c}
+		U=\left\{ (u,v) \in \mathbb{R}^2  \mid u>0 \right\} &\longrightarrow \mathbb{R}^3\\
+		(u,v) &\longmapsto & (u \cos v , u \sin v, \ln u)
+	\end{array}
+	\] 
+	cio\`e \`e la superficie ottenuta ruotando un profilo logaritmico.
+	\begin{enumerate}[(1).]
+		\item Calcolare la curvatura gaussiana di $\Sigma $ in ogni suo punto.
+		\item Verificare il teorema di Gauss-Bonnet per la regione $R = \left\{ 0 \le z \le 1 \right\} \subseteq \Sigma $.
+		\item Data $\gamma:\mathbb{R}\to \Sigma $ una geodetica tale che $\gamma(0) = (1,0,0)$ e $\gamma'(0) = - (1,\sqrt{2} ,1)$, mostrare che
+			\[
+			\gamma(\mathbb{R}) \subseteq \left\{ z \ge  -\frac{1}{2}\ln(2) \right\} \subseteq \Sigma 
+			\] 
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Si divide lo svolgimento nei punti richiesti.
+	\begin{enumerate}[(1).]
+		\item Si svolgono i soliti conti:
+			\[
+				\begin{split}
+					&\underline{x}_u = (\cos v ,\sin v , 1 / u) \hspace{1cm} \underline{x}_v = (-u \sin v, u \cos v,0) = u( - \sin v ,\cos v, 0)\\
+					&\Rightarrow E = \frac{1+u^2}{u^2} \hspace{1cm}F = 0 \hspace{1cm}G = u^2\\
+					&\underline{n} = \frac{\underline{x}_u \times \underline{x}_v}{\left\lVert \underline{x}_u \times \underline{x}_v \right\rVert } = \frac{u}{\sqrt{EG-F^2} } \begin{pmatrix} \cos v\\ \sin v \\ 1 / u \end{pmatrix} \times \begin{pmatrix} - \sin v \\ \cos v \\ 0 \end{pmatrix} = \frac{1}{\sqrt{1+u^2} } \begin{pmatrix} - \cos v\\ - \sin v \\ u \end{pmatrix} \\
+					& \underline{x}_{uu} = (0,0,- 1 / u^2) \hspace{1cm}\underline{x}_{uv} = (- \sin v , \cos v, 0) \hspace{1cm}\underline{x}_{vv } = -u(\cos v, \sin v ,0)\\
+					&\Rightarrow \ell = \underline{x}_{uu} \cdot \underline{n}= - \frac{1}{u \sqrt{1+u^2} }\hspace{1cm} m = \underline{x}_{uv} \cdot \underline{n} = 0 \hspace{1cm} n = \underline{x}_{vv} \cdot \underline{n}=\frac{u}{\sqrt{1+u^2} }
+				\end{split}
+			\] 
+			quindi
+			\[
+			K = \frac{\ell n - m^2}{EG-F^2}=- \frac{1}{(1+u^2)^2}
+			\] 
+		\item Si nota che, per $u_0>0$, la circonferenza $\left\{ z = \ln u_0 \right\} \cap \Sigma $ \`e una circonferenza di raggio $u_0$, quindi si parametrizza tramite lunghezza d'arco come
+			\[
+			\beta _{u_0} (s) = \left(u_0 \cos \left(\frac{s}{u_0}\right) , u_0 \sin \left(\frac{s}{u_0}\right) , \ln(u_0)\right) 
+			\] 
+			Da questa, si ricavano
+\[
+	T(s) = \left(-\sin \left(\frac{s}{u_0}, \cos \frac{s}{u_0},0\right) \right) \hspace{1cm}T'(s) = -\frac{1}{u_0}\left(\cos \frac{s}{u_0}, \sin \frac{s}{u_0},0\right) 
+\] 
+Quindi, lungo $\beta _{u_0} $, si ha:
+\[
+	k_g = T' \cdot (\underline{n}\times T) = \frac{1}{u_0 \sqrt{1+u_0^2} }\det \begin{pmatrix} \cos s / u_0 & \sin s /u_0 & 0 \\ \cos  s / u_0 & \sin  s / u_0 & -u_0 \\ - \sin s / u_0 & \cos s / u_0 & 0  \end{pmatrix} = \frac{1}{\sqrt{1+u_0^2} }
+\] 
+Il verso del versore normale trovato al punto precedente punta, evidentemente, verso l'interno della superficie, per via dei segni negativi davanti a seno e coseno. 
+Tenendo conto dell'orientazione data dal versore normale e che la regione \`e circondata dalle circonferenze $z = 0\Rightarrow u = 1$ e $z=1\Rightarrow u=e$, allora
+\[
+	\begin{split}
+		\int_{\partial R}  k_g ds &= \int_{\beta _e} k_g ds - \int_{\beta _1} kg ds\\
+					  &= \frac{1}{\sqrt{1+e^2} }2\pi e - \frac{1}{\sqrt{2} }2\pi = 2\pi \left(\frac{e}{\sqrt{1+e^2} }-\frac{1}{\sqrt{2} }\right) 
+	\end{split}
+\] 
+Ora si calcola l'integrale di $K$:
+\[
+\int_{R}  KdA = \int_{1} ^e \int_{0} ^{2\pi} \frac{1}{(1+u^2)^{3/2} }du dv 
+\] 
+Per calcolare la primitiva di $(1+u^2)^{-3 / 2} $, si usano seno e coseno iperbolici, che vengono richiamati di seguito.
+\[
+	\begin{split}
+		&\sinh t = \frac{e^t - e^{-t} }{2} \hspace{1cm}\cosh t = \frac{e^t + e^{-t} }{2} \implies \cosh^2 t = 1 + \sinh ^2 t\\
+		&\sinh' t = \cosh t \hspace{1cm} \cosh ' t = \sinh t
+	\end{split}
+\] 
+Per l'integrale, si sostituisce $u = \sinh t$, per cui
+\[
+\int (1+u^2)^{-3 / 2} du = \int \cosh^{-3}t \cosh t dt = \int\frac{1}{\cosh^2 t} dt = \frac{\sinh t}{\cosh t} = \frac{u}{\sqrt{1+u^2} }
+\] 
+visto che
+\[
+\left[ \frac{\sinh t }{\cosh t} \right]  = \frac{\cosh ^2 t - \sinh^2 t}{\cosh ^2 t} = \frac{1}{\cosh ^2 t}
+\] 
+Quindi:
+\[
+	\begin{split}
+		\int_{R}  KdA &= -\int_{1} ^e \int_{0} ^{2\pi}  \frac{1}{(1+u^2)^{3/2} }dudv = - 2\pi \left[ \frac{u}{\sqrt{1+u^2} } \right] _1^e\\
+			      & = -2\pi \left(\frac{e}{\sqrt{1+e^2} - \frac{1}{\sqrt{2} }}\right) = - \int_{\partial R} k_g ds
+	\end{split}
+\] 
+Essendo che $R$ \`e omeomorfo ad un anello, allora $\chi (R) = 0$ e la formula di Gauss-Bonnet \`e verificata.
+\item Visto che $\Sigma $ \`e una superficie di rotazione, si pu\`o usare la relazione di Clairaut per $\gamma$, con $r = u$.
+	Ora si cerca di trovare la costante che soddisfa $u \cos \phi  = \text{cost.}$. 
+	Si inizia col notare che, nel punto $(1,0,0) = \underline{x}(1,0)$, si ha $u=1$, mentre 
+	\[
+	\gamma'(0) \cdot \underline{x}_v ( 1,0) = \left\lVert \gamma'(0) \right\rVert \left\lVert \underline{x}_v(1,0) \right\rVert  \cos \phi  = 2 \cos \phi 
+	\] 
+	Ma il prodotto scalare tra i due \`e $-(1,\sqrt{2} ,1) \cdot (0,1,0) = -\sqrt{2} $, quindi $\cos \phi  = - 1 / \sqrt{2} $, da cui la costante \`e proprio $- 1 / \sqrt{2} $.
+	Ne segue che, in ogni punto di $\gamma$ della forma $\underline{x}(u,v)$, si ha
+	\[
+	u \cos \phi  = - \frac{1}{\sqrt{2} }
+	\] 
+	Ora, visto che $- u \le  u \cos \phi  = - 1 / \sqrt{2} \iff u \ge  1 / \sqrt{2} $ e che $z = \ln u$, allora
+	\[
+	z \ge  \ln \left(\frac{1}{\sqrt{2} }\right)  = -\frac{1}{2} \ln 2 
+	\] 
+	che \`e proprio il risultato cercato.
+	\end{enumerate}
+\end{svolgimento}
+\newpage 
+\section{Topologia differenziale}
+\begin{definizione}
+	[Mappa liscia]
+	Siano $X \subseteq \mathbb{R}^n$ e $Y \subseteq \mathbb{R}^m$, con $X,Y \neq \varnothing$, due sottoinsiemi generici di spazi euclidei. 
+	Data anche $f:X\to Y$ una mappa fra questi due sottoinsiemi, si dice che $f$ \`e \textit{liscia}, o $C^\infty$, se $\forall x \in X$, si trova un intorno aperto $W\subseteq \mathbb{R}^n:x \in W$ e una funzione $F : W \to \mathbb{R}^m$ di classe $C^\infty$ tale che $F|_{W\cap X}  = f|_{W\cap X} $.
+\end{definizione}
+\begin{definizione}
+	[Diffeomorfismo]
+	Una mappa $f:X\subseteq \mathbb{R}^n \to Y \subseteq \mathbb{R}^m$ \`e detta \textit{diffeomorfismo} se \`e un omeomorfismo e $f,f^{-1}$ sono entrambe lisce. 
+	In questo caso, si scriver\`a che $f : X \stackrel{\cong}{\longrightarrow}Y$, oppure $X \cong Y$ se $f$ non \`e specificata.
+\end{definizione}
+\begin{osservazione}
+Si pu\`o verificare che:
+\begin{enumerate}[(a).]
+	\item se $X  \subseteq \mathbb{R}^n$ \`e un aperto, allora $f:X\to Y \subseteq \mathbb{R}^m$ \`e $C^\infty\iff f:U\to \mathbb{R}^m$ lo \`e nel senso usuale.
+\end{enumerate}
+\end{osservazione}
 \end{document}
 
