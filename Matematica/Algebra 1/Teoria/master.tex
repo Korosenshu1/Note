@@ -1,5 +1,5 @@
 %! TEX program = lualatex
-\documentclass[11pt]{article}
+\documentclass[12pt]{scrartcl}
 % Packages
 %\usepackage[margin=1.5in]{geometry}
 \usepackage{index}
@@ -4095,14 +4095,64 @@ I contenuti presenti in $c(h(x))$ sono costanti, quindi possono essere portati f
 	\end{enumerate}
 	Allora $f(x)$ \`e irriducibile in $A[x]$ (e in $K[x]$, con $K$ campo dei quozienti di $A$).
 \end{prop}
-
-
-
-
-
-
-
-
-
+\newpage
+\section{Teoria dei campi}
+\subsection{Introduzione}
+\begin{definizione}
+	[Elementi algebrici e trascendenti]
+	Sia $K$ un campo e $L$ una sua estensione; allora $\alpha  \in L$ si dice \textit{algebrico} su $K$ se $\exists f(x) \in K[x]\setminus\left\{ 0 \right\} $ tale che $f(\alpha ) = 0$, mentre si dice \textit{trascendente} su $K$ se tale polinomio non esiste.
+\end{definizione}
+\noindent Dati un campo $K$ e una sua estensione $L$, per $\alpha \in L$, si pu\`o definire la mappa
+\[
+	\varphi _\alpha :
+\begin{array}
+	{c c c}
+	K[x] &\longrightarrow&K[\alpha ]\\
+	f(x) &\longmapsto & f(\alpha )
+\end{array}
+\] 
+detta \textit{omomorfismo di valutazione}.
+Questo soddisfa il seguente diagramma:
+\[
+\begin{tikzcd}
+	K[x] & & & K[\alpha ]\\
+	\\
+	\\
+	K[x] / \operatorname{Ker} \varphi _\alpha 
+	\arrow[from=1-1, to=1-4,"\displaystyle \varphi _\alpha ",two heads]
+	\arrow[from=1-1, to=4-1,"\displaystyle \pi"',two heads]
+	\arrow[from=4-1, to=1-4,"\displaystyle \overline{\varphi }_\alpha "',"\displaystyle \sim"]
+\end{tikzcd}
+\] 
+cio\`e $K[\alpha ] \cong K[x] / \operatorname{Ker} \varphi _\alpha $.
+Si nota, da questo, che $\operatorname{Ker} \varphi _\alpha \subset K[x]$ \`e un ideale primo perch\'e $K[\alpha ]$ \`e un sottoanello di un campo, quindi \`e un dominio.
+In termini dell'omomorfismo di valutazione, si ha:
+\begin{itemize}
+	\item $\alpha $ trascendente su $K \iff \operatorname{Ker} \varphi _\alpha  = \left\{ 0 \right\} \iff\varphi _\alpha$ \`e iniettivo $\iff K[x] \cong K[\alpha ]$;
+	\item $\alpha $ \`e algebrico su $K \iff \operatorname{Ker} \varphi _\alpha \neq \left\{ 0 \right\} \iff \varphi _\alpha $ non \`e iniettivo.
+\end{itemize}
+\begin{osservazione}
+	Se $\alpha \in L$ algebrico su $K$, visto che $K[x]$ \`e un ED, \`e un PID in particolare, allora $\operatorname{Ker} \varphi _\alpha $ deve essere un ideale massimale di $K[x]$, quindi $K[x] / \operatorname{Ker} \varphi _\alpha $ \`e un campo e, conseguentemente, lo \`e anche $K[\alpha ]$.
+	In questo caso, allora, $K[x] = K(\alpha )$.
+\end{osservazione}
+\noindent Essendo $K[x]$ a ideali principali, allora $\operatorname{Ker} \varphi _\alpha  =\langle \mu _\alpha (x) \rangle$, con $\mu _\alpha (x) \in \operatorname{Ker} \varphi _\alpha $; visto che \`e un ideale massimale, allora $\mu _\alpha (x)$ \`e irriducibile in $K[x]$.
+Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generatore monico; infatti, essendo $K[x]$ un ED, si sa che i suoi ideali sono generati dagli elementi di grado minimo e tali elementi differiscono per un elemento di $K\setminus\left\{ 0 \right\} $.
+\begin{definizione}
+	[Grado di un'estensione]
+	Data un'estensione $L$ di $K$, indicata con $L \ K$, se ne definisce il \textit{grado} come
+	\[
+		[L:K] = \dim _{K } L
+	\] 
+	cio\`e \`e la dimensione di $L$ come spazio vettoriale su $K$.
+\end{definizione}
+\begin{prop}
+	Sia $L / K$ un'estensione di $K$, con $\alpha \in L$; allora il grado dell'estensione semplice $K(\alpha )$ \`e
+	\[
+		[K(\alpha ):K]=\begin{cases}
+			+\infty &,\ \text{ se } \alpha \text{ trascendente su } K\\
+			\deg \mu _\alpha (x) &,\ \text{ se } \alpha \text{ algebrico su } K\\
+		\end{cases}
+	\] 
+\end{prop}
 
 \end{document}
