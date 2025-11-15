@@ -3577,7 +3577,129 @@ quindi $\mathrm{Im} (dg_u) = \mathrm{Im} (dh_v)$.
 	Sia $M \subseteq \mathbb{R}^k$ una variet\`a di dimensione $m$; allora $\forall x \in M$, $\dim T_x M = m$.
 \end{prop}
 \begin{proof}
-	Visto che $\dim T_x M = \dim dg_u(\mathbb{R}^m)$, allora $\dim T_xM \le m$ perch\'e il differenziale \`e un isomorfismo.
+	Visto che $\dim T_x M = \dim dg_u(\mathbb{R}^m)$, allora $\dim T_xM \le m$ perch\'e il differenziale \`e un isomorfismo. 
+	Per $U\subseteq \mathbb{R}^m$ aperto, data la parametrizzazione locale
+	\[
+		g : U \stackrel{\cong}{\longrightarrow} W \cap M
+	\] 
+e $g(u) = x$, visto che $g ^{-1}$ \`e $C^\infty$, allora $\exists x \in W' \subseteq W$ aperto, con $F:W'\to \mathbb{R}^m$ di classe $C^\infty$ e $F|_{W'\cap M} = g^{-1}|_{W'\cap M} $, quindi tale che
+\[
+	(d\iota)_u = \mathrm{Id} _{\mathbb{R}^m} = dF_x \circ dg_u
+\] 
+\[
+\begin{tikzcd}
+	& &W' \\
+	 & &\\
+	u\in U\cap g^{-1}(W')& &\mathbb{R}^m
+	\arrow[from=3-1, to=1-3, "\displaystyle g"]
+	\arrow[from=3-1, to=3-3, "\displaystyle \iota"', hook]
+	\arrow[from=1-3, to=3-3, "\displaystyle F"]
+\end{tikzcd}
+\] 
+Allora $dg_u$ \`e iniettiva e, allora, $\dim T_x M = m$.
+\end{proof}
+\noindent Si vuole definire il differenziale di mappe $C^\infty$ tra variet\`a.
+Si considera, allora, $f: M \subseteq \mathbb{R}^k \longrightarrow N \subseteq \mathbb{R}^{\ell } $ liscia, con $x\longmapsto y= f(x)$; per definizione, quindi, $\exists W \subseteq \mathbb{R}^k$ intorno aperto di $x$ e $F:W\to \mathbb{R}^\ell $ tale che $F|_{W\cap M} = f|_{W\cap M} $.
+Quindi si pu\`o definire il differenziale di $f$ come
+\begin{equation}
+	df_x := dF_x|_{T_x M} :T_x M \longrightarrow \mathbb{R}^\ell 
+\end{equation}
+\begin{lemma}
+	Il differenziale $df_x$ \`e ben definito e $df_x (T_xM) \subseteq T_{f(x)} N$.
+\end{lemma}
+\begin{proof}
+	Si fa vedere che $df_x$ non dipende da $F$, ma solo da $f$.
+	Sia, per esempio, $\dim M= m$ e siano 
+	\[
+	g :
+	\begin{array}
+		{c c c}
+		U & \longrightarrow& M\\
+		u &\longmapsto & g(u) = x
+	\end{array} \hspace{2cm}
+	h:
+	\begin{array}
+		{c c c}
+		V &\longrightarrow & N\\
+		v &\longmapsto & h(v) = y
+	\end{array}
+	\] 
+	due parametrizzazioni locali attorno a $x$ e $y $ rispettivamente.
+	A meno di cambiare $U$, si pu\`o supporre che $g(U) \subseteq W$, quindi si pu\`o costruire il seguente diagramma:
+	\[
+	\begin{tikzcd}
+		W & & \mathbb{R}^\ell \\
+		\\
+		U & & V
+		\arrow[from=3-1, to=1-1, "\displaystyle g"]
+		\arrow[from=3-1, to=3-3, "\displaystyle h^{-1}\circ f \circ g"']
+		\arrow[from=3-3, to=1-3, "\displaystyle h"']
+		\arrow[from=1-1, to=1-3, "\displaystyle F"]
+	\end{tikzcd}
+	\] 
+	Pertanto, si ha:
+	\[
+	\begin{split}
+		&dF_x\big(\overbracket{dg_u(\mathbb{R}^m)}^{T_x M } \big) = \overbracket{dh_v \big(d(h^{-1}\circ f \circ g)_u (\mathbb{R}^m)\big)}^{\subseteq \mathrm{Im} (dh_v) = T_y N} \\
+		&\Rightarrow dF_x |_{T_x M }  = dh_v \circ d(h^{-1}\circ f\circ g)_u \circ (dg_u)^{-1}
+	\end{split}
+	\] 
+	dove l'ultima espressione non dipende n\'e da $F$, n\'e da $W$.
+\end{proof}
+\begin{prop}
+	[Propriet\`a del differenziale]
+	Il differenziale di mappe tra variet\`a soddisfa le seguenti propriet\`a:
+	\begin{enumerate}[(a).]
+		\item $d(g\circ f)_x = dg_{f(x)} \circ df_x$;
+		\item la mappa identit\`a $\mathrm{Id} _M : M \to M : x \longmapsto x$ soddisfa $d(\mathrm{Id} _M)_x = \mathrm{Id} _{T_xM} , \ \forall x \in M$;
+		\item l'iniezione $M' \stackrel{\iota}{\longhookrightarrow } M$ \`e la restrizione di $\mathrm{Id} _M$ a $M'$, che \`e, a sua volta, la restrizione di $\mathrm{Id} _{\mathbb{R}^k} $, quindi $d\iota_x : T_x M' \to T_x M$ \`e iniettiva e definisce un'immersione lineare di $T_x M' $ in $T_xM$, dove, perci\`o, il primo risulta un sottospazio del secondo.
+	\end{enumerate}
+\end{prop}
+\noindent Similmente a quanto visto nell'ultimo punto della proposizione precedente, si nota che se $f : M \to N$ \`e un diffeomorfismo tra variet\`a, allora 
+\[
+	df_x : T_x M \stackrel{\cong}{\longrightarrow}T_{f(x)} N
+\] 
+\`e un isomorfismo lineare $\forall x \in M$.
+\subsection{Variet\`a compatte}
+\begin{definizione}
+	[Punto critico]
+	Sia $f:M\to N$ una mappa $C^\infty$ tra variet\`a, con $\dim M = m$ e $\dim N = n$; allora $x\in M$ \`e un \textit{punto critico} di $f$ se $\operatorname{rg}  df_x < n$.
+\end{definizione}
+\noindent Se un punto non \`e critico, allora si dice \textit{regolare}.
+I rispettivi $y \in N$ per cui la controimmagine di $f$ \`e un punto critico sono detti \textit{valori critici}, altrimenti sono \textit{valori regolari.} 
+In particolare, se $f^{-1}(y) = \varnothing$, allora $y$ \`e un valore regolare.
+\begin{prop}
+	Sia $f : M \to N$ una mappa liscia, con $\dim M= \dim N$; allora valgono i due seguenti punti.
+	\begin{enumerate}[(a).]
+		\item Se $x \in <$ \`e un punto regolare di $f$, allora la restrizione di $f$ \`e un diffeomorfismo tra un intorno di $x \in M$ e un intorno di $f(x)$ in $N$.
+		\item Se $M$ \`e compatta e se $y \in N$ \`e un valore regolare di $f$, allora $f^{-1}(y)$ \`e un insieme finito.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Si divide la dimostrazione nei due punti.
+	\begin{enumerate}[(a).]
+		\item Si considerano le parametrizzazioni locali
+			\[
+			g :U \longrightarrow g(U) \subseteq M\hspace{1cm} h : V \longrightarrow h(V) \subseteq N
+			\] 
+			rispettivamente attorno a $x$ e a $y$. 
+			A meno di restringere $U$, si pu\`o suppore che $f(g(U)) \subseteq h(V)$, quindi vale il seguente diagramma:
+\[
+\begin{tikzcd}
+	x  \in  g(U) & & &h(V)  \ni  y = f(x)\\
+	\\
+	u  \in  U & & &V  \ni  v \\
+	     \mathbb{R}^m & & & \mathbb{R}^m 
+	     \arrow[from=1-1, to= 1-4, "f"]
+	     \arrow[from=3-1, to=1-1, "g"']
+	     \arrow[from=3-4, to=1-4, "h"']
+	     \arrow[from=3-1, to=3-4, "h^{-1}\circ f\circ g"]
+	     \arrow[from=3-1, to=4-1, hook]
+	     \arrow[from=3-4, to=4-4, hook]
+\end{tikzcd}
+\] 
+da cui $df_x \circ dg_u = dh_v \circ d(h^{-1}\circ f\circ g)_u$, con $df_x$, $ dg_u$, $dh_v$ tutti isomorfismi.
+	\end{enumerate}
 \end{proof}
 \end{document}
 
