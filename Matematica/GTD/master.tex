@@ -3431,11 +3431,153 @@ Essendo che $R$ \`e omeomorfo ad un anello, allora $\chi (R) = 0$ e la formula d
 	Una mappa $f:X\subseteq \mathbb{R}^n \to Y \subseteq \mathbb{R}^m$ \`e detta \textit{diffeomorfismo} se \`e un omeomorfismo e $f,f^{-1}$ sono entrambe lisce. 
 	In questo caso, si scriver\`a che $f : X \stackrel{\cong}{\longrightarrow}Y$, oppure $X \cong Y$ se $f$ non \`e specificata.
 \end{definizione}
-\begin{osservazione}
-Si pu\`o verificare che:
+\noindent Si pu\`o verificare che:
 \begin{enumerate}[(a).]
-	\item se $X  \subseteq \mathbb{R}^n$ \`e un aperto, allora $f:X\to Y \subseteq \mathbb{R}^m$ \`e $C^\infty\iff f:U\to \mathbb{R}^m$ lo \`e nel senso usuale.
+	\item se $X  \subseteq \mathbb{R}^n$ \`e un aperto, allora $f:X\to Y \subseteq \mathbb{R}^m$ \`e $C^\infty\iff f:U\to \mathbb{R}^m$ lo \`e nel senso usuale;
+	\item la composizione di mappe $C^\infty$ \`e $C^\infty$;
+	\item se $f:X\to Y$ \`e $C^\infty$, allora lo \`e anche $f : X \to f(X)$ e, $\forall X' \subseteq X, \ f|_{X'} :X'\to Y$ \`e $C^\infty$.
 \end{enumerate}
-\end{osservazione}
+\begin{definizione}
+	[Variet\`a differenziabile]
+Sia dato un sottoinsieme $M \subseteq \mathbb{R}^k$; allora questo \`e una \textit{variet\`a differenziabile} (o $C^\infty$) di \textit{dimensione} $m$ se $\forall x \in M$, si trova un intorno aperto $W \subseteq \mathbb{R}^k$ di $x$ e un diffeomorfismo $f : W\cap M \stackrel{\cong}{\longrightarrow} U \subseteq \mathbb{R}^m$, con $U$ aperto.
+\end{definizione}
+\noindent Nella definizione sopra, si dice che $f$ \`e una \textit{carta locale} su $M$, mentre la sua inversa $f^{-1}: U \to W\cap M$ \`e detta \textit{parametrizzazione locale}.
+Nel caso in cui $m=0$, per convenzione, si richiede che $W\cap M = \left\{ x \right\} $, invece di avere $W \cap M \cong U$.
+\begin{esempio}
+Di seguito, alcuni esempi di variet\`a differenziabili.
+\begin{enumerate}[(a).]
+	\item Un aperto $U \subseteq \mathbb{R}^k$ \`e una variet\`a di dimensione $k$.
+	\item Una superficie $\Sigma \subseteq \mathbb{R}^3$ \`e una variet\`a di dimensione $2$.
+		Infatti, dato $p \in \Sigma $, si pu\`o trovare un intorno di $p$ in $\Sigma $ che \`e grafico di funzione rispetto ad una proiezione $\pi:\mathbb{R}^3 \to \mathbb{R}^2$.
+		Quindi, si trova un aperto $U \subseteq \mathbb{R}^2$ e una mappa liscia $f : U \to \mathbb{R}$ tali per cui 
+		\[
+		\underline{x}:
+		\begin{array}
+			{c c c}
+			U&\longrightarrow & \mathbb{R}^3\\
+			(u,v) & \longmapsto & (u,v,f(u,v))
+		\end{array}
+		\] 
+		\`e una parametrizzazione regolare attorno a $p$.
+		Posto, quindi, $W = \pi^{-1}(U)$, si ha $W \subseteq \mathbb{R}^3$ aperto e 
+		\[
+		\pi|_{W\cap \Sigma } : W\cap\Sigma = \underline{x}(U) \longrightarrow U
+		\] 
+		\`e $C^\infty$, con inversa $\underline{x}$, anch'essa $C^\infty$.
+\end{enumerate}
+\end{esempio}
+\subsection{Spazio tangente e differenziale}
+\noindent Ora si vuole definire lo spazio tangente di una variet\`a in ogni suo punto.
+Si inizia col costruire tale definizione per gli aperti degli spazi euclidei.
+\begin{definizione}
+	[Spazio tangente]
+	Sia $U \subseteq\mathbb{R}^k$ un aperto e sia $x \in U$; lo \textit{spazio tangente} $T_x U$ \`e $\mathbb{R}^k$.
+\end{definizione}
+\noindent Per poter estendere questa definizione, \`e necessario introdurre e caratterizzare il differenziale di una mappa.
+\begin{definizione}
+	[Differenziale]
+	Siano $U \subseteq \mathbb{R}^k$, $V \subseteq \mathbb{R}^\ell $ due aperti e sia $f : U \to V$ di classe $C^\infty$; allora, date $x \in U$ e $h \in \mathbb{R}^k$, il \textit{differenziale} di $f$ \`e definito da $df_x:\mathbb{R}^k\to \mathbb{R}^{\ell } $ come
+	\[
+	df_x(h) : = \lim_{t \to 0} \frac{f(x+th) - f(x)}{t}
+	\] 
+\end{definizione}
+\noindent Il differenziale \`e un'applicazione lineare, la cui matrice \`e data dallo jacobiano $J(f)_x = \left(\frac{\partial f_i}{\partial x_j} \right) _x$ rispetto alla base canonica.
+Seguono alcune sue propriet\`a.
+\begin{enumerate}[(a).]
+	\item $d(g\circ f)_x = dg_{f(x)} \circ df_x$.
+	\item dato $U\subseteq \mathbb{R}^k$ e data $\mathrm{Id}_U : U \to U$, allora $d(\mathrm{Id}_U)_x = \mathrm{Id} _{\mathbb{R}^k}  , \ \forall x \in U$.
+	\item Dati $U' \subseteq U \subseteq \mathbb{R}^k$ due aperti, la mappa inclusione $\iota : U' \longhookrightarrow U$ soddisfa $(d\iota)_x = \mathrm{Id} _{\mathbb{R}^k} , \ \forall x \in U'$.
+	\item Data $L : \mathbb{R}^k \to \mathbb{R}^{\ell } $ un'applicazione lineare, allora $dL_x = L , \ \forall x \in \mathbb{R}^k$.
+\end{enumerate}
+\begin{prop}
+	Dati $U \subseteq \mathbb{R}^k$ e $V \subseteq \mathbb{R}^\ell $ due aperti tali che $\exists f : U \stackrel{\cong}{\longrightarrow}V$, allora $k = \ell $ e $df_x$ \`e un isomorfismo lineare $\forall x \in U$.
+\end{prop}
+\begin{proof}
+	Sia $g : V \to U$ l'inversa di $f$; allora
+	\[
+	\begin{split}
+		&\mathrm{Id} _{R^k} = d (\iota_U)_x = d(g \circ f)_x = (dg)_{f(x)} \circ df_x\\
+		& \mathrm{Id} _{\mathbb{R}^\ell } = d(\iota_V)_{f(x)} = d(f\circ g)_{f(x)} = (df)_x\circ dg_{f(x)} 
+	\end{split}
+	\] 
+	per cui $df_x : \mathbb{R}^{k} \to \mathbb{R}^\ell $ \`e iniettiva e suriettiva, quindi $f$ \`e un isomorfismo e $k=\ell $.
+\end{proof}
+\noindent Ora si pu\`o estendere la definizione di spazio tangente a varit\`a generiche.
+\begin{definizione}
+	[Spazio tangente]
+	Sia $M \subseteq \mathbb{R}^k$ una variet\`a differenziabile di dimensione $\dim M = m$ e sia $x \in M$.
+	Data $g : U \stackrel{\cong}{\longrightarrow} W \cap M \subseteq \mathbb{R}^k$, con $U \subseteq \mathbb{R}^m$ aperto e $x = g(u) \in W \cap M$, una parametrizzazione locale attorno ad $x$, allora si definisce
+	\[
+	T_x M : = dg_u (\mathbb{R}^m) \subseteq \mathbb{R}^k
+	\] 
+	come lo \textit{spazio tangente} di $M$ in $x$.
+\end{definizione}
+\noindent Ora si verifica la bont\`a della definizione.
+\begin{proof}
+	Siano
+	\[
+	\begin{split}
+		&g : U \stackrel{\cong}{\longrightarrow}g(U) \subseteq M\\
+		&h : V \stackrel{\cong}{\longrightarrow}h(V) \subseteq M
+	\end{split}
+	\] 
+due parametrizzazioni locali attorno a $x \in M$.
+	\begin{center}
+	\begin{tikzpicture}[scale=1.1,>=Stealth]
+
+% Stile per le aree ombreggiate
+\tikzset{shadearea/.style={pattern=north east lines, pattern color=gray!70}}
+
+% --- Parte superiore: spazi immagine ---
+% Cerchi
+\draw (0,2) circle (1.2cm) node[above left=2pt] {$g(U)$};
+\draw (2,2) circle (1.2cm) node[above right=2pt] {$h(V)$};
+
+% Intersezione ombreggiata
+\begin{scope}
+  \clip (0,2) circle (1.2cm);
+  \fill[shadearea] (2,2) circle (1.2cm);
+\end{scope}
+
+% Frecce verso il basso
+\draw[->] (-1.6,0.2) to[bend left=20] node[left] {$g$} (-1.1,1.4);
+\draw[->] (3.6,0.2) to[bend right=20] node[right] {$h$} (3.1,1.4);
+
+% --- Parte inferiore: domini ---
+% Cerchi U e V
+\draw (-1,-1) circle (1.2cm) node[below left=2pt] {$U$};
+\draw (3,-1) circle (1.2cm) node[below right=2pt] {$V$};
+
+% Aree ombreggiate nei domini
+\begin{scope}
+  \clip (-1,-1) circle (1.2cm);
+  \fill[shadearea] (-0.3,0) circle (1.2cm);
+\end{scope}
+
+\begin{scope}
+  \clip (3,-1) circle (1.2cm);
+  \fill[shadearea] (2.3,0) circle (1.2cm);
+\end{scope}
+
+% Frecce di transizione
+\draw[->] (-0.5,-0.3) to[bend left=20] node[below] {$h^{-1}\circ g$} (2.5,-0.3);
+
+\draw[->] (5,0) node[right=3pt] {$h^{-1}(g(U))$} to[bend right=25] (2.7,-0.5);
+\draw[->] (-3,0) node[left=3pt] {$g^{-1}(h(V))$} to[bend left=25] (-0.7,-0.5);
+\end{tikzpicture}
+	\end{center}
+Visto che $g(U)$ e $h(V)$ sono aperti, l'intersezione $g(U) \cap h(V)$ \`e, a sua volta, un aperto.
+La mappa $h^{-1}\circ g$ \`e un diffeomorfismo perch\'e composizione di diffeomorfismi, quindi
+\[
+dg_u = d\big(h\circ (h^{-1}\circ g\big)_u = dh_v \circ d(h^{-1}\circ g)_u
+\] 
+quindi $\mathrm{Im} (dg_u) = \mathrm{Im} (dh_v)$.
+\end{proof}
+\begin{prop}
+	Sia $M \subseteq \mathbb{R}^k$ una variet\`a di dimensione $m$; allora $\forall x \in M$, $\dim T_x M = m$.
+\end{prop}
+\begin{proof}
+	Visto che $\dim T_x M = \dim dg_u(\mathbb{R}^m)$, allora $\dim T_xM \le m$ perch\'e il differenziale \`e un isomorfismo.
+\end{proof}
 \end{document}
 
