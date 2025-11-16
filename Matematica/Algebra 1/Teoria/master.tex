@@ -199,7 +199,8 @@ title=#1
 \renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\usepackage[default]{fontsetup}
+\usepackage{kpfonts}
+
 
 
 \newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
@@ -4154,5 +4155,13 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 		\end{cases}
 	\] 
 \end{prop}
+\begin{proof}
+	Se $\alpha $ \`e trascendente su $K$, allora $\operatorname{Ker} \varphi _\alpha  = \left\{ 0 \right\} $, il che vuol dire che non esiste alcuna relazione banale tra le varie potenze di $\alpha $ non esiste alcuna relazione di dipendenza lineare, quindi l'insieme $\left\{ 1, \alpha ,\ldots, \alpha ^k,\ldots \right\} $ \`e linearmente indipendente in $K[\alpha ] \subset K(\alpha )$ e, conseguentemente, $K[\alpha ]$ ha dimensione infinita, quindi anche $K(\alpha )$.
 
+	Se $\alpha $ \`e algebrico su $K$, invece, si ha
+	\[
+		K(\alpha ) \cong K[\alpha ] \cong \frac{K[x]}{(\mu _\alpha (x))}
+	\] 
+	
+\end{proof}
 \end{document}
