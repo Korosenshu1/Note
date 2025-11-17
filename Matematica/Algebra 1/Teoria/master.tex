@@ -4290,4 +4290,42 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 			\item Date due estensioni $L / K$ e $M / K$, queste sono algebriche se e solo se l'estensione composta $LM / K$ \`e algebrica.
 		\end{enumerate}
 	\end{teorema}
+	\begin{proof}
+		Si divide la dimostrazione nei due punti.
+		\begin{enumerate}[(a).]
+			\item Si dimostra l'implicazione ($\Rightarrow $).
+				Se $F / K$ \`e algebrica, allora $\forall \alpha \in F$, si ha $\alpha $ algebrico su $K$, quindi ogni $\alpha \in L \subset F$ \`e algebrico su $K$ e, dunque, $L$ \`e algebrico su $K$.
+				Inoltre, $F$ \`e algebrico su $L$ perch\'e contiene $K$: tutti gli elementi di $F$ sono gi\`a algebrici su $K$ e, a maggior ragione, sono algebrici anche su $L$, che \`e un campo pi\`u grande.
+
+				Ora si dimostra ($\Leftarrow$).
+				Sia $\alpha \in F$; per ipotesi $F / L$, $L / K$ algebriche, quindi $\alpha $ \`e algebrico su $L$ e, quindi
+				\[
+					\exists f(x) \in L[x] \setminus \left\{ 0 \right\} : f(\alpha ) = 0\hspace{.5cm} \text{con} \hspace{.5cm} f(x) = \sum_{i=0}^{n} a_i x^i
+				\] 
+				Sia $L_0 = K(a_0,\ldots,a_n)$ il campo generato su $K$ dai coefficienti di $f$; per costruzione, $f(x) \in L_0(x)$, quindi $\alpha $ \`e algebrico su $L_0$ e 
+				\[
+				K \subset L_0 \subset L_0(\alpha ) ,\ \forall \alpha \in F
+				\] 
+			La prima estensione \`e finita perch\'e \`e generata da elementi algebrici, mentre la seconda \`e ancora finita perch\'e \`e un'estensione algebrica semplice (vale la proposizione \ref{gradext}).
+			Di conseguenza, la torre di estensioni \`e finita e $[L_0(\alpha ):K] < +\infty$, quindi $L_0(\alpha ) / K$ \`e algebrica per la proposizione \ref{algextfin}.
+			Ne segue che $\alpha \in F$ \`e algebrico su $K$, per ogni $\alpha  \in F$, quindi $F / K $ \`e algebrica.
+		\item Si dimostra ($\Leftarrow$), quindi si prende $LM / K$ algebrica. 
+			Sia $\alpha  \in M \subset LM$; allora $\alpha $ \`e algebrico su $K$ perch\'e ogni elemento di $LM$ lo \`e.
+			Ma il discorso vale per ogni elemento di $M$ e, analogamente, per ogni elemento di $L$, quindi $M / K$ e $L / K$ sono algebriche.
+
+			Ora si dimostra ($\Rightarrow $), quindi si considerano $M / K$ e $L / K$ algebriche.
+			Sia $\alpha  \in LM = L(M)$; visto che $M$ \`e algebrico su $K$ (quindi \`e algebrico a maggior ragione su $L$), allora $L(m_1,\ldots,m_n) / L$ \`e un'estensione finita (perch\'e finitamente generata da algebrici) e tale che $\alpha \in L(m_1,\ldots,m_n)$.
+			In questo modo, si pu\`o far vedere che $\alpha $ appartiene ad un'estensione finita di $K$, quindi un'estensione algebrica e, quindi, $\alpha $ \`e algebrico su $K$.
+			Si nota, infatti, che per il ragionamento fatto sopra:
+			\[
+			\alpha  \in  F = K(\lambda _1,\ldots,\lambda _n,m_1,\ldots,m_n)
+			\] 
+			dove i $\lambda _i\in L$ sono i coefficienti della decomposizione di $\alpha $ tramite la base di $L(m_1,\ldots,m_n)$ come spazio vettoriale\footnote{Tale spazio ha dimensione finita perch\'e l'estensione $L(m_1,\ldots,m_n) / L$ \`e finita, quindi la decomposizione ha senso.} su $L$. 
+			Questa \`e un'estensione algebrica di $K$ perch\'e sono algebrici su $K$ tutti gli elementi di $L$ e $M$ per ipotesi, quindi $\alpha $ \`e algebrico su $K$.
+			Visto che questo discorso si pu\`o ripetere per ogni $\alpha \in LM $, si ha la tesi.
+		\end{enumerate}
+	\end{proof}
+	\subsection{Chiusura algebrica}
+	
+	
 \end{document}
