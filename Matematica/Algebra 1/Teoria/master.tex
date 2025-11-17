@@ -4146,7 +4146,7 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 	\] 
 	cio\`e \`e la dimensione di $L$ come spazio vettoriale su $K$.
 \end{definizione}
-\begin{prop}
+\begin{prop}\label{gradext}
 	Sia $L / K$ un'estensione di $K$, con $\alpha \in L$; allora il grado dell'estensione semplice $K(\alpha )$ \`e
 	\[
 		[K(\alpha ):K]=\begin{cases}
@@ -4162,6 +4162,132 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 	\[
 		K(\alpha ) \cong K[\alpha ] \cong \frac{K[x]}{(\mu _\alpha (x))}
 	\] 
-	
+	tramite l'isomorfismo che mappa la base $\left\{ \overline{1}, \overline{x},\ldots, \overline{x}^{n-1} \right\} $ di $K[x] / \langle \mu _\alpha (x) \rangle$ nella base $\left\{ 1 , \alpha  ,\ldots, \alpha  ^{n-1} \right\} $ di $K[\alpha ]$, perci\`o $\dim _K K(\alpha )= n = \deg \mu _\alpha (x)$.
 \end{proof}
+\begin{prop}
+	\label{text}
+	Data una torre di estensioni $K \subset  F \subset L$, allora $L / K$ \`e finita se e solo se $L / F$ e $F / K$ sono finite; inoltre vale
+	\[
+		[L:K] = [L:F] [F:K]
+	\] 
+\end{prop}
+\begin{definizione}
+	[Estensione composta]
+	Dati $L,M \subset \Omega $ due sottocampi del campo $\Omega $, allora si definisce
+	\[
+	LM = L(M) = M(L)
+	\] 
+	come il pi\`u piccolo sottocampo di $\Omega $ che contiene sia $L$ e che $M$.
+	Inoltre, se $M$ e $L$ sono estensioni finitamente generate con
+	\[
+	L = K(\alpha_1,\ldots,\alpha _n) \hspace{1cm}M = K(\beta _1,\ldots,\beta _m)
+	\] 
+	allora il composto \`e dato da
+	\[
+	LM = K(\alpha _1,\ldots,\alpha _n, \beta _1,\ldots,\beta _m)
+	\] 
+\end{definizione}
+\begin{prop}\label{gradcompext}
+	Siano date due torri di estensioni di $K$:
+	\[
+	K \subset  L \subset FL \hspace{2cm} K \subset F \subset FL
+	\] 
+	con $[L:K] = m$ e $[F:K]= n$; allora $[FL:k] = d < +\infty$ e $[m,n]  \mid d$.
+\end{prop}
+\begin{proof}
+	Avendo $n,m < +\infty$, si pu\`o considerare $FL$ come un $L$-spazio vettoriale generato da $n$ elementi, per cui si ricava che $FL$ \`e anche un $K$-spazio vettoriale di dimensione finita.
+	In particolare, applicando due volte la proposizione \ref{text} all'estensione
+	\[
+	\begin{tikzcd}
+		&  FL  & \\
+		L  & &  F \\
+		  &  K  & 
+		  \arrow[from=3-2, to=2-1, "\displaystyle m", no head]
+		  \arrow[from=3-2, to=2-3, "\displaystyle n"', no head]
+		  \arrow[from=3-2, to=1-2, "\displaystyle d", no head]
+		  \arrow[from=2-1, to=1-2, no head] 
+		  \arrow[from=2-3, to=1-2, no head]
+	\end{tikzcd}
+	\] 
+	si ha che $m \mid d$ e $n \mid d$, da cui la tesi.
+\end{proof}
+\subsection{Estensioni algebriche}
+\begin{definizione}
+	[Estensione algebrica]
+	Un'estensione $L / K$ \`e detta \textit{algebrica} se $\forall  \alpha  \in L$, si ha $\alpha $ algebrico su $K$.
+\end{definizione}
+\begin{prop}\label{algextfin}
+	Ogni estensione di grado finito \`e algebrica.
+\end{prop}
+\begin{proof}
+	Si verifica, quindi, che $\forall \alpha \in L$, $\alpha $ \`e algebrico su $K$.
+	Si ha la torre $K \subset K(\alpha ) \subseteq L$ che, per ipotesi, \`e finita, quindi la sottoestensione $K \subset K(\alpha )$ \`e a sua volta finita e, per la proposizione \ref{gradext}, si conclude che $\alpha $ deve essere algebrico.
+	Ma questo vale $\forall \alpha  \in L$, quindi $L$ \`e un'estensione algebrica di $K$.
+\end{proof}
+\begin{prop}
+	Data un'estensione $L / K$, allora 
+	\[
+	A = \left\{ \alpha  \in L  \mid \alpha  \text{ algebrico su } K \right\} 
+	\] 
+	\`e un campo e un'estensione algebrica di $K$.
+\end{prop}
+\begin{proof}
+	Siano $\alpha , \beta  \in  A$; allora $[K(\alpha ): K ], \ [ K(\beta):  K] < + \infty$ e si considera la torre
+	\[
+	K \subseteq K(\alpha ) \subseteq K(\alpha )(\beta ) = K(\alpha ,\beta )
+	\] 
+	La prima estensione \`e finita per ipotesi, mentre la seconda \`e finita per la proposizione \ref{gradcompext}, visto che \`e l'estensione composta di $K(\alpha )$ e $K(\beta )$, che sono entrambe semplici e, quindi, finite perch\'e algebriche.
+	Visto che, allora, $K \subseteq K(\alpha ,\beta )$ \`e un'estensione finita, per la proposizione \ref{algextfin}, gli elementi $\alpha \pm \beta, \ \alpha \beta ,\ 1 / \alpha , \ 1 / \beta  $ sono algebrici su $K$, quindi $A$ \`e un campo.
+\end{proof}
+	Il viceversa della proposizione appena dimostrata \`e falso in generale, ma non nel caso di estensioni semplici, per quanto affermato dalla proposizione \ref{gradext}.
+	Infatti, si pu\`o considerare l'estensione $\mathbb{Q}\subset \mathbb{C}$ e l'insieme 
+	\[
+	\overline{\mathbb{Q}}= \left\{ \alpha  \in \mathbb{C} \mid \alpha \text{ algebrico su }\mathbb{Q} \right\} 
+	\] 
+	Si avr\`a che $[\overline{\mathbb{Q}}: \mathbb{Q}] = + \infty$.
+	Si considera la torre 
+	\[
+		\mathbb{Q}\subset \mathbb{Q}(\sqrt[n]{2} ) \subset \overline{\mathbb{Q}}, \ \forall n \ge 2
+	\] 
+	L'estensione $\mathbb{Q}\subset \mathbb{Q}(\sqrt[n]{2}) $ ha grado $n$ perch\'e il suo polinomio minimo \`e 
+	\[
+		\mu _{\sqrt[n]{2} } = x^n -2
+	\] 
+	Per la proposizione \ref{text}:
+	\[
+		[\overline{\mathbb{Q}}:\mathbb{Q}] = [\overline{\mathbb{Q}}:\mathbb{Q}(\sqrt[n]{2} )] [ \mathbb{Q}(\sqrt[n]{2} ):\mathbb{Q}] \ge n, \ \forall n \ge 2
+	\] 
+	quindi l'estensione $\mathbb{Q}\subset \overline{\mathbb{Q}}$ ha grado $+\infty$.
+
+	\begin{prop}
+		$L / K$ \`e un'estensione finitamente generata da elementi algebrici $L = K(\alpha_1, \ldots, \alpha _n)$ se e solo se $L / K $ \`e finita.
+	\end{prop}
+	\begin{proof}
+		Per dimostrare ($\Rightarrow $), si procede per induzione.
+		Se $n=1$, la tesi \`e vera per la proposizione \ref{gradext}, visto che l'estensione \`e semplice ed algebrica, quindi finita.
+		Si assume che la tesi sia vera per $n-1$.
+		Si pu\`o scrivere 
+		\[
+		K(\alpha _1,\ldots,\alpha _n) = K(\alpha _1,\ldots,\alpha _{n-1} ) (\alpha _n)
+		\] 
+		e si considera la torre
+		\[
+		K \subset K(\alpha _1,\ldots,\alpha _{n-1} ) \subset K(\alpha _1,\ldots,\alpha _{n-1} ) (\alpha _n)
+		\] 
+		dove la prima estensione \`e finita per ipotesi induttiva, mentre la seconda lo \`e per la proposizione \ref{gradext}.
+
+		Per il viceversa, si considera l'estensione finita $[L:K]=n$ e si considera $\left\{ v_1,\ldots,v_n \right\} $ una $K$-base di $L$; allora $L$ \`e un'estensione finitamente generata:
+		\[
+		L = \mathrm{Span} (v_1,\ldots,v_n)_K = K(v_1,\ldots,v_n)
+		\] 
+		quindi si ha la tesi.
+	\end{proof}
+	\begin{teorema}
+		[Caratterizzazione delle estensioni algebriche]
+		Valgono le due seguenti propriet\`a per estensioni algebriche.
+		\begin{enumerate}[(a).]
+			\item Data una torre di estensioni $K \subset L \subset F$, l'estensione $F / K$ \`e algebrica se e solo se $F / L$ e $L / K$ sono algebriche.
+			\item Date due estensioni $L / K$ e $M / K$, queste sono algebriche se e solo se l'estensione composta $LM / K$ \`e algebrica.
+		\end{enumerate}
+	\end{teorema}
 \end{document}
