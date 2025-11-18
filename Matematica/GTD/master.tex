@@ -3668,7 +3668,7 @@ Allora si definisce il differenziale di $f$ come
 \noindent Se un punto non \`e critico, allora si dice \textit{regolare}.
 I rispettivi $y \in N$ per cui la controimmagine di $f$ \`e un punto critico sono detti \textit{valori critici}, altrimenti sono \textit{valori regolari.} 
 In particolare, se $f^{-1}(y) = \varnothing$, allora $y$ \`e un valore regolare.
-\begin{prop}
+\begin{prop}\label{vrab}
 	Sia $f : M \to N$ una mappa liscia, con $\dim M= \dim N$; allora valgono i due seguenti punti.
 	\begin{enumerate}[(a).]
 		\item Se $x \in M$ \`e un punto regolare di $f$, allora la restrizione di $f$ \`e un diffeomorfismo tra un intorno di $x \in M$ e un intorno di $f(x)$ in $N$.
@@ -3733,6 +3733,168 @@ f |_{g(U')}  = h|_{V'} \circ (h^{-1}\circ f\circ g)_{V'} \circ g^{-1}|_{g(U')}
 	V:= V_1\cap \ldots \cap V_k \setminus f\left(M \setminus \bigcup _i U_i\right) 
 	\] 
 	dove $f(M\setminus \bigcup_i U_i)$ \`e immagine di un compatto, perch\'e $M \setminus\bigcup_i U_i$ \`e chiuso in $M$, quindi \`e chiuso e, allora, $V$ \`e aperto.
+	Questo $V$ \`e l'insieme cercato perch\'e assicura che, dato $y' \in V$, ci sia esattamente un $x'_i$ in ogni $U_i$ che viene mappato in $y'$ perch\'e ogni $U_i$ \`e diffeomorfo al relativo $V_i$, pertanto $y' \in V\Rightarrow y' \in V_i ,\ \forall i$; inoltre, sottraendo $f(M \setminus\bigcup_i U_i)$, si assicura che di rimuovere tutti gli elementi che abbiano preimmagine all'infuori degli $U_i$.
+	Cos\`i facendo, ogni elemento di $V$ ha una preimmagine di cardinalit\`a esattamente $k$.
+\end{proof}
+\subsubsection{Teoremi di Sard e di Brown}
+Questi due permettono di concludere l'esistenza di valori regolari.
+Per poterli introdurre, si deve dare qualche basica nozione di teoria della misura.
+\begin{definizione}
+	[Rettangoli di $\mathbb{R}^n$]
+	Un rettangolo $B \subseteq\mathbb{R}^n$ \`e un sottoinsieme della forma 
+	\[
+	B = I_1 \times \ldots \times I_n 
+	\] 
+	dove $I_k \subseteq \mathbb{R}, \ \forall k = 1,\ldots,n$.
+	Inoltre, il suo volume \`e dato da 
+	\[
+	\mathrm{vol} (B) = \prod_{k=1} ^n \lvert I_k \rvert  
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Insieme di misura nulla]
+	Sia $A \subseteq \mathbb{R}^n$ un sottoinsieme; si dice che $A$ ha \textit{misura nulla} se $\forall \varepsilon >0$, esiste una famiglia numerabile di rettangoli $\left\{ B_i \right\} _{i}$, con $B_i \subseteq \mathbb{R}^n ,\ \forall i$, tale che 
+	\[
+	A \subset \bigcup_{i} B_i \hspace{.5cm}\text{ e } \hspace{.5cm} \sum_{i} \mathrm{vol} (B_i) < \varepsilon 
+	\] 
+\end{definizione}
+\begin{prop}
+	Siano $A' \subseteq A \subseteq \mathbb{R}^n$; se $m(A) = 0$, allora $m(A')=0$.
+\end{prop}
+\begin{prop}
+	Se $\left\{  A_k\right\}_{k\ge 1}  $ \`e una famiglia numerabile di insiemi a misura nulla, allora
+	\[
+	m\left(\bigcup_{k} A_k\right) =0
+	\] 
+\end{prop}
+\begin{proof}
+	Siano $\left\{ B^{(k)} _i \right\} _i$ delle famiglie numerabili di rettangoli al variare di $k\ge 1$ con
+	\[
+	A_k \subset \bigcup_{i}B^{(k)} _i \hspace{.5cm}\text{ e } \hspace{.5cm} \sum_{i} \mathrm{vol} (B^{(k)} _i) < \frac{\varepsilon }{2^k}
+	\] 
+	Allora si ha:
+	\[
+	\bigcup_{i,k} B^{(k)} _i \supseteq \bigcup_k A_k \hspace{.5cm}\text{ e }\hspace{.5cm} \sum_{i,k}^{} \mathrm{vol} (B^{(k)} _i) < \varepsilon 
+	\] 
+	da cui la tesi.
+\end{proof}
+\noindent Ora si hanno gli strumenti necessari per introdurre i risultati analitici di cui si ha bisogno.
+Questi, essendo prevalentemente di carattere analitico, non vedranno dimostrazione.
+\begin{lemma}\label{lemret}
+	Sia $R \subseteq \mathbb{R}^n$ un rettangolo tale che la sua chiusura $\overline{R}$ \`e contenuta nell'unione di una famiglia numerabile di rettangoli $\left\{ B_i \right\} _i$.
+	Allora
+	\[
+	\sum_{i}^{} a_n z^n\mathrm{vol} (B_i) \ge \mathrm{vol} (R)
+	\] 
+	In particolare, se $\mathrm{vol} (R) > 0$, allora $\overline{R}$ ha misura non-nulla.
+\end{lemma}
+\begin{teorema}
+	[Teorema di Sard]
+	Sia $U \subseteq \mathbb{R}^m$ un aperto e $F: U \to \mathbb{R}^n$ una mappa $C^\infty$; allora l'insieme dei valori critici di $F$ ha misura nulla.
+\end{teorema}
+\noindent L'obiettivo, ora, \`e di estendere questo risultato al caso pi\`u generale di variet\`a differenziabili.
+Per fare ci\`o, \`e prima necessario stabilire quando un sottoinsieme di una variet\`a ha misura nulla, per cui si ha la seguente definizione.
+\begin{definizione}
+	Sia $M$ una $m$-variet\`a; si dice che $A \subseteq M \subseteq \mathbb{R}^k$ ha \textit{misura nulla} se, per ogni carta locale $(f,W\cap M)$ su $M$, l'insieme $f(A\cap W) \subseteq \mathbb{R}^m$ ha misura nulla.
+\end{definizione}
+\begin{teorema}
+	Sia $F : M\to N$ un'applicazione $C^\infty$ tra variet\`a, con $\dim M = m$ e $\dim N = n$; allora l'insieme dei valori critici di $F$ ha misura nulla.
+\end{teorema}
+\begin{proof}
+	Gli spazi euclidei sono a base numerabile, pertanto esiste una famiglia numerabile di carte locali $\left\{ (f_i, W_i\cap M) \right\}_i $ tale che
+	\[
+	M \subseteq \bigcup_i W_i
+	\] 
+	Si fa vedere che, data $(g,Z\cap N)$ \`e una carta su $N$, l'insieme $g(F(C) \cap Z)$ ha misura nulla, con $C = \mathrm{Crit} (F)$ insieme dei punti critici di $F$, quindi $F(C)$ \`e l'insieme dei valori critici di $F$.
+	Si considera il seguente diagramma:
+	\[
+	\begin{tikzcd}
+		x \in W_i\cap F^{-1}(Z) & & &Z\cap N\\
+		\\
+		u \in f_i\big(W_i\cap F^{-1}(Z)\big) & & & g(Z\cap N)
+		\arrow[from=1-1, to=3-1, "\displaystyle f_i"']
+		\arrow[from=3-1, to=3-4, "\displaystyle g\circ F\circ f_i^{-1}"]
+		\arrow[from=1-1, to=1-4, "\displaystyle F"]
+		\arrow[from=1-4, to=3-4, "\displaystyle g"]
+	\end{tikzcd}
+	\] 
+	per cui sono definite le funzioni di transizione
+	\[
+	h_i := g\circ F \circ f_i^{-1} : f_i\big(W_i\cap F^{-1}(Z)\big)\longrightarrow g(Z\cap N)
+	\] 
+	Visto che $g$ e $f_i$ sono diffeomorfismi, allora un punto $u$ \`e critico per $h_i$ se e solo se $f_i^{-1}(u) \in C= \mathrm{Crit} (F)$ perch\'e 
+	\[
+	dF_x=dg^{-1}_v\circ d\big(g\circ F \circ f_i^{-1}\big)_u\circ (df_i)_x
+	\] 
+	Ma l'insieme dei valori critici di $h_i$ coincide con $g\big(F(C\cap W_i)\cap Z\big)$ per il diagramma e ha misura nulla per il teorema di Sard; inoltre
+	\[
+	\bigcup_i g\big(F(C\cap W_i)\cap Z\big) = g\big(F(C)\cap Z\big)
+	\] 
+	e, essendo l'unione numerabile di insiemi a misura nulla ancora a misura nulla, si ha $m\big(g(F(C)\cap Z)\big) = 0$, quindi $F(C)$ ha misura nulla.
+\end{proof}
+\begin{corollario}
+	[Teorema di Brown]
+	Sia $F : M \to N$ una mappa $C^\infty$ tra variet\`a di dimensioni $m=\dim M$ e $n= \dim N$.
+	L'insieme dei valori regolari di $F$ \`e denso in $N$.
+\end{corollario}
+\begin{proof}
+	Si fa vedere che $N \setminus F(C)$ \`e denso in $N$, cio\`e dato $x \in F(C)$, si mostra che per ogni carta locale $(g,Z\cap N)$ intorno ad $X$, si trovano punti di $N \setminus F(X)$ in $Z \cap N$.
+	Per il teorema di Sard, l'insieme $g\big(Z\cap F(C)\big)$; se per assurdo $Z\cap N$ non contenesse punti di $N\setminus F(C)$, allora $Z\cap N = Z \cap F(C)$, ma, allora, l'aperto $g(Z\cap N) = g\big(Z\cap F(C)\big)$ conterrebbe la chiusura di un rettangolo di volume positivo, quindi per il lemma \ref{lemret}, non avrebbe misura nulla.
+	Ne segue che, in $Z \cap N$, devono esserci punti regolari.
+\end{proof}
+\subsubsection{Altri risultati sui valori regolari}
+
+\begin{prop}
+	[Prodotto diretto di variet\`a]
+	Se $N,N'$ sono due variet\`a differenziabili, allora anche $N \times N'$ \`e una variet\`a, con $\dim N\times N' = \dim N + \dim N'$.
+	Inoltre
+	\[
+	T_{(y,y')} (N\times N') = d\iota _{y'} (T_yN) \oplus d\iota_y(T_{y'} N')
+	\] 
+	dove 
+	\[
+	\iota_{y'} :
+	\begin{array}
+		{c c c}
+		N&\longrightarrow&N\times N'\\
+		n &\longmapsto &(n,y')
+	\end{array}
+	\hspace{1cm}
+	\iota_{y} :
+	\begin{array}
+		{c c c}
+		N'&\longrightarrow&N\times N'\\
+		n' &\longmapsto &(y,n')
+	\end{array}
+	\] 
+\end{prop}
+\begin{proof}
+{\color{red} Da dimostrare\ldots}
+\end{proof}
+\begin{teorema}
+	Siano $M,N$ due variet\`a di dimensioni $m$ e $n$ rispettivamente, con $m \ge n$.
+	Sia, poi, $f:M\to N$ una mappa liscia, con $y \in N$ valore regolare; allora $f^{-1}(y) \subset M$ \`e una variet\`a di dimensione $m-n$.
+\end{teorema}
+\begin{proof}
+	L'idea \`e di \textit{inspessire} $N$ in modo da poter applicare il punto (a) della proposizione \ref{vrab}.
+
+	Sia, allora, $x \in f^{-1}(y)$, per cui $df_x : T_x M \to T_y N$ \`e suriettiva, visto che $y$ \`e regolare.
+Dato $K = \operatorname{Ker} df_X \subseteq T_x M $, si ha $\dim K = m-n$; si vorrebbe trovare una mappa $F:M\to N\times \mathbb{R}^{m-n} $.
+A tal proposito, si considera l'applicazione lineare $L :\mathbb{R}^k \to \mathbb{R}^{m-n} $, con  $k:\mathbb{R}^k \supseteq M$ (quindi $K \subseteq \mathbb{R}^k$) e tale che
+\[
+	L|_K :K\stackrel{\cong}{\longrightarrow} \mathbb{R}^{m-n} 
+\] 
+\`e un isomorfismo.
+Allora si definisce
+\[
+F:
+\begin{array}
+	{c c c}
+	M&\longrightarrow & N \times ^{m-n} \\
+	x&\longmapsto & \big(f(x), L(x)\big)
+\end{array}
+\] 
+Ora si dimostra che $F$ \`e $C^\infty$ e soddisfa $dF_x(v) = \big(df_x(v),L(v)\big)$.
 \end{proof}
 \end{document}
 
