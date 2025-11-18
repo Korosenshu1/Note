@@ -3428,12 +3428,12 @@ Essendo che $R$ \`e omeomorfo ad un anello, allora $\chi (R) = 0$ e la formula d
 \end{definizione}
 \begin{definizione}
 	[Diffeomorfismo]
-	Una mappa $f:X\subseteq \mathbb{R}^n \to Y \subseteq \mathbb{R}^m$ \`e detta \textit{diffeomorfismo} se \`e un omeomorfismo e $f,f^{-1}$ sono entrambe lisce. 
+	Una mappa $f:X\subseteq \mathbb{R}^n \longrightarrow Y \subseteq \mathbb{R}^m$ \`e detta \textit{diffeomorfismo} se \`e un omeomorfismo e $f,f^{-1}$ sono entrambe lisce. 
 	In questo caso, si scriver\`a che $f : X \stackrel{\cong}{\longrightarrow}Y$, oppure $X \cong Y$ se $f$ non \`e specificata.
 \end{definizione}
 \noindent Si pu\`o verificare che:
 \begin{enumerate}[(a).]
-	\item se $X  \subseteq \mathbb{R}^n$ \`e un aperto, allora $f:X\to Y \subseteq \mathbb{R}^m$ \`e $C^\infty\iff f:U\to \mathbb{R}^m$ lo \`e nel senso usuale;
+	\item se $X =U \subseteq \mathbb{R}^n$ \`e un aperto, allora $f:X\to Y \subseteq \mathbb{R}^m$ \`e $C^\infty\iff f:U\to \mathbb{R}^m$ lo \`e nel senso usuale;
 	\item la composizione di mappe $C^\infty$ \`e $C^\infty$;
 	\item se $f:X\to Y$ \`e $C^\infty$, allora lo \`e anche $f : X \to f(X)$ e, $\forall X' \subseteq X, \ f|_{X'} :X'\to Y$ \`e $C^\infty$.
 \end{enumerate}
@@ -3569,9 +3569,9 @@ due parametrizzazioni locali attorno a $x \in M$.
 Visto che $g(U)$ e $h(V)$ sono aperti, l'intersezione $g(U) \cap h(V)$ \`e, a sua volta, un aperto.
 La mappa $h^{-1}\circ g$ \`e un diffeomorfismo perch\'e composizione di diffeomorfismi, quindi
 \[
-dg_u = d\big(h\circ (h^{-1}\circ g\big)_u = dh_v \circ d(h^{-1}\circ g)_u
+dg_u = d\big(h\circ (h^{-1}\circ g)\big)_u = dh_v \circ d(h^{-1}\circ g)_u
 \] 
-quindi $\mathrm{Im} (dg_u) = \mathrm{Im} (dh_v)$.
+Allora, essendo che $d(h^{-1}\circ g)_u$ \`e un isomorfismo lineare, si ha $\mathrm{Im} (dg_u) = \mathrm{Im} (dh_v)$, perci\`o il piano tangente \`e univocamente determinato.
 \end{proof}
 \begin{prop}
 	Sia $M \subseteq \mathbb{R}^k$ una variet\`a di dimensione $m$; allora $\forall x \in M$, $\dim T_x M = m$.
@@ -3598,15 +3598,15 @@ e $g(u) = x$, visto che $g ^{-1}$ \`e $C^\infty$, allora $\exists x \in W' \subs
 \] 
 Allora $dg_u$ \`e iniettiva e, allora, $\dim T_x M = m$.
 \end{proof}
-\noindent Si vuole definire il differenziale di mappe $C^\infty$ tra variet\`a.
-Si considera, allora, $f: M \subseteq \mathbb{R}^k \longrightarrow N \subseteq \mathbb{R}^{\ell } $ liscia, con $x\longmapsto y= f(x)$; per definizione, quindi, $\exists W \subseteq \mathbb{R}^k$ intorno aperto di $x$ e $F:W\to \mathbb{R}^\ell $ tale che $F|_{W\cap M} = f|_{W\cap M} $.
-Quindi si pu\`o definire il differenziale di $f$ come
-\begin{equation}
+\begin{definizione}
+	[Differenziale per variet\`a]
+Si considera $f: M \subseteq \mathbb{R}^k \longrightarrow N \subseteq \mathbb{R}^{\ell } $ liscia, con $x\longmapsto y= f(x)$; per definizione, quindi, $\exists W \subseteq \mathbb{R}^k$ intorno aperto di $x$ e $F:W\to \mathbb{R}^\ell $ tale che $F|_{W\cap M} = f|_{W\cap M} $.
+Allora si definisce il differenziale di $f$ come
+\[
 	df_x := dF_x|_{T_x M} :T_x M \longrightarrow \mathbb{R}^\ell 
-\end{equation}
-\begin{lemma}
-	Il differenziale $df_x$ \`e ben definito e $df_x (T_xM) \subseteq T_{f(x)} N$.
-\end{lemma}
+\] 
+\end{definizione}
+\noindent Ora si dimostra che il differenziale $df_x$ \`e ben definito e $df_x (T_xM) \subseteq T_{f(x)} N$.
 \begin{proof}
 	Si fa vedere che $df_x$ non dipende da $F$, ma solo da $f$.
 	Sia, per esempio, $\dim M= m$ e siano 
@@ -3660,7 +3660,7 @@ Quindi si pu\`o definire il differenziale di $f$ come
 	df_x : T_x M \stackrel{\cong}{\longrightarrow}T_{f(x)} N
 \] 
 \`e un isomorfismo lineare $\forall x \in M$.
-\subsection{Variet\`a compatte}
+\subsection{Punti critici e valori regolari}
 \begin{definizione}
 	[Punto critico]
 	Sia $f:M\to N$ una mappa $C^\infty$ tra variet\`a, con $\dim M = m$ e $\dim N = n$; allora $x\in M$ \`e un \textit{punto critico} di $f$ se $\operatorname{rg}  df_x < n$.
@@ -3671,7 +3671,7 @@ In particolare, se $f^{-1}(y) = \varnothing$, allora $y$ \`e un valore regolare.
 \begin{prop}
 	Sia $f : M \to N$ una mappa liscia, con $\dim M= \dim N$; allora valgono i due seguenti punti.
 	\begin{enumerate}[(a).]
-		\item Se $x \in <$ \`e un punto regolare di $f$, allora la restrizione di $f$ \`e un diffeomorfismo tra un intorno di $x \in M$ e un intorno di $f(x)$ in $N$.
+		\item Se $x \in M$ \`e un punto regolare di $f$, allora la restrizione di $f$ \`e un diffeomorfismo tra un intorno di $x \in M$ e un intorno di $f(x)$ in $N$.
 		\item Se $M$ \`e compatta e se $y \in N$ \`e un valore regolare di $f$, allora $f^{-1}(y)$ \`e un insieme finito.
 	\end{enumerate}
 \end{prop}
@@ -3699,7 +3699,40 @@ In particolare, se $f^{-1}(y) = \varnothing$, allora $y$ \`e un valore regolare.
 \end{tikzcd}
 \] 
 da cui $df_x \circ dg_u = dh_v \circ d(h^{-1}\circ f\circ g)_u$, con $df_x$, $ dg_u$, $dh_v$ tutti isomorfismi.
+Allora si pu\`o usare il teorema della funzione inversa per dire che $\exists U'$ tale che
+\[
+	h^{-1}\circ f \circ g | _{U'} : U ' \stackrel{\cong}{\longrightarrow} V'
+\] 
+cio\`e si trova un intervallo aperto $U'\subseteq U$ in cui $h^{-1}\circ f\circ g$ \`e un diffeomorfismo.
+Ma quindi
+\[
+f |_{g(U')}  = h|_{V'} \circ (h^{-1}\circ f\circ g)_{V'} \circ g^{-1}|_{g(U')} 
+\] 
+\`e un diffeomorfismo perch\'e composizione di diffeomorfismi.
+\item Ora si assume $M$ compatta. 
+	Intanto, si ha che $f^{-1}(y) \subseteq M$ \`e chiuso in un compatto, quindi \`e, a sua volta, compatto.
+	Inoltre \`e discreto perch\'e se $x \in f^{-1}(y)$, per il punto precedente, $\exists U$ intorno di $x$ tale che 
+	\[
+		f|_U:U\stackrel{\cong}{\longrightarrow} f(U) \ni y
+	\] 
+	per cui $f^{-1}(y) \cap U = \left\{ x \right\} $, perci\`o $\lvert f^{-1}(y) \rvert < + \infty$.
 	\end{enumerate}
+\end{proof}
+\begin{lemma}
+	[Lemma della pila di dischi]
+	Siano $M,N$ due variet\`a differenziabili, con $\dim M = \dim N$ e $M$ compatta.
+	Data $f:M\to N$ liscia e $y \in N$ valore regolare di $f$, allora esiste un intorno $V \subseteq N$ di $y$ tale che $\lvert f^{-1}(y') \rvert = \lvert f^{-1}(y) \rvert , \ \forall y ' \in V$.
+\end{lemma}
+\begin{proof}
+	Per la proposizione precedente, si pu\`o affermare che $f^{-1}(y) = \left\{ x_1,\ldots,x_k \right\} $ e anche che per ciascun $x_i$, si trova un $U_i$ suo intorno tale che
+	\[
+		f|_{U_i} :U_i \stackrel{\cong}{\longrightarrow} f(U_i):= V_i, \ \forall i = 1,\ldots,k
+	\] 
+	Allora si prende 
+	\[
+	V:= V_1\cap \ldots \cap V_k \setminus f\left(M \setminus \bigcup _i U_i\right) 
+	\] 
+	dove $f(M\setminus \bigcup_i U_i)$ \`e immagine di un compatto, perch\'e $M \setminus\bigcup_i U_i$ \`e chiuso in $M$, quindi \`e chiuso e, allora, $V$ \`e aperto.
 \end{proof}
 \end{document}
 
