@@ -4192,11 +4192,10 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 	\[
 	K \subset  L \subset FL \hspace{2cm} K \subset F \subset FL
 	\] 
-	con $[L:K] = m$ e $[F:K]= n$; allora $[FL:k] = d < +\infty$ e $[m,n]  \mid d$.
+	con $[L:K] = m$ e $[F:K]= n$; allora $[FL:K] = d < +\infty$ e $[m,n]  \mid d$.
 \end{prop}
 \begin{proof}
-	Avendo $n,m < +\infty$, si pu\`o considerare $FL$ come un $L$-spazio vettoriale generato da $n$ elementi, per cui si ricava che $FL$ \`e anche un $K$-spazio vettoriale di dimensione finita.
-	In particolare, applicando due volte la proposizione \ref{text} all'estensione
+	Si ha il seguente diagramma di estensioni:
 	\[
 	\begin{tikzcd}
 		&  FL  & \\
@@ -4209,7 +4208,8 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 		  \arrow[from=2-3, to=1-2, no head]
 	\end{tikzcd}
 	\] 
-	si ha che $m \mid d$ e $n \mid d$, da cui la tesi.
+	Intanto, le estensioni $[FL:L]$ e $[FL:F]$ sono finite perch\'e la base prodotto $\left\{ f_i\ell _j \right\}  $ ottenuta moltiplicando una base $\left\{ f_i \right\} _{i=1} ^n$ di $F$ su $K$ e $\left\{ \ell _j \right\}_{j=1} ^m $ di $L$ su $K$ genera gli elementi di $FL$; in particolare, \`e finita l'estensione $[FL:K]$.
+	Infine, applicando due volte la proposizione \ref{text}, si ottiene che $m,n \mid d$. 
 \end{proof}
 \subsection{Estensioni algebriche}
 \begin{definizione}
@@ -4302,7 +4302,7 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 				\[
 					\exists f(x) \in L[x] \setminus \left\{ 0 \right\} : f(\alpha ) = 0\hspace{.5cm} \text{con} \hspace{.5cm} f(x) = \sum_{i=0}^{n} a_i x^i
 				\] 
-				Sia $L_0 = K(a_0,\ldots,a_n)$ il campo generato su $K$ dai coefficienti di $f$; per costruzione, $f(x) \in L_0(x)$, quindi $\alpha $ \`e algebrico su $L_0$ e 
+				Sia $L_0 = K(a_0,\ldots,a_n)$ il campo generato su $K$ dai coefficienti di $f$; per costruzione, $f(x) \in L_0[x]$, quindi $\alpha $ \`e algebrico su $L_0$ e 
 				\[
 				K \subset L_0 \subset L_0(\alpha ) ,\ \forall \alpha \in F
 				\] 
@@ -4326,6 +4326,169 @@ Inoltre, \`e possibile scegliere $\mu _\alpha (x)$ tale che sia l'unico generato
 		\end{enumerate}
 	\end{proof}
 	\subsection{Chiusura algebrica}
-	
-	
+	\begin{definizione}
+		[Campo algebricamente chiuso]
+		Un campo $\Omega $ si dice \textit{algebricamente chiuso} se ogni polinomio $f(x) \in \Omega [x]$ non costante ha almeno una radice in $\Omega $.
+	\end{definizione}
+	\noindent Come conseguenza del teorema fondamentale dell'algebra, $\mathbb{C}$ \`e algebricamente chiuso.
+	Si nota, inoltre, che se $\Omega $ \`e algebricamente chiuso, gli unici polinomi irriducibili in $\Omega [x]$ sono quelli di grado $1$.
+	\begin{definizione}
+		[Chiusura algebrica]
+		Un'estensione $\Omega / K$ \`e una \textit{chiusura algebrica} di $K$ se:
+		\begin{enumerate}[(a).]
+			\item $\Omega $ \`e algebricamente chiuso;
+			\item $\Omega  / K$ \`e un'estensione algebrica.
+		\end{enumerate}
+	\end{definizione}
+	\noindent Per definizione, si osserva che $\mathbb{C}$ \`e la chiusura algebrica di $\mathbb{R}$, ma non di $\mathbb{Q}$ perch\'e non tutti gli elementi di $\mathbb{C}$ sono algebrici su $\mathbb{Q}$.
+	\begin{teorema}
+		[Esistenza e unicit\`a della chiusura]
+		Sia $K$ un campo; allora esiste sempre una sua chiusura algebrica e due qualunque di queste sono isomorfe, nel senso che gli isomorfismi tra le chiusure fissano $K$.
+	\end{teorema}
+	\noindent A scopo di esempio, si pu\`o considerare $\overline{\mathbb{Q}}=\left\{ \alpha \in \mathbb{C} \mid \alpha \text{ algebrico su } \mathbb{Q} \right\} $, che \`e un campo, per quanto visto. 
+	\`E, inoltre, una chiusura algebrica di $\mathbb{Q}$ perch\'e l'estensione $\overline{\mathbb{Q}}/ \mathbb{Q}$ \`e algebrica per definizione; si verifica, ora, che $\overline{\mathbb{Q}}$ \`e algebricamente chiuso.
+	Sia, allora, $f(x) \in \overline{\mathbb{Q}}[x]$ un polinomio non costante; allora $f(x)$ ammette almeno una radice $\alpha  \in \mathbb{C}$, visto che quest'ultimo \`e algebricamente chiuso.
+	Si deve far vedere che $\alpha \in \overline{\mathbb{Q}}$, perci\`o si deve mostrare che $\alpha $ \`e algebrico su $\mathbb{Q}$; a tal proposito, si considera la torre $\mathbb{Q} \subset \overline{\mathbb{Q}} \subset \overline{\mathbb{Q}}(\alpha )$.
+	Allora basta osservare che l'estensione $\overline{\mathbb{Q}}/\mathbb{Q}$ \`e algebrica per definizione, quindi \`e finita in particolare, e l'estensione $\overline{\mathbb{Q}}(\alpha ) / \overline{\mathbb{Q}}$ \`e algebrica, in quanto estensione semplice finita, pertanto l'estensione $\overline{\mathbb{Q}}(\alpha ) / \mathbb{Q}$ \`e finita, quindi $\alpha $ \`e algebrico su $\mathbb{Q}$.
+	Questo, in aggiunta al fatto che $\alpha  \in \mathbb{C}$, permette di concludere che $\alpha  \in \overline{\mathbb{Q}}$ e, quindi, che quest'ultimo \`e algebricamente chiuso perch\'e il discorso vale per ogni polinomio in $\overline{\mathbb{Q}}[x]$.
+\begin{osservazione}
+Il ragionamento appena fatto permette di costruire una chiusura algebrica $\overline{K}$ di un campo $K$ ogni volta che $K \subset \Omega $, con $\Omega $ algebricamente chiuso, semplicemente prendendo 
+\[
+\overline{K} = \left\{ \alpha \in \Omega  \mid \alpha \text{ algebrico su } K \right\} 
+\] 
+\end{osservazione}
+\begin{definizione}
+	[Campo di spezzamento]
+	Sia $f(x) \in K[x]$, con $\deg f(x) \ge 1$, e siano $\alpha _1,\ldots,\alpha _n \in \overline{K}$ radici di $f(x)$; allora si definisce \textit{campo di spezzamento} di $f(x)$ su $K$ il sottocampo di $\overline{K}$ dato da $K(\alpha _1,\ldots,\alpha _n)$.
+\end{definizione}
+\begin{esempio}
+	[Campo di spezzamento di $x^3 - 2$]
+	Sia $f(x) = x^3 - 2 \in \mathbb{Q}[x]$. 
+	Le sue radici in $\mathbb{C}$ sono $\sqrt[3]{2}$, $ \sqrt[3]{2} \zeta_3$ e $\sqrt[3]{2} \zeta_3^2$, perci\`o il suo campo di spezzamento su $\mathbb{Q}$ \`e dato da $\mathbb{Q}(\sqrt[3]{2},\sqrt[3]{2}\zeta_3,\sqrt[3]{2}\zeta_3^2)$.
+	In realt\`a, questo campo di spezzamento coincide con $\mathbb{Q}(\sqrt[3]{2} ,\zeta_3)$; infatti, sicuramente $\mathbb{Q}(\sqrt[3]{2} ,\zeta_3)\subseteq \mathbb{Q}(\sqrt[3]{2} ,\sqrt[3]{2}\zeta_3,\sqrt[3]{2}\zeta_3^2)$ perch\'e quest'ultimo contiene sia $\sqrt[3]{2}$, che
+	\[
+		\zeta_3 = \frac{\sqrt[3]{2} \zeta_3 }{\sqrt[3]{2} }
+	\] 
+	ma \`e anche vera l'inclusione opposta perch\'e, in $\mathbb{Q}(\sqrt[3]{2}, \zeta_3) $, ci sono:
+	\begin{itemize}
+		\item $\sqrt[3]{2} $ per costruzione;
+		\item $\zeta_3$ per costruzione, quindi anche $\sqrt[3]{2} \zeta_3 $ per chiusura rispetto alla moltiplicazione;
+		\item sempre per chiusura rispetto alla moltiplicazione, $\zeta_3 ^2$ e, quindi, $\sqrt[3]{2} \zeta_3^2$.
+	\end{itemize}
+\end{esempio}
+
+
+\noindent Ora si vuole studiare il seguente problema: dato un campo $K$ e la sua chiusura $\overline{K}$, per $\alpha \in \overline{K}$, si vuole capire quante iniezioni
+\[
+\varphi :K(\alpha )\longhookrightarrow \overline{K} \hspace{.5cm} \text{ con }\hspace{.5cm}\varphi |_K = \mathrm{Id} _K
+\] 
+si possono costruire, cio\`e in quanto modi $K(\alpha )$ si pu\`o immergere in $\overline{K}$.
+Ora, si ricorda preliminarmente che un omomorfismo fra campi pu\`o avere solo nucleo banale, oppure tutto il campo, visto che tale nucleo sarebbe un ideale del campo, il quale ha solo ideale banale e se stesso come ideali.
+La seguente proposizione fornisce la risposta.
+\begin{prop}
+	Sia $K$ un campo e $\alpha \in \overline{K}$, con $\overline{K}$ chiusura algebrica di $K$.
+	Dato $\alpha  \in \overline{K}$ e detto $k$ il numero di radici distinte di $\mu _\alpha (x)$ in $\overline{K}$, allora
+	\[
+	\exists \varphi _1,\ldots,\varphi _k : K(\alpha ) \longhookrightarrow \overline{K}
+	\] 
+	con $\varphi _i|_K = \mathrm{Id} _K$.
+\end{prop}
+\begin{proof}
+	Tramite omomorfismo di valutazione, si sa che $K(\alpha ) \cong K[x] /\langle \mu _\alpha (x) \rangle$, quindi ci si pu\`o limitare a trovare un omomorfismo da $K[x]$ in $\overline{K}$ e poi usare il I teorema di omomorfismo.
+	Si considera l'immersione $K \longhookrightarrow \overline{K}$, data dall'identit\`a; questa si pu\`o estendere in una mappa da $K[x]$ a $\overline{K}$ tramite 
+	\[
+		\widetilde{\varphi }:
+		\begin{array}
+			{c c c}
+			K[x]& \longrightarrow &\overline{K}\\
+			p(x) & \longmapsto& p(\beta)
+		\end{array}, \ \forall \beta \in \overline{K}
+	\] 
+	Per tale omomorfismo, ha senso considerare il quoziente $K(\alpha ) \cong K[x] / \langle \mu _\alpha (x) \rangle$ se e solo se $\langle \mu _\alpha (x) \rangle\subset \operatorname{Ker} \widetilde{\varphi }$, cio\`e se e solo se $\mu _\alpha (x) \in \operatorname{Ker} \widetilde{\psi }$, quindi se e solo se $\mu _\alpha (\beta ) = 0$.
+	Allora, per ogni radice di $\mu _\alpha (x)$ in $\overline{K}$, si ha un omomorfismo iniettivo $\varphi $ per il primo teorema di omomorfismo:
+	\[
+		\begin{tikzcd}
+		K[x] & &  \overline{K}\\
+		\\
+		K(\alpha) \cong \displaystyle \frac{K[x]}{\langle \mu _\alpha (x) \rangle}
+		\arrow[from=1-1, to=1-3, "\displaystyle \widetilde{\varphi }"]
+		\arrow[from=1-1, to=3-1, two heads, "\displaystyle \pi_\alpha "']
+		\arrow[from=3-1, to=1-3, hook, "\displaystyle \varphi "']
+		\end{tikzcd}
+	\] 
+	Infine, ogni omomorfismo del genere \`e diverso da un altro perch\'e restituisce valori diversi quando calcolato, per esempio, su $x$, essendo relativo a radici distinte di $\mu _\alpha (x)$.
+\end{proof}
+\noindent Ora ci si pone un ulteriore problema: determinare il numero di radici di $\mu _\alpha (x)$ in $\overline{K}$.
+Essendo $\overline{K}$ algebricamente chiuso, il numero di radici del polinomio, ciascuna contata con la relativa molteplicit\`a, deve essere pari a $\deg \mu _\alpha (x)$.
+Il numero di radici multiple di $\mu _\alpha (x)$ si pu\`o ottenere tramite il seguente criterio.
+\begin{teorema}
+	[Criterio della derivata]
+	Sia $f(x) \in K[x]$; allora $f(x)$ ha radici multiple in $\overline{K}$ se e solo se $\operatorname{gcd}(f(x),f'(x)) \neq 1$. 
+	Inoltre, se $f(x)$ \`e irriducibile in $K[x]$, allora $f(x)$ ha radici multiple se e solo se $f'(x) = 0$.
+\end{teorema}
+\begin{proof}
+	Si divide la dimostrazione per le due affermazioni.
+	\begin{itemize}
+		\item Sia $f(x)$ un polinomio con radici multiple $\alpha $ in $\overline{K}$; si mostra che $\operatorname{gcd}(f(x),f'(x)) \neq 1$.
+			Se $f(x)$ ha radici multiple sulla chiusura algebrica, allora si scrive come $f(x) = (x-\alpha )^m g(x)$, con $g(\alpha ) \neq 0$ e $m\ge 2$.
+			Allora 
+			\[
+				f'(x) = m (x-\alpha )^{m-1} g(x) + (x-\alpha )^m g'(x) = (x-\alpha )^{m-1} \big[m g(x) + (x-\alpha ) g'(x)\big]
+			\] 
+			\`e tale che $f'(\alpha ) = 0$ perch\'e $m-1\ge 1$.
+			Allora il massimo comune divisore di $f$ e $f'$ \`e almeno $x-\alpha \neq 1$.
+
+			Ora si assume che $d(x) = \operatorname{gcd}(f,f')\neq 1 $, cio\`e non \`e una costante; allora ammette almeno una radice $\alpha \in \overline{K}$, per cui $d(\alpha ) = 0 =\operatorname{gcd}(f(\alpha ),f'(\alpha )) \iff f(\alpha ) = f'(\alpha ) = 0$.
+			Ma allora, per gli stessi passaggi al punto sopra, $f(x)$ deve avere almeno un fattore $(x-\alpha )^m$, con $m\ge 2$, altrimenti non si potrebbe avere anche $f'(\alpha ) = 0$, da cui la tesi.
+		\item Per questo caso, si nota che $f(x) \in K[x]\Rightarrow f'(x) \in K[x]$, quindi $\operatorname{gcd}(f,f') \in K[x]$ (si ottiene tramite l'algoritmo di Euclide); se $f$ \`e irriducibile in $K[x]$, il gcd \`e $1$, oppure $f(x)$, ma quest'ultimo caso \`e verificato se e solo se $f'(x) = 0$, dovendo essere $\deg f' < \deg f$.
+	\end{itemize}
+\end{proof}
+\begin{osservazione}
+	Questo risultato permette di concludere che i polinomi irriducibili di $K[x]$ con derivata non-nulla hanno tante radici distinte, quanto vale il loro grado.
+\end{osservazione}
+\begin{definizione}
+	[Campo perfetto]
+	Un campo $K$ tale che ogni polinomio irriducibile di $K[x]$ ha derivata non-nulla \`e detto \textit{campo perfetto}.
+\end{definizione}
+\begin{osservazione}
+Se $\operatorname{char}  K = 0$, allora $K$ \`e un campo perfetto.
+Infatti, dato
+\[
+f(x) = \sum_{i=0}^{n} a_ix^i \implies f'(x) = \sum_{i=1}^{n} ia_ix^{i-1}
+\] 
+Allora $f'(x) = 0$ se e solo se ogni suo coefficiente \`e nullo: se $a_i\neq 0$, il termine $i a_i$ non pu\`o mai essere nullo perch\'e la caratteristica \`e zero.
+\end{osservazione}
+\begin{boxenv}[]
+Per il seguito, si assumer\`a di avere a che fare esclusivamente con campi perfetti.
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
