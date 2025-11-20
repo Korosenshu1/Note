@@ -3476,7 +3476,7 @@ Si inizia col costruire tale definizione per gli aperti degli spazi euclidei.
 \noindent Per poter estendere questa definizione, \`e necessario introdurre e caratterizzare il differenziale di una mappa.
 \begin{definizione}
 	[Differenziale]
-	Siano $U \subseteq \mathbb{R}^k$, $V \subseteq \mathbb{R}^\ell $ due aperti e sia $f : U \to V$ di classe $C^\infty$; allora, date $x \in U$ e $h \in \mathbb{R}^k$, il \textit{differenziale} di $f$ \`e definito da $df_x:\mathbb{R}^k\to \mathbb{R}^{\ell } $ come
+	Siano $U \subseteq \mathbb{R}^k$, $V \subseteq \mathbb{R}^\ell $ due aperti e sia $f : U \to V$ di classe $C^\infty$; allora, dati $x \in U$ e $h \in \mathbb{R}^k$, il \textit{differenziale} di $f$ \`e definito da $df_x:\mathbb{R}^k\to \mathbb{R}^{\ell } $ come
 	\[
 	df_x(h) : = \lim_{t \to 0} \frac{f(x+th) - f(x)}{t}
 	\] 
@@ -3890,11 +3890,11 @@ Allora si definisce
 F:
 \begin{array}
 	{c c c}
-	M&\longrightarrow & N \times ^{m-n} \\
+	M&\longrightarrow & N \times \mathbb{R}^{m-n} \\
 	x&\longmapsto & \big(f(x), L(x)\big)
 \end{array}
 \] 
-Ora si dimostra che $F$ \`e $C^\infty$ e soddisfa $dF_x(v) = \big(df_x(v),L(v)\big)$.
+Ora si dimostra ({\color{red}da dimostrare\ldots}) che $F$ \`e $C^\infty$ e soddisfa $dF_x(v) = \big(df_x(v),L(v)\big)$.
 \end{proof}
 \end{document}
 
