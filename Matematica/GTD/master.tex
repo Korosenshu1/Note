@@ -206,9 +206,7 @@ title=#1
 La necessit\`a di definire la curva su un aperto, o quantomeno di poter estendere l'intervallo di definizione ad un aperto, deriva dal fatto che, in questo modo, si pu\`o effettivamente parlare di derivata piena anche per gli estremi, potendo trovare, infatti, un aperto che contiene interamente i punti di frontiera dell'intervallo di definizione.
 Se non si avesse questa possibilit\`a, nel caso di $\alpha :[a,b] \subset \mathbb{R}\to \mathbb{R}^3$, per esempio, non si potrebbe calcolare la derivata tradizionale in $a$, o $b$, perch\'e si potrebbe solamente calcolare il limite destro o sinistro.
 \end{osservazione}
-\noindent Si nota che, nel caso in cui $I$ non fosse aperto, si estende l'intervallo di definizione ad $A \supset I$ aperto.
-
-Si parla di \textit{traccia} della curva in riferimento all'immagine che genera dell'intero intervallo: $\operatorname{Tr} \alpha  = \alpha (I)$.
+\noindent Si parla di \textit{traccia} della curva in riferimento all'immagine che genera dell'intero intervallo: $\operatorname{Tr} \alpha  = \alpha (I)$.
 La traccia rappresenta l'unione di ciascun punto di $\alpha (t) \in \mathbb{R}^3, \ \forall t \in I$.
 Per \textit{velocit\`a} della curva, invece, si intende la grandezza\footnote{Questa \`e ben definita perch\'e si sta operando in uno spazio vettoriale, con $\alpha (t+h) - \alpha (t)$ giustificata dall'operazione di somma dello spazio e divisione per $h$ data dalla moltiplicazione per uno scalare.}
 \begin{equation}
@@ -428,7 +426,7 @@ non si \`e in grado di trovare un'espressione per $t(s)$ perch\'e la primitiva d
 \subsection{Riferimento ed equazioni di Frenet}
 \begin{definizione}
 	[Versore tangente]
-	Data una curva riparametrizzabile $\alpha :I \to \mathbb{R}^3$ e la sua riparametrizzazione tramite lunghezza d'arco $\beta (s)$, si definisce il \textit{versore tangente} ad $\alpha $ come $T(s) = \beta '(s)$.
+	Data una curva regolare $\alpha :I \to \mathbb{R}^3$ e la sua versione pla, $\beta (s)$, si definisce il \textit{versore tangente} ad $\alpha $ come $T(s) = \beta '(s)$.
 \end{definizione}
 \begin{definizione}
 	[Curvatura]
@@ -557,7 +555,7 @@ Infine:
 Si considera l'elica parametrizzata $\alpha = (a\cos t , a \sin t, bt)$, con raggio $a\in \mathbb{R}^{>0} $ e passo $b \in \mathbb{R}$.
 La sua pla \`e gi\`a stata ricava; dato $c = \sqrt{a^2 + b^2} $, si ottiene:
 \[
-	\beta (s)= \left(a \cos \left(\frac{s}{\sqrt{c} }\right) , a\sin \left(\frac{s}{\sqrt{c} }\right),\frac{b}{\sqrt{c} } s\right)
+	\beta (s)= \left(a \cos \frac{s}{c} , a\sin \frac{s}{c},\frac{b}{c} s\right)
 \] 
 da cui
 \[
