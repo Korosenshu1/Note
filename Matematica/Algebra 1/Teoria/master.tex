@@ -4471,8 +4471,9 @@ si potr\`a dire esattamente quanti omomorfismi
 \varphi _i : K(\zeta_3) \longhookrightarrow \overline{K}
 \] 
 con $\varphi_i |_K = \varphi $ esistono.
-\begin{prop}\label{imext2}
+\begin{prop}
 	[Estensioni di immersioni]
+\label{imext2}
 	Sia $\alpha  \in \overline{K}$, con $[K(\alpha ) : K] = n$; allora, $\forall \varphi : K \longhookrightarrow \overline{K}$, si hanno esattamente $n$ estensioni di $\varphi $ ad un'immersione da $K(\alpha )$ a $\overline{K}$, cio\`e:
 	\[
 	\exists \varphi _1,\ldots,\varphi _n : K(\alpha ) \longhookrightarrow  \overline{K}
@@ -4536,7 +4537,51 @@ con $\varphi_i |_K = \varphi $ esistono.
 	[Estensione separabile]
 	Sia $K \subset L$ un'estensione algebrica; questa si dice \textit{separabile} se il polinomio minimo di ogni suo elemento \`e un \textit{polinomio separabile}, cio\`e se ha radici tutte distinte in un suo campo di spezzamento.
 \end{definizione}
-
+\begin{esempio}
+	Sia $f(x) = x^3 - 2$; questo coincide con il polinomio minimo di $\alpha = \sqrt[3]{2} $ su $\mathbb{Q}$, $\mu _{\sqrt[3]{2}/\mathbb{Q} } (x)$.
+	Si vogliono studiare le immersioni di $\mathbb{Q}(\alpha )$ in $\overline{\mathbb{Q}}$.
+\end{esempio}
+\begin{svolgimento}
+	I coniugati di $\alpha $ sono $\alpha$, $\alpha \zeta_3$ e $\alpha \zeta_3^2$.
+	Allora l'omomorfismo $\varphi :Q(\alpha ) \longhookrightarrow \overline{\mathbb{Q}}$, con $\varphi |_{\mathbb{Q}}= \mathrm{Id} _{\mathbb{Q}}$, ha le seguenti possibilit\`a:
+	\[
+	\varphi (\alpha ) = \begin{cases}
+		\alpha \\
+		\alpha \zeta_3\\
+		\alpha \zeta_3^2
+	\end{cases}
+	\] 
+	Queste corrispondono a:
+\[
+\varphi \big(\mathbb{Q}(\alpha )\big) = \mathbb{Q}\big(\varphi (\alpha )\big) = \begin{cases}
+	\mathbb{Q}(\alpha )\\
+	\mathbb{Q}(\alpha \zeta_3)\\
+	\mathbb{Q}(\alpha \zeta_3^2)
+\end{cases}
+\] 
+Allora si dice che $\mathbb{Q}(\alpha )$ \`e isomorfo \textit{su} $\mathbb{Q}$\footnote{Nel senso che \`e isomorfo tramite mappe che fissano $\mathbb{Q}$.} a questi tre distinti campi, in accordo con la proposizione \ref{imext2}.
+\end{svolgimento}
+\begin{esempio}
+	[Polinomio ciclotomico p-esimo]
+	Sia $p$ un primo; si considera il campo ciclotomico $p$-esimo $\mathbb{Q}(\zeta_p)$; si studiano le immersioni $\mathbb{Q}(\zeta_p )\hookrightarrow \overline{\mathbb{Q}}$. 
+\end{esempio}
+\begin{svolgimento}
+	Si ha:
+	\[
+	\mu _{\zeta_p / \mathbb{Q}} (x) = \frac{x^p - 1}{x-1} = x^{p-1}+\ldots+ x+1
+	\] 
+	Questo \`e irriducibile perch\'e \`e il traslato di un $p$-Eisenstein, quindi i coniugati di $\zeta_p$ sono dati da $\zeta_p^i$, per $1\le i < p$.
+	Allora $[\mathbb{Q}(\zeta_p) :\mathbb{Q}] = \varphi (p) = p-1$ e le immersioni sono della forma
+	\[
+	\varphi _i :\mathbb{Q}(\zeta_p) \longhookrightarrow \overline{\mathbb{Q}} : \zeta_p \longmapsto \zeta_p^i
+	\] 
+	con $\varphi _i|_{\mathbb{Q}} = \mathrm{Id} _{\mathbb{Q}}$.
+Nuovamente, in accordo con la proposizione \ref{imext2}, si hanno $p-1$ possibili immersioni:
+\[
+\varphi _i\big(\mathbb{Q}(\zeta_p)\big) = \mathbb{Q}\big(\varphi _i(\zeta_p)\big) = \mathbb{Q}(\zeta_p^i) = \mathbb{Q}(\zeta_p), \ \forall i \in \left\{ 1,\ldots,p-1 \right\} 
+\] 
+\end{svolgimento}
+\subsection{Estensioni normali}
 
 
 
