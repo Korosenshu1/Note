@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  19 NOV 2025 19:14
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  21 NOV 2025 11:50
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -2266,12 +2266,17 @@ Underfull \hbox (badness 4096) in paragraph at lines 4451--4452
  []
 
 
+
+[113]
+
+[114]
+
 Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[113] (./master.aux)
+[115] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2281,14 +2286,18 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 56065 strings out of 475506
+ 56118 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 4942 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 27 glue, 4 kern, 1 glyph, 1347 attribute, 104 glue_spec, 675 attribute_list, 2 write nodes
-   avail lists: 1:5,2:2757,3:1038,4:228,5:837,6:101,7:7324,8:109,9:1009,10:32,11:846
- 77281 multiletter control sequences out of 65536+600000
- 154 fonts using 29184527 bytes
+ 5064 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 29 glue, 4 kern, 1 glyph, 1383 attribute, 104 glue_spec, 693 attribute_list, 2 write nodes
+   avail lists: 1:5,2:2703,3:1038,4:228,5:837,6:101,7:7322,8:109,9:1009,10:32,11:846
+ 77326 multiletter control sequences out of 65536+600000
+ 154 fonts using 29186983 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.44'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.43'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.42'
 
@@ -2374,10 +2383,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (113 pages, 1395118 bytes).
+Output written on master.pdf (115 pages, 1404156 bytes).
 
-PDF statistics: 1373 PDF objects out of 1440 (max. 8388607)
- 1207 compressed objects within 13 object streams
- 566 named destinations out of 1000 (max. 131072)
+PDF statistics: 1396 PDF objects out of 1440 (max. 8388607)
+ 1228 compressed objects within 13 object streams
+ 574 named destinations out of 1000 (max. 131072)
  352 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -4385,13 +4385,13 @@ Il ragionamento appena fatto permette di costruire una chiusura algebrica $\over
 si possono costruire, cio\`e in quanto modi $K(\alpha )$ si pu\`o immergere in $\overline{K}$.
 Ora, si ricorda preliminarmente che un omomorfismo fra campi pu\`o avere solo nucleo banale, oppure tutto il campo, visto che tale nucleo sarebbe un ideale del campo, il quale ha solo ideale banale e se stesso come ideali.
 La seguente proposizione fornisce la risposta.
-\begin{prop}
+\begin{prop}\label{imext}
 	Sia $K$ un campo e $\alpha \in \overline{K}$, con $\overline{K}$ chiusura algebrica di $K$.
 	Dato $\alpha  \in \overline{K}$ e detto $k$ il numero di radici distinte di $\mu _\alpha (x)$ in $\overline{K}$, allora
 	\[
 	\exists \varphi _1,\ldots,\varphi _k : K(\alpha ) \longhookrightarrow \overline{K}
 	\] 
-	con $\varphi _i|_K = \mathrm{Id} _K$.
+	estensioni dell'immersione $K\longhookrightarrow \overline{K}$ data dall'identit\`a, cio\`e con $\varphi _i|_K = \mathrm{Id} _K$.
 \end{prop}
 \begin{proof}
 	Tramite omomorfismo di valutazione, si sa che $K(\alpha ) \cong K[x] /\langle \mu _\alpha (x) \rangle$, quindi ci si pu\`o limitare a trovare un omomorfismo da $K[x]$ in $\overline{K}$ e poi usare il I teorema di omomorfismo.
@@ -4461,14 +4461,81 @@ Allora $f'(x) = 0$ se e solo se ogni suo coefficiente \`e nullo: se $a_i\neq 0$,
 \begin{boxenv}[]
 Per il seguito, si assumer\`a di avere a che fare esclusivamente con campi perfetti.
 \end{boxenv}
-
-
-
-
-
-
-
-
+\noindent Ora si estende il risultato ottenuto dalla prop. \ref{imext}, considerando un'immersione $K \longhookrightarrow \overline{K}$ generica e con l'assunzione di campo perfetto.
+Questo nuovo risultato permetter\`a di contare il numero di estensioni di un omomorfismo qualsiasi da $K$ in $\overline{K}$ ad uno da $K(\alpha )$ in $\overline{K}$; per esempio, dato $K = \mathbb{Q}(\sqrt[3]{2}) $ e l'omomorfismo 
+\[
+	\varphi :K\longhookrightarrow \overline{K} : \sqrt[3]{2} \longmapsto \sqrt[3]{2} \zeta_3
+\] 
+si potr\`a dire esattamente quanti omomorfismi 
+\[
+\varphi _i : K(\zeta_3) \longhookrightarrow \overline{K}
+\] 
+con $\varphi_i |_K = \varphi $ esistono.
+\begin{prop}\label{imext2}
+	[Estensioni di immersioni]
+	Sia $\alpha  \in \overline{K}$, con $[K(\alpha ) : K] = n$; allora, $\forall \varphi : K \longhookrightarrow \overline{K}$, si hanno esattamente $n$ estensioni di $\varphi $ ad un'immersione da $K(\alpha )$ a $\overline{K}$, cio\`e:
+	\[
+	\exists \varphi _1,\ldots,\varphi _n : K(\alpha ) \longhookrightarrow  \overline{K}
+	\] 
+	tali che $\varphi _i|_K = \varphi ,\ \forall i = 1,\ldots,n$.
+\end{prop}
+\begin{proof}
+	Similmente a quanto fatto per la prop. \ref{imext}, data $\varphi :K\longhookrightarrow \overline{K}$, si considera la sua estensione ad una mappa\footnote{Qui la notazione $\varphi (p(x))$ si riferisce all'applicare $\varphi $ ai coefficienti di $p(x)$, quindi $\big(\varphi (p(x))\big)\big(\beta \big)$ significa applicare $\varphi $ ai coefficienti di $p(x)$ e valutare il polinomio risultante in $\beta $.}
+	\[
+		\widetilde{\varphi }:
+		\begin{array}
+			{c c c}
+			K[x]& \longrightarrow & \overline{K}\\
+			x & \longmapsto & \beta \\
+			p(x) & \longmapsto & \big(\varphi (p(x))\big)\big(\beta \big)
+		\end{array}
+	\] 
+	Come fatto precedentemente, si richiede che $\langle \mu _\alpha (x) \rangle \subseteq \operatorname{Ker} \widetilde{\varphi }$ cos\`i da poter usare $K(\alpha ) \cong K[x]  / \langle \mu _\alpha (x) \rangle$ e avere l'immersione richiesta\footnote{Si nota che, una volta verificato tale contenimento, si ha, in realt\`a, l'uguaglianza perch\'e $\langle \mu _\alpha (x) \rangle$ \`e un ideale massimale, essendo in un PID, con $\mu _\alpha (x)$ irriducibile, quindi primo, e con un omomorfismo non nullo.}.
+	Questa inclusione \`e equivalente a richiedere $\widetilde{\varphi }(\mu _\alpha (x)) = 0 \iff \varphi (\mu _\alpha (x))(\beta ) = 0$, cio\`e $\beta $ deve essere radice del polinomio $\varphi (\mu _\alpha (x))$, quindi ci saranno tante estensioni, quante sono le radici distinte di $\varphi (\mu _\alpha (x))$ in $\overline{K}$.
+	Essendo $\mu _\alpha (x)$ irriducibile per definizione, allora $\varphi (\mu _\alpha (x))$ \`e ancora irriducibile e $\deg \mu _\alpha (x) = \deg \varphi (\mu _\alpha (x))$ (essendo l'omomorfismo iniettivo).
+	Inoltre, il campo \`e perfetto, quindi il numero di radici distinte di $\varphi (\mu _\alpha (x))$ \`e pari al suo grado, quindi pari a quello di $\mu _\alpha (x)$.
+\end{proof}
+\noindent Tramite questa proposizione, si pu\`o dimostrare un risultato pi\`u generale in cui l'estensione dell'immersione parte da un'estensione di campo generica.
+\begin{corollario}
+	Sia $E / K$ un'estensione, con $[E:K] = n$; allora $\forall \varphi  : K \longhookrightarrow \overline{K}$ immersione, esistono esattamente $n$ immersioni
+	\[
+	\varphi _1,\ldots,\varphi _n : E \longhookrightarrow \overline{K}
+	\] 
+	con $\varphi _i|_K = \varphi $.
+\end{corollario}
+\begin{proof}
+	La dimostrazione segue per induzione.
+	Per $n=2$, infatti, l'estensione \`e semplice e deriva dalla proposizione \ref{imext2} appena dimostrata.
+	Per $n>2$, invece, si considera $\alpha  \in  E \setminus K$, per cui si ha la torre $K \subset K(\alpha ) \subset E$; se $[K(\alpha ):K] = m$ e $[E:K(\alpha )] = d$, allora $n = md$.
+	\[
+	\begin{tikzcd}
+		 E \\
+		 K(\alpha )\\
+		 K
+		 \arrow[from=3-1, to=2-1, no head, "m"']
+		 \arrow[from=2-1, to=1-1, no head, "d"']
+		 \arrow[from=3-1, to=1-1, no head, bend left=50, "n = md"]
+	\end{tikzcd}
+	\] 
+	Se $m=n$, allora $E = K(\alpha )$ e si \`e ancora nel caso precedente con $n=2$ perch\'e l'estensione sarebbe semplice.
+	Considerando $1<m<n$, allora $d < n$ e si pu\`o applicare la proposizione \ref{imext2} due volte di fila per dire che $\varphi $ si estende in $m$ modi a $K(\alpha )$:
+	\[
+	\exists \varphi _1,\ldots,\varphi _m : K(\alpha )\longhookrightarrow \overline{K} \hspace{.5cm} \text{ con } \hspace{.5cm} \varphi _i|_K = \varphi 
+	\] 
+	e, successivamente, ciascuna di queste $\varphi _i:K(\alpha ) \longhookrightarrow \overline{K}$ si estende, per ipotesi induttiva (visto che $[E:K(\alpha )] = d < n$):
+	\[
+	\exists \varphi _{i1} ,\ldots, \varphi _{i d } : E \longhookrightarrow \overline{K} \hspace{.5cm} \text{ con } \hspace{.5cm} \varphi _{ij} |_{K(\alpha )} = \varphi _i
+	\] 
+	quindi $\varphi _{ij} |_K = \varphi _i|_K = \varphi $ e si ha la tesi.
+\end{proof}
+\begin{definizione}
+	[Elementi coniugati]
+	Dato $\alpha  \in \overline{K}$, si definiscono i \textit{coniugati} di $\alpha $ su $K$ come le radici del polinomio minimo di $\alpha $ su $K$.
+\end{definizione}
+\begin{definizione}
+	[Estensione separabile]
+	Sia $K \subset L$ un'estensione algebrica; questa si dice \textit{separabile} se il polinomio minimo di ogni suo elemento \`e un \textit{polinomio separabile}, cio\`e se ha radici tutte distinte in un suo campo di spezzamento.
+\end{definizione}
 
 
 
