@@ -4818,4 +4818,132 @@ Si vuole studiare il gruppo di Galois di $F / K$ al variare del grado di $f(x)$.
 	\] 
 	al variare di $i \in \left\{ 0,1,2 \right\} $ e $j \in \left\{ 1,2 \right\} $.
 \end{esempio}
+\subsubsection{Gruppo di Galois di $\mathbb{F}_{q^d} / \mathbb{F}_q$}
+\begin{prop}
+	L'estensione $\mathbb{F}_{q^d} /\mathbb{F}_q$, con $q = p^r$ e $p$ primo, \`e normale.
+\end{prop}
+\begin{proof}
+	Si nota che, per ogni immersione $\varphi : \mathbb{F}_{q^d} \longhookrightarrow \overline{\mathbb{F}}_p$ tale che $\varphi |_{\mathbb{F}_q} = \mathrm{Id} _{\mathbb{F}_q} $, $\varphi (\mathbb{F}_{q^d} )$ \`e un sottocampo di $\overline{\mathbb{F}}_p$ con $q^d = p^{rd} $ elementi, visto che $\varphi $ \`e iniettiva.
+	Ora, valendo l'unicit\`a dei campi con $p^n$ elementi, deve valere necessariamente $\varphi (\mathbb{F}_{q^d} ) = \mathbb{F}_{q^d} $, quindi l'estensione \`e normale.
+	D'altra parte, si ricorda che le estensioni $\mathbb{F}_{p^n} $ di campi finiti $\mathbb{F}_p$ si costruiscono come campi di spezzamento dei polinomi $x^{p^n} -x \in \mathbb{F}_p[x]$ al variare di $n$, quindi sono sempre normali per costruzione.
+\end{proof}
+\begin{corollario}
+	Tutte le estensioni di campi finiti sono normali.
+\end{corollario}
+\begin{proof}
+	Si considera il seguente diagramma\footnote{In {\color{nred}rosso} sono evidenziate le estensioni normali.}:
+	\[
+		\begin{tikzcd}
+	\mathbb{F}_{p^n} = \mathbb{F}_{q^d} \\
+	\mathbb{F}_{p^r} = \mathbb{F}_{q} \\
+	\mathbb{F}_p
+	\arrow[from=3-1, to=2-1, no head]
+	\arrow[from=3-1, to=1-1, bend left = 50, no head, color=nred]
+	\arrow[from=2-1, to=1-1, no head, color=nred]
+		\end{tikzcd}
+	\] 
+	Per quanto affermato nella proposizione precedente, $\mathbb{F}_{p^n} / \mathbb{F}_p$ \`e sempre normale, quindi, per la proposizione \ref{normtor}, tutte le estensioni di campi finiti sono normali.
+\end{proof}
+\begin{definizione}
+	[Automorfismo di Frobenius]
+	Viene chiamato \textit{automorfismo di Frobenius} l'automorfismo
+	\[
+		\phi :
+		\begin{array}
+			{c c c}
+			\mathbb{F}_{q^d} &\stackrel{\sim}{\longrightarrow} & \mathbb{F}_{q^d} \\
+			x& \longmapsto & x^q
+		\end{array}
+	\] 
+\end{definizione}
+\begin{teorema}
+	Il gruppo di Galois dell'estensione $\mathbb{F}_{q^d} /\mathbb{F}_q$, con $q = p^r$, \`e generato dall'automorfismo di Frobenius $\phi :\mathbb{F}_{q^d} \stackrel{\sim}{\longrightarrow} \mathbb{F}_{q^d} : x \longmapsto x^q$.
+\end{teorema}
+\begin{proof}
+	Intanto si verifica che $\phi  \in \operatorname{Gal} \mathbb{F}_{q^d} /\mathbb{F}_q$. 
+	Si vede che $\phi $ \`e un omomorfismo di anelli:
+	\[
+	\begin{split}
+		&\phi (\alpha +\beta ) = (\alpha +\beta )^q = \alpha ^q + \beta ^q = \phi (\alpha ) + \phi (\beta ) \\
+		&\phi (\alpha \beta )= (\alpha \beta )^q = \alpha ^q \beta ^q = \phi (\alpha )\phi (\beta ) 
+	\end{split}\hspace{.25cm}, \hspace{.5cm}\forall \alpha ,\beta  \in \mathbb{F}_q^d
+	\] 
+	dove si \`e usato che si \`e in caratteristica $p$, con $q= p^r$, pertanto tutti i termini del binomio che non sono relativi a potenze massime di uno dei due addenti si eliminano perch\'e moltiplicati per un multiplo di $p$ (Lemma del Binomio Ingenuo).
+
+	Inoltre, \`e biettivo perch\'e, dato $\phi :\alpha \longmapsto \alpha ^q$, si ha $\phi ^d (\alpha ) = \alpha ^{q^d}= \alpha$, quindi $\phi ^{-1}=\phi ^{d-1} $.
+	Altrimenti, si pu\`o dimostrare che \`e iniettivo osservando che $\alpha ^q = \beta ^q\Rightarrow (\alpha -\beta )^q = 0 \iff \alpha - \beta = 0 \iff \alpha = \beta $, quindi \`e automaticamente anche suriettivo perch\'e il dominio \`e finito.
+
+Ora, dato un generico $\alpha \in \mathbb{F}_q$, questo soddisfa $\phi (\alpha )= \alpha ^q = \alpha $, pertanto $\phi $ \`e un automorfismo di $\mathbb{F}_{q^d} $ che fissa $\mathbb{F}_q$, cio\`e tale che $\phi |_{\mathbb{F}_q}= \mathrm{Id} _{\mathbb{F}_q} $, quindi $\phi \in \operatorname{Gal} \mathbb{F}_{q^d} /\mathbb{F}_q$.
+Inoltre, $\operatorname{Gal} \mathbb{F}_{q^d} / \mathbb{F}_q$ \`e un gruppo di ordine $d$, visto che l'estensione \`e di ordine $d$, quindi deve valere $\operatorname{ord}(\phi ) = k  \mid d$; d'altra parte, se $\phi ^k = \mathrm{Id} $:
+\[
+\phi ^k(\alpha ) = \alpha ^{q^k} = \alpha , \ \forall \alpha \in \mathbb{F}_{q^d} 
+\] 
+cio\`e $f(x) = x^{q^k} -x$ ha, come radici, tutti i $q^d$ elementi di $\mathbb{F}_{q^d} $, quindi 
+\[
+\deg f(x) = q^k \ge q^d = \lvert \mathbb{F}_{q^d}  \rvert \implies k\ge d
+\] 
+perci\`o deve essere $ k =d$.
+Visto che $\phi $ ha proprio ordine $d$ ed \`e un elemento del gruppo, allora lo genera e si ha la tesi.
+\end{proof}
+\begin{esempio}
+Si studia l'estensione $E = \mathbb{Q}(\sqrt{2} , \sqrt{3} ) / \mathbb{Q}$ e il suo gruppo di Galois.
+\end{esempio}
+\begin{svolgimento}
+	Le estensioni, via identit\`a, $\varphi : E \longhookrightarrow \overline{\mathbb{Q}}$ sono determinate dalle immagini di $\sqrt{2} $ e $\sqrt{3} $, cio\`e sono:
+	\begin{center}
+\begin{minipage}
+	{0.45\columnwidth}
+	\[
+	\varphi = \begin{cases}
+		\sqrt{2} \longmapsto \pm \sqrt{2} \\
+		\sqrt{3} \longmapsto \pm \sqrt{3} 
+	\end{cases}
+	\] 
+\end{minipage}	
+\hfill
+\begin{minipage}
+	{0.45\columnwidth}
+	\[
+	\begin{tikzcd}
+	&  E  & \\
+		\mathbb{Q}(\sqrt{3} )  & &  \mathbb{Q}(\sqrt{2} )\\
+				       & \mathbb{Q} & 
+				      \arrow[from=1-2, to=2-1, no head]
+				      \arrow[from=1-2, to=2-3, no head]
+				      \arrow[from=1-2, to=3-2, no head, "\displaystyle 4"]
+				      \arrow[from=3-2, to=2-1, no head, "\displaystyle 2"]
+				      \arrow[from=3-2, to=2-3, no head, "\displaystyle 2"']
+	\end{tikzcd}
+	\] 
+\end{minipage}
+	\end{center}
+	Il composto e le due estensioni semplici sono normali perch\'e di grado $2$.
+	Le possibili immersioni sono
+	\[
+\begin{array}
+	{l l}
+	\mathrm{Id} = \varphi _1 = \begin{cases}
+		\sqrt{2} \longmapsto \sqrt{2} \\
+		\sqrt{3} \longmapsto \sqrt{3} 
+		\end{cases} \hspace{.5cm}&\varphi _2 = \begin{cases}
+		\sqrt{2} \longmapsto - \sqrt{2} \\
+		\sqrt{3} \longmapsto  \sqrt{3} 
+	\end{cases} 	\\
+\varphi _3 = \begin{cases}
+		\sqrt{2} \longmapsto \sqrt{2} \\
+		\sqrt{3} \longmapsto -\sqrt{3} 
+	\end{cases} & \varphi _4 = \begin{cases}
+		\sqrt{2} \longmapsto -\sqrt{2} \\
+		\sqrt{3} \longmapsto - \sqrt{3} 
+	\end{cases}
+\end{array}
+\] 
+Si vede, allora, che tutti gli elementi (tranne ovviamente l'identit\`a) hanno ordine $2$ e sono $4$ in totale, quindi $\operatorname{Gal} \mathbb{Q}(\sqrt{2} , \sqrt{3} ) / \mathbb{Q} \cong \mathbb{Z}/ 2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.	
+Infine, si osserva, per doppio contenimento, che $\mathbb{Q}(\sqrt{2} ,\sqrt{3} ) = \mathbb{Q}(\sqrt{2} +\sqrt{3} )$.
+\end{svolgimento}
+\noindent Nell'ultima parte dell'esercizio precedente, si \`e visto come l'estensione $\mathbb{Q}(\sqrt{2} ,\sqrt{3} )$ si potesse esprimere tramite l'estensione semplice $\mathbb{Q}(\sqrt{2} +\sqrt{3} )$; questo si generalizza nel seguente teorema\footnote{Dimostrato a pagina 130.}.
+\begin{teorema}
+	[Teorema dell'elemento primitivo]
+	Sia $K$ un campo e $E / K$ una sua estensione finita e separabile; allora $E / K$ \`e semplice, cio\`e $\exists \gamma\in E : E = K(\gamma)$.
+\end{teorema}
 \end{document}
