@@ -4497,7 +4497,7 @@ con $\varphi_i |_K = \varphi $ esistono.
 	Inoltre, il campo \`e perfetto, quindi il numero di radici distinte di $\varphi (\mu _\alpha (x))$ \`e pari al suo grado, quindi pari a quello di $\mu _\alpha (x)$.
 \end{proof}
 \noindent Tramite questa proposizione, si pu\`o dimostrare un risultato pi\`u generale in cui l'estensione dell'immersione parte da un'estensione di campo generica.
-\begin{corollario}
+\begin{corollario}\label{imext3}
 	Sia $E / K$ un'estensione, con $[E:K] = n$; allora $\forall \varphi  : K \longhookrightarrow \overline{K}$ immersione, esistono esattamente $n$ immersioni
 	\[
 	\varphi _1,\ldots,\varphi _n : E \longhookrightarrow \overline{K}
@@ -4582,19 +4582,177 @@ Nuovamente, in accordo con la proposizione \ref{imext2}, si hanno $p-1$ possibil
 \] 
 \end{svolgimento}
 \subsection{Estensioni normali}
+\begin{definizione}
+	[Estensione normale]
+Sia $F / K$ un'estensione algebrica; questa si dice \textit{normale} se 
+\[
+\forall \varphi : F \longhookrightarrow \overline{K} \hspace{.5cm} \text{ con }\hspace{.5cm} \varphi |_K = \mathrm{Id} _K
+\] 
+si ha $\varphi (F) = F$, cio\`e l'estensione viene fissata da ogni immersione del campo di partenza nella sua chiusura algebrica.
+\end{definizione}
+\noindent Alcuni esempi di estensioni normali sono:
+\begin{itemize}
+	\item $\mathbb{Q}(\zeta_n) / \mathbb{Q}$, con $n$ generico;
+	\item dato $F = \mathbb{Q}(\sqrt[3]{2},\zeta_3) $, $F / \mathbb{Q}$ \`e normale perch\'e, per $\varphi : F \longhookrightarrow \overline{\mathbb{Q}}$ con $\varphi |_{\mathbb{Q}}=\mathrm{Id} _{\mathbb{Q}}  $, si ha 
+		\[
+			\varphi \big(\mathbb{Q}(\sqrt[3]{2} , \zeta_3)\big) = \mathbb{Q}\big(\varphi (\sqrt[3]{2} , \varphi (\zeta_3)\big) = \mathbb{Q}(\sqrt[3]{2}\zeta_3^i, \zeta_3^j) = \mathbb{Q}(\sqrt[3]{2} , \zeta_3)
+		\] 
+		con $i \in \left\{ 0,1,2 \right\} $ e $j \in \left\{ 1,2 \right\} $, che sono $6$ immersioni (in accordo con il cor. \ref{imext3}) rispetto a cui $F$ \`e invariante.
+\end{itemize}
+\begin{prop}[Caratterizzazione delle estensioni normali]\label{nextcar}
+	Sia $F / K$ un'estensione algebrica finita; allora le seguenti affermazioni sono equivalenti.
+	\begin{enumerate}[(a).]
+		\item $F / K$ \`e normale.
+		\item Ogni polinomio irriducibile $f(x) \in K[x]$ che ha una radice in $F$ le contiene tutte in $F$.
+		\item $F$ \`e il campo di spezzamento su $K$ di una famiglia di polinomi di $K[x]$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Si verificano le varie equivalenze nei seguenti punti.
+	\begin{itemize}
+		\item (a)$\Rightarrow $(b). Sia $f(x) \in K[x]$ e sino $\alpha _1,\ldots, \alpha _n \in \overline{K}$ le sue radici.
+			Per ipotesi, si sa che almeno una di queste, sia $\alpha _1$, appartiene a $F$, quindi $K(\alpha _1) \subset F$; si dimostra che, per $F / K$ normale, tutte le altre radici stanno ancora in $F$.
+Si considerano le immersioni
+\[
+\varphi _i : K(\alpha _1) \longrightarrow K(\alpha _i) \subseteq \overline{K} : \alpha _1 \longmapsto \alpha _i
+\] 
+con $\varphi _i|_K = \mathrm{Id} _K$, $\forall i \in \left\{ 1,\ldots,n \right\} $, la cui esistenza \`e assicurata dalla proposizione \ref{imext}.
+Ora, ciascuna di queste $\varphi _i$ si estendono ad un'immersione $F \longhookrightarrow \overline{K}$ in tanti modi quanto vale $[F : K(\alpha _1)]$, per il corollario \ref{imext3}; sia $\widetilde{\varphi }_i : F \longhookrightarrow \overline{K}$ tale che $\widetilde{\varphi }_i|_{K(\alpha _1)} = \varphi _i$ una di queste, relativa a $\varphi _i$.
+Si nota che $\widetilde{\varphi }_i|_{K} = \varphi _i|_K = \mathrm{Id} _K$, visto che $K \subset K(\alpha _1)$, ma, per assunzione, $F / K$ \`e normale, quindi $\widetilde{\varphi }_i (F) = F$ e questo vale per ogni estensione di ogni $\varphi _i$.
+Questo, per\`o, implica che ogni coniugato di $\alpha _1$ deve stare ancora in $F$, da cui si ha la tesi.
+\item (b)$\Rightarrow $(c). Sia $F_0$ il campo di spezzamento, su $K$, della famiglia di polinomi
+	\[
+		\mathcal{F} = \left\{ \mu _\alpha (x) \in K[x]  \mid \alpha \in F \text{ e } \mu _\alpha (x) \text{ pol. minimo di } \alpha \text{ su } K \right\} 
+	\] 
+	Si ha, intanto, $F \subseteq F_0$ perch\'e $F_0$ contiene tutte le radici di tutti i polinomi minimi di tutti gli elementi di $F$; d'altra parte $F_0= K(\beta  \mid \beta \text{ radice di }\mu _\alpha (x) \in \mathcal{F} )$, con ogni $\mu _\alpha (x)$ irriducibile su $K[x]$ e almeno una radice di ognuno di questi \`e in $F$.
+	Visto che si ha il punto (b) come ipotesi, $F$ contiene tutte le radici di ogni polinomio di $\mathcal{F} $, quindi si ha anche $F_0 \subseteq F$, per cui $F =F_0$.
+\item (c)$\Rightarrow $(a). Sia $F$ il campo di spezzamento di una qualche famiglia di polinomi $\mathcal{F} =\left\{ f_1(x),\ldots,f_k(x) \right\} $; si dimostra che se $\varphi :F\longhookrightarrow \overline{K}$ soddisfa $\varphi |_K = \mathrm{Id} _K$, allora $\varphi (F) = F$.
+	Indicando con $\left\{ \alpha _{ij}  \right\} _{j=1,\ldots,n_i} $, per $n_i = \deg f_i(x)$, le radici di $f_i(x)$, allora si pu\`o scrivere 
+	\[
+	F = K\big(\left\{ \alpha _{ij}  \right\}  \mid i=1,\ldots, k, \ j = 1,\ldots, n_i\big)
+	\] 
+	Si sa che, per ogni $i$, tale immersione deve soddisfare $\varphi (\alpha _{ij} ) = \alpha _{ij'} $, con $j' \in \left\{ 1,\ldots,n_i \right\} $, perci\`o
+	\[
+		\begin{split}
+			\varphi (F) &= \varphi \Big( K\big(\left\{ \alpha _{ij}  \right\}  \mid i=1,\ldots, k, \ j = 1,\ldots, n_i\big) \Big)\\
+				    &= K\big(\varphi (\alpha _{ij} )  \mid i=1,\ldots,k, \ j=1,\ldots,n_i\big) = F
+		\end{split}
+	\] 
+	da cui la tesi.
+	\end{itemize}
+\end{proof}
 
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{prop}
+	Ogni estensione di grado $2$ \`e normale in caratteistica diversa da $2$.
+\end{prop}
+\begin{proof}
+	Sia $F/K$ un'estensione di $K$, con $\operatorname{char} K \neq 2$ e $[F:K] = 2$.
+	Dato $\alpha  \in F \setminus K$, allora $F = K(\alpha )$, con polinomio minimo della forma
+	\[
+		\mu _\alpha (x) = x^2 + bx + c \in K[x]
+	\] 
+	e
+	\[
+	\alpha _{1,2} = \frac{-b \pm \sqrt{\Delta } }{2} \hspace{1cm} \text{ con } \hspace{1cm} \alpha = \frac{-b + \sqrt{\Delta } }{2}
+	\] 
+	quindi $F = K(\alpha ) = K(\sqrt{\Delta } )$. 
+	Ma, allora, $\alpha _1, \ \alpha _2 \in K(\sqrt{\Delta } )$ e, dunque, $F$ \`e il campo di spezzamento di $\mu _{\alpha  / K} (x)$; per il punto (c) della proposizione \ref{nextcar}, $F / K$ \`e normale.
+\end{proof}
+\noindent \`E facile osservare, alla luce della proposizione \ref{nextcar}, che $\mathbb{Q}(\sqrt[3]{2} ) / \mathbb{Q}$ non \`e normale perch\'e, del polinomio minimo $f(x) = x^3 - 2$ (irriducibile su $\mathbb{Q}$), contiene solo una radice.
+\begin{prop}
+	Siano $F / K$ e $L / K$ due estensioni normali di $K$ nella chiusura $\overline{K}$; allora anche $FL / K$ e $F\cap L / K$ sono estensioni normali.
+\end{prop}
+\begin{proof}
+	Si considera il diagramma 
+	\[
+	\begin{tikzcd}
+		& & FL & &\\
+		F & & & & L\\
+		  & & F\cap L & &\\
+		  & & K & &
+		  \arrow[from=1-3, to=3-3, no head]
+		  \arrow[from=1-3, to=2-1, no head]
+		  \arrow[from=1-3, to=2-5, no head]
+		  \arrow[from=3-3, to=2-1, no head]
+		  \arrow[from=3-3, to=2-5, no head]
+		  \arrow[from=3-3, to=4-3, no head]
+		  \arrow[from=4-3, to=2-1, no head]
+		  \arrow[from=4-3, to=2-5, no head]
+	\end{tikzcd}
+	\] 
+	Il fatto che $FL / K$ sia normale segue direttamente dal fatto che l'immersione 
+	\[
+	\varphi : FL\longhookrightarrow \overline{K} \hspace{1cm} \text{ con }\hspace{1cm}\varphi |_K = \mathrm{Id} _K
+	\] 
+	deve essere un omomorfismo e, quindi
+	\[
+	\varphi (FL) = \varphi (F) \varphi (L) = FL
+	\] 
+	visto che gli elementi di $FL$ sono combinazioni polinomiali degli elementi di $F$ e di $L$, che sono estensioni normali per assunzione.
+	Per l'intersezione, invece, si pu\`o vedere facilmente che ogni immersione deve rispettare
+	\[
+	\varphi (F\cap L) = \varphi (F) \cap \varphi (L) = F\cap L
+	\] 
+	perch\'e se mappasse un elemento dell'intersezione in un elemento che non sta nell'intersezione, ma solo in uno dei due campi, invaliderebbe immediatamente l'assunzione di normalit\`a di $F / K$ e $L / K$ perch\'e esisterebbe un'immersione che non fissa almeno uno dei due.
+\end{proof}
+\begin{prop}\label{normtor}
+	Data una torre $K \subset F \subset L$ in una chiusura algebrica $\overline{K}$, se $L / K$ \`e normale, allora $L / F$ \`e normale.
+\end{prop}
+\begin{proof}
+	Data $L / K$ estensione normale, si mostra che $L / F$ \`e normale, cio\`e 
+	\[
+	\forall \varphi : L \longhookrightarrow \overline{K} \hspace{1cm}\text{ con }\hspace{1cm} \varphi |_F = \mathrm{Id} _F
+	\] 
+	vale $\varphi (L) = L$.
+	Ma $\varphi |_F = \mathrm{Id} _F \Rightarrow \varphi |_K = \mathrm{Id} _K$ e, per assunzione, si sa che ogni immersione $L \longhookrightarrow \overline{K}$ che fissa $K$, fissa anche $L$, quindi $\varphi (L) = L$ e si ha la tesi.
+\end{proof}
+\begin{osservazione}
+	In generale, nella proposizione precedente (\ref{normtor}), $F / K$ non \`e normale.
+	Siano, infatti, $K = \mathbb{Q}$, $F = \mathbb{Q}(\sqrt[3]{2} )$ e $L = \mathbb{Q}(\sqrt[3]{2}, \zeta_3) $; allora $L / K$ \`e normale perch\'e contiene tutte le radici del polinomio minimo dei due elementi, mentre $F / K$ ovviamente no.
+\end{osservazione}
+\begin{osservazione}
+	Il viceversa della proposizione precedente (\ref{normtor}) \`e falso in generale; presa, infatti, la torre $\mathbb{Q} \subset  \mathbb{Q}(\sqrt{2} ) \subset \mathbb{Q}(\sqrt[4]{2}) $, entrambe le estensioni sono normali perch\'e di grado $2$, mentre la torre non lo \`e perch\'e $\mathbb{Q}(\sqrt[4]{2}) / \mathbb{Q} $ contiene solo due radici di $x^4 - 2$.
+\end{osservazione}
+\subsection{Teoria di Galois}
+\begin{definizione}
+	[Estensione di Galois]
+	Un'estensione $E / K$ si dice \textit{di Galois} e \`e normale e separabile.
+\end{definizione}
+\begin{boxenv}[]
+Avendo assunto di avere a che fare esclusivamente con campi perfetti, allora ogni estensione che si tratta \`e automaticamente separabile. 
+Quindi, in questa assunzione, ci si pu\`o ridurre ad affermare che un'estensione normale \`e di Galois.
+Inoltre, si considereranno unicamente estensioni di Galois finite.
+\end{boxenv}
+\noindent Visto che un'estensione di Galois $E / K$ deve essere normale, considerando l'insieme $\left\{ \varphi : E \longhookrightarrow \overline{K} \mid \varphi |_K = \mathrm{Id} _K \right\} $, si ha $\varphi (E) = E, \ \forall \varphi $; per questo motivo, si pu\`o restringere ciascuna di queste mappe $\varphi $ in modo da ottenere degli automorfismi e si pu\`o definire:
+\[
+	\operatorname{Aut} _K E = \left\{ \varphi  : E \stackrel{\sim}{\longrightarrow} E  \mid \varphi |_K = \mathrm{Id} _K \right\} 
+\] 
+Questi sono i $K$-automorfismi di $E$, cio\`e automorfismi di $E$ che fissano puntualmente $K$; equipaggiando questo insieme con l'operazione di composizione, si ottiene il \textit{gruppo di Galois} dell'estensione:
+\begin{equation}
+	\operatorname{Gal} (E / K ) : = \big(\operatorname{Aut} _K E , \circ\big)
+\end{equation}
+Per costruzione, alla luce del corollario \ref{imext3}, si ha:
+\begin{equation}
+	\lvert \operatorname{Gal} E / K \rvert = [E : K]
+\end{equation}
+Ora si dimostra che \`e effettivamente un gruppo.
+\begin{proof}
+	Per costruzione $\operatorname{Gal} E / K \subset \operatorname{Aut} E$, che \`e il gruppo degli automorfismi di $E$ rispetto alla composizione. 
+	Allora basta mostrare che $\operatorname{Gal} E / K$ \`e un sottogruppo.
+	Date $\varphi , \psi \in \operatorname{Gal} E / K$, la loro composizione \`e ancora un automorfismo e fissa ancora $K$, quindi rimane da mostrare l'esistenza dell'inverso.
+	Sia, quindi, $\varphi \in \operatorname{Gal} E / K$; la mappa inversa $\varphi ^{-1}$ \`e ancora un automorfismo per definizione e deve fissare $K$ perch\'e 
+	\[
+	K=\mathrm{Id}(K) = \varphi ^{-1}\circ \varphi (K) = \varphi ^{-1}(K)
+	\] 
+	Quindi $\operatorname{Gal} E / K < \operatorname{Aut} E$.
+\end{proof}
+\begin{prop}
+	Sia $f(x) \in K[x]$ irriducibile e di grado $n$; se $F$ \`e un suo campo di spezzamento su $K$, allora
+	\[
+		n  \mid [F:K]  \mid n!
+	\] 
+	e $\operatorname{Gal} E / K \longhookrightarrow S_n$.
+\end{prop}
 
 
 
