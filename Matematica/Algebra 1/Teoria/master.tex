@@ -4746,19 +4746,76 @@ Ora si dimostra che \`e effettivamente un gruppo.
 	\] 
 	Quindi $\operatorname{Gal} E / K < \operatorname{Aut} E$.
 \end{proof}
-\begin{prop}
-	Sia $f(x) \in K[x]$ irriducibile e di grado $n$; se $F$ \`e un suo campo di spezzamento su $K$, allora
+\begin{prop}\label{pg1}
+	Sia $f(x) \in K[x]$ irriducibile e di grado $n$; se $F$ \`e il suo campo di spezzamento su $K$, allora
 	\[
 		n  \mid [F:K]  \mid n!
 	\] 
 	e $\operatorname{Gal} E / K \longhookrightarrow S_n$.
 \end{prop}
-
-
-
-
-
-
-
-
+\begin{proof}
+	Siano $\alpha _1,\ldots, \alpha _n$ le radici di $f(x)$ in $\overline{K}$; allora $F = K(\alpha _1,\ldots, \alpha _n)$, perci\`o si ha la torre
+	\[
+		K \subseteq K(\alpha _1) \subseteq F \implies n = [K(\alpha _1):K] \mid [F:K] = \lvert \operatorname{Gal} F / K \rvert 
+	\] 
+	Ora si considera l'azione che restringe gli automorfismi di $\operatorname{Gal} F / K$ alle sole radici di $f(x)$:
+	\[
+	\phi :
+		\begin{array}
+			{c c c}
+\operatorname{Gal} F / K &\longrightarrow &S\big(\left\{ \alpha _1,\ldots,\alpha _n \right\} \big)\cong S_n\\
+\varphi &\longmapsto & \varphi |_{\left\{ \alpha _1,\ldots,\alpha _n \right\} } 
+		\end{array}
+	\] 
+	Si dimostra che \`e un'azione ben definita, che \`e un omomorfismo e che \`e iniettiva.
+	\begin{itemize}
+		\item $\phi $ \`e ben definita perch\'e ogni $\varphi  \in \operatorname{Gal} F / K$ manda una radice in un suo coniugato, quindi \`e una permutazione; inoltre, \`e presente anche l'automorfismo identit\`a che manda ciascuna radice in s\'e.
+		\item $\phi$ \`e un omomorfismo perch\'e
+			\[
+				\phi (\varphi \circ \psi )=(\varphi \circ \psi )_{\left\{ \alpha _1,\ldots,\alpha _n \right\} }  = \varphi _{\left\{ \alpha _1,\ldots,\alpha _n \right\} } \circ \psi |_{\left\{ \alpha _1,\ldots,\alpha _n \right\} } = \phi (\varphi )\circ \phi (\psi )
+			\] 
+			per ogni $\varphi ,\psi \in \operatorname{Gal} F / K$, dove la restrizione di $\varphi $ \`e data dal fatto che $\psi $ \`e ristretta alle radici e restituir\`a un'altra di queste radici.
+		\item $\phi $ \`e iniettiva perch\'e
+			\[
+			\operatorname{Ker} \phi = \left\{ \varphi \in \operatorname{Gal} F / K  \mid \varphi (\alpha _i)= \alpha _i, \ \forall i \in \left\{ 1,\ldots,n \right\}  \right\} = \left\{ \operatorname{Id}  \right\} 
+			\] 
+			dove l'ultima uguaglianza \`e giustificata dal fatto che $\varphi $ genera tutti i generatori di $F / K$, quindi \`e univocamente determinata come l'identit\`a.
+	\end{itemize}
+	La tesi, allora, deriva dal fatto che $\operatorname{Gal} F / K \longhookrightarrow S_n$, quindi $\lvert \operatorname{Gal} F / K \rvert  \mid \lvert S_n \rvert = n!$.
+\end{proof}
+\begin{osservazione}
+Con la dimostrazione precedente, si \`e anche evidenziato che il gruppo di Galois agisce fedelmente sulle radici.
+Inoltre, agisce anche transitivamente perch\'e
+\[
+\operatorname{Orb} (\alpha _1) = \left\{ \varphi (\alpha _1)  \mid \varphi \in \operatorname{Gal} F / K \right\} = \left\{ \alpha _1,\ldots, \alpha _n \right\} 
+\] 
+Infatti, essendo $[K(\alpha _1) : K] = n$, allora si hanno esattamente $n$ immersioni che permutano le radici, ognuna delle quali \`e iniettiva e si pu\`o estendere a $F$, dunque tutte le radici sono raggiunte da una singola orbita.
+\end{osservazione}
+\noindent Sia $K$ un campo e sia $f(x) \in K[x]$ un polinomio irriducibile, con $F$ suo campo di spezzamento su $K$.
+Si vuole studiare il gruppo di Galois di $F / K$ al variare del grado di $f(x)$.
+\begin{itemize}
+	\item Se $\deg f(x) = 2$, allora $[F:K]=2$ e, per la proposizione \ref{pg1}, si ha $\operatorname{Gal} F / K \cong \mathbb{Z}/2\mathbb{Z}$, quindi $\operatorname{Gal}F / K = \left\{ \mathrm{Id} , \varphi  \right\}  $.
+		Visto che $f(x)$ ha grado due, allora $F = K(\sqrt{\Delta } )$ e le due mappe possibili sono:
+		\[
+		\mathrm{Id} :a + b \sqrt{\Delta } \longmapsto a + b\sqrt{\Delta }  \hspace{1cm} \varphi : a + b\sqrt{\Delta } \longmapsto a - b\sqrt{\Delta } 
+		\] 
+		Sostanzialmente, se le radici fossero $\alpha _1$ e $\alpha _2$, allora si avrebbe $\mathrm{Id} :\alpha _1 \longmapsto \alpha _1$ e $\varphi : \alpha _2 \longmapsto \alpha _2$.
+	\item Se $\deg f(x) =3$, allora, sempre per la proposizione \ref{pg1}, si ha $3  \mid [F:K] \mid 6$ e $\operatorname{Gal} F / K \le S_3$.
+		Quindi le opzioni sono:
+		\[
+		\operatorname{Gal} F / K \cong \begin{cases}
+			A_3 \cong \mathbb{Z}/3\mathbb{Z}\\
+			S_3
+		\end{cases}
+		\] 
+\end{itemize}
+\begin{esempio}
+	Sia $f(x) = x^3 -2 $, con $K = \mathbb{Q}$ e $F = \mathbb{Q}(\sqrt[3]{2} , \zeta_3)$.
+	Allora $[F:K] = 6$, quindi $\operatorname{Gal} F / K \cong S_3$.
+	I suoi elementi sono dati dall'estensione delle seguenti immersioni:
+	\[
+		\varphi (\sqrt[3]{2} ) =\sqrt[3]{2} \zeta_3^i \hspace{1cm} \varphi (\zeta_3) = \zeta_3^j
+	\] 
+	al variare di $i \in \left\{ 0,1,2 \right\} $ e $j \in \left\{ 1,2 \right\} $.
+\end{esempio}
 \end{document}
