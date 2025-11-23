@@ -5007,7 +5007,7 @@ Infine, si osserva, per doppio contenimento, che $\mathbb{Q}(\sqrt{2} ,\sqrt{3} 
 	K\subseteq L^H \subseteq L
 \end{equation}
 dove la seconda inclusione deriva per costruzione, mentre la prima deriva dal fatto che ogni elemento di $H$ fissa, per definizione, gli elementi di $K$.
-\begin{lemma}
+\begin{lemma}\label{lcg1}
 	Sia $L / M$ un'estensione di Galois e $H \le \operatorname{Gal} L / M$; allora
 	\[
 	M = L^H \iff H = \operatorname{Gal} L / M
@@ -5044,7 +5044,7 @@ dove la seconda inclusione deriva per costruzione, mentre la prima deriva dal fa
 			visto che $f(x)\in L^H[x] =M[x]$ (perch\'e $L^H = M$ per ipotesi) e $f(\alpha ) = 0 \Rightarrow  \mu _\alpha (x)  \mid f(x)$, per cui $\lvert G  \rvert \le H$ e, quindi, $H = G$.
 	\end{itemize}
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lcg2}
 	Sia $L / K$ un'estensione di Galois e $H < \operatorname{Gal} L / K$; data $\sigma  \in \operatorname{Gal} L / K$, allora
 	\[
 	L^{\sigma H\sigma ^{-1}}= \sigma (L^H)
@@ -5084,6 +5084,92 @@ Inoltre, $H \lhd G\iff L^H / K$ \`e normale e, in tal caso:
 \[
 \operatorname{Gal} L^H / K \cong \frac{\operatorname{Gal} L / K}{\operatorname{Gal} L / L^H} = G / H
 \] 
-
 \end{teorema}
+\begin{proof}
+	Si definiscono $\mathcal{E} _{L / K} = \left\{ F  \mid  K\subseteq F \subseteq L \right\} $ l'insieme delle sottoestensioni di $L / K$ e $\mathcal{G} _{L / K} = \left\{ H < \operatorname{Gal} L / K \right\} $ l'insieme dei sottogruppi del gruppo di Galois di $L / K$.
+	La biezione tra questi due \`e ottenuta tramite le applicazioni
+	\[
+	\begin{split}
+		&\alpha : \mathcal{E} _{L / K} \longrightarrow \mathcal{G} _{L / K}  : F \longmapsto \operatorname{Gal} L / F\\
+		& \beta : \mathcal{G} _{L / K} \longrightarrow \mathcal{E} _{L / K} : H \longmapsto L^H
+	\end{split}
+	\] 
+	dove $L / F$ \`e un'estensione di Galois (cio\`e un'estensione normale, visto che si considerano campi perfetti) per la proposizione \ref{normtor}, quindi $\alpha $ \`e ben definita; si nota, inoltre, che $\operatorname{Gal} L / F < \operatorname{Gal}  L / K$ perch\'e un $K$-automorfismo di $F$ che lo fissa, fissa puntualmente anche $K$, quindi tutti gli automorfismi di $\operatorname{Gal} L / F$ stanno anche in $\operatorname{Gal} L / K$.
+Poi, anche $\beta $ \`e ben definita perch\'e si \`e dimostrato che $L^H$ \`e un campo e vale $K \subseteq L^H \subseteq L$.
+Ora si verifica che le due mappe, effettivamente, definiscano una biezione; intanto si vede che:
+\[
+\beta \circ \alpha (F) = \beta \left(\operatorname{Gal} L / F\right) = L^{\operatorname{Gal} L / F} = F, \ \forall F \in \mathcal{E} _{L / K} 
+\] 
+dove, per l'ultima uguaglianza, si \`e usato il lemma \ref{lcg1}.
+Viceversa:
+\[
+\alpha \circ \beta (H) = \alpha (L^H) = \operatorname{Gal} L / L^H = H , \ \forall H \in \mathcal{G} _{L / K} 
+\] 
+Infatti, tutti gli elementi di $L^H$ sono fissati dagli elementi di $H$ (per definizione), quindi $H \le \operatorname{Gal} L / L^H$; allo stesso tempo, avendo $H \le \operatorname{Gal} L / L^H$, per il lemma \ref{lcg1}, essendo il campo fissato da $H$ quello base, deve valere proprio $H = \operatorname{Gal} L / L^H$.
+
+Ora si dimostra la seconda parte del teorema.
+Si sa che
+\[
+H \lhd \operatorname{Gal} L / K \iff \sigma H \sigma ^{-1} = H, \ \forall \sigma \in \operatorname{Gal} L / K
+\] 
+quindi, per il lemma \ref{lcg2}, $H \lhd \operatorname{Gal} L / K$ \`e equivalente a richiedere che
+\[
+\sigma (L^H) = L^{\sigma H \sigma ^{-1}} = L^H, \ \forall \sigma \in \operatorname{Gal} L / K
+\] 
+Questo significa che $L^H / K$ \`e normale; infatti, la condizione di normalit\`a corrisponde al fatto che $\forall \psi : L^H \longhookrightarrow \overline{K}$, con $\psi |_K = \mathrm{Id} _K$, si ha anche $\psi (L^H) = L^H$, per\`o ogni $\psi $ si estende ad un'immersione $L \longhookrightarrow \overline{K}$ (per il corollario \ref{imext3}, quindi
+\[
+\forall \psi \in \operatorname{Gal} L^H / K , \ \exists \sigma \in \operatorname{Gal} L / K : \sigma |_{L^H} =\psi 
+\] 
+Per finire, si verifica che $\operatorname{Gal} L^H / K \cong G / H$.
+Si considera l'omomorfismo 
+\[
+\phi :\operatorname{Gal} L/K \longrightarrow \operatorname{Gal} L^H / K : \varphi \longmapsto \varphi |_{L^H} 
+\] 
+Questo \`e suriettivo perch\'e ogni $\psi \in \operatorname{Gal} L^H / K$ si estende ad $L$; inoltre:
+\[
+	\begin{split}
+		\operatorname{Ker} \phi &= \left\{ \varphi \in \operatorname{Gal} L / K  \mid  \varphi |_{L^H} = \mathrm{Id} _{L^H}  \right\} = \left\{ \varphi \in \operatorname{Gal} L / K  \mid \varphi (\alpha ) = \alpha , \ \forall \alpha \in L^H \right\} \\
+					& = \operatorname{Gal} L / L^H = H
+	\end{split}
+\] 
+Quindi si ha la tesi per il primo teorema di omomorfismo.
+\end{proof}
+\noindent Il teorema di corrispondenza si pu\`o, pi\`u o meno, riassumere nel considerare la seguente torre:
+\[
+\begin{tikzcd}
+	L\\
+	L^H \\
+	K
+	\arrow[from=1-1,to=2-1, no head, "H", color=nred]
+	\arrow[from=3-1,to=2-1, no head, "G / H"', color=nred]
+	\arrow[from=3-1,to=1-1, no head, "G", color=nred, bend left = 50]
+\end{tikzcd}
+\] 
+Nel diagramma, $G$ \`e il gruppo di Galois di $L / K$, mentre $H < G$ \`e il sottogruppo di Galois dell'estensione $L / L^H$, anch'essa di Galois\footnote{Visto che $L / K$ normale per assunzione e, quindi, si pu\`o applicare la proposizione \ref{normtor}}.
+Inoltre, se $H \lhd G$, allora anche $L^H / K$ \`e di Galois, con gruppo di Galois dato da $G / H$.
+\begin{prop}
+	[Propriet\`a della corrispondenza]
+	Siano $H , S \le \operatorname{Gal} L / K$; allora valgono i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $H \le S \iff L^H\supseteq L^S$;
+		\item $L^{H\cap S} = L^H L^S$ (composto dei due campi);
+		\item $L^{\langle S,H \rangle}  = L^H \cap L^S$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Si divide la dimostrazione nei vari punti.
+	\begin{enumerate}[(a).]
+		\item Sia $\sigma \in H$, con $L^H \supseteq L^S$; allora $\sigma $ fissa anche tutti gli elementi di $L^S$, per cui $\sigma \in S, \ \forall \sigma \in H$ e, quindi $H\le S$.
+			Viceversa, visto che ogni elemento di $H$ \`e anche di $S$, allora tutti gli elementi di $H$ fissano anche quelli di $L^S$.
+		\item Si nota che $H\cap S \subseteq H,S$, quindi $L^{H\cap S} \supseteq L^H,L^S$ per il punto precedente.
+			Visto che $L^{H\cap S} $ contiene sia $L^H$, che $L^S$, allora deve contenerne anche il composto, quindi $L^{H\cap S} \supseteq L^{H} L^S$.
+			D'altra parte, $L^H L^S \subseteq L$, quindi $\exists N\le \operatorname{Gal} L / K$ tale che $L^H L^S = L^N$; essendo il composto dei due campi pi\`u grande dei singoli, per il teorema di corrispondenza:
+			\[
+				\operatorname{Gal} \faktor{L}{L^H L^S}= \operatorname{Gal} L / L^N = N \subseteq \Big(\operatorname{Gal} L / L^H \cap \operatorname{Gal} L / L^S\Big) = H \cap S
+			\] 
+			da cui $N \subseteq H\cap S$, che \`e equivalente a chiedere $L^HL^S \supseteq L^{H\cap S} $, quindi si ha la tesi.
+		\item Visto che $H , S \subseteq \langle H,S \rangle$, allora $L^S , L^H \supseteq L^{\langle H,S \rangle} $, quindi $L^{\langle H,S \rangle} \subseteq L^H \cap L^S$, essendo contenuto in entrambi.
+			Viceversa, dato $\alpha \in L^H \cap L^S$, si ha $\varphi (\alpha ) = \alpha, \ \forall \varphi \in H, S$, quindi $\alpha $ \`e fissato da tutti gli elementi di $\langle H,S \rangle$ e $L^H \cap L^S \subseteq L^{\langle H,S \rangle} $.
+	\end{enumerate}
+\end{proof}
 \end{document}
