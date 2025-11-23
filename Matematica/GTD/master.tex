@@ -593,7 +593,7 @@ Fissando $a$, si nota che, per $b \to \pm \infty$, si ha $\tau (s) \to 0$ e $k(s
 				Allora si deve avere $\beta (s) =  \beta (0)+ s v \in \beta (0) +\langle v \rangle$.
 		\end{itemize}
 	\end{proof}
-\begin{esercizio}
+	\begin{esercizio}\label{kcpr}
 Sia $\beta :I \to \mathbb{R}^3$ una curva pla tale che
 \[
 \beta (I) \subseteq S_r^2(P) = \left\{ x \in \mathbb{R}^3 \ \big\lvert\ \left\lVert x- P \right\rVert = r\right\} 
@@ -633,14 +633,14 @@ Mostrare che $\beta  $ \`e di Frenet.
 				T(s) \cdot B_0 = 0 \implies k(s) (N(s) \cdot B_0) = 0 \implies N(s) \cdot B_0 = 0
 				\] 
 				dove la seconda implicazione \`e giustificata dal fatto che $\alpha $ \`e di Frenet, quindi $k(s) > 0 $.
-				Visto che $B_\alpha (s) = T(s) \times N(s)$, considerando (continuare \ldots).
+				Visto che $B_\alpha (s) = T(s) \times N(s)$, allora si avr\`a $B_\alpha (s)=\pm B_0, \ \forall s$, da cui $B'_\alpha = 0, \ \forall s$, quindi $\tau _\alpha (s) = 0, \ \forall s$.
 		\end{itemize}
 	\end{proof}
 \begin{prop}
 	Sia $\alpha : I \to \mathbb{R}^3$ una curva di Frenet; se $\tau _\alpha  = 0$, allora $k_\alpha $ \`e costante $\iff \alpha (I)$ \`e contenuta in una circonferenza.
 \end{prop}
 \begin{proof}
-{\color{nred} Da scrivere\ldots}
+	La serie di equivalenze \`e fornita dall'esercizio \ref{kcpr}.
 \end{proof}
 \begin{prop}
 	Sia $\alpha : I \to \mathbb{R}^3$ una curva regolare; se $\alpha (I) \subseteq \mathbb{S}_R(P) = \left\{ x \in \mathbb{R}^3  \mid \left\lVert x - P \right\rVert = R \right\} $, allora $\alpha $ \`e di Frenet e $k_\alpha \ge 1 / R > 0$.
