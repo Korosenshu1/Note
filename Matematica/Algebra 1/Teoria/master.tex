@@ -5017,6 +5017,73 @@ dove la seconda inclusione deriva per costruzione, mentre la prima deriva dal fa
 	Si dimostrano separatamente le due implicazioni.
 	\begin{itemize}
 		\item ($\Leftarrow$) Si prende $G = \operatorname{Gal} L / M$ e si fa vedere che $L^G = M$.
+			Se $M \subsetneq L^G$, allora $[L^G:M] > 1$ ed esiste almeno un'immersione non banale (diversa dall'identit\`a)
+			\[
+			\varphi :L^G \longhookrightarrow \overline{M} \hspace{1cm} \text{ con }\hspace{1cm} \varphi |_M = \mathrm{Id} _M
+			\] 
+			Per il corollario \ref{imext3}, si trova
+			\[
+			\widetilde{\varphi }:L\longhookrightarrow \overline{M}\hspace{1cm} \text{ con }\hspace{1cm} \widetilde{\varphi }|_{L^G} =\varphi 
+			\] 
+			con $\widetilde{\varphi }|_M = \varphi |_M = \mathrm{Id} _M$.
+			Allo stesso tempo, $L / M$ \`e normale, quindi $\widetilde{\varphi} (L) = L$, quindi $\widetilde{\varphi }\in \operatorname{Gal} L / M$ e, dunque, $\widetilde{\varphi }(L^G) = L^G$, che \`e assurdo perch\'e si era assunto che il grado dell'estensione $L^G / M$ fosse maggiore di $1$, quindi con l'esistenza di almeno un elemento non fissato da $\widetilde{\varphi }$.
+		\item ($\Rightarrow $) Si mostra che il campo base \`e proprio quello fissato da tutto il gruppo di Galois.
+			Visto che $L / M$ \`e un'estensione finita, per il teorema dell'elemento primitivo, si ha $L = M(\alpha )$; dato $H\le G$ un campo che fissa solo il campo base, cio\`e $L^H = M$, si considera, allora:
+			\[
+			f(x) = \prod_{\sigma \in H} \big(x - \sigma (\alpha )\big) \hspace{1cm}\text{ con } \hspace{1cm} \deg f(x) = \lvert H \rvert 
+			\] 
+			Questo si annulla in $\alpha $ e sta in $L^H[x]$; infatti, dato $\rho \in H$:
+			\[
+			\rho \big(f(x)\big) = \prod _{\sigma \in H}  \big(x - \rho (\sigma (\alpha ))\big) = \prod_{\sigma \in H} \big(x - \sigma (\alpha )\big) = f(x)
+			\] 
+			dove la penultima uguaglianza deriva dal fatto che $\rho \in H$, quindi permuta gli elementi dell'insieme senza alterarne il prodotto.
+			Allora si nota che:
+			\[
+				\lvert G \rvert =[L:M] = [M(\alpha ):M] = \deg \mu_{ \alpha  / M} (x) \le \deg f(x) = \lvert H \rvert 
+			\] 
+			visto che $f(x)\in L^H[x] =M[x]$ (perch\'e $L^H = M$ per ipotesi) e $f(\alpha ) = 0 \Rightarrow  \mu _\alpha (x)  \mid f(x)$, per cui $\lvert G  \rvert \le H$ e, quindi, $H = G$.
 	\end{itemize}
 \end{proof}
+\begin{lemma}
+	Sia $L / K$ un'estensione di Galois e $H < \operatorname{Gal} L / K$; data $\sigma  \in \operatorname{Gal} L / K$, allora
+	\[
+	L^{\sigma H\sigma ^{-1}}= \sigma (L^H)
+	\] 
+\end{lemma}
+\begin{proof}
+	Visto che $L^H = \left\{ \alpha \in L  \mid \varphi (\alpha ) = \alpha , \ \forall \varphi \in H \right\} $, si ha:
+	\[
+		\begin{split}
+			\sigma (L^H) &= \left\{ (\sigma (\alpha )  \mid \alpha \in L^H \right\} = \big\{ \underbracket{\sigma (\alpha )}_{=\beta }   \mid \varphi (\alpha ) = \alpha , \ \forall \varphi \in H \big\} \\
+				     &= \left\{ \beta \in L  \mid (\varphi \circ \sigma ^{-1})(\beta ) = \sigma ^{-1}(\beta ) , \ \forall \varphi  \in H \right\}\\
+				     &= \left\{ \beta \in L  \mid (\sigma \circ \varphi \circ \sigma ^{-1}) (\beta ) = \beta , \ \forall \varphi  \in H \right\} = L^{\sigma H \sigma ^{-1}} 
+		\end{split}
+	\] 
+\end{proof}
+\begin{osservazione}
+In generale, $\sigma (L^H) \neq L^H$, ma \`e sempre una sottoestensione di $L / K$, visto che $L$ \`e sempre fissato.
+In generale, si ha il seguente diagramma
+\[
+	\begin{tikzcd}
+&L&\\
+	L^H&&\sigma (L^H)\\
+	   &K&
+	   \arrow[from=1-2, to=2-1, no head]
+	   \arrow[from=1-2, to=2-3, no head]
+	   \arrow[from=1-2, to=3-2, no head]
+	   \arrow[from=3-2, to=2-1, no head]
+	   \arrow[from=3-2, to=2-3, no head]
+	\end{tikzcd}
+\] 
+Se valesse $H\lhd G$, allora si avrebbe proprio $L^H = L^{\sigma H\sigma ^{-1}} = \sigma (L^H), \ \forall \sigma \in \operatorname{Gal} L / K$.
+\end{osservazione}
+\begin{teorema}
+	[Teorema di corrispondenza di Galois]
+Sia data $L / K$ un'estensione di Galois finita; allora l'insieme delle sottoestensioni di $L / K$ e l'insieme dei sottogruppi di $\operatorname{Gal} L / K$ sono in corrispondenza biunivoca.
+Inoltre, $H \lhd G\iff L^H / K$ \`e normale e, in tal caso:
+\[
+\operatorname{Gal} L^H / K \cong \frac{\operatorname{Gal} L / K}{\operatorname{Gal} L / L^H} = G / H
+\] 
+
+\end{teorema}
 \end{document}
