@@ -1128,7 +1128,7 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	Per costruire correttamente il dominio della parametrizzazione, si parte col considerare un intervallo $I \subseteq \mathbb{R}$, contenente $u_0$, tale per cui $\alpha |_I:I\to\mathbb{R}^3$ risulti iniettiva e si prova a mostrare che $\underline{x}|_{I \times (v_0-\pi,v_0+\pi)} $ \`e una parametrizzazione regolare.
 	Se $(u,v), (u',v') \in I \times (v_0-\pi,v_0+\pi)$ e $\underline{x}(u,v) = \underline{x}(u',v')$, si vede che, data
 	\[
-	\varphi : \mathbb{R}^3 \to \mathbb{R}^2 \text{ tale che } \varphi (x,y,z) = \big(\sqrt{x^2 + y^2 } ,0,z\big)
+	\varphi : \mathbb{R}^3 \to \mathbb{R}^3 \text{ tale che } \varphi (x,y,z) = \big(\sqrt{x^2 + y^2 } ,0,z\big)
 	\] 
 	si ha $\varphi (\underline{x}(u,v)) = (f(u),0,g(u)) = \alpha (u)$, pertanto 
 	\[
@@ -1142,14 +1142,11 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	da cui $(\cos v , \sin v ) = (\cos v',\sin v')$. 
 	Visto che $v , v' \in (v_0 - \pi, v_0 + \pi)$, allora deve risultare per forza $v = v'$ perch\'e le funzioni trigonometriche sono iniettive su questo intervallo.
 
-	\begin{osservazione}
-	L'iniettivit\`a appena dimostrata \`e solamente una relazione locale, imposta per ciascuno specifico punto $p \in S$; questo non baster\`a e si dovr\`a estendere con ulteriori ipotesi.
-	\end{osservazione}
-	\noindent Quanto alla regolarit\`a, si vede che
+	Quanto alla regolarit\`a, si vede che
 	\[
 	\underline{x}_u = (f ' \cos v, f ' \sin v , g') \hspace{1cm} \underline{x}_v = (-f \sin v , f \cos v , 0)
 	\] 
-	e, essendo $\underline{x}_v \cdot \underline{x}_v = f'^2 > 0$, $\underline{x}_u \cdot \underline{x}_v =0$ e $\underline{x}_u \cdot  \underline{x}_u = f'^2 + g'^2 = \left\lVert \alpha '(u) \right\rVert ^2$, dall'imposizione che $\alpha $ sia regolare, si ottiene la regolarit\`a della parametrizzazione.
+	e, essendo $\underline{x}_v \cdot \underline{x}_v = f^2 > 0$, $\underline{x}_u \cdot \underline{x}_v =0$ e $\underline{x}_u \cdot  \underline{x}_u = f'^2 + g'^2 = \left\lVert \alpha '(u) \right\rVert ^2$, dall'imposizione che $\alpha $ sia regolare, si ottiene la regolarit\`a della parametrizzazione.
 	\begin{osservazione}
 	La regolarit\`a di $\alpha $ serve ad evitare casi in cui la superficie presenta cuspidi, o altre irregolarit\`a; inoltre, questo garantisce anche la regolarit\`a della parametrizzazione.
 	\end{osservazione}
@@ -1157,7 +1154,7 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	Per farlo, si prende la relazione $(f(u) \cos v , f(u) \sin v, g(u)) = (x,y,z)$ e la si prova ad invertire.
 	Visto che $\alpha $ \`e iniettiva, ammette inversa nell'immagine di $I$, quindi si ha
 	\[
-	u = \alpha ^{-1}\left(\sqrt{x^2 + y^2 , 0 , z}\right) 
+		u = \alpha ^{-1}\left(\sqrt{x^2 + y^2} , 0 , z\right) 
 	\] 
 	Perch\'e questa sia continua, serve richiedere esplicitamente che $\alpha ^{-1}|_{\alpha (I)} : \alpha (I) \to I$ sia continua.
 	Quanto a $v$, invece, se $v_0 \not \in \pi \mathbb{Z}$ (cio\`e non \`e un multiplo di $\mathbb{Z}$), in un intorno di $v_0$, si pu\`o ricavare
@@ -1178,8 +1175,7 @@ Definendole su tutto l'intervallo reale, infatti, si ottiene una superficie che 
 	\] 
 	dove $a$ serve a distanziarla dall'asse $z$ in modo che la rotazione attorno allo stesso asse possa creare una superficie con un buco al centro; di fatto, si prende $a > b > 0$.
 \end{esempio}
-\noindent In realt\`a, per le superfici di rotazione, ma anche per la sfera, non si \`e verificato che la parametrizzazione locale fosse tale che $p \in \underline{x}(U)$ \`e un intorno di $p$ nella topologia indotta su $S$ da $\mathbb{R}^3$.
-Quindi si verifica $\underline{x}(I\times J)$ \`e un intorno di $\underline{x}(u_0,v_0), \ \forall (u_0,v_0) \in I \times J$.
+\noindent Si verifica che $\underline{x}(I\times J)$ \`e, effettivamente, un intorno di $\underline{x}(u_0,v_0), \ \forall (u_0,v_0) \in I \times J$ se sono verificate le ipotesi su $\alpha $.
 
 Per farlo, si considera una successione $\left\{ \underline{x}(u_i,v_i) \right\} \subseteq S$ tale che $\underline{x}(u_i,v_i)\to \underline{x}(u_0,v_0)$ e si fa vedere che, per $i$ arbitrariamente grande, $\underline{x}(u_i,v_i) \in \underline{x}(I \times J)$.
 Ricordando la definizione della mappa $\varphi : \mathbb{R}^3 \setminus\left\{ \text{asse }z \right\}\to \mathbb{R}^2 $, tale che $\varphi (x,y,z) = (\sqrt{x^2 + y^2} ,z)$ e $\varphi \circ \underline{x}(u,v) = \alpha (u)$, si ha
