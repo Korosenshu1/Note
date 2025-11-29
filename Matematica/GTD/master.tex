@@ -1548,7 +1548,7 @@ L’operatore forma è uno strumento che consente di descrivere in modo quantita
 	Se $S \subseteq \mathbb{R}^3$ \`e una superficie, si dice che un'applicazione $f : S \to \mathbb{R}$ \`e $C^\infty$ su $S$ se $f\circ \underline{x}$ \`e di classe $C^\infty$, per ogni parametrizzazione regolare $\underline{x} : U \to \mathbb{R}^3$ su $S$.
 \end{definizione}
 \begin{osservazione}
-Se $\underline{n} : S \to \mathbb{R}^3$ \`e una normale unitaria e continua, per ogni parametrizzazione regolare $\underline{x}:U\to \mathbb{R}^3$ su $S$, l'applicazione $n \circ X:U\to \mathbb{R}^3$ coincide con $\underline{n}_{\underline{x}} $, o con $- \underline{n}_{\underline{x}} $, quindi \`e di classe $C^\infty$.
+Se $\underline{n} : S \to \mathbb{R}^3$ \`e una normale unitaria e continua, per ogni parametrizzazione regolare $\underline{x}:U\to \mathbb{R}^3$ su $S$, l'applicazione $n \circ x:U\to \mathbb{R}^3$ coincide con $\underline{n}_{\underline{x}} $, o con $- \underline{n}_{\underline{x}} $, quindi \`e di classe $C^\infty$.
 \end{osservazione}
 \noindent Data $f : S \to \mathbb{R}^3 \in C^\infty$ e preso $\xi  \in T_p S$, si vuole, ora, definire il concetto di \textit{derivata} nella direzione $\xi $.
 Se $\xi = \alpha '(0)$, per $\alpha  : (-\varepsilon ,\varepsilon ) \to \mathbb{R}^3$ curva regolare su $S$, con $\alpha (0)= p$, si definisce
@@ -1865,7 +1865,7 @@ Allora si ha la seguente definizione.
 			\begin{split}
 		&\underline{x}_{uu} = \Gamma_{uu} ^u \underline{x}_u + \Gamma_{uu} ^v \underline{x}_v + \ell  \underline{n}\\
 		&\underline{x}_{uv} = \Gamma_{uv} ^u \underline{x}_u + \Gamma_{uv} ^v \underline{x}_v + m \underline{n}\\
-		&\underline{x}_{uu} = \Gamma_{vv} ^u \underline{x}_u + \Gamma_{vv} ^v \underline{x}_v + n  \underline{n}
+		&\underline{x}_{vv} = \Gamma_{vv} ^u \underline{x}_u + \Gamma_{vv} ^v \underline{x}_v + n  \underline{n}
 			\end{split}
 		\] 
 		La dimostrazione viene portata a termine passando per i seguenti tre punti.
@@ -1886,7 +1886,7 @@ Allora si ha la seguente definizione.
 				&\underline{x}_v \cdot \underline{x}_{uu} = (\underbracket{\underline{x}_v \cdot \underline{x}_u}_{=F} )_u - \underbracket{\underline{x}_{uv} \cdot \underline{x}_u}_{=\frac{1}{2}(\underline{x}_u \cdot \underline{x}_u)_v} = F_u - \frac{1}{2}E_v
 			\end{split}
 			\] 
-			Visto che per gli altri simboli, il discorso \`e analogo, il punto (1) \`e verificato.
+			Visto che per gli altri simboli il discorso \`e analogo, il punto (1) \`e verificato.
 		\item Si ricorda che
 			\[
 			\begin{split}
@@ -1894,12 +1894,13 @@ Allora si ha la seguente definizione.
 				&\Rightarrow \ell d - m b = \frac{1}{EG - F^2} \big[\ell (\cancel{-mF} + nE ) - m (\cancel{-\ell F}+mE)\big]= E \frac{\ell n - m ^2 }{EG-F^2}= EK
 			\end{split}
 			\] 
+			dove si sono sostituiti i valori di $d$ e $b$ secondo la prima riga.
 		\item Per finire, si mostra che $\ell d - m b$ si esprime in termini di $E,F,G$.
 			Si pu\`o sfruttare l'equivalenza delle derivate miste; per esempio, si considera che $\underline{x}_{uuv} = \underline{x}_{uvu} $. 
 			Indicando con $[\cdot ]_v$ il coefficiente di $\underline{x}_v$ di un vettore, si nota che
 			\[
 			\begin{split}
-				\big[(\underline{x}_{uu} )_v\big]_v &= \big[(\Gamma^u_{uu} \underline{x}_u + \Gamma_{uu}^u \underline{x}_v + \ell \underline{n})_v \big]_v\\
+				\big[(\underline{x}_{uu} )_v\big]_v &= \big[(\Gamma^u_{uu} \underline{x}_u + \Gamma_{uu}^v \underline{x}_v + \ell \underline{n})_v \big]_v\\
 								    &=\Gamma^u_{uu} \Gamma^v_{uv} + (\Gamma^v_{uu} )_v + \Gamma_{uu} ^v \Gamma^v_{vv}  + \ell (-d)
 			\end{split}
 			\] 
@@ -1924,7 +1925,7 @@ Allora si ha la seguente definizione.
 	\begin{proof}
 		La sfera $S^2_a$ ha curvatura gaussiana costante $K = 1 / a^2  > 0$, mentre il piano ha $E,G = 1$ e $F = 0$, con $K = 0$.
 	\end{proof}
-\noindent Ora si generalizza il concetto di isometria locale a due superfici generiche.
+\noindent Ora si generalizza il concetto di locale isometria a due superfici generiche.
 \begin{definizione}
 	[Superfici localmente isometriche]
 	Siano $\Sigma, \Sigma ^*$ due superfici; queste si dicono \textit{localmente isometriche} intorno ai punti $p \in \Sigma$ e $p^* \in \Sigma^*$ se si trovano due parametrizzazioni regolari
@@ -2818,15 +2819,15 @@ da cui
 \[
 	\begin{split}
 		\begin{pmatrix} a & c \\b & d \end{pmatrix} &= \begin{pmatrix} 1 & 0 \\ 0 & 1 / (u^2 + b^2) \end{pmatrix} \begin{pmatrix} 0 &-b /\sqrt{u^2 + b^2}\\ -b /\sqrt{u^2 + b^2} & 0   \end{pmatrix} \\
-				  &= \begin{pmatrix} 0 & -\frac{b}{\sqrt{u^2 + b^2} } \\ -\frac{b}{(u^2 + b^2 )^{3 / 2} } \end{pmatrix} 
+				  &= \begin{pmatrix} 0 & -\frac{b}{\sqrt{u^2 + b^2} } \\ -\frac{b}{(u^2 + b^2 )^{3 / 2} }&0 \end{pmatrix} 
 	\end{split}
 \] 
 Allora si trova $H = 0$, da cui si conclude che $\mathcal{E} $ \`e una superficie \textit{minima}, e 
 \[
-K(p) = \det S_p =- \frac{b^2}{(u^2 + b^2 )}< 0
+K(p) = \det S_p =- \frac{b^2}{(u^2 + b^2 )^2}< 0
 \] 
 quindi tutti i punti dell'elicoide sono iperbolici.
-Per le curvature principali, invece, si usa che $H \propto k_1 + k_2 = 0 $ e che $K = k_1k_2 =- \frac{b^2 }{u^2 + b^2}$, da cui
+Per le curvature principali, invece, si usa che $H \propto k_1 + k_2 = 0 $ e che $K = k_1k_2 =- \frac{b^2 }{(u^2 + b^2)^2}$, da cui
 \[
 \begin{cases}
 	k_1 = \displaystyle -\frac{b}{u^2 + b^2}\\
