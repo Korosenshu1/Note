@@ -1291,8 +1291,8 @@ Sia $U \subseteq \mathbb{R}^3$ un aperto e sia $f : U \to \mathbb{R}$, di classe
 \end{scope}
 
 % Frecce di transizione
-\draw[->] (-0.5,-0.3) to[bend left=20] node[above] {$x^{-1}\!\circ y$} (2.5,-0.3);
-\draw[->] (2.5,-0.8) to[bend left=20] node[below] {$y^{-1}\!\circ x$} (-0.5,-0.8);
+\draw[->] (-0.5,-0.3) to[bend left=20] node[above]  {$y^{-1}\!\circ x$} (2.5,-0.3);
+\draw[->] (2.5,-0.8) to[bend left=20] node[below] {$x^{-1}\!\circ y$} (-0.5,-0.8);
 
 
 \end{tikzpicture}
@@ -1356,7 +1356,7 @@ Infine, si osserva che
 \underline{x}^{-1} \circ \underline{y} = (\pi \circ \underline{x})^{-1}\circ (\pi\circ \underline{x}) \circ \underline{x}^{-1}\circ \underline{y}= (\pi \circ \underline{x})^{-1} \circ \pi \circ y
 \] 
 \`e di classe $C^\infty$ perch\'e composizione di mappe $C^\infty$, dove $\pi$ indica una delle tre proiezioni.
-Questo discorso si pu\`o ripetere per dimostrare che anche $\underline{y}^{-1}\circ \underline{x}$ \`e di classe $C^\infty$.
+In maniera analoga si mostra che $\underline{y}^{-1}\circ \underline{x}$ \`e di classe $C^\infty$.
 \end{proof}
 \subsubsection{Versore normale}
 \begin{osservazione}
@@ -2143,7 +2143,7 @@ cio\`e $\left\lVert \alpha ' \right\rVert $ \`e costante.
 \end{svolgimento}
 \subsubsection{Esistenza locale e mappa esponenziale}
 
-In coordinate locali su una superficie, una curva $\alpha (t) = \underline{x}(u(t),v(t))$ ha velocit\`a data da $\alpha '(t) = u'(t) \underline{x}_u + v' \underline{x}_v$; visto che un campo vettoriale parallelo lungo $\alpha $ si scrive come $X(\alpha (t)) = a(t) \underline{x}_u(\alpha (t)) + b(t) \underline{x}_v (\alpha (t))$, quello coincidente con $\alpha '$ lungo $\alpha $ dovr\`a avere $a(t) = u'(t)$ e $b(t) = v'(t)$. 
+In coordinate locali su una superficie, una curva $\alpha (t) = \underline{x}(u(t),v(t))$ ha velocit\`a data da $\alpha '(t) = u'(t) \underline{x}_u + v'(t) \underline{x}_v$; visto che un campo vettoriale parallelo lungo $\alpha $ si scrive come $X(\alpha (t)) = a(t) \underline{x}_u(\alpha (t)) + b(t) \underline{x}_v (\alpha (t))$, quello coincidente con $\alpha '$ lungo $\alpha $ dovr\`a avere $a(t) = u'(t)$ e $b(t) = v'(t)$. 
 Pertanto dovr\`a soddisfare 
 \[
 \begin{cases}
@@ -2186,13 +2186,13 @@ A questo punto, si pu\`o definire la \textbf{mappa esponenziale}:
 		v &\longmapsto & \exp_p(v) : = \gamma_v (1)
 	\end{array}
 \end{equation}
-Ora, fissata una base $\left\{ e_1,e_2 \right\} \subset T_p\Sigma$, si ha la biezione $\mathbb{R}^2 \longleftrightarrow T_p\Sigma$; questa permette di individuare un aperto $U'p \subseteq \mathbb{R}^2$ che \`e in biezione con $U_p \subseteq T_p\Sigma$.
+Ora, fissata una base $\left\{ e_1,e_2 \right\} \subset T_p\Sigma$, si ha la biezione $\mathbb{R}^2 \longleftrightarrow T_p\Sigma$; questa permette di individuare un aperto $U'_p \subseteq \mathbb{R}^2$ che \`e in biezione con $U_p \subseteq T_p\Sigma$.
 Pertanto si pu\`o definire la mappa
 \[
 	\underline{x}:
 \begin{array}
 	{c c c c c}
-	U'p &\longrightarrow&U_p &\longrightarrow & \Sigma\\
+	U'_qp &\longrightarrow&U_p &\longrightarrow & \Sigma\\
 	(u,v) &\longmapsto & ue_1+ve_2&\longmapsto& \exp_p (ue_1+ve_2)
 \end{array}
 \] 
