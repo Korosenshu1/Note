@@ -2274,15 +2274,15 @@ Per\`o, $\alpha (0,t) = \exp_q(0) = q, \ \forall t$, quindi $\alpha _t(0,t) = 0$
 	\[
 	L(\gamma_v) = \int_{0} ^1 \left\lVert \gamma'_v(t) \right\rVert dt = \int_{0} ^1 \left\lVert v \right\rVert dt = \left\lVert v \right\rVert 
 	\] 
-	Si dimostra la disuguaglianza assumendo che $c(t) = 0 \iff t =0$\footnote{Il caso pi\`u generale, cio\`e quello in cui la curva percorre un tratto per poi ritornare al punto di partenza e procedere verso il punto di arrivo $q'$, segue direttamente dal fatto che il tratto percorso prima di ritornare a $q$ ne aumenta la lunghezza senza farla avvicinare a $q'$.}.
+	Si dimostra la disuguaglianza assumendo che $c(t) = q \iff t =0$\footnote{Il caso pi\`u generale, cio\`e quello in cui la curva percorre un tratto per poi ritornare al punto di partenza e procedere verso il punto di arrivo $q'$, segue direttamente dal fatto che il tratto percorso prima di ritornare a $q$ ne aumenta la lunghezza senza farla avvicinare a $q'$.}.
 
 	Ora, visto che $c(t)$ \`e una curva interamente contenuta in $N_q$, si pu\`o esprimere in termini di $\exp_q$ tramite una funzione radiale e una funzione angolare:
 	\[
 	c(t) = \exp_q (u(t) v(\tau (t)) = \alpha (u(t),\tau (t))
 	\] 
-	dove $\alpha (u,t) = \exp_q(u v(t))$ \`e la funzione usata nel lemma precedente e $\tau (t)$ \`e una funzione ausiliare permette di controllare la direzione angolare in generale (e non vincolarla ad essere lineare).
+	dove $\alpha (u,t) = \exp_q(u v(t))$ \`e la funzione usata nel lemma precedente e $\tau (t)$ \`e una funzione ausiliare che permette di controllare la direzione angolare in generale (e non vincolarla ad essere lineare).
 	Dal lemma precedente, si ricorda che $\left\lVert \alpha _u \right\rVert = \lVert \gamma_{v(t)} '(u) \rVert  = \left\lVert v(t) \right\rVert = \left\lVert v \right\rVert $. 
-	Allora, usando che $\alpha _u \cdot \alpha _t = 0$ per il lemma di Gauss:
+	Allora, usando che $\alpha _u \cdot \alpha _t = 0$, per il lemma di Gauss, si ha:
 	\[
 	c'(t) = u'(t) \alpha _u + \tau '(t) \alpha _t \implies \left\lVert c'(t) \right\rVert ^2 = u'(t) ^2 \left\lVert v \right\rVert ^2 + \tau '(t)^2 \left\lVert \alpha _t \right\rVert ^2 \ge u'(t) ^2 \left\lVert v \right\rVert ^2
 	\] 
@@ -2368,7 +2368,7 @@ Le soluzioni del sistema sono determinate dalle condizioni iniziali a $t=t_0$, i
 		\[
 		\frac{v''}{v'}= 2 \frac{f'(u)}{f(u)}u' \iff \ln v' = -2 \ln f(u) + \text{cost.} \iff v' = \frac{c}{f(u)^2}
 		\] 
-		Ora, se $\gamma$ \`e una geodetica, $\gamma' = u' \underline{x}_u + v' \underline{x}_v$; usando il valore di $v'$ appena ottenuto dalla condizione $v(t)\neq 0$, si pu\`o calcolare il prodotto scalare tra $\gamma$ e $\underline{x}_v$ in quanto quest'ultimo \`e tangente ad un parallelo:
+		Ora, se $\gamma$ \`e una geodetica, $\gamma' = u' \underline{x}_u + v' \underline{x}_v$; usando il valore di $v'$ appena ottenuto dalla condizione $v'(t)\neq 0$, si pu\`o calcolare il prodotto scalare tra $\gamma$ e $\underline{x}_v$ in quanto quest'ultimo \`e tangente ad un parallelo:
 		\[
 			\gamma ' \cdot \underline{x}_v = v'G = v' f(u)^2 = \text{cost.} 
 		\] 
@@ -2422,7 +2422,7 @@ Allora $\gamma(t)= \underline{x}(u(t),v(t))$ \`e una curva che soddisfa $u'' = 0
 	\] 
 	che coincide proprio con la seconda equazione del sistema.
 	Per terminare questo caso, allora, si verifica che $\gamma$ soddisfa la prima equazione. 
-	A questo scopo, si usa il fatto che $\left\lVert \gamma' \right\rVert = 0$ e si deriva.
+	A questo scopo, si usa il fatto che $\left\lVert \gamma' \right\rVert = \text{cost.}$ e si deriva.
 	\[
 		\begin{split}
 	&\left\lVert \gamma' \right\rVert = (u')^2 + (v')^2 f^2 = \text{cost.}\\
