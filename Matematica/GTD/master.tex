@@ -1636,7 +1636,7 @@ Allo stesso modo, si parte da $\underline{n}(\underline{x}(u_0,v)) \cdot \underl
 \[
 -S_p(\underline{x}_v(p) \cdot \underline{x}_u(p) + \underline{n}(p) \cdot \underline{x}_{uv} (u_0,v_0) = 0 
 \] 
-Facendo uso del fatto che le derivate parziali sono miste, essendo $\underline{x}$ in $C^\infty$, unendo le due relazioni ottenute, si ha: 
+Facendo uso del fatto che le derivate parziali miste sono uguali, essendo $\underline{x}$ in $C^\infty$, e unendo le due relazioni ottenute, si ha: 
 \[
 S_p(\underline{x}_u(p)) \cdot \underline{x}_v(p) = \underline{x}_u(p) \cdot S_p(\underline{x}_v(p))
 \] 
@@ -3314,14 +3314,14 @@ Allora i due integrali si elidono a vicenda e rimane la somma sugli angoli, che 
 	\underline{x}: 
 	\begin{array}
 		{c c c}
-		U=\left\{ (u,v) \in \mathbb{R}^2  \mid u>0 \right\} &\longrightarrow \mathbb{R}^3\\
+		U=\left\{ (u,v) \in \mathbb{R}^2  \mid u>0 \right\} &\longrightarrow& \mathbb{R}^3\\
 		(u,v) &\longmapsto & (u \cos v , u \sin v, \ln u)
 	\end{array}
 	\] 
 	cio\`e \`e la superficie ottenuta ruotando un profilo logaritmico.
 	\begin{enumerate}[(1).]
 		\item Calcolare la curvatura gaussiana di $\Sigma $ in ogni suo punto.
-		\item Verificare il teorema di Gauss-Bonnet per la regione $R = \left\{ 0 \le z \le 1 \right\} \subseteq \Sigma $.
+		\item Verificare il teorema di Gauss-Bonnet per la regione $R = \left\{ 0 \le z \le 1 \right\} \cap \Sigma $.
 		\item Data $\gamma:\mathbb{R}\to \Sigma $ una geodetica tale che $\gamma(0) = (1,0,0)$ e $\gamma'(0) = - (1,\sqrt{2} ,1)$, mostrare che
 			\[
 			\gamma(\mathbb{R}) \subseteq \left\{ z \ge  -\frac{1}{2}\ln(2) \right\} \subseteq \Sigma 
@@ -3367,7 +3367,7 @@ Tenendo conto dell'orientazione data dal versore normale e che la regione \`e ci
 \] 
 Ora si calcola l'integrale di $K$:
 \[
-\int_{R}  KdA = \int_{1} ^e \int_{0} ^{2\pi} \frac{1}{(1+u^2)^{3/2} }du dv 
+\int_{R}  KdA = \int_{1} ^e \int_{0} ^{2\pi} -\frac{1}{(1+u^2)^{3/2} }du dv 
 \] 
 Per calcolare la primitiva di $(1+u^2)^{-3 / 2} $, si usano seno e coseno iperbolici, che vengono richiamati di seguito.
 \[
