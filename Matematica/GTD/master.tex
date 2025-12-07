@@ -3480,7 +3480,9 @@ Seguono alcune sue propriet\`a.
 	\item Dati $U' \subseteq U \subseteq \mathbb{R}^k$ due aperti, la mappa inclusione $\iota : U' \longhookrightarrow U$ soddisfa $(d\iota)_x = \mathrm{Id} _{\mathbb{R}^k} , \ \forall x \in U'$.
 	\item Data $L : \mathbb{R}^k \to \mathbb{R}^{\ell } $ un'applicazione lineare, allora $dL_x = L , \ \forall x \in \mathbb{R}^k$.
 \end{enumerate}
+
 \begin{prop}
+
 	Dati $U \subseteq \mathbb{R}^k$ e $V \subseteq \mathbb{R}^\ell $ due aperti tali che $\exists f : U \stackrel{\cong}{\longrightarrow}V$, allora $k = \ell $ e $df_x$ \`e un isomorfismo lineare $\forall x \in U$.
 \end{prop}
 \begin{proof}
@@ -3491,13 +3493,13 @@ Seguono alcune sue propriet\`a.
 		& \mathrm{Id} _{\mathbb{R}^\ell } = d(\iota_V)_{f(x)} = d(f\circ g)_{f(x)} = (df)_x\circ dg_{f(x)} 
 	\end{split}
 	\] 
-	per cui $df_x : \mathbb{R}^{k} \to \mathbb{R}^\ell $ \`e iniettiva e suriettiva, quindi $f$ \`e un isomorfismo e $k=\ell $.
+	per cui $df_x : \mathbb{R}^{k} \to \mathbb{R}^\ell $ \`e iniettiva e suriettiva, quindi $df_x$ \`e un isomorfismo e $k=\ell $.
 \end{proof}
 \noindent Ora si pu\`o estendere la definizione di spazio tangente a varit\`a generiche.
 \begin{definizione}
 	[Spazio tangente]
-	Sia $M \subseteq \mathbb{R}^k$ una variet\`a differenziabile di dimensione $\dim M = m$ e sia $x \in M$.
-	Data $g : U \stackrel{\cong}{\longrightarrow} W \cap M \subseteq \mathbb{R}^k$, con $U \subseteq \mathbb{R}^m$ aperto e $x = g(u) \in W \cap M$, una parametrizzazione locale attorno ad $x$, allora si definisce
+	Sia $M \subseteq \mathbb{R}^k$ una variet\`a differenziabile di dimensione $\dim M = m$.
+	Allora, dato $x \in M$, si ha una parametrizzazione locale $g : U \subseteq \mathbb{R}^m \stackrel{\cong}{\longrightarrow} W \cap M \subseteq \mathbb{R}^k$ tale che $x = g(u) \in W \cap M$ e si definisce
 	\[
 	T_x M : = dg_u (\mathbb{R}^m) \subseteq \mathbb{R}^k
 	\] 
@@ -3565,16 +3567,12 @@ dg_u = d\big(h\circ (h^{-1}\circ g)\big)_u = dh_v \circ d(h^{-1}\circ g)_u
 Allora, essendo che $d(h^{-1}\circ g)_u$ \`e un isomorfismo lineare, si ha $\mathrm{Im} (dg_u) = \mathrm{Im} (dh_v)$, perci\`o il piano tangente \`e univocamente determinato.
 \end{proof}
 \begin{prop}
-	Sia $M \subseteq \mathbb{R}^k$ una variet\`a di dimensione $m$; allora $\forall x \in M$, $\dim T_x M = m$.
+	Sia $M \subseteq \mathbb{R}^k$ una variet\`a di dimensione $m$; allora, $\forall x \in M$, $\dim T_x M = m$.
 \end{prop}
 \begin{proof}
-	Visto che $\dim T_x M = \dim dg_u(\mathbb{R}^m)$, allora $\dim T_xM \le m$ perch\'e il differenziale \`e un isomorfismo. 
-	Per $U\subseteq \mathbb{R}^m$ aperto, data la parametrizzazione locale
+	Visto che $\dim T_x M = \dim dg_u(\mathbb{R}^m)$, allora $\dim T_xM \le m$; si mostra che vale l'uguaglianza, facendo vedere che $dg_u$ \`e un isomorfismo. 
+	Sia $g : U \stackrel{\cong}{\longrightarrow} W \cap M$ una parametrizzazione locale attorno a $x \in M$, con $g(u) = x$; visto che $g ^{-1}$ \`e $C^\infty$, allora si trovano $ W' \subseteq W$ aperto, con $x \in W'$, e $F:W'\to \mathbb{R}^m$ $C^\infty$ tali che $F|_{W'\cap M} = g^{-1}|_{W'\cap M} $, per cui:
 	\[
-		g : U \stackrel{\cong}{\longrightarrow} W \cap M
-	\] 
-e $g(u) = x$, visto che $g ^{-1}$ \`e $C^\infty$, allora $\exists x \in W' \subseteq W$ aperto, con $F:W'\to \mathbb{R}^m$ di classe $C^\infty$ e $F|_{W'\cap M} = g^{-1}|_{W'\cap M} $, quindi tale che
-\[
 	(d\iota)_u = \mathrm{Id} _{\mathbb{R}^m} = dF_x \circ dg_u
 \] 
 \[
@@ -3587,7 +3585,7 @@ e $g(u) = x$, visto che $g ^{-1}$ \`e $C^\infty$, allora $\exists x \in W' \subs
 	\arrow[from=1-3, to=3-3, "\displaystyle F"]
 \end{tikzcd}
 \] 
-Allora $dg_u$ \`e iniettiva e, allora, $\dim T_x M = m$.
+Allora $dg_u$ \`e iniettiva perch\'e $dF_x\circ dg_u$ lo \`e (essendo pari a $\operatorname{Id} _{\mathbb{R}^m} $), quindi $\dim T_x M = m$.
 \end{proof}
 \begin{definizione}
 	[Differenziale per variet\`a]
