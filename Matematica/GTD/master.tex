@@ -3695,7 +3695,7 @@ Allora si pu\`o usare il teorema della funzione inversa per dire che $\exists U'
 cio\`e si trova un intervallo aperto $U'\subseteq U$ in cui $h^{-1}\circ f\circ g$ \`e un diffeomorfismo.
 Ma quindi
 \[
-f |_{g(U')}  = h|_{V'} \circ (h^{-1}\circ f\circ g)_{V'} \circ g^{-1}|_{g(U')} 
+f |_{g(U')}  = h|_{V'} \circ (h^{-1}\circ f\circ g)|_{U'} \circ g^{-1}|_{g(U')} 
 \] 
 \`e un diffeomorfismo perch\'e composizione di diffeomorfismi.
 \item Ora si assume $M$ compatta. 
@@ -3704,7 +3704,10 @@ f |_{g(U')}  = h|_{V'} \circ (h^{-1}\circ f\circ g)_{V'} \circ g^{-1}|_{g(U')}
 	\[
 		f|_U:U\stackrel{\cong}{\longrightarrow} f(U) \ni y
 	\] 
-	per cui $f^{-1}(y) \cap U = \left\{ x \right\} $, perci\`o $\lvert f^{-1}(y) \rvert < + \infty$.
+	per cui $f^{-1}(y) \cap U = \left\{ x \right\} $, essendo $f$ iniettiva in $U$ (motivo per cui ci pu\`o essere un solo punto di $U$ mappato in $y$, che \`e proprio $x$ per costruzione). 
+	Questo permette di concludere che ogni punto di $f^{-1}(y)$ \`e isolato e che $\forall p \in f^{-1}(y)$, si trova un certo aperto $U_p$ tale che $f^{-1}(y) \cap U_p = \left\{ p \right\} $.
+	
+	Per concludere, si nota che $\left\{ U_p \right\} _{p \in f^{-1}(y)} $ forma un ricoprimento di $f^{-1}(y)$; essendo quest'ultimo compatto, ammette un sottoricoprimento finito, dove ogni insieme di tale sottoricoprimento contiene un solo punto di $f^{-1}(y)$, e quindi si deduce che $\lvert f^{-1}(y) \rvert < + \infty$.
 	\end{enumerate}
 \end{proof}
 \begin{lemma}
