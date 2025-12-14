@@ -3797,7 +3797,7 @@ Per fare ci\`o, \`e prima necessario stabilire quando un sottoinsieme di una var
 	\[
 	M \subseteq \bigcup_i W_i
 	\] 
-	Si fa vedere che, data $(g,Z\cap N)$ \`e una carta su $N$, l'insieme $g(F(C) \cap Z)$ ha misura nulla, con $C = \mathrm{Crit} (F)$ insieme dei punti critici di $F$, quindi $F(C)$ \`e l'insieme dei valori critici di $F$.
+	Si fa vedere che, data $(g,Z\cap N)$ una carta su $N$, l'insieme $g(F(C) \cap Z)$ ha misura nulla, con $C = \mathrm{Crit} (F)$ insieme dei punti critici di $F$ (quindi $F(C)$ \`e l'insieme dei valori critici di $F$).
 	Si considera il seguente diagramma:
 	\[
 	\begin{tikzcd}
@@ -3830,8 +3830,8 @@ Per fare ci\`o, \`e prima necessario stabilire quando un sottoinsieme di una var
 	L'insieme dei valori regolari di $F$ \`e denso in $N$.
 \end{corollario}
 \begin{proof}
-	Si fa vedere che $N \setminus F(C)$ \`e denso in $N$, cio\`e dato $x \in F(C)$, si mostra che per ogni carta locale $(g,Z\cap N)$ intorno ad $X$, si trovano punti di $N \setminus F(X)$ in $Z \cap N$.
-	Per il teorema di Sard, l'insieme $g\big(Z\cap F(C)\big)$; se per assurdo $Z\cap N$ non contenesse punti di $N\setminus F(C)$, allora $Z\cap N = Z \cap F(C)$, ma, allora, l'aperto $g(Z\cap N) = g\big(Z\cap F(C)\big)$ conterrebbe la chiusura di un rettangolo di volume positivo, quindi per il lemma \ref{lemret}, non avrebbe misura nulla.
+	Per il teorema di Sard, l'insieme $g\big(Z\cap F(C)\big)$ ha misura nulla; allora, se per assurdo $Z\cap N$ non contenesse punti di $N\setminus F(C)$, allora $Z\cap N = Z \cap F(C)$, quindi l'aperto $g(Z\cap N) = g\big(Z\cap F(C)\big)$ conterrebbe la chiusura di un rettangolo di volume positivo.
+	Per\`o, per il lemma \ref{lemret}, l'insieme $g\big(Z\cap F(C)\big)$ non avrebbe misura nulla, da cui l'assurdo. 	
 	Ne segue che, in $Z \cap N$, devono esserci punti regolari.
 \end{proof}
 \subsubsection{Altri risultati sui valori regolari}
