@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  17 DEC 2025 15:14
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  20 DEC 2025 13:43
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1729,6 +1729,8 @@ Package luatex.def Info: front.jpg  used on input line 175.
 
 [5]
 
+[6]
+
 Package caption Warning: Unused \captionsetup[figure] on input line 104.
 See the caption package documentation for explanation.
 
@@ -1738,7 +1740,7 @@ See the caption package documentation for explanation.
 
 
 
-[6] (./master.aux)
+[7] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1748,21 +1750,23 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51324 strings out of 475506
+ 51337 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 906 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 6 glue, 4 kern, 1 glyph, 54 attribute, 100 glue_spec, 29 attribute_list, 2 write nodes
-   avail lists: 1:4,2:1891,3:704,4:146,5:319,6:37,7:3971,8:59,9:598,10:8,11:432
- 73207 multiletter control sequences out of 65536+600000
+ 973 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 7 glue, 4 kern, 1 glyph, 74 attribute, 100 glue_spec, 39 attribute_list, 2 write nodes
+   avail lists: 1:6,2:1760,3:659,4:134,5:294,6:46,7:4307,8:59,9:629,10:18,11:432
+ 73217 multiletter control sequences out of 65536+600000
  123 fonts using 71035647 bytes
  124i,8n,125p,10918b,3128s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM08-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-BookItalic.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Book.otf>
-Output written on master.pdf (6 pages, 183661 bytes).
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
-PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 28 named destinations out of 1000 (max. 131072)
- 32 words of extra memory for PDF output out of 10000 (max. 100000000)
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
+</usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM08-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-BookItalic.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Book.otf>
+Output written on master.pdf (7 pages, 193166 bytes).
+
+PDF statistics: 161 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 131072)
+ 40 words of extra memory for PDF output out of 10000 (max. 100000000)
 

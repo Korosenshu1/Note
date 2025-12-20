@@ -292,6 +292,7 @@ Un insieme ottenuto come intersezione numerabile di aperti \`e chiamato $G_\delt
 Il vantaggio \`e legato alla struttura che gli insiemi $G_\delta $ hanno rispetto a sottoinsiemi generici di $\mathbb{R}^d$, che spesso \`e preferibile.
 Si nota, infine, che insiemi ottenuti come unione numerabile di chiusi si indica con $F_\sigma $.
 \end{osservazione}
+\subsection{Misurabilit\`a}
 \begin{definizione}
 	[Insieme misurabile]
 	Un insieme $E \subseteq \mathbb{R}^d$ si dice \textit{misurabile secondo Lebesgue} se $\forall \varepsilon >0$, $\exists G \subseteq \mathbb{R}^d$ aperto, con $G\supseteq E$, tale che $\lvert G \setminus E \rvert _e < \varepsilon $.
@@ -321,19 +322,48 @@ ma non si riesce a dedurre che $\lvert G \setminus E \rvert _e < \varepsilon $.
 		\item Se $I$ \`e un intervallo, allora $I = \mathring{I}\cup \partial I$ e $\lvert \partial I \rvert = 0$.
 	\end{enumerate}
 \end{teorema}
-\noindent Per dimostrare che ogni chiuso \`e misurabile (\ref{tdmt2}b), si utilizzano i due seguenti lemmi.
-\begin{lemma}
+\noindent \textit{Dimostrazione \ref{tdmt2}a.} Visto che gli $E_k$ sono tutti misurabili, allora $\forall \varepsilon >0, \ \exists G_k\supset E_k$ aperto tale che $\lvert G_k\setminus E_k \rvert_e < \varepsilon / 2^k $; definendo
+\[
+G:= \bigcup _{k=1} ^{+\infty} G_k
+\] 
+questo \`e aperto per costruzione e\footnote{Infatti $\forall k, \ E_k \subset G_k \Rightarrow \bigcup_k E_k \subset \bigcup_k G_k$. Inoltre, $x \in G \setminus E$ implica che $\exists k_0$ tale che $x \in G_k$ e che $\forall k, \ x \not\in E_k$; allora $x \in \bigcup_k (G_k \setminus E_k)$ perch\'e $x \in G_{k_0} \setminus E_{k_0}$.}
+\[
+E_k \subset G_k \Rightarrow E \subset G \hspace{.2cm} ; \hspace{.5cm} G \setminus E \subset \bigcup _{k=1} ^{+\infty} \big(G_k \setminus E_k\big)
+\] 
+Allora 
+\[
+\lvert G \setminus E \rvert _e \le \sum_{k=1}^{+\infty} \lvert G_k \setminus E_k \rvert _e \le \sum_{k=1}^{+\infty} \frac{\varepsilon }{2^k} = \varepsilon 
+\] 
+da cui la tesi. \qed
+
+\noindent Per dimostrare che ogni chiuso \`e misurabile (\ref{tdmt2}b), si usa il seguente lemma.
+\begin{lemma}\label{l2t1}
+Siano $E_1,E_2 \subseteq \mathbb{R}^d$ due sottoinsiemi tali che $d(E_1,E_2)>0$; allora $\lvert E_1\cup E_2 \rvert_e = \lvert E_1 \rvert _e + \lvert E_2 \rvert _e$
+\end{lemma}
+\noindent \textit{Dimostrazione \ref{tdmt2}b.} Si assume preliminarmente $F$ compatto, per poi estendere il risultato al caso generale.
+Sia $G \subseteq \mathbb{R}^d$ un aperto contenente $F$ e tale che $\lvert G \rvert \le  \lvert F \rvert _e + \varepsilon $, per $\varepsilon  > 0$; si deve arrivare a mostrare che $\lvert G \setminus F \rvert _e < \varepsilon $.
+Intanto si nota che, grazie alla compattezza di $F$, si pu\`o usare il lemma \ref{l2t1}:
+\[
+G = G\setminus F \cup F \implies \lvert G \rvert = \lvert F \rvert _e  + \lvert G \setminus F \rvert _e \implies \lvert G \setminus F \rvert _e = \lvert G \rvert - \lvert F \rvert _e
+\] 
+Ma visto che $\lvert G \rvert  \le  \lvert F \rvert _e + \varepsilon $, allora si ottiene la tesi.
+Ora si deve estendere la dimostrazione a $F$ chiuso, senza la condizione che sia necessariamente limitato, quindi compatto; per farlo, si scrive
+\[
+F = \bigcup_{k=1} ^{+\infty} F_k = \bigcup_{k=1} ^{+\infty} \Big(F \cap \overline{B}_k(0)\Big) 
+\] 
+con $\overline{B}_k(0)$ palla chiusa di centro l'origine e raggio $k$.
+Si nota che ogni $F_k$ \`e chiuso, perch\'e intersezione di chiusi, e limitato perch\'e $\overline{B}_k(0)$ \`e limitato.
+Ne segue che ogni $F_k$ \`e compatto, quindi misurabile per quanto appena detto; per il teorema \ref{tdmt2}a, allora, anche $F$ \`e misurabile.\qed
+
+\begin{lemma}[Da capire dove inserire]
 	Siano $\left\{ I_k \right\} _{k=1} ^N$ degli intervalli non sovrapposti, cio\`e per cui vale $\mathring{I}_k \cap \mathring{I}_j = \varnothing$ per $k\neq j$; allora $\bigcup_{k=1} ^N I_k$ \`e misurabile e 
 	\[
 	\left\lvert \bigcup_{k=1} ^N I_k\right\rvert  = \sum_{k=1}^{N} \lvert I_k \rvert 
 	\] 
 \end{lemma}
-\begin{lemma}
-Siano $E_1,E_2 \subseteq \mathbb{R}^d$ due sottoinsiemi tali che $d(E_1,E_2)>0$; allora $\lvert E_1\cup E_2 \rvert_e = \lvert E_1 \rvert _e + \lvert E_2 \rvert _e$
-\end{lemma}
-
-
-
+\begin{boxenv}[]
+	\centering \color{mastercolor} Riprendere da 16:38, lezione 29/09
+\end{boxenv}
 
 
 
