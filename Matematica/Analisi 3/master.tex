@@ -177,7 +177,7 @@ title=#1
 \newpage
 \tableofcontents
 \newpage
-\section{Teoria della misura}
+\section{Teoria della misura e dell'integrazione}
 Si costruisce una teoria della misura per spazi euclidei che sia compatibile con i teoremi di passaggio al limite sotto il segno di integrale.
 \subsection{Misura esterna}
 Si considerano gli oggetti fondamentali di $\mathbb{R}^d$, al variare di $d$, cio\`e, rettangoli per $d=2$, parallelepipedi per $d=3$ e cos\`i via.
@@ -337,14 +337,27 @@ Allora
 da cui la tesi. \qed
 
 \noindent Per dimostrare che ogni chiuso \`e misurabile (\ref{tdmt2}b), si usa il seguente lemma.
-\begin{lemma}\label{l2t1}
+\begin{lemma}\label{tdml1}
 Siano $E_1,E_2 \subseteq \mathbb{R}^d$ due sottoinsiemi tali che $d(E_1,E_2)>0$; allora $\lvert E_1\cup E_2 \rvert_e = \lvert E_1 \rvert _e + \lvert E_2 \rvert _e$
 \end{lemma}
+\begin{proof}
+	Sia $\delta = d(E_1,E_2) > 0$; allora, nell'inf della definizione di $\lvert E_1\cup E_2 \rvert _e$, ciascun ricoprimento $S$  candidato all'essere l'estremo inferiore si pu\`o sostituire con un $S'$ tale che ogni rettangolo $I_k$ abbia diametro
+	\[
+	\operatorname{diam} I_k := \sup \left\{ \lvert x-y \rvert  \mid x, y \in I_k \right\} 
+	\] 
+	pari o inferiore a un certo arbitrario $\varepsilon < \delta$.
+	Questo \`e sempre possibile farlo perch\'e si ha $\sigma (S) = \sigma (S')$, visto che si \`e solo spezzato ogni rettangolo in sotto-rettangoli pi\`u piccoli che, quindi, restituiscono stessa area di quelli originari.
+	In questo modo, per\`o, non pu\`o esistere alcun rettangolo $I_k$ che sia tale da intersecare entrambi gli insiemi, quindi si pu\`o spezzare un ricoprimento $S$ in base a quale dei due insiemi tocca:
+	\[
+		\lvert E_1\cup E_2 \rvert _e = \inf_{S} \sigma (S) = \inf_{S_1,S_2} \big[\sigma (S_1) + \sigma (S_2)\big]  = \inf_{S_1} \sigma (S_1) + \inf_{S_2} \sigma (S_2) = \lvert E_1 \rvert _e   + \lvert E_2 \rvert _e
+	\] 
+	da cui la tesi.
+\end{proof}
 \noindent \textit{Dimostrazione \ref{tdmt2}b.} Si assume preliminarmente $F$ compatto, per poi estendere il risultato al caso generale.
 Sia $G \subseteq \mathbb{R}^d$ un aperto contenente $F$ e tale che $\lvert G \rvert \le  \lvert F \rvert _e + \varepsilon $, per $\varepsilon  > 0$; si deve arrivare a mostrare che $\lvert G \setminus F \rvert _e < \varepsilon $.
-Intanto si nota che, grazie alla compattezza di $F$, si pu\`o usare il lemma \ref{l2t1}:
+Intanto si nota che, grazie alla compattezza di $F$, si pu\`o usare il lemma \ref{tdml1}:
 \[
-G = G\setminus F \cup F \implies \lvert G \rvert = \lvert F \rvert _e  + \lvert G \setminus F \rvert _e \implies \lvert G \setminus F \rvert _e = \lvert G \rvert - \lvert F \rvert _e
+G = \big(G\setminus F \big)\cup F \implies \lvert G \rvert = \lvert F \rvert _e  + \lvert G \setminus F \rvert _e \implies \lvert G \setminus F \rvert _e = \lvert G \rvert - \lvert F \rvert _e
 \] 
 Ma visto che $\lvert G \rvert  \le  \lvert F \rvert _e + \varepsilon $, allora si ottiene la tesi.
 Ora si deve estendere la dimostrazione a $F$ chiuso, senza la condizione che sia necessariamente limitato, quindi compatto; per farlo, si scrive
@@ -355,23 +368,194 @@ con $\overline{B}_k(0)$ palla chiusa di centro l'origine e raggio $k$.
 Si nota che ogni $F_k$ \`e chiuso, perch\'e intersezione di chiusi, e limitato perch\'e $\overline{B}_k(0)$ \`e limitato.
 Ne segue che ogni $F_k$ \`e compatto, quindi misurabile per quanto appena detto; per il teorema \ref{tdmt2}a, allora, anche $F$ \`e misurabile.\qed
 
-\begin{lemma}[Da capire dove inserire]
-	Siano $\left\{ I_k \right\} _{k=1} ^N$ degli intervalli non sovrapposti, cio\`e per cui vale $\mathring{I}_k \cap \mathring{I}_j = \varnothing$ per $k\neq j$; allora $\bigcup_{k=1} ^N I_k$ \`e misurabile e 
+Da questi risultati appena visti, si ottengono, come corollario, i seguenti punti.
+\begin{corollario}\label{tdmc1}
+	Valgono i seguenti punti.
+	\begin{enumerate}[(a).]
+		\item Se $A$ \`e misurabile, allora $\mathbb{R}^d \setminus A$ \`e misurabile.
+		\item Se gli $A_i$ sono misurabili, allora $\bigcap_{i=1} ^{+\infty} A_i$ \`e misurabile.
+		\item Se $E_1 \subset E_2$ sono misurabili, allora $\lvert E_2\setminus E_1 \rvert = \lvert E_2 \rvert - \lvert E_1 \rvert $ e, quindi, $E_2\setminus E_1$ \`e misurabile.
+	\end{enumerate}
+\end{corollario}
+\noindent Il punto \ref{tdmc1}a permette di dimostrare il seguente risultato.
+\begin{prop}\label{tdmp1}
+	$E \subseteq \mathbb{R}^d$ \`e misurabile $\iff \forall \varepsilon >0 , \ \exists F \subseteq \mathbb{R}^d$ chiuso con $F \subset E$ tale che $\lvert E \setminus F \rvert < \varepsilon $.
+\end{prop}
+\begin{proof}
+	Per il corollario \ref{tdmc1}a, $E$ \`e misurabile se e solo se $E^c$\footnote{Con $c$ all'apice si intende il complementare.} \`e misurabile, cio\`e se per ogni $\varepsilon >0$, si trova un aperto $G \supset E^c$ tale che $\lvert G \setminus E^c \rvert_e < \varepsilon $.
+	Ora, $G$ \`e aperto, quindi misurabile e, dunque, il suo complementare $F:= G^c$ \`e un chiuso misurabile. 
+	Inoltre, visto che $E^c \subset G$, allora $E\supset F$ ed essendo $G \setminus E^c  = E \setminus F $, si ha la tesi.
+\end{proof}
+\begin{teorema}
+	Sia $E \subseteq \mathbb{R}^d$; allora sono equivalenti i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $E$ \`e misurabile;
+		\item $E = H \setminus Z$ con $\lvert Z \rvert =0$ e $H$ \`e un $G_\delta $;
+		\item $E = H' \cup Z'$, con $\lvert Z' \rvert = 0$ e $H'$ \`e un $F_\sigma $.
+	\end{enumerate}
+\end{teorema}
+\noindent Il seguente teorema fornisce una visione alternativa e pi\`u generale (perch\'e indipendente dalla struttura dello spazio in cui si lavora) per definire la misurabilit\`a.
+\begin{teorema}
+	[Teorema di Carath\'eodory]
+	Un insieme $E \subseteq \mathbb{R}^d$ \`e misurabile se e solo se $\forall A \subseteq \mathbb{R}^d$, si ha
 	\[
-	\left\lvert \bigcup_{k=1} ^N I_k\right\rvert  = \sum_{k=1}^{N} \lvert I_k \rvert 
+	\lvert A \rvert _e = \lvert A\cap E  \rvert _e + \lvert A\setminus E \rvert _e
 	\] 
-\end{lemma}
+\end{teorema}
+\begin{teorema}\label{tdmt3}
+	Sia $\left\{ E_k \right\} _{k=1} ^{+\infty} $ una famiglia di sottoinsiemi misurabili di $\mathbb{R}^d$; allora valgono i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item se $E_i \cap E_j = \varnothing$ per $i\neq j$, allora $\left\lvert \bigcup_{k=1} ^{+\infty} E_k \right\rvert = \sum_{k=1}^{+\infty} \lvert E_k \rvert $;
+		\item se $E_k \nearrow E$, cioè $E_k \subseteq E_{k+1}$ per ogni $k$, definendo $E = \bigcup_{k=1} ^{+\infty} E_k$, allora $\lvert E \rvert =\displaystyle  \lim_{k \to +\infty} \lvert E_k \rvert $;
+		\item se $E_k \searrow E$, cioè $E_{k+1} \subseteq E_k$ per ogni $k$, con $E = \bigcap_{k=1} ^{+\infty} E_k$, e se, inoltre, $\exists k : \lvert E_k \rvert < + \infty$, allora $\lvert E \rvert = \displaystyle \lim_{k \to +\infty} \lvert E_k \rvert $.
+	\end{enumerate}
+\end{teorema}
+\noindent \textit{Dimostrazione \ref{tdmt3}a.} Per ogni $k$, si usa la prop. \ref{tdmp1} per dire che si trova un $F_k$ tale che $\lvert E_k \setminus F_k \rvert < \varepsilon  / 2^k$.
+Visto che gli $F_k$ sono disgiunti per definizione, allora si pu\`o usare il lemma \ref{tdml1} per dire che
+\[
+	\left\lvert \bigcup_{k=1} ^m F_k\right\rvert = \sum_{k=1}^{m} \lvert F_k \rvert, \ \forall m \in \mathbb{N}
+\] 
+Inoltre
+\[
+\bigcup_{k=1} ^m F_k \subset \bigcup_{k=1} ^{+\infty} E_k \implies \sum_{k=1}^{m} \lvert F_k \rvert \le \left\lvert \bigcup_{k=1} ^{+\infty} E_k \right\rvert , \ \forall m \in \mathbb{N}
+\] 
+Visto che vale $\forall m \in \mathbb{N}$, allora \`e anche vero che
+\[
+\sum_{k=1}^{+\infty} \lvert F_k \rvert \le  \left\lvert \bigcup_{k=1} ^{+\infty} E_k \right\rvert 
+\] 
+da cui
+\[
+\left\lvert \bigcup_{k=1} ^{+\infty} E_k \right\rvert \ge \sum_{k=1}^{+\infty} \lvert F_k \rvert > \sum_{k=1}^{+\infty} \left(\lvert E_k \rvert -\frac{\varepsilon }{2^k}\right) = \sum_{k=1}^{+\infty} \lvert E_k \rvert - \varepsilon , \ \forall \varepsilon 
+\] 
+da cui $\left\lvert \bigcup_k E_k \right\rvert  \ge \sum_{k}^{} \lvert E_k \rvert $.
+Al contempo, per\`o, \`e sempre vera la disuguaglianza
+\[
+\left\lvert \bigcup_{k=1} ^{+\infty} E_k\right\rvert \le \sum_{k=1}^{+\infty} \lvert E_k \rvert 
+\] 
+da cui la tesi. \qed
+
+\noindent \textit{Dimostrazione \ref{tdmt3}b.} Visto che $\forall k, \ E_k \subseteq E_{k+1} $, si pu\`o definire equivalentemente 
+\[
+E := E_1 \cup \bigcup_{k=1} ^{+\infty} \big(E_{k+1} \setminus E_k\big)
+\] 
+in modo che siano tutti disgiunti. 
+Si pu\`o, quindi, usare il corollario \ref{tdmc1}c, assumendo che $\forall k , \lvert E_k \rvert <+\infty$, e il punto \ref{tdmt3}a per scrivere che 
+\[
+\lvert E \rvert = \lvert E_1 \rvert + \sum_{k=1} ^{+\infty} \lvert E_{k+1} \setminus E_k \rvert = \lvert E_1 \rvert  +\sum_{k=1} ^{+\infty} \Big(\lvert E_{k+1}  \rvert - \lvert E_k \rvert \Big)
+\] 
+Questa espressione \`e tale da elidere ciascun termine tranne ``l'ultimo'', perci\`o:
+\[
+\lvert E \rvert = \lim_{k \to +\infty} \lvert E_k \rvert 
+\] 
+da cui la tesi.
+
+Per dimostrarlo nel caso generale in cui non si assume che ogni $E_k$ abbia misura finita, si usa un'altra strada; intanto si definiscono gli $F_k := E_{k}\setminus E_{k-1}  $, con $E_0=\varnothing$, per cui 
+\[
+E = \bigcup_{k=1} ^{+\infty} F_k
+\] 
+Ora, gli $F_k$ sono a due a due disgiunti, pertanto si pu\`o usare il punto \ref{tdmt3}a per scrivere che
+\[
+\lvert E \rvert = \sum_{k=1} ^{+\infty} \lvert F_k \rvert 
+\] 
+In maniera del tutto analoga, si ha che
+\[
+E_n = \bigcup_{k=1} ^n F_k \implies \lvert E_n \rvert = \sum_{k=1}^{n} \lvert F_k \rvert 
+\] 
+Prendendo il limite di questa espressione, si vede che 
+\[
+\lim_{n \to +\infty} \lvert E_n \rvert = \lim_{n \to +\infty} \sum_{k=1}^{n} \lvert F_k \rvert = \sum_{k=1}^{+\infty} \lvert F_k \rvert = \lvert E \rvert 
+\] 
+da cui la tesi. \qed 
+
+\noindent \textit{Dimostrazione \ref{tdmt3}c.} Si usa il fatto che $\exists k_0 : E_{k_0} $ ha misura finita per ricondurre la dimostrazione al punto precedente, cio\`e al caso crescente.
+Infatti, avendo tutti insiemi di misura finita da $k_0$ in poi e avendo definito $E$ come l'intersezione di questi, si pu\`o far partire tale intersezione direttamente da $k=k_0$.
+A questo punto, per tradurre il caso (c) al caso (b), dopo aver rinominato gli indici prendendo $k_0 =1$ e tutti gli altri di seguito, si definisce 
+\[
+F_k := E_1 \setminus E_k
+\] 
+Visto che gli $E_k$ sono decrescenti, $F_k$ \`e crescente e, quindi, per il punto (b) e il corollario \ref{tdmc1}c:
+\[
+\lvert F \rvert = \lim_{k \to +\infty} \lvert E_1\setminus E_k \rvert = \lvert E_1 \rvert - \lim_{k \to +\infty}  \lvert E_k \rvert 
+\] 
+Per\`o si nota che 
+\[
+F = \lim_{k \to +\infty} E_1 \setminus E_k=E_1 \setminus E\implies \lvert F \rvert = \lvert E_1 \rvert - \lvert E \rvert 
+\] 
+Combinando le due espressioni, si ottiene la tesi.\qed
+\subsection{Misurabilit\`a di funzioni}
+\begin{definizione}
+	[Misurabilit\`a di una funzione]
+	Dato $E \subseteq \mathbb{R}^d$ misurabile, si dice che $f: E \to \mathbb{R}$ \`e una funzione \textit{misurabile} (secondo Lebesgue) se, $\forall a \in \mathbb{R}$, l'insieme $\left\{ x \in E  \mid f> a \right\} $ \`e misurabile.
+\end{definizione}
+\noindent Pi\`u semplicemente, la notazione per $\left\{ x \in E  \mid f > a \right\} $ si indicher\`a con $\left\{ f>a \right\} $.
+\begin{prop}
+	Sia $f$ misurabile; allora sono equivalenti i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $\left\{ f \ge a \right\} $ \`e misurabile;
+		\item $\left\{ f < a \right\} $ \`e misurabile;
+		\item $\left\{ f\le a \right\} $ \`e misurabile.
+	\end{enumerate}
+\end{prop}
+\begin{osservazione}
+La misurabilit\`a di una funzione, allora, \`e verificata anche per cambiamenti della funzione stessa su insiemi a misura nulla.
+\end{osservazione}
+\begin{prop}
+	Siano $f,g$ due funzioni misurabili; allora:
+	\begin{enumerate}[(a).]
+		\item $f+c$ \`e misurabile;
+		\item $cf$ \`e misurabile;
+		\item $f+g$ \`e misurabile;
+		\item $f / g$ \`e misurabile se $g\neq 0$ q.o. 
+	\end{enumerate}
+\end{prop}
+\begin{teorema}
+	Sia $\left\{ f_k \right\}_{k}  $ una successione di funzioni misurabili; allora $\sup_{k} f_k$ e $\inf_{k} f_k$ sono misurabili e anche 
+	\[
+	\limsup _{k} f_k \hspace{1cm} \liminf_k f_k
+	\] 
+	sono misurabili e, quindi, anche $\lim_{k} f_k$ \`e misurabile.
+\end{teorema}
+\begin{teorema}
+	Sia $\phi \in C(\mathbb{R})$ e sia $f$ finita quasi ovunque; se $f$ \`e misurabile, allora $\phi \circ f$ \`e misurabile.
+\end{teorema}
+\noindent Alcuni esempi importanti di applicazione del teorema precedente \`e dato dalle funzioni $\phi \circ f$ della forma $\lvert f \rvert $, $\lvert f \rvert ^p$, oppure $f^+ = \max \left\{ f,0 \right\} $ e $f^- = \min \left\{ f,0 \right\} $, quindi con $f = f^+ - f^-$.
+\begin{definizione}
+	[Funzione semplice]
+	Sia $f : E \subseteq \mathbb{R}^d \to  \mathbb{R}$; si dice che $f$ \`e \textit{semplice} se esistono $N \in \mathbb{N}$, $a_k \in \mathbb{R}$ e $E_k \subset E$ disgiunti tali che
+	\[
+	f(x) = \sum_{k=1}^{N} a_k \chi _{E_k} (x)
+	\] 
+\end{definizione}
+\begin{prop}
+	Data $f$ semplice, questa \`e misurabile $\iff$ gli insiemi $E_k$ sono misurabili.
+\end{prop}
+\begin{teorema}\label{mft1}
+	Valgono i seguenti punti.
+	\begin{enumerate}[(a).]
+		\item Data $f: E \to \mathbb{R}$, questa \`e limite puntuale di funzioni semplici. 
+			In altri termini, $\forall f : E \to \mathbb{R}$, esiste una successione $ \left\{ f_k \right\} $, con $f_k$ semplici, tale che $f_k(x) \to f(x), \ \forall x \in E$.
+		\item Se $f\ge 0$, allora la successione al punto (a) si pu\`o costruire crescente, cio\`e tale che $f_k(x) \le  f_{k+1} (x)$.
+		\item Se $f$ \`e misurabile, allora la successione al punto (a) si pu\`o scegliere in modo tale che le funzioni $f_k$ siano misurabili.
+	\end{enumerate}
+\end{teorema}
+\noindent \textit{Dimostrazione \ref{mft1}b}. Sia $f\ge 0$; si definiscono gli intervalli 
+\[
+\left[ \frac{j-1}{2^k}, \ \frac{j}{2^k} \right] 
+\] 
+e si definisce la successione
+\[
+f_k(x) = \begin{cases}
+	\displaystyle \frac{j-1}{2^k}&,\ \text{ se } \displaystyle \frac{j-1}{2^k}\le f(x) \le \frac{j}{2^k}\\
+	\\
+	k &,\ \text{ se } f\ge k
+\end{cases}
+\] 
+con $j=1,\ldots, k2^k$. 
+Allora, per definizione, si ha:
+\[
+	f_k(x) = \sum_{j=1}^{k 2^k} \frac{j-1}{2^k}\chi _{\left[ \frac{j-1}{2^k}\le f \le \frac{j}{2^k} \right] } + k \chi _{\left\{ f\ge k \right\} } 
+\] 
 \begin{boxenv}[]
-	\centering \color{mastercolor} Riprendere da 16:38, lezione 29/09
+	\centering\color{mastercolor} Riprendere dalla lezione 3
 \end{boxenv}
-
-
-
-
-
-
-
-
-
-
 \end{document}
