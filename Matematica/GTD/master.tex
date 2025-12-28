@@ -253,7 +253,13 @@ Sia $\alpha : [a,b]\to\mathbb{R}^3$ una curva parametrizzata; una sua \textit{ri
 \end{tikzcd}
 \] 
 commuta, quindi si ha $\beta (h(t)) = \alpha (t)$. 
-Perch\'e questo sia verificato, si assume che $h \in C^\infty([a,b])$ e $h'(t) \neq 0, \ \forall t \in [a,b]$; in questo modo, $\exists h^{-1}$ di classe $C^\infty$ tale che $\beta = \alpha \circ h^{-1}$, quindi anche $\beta $ risulta liscia ed \`e verificata la relazione $(\beta \circ h)(t) = \alpha (t)$, con $\operatorname{Tr} \alpha =\operatorname{Tr} \beta $.
+Perch\'e questo sia verificato, si assume che:
+\begin{itemize}
+	\item $h \in C^\infty([a,b])$;
+	\item $h'(t) \neq 0, \ \forall t \in [a,b]$;
+	\item $h(a) = c$ e $h(b) = d$ (o viceversa, per avere un verso di percorrenza opposto).
+\end{itemize}
+In questo modo, $h$ \`e un diffeomorfismo $C^\infty$ su $[a,b]$ e, quindi, $\exists h^{-1}$ di classe $C^\infty$ tale che $\beta = \alpha \circ h^{-1}$ sia liscia e sia verificata la relazione $\operatorname{Tr} \alpha =\operatorname{Tr} \beta $.
 
 Ora si definisce la lunghezza di una curva; se ne giustifica la definizione tramite il seguente ragionamento.
 Sia dato $[a,b] \subset \mathbb{R}$ un intervallo e sia $P \in \mathcal{P} ([a,b])$ una sua partizione, tale che $a = t_0 < t_1 < \ldots<t_{k-1} <t_k = b$; allora la lunghezza di una curva $\alpha  : [a,b] \to \mathbb{R}^3$ approssimata a tale partizione \`e data da:
@@ -712,28 +718,18 @@ N = B \times T = \frac{(\alpha ' \times \alpha '') \times \alpha '}{\left\lVert 
 \] 
 \end{boxenv}
 \noindent Infine, si calcola la torsione. 
-Per farlo, si deriva la I equazione di Frenet:
-\[
-s'T'' = s'k'N + s'k N'  \implies T'' = k'N + kN'
-\] 
-dove $s' \neq 0$ perch\'e la curva \`e regolare e, quindi, si cancella.
-Vista la III equazione di Frenet $B'  = -\tau N $, si ha $\tau  = - B' \cdot N$; in realt\`a, si nota che
-\[
-	0=(\underbracket{B\cdot N}_{=0} )'= B' \cdot N + B \cdot N'\implies B' \cdot N = - B\cdot N'
-\] 
-da cui $\tau  = B \cdot N'$.
 Derivando l'equazione \ref{e1}:
 \[
-\alpha '''= T'' s'^3 + 3T's's'' + Ts''' 
+\alpha '''= T'' s'^3 + 3T's's'' + Ts'''\hspace{.2cm}\text{ con } \hspace{.4cm}T'' = k' N + k N'
 \] 
 Ora, visto che $T' \propto N$ e $T,N \perp B$, dal prodotto scalare per $B$ si ha:
 \[
 \alpha ''' \cdot B = s'^3T '' \cdot B = s'^3k N' \cdot B= s'^3 k \tau 
 \] 
-Ricordando l'espressione per $B$, si ha:
+quindi:
 \begin{boxenv}[]
 \[
-\tau = \frac{\alpha ''' \cdot (\alpha ' \times \alpha '')}{\left\lVert \alpha ' \times \alpha '' \right\rVert ^2 } 
+\tau = \frac{\alpha ' \times \alpha ''}{\left\lVert \alpha ' \times \alpha '' \right\rVert ^2 } \cdot \alpha '''
 \] 
 \end{boxenv}
 \begin{osservazione}

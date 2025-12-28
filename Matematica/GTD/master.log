@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  14 DEC 2025 13:15
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  26 DEC 2025 12:59
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1435,12 +1435,12 @@ LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
 [5]
 
 [6]
-Overfull \hbox (0.81358pt too wide) in paragraph at lines 309--312
+Overfull \hbox (0.81358pt too wide) in paragraph at lines 315--318
 \TU/TeXGyrePagellaX(0)/m/n/12 Si con-si-de-ra, quin-di, una cur-va re-go-la-re $\U/zeur/m/n/12  \U/zeus/m/n/12 º Û\U/zeur/m/n/12 a; b\U/zeus/m/n/12 Ý ! \U/msb/m/n/12 R[]$\TU/TeXGyrePagellaX(0)/m/n/12 ; vi-sto che $\U/zeur/m/n/12 s\U/zeus/m/n/12 ¨\U/zeur/m/n/12 t\U/zeus/m/n/12 © ½ [][] [] \U/zeur/m/n/12 du$\TU/TeXGyrePagellaX(0)/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 325--326
+Underfull \hbox (badness 3612) in paragraph at lines 331--332
 [][]\TU/lmss/bx/sc/12 Os-ser-va-zio-ne 1.3.  []\TU/TeXGyrePagellaX(0)/m/n/12 In ba-se a quan-to det-to pri-ma, ogni cur-va re-go-la-re è
  []
 
@@ -1481,7 +1481,7 @@ Underfull \hbox (badness 3612) in paragraph at lines 325--326
 [23]
 
 [24]
-Overfull \hbox (55.35927pt too wide) in paragraph at lines 1052--1054
+Overfull \hbox (55.35927pt too wide) in paragraph at lines 1048--1050
 []\TU/TeXGyrePagellaX(0)/m/n/12 Per l’i-niet-ti-vi-tà, si cer-ca di de-fi-ni-re un’in-ver-sa. Dal-la re-la-zio-ne $[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 u; v\U/zeus/m/n/12 © ½ ¨\U/zeur/m/n/12 u [] v; u [] v; bv\U/zeus/m/n/12 © ½
  []
 
@@ -1494,7 +1494,7 @@ Overfull \hbox (55.35927pt too wide) in paragraph at lines 1052--1054
 [27]
 
 [28]
-Overfull \hbox (2.19032pt too wide) in paragraph at lines 1192--1195
+Overfull \hbox (2.19032pt too wide) in paragraph at lines 1188--1191
 \TU/TeXGyrePagellaX(0)/m/n/12 Quin-di, per ave-re la te-si, bi-so-gna so-lo ri-chie-de-re che $\U/zeur/m/n/12 \U/zeus/m/n/12 ¨\U/zeur/m/n/12 I\U/zeus/m/n/12 ©$ \TU/TeXGyrePagellaX(0)/m/n/12 sia un in-tor-no di $\U/zeur/m/n/12 \U/zeus/m/n/12 ¨\U/zeur/m/n/12 u[]\U/zeus/m/n/12 ©\U/zeur/m/n/12 ;  \U/zeus/m/n/12 8\U/zeur/m/n/12 u[] \U/zeus/m/n/12 2
  []
 
@@ -1529,19 +1529,19 @@ Overfull \hbox (2.19032pt too wide) in paragraph at lines 1192--1195
 [42]
 
 [43]
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 1802.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 1798.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1802.
+(hyperref)                removing `math shift' on input line 1798.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ell' on input line 1802.
+(hyperref)                removing `\ell' on input line 1798.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1802.
+(hyperref)                removing `math shift' on input line 1798.
 
 
 
@@ -1570,25 +1570,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [55]
 
 [56]
-Overfull \hbox (0.90076pt too wide) in paragraph at lines 2314--2316
+Overfull \hbox (0.90076pt too wide) in paragraph at lines 2310--2312
 []\TU/TeXGyrePagellaX(0)/m/n/12 Si con-si-de-ra una cur-va re-go-la-re pla $\U/zeur/m/n/12 \U/zeus/m/n/12 ¨\U/zeur/m/n/12 u\U/zeus/m/n/12 © ½ ¨\U/zeur/m/n/12 f\U/zeus/m/n/12 ¨\U/zeur/m/n/12 u\U/zeus/m/n/12 ©\U/zeur/m/n/12 ; 0; g\U/zeus/m/n/12 ¨\U/zeur/m/n/12 u\U/zeus/m/n/12 ©©$\TU/TeXGyrePagellaX(0)/m/n/12 , con $[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 u; v\U/zeus/m/n/12 © ½
  []
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 2330.
+(amsmath)                trying to recover with `aligned' on input line 2326.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 2336.
+(amsmath)                trying to recover with `aligned' on input line 2332.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 2347.
+(amsmath)                trying to recover with `aligned' on input line 2343.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 2353.
+(amsmath)                trying to recover with `aligned' on input line 2349.
 
 
 
@@ -1609,7 +1609,7 @@ Package amsmath Warning: Cannot use `split' here;
 [64]
 
 [65]
-Overfull \hbox (0.31976pt too wide) in paragraph at lines 2682--2684
+Overfull \hbox (0.31976pt too wide) in paragraph at lines 2678--2680
 []\TU/TeXGyrePagellaX(0)/m/n/12 Si for-ni-sce un’i-dea del-la di-mo-stra-zio-ne. Per il teo-re-ma di Gauss-Bonnet
  []
 
@@ -1638,7 +1638,7 @@ Overfull \hbox (0.31976pt too wide) in paragraph at lines 2682--2684
 [76]
 
 [77]
-Overfull \hbox (12.49286pt too wide) detected at line 3197
+Overfull \hbox (12.49286pt too wide) detected at line 3193
 []
  []
 
@@ -1647,7 +1647,7 @@ Overfull \hbox (12.49286pt too wide) detected at line 3197
 [78]
 
 [79]
-Overfull \hbox (1.45836pt too wide) in paragraph at lines 3269--3273
+Overfull \hbox (1.45836pt too wide) in paragraph at lines 3265--3269
 \TU/TeXGyrePagellaX(0)/m/n/12 Si no-ta, in-tan-to, che gli an-go-li for-ma-ti dal bor-do so-no tut-ti pa-ri a $\U/zeur/m/n/12 =2$\TU/TeXGyrePagellaX(0)/m/n/12 , quin-di $[][] \U/zeur/m/n/12 "[] \U/zeus/m/n/12 ½
  []
 
@@ -1674,7 +1674,7 @@ Overfull \hbox (1.45836pt too wide) in paragraph at lines 3269--3273
 [89]
 
 [90]
-Overfull \hbox (12.49945pt too wide) in paragraph at lines 3719--3720
+Overfull \hbox (12.49945pt too wide) in paragraph at lines 3715--3716
 []\TU/TeXGyrePagellaX(0)/m/n/12 Per la pro-po-si-zio-ne pre-ce-den-te, si può af-fer-ma-re che $\U/zeur/m/n/12 f[]\U/zeus/m/n/12 ¨\U/zeur/m/n/12 y\U/zeus/m/n/12 © ½ []$
  []
 
@@ -1707,12 +1707,12 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51311 strings out of 475506
+ 51315 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 5416 words of node memory still in use:
-   22 hlist, 2 vlist, 10 rule, 14 glue, 4 kern, 2 glyph, 1411 attribute, 102 glue_spec, 731 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:6,2:2627,3:799,4:142,5:519,6:98,7:6006,8:96,9:1402,10:36,11:706
- 72571 multiletter control sequences out of 65536+600000
+ 5404 words of node memory still in use:
+   22 hlist, 2 vlist, 10 rule, 14 glue, 4 kern, 2 glyph, 1407 attribute, 102 glue_spec, 729 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
+   avail lists: 1:5,2:2627,3:799,4:142,5:465,6:98,7:6006,8:96,9:1402,10:36,11:706
+ 72575 multiletter control sequences out of 65536+600000
  182 fonts using 16227751 bytes
  124i,28n,114p,10918b,1205s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1746,7 +1746,7 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/ebgaramond/ebg_notamz.enc}</usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newpx/TeXGyrePagellaX-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on master.pdf (95 pages, 834349 bytes).
+Output written on master.pdf (95 pages, 833573 bytes).
 
 PDF statistics: 1080 PDF objects out of 1200 (max. 8388607)
  917 compressed objects within 10 object streams
