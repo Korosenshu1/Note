@@ -3857,7 +3857,37 @@ Per fare ci\`o, \`e prima necessario stabilire quando un sottoinsieme di una var
 	\] 
 \end{prop}
 \begin{proof}
-{\color{red} Da dimostrare\ldots}
+	Siano $n = \dim N$ e $n' = \dim N'$. 
+	Dato un punto $(y,y') \in N \times N'$, si considerano le carte locali $(f,W\cap N)$ e $(f' , W' \cap N')$ definite attorno a $y\in N$ e $y' \in N'$ rispettivamente.
+	Allora si definisce la mappa
+	\[
+	F: 
+	\begin{array}
+	{c c c}
+	(W\cap N) \times (W'\cap N') & \longrightarrow & \mathbb{R}^n \times \mathbb{R}^{n'} \\
+	(p,p')&\longmapsto&\big(f(p) , f'(p')\big)
+	\end{array}
+	\] 
+	che, per costruzione, \`e una carta locale di $N \times N'$ attorno a $(y,y')$, da cui si conclude che 
+	\[
+	\dim N\times N' = \dim N + \dim N' = n +n'
+	\] 
+	Per lo spazio tangente, si fa vedere che $ d\iota _{y'} (T_yN) \oplus d\iota_y(T_{y'} N') \subseteq T_{(y,y')} (N \times N')$ e che hanno stessa dimensione.
+	\begin{itemize}
+		\item L'inclusione deriva dal fatto che se $(t,t')$ \`e nella somma diretta, allora $(t,t') = (t,0) + (0,t')$, con $t \in T_y N$ e $t' \in T_{y'} N'$, pertanto $(t,t') \in T_{(y,y') } (N\times N')$.
+			Questo deriva dal fatto che l'immagine di $d \iota_{y'} $, per esempio, \`e proprio $T_y N \times \left\{ 0 \right\} $.
+		\item Per la dimensione, si osserva che, essendo $d\iota _{y'} (T_yN)\cap d\iota_y(T_{y'} N')=\left\{ (0,0) \right\} $, allora la dimensione della somma diretta \`e la somma delle dimensioni degli spazi tangente $T_y N$ e $T_{y'} N'$.
+			Questa, per\`o, coincide esattamente con la dimensione del prodotto diretto degli spazi per quanto detto nella prima parte della dimostrazione; infatti, date due parametrizzazioni locali $g: U \to W\cap N$ e $g':U'\to W'\cap N'$ attorno a $y \in N$ e $y' \in N'$ rispettivamente, allora si definisce la mappa 
+			\[
+G :
+\begin{array}{c c c}
+	U \times U' &\longrightarrow& N \times N'\\
+	(u,u') &\longmapsto & \big(g(u), g'(u')\big)
+			\end{array}
+			\] 
+			con $dG_{(y,y')} : \mathbb{R}^n \times \mathbb{R}^{n'}\to T_{(y,y')} (N \times  N') $.
+			Quindi, la sua immagine ha dimensione $n + n'$, ossia la somma delle dimensioni di $T_y N $ e $T_{y'} N'$.
+	\end{itemize}
 \end{proof}
 \begin{teorema}
 	Siano $M,N$ due variet\`a di dimensioni $m$ e $n$ rispettivamente, con $m \ge n$.
@@ -3882,7 +3912,7 @@ F:
 	x&\longmapsto & \big(f(x), L(x)\big)
 \end{array}
 \] 
-Ora si dimostra ({\color{red}da dimostrare\ldots}) che $F$ \`e $C^\infty$ e soddisfa $dF_x(v) = \big(df_x(v),L(v)\big)$.
+Allora $F$ \`e $C^\infty$ e $dF_x(v) = \big(df_x(v),L(v)\big)$.
 \end{proof}
 \begin{center}
 	\color{nred} Riprendere dalla lezione 23
