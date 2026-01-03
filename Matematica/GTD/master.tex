@@ -133,7 +133,7 @@ title=#1
 
 
 % Personalizza la formattazione della subsubsection
-\titleformat{\subsubsection}[block]{\centering\fontsize{14}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
+\titleformat{\subsubsection}[block]{\centering\fontsize{13}{20}\bfseries}{\color{nred}\normalfont\S\thesubsubsection}{.5em}{}
 
 % Maketitle customization
 \renewcommand{\maketitle}{
@@ -3896,9 +3896,9 @@ G :
 \begin{proof}
 	L'idea \`e di \textit{inspessire} $N$ in modo da poter applicare il punto (a) della proposizione \ref{vrab}.
 
-	Sia, allora, $x \in f^{-1}(y)$, per cui $df_x : T_x M \to T_y N$ \`e suriettiva, visto che $y$ \`e regolare.
-Dato $K = \operatorname{Ker} df_X \subseteq T_x M $, si ha $\dim K = m-n$; si vorrebbe trovare una mappa $F:M\to N\times \mathbb{R}^{m-n} $.
-A tal proposito, si considera l'applicazione lineare $L :\mathbb{R}^k \to \mathbb{R}^{m-n} $, con  $k:\mathbb{R}^k \supseteq M$ (quindi $K \subseteq \mathbb{R}^k$) e tale che
+	Sia, allora, $x \in f^{-1}(y)$, per cui $df_x : T_x M \to T_y N$ \`e suriettiva, visto che $y$ \`e regolare; se $K = \operatorname{Ker} df_x \subseteq T_x M $, allora $\dim K = m-n$. 
+Si vorrebbe trovare una mappa $F:M\to N\times \mathbb{R}^{m-n} $.
+A tal proposito, si considera l'applicazione lineare $L :\mathbb{R}^k \to \mathbb{R}^{m-n} $, dove $M \subseteq \mathbb{R}^k$ (quindi $K \subseteq \mathbb{R}^k$) e tale che
 \[
 	L|_K :K\stackrel{\cong}{\longrightarrow} \mathbb{R}^{m-n} 
 \] 
@@ -3912,10 +3912,152 @@ F:
 	x&\longmapsto & \big(f(x), L(x)\big)
 \end{array}
 \] 
-Allora $F$ \`e $C^\infty$ e $dF_x(v) = \big(df_x(v),L(v)\big)$.
+Allora $F$ \`e $C^\infty$ e $dF_x(v) = \big(df_x(v),L(v)\big)$; inoltre, se $v \in T_xM$ \`e tale che $dF_x(v) = (0,0)$, allora $v=0$ perch\'e \`e l'unico che verifica $df_x(v) = L(v) = 0$, quindi $x \in M$ \`e un punto regolare per $F$.
+Pertanto, \`e possibile applicare \ref{vrab}a, secondo cui $\exists U \subseteq M$ intorno di $x$ tale per cui $F|_U :U \stackrel{\cong}{\longrightarrow} V$, con $V$ intorno di $F(x) = \big(y,L(x)\big)$.
+La restrizione, allora, mappa $f^{-1}(y) \cap U$ in $V\cap (\left\{ y \right\}  \times \mathbb{R}^{m-n}) $, dove $V \cap \left(\left\{ y \right\}  \times \mathbb{R}^{m-n} \right) $ \`e diffeomorfo a un aperto di $\mathbb{R}^{m-n} $ perch\'e $V$ \`e aperto e $\left\{ y \right\}  \times  \mathbb{R}^{m-n} $ \`e diffeomorfo a $\mathbb{R}^{m-n} $ tramite $\left\{ y \right\} \times \mathbb{R}^{m-n} \ni (y,c) \longmapsto c \in \mathbb{R}^{m-n} $.
+Dunque, potendo ripetere il discorso $\forall x \in f^{-1}(y)$, si conclude che $f^{-1}(y)$ \`e una variet\`a di dimensione $m-n$.
 \end{proof}
-\begin{center}
-	\color{nred} Riprendere dalla lezione 23
-\end{center}
+	\noindent Il teorema appena dimostrato permette di caratterizzare la sfera $S^{n-1}\subset \mathbb{R}^n$ come una variet\`a.
+	Infatti, sia $f : \mathbb{R}^n \to \mathbb{R}$ data da $f(x) = x_1^2 + \ldots + x_n^2$; questa \`e liscia e il suo differenziale $df_x : \mathbb{R}^n \to \mathbb{R}$ \`e rappresentato da $(Jf)_x = (2x_1,\ldots,2x_n)$.
+Ne segue che il suo unico punto critico \`e $(0,\ldots,0)$, per cui $1 \in \mathbb{R}$ \`e regolare, in quanto sono tutti valori regolari gli elementi di $\mathbb{R}\setminus f(C) = \mathbb{R}\setminus\left\{ 0 \right\} $, dove $C = \left\{ (0,\ldots,0) \right\} $ \`e l'insieme dei punti critici di $f$.
+Il precedente teorema permette di concludere che 
+\[
+f^{-1}(1) = \left\{ x \in \mathbb{R}^n \mid  x_1^2 + \ldots + x_n^2 = 1 \right\} = : S^{n-1} \subseteq \mathbb{R}^n
+\] 
+\`e una variet\`a di dimensione $n-1$.
+\begin{lemma}
+	Siano $M,N$ due variet\`a di dimensioni $\dim M = m \ge \dim N = n$ e sia $f : M \to  N$ liscia, con $y \in N$ valore regolare; allora, indicando con $M':= f^{-1}(y)$, si ha $T_x M' = \operatorname{Ker} df_x, \ \forall x \in f^{-1}(y)$ e
+	\[
+		df_x |_{(T_x M')^\perp} : (T_xM')^\perp \stackrel{\cong}{\longrightarrow}T_y N
+	\] 
+\end{lemma}
+\begin{proof}
+	Si osserva preliminarmente che una mappa costante tra due variet\`a ha differenziale nullo perch\'e si estende localmente alla mappa costante.
+	Ora, osservando che la composizione
+	\[
+		M ' = f^{-1}(y) \stackrel{\iota}{\longhookrightarrow } M \stackrel{f}{\longrightarrow} N
+	\] 
+	\`e una mappa costante, si ha che $df_x|_{T_x M'} = 0 \iff T_x M' \subseteq \operatorname{Ker} df_x, \ \forall x \in  f^{-1}(y)$.
+	Usando, poi, che $\dim M' = \dim \operatorname{Ker} df_x = m-n$, si conclude che $T_x M ' = \operatorname{Ker} df_x$.
+	Ma, allora, la mappa
+	\[
+	df_x |_{(T_x M')^\perp}  :(T_xM')^\perp \longrightarrow T_y N 
+	\] 
+	\`e iniettiva, quindi \`e un isomorfismo.
+\end{proof}
+\noindent Questo lemma, invece, permette di studiare gli spazi tangenti delle sfere.
+Riprendendo la funzione 
+\[
+f: \mathbb{R}^n \to \mathbb{R} , \ f(x) = \sum_{i=1}^{n} x_i^2
+\] 
+con $S^{n-1} = f^{-1}(1)$ e $df_x$ dato da $(Jf)_x = (2x_1,\ldots,2x_n)$, si vede che:
+\[
+df_x(v)  =2 \sum_{i=1}^{n} x_i v_i = 2x \cdot v = 0 \iff v\perp x
+\] 
+Allora $T_x S^{n-1}=\operatorname{Ker} df_x = x ^\perp \subseteq \mathbb{R}^n$.
+
+Un altro esempio di applicazione di quanto appena visto \`e riguardante il gruppo delle matrici ortogonali; infatti, si pu\`o dimostrare che questo \`e una variet\`a di dimensione $\frac{n(n-1)}{2}$.
+Per vederlo, indicando con $M(n)$ lo spazio delle matrici reali $n\times n$, che \`e isomorfo a $\mathbb{R}^{n^2} $, si pu\`o definire
+\[
+f: 
+\begin{array}
+	{c c c}
+	M(n) & \longrightarrow & S(n) \cong \mathbb{R}^{n(n+1) / 2} \\
+	A & \longmapsto & A A^t
+\end{array}
+\] 
+con $S(n)$ spazio delle matrici simmetriche.
+Allora $O(n) = f^{-1}(I)$ \`e il gruppo delle matrici ortogonali.
+Data $A \in f^{-1}(I)$, si ha
+\[
+	df_A(B) = \lim_{\varepsilon  \to 0} \frac{f(A+\varepsilon B) - f(A)}{\varepsilon }= \lim_{\varepsilon  \to 0} \frac{(A+\varepsilon B)(A+\varepsilon B)^t - A A^t}{\varepsilon }=AB^t + BA^t
+\] 
+Questa \`e suriettiva; data $C \in S(n)$ e $A \in O(n) = f^{-1}(I)$, si pu\`o trovare $B\in M(n)$ tale che 
+\[
+AB^t + BA^t = C
+\] 
+Scrivendo $C = \frac{1}{2}C + (\frac{1}{2}C)^t$, basta trovare $B$ tale che $BA ^t= \frac{1}{2}C$; per farlo, si prende $B := \frac{1}{2}CA$.
+Questo permette di concludere che $df_A : T_AM(n) \to  T_IS(n)$ \`e suriettiva $\forall A \in f^{-1}(I)$ e, quindi, $O(n)$ \`e una variet\`a di dimensione $n^2 - \frac{n(n+1)}{2}=\frac{n(n-1)}{2}$.
+
+\subsection{Variet\`a con bordo}
+L'obiettivo \`e quello di arrivare a dimostrare il teorema di Brower, il quale afferma che una generica mappa continua 
+\[
+D^n := \left\{ x\in \mathbb{R}^n  \mid x_1^2 + \ldots + x_n^2 \le 1 \right\} \longrightarrow D^n
+\] 
+ha almeno un punto fisso.
+Per fare ci\`o, si deve trovare un modo per trattare le variet\`a con bordo in modo da includere $D^n$.
+
+Per introdurre le variet\`a con bordo, \`e necessario trovare un sostituto per gli spazi euclidei che possa contenere informazioni sul bordo.
+A questo scopo, si introduce il \textit{semispazio euclideo} 
+\[
+H^m : = \left\{ x \in \mathbb{R}^m  \mid x_m \ge 0 \right\} 
+\] 
+per rimpiazzare $\mathbb{R}^m$ nella definizione di $m$-variet\`a. 
+\begin{definizione}
+	[Variet\`a con bordo]
+	Dato $M \subseteq \mathbb{R}^k$, si dice che \`e una $m$-\textit{variet\`a con bordo} se ogni $x\in M$ ha un intorno diffeomorfo ad un aperto di $H^m$.
+\end{definizione}
+\noindent Come per le variet\`a senza bordo, i diffeomorfismi $g : U \subseteq H^m \to g(U) \subseteq M$ si dicono \textit{parametrizzazioni locali}, mentre le rispettive inverse si chiamano \textit{carte locali}.
+
+Il bordo di $M$, indicato con $\partial M$, \`e l'insieme dei punti ottenuti dall'immagine di un punto di $\partial H^m := \left\{ x \in \mathbb{R}^m  \mid x_m = 0 \right\} $ tramite una qualche parametrizzazione locale. 
+
+\subsubsection{Spazi tangenti e bordi}
+Per introdurre gli spazi tangenti di variet\`a con bordo, si deve prima caratterizzare il differenziale.
+Se $g : U \subseteq H^m \to \mathbb{R}^k$ \`e una mappa liscia, con $U$ aperto, allora $dg_u$ \`e il differenziale gi\`a utilizzato quando $u \in U \setminus\partial H^m$, in quanto $g$ \`e definita su un intorno di $x \in \mathbb{R}^m$; se, invece, $u \in \partial U = U \cap \partial H^m$, allora $dg_u$ \`e definito come $d\widetilde{g}_u$, dove $\widetilde{g}$ \`e un'estensione di $g$ ad un intorno di $u$ in $\mathbb{R}^m$.
+
+\begin{prop}
+	La definizione di $dg_u$ non dipende dalla scelta dell'estensione di $g$.
+\end{prop}
+\begin{proof}
+	Siano $\widetilde{g}$ e $\widetilde{g}'$ due estensioni di $g$ a un intorno di $u$ in $\mathbb{R}^m$ e sia $\left\{ u_i \right\} \to u$ una successione tale che la coordinata $x_m$ di $u_i$ sia positiva; allora $d \widetilde{g}'_u = d\widetilde{g}_u, \ \forall i \gg 0$ perch\'e $\widetilde{g}$ e $\widetilde{g}'$ coincidono con $g$ su intorni di $u_i$.
+	Ma questo implica che
+	\[
+	d \widetilde{g}'_u = \lim_{i \to +\infty} d\widetilde{g}'_{u_i}  = \lim_{i \to +\infty} d\widetilde{g}_{u_i} = d\widetilde{g}_u
+	\] 
+\end{proof}
+\begin{prop}
+	Sia $g : U \to  M$ una parametrizzazione locale per la $m$-variet\`a $M$; allora $\forall u \in U$, il differenziale $dg_u$ \`e iniettivo.
+\end{prop}
+\begin{proof}
+	Nel caso di $u \in U \setminus\partial U$ \`e ovvio.
+	Se, invece, $u \in \partial U$, con $x = g(u) \in M$, \`e possibile estendere l'inversa $g^{-1}$ attorno a $x$ alla funzione 
+	\[
+	F : W' \to \mathbb{R}^m \ C^\infty\ , \hspace{.3cm} F|_{W' \cap M} = g^{-1}
+	\] 
+	Pertanto si pu\`o costruire il seguente diagramma:
+	\[
+	\begin{tikzcd}
+		 &  W ' & \\
+		 \\
+		U & & \mathbb{R}^m
+		\arrow[from=3-1, to=1-2, "\displaystyle g"]
+		\arrow[from=1-2, to=3-3, "\displaystyle F"]
+		\arrow[from=3-1, to=3-3, "\displaystyle\iota",hook]
+	\end{tikzcd}
+	\] 
+	Allora, se $\left\{ u_i \right\} _i \subseteq U \setminus \partial U$ \`e una successione convergente a $u$, si ha:
+	\[
+		\operatorname{Id} _{\mathbb{R}^m} = d\iota _{u_i} = dF_{g(u_i)} \circ dg_{u_i} \stackrel{u_i \to u}{\longrightarrow} \operatorname{Id} _{\mathbb{R}^m} = dF_x \circ dg_u
+	\] 
+	perci\`o $dg_u$ \`e iniettiva.
+\end{proof}
+\begin{definizione}
+	Sia $M\subseteq \mathbb{R}^k$ una $m$-variet\`a con bordo e sia $x \in \partial M$, con $g : U \to M$ una parametrizzazione locale attorno a $x=g(u)$ e $u\in \partial U$; allora si definisce 
+	\[
+	T_x M := dg_u(\mathbb{R}^m) \subseteq \mathbb{R}^k
+	\] 
+\end{definizione}
+\begin{teorema}
+	Sia $M$ una $m$-variet\`a con bordo; allora $\partial M$ \`e una $(m-1)$-variet\`a senza bordo.
+\end{teorema}
+\begin{proof}
+	L'idea \`e che $\partial M \cong \mathbb{R}^{m-1} $.
+	Per vederlo, si prende $x \in \partial M$ e $g : U \to M $ una parametrizzazione locale attorno a $x = g(u)$, dove $u \in \partial U := U \cap \partial H^m$, che \`e un aperto di $\mathbb{R}^{m-1} $.
+\end{proof}
+\begin{boxenv}[]
+	\centering\color{nred} Riprendere dalla lezione 24
+\end{boxenv}
+
+
 \end{document}
 
