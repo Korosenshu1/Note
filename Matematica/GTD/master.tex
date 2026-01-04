@@ -3980,7 +3980,7 @@ Scrivendo $C = \frac{1}{2}C + (\frac{1}{2}C)^t$, basta trovare $B$ tale che $BA 
 Questo permette di concludere che $df_A : T_AM(n) \to  T_IS(n)$ \`e suriettiva $\forall A \in f^{-1}(I)$ e, quindi, $O(n)$ \`e una variet\`a di dimensione $n^2 - \frac{n(n+1)}{2}=\frac{n(n-1)}{2}$.
 
 \subsection{Variet\`a con bordo}
-L'obiettivo \`e quello di arrivare a dimostrare il teorema di Brower, il quale afferma che una generica mappa continua 
+L'obiettivo \`e quello di arrivare a dimostrare il teorema di Brouwer, il quale afferma che una generica mappa continua 
 \[
 D^n := \left\{ x\in \mathbb{R}^n  \mid x_1^2 + \ldots + x_n^2 \le 1 \right\} \longrightarrow D^n
 \] 
@@ -4129,9 +4129,134 @@ Se $g : U \subseteq H^m \to \mathbb{R}^k$ \`e una mappa liscia, con $U$ aperto, 
 	Usando il lemma della funzione inversa, visto che $h^{-1}\circ g$ \`e una mappa $C^\infty$ da un intorno di $u$ in $\mathbb{R}^m$ contenuto in $U$, si conclude che ha immagine contenente un intorno di $v$ in $\mathbb{R}^m$; questo, per\`o, \`e impossibile perch\'e l'immagine di $h^{-1}\circ g$ \`e contenuta in $V \subseteq H^m$ per costruzione.
 \end{proof}
 \subsubsection{Valori regolari}
-\begin{boxenv}[]
-	\centering \color{nred} Riprendere dalla lezione 24
-\end{boxenv}
+\begin{lemma}\label{vbvr1}
+	Siano $M$ una variet\`a senza bordo\footnote{Lo stesso vale per variet\`a con bordo, ma la dimostrazione andrebbe leggermente sistemata di conseguenza.} e $g : M \to \mathbb{R}$ una mappa liscia; se $0 \in \mathbb{R}$ \`e un valore regolare di $g$, allora $\left\{ x \in M  \mid g(x) \ge 0 \right\} $ \`e una variet\`a con bordo $g^{-1}(0)$.
+\end{lemma}
+\begin{proof}
+	L'insieme $\left\{ x \in M  \mid g(x) > 0 \right\} \subset M$ \`e aperto, quindi \`e una variet\`a con carte locali date dalle intersezioni con le carte di $M$.
+	Se $m = \dim M$ e $M \subset \mathbb{R}^k$, visto che $0$ \`e un valore regolare per $g$, si ha $\dim  \operatorname{Ker} dg_x = m -1$.
+	Ora si definisce l'applicazione lineare $L : \mathbb{R}^k \to  \mathbb{R}^{m-1} $ tale che $L |_{\operatorname{Ker} dg_x} $ sia un isomorfismo lineare e si introduce la mappa
+	\[
+	G: 
+	\begin{array}
+		{c c c}
+		M & \longrightarrow & \mathbb{R}^{m-1} \times \mathbb{R}\\
+		x & \longmapsto & \big(L(x), g(x)\big)
+	\end{array}
+	\] 
+	Per costruzione, $dG_x$ \`e un isomorfismo, quindi $G$ induce un diffeomorfismo tra un intorno $U\subset M$ di $x$ e un intorno $V \subset \mathbb{R}^{m-1} \times \mathbb{R}$ di $\big(L(x), 0\big)$.
+	Inoltre, notando che
+	\[
+	G^{-1}\Big(\left(\mathbb{R}^{m-1} \times \mathbb{R}^{\ge 0} \right) \cap V = H^m \cap V\Big)= U \cap \left\{x \in M \mid  g(x)\ge 0 \right\} 
+	\] 
+	si conclude che $G$ \`e una carta locale attorno a $x$.
+\end{proof}
+\noindent Questo lemma si pu\`o utilizzare per concludere che $D^m$ \`e una variet\`a con bordo; infatti, ricordando che
+\[
+D^m : = \left\{ x \in \mathbb{R}^m  \Bigg\lvert \sum_{i=1}^{m} x_i^2 \le 1 \right\}  \subseteq \mathbb{R}^m
+\] 
+si pu\`o definire
+\[
+g : 
+\begin{array}
+	{c c c}
+	\mathbb{R}^m & \longrightarrow & \mathbb{R}\\
+	x & \longmapsto & 1 - \sum_{i=1}^{m} x_i^2
+\end{array}
+\] 
+che \`e una mappa $C^\infty$, per ottenere che $D^m = \left\{ x \in \mathbb{R}^m  \mid g(x) \ge 0 \right\} $.
+Si vede che $0 \in \mathbb{R}$ \`e un valore regolare per $g$; infatti
+\[
+dg_x = -\big(2x_1,\ldots,2x_m\big) = 0 \iff x_1=\ldots=x_m =0 
+\] 
+ma $(0,\ldots,0)$ non risolve $g=0$. 
+Pertanto, sfruttando il lemma precedente, si conclude che $D^m$ \`e una variet\`a, il cui bordo \`e dato da $g^{-1}(0) = S^{m-1}$.
+\begin{lemma}\label{vbvr2}
+	Siano $M,N$ due variet\`a con $m = \dim M > \dim N = n$ e sia $f : M \to N$ una mappa $C^\infty$.
+	Se $M$ ha bordo e $y \in N$ \`e un valore regolare sia per $f$ che per $f|_{\partial M} $, con $f^{-1}(y) \neq \varnothing$, allora $f^{-1}(y)$ \`e una variet\`a di dimensione $m-n$, il cui bordo \`e dato da $\partial f^{-1}(y) = f^{-1}(y)\cap \partial M$.
+\end{lemma}
+\begin{proof}
+	La dimostrazione si basa su verifiche locali, pertanto \`e possibile trattare il caso specifico per $M = H^m$ e $N = \mathbb{R}^n$ senza perdere generalit\`a.
+	Sia, dunque, $f: H^m \to \mathbb{R}^n$ una mappa liscia con $y \in \mathbb{R}^n$ valore regolare per $f$ e $f|_{\partial H^m} $.
+	Sia, inoltre, $\overline{x}\in f^{-1}(y)$; se $\overline{x}\in \operatorname{Int} \left(H^m\right) $, allora si pu\`o usare quanto visto per le variet\`a senza bordo per concludere che $f^{-1}(y)$ \`e una variet\`a di dimensione $m-n$ in un intorno di $\overline{x}$.
 
+	Nel caso in cui, invece, $\overline{x}\in \partial H^m$, si definisce $F:U \subseteq \mathbb{R}^m \to \mathbb{R}^n$ come l'estensione $C^\infty$ di $f$ a $\mathbb{R}^m$, cio\`e \`e tale che $F|_{U\cap H^m} = f|_{U\cap H^m} $.
+	Visto che $y$ \`e regolare per $f$, allora $df_{\overline{x}} = dF_{\overline{x}} $ \`e suriettiva e, quindi (a meno di restringere $U$) si pu\`o assumere, senza perdita di generalit\`a, che $F$ non abbia punti critici in $U$.
+	Ne segue che $F^{-1}(y) \subset U$ \`e una variet\`a di dimensione $m-n$ per quanto gi\`a visto.
+
+	Ora si definisce 
+	\[
+	\pi : 
+	\begin{array}
+		{c c c}
+		\mathbb{R}^m &\longrightarrow &\mathbb{R}\\
+		(x_1,\ldots,x_m) &\longmapsto & x_m
+	\end{array}
+	\] 
+	e se ne considera la restrizione a $F^{-1}(y)$ (d'ora in avanti, si assumer\`a che avr\`a dominio su $F^{-1}(y)$); allora
+	\[
+	f^{-1}(y) \cap U = \left\{ x \in F^{-1}(y)  \mid \pi(x) \ge 0 \right\} 
+	\] 
+	Facendo uso del lemma precedente (\ref{vbvr1}), sar\`a sufficiente dimostrare che $0 \in \mathbb{R}$ \`e un valore regolare per $\pi$ per poter concludere.
+	Si nota che
+	\[
+	\left(\pi|_{F^{-1}(y)} \right) ^{-1}(0) = f^{-1}(y) \cap \partial H^m
+	\] 
+	Se $\overline{x}\in f^{-1}(y) \cap \partial H^m$, allora
+	\[
+		T_{\overline{x}}F^{-1}(y) = \operatorname{Ker} dF_{\overline{x}} = \operatorname{Ker} df_{\overline{x}} 
+	\] 
+	ha dimensione $m-n$ perch\'e $\dim F^{-1}(y) = m-n$.
+Considerando il diagramma
+\[
+\begin{tikzcd}
+	H^m & & \mathbb{R}^n\\
+	\\
+	\partial H^m & &
+	\arrow[from=1-1, to=1-3, "\displaystyle f"]
+	\arrow[from=3-1, to=1-1, hook]
+	\arrow[from=3-1, to=1-3, "\displaystyle f|_{\partial H^m}"' ]
+\end{tikzcd}
+\] 
+si vede che $y$ valore regolare per $f|_{\partial H^m}$ implica che
+\[
+	K:= \operatorname{Ker} \Big(d\left(f|_{\partial H^m} \right) _{\overline{x}} \Big) = \operatorname{Ker} \Big(df_{\overline{x}}\big|_{T_{\overline{x}}\partial H^m} \Big)
+\] 
+ha dimensione $\dim K = m-n-1$.
+Visto che $T_{\overline{x}} \partial H^m = \operatorname{Ker} d\pi_{\overline{x}} $, allora $K = \operatorname{Ker} df_{\overline{x}} \cap \operatorname{Ker} d\pi_{\overline{x}} $, quindi $m-n-1 = \dim K < \dim \operatorname{Ker} df_{\overline{x}} = m -n$, da cui
+\[
+\operatorname{Ker} df_{\overline{x}} = \operatorname{Ker} dF_{\overline{x}} \not \subseteq \operatorname{Ker} d\pi_{\overline{x}} 
+\] 
+che equivale a dire che
+\[
+d\pi_{\overline{x}} \big|_{T_{\overline{x}} F^{-1}(y)} \neq 0
+\] 
+Quindi, $0$ \`e un valore regolare per $\pi$ e, allora, $f^{-1}(y) \cap U$ \`e una variet\`a con bordo di dimensione $m-n$ e $\partial \big(f^{-1}(y) \cap U\big) = f^{-1}(y) \cap \partial H^m$.
+\end{proof}
+\subsubsection{Teorema di Brouwer}
+Per proseguire con la trattazione, si considerer\`a il seguente enunciato come \textit{fatto}.
+\vspace{.3cm}
+
+\noindent \textbf{Fatto.} Ogni variet\`a compatta di dimensione $1$ \`e diffeomorfa ad un'unione finita di copie di $S^{1}$ e di intervalli chiusi di $\mathbb{R}$.
+
+\vspace{.3cm}
+\begin{lemma}
+	Sia $M$ una variet\`a compatta con $\partial M \neq \varnothing$; allora non pu\`o esistere una mappa $f:M\to  \partial M\ C^\infty$ tale che $f |_{\partial M} = \operatorname{Id} _{\partial M} $.
+\end{lemma}
+\begin{proof}
+	Si procede per assurdo, assumendo che tale mappa esista.
+	Si sa che i valori regolari di $f$ in $\partial M$ sono densi; sia $y \in \partial M$ uno di questi.
+	Visto che $f|_{\partial M} = \operatorname{Id} _{\partial M} $, allora $y$ \`e regolare per $f |_{\partial M} $ e, per il lemma precedente (\ref{vbvr2}), $f^{-1}(y)$ \`e una variet\`a di dimensione $1$ con 
+	\[
+	\partial f^{-1}(y) = f^{-1}(y) \cap \partial M = \left\{ y \right\} 
+	\] 
+	dove la seconda uguaglianza deriva dal fatto che $f|_{\partial M} = Id_{\partial M} $.
+	Per il \textit{fatto} appena enunciato, questo \`e impossibile perch\'e i bordi delle variet\`a di dimensione $1$ hanno sempre un numero pari di punti.
+\end{proof}
+\begin{osservazione}
+Come diretta conseguenza di questo lemma, si ha che $\operatorname{Id} _{S^{m-1} } : S^{m-1}\to S^{m-1} $ non si pu\`o estendere ad un'applicazione liscia $D^m\to S^{m-1} $.
+\end{osservazione}
+\begin{lemma}
+	Ogni mappa $C^\infty$ $g:D^{m} \to D^m$ ha almeno un punto fisso, cio\`e $\exists x \in D^m $ tale che $ g(x)  = x$.
+\end{lemma}
 \end{document}
-
