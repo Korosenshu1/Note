@@ -1300,8 +1300,8 @@ f(s,t) = \big(u(s,t),v(s,t)\big)\implies f(s_0,t_0) = (u_0,v_0)
 quindi $\underline{x} (f(s,t)) = \underline{y}(s,t)$, allora si potrebbe derivare per ottenere 
 \[
 \begin{cases}
-	\underline{y}_s = u_s \underline{x}_u \cdot f + v_s \underline{x}_v \cdot f\\
-	\underline{y}_t = u_t \underline{x}_u \cdot f + v_t \underline{x}_v \cdot f
+	\underline{y}_s = u_s \underline{x}_u \circ f + v_s \underline{x}_v \circ f\\
+	\underline{y}_t = u_t \underline{x}_u \circ f + v_t \underline{x}_v \circ f
 \end{cases}
 \] 
 Ma allora $\underline{y}_s, \ \underline{y}_{t} \in \mathrm{Span} (\underline{x}_u,\underline{x}_v)  $, quindi
@@ -1931,7 +1931,7 @@ Allora si ha la seguente definizione.
 		&\underline{x}^*:U\to \Sigma ^* \text{ attorno a } p^*\\
 	\end{split}
 	\] 
-	tali che $E = E^*$, $F = F^*$ e $G = G*$ come funzioni su $U$.
+	tali che $E = E^*$, $F = F^*$ e $G = G^*$ come funzioni su $U$.
 \end{definizione}
 \noindent Si considera il seguente diagramma.
 \[
@@ -1975,7 +1975,7 @@ Ripercorrendo i passaggi all'indietro, si vede che se $f = \underline{x}^* \circ
 	[Applicazioni del teorema Egregium]
 Come applicazioni del teorema Egregium, si nota anche che:
 \begin{itemize}
-	\item gli elicoidi ($K<0$) non sono localmente isometrico n\'e alle sfere, n\'e al piano;
+	\item gli elicoidi ($K<0$) non sono localmente isometrici n\'e alle sfere, n\'e al piano;
 	\item il cilindro \`e localmente isometrico al piano tramite
 		\[
 		\underline{x}:
@@ -2027,7 +2027,7 @@ Come applicazioni del teorema Egregium, si nota anche che:
 \underline{n}(s) \cdot \alpha '(s) = 0 \implies \underline{n}(s) \cdot \alpha ''(s) = 0
 \] 
 Se ne conclude, allora, che $\alpha ''(s) \perp \underline{n}$ e $\alpha ''(s) \perp \alpha '(s)$, quindi $\alpha ''(s) \in \underline{n}^\perp \cap \alpha '(s) ^\perp$.
-Visto che sia $\alpha '(s)$ che $\underline{n}$ sono normali ad $\alpha (s)$ (perch\'e $\alpha (s)$ appartiene a $\pi$), si ha che $\alpha ''(s) \in \mathrm{Span} (\alpha (s)) = \left(T_{\alpha (s)} S^2_a\right) ^\perp$.
+Visto che sia $\alpha '(s)$ che $\underline{n}$ sono in $T_{\alpha (s) } S^2_a$\footnote{Il primo perch\'e la curva \`e sulla superficie, il secondo perch\'e \`e ortogonale $\pi$, il quale non coincide con $T_{\alpha (s)} S^2_a$.}, si ha che $\alpha ''(s) \in \left(T_{\alpha (s)} S^2_a\right) ^\perp$.
 Tramite queste informazioni, si pu\`o calcolare la derivata covariante del campo $X$:
 \[
 D_{\alpha '(s)} X = \Eval{\frac{d }{d t} \big(\alpha '(s+t)\big)}{t=0}{} = \alpha '' (s) \perp T_{\alpha (s)} S^2_a \implies \nabla _{\alpha '(s)} X = 0 
@@ -2188,7 +2188,7 @@ Pertanto si pu\`o definire la mappa
 	\underline{x}:
 \begin{array}
 	{c c c c c}
-	U'_qp &\longrightarrow&U_p &\longrightarrow & \Sigma\\
+	U'_p &\longrightarrow&U_p &\longrightarrow & \Sigma\\
 	(u,v) &\longmapsto & ue_1+ve_2&\longmapsto& \exp_p (ue_1+ve_2)
 \end{array}
 \] 
