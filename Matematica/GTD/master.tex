@@ -3357,7 +3357,7 @@ Il verso del versore normale trovato al punto precedente punta, evidentemente, v
 Tenendo conto dell'orientazione data dal versore normale e che la regione \`e circondata dalle circonferenze $z = 0\Rightarrow u = 1$ e $z=1\Rightarrow u=e$, allora
 \[
 	\begin{split}
-		\int_{\partial R}  k_g ds &= \int_{\beta _e} k_g ds - \int_{\beta _1} kg ds\\
+		\int_{\partial R}  k_g ds &= \int_{\beta _e} k_g ds - \int_{\beta _1} k_g ds\\
 					  &= \frac{1}{\sqrt{1+e^2} }2\pi e - \frac{1}{\sqrt{2} }2\pi = 2\pi \left(\frac{e}{\sqrt{1+e^2} }-\frac{1}{\sqrt{2} }\right) 
 	\end{split}
 \] 
@@ -3979,7 +3979,7 @@ AB^t + BA^t = C
 Scrivendo $C = \frac{1}{2}C + (\frac{1}{2}C)^t$, basta trovare $B$ tale che $BA ^t= \frac{1}{2}C$; per farlo, si prende $B := \frac{1}{2}CA$.
 Questo permette di concludere che $df_A : T_AM(n) \to  T_IS(n)$ \`e suriettiva $\forall A \in f^{-1}(I)$ e, quindi, $O(n)$ \`e una variet\`a di dimensione $n^2 - \frac{n(n+1)}{2}=\frac{n(n-1)}{2}$.
 
-\subsection{Variet\`a con bordo}
+\subsection{Variet\`a con bordo e teorema di Brouwer}
 L'obiettivo \`e quello di arrivare a dimostrare il teorema di Brouwer, il quale afferma che una generica mappa continua 
 \[
 D^n := \left\{ x\in \mathbb{R}^n  \mid x_1^2 + \ldots + x_n^2 \le 1 \right\} \longrightarrow D^n
@@ -4240,7 +4240,7 @@ Per proseguire con la trattazione, si considerer\`a il seguente enunciato come \
 \noindent \textbf{Fatto.} Ogni variet\`a compatta di dimensione $1$ \`e diffeomorfa ad un'unione finita di copie di $S^{1}$ e di intervalli chiusi di $\mathbb{R}$.
 
 \vspace{.3cm}
-\begin{lemma}
+\begin{lemma}\label{lb1}
 	Sia $M$ una variet\`a compatta con $\partial M \neq \varnothing$; allora non pu\`o esistere una mappa $f:M\to  \partial M\ C^\infty$ tale che $f |_{\partial M} = \operatorname{Id} _{\partial M} $.
 \end{lemma}
 \begin{proof}
@@ -4256,9 +4256,86 @@ Per proseguire con la trattazione, si considerer\`a il seguente enunciato come \
 \begin{osservazione}
 Come diretta conseguenza di questo lemma, si ha che $\operatorname{Id} _{S^{m-1} } : S^{m-1}\to S^{m-1} $ non si pu\`o estendere ad un'applicazione liscia $D^m\to S^{m-1} $.
 \end{osservazione}
-\begin{lemma}
+\begin{lemma}\label{lb2}
 	Ogni mappa $C^\infty$ $g:D^{m} \to D^m$ ha almeno un punto fisso, cio\`e $\exists x \in D^m $ tale che $ g(x)  = x$.
 \end{lemma}
+\begin{proof}
+	Si procede per assurdo.
+	Sia, quindi, $g : D^m \to  D^m $ una mappa liscia senza punti fissi; allora la si pu\`o usare per costruire la mappa $C^\infty$
+	\[
+		f:
+		\begin{array}
+			{c c c}
+			D^m&  \longrightarrow  &S^{m-1}\\
+			x & \longmapsto& x + tu
+		\end{array}\,  \hspace{.5cm} \text{ tale che } \hspace{.5cm} f|_{S^{m-1}}  = \operatorname{Id} _{S^{m-1}} 
+	\] 
+	con
+	\[
+	u : = \frac{x - g(x)}{\left\lVert x-g(x) \right\rVert }
+	\] 
+	dove si osserva che $\left\lVert x - g(x) \right\rVert \neq 0$ per ogni $x$ perch\'e $g$ non ha punti fissi per assunzione.
+	Per ottenere $t$, si usa che\footnote{La condizione \`e assicurata dal fatto che $f$ deve mappare elementi di $D^m$ in $S^{m-1}$.}
+	\[
+	1 = (x + tu ) \cdot (x + tu ) = x \cdot  x + t^2 + 2t( x \cdot  u) \implies t = - x \cdot  u \pm \sqrt{(x\cdot u)^2 - x \cdot  x + 1} 
+	\] 
+	dove si sceglie la soluzione con il segno positivo davanti la radice.
+	Perch\'e $t$ sia $C^\infty$, deve risultare $h(x) := (x\cdot u) ^2 - x \cdot x + 1 > 0$; visto che $x \in D^m$, si ha $h(x) \ge (x\cdot u)^2 \ge 0$ e $h(x) = (x\cdot u)^2\iff x \cdot  x = 1$.
+	In questo caso, si ha:
+	\[
+	x \cdot  u = \frac{x \cdot x - x \cdot g(x)}{\left\lVert x - g(x) \right\rVert } = \frac{1 - x \cdot g(x)}{\left\lVert x - g(x) \right\rVert }>0
+	\] 
+	visto che $x \neq g(x)$.
+	Inoltre, $x \cdot  x = 1 \implies t = 0 \implies f(x) = x$, da cui si ottiene che $f $ \`e $C^\infty$ e $f|_{S^{m-1}} = \operatorname{Id} _{S^{m-1}} $, che \`e in contraddizione con il precedente lemma (\ref{lb1}).
+\end{proof}
+\begin{teorema}
+	[Teorema di Brouwer]
+	Ogni mappa continua $G: D^m \to D^m$ ha almeno un punto fisso.
+\end{teorema}
+\begin{proof}
+	Visto che $D^m$ \`e compatto, per il teorema di approssimazione di Weierstrass, si trova una funzione polinomiale $P_1:\mathbb{R}^m \to \mathbb{R}$ tale che $\left\lVert P_1(x) - G(x) \right\rVert <\varepsilon , \ \forall x \in D^m$.
+	Si nota anche che, per ogni $x \in  D^m$, vale
+	\[
+	\left\lVert P_1(x) \right\rVert \le \left\lVert P_1(x) - G(x) \right\rVert + \left\lVert G(x) \right\rVert < \varepsilon  + 1
+	\] 
+	Allora, si definisce 
+	\[
+		P:
+	\begin{array}
+		{c c c}
+		D^m & \longrightarrow & D^m\\
+		x&\longmapsto &\displaystyle \frac{P_1(x)}{\varepsilon +1}
+	\end{array}
+	\] 
+	Assumendo per assurdo che $G(x) - x \neq 0, \ \forall x \in D^m$, si ha
+	\[
+	\mu := \min_{x \in D^m} \left\lVert G(x) - x  \right\rVert > 0
+	\] 
+	Prendendo $\varepsilon >0 $ tale che $\mu > 2 \varepsilon /(1+\varepsilon )$, si ha
+	\[
+		\begin{split}
+			\left\lVert P(x) - G(x) \right\rVert &= \left\lVert \frac{P_1(x)}{\varepsilon +1} - G(x) \right\rVert = \frac{1}{\varepsilon +1} \left\lVert P_1(x) - (\varepsilon +1) G(x) \right\rVert \\
+							     &\le \frac{1}{\varepsilon +1}\Big[\left\lVert P_1(x) - G(x) \right\rVert + \varepsilon \left\lVert G(x) \right\rVert \Big] \\
+							     & <\frac{2 \varepsilon }{\varepsilon +1}<\mu 
+		\end{split}
+	\] 
+	per cui $P(x) \neq x , \ \forall x \in D^m$.
+	Ma visto che $P:D^m \to D^m $ \`e $C^\infty$, allora il lemma precedente (\ref{lb2}) \`e contraddetto.
+\end{proof}
+\subsection{Teoria del grado mod 2}
+Data $f : M \to  N$ mappa $C^\infty$ tra variet\`a, con $M$ compatta, $\partial M = \varnothing$, $N$ connessa e $\dim M = \dim N$, si vuole dimostrare che, dati $y,y' \in N$ valori regolari di $f$, vale
+\[
+\lvert f^{-1}(y) \rvert \equiv \lvert f^{-1}(y') \rvert \pmod{2} 
+\] 
+\begin{esercizio}
+	Sia $M$ una variet\`a; allora $M \times [0,1]$ \`e una variet\`a con bordo $\partial M = M \times \left\{ 0 \right\} \cup M \times \left\{ 1 \right\} $.
+\end{esercizio}
+\begin{svolgimento}
+	Suggerimento: usare che $f : M \times \mathbb{R} \to \mathbb{R}, \ f(x,t) = 1-t^2 $ \`e $C^\infty$.
+\end{svolgimento}
+\begin{definizione}
+	[Omotopia $C^\infty$]
+\end{definizione}
 \begin{boxenv}[]
 	\centering \color{nred} Riprendere dalla lezione 25
 \end{boxenv}
