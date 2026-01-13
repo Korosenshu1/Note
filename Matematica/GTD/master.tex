@@ -4328,16 +4328,132 @@ Data $f : M \to  N$ mappa $C^\infty$ tra variet\`a, con $M$ compatta, $\partial 
 \lvert f^{-1}(y) \rvert \equiv \lvert f^{-1}(y') \rvert \pmod{2} 
 \] 
 \begin{esercizio}
-	Sia $M$ una variet\`a; allora $M \times [0,1]$ \`e una variet\`a con bordo $\partial M = M \times \left\{ 0 \right\} \cup M \times \left\{ 1 \right\} $.
+	{\color{nred}(Da svolgere\ldots)} Sia $M$ una variet\`a; allora $M \times [0,1]$ \`e una variet\`a con bordo $\partial M = M \times \left\{ 0 \right\} \cup M \times \left\{ 1 \right\} $.
 \end{esercizio}
 \begin{svolgimento}
 	Suggerimento: usare che $f : M \times \mathbb{R} \to \mathbb{R}, \ f(x,t) = 1-t^2 $ \`e $C^\infty$.
 \end{svolgimento}
 \begin{definizione}
 	[Omotopia $C^\infty$]
+	Siano $M,N$ due variet\`a e $f, g : M \to  N $ due mappe $C^\infty$.
+	Si dice che queste sono $C^\infty$\textit{-omotope} se esiste un'applicazione $C^\infty$ $F:M\times [0,1] \to N	$ tale che $F(x,0) = f(x), \ F(x,1) = g(x), \ \forall x \in M$.
 \end{definizione}
-\begin{boxenv}[]
-	\centering \color{nred} Riprendere dalla lezione 25
-\end{boxenv}
+\begin{lemma}[Lemma di omotopia]\label{lom}
+	Siano $M,N$ due variet\`a, con $M$ compatta e $\dim M = \dim N$.
+	Siano, poi, $f,g : M \to N$ due mappe $C^\infty$-omotope e sia $y \in N$ un loro valore regolare; allora $\lvert f^{-1}(y) \rvert \equiv \lvert g^{-1}(y) \rvert \pmod{2} $.
+\end{lemma}
+\begin{proof}
+	Sia $F:M \times [0,1]\to N$ l'omotopia $C^\infty$.
+	Siano, poi, $V_1\subseteq N$ un intorno di $y$ tale che $\lvert f^{-1}(y') \rvert = \lvert f^{-1}(y) \rvert ,\ \forall y' \in V_1$ e $V_2\subseteq N$ un intorno analogo che soddisfa la stessa condizione per $g$, cio\`e $\lvert g^{-1}(y') \rvert = \lvert g^{-1}(y) \rvert , \ \forall y ' \in V_2$.
+	\`E sufficiente mostrare che la tesi vale in un punto di $V_1\cap V_2$.
+	Sia, quindi, $y \in V_1\cap V_2$ un valore regolare di $F$; allora $F^{-1}(y)$ \`e una variet\`a di dimensione $1$, con bordo
+	\[
+		\begin{split}
+			\partial F^{-1}(y) &= F^{-1}(y) \cap \partial \big(M\times [0,1]\big) = F^{-1}(y) \cap \big(M \times \left\{ 0 \right\} \cup M \times \left\{ 1 \right\} \big)\\
+					   & = f^{-1}(y) \cup g^{-1}(y)
+		\end{split}
+	\] 
+	Ma questo implica che
+	\[
+	0 \equiv \lvert \partial F^{-1}(y) \rvert = \lvert f^{-1}(y) \rvert + \lvert g^{-1}(y) \rvert \pmod{2} 
+	\] 
+	da cui la tesi.
+\end{proof}
+\begin{definizione}
+	[Isotopia]
+	Sia $F : M \times [0,1]\to N$ un'omotopia $C^\infty$ tra diffeomorfismi $f,g : M \to N$.
+	Si dice che $F$ \`e un'\textit{isotopia} se, $\forall t \in [0,1]$, la mappa 
+	\[
+		F_t : 
+	\begin{array}
+		{c c c}
+		M & \longrightarrow & N\\
+		x & \longmapsto & F(x,t)
+	\end{array}
+	\] 
+	\`e un diffeomorfismo.
+\end{definizione}
+\begin{lemma}
+	[Lemma di omogeneit\`a]\label{log}
+	Sia $N$ una variet\`a connessa e siano $y,z \in N$.
+	Allora esiste un diffeomorfismo $h : N \to N$ tale che:
+	\begin{enumerate}[(a).]
+		\item $h(y) = z$;
+		\item $h$ \`e isotopo a $\operatorname{Id} _N$ tramite un'isotopia a supporto compatto, cio\`e $\exists K \subset N$ compatto con $y,z \in K$ e $h_t|_{N\setminus K} = \operatorname{Id} _{N \setminus K} , \ \forall t \in [0,1]$.
+	\end{enumerate}
+\end{lemma}
+\begin{teorema}
+	Siano $M,N$ due variet\`a, con $\dim M = \dim N$, $M$ compatta e $N$ connessa.
+	Se $y,z \in N$ sono valori regolari di $f : M \to  N$ mappa $C^\infty$, allora:
+	\begin{enumerate}[(a).]
+		\item $\lvert f^{-1}(y) \rvert \equiv \lvert f^{-1}(z) \rvert \pmod{2} $ e $\deg_2 f := \lvert f^{-1}(y) \rvert \pmod{2} $ \`e il \textit{grado di $f$ modulo 2};
+		\item data $g : M \to N$ $C^\infty$ omotopa a $f$, allora $\deg_2 g = \deg _2 f$.
+	\end{enumerate}
+\end{teorema}
+\begin{proof}
+Si divide la dimostrazione nei due punti.
+\begin{enumerate}[(a).]
+	\item Per il lemma di omogeneit\`a (\ref{log}), esiste $h : N \to N$ diffeomorfismo isotopo a $\operatorname{Id} _N$ con $h(y) = z$; se $y$ \`e un valore regolare per $f$, dunque, si ha che $z$ \`e un valore regolare per $h\circ g$.
+Definendo 
+\[
+\begin{array}
+	{c c c c c}
+	M \times [0,1] & \xrightarrow{\quad \displaystyle f \times \operatorname{Id} \quad} & N \times [0,1] & \xrightarrow{\quad \displaystyle H \quad} &N\\
+	(x,t) & \xmapsto{\qquad\qquad} & \big(f(x) , t \big) & \xmapsto{\qquad\quad} & H\big(f(x), t\big)
+\end{array}
+\] 
+dove $(x,t)\longmapsto \big(f(x),t\big)$ \`e un'omotopia $C^\infty$ da $h\circ f$ a $f$ e $H$ \`e un'isotopia da $h$ a $\operatorname{Id} _n$, si pu\`o usare il lemma di omotopia (\ref{lom}) per concludere che
+\[
+	\lvert f^{-1}(z) \rvert \equiv \lvert (h\circ f)^{-1}(z) \rvert = \lvert f^{-1}(y) \rvert \pmod{2} 
+\] 
+\item Sia $g : M \to N$ una mappa $C^\infty$-omotopa a $f$ e sia $C$ l'insieme dei punti critici di $f$, quindi $C$ \`e chiuso in un compatto e, allora, \`e anch'esso compatto.
+	Perci\`o, $f(C) \subseteq N$ sar\`a compatto, quindi $N \setminus f(C)$ (cio\`e l'insieme dei valori regolari di $f$) \`e aperto.
+	Usando il fatto che i valori regolari sono densi all'insieme dei valori regolari di $g$, si ha che $\exists y \in N$ che \`e un valore regolare sia per $f$, che per $g$; allora, usando il lemma di omotopia (\ref{lom}), si pu\`o concludere che
+	\[
+	\deg_2 g = \lvert g^{-1}(y) \rvert \operatorname{mod} 2  = \lvert f^{-1}(y) \rvert \operatorname{mod} 2 = \deg _2 f
+	\] 
+\end{enumerate}
+\end{proof}
+\noindent Ora si dimostra il lemma di omogeneit\`a; per farlo, per\`o, \`e necessaria la seguente definizione.
+\begin{definizione}
+	[Elementi isotopi]
+	Data $N$ una variet\`a e $y,z \in N$, si dice che $y$ e $z$ sono \textit{isotopi} se esiste un diffeomorfismo $h:N\to N$ isotopo a $\operatorname{Id} _N$ tramite isotopia a supporto compatto, con $h(y) = z$.
+\end{definizione}
+\begin{prop}
+	Data $N$ una variet\`a differenziabile, l'isotopia tra punti \`e una relazione di equivalenza su $N$.
+\end{prop}
+\begin{proof}
+	Per definizione, si ha che ogni $y\in N$ \`e isotopo a se stesso.
+	Ora si dimostra che se $y$ \`e isotopo a $z$, allora $z$ \`e isotopo a $y$.
+	\begin{boxenv}[]
+		\centering \color{nred} Riprendere dalla lezione 26
+	\end{boxenv}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
