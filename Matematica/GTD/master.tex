@@ -4425,10 +4425,45 @@ dove $(x,t)\longmapsto \big(f(x),t\big)$ \`e un'omotopia $C^\infty$ da $h\circ f
 \begin{proof}
 	Per definizione, si ha che ogni $y\in N$ \`e isotopo a se stesso.
 	Ora si dimostra che se $y$ \`e isotopo a $z$, allora $z$ \`e isotopo a $y$.
-	\begin{boxenv}[]
-		\centering \color{nred} Riprendere dalla lezione 26
-	\end{boxenv}
+	Si ha, per $H : N \times [0,1] \to  N$ isotopia da $h$ a $\operatorname{Id} _N$, che
+	\[
+	\begin{array}
+		{c c c c c c c}
+		N \times [0,1] & \xrightarrow{\qquad}& N \times [0,1] &\xrightarrow{\quad \displaystyle H\quad} & N &\xrightarrow{\quad \displaystyle h^{-1} \quad} & N \\
+		(x,t) & \xmapsto{\qquad}& (x,1-t) & & & &
+	\end{array}
+	\] 
+	definisce un'isotopia a supporto compatto da $h^{-1}$ a $\operatorname{Id} _N$.
+
+	Per finire, si dimostra che se $y$ \`e isotopo a $z$ e $z$ \`e isotopo a $w$, allora $y$ \`e isotopo a $w$.
+	Si hanno le isotopie a supporto compatto
+	\[
+	\begin{array}
+		{c c}
+		\begin{array}
+			{c c c}
+			N \times [0,1]& \xrightarrow{\quad \displaystyle H \quad} & N
+		\end{array} 
+		&\hspace{1cm}
+		\begin{array}
+			{c c c}
+			N \times [0,1] & \xrightarrow{\quad \displaystyle G \quad} & N
+		\end{array}
+	\end{array}
+	\] 
+	rispettivamente da $h$ a $\operatorname{Id}_N $, con $h(y) = z$, e da $g$ a $\operatorname{Id} _N$, con $g(z) = w$.
+	Allora si definisce 
+	\[
+	\begin{array}
+		{c c c c c}
+		N \times [0,1] & \xrightarrow{\quad \displaystyle H \times \operatorname{Id}\quad } & N \times [0,1] & \xrightarrow{\quad \displaystyle G \quad} & N
+	\end{array}
+	\] 
+	che \`e un'isotopia a supporto compatto da $g\circ h$ a $\operatorname{Id} _N$, con $g \big(h(y)\big) = w$.
 \end{proof}
+\begin{boxenv}[]
+	\centering \color{nred} Riprendere dalla lezione 26
+\end{boxenv}
 
 
 
