@@ -1,0 +1,1118 @@
+%! TEX program = lualatex
+\documentclass[12pt]{scrartcl}
+% Packages
+%\usepackage[margin=1.5in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{parskip}
+\usepackage{pythonhighlight}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage{setspace}
+\setstretch{1.2}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+\definecolor{mastercolor}{HTML}{a67c00}
+\definecolor{nred}{HTML}{bf0040}
+
+
+% Titles 
+\title{Riassunti di Algebra}
+\author{Manuel Deodato}
+\date{}
+
+
+
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\sffamily\scshape\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+
+
+
+\tcolorboxenvironment{definizione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{lemma}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{teorema}{enhanced,blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{corollario}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{prop}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{esercizio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+\tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{20}{20}\scshape}
+{\color{mastercolor}{\fontsize{30}{20}\selectfont\thesection\hspace{.2cm}\color{mastercolor}{\vrule width 1pt}}}
+{0.7em}
+{}
+\titlespacing*{\section}{0pt}{*2}{1cm}
+\titlespacing*{\subsection}{0pt}{*5}{.5cm}
+\titlespacing*{\subsubsection}{0pt}{*5}{.5cm}
+
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{166,124,0}}
+
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\centering\fontsize{14}{20}\bfseries}{\normalfont\color{mastercolor}\S\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\centering\fontsize{12}{20}\bfseries}{\normalfont\color{mastercolor}\S\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+%\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{kpfonts}
+
+
+
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
+\begin{document}
+\maketitle
+\tableofcontents 
+\newpage
+\section{Nozioni fondamentali}
+\subsection{Applicazioni}
+\begin{prop}
+	Sia $f :X \to Y$; valgono le seguenti propriet\`a:
+	\[
+		\begin{array}
+			{c c}
+			f^{-1}(A\cup B) = f^{-1}(A) \cup f^{-1}(B) & f^{-1}(A\cap B) = f^{-1}(A) \cap f^{-1}(B)\\
+			f(A\cup B) = f(A) \cup f(B) & f(A\cap B) \subseteq f(A) \cap f(B)
+		\end{array}
+	\] 
+\end{prop}
+\noindent Un diagramma \`e detto \textbf{commutativo} se e soltanto se ogni cammino con stessa partenza e stesso arrivo danno lo stesso risultato per composizione.
+Nel caso del diagramma
+\[
+\begin{tikzcd}
+	X & & Y \\
+	\\
+	A & & B
+	\arrow[from=1-1, to=1-3, "f"]
+	\arrow[from=1-3, to=3-3, "h"]
+	\arrow[from=3-3, to=3-1, "i"]
+	\arrow[from=1-1, to=3-1, "g"']
+\end{tikzcd}
+\] 
+questo \`e commutativo se e solo se $(h\circ f) (x) = (i \circ g) (x)$.
+\subsection{Relazioni}
+Sia $X$ un insieme e $R \subseteq X \times X$.
+Si dice che ad $R$ \`e associata una \textbf{relazione} $\sim_R$ (o pi\`u semplicemente $\sim$ quando non vi \`e ambiguit\`a) su $X$ se $x \sim_R y \iff (x,y) \in R$.
+
+Un esempio, sono le relazioni di equivalenza, cio\`e relazioni che soddisfano le propriet\`a \textit{riflessiva} ($x \sim x$), \textit{simmetrica} ($x\sim y \iff y \sim x$) e \textit{transitiva} ($x\sim y$, $y \sim z\Rightarrow x\sim z$).
+\begin{teorema}
+	Se $\sim$ \`e una relazione di equivalenza su $X$, allora la famiglia delle sue classi di equivalenza \`e una partizione di $X$.
+	Viceversa, se $\mathcal{P} $ \`e una partizione di $X$, allora induce, su $X$, una relazione di equivalenza data da 
+	\[
+	x \sim y \iff\exists C \in \mathcal{P} : x,y \in C
+	\] 
+	che ha, per classi, gli insiemi $C$ della partizione $\mathcal{P} $.
+\end{teorema}
+\begin{definizione}
+	$f : X \to Y$ \`e \textit{compatibile} con $\sim$ su $X$ se $x\sim y\Rightarrow f(x) = f(y)$.
+\end{definizione}
+\noindent Data $X \xrightarrow{\; f \;} Y$ compatibile con $\sim $ su $X$ e $\pi : X \longrightarrow X /\mathrm{\sim} $ \textit{proiezione al quoziente}, allora \textbf{esiste un'unica applicazione} $f=\overline{f} \circ \pi $ che rende
+\[
+\begin{tikzcd}
+	X& & Y\\
+	\\
+	X /\mathrm{\sim} 
+	\arrow[from=1-1,to=1-3, "f"]
+	\arrow[from=1-1,to=3-1, "\pi"']
+	\arrow[from=3-1,to=1-3, "\overline{f}"']
+\end{tikzcd}
+\] 
+commutativo.
+
+Se $\sim$ e $\sim'$ sono due relazioni su $X$, con $x\sim y \Rightarrow  x\sim' y$, allora la partizione $\mathcal{P} $ indotta da $\sim$ \`e pi\`u fine di $\mathcal{P} '$, cio\`e quella indotta da $\sim'$.
+Questo significa che per ogni classe $ C \in \mathcal{P} , \ \exists C ' \in \mathcal{P} '$ tale che $C \subseteq C'$; in questo senso, la corrispondenza $C \longmapsto C'$ \`e un'applicazione suriettiva $\epsilon $ che rende commutativo il seguente diagramma:
+\[
+\begin{tikzcd}
+	& X &\\
+	\\
+	X/\mathrm{\sim}  & & X / \mathrm{\sim'} 
+	\arrow[from=1-2, to=3-1, "\pi"']
+	\arrow[from=1-2, to=3-3, "\pi'"]
+	\arrow[from=3-1, to=3-3, "\epsilon ", two heads]
+\end{tikzcd}
+\] 
+\begin{definizione}
+	[Insieme di rappresentanti]
+	Dato $X$ un insieme e $\sim$ relazione di equivalenza su $X$, un insieme $\mathcal{R} \subseteq X$ \`e un \textit{insieme di rappresentanti} se 
+\[
+\pi |_{\mathcal{R}} : \mathcal{R} \subseteq X \xrightarrow{\quad} X / \mathrm{\sim} 
+\] 
+	\`e biettiva.
+\end{definizione}
+\noindent Questo vuol dire che, per ogni classe di equivalenza, si \`e scelto un singolo elemento di $X$ ad essa associato tramite la proiezione al quoziente $\pi$.
+\subsection{Divisibilit\`a tra interi}
+\begin{prop}
+	[Algoritmo di Euclide]
+	Siano $a,b$ due interi non negativi, con $a \ge b$.
+	Si prendono $r_0 =a$ e $r_1 = b$; se, per $k\ge 1$, $r_k >0$, allora si definisce ricorsivamente $r_{k+1} $ come il resto della divisione di $r_{k-1} $ per $r_k$.
+	Essendo $r_0>r_1>\ldots\ge 0$, in un numero finito di passi, siano $n$ per esempio, si ottiene $r_n = 0$.
+	Allora $(a,b) = r_{n-1} $.
+\end{prop}
+\newpage
+
+
+
+
+\section{Teoria dei gruppi 2}
+\subsection{Automorfismi e azioni}
+\begin{prop}
+	Dato un gruppo $G$, si ha che $\operatorname{Int} G \lhd \operatorname{Aut} G$ e $\operatorname{Int} G \cong G / Z(G)$.
+\end{prop}
+\begin{definizione}
+	[Azione]
+	Un'azione di $G$ gruppo su $X$ insieme \`e un omomorfismo
+	\[
+		\gamma :
+	\begin{array}
+		{c c c}
+		G & \xrightarrow{\qquad}& S(X) = \left\{ f : X \to X | f \text{ biettiva} \right\} \\
+		g & \xmapsto{\qquad} & \psi _g : \psi _g(x) = g \cdot x
+	\end{array}
+	\] 
+\end{definizione}
+\noindent Cio\`e un'azione di $G$ permette di identificare un modo in cui un elemento del gruppo pu\`o agire (tramite una permutazione) sull'insieme $X$.
+\begin{boxenv}[]
+Un'azione di gruppo \`e ben definita se:
+\begin{enumerate}[(a).]
+	\item $e \cdot x  = x, \ \forall  x \in X$, con $e \in G$ identit\`a;
+	\item $h\cdot (g\cdot x) = (hg)\cdot x$, per $g,h \in G$ e $x \in X$.
+\end{enumerate}
+\end{boxenv}
+\noindent Relativamente ad un'azione $\gamma : G \to S(X)$, si definiscono:
+\begin{itemize}
+	\item \textbf{orbita:} dato $x \in X$, la sua orbita \`e l'insieme $\operatorname{Orb} x = \left\{ g\cdot x  \mid g \in G \right\} $;
+	\item \textbf{stabilizzatore:} dato $x \in X$, il suo stabilizzatore \`e l'insieme 
+	\[
+	\operatorname{Stab} x = \left\{ g \in G  \mid g\cdot x = x \right\}<G
+	\] 
+\end{itemize}
+\noindent Le orbite partizionano $X$, visto che $x \sim_\gamma y \iff \operatorname{Orb} x = \operatorname{Orb} y$, quindi:
+\begin{boxenv}[]
+\[
+\lvert X \rvert = \sum_{x \in \mathcal{R}}^{} \lvert \operatorname{Orb} x \rvert  
+\] 
+\end{boxenv}
+\begin{lemma}
+	[Orbita-stabilizzatore]
+	Esiste una biezione $\operatorname{Orb} x \longrightarrow G / \operatorname{Stab} x$ definita da $g\cdot x \longmapsto g \operatorname{Stab} x$.
+\end{lemma}
+\subsubsection{Azioni per coniugio}
+Per $X = G$ e $\gamma : G \longrightarrow \operatorname{Int} G \subset S(G) $ si ha l'azione per coniugio.
+Le orbite sono le \textbf{classi di coniugio} $\operatorname{Cl} (x)$ e gli stabilizzatori sono detti \textbf{centralizzatori} $Z(x)$.
+Per il lemma orbita-stabilizzatore, si ha $\lvert G \rvert = \lvert \operatorname{Cl}( x) \rvert \lvert Z(x) \rvert $.
+
+Si pu\`o far agire $G$ su $X = \left\{ H \le G \right\} $ con $g\cdot H = g H g^{-1}$.
+In questo caso, le orbite non hanno un nome particolare, ma gli stabilizzatori si dicono \textbf{normalizzatori} $N_G(H)$.
+In questo senso, $H \lhd G \iff N_G(H) = G$.
+Questo significa che $N_G(H)$ contiene tutti i generatori $g_1,\ldots,g_n$ di $G$, quindi $g_i H g_i^{-1} = H,\ \forall i$.
+
+Dall'azione per coniugio, si ottiene la \textbf{formula delle classi di coniugio}:
+\begin{boxenv}[]
+\[
+\lvert G \rvert = \lvert Z(G) \rvert + \sum_{x \in \mathcal{R} \setminus Z(G)}^{} \frac{\lvert G \rvert }{\lvert Z(x) \rvert }
+\] 
+
+\end{boxenv}
+
+\subsection{I p-gruppi}
+\begin{definizione}
+	Un $p$-gruppo \`e un gruppo $G$ di ordine $p^n$ per qualche $n\in \mathbb{N}$.
+\end{definizione}
+\begin{prop}
+	Il centro di un $p$-gruppo \`e non-banale.
+\end{prop}
+\begin{prop}
+	Un gruppo di ordine $p^2$ \`e abeliano.
+\end{prop}
+\begin{teorema}
+	Ogni $p$-gruppo $G$ di ordine $p^n$ ha sottogruppi $G_k$ di ordine $p^k, \ k=0,\ldots,n$ tali che
+	\[
+	\left\{ e \right\}=G_0 \lhd G_1 \lhd \ldots \lhd G_{n-1} \lhd G_n=G
+	\] 
+	
+\end{teorema}
+
+\subsection{Teoremi di Cauchy e Cayley}
+\begin{teorema}
+	[Cauchy]
+	Sia $p$ un primo e $G$ un gruppo finito; se $p  \mid |G|$, allora $G$ ha un elemento di ordine $p$.
+\end{teorema}
+\begin{teorema}
+	[Cayley]
+	Ogni gruppo $G$ \`e isomorfo a un sottogruppo di $S(G)$.
+	Se $\lvert G \rvert = n$, allora $G\longhookrightarrow S_n$.
+\end{teorema}
+\subsection{Commutatore e gruppo derivato}
+\begin{definizione}
+	[Derivato]
+	Dato $G$ gruppo, si definisce il derivato come
+	\[
+		G '=[G:G] := \langle [g,h]  \mid g,h \in G \rangle 
+	\] 
+	cio\`e \`e il pi\`u piccolo sottogruppo di $G$ contenente tutti i commutatori.
+\end{definizione}
+\noindent Le sue propriet\`a sono le seguenti:
+\begin{itemize}
+	\item $G'  =\left\{ e \right\} \iff G$ abeliano;
+	\item $G' \lhd G$;
+	\item $G'$ caratteristico in $G$;
+	\item se $H \lhd G$ \`e tale che $G / H$ \`e abeliano, allora $G' \subset H$.
+\end{itemize}
+\begin{prop}
+	Sia $G$ un gruppo e $G'$ il suo derivato.
+	Allora $G_{\text{ab}} = G / G'$ \`e abeliano ed \`e il pi\`u grande quoziente abeliano di $G$.
+\end{prop}
+\subsection{Il gruppo diedrale}
+\begin{prop}
+	Tutti gli elementi di $D_n$ si scrivono come $\sigma \rho ^i$, oppure come $\rho ^i$, per $i=0,\ldots,n-1$.
+\end{prop}
+\begin{prop}
+	In $D_n$, il numero di elementi di ordine $k$ \`e dato da:
+	\[
+	\begin{cases}
+		n+1&,\ \text{ se }k = 2, \ n \text{ pari}\\
+		n &,\ \text{ se }k=2, \ n \text{ dispari}\\
+		\phi (k) &,\ \text{ se }k \mid n\\
+		0&,\ \text{altrimenti}
+	\end{cases}
+	\] 
+\end{prop}
+\noindent Di seguito, si riportano tutte le caratteristiche riguardanti la struttura di $D_n$.
+\begin{itemize}
+	\item \textbf{Sottogruppi.} Un sottogruppo di $D_n$ pu\`o essere composto da sole rotazioni, caso in cui coincide con un sottogruppo di $\mathbb{Z}/n\mathbb{Z}$, oppure ha, in egual numero, rotazioni e riflessioni, caso in cui \`e isomorfo a $D_m$, per qualche $m$.
+	\item \textbf{Sottogruppi normali.} Visto che $[D_n:C_n] = 2$, allora $C_n \lhd D_n$.
+		Ogni sottogruppo di $C_n$ \`e caratteristico in $C_n$ perch\'e unico, quindi \`e automaticamente normale in $D_n$.
+		Se $n$ \`e pari, si pu\`o definire $H = \langle \rho ^2 \rangle \sqcup \tau \langle \rho ^2 \rangle$, per cui $[D_n :H ] = 2 \Rightarrow H \lhd D_n$.
+		In questo caso, sottogruppi di questa forma sono $\langle \rho ^2 , \sigma  \rangle$ e $\langle \rho ^2 , \sigma \rho  \rangle$.
+		Se $n$ \`e dispari, invece, un sottogruppo normale contenente una riflessione, le deve contenere tutte, quindi coincide con $D_n$.
+	\item \textbf{Sottogruppi caratteristici.} Per $n\ge 3$, $C_n$ e i suoi sottogruppi di ordine $d> 2, \ d \mid n$ sono gli unici ad essere sempre caratteristici.
+		Per gli $n$ pari, $\langle \rho ^2 ,\sigma  \rangle$ e $\langle \rho ^2 ,\sigma \rho  \rangle$ non sono caratteristici perch\'e $\tau :D_n\to D_n$ con $\tau (\rho ) = \rho $ e $\tau (\sigma ) = \sigma \rho $	\`e un automorfismo ben definito che scambia i due sottogruppi.
+	\item \textbf{Centro.} Se $n$ \`e dispari, $Z(D_n) = \left\{ e \right\} $, mentre, se $n$ \`e pari, $Z(D_n) = \left\{ e , \rho ^{n / 2}  \right\} \cong \mathbb{Z}/2\mathbb{Z}$.
+	\item \textbf{Quozienti.} Questi sono in corrispondenza biunivoca con i sottogruppi normali.
+		In generale, si ha $D_n / \langle \rho ^m \rangle\cong D_m$.
+		Per $n$ pari, invece, i quozienti relativi a $\langle \rho ^2,\sigma  \rangle$ e $\langle \rho ^2 ,\sigma \rho  \rangle$ hanno indice due, quindi sono isomorfi a $\mathbb{Z}/2\mathbb{Z}$.
+	\item \textbf{Automorfismi.} Un automorfismo di $D_n$ \`e della forma
+		\[
+			\gamma: 
+		\begin{array}
+			{c c c}
+			D_n &\longrightarrow& D_n\\
+			\rho & \longmapsto & \rho ^i \\
+			\sigma &\longmapsto &\sigma \rho ^j
+		\end{array}\ , \hspace{1cm} \operatorname{gcd}(i,n)=1
+		\] 
+		Allora $\lvert \operatorname{Aut} (D_n) \rvert = n \phi (n)$.
+\end{itemize}
+\begin{boxenv}[]
+\centering $D_n \cong \mathbb{Z}/ n\mathbb{Z}\rtimes _\varphi \mathbb{Z}/ 2\mathbb{Z}$
+\end{boxenv}
+\subsection{Il gruppo simmetrico}
+
+\begin{prop}
+	Ogni $k$-ciclo ha $k$ scritture equivalenti.
+\end{prop}
+
+\begin{prop}
+	I cicli di una permutazione di $S_n$ sono le orbite degli elementi di $X = \left\{ 1,\ldots,n \right\} $ formate dall'azione indotta da tale permutazione.
+\end{prop}
+
+\begin{corollario}
+	$S_n$ \`e generato dai cicli.
+\end{corollario}
+\begin{prop}
+	Ogni permutazione si scrive come composizione di trasposizioni.
+\end{prop}
+\noindent L'applicazione \textbf{segno} \`e definita da
+\[
+\operatorname{sgn} :
+\begin{array}
+	{c c c}
+	S_n & \longrightarrow & \left\{ \pm 1 \right\} \\
+	\sigma & \longmapsto & \displaystyle \prod_{1\le i<j\le n}  \frac{\sigma (i) - \sigma (j)}{i - j}
+\end{array}
+\] 
+ed \`e un omomorfismo di gruppi.
+Vale $-1$ sulle trasposizioni; infatti, restituisce la parit\`a del numero di trasposizioni presenti nella decomposizione di una permutazione.
+Il suo nucleo coincide con $A_n\lhd S_n$.
+\begin{teorema}
+	Due permutazioni id $S_n$ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti.
+\end{teorema}
+\noindent Di seguito, la caratterizzazione di $S_n$ e dei suoi elementi.
+\begin{itemize}
+	\item \textbf{Numero di un certo tipo di permutazioni con precisa decomposizione.} 
+		In $S_n$, il numero complessivo di $k$-cicli \`e ottenuto tramite 
+		\[
+		\binom{n}{k}(k-1)!
+		\] 
+		Volendo cercare quante permutazioni con una precisa decomposizione in cicli disgiunti ci sono, si procede come da esempio. 
+		In $S_{12}$, il numero di permutazioni date dalla composizione di due $3$-cicli e tre $2$-cicli \`e
+		\[
+			\binom{12}{3}\frac{3!}{3}\binom{9}{3}\frac{3!}{3}\binom{6}{3}\frac{2!}{2}\binom{4}{3}\frac{2!}{2}\binom{2}{3}\frac{2!}{2}\frac{1}{3!2!}
+		\] 
+		Questo si generalizza nella seguente formula:
+		\[
+			\frac{n!}{\prod_{k\ge 1} \left[k^{m_k} (m_k!)\right] }
+		\] 
+		con $m_k$ numero di $k$-cicli.
+	\item \textbf{Ordine di una permutazione.} 
+Un $k$-ciclo ha ordine $k$; se una permutazione \`e composta da $\ell $ cicli disgiunti $\sigma _i$, allora il suo ordine \`e 
+\[
+\operatorname{lcm} \big(\operatorname{ord}(\sigma _1),\ldots,\operatorname{ord}(\sigma _\ell )  \big)
+\] 
+	\item \textbf{Centralizzatore di una permutazione.} Sapendo che due permutazioni sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti, si sa calcolare $\lvert \operatorname{Cl} (\sigma ) \rvert $ tramite la formula al primo punto. 
+		Per orbita-stabilizzatore, si ha $\lvert Z(\sigma ) \rvert \lvert \operatorname{Cl} (\sigma ) \rvert = n!$, quindi si pu\`o calcolare $\lvert Z(\sigma ) \rvert $.
+\end{itemize}
+\begin{prop}
+	Per la formula delle classi, $\lvert Z_{S_n} (\sigma ) \rvert \lvert \operatorname{Cl} _{S_n} (\sigma ) \rvert = n!$ e $\lvert Z_{A_n} (\sigma ) \rvert \lvert \operatorname{Cl} _{A_n} (\sigma ) \rvert = n!/2$, con:
+	\[
+	Z_{A_n} (\sigma ) = Z_{S_n} (\sigma )\cap A_n
+	\] 
+	Per la stessa formula, nel passare da $\operatorname{Cl} _{S_n} (\sigma )$ a $\operatorname{Cl} _{A_n} (\sigma )$ e da $Z_{S_n} (\sigma )$ a $Z_{A_n} (\sigma )$, uno dei due dimezza di ordine, mentre l'altro rimane invariato.
+\end{prop}
+\begin{prop}
+	Dato $H < S_n$, allora o $H \subset A_n$, quindi $\lvert H\cap A_n \rvert = \lvert H \rvert $, oppure $\lvert H\cap A_n \rvert = \lvert H \rvert / 2$.
+\end{prop}
+\begin{prop}
+	I $3$-cicli sono tutti coniugati in $A_n$, per $n\ge 5$.
+\end{prop}
+\begin{prop}
+	I $5$-cicli in $A_5$ NON sono tutti coniugati.
+\end{prop}
+\begin{prop}
+	$A_4$ non ha sottogruppi di ordine $6$.
+\end{prop}
+\begin{teorema}
+	$A_n$ \`e semplice $\forall n \ge 5$.
+\end{teorema}
+\begin{boxenv}[]
+\centering $S_n \cong A_n \rtimes \langle \tau  \rangle$, con $\tau $ trasposizione
+\end{boxenv}
+\subsection{I quaternioni}
+Il gruppo \`e definito come $Q_8 = \langle i,j \mid i^4 = 1, \ i^2 = j^2 , \ ij=j^3 i \rangle$.
+$i^4 = 1$ e $i^2 = j^2$, allora $j^4=1$, quindi $\operatorname{ord}(j)  \mid 4$. 
+Poi $\operatorname{ord}(j^2) = \operatorname{ord}(i^2) = 2$, quindi $\operatorname{ord}(j) =4$.
+Allora $Q_8$ ha due gruppi ciclici di ordine $4$: $\langle i \rangle$ e $\langle j \rangle$, con $\langle i \rangle\cap \langle j \rangle=\left\{ 1,i^2=j^2 \right\} $.
+Visto che $\langle i \rangle,\langle j \rangle<Q_8$ e $\lvert \langle i \rangle\langle j \rangle \rvert = 8$, allora 
+\[
+Q_8 = \langle i \rangle\langle j \rangle=\left\{ 1,i, i^2 ,i^3,j,j^3 ,ij,i^3j \right\} 
+\] 
+visto che $\langle i \rangle, \langle j \rangle\lhd Q_8$ (hanno indice $2$).
+\begin{osservazione}
+$Q_8$ non \`e abeliano: $ij = j^3 i = j^{-1}i \neq ji$.
+\end{osservazione}
+\noindent Di seguito, la caratterizzazione strutturale del gruppo.
+\begin{itemize}
+	\item \textbf{Sottogruppi.} 
+		$\langle i \rangle, \langle j \rangle\lhd Q_8$ perch\'e hanno indice $2$.
+		Anche $\langle i^2 \rangle=\langle j^2 \rangle\lhd Q_8$ perch\'e $i^2$ (quindi $j^2$) commuta con i generatori.
+	\item \textbf{Centro.} Si ha $\langle i^2 \rangle=Z(Q_8)$ perch\'e $\langle i^2 \rangle$ ha ordine $2$, quindi contenuto in $Z(Q_8)$; al contempo, $\lvert Z(Q_8) \rvert \in \left\{ 2,4,8 \right\} $, ma, se non fosse $2$, $Q_8$ sarebbe abeliano.
+	\item \textbf{Elementi.} Prendendo $k = ij$ e $i^2 = -1$, si ha 
+		\[
+		Q_8 = \left\{ \pm 1 , \pm i, \pm j , \pm k \right\} 
+		\] 
+		Si ha $i^2 = -1 \Rightarrow  i^3 = -i \Rightarrow i^3 j = -ij = -k$.
+		Quindi: $ij = k , \ jk = i, \ ki = j$ e $ji = -k, \ ik = -j $ e $kj = -i$.
+		Infine, $k^2 = (ij)^2 = ijij=i^2$, quindi $\operatorname{ord}(k) =4$.
+		In questi termini, $\langle -1 \rangle=Z(Q_8)$.
+	\item \textbf{Sottogruppi normali e caratteristici.} Per quanto detto, $\langle -1 \rangle= Z(Q_8)$ quindi \`e caratteristico e, in particolare, normale.
+		Invece $\langle i \rangle,\langle j \rangle,\langle k \rangle\lhd Q_8$, ma non sono caratteristici.
+		Allora ogni sottogruppo di $Q_8$ \`e normale.
+	\item \textbf{Prodotto semi-diretto.} Si nota che $Q_8$ non si pu\`o ottenere come prodotto semi-diretto perch\'e ogni coppia di sottogruppi non si interseca mai solo in $1$, ma anche $-1$.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Prodotti diretti}
+\begin{teorema}
+	[Decomposizione diretta]
+Sia $G$ un gruppo e siano $H ,K \lhd G$; se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G \cong H \times K$.
+\end{teorema}
+\begin{corollario}
+In un prodotto diretto, i fattori commutano fra loro.
+\end{corollario}
+\begin{corollario}
+	Se $G = H \times K$, allora $Z(H\times K) \cong Z(H) \times Z(K)$, visto che $Z(H) \times \left\{ e_k \right\} $ e $\left\{ e_H \right\} \times Z_k$ sono sottogruppi normali di $Z(H\times K)$.
+	Questo implica che
+	\[
+	\operatorname{Int} (H\times K) \cong \frac{H\times K}{Z(H\times K)}\cong H / Z(H) \times K / Z(K) \cong \operatorname{Int} (H) \times \operatorname{Int} (K)
+	\] 
+\end{corollario}
+\begin{teorema}
+	Si ha $\operatorname{Aut} (H \times K) \cong \operatorname{Aut} (H) \times \operatorname{Aut} (K)$ se e soltanto se $H \times \left\{ e_K \right\} $ e $\left\{ e_H \right\} \times K$ sono caratteristici in $H \times K$.
+	Altrimenti $ \operatorname{Aut} (H) \times \operatorname{Aut} (K)\longhookrightarrow  \operatorname{Aut} (H \times K)$.
+\end{teorema}
+\begin{corollario}
+	Sia $G = H \times K$, con $\lvert H \rvert =n$ e $\lvert K \rvert = m$; se $\operatorname{gcd}(n,m) =1$, allora $H\times \left\{ e_K \right\} ,\ \left\{ e_H \right\} \times  K$ sono caratteristici in $G$.
+\end{corollario}
+\subsection{Prodotti semi-diretti}
+\begin{definizione}
+	[Prodotto semi-diretto]
+	Siano $H,K$ due gruppi e $\gamma : K \to  \operatorname{Aut} (H)$ un omomorfismo tale che $\gamma(k)=\gamma_k \in \operatorname{Aut} (H)$.
+	Allora si definisce $H \rtimes_\gamma K$ il gruppo $H\times K$ la cui operazione di gruppo \`e definita da
+	\[
+		(h,k) * (h',k') = \Big(h \gamma_{k} (h'),k k'\Big)
+	\] 
+	Il prodotto diretto \`e dato da $\gamma(K) = \operatorname{Id} _H$.
+\end{definizione}
+\begin{prop}
+	Si considera $H \rtimes _\gamma K$ e si definiscono $\overline{H}= H \times \left\{ e_K \right\} $ e $\overline{K} = \left\{ e_H \right\} \times K$.
+	Per costruzione, $\overline{K},\overline{H} \lhd H \times K$, mentre:
+	\begin{itemize}
+		\item $\overline{H}\lhd H \rtimes_\gamma K $ sempre;
+		\item $\overline{K} \lhd H \rtimes _\gamma K \iff $ il prodotto \`e diretto.
+	\end{itemize}
+\end{prop}
+\begin{teorema}
+	[Decomposizione semi-diretta]
+Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$. 
+Se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G\cong H \rtimes _\gamma K$, con $\gamma : K \to \operatorname{Aut} (H)$	e $\gamma(k) = khk^{-1}$.
+\end{teorema}
+\subsection{Teorema di struttura per gruppi abeliani finiti}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Risultati sulle classificazioni}
+\begin{itemize}
+	\item \textbf{Classificazione dei gruppi di ordine 6.} 
+	\item \textbf{Classificazione dei gruppi di ordine pq.} 
+\end{itemize}
+
+
+\subsection{Risultati vari sui gruppi}
+
+\begin{prop}
+	$G / Z(G)$ ciclico $\iff G$ abeliano.
+\end{prop}
+\begin{prop}
+	Se $H,K < G$, allora $HK < G \iff HK = KH$; in questo caso, $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert }{\lvert H\cap K \rvert }$.
+\end{prop}
+\begin{prop}
+	Se $H,K \lhd G$, con $H\cap K = \left\{ e \right\}$, allora $hk = kh, \ \forall h \in H, \ \forall k \in K$.
+\end{prop}
+\begin{prop}
+	Sia $H<G$ con $[G:H]= 2$; allora $H\lhd G$.
+\end{prop}
+\begin{prop}
+	Siano $H\lhd G$ e $K$ sottogruppo caratteristico di $H$; allora $K\lhd G$.
+\end{prop}
+\begin{prop}
+	Sia $H<G$, con $\lvert H \rvert =2$; allora $H$ \`e normale se e solo se $H < Z(G)$.
+\end{prop}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Esercizi}
+\subsection{Esercizi su gruppi 1}
+\begin{esercizio}
+Sia $G = \mathbb{Z}/20 \mathbb{Z} \times  \mathbb{Z} / 8 \mathbb{Z}$; determinare il numero degli omomorfismi $f : G \to  G$.
+Inoltre, dati $n \in \mathbb{N}$ e $f_n : G \to G$ l'omomorfismo dato da $f_n(x)=nx$, determinare:
+\begin{enumerate}[(a).]
+	\item per quali valori di $n$, $\operatorname{Ker} f_n$ \`e ciclico;
+	\item per quali valori di $n$, $\operatorname{Im} f_n$ \`e ciclico.
+\end{enumerate}
+\end{esercizio}
+ 
+\subsection{Esercizi su campi e anelli 1}
+\begin{esercizio}
+	Sia $f(x) = x^4 + x^3 -3 \in \mathbb{F}_7[x]$. Determinare il numero di divisori dello zero e l'inverso di $\overline{x+1}$ in $\mathbb{F}_7[x] / \langle f(x) \rangle$.
+\end{esercizio}
+\begin{svolgimento}
+	Si scompone $f(x)$ in $\mathbb{F}_7[x]$; per farlo, si vede se ha radici, calcolando $f(a)$, per $a = 0,1,\ldots,6$.
+	Provando, si vede che:
+	\[
+	\begin{split}
+		&f(0) = -3\equiv 4  \pmod{7} \\
+		& f(1) = -1 \equiv 6  \pmod{7} \\
+		&f(2) = 16 + 8 - 3 = 21 \equiv 0 \pmod{7} \\
+		&f(3) = 81 + 27 - 3=105 \equiv 0 \pmod{7}\\
+		&f(4) = 256 + 64 -3 = 317 = 280 + 37 \equiv 2 \pmod{7} \\
+		&f(5) = 625 + 125 - 3 = 747 =735 + 12 \equiv 5 \pmod{7} \\
+		&f(6) = 1296 + 216 - 3 = 1509 = 1498 + 11 \equiv 4 \pmod{7} 
+	\end{split}
+	\] 
+	Per effettuare la fattorizzazione di $f(x)$, si usa Ruffini. 
+	Iniziando con $(x-2)$, visto che $f(x) = x^4 + x^3 - 3 \equiv x^4 + x^3 + 4 \operatorname{mod} 7$, si ottiene:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c c c c c}
+		2 & 1 & 1 & 0 & 0 & 4 \\
+		  &  & 2& 6& 5 & 3\\
+	\hline
+		  &1 & 3 & 6& 5 &0
+	\end{tabular}
+\end{table}	
+\[
+f(x) = (x-2) \big(x^3 + 3x^2 + 6x + 5\big)= (x-2) g(x)
+\] 
+Evidentemente, $g(3) = 0 \implies (x-3)  \mid g(x)$; usando ancora Ruffini, si ha:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c c c c }
+		3 & 1 & 3 & 6 & 5 \\
+		  &  & 3& 4& 2 \\
+	\hline
+		  &1 & 6 & 3& 0 
+	\end{tabular}
+\end{table}	
+\[
+f(x) = (x-2) g(x) = (x-2)(x-3)\big(x^2 + 6x + 3\big)
+\] 
+dove si nota che $x^2 + 6x + 3$ non si annulla n\'e per $x = 2$, n\'e per $x = 3$, quindi \`e irriducibile in $\mathbb{F}_7[x]$ (altrimenti $f(x)$ avrebbe una radice diversa da $x = 2, 3$, che \`e assurdo per i calcoli svolti sopra).
+In questo modo, si pu\`o studiare nel dettaglio $\mathbb{F}_7 [x] / \langle f(x) \rangle$. 
+Intanto, visto che $f(x)$ \`e un polinomio di grado $4$ in $\mathbb{F}_7[x]$, tale quoziente sar\`a composto da tutti i polinomi della forma
+\[
+ax^3 + bx^2 + cx + d, \ a,b,c,d \in \mathbb{F}_7
+\] 
+pertanto avr\`a un totale di $7^4$ elementi.
+Le unit\`a di $\mathbb{F}_7[x] / \langle f(x) \rangle$ sono tutte quelle classi $\overline{h(x)}$ tali che $\big(f(x),h(x)\big) = 1$; per studiare meglio questo fatto, si usa il teorema cinese del resto per anelli a partire dall'osservazione che $x-2$, $ x-3 $ e $x^2 + 6x +3$ sono coprimi tra loro:
+\[
+	\frac{\mathbb{F}_7[x]}{\langle  (x-2) (x-3) (x^2 + 6x+3)\rangle} \cong \mathbb{F}_7[x] / \langle x-2 \rangle \times \mathbb{F}_7[x] / \langle x-3 \rangle \times \mathbb{F}_7[x] / \langle x^2 + 6x + 3 \rangle
+\] 
+Per studiare il numero delle unit\`a complessive di $\mathbb{F}_7[x] / \langle f(x) \rangle$, si studia singolarmente ciascun fattore:
+\begin{itemize}
+	\item $\mathbb{F}_7[x] / \langle x-2 \rangle\cong \mathbb{F}_7$, quindi ha $7$ elementi, per un totale di $6$ unit\`a;
+	\item $\mathbb{F}_7[x] / \langle x-3 \rangle \cong \mathbb{F}_7$, quindi ha $6$ unit\`a;
+	\item $\mathbb{F}_7[x] / \langle x^2 + 6x+3 \rangle$ \`e un campo perch\'e $x^2 + 6x +3 $ \`e irriducibile in $\mathbb{F}_7[x]$ e ha un totale di $7^2 = 49$ elementi, quindi \`e isomorfo a $\mathbb{F}_{49} $, con un totale di $48$ unit\`a.
+\end{itemize}
+Da questo si conclude che il numero totale di unit\`a in $\mathbb{F}_7[x] / \langle f(x) \rangle$ \`e $6 \cdot  6 \cdot 48 =1728$ unit\`a.
+Essendo interessati ai divisori dello zero, sapendo che divisori dello zero e unit\`a partizionano l'anello (a parte lo zero), si ha che, in totale, sono $7^4 - 1728 =2401 - 1728 = 673$ incluso lo zero.
+
+Per finire, si calcola l'inverso di $\overline{x + 1}$ in $\mathbb{F}_7[x] / \langle f(x) \rangle$.
+Intanto si nota che $x+1$ \`e coprimo con $f(x)$ perch\'e si annulla in $-1\equiv 6 \operatorname{mod} 7$, quindi l'inverso in $\mathbb{F}_7[x] /\langle f(x) \rangle$ esiste.
+Si cerca un polinomio $a(x) \in \mathbb{F}_7[x]$ che soddisfa
+\[
+a(x) (x+1) + b(x) f(x) = 1
+\] 
+cosicch\'e, in $\mathbb{F}_7[x] /\langle f(x) \rangle$, $\overline{a(x) } (\overline{x+1}) = 1$.
+Per iniziare, si divide $f(x)$ per $x+1$ (usando $-1 \equiv 6 \operatorname{mod} 7 $):
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c c c c c}
+		6 & 1 & 1 & 0 & 0 & 4 \\
+		  &  & 6& 0& 0 & 0\\
+	\hline
+		  &1 & 0 & 0& 0 &4
+	\end{tabular}
+\end{table}	
+\[
+f(x) = (x+1)x^3 +4 
+\] 
+In $\mathbb{F}_7[x]$, $4^{-1} \equiv 2 \operatorname{mod} 7 $, quindi, moltiplicando tutto per $2$ in $\mathbb{F}_7[x] / \langle f(x) \rangle$, si ha:
+\[
+1= 2f(x) - 2(x+1)x^3 \implies  \overline{1} = \overline{-2}(\overline{x+1})\overline{x^3}
+\] 
+da cui l'inverso di $\overline{x+1}$ \`e proprio $\overline{-2x^3}\equiv \overline{5x^3}$, visto che $-2\equiv 5 \operatorname{mod} 7 $.
+\end{svolgimento}
+
+\begin{esercizio}
+	Sia $m$ un numero intero e sia
+	\[
+	f_m(x) = (x^2 - m) (x^4-25)
+	\] 
+	Determinare, per ogni valore intero di $m$, il grado del campo di spezzamento di $f_m(x)$ su $\mathbb{Q}$.
+\end{esercizio}
+\begin{svolgimento}
+	Il campo di spezzamento per $f_m(x)$ si ottiene aggiungendo a $\mathbb{Q}$ le radici dei due fattori $x^2 - m$ e $x^4-25$.
+	Si pu\`o notare che
+	\[
+	x^4 - 25 = (x^2+5)(x^2-5) 
+	\] 
+	Da qui, si ottiene che le radici di $x^4 - 25$ sono $\pm\sqrt{5} $ e $\pm i \sqrt{5} $, quindi il suo campo di spezzamento corrisponde con $K=\mathbb{Q}(\sqrt{5} ,i)$.
+	Per finire, si osserva che $[\mathbb{Q}(\sqrt{5} ) : \mathbb{Q}] = 2$ e $[\mathbb{Q}(i) : \mathbb{Q}] = 2$, per cui $[K : \mathbb{Q}] = 4$, dato che $i \not\in\mathbb{Q}(\sqrt{5} )$.
+	Visto che $K$ \`e indipendente da $m$, rimarr\`a fisso per il resto dell'esercizio.
+
+	Quanto al fattore $x^2 - m$, le sue radici sono $\pm \sqrt{m} $, ma qui il campo di spezzamento dipende dalla scelta dell'intero $m$.
+	\begin{itemize}
+		\item Se $m=0$, le radici di $x^2 - m$ sono gi\`a contenute in $\mathbb{Q}$ poich\'e \`e proprio lo zero.
+		\item Se $m$ \`e un quadrato perfetto positivo, allora $\sqrt{m} \in \mathbb{Q}$ e, anche in questo caso, $\mathbb{Q}$ contiene gi\`a le radici.
+		\item Se $m<0$, invece, le radici sono date da $\pm i \sqrt{\lvert m \rvert } $; in questo caso, se $m = - n^2$, per qualche intero $n$, allora il suo campo di spezzamento coincide con $\mathbb{Q}(i)$, visto che $\sqrt{\lvert m \rvert } \in \mathbb{Q}$. Altrimenti, il suo campo di spezzamento sar\`a dato da $\mathbb{Q}(i \sqrt{\lvert m \rvert } )$.
+		\item Infine, se $m>0$ non \`e un quadrato perfetto, il campo di spezzamento \`e ottenuto aggiungendo $\sqrt{m} $, quindi coincide con $\mathbb{Q}(\sqrt{m} )$.
+	\end{itemize}
+	Allora, il campo di spezzamento per questo fattore, al variare di $m\in \mathbb{Z}$, \`e dato da:
+	\[
+	L = \begin{cases}
+		\mathbb{Q} \\
+		\mathbb{Q}(i\sqrt{m} ) \\
+		\mathbb{Q}(\sqrt{m} ) 
+	\end{cases}
+	\] 
+	Visto che $i$ \`e gi\`a stato aggiunto per la radice del secondo fattore, ci si pu\`o concentrare sul trattare i casi in cui $L = \mathbb{Q}(\sqrt{m} )$ o $L = \mathbb{Q}$.
+
+	Per concludere, quindi, il campo di spezzamento del polinomio $f_m(x)$ su $\mathbb{Q}$ \`e dato da $E = K L$, con le varie possibilit\`a per $L$ al variare di $m \in \mathbb{Z}$:
+	\begin{itemize}
+		\item se $m=0$, $m$ (positivo o negativo) quadrato perfetto, oppure $m=\pm 5$, allora $E = \mathbb{Q}(\sqrt{5} ,i)$;
+		\item se $m$ (positivo o negativo) NON \`e un quadrato perfetto e $\lvert m \rvert \neq 5$, allora $E = \mathbb{Q}(\sqrt{5} ,\sqrt{\lvert m \rvert } , i)$.
+	\end{itemize}
+	Nel primo caso, il grado dell'estensione rimane quello di $K$, ossia $[E : \mathbb{Q}] = 4$, mentre, nel secondo caso, $[E:\mathbb{Q}] = 2^3 = 8$.
+\end{svolgimento}
+\begin{esercizio}
+	Siano $f(x) = x^3 + 3x - 1$ e $g(x) = x^2 - 2$.
+	\begin{enumerate}[(a).]
+		\item Se $\alpha $ \`e una radice complessa di $f(x)$, determinare il polinomio minimo di $1 / (\alpha +2)$ su $\mathbb{Q}$.
+		\item Determinare l'insieme dei numeri primi $p$ tali che $f(x)$ e $g(x)$, considerati a coefficienti in $\mathbb{F}_p$, hanno una radice comune.
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Si divide lo svolgimento nei due punti.
+	\begin{enumerate}[(a).]
+		\item Sia $\alpha $ una radice complessa di $f(x)$. Si cerca il polinomio minimo di 
+			\[
+			\beta = \frac{1}{\alpha  + 2}\implies \alpha \beta  + 2 \beta  = 1 \implies \alpha  = \frac{1}{\beta }-2
+			\] 
+			Visto che $f(\alpha) = 0 $, allora:
+			\[
+			\left(\frac{1}{\beta }-2\right) ^3 + 3 \left(\frac{1}{\beta }-2\right) -1 = 0
+			\] 
+			Espandendo e riordinando si ottiene un polinomio in $\beta$:
+			\[
+			\begin{split}
+				&\frac{1}{\beta ^3}-8 -\frac{6}{\beta ^2} + \frac{12}{\beta } + \frac{3}{\beta }-6 - 15 = 0 \implies \frac{1}{\beta ^3}-\frac{6}{\beta ^2}+\frac{15}{\beta }  = 15\\
+				&\Rightarrow 15\beta ^3 = 1 - 6 \beta + 15\beta ^2 \implies 15\beta ^3 - 15 \beta ^2 + 6 \beta -1 = 0
+			\end{split}
+			\] 
+			In questo modo, si ricava il polinomio $p(x) = 15 x^3 - 15 x^2 + 6 x - 1$, che \`e a coefficienti razionali, ha $\beta $ come radice ed \`e di grado $3$.
+			Usando Eisenstein con $p=3$ su $f(x)$, si conclude che \`e irriducibile su $\mathbb{Q}$, quindi $[\mathbb{Q}(\alpha ) :\mathbb{Q}] = 3$. 
+			Infine, visto che $\beta \in Q(\alpha )$ e, viceversa, $\alpha \in Q(\beta )$, si conclude che $[\mathbb{Q}(\beta ):\mathbb{Q}] = 3$, pertanto $p(x)$ coincide proprio con il polinomio minimo di $\beta $.
+		\item Si cercano i primi $p$ tali per cui $\exists a \in \mathbb{F}_p$ con $f(a) = g(a) = 0$.
+			Si nota che $g(a) = 0 \implies a^2 = 2$ in $\mathbb{F}_p$.
+			Passando alla condizione $f(a) = 0$, si ha $a^3 + 3a - 1 =0$; moltiplicando tutto per $a$, si ottiene $a^4 + 3a^2 - 1 = 0$. 
+			Sostituendo la condizione trovata prima, cio\`e $a^2 = 2$, si ottiene $4 + 6 - a =0$, quindi $a = 10$ in $\mathbb{F}_p$.
+
+			In questo modo, si ricava che $a$ deve soddisfare due condizioni in $\mathbb{F}_p$: $a \equiv 10 \operatorname{mod} p $ e $a^2 \equiv 2 \operatorname{mod}p $, cio\`e
+			\[
+				100 \equiv 2 \pmod{p} \implies p  \mid 98=2\cdot 7^2
+			\] 
+			Allora le possibilit\`a sono $p = 2$, oppure $p=7$.
+			Si nota che, per $p=2$, $g(x) = x^2$ e $f(x) = x^3 + x +1$, che non hanno radici comuni.
+			Perci\`o, ci si convince facilmente che l'unico $p$ che soddisfa la richiesta \`e $p=7$.
+	\end{enumerate}
+\end{svolgimento}
+\begin{esercizio}
+	Sia $f(x) = x^6 + 4x^3 + 2$.
+	\begin{enumerate}[(a).]
+		\item Detta $\alpha $ una radice complessa di $f(x)$, determinare il polinomio minimo di $1/\alpha ^2$ su $\mathbb{Q}$.
+		\item Determinare il campo di spezzamento di $f(x)$ su $\mathbb{F}_7$.
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Si divide lo svolgimento nei due punti.
+	\begin{enumerate}[(a).]
+		\item Si nota preliminarmente che $f(x)$ \`e irriducibile per il criterio di Eisenstein con $p=2$. 
+			Inoltre, $f(\alpha ) = 0$, quindi $\alpha ^6 +2 = - 4 \alpha ^3$; elevando al quadrato, si ottiene che:
+			\[
+			\alpha ^{12} +4 + 4 \alpha ^6 = 16 \alpha ^6 \implies \alpha ^{12} - 12 \alpha ^6 + 4 = 0
+			\] 
+In questo modo, sostituendo $y = \alpha ^2$, si trova $y^6 - 12 y^3  + 4 = 0$, quindi $y = \alpha ^2$ soddisfa $p(y) = 0$, con $p(x) = x^6 - 12 x^3 + 4$.
+Ora si deve mostrare che $p(x)$ \`e irriducibile per far vedere che \`e il polinomio minimo per $\alpha ^2$.
+Visto che $\mathbb{Q}(\alpha ^2 ) \subseteq \mathbb{Q}(\alpha )$, allora $[\mathbb{Q}(\alpha) : \mathbb{Q}(\alpha ^2) ] \le 2$, quindi $[\mathbb{Q}(\alpha ^2) : \mathbb{Q}]=3,6$; si vuole escludere il caso in cui il grado sia $3$.
+In questo caso, \`e facile convincersi che $p(x)$ dovrebbe scomporsi in due fattori cubici; riducendolo modulo $2$, poi, si vede che $\overline{p(x)} = \overline{x^6}$, pertanto i polinomi di grado $3$, $A(x)$ e $B(x)$, in cui si scompone $p(x)$ devono avere coefficienti pari, ad eccetto del primo.
+Svolgendo il prodotto, si vede anche che i termini noti dei due polinomi devono essere $c=c'=\pm 2$, quindi 
+\[
+A(x) = x^3 + u x^2 + vx \pm 2 \hspace{1cm}B(x) = x^3 + u'x^2 + v'x \pm 2
+\] 
+con $u, v, u', v' \equiv 0 \operatorname{mod} 2 $.
+Svolgendo il prodotto, si ottengono le condizioni $u' = -u, \ v'= -u$ per i termini di grado $1$ e $5$, mentre si ottiene $u^2 = v^2 = 0$ per quelli di grado $4$ e $2$, da cui l'assurdo.
+Pertanto, $\mathbb{Q}(\alpha ^2 ) = \mathbb{Q}(\alpha )$ e, visto che $\mathbb{Q}( 1/\alpha ^2) = \mathbb{Q}(\alpha ^2)$, si conclude che il polinomio minimo di $\beta = 1 / \alpha ^2$ ha grado $6$.
+Riprendendo l'espressione $\alpha ^{12} - 12 \alpha ^6 + 4 = 0$ trovata prima e sostituendo $\alpha ^2 = 1 / \beta $, si trova:
+\[
+\frac{1}{\beta ^6} - \frac{12}{\beta ^3} + 4 = 0\implies 4 \beta ^6 - 12 \beta ^3 + 1 =0 \implies \beta ^6 - 3 \beta ^3 + \frac{1}{4}=0
+\] 
+da cui $P(x) = x^6 - 3 x^3 + 1 / 4 $ \`e il polinomio minimo di $\beta $ perch\'e soddisfa $P(\beta ) =0$ e ha stesso grado dell'estensione $\mathbb{Q}(\beta )$.
+\item Bisogna capire se $f(x)$ \`e irriducibile in $\mathbb{F}_7$.
+	Si osserva che, ponendo $t = x^3$, si ottiene $t^2 + 4 t + 2=0$, con $\Delta = 16 - 8 = 8 \equiv 1 \operatorname{mod} 7 $, che \`e un quadrato in $\mathbb{F}_7$, pertanto $f(x)$ non \`e irriducibile.
+	Si nota, poi, che $-3 \equiv 4 \operatorname{mod} 7 $ e $-5 \equiv 2 \operatorname{mod} 7 $, per cui le radici di $t^2 +4t+2 = 0$ sono $t = 1,2$.
+	Tale polinomio, quindi, si scompone in 
+	\[
+	t^2 + 4 t + 2=(t-1) (t-2) \implies f(x) = x^6 + 4 x^3 + 2 = (x^3 - 1)(x^3-2)
+	\] 
+	Si osserva, ora, che gli elementi di $\mathbb{F}_7^\times$ soddisfano $x^6 = 1$; tramite la mappa $\varphi : \mathbb{F}_7^\times \to \mathbb{F}_7^\times$ tale che $x\longmapsto x^3$, si ottiene che $x^2 = 1$. 
+	In questo modo, si possono capire quali sono i cubi di $\mathbb{F}_7$; da tale relazione, si trova che questi sono $x = \pm 1$, cio\`e $1,6$.
+	Questo significa che $1$ \`e un cubo e, pertanto, $x^3 - 1$ \`e riducibile, mentre $x^3 - 2$ no.
+Le radici di $x^3 = 1$ sono gli elementi di $\mathbb{F}_7^\times$ che hanno ordine $3$; visto che $3  \mid 6$, ci sono sicuramente elementi del genere e sono dati da $1,2,4$, quindi 
+\[
+f(x) = (x-1)(x-2)(x-4)(x^3-2)
+\] 
+\`e la scomposizione in irriducibili di $f(x)$.
+Visto che le radici dei fattori di primo grado sono gi\`a in $\mathbb{F}_7$, $\operatorname{Spl} _{\mathbb{F}_7} f(x)=\operatorname{Spl} _{\mathbb{F}_7} x^3-2$.
+Essendo $x^3 -2 $ irriducibile di grado $3$, allora, se $\xi $ \`e una radice $x^3 -2$, si ha $\mathbb{F}_7(\xi ) \cong \mathbb{F}_{7^3} $.
+Questo permette di concludere che $\operatorname{Spl} _{\mathbb{F}_7} f(x)=\mathbb{F}_{7^3} $.
+	\end{enumerate}
+\end{svolgimento}
+\begin{esercizio}
+	Determinare il campo di spezzamento di $x^{6}-4$ su $\mathbb{Q}$ e su $\mathbb{F}_{11} $.
+\end{esercizio}
+\begin{svolgimento}
+	Si inizia col determinarlo su $\mathbb{Q}$. 
+	Per farlo, \`e necessario capire se $x^6- 4$ \`e irriducibile; si nota, per\`o, che $x^6 - 4 = (x^3-2)(x^3+2)$.
+	Questi due fattori, poi, sono irriducibili per Eisenstein con $p=2$, quindi il campo di spezzamento di $x^6 - 4$ \`e determinato dai campi di spezzamento di questi due polinomi di grado $3$ su $\mathbb{Q}$.
+	Visto che sono irriducibili, la loro estensione avr\`a grado $3$:
+	\begin{itemize}
+		\item per $\operatorname{Spl}_{\mathbb{Q}} x^3 - 2 $, si ha $\mathbb{Q}(\sqrt[3]{2},\zeta_3) $, con $\zeta_3=e^{2\pi i / 3} $ radice cubica dell'unit\`a;
+		\item per $\operatorname{Spl} _{\mathbb{Q}} x^3 + 2$, si ha lo stesso campo di spezzamento $\mathbb{Q}(\sqrt[3]{2},\zeta_3) $, visto che $(-\sqrt[3]{2})^3 = -2 $.
+	\end{itemize}
+	Se ne conclude che il campo di spezzamento di $x^6 - 4$ su $\mathbb{Q}$ \`e dato da $\mathbb{Q}(\sqrt[3]{2} , \zeta_3 )$ ed \`e un'estensione di grado $6$ perch\'e prodotto di un'estensione di grado $2$, $\mathbb{Q}(\zeta_3)$, e di un'estensione di grado $3$, $\mathbb{Q}(\sqrt[3]{2}) $.
+
+	Quanto al caso su $\mathbb{F}_{11} $, il procedimento \`e analogo: si cerca di capire se $x^6 - 4$ ha qualche radice, o se \`e irriducibile.
+	Si deve capire se $\exists x \in  \mathbb{F}_{10}^\times$ tale che $  x^6 = 4$, sapendo che gli elementi di tale campo soddisfano $x^{10}=1$.
+	Pertanto $x^6 = 4$ \`e soddisfatta se e solo se $4^{10 / \operatorname{gcd}(10,6) }  = 1$ in $\mathbb{F}_{11} $; visto che $\operatorname{gcd}(10,6) =2$, si verifica che $4^5 = 1024 \equiv 1 \operatorname{mod} 11 $.
+	Si nota che:
+	\[
+		\begin{split}
+			&4^2 = 16 \equiv 5 \pmod{11} \hspace{1cm} 4^4 \equiv 5^2 =25 \equiv 3 \pmod{11} \\
+			&4^5 \equiv 3 \cdot 4 = 12 \equiv 1 \pmod{11} 
+		\end{split}
+	\] 
+	Quindi $x^6 - 4$ si decompone in $\mathbb{F}_{11}$.
+	Per trovare le radici di questo polinomio ci sono due vie: partendo dal fatto che ci sono due elementi che soddisfano $x^6 - 4 = 0$ in $\mathbb{F}_{11} $, essendo $\operatorname{gcd}(10,6) =2$, si procede a trovarle manualmente e si usa che, se $a$ \`e una radice, allora anche $-a$ lo \`e, oppure si usa che $2$ \`e un generatore di $\mathbb{F}_{11} ^\times$, quindi
+	\[
+	x^6 = 4 \iff (2^k)^6 = 2^2 \iff 6k \equiv 2 \pmod{10} 
+	\] 
+	che si riduce, dividendo per $2$, a $3k \equiv 1 \operatorname{mod} 5$.
+	Usando che l'inverso di $3$ modulo $5$ \`e $2$, si ha la congruenza $k \equiv 2 \operatorname{mod}5$, che, modulo $10$, si traduce in $k = 2,7$.
+	In questo modo, gli elementi che soddisfano $x^6 - 4 = 0$ sono $2^2 = 4$ e $2^7 = 128 \equiv 7 \operatorname{mod} 11 $.
+	Se ne conclude che $x^6 - 4 = (x-4)(x-7) p(x)$, dove la divisione per $x-2$ restituisce (usando che $-4\equiv 7 \operatorname{mod} 11 $):
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c | c c c c c c c}
+			4 & 1 & 0 & 0 & 0 &0 & 0& 7\\
+			  & & 4 &5 & 9&3&1&4 \\
+		\hline
+			  & 1 & 4 & 5&9&3&1&0\\
+		\end{tabular}
+	\end{table}
+	\[
+	x^6-4 = (x-4)\big(x^5+ 4x^4 + 5 x^3 + 9 x^2 + 3x + 1\big)
+	\] 
+	Applicando nuovamente Ruffini, si ottiene:
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c | c c c c c c }
+			7 & 1 & 4 & 5 & 9 &3 & 1 \\
+			  & & 7 &0 & 2&0&10 \\
+		\hline
+			  & 1 & 0 & 5&0&3&0\\
+		\end{tabular}
+	\end{table}
+	\[
+	x^6-4=(x-4)(x-7)\big(x^4 + 5 x^2 + 3\big)
+	\] 
+	Allora il campo di spezzamento su $\mathbb{F}_{11} $ di $x^6-4$ coincide con quello di $x^4 + 5 x^2 + 3$.
+Per trovare il campo di spezzamento di questo polinomio, si prende $t = x^2$, per cui si ottiene $t^2 + 5 t + 3=0$, da cui
+\[
+t_{1,2} = \frac{-5 \pm \sqrt{25 - 12} }{2}\equiv \frac{6\pm \sqrt{2} }{2} = 3 \pm \frac{1}{\sqrt{2} } \in \mathbb{F}_{11} (\sqrt{2} )\cong \mathbb{F}_{11^2} 
+\] 
+Ne segue che il campo di spezzamento di $x^6-4$ \`e proprio $\mathbb{F}_{11^2} $, in quanto, contenendo $t_1$ e $t_2$, contiene anche le rispettive radici quadrate $\pm \sqrt{t_1} $ e $\pm \sqrt{t_2} $.
+\end{svolgimento}
+
+\begin{esercizio}
+Calcolare i gradi delle estensioni $\mathbb{Q}(\sqrt{3} ,\sqrt{5} ) / \mathbb{Q}$ e $\mathbb{Q}(\sqrt{3} -\sqrt{5} ) / \mathbb{Q}$.
+Poi, trovare i polinomi minimi di $\sqrt{3} -\sqrt{5} $ e di $\sqrt{\sqrt{3} -\sqrt{5} } -1$ su $\mathbb{Q}$.
+\end{esercizio}
+\begin{svolgimento}
+	Per calcolare $[\mathbb{Q}(\sqrt{3} ,\sqrt{5} ):\mathbb{Q}]$, si nota che una possibile base \`e data da $\left\{ 1, \sqrt{3} , \sqrt{5} ,\sqrt{3} \sqrt{5}  \right\} $.
+	Questo significa che tale estensione ha grado $4$.
+	Si nota che quella esposta \`e effettivamente una base perch\'e $\sqrt{3} $ e $\sqrt{5} $ sono indipendenti
+	Per calcolare il grado della seconda estensione, si tiene a mente quanto appena visto; si far\`a vedere che $\sqrt{3} , \sqrt{5} \in \mathbb{Q}(\sqrt{3} -\sqrt{5} )$.
+	Per farlo, \`e sufficiente osservare che $1 / (\sqrt{3} -\sqrt{5} ), (3-5) \in \mathbb{Q}(\sqrt{3} -\sqrt{5} )$, per cui:
+	\[
+	\frac{3-5}{\sqrt{3} -\sqrt{5} }= \frac{(\sqrt{3} -\sqrt{5} )(\sqrt{3} +\sqrt{5}) }{\sqrt{3} -\sqrt{5} }= \sqrt{3} +\sqrt{5} \in \mathbb{Q}(\sqrt{3} -\sqrt{5} )
+	\] 
+	Ma allora
+	\[
+	\sqrt{3} =\frac{( \sqrt{3} -\sqrt{5} ) + (\sqrt{3} +\sqrt{5} )}{2} \hspace{1cm} \sqrt{5} = \frac{(\sqrt{3} +\sqrt{5} ) - ( \sqrt{3} -\sqrt{5} )}{2}
+	\] 
+	quindi $\sqrt{3} ,\sqrt{5} \in \mathbb{Q}(\sqrt{3} - \sqrt{5} )$.
+	Visto che $\sqrt{3} -\sqrt{5} \in \mathbb{Q}(\sqrt{3} ,\sqrt{5} )$, si conclude facilmente che $\mathbb{Q}(\sqrt{3} -\sqrt{5} ) = \mathbb{Q}(\sqrt{3} ,\sqrt{5} )$, da cui $[\mathbb{Q}(\sqrt{3} -\sqrt{5} ) : \mathbb{Q} ] = 4$.
+
+	Per trovare il polinomio minimo di $\sqrt{3} -\sqrt{5} $, si prende $x = \sqrt{3} -\sqrt{5} $; allora si nota che:
+	\[
+		\begin{split}
+			&x^2 = 3 + 5 - 2\sqrt{15} \Rightarrow \sqrt{15} = \frac{x^2 - 8}{2} \\
+			&\Rightarrow 15 = \frac{1}{4} \left[ x^4 + 64 - 16 x^2 \right] \implies x^4 - 16 x^2 + 4 = 0
+		\end{split}
+	\] 
+	In questo modo, il candidato polinomio minimo di $\sqrt{3} -\sqrt{5} $ \`e proprio $p(y)= y^4 - 16 y^2 + 4$ perch\'e \`e stato costruito in modo tale che $p(x) =0 , \ x = \sqrt{3} -\sqrt{5} $. 
+Visto che l'estensione $\mathbb{Q}(\sqrt{3} -\sqrt{5} ) / \mathbb{Q}$ ha grado $4$ e che $p(y)$ \`e un polinomio di grado $4$ a coefficienti razionali che ha $\sqrt{3} -\sqrt{5} $ come radice, allora \`e automaticamente il polinomio minimo.
+
+Per $\sqrt{\sqrt{3} -\sqrt{5} } -1$, si procede in maniera analoga, ponendo $\beta  = \sqrt{\sqrt{3} -\sqrt{5} } -1\Rightarrow \beta + 1 = \sqrt{\sqrt{3} -\sqrt{5} } $; in questo modo, si ha:
+\[
+	\begin{split}
+		&(\beta +1) ^2 = \sqrt{3} -\sqrt{5} \Rightarrow (\beta +1)^4 = 3 + 5 - 2\sqrt{15}  \\
+		&\Rightarrow \sqrt{15} = \frac{8-(\beta +1)^4}{2}\Rightarrow 15 = \frac{1}{4}\left[ 64 + (\beta +1)^8-16 (\beta +1)^4 \right] \\
+		&\Rightarrow (\beta +1)^8 - 16 (\beta +1)^4 + 4 = 0
+	\end{split}
+\] 
+Questo permette di ottenere un polinomio monico di grado $8$ a coefficienti razionali e con $\beta $ come radice; per concludere che \`e il polinomio minimo, \`e sufficiente mostrare che il grado dell'estensione \`e $8$.
+Si osserva che, per $\alpha = \sqrt{3} -\sqrt{5}$, si ha $\beta +1 = \sqrt{\alpha } $, quindi $\mathbb{Q}(\beta ) =\mathbb{Q}( \sqrt{\alpha } )$.
+Perci\`o
+\[
+	[\mathbb{Q}(\sqrt{\alpha } ):\mathbb{Q}] = [\mathbb{Q}(\sqrt{\alpha } ):\mathbb{Q}(\alpha )] [\mathbb{Q}(\alpha ) : \mathbb{Q}] = 4 [\mathbb{Q}(\sqrt{\alpha } ):\mathbb{Q}(\alpha )]
+\] 
+con $[\mathbb{Q}(\sqrt{\alpha } ) : \mathbb{Q}(\alpha )]\le 2$ perch\'e ottenuta aggiungendo una radice quadrata.
+Si pu\`o mostrare che questa estensione ha grado esattamente $2$; infatti, se $\alpha $ fosse un quadrato, avrebbe tutti coniugati positivi, visto che $\mathbb{Q}(\alpha )$ \`e un campo totalmente reale, per\`o un possibile coniugato \`e $-\sqrt{3} -\sqrt{5} < 0$, quindi $\alpha $ non pu\`o essere un quadrato.
+Allora $[\mathbb{Q}(\sqrt{\alpha } ):\mathbb{Q}] = 8$ e, dunque, quello trovato \`e proprio il polinomio minimo di $\beta $.
+
+\end{svolgimento}
+\begin{esercizio}
+Determinare il grado del campo di spezzamento di $f(x) = x^4 - 2$ su $\mathbb{Q}$, su $\mathbb{F}_3$ e su $\mathbb{F}_{17} $.
+\end{esercizio}
+\begin{svolgimento}
+	Per $\operatorname{Spl} _{\mathbb{Q}} x^4 - 2$, si nota che ha radici date da $\sqrt[4]{2},  \sqrt[4]{2}\zeta_4, \sqrt[4]{2}\zeta_4^2, \sqrt[4]{2}\zeta_4^3$, con $\zeta_4=i$ radice quartica dell'unit\`a.
+	Evidentemente, il suo campo di spezzamento \`e dato da $\mathbb{Q}(\sqrt[4]{2} ,\zeta_4)$, dove $[\mathbb{Q}(\sqrt[4]{2}):\mathbb{Q}] = 4 $ e $[\mathbb{Q}(\zeta_4) : \mathbb{Q}] = 2$; essendo queste estensioni indipendenti, il grado complessivo dell'estensione \`e $8$.
+
+	Per $\operatorname{Spl} _{\mathbb{F}_3} x^4 - 2$, si nota che tale polinomio \`e irriducibile: $-2\not\equiv 0 \operatorname{mod} 3 $, $-1\not\equiv 0 \operatorname{mod} 3 $ e $2^4 - 2 = 14 \equiv 2\not \equiv 0 \operatorname{mod} 3$.
+	Inoltre, $x^4 - 2$ non si scompone neanche in fattori quadratici in $\mathbb{F}_3$ perch\'e, altrimenti, $2$ dovrebbe essere un quadrato, ma $2^2 = 1$ e $1 ^2 = 1$.
+	Allora $x^4 - 2$ \`e irriducibile di grado $4$ su $\mathbb{F}_3$, il che vuol dire che si decompone completamente in $\mathbb{F}_{3^4} $.
+
+Per $\operatorname{Spl} _{\mathbb{F}_{17}} x^4-2$, infine, si usa il fatto che un elemento di $\mathbb{F}_{17}^\times $ soddisfa $x^{16} = 1$, per cui vale $x^4 = 2$ se e soltanto se \`e verificata la relazione $2^4 \equiv 1 \operatorname{mod} 17 $, ma questa non \`e verificata perch\'e $2^4 = 16$. 
+Inoltre, $x^4 - 2$ non si pu\`o scomporre in fattori quadratici; se cos\`i fosse, infatti, dovrebbe essere soddisfatta la relazione $x^2 = 2 \iff 2 ^ 8 \equiv 1 \operatorname{mod} 17 $, ma $2^8 = 4^4 = 256\equiv 8 \operatorname{mod} 17$.
+Quindi $x^4 - 2$ \`e irriducibile di grado $4$ anche in $\mathbb{F}_{17} $, per cui il suo campo di spezzamento sar\`a $\mathbb{F}_{17^4} $.
+
+\noindent \textbf{Nota:} si pu\`o dimostrare che $x^4 - a$ \`e riducibile in un certo campo $K$ se e soltanto se $a$ \`e una potenza quarta in tale campo, oppure \`e un quadrato.
+Questo permette di giustificare i passaggi nell'esercizio e la dimostrazione si basa sul proseguire per conto diretto, assumendo una generica decomposizione in fattori quadratici.
+\end{svolgimento}
+\subsection{Esercizi su gruppi 2}
+\begin{esercizio}
+Sia $G = \mathbb{Z}/4\mathbb{Z}\rtimes _\phi \mathbb{Z}/4\mathbb{Z}$ definito da $\phi (1) = - 1 \in (\mathbb{Z}/4\mathbb{Z})^* \cong \operatorname{Aut} (\mathbb{Z}/4\mathbb{Z})$.
+\begin{enumerate}[(a).]
+	\item Per ogni intero $n$, contare gli elementi di ordine $n$ in $G$.
+	\item Dimostrare che $Z(G) \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.
+	\item Calcolare $G'$ e la classe di isomorfismo di $G_\text{ab} := G / G'$.
+\end{enumerate}
+\end{esercizio}
+
+\subsection{Esercizi su anelli 2}
+\begin{esercizio}
+Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $Z[x]$. Contare gli ideali massimali di $Z[x]/IJ$.
+\end{esercizio}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
