@@ -59,7 +59,7 @@
 {\normalfont}% name of font to use in the body of the theorem
 %{15pt}% measure of space to indent
 {0pt}% measure of space to indent
-{\noindent\sffamily\scshape\bfseries}% name of head font
+{\noindent\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
@@ -196,7 +196,7 @@ title=#1
 
 
 % Font
-\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
+%\renewcommand{\textbf}[1]{\textsf{\bfseries #1}}
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{kpfonts}
@@ -1684,7 +1684,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 \begin{teorema}\label{corts1}
 	Sia $G$ un gruppo abeliano con $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ tutti primi e $p_i\neq p_j, \ \forall i\neq j$; allora
 	\[
-	G \cong G(p_1) \times \ldots G(p_s)
+	G \cong G(p_1) \times \ldots\times  G(p_s)
 	\] 
 	Inoltre, la decomposizione di $G$ come prodotto di $p$-gruppi tra loro coprimi \`e unica.
 \end{teorema}
@@ -1694,7 +1694,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		Se $s=1$, allora $\lvert G \rvert =p_1^{e_1}\Rightarrow G=G(p_1)$.
 		Si assume che la tesi sia versa $\forall 2\le m<n$ e si verifica per $n$, che pu\`o essere scritto come $n = m m'$, con $(m,m') = 1$ e $m,m' < n$.
 		
-		Si verifica prima (in notazione additiva) che $G \cong mG \times m' G$.
+		Si verifica prima che $G \cong mG \times m' G$.
 		Intanto si osserva che $mG,m'G < G$ e, visto che $G$ \`e abeliano per assunzione, si ha anche che $mG,m'G\lhd G$.
 		Inoltre, visto che $(m,m') = 1$, allora $\exists h,k \in \mathbb{Z}$ tali che 
 		\[
@@ -2379,55 +2379,6 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
 
 		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
 	\end{proof}
-\subsubsection{Utilizzo delle varie azioni di gruppo}
-\begin{enumerate}
-  \item \textbf{Azione su classi laterali (traslazione a sinistra/destra)}  
-  Definizione: \(g \cdot (xH) = (gx)H\).  
-  \begin{itemize}
-    \item Si usa quando compare l’indice \([G:H]\).  
-    \item Induce un omomorfismo \(G \to S_{[G:H]}\).  
-    \item Il nucleo è il \emph{core} di \(H\): \(\bigcap_{g \in G} gHg^{-1}\).  
-    \item Risultati tipici: un sottogruppo di indice primo (o il più piccolo primo che divide \(|G|\)) è normale.
-  \end{itemize}
-
-  \item \textbf{Azione per coniugio su elementi del gruppo}  
-  Definizione: \(g \cdot x = gxg^{-1}\).  
-  \begin{itemize}
-    \item Si usa per studiare centro, classi di coniugio, centralizzatori e normalizzatori.  
-    \item Porta alla \emph{class equation}: \(|G| = |Z(G)| + \sum [G:C_G(x)]\).  
-    \item Risultato tipico: il centro di un \(p\)-gruppo è non banale.
-  \end{itemize}
-
-  \item \textbf{Azione per coniugio su sottogruppi}  
-  Definizione: \(g \cdot H = gHg^{-1}\).  
-  \begin{itemize}
-    \item Si usa per studiare la normalità di \(H\).  
-    \item L’orbita di \(H\) è l’insieme delle sue coniugate.  
-    \item Il numero di coniugate divide \([G:H]\).  
-    \item L’intersezione delle coniugate è un sottogruppo normale (il \emph{core}).  
-  \end{itemize}
-
-  \item \textbf{Azione regolare (su se stesso per moltiplicazione)}  
-  Definizione: \(g \cdot x = gx\).  
-  \begin{itemize}
-    \item Ogni gruppo si immerge in \(S_{|G|}\) (Lemma di Cayley).  
-    \item Risultato tipico: ogni gruppo è isomorfo a un sottogruppo di un simmetrico.
-  \end{itemize}
-
-  \item \textbf{Azione su insiemi di sottogruppi o sottostrutture}  
-  Esempi: su sottogruppi di ordine fissato, su \(p\)-sottogruppi, su insiemi di generatori.  
-  \begin{itemize}
-    \item Utile per applicare orbit-stabilizer e contare.  
-    \item Risultati tipici: teoremi di Sylow (numero di \(p\)-sottogruppi congruo a \(1 \pmod p\)).
-  \end{itemize}
-
-  \item \textbf{Azione su strutture esterne} (spazi, radici di polinomi, grafi, ecc.)  
-  \begin{itemize}
-    \item Contesto più avanzato (es. teoria di Galois).  
-    \item Esempio tipico: gruppo di Galois che agisce sulle radici di un polinomio.
-  \end{itemize}
-\end{enumerate}
-
 \subsubsection{Automorfismi di $(\mathbb{Z}/p\mathbb{Z})^n$}
 
 Si vuole caratterizzare $\operatorname{Aut} \big((\mathbb{Z}/p\mathbb{Z})^n\big)$, con $p$ primo.

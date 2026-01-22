@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.12)  23 NOV 2025 18:07
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  22 JAN 2026 16:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1911,6 +1911,11 @@ Package fontspec Info:
 [11]
 
 [12]
+Underfull \hbox (badness 1478) in paragraph at lines 601--602
+[][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 1.9 (Com-mu-ta-to-re).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 un grup-po; da-ti $\TU/KpMath-Regular.otf(1)/m/n/12 𝑔, ℎ ∈ 𝐺$\TU/KpRoman(1)/m/n/12 , il lo-ro
+ []
+
+
 
 [13]
 
@@ -1970,8 +1975,8 @@ Overfull \hbox (0.95018pt too wide) in paragraph at lines 1081--1084
 
 
 [26]
-Overfull \hbox (0.33505pt too wide) in paragraph at lines 1124--1126
-[]\TU/KpSans(0)/b/n/12 Or-di-ne di una per-mu-ta-zio-ne di $[]$. \TU/KpRoman(1)/m/n/12 Un $\TU/KpMath-Regular.otf(1)/m/n/12 𝑘$\TU/KpRoman(1)/m/n/12 -ciclo ha or-di-ne $\TU/KpMath-Regular.otf(1)/m/n/12 𝑘$\TU/KpRoman(1)/m/n/12 ; in-fat-ti per $\TU/KpMath-Regular.otf(1)/m/n/12 𝜎 = (𝑎[]  ⋯  𝑎[])$\TU/KpRoman(1)/m/n/12 ,
+Overfull \hbox (1.2351pt too wide) in paragraph at lines 1124--1126
+[]\TU/KpRoman(1)/b/n/12 Or-di-ne di una per-mu-ta-zio-ne di $[]$. \TU/KpRoman(1)/m/n/12 Un $\TU/KpMath-Regular.otf(1)/m/n/12 𝑘$\TU/KpRoman(1)/m/n/12 -ciclo ha or-di-ne $\TU/KpMath-Regular.otf(1)/m/n/12 𝑘$\TU/KpRoman(1)/m/n/12 ; in-fat-ti per $\TU/KpMath-Regular.otf(1)/m/n/12 𝜎 = (𝑎[]  ⋯  𝑎[])$\TU/KpRoman(1)/m/n/12 ,
  []
 
 
@@ -2014,7 +2019,7 @@ Overfull \hbox (11.65434pt too wide) in paragraph at lines 1604--1605
 
 [40]
 Underfull \hbox (badness 10000) in paragraph at lines 1671--1672
-[][]\TU/KpSans(0)/b/sc/12 D---- 1.19 ($\TU/KpRoman(2)/b/n/12 p$\TU/KpSans(0)/b/sc/12 -).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 un grup-po abe-lia-no fi-ni-to; si
+[][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 1.19 ($\TU/KpRoman(2)/b/n/12 p$\TU/KpRoman(1)/b/n/12 -torsione).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 un grup-po abe-lia-no fi-ni-to; si
  []
 
 
@@ -2087,28 +2092,28 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [60]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2382.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 2382.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 2382.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2382.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2382.
+
+
+
 [61]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 2431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 2431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2431.
-
-
 
 [62]
 
@@ -2137,20 +2142,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [74]
 
 [75]
-
-[76]
-Underfull \hbox (badness 3668) in paragraph at lines 3045--3045
+Underfull \hbox (badness 3668) in paragraph at lines 2996--2996
 [][]\TU/KpRoman(1)/m/n/10 L’in-ver-sa di un omo-mor-fi-smo è un omo-mor-fi-smo per-ché se $\TU/KpMath-Regular.otf(1)/m/n/10 𝑓(𝑎𝑏) = 𝑓(𝑎)𝑓(𝑏)$\TU/KpRoman(1)/m/n/10 , al-lo-ra
  []
 
 
 
-[77]
-Overfull \hbox (4.22435pt too wide) in paragraph at lines 3079--3081
+[76]
+Overfull \hbox (4.22435pt too wide) in paragraph at lines 3030--3032
 \TU/KpMath-Regular.otf(1)/m/n/12 𝑅 ⟶ 𝑅[]$ \TU/KpRoman(1)/m/n/12 non fos-se iniet-ti-vo, si po-treb-be pas-sa-re al quo-zien-te e tro-va-re che $\TU/KpMath-Regular.otf(1)/m/n/12 𝑅/ [] 𝜑 []⟶
  []
 
 
+Underfull \hbox (badness 1371) in paragraph at lines 3049--3050
+[][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 2.15 (Anel-lo pro-dot-to).  []\TU/KpRoman(1)/m/n/12 Sia-no $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴, 𝐵$ \TU/KpRoman(1)/m/n/12 due anel-li; il lo-ro pro-dot-to
+ []
+
+
+
+[77]
 
 [78]
 
@@ -2161,25 +2171,25 @@ Overfull \hbox (4.22435pt too wide) in paragraph at lines 3079--3081
 [81]
 
 [82]
-
-[83]
-Underfull \hbox (badness 2103) in paragraph at lines 3316--3317
-[][]\TU/KpSans(0)/b/sc/12 D---- 2.23 (P- -----).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 un anel-lo (com-mu-ta-ti-vo con
+Underfull \hbox (badness 1496) in paragraph at lines 3267--3268
+[][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 2.23 (Par-te mol-ti-pli-ca-ti-va).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 un anel-lo (com-mu-ta-ti-vo con
  []
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 3334--3335
-[][]\TU/KpSans(0)/b/sc/12 P---- 2.10.  []\TU/KpRoman(1)/m/n/12 L’in-sie-me del-le fra-zio-ni di un do-mi-nio, mu-ni-to con le
+Underfull \hbox (badness 2165) in paragraph at lines 3285--3286
+[][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 2.10.  []\TU/KpRoman(1)/m/n/12 L’in-sie-me del-le fra-zio-ni di un do-mi-nio, mu-ni-to con le
+ []
+
+
+
+[83]
+Underfull \hbox (badness 2426) in paragraph at lines 3327--3328
+[][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 2.11.  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 un do-mi-nio e $\TU/KpMath-Regular.otf(1)/m/n/12 𝑆[]𝐴$ \TU/KpRoman(1)/m/n/12 il suo anel-lo del-le fra-zio-ni;
  []
 
 
 
 [84]
-Underfull \hbox (badness 2173) in paragraph at lines 3376--3377
-[][]\TU/KpSans(0)/b/sc/12 P---- 2.11.  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 un do-mi-nio e $\TU/KpMath-Regular.otf(1)/m/n/12 𝑆[]𝐴$ \TU/KpRoman(1)/m/n/12 il suo anel-lo del-le fra-zio-ni;
- []
-
-
 
 [85]
 
@@ -2200,72 +2210,67 @@ Underfull \hbox (badness 2173) in paragraph at lines 3376--3377
 [93]
 
 [94]
-Underfull \hbox (badness 1286) in paragraph at lines 3777--3778
-[][]\TU/KpSans(0)/b/sc/12 T-- 2.6 (C------ - UFD).  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 un do-mi-nio; al-lo-ra so-no
- []
-
-
 
 [95]
 
 [96]
 
 [97]
-
-[98]
-Overfull \hbox (3.24687pt too wide) in paragraph at lines 3937--3938
+Overfull \hbox (3.24687pt too wide) in paragraph at lines 3888--3889
 []\TU/KpRoman(1)/m/n/12 Ana-lo-ga-men-te al co-rol-la-rio pre-ce-den-te, si sa che $\TU/KpMath-Regular.otf(1)/m/n/12 ∃𝑑 ∈ 𝐴$ \TU/KpRoman(1)/m/n/12 ta-le che $\TU/KpMath-Regular.otf(1)/m/n/12 𝑔[](𝑥) =
  []
 
 
 
+[98]
+
 [99]
 
 [100]
-
-[101]
-Overfull \hbox (12.82741pt too wide) in paragraph at lines 4038--4039
+Overfull \hbox (12.82741pt too wide) in paragraph at lines 3989--3990
 []\TU/KpRoman(1)/m/n/12 Per que-sto mo-ti-vo, al-la suc-ces-sio-ne $[]$ si pos-so-no as-so-cia-re le suc-ces-sio-ni $[]$
  []
 
 
 
+[101]
+
 [102]
 
 [103]
-
-[104]
-Underfull \hbox (badness 1062) in paragraph at lines 4150--4151
-[][]\TU/KpSans(0)/b/sc/12 P---- 3.1.  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐿/𝐾$ \TU/KpRoman(1)/m/n/12 un’e-sten-sio-ne di $\TU/KpMath-Regular.otf(1)/m/n/12 𝐾$\TU/KpRoman(1)/m/n/12 , con $\TU/KpMath-Regular.otf(1)/m/n/12 𝛼 ∈ 𝐿$\TU/KpRoman(1)/m/n/12 ; al-lo-ra il gra-do
+Underfull \hbox (badness 1132) in paragraph at lines 4101--4102
+[][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 3.1.  []\TU/KpRoman(1)/m/n/12 Sia $\TU/KpMath-Regular.otf(1)/m/n/12 𝐿/𝐾$ \TU/KpRoman(1)/m/n/12 un’e-sten-sio-ne di $\TU/KpMath-Regular.otf(1)/m/n/12 𝐾$\TU/KpRoman(1)/m/n/12 , con $\TU/KpMath-Regular.otf(1)/m/n/12 𝛼 ∈ 𝐿$\TU/KpRoman(1)/m/n/12 ; al-lo-ra il gra-do
  []
 
 
+
+[104]
 
 [105]
 
 [106]
 
 [107]
-
-[108]
-Underfull \hbox (badness 3907) in paragraph at lines 4323--4323
+Underfull \hbox (badness 3907) in paragraph at lines 4274--4274
 [][]\TU/KpRoman(1)/m/n/10 Ta-le spa-zio ha di-men-sio-ne fi-ni-ta per-ché l’e-sten-sio-ne $\TU/KpMath-Regular.otf(1)/m/n/10 𝐿(𝑚[], … , 𝑚[])/𝐿$ \TU/KpRoman(1)/m/n/10 è fi-ni-ta, quin-di la
  []
 
 
+
+[108]
 
 [109]
 
 [110]
 
 [111]
-
-[112]
-Underfull \hbox (badness 4096) in paragraph at lines 4451--4452
-[][]\TU/KpSans(0)/b/sc/12 D---- 3.8 (C- --).  []\TU/KpRoman(1)/m/n/12 Un cam-po $\TU/KpMath-Regular.otf(1)/m/n/12 𝐾$ \TU/KpRoman(1)/m/n/12 ta-le che ogni po-li-no-mio
+Underfull \hbox (badness 3271) in paragraph at lines 4402--4403
+[][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 3.8 (Cam-po per-fet-to).  []\TU/KpRoman(1)/m/n/12 Un cam-po $\TU/KpMath-Regular.otf(1)/m/n/12 𝐾$ \TU/KpRoman(1)/m/n/12 ta-le che ogni po-li-no-mio
  []
 
 
+
+[112]
 
 [113]
 
@@ -2280,44 +2285,44 @@ Underfull \hbox (badness 4096) in paragraph at lines 4451--4452
 [118]
 
 [119]
-
-[120]
-Underfull \hbox (badness 1412) in paragraph at lines 4787--4789
-[][]\TU/KpSans(0)/b/sc/12 O---- 3.7.  []\TU/KpRoman(1)/m/n/12 Con la di-mo-stra-zio-ne pre-ce-den-te, si è an-che evi-den-zia-to
+Underfull \hbox (badness 1496) in paragraph at lines 4738--4740
+[][]\TU/KpRoman(1)/b/n/12 Os-ser-va-zio-ne 3.7.  []\TU/KpRoman(1)/m/n/12 Con la di-mo-stra-zio-ne pre-ce-den-te, si è an-che evi-den-zia-to
  []
 
 
 
+[120]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symbb' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4772.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4772.
+
+
+
 [121]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4821.
-
-
 
 [122]
 
@@ -2333,14 +2338,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [128]
 
-[129]
-
 Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[130] (./master.aux)
+[129] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2350,13 +2353,13 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 56489 strings out of 475506
+ 56476 strings out of 475506
  100000,2373549 words of node,token memory allocated
  5927 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 34 glue, 4 kern, 1 glyph, 1659 attribute, 104 glue_spec, 831 attribute_list, 2 write nodes
-   avail lists: 1:5,2:2289,3:1038,4:228,5:846,6:101,7:7317,8:109,9:1009,10:32,11:846
- 77636 multiletter control sequences out of 65536+600000
- 154 fonts using 29193279 bytes
+   avail lists: 1:5,2:2289,3:1038,4:228,5:843,6:101,7:7319,8:109,9:1009,10:32,11:846
+ 77631 multiletter control sequences out of 65536+600000
+ 151 fonts using 28732663 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.49'
@@ -2456,11 +2459,11 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.3'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (130 pages, 1466094 bytes).
+</usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on master.pdf (129 pages, 1454125 bytes).
 
-PDF statistics: 1563 PDF objects out of 1728 (max. 8388607)
- 1379 compressed objects within 14 object streams
- 635 named destinations out of 1000 (max. 131072)
- 384 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1541 PDF objects out of 1728 (max. 8388607)
+ 1361 compressed objects within 14 object streams
+ 627 named destinations out of 1000 (max. 131072)
+ 376 words of extra memory for PDF output out of 10000 (max. 100000000)
 
