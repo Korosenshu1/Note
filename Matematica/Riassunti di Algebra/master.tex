@@ -1091,6 +1091,59 @@ Sia $G = \mathbb{Z}/4\mathbb{Z}\rtimes _\phi \mathbb{Z}/4\mathbb{Z}$ definito da
 	\item Calcolare $G'$ e la classe di isomorfismo di $G_\text{ab} := G / G'$.
 \end{enumerate}
 \end{esercizio}
+\begin{svolgimento}
+	Si divide lo svolgimento nei vari punti.
+	\begin{enumerate}[(a).]
+		\item I possibili $n$ sono $1,2,4,8,16$.
+
+			Per $n=1$, si ha evidentemente l'identit\`a $(0,0)$.
+
+			Per $n=2$, si osserva che:
+			\[
+				(a,b)^2 = (0,0) \iff \Big(a+(-1)^b a , 2b\Big) = (0,0)
+			\] 
+			Conviene dividere i casi in cui $b$ \`e pari o dispari.
+			Se $b$ pari (cio\`e $b=0,2$), allora il quadrato \`e pari a $(2a,2b)$ e questo coincide con $(0,0)$ se e soltanto se $a,b \in \left\{ 0,2 \right\} $. Escludendo l'identit\`a stessa, ci sono tre possibilit\`a: $(2,0), \ (2,2), \ (0,2)$.
+			Se $b$ \`e dispari, invece, il quadrato \`e pari a $(0,2b)$; questo risulterebbe pari a $(0,0)$ se $b\equiv 0 \operatorname{mod} 2 $, ma questo \`e impossibile perch\'e si \`e assunto $b$ dispari.
+
+			Per $n=4$, invece, si impone $(a,b)^4 = (0,0)$, cio\`e:
+			\[
+				\Big(a + (-1)^b a , 2b\Big)\Big(a+(-1)^b a, 2b\Big) =\begin{cases}
+					 (0,4b) \equiv (0,0) \mod{4}&,\ b \text{ dispari} \\
+					 (4a,4b)\equiv (0,0) \mod{4}&,\ b \text{ pari}
+				\end{cases}
+			\] 
+			Questo conteggio permette di concludere che tutti gli elementi di $G$ che non sono di ordine $1$ o $2$ sono di ordine $4$.
+			Visto che l'identit\`a e gli elementi di ordine $2$ sono quattro in totale, si conclude che quelli di ordine $4$ sono $12$.
+		\item Per il lemma orbita-stabilizzatore, $\lvert Z(G) \rvert  \mid \lvert G \rvert $, quindi le possibili cardinalit\`a sono $1,2,4,8,16$.
+			$G$ \`e un $p$-gruppo, quindi $1$ non \`e ammissibile; inoltre, $8$ e $16$ non sono possibili in quanto $G$ risulterebbe abeliano, che \`e assurdo.
+			Allora $\lvert Z(G) \rvert \in \left\{ 2,4 \right\} $.
+			Tuttavia, neanche $\lvert Z(G) \rvert =2$ \`e possibile perch\'e $Z(G)$ contiene tutti gli elementi di ordine $2$; infatti, dato $(a,b) \in G$ con $a,b\equiv 0 \operatorname{mod} 2 $, si ha:
+			\[
+				\begin{split}
+					&(c,d) (a,b) = \Big(c + (-1)^d a , d + b\Big)\\
+					&(a,b) (c,d) = \Big(a + (-1)^b c , b+d \Big) = \Big(a + c , b+d \Big)
+				\end{split}
+			\] 
+			Questi coincidono per ogni elemento $(c,d) \in G$ se e solo se $a+c = c - a$; per\`o si \`e assunto $a \equiv 0 \operatorname{mod} 2 $, quindi verifica $a \equiv -a \operatorname{mod} 4 $ e, allora, $(c,d) (a,b) = (a,b)(c,d) , \ \forall (c,d) \in G$.
+			Se ne conclude che $\lvert Z(G) \rvert = 4$, dove tre elementi sono id ordine $2$ e l'ultimo \`e l'identit\`a.
+			Essendo un gruppo di ordine $4$ per forza abeliano, il teorema di struttura assicura che $Z(G) \cong \mathbb{Z}/ 4 \mathbb{Z}$, oppure $Z(G) \cong \mathbb{Z}/ 2 \mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$; per quanto appena detto sugli ordini degli elementi di $Z(G)$, l'unica possibilit\`a \`e proprio quella richiesta: $Z(G) \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.
+		\item Per costruire $G'$, si nota che i quozienti 
+			\[
+			G / Z(G) \hspace{1cm} \frac{G}{\mathbb{Z}/4\mathbb{Z} \times \left\{ 0 \right\} }
+			\] 
+		sono abeliani (visto che il quoziente ha cardinalit\`a $4$), quindi 
+		\[
+		G ' \subseteq Z(G) \cap \Big(\mathbb{Z}/4\mathbb{Z}\times  \left\{ 0 \right\} \Big) \cong \Big(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}\Big)\cap \Big(\mathbb{Z}/4\mathbb{Z}\times  \left\{ 0 \right\} \Big) = \left\{ (0,0), (1,0) \right\} 
+		\] 
+		Quindi $\lvert G' \rvert = \left\{ 1,2 \right\} $; visto che $G$ non \`e abeliano, $\lvert G' \rvert = 2$ e, quindi, $G ' =\left\{ (0,0), (2,0) \right\} $, dato che $Z(G)$ contiene gli elementi di $G$ di ordine $2$.
+		In questo modo, $G_{\text{ab}} $ ha cardinalit\`a $8$ ed \`e abeliano, quindi le classi di isomorfismo possibili, per il teorema di struttura, sono le seguenti:
+		\[
+		\big(\mathbb{Z}/2\mathbb{Z}\big)^3 \hspace{1cm} \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/4\mathbb{Z} \hspace{1cm} \mathbb{Z}/8\mathbb{Z}
+		\] 
+		Per\`o $G_{\text{ab}} $ ha elementi di ordine $4$ e non ha elementi di ordine $8$, quindi l'unica possibilit\`a rimanente \`e $G_\text{ab}\cong \mathbb{Z}/2\mathbb{Z} \times  \mathbb{Z}/4\mathbb{Z}$.
+	\end{enumerate}
+\end{svolgimento}
 
 \subsection{Esercizi su anelli 2}
 \begin{esercizio}

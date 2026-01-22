@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  21 JAN 2026 17:02
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  22 JAN 2026 12:58
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1892,12 +1892,18 @@ Overfull \hbox (0.82257pt too wide) in paragraph at lines 962--963
 
 [21]
 
+[22]
+Overfull \hbox (10.80324pt too wide) in paragraph at lines 1138--1141
+\TU/KpRoman(1)/m/n/12 Quin-di $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = []$\TU/KpRoman(1)/m/n/12 ; vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 non è abe-lia-no, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = 2$ \TU/KpRoman(1)/m/n/12 e, quin-di, $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺[] = []$\TU/KpRoman(1)/m/n/12 ,
+ []
+
+
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
 
 
-[22] (./master.aux)
+[23] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1907,19 +1913,19 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 54950 strings out of 475506
+ 54954 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 1455 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 243 attribute, 104 glue_spec, 123 attribute_list, 2 write nodes
-   avail lists: 1:4,2:3060,3:1175,4:214,5:605,6:101,7:5624,8:109,9:1212,10:12,11:588
+ 1647 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 307 attribute, 104 glue_spec, 155 attribute_list, 2 write nodes
+   avail lists: 1:4,2:2964,3:1175,4:214,5:606,6:101,7:5624,8:109,9:1212,10:12,11:588
  76614 multiletter control sequences out of 65536+600000
- 109 fonts using 18756267 bytes
- 124i,17n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109 fonts using 18756211 bytes
+ 124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (22 pages, 144144 bytes).
+Output written on master.pdf (23 pages, 149278 bytes).
 
-PDF statistics: 382 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
- 120 named destinations out of 1000 (max. 131072)
+PDF statistics: 389 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
+ 124 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
