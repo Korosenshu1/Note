@@ -1753,11 +1753,10 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		p^r y = p^r x + p^r ax_1 = 0 \iff p^r x = - p^r ax_1
 		\] 
 		dove, essendo $\operatorname{ord}_{\langle x_1 \rangle} (\overline{x}) =p^r$, allora $p^r x \in \langle x_1 \rangle$, cio\`e la sua proiezione modulo $\langle x_1 \rangle$ \`e nella classe laterale banale, quindi $p^rx = bx_1$.
-		Per ipotesi, si era assunto che $x_1$ ha ordine massimo, sia questo $p^{r_1} $; allora deve risultare che $r\le r_1$, ma 
+		Per ipotesi, si era assunto che $x_1$ ha ordine massimo, sia questo $p^{r_1} $; allora deve risultare che $r\le r_1$, quindi si pu\`o scrivere che
 		\[
 		0 = p^{r_1} x \iff p^{r_1-r} p^r x = 0 \iff p^{r_1-r} bx_1=0
 		\] 
-		dove si \`e moltiplicato e diviso per $p^r$. 
 		L'ultima uguaglianza \`e versa se e solo se $p^{r_1}  \mid p^{r_1-r} b$ (visto che $\operatorname{ord}_G(x_1) =p^{r_1} $), quindi se e solo se $p^r  \mid b \implies b = p^r b_1$.
 		Per finire, scegliendo $a = -b_1$  e sostituendo nell'espressione iniziale, si ottiene 
 		\[
@@ -1795,7 +1794,7 @@ Sia $G$ un gruppo abeliano finito; si definisce \textit{$p$-componente} o \texti
 		\] 
 		Ora, si vuole mostrare che:
 \[
-H = \langle x_1,\ldots,x_t \rangle\cong \langle x_2 \rangle\times \ldots\times \langle x_t \rangle
+H = \langle x_2,\ldots,x_t \rangle\cong \langle x_2 \rangle\times \ldots\times \langle x_t \rangle
 \] 
 La proiezione al quoziente ristretta ad $H$ \`e data da:
 \[
@@ -1810,7 +1809,7 @@ Questo \`e un isomorfismo, infatti $\pi$ \`e un omomorfismo suriettivo perch\'e 
 \[
 \pi(a_2x_2+ \ldots+a_t x_t) = (a_2\overline{x}_2,\ldots,a_t \overline{x}_t)= (0,\ldots,0) \iff a_i \overline{x}_i = 0, \ \forall i
 \] 
-cio\`e se e solo se $\operatorname{ord}_{G/\langle x_1 \rangle} (\overline{x}_i) = p^{r_i}  \mid a_i $\footnote{L'uguaglianza deriva dal lemma precedente.}.
+cio\`e se e solo se $\operatorname{ord}_{G/\langle x_1 \rangle} (\overline{x}_i) = p^{r_i}  \mid a_i $.
 Per\`o, valendo anche $\operatorname{ord}(x_i) =p^{r_i} $, allora quanto appena detto \`e equivalente a richiedere che $a_i x_ i= 0 , \ \forall i$.
 Allora $\pi|_{H} $ \`e un isomorfismo e, quindi, vale che:
 \[
@@ -1823,7 +1822,7 @@ Si inizia col far vedere che l'intersezione \`e banale; questo \`e dato dal fatt
 \[
 \overline{0} = a_2 \overline{x}_2 + \ldots + a_t \overline{x}_t \iff (a_2 \overline{x}_2,\ldots, a_t \overline{x}_t) = (\overline{0},\ldots,\overline{0})
 \] 
-quindi si deve avere $x_i = 0$ nel gruppo di partenza e $a_1 x_1=0$, da cui $\langle x_1 \rangle\cap H = \left\{ 0 \right\} $.
+quindi si deve avere $a_ix_i = 0$ nel gruppo di partenza e $a_1 x_1=0$, da cui $\langle x_1 \rangle\cap H = \left\{ 0 \right\} $.
 Per  mostrare che $\langle x_1 \rangle+  H = G$, si nota che $\langle x_1 \rangle+ H \subseteq G$ e che
 \[
 \lvert \langle x_1 \rangle+ H  \rvert = \frac{\lvert \langle x_1 \rangle \rvert \lvert H \rvert }{\lvert \langle x_1 \rangle \cap H\rvert } = \frac{p^{r_1} \cdot p^{n-r_1} }{1}=p^n
@@ -1839,7 +1838,7 @@ Sia
 G \cong \mathbb{Z}/ p^{r_1} \mathbb{Z} \times \ldots \times \mathbb{Z}/ p^{r_t} \mathbb{Z} \cong \mathbb{Z}/ p^{k_1} \mathbb{Z}\times \ldots\mathbb{Z}/p^{k_s} \mathbb{Z}
 \] 
 dove si assume che siano ordinati in modo tale da avere $r_1\ge \ldots\ge r_t $ e $k_1\ge \ldots\ge k_s$.
-Intanto deve valere $s=t$ perch\'e, considerando $G_p = \left\{ g \in G  \mid gp = 0 \right\} $ (sottogruppo degli elementi di $G$ il cui ordine divide $p$), che \`e caratteristico (perch\'e gli omomorfismi conservano l'ordine), si nota che gli elementi di $G$ di ordine tale da dividere $p$ stanno tutti in $G_p$, quindi $G_p$ \`e isomorfo a un sottogruppo della forma $(\mathbb{Z} / p\mathbb{Z})^\ell $, con $\ell $ numero dei fattori $\mathbb{Z} / p^h \mathbb{Z}$ distinti:
+Intanto deve valere $s=t$ perch\'e, considerando $G_p = \left\{ g \in G  \mid gp = 0 \right\} $ (sottogruppo degli elementi di $G$ il cui ordine divide $p$), che \`e caratteristico (perch\'e gli automorfismi conservano l'ordine), si nota che gli elementi di $G$ di ordine tale da dividere $p$ stanno tutti in $G_p$, quindi $G_p$ \`e isomorfo a un sottogruppo della forma $(\mathbb{Z} / p\mathbb{Z})^\ell $, con $\ell $ numero dei fattori $\mathbb{Z} / p^h \mathbb{Z}$ distinti:
 \[
 G_p \cong (\mathbb{Z}/p\mathbb{Z})^t \cong (\mathbb{Z}/p\mathbb{Z})^s \iff t= s
 \] 

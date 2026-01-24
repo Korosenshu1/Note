@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  22 JAN 2026 12:58
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  24 JAN 2026 14:14
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1849,17 +1849,17 @@ Package kpfonts-otf Warning: kpfonts-otf provides all AMS symbols.
 [4]
 
 [5]
+Underfull \hbox (badness 4132) in paragraph at lines 424--425
+[][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 1.10.  []\TU/KpRoman(1)/m/n/12 Per la for-mu-la del-le clas-si, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝑍[](𝜎)||[][](𝜎)| = 𝑛!$ \TU/KpRoman(1)/m/n/12 e
+ []
+
+
 
 [6]
 
 [7]
 
 [8]
-Underfull \hbox (badness 3780) in paragraph at lines 510--511
-[][]\TU/KpSans(0)/b/sc/12 P---- 2.10.  []\TU/KpRoman(1)/m/n/12 Per la for-mu-la del-le clas-si, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝑍[](𝜎)||[][](𝜎)| = 𝑛!$ \TU/KpRoman(1)/m/n/12 e
- []
-
-
 
 [9]
 
@@ -1876,13 +1876,13 @@ Underfull \hbox (badness 3780) in paragraph at lines 510--511
 [15]
 
 [16]
-
-[17]
-Overfull \hbox (0.82257pt too wide) in paragraph at lines 962--963
+Overfull \hbox (0.82257pt too wide) in paragraph at lines 924--925
 []\TU/KpRoman(1)/m/n/12 per $[][] \TU/KpMath-Regular.otf(1)/m/n/12 𝑥[] + 2$\TU/KpRoman(1)/m/n/12 , si ha lo stes-so cam-po di spez-za-men-to $\TU/KpMath-Regular.otf(1)/m/n/12 ℚ([], 𝜁[])$\TU/KpRoman(1)/m/n/12 , vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 (−[])[] =
  []
 
 
+
+[17]
 
 [18]
 
@@ -1891,19 +1891,22 @@ Overfull \hbox (0.82257pt too wide) in paragraph at lines 962--963
 [20]
 
 [21]
-
-[22]
-Overfull \hbox (10.80324pt too wide) in paragraph at lines 1138--1141
+Overfull \hbox (10.80324pt too wide) in paragraph at lines 1100--1103
 \TU/KpRoman(1)/m/n/12 Quin-di $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = []$\TU/KpRoman(1)/m/n/12 ; vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 non è abe-lia-no, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = 2$ \TU/KpRoman(1)/m/n/12 e, quin-di, $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺[] = []$\TU/KpRoman(1)/m/n/12 ,
  []
 
+
+
+[22]
+
+[23]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
 
 
-[23] (./master.aux)
+[24] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1913,19 +1916,19 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 54954 strings out of 475506
+ 54960 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 1647 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 307 attribute, 104 glue_spec, 155 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2964,3:1175,4:214,5:606,6:101,7:5624,8:109,9:1212,10:12,11:588
- 76614 multiletter control sequences out of 65536+600000
- 109 fonts using 18756211 bytes
+ 1671 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 315 attribute, 104 glue_spec, 159 attribute_list, 2 write nodes
+   avail lists: 1:6,2:2628,3:1032,4:204,5:606,6:98,7:5624,8:109,9:1212,10:12,11:588
+ 76612 multiletter control sequences out of 65536+600000
+ 107 fonts using 18449107 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (23 pages, 149278 bytes).
+</usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on master.pdf (24 pages, 149842 bytes).
 
-PDF statistics: 389 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 124 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 390 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 132 named destinations out of 1000 (max. 131072)
+ 192 words of extra memory for PDF output out of 10000 (max. 100000000)
 

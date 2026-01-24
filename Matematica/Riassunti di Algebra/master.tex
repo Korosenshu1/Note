@@ -59,7 +59,7 @@
 {\normalfont}% name of font to use in the body of the theorem
 %{15pt}% measure of space to indent
 {0pt}% measure of space to indent
-{\noindent\sffamily\scshape\bfseries}% name of head font
+{\noindent\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
@@ -208,96 +208,11 @@ title=#1
 \maketitle
 \tableofcontents 
 \newpage
-\section{Nozioni fondamentali}
-\subsection{Applicazioni}
-\begin{prop}
-	Sia $f :X \to Y$; valgono le seguenti propriet\`a:
-	\[
-		\begin{array}
-			{c c}
-			f^{-1}(A\cup B) = f^{-1}(A) \cup f^{-1}(B) & f^{-1}(A\cap B) = f^{-1}(A) \cap f^{-1}(B)\\
-			f(A\cup B) = f(A) \cup f(B) & f(A\cap B) \subseteq f(A) \cap f(B)
-		\end{array}
-	\] 
-\end{prop}
-\noindent Un diagramma \`e detto \textbf{commutativo} se e soltanto se ogni cammino con stessa partenza e stesso arrivo danno lo stesso risultato per composizione.
-Nel caso del diagramma
-\[
-\begin{tikzcd}
-	X & & Y \\
-	\\
-	A & & B
-	\arrow[from=1-1, to=1-3, "f"]
-	\arrow[from=1-3, to=3-3, "h"]
-	\arrow[from=3-3, to=3-1, "i"]
-	\arrow[from=1-1, to=3-1, "g"']
-\end{tikzcd}
-\] 
-questo \`e commutativo se e solo se $(h\circ f) (x) = (i \circ g) (x)$.
-\subsection{Relazioni}
-Sia $X$ un insieme e $R \subseteq X \times X$.
-Si dice che ad $R$ \`e associata una \textbf{relazione} $\sim_R$ (o pi\`u semplicemente $\sim$ quando non vi \`e ambiguit\`a) su $X$ se $x \sim_R y \iff (x,y) \in R$.
-
-Un esempio, sono le relazioni di equivalenza, cio\`e relazioni che soddisfano le propriet\`a \textit{riflessiva} ($x \sim x$), \textit{simmetrica} ($x\sim y \iff y \sim x$) e \textit{transitiva} ($x\sim y$, $y \sim z\Rightarrow x\sim z$).
-\begin{teorema}
-	Se $\sim$ \`e una relazione di equivalenza su $X$, allora la famiglia delle sue classi di equivalenza \`e una partizione di $X$.
-	Viceversa, se $\mathcal{P} $ \`e una partizione di $X$, allora induce, su $X$, una relazione di equivalenza data da 
-	\[
-	x \sim y \iff\exists C \in \mathcal{P} : x,y \in C
-	\] 
-	che ha, per classi, gli insiemi $C$ della partizione $\mathcal{P} $.
-\end{teorema}
-\begin{definizione}
-	$f : X \to Y$ \`e \textit{compatibile} con $\sim$ su $X$ se $x\sim y\Rightarrow f(x) = f(y)$.
-\end{definizione}
-\noindent Data $X \xrightarrow{\; f \;} Y$ compatibile con $\sim $ su $X$ e $\pi : X \longrightarrow X /\mathrm{\sim} $ \textit{proiezione al quoziente}, allora \textbf{esiste un'unica applicazione} $f=\overline{f} \circ \pi $ che rende
-\[
-\begin{tikzcd}
-	X& & Y\\
-	\\
-	X /\mathrm{\sim} 
-	\arrow[from=1-1,to=1-3, "f"]
-	\arrow[from=1-1,to=3-1, "\pi"']
-	\arrow[from=3-1,to=1-3, "\overline{f}"']
-\end{tikzcd}
-\] 
-commutativo.
-
-Se $\sim$ e $\sim'$ sono due relazioni su $X$, con $x\sim y \Rightarrow  x\sim' y$, allora la partizione $\mathcal{P} $ indotta da $\sim$ \`e pi\`u fine di $\mathcal{P} '$, cio\`e quella indotta da $\sim'$.
-Questo significa che per ogni classe $ C \in \mathcal{P} , \ \exists C ' \in \mathcal{P} '$ tale che $C \subseteq C'$; in questo senso, la corrispondenza $C \longmapsto C'$ \`e un'applicazione suriettiva $\epsilon $ che rende commutativo il seguente diagramma:
-\[
-\begin{tikzcd}
-	& X &\\
-	\\
-	X/\mathrm{\sim}  & & X / \mathrm{\sim'} 
-	\arrow[from=1-2, to=3-1, "\pi"']
-	\arrow[from=1-2, to=3-3, "\pi'"]
-	\arrow[from=3-1, to=3-3, "\epsilon ", two heads]
-\end{tikzcd}
-\] 
-\begin{definizione}
-	[Insieme di rappresentanti]
-	Dato $X$ un insieme e $\sim$ relazione di equivalenza su $X$, un insieme $\mathcal{R} \subseteq X$ \`e un \textit{insieme di rappresentanti} se 
-\[
-\pi |_{\mathcal{R}} : \mathcal{R} \subseteq X \xrightarrow{\quad} X / \mathrm{\sim} 
-\] 
-	\`e biettiva.
-\end{definizione}
-\noindent Questo vuol dire che, per ogni classe di equivalenza, si \`e scelto un singolo elemento di $X$ ad essa associato tramite la proiezione al quoziente $\pi$.
-\subsection{Divisibilit\`a tra interi}
-\begin{prop}
-	[Algoritmo di Euclide]
-	Siano $a,b$ due interi non negativi, con $a \ge b$.
-	Si prendono $r_0 =a$ e $r_1 = b$; se, per $k\ge 1$, $r_k >0$, allora si definisce ricorsivamente $r_{k+1} $ come il resto della divisione di $r_{k-1} $ per $r_k$.
-	Essendo $r_0>r_1>\ldots\ge 0$, in un numero finito di passi, siano $n$ per esempio, si ottiene $r_n = 0$.
-	Allora $(a,b) = r_{n-1} $.
-\end{prop}
-\newpage
 
 
 
 
-\section{Teoria dei gruppi 2}
+\section{Teoria dei gruppi}
 \subsection{Automorfismi e azioni}
 \begin{prop}
 	Dato un gruppo $G$, si ha che $\operatorname{Int} G \lhd \operatorname{Aut} G$ e $\operatorname{Int} G \cong G / Z(G)$.
@@ -340,8 +255,7 @@ Un'azione di gruppo \`e ben definita se:
 	[Orbita-stabilizzatore]
 	Esiste una biezione $\operatorname{Orb} x \longrightarrow G / \operatorname{Stab} x$ definita da $g\cdot x \longmapsto g \operatorname{Stab} x$.
 \end{lemma}
-\subsubsection{Azioni per coniugio}
-Per $X = G$ e $\gamma : G \longrightarrow \operatorname{Int} G \subset S(G) $ si ha l'azione per coniugio.
+\noindent Per $X = G$ e $\gamma : G \longrightarrow \operatorname{Int} G \subset S(G) $ si ha l'azione per coniugio.
 Le orbite sono le \textbf{classi di coniugio} $\operatorname{Cl} (x)$ e gli stabilizzatori sono detti \textbf{centralizzatori} $Z(x)$.
 Per il lemma orbita-stabilizzatore, si ha $\lvert G \rvert = \lvert \operatorname{Cl}( x) \rvert \lvert Z(x) \rvert $.
 
@@ -638,16 +552,60 @@ Sia $G$ un gruppo e siano $H \lhd G$ e $K < G$.
 Se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G\cong H \rtimes _\gamma K$, con $\gamma : K \to \operatorname{Aut} (H)$	e $\gamma(k) = khk^{-1}$.
 \end{teorema}
 \subsection{Teorema di struttura per gruppi abeliani finiti}
+\begin{definizione}
+	[$p$-torsione]
+	Dato un gruppo abeliano finito $G$, se ne definisce la $p$-componente 
+	\[
+	G(p) := \left\{ g \in G  \mid \operatorname{ord}(g) =p^k , k\in \mathbb{N} \right\} 
+	\] 
+\end{definizione}
+\begin{prop}
+	La $p$-torsione $G(p)$ di un gruppo $G$ abeliano finito \`e un sottogruppo caratteristico.
+\end{prop}
 
+\begin{teorema}
+	Se $G$ \`e un gruppo abeliano di ordine $\lvert G \rvert = n = p_1^{e_1} \cdots p_s^{e_s}$, con $p_i$ primi diversi fra loro, allora 
+	\[
+	G \cong G(p_1) \times \ldots \times G(p_s)
+	\] 
+\end{teorema}
+\begin{lemma}
+	Sia $G$ un $p$-gruppo e $x_1 \in G$ elemento di ordine massimo.
+	Dato anche $\overline{x}\in G / \langle x_1 \rangle$, $\exists y \in \pi^{-1}_{\langle x_1 \rangle} (\overline{x})$ tale che $\operatorname{ord}_G(y) = \operatorname{ord}_{G / \langle x_1 \rangle} (\overline{x}) $.
+\end{lemma}
 
+\begin{teorema}
+Se $G$ \`e un $p$-gruppo abeliano, allora esistono unici $r_1,\ldots,r_t \in \mathbb{N}$ tali che 
+\[
+G \cong \mathbb{Z}/p^{r_1} \mathbb{Z} \times  \ldots \times  \mathbb{Z}/p_{r_t} \mathbb{Z}
+\] 
+con $r_1\ge r_2\ge \ldots \ge r_t$.
+\end{teorema}
+\begin{teorema}
+	[Teorema di struttura]
+	Sia $G$ un gruppo abeliano finito; allora $G$ si decompone univocamente come
+	\[
+	G \cong \mathbb{Z}/n_1\mathbb{Z}\times \ldots\times \mathbb{Z}/n_s\mathbb{Z}
+	\] 
+	dove $n_{i+1}  \mid n_i, \ \forall i = 1,\ldots,s-1$.
+\end{teorema}
 
-
-
-
-
-
-
-
+\subsection{Teoremi di Sylow}
+Per i seguenti teoremi, si considera un gruppo finito $G$ di ordine $\lvert G \rvert =p^nm$, con $p$ primo e $\operatorname{gcd}(m,p) =1$.
+\begin{teorema}
+	[I teorema]
+	Dato $\alpha \in \mathbb{N}$, con $0\le \alpha \le n$, allora $\exists H<G$ di ordine $\lvert H \rvert =p^\alpha $.
+\end{teorema}
+\begin{teorema}
+	[II teorema]
+	Ogni $p$-gruppo di $G$ \`e contenuto in un $p$-Sylow.
+	Inoltre, due qualunque $p$-Sylow di $G$ sono coniugati.
+\end{teorema}
+\begin{teorema}
+	[III teorema]
+	Dato $n_p$ il numero di $p$-Sylow di $G$, si ha che $n_p  \mid \lvert G \rvert $ e $n_p \equiv 1 \operatorname{mod} p $.
+	In particolare, si avr\`a $n_p  \mid  m$.
+\end{teorema}
 
 
 
@@ -670,6 +628,10 @@ Se $HK = G$ e $H\cap K = \left\{ e \right\} $, allora $G\cong H \rtimes _\gamma 
 \begin{itemize}
 	\item \textbf{Classificazione dei gruppi di ordine 6.} 
 	\item \textbf{Classificazione dei gruppi di ordine pq.} 
+	\item \textbf{Classificazione dei gruppi di ordine 1000.} 
+	\item \textbf{Classificazione dei gruppi di ordine 12.} 
+	\item \textbf{Classificazione dei gruppi di ordine 8.} 
+	\item \textbf{Classificazione dei gruppi di ordine 30.} 
 \end{itemize}
 
 
@@ -1151,7 +1113,84 @@ Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $Z[x]$. Conta
 \end{esercizio}
 
 
+\appendix
 
+\section{Nozioni fondamentali}
+\subsection{Applicazioni}
+\begin{prop}
+	Sia $f :X \to Y$; valgono le seguenti propriet\`a:
+	\[
+		\begin{array}
+			{c c}
+			f^{-1}(A\cup B) = f^{-1}(A) \cup f^{-1}(B) & f^{-1}(A\cap B) = f^{-1}(A) \cap f^{-1}(B)\\
+			f(A\cup B) = f(A) \cup f(B) & f(A\cap B) \subseteq f(A) \cap f(B)
+		\end{array}
+	\] 
+\end{prop}
+\noindent Un diagramma \`e detto \textbf{commutativo} se e soltanto se ogni cammino con stessa partenza e stesso arrivo danno lo stesso risultato per composizione.
+Nel caso del diagramma
+\[
+\begin{tikzcd}
+	X & & Y \\
+	\\
+	A & & B
+	\arrow[from=1-1, to=1-3, "f"]
+	\arrow[from=1-3, to=3-3, "h"]
+	\arrow[from=3-3, to=3-1, "i"]
+	\arrow[from=1-1, to=3-1, "g"']
+\end{tikzcd}
+\] 
+questo \`e commutativo se e solo se $(h\circ f) (x) = (i \circ g) (x)$.
+\subsection{Relazioni}
+Sia $X$ un insieme e $R \subseteq X \times X$.
+Si dice che ad $R$ \`e associata una \textbf{relazione} $\sim_R$ (o pi\`u semplicemente $\sim$ quando non vi \`e ambiguit\`a) su $X$ se $x \sim_R y \iff (x,y) \in R$.
+
+Un esempio, sono le relazioni di equivalenza, cio\`e relazioni che soddisfano le propriet\`a \textit{riflessiva} ($x \sim x$), \textit{simmetrica} ($x\sim y \iff y \sim x$) e \textit{transitiva} ($x\sim y$, $y \sim z\Rightarrow x\sim z$).
+\begin{teorema}
+	Se $\sim$ \`e una relazione di equivalenza su $X$, allora la famiglia delle sue classi di equivalenza \`e una partizione di $X$.
+	Viceversa, se $\mathcal{P} $ \`e una partizione di $X$, allora induce, su $X$, una relazione di equivalenza data da 
+	\[
+	x \sim y \iff\exists C \in \mathcal{P} : x,y \in C
+	\] 
+	che ha, per classi, gli insiemi $C$ della partizione $\mathcal{P} $.
+\end{teorema}
+\begin{definizione}
+	$f : X \to Y$ \`e \textit{compatibile} con $\sim$ su $X$ se $x\sim y\Rightarrow f(x) = f(y)$.
+\end{definizione}
+\noindent Data $X \xrightarrow{\; f \;} Y$ compatibile con $\sim $ su $X$ e $\pi : X \longrightarrow X /\mathrm{\sim} $ \textit{proiezione al quoziente}, allora \textbf{esiste un'unica applicazione} $f=\overline{f} \circ \pi $ che rende
+\[
+\begin{tikzcd}
+	X& & Y\\
+	\\
+	X /\mathrm{\sim} 
+	\arrow[from=1-1,to=1-3, "f"]
+	\arrow[from=1-1,to=3-1, "\pi"']
+	\arrow[from=3-1,to=1-3, "\overline{f}"']
+\end{tikzcd}
+\] 
+commutativo.
+
+Se $\sim$ e $\sim'$ sono due relazioni su $X$, con $x\sim y \Rightarrow  x\sim' y$, allora la partizione $\mathcal{P} $ indotta da $\sim$ \`e pi\`u fine di $\mathcal{P} '$, cio\`e quella indotta da $\sim'$.
+Questo significa che per ogni classe $ C \in \mathcal{P} , \ \exists C ' \in \mathcal{P} '$ tale che $C \subseteq C'$; in questo senso, la corrispondenza $C \longmapsto C'$ \`e un'applicazione suriettiva $\epsilon $ che rende commutativo il seguente diagramma:
+\[
+\begin{tikzcd}
+	& X &\\
+	\\
+	X/\mathrm{\sim}  & & X / \mathrm{\sim'} 
+	\arrow[from=1-2, to=3-1, "\pi"']
+	\arrow[from=1-2, to=3-3, "\pi'"]
+	\arrow[from=3-1, to=3-3, "\epsilon ", two heads]
+\end{tikzcd}
+\] 
+\begin{definizione}
+	[Insieme di rappresentanti]
+	Dato $X$ un insieme e $\sim$ relazione di equivalenza su $X$, un insieme $\mathcal{R} \subseteq X$ \`e un \textit{insieme di rappresentanti} se 
+\[
+\pi |_{\mathcal{R}} : \mathcal{R} \subseteq X \xrightarrow{\quad} X / \mathrm{\sim} 
+\] 
+	\`e biettiva.
+\end{definizione}
+\noindent Questo vuol dire che, per ogni classe di equivalenza, si \`e scelto un singolo elemento di $X$ ad essa associato tramite la proiezione al quoziente $\pi$.
 
 
 
