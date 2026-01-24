@@ -1926,7 +1926,7 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 	Sia $G$ un gruppo finito e $p$ un numero primo tale che $\lvert G \rvert =p^n m$, con $\operatorname{gcd}(m,p) =1$; allora:
 	\begin{enumerate}[(a).]
 		\item \textit{esistenza}: $\forall \alpha \in \mathbb{N} : 0\le \alpha \le n, \ \exists H < G$ con $\lvert H \rvert = p^\alpha $;
-		\item \textit{inclusione}: ogni $p$-gruppo di $G$ \`e contenuto in un $p$-Sylow\footnote{Si intende che se $H < G$ con $\lvert H \rvert = p^\alpha $, con $0\le \alpha\le n $, allora $H$ \`e contenuto in un sottogruppo di $G$ di ordine $p^{\alpha  + 1} $.};
+		\item \textit{inclusione}: ogni $p$-gruppo di $G$ \`e contenuto in un $p$-Sylow;
 		\item \textit{coniugio}: due qualsiasi $p$-Sylow sono coniugati;
 		\item \textit{numero}: indicando con $n_p$ il numero di $p$-Sylow di $G$, si ha che $n_p  \mid |G|$ e $n_p \equiv 1 \pmod{p} $.
 	\end{enumerate}
@@ -1943,9 +1943,19 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 				\[
 				v_p(p^nm - i) = v_p(p^\alpha -i)=v_p(i)\implies v_p\left(\frac{p^nm - i}{p^{\alpha } -i}\right) =v_p(p^nm-i) - v_p(p^\alpha  - i) = 0
 				\] 
-				essendo $i\le p^{\alpha }-1 $ e $\alpha \le n$. Visto che $v_p$ conta l'esponente massimo per cui \`e possibile dividere il suo input, si conclude che $p^{n-\alpha } $ divide esattamente $\lvert \mathcal{M}  \rvert $ e $n-\alpha $ \`e il massimo esponente con cui $p$ pu\`o divide $\lvert \mathcal{M}  \rvert $\footnote{Per vederlo pi\`u chiaramente, si assume che qualche potenza di $p$ divida $i$, altrimenti $p^nm - i$ e $p^\alpha - i$ non sarebbero divisibili per alcuna potenza di i e si avrebbe la tesi. Allora, si pu\`o scrivere $i = p^s j$, con $\operatorname{gcd}(p,j) =1$, da cui $p^{n} m - i = p^s(p^{n-s} m - j)$ e $p^\alpha - i = p^s (p^{\alpha - s} - j)$. Il loro rapporto semplifica $p^s$ e rimane il rapporto di due termini non divisibili per alcuna potenza di $p$ perch\'e $(j,p) = 1$.}.
+				essendo $i\le p^{\alpha }-1 $ e $\alpha \le n$. Visto che $v_p$ conta l'esponente massimo $k$ per cui $p^k$ divide il suo argomento, si conclude che $p^{n-\alpha } $ divide esattamente $\lvert \mathcal{M}  \rvert $ e $n-\alpha $ \`e il massimo esponente con cui $p$ pu\`o divide $\lvert \mathcal{M}  \rvert $\footnote{Per vederlo pi\`u chiaramente, si assume che qualche potenza di $p$ divida $i$, altrimenti $p^nm - i$ e $p^\alpha - i$ non sarebbero divisibili per alcuna potenza di i e si avrebbe la tesi. Allora, si pu\`o scrivere $i = p^s j$, con $\operatorname{gcd}(p,j) =1$, da cui $p^{n} m - i = p^s(p^{n-s} m - j)$ e $p^\alpha - i = p^s (p^{\alpha - s} - j)$. Il loro rapporto semplifica $p^s$ e rimane il rapporto di due termini non divisibili per alcuna potenza di $p$ perch\'e $(j,p) = 1$.}.
 
-				Ora si considera l'azione di $G$ su $\mathcal{M} $ data da $\phi : G \to S(\mathcal{M} )$, con $\phi (g) (M)= \phi _g(M)=gM$; per il teorema delle classi:
+				Ora si considera l'azione di $G$ su $\mathcal{M} $ data da 
+				\[
+					\phi :
+				\begin{array}
+					{c c c}
+					G &\longrightarrow & S(\mathcal{M} ) \\
+					g &\longmapsto & \phi _g
+				\end{array} \hspace{.2cm}, \hspace{.4cm} \text{con} \hspace{.3cm} \phi _g(M)=gM 
+				\] 
+				
+				Visto che le orbite di questa azione partizionano $\mathcal{M} $, si ha:
 				\[
 				|\mathcal{M} | = \sum_{M_i \in R}^{} \lvert \operatorname{Orb} (M_i) \rvert = \sum_{M_i \in R}^{} \frac{\lvert G \rvert }{\lvert \operatorname{Stab} (M_i) \rvert }
 				\] 
@@ -1978,7 +1988,7 @@ Nel teorema seguente, sono riuniti tutti i teoremi di Sylow; il primo corrispond
 				dove $R$ \`e l'insieme dei rappresentanti delle classi di $G/S$ e $a_g$ \`e un esponente dipendente dal $g$ in $R$.
 				Visto che $p  \nmid m $\footnote{Questo \`e per assunzione, cio\`e $\lvert G \rvert =p^n m $ con $(p,m) = 1$.}, deve esistere un $g \in R$ tale che $a_g=0$, per cui $\operatorname{Orb} (gS) = \left\{ gS \right\} \Rightarrow \operatorname{Stab} (gS) = H$.
 				Questo significa anche che $\forall h\in H, \ hgS = gS \Rightarrow H \subset gSg^{-1}$, ma $gSg^{-1}$ \`e un $p$-Sylow perch\'e $\lvert gSg^{-1} \rvert = \lvert S \rvert $, quindi $H$ \`e contenuto in un $p$-Sylow.
-			\item Quanto riportato in (b) dimostra anche la parte sul congiugio; infatti, se $H$ \`e un $p$-Sylow con $\lvert H\rvert = p^n$, allora \`e un $p$-gruppo, allora $H \subset gSg^{-1}$ e, visto che hanno stessa cardinalit\`a, segue che $H = g S g^{-1}$.
+			\item Quanto riportato in (b) dimostra anche la parte sul coniugio; infatti, se $H$ \`e un $p$-Sylow con $\lvert H\rvert = p^n$, allora \`e un $p$-gruppo, allora $H \subset gSg^{-1}$ e, visto che hanno stessa cardinalit\`a, segue che $H = g S g^{-1}$.
 			\item Sia $S$ un $p$-Sylow; visto che tutti i $p$-Sylow sono coniugati, per un certo $p$ fissato, significa che il loro numero \`e pari all'ordine della classe di coniugio di $S$, pertanto $n_p = \lvert \operatorname{Cl} (S) \rvert  = [G:N_G(S)]  \mid  |G|$.
 				Si considera, ora, l'azione di $S$ sull'insieme dei coniugati di $S$ in $G$, $Y$, definita da $\phi :S \to S(Y)$, con $\phi (g)(xSx^{-1}) = \gamma_g (xSx^{-1}) = gxSx^{-1}g^{-1}$; si vuole dimostrare che $\operatorname{Orb} (S)$ \`e l'unica orbita banale di questa azione.
 
