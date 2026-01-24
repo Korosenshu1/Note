@@ -627,11 +627,56 @@ Per i seguenti teoremi, si considera un gruppo finito $G$ di ordine $\lvert G \r
 \subsection{Risultati sulle classificazioni}
 \begin{itemize}
 	\item \textbf{Classificazione dei gruppi di ordine 6.} 
+
+		Si ha $\lvert G \rvert = 2 \cdot 3$, quindi sono presenti, per Cauchy, un sottogruppo $P_2$ di ordine $2$ e un sottogruppo $P_3$ di ordine $3$.
+		Visto che $P_3$ ha indice $2$ \`e normale in $G$. 
+		Inoltre, $P_3\cap P_2 = \left\{ e \right\} $ perch\'e gli altri elementi di un gruppo hanno ordine coprimo con l'ordine dell'altro gruppo.
+		Questo implica che $P_2P_3 = G$, quindi $G \cong P_3 \rtimes _\phi P_2$, con 
+		\[
+		\phi : \mathbb{Z}/2\mathbb{Z} \longrightarrow \operatorname{Aut} \mathbb{Z}/3\mathbb{Z} \cong (\mathbb{Z}/3\mathbb{Z})^* \cong \mathbb{Z}/2\mathbb{Z}
+		\] 
+		Ne segue che ci sono due possibili omomorfismi: $\phi (1) = 0$, che corrispnde al prodotto diretto $G\cong \mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}\cong \mathbb{Z}/6\mathbb{Z}$, oppure $\phi (1) = 2 \in (\mathbb{Z}/3\mathbb{Z})^*$.
+		Riguardo l'ultimo caso, notando che $2 \equiv -1 \operatorname{mod} 3 $, si conclude che l'ultimo omomorfismo consiste nel prodotto per $-1$.
+		Pertanto, dati $(a,b), (c,d) \in \mathbb{Z}/3\mathbb{Z} \rtimes _\phi \mathbb{Z}/2\mathbb{Z}$, il prodotto \`e definito da:
+		\[
+			(a,b)*(c,d) = \big(a+(-1)^b c, b + d\big)
+		\] 
+	Per finire, si nota che, per $a \in (\mathbb{Z}/3\mathbb{Z})^*$:
+	\[
+		(0,1)(a,0)(0,1)^{-1}=(0,1)(a,0)(0,1) = (-2a,0) = (a,0)^{-1}
+	\] 
+	Quindi, $G$ soddisfa la presentazione di $S_3$, per cui $G \cong S_3$.
+	Si conclude che se $G$ \`e un gruppo di ordine $6$, le possibilit\`a sono:
+	\begin{boxenv}[]
+	\[
+	\mathbb{Z}/6\mathbb{Z} \hspace{1cm} S_3
+	\] 
+	\end{boxenv}
+	rispettivamente nel caso abeliano e non-abeliano.
 	\item \textbf{Classificazione dei gruppi di ordine pq.} 
-	\item \textbf{Classificazione dei gruppi di ordine 1000.} 
+		Se $p=q$, $G$ \`e abeliano e $G \cong \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z}/p\mathbb{Z}$ oppure $G\cong \mathbb{Z}/p^2 \mathbb{Z}$.
+
+		Se $q>p$ e $p \not  \mid q-1$, allora si pu\`o avere solo $G \cong \mathbb{Z}/pq\mathbb{Z}$; altrimenti si ha un prodotto semi-diretto non-banale, unico a meno di isomorfismo.
 	\item \textbf{Classificazione dei gruppi di ordine 12.} 
+		\begin{boxenv}[]
+		\[
+		\mathbb{Z}/12 \mathbb{Z} \hspace{1cm}\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/6\mathbb{Z} \hspace{1cm}A_4 \hspace{1cm}\mathbb{Z}/3\mathbb{Z} \rtimes _\varphi \mathbb{Z}/4\mathbb{Z} \hspace{1cm} D_6
+		\] 
+		
+		\end{boxenv}
+		
 	\item \textbf{Classificazione dei gruppi di ordine 8.} 
+	\begin{boxenv}[]
+	\[
+	\mathbb{Z}/8\mathbb{Z} \hspace{1cm}\mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \hspace{1cm} (\mathbb{Z}/2\mathbb{Z})^3 \hspace{1cm}D_4 \hspace{1cm} Q_8
+	\] 
+	\end{boxenv}
 	\item \textbf{Classificazione dei gruppi di ordine 30.} 
+		\begin{boxenv}[]
+		\[
+		\mathbb{Z}/30\mathbb{Z} \hspace{1cm} D_{15} \hspace{1cm} D_5 \times \mathbb{Z}/3\mathbb{Z} \hspace{1cm}D_3 \times \mathbb{Z}/5\mathbb{Z}
+		\] 
+		\end{boxenv}
 \end{itemize}
 
 
