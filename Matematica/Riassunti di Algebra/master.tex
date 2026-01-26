@@ -1237,19 +1237,186 @@ Questo significa che per ogni classe $ C \in \mathcal{P} , \ \exists C ' \in \ma
 \end{definizione}
 \noindent Questo vuol dire che, per ogni classe di equivalenza, si \`e scelto un singolo elemento di $X$ ad essa associato tramite la proiezione al quoziente $\pi$.
 
+\newpage
+\section{Esercizi sulle azioni di gruppo}
+\begin{esercizio}
+Sia $G = S_n$ e $X = \left\{ 1,\ldots,n \right\} $; descrivere le orbite e gli stabilizzatori per l'azione naturale di $S_n$ su $X$.
+\end{esercizio}
+\begin{svolgimento}
+	L'azione naturale di $S_n$ su un insieme di $n$ elementi come $X$ consiste nell'applicare ogni elemento di $S_n$ a un elemento di $X$ perch\'e gli elementi di $S_n$ sono gi\`a permutazioni. 
+	Cio\`e:
+	\[
+	\phi  : 
+	\begin{array}
+		{c c c}
+		S_ n &\longrightarrow & S(X) = S_n\\
+		\sigma  & \longmapsto & \phi _\sigma
+	\end{array}
+	\hspace{.3cm} \text{ con }\hspace{.3cm} \phi _\sigma (x) = \sigma (x)
+	\] 
+	Sia, dunque, $x \in X$. 
+	Le orbite e gli stabilizzatori sono dati da:
+	\[
+	\begin{split}
+		&\operatorname{Orb} (x) = \left\{ \sigma (x)  \mid \sigma \in S_n \right\} \\
+		& \operatorname{Stab} (x) = \left\{ \sigma \in S_n  \mid \sigma (x) = x \right\} 
+	\end{split}
+	\] 
+	Visto che $S_n$ contiene tutte le permutazioni di $n$ elementi, $\operatorname{Orb} (x) = X$, quindi l'azione \`e \textit{transitiva}.
+	Per il lemma orbita-stabilizzatore, $\lvert S_n \rvert=n! = n \lvert \operatorname{Stab}(x)  \rvert $, cio\`e $\lvert \operatorname{Stab} (x) \rvert = (n-1)!$.
+	Visto che $\operatorname{Stab} (x) < S_n$ ed \`e il gruppo delle permutazioni che lasciano fisso $x$, si pu\`o concludere che \`e isomorfo a $S_{n-1} $
+\end{svolgimento}
+\begin{esercizio}
+		Si considera l'azione $S_n \curvearrowright X$, con 
+		\[
+		X := \left\{ (i,j) \in \left\{ 1,\ldots,n \right\} ^2  \mid  i \neq j \right\} 
+		\] 
+		data da $\sigma \cdot (i,j) = \big(\sigma (i), \sigma (j)\big)$.
+		Dire:
+		\begin{enumerate}[(a).]
+			\item se l'azione \`e ben definita;
+			\item quante orbite ha l'azione;
+			\item la cardinalit\`a di ogni orbita.
+		\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	L'azione \`e ben definita perch\'e $\operatorname{id} \in S_n$ \`e tale che $(i,j) \longmapsto (i,j)$ e $\sigma \circ \tau (i,j) = \big(\sigma (\tau (i)), \sigma (\tau (j))\big)$, quindi $\phi(\sigma\circ \tau ) = \phi (\sigma )\circ \phi (\tau ) $.
 
+	Dato $(i,j)\in X$:
+	\[
+	\operatorname{Orb}(i,j) = \left\{ \big(\sigma (i),\sigma (j)\big)  \mid \sigma \in S_n \right\} 
+	\] 
+	Si vuole dimostrare che anche questa azione \`e transitiva, usando il fatto che $i\neq j$.
+	Sia, allora, $(m,n) \in X$; visto che $i\neq j$ in ogni elemento di $X$, si pu\`o costruire una permutazione $\sigma = \tau _1 \circ \tau _2$ tale che $\tau _1 = (i,m)$ e $\tau _2 = (j,n)$. 
+	In questo modo, ogni elemento di $X$ \`e raggiungibile tramite una permutazione agente su $(i,j)$, il che conclude che l'azione \`e transitiva ed esiste una sola orbita.
 
+	Questo vuol anche dire che $\lvert \operatorname{Orb} (i,j) \rvert = \lvert X \rvert  = n^2 - n$, dove il $-n$ deriva dal fatto che gli elementi diagonali $(i,i)$ sono esclusi dall'insieme.
 
+	Infine, per il lemma orbita-stabilizzatore, \`e possibile calcolare $\lvert \operatorname{Stab} (i,j) \rvert $:
+	\[
+	\lvert \operatorname{Stab} (i,j) \rvert  = \lvert S_n \rvert / \lvert \operatorname{Orb} (i,j) \rvert = \frac{n!}{n(n-1)} = (n-2)!
+	\] 
+	In questo caso, quindi, le permutazioni nello stabilizzatore di $(i,j)$ sono tutte quelle che lasciano fissi due elementi, rispettivamente $i$ e $j$; questo permette di concludere che $\operatorname{Stab} (i,j) \cong S_{n-2} $.
+\end{svolgimento}
+\begin{esercizio}
+Sia $G$ un gruppo finito e $H \le G$.
+\begin{enumerate}[(a).]
+	\item Definire un'azione naturale di $G$ sull'insieme dei sottogruppi coniugati di $H$.
+	\item Mostrare che la dimensione dell'orbita di $H$ \`e $\left[ G: N_G(H) \right] $.
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Si vuole studiare l'azione naturale di $G \curvearrowright X$, con 
+\[
+X : = \left\{ gHg^{-1} \mid g \in G \right\} 
+\] 
+Il modo pi\`u naturale in cui $G$ pu\`o agire su questo insieme \`e tramite la seguente azione:
+\[
+\begin{array}
+	{c c c}
+	G \times X & \longrightarrow& X\\
+	(g,K) & \longmapsto & gKg^{-1}
+\end{array}
+\] 
+dove $K=x Hx^{-1}, \ x \in G$.
+L'azione \`e ben definita perch\'e $e K e= K$, per $e$ identit\`a di $G$, e, dati $g_1,g_2\in G$, si ha:
+\[
+	(g_1g_2) \cdot K = g_1g_2Kg_2^{-1}g_1^{-1} = g_1 \cdot (g_2 \cdot K)
+\] 
+Ora si vuole studiare l'orbita di $H \in X$; si nota che
+\[
+\operatorname{Orb} (H) = \left\{ g H g^{-1}  \mid g \in G \right\} 
+\] 
+Per studiare l'orbita, conviene passare per il lemma orbita-stabilizzatore: \`e facile determinare che $\operatorname{Stab} (H) = \left\{ g \in G  \mid gHg^{-1} \right\} = N_G(H)$, cio\`e sono tutti gli elementi di $G$ rispetto a cui $H$ \`e normale.
+Ne segue che $\lvert \operatorname{Orb} (H) \rvert = \lvert G \rvert / \lvert N_G(H) \rvert = [ G : N_G(H)]$, proprio come richiesto.
+\end{svolgimento}
+\begin{esercizio}
+Sia $G$ un gruppo finito.
+\begin{enumerate}[(a).]
+	\item Considerare l'azione di $G$ su se stesso per coniugazione.
+	\item Dedurre la formula delle classi di coniugio. 
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+L'azione \`e data da $G \times G \to G$ con $(g,h) \longmapsto ghg^{-1}$.
+Anche in questo caso, si dimostra che l'azione \`e ben definita nello stesso modo delle altre.
+Per dedurre la formula delle classi, \`e sufficiente notare che $X = G$, per cui, se $\mathcal{R} $ \`e l'insieme dei rappresentanti delle orbite:
+\[
+\lvert G \rvert = \sum_{x \in \mathcal{R} }^{} \lvert \operatorname{Orb} (x) \rvert = \sum_{x \in \mathcal{R} }^{} \frac{\lvert G \rvert }{\lvert \operatorname{Stab}(x)  \rvert }= \sum_{x \in \mathcal{R} }^{} \frac{\lvert G \rvert }{\lvert Z(x)  \rvert }
+\] 
+Tuttavia, si nota che ci sono delle orbite di lunghezza unitaria date dagli elementi di $G$ che sono nel centro di $G$, cio\`e che commutano con qualunque elemento del gruppo e, chiaramente, sono nell'insieme $\mathcal{R} $ perch\'e non sono contenuti in altre orbite se non la propria.
+Allora, l'espressione di sopra si pu\`o scrivere in maniera pi\`u precisa come:
+\[
+\lvert G \rvert  = \lvert Z(G) \rvert + \sum_{x \in \mathcal{R} \setminus Z(G)}^{} \frac{\lvert G \rvert }{\lvert Z(x) \rvert }
+\] 
+che \`e la formula cercata.
+\end{svolgimento}
+\begin{esercizio}
+	Si considera l'azione $GL_n(\mathbb{R}) \curvearrowright M_n(\mathbb{R})$ data da $A \cdot M = AMA^{-1}$.
+	\begin{enumerate}[(a).]
+		\item Mostrare che due matrici sono nella stessa orbita se e solo se sono simili.
+		\item Elencare gli invarianti dell'azione.
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Siano $M_1,M_2 \in \operatorname{Orb} (M)$; allora $M_1 = BM_2B^{-1}$, per qualche $B \in GL_n(\mathbb{R})$, che \`e equivalente a dire che le due matrici sono simili. 
+Questo significa che l'azione di $GL_n(\mathbb{R})$ sulle matrici quadrate non modifica nessuna caratteristica preservata dalla similitudine. 
+\end{svolgimento}
 
-
-
-
-
-
-
-
-
-
+\begin{esercizio}
+	Considerare l'azione $GL(V) \curvearrowright X$, con $V$ spazio vettoriale finito-dimensionale e $X$ insieme dei sottospazi di $V$.
+\begin{enumerate}[(a).]
+	\item Descrivere le orbite dell'azione.
+	\item Concludere che due sottospazi sono nella stessa orbita se e solo se hanno stessa dimensione.
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+L'azione naturale di $GL(V)$ su $X$ \`e data da $(M,W) \longmapsto M(W)$. 
+Ne segue che, dato $W \in X$:
+\[
+\operatorname{Orb} (W) = \left\{ M(W)  \mid M \in GL(V) \right\} 
+\] 
+cio\`e corrisponde con l'insieme dei sottospazi vettoriali di $V$ raggiungibili tramite un'applicazione lineare a partire da $W$.
+Un'applicazione lineare di $GL(V)$ \`e invertibile, quindi \`e un isomorfismo lineare; questo significa che due sottospazi nella stessa orbita hanno, necessariamente, uguale dimensione.
+\end{svolgimento}
+\begin{esercizio}
+Sia $G$ un $p$-gruppo di ordine $p^n$.
+\begin{enumerate}[(a).]
+	\item Considerare l'azione per coniugio di $G$ su se stesso.
+	\item Dimostrare che $Z(G)$ \`e non-banale tramite tale azione.
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Usando la formula delle classi, ottenuta dall'azione per coniugio di $G$ su se stesso, si ottiene la relazione 
+\[
+p^n = \lvert Z(G) \rvert  + \sum_{x \in \mathcal{R} \setminus Z(G)}^{} \frac{p^n}{\lvert \operatorname{Z} (x) \rvert }
+\] 
+Ora, visto che $\lvert Z(G) \rvert > 0$ perch\'e $e \in Z(G)$ e nell'assunzione in cui almeno un elemento di $G$ non stia in $Z(G)$ (caso altrimenti banale perch\'e $Z(G) = G$ soddisfa la tesi), si ha almeno un elemento nella somma che \`e una certa potenza di $p$, arrivando ad un'uguaglianza della forma:
+\[
+\lvert Z(G) \rvert = p^n - p^s
+\] 
+con $s\ge 1$, per cui $p  \mid \lvert Z(G) \rvert $.
+\end{svolgimento}
+\begin{esercizio}
+Sia $G$ un gruppo finito e $P < G$ un suo $p$-Sylow.
+Dedurre il teorema di Sylow sulla congruenza del numero di $p$-Sylow.
+\end{esercizio}
+\begin{svolgimento}
+	Sia $X : = \left\{ P<G  \mid P \ p\text{-Sylow di } G \right\} $ e $P \curvearrowright X$ per coniugio; allora:
+	\[
+	n_p = \lvert X \rvert = \sum_{P' \in \mathcal{R} }^{} \lvert \operatorname{Orb} (P') \rvert 
+	\] 
+	Visto che $P \in X$ e $P\curvearrowright X$, la sua orbita sar\`a unitaria:
+	\[
+		n_p = 1 + \sum_{\substack{P' \in \mathcal{R}\\ P'\neq P}}^{} \lvert \operatorname{Orb} (P') \rvert 
+	\] 
+	Per\`o, per il lemma orbita-stabilizzatore
+\[
+\lvert P \rvert = \lvert \operatorname{Orb} (P') \rvert \lvert \operatorname{Stab} (P') \rvert =\lvert \operatorname{Orb} (P') \rvert \lvert N_P(P') \rvert 
+\] 
+	con $P'\neq P$ e $N_P(P') = P \cap N_G(P')$; questo significa che ogni orbita deve dividere $p^n$ e, allo stesso tempo, $\operatorname{Stab} (P')$ non pu\`o essere banale se $P \neq P'$, quindi $p  \mid \operatorname{Orb} (P')$.
+	Unendo tutto, si pu\`o concludere che $n_p \equiv 1 \pmod{p} $, che \`e proprio il risultato cercato.
+\end{svolgimento}
 
 
 \end{document}
