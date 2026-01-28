@@ -704,6 +704,147 @@ Per i seguenti teoremi, si considera un gruppo finito $G$ di ordine $\lvert G \r
 
 
 
+\newpage
+\section{Teoria degli anelli}
+\subsection{Propriet\`a di base}
+\begin{prop}
+	Sia $A$ un anello commutativo con identit\`a; allora:
+	\begin{enumerate}[(a).]
+		\item $(A^*,\cdot )$ \`e un gruppo abeliano;
+		\item $A^* \cap D(A) = \varnothing$;
+		\item se $A$ \`e finito, allora $A = D(A) \cup A^*$.
+	\end{enumerate}
+\end{prop}
+\noindent \textit{Dimostrazione (c).} $A^*, D(A) \subseteq A$, quindi $A^* \cup D(A) \subseteq A$. 
+Viceversa, per vedere che $A\subseteq A^* \cup D(A)$, si nota che se $x \in D(A)$, la tesi \`e versa, mentre se $x \in A \setminus D(A)$, allora si pu\`o definire 
+\[
+\varphi _x : 
+\begin{array}
+	{c c c}
+	A & \longrightarrow & A\\
+	a & \longmapsto & xa
+\end{array}
+\] 
+con $\operatorname{Ker} \varphi _x = \left\{ a \in A  \mid xa = 0 \right\} $. 
+Per\`o $x \not \in D(A)$, quindi $\operatorname{Ker} \varphi _x = \left\{ 0 \right\} $; usando che $A$ \`e finito, $\varphi _x$ \`e iniettiva e, quindi, anche suriettiva, per cui $1 \in \operatorname{Im} \varphi _x$.
+Questo significa che $\exists \overline{a} \in A$ per cui $x\overline{a} = 1$, quindi $x \in A^*$.
+\qed
+\begin{definizione}
+	[Ideale]
+	Dato $A$ anello, $I \subseteq A$ \`e un \textit{ideale} se
+	\begin{enumerate}[(a).]
+		\item $(I,+) < (A,+)$;
+		\item per ogni $ a \in A$, si ha $ aI \subset I$ e $Ia \subset I$.
+	\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[Ideale generato]
+	Dato $A$ anello e $S=\left\{ s_1,\ldots,s_n \right\}  \subset A$, l'ideale \textit{generato} da $S$ \`e:
+	\[
+	\langle S \rangle := \left\{ \sum_{i=1}^{n} a_is_i\ \Bigg \lvert\ a_i \in A\right\} 
+	\] 
+\end{definizione}
+\begin{prop}
+Dato $A$ anello e $I,J \subseteq A$ due suoi ideali, le seguenti operazioni producono altri ideali:
+\begin{enumerate}[(a).]
+	\item $I\cap J$;
+	\item $I+J:= \langle I,J \rangle= \left\{ i+j  \mid i \in I , \j \in J \right\} $;
+	\item $IJ = \left\{ \sum_{k=1}^{n} i_kj_k  \mid n\ge 1, \ i_k \in I, \ j_k \in J \right\} $;
+	\item $\sqrt{I} = \left\{ x \in A  \mid \exists n \in \mathbb{N} : x^n \in I \right\} $;
+	\item $\left(I:J\right) = \left\{ x \in A  \mid xJ \subseteq I \right\} $.
+\end{enumerate}
+\end{prop}
+\begin{prop}
+	$A$ anello e $I,J$ ideali; in generale, $IJ \subseteq I\cap J$, mentre $IJ = I \cap J$ se e solo se $ I+ J = A$.
+\end{prop}
+\begin{prop}
+	$I \subset A$ \`e un ideale proprio se e solo se $I \cap A^* = \varnothing$.
+\end{prop}
+\begin{corollario}
+$A$ \`e un campo se e solo se i suoi unici ideali sono $\left\{ 0 \right\} $ e $A$.
+\end{corollario}
+\subsection{Omomorfismi e quoziente}
+\begin{prop}
+	Gli ideali di un anello $A$ sono tutti e soli i nuclei degli omomorfismi da $A$.
+\end{prop}
+\begin{teorema}
+	[I teorema di omomorfismo]
+	Sia $f : A \to B$ un omomorfismo; allora esiste un unico omomorfismo iniettivo $ \varphi : A / \mathrm{Ker} (f) \to B$ tale che $f = \varphi \circ \pi$, ossia con $\operatorname{Im} f = \operatorname{Im} \varphi $.
+\end{teorema}
+\begin{teorema}
+	[II teorema di omomorfismo]
+	Dati $I,J \subset A$ due ideali, con $I \subset J$, allora $J / I$ \`e un ideale di $A / I$ e 
+	\[
+	\frac{A / I}{J / I} \cong A / J
+	\] 
+\end{teorema}
+\begin{teorema}
+	[III teorema di omomorfismo]
+	Sia $I \subset A$ ideale e $B \subset A$ sottoanello; allora:
+	\[
+	\frac{B+I}{I}\cong \frac{B}{B\cap I}
+	\] 
+\end{teorema}
+\begin{lemma}
+	Sia $f : A \to  B$ un omomorfismo; allora:
+	\begin{enumerate}[(a).]
+		\item $\forall J$ ideale di $B$, si ha che $f^{-1}(J)$ \`e un ideale di $A$;
+		\item se $f$ \`e suriettiva, allora $\forall I$ ideale di $A$, si ha che $f(I)$ \`e un ideale di $B$.
+	\end{enumerate}
+\end{lemma}
+\begin{teorema}
+	[Teorema di corrispondenza]
+	Sia $I$ un ideale di $A$ e $\pi$ la proiezione al quoziente $A / I$. 
+	Tale proiezione induce una corrispondenza biunivoca tra gli ideali di $A / I$ e gli ideali di $A$ che contengono $I$.
+\end{teorema}
+\begin{teorema}
+	[Teorema cinese del resto]
+	Sia $A$ un anello commutativo con unit\`a e $I,J$ due suoi ideali; allora 
+	\[
+	f:
+	\begin{array}
+		{c c c}
+		A & \longrightarrow & A / I \times A / J\\
+		a & \longmapsto & (a + I , a+ J )
+	\end{array}
+	\] 
+	\`e un omomorfismo, con $\operatorname{Ker} f = I \cap J$.
+	Inoltre, vale $I + J = A \iff f$ \`e suriettiva; in questo caso:
+	\[
+	A / IJ \cong A / I \times A / J
+	\] 
+\end{teorema}
+\subsection{Ideali primi e ideali massimali}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1152,12 +1293,106 @@ Sia $G = \mathbb{Z}/4\mathbb{Z}\rtimes _\phi \mathbb{Z}/4\mathbb{Z}$ definito da
 	\end{enumerate}
 \end{svolgimento}
 
+\begin{esercizio}
+Sia $\lvert G \rvert = 3^2 \cdot 5 = 45$.
+\begin{enumerate}[(a).]
+	\item Determinare i possibili valori di $n_5$.
+	\item Dimostrare che esiste almeno un sottogruppo normale non-banale di $G$.
+	\item Assumendo che un $5$-Sylow non sia normale, dimostrare che lo \`e il $3$-Sylow.
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Per i teoremi di Sylow, si ha:
+\[
+\begin{split}
+	&n_3 \equiv 1 \pmod{3} \hspace{.3cm} n_3  \mid 5\hspace{.4cm} \implies\hspace{.4cm} n_3 = 1\\
+	&n_5 \equiv 1 \pmod{5}  \hspace{.3cm} n_5  \mid 3^2 \hspace{.4cm} \implies\hspace{.4cm} n_5 = 1
+\end{split}
+\] 
+Questo fa concludere immediatamente entrambi gli altri punti: in $G$, si ha un singolo $3$-Sylow e un singolo $5$-Sylow e sono entrambi sempre normali.
+\end{svolgimento}
+\begin{esercizio}
+Sia $G = D_4$ il gruppo diedrale di ordine $8$.
+\begin{enumerate}[(a).]
+	\item Stabilire i possibili ordini dell'immagine di un omomorfismo $\varphi  : G \to  S_4$.
+	\item Dimostrare che non esiste un omomorfismo iniettivo $\varphi : G \to S_3$.
+	\item Esibire un omomorfismo non-banale $\varphi : G \to S_4$.	
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Un omomorfismo \`e univocamente definito in base a come agisce sui generatori.
+Visto che $D_4=\langle r,s \mid r^4 = s^2 = e , \ srs=r^{-1} \rangle$, $\varphi $ \`e univocamente determinato da $r \longmapsto \varphi (r)$ e $s \longmapsto \varphi (s)$, immagini che sono vincolate dal dover rispettare $\varphi (s) \varphi (r) \varphi (s) = \varphi (r)^{-1}$.
+Per quanto appena detto, si nota subito che $\operatorname{ord}\big( \varphi (r)\big)  \mid \operatorname{ord}(r) =4$ e $\operatorname{ord}\big( \varphi (s)\big)  \mid \operatorname{ord}(r) =2$.
+Sulla base di questo, i possibili ordini dell'immagine di $D_4$ sono $2,4,8$, rispettivamente relativi a mappare $r\mapsto \operatorname{id} $, $r\mapsto \tau $, con $\tau $ $2$-ciclo o doppio $2$-ciclo, e $r\mapsto \sigma $, con $\sigma $ $4$-ciclo.
+
+Un omomorfismo iniettivo $D_4\longrightarrow S_3$ non pu\`o esistere per questioni di ordine: $S_3$ ha ordine $6$, mentre $D_4$ ha ordine $8$.
+
+Un omomorfismo non-banale si costruisce sulla linea del ragionamento fatto all'inizio. 
+Quello pi\`u semplice possibile, per\`o, \`e sicuramente relativo a $r \longmapsto \operatorname{id} $ e $s \longmapsto (1 \ 2)$, per esempio; in questo modo, \`e anche facile vedere che la presentazione \`e conservata: $(1 \ 2) \operatorname{id} (1 \ 2) = \operatorname{id} = \operatorname{id} ^{-1}$.
+\end{svolgimento}
+\begin{esercizio}
+Sia $\lvert G \rvert = 3^3 \cdot 7 = 189$.
+\begin{enumerate}[(a).]
+	\item Determinare i possibili valori di $n_7$.
+	\item Mostrare che esiste almeno un sottogruppo normale non-banale di $G$.
+\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+Per i teoremi di Sylow, si ha:
+\[
+\begin{split}
+	&n_3 \equiv 1 \pmod{3} \hspace{.3cm} n_3  \mid 7\hspace{.4cm} \implies\hspace{.4cm} n_3 = \left\{ 1,7 \right\} \\
+	&n_7 \equiv 1 \pmod{7}  \hspace{.3cm} n_7  \mid 3^3 \hspace{.4cm} \implies\hspace{.4cm} n_7 = 1 
+\end{split}
+\] 
+Se ne conclude che $G$ ha un unico $7$-Sylow, $P_7$, il quale, essendo unico, risulta normale in $G$.
+Questo permette di concludere che $G$ ha sempre un sottogruppo normale.
+
+Dato $P_3$ il $3$-Sylow di $G$, si pu\`o concludere, per il teorema di decomposizione semi-diretta, che $G \cong P_7 \rtimes _\phi P_3$; infatti, $P_3P_7=G$ e $P_3\cap P_7 = \left\{ e \right\} $, visto che se $x \in P_3\cap P_7$, allora $\operatorname{ord}(x)  \mid 3^3$ e $\operatorname{ord}(x)  \mid 7$, da cui $\operatorname{ord}(x) =1$ \`e l'unica possibilit\`a.
+Tale prodotto semi-diretto \`e dato da $\phi : P_3 \longrightarrow \operatorname{Aut} P_7 \cong (\mathbb{Z}/7\mathbb{Z})^*\cong \mathbb{Z}/6\mathbb{Z}$.
+Gli unici omomorfismi validi si caratterizzano osservando che $\operatorname{ord}(\phi (x))  \mid \operatorname{ord}(x)  $, per $x \in P_3$, con $\lvert P_3 \rvert =27$; questo permette di concludere che gli unici elementi ammissibili in $\mathbb{Z}/6\mathbb{Z}$ sono quelli di ordine $3$, cio\`e $2$ e $4$, oltre che l'identit\`a relativa all'omomorfismo banale.
+\end{svolgimento}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Esercizi su anelli 2}
 \begin{esercizio}
 Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $Z[x]$. Contare gli ideali massimali di $Z[x]/IJ$.
 \end{esercizio}
 
-
+\newpage
 \appendix
 
 \section{Nozioni fondamentali}
@@ -1236,7 +1471,6 @@ Questo significa che per ogni classe $ C \in \mathcal{P} , \ \exists C ' \in \ma
 	\`e biettiva.
 \end{definizione}
 \noindent Questo vuol dire che, per ogni classe di equivalenza, si \`e scelto un singolo elemento di $X$ ad essa associato tramite la proiezione al quoziente $\pi$.
-
 \newpage
 \section{Esercizi sulle azioni di gruppo}
 \begin{esercizio}
@@ -1417,6 +1651,11 @@ Dedurre il teorema di Sylow sulla congruenza del numero di $p$-Sylow.
 	con $P'\neq P$ e $N_P(P') = P \cap N_G(P')$; questo significa che ogni orbita deve dividere $p^n$ e, allo stesso tempo, $\operatorname{Stab} (P')$ non pu\`o essere banale se $P \neq P'$, quindi $p  \mid \operatorname{Orb} (P')$.
 	Unendo tutto, si pu\`o concludere che $n_p \equiv 1 \pmod{p} $, che \`e proprio il risultato cercato.
 \end{svolgimento}
+
+
+
+
+
 
 
 \end{document}
