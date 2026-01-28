@@ -1389,8 +1389,61 @@ Gli unici omomorfismi validi si caratterizzano osservando che $\operatorname{ord
 
 \subsection{Esercizi su anelli 2}
 \begin{esercizio}
-Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $Z[x]$. Contare gli ideali massimali di $Z[x]/IJ$.
+Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $\mathbb{Z}[x]$. Contare gli ideali massimali di $\mathbb{Z}[x]/IJ$.
 \end{esercizio}
+\begin{svolgimento}
+	Si vuole utilizzare il teorema cinese del resto per scrivere $\mathbb{Z}[x] / IJ \cong \mathbb{Z}[x] / I \times \mathbb{Z}[x] / J$.
+	Per farlo, si osserva che $1 \in I+J$ perch\'e $4 \in I$ e $3 \in J$, quindi $1 = 4-3 \in I+J$, da cui $I + J = \mathbb{Z}[x]$. 
+	Questo assicura l'isomorfismo voluto.
+	Ora si nota che 
+	\[
+		\mathbb{Z}[x] / (4,3x+1) \cong  \mathbb{Z}_4[x] / (3x+1)
+	\] 
+	dove $(3x+1)$ nell'espressione finale \`e l'ideale in $\mathbb{Z}_4[x]$; per questo motivo, visto che $3$ \`e un'unit\`a in $\mathbb{Z}_4$, si ha che $(3x+1) = (x+3) \subset \mathbb{Z}_4[x]$.
+	Ne segue che $\mathbb{Z}[x] / (4,3x+1)\cong\mathbb{Z}_4[x] / (x+3)\cong \mathbb{Z}_4$.
+	Per l'altro fattore, si ha:
+	\[
+		\mathbb{Z}[x] / (3,x^2+1) \cong \mathbb{F}_3[x] / (x^2+1) \cong \mathbb{F}_9
+	\] 
+	perch\'e $x^2 + 1$ \`e irriducibile in $\mathbb{F}_3$ e il campo risultante \`e quello con $9$ elementi.
+	Se ne conclude che $\mathbb{Z}[x] /IJ \cong \mathbb{Z}_4\times \mathbb{F}_9$.
+	Ora, $\mathbb{F}_9$ ha, come unico ideale proprio, quello banale, mentre $\mathbb{Z}_4$ ha solo $(2)$ come ideale massimale.
+	Questo significa che gli ideali massimali di $\mathbb{Z}[x] /IJ$ sono due e sono dati da $(2) \times \mathbb{F}_9$ e $\mathbb{Z}_4 \times \left\{ 0 \right\} $.
+\end{svolgimento}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \appendix

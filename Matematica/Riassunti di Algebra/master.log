@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  28 JAN 2026 19:37
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  28 JAN 2026 23:01
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1929,7 +1929,7 @@ Overfull \hbox (10.80324pt too wide) in paragraph at lines 1286--1289
 [32]
 
 [33]
-Overfull \hbox (6.41696pt too wide) in paragraph at lines 1612--1615
+Overfull \hbox (6.41696pt too wide) in paragraph at lines 1665--1668
 \TU/KpRoman(1)/m/n/12 cioè cor-ri-spon-de con l’in-sie-me dei sot-to-spa-zi vet-to-ria-li di $\TU/KpMath-Regular.otf(1)/m/n/12 𝑉$ \TU/KpRoman(1)/m/n/12 rag-giun-gi-bi-li tra-mi-te un’ap-
  []
 
@@ -1954,14 +1954,14 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 Here is how much of LuaTeX's memory you used:
  55075 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 1941 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 405 attribute, 104 glue_spec, 204 attribute_list, 2 write nodes
-   avail lists: 1:4,2:3384,3:1351,4:237,5:615,6:117,7:5624,8:109,9:1212,10:12,11:588
+ 1953 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 409 attribute, 104 glue_spec, 206 attribute_list, 2 write nodes
+   avail lists: 1:4,2:3378,3:1351,4:237,5:615,6:117,7:5624,8:109,9:1212,10:12,11:588
  76653 multiletter control sequences out of 65536+600000
  107 fonts using 18448939 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (35 pages, 185516 bytes).
+Output written on master.pdf (35 pages, 187046 bytes).
 
 PDF statistics: 521 PDF objects out of 1000 (max. 8388607)
  448 compressed objects within 5 object streams
