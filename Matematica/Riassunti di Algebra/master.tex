@@ -815,23 +815,122 @@ $A$ \`e un campo se e solo se i suoi unici ideali sono $\left\{ 0 \right\} $ e $
 	\] 
 \end{teorema}
 \subsection{Ideali primi e ideali massimali}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{definizione}
+	[Maggiorante]
+	Dato $(\mathcal{F} ,\le )$ un insieme parzialmente ordinato e $X \subset \mathcal{F} $ un sottoinsieme, si dice che $M \in \mathcal{F} $ \`e un maggiorante per $X$ se, $\forall A \in X$, $ \ A\le M$.
+\end{definizione}
+\begin{definizione}
+	[Elemento massimale]
+	Dato $(\mathcal{F} ,\le )$, si ha $A \in \mathcal{F} $  elemento massimale per $\mathcal{F} $ se, $\forall B \in \mathcal{F} : A\le B$, si ha $A = B$.
+\end{definizione}
+\begin{definizione}
+	[Massimo]
+	$A \in \mathcal{F} $ \`e detto \textit{massimo} per $\mathcal{F} $ se, $\forall B \in \mathcal{F} $, si ha $B \le A$.
+\end{definizione}
+\begin{definizione}
+	[Catena]
+	Una catena di $\mathcal{F} $ \`e un suo sottoinsieme totalmente ordinato.
+\end{definizione}
+\begin{definizione}
+	[Insieme induttivo]
+	Si dice che $\mathcal{F} $ \`e induttivo se ogni sua catena ammette un maggiorante al suo interno.
+\end{definizione}
+\begin{lemma}
+	[Lemma di Zorn]
+	Se $(\mathcal{F} ,\le )$ \`e un insieme parzialmente ordinato e induttivo, allora contiene elementi massimali.
+\end{lemma}
+\begin{definizione}
+	[Ideale primo]
+	Un $I$ ideale proprio di $A$ anello, si dice \textit{primo} se
+	\[
+	xy \in I \implies x \in I \ \text{ oppure }\ y \in I, \ \forall x,y \in A
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Ideale massimale]
+	$I \subsetneq A$ \`e detto \textit{massimale} se \`e un elemento massimale della famiglia $\mathcal{F} $ di tutti gli ideali propri di $A$, cio\`e se e solo se $\forall J \subsetneq A : I \subseteq J \implies I = J$.
+\end{definizione}
+\begin{prop}
+Ogni anello unitario ammette ideali massimali.
+\end{prop}
+\begin{prop}
+	[Propriet\`a degli ideali massimali]
+	Dato $A$ anello, si ha che
+	\begin{enumerate}[(a).]
+		\item ogni ideale proprio di $A$ \`e contenuto in un ideale massimale;
+		\item ogni elemento non-invertibile di $A$ \`e contenuto in un ideale massimale.
+	\end{enumerate}
+\end{prop}
+\begin{prop}
+	[Caratterizzazione degli ideali primi e massimali]
+	Sia $A$ un anello e $I \subsetneq A$ un suo ideale proprio; allora:
+	\begin{enumerate}[(a).]
+		\item $I$ \`e primo se e solo se $A / I$ \`e un dominio;
+		\item $I$ \`e massimale se e solo se $A / I $ \`e un campo;
+		\item $A$ \`e un dominio se e solo se $(0)$ \`e un ideale primo;
+		\item $A$ \`e un campo se e solo se $(0)$ \`e un ideale massimale;
+		\item $I$ massimale $\implies I$ primo.
+	\end{enumerate}
+\end{prop}
+\begin{prop}
+La biezione tra ideali data da $\pi : A \to A / I$ preserva ideali primi e massimali (contenenti $I$).
+\end{prop}
+\subsection{Anello delle frazioni}
+\begin{definizione}
+	[Parte moltiplicativa]
+	Dati $A$ dominio (commutativo e con identit\`a) e $S \subset A$, si dice che $S$ \`e una \textit{parte moltiplicativa} di $A$ se:
+	\begin{enumerate}[(a).]
+		\item $0 \not\in S$;
+		\item $1 \in S$;
+		\item $S$ \`e chiuso sotto moltiplicazione, cio\`e, dati $x,y \in S$, allora $xy \in S$.
+	\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[Insieme delle frazioni]
+	Dato un dominio $A$ e data $S$ una sua parte moltiplicativa, si definisce l'\textit{insieme delle frazioni} come
+	\[
+		S^{-1}A = \faktor{\left\{ \frac{a}{s}\ \Bigg \lvert \ a \in A, \ s \in S\right\}}{\mathrm{\sim} }
+	\] 
+	dove $a / s \sim b/t \iff at = bs$.
+\end{definizione}
+\begin{prop}
+L'applicazione 
+\[
+f: 
+\begin{array}
+	{c c c}
+	A &\longrightarrow & S^{-1}A \\
+	a & \longmapsto & a / 1
+\end{array}
+\] 
+\`e un omomorfismi iniettivo, quindi $S^{-1}A$ \`e un'estensione di $A$.
+\end{prop}
+\begin{prop}
+Sia $A$ un dominio e $S = A \setminus \left\{ 0 \right\} $ una sua parte moltiplicativa; allora l'anello delle frazioni $S^{-1}A$ \`e il pi\`u piccolo campo contenente $A$.
+\end{prop}
+\begin{definizione}
+	[Localizzato]
+	Dato un dominio $A $ e $P \subset A$ un suo ideale primo, considerando $S = A \setminus P$, si definisce $S ^{-1} A = A_p$ come il localizzato di $A$ a $P$.
+\end{definizione}
+\begin{osservazione}
+$A_p$ \`e un anello locale, ossia ha un unico ideale massimale.
+\end{osservazione}
+\noindent Di seguito, alcune caratteristiche di $S^{-1}A$.
+\begin{itemize}
+	\item \textbf{Invertibili.} Sono tutti gli $a / s \in S^{-1} A$ tali che $s / a \in S^{-1}A$, ossia quelli tali che $\exists b \in A : ab \in S$.
+	\item \textbf{Ideali.} Dato $I \subset A$, si costruisce l'insieme $S^{-1}I = \left\{ x / s \in S^{-1}A  \mid x \in I , \ s \in S \right\} $.
+		Per questo, vale la seguente proposizione.
+\end{itemize}
+\begin{prop}
+Sia $I \subset A $ e $S ^{-1}A$ l'anello delle frazioni di $A$. Allora:
+\begin{enumerate}[(a).]
+	\item $S^{-1}I$ \`e un ideale di $S^{-1}A$;
+	\item per ogni ideale $J \subset S^{-1}A$, si trova un ideale $I \subset A$ tale che $J = S^{-1}I$;
+	\item $S^{-1}I$ \`e proprio se e solo se $I \cap S = \varnothing$;
+	\item dato $P$ ideale primo, allora $S ^{-1} P$ \`e un ideale primo di $S^{-1}A$.
+\end{enumerate}
+\end{prop}
+\subsection{Divisibilit\`a nei domini}
 
 
 

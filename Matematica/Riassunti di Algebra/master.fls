@@ -396,8 +396,8 @@ OUTPUT master.pdf
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 INPUT ./master.toc
-OUTPUT master.toc
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT master.toc
 INPUT ./master.aux
 INPUT ./master.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
