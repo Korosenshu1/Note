@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  29 JAN 2026 08:29
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  30 JAN 2026 18:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1887,6 +1887,11 @@ Underfull \hbox (badness 1226) in paragraph at lines 768--769
 [16]
 
 [17]
+Underfull \hbox (badness 3158) in paragraph at lines 995--996
+[][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 2.17.  []\TU/KpRoman(1)/m/n/12 Gli ele-men-ti di gra-do mi-ni-mo di $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 do-mi-nio eu-cli-deo
+ []
+
+
 
 [18]
 
@@ -1899,11 +1904,6 @@ Underfull \hbox (badness 1226) in paragraph at lines 768--769
 [22]
 
 [23]
-Overfull \hbox (0.82257pt too wide) in paragraph at lines 1209--1210
-[]\TU/KpRoman(1)/m/n/12 per $[][] \TU/KpMath-Regular.otf(1)/m/n/12 𝑥[] + 2$\TU/KpRoman(1)/m/n/12 , si ha lo stes-so cam-po di spez-za-men-to $\TU/KpMath-Regular.otf(1)/m/n/12 ℚ([], 𝜁[])$\TU/KpRoman(1)/m/n/12 , vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 (−[])[] =
- []
-
-
 
 [24]
 
@@ -1912,13 +1912,13 @@ Overfull \hbox (0.82257pt too wide) in paragraph at lines 1209--1210
 [26]
 
 [27]
-
-[28]
-Overfull \hbox (10.80324pt too wide) in paragraph at lines 1385--1388
-\TU/KpRoman(1)/m/n/12 Quin-di $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = []$\TU/KpRoman(1)/m/n/12 ; vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 non è abe-lia-no, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = 2$ \TU/KpRoman(1)/m/n/12 e, quin-di, $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺[] = []$\TU/KpRoman(1)/m/n/12 ,
+Overfull \hbox (0.82257pt too wide) in paragraph at lines 1404--1405
+[]\TU/KpRoman(1)/m/n/12 per $[][] \TU/KpMath-Regular.otf(1)/m/n/12 𝑥[] + 2$\TU/KpRoman(1)/m/n/12 , si ha lo stes-so cam-po di spez-za-men-to $\TU/KpMath-Regular.otf(1)/m/n/12 ℚ([], 𝜁[])$\TU/KpRoman(1)/m/n/12 , vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 (−[])[] =
  []
 
 
+
+[28]
 
 [29]
 
@@ -1927,6 +1927,11 @@ Overfull \hbox (10.80324pt too wide) in paragraph at lines 1385--1388
 [31]
 
 [32]
+Overfull \hbox (10.80324pt too wide) in paragraph at lines 1580--1583
+\TU/KpRoman(1)/m/n/12 Quin-di $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = []$\TU/KpRoman(1)/m/n/12 ; vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 non è abe-lia-no, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = 2$ \TU/KpRoman(1)/m/n/12 e, quin-di, $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺[] = []$\TU/KpRoman(1)/m/n/12 ,
+ []
+
+
 
 [33]
 
@@ -1935,20 +1940,28 @@ Overfull \hbox (10.80324pt too wide) in paragraph at lines 1385--1388
 [35]
 
 [36]
-Overfull \hbox (6.41696pt too wide) in paragraph at lines 1764--1767
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+Overfull \hbox (6.41696pt too wide) in paragraph at lines 1959--1962
 \TU/KpRoman(1)/m/n/12 cioè cor-ri-spon-de con l’in-sie-me dei sot-to-spa-zi vet-to-ria-li di $\TU/KpMath-Regular.otf(1)/m/n/12 𝑉$ \TU/KpRoman(1)/m/n/12 rag-giun-gi-bi-li tra-mi-te un’ap-
  []
 
 
 
-[37]
+[41]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
 
 
-[38] (./master.aux)
+[42] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1958,19 +1971,19 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 55135 strings out of 475506
+ 55231 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 2019 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 431 attribute, 104 glue_spec, 217 attribute_list, 2 write nodes
-   avail lists: 1:5,2:3729,3:1472,4:269,5:615,6:119,7:5624,8:109,9:1212,10:12,11:588
- 76675 multiletter control sequences out of 65536+600000
- 107 fonts using 18449107 bytes
+ 2055 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 443 attribute, 104 glue_spec, 223 attribute_list, 2 write nodes
+   avail lists: 1:4,2:3711,3:1472,4:269,5:615,6:120,7:5624,8:109,9:1212,10:12,11:588
+ 76715 multiletter control sequences out of 65536+600000
+ 107 fonts using 18448995 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (38 pages, 196355 bytes).
+Output written on master.pdf (42 pages, 209487 bytes).
 
-PDF statistics: 579 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
- 244 named destinations out of 1000 (max. 131072)
- 248 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 678 PDF objects out of 1000 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 300 named destinations out of 1000 (max. 131072)
+ 304 words of extra memory for PDF output out of 10000 (max. 100000000)
 

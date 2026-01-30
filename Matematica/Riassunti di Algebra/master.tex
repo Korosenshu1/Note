@@ -931,6 +931,201 @@ Sia $I \subset A $ e $S ^{-1}A$ l'anello delle frazioni di $A$. Allora:
 \end{enumerate}
 \end{prop}
 \subsection{Divisibilit\`a nei domini}
+\begin{definizione}
+	[Divisibilit\`a] Siano $a,b \in A$ dominio, con $a \neq 0$; allora $a  \mid b \iff \exists c \in A : b = ac$.
+\end{definizione}
+\begin{osservazione}
+$a  \mid b \iff \langle b \rangle\subseteq \langle a \rangle$; infatti, $ca= b \Rightarrow b \in \langle a \rangle \Rightarrow \langle b \rangle\subseteq \langle a \rangle$.
+\end{osservazione}
+\begin{definizione}
+[Elemento associato]
+Dati $a,a' \in A$ dominio, si dicono \textit{associati} se vale una delle seguenti, equivalenti, condizioni:
+\begin{enumerate}[(a).]
+	\item $a  \mid  a' $ e $a'  \mid  a$;
+	\item $\exists u \in A^*$ tale che $a = u a'$;
+	\item $\langle a \rangle= \langle a' \rangle$.
+\end{enumerate}
+\end{definizione}
+\begin{definizione}
+	[MCD] Per $a,b \in A$ dominio non entrambi nulli, $d$ \`e un MCD se valgono entrambe le seguenti condizioni:
+	\begin{enumerate}[(a).]
+		\item $d \mid a $ e $d  \mid  b$;
+		\item $\forall x \in A$ tale che $x  \mid a$ e $x \mid b$, si ha $x  \mid  d$.
+	\end{enumerate}
+\end{definizione}
+\begin{prop}
+	Dati $a,b \in A$, si dice che $d$ e $d'$ sono loro MCD se e solo se $d \sim d'$.
+\end{prop}
+\begin{definizione}
+	[Elemento primo]	
+$x \in A\setminus (A^* \cup \left\{ 0 \right\} )$ \`e primo se, $\forall a,b \in A$, si ha $x  \mid ab \implies x  \mid a$ oppure $x | b$.
+\end{definizione}
+\begin{definizione}
+	[Elemento irriducibile]
+	$x \in A \setminus (A^* \cup \left\{ 0 \right\} )$ \`e irriducibile se, $\forall a,b \in A$, vale $x = ab \Rightarrow a \in A^*$ oppure $b \in A^*$.
+\end{definizione}
+\begin{prop}
+Se $x \in A$ dominio \`e primo, allora \`e irriducibile.
+\end{prop}
+\begin{prop}
+	[Caratterizzazione elementi primi e irriducibili]
+	Sia $x \in A$ dominio. Allora:
+	\begin{enumerate}[(a).]
+		\item $x$ \`e primo $\iff \langle x \rangle$ \`e un ideale primo non-nullo;
+		\item $x$ \`e irriducibile $\iff \langle x \rangle$ \`e un ideale massimale nell'insieme degli ideali principali.
+	\end{enumerate}
+\end{prop}
+\subsection{ED, PID e UFD}
+\subsubsection{ED}
+
+
+\begin{definizione}
+	[ED] 
+	$A$ dominio \`e \textit{euclideo} se si pu\`o definire una mappa $d : A \setminus \left\{ 0 \right\}  \to   \mathbb{N}$ tale che:
+	\begin{enumerate}[(a).]
+		\item $d(x) \le  d(xy) , \ \forall x,y \in A \setminus\left\{ 0 \right\} $;
+		\item $\forall x \in A , \ \forall y \in A \setminus\left\{ 0 \right\} $, si trovano $q,r \in A$ tali che $x = yq + r$, con $d(r) < d(y)$ oppure $r=0$.
+	\end{enumerate}
+\end{definizione}
+\begin{prop}
+	[Algoritmo di Euclide]
+	In $A$ dominio euclideo, per ogni coppia $a,b \in A$, esiste un MCD ottenuto tramite algoritmo di Euclide.
+\end{prop}
+\begin{prop}
+	Gli elementi di grado minimo di $A$ dominio euclideo coincidono con gli elementi di $A^*$.
+\end{prop}
+\begin{prop}
+	Tutti gli ideali di $A$ dominio euclideo sono principali e generati da un elemento di grado minimo nell'ideale in questione.
+\end{prop}
+\subsubsection{PID}
+\begin{definizione}
+	[PID]
+	Un dominio $A$ \`e a \textit{ideali principali} se ogni suo ideale \`e principale.
+\end{definizione}
+\begin{prop}
+Se $A$ \`e un PID, i suoi unici ideali primi sono $\langle 0 \rangle$ e quelli massimali.
+\end{prop}
+\begin{prop}
+	[MCD nei PID]
+	Dati $x,y \in A$ PID non entrambi nulli, si ha $\langle x,y \rangle = \langle d \rangle$, con $d = (x,y)$. 
+\end{prop}
+\subsubsection{UFD}
+\begin{definizione}
+	[UFD]
+	$A$ dominio \`e a \textit{fattorizzazione unica} se ogni elemento $x \in A \setminus (A^* \cup \left\{ 0 \right\} )$ si decompone univocamente in irriducibili, a meno di prodotto per un'unit\`a.
+\end{definizione}
+\begin{prop}
+	Dati $a,b \in A$ UFD non entrambi nulli, esiste sempre un loro MCD.	
+\end{prop}
+\begin{teorema}
+	[Caratterizzazione degli UFD]
+	$A$ dominio \`e un UFD se e solo se sono soddisfatte entrambe le seguenti condizioni:
+\begin{enumerate}[(a).]
+	\item ogni irriducibile \`e primo;
+	\item ogni catena discendente di divisibilit\`a \`e stazionaria, cio\`e data $\left\{ a_i \right\} _{i\ge 0} \subset A$, con $a_{i+1}  \mid a_i$, allora $\exists n_0 \in \mathbb{N}$ tale che $a_i \sim a _{n_0} , \ \forall i \ge n_0$.
+\end{enumerate}
+\end{teorema}
+\begin{corollario}
+Se $A$ \`e un PID, allora \`e un UFD.
+\end{corollario}
+\begin{boxenv}[]
+	\centering $\text{ED}\implies \text{PID} \implies \text{UFD}$
+\end{boxenv}
+
+\subsection{Anelli di polinomi}
+\begin{definizione}
+	[Contenuto]
+	Dato $f(x) \in A[x]$, con $A$ UFD e $f(x) =\sum_{i=0}^{n} a_i x^i$, si definisce il \textit{contenuto} di $f(x)$ come l'MCD dei suoi coefficienti:
+	\[
+	c\big(f(x)\big) = \operatorname{gcd}(a_0,\ldots,a_n) 
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Elemento primitivo]
+	$f(x) \in A[x]$, con $A$ UFD, \`e \textit{primitivo} se $c (f(x)) \sim 1$.
+\end{definizione}
+\begin{lemma}
+	[Lemma di Gauss]
+	Dati $f(x) , g(x) \in A[x]$, allora:
+	\[
+	c\big(f(x) g(x)\big) = c(f(x)) c(g(x))
+	\] 
+\end{lemma}
+\begin{corollario}
+	Dati $f(x) , g(x) \in A[x]$, con $c(f(x)) = 1$ e $f(x)  \mid g(x)$ in $K[x]$, con $K$ campo dei quozienti di $A$, allora $f(x)  \mid g(x)$ in $A[x]$.
+\end{corollario}
+\begin{corollario}
+	Dato $f(x) \in A[x]$, con $f(x) = g(x) h(x)$ in $K[x]$ (con $K$ campo dei quozienti di $A$) e $\deg g(x), \deg h(x) \ge 1$ (quindi $f$ riducibile in $K[x]$), allora $\exists \delta \in K^*$ tale che $g_1(x) = \delta g(x) \in A[x]$ e $h_1(x) = \delta ^{-1}h(x) \in A[x]$, per cui $f(x) = g_1(x) h_1(x)$ in $A[x]$.
+\end{corollario}
+\begin{teorema}
+	Gli irriducibili di $A[x]$, con $A$ UFD, soddisfano una tra le seguenti condizioni:
+	\begin{enumerate}[(a).]
+		\item $f(x) \in A$ e irriducibile in $A$;
+		\item $f(x) \in A[x]$, con $\deg f(x) \ge 1$, $c(f(x)) = 1$ e $f(x)$ irriducibile in $K[x]$.
+	\end{enumerate}
+\end{teorema}
+\begin{teorema}
+	Se $A$ \`e un UFD, allora $A[x]$ \`e un anello a fattorizzazione unica.
+\end{teorema}
+\begin{corollario}
+	Se $A$ \`e un UFD, allora $A[x_1,\ldots,x_n]$ \`e un anello a fattorizzazione unica.
+\end{corollario}
+\begin{prop}
+	[Eisenstein]
+	Sia $A$ un UFD e $f(x) \in A[x]$ primitivo, con $f(x) = \sum_{i=0}^{n} a_i x^i$. 
+	Dato $p \in A$ un primo tale che
+	\begin{enumerate}[(a).]
+		\item $p \nmid a_n$,
+		\item $p  \mid a_i$, $\forall i =0,\ldots,n-1$,
+		\item $p^2 \nmid a_0$;
+	\end{enumerate}
+	allora $f(x)$ \`e irriducibile in $A[x]$ e in $K[x]$.
+\end{prop}
+
+
+
+
+\subsection{Gli interi di Gauss}
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Teoria dei campi}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
