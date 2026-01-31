@@ -1647,10 +1647,36 @@ Tale prodotto semi-diretto \`e dato da $\phi : P_3 \longrightarrow \operatorname
 Gli unici omomorfismi validi si caratterizzano osservando che $\operatorname{ord}(\phi (x))  \mid \operatorname{ord}(x)  $, per $x \in P_3$, con $\lvert P_3 \rvert =27$; questo permette di concludere che gli unici elementi ammissibili in $\mathbb{Z}/6\mathbb{Z}$ sono quelli di ordine $3$, cio\`e $2$ e $4$, oltre che l'identit\`a relativa all'omomorfismo banale.
 \end{svolgimento}
 
+\begin{esercizio}
+Determinare il pi\`u piccolo $m$ tale che esiste un sottogruppo di $S_m$ isomorfo a $A_5 \times \mathbb{Z}/6\mathbb{Z}$.
+\end{esercizio}
+\begin{svolgimento}
+	Si deve trovare un $m$ compatibile con il fatto che gli elementi di $A_5$ e quelli di $\mathbb{Z}/6$ devono commutare.
+	Gli elementi di $A_5$ sono tutte le permutazioni pari che agiscono fedelmente su $5$ elementi; pertanto, $A_5$ contiene elementi di ordine $5$, mentre $\mathbb{Z}/6$ contiene elementi di ordine $6$.
+	Mentre un elemento di ordine $5$ in $S_m$ \`e per forza un $5$-ciclo, un elemento di ordine $6$ si pu\`o costruire componendo un $2$-ciclo con un $3$-ciclo, quindi deve avere a disposizione almeno $5$ elementi su cui agire.
+	Per fare in modo che elementi di ordine $5$ e $6$ commutino, si deve far in modo che agiscano su elementi distinti; per quanto appena detto, quindi, il pi\`u piccolo $m$ che permette ci\`o \`e $m=10$.
+	Per dimostrarlo, si fa prima vedere che $S_9$ non sarebbe sufficiente e poi si d\`a un esempio concreto in $S_{10}$.
 
+	Sia, allora, $\varphi : A_5 \times \mathbb{Z}/6\mathbb{Z} \to S_9$.
+	Dato $\sigma \in A_5$, $\varphi (\sigma ,0)$ deve avere ordine $5$ perch\'e $\varphi $ sia un isomorfismo, quindi deve essere necessariamente un $5$-ciclo; inoltre, $\varphi (e, 1)$ deve avere ordine $6$ e commutare con $\varphi (\sigma ,0)$.
+	A questo punto, si osserva che 
+	\[
+		\lvert \operatorname{Cl}_{S_9}  (\varphi (\sigma ,0)) \rvert  = \binom{9}{5}4!=\frac{9!}{4!5!} = \frac{9!}{5!}\implies \lvert Z_{S_9} (\varphi (\sigma ,0) \rvert =\frac{9!}{9! / 5!}=5!
+	\] 
+Data $\varphi (\sigma ,0) = (1 \ 2 \ 3 \ 4\ 5)$, prendendo  
+\[
+H:=\langle (1 \ 2 \ 3 \ 4\ 5) \rangle \hspace{1cm}  K:= \left\{ \text{permutazioni di } S_9 \text{ che fissano } \left\{ 1 \ 2 \ 3\ 4\ 5 \right\}  \right\} \cong S_4
+\] 
+questi sono sottogruppi di $\mathbb{Z}_{S_9} (\varphi (\sigma ,0))$, commutano, si intersecano nell'identit\`a e sono tali che $\lvert HK \rvert = 5!$, quindi, per il teorema di decomposizione diretta, si pu\`o scrivere che
+\[
+	Z_{S_9} (1 \ 2 \ 3 \ 4 \ 5) \cong \mathbb{Z}/5 \times S_4
+\] 
+Ma a questo punto sorge un assurdo: non pu\`o esistere alcun elemento di ordine $6$ nel centralizzatore, quindi questo isomorfismo non va bene.
 
-
-
+Ora si mostra che \`e possibile costruire un isomorfismo in $S_{10}$.
+Siano $H$ il sottogruppo di $S_{10}$ delle permutazioni pari agiscono su $\left\{ 1 \ 2 \ 3 \ 4\ 5 \right\} $ e $ \tau=  (6 \ 7 )(8 \ 9 \ 10)\in S_{10}$, quindi $H \cong A_5$ e $K= \langle \tau  \rangle\cong \mathbb{Z}/6$. 
+Si nota che $H$ e $K$ commutano e hanno intersezione banale perch\'e agiscono su elementi differenti, quindi, per il teorema di decomposizione diretta, esiste un sottogruppo di $S_{10}$ isomorfo a $ H \times K \cong A_5 \times \mathbb{Z}/6$.
+\end{svolgimento}
 
 
 
@@ -1705,7 +1731,62 @@ Siano $I = (4, 3x + 1)$ e $J = (3, x^2 + 1)$, ideali dell’anello $\mathbb{Z}[x
 	Questo significa che gli ideali massimali di $\mathbb{Z}[x] /IJ$ sono due e sono dati da $(2) \times \mathbb{F}_9$ e $\mathbb{Z}_4 \times \left\{ 0 \right\} $.
 \end{svolgimento}
 
+\begin{esercizio}
+	Sia $A = \mathbb{Z}[x,y] / (y^2 +1)$.
+	\begin{enumerate}[(a).]
+		\item Contare il numero di omomorfismi da $A$ in $\mathbb{F}_7$ e $\mathbb{F}_{49} $.
+		\item Contare gli ideali di $A$ che contengono $(7,x^2+1)$.
+	\end{enumerate}
+\end{esercizio}
+\begin{svolgimento}
+	Per il punto (a), si contano quanti omomorfismi da $\mathbb{Z}[y] / (y^2+1)$ in $\mathbb{F}_7$ e $\mathbb{F}_{49} $ sono possibili, perch\'e la scelta di dove mappare $x$ \`e totalmente arbitraria, visto che non ci sono vincoli.
+	Per $y$, invece, \`e necessario che un omomorfismo $\varphi : \mathbb{Z}[x,y] / (y^2+1) \to \mathbb{F}_7, \mathbb{F}_{49}  $ rispetti la condizione 
+\[
+\varphi (y)^2 + 1 =0 \implies \varphi (y)^2 = -1
+\] 
+Questo si analizza studiando se, nel rispettivo campo di arrivo, \`e possibile che $-1$ sia un quadrato.
+\begin{enumerate}[(i).]
+	\item Caso per $\mathbb{F}_7$.
 
+		In questo campo, $-1 \equiv 6 \operatorname{mod} 7  $, quindi \`e necessario risolvere $a^2\equiv 6 \operatorname{mod} 7 , \ a \neq 0$.
+		Visto che $a^6 \equiv 1 \operatorname{mod} 7 $, allora deve risultare
+		\[
+		(a^2)^3 \equiv 1 \pmod{7} \implies 6^3 \equiv 1 \pmod{7} 
+		\] 
+		Ma $ 6^3 =  216 = 210 + 6\equiv 6 \pmod{7} $, quindi non c'\`e alcun omomorfismo in $\mathbb{F}_7$ che possa soddisfare tale relazione.
+	\item Caso per $\mathbb{F}_{49} $.
+
+	Questa volta, la relazione da soddisfare \`e $a^{48} \equiv 1 \operatorname{mod} 49 $, ossia $(-1)^{24} \equiv 1 \operatorname{mod} 49  $, che \`e verificato perch\'e $24\equiv 0 \operatorname{mod} 2$.
+	Ora, visto che $-1$ \`e un quadrato in $\mathbb{F}_{49} $, ci saranno due elementi di $\mathbb{F}_{49} $ che soddisfano $t^2 = - 1$, quindi ci sono due scelte per $\varphi (y)$. 
+	Al contempo, ci sono $49$ possibili scelte per $\varphi (x)$, per un totale di $98$ omomorfismi.
+\end{enumerate}
+Per il punto (b), invece, contare gli ideali di $A$ che contengono $(7,x^2+1)$ \`e equivalente a contare gli ideali di $A / (7,x^2+1)$.
+Allora: 
+\[
+	A / (7,x^2+1) \cong \frac{\mathbb{Z}[x,y] / (y^2+1)}{(7,x^2+1)}
+\] 
+Usando il secondo teorema di omomorfismo, si ha $A/J \cong \frac{A / I }{J / I}$, quindi:
+\[
+	\frac{\mathbb{Z}[x,y] / (y^2+1)}{(7,x^2+1)} \cong \frac{\mathbb{Z}[x,y] / (y^2+1)}{(7,x^2+1,y^2+1) / (y^2+1)}\cong \mathbb{Z}[x,y] / (7,x^2+1,y^2+1) \cong\frac{\mathbb{F}_7[x,y]}{(x^2+1,y^2+1)}
+\] 
+Ora, usando il fatto che $x^2+1$ \`e irriducibile in $\mathbb{F}_7[x]$ e che, detta $\alpha $ una sua radice, si ha $\mathbb{F}_7[x] / (x^2+1) \cong \mathbb{F}_7[\alpha ]\cong \mathbb{F}_{49} $
+\[
+	\frac{\mathbb{F}_7[x,y]}{(x^2+1,y^2+1)} \cong \frac{\big(\mathbb{F}_7[x] / (x^2+1)\big)[y]}{(y^2+1)}\cong \frac{\mathbb{F}_{49}[y]}{(y^2+1)}
+\] 
+In $\mathbb{F}_{49} [y]$, il polinomio $y^2 + 1 = (y-\alpha )(y+\alpha )$, con $(y+\alpha )-(y-\alpha )=2\alpha \in \mathbb{F}_{49} ^\times$, quindi $\langle y-\alpha  \rangle + \langle y+\alpha  \rangle = \mathbb{F}_{49} [y]$ e si pu\`o applicare il teorema cinese del resto:
+\[
+	\frac{\mathbb{F}_{49}[y]}{(y^2+1)} \cong \frac{\mathbb{F}_{49} [y]}{(y+\alpha )} \times \frac{\mathbb{F}_{49} [y]}{(y-\alpha )}\cong \mathbb{F}_{49} \times \mathbb{F}_{49} 
+\] 
+I suoi ideali, allora, sono dati da $\left\{ 0 \right\} \times \left\{ 0 \right\} , \ \left\{ 0 \right\} \times \mathbb{F}_{49} , \ \mathbb{F}_{49} \times \left\{ 0 \right\} $ e $\mathbb{F}_{49} \times \mathbb{F}_{49} $, pertanto ci sono $4$ ideali in $\mathbb{Z}[x,y] / (y^2+1)$ che contengono $(7,x^2+1)$.
+\end{svolgimento}
+\begin{esercizio}
+	Sia $A = \mathbb{Z}[i]$ e siano $I = (x-2-i), \ J = (x-2+i)$ due ideali di $A[x]$.
+	\begin{enumerate}[(a).]
+		\item Dimostrare che $I\cap J$ \`e principale.
+		\item Dimostrare che esiste un unico ideale massimale $M $ in $A[x]$ che contiene $I+J$.
+		\item Dimostrare che $I+J$ non \`e principale.
+	\end{enumerate}
+\end{esercizio}
 
 
 
