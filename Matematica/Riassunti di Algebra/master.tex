@@ -1083,10 +1083,6 @@ Se $A$ \`e un PID, allora \`e un UFD.
 \end{prop}
 
 
-
-
-\subsection{Gli interi di Gauss}
-
 \newpage
 
 
@@ -1115,25 +1111,165 @@ Se $A$ \`e un PID, allora \`e un UFD.
 
 
 \section{Teoria dei campi}
+\subsection{Estensioni di campi}
 
 
+\begin{definizione}
+	[Elementi algebrici e trascendenti]
+	Dato $K$ campo e $L$ una sua estensione, $\alpha \in L$ \`e algebrico su $K$ se $\exists  f(x) \in K[x] \setminus \left\{ 0 \right\} $ tale che $f(\alpha )= 0$. 
+	Altrimenti, $\alpha $ \`e detto trascendente su $K$.
+\end{definizione}
+\begin{definizione}
+	[Grado di un'estensione]
+	Data $L / K$ estensione, il suo grado si indica con $[L:K] = \dim _K L $ ed \`e la dimensione di $L$ come spazio vettoriale su $K$.
+\end{definizione}
+\begin{prop}
+Sia $L / K$ un'estensione, con $\alpha  \in L$; allora:
+\[
+	[K(\alpha ) : K] = \begin{cases}
+		+\infty &,\ \alpha \text{ trascendente}\\
+		\deg \mu_\alpha (x) &,\ \alpha \text{ algebrico}
+	\end{cases}
+\] 
+con $\mu _\alpha (x)$ polinomio minimo di $\alpha$ in $K[x]$.
+\end{prop}
+\begin{prop}
+	[Formula della torre]
+	Sia data la torre di estensioni $K \subset F \subset L$; allora $L / K$ \`e finita se e solo se $L/F$ e $F / K$ sono finite e vale 
+	\[
+		[L:K]=[L:F][F:K]
+	\] 
+\end{prop}
+\begin{definizione}
+	[Estensione composta]
+	Sia $\Omega $ un campo e $L,M \subset \Omega $; allora $LM=L(M)=M(L)$ \`e il pi\`u piccolo sottocampo di $\Omega $ contenente $L $ e $M$.
+	Se $M,L$ sono estensioni finitamente generate, cio\`e $L = K(\alpha _1,\ldots,\alpha _n)$ e $M = K(\beta _1,\ldots,\beta _m)$, vale
+	\[
+	LM = K(\alpha _1,\ldots,\alpha _n,\beta _1,\ldots,\beta _m)
+	\] 
+\end{definizione}
+\begin{prop}
+	Si considerano le due torri $K \subset L \subset FL$ e $K \subset F \subset  FL$, con $[L:K] = m$ e $[F:K] = n$; allora $[FL:K] = d < +\infty$ e $[m,n] \mid d$.
+\end{prop}
+\[
+\begin{tikzcd}
+	& FL &\\
+	L & & F \\
+	  & K &
+	\arrow[from=1-2, to=3-2, no head, "\displaystyle d"]
+        \arrow[from=1-2, to=2-1, no head]
+        \arrow[from=1-2, to=2-3, no head]
+	\arrow[from=3-2, to=2-1, no head, "\displaystyle m"]
+	\arrow[from=3-2, to=2-3, no head, "\displaystyle n"']
+\end{tikzcd}
+\] 
+\begin{definizione}
+[Estensione algebrica]
+$L / K$ \`e algebrica se $\forall  \alpha  \in L$, $\alpha $ \`e algebrico su $K$.
+\end{definizione}
+\begin{prop}
+Ogni estensione finita \`e algebrica.
+\end{prop}
+\begin{prop}
+Data estensione $L / K$, allora $A = \left\{ \alpha \in L  \mid \alpha  \text{ algebrico su } K \right\} $ \`e un campo e un'estensione algebrica di $K$.
+\end{prop}
+\begin{prop}
+$L / K$ \`e un'estensione finitamente generata da algebrici, cio\`e $L=K(\alpha _1,\ldots,\alpha _n)$, se e solo se $L / K$ \`e finita.
+\end{prop}
+\begin{teorema}
+	[Caratterizzazione delle estensioni algebriche]
+	Valgono i due seguenti punti.
+	\begin{enumerate}[(a).]
+		\item Data la torre $K \subset L \subset F$, $F / K$ \`e algebrica se e solo se $F / L$ e $L / K$ sono algebriche.
+		\item Date due estensioni $L / K$ e $M / K$, queste sono algebriche se e solo se $LM / K$ \`e algebrica.
+	\end{enumerate}
+\end{teorema}
+\subsection{Chiusura algebrica}
+\begin{definizione}
+	[Campo algebricamente chiuso]
+	$\Omega $ \`e detto algebricamente chiuso se ogni $f(x) \in \Omega [x]$ non costante ha almeno una radice in $\Omega $.	
+\end{definizione}
+\begin{definizione}
+	[Chiusura algebrica]
+	$\Omega / K$ \`e una chiusura algebrica di $K$ se valgono i due seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $\Omega $ \`e algebricamente chiuso;
+		\item $\Omega / K$ \`e un'estensione algebrica.
+	\end{enumerate}
+\end{definizione}
+\begin{teorema}
+	[Esistenza e unicit\`a della chiusura]
+	Dato $K$ campo, allora esiste sempre una sua chiusura algebrica, che \`e unica a meno di isomorfismo.
+\end{teorema}
+\begin{definizione}
+[Campo di spezzamento]
+Dato $f(x) \in K[x]$, con $\deg f(x) \ge 1$, e date $\alpha _1 ,\ldots,\alpha _n \in \overline{K}$ e sue radici, se ne definisce il campo di spezzamento su $K$ come il sotto campo di $\overline{K}$ dato da $K(\alpha _1,\ldots,\alpha _n)$.
+\end{definizione}
+\begin{prop}
+Sia $K$ un campo e $\alpha \in \overline{K}$. 
+Se $k$ \`e il numero di radici distinte di $\mu _\alpha (x) $ in $\overline{K}$, allora 
+\[
+\exists \varphi _1,\ldots, \varphi _k : K(\alpha ) \longhookrightarrow \overline{K}
+\] 
+estensioni dell'immersione $K \longhookrightarrow \overline{K}$ data dall'identit\`a, con $\varphi _i|_K = \operatorname{Id} _K$.
+\end{prop}
+\begin{teorema}
+	[Criterio della derivata]
+	Sia $f(x) \in K[x]$; allora $f(x)$ ha radici multiple in $\overline{K}$ se e solo se $\operatorname{gcd}(f(x),f'(x)) \neq 1$.
+	Se $f$ \`e irriducibile in $K[x]$, allora $f$ ha radici multiple se e solo se $f'(x) = 0$.
+\end{teorema}
+\begin{definizione}
+	[Campo perfetto]
+	$K$ \`e perfetto se ogni irriducibile di $K[x]$ ha derivata non-nulla.
+\end{definizione}
+\begin{prop}
+	Sia $\alpha \in \overline{K}$, con $[K(\alpha ) : K] = n$.
+	Allora, per ogni $\varphi : K \longhookrightarrow \overline{K}$
+	\[
+	\exists \varphi _1 ,\ldots,\varphi _n : K(\alpha )\longhookrightarrow \overline{K}
+	\] 
+	con $\varphi _i|_K = \varphi, \ \forall i$.
+\end{prop}
+\begin{corollario}
+$E/K$ estensione di grado $n$; allora $\forall \varphi : K \longhookrightarrow \overline{K}$, si trovano esattamente $n$ immersioni $\varphi _1,\ldots,\varphi _n : E \longhookrightarrow \overline{K}$, con $\varphi _i|_K = \varphi $.
+\end{corollario}
+\begin{definizione}
+	[Elementi coniugati]
+	Per $\alpha \in \overline{K}$, i suoi coniugati su $K$ sono le radici del suo polinomio minimo su $K$.
+\end{definizione}
+\begin{definizione}
+	[Estensione separabile]
+	$K \subset L$ estensione algebrica \`e separabile se il polinomio minimo di ogni suo elemento \`e separabile, cio\`e se ha tutte radici distinte in un campo di spezzamento.
+\end{definizione}
+\subsection{Estensioni normali}
+\begin{definizione}
+	[Estensione normale]
+	$F / K$ estensione algebrica \`e normale se $\forall \varphi  : F \longhookrightarrow \overline{K}$, con $\varphi |_K = \operatorname{Id} _K$, si ha $\varphi (F) = F$.
+\end{definizione}
+\begin{prop}
+	Sia $F / K$ algebrica e finita.
+	Allora le seguenti affermazioni sono equivalenti:
+	\begin{enumerate}[(a).]
+		\item $F / K$ \`e normale;
+		\item ogni irriducibile $f(x) \in K[x]$ che ha una radice in $F$, le ha tutte in $F$;
+		\item $F$ \`e il campo di spezzamento su $K$ di una famiglia di polinomi di $K[x]$.
+	\end{enumerate}
+\end{prop}
+\begin{prop}
+Ogni estensione di grado $2$ \`e normale in caratteristica diversa da $2$.
+\end{prop}
+\begin{prop}
+Siano $F / K$ e $L / K$ due estensioni normali di $K$ nella chiusura $\overline{K}$; allora anche $FL / K$ e $(F\cap L) / K$ sono normali.
+\end{prop}
+\begin{prop}
+Data la torre $K \subset F \subset L$ nella chiusura $\overline{K}$, se $L / K$ \`e normale, allora $L / F$ \`e normale.
+\end{prop}
 
+\subsection{Teoria di Galois}
 
+\subsubsection{Gruppo di Galois di $\mathbb{F}_{q^d} / \mathbb{F}_q$}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsubsection{Teorema di corrispondenza di Galois}
 
 
 
@@ -1787,8 +1923,6 @@ I suoi ideali, allora, sono dati da $\left\{ 0 \right\} \times \left\{ 0 \right\
 		\item Dimostrare che $I+J$ non \`e principale.
 	\end{enumerate}
 \end{esercizio}
-
-
 
 
 
