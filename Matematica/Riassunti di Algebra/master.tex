@@ -1241,6 +1241,10 @@ $E/K$ estensione di grado $n$; allora $\forall \varphi : K \longhookrightarrow \
 	[Estensione separabile]
 	$K \subset L$ estensione algebrica \`e separabile se il polinomio minimo di ogni suo elemento \`e separabile, cio\`e se ha tutte radici distinte in un campo di spezzamento.
 \end{definizione}
+\begin{teorema}
+	[Teorema dell'elemento primitivo]
+	Sia $K$ un campo e $E / K$ un'estensione finita e separabile; allora $E / K$ \`e semplice, cio\`e $\exists \gamma\in E : E = K(\gamma)$.
+\end{teorema}
 \subsection{Estensioni normali}
 \begin{definizione}
 	[Estensione normale]
@@ -1266,16 +1270,100 @@ Data la torre $K \subset F \subset L$ nella chiusura $\overline{K}$, se $L / K$ 
 \end{prop}
 
 \subsection{Teoria di Galois}
+\begin{definizione}
+	[Estensione di Galois]
+Un'estensione $E / K$ \`e di Galois se e solo se \`e normale e separabile.
+\end{definizione}
+\begin{definizione}
+	[Gruppo di Galois]
+	Dato 
+	\[
+		\operatorname{Aut} _K E = \left\{ \varphi : E \stackrel{\mathrm{\sim}}{\longrightarrow} E \ \big\lvert \ \varphi |_K = \operatorname{Id} _K\right\} 
+	\] 
+	l'insieme delle immersioni $\left\{ \varphi : E \longhookrightarrow \overline{K}  \mid \varphi |_K = \operatorname{Id} _K \right\} $ che fissano $E$ (perch\'e $E \ K$ \`e normale) con immagine in $E$, si definisce 
+	\[
+	\operatorname{Gal} (E / K) := \left(\mathrm{Aut} _K E , \circ\right) 
+	\] 
+\end{definizione}
+\begin{osservazione}
+Visto che il numero di immersioni $E \longhookrightarrow \overline{K}$ coincide con il grado dell'estensione, si ha:
+\[
+	\lvert \operatorname{Gal} E / K \rvert = [E:K]
+\] 
+\end{osservazione}
+
+
+\begin{prop}
+	Sia $f(x) \in K[x]$ irriducibile di grado $n$; se $F$ \`e il suo campo di spezzamento su $K$, allora $n  \mid [F:K]  \mid n!$ e $\operatorname{Gal} F / K \longhookrightarrow S_n$.
+\end{prop}
+\begin{osservazione}
+L'azione di $\operatorname{Gal} F / K$ sull'insieme delle radici di $f(x)$ \`e fedele e transitiva.
+\end{osservazione}
+
+
 
 \subsubsection{Gruppo di Galois di $\mathbb{F}_{q^d} / \mathbb{F}_q$}
 
+\begin{prop}
+L'estensione $\mathbb{F}_{q^{d} } / \mathbb{F}_q$, con $q = p^r$ e $p$ primo, \`e normale.
+\end{prop}
+\begin{corollario}
+Tutte le estensioni di campi finiti sono normali.
+\end{corollario}
+\begin{definizione}
+	[Automorfismo di Frobenius]
+	Si definisce come
+	\[
+	\phi : 
+	\begin{array}
+		{c c c}
+		\mathbb{F}_{q^d} & \stackrel{\sim}{\longrightarrow} & \mathbb{F}_{q^d} \\
+		x & \longmapsto & x^q
+	\end{array}
+	\] 
+\end{definizione}
+\begin{teorema}
+Il gruppo di Galois di $\mathbb{F}_{q^d} /\mathbb{F}_q$ \`e generato dall'automorfismo di Frobenius.
+\end{teorema}
+
 \subsubsection{Teorema di corrispondenza di Galois}
 
-
-
-
-
-
+\begin{definizione}
+Sia $L / K$ un'estensione di Galois finita e $H < \operatorname{Gal}  L / K$; allora si definisce 
+\[
+L^H := \operatorname{Fix} (H) = \left\{ \alpha \in L  \mid \varphi (\alpha ) = \alpha , \ \forall \varphi  \in H \right\} \subseteq L
+\] 
+\end{definizione}
+\begin{prop}
+$L^H$ \`e un sottocampo.
+\end{prop}
+\begin{lemma}
+Sia $L / M$ di Galois e $ H\le \operatorname{Gal} L / M$; allora
+\[
+M = L^H \iff H = \operatorname{Gal} L / M
+\] 
+\end{lemma}
+\begin{lemma}
+Sia $L / K$ di Galois e $H < \operatorname{Gal} L / K$. 
+Per $\sigma  \in \operatorname{Gal} L / K$, si ha $L^{\sigma H\sigma ^{-1}} = \sigma (L^H)$.
+\end{lemma}
+\begin{teorema}
+	[Teorema di corrispondenza di Galois]
+	Data $L / K$ di Galois, l'insieme delle sottoestensioni di $L / K$ e l'insieme dei sottogruppi di $\operatorname{Gal} L / K$ sono in corrispondenza biunivoca; inoltre, $H \lhd \operatorname{Gal} L / K \iff L^H / K $ \`e normale e, in tal caso:
+	\[
+	\operatorname{Gal} L^H / K \cong \frac{\operatorname{Gal} L / K}{\operatorname{Gal} L/L^H}
+	\] 
+\end{teorema}
+\begin{prop}
+	[Propriet\`a della corrispondenza]
+	Siano $H,S \le \operatorname{Gal} L / K$. 
+	Allora valgono i seguenti punti:
+	\begin{enumerate}[(a).]
+		\item $H \le S \iff L^H \supseteq L^S$;
+		\item $L^{H\cap S} = L^H L^S$ (composto dei due campi);
+		\item $L^{\langle S,H \rangle} = L^H \cap L^S$.
+	\end{enumerate}
+\end{prop}
 
 
 
