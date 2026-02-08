@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  24 JAN 2026 17:24
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  2 FEB 2026 16:21
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -2264,7 +2264,7 @@ Underfull \hbox (badness 3907) in paragraph at lines 4283--4283
 [110]
 
 [111]
-Underfull \hbox (badness 3271) in paragraph at lines 4411--4412
+Underfull \hbox (badness 3271) in paragraph at lines 4412--4413
 [][]\TU/KpRoman(1)/b/n/12 De-fi-ni-zio-ne 3.8 (Cam-po per-fet-to).  []\TU/KpRoman(1)/m/n/12 Un cam-po $\TU/KpMath-Regular.otf(1)/m/n/12 𝐾$ \TU/KpRoman(1)/m/n/12 ta-le che ogni po-li-no-mio
  []
 
@@ -2285,7 +2285,7 @@ Underfull \hbox (badness 3271) in paragraph at lines 4411--4412
 [118]
 
 [119]
-Underfull \hbox (badness 1496) in paragraph at lines 4747--4749
+Underfull \hbox (badness 1496) in paragraph at lines 4749--4751
 [][]\TU/KpRoman(1)/b/n/12 Os-ser-va-zio-ne 3.7.  []\TU/KpRoman(1)/m/n/12 Con la di-mo-stra-zio-ne pre-ce-den-te, si è an-che evi-den-zia-to
  []
 
@@ -2294,31 +2294,31 @@ Underfull \hbox (badness 1496) in paragraph at lines 4747--4749
 [120]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4781.
+(hyperref)                removing `math shift' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 4781.
+(hyperref)                removing `\symbb' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4781.
+(hyperref)                removing `subscript' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4781.
+(hyperref)                removing `superscript' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 4781.
+(hyperref)                removing `\symbb' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4781.
+(hyperref)                removing `subscript' on input line 4783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4781.
+(hyperref)                removing `math shift' on input line 4783.
 
 
 
@@ -2359,7 +2359,7 @@ Here is how much of LuaTeX's memory you used:
    6 hlist, 2 vlist, 2 rule, 33 glue, 4 kern, 1 glyph, 1659 attribute, 104 glue_spec, 831 attribute_list, 2 write nodes
    avail lists: 1:5,2:2289,3:1038,4:228,5:843,6:101,7:7320,8:109,9:1009,10:32,11:846
  77629 multiletter control sequences out of 65536+600000
- 151 fonts using 28729895 bytes
+ 151 fonts using 28729999 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.47'
@@ -2456,7 +2456,7 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (129 pages, 1453340 bytes).
+Output written on master.pdf (129 pages, 1453511 bytes).
 
 PDF statistics: 1537 PDF objects out of 1728 (max. 8388607)
  1357 compressed objects within 14 object streams

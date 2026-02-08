@@ -4364,7 +4364,7 @@ La seguente proposizione fornisce la risposta.
 			p(x) & \longmapsto& p(\beta)
 		\end{array}, \ \forall \beta \in \overline{K}
 	\] 
-	Per tale omomorfismo, ha senso considerare il quoziente $K(\alpha ) \cong K[x] / \langle \mu _\alpha (x) \rangle$ se e solo se $\langle \mu _\alpha (x) \rangle\subset \operatorname{Ker} \widetilde{\varphi }$, cio\`e se e solo se $\mu _\alpha (x) \in \operatorname{Ker} \widetilde{\psi }$, quindi se e solo se $\mu _\alpha (\beta ) = 0$.
+	Per tale omomorfismo, ha senso considerare il quoziente $K(\alpha ) \cong K[x] / \langle \mu _\alpha (x) \rangle$ se e solo se $\langle \mu _\alpha (x) \rangle\subseteq \operatorname{Ker} \widetilde{\varphi }$, cio\`e se e solo se $\mu _\alpha (x) \in \operatorname{Ker} \widetilde{\varphi }$, quindi se e solo se $\mu _\alpha (\beta ) = 0$.
 	Allora, per ogni radice di $\mu _\alpha (x)$ in $\overline{K}$, si ha un omomorfismo iniettivo $\varphi $ per il primo teorema di omomorfismo:
 	\[
 		\begin{tikzcd}
@@ -4376,6 +4376,7 @@ La seguente proposizione fornisce la risposta.
 		\arrow[from=3-1, to=1-3, hook, "\displaystyle \varphi "']
 		\end{tikzcd}
 	\] 
+	giustificato dal fatto che, se $\mu _\alpha (x) \in \operatorname{Ker} \widetilde{\varphi }$, allora $\operatorname{Ker} \widetilde{\varphi }=\langle \mu _\alpha (x) \rangle$.
 	Infine, ogni omomorfismo del genere \`e diverso da un altro perch\'e restituisce valori diversi quando calcolato, per esempio, su $x$, essendo relativo a radici distinte di $\mu _\alpha (x)$.
 \end{proof}
 \noindent Ora ci si pone un ulteriore problema: determinare il numero di radici di $\mu _\alpha (x)$ in $\overline{K}$.
@@ -4422,7 +4423,8 @@ Allora $f'(x) = 0$ se e solo se ogni suo coefficiente \`e nullo: se $a_i\neq 0$,
 Per il seguito, si assumer\`a di avere a che fare esclusivamente con campi perfetti.
 \end{boxenv}
 \noindent Ora si estende il risultato ottenuto dalla prop. \ref{imext}, considerando un'immersione $K \longhookrightarrow \overline{K}$ generica e con l'assunzione di campo perfetto.
-Questo nuovo risultato permetter\`a di contare il numero di estensioni di un omomorfismo qualsiasi da $K$ in $\overline{K}$ ad uno da $K(\alpha )$ in $\overline{K}$; per esempio, dato $K = \mathbb{Q}(\sqrt[3]{2}) $ e l'omomorfismo 
+Questo nuovo risultato permetter\`a di contare il numero di estensioni di un omomorfismo qualsiasi da $K$ in $\overline{K}$ ad uno da $K(\alpha )$ in $\overline{K}$.
+Per esempio, dato $K = \mathbb{Q}(\sqrt[3]{2}) $ e l'omomorfismo 
 \[
 	\varphi :K\longhookrightarrow \overline{K} : \sqrt[3]{2} \longmapsto \sqrt[3]{2} \zeta_3
 \] 
@@ -4603,7 +4605,7 @@ Questo, per\`o, implica che ogni coniugato di $\alpha _1$ deve stare ancora in $
 \end{proof}
 
 \begin{prop}
-	Ogni estensione di grado $2$ \`e normale in caratteistica diversa da $2$.
+	Ogni estensione di grado $2$ \`e normale in caratteristica diversa da $2$.
 \end{prop}
 \begin{proof}
 	Sia $F/K$ un'estensione di $K$, con $\operatorname{char} K \neq 2$ e $[F:K] = 2$.

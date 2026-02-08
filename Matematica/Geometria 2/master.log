@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.27)  13 OCT 2025 13:20
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  8 FEB 2026 13:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -950,9 +950,35 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen358
 \xmathstrut@box=\box132
 \xmathstrut@dim=\dimen359
+) (/usr/share/texmf-dist/tex/latex/pythonhighlight/pythonhighlight.sty
+Package: pythonhighlight 2024/03/18 python code highlighting; provided by Olivier Verdier <olivier.verdier@gmail.com>
+ (/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count371
+\lst@gtempboxa=\box133
+\lst@token=\toks56
+\lst@length=\count372
+\lst@currlwidth=\dimen360
+\lst@column=\count373
+\lst@pos=\count374
+\lst@lostspace=\dimen361
+\lst@width=\dimen362
+\lst@newlines=\count375
+\lst@lineno=\count376
+\lst@maxwidth=\dimen363
+ (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count377
+\lst@skipnumbers=\count378
+\lst@framebox=\box134
+) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
-\@enLab=\toks56
+\@enLab=\toks57
 ) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
  (/usr/share/texmf-dist/tex/generic/babel/luababel.def
@@ -1050,16 +1076,16 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \babelcatcodetablenum=\catcodetable15
 \bbl@pattcodes=\catcodetable16
 )
-\babel@savecnt=\count371
-\U@D=\dimen360
+\babel@savecnt=\count379
+\U@D=\dimen364
 \l@unhyphenated=\language91
  (/usr/share/texmf-dist/tex/generic/babel/luababel.def
 \bbl@attr@locale=\attribute4
 ) (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
-\it@lettering=\count372
-\it@doublequoteactive=\count373
-\it@ISOcompliance=\count374
+\it@lettering=\count380
+\it@doublequoteactive=\count381
+\it@ISOcompliance=\count382
  (/usr/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex UTF-8 Italian hyphenation patterns (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex) (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-it.tex)))) (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
@@ -1067,14 +1093,14 @@ Package babel Info: Importing font and identification data for italian
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
-\FN@temptoken=\toks57
-\footnotemargin=\dimen361
-\@outputbox@depth=\dimen362
+\FN@temptoken=\toks58
+\footnotemargin=\dimen365
+\@outputbox@depth=\dimen366
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count375
+\c@abspage=\count383
 )
-\c@pp@a@footnote=\count376
+\c@pp@a@footnote=\count384
 Package footmisc Info: Declaring symbol style bringhurst on input line 699.
 Package footmisc Info: Declaring symbol style chicago on input line 707.
 Package footmisc Info: Declaring symbol style wiley on input line 716.
@@ -1093,22 +1119,22 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen363
-\pgfarrowlength=\dimen364
-\pgfarrowwidth=\dimen365
-\pgfarrowlinewidth=\dimen366
+\pgfarrowinset=\dimen367
+\pgfarrowlength=\dimen368
+\pgfarrowwidth=\dimen369
+\pgfarrowlinewidth=\dimen370
 )))
-\c@esempio=\count377
-\c@definizione=\count378
-\c@prop=\count379
-\c@teorema=\count380
-\c@lemma=\count381
-\c@corollario=\count382
-\c@osservazione=\count383
-\c@notazione=\count384
-\c@esercizio=\count385
-Package hyperref Info: Option `colorlinks' set `true' on input line 127.
-Package hyperref Info: Option `breaklinks' set `true' on input line 127.
+\c@esempio=\count385
+\c@definizione=\count386
+\c@prop=\count387
+\c@teorema=\count388
+\c@lemma=\count389
+\c@corollario=\count390
+\c@osservazione=\count391
+\c@notazione=\count392
+\c@esercizio=\count393
+Package hyperref Info: Option `colorlinks' set `true' on input line 153.
+Package hyperref Info: Option `breaklinks' set `true' on input line 153.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1129,7 +1155,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 162.
+(scrartcl)              package `tocloft' on input line 188.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1160,8 +1186,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip110
 \cftfigindent=\skip111
 \cftfignumwidth=\skip112
-\c@lofdepth=\count386
-\c@lotdepth=\count387
+\c@lofdepth=\count394
+\c@lotdepth=\count395
 \cftbeforelottitleskip=\skip113
 \cftafterlottitleskip=\skip114
 \cftbeforetabskip=\skip115
@@ -1173,586 +1199,118 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen367
-) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count388
-\l__fontspec_language_int=\count389
-\l__fontspec_strnum_int=\count390
-\l__fontspec_tmp_int=\count391
-\l__fontspec_tmpa_int=\count392
-\l__fontspec_tmpb_int=\count393
-\l__fontspec_tmpc_int=\count394
-\l__fontspec_em_int=\count395
-\l__fontspec_emdef_int=\count396
-\l__fontspec_strong_int=\count397
-\l__fontspec_strongdef_int=\count398
-\l__fontspec_tmpa_dim=\dimen368
-\l__fontspec_tmpb_dim=\dimen369
-\l__fontspec_tmpc_dim=\dimen370
- (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math.sty
-Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
-Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (/usr/share/texmf-dist/tex/latex/base/fix-cm.sty
-Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
- (/usr/share/texmf-dist/tex/latex/base/ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
-)) (/usr/share/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
-Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting with LuaLaTeX
-Lua module: lualatex-math 2013/08/03 v1.3 Patches for mathematics typesetting with LuaLaTeX)
-\g__um_fam_int=\count399
-\g__um_fonts_used_int=\count400
-\l__um_primecount_int=\count401
-\g__um_primekern_muskip=\muskip19
- (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (/usr/share/texmf-dist/tex/latex/fontsetup/fontsetup.sty
-Package: fontsetup 2024/11/01 v2.3.0 For easily using font families with mathematics
- (/usr/share/texmf-dist/tex/generic/oberdiek/iflang.sty
-Package: iflang 2018/01/21 v1.7 Checks for the current language (HO)
-Package iflang Info: Naming convention for patterns: babel.
-) (/usr/share/texmf-dist/tex/latex/fontsetup/fspdefault.tex (/usr/share/texmf-dist/tex/latex/newcomputermodern/NewCM10-Book.fontspec)
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCM10-Book.otf(0)' created for font
-(fontspec)             'NewCM10-Book.otf' with options
-(fontspec)             [Ligatures=TeX,Extension = .otf,SizeFeatures={{Size=-8,
-(fontspec)             Font=NewCM08-Book,
-(fontspec)             ItalicFont=NewCM08-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM08-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size=8, Font=NewCM08-Book,
-(fontspec)             ItalicFont=NewCM08-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM08-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-, Font = NewCM10-Book,
-(fontspec)             ItalicFont=NewCM10-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM10-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}}},SizeFeatures={{Size=-8,
-(fontspec)             Font=NewCM08-Book.otf,
-(fontspec)             ItalicFont=NewCM08-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM08-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size=8, Font=NewCM08-Book.otf,
-(fontspec)             ItalicFont=NewCM08-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM08-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-, Font = NewCM10-Book.otf,
-(fontspec)             ItalicFont=NewCM10-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM10-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}}},SmallCapsFeatures={Numbers=OldStyle},BoldSlantedFont=NewCM10-Bold.otf,SlantedFont=NewCM10-Book.otf,BoldItalicFont=NewCM10-BoldItalic.otf,BoldFont=NewCM10-Bold.otf,ItalicFont=NewCM10-BookItalic.otf,SlantedFeatures={FakeSlant=0.25},BoldSlantedFeatures={FakeSlant=0.25}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <-8>"[NewCM08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"<8>"[NewCM08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"<9->"[NewCM10-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <-8>"[NewCM08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"<8>"[NewCM08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"<9->"[NewCM10-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BookItalic.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BookItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Book.otf]:mode=node;script=latn;language=dflt;slant=0.25;+tlig;"
-(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Book.otf]:mode=node;script=latn;language=dflt;slant=0.25;+tlig;+smcp;+onum;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BoldItalic.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=node;script=latn;language=dflt;slant=0.25;+tlig;"
-(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=node;script=latn;language=dflt;slant=0.25;+tlig;+smcp;+onum;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCM10-Book.otf(1)' created for font
-(fontspec)             'NewCM10-Book.otf' with options [Extension =
-(fontspec)             .otf,SizeFeatures={{Size=-8, Font=NewCM08-Book,
-(fontspec)             ItalicFont=NewCM08-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM08-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size=8, Font=NewCM08-Book,
-(fontspec)             ItalicFont=NewCM08-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM08-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-, Font = NewCM10-Book,
-(fontspec)             ItalicFont=NewCM10-BookItalic,BoldFont=NewCM10-Bold,BoldItalicFont=NewCM10-BoldItalic,SlantedFont=NewCM10-Book,BoldSlantedFont=NewCM10-Bold,SmallCapsFeatures={Numbers=OldStyle}}},Renderer=Basic,SizeFeatures={{Size=-8,
-(fontspec)             Font=NewCM08-Book.otf,
-(fontspec)             ItalicFont=NewCM08-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM08-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size=8, Font=NewCM08-Book.otf,
-(fontspec)             ItalicFont=NewCM08-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM08-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-, Font = NewCM10-Book.otf,
-(fontspec)             ItalicFont=NewCM10-BookItalic.otf,BoldFont=NewCM10-Bold.otf,BoldItalicFont=NewCM10-BoldItalic.otf,SlantedFont=NewCM10-Book.otf,BoldSlantedFont=NewCM10-Bold.otf,SmallCapsFeatures={Numbers=OldStyle}}},SmallCapsFeatures={Numbers=OldStyle},BoldSlantedFont=NewCM10-Bold.otf,SlantedFont=NewCM10-Book.otf,BoldItalicFont=NewCM10-BoldItalic.otf,BoldFont=NewCM10-Bold.otf,ItalicFont=NewCM10-BookItalic.otf,SlantedFeatures={FakeSlant=0.25},BoldSlantedFeatures={FakeSlant=0.25}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <-8>"[NewCM08-Book.otf]:mode=base;script=latn;language=dflt;"<8>"[NewCM08-Book.otf]:mode=base;script=latn;language=dflt;"<9->"[NewCM10-Book.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <-8>"[NewCM08-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"<8>"[NewCM08-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"<9->"[NewCM10-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BookItalic.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BookItalic.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Book.otf]:mode=base;script=latn;language=dflt;slant=0.25;"
-(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Book.otf]:mode=base;script=latn;language=dflt;slant=0.25;+smcp;+onum;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BoldItalic.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NewCM10-BoldItalic.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=base;script=latn;language=dflt;slant=0.25;"
-(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCM10-Bold.otf]:mode=base;script=latn;language=dflt;slant=0.25;+smcp;+onum;"
-
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/NewCM10-Book.otf(1)/m/n on input line 35.
+\ttl@leftsep=\dimen371
+) (/usr/share/texmf-dist/tex/latex/cmbright/cmbright.sty
+Package: cmbright 2005/04/13 v8.1 (WaS)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmbr/m/n on input line 29.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/m/n on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/cmbrm/m/it on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/cmbrm/m/it on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmbrm/m/it --> OML/cmbrm/b/it on input line 31.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 32.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/cmbrs/m/n on input line 32.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/cmbrs/m/n on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/NewCM10-Book.otf(1)/m/it on input line 35.
+(Font)                  OT1/cmr/m/it --> OT1/cmbr/m/sl on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/cmbr/m/sl on input line 33.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/NewCM10-Book.otf(1)/b/n on input line 35.
- (/usr/share/texmf-dist/tex/latex/newcomputermodern/NewCMSans10-Book.fontspec)
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMSans10-Book.otf(0)' created for font
-(fontspec)             'NewCMSans10-Book.otf' with options
-(fontspec)             [Ligatures=TeX,Extension = .otf,SizeFeatures={{Size=
-(fontspec)             -8,
-(fontspec)             Font=NewCMSans08-Book,ItalicFont=NewCMSans08-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 8,
-(fontspec)             Font=NewCMSans08-Book,ItalicFont=NewCMSans08-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-,
-(fontspec)             Font=NewCMSans10-Book,ItalicFont=NewCMSans10-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}}
-(fontspec)             },SizeFeatures={{Size= -8,
-(fontspec)             Font=NewCMSans08-Book.otf,ItalicFont=NewCMSans08-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},},
-(fontspec)             {Size= 8,
-(fontspec)             Font=NewCMSans08-Book.otf,ItalicFont=NewCMSans08-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},},
-(fontspec)             {Size= 9-,
-(fontspec)             Font=NewCMSans10-Book.otf,ItalicFont=NewCMSans10-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},}},ItalicFont=NewCMSans10-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},SlantedFont=NewCMSans10-BookOblique.otf,BoldSlantedFont=NewCMSans10-BoldOblique.otf].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <-8>"[NewCMSans08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"<8>"[NewCMSans08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"<9->"[NewCMSans10-Book.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <-8>"[NewCMSans08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"<8>"[NewCMSans08-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"<9->"[NewCMSans10-Book.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-Bold.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BookOblique.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BookOblique.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=node;script=latn;language=dflt;+tlig;+smcp;+onum;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMSans10-Book.otf(1)' created for font
-(fontspec)             'NewCMSans10-Book.otf' with options [Extension =
-(fontspec)             .otf,SizeFeatures={{Size= -8,
-(fontspec)             Font=NewCMSans08-Book,ItalicFont=NewCMSans08-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 8,
-(fontspec)             Font=NewCMSans08-Book,ItalicFont=NewCMSans08-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}},
-(fontspec)             {Size= 9-,
-(fontspec)             Font=NewCMSans10-Book,ItalicFont=NewCMSans10-BookOblique,BoldFont=NewCMSans10-Bold,BoldItalicFont=NewCMSans10-BoldOblique,SmallCapsFeatures={Numbers=OldStyle}}
-(fontspec)             },Renderer=Basic,SizeFeatures={{Size= -8,
-(fontspec)             Font=NewCMSans08-Book.otf,ItalicFont=NewCMSans08-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},},
-(fontspec)             {Size= 8,
-(fontspec)             Font=NewCMSans08-Book.otf,ItalicFont=NewCMSans08-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},},
-(fontspec)             {Size= 9-,
-(fontspec)             Font=NewCMSans10-Book.otf,ItalicFont=NewCMSans10-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},}},ItalicFont=NewCMSans10-BookOblique.otf,BoldFont=NewCMSans10-Bold.otf,BoldItalicFont=NewCMSans10-BoldOblique.otf,SmallCapsFeatures={Numbers=OldStyle},SlantedFont=NewCMSans10-BookOblique.otf,BoldSlantedFont=NewCMSans10-BoldOblique.otf].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <-8>"[NewCMSans08-Book.otf]:mode=base;script=latn;language=dflt;"<8>"[NewCMSans08-Book.otf]:mode=base;script=latn;language=dflt;"<9->"[NewCMSans10-Book.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <-8>"[NewCMSans08-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"<8>"[NewCMSans08-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"<9->"[NewCMSans10-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-Bold.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-Bold.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BookOblique.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BookOblique.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCMSans10-BoldOblique.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/NewCMSans10-Book.otf(1)/m/n on input line 62.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/NewCMSans10-Book.otf(1)/b/n on input line 62.
- (/usr/share/texmf-dist/tex/latex/newcomputermodern/NewCMMono10-Book.fontspec)
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMono10-Book.otf(0)' created for font
-(fontspec)             'NewCMMono10-Book.otf' with options
-(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,Extension
-(fontspec)             = .otf,UprightFont = NewCMMono10-Book,BoldFont =
-(fontspec)             NewCMMono10-Bold,ItalicFont =
-(fontspec)             NewCMMono10-BookItalic,BoldItalicFont =
-(fontspec)             NewCMMono10-BoldOblique,ItalicFont=NewCMMono10-BookItalic.otf,BoldFont=NewCMMono10-Bold.otf,BoldItalicFont=NewCMMono10-BoldOblique.otf,SlantedFont=NewCMMono10-Book.otf,SlantedFeatures={FakeSlant=0.25},BoldSlantedFont=NewCMMono10-Bold.otf,BoldSlantedFeatures={FakeSlant=0.25},SmallCapsFeatures={Numbers=OldStyle}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=node;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Bold.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BookItalic.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BookItalic.otf]:mode=node;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=node;script=latn;language=dflt;slant=0.25;"
-(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=node;script=latn;language=dflt;slant=0.25;+smcp;+onum;"
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BoldOblique.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Bold.otf]:mode=node;script=latn;language=dflt;slant=0.25;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMono10-Book.otf(1)' created for font
-(fontspec)             'NewCMMono10-Book.otf' with options [Extension =
-(fontspec)             .otf,UprightFont = NewCMMono10-Book,BoldFont =
-(fontspec)             NewCMMono10-Bold,ItalicFont =
-(fontspec)             NewCMMono10-BookItalic,BoldItalicFont =
-(fontspec)             NewCMMono10-BoldOblique,Renderer=Basic,ItalicFont=NewCMMono10-BookItalic.otf,BoldFont=NewCMMono10-Bold.otf,BoldItalicFont=NewCMMono10-BoldOblique.otf,SlantedFont=NewCMMono10-Book.otf,SlantedFeatures={FakeSlant=0.25},BoldSlantedFont=NewCMMono10-Bold.otf,BoldSlantedFeatures={FakeSlant=0.25},SmallCapsFeatures={Numbers=OldStyle}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Bold.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BookItalic.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BookItalic.otf]:mode=base;script=latn;language=dflt;+smcp;+onum;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=base;script=latn;language=dflt;slant=0.25;"
-(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Book.otf]:mode=base;script=latn;language=dflt;slant=0.25;+smcp;+onum;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-BoldOblique.otf]:mode=base;script=latn;language=dflt;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMMono10-Bold.otf]:mode=base;script=latn;language=dflt;slant=0.25;"
-
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/NewCMMono10-Book.otf(1)/m/n on input line 71.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtl/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/NewCMMono10-Book.otf(1)/b/n on input line 71.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMUncial10-Book.otf(0)' created for
-(fontspec)             font 'NewCMUncial10-Book.otf' with options
-(fontspec)             [SizeFeatures={{Size=-8, Font=NewCMUncial08-Book.otf,
-(fontspec)             BoldFont=NewCMUncial10-Bold.otf,SlantedFont=NewCMUncial08-Book.otf,BoldSlantedFont=NewCMUncial10-Bold.otf,},
-(fontspec)             {Size=8, Font=NewCMUncial08-Book.otf,
-(fontspec)             BoldFont=NewCMUncial08-Bold.otf,SlantedFont=NewCMUncial08-Book.otf,BoldSlantedFont=NewCMUncial10-Bold.otf,},
-(fontspec)             {Size= 9-, Font = NewCMUncial10-Book.otf,
-(fontspec)             BoldFont=NewCMUncial10-Bold.otf,SlantedFont=NewCMUncial10-Book.otf,BoldSlantedFont=NewCMUncial10-Bold.otf,}},BoldSlantedFont=NewCMUncial10-Bold.otf,SlantedFont=NewCMUncial10-Book.otf,BoldFont=NewCMUncial10-Bold.otf,SlantedFeatures={FakeSlant=0.25},BoldSlantedFeatures={FakeSlant=0.25}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <-8>"[NewCMUncial08-Book.otf]:mode=node;script=latn;language=dflt;"<8>"[NewCMUncial08-Book.otf]:mode=node;script=latn;language=dflt;"<9->"[NewCMUncial10-Book.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NewCMUncial10-Bold.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMUncial10-Book.otf]:mode=node;script=latn;language=dflt;slant=0.25;"
-(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
-(fontspec)             <->"[NewCMUncial10-Bold.otf]:mode=node;script=latn;language=dflt;slant=0.25;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Book.otf(0)' created for font
-(fontspec)             'NewCMMath-Book.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Book.otf(1)' created for font
-(fontspec)             'NewCMMath-Book.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Book.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Book.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;"<7.2-10.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=0;"<-7.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/NewCMMath-Book.otf(1)/m/n on input line 97.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/NewCMMath-Book.otf(1)/b/n on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Book.otf(2)' created for font
-(fontspec)             'NewCMMath-Book.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Book.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Book.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex2}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<7.2-10.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=0;"<-7.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/NewCMMath-Book.otf(2)/m/n on input line 97.
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/NewCMMath-Book.otf(2)/b/n on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Book.otf(3)' created for font
-(fontspec)             'NewCMMath-Book.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Book.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Book.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex3}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<7.2-10.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=0;"<-7.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Book.otf(3)/m/n on input line 97.
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Book.otf(3)/b/n on input line 97.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+esint on input line 97.
- (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
-File: uesint.fd 
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 97.
- (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Redeclaring math version `bold' on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Bold.otf(0)' created for font
-(fontspec)             'NewCMMath-Bold.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Bold.otf(1)' created for font
-(fontspec)             'NewCMMath-Bold.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Bold.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Bold.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;"<7.2-10.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=0;"<-7.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/m/n --> TU/NewCMMath-Bold.otf(1)/m/n on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Bold.otf(2)' created for font
-(fontspec)             'NewCMMath-Bold.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Bold.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Bold.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex2}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<7.2-10.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=0;"<-7.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/m/n --> TU/NewCMMath-Bold.otf(2)/m/n on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Bold.otf(3)' created for font
-(fontspec)             'NewCMMath-Bold.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Bold.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Bold.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex3}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<7.2-10.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=0;"<-7.2>"[NewCMMath-Bold.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
-
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 97.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Bold.otf(3)/m/n on input line 97.
-
-Package fontspec Info: 
-(fontspec)             Font family 'NewCMMath-Book.otf(4)' created for font
-(fontspec)             'NewCMMath-Book.otf' with options
-(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=NewCMMath-Book.otf,Style=MathScript},{Size=-7.2,Font=NewCMMath-Book.otf,Style=MathScriptScript}},RawFeature={mathfontdimen=xetex},StylisticSet={1}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10.2->"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ss01;"<7.2-10.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ss01;+ssty=0;"<-7.2>"[NewCMMath-Book.otf]:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ss01;+ssty=1;"
-
-\sym__um_fam1=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `normal'
-(Font)                  TU/NewCMMath-Book.otf(4)/m/n --> TU/NewCMMath-Book.otf(4)/m/n on input line 99.
-LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
-(Font)                  TU/NewCMMath-Book.otf(4)/m/n --> TU/NewCMMath-Book.otf(4)/b/n on input line 99.
-)
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/NewCMMath-Book.otf(1)/m/n --> TU/NewCMMath-Book.otf(1)/m/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/NewCMMath-Bold.otf(1)/m/n --> TU/NewCMMath-Book.otf(1)/b/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  TU/NewCMMath-Book.otf(2)/m/n --> TU/NewCMMath-Book.otf(2)/m/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  TU/NewCMMath-Bold.otf(2)/m/n --> TU/NewCMMath-Book.otf(2)/b/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  TU/NewCMMath-Book.otf(3)/m/n --> TU/NewCMMath-Book.otf(3)/m/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  TU/NewCMMath-Bold.otf(3)/m/n --> TU/NewCMMath-Book.otf(3)/b/n on input line 204.
-LaTeX Font Info:    Redeclaring math version `bold' on input line 204.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 204.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/m/n --> TU/NewCMMath-Bold.otf(1)/m/n on input line 204.
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 204.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/m/n --> TU/NewCMMath-Bold.otf(2)/m/n on input line 204.
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 204.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Bold.otf(3)/m/n on input line 204.
-\sym__um_fam2=\mathgroup9
-LaTeX Font Info:    Overwriting symbol font `__um_fam2' in version `normal'
-(Font)                  TU/NewCMMath-Book.otf(4)/m/n --> TU/NewCMMath-Book.otf(4)/m/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `__um_fam2' in version `bold'
-(Font)                  TU/NewCMMath-Book.otf(4)/m/n --> TU/NewCMMath-Book.otf(4)/b/n on input line 204.
-) (./master.aux)
+(Font)                  OT1/cmtt/m/n --> OT1/cmtl/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \alpha on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \beta on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \gamma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \delta on input line 40.
+LaTeX Font Info:    Redeclaring math symbol \epsilon on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \zeta on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \eta on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \theta on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \iota on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \kappa on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \lambda on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \mu on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \nu on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \xi on input line 50.
+LaTeX Font Info:    Redeclaring math symbol \pi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \rho on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \sigma on input line 53.
+LaTeX Font Info:    Redeclaring math symbol \tau on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \upsilon on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \phi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \chi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \psi on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \omega on input line 59.
+LaTeX Font Info:    Redeclaring math symbol \varepsilon on input line 60.
+LaTeX Font Info:    Redeclaring math symbol \vartheta on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \varpi on input line 62.
+LaTeX Font Info:    Redeclaring math symbol \varrho on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \varsigma on input line 64.
+LaTeX Font Info:    Redeclaring math symbol \varphi on input line 65.
+LaTeX Info: Redefining \LaTeX on input line 129.
+LaTeX Info: Redefining \LaTeXe on input line 139.
+LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 144.
+ (/usr/share/texmf-dist/tex/latex/cmbright/t1cmbr.fd
+File: t1cmbr.fd 2005/04/13 v8.1 (WaS)
+)) (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count402
-\scratchdimen=\dimen371
-\scratchbox=\box133
-\nofMPsegments=\count403
-\nofMParguments=\count404
-\everyMPshowfont=\toks58
-\MPscratchCnt=\count405
-\MPscratchDim=\dimen372
-\MPnumerator=\count406
-\makeMPintoPDFobject=\count407
-\everyMPtoPDFconversion=\toks59
+\scratchcounter=\count396
+\scratchdimen=\dimen372
+\scratchbox=\box135
+\nofMPsegments=\count397
+\nofMParguments=\count398
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count399
+\MPscratchDim=\dimen373
+\MPnumerator=\count400
+\makeMPintoPDFobject=\count401
+\everyMPtoPDFconversion=\toks60
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 183.
+Package hyperref Info: Link coloring ON on input line 205.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 
@@ -1764,58 +1322,86 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 183.
+(scrartcl)           before \begin{document} on input line 205.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count408
+\BKM@id=\count402
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 183.
+ on input line 205.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen373
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen374
-\c__nicematrix_innersep_middle_dim=\dimen375
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen374
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen375
+\c__nicematrix_innersep_middle_dim=\dimen376
+\c@lstlisting=\count403
+Package tocbasic Info: setting babel extension for `lol' on input line 205.
+\scr@dte@lstlisting@maxnumwidth=\skip118
+LaTeX Info: Redefining \it@ocap on input line 205.
+LaTeX Info: Redefining \it@ccap on input line 205.
 
-Package unicode-math Warning: Using \overbracket and \underbracket from
-(unicode-math)                `mathtools' package.
-(unicode-math)                 
-(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
-(unicode-math)                original `unicode-math' definition.
+LaTeX Font Warning: Font shape `T1/cmbr/m/sc' undefined
+(Font)              using `T1/cmbr/m/n' instead on input line 206.
 
-
-Package unicode-math Warning: I'm going to overwrite the following commands
-(unicode-math)                from the `mathtools' package: 
-(unicode-math)                 
-(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
-(unicode-math)                
-(unicode-math)                 
-(unicode-math)                 Note that since I won't overwrite the other
-(unicode-math)                colon-like commands, using them will lead to
-(unicode-math)                inconsistencies.
-
-<front1.jpeg, id=7, 925.4575pt x 926.46124pt>
-File: front1.jpeg Graphic file (type jpg)
-<use front1.jpeg>
-Package luatex.def Info: front1.jpeg  used on input line 188.
-(luatex.def)             Requested size: 313.69029pt x 314.03136pt.
+<front.png, id=7, 963.6pt x 1850.915pt>
+File: front.png Graphic file (type png)
+<use front.png>
+Package luatex.def Info: front.png  used on input line 211.
+(luatex.def)             Requested size: 112.03273pt x 215.18077pt.
 
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./front1.jpeg>] (./master.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./front.png>] (./master.toc
+LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <12> not available
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+cmbr on input line 3.
+ (/usr/share/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
+File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 3.
+ (/usr/share/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
+File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line 3.
+ (/usr/share/texmf-dist/tex/latex/cmbright/omscmbrs.fd
+File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for U+esint on input line 3.
+ (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+))
 \tf@toc=\write6
 
 \openout6 = master.toc
 
 
 [2]
+LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <14> not available
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 219.
+LaTeX Font Info:    Trying to load font information for TS1+cmbr on input line 254.
+ (/usr/share/texmf-dist/tex/latex/cmbright/ts1cmbr.fd
+File: ts1cmbr.fd 2005/04/13 v8.1 (WaS)
+)
 
 [3]
+LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <12> not available
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 274.
+
+Underfull \hbox (badness 1810) in paragraph at lines 310--311
+[][]\T1/cmbr/bx/n/12 De-fi-ni-zio-ne 1.4 (Iso-mor-fi-smo pro-iet-ti-vo).  []\T1/cmbr/m/n/12 Da-ta $\OML/cmbrm/m/it/12 f$ \T1/cmbr/m/n/12 pro-iet-ti-va, que-sta è un
+ []
+
+
 
 [4]
 
@@ -1831,64 +1417,38 @@ Package luatex.def Info: front1.jpeg  used on input line 188.
 
 [10]
 
-[11]
-
-[12]
-
-[13]
-
-[14]
-
-[15]
-
-[16]
-
-[17]
-
-[18]
-
-[19]
-
-[20]
-
-[21]
-
-[22]
-
-[23]
-
-[24]
-
-Package caption Warning: Unused \captionsetup[table] on input line 116.
+Package caption Warning: Unused \captionsetup[table] on input line 142.
 See the caption package documentation for explanation.
 
 
 
-[25] (./master.aux)
+[11] (./master.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 53528 strings out of 475506
- 100000,2373549 words of node,token memory allocated
- 1793 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 355 attribute, 103 glue_spec, 179 attribute_list, 2 write nodes
-   avail lists: 1:4,2:3312,3:1225,4:214,5:396,6:49,7:6254,8:57,9:716,10:24,11:727
- 75190 multiletter control sequences out of 65536+600000
- 150 fonts using 76581343 bytes
- 124i,20n,125p,10918b,3296s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 48090 strings out of 475506
+ 100000,1977958 words of node,token memory allocated
+ 1182 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 5 glyph, 134 attribute, 103 glue_spec, 69 attribute_list, 2 write nodes
+   avail lists: 1:6,2:2665,3:972,4:180,5:318,6:51,7:4848,8:40,9:635,10:14,11:524
+ 69883 multiletter control sequences out of 65536+600000
+ 51 fonts using 3092607 bytes
+ 124i,12n,114p,10918b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrbs10.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrbs8.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/share/texmf-dist/fonts/type1/public/hfbright/hfbrsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbbx10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbmo10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbmr17.pfb>
+Output written on master.pdf (11 pages, 438241 bytes).
 
-warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM08-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-BookItalic.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMMath-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCM10-Book.otf></usr/share/texmf-dist/fonts/opentype/public/newcomputermodern/NewCMSans10-Book.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (25 pages, 320766 bytes).
-
-PDF statistics: 388 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
- 150 named destinations out of 1000 (max. 131072)
- 128 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 200 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 131072)
+ 80 words of extra memory for PDF output out of 10000 (max. 100000000)
 
