@@ -4465,24 +4465,137 @@ dove $(x,t)\longmapsto \big(f(x),t\big)$ \`e un'omotopia $C^\infty$ da $h\circ f
 	\centering \color{nred} Riprendere dalla lezione 26
 \end{boxenv}
 
+\newpage
 
+\appendix	
 
+\section{Complementi di calcolo differenziale}
+\subsection{Continuit\`a e differenziabilit\`a}
+\begin{prop}
+	[Criterio per la continuit\`a in $\mathbb{R}^n$]
+	Siano $A \subseteq \mathbb{R}^n$ un aperto e $f: A \to \mathbb{R}$; si dice che $f$ \`e \textit{continua} in $x_0 \in A$ se e solo se $\forall \gamma:[0,1]\to \mathbb{R}^n$ curva continua, con $\gamma(0) = x_0$, si ha $f \circ \gamma : [0,1] \to \mathbb{R}$ continua in $0$.
+\end{prop}
+\begin{proof}
+\ 
 
+\begin{itemize}
+	\item[$(\Rightarrow )$] Se $f$ \`e continua in $x_0$ e $\gamma$ \`e continua in $0$, con $\gamma(0) = x_0$, allora $f\circ \gamma$ \`e continua in $0$ perch\'e la composizione di funzioni continue \`e continua.
+	\item[$(\Leftarrow )$] Per assurdo, si assume che $f$ non sia continua e si considera la successione $\left\{ x_n \right\} $ tale che $x_n \to x_0$, con $f(x_n) \not \to f(x_0)$.
+		Sia $\gamma$ una curva tale che, per $\left\{ t_n \right\} \subset [0,1]$ successione decrescente tendente a $0$, si abbia $\gamma(t_n) = x_n$; allora:
+		\[
+		f\circ \gamma(t_n) = f(x_n) \not \to f(x_0) = f\circ \gamma(0)
+		\] 
+	da cui l'assurdo $f\circ \gamma$ discontinua in $0$.
+\end{itemize}
+\end{proof}
+\begin{prop}
+	Sia $f : \mathbb{R}^n \to \mathbb{R}$; se esiste $g : [0,1] \to \mathbb{R}$ continua, con $g(0) = 0$ e $g\ge 0$ tale che 
+	\[
+	\lvert f(x) - f(x_0) \rvert \le g(\lvert x-x_0 \rvert )
+	\] 
+	allora $f$ \`e continua in $x_0$.
+\end{prop}
+\begin{proof}
+Si ha
+\[
+0\le \lim_{x \to x_0} \lvert f(x) - f(x_0) \rvert \le \lim_{x \to x_0} g(\lvert x-x_0 \rvert ) = 0 \implies \lim_{x \to x_0} f(x) = f(x_0)
+\] 
+\end{proof}
+\begin{definizione}
+	[Derivata parziale]
+	Sia $f : A \to \mathbb{R}$, con $A \subseteq \mathbb{R}^n$ aperto e $x_0 \in A$. 
+	Si definisce la \textit{derivata parziale} $i$-esima di $f$ come 
+	\[
+	\lim_{t \to 0} \frac{f(x_0+te_i) - f(x_0)}{t}
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Gradiente]
+	Sia $f : \mathbb{R}^n\to \mathbb{R}$ una funzione per cui le derivate parziali sono tutte ben definite nel $x_0$; allora si definisce \textit{gradiente} di $f$ in $x_0$ come il vettore
+	\[
+	\nabla f(x_0) = \begin{pmatrix} \partial _{x_1} f(x_0) \\ \vdots\\ \partial _{x_n} f(x_0) \end{pmatrix} = \begin{pmatrix} \partial _{x_1}  \\ \vdots\\ \partial _{x_n} \end{pmatrix} f(x_0)
+	\] 
+\end{definizione}
+\begin{definizione}
+	[Derivata direzionale]
+	Sia $v \in \mathbb{R}^n \setminus \left\{ 0 \right\} $; allora si definisce
+	\[
+	\lim_{t \to 0} \frac{f(x_0 + tv) - f(x_0)}{t}= D_v f(x_0) = \frac{\partial f}{\partial v} (x_0)
+	\] 
+	come la \textit{derivata direzionale} di $f$ lungo $v$.
+\end{definizione}
+\begin{definizione}
+	[Differenziabilit\`a]
+	Una funzione $f$ \`e differenziabile in $x_0$ se esiste un vettore $v \in \mathbb{R}^n$ tale che
+	\[
+	f(x) = f(x_0) + v \cdot (x -x_0) + \operatorname{o} (\lvert x-x_0 \rvert )
+	\] 
+	Se tale vettore $v$ esiste, questo si indica con $\mathcal{D} f(x_0)$.
+\end{definizione}
+\begin{prop}
+Se $f$ \`e differenziabile in $x_0$, allora il suo gradiente \`e ben definito e si ha
+\[
+f(x) = f(x_0) + \nabla f(x_0) \cdot (x-x_0) + \operatorname{o} (\lvert x-x_0 \rvert )
+\] 
+\end{prop}
+\begin{proof}
+	Sapendo che $f(x) = f(x_0) + v \cdot (x-x_0) + \operatorname{o} (\lvert x-x_0 \rvert )$, la derivata parziale $i$-esima \`e data da:
+	\[
+	\frac{f(x_0+te_i) - f(x_0)}{t} = \frac{v \cdot t e_i + \operatorname{o} (\lvert t e_i \rvert )}{t} = v_i + \operatorname{o} (1) \longrightarrow v_i
+	\] 
+	Allora le componenti del gradiente in $x_0$ coincidono con le componenti di $v$, proprio come da tesi.
+\end{proof}
+\begin{osservazione}
+Tramite lo stesso conto della dimostrazione precedente, si vede che $\forall w \in \mathbb{R}^n$ esiste la derivata direzionale lungo $w$ ed \`e data da
+\[
+\frac{\partial f}{\partial w} (x_0) = \nabla f(x_0) \cdot w
+\] 
+\end{osservazione}
+\begin{teorema}
+Sia $f : A \to \mathbb{R}$, con $A \subseteq \mathbb{R}^n$ aperto, e sia $z_0=(x_0,y_0) \in A$ tale che, per ogni $(x,y)=z \in B_r(z_0)$, esistono tutte le derivate parziali in $z$ e sono continue in $z_0$; allora $f$ \`e differenziabile in $z_0$.
+\end{teorema}
+\noindent Data $f : A \to \mathbb{R}^m$, con $A \subseteq \mathbb{R}^n$ aperto, si scrive
+\[
+f = (f_1,\ldots,f_m)
+\] 
+dove le funzioni $f_i : A \to \mathbb{R}$ sono le \textit{componenti} di $f$.
+Allora $f$ \`e continua in $x_0$ se e solo se ogni $f_i$ lo \`e; analogamente, $f$ \`e differenziabile in $x_0$ se ogni $f_i$ lo \`e.
+\begin{definizione}
+	[Matrice jacobiana]
+	Data $f : A\subseteq \mathbb{R}^n \to \mathbb{R}^m$, si ha
+	\[
+	f(x) = f(x_0) + \mathcal{D} f(x_0) (x-x_0) + \operatorname{o} (\lvert x-x_0 \rvert )
+	\] 
+	dove la componente $(i,j)$ della matrice $\mathcal{D} f(x_0)$ \`e $\partial _{x_j} f_i(x_0)$. 
+	Questa matrice \`e detta \textit{matrice jacobiana} in $x_0$ ed \`e, quindi, data da
+	\[
+		\mathcal{D} f =\begin{pmatrix} \partial _{x_1} f_1 & \cdots & \partial _{x_n} f_1\\ \vdots & \ddots & \vdots\\ \partial _{x_1} f_m & \cdots & \partial _{x_n} f_m\end{pmatrix} = \begin{pmatrix} \nabla f_1 ^\top \\ \vdots \\ \nabla f_m^\top \end{pmatrix} 
+	\] 
+	
+\end{definizione}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Invertibilit\`a e teorema di Dini}
+\begin{definizione}
+	[Diffeomorfismo]
+	Sia $f : M \to  N$, con $M,N$ due aperti di $\mathbb{R}^n$, una mappa.
+	Questa \`e detta \textit{diffeomorfismo} di classe $C^k$ se \`e di classe $C^k$, biettiva e la sua inversa \`e di classe $C^k$.
+\end{definizione}
+\begin{definizione}
+	[Invertibilit\`a locale]
+	Data $f: U \to \mathbb{R}^n$, con $U \subseteq \mathbb{R}^n$ aperto e fissato $x_0 \in U$, si dice che $f$ \`e \textit{localmente invertibile} in $x_0$ se esistono un intorno $V$ di $x_0$ e un intorno $W=f(V)$ di $f(x_0)$ tali che $f|_V : V \to W$ \`e invertibile.
+\end{definizione}
+\begin{teorema}
+Siano $U \subseteq \mathbb{R}^n$ un aperto e $f : U \to \mathbb{R}^n$ una funzione di classe $C^k (U)$, con $k\ge 1$.
+Dato $x_0 \in U$, se $\det (\mathcal{D} f(x_0))\neq 0$, allora esistono $V, W$ due intorni aperti di $x_0$ e $f(x_0)$ tali che $f|_V :V\to W$ \`e un diffeomorfismo di classe $C^k$.
+\end{teorema}
+\begin{teorema}
+	[Teorema di Dini]
+	Sia $f : \Omega \to \mathbb{R}^m$, con $\Omega \subseteq \mathbb{R}^n \times \mathbb{R}^m$, una funzione di classe $C^k$ e sia $(x_0,y_0) \in \Omega $.
+	Se $\det (\mathcal{D} _y f(x_0,y_0)) \neq 0$, allora esistono $U$ intorno di $x_0$ e $g:U\to \mathbb{R}^m$ di classe $C^k$ tali che, per ogni $x \in U$, si ha 
+	\[
+	f(x,g(x)) = f(x_0,y_0)
+	\] 
+\end{teorema}
 
 
 
