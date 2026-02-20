@@ -1,0 +1,353 @@
+%! TEX program = lualatex
+\documentclass[12pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+%\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{parskip}
+\usepackage{pythonhighlight}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+\usepackage{faktor}
+
+% Titles 
+\title{Appunti di Algebra 2}
+\author{Manuel Deodato}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+%%%%% tcolorbox setup
+
+% Teorema e proposizione
+\newtcbtheorem[number within=section]{teorema}{Teorema}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart, before upper={\setlength{\parindent}{15pt} \noindent}}{th}
+
+\newtcbtheorem[number within=section]{prop}{Proposizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart, before upper={\setlength{\parindent}{15pt} \noindent}}{prop}
+
+
+
+
+
+% Definizione
+\definecolor{greendef}{HTML}{b8d8be}
+
+\newtcbtheorem[number within=section]{definizione}{Definizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white, before upper={\setlength{\parindent}{15pt} \noindent}}{def}
+
+
+% Esempio
+\theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+
+%\definecolor{empurple}{HTML}{6e5e89}
+
+%\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
+
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
+
+\numberwithin{esempio}{section}
+
+
+% Lemma e Corollario
+\definecolor{lemcor}{HTML}{a78d8a}
+
+\newtcbtheorem[number within=section]{lemma}{Lemma}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white, before upper={\setlength{\parindent}{15pt} \noindent}}{lem}
+
+\newtcbtheorem[number within=section]{corollario}{Corollario}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white, before upper={\setlength{\parindent}{15pt} \noindent}}{cor}
+
+
+
+% Osservazione
+\theoremstyle{definition}
+\newtheorem{osservazione}{Osservazione}
+
+\definecolor{coloros}{HTML}{6e5e89}
+
+\tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
+
+\numberwithin{osservazione}{section}
+
+% Nota
+\newtheorem{nota}{Nota}
+
+\definecolor{ncol}{HTML}{f9ebbe}
+
+\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}, before upper={\setlength{\parindent}{15pt} \noindent}}
+
+\numberwithin{nota}{section}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{20}{20}\sffamily\scshape}
+{\color{gray}{\fontsize{25}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{mastercolor}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{15}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{kpfonts}
+
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Teoria degli anelli}
+\subsection{Nozioni di base}
+
+
+\begin{definizione}{Anello}{}
+	Un insieme $A$ si dice \textit{anello} se \`e dotato di due operazioni, una somma $+$ e un prodotto $\cdot $, tali che:
+	\begin{enumerate}[(a).]
+		\item $(A,+)$ \`e un gruppo abeliano;
+		\item il prodotto \`e associativo, ossia $(ab)c=a(bc), \ \forall a,b,c \in A$;
+		\item prodotto e somma soddisfano la distributivit\`a, ossia $a(b+c) = ab + ac$ e $(a+b)c=ac+bc, \ \forall a,b,c \in A$.
+	\end{enumerate}
+\end{definizione}
+\noindent Si parla di anello commutativo con unit\`a se, rispettivamente, il prodotto \`e commutativo e se ha l'elemento neutro.
+\begin{boxenv}[]
+Tutti gli anelli trattati saranno commutativi con identit\`a.
+\end{boxenv}
+\begin{definizione}
+	{Omomorfismo di anelli}{}
+	Dati due anelli $A,B$, si dice che $f:A\to B$ \`e un omomorfismo se:
+	\begin{enumerate}[(a).]
+		\item $f(a+b) = f(a)+f(b), \ \forall a,b \in A$;
+		\item $f(ab) = f(a)f(b), \ \forall a,b \in A$;
+		\item $f(1_A) = 1_B$.
+	\end{enumerate}
+\end{definizione}
+\noindent Un \textit{sottoanello} $B$ di un anello $A$ \`e un sottogruppo additivo, chiuso rispetto al prodotto e contenente l'unit\`a.
+\begin{definizione}
+	{Ideale}{}
+	Sia $A$ un anello e $I \subseteq A$ un sottoinsieme; questo \`e detto \textit{ideale} se:
+\begin{enumerate}[(a).]
+	\item \`e un sottogruppo additivo;
+	\item ha la propriet\`a di assorbimento, cio\`e se $\forall i \in I, \ \forall a \in A$, si ha $ai \in A$.
+\end{enumerate}
+\end{definizione}
+\begin{osservazione}
+Lavorando con anelli commutativi, la richiesta $ai \in A$, oppure $ia \in A$ \`e equivalente e individua lo stesso elemento.
+\end{osservazione}
+\noindent Dato $S \subseteq A$ un sottoinsieme, si indica con $(S)$ il pi\`u piccolo ideale di $A$ che contiene $S$.
+Visto che si lavora con anelli commutativi con identit\`a, se $S = \left\{ s_1,\ldots,s_n \right\} $, allora:
+\[
+	(S) = \left\{ \sum_{i=1}^{n} a_i s_i \ \Bigg\lvert \ a_i \in A \right\} 
+\] 
+Se $S$ \`e un insieme finito, allora $(S)$ si dice \textit{finitamente generato}; inoltre, se $S = s$, allora $(S)=(s)$ ed \`e detto \textit{principale}.
+
+Dato un ideale $I$ di un anello $A$, l'insieme $A / I$ si pu\`o dotare di una struttura di anello tramite le operazioni
+\[
+	(a + I)+(b+I)=(a+b) + I \hspace{1cm} (a+I)(b+I) = ab + I 
+\] 
+Se $f:A\to B$ \`e un omomorfismo di anelli, il suo nucleo, $\operatorname{Ker} f$, \`e un ideale di $A$.
+\begin{teorema}
+	{I teorema di omomorfismo}{}
+	Sia $f:A\to B$ un omomorfismo di anelli e $I \subseteq A$ un ideale di $A$, con $I \subseteq \operatorname{Ker} f$.
+	Data la proiezione $\pi : A \to A / I$, allora esiste ed \`e unica $ \widetilde{f}:A / I \to B$ tale che $\widetilde{f}\circ \pi = f$, che risulta iniettiva se e solo se $I = \operatorname{Ker} f$.
+	Per $I = \operatorname{Ker} f$, quindi, si ha $A / I \cong \operatorname{Im} f$.
+\end{teorema}
+\begin{teorema}
+	{II teorema di omomorfismo}
+	Sia $A$ un anello e siano $I,J \subseteq A$ due ideali, con $I \subseteq J$.
+	Ne segue che $J / I$ \`e un ideale di $A / I$ e $(A / I)(J / I) \cong A / J$.
+\end{teorema}
+\begin{teorema}
+	{Teorema di corrispondenza}{}
+	Dato $A$ un anello e $I \subseteq A$ un suo ideale, la mappa $\pi:A\to A / I$ induce una corrispondenza biunivoca tra gli ideali di $A$ che contengono $I$ e gli ideali di $A / I$.
+\end{teorema}
+\noindent  Dato un anello $A$, un suo ideale proprio $P$ \`e detto \textit{primo} se
+\[
+\forall a,b \in A : ab \in P \implies a \in P \text{ oppure } b \in P
+\] 
+Inoltre, un ideale proprio $M$ di $A$ \`e detto \textit{massimale} se 
+\[
+\forall I \text{ ideale di } A : M \subseteq I \implies I = M \text{ oppure } I = A
+\] 
+
+\begin{definizione}
+	{Spettro di un anello}{}
+	Sia $A$ un anello; si definisce il suo \textit{spettro} come:
+	\[
+	\operatorname{Spec} A := \left\{ P \subset A  \mid P \text{ ideale primo di } A \right\} 
+	\] 
+\end{definizione}
+\noindent Sulla stessa linea della precedente definizione, si definisce anche 
+\begin{equation}
+	\operatorname{Max} A := \left\{ M \subset A  \mid M \text{ \`e un ideale massimale di } A \right\} 
+\end{equation}
+Si ricorda che $P$ \`e un ideale primo se e solo se $A / I$ \`e un dominio, mentre $M$ \`e massimale se e solo se $A / M$ \`e un campo.
+Ne segue che gli ideali massimali sono anche ideali primi.
+
+Si ricorda, inoltre, che ogni anello non-banale ammette almeno un ideale massimale, quindi almeno un ideale primo.
+Allora, ogni ideale proprio e, in particolare, ogni elemento non-invertibile \`e contenuto in un ideale massimale.
+\begin{definizione}
+	{Dimensione di Krull}{}
+	Sia $A$ un anello; la sua \textit{dimensione di Krull} \`e definita come
+	\[
+	\dim A := \sup \left\{ k  \mid P_0 \subsetneq P_1 \subsetneq \ldots \subsetneq P_k , \ P_i \in \operatorname{Spec} A\right\} 
+	\] 
+	cio\`e \`e la massima lunghezza di una catena di ideali primi di $A$.
+\end{definizione}
+\begin{esempio}
+	\ 
+
+	\begin{itemize}
+		\item Se $k$ \`e un campo, il suo unico ideale primo \`e $(0)$ ed \`e massimale, quindi $\dim k = 0$.
+		\item Se $A = \mathbb{Z}$ (o un qualunque altro PID), i primi di $A$ sono $(0)$ e i massimali, pertanto la pi\`u lunga catena \`e data da $(0) \subseteq M$, per quale $M$ ideale massimale. 
+			Allora $\dim A = 1$.
+	\end{itemize}
+\end{esempio}
+\subsection{Ideali}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
