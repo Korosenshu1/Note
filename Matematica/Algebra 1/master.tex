@@ -2369,24 +2369,31 @@ Invece, una coppia di cicli di lunghezza pari di $S_4$ pu\`o essere soltanto il 
 	Sia $G$ un gruppo di ordine $n$ e sia $p$ il pi\`u piccolo primo che divide $n$; se $H < G$ e $[G : H ] = p$, allora $H \lhd G$.
 \end{prop}
 	\begin{proof}
-		L'insieme delle classi laterali \`e $G / H = \left\{ g_1H , \ldots, g_p H \right\} $, visto che $[G:H] = p$.
-		Si definisce l'azione $\gamma: G \to S(G / H)$ con $\gamma(g) = \pi _g$ e $\pi_G (g_i H) = gg_i H$, che consiste nella permutazione di tutte le classi di equivalenza.
-		Il nucleo di questo omomorfismo (\`e facile vedere che \`e un omomorfismo perch\'e consiste nella moltiplicazione per $g$) \`e dato da:
+		Si fa agire $G \curvearrowright X$, con $X = G / H$ insieme delle classi laterali di $H$ in $G$, quindi $\lvert X \rvert = p$. 
+		L'azione \`e definita dall'omomorfismo
 		\[
-			\operatorname{Ker} \gamma = \left\{ g \in  G  \mid \forall i, \ g g_{i} H = g_i H \right\} = \left\{ g \in  G  \mid g \in \bigcap _{x \in G} \operatorname{Stab} (xH) \right\} 
+\phi :
+		\begin{array}
+			{c c c}
+			G &\longrightarrow & S(X) \cong S_p\\
+			 g &\longmapsto & \big(\phi _g:xH \mapsto (gx) H\big)
+		\end{array}
 		\] 
-		Si nota che $g \in \operatorname{Stab} (xH) \Rightarrow gx H = xH \Rightarrow x^{-1}gx H = H$, che \`e vero se e solo se $x^{-1}g x \in H$, ossia $g \in  x H x^{-1}$.
-		Pertanto, il nucleo si pu\`o scrivere come:
+		Il nucleo di questo omomorfismo \`e dato da: 
 		\[
-		\operatorname{Ker} \gamma = \left\{ g \in  G  \mid g \in \bigcap_{x \in  G}  xH x^{-1}  \right\} \overset{\text{def}}{=}H_G
+			\operatorname{Ker} \phi = \left\{ g \in G  \mid  gxH = xH ,\ \forall x \in G \right\} = \left\{ g \in G  \mid x^{-1}gx H = H, \ \forall x \in G \right\} 
 		\] 
-		L'azione definita sopra consiste nella permutazione delle classi di equivalenza: ogni $\pi_g$ moltiplica ciascuna classe per $g$, rimappando ciascuna classe in un'altra (in modo univoco, visto che \`e un automorfismo). 
-		Allora $\gamma : G \to \mathcal{S} _p (G / H) \subset S(G/H)$, con $\mathcal{S}_p (G / H) \cong S_p$; qui $\mathcal{S}_p(G / H) $ \`e l'insieme degli automorfismi $\pi_g$, mentre $S_p$ \`e l'insieme delle permutazioni su $\left\{ 1, \ldots, p  \right\} $.
+		La condizione $x^{-1}gx \in G$ equivale a richiedere che $x^{-1}g x = h$, per qualche $h\in H$, ossia $g = xhx^{-1}$.
+		Richiedendo che valga per ogni $x \in G$, si conclude che $\operatorname{Ker} \phi $ \`e l'insieme degli elementi di $G$ che si ottengono coniugando elementi di $H$ per coniugio tramite ogni elemento di $G$; questo si formalizza con la seguente scrittura:
+		\[
+		\operatorname{Ker} \phi = \bigcap_{x \in G} xHx^{-1}:=H_G
+		\] 
+L'idea \`e di dimostrare che $H_G \lhd G$ (essendo il nucleo di un omomorfismo $G \to S_p$) coincide con $H$.
 
-		Per il I teorema di omomorfismo, $G / H_G \longrightarrow S_p$ \`e iniettiva\footnote{Non \`e detto che sia suriettiva, in generale sar\`a un isomorfismo se ristretta a un sottoinsieme di $S_p$.}, cio\`e $G / H_G \hookrightarrow S_p$; pertanto $\lvert G / H \rvert  \mid p !$ per Lagrange.
-		Allora ci sono due possibilit\`a: o $\lvert G / H \rvert  =1 $, oppure $\lvert G / H \rvert = p$, visto che $\lvert G / H \rvert $ deve dividere sia $n$ (che ha come primo pi\`u piccolo $p$), che $p!$ (che ha come primo pi\`u grande $p$).
-
-		Per finire, basta osservare che, essendo $H \in G / H$, si ha in particolare $g \in \operatorname{Ker} \gamma\Rightarrow gH = H \iff g \in  H \Rightarrow  H_G \subset H$, da cui $\lvert G / H_G \rvert\ge p $; questo permette di escludere $\lvert G / H \rvert  =1$ come possibilit\`a e concludere che $\lvert G / H \rvert = p$, con $H = H_G$, il che vuol dire che $H$ \`e il nucleo di un omomorfismo, quindi \`e normale.
+Per il I teorema di omomorfismo, $G / H_G \longrightarrow S_p$ \`e iniettiva, quindi $\lvert G / H_G \rvert  \mid p !$.
+Allo stesso tempo, per Lagrange, $\lvert G \rvert = n = [G:H_G]\lvert H_G \rvert $, quindi $\lvert G / H_G \rvert  \mid n$; essendo $p$ il pi\`u piccolo primo che divide $n$ e essendo $p$ il pi\`u grande primo presente in $p!$, allora $\lvert G / H_G \rvert = \left\{ 1,p \right\} $.
+Per finire, si nota che $g \in H_G \Rightarrow gH = H$, cio\`e $g \in H$ e, quindi, $H_G \subseteq H$. 
+Perci\`o, essendo $H_G$ al pi\`u $H$, deve valere $\lvert G / H_G \rvert \ge p$, quindi $\lvert G/H_G \rvert = p$ e $\lvert H_G \rvert =\lvert H \rvert $, da cui $H= H_G$.
 	\end{proof}
 \subsubsection{Automorfismi di $(\mathbb{Z}/p\mathbb{Z})^n$}
 

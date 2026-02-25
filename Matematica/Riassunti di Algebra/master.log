@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  19 FEB 2026 17:55
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.1.16)  23 FEB 2026 14:40
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1734,26 +1734,26 @@ LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
 )) (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count410
@@ -1773,7 +1773,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 207.
+Package hyperref Info: Link coloring ON on input line 206.
  (./master.out) (./master.out)
 \@outlinefile=\write5
 
@@ -1785,7 +1785,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 207.
+(scrartcl)           before \begin{document} on input line 206.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1794,7 +1794,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 207.
+ on input line 206.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -1803,7 +1803,7 @@ Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen379
 \c__nicematrix_innersep_middle_dim=\dimen380
 \c@lstlisting=\count417
-Package tocbasic Info: setting babel extension for `lol' on input line 207.
+Package tocbasic Info: setting babel extension for `lol' on input line 206.
 \scr@dte@lstlisting@maxnumwidth=\skip118
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
@@ -1823,14 +1823,14 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 (unicode-math)                colon-like commands, using them will lead to
 (unicode-math)                inconsistencies.
 
-LaTeX Info: Redefining \ointclockwise on input line 207.
-LaTeX Info: Redefining \varointctrclockwise on input line 207.
-LaTeX Info: Redefining \idotsint on input line 207.
-LaTeX Info: Redefining \sqiint on input line 207.
+LaTeX Info: Redefining \ointclockwise on input line 206.
+LaTeX Info: Redefining \varointctrclockwise on input line 206.
+LaTeX Info: Redefining \idotsint on input line 206.
+LaTeX Info: Redefining \sqiint on input line 206.
 
 Package kpfonts-otf Warning: kpfonts-otf provides all AMS symbols.
 (kpfonts-otf)                Loading amssymb.sty is not advisable.
-(kpfonts-otf)                Reported on input line 207.
+(kpfonts-otf)                Reported on input line 206.
 
 (./master.toc
 
@@ -1851,7 +1851,7 @@ Package kpfonts-otf Warning: kpfonts-otf provides all AMS symbols.
 [5]
 
 [6]
-Underfull \hbox (badness 4132) in paragraph at lines 424--425
+Underfull \hbox (badness 4132) in paragraph at lines 423--424
 [][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 1.10.  []\TU/KpRoman(1)/m/n/12 Per la for-mu-la del-le clas-si, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝑍[](𝜎)||[][](𝜎)| = 𝑛!$ \TU/KpRoman(1)/m/n/12 e
  []
 
@@ -1871,12 +1871,12 @@ Underfull \hbox (badness 4132) in paragraph at lines 424--425
 
 [13]
 
-LaTeX Warning: Command \j invalid in math mode on input line 774.
+LaTeX Warning: Command \j invalid in math mode on input line 773.
 
 
 
 [14]
-Underfull \hbox (badness 1226) in paragraph at lines 791--792
+Underfull \hbox (badness 1226) in paragraph at lines 790--791
 [][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 2.5.  []\TU/KpRoman(1)/m/n/12 Gli idea-li di un anel-lo $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 so-no tut-ti e so-li i nu-clei de-gli
  []
 
@@ -1889,7 +1889,7 @@ Underfull \hbox (badness 1226) in paragraph at lines 791--792
 [17]
 
 [18]
-Underfull \hbox (badness 3158) in paragraph at lines 1018--1019
+Underfull \hbox (badness 3158) in paragraph at lines 1017--1018
 [][]\TU/KpRoman(1)/b/n/12 Pro-po-si-zio-ne 2.17.  []\TU/KpRoman(1)/m/n/12 Gli ele-men-ti di gra-do mi-ni-mo di $\TU/KpMath-Regular.otf(1)/m/n/12 𝐴$ \TU/KpRoman(1)/m/n/12 do-mi-nio eu-cli-deo
  []
 
@@ -1902,14 +1902,14 @@ Underfull \hbox (badness 3158) in paragraph at lines 1018--1019
 [21]
 
 [22]
-Underfull \hbox (badness 1097) in paragraph at lines 1214--1215
+Underfull \hbox (badness 1097) in paragraph at lines 1213--1214
 [][]\TU/KpRoman(1)/b/n/12 Teo-re-ma 3.1 (Ca-rat-te-riz-za-zio-ne del-le esten-sio-ni al-ge-bri-che).  []\TU/KpRoman(1)/m/n/12 Val-go-no i due
  []
 
 
 
 [23]
-Underfull \hbox (badness 1112) in paragraph at lines 1279--1280
+Underfull \hbox (badness 1112) in paragraph at lines 1278--1279
 \TU/KpRoman(1)/m/n/12 sten-sio-ne fi-ni-ta e se-pa-ra-bi-le; al-lo-ra $\TU/KpMath-Regular.otf(1)/m/n/12 𝐸/𝐾$ \TU/KpRoman(1)/m/n/12 è sem-pli-ce, cioè $\TU/KpMath-Regular.otf(1)/m/n/12 ∃𝛾 ∈ 𝐸 ∶ 𝐸 =
  []
 
@@ -1918,31 +1918,31 @@ Underfull \hbox (badness 1112) in paragraph at lines 1279--1280
 [24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1338.
+(hyperref)                removing `math shift' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 1338.
+(hyperref)                removing `\symbb' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1338.
+(hyperref)                removing `subscript' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1338.
+(hyperref)                removing `superscript' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 1338.
+(hyperref)                removing `\symbb' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1338.
+(hyperref)                removing `subscript' on input line 1337.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1338.
+(hyperref)                removing `math shift' on input line 1337.
 
 
 
@@ -1953,7 +1953,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [27]
 
 [28]
-Overfull \hbox (10.80324pt too wide) in paragraph at lines 1504--1507
+Overfull \hbox (10.80324pt too wide) in paragraph at lines 1503--1506
 \TU/KpRoman(1)/m/n/12 Quin-di $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = []$\TU/KpRoman(1)/m/n/12 ; vi-sto che $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺$ \TU/KpRoman(1)/m/n/12 non è abe-lia-no, $\TU/KpMath-Regular.otf(1)/m/n/12 |𝐺[]| = 2$ \TU/KpRoman(1)/m/n/12 e, quin-di, $\TU/KpMath-Regular.otf(1)/m/n/12 𝐺[] = []$\TU/KpRoman(1)/m/n/12 ,
  []
 
@@ -1962,14 +1962,14 @@ Overfull \hbox (10.80324pt too wide) in paragraph at lines 1504--1507
 [29]
 
 [30]
-Overfull \hbox (4.20598pt too wide) in paragraph at lines 1622--1625
+Overfull \hbox (4.20598pt too wide) in paragraph at lines 1621--1624
 []\TU/KpRoman(1)/m/n/12 Que-sta vol-ta, la re-la-zio-ne da sod-di-sfa-re è $\TU/KpMath-Regular.otf(1)/m/n/12 𝑎[] ≡ 1 [] 49$\TU/KpRoman(1)/m/n/12 , os-sia $\TU/KpMath-Regular.otf(1)/m/n/12 (−1)[] ≡ 1 [] 49$\TU/KpRoman(1)/m/n/12 ,
  []
 
 
 
 [31]
-Overfull \hbox (7.18375pt too wide) detected at line 1634
+Overfull \hbox (7.18375pt too wide) detected at line 1633
 [] \TU/KpMath-Regular.otf(1)/m/n/12 ≅ [] ≅ ℤ[𝑥, 𝑦]/(7, 𝑥[] + 1, 𝑦[] + 1) ≅ []
  []
 
@@ -2002,7 +2002,7 @@ Here is how much of LuaTeX's memory you used:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 375 attribute, 104 glue_spec, 189 attribute_list, 2 write nodes
    avail lists: 1:6,2:3816,3:1499,4:269,5:491,6:125,7:5243,8:109,9:806,10:18,11:539
  76682 multiletter control sequences out of 65536+600000
- 107 fonts using 18448939 bytes
+ 107 fonts using 18448995 bytes
  124i,19n,119p,10918b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 Output written on master.pdf (33 pages, 174585 bytes).
