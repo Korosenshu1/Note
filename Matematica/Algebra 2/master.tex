@@ -1,0 +1,377 @@
+%! TEX program = lualatex
+\documentclass[12pt]{scrartcl}
+% Packages
+%\usepackage[margin=1.5in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{esint}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage{setspace}
+\setstretch{1.2}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+\definecolor{mastercolor}{HTML}{5666a8}
+\definecolor{nred}{HTML}{bf0040}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{86, 102, 168}}
+
+% Titles 
+\title{Appunti di\\ \vspace{.3cm} Algebra 2}
+\author{Manuel Deodato}
+\date{}
+
+
+
+% Sezioni
+\setkomafont{section}{\normalfont\sffamily\fontsize{20}{18}\selectfont\MakeUppercase}
+\setkomafont{subsection}{\normalfont\bfseries\fontsize{16}{18}\selectfont}
+\setkomafont{subsubsection}{\normalfont\bfseries\fontsize{14}{18}\selectfont}
+
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+
+
+
+%\tcolorboxenvironment{definizione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{lemma}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{teorema}{enhanced,blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{corollario}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{prop}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{esercizio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+%\tcolorboxenvironment{osservazione}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={.5mm}{0pt}{mastercolor}, before upper={\setlength{\parindent}{15pt}}}
+
+
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+
+
+% TOC
+%\KOMAoptions{toc=flat}
+%\setcounter{tocdepth}{2}
+\makeatletter
+\renewcommand*\@dotsep{10000} % senza punti
+\renewcommand*\@pnumwidth{2.2em}
+\renewcommand*\@tocrmarg{3.0em}
+\makeatother
+\setkomafont{sectionentry}{\normalfont\bfseries\normalsize}
+
+
+
+% Font
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{kpfonts}
+
+
+
+\newcommand{\longhookrightarrow}{\lhook\joinrel\longrightarrow}
+\begin{document}
+\maketitle
+\vspace{6cm}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.6\columnwidth]{front.png}
+\end{figure}
+
+\newpage
+\tableofcontents 
+\newpage
+\section{Teoria degli anelli}
+In tutta la seguente trattazione, un anello si assumer\`a sempre essere commutativo con identit\`a.
+\subsection{Struttura degli anelli}
+\begin{definizione}
+Sia $A$ un anello. 
+Si definiscono i seguenti insiemi:
+\[
+	\begin{split}
+		&\operatorname{Spec} A := \left\{ \text{ideali primi di } A \right\} \\
+		&\operatorname{Max} A := \left\{ \text{ideali massimali di } A \right\} \\
+		&\mathcal{I} (A) := \left\{ \text{ideali di } A \right\} 
+	\end{split}
+\] 
+\end{definizione}
+\noindent Visto che un ideale massimale \`e anche primo, allora $\operatorname{Max} A \subseteq \operatorname{Spec} A$.
+L'insieme $\mathcal{I} (A)$ si pu\`o equipaggiare con una relazione di ordine parziale $\le $ data dal contenimento.
+In questo modo, tramite il lemma di Zorn, si dimostra che ogni anello $A \neq 0$ (cio\`e ogni anello in cui $1_A \neq 0_A$) contiene almeno un ideale massimale.
+
+Altri insiemi utili per studiare gli anelli sono
+\begin{equation}
+	\begin{split}
+		&\mathcal{N} (A) := \left\{ a \in A  \mid \exists n\in \mathbb{N} : a^n = 0\right\} \\
+		& \mathcal{D} (A) := \left\{ a \in A  \mid \exists b \in A\setminus\left\{ 0 \right\} : ab=0 \right\} 
+	\end{split}
+\end{equation}
+\begin{definizione}
+	[Anello locale]
+	Un anello $A$ si dice \textit{locale} se ha un solo ideale massimale, ossia se $\lvert \operatorname{Max} A \rvert = 1 $.
+\end{definizione}
+\noindent Talvolta, un anello locale si esibisce specificandone l'unico ideale massimale, o anche il campo residuo, con la notazione $(A,\mathfrak{m} , k = A / \mathfrak{m} )$.
+\subsubsection{Operazioni tra ideali}
+\begin{definizione}
+	[Prodotto tra ideali]
+	Sia $A$ un anello e siano $I,J$ due suoi ideali; allora
+	\[
+	IJ := \left(ij  \mid i\in I, \ j\in J\right) 
+	\] 
+\end{definizione}
+\noindent Per definizione, allora, $IJ$ \`e l'anello generato dalle combinazioni lineari finite di elementi della forma $ij$, con $i \in I$ e $j \in J$.
+Visto che entrambi soddisfano l'assorbimento, i coefficienti in $A$ di tali combinazioni si possono omettere e, allora, si trova:
+\begin{equation}
+	IJ = \left\{ \sum_{k=1}^{\ell } i_kj_k \mid i_k \in I, \ j_k \in J \right\} 
+\end{equation}
+Nel caso di $n$ ideali $I_1,\ldots,I_n$, il prodotto si generalizza come
+\[
+\prod_{k=1} ^n I_i = \left(\prod_{k=1} ^n i_k  \ \Bigg\lvert \ i_k \in I_k\right) 
+\] 
+\begin{definizione}
+	Dati due ideali $I,J$ in $A$, le altre operazioni possibili sono le seguenti:
+	\begin{itemize}
+		\item $I+J = (I,J) = \left\{ i+j  \mid i\in I, \ j \in J \right\} $;
+		\item $I\cap J$;
+		\item $\sqrt{I} = \left\{ a \in A  \mid \exists n \in N : a^n \in I \right\} $;
+		\item $I:J = \left\{ a \in A :aJ \subseteq I \right\} $
+	\end{itemize}
+\end{definizione}
+\begin{prop}
+	Dato $A$ anello e $I,J$ due suoi ideali, allora $IJ \subseteq I \cap J$.
+	Se $I$ e $J$ sono comassimali (cio\`e $I+J = A$), allora $IJ = I \cap J$.
+\end{prop}
+\begin{esempio}
+Se $I = J = (2) \subset \mathbb{Z}$, allora si vede che $I \cap J = (2)$, mentre $IJ = (4)$, per cui l'uguaglianza non si verifica.
+\end{esempio}
+\begin{prop}
+Se $I_1,\ldots, I_n$ sono ideali di $A$, a due a due comassimali ($I_i+I_j = (1)$ per ogni $i\neq j$), allora
+\[
+\prod_{k=1} ^n I_k = \bigcap_{k=1} ^n I_k
+\] 
+\end{prop}
+\begin{prop}
+	[Propriet\`a del radicale]
+	Siano $I,J$ due anelli di $A$; allora:
+\begin{enumerate}[(a).]
+	\item $I \subseteq \sqrt{I} $;
+	\item $I \subseteq J \implies \sqrt{I} \subseteq \sqrt{J} $;
+	\item $\sqrt{I^k} = \sqrt{I} $, $ \ \forall k$;
+	\item $I$ e $J$ sono comassimali $\iff \sqrt{I} +\sqrt{J} =(1)$.
+	\item $\sqrt{IJ} = \sqrt{I\cap J} = \sqrt{I} \cap \sqrt{J} $;
+	\item $\sqrt{I+JH} = \sqrt{I+J}\cap \sqrt{I+H}  $
+\end{enumerate}	
+\end{prop}
+\begin{proof}
+Si dimostra il punto (d).
+\begin{itemize}
+	\item[$(\Rightarrow)$] Visto che $I+J \subseteq \sqrt{I} +\sqrt{J} $, se $I+J = (1) $, allora $ 1 \in \sqrt{I} +\sqrt{J} \Rightarrow \sqrt{I} +\sqrt{J} = (1)$.
+	\item[$(\Leftarrow)$] Siano $a \in \sqrt{I} $, $ b \in \sqrt{J} $ tali che $a+b = 1$. 
+		Visto che sono nei radicali, $\exists m,n\in \mathbb{N}_+$ tali che $a^m \in I$ e $b^n \in J$, quindi:
+		\[
+			1^{m+n} = 1 = (a+b)^{m+n}= a^m \sum_{i=0}^{n-1} \binom{m+n}{i} a^{n-i} b^i + b ^n \sum_{i=n}^{m+n} \binom{m+n}{i} a^{m+n-i} b^{i-n} 
+		\] 
+		Visto che $a^m \in I$ e $b^n\in J$, il primo termine \`e in $I$ e il secondo \`e in $J$, per cui $1 \in I + J$.
+\end{itemize}
+Ora si dimostra il punto (e).
+\begin{itemize}
+	\item[$(\subseteq)$] Visto che $IJ \subseteq I\cap J$, allora $\sqrt{IJ} \subseteq \sqrt{I \cap J} \subseteq \sqrt{I} \cap \sqrt{J} $.
+	\item[$(\supseteq)$] Sia $\alpha \in \sqrt{I} \cap \sqrt{J} $; allora $\exists m,n \in \mathbb{N}_+$ tali che $\alpha ^n\in I$ e $\alpha ^{m} \in J$, per cui $\alpha ^{n+m} \in IJ$, quindi $\alpha\in  \sqrt{IJ} $.
+\end{itemize}
+Infine, si dimostra il punto (f).
+\begin{itemize}
+	\item[$(\subseteq)$] Si ha $I+JH \subset (I+J)\cap (I+H)$, per cui $\sqrt{I+JH} \subseteq \sqrt{I+H} \cap \sqrt{I+J} $.
+	\item[$(\supseteq)$] Dato $\alpha \in \sqrt{I+J} \cap \sqrt{I+H} $, allora $\exists m,n\in \mathbb{N}_+$ tali che $\alpha ^n = i_1 + j_1$ e $\alpha ^m = i_2+h_1$, per cui
+		\[
+			\alpha ^{n+m} =\underbracket{i_1i_2 + i_1h_1+i_2j_1}_{\in I} +\overbracket{j_1h_1}^{\in JH} \implies \alpha \in \sqrt{I+JH} 
+		\] 
+		
+\end{itemize}
+\end{proof}
+\begin{prop}
+	[Propriet\`a del colon]
+	Dati $I,J$ e $\left\{ I_n \right\} _{n\in \mathbb{N}} $ ideali di $A$, si ha:
+	\begin{enumerate}[(a).]
+		\item $I \subset I:J$;
+		\item $(I:J):J \subseteq I$;
+		\item $(I:J):H = I:JH = (I:H):J$;
+		\item $\left(\bigcap_n I_n\right) :J = \bigcap _n(I_n:J)$;
+		\item $J:\sum_n I_n = \bigcap _n (J:I_n)$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	{\color{red}Esercizio.}
+\end{proof}
+\begin{definizione}
+	[Ideale radicale]
+Sia $A$ un anello e $I$ un suo ideale; se $I = \sqrt{I} $, allora $I$ \`e detto \textit{radicale}.
+\end{definizione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Decomposizione primaria}
+Per $A = \mathbb{Z}$, si sa che
+\[
+	\begin{split}
+		&\operatorname{Spec} \mathbb{Z} = \left\{ (p)  \mid p \text{ elemento primo di }  \mathbb{Z}\right\} \cup \left\{(0) \right\} \\
+		& \operatorname{Max} \mathbb{Z} = \left\{ (p)  \mid p \text{ elemento primo di }  \mathbb{Z}\right\}
+	\end{split}
+\] 
+dove $(0)$ non \`e un ideale massimale perch\'e contenuto in qualunque altro ideale.
+
+Visto che $\mathbb{Z}$ \`e un dominio euclideo, \`e anche un PID e, quindi, un UFD, i cui invertibili sono $\left\{ \pm 1\right\} $.
+Per quanto appena detto, in $\mathbb{Z}$ vale il teorema fondamentale dell'aritmetica: se $a \in \mathbb{Z}\setminus\left\{ 0,\pm 1 \right\} $, allora
+\[
+a = \epsilon  \prod_{i=1} ^n p_i^{\alpha _i} 
+\] 
+dove $\epsilon \in \mathbb{Z}^*=\left\{ \pm 1 \right\} $ e $\alpha _i \in \mathbb{N}_+$.
+L'obiettivo della decomposizione primaria \`e tradurre questa propriet\`a in termini di ideali.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
