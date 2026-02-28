@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1772227409.81614 "master.tex" "master.pdf" "master" 1772227415.35778 0
+["lualatex"] 1772293367.10919 "master.tex" "master.pdf" "master" 1772293371.36353 0
   "/etc/texmf/tex/generic/config/language.dat" 1768593158.06661 5960 3d5d21f87da1c1249bc1ecea1895a000 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/kpmath-bold.luc" 1768651084.0604 258921 744925bba25c94c4e8b446868622848c ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/kpmath-regular.luc" 1768651083.8944 449107 1f4722e5e1d7f4d6393b7251c06ca56e ""
@@ -28,16 +28,24 @@
   "/usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpRoman-Regular.otf" 1767555874 118356 0f2301ede5b0c6a2a059d84bce38a1f5 ""
   "/usr/share/texmf-dist/fonts/opentype/public/kpfonts-otf/KpSans-Regular.otf" 1767555874 87404 9837125b76abc6fc9259d125f044a62f ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1767555874 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1767555874 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1767555874 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1767555874 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1767555874 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1767555874 940 228d6584342e91276bf566bcf9716b83 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1767555874 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1767555874 1524 4414a8315f39513458b80dfc63bff03a ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm" 1767555874 1508 3b32edd0d68f6498a5a375e78f9edc5e ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1767555874 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm" 1767555874 1528 e2423ae06dc7dee599cceb79d1c9dc32 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1767555874 1520 eccf95517727cb11801f4f1aee3a21b4 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1767555874 1524 d89e2d087a9828407a196f428428ef4a ""
   "/usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm" 1767555874 364 55557743e6c24ee44e49bc5e8dbbe3cd ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1767555874 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1767555874 688 37338d6ab346c2f1466b29e195316aa4 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1767555874 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1767555874 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1767555874 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1767555874 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf" 1767555874 11361 8658bbf8ead5c43fd2f199c4b2910145 ""
   "/usr/share/texmf-dist/tex/generic/babel/babel.sty" 1767555874 143388 b008e1666520ff43d0878397f2926242 ""
@@ -346,11 +354,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1768593337 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1768593186 5586700 e0e0d679a85b4583d0a60f9837abc943 ""
   "front.png" 1772194517.97037 167195 7a603b688a4698f6fd559ee1dd8b9742 ""
-  "master.aux" 1772227414.86151 2548 12f92b6dac3d27fa49bf497b1bbeb85a "lualatex"
+  "master.aux" 1772293370.98189 4104 579a636f690a61725d15e0255e295b48 "lualatex"
   "master.ind" 1772191084.91102 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.out" 1772227414.45951 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "master.tex" 1772227404.41048 12085 8ccb641926f4be1cff48766aad72deee ""
-  "master.toc" 1772227414.86451 484 1e36f74b83367cc7aaafb3d3b2742a3e "lualatex"
+  "master.out" 1772293370.32043 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "master.tex" 1772293367.06187 24683 ea4088eb946f751727a964b399c101b2 ""
+  "master.toc" 1772293370.98589 786 45c0c45508a0c2d2dcfdf358affd31ec "lualatex"
   (generated)
   "master.aux"
   "master.idx"
@@ -359,8 +367,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1772191084.79853 "master.idx" "master.ind" "master" 1772227415.35763 0
-  "master.idx" 1772227411.1365 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1772191084.79853 "master.idx" "master.ind" "master" 1772293371.36342 0
+  "master.idx" 1772293368.03111 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

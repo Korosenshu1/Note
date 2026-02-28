@@ -72,8 +72,20 @@
 \newtheorem{corollario}{Corollario}[teorema]
 \newtheorem{osservazione}{Osservazione}[section]
 \newtheorem{notazione}{Notazione}[section]
-\newtheorem{esercizio}{Esercizio}[section]
 
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
 
 
 
@@ -201,6 +213,46 @@ Altri insiemi utili per studiare gli anelli sono
 	Un anello $A$ si dice \textit{locale} se ha un solo ideale massimale, ossia se $\lvert \operatorname{Max} A \rvert = 1 $.
 \end{definizione}
 \noindent Talvolta, un anello locale si esibisce specificandone l'unico ideale massimale, o anche il campo residuo, con la notazione $(A,\mathfrak{m} , k = A / \mathfrak{m} )$.
+\subsubsection{Omomorfismi di anelli}
+\begin{definizione}
+	[Omomorfismo di anelli]
+	Sia $f:A\to B$ una funzione, con $A,B$ anelli. Si dice che $f$ \`e un omomorfismo di anelli se, per ogni $a_1,a_2\in A$:
+	\begin{enumerate}[(a).]
+		\item $f(a_1+a_2) = f(a_1) + f(a_2)$;
+		\item $f(a_1a_2) = f(a_1)(fa_2)$;
+		\item $f(1_A) = 1_B$.
+	\end{enumerate}
+\end{definizione}
+
+\begin{esempio}
+L'omomorfismo di gruppi $f:\mathbb{Z}\to \mathbb{Z}:n \longmapsto 2n$ non \`e un omomorfismo di anelli perch\'e $\operatorname{Im} f = (2)$, che \`e un ideale di $\mathbb{Z}$, non un anello.
+\end{esempio}
+\begin{prop}
+Sia $f : A \to B$ un omomorfismo; allora:
+\begin{enumerate}[(a).]
+	\item $\operatorname{ker} f$ \`e un ideale di $A$;
+	\item $\operatorname{Im} f$ \`e un sottoanello di $B$ e non un ideale, a meno dei casi banali in cui $B=0$, o $f$ suriettiva, per cui $\operatorname{Im} f = (1_B) = B$.
+\end{enumerate}
+\end{prop}
+\begin{teorema}
+	[Teoremi di omomorfismo]
+	Sia $f:A\to B$ un omomorfismo.
+	Allora:
+	\begin{enumerate}[(1).]
+		\item $f$ induce un isomorfismo $\overline{f}:A  /\operatorname{ker} f \xrightarrow{\ \sim\ } \operatorname{Im} f$;
+		\item dati $I,J$ ideali di $A$, con $J \supseteq I$, allora $J / I$ \`e un ideale di $A / I$ e 
+			\[
+				\frac{A / I }{J / I}\cong A / J
+			\] 
+		\item dato $I$ ideale di $A$ e $C$ sottoanello di $A$, allora $C+I$ \`e un sottoanello, $I$ \`e un ideale di $C+I$, $C\cap I$ \`e un ideale di $I$ e
+			\[
+			\frac{C+I}{I}\cong \frac{C}{C\cap I}
+			\] 
+	\end{enumerate}
+\end{teorema}
+
+
+
 \subsubsection{Operazioni tra ideali}
 \begin{definizione}
 	[Prodotto tra ideali]
@@ -226,6 +278,10 @@ Nel caso di $n$ ideali $I_1,\ldots,I_n$, il prodotto si generalizza come
 		\item $\sqrt{I} = \left\{ a \in A  \mid \exists n \in N : a^n \in I \right\} $;
 		\item $I:J = \left\{ a \in A :aJ \subseteq I \right\} $
 	\end{itemize}
+\end{definizione}
+\begin{definizione}
+	[Ideale radicale]
+Sia $A$ un anello e $I$ un suo ideale; se $I = \sqrt{I} $, allora $I$ \`e detto \textit{radicale}.
 \end{definizione}
 \begin{prop}
 	Dato $A$ anello e $I,J$ due suoi ideali, allora $IJ \subseteq I \cap J$.
@@ -292,35 +348,43 @@ Infine, si dimostra il punto (f).
 \begin{proof}
 	{\color{red}Esercizio.}
 \end{proof}
-\begin{definizione}
-	[Ideale radicale]
-Sia $A$ un anello e $I$ un suo ideale; se $I = \sqrt{I} $, allora $I$ \`e detto \textit{radicale}.
-\end{definizione}
+\begin{esercizio}
+Le seguenti relazioni
+\[
+I+JH \subset (I+J)\cap (I+H) \hspace{1cm}I\cap (J+H) \supset (I\cap J)+(I\cap H)
+\] 
+sono veri.
+Trovare degli esempi in cui i contenimenti opposti sono falsi, prima in $\mathbb{Z}$, poi in $k[x]$, aggiungendo variabili, se necessario.
+\end{esercizio}
+\begin{prop}
+Se $(I,\alpha ,\beta )=(1) = A$ (non comassimali a due a due, ma complessivamente), allora
+\[
+	(I,\alpha \beta ) = (I,\alpha ) \cap (I,\beta )
+\] 
+\end{prop}
+\begin{proof}
+\ 
+
+\begin{itemize}
+	\item[$(\subseteq)$] Ovvio.
+	\item[$(\supseteq)$] Sia $\gamma \in (I,\alpha ) \cap (I,\beta )$; allora $\gamma = i_1 + \alpha  u $ e, quindi, $ i_1+\alpha u \in (I,\beta )$.
+		Vista la comassimalit\`a, si ha $1 = i_2+\alpha a + \beta b$, per cui
+		\[
+			\begin{split}
+				a \gamma &= a i_1 + \alpha a u = ai_1 + u(1-i_2-\beta b)\\
+					 &=\underbracket{a i_1 - i_2 u}_{\in I} + u - \underbracket{u\beta b}_{\in (\beta )} 
+			\end{split}
+		\] 
+		Visto che $a\gamma\in (I,\beta )$ per assorbimento, allora $u \in (I,\beta )$, quindi $u = i_3 + \beta c$ e, dunque:
+		\[
+			\gamma = i_1 + \alpha u = \underbracket{i_1+\alpha i_3}_{\in I} + \underbracket{\alpha \beta c}_{\in (\alpha \beta )} 
+		\] 
+\end{itemize}
+Alternativamente, per dimostrarlo, si sarebbe potuto passare modulo $I$, con l'ipotesi $(\overline{\alpha },\overline{\beta }) = (\overline{1})$ e la tesi $(\overline{\alpha }\overline{\beta })=(\overline{\alpha }) \cap (\overline{\beta })$.
+\end{proof}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsubsection{Decomposizione primaria}
+\subsubsection{Decomposizione primaria in $\mathbb{Z}$}
 Per $A = \mathbb{Z}$, si sa che
 \[
 	\begin{split}
@@ -337,6 +401,61 @@ a = \epsilon  \prod_{i=1} ^n p_i^{\alpha _i}
 \] 
 dove $\epsilon \in \mathbb{Z}^*=\left\{ \pm 1 \right\} $ e $\alpha _i \in \mathbb{N}_+$.
 L'obiettivo della decomposizione primaria \`e tradurre questa propriet\`a in termini di ideali.
+Si nota che
+\begin{equation}
+I = (a) = \left(\prod_{i=1}^{n} p_i^{\alpha _i}  \right) =\prod_{i=1}^{n} \left(p_i^{\alpha _i} \right)  =\prod_{i=1}^{n} (p_i)^{\alpha _i}=  \bigcap_{i=1} ^n (p_i)^{\alpha _i} 
+\end{equation}
+dove l'ultima uguaglianza \`e giustificata sapendo che il prodotto di ideali \`e uguale alla loro intersezione se e solo se sono a due a due comassimali e sapendo che $I,J$ sono comassimali se e solo se $\sqrt{I} $ e $\sqrt{J} $ lo sono, si pu\`o concludere che $I = $.
+Quanto appena visto nel caso di $A = \mathbb{Z}$ \`e noto come \textit{decomposizione primaria} perch\'e si \`e decomposto un generico ideale $I$ in \textit{ideali primari}, rendendo pi\`u semplice lo studio di $I$ e del suo quoziente.
+
+\subsubsection{Ideali primari}
+\begin{definizione}
+	[Ideale primario]
+	Sia $I$ un ideale di $A$ anello.
+	$I$ si dice \textit{primario} se, per ogni $a,b\in I$, vale $a\in I$, oppure $b \in \sqrt{I} $.
+\end{definizione}
+\begin{osservazione}
+Se $I$ \`e primo, allora \`e $I = \sqrt{I} $, cio\`e $I$ \`e radicale.
+Ne segue che, se $I$ \`e primo, allora \`e anche primario.
+\end{osservazione}
+\begin{prop}
+$I$ \`e un ideale primario di $A\iff \mathcal{N} (A / I) = \mathcal{D} (A / I)$. 
+\end{prop}
+\begin{proof}
+	Se $B$ \`e un generico anello, si sa gi\`a che $\mathcal{D} (B) \subseteq \mathcal{N} (B)$\footnote{$\mathcal{N} (B)$ \`e sempre un ideale, mentre $\mathcal{D} (B)$ no in generale. Per esempio, se $B = \mathbb{Z}/(6)$, allora $\mathcal{D} (B) = \left\{ 0,2,3,4 \right\} = (2) \cup (3)$.}.
+
+	\begin{itemize}
+		\item[$(\Leftarrow)$] Si mostra che $\mathcal{N} (A / I) \subseteq \mathcal{D} (A / I) \Rightarrow I$ primario.
+			Siano $a,b \in A$ tali che $ab \in I$ e $a\not\in I$; si fa vedere che $b \in \sqrt{I} $, cio\`e $\exists n \in \mathbb{N}_+$ tale che $b^n \in I$.
+			In $A / I$, si ha, allora, $\overline{a}\overline{b}=\overline{0}$ e $\overline{a}\neq \overline{0}$, quindi $\overline{b} \in \mathcal{D} (A / I)$.
+			Visto che $\mathcal{D} (A / I) = \mathcal{N} (A / I)$, allora esiste un certo naturale $n$ per cui $\overline{b}^n = 0$, ossia $\overline{b^n}=0$, che \`e equivalente a chiedere $b^n \in I$.
+		\item[$(\Rightarrow )$] {\color{red} Esercizio.}
+	\end{itemize}
+\end{proof}
+\noindent Tornando al caso di $\mathbb{Z}$, gli ideali $\left(p_i^{\alpha _i} \right) $ sono primari se e solo se, in $\mathbb{Z}/(p_i^{\alpha _i}) $, gli zero-divisori sono nilpotenti.
+Questo \`e vero; infatti, se $\overline{a},\overline{b} \in \mathbb{Z}/(p_i^{\alpha _i} )$ con $\overline{a}\overline{b}=\overline{0}$ e $\overline{b}\neq 0$, allora $ab = \alpha p_i^{\alpha _i} $, per $\alpha \in \mathbb{Z}$ tale che $p_i  \nmid \alpha $.
+Allora $a=a_1p_i^{\beta _i} $ e $b = b_1 p_i ^{\gamma_i} $, con $p_i\nmid a_1,b_1$; essendo $\overline{b}\neq 0$, allora deve valere necessariamente $\gamma_i < \alpha _i$, quindi, elevando $a$ ad un'opportuna potenza, questo \`e diviso da $p_i^{\alpha _i} $, quindi $\overline{a}$ \`e nilpotente.
+\begin{prop}
+Sia $I$ un ideale di $A$; se $\sqrt{I} $ \`e massimale, allora $I$ \`e primario (relativamente a $\sqrt{I} $).
+\end{prop}
+\begin{proof}
+Sia $\sqrt{I} $ massimale e sia $\alpha \beta \in I$, con $\beta \not \in \sqrt{I} $; si fa vedere che $\alpha \in I$.
+Visto che $\sqrt{I} $ \`e massimale e $\beta \not \in \sqrt{I} $, allora $(\beta ) + \sqrt{I}  = (1)$\footnote{Altrimenti $\sqrt{I} $ sarebbe contenuto strettamente in $(\beta ) + \sqrt{I} $ e non pu\`o essere uguale perch\'e non contiene $\beta $.}, quindi $1 = j + \beta a$.
+Elevando alla $n$, si pu\`o scrivere $1^n = 1 = j^n + \beta b$, per un opportuno $b \in A$ perch\'e tutte le potenze del binomio, ad eccezione di $j^n$, hanno $\beta $ come multiplo, quindi stanno in $(\beta )$.
+Moltiplicando per $\alpha $, visto che $j^n\in I$, si ha:
+\[
+	\alpha  = \underbracket{\alpha j^n }_{\in I} + \underbracket{\overbracket{\alpha  \beta}^{\in I}  b}_{\in I}  \implies \alpha \in I
+\] 
+\end{proof}
+\begin{osservazione}
+In $\mathbb{Z}$, si \`e visto che $\sqrt{I} $ primo implica $I$ primario, ma questo non \`e vero in generale ed \`e necessario che $\sqrt{I} $ sia massimale per rendere vera l'affermazione.
+Per esempio, si pu\`o considerare $A = K[x,y,z] / (xy-z^2)$, con l'ideale $\mathfrak{p} =(\overline{x},\overline{z})$, che \`e primo perch\'e $A / \mathfrak{p} \cong K [y]$.
+Si nota che
+\[
+\mathfrak{p} ^2 = (\overline{x}^2 , \overline{x}\overline{z},\overline{z}^2 ) \implies \overline{x}\overline{y} \in \mathfrak{p} ^2
+\] 
+per\`o $\overline{x}\not\in \mathfrak{p} ^2$ e $\overline{y}\not\in \sqrt{\mathfrak{p} ^2}=\mathfrak{p}  $, quindi $\mathfrak{p} ^2$ non \`e primario.
+\end{osservazione}
 
 
 
@@ -344,6 +463,134 @@ L'obiettivo della decomposizione primaria \`e tradurre questa propriet\`a in ter
 
 
 
+
+
+
+
+
+
+
+
+
+
+\begin{esempio}
+	[Decomposizione in UFD]
+	Sia dato $A = K[x,y]$, che \`e un UFD.
+	Sia dato anche $I = (x^2 , xy)$; lo si vuole decomporre in primari.
+\end{esempio}
+\begin{svolgimento}
+Si potrebbe provare $(x^2) \cap (x,y)$, ma \`e falsa perch\'e $xy \not \in (x^2)$.
+La combinazione funzionante \`e $(x) \cap (x^2 , y)$; infatti, si vede che $x^2$ e $xy$ appartengono ad entrambi gli ideali.
+Inoltre, dato $a \in (x) \cap (x^2 , y)$, cio\`e $a = \alpha x = \beta x^2 + \gamma y$, con $\alpha ,\beta ,\gamma \in A$, si ha:
+\[
+\begin{split}
+	&(\alpha -x\beta )x = \gamma y \Rightarrow \exists \gamma' : \gamma = \gamma' x \\
+	&\Rightarrow \alpha -\beta x = \gamma'y \Rightarrow \alpha  = \beta x + \gamma'y \Rightarrow a = \alpha x = \beta x^2 + \gamma' xy
+\end{split}
+\] 
+Per terminare, si deve concludere che $(x)$ e $(x^2 ,y) $ sono primari.
+Intanto, $(x)$ \`e primo, quindi primario; per $(x^2,y)$ si pu\`o passare al quoziente $A / (x^2 ,y) \cong K [x] / (x^2)$ e verificare che tutti gli zero divisori sono nilpotenti.
+Alternativamente, si pu\`o usare la precedente proposizione, visto che $\sqrt{(x^2,y)} = \sqrt{(x,y)} =(x,y)$, che \`e massimale.
+\end{svolgimento}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Somma diretta di anelli}
+\begin{definizione}
+[Somma diretta esterna]
+Dati due anelli $A,B$, se ne definisce la \textit{somma diretta} come
+\[
+A \oplus B : = A \times B
+\] 
+\end{definizione}
+\begin{definizione}
+	[Somma diretta interna]
+	Sia $A$ un anello e siano $B,C$ due anelli contenuti in $A$; allora si dice che $A \cong B \oplus C$ se
+	\begin{enumerate}[(a).]
+		\item $B+C = (1) = A$;
+		\item $B\cap C = (0)$.
+	\end{enumerate}
+\end{definizione}
+\begin{prop}
+Siano $B,C$ due anelli contenuti in $A$; allora $A \cong B \oplus C$ se e solo se $\exists a,b\in A$ idempotenti ortogonali, cio\`e tali che
+\begin{enumerate}[(a).]
+	\item $a^2 = a$ e $b^2 = b$;
+	\item $ab=0$;
+	\item $a+b=1$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\ 
+
+\begin{itemize}
+	\item[$(\Rightarrow)$] Sia $A\cong B \oplus C $; dati $(1_B,0_C)$ e $(0_B,1_C)$, si pu\`o verificare che soddisfano le condizioni di idempotenza ortogonale.
+	\item[$(\Leftarrow)$] Siano $B = (a)$ e $C = (b) = (1-a)$ (per il punto c). 
+		Allora $B$ risulta un anello rispetto alle operazioni indotte da $A$ e con unit\`a pari ad $a$; infatti, per $b \in B$, si ha $b = \alpha a$ e
+		\[
+		a b =\alpha a^2 = \alpha  a = b
+		\] 
+		Ne segue che un certo $x  \in A$ si scrive come
+		\[
+			x= \underbracket{a x}_{\in B}  + \overbracket{(1-a)}^{\in C} x
+		\] 
+Se, poi, $y \in B\cap C$, allora $x = ab =(1-a)c$, quindi
+\[
+	\begin{split}
+		a y  &= a^2 b = b =y \\
+			  &= a (1-a) c = 0
+	\end{split}\iff y = 0
+\] 
+\end{itemize}
+\end{proof}
+\begin{prop}
+	Dato $A$ un anello e $\left\{ B_i \right\}_{i=1}^n $ famiglia di anelli contenuti in $A$, allora si dice che $A \cong \bigoplus_{i=1} ^n B_i$ se e solo se esistono $\left\{ a_i \right\} _{i=1} ^n$, con $a_i \in B_i$, elementi idempotenti ortogonali, cio\`e tali che
+	\begin{enumerate}[(a).]
+		\item $a_i^2 = a_i$;
+		\item $a_ia_j = a_i \delta _{ij} $;
+		\item $\sum_{i=1}^{n} a_i = 1$.
+	\end{enumerate}
+\end{prop}
+\begin{osservazione}
+Si nota che, nel caso della somma diretta di due anelli, le condizioni $(b)$ e $(c)$ sono equivalenti, ma non \`e questo il caso quando si considera la somma diretta di pi\`u anelli.
+\end{osservazione}
+\begin{esercizio}
+Caratterizzare $\mathcal{N} (A \oplus B)$, $\mathcal{D} (A\oplus B)$ e $(A\oplus B)^*$.
+\end{esercizio}
+\begin{esercizio}
+Gli ideali di $A \oplus B$ sono tutti e soli quelli della forma $I \oplus J$, con $I$ ideale di $A$ e $J$ ideale di $B$.
+\end{esercizio}
+\noindent \textit{Suggerimento:} Per la freccia verso sinistra, dato $H$ ideale di $A\oplus B$, considerare le proiezioni
+\[
+\pi_A : A \oplus B \to A \hspace{1cm}\pi_B : A\oplus B \to B
+\] 
+e verificare che $\pi_A(H)$ \`e un ideale di $A$ e $\pi_B(H)$ \`e un ideale di $B$, per poi mostrare che $H \cong \pi_A(H) \oplus \pi_B(H)$ (il fatto che l'immagine sia un ideale \`e assicurato dalla suriettivit\`a di $\pi$).
+Se $(\alpha ,\beta ) \in \pi_A(H)\oplus \pi_B(H)$, allora $(\alpha ,\gamma) \in H$ per qualche $\gamma\in B$ e $(\alpha ,\gamma)(1,0) = (\alpha ,0) \in H$.
+\begin{esercizio}
+Dimostrare che $A \oplus B / I\oplus J \cong A / I \oplus B / J$ (sugg. usare il I teorema di omomorfismo) e, poi, caratterizzare $\operatorname{Spec} A\oplus B$ e $\operatorname{Max} A \oplus B$.
+\end{esercizio}
 
 
 
