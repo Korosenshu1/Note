@@ -1,0 +1,345 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di Fisica statistica}
+\author{Manuel Deodato}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+
+%%%%% tcolorbox setup
+
+% Teorema e proposizione
+\newtcbtheorem[number within=section]{teorema}{Teorema}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
+
+\newtcbtheorem[number within=section]{prop}{Proposizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
+
+
+
+
+
+% Definizione
+\definecolor{greendef}{HTML}{b8d8be}
+
+\newtcbtheorem[number within=section]{definizione}{Definizione}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
+
+
+% Esempio
+\theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+
+%\definecolor{empurple}{HTML}{6e5e89}
+
+%\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
+
+\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
+
+\numberwithin{esempio}{section}
+
+
+% Lemma e Corollario
+\definecolor{lemcor}{HTML}{a78d8a}
+
+\newtcbtheorem[number within=section]{lemma}{Lemma}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
+
+\newtcbtheorem[number within=section]{corollario}{Corollario}
+{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
+
+
+
+% Osservazione
+\theoremstyle{definition}
+\newtheorem{osservazione}{Osservazione}
+
+\definecolor{coloros}{HTML}{6e5e89}
+
+\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
+
+\numberwithin{osservazione}{section}
+
+% Nota
+\newtheorem{nota}{Nota}
+
+\definecolor{ncol}{HTML}{f9ebbe}
+
+\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
+
+\numberwithin{nota}{section}
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage{sansiwona}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Termodinamica e meccanica statistica classica}
+\subsection{Sistemi interagenti}
+Si considera un gas di $N$ particelle descritto da un'hamiltoniana 
+\[
+H = \sum_{j=1}^{N} \frac{p_j^2}{2m} + \mathcal{V} (\vec{x}_1,\ldots,\vec{x}_N)
+\] 
+dove $\mathcal{V}$ \`e il termine di interazione, che si assume indipendente dai momenti.
+Si descrive tale sistema con il formalismo canonico; allora
+\[
+Z = \frac{1}{N! h^{3N}} \int d^N \vec{q} d^N \vec{p} \ e^{- \beta  H} 
+\] 
+L'integrale nei momenti \`e facile perch\'e risulta essere un integrale gaussiano\footnote{Si ricorda che $\int_{-\infty} ^{+\infty} e^{-\alpha x^2} \ dx = \sqrt{\pi / \alpha } $.}:
+\[
+\frac{1}{h^{3N} } \int d^N \vec{p} \ e^{-\beta  \sum_{j}^{} \frac{p^2_i}{2m}}  = \left(\frac{2\pi m }{h^2 \beta }\right) ^{3N / 2} 
+\] 
+La parte complicata \`e relativa a quella sulle posizioni. 
+Si indica con $Z_N$ la parte della funzione di partizione relativa all'integrale della parte interagente dell'hamiltoniana:
+\[
+Z_N := \int d^N \vec{x} \ e^{-\beta  \mathcal{V} (\vec{x}_1,\ldots,\vec{x}_N)} 
+\] 
+Conoscendo $Z_N$, si ricava tutta la fisica del sistema. 
+Infatti:
+\[
+\begin{split}
+	&F= -\frac{1}{\beta }\log \left[\frac{1}{N!}\left(\frac{2\pi m }{h^2 \beta }\right)^{3N / 2}  \right]  - \frac{1}{\beta }\log Z_n\\
+	& U = - \frac{\partial }{\partial \beta } \log Z = \frac{3}{2} N \kappa _B T + \kappa _B T^2 \Eval{\frac{\partial }{\partial T} \log Z_N}{T}{}\\
+	& p = \Eval{- \frac{\partial F}{\partial V}}{T}{} = \kappa _B T \Eval{\frac{\partial }{\partial V} \log Z_N}{T}{}
+\end{split}
+\] 
+da cui si ricava l'equazione di stato 
+\begin{equation}\label{1-steq}
+	\frac{pV}{N\kappa _B T} = \frac{V}{N} \Eval{\frac{\partial }{\partial V} \log Z_N}{T}{}
+\end{equation}
+\begin{osservazione}
+Nel limite non interagente in cui $\mathcal{V} \equiv 0$, si vede che $Z_N = V^N$ (volume nel quale \`e confinato il gas), per cui
+\[
+\frac{pV}{N\kappa _B T} = \frac{V}{N}N \frac{1}{V}= 1 \implies pV = N \kappa _B T
+\] 
+che \`e l'equazione di stato del gas perfetto.
+\end{osservazione}
+\subsubsection{Interazione a due corpi}
+Si studia il caso in cui il potenziale sia della forma 
+\[
+\mathcal{V} (\vec{x}_1,\ldots,\vec{x}_N) = \sum_{i<j}^{} v (\vec{x}_i - \vec{x}_j)
+\] 
+La tecnica per calcolare $Z_N$ \`e procedere iterativamente: si cerca di trovare $Z_{N+1} $ in termini di $Z_N$, assumendo quest'ultima nota.
+Di seguito, si svolgono passaggi per esplicitare $Z_N$ nel caso in cui si abbiano $N+1$ particelle.
+\[
+\begin{split}
+	Z_{N+1} &= \int d^N \vec{x} \int d \vec{x}' \ e^{-\beta \sum_{i<j}^{} v(\vec{x}_i -\vec{x}_j)}  e^{-\beta \sum_{j=1}^{N} v(\vec{x}' - \vec{x}_j)} \\
+		&= \frac{\displaystyle \int d^N \vec{x} \int d\vec{x}'\ e^{-\beta \sum_{i<j}^{} v(\vec{x}_i -\vec{x}_j)} e^{-\beta \sum_{j}^{} v(\vec{x}' -\vec{x}_j)}  }{\displaystyle \int d^N \vec{x} \ e^{-\beta \sum_{i<j}^{} v(\vec{x}_i-\vec{x}_j)} } \int d^N \vec{x} \ e^{-\beta \sum_{i<j}^{} v(\vec{x}_i - \vec{x}_j)} \\
+		& = \left\langle \int d\vec{x}' \ e^{-\beta \sum_{j}^{} v(\vec{x}' - \vec{x}_j)}  \right\rangle_N Z_N
+\end{split}
+\] 
+dove il pedice $N$ alla media si riferisce al fatto che \`e pesata con la funzione di distribuzione per il sistema di $N$ particelle.
+
+Per proseguire nello studio del sistema, si fa la seguente assunzione: \textit{l'interazione tra le particelle del sistema avviene esclusivamente a coppie}. 
+Questo significa che, qualora due particelle si trovino vicine a tal punto da interagire, è estremamente improbabile che ve ne siano altre che interagiscono.	
+Se le particelle $i$ e $j$ sono vicine, si scrive che $\vec{x}_i \sim \vec{x}_j$.
+\begin{osservazione}
+	Se $\vec{x}' \not \sim \vec{x}_i, \ \forall i=1,\ldots, N$, allora $e ^{- \beta \sum_{j}^{} v(\vec{x}' - \vec{x}_j)} \simeq 1$, per cui $Z_{N+1} \simeq VZ_N$.
+\end{osservazione}
+Trascurando il caso banale nell'osservazione, rimane da studiare il caso $\vec{x}' \sim \vec{x}_i$, per qualche $i=1,\ldots,N$.
+In questo caso, si pu\`o considerare $e^{-\beta  \sum_{i<j}^{} v (\vec{x}_i - \vec{x}_j)} \simeq 1$, da cui
+\[
+Z_{N+1}  \simeq \frac{\displaystyle \int d \vec{x}' \int d ^N \vec{x}\ e^{-\beta  \sum_{i}^{} v(\vec{x}' - \vec{x}_i)} }{V^N} Z_N
+\] 
+Visto che le particelle sono indistinguibili
+\[
+Z_{N+1} \simeq \int d\vec{x}' \left(\int d\vec{y} \ e ^{-\beta v(\vec{x}' -\vec{y})}\right) ^N \frac{1}{V^N}Z_N
+\] 
+Aggiungendo e sottraendo $1$,l'integrale tra parentesi \`e
+\[
+\left[ V - \int d\vec{y} \left(1 - e^{-\beta  v(\vec{x}' - \vec{y})}\right)  \right] ^N
+\] 
+Ora si assume che il potenziale sia uniforme e, quindi, che $v(\vec{x}_i - \vec{x}_j) \equiv v(\lvert \vec{x}_{i} -\vec{x}_j  \rvert )$; tramite un cambio di coordinate, allora:
+\[
+\begin{split}
+	&a:= \int dr \ 4 \pi r^2 \left(1-e^{-\beta v(r)}\right) \\
+	&\Rightarrow Z_{N+1} \simeq \frac{1}{V^N} \left(\int d\vec{x}' (V-a)^N\right) Z_N = \frac{V (V-a)^N}{V^N}Z_N = V \left(1-\frac{a}{V}\right) ^N Z_N
+\end{split}
+\] 
+visto che $(V-a)^N$ non dipende da $\vec{x}'$.
+Allora, si vede che $Z_1 = V$, $Z_2 = V(1-a / V)Z_1$, e cos\`i via, per cui 
+\[
+Z_N = V^N \left(1- \frac{a}{V}\right) ^{1 + 2 + \ldots + (N-1)} = V^N \left(1- \frac{a}{V}\right) ^{\frac{N(N-1)}{2}} 
+\] 
+Infine, si osserva che, nel limite termodinamico, cio\`e per grandi $N,V$ e $N / V$ costante, si ha
+\[
+\left(1-\frac{a}{V}\right) ^{\frac{N(N-1)}{2}} = \exp \left[ \frac{N(N-1)}{2}\log\left(1-\frac{a}{V}\right)  \right] \simeq \exp \left[ \frac{N^2}{2} \log\left(1-\frac{a}{V}\right)  \right] \simeq \exp\left(\frac{-aN^2}{2V}\right)  
+\] 
+da cui
+\[
+Z_N \simeq V^N e ^{- aN^2 / (2V)} 
+\] 
+Questa \`e l'espressione di \textit{campo medio}. 
+
+Ora si riprende l'equazione di stato in \ref{1-steq}. (-42:38)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
