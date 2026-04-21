@@ -285,7 +285,7 @@ Visto che le particelle sono indistinguibili
 \[
 Z_{N+1} \simeq \int d\vec{x}' \left(\int d\vec{y} \ e ^{-\beta v(\vec{x}' -\vec{y})}\right) ^N \frac{1}{V^N}Z_N
 \] 
-Aggiungendo e sottraendo $1$,l'integrale tra parentesi \`e
+Aggiungendo e sottraendo $1$, l'integrale tra parentesi \`e
 \[
 \left[ V - \int d\vec{y} \left(1 - e^{-\beta  v(\vec{x}' - \vec{y})}\right)  \right] ^N
 \] 
@@ -311,12 +311,91 @@ Z_N \simeq V^N e ^{- aN^2 / (2V)}
 \] 
 Questa \`e l'espressione di \textit{campo medio}. 
 
-Ora si riprende l'equazione di stato in \ref{1-steq}. (-42:38)
+\subsubsection{Equazione di Van der Waals}
 
 
 
+Ora si riprende l'equazione di stato in \ref{1-steq}. 
+Inserendo quanto appena ottenuto, si trova 
+\[
+\frac{pV}{N\kappa _B T} = 1 + \frac{Na}{2V}
+\] 
+Per capire meglio l'espressione, si esplicita $a$:
+\[
+\begin{split}
+	a &= 4 \pi \int_{0} ^{+\infty} dr \ r^2 \left(1 - e ^{-\beta v(r)}\right) \\
+	  &\simeq 4\pi \int_{0} ^b dr \ r^2 (1-0) + 4 \pi \int_{b} ^{+\infty} dr \ r ^2 \left(1-e^{-\beta  v}\right) \\
+	  &\simeq \frac{4}{3}\pi b^3 - \frac{1}{\kappa _B T}4 \pi \int_{b} ^{+\infty} dr \ r^2 \big(-v(r)\big) \\
+	  &= V_b - \frac{D}{T}
+\end{split}
+\] 
+dove $V_b = \frac{4}{3}\pi b^3$ (volume sfera di raggio $b$) e $D = -\frac{1}{\kappa _B}\int_{b} ^{+\infty} dr \ 4\pi r^2 v(r)$.
+Nella prima approssimazione sopra, si \`e scelto $v(r)$ simile a Lennard-Jones, approssimandolo come\footnote{Cio\`e a meno di un tratto di discesa, diventa subito negativo dopo $b$ e, dopo un minimo, si attesta sullo zero.}
+\[
+v(r) = \begin{cases}
+	+\infty&\, r \in [0,b]\\
+	       v(r)<0&\, r \in (b,+\infty)
+\end{cases}
+\] 
+Nella seconda approssimazione, invece, si \`e assunto il caso di \textbf{alte temperature}, corrispondente a $\beta \ll 1$, per sviluppare l'esponenziale al primo ordine.
+In questo modo, l'equazione di stato diventa 
+\[
+\frac{pV}{N\kappa _BT}\simeq 1+\frac{N}{2} \frac{V_b}{V}-\frac{ND}{2VT}
+\] 
+Questo pu\`o essere riscritto in una forma pi\`u nota:
+\begin{equation}
+	\left(p+\frac{a_w}{V^2}\right) \left(V-b_w\right) = N\kappa _B
+\end{equation}
+dove $b_w = \frac{N}{2}V_b$ e $a_w = \frac{1}{2}N^2 \kappa _B D	$.
+Questa \`e l'\textit{equazione di stato di Van der Waals} (da cui i pedici $w$ in $a_w$ e $b_w$).
+Questa equazione permette di dire che, sotto le ipotesi trattate, in particolare quella di gas diluito, il gas si pu\`o descrivere tramite l'equazione di stato del gas perfetto, a patto di correggere pressione e volume opportunamente:
+\begin{itemize}
+	\item il volume deve essere corretto perch\'e le particelle non sono puntiformi, ma occupano un volume (sono circa sfere), quindi non possono sovrapporsi (viene diminuito tramite $b_w$);
+	\item la pressione viene aumentata per via del potenziale considerato, il quale include una coda attrattiva che tende a non far allontanare liberamente le particelle tra loro.
+\end{itemize}
+Ora se ne studiano le isoterme nel piano $(V,p)$. 
+Si vede che, al variare del valore fisso di temperatura, se ne trova uno in particolare che definisce la curva risultante; questo si chiama \textit{temperatura critica}, $T_c$.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.5\columnwidth]{vdw.png}
+\end{figure}
+Per $T>T_c$, la curva risultante assegna sempre una pressione ad un volume; nel caso di $T<T_c$, invece, la curva non \`e pi\`u iniettiva: si trovano dei valori di pressione raggiunti da volumi diversi.
+Mentre nel caso $T>T_c$, la relazione $\Eval{\frac{\partial p}{\partial V} }{T}{}<0$ \`e sempre verificata, si vede che per $T<T_c$, la variazione di pressione al variare del volume pu\`o diventare positiva, il che rappresenta un problema fisico perch\'e indica instabilit\`a nel gas.
+Quando $T=T_c$, invece, l'equazione diventa $(V-V_c)^3= 0$ e presenta un punto di flesso in $(T_c,p_c,V_c)$, dove 
+\begin{equation}
+	T_c = \frac{8}{27} \frac{a}{b}\frac{1}{N\kappa _B} \hspace{1cm} p_c = \frac{a}{27b^2}\hspace{1cm}V_c = 3b
+\end{equation}
+Si vedr\`a che questo punto, chiamato \textit{punto critico}, \`e relativo ad una transizione di fase del secondo ordine; i tre punti di volume corrispondenti ad un certo valore di pressione nel caso di $T<T_c$, una volta corretti, si vedranno corrispondere ad una transizione di fase del primo ordine. 
+\subsubsection{Costruzione di Maxwell}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Per risolvere il problema della zona instabile nel caso $T<T_c$, Maxwell ha proposto il seguente argomento.
+		Il problema risiede nel fatto che, passando al grafico $(V,F)$ tramite $F = \int p \ dV$ a $T$ fissata, si vede che la curva prevista da Van der Waals non minimizza l'energia libera di Helmholtz, causa dell'instabilit\`a.
 
-
+		Allora si deve sostituire la parte prevista da Van der Waals con una retta orizzontale a pressione $p_1=p_2$ che, nel grafico $(V,F)$, sia la tangente alla curva nei punti $V_1$ e $V_2$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{max-constr-vdw.png}
+	\end{minipage}
+\end{center}
+Questo permette di identificare i punti $1$ e $2$.
+Le condizioni imposte da questo ragionamento sono:
+\[
+\begin{split}
+	&p_1=p_2\implies \Eval{\frac{\partial F}{\partial V_1} }{T}{} =\Eval{\frac{\partial F}{\partial V_2} }{T}{}\\
+	& \frac{F_2-F_1}{V_2-V_1}= \Eval{\frac{\partial F}{\partial V_1} }{T}{}
+\end{split}
+\] 
+da cui
+\[
+ -\Eval{\frac{\partial F}{\partial V_1} }{T}{} (V_2-V_1) = -(F_2-F_1) \implies p_1 (V_2-V_1) = \int_{V_1} ^{V_2} p \ dV
+\] 
+Questo permette di concludere anche che la retta orizzontale $p_1=p_2$ nel grafico $(V,p)$ \`e tale per cui le aree $A$ e $B$ sono uguali.
+Infine, si nota che, durante l'intera retta rossa individuata da Maxwell, la sostanza che compone il sistema coesiste allo stato liquido e gassoso: per $V\le V_1$, la sostanza \`e allo stato liquido; per $V\ge V_2$, la sostanza \`e allo stato gassoso; per $V \in (V_1,V_2)$, i due stati coesistono e la pressione \`e costante.
 
 
 
