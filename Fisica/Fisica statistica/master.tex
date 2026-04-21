@@ -366,6 +366,14 @@ Quando $T=T_c$, invece, l'equazione diventa $(V-V_c)^3= 0$ e presenta un punto d
 	T_c = \frac{8}{27} \frac{a}{b}\frac{1}{N\kappa _B} \hspace{1cm} p_c = \frac{a}{27b^2}\hspace{1cm}V_c = 3b
 \end{equation}
 Si vedr\`a che questo punto, chiamato \textit{punto critico}, \`e relativo ad una transizione di fase del secondo ordine; i tre punti di volume corrispondenti ad un certo valore di pressione nel caso di $T<T_c$, una volta corretti, si vedranno corrispondere ad una transizione di fase del primo ordine. 
+\begin{osservazione}
+Definendo $\overline{p}= p / p_c$, $\overline{V} = V / V_c$ e $\overline{T} = T / T_c$, l'equazione di Van der Waals si scrive come
+\[
+\left(\overline{p} + \frac{3}{\overline{V}^2}\right) \left(\overline{V}-\frac{1}{3}\right) = \frac{8}{3}\overline{T}
+\] 
+nota come \textit{legge degli stati corrispondenti}.
+Si nota che questa non contiene alcuna informazione sulla natura del gas in esame, ossia sulla sostanza di cui \`e composto, visto che si riescono a eliminare le variabili $a$ e $b$ da cui tale dipendenza deriva.
+\end{osservazione}
 \subsubsection{Costruzione di Maxwell}
 \begin{center}
 	\begin{minipage}
@@ -397,10 +405,106 @@ da cui
 Questo permette di concludere anche che la retta orizzontale $p_1=p_2$ nel grafico $(V,p)$ \`e tale per cui le aree $A$ e $B$ sono uguali.
 Infine, si nota che, durante l'intera retta rossa individuata da Maxwell, la sostanza che compone il sistema coesiste allo stato liquido e gassoso: per $V\le V_1$, la sostanza \`e allo stato liquido; per $V\ge V_2$, la sostanza \`e allo stato gassoso; per $V \in (V_1,V_2)$, i due stati coesistono e la pressione \`e costante.
 
+\subsection{Espansioni in clusters}
+Si tratta di sviluppi di natura perturbativa, fondati sull'assunzione di gas con densit\`a \textit{piccola}.
+Permette una descrizione pi\`u accurata e generale di un sistema composto da un gas reale; si ritrover\`a il caso di Van der Waals come sviluppo al primo ordine non-banale.
+\begin{osservazione}
+Questi sviluppi sono adeguati quando il sistema non si trova vicino a transizioni di fase, le quali sono caratterizzate da non-analiticit\`a delle variabili termodinamiche del sistema.
+\end{osservazione}
+Si utilizza il formalismo gran canonico per studiare un gas descritto dall'hamiltoniana
+\[
+H = \sum_{i}^{} \frac{p_i^2}{2m} + \sum_{i<j}^{} v\left(\lvert \vec{r}_i - \vec{r}_j \rvert \right) 
+\] 
+introdotta nelle sezioni precedenti. 
+Si ricorda che la funzione di gran partizione \`e data da\footnote{Dalle sezioni precedenti, si ricorda che la parte dei momenti coinvolge integrali gaussiani gi\`a visti e rimane la parte difficile da trattare nelle coordinate.} 
+\[
+	\begin{split}
+		\mathcal{Z} (T,V,\mu ) &= \sum_{N=0}^{+\infty}  e^{\beta \mu N} Z(T,V,N) \\
+				       &= \sum_{N=0}^{+\infty} \frac{1}{N!} \frac{1}{\lambda _T^{3N} }e^{\beta \mu N}\int d^N \vec{r} \ \exp \left[ -\beta \sum_{i<j}^{} v\left(\lvert \vec{r}_i -\vec{r}_j \rvert \right)  \right] \\
+				       &=\sum_{N=0}^{+\infty} \frac{e^{\beta \mu N} }{N! \lambda _T^{3N} } Z_N(T,V)
+	\end{split}
+\] 
+dove $\lambda _T ^2 = h^2 / (2\pi m \kappa _B T)$, nota col nome di \textit{lunghezza d'onda termica} e 
+\[
+v(r)\simeq \begin{cases}
+	0 &,\ r\to +\infty\\
+	+\infty &,\ r\to 0
+\end{cases}
+\] 
+un potenziale del tipo Lennard-Jones.
+Per studiare $Z_N$, si definiscono le \textit{funzioni di Mayer} $f_{ij} := e^{-\beta v\left(\lvert \vec{r}_i - \vec{r}_j \rvert \right) } - 1$, per cui
+\[
+Z_N(T,V) = \int d^N \vec{r}\ \prod_{i<j} (1+f_{ij} )
+\] 
+Inoltre, si introduce la quantit\`a $W_N(\vec{r}_1,\ldots,\vec{r}_N)$, la cui giustificazione arriver\`a pi\`u avanti, tale per cui 
+\begin{equation}\label{ncumexp}
+\mathcal{Z} (T,V,\mu ) = \sum_{N=0}^{+\infty} \frac{e^{\beta \mu N}}{N!\lambda _T^{3N} } \int d^N \vec{r}\ W_N(\vec{r}_1,\ldots,\vec{r}_n)
+\end{equation}
+\subsubsection{Espansione in cumulanti}
+Per comodit\`a, essendo che si dovr\`a valutare $\log \mathcal{Z} $, si scrive 
+\begin{equation}\label{cumexp}
+\mathcal{Z} (T,V,\mu ) = \exp \left[ \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\ell ! \lambda _T^{3\ell } } \int d^\ell \vec{r} \ \mathcal{U}_\ell (\vec{r}_1,\ldots,\vec{r}_\ell ) \right] 
+\end{equation}
+nota come \textit{espansione in cumulanti}.
+Si studia la relazione tra le espressioni in \ref{ncumexp} e \ref{cumexp}, esplicitando i primi termini della serie nella prima e i primi termini dello sviluppo in serie dell'esponenziale nella seconda, in quanto questi dovranno coincidere, termine a termine, per ciascun ordine dello sviluppo.
+\[
+\begin{split}
+	& \mathcal{Z}  = 1 + \frac{e^{\beta \mu }}{\lambda _T^3}  \int d\vec{r}_1 W_1 (\vec{r}_1) + \frac{e^{2 \beta \mu }}{2! \lambda _T^6} \int d\vec{r}_1 d\vec{r}_2 \ W_2 (\vec{r}_1, \vec{r}_2)+\ldots \\
+	&\begin{split}
+		\mathcal{Z}  &= 1 + \left\{ \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\ell ! \lambda ^{3\ell } } \int d^\ell \vec{r}\mathcal{U} _\ell  \right\} + \frac{1}{2} \left\{ \ldots \right\} ^2 + \ldots\\
+			     &\simeq 1 +  \frac{e^{\beta \mu }}{\lambda _T^3} \int d\vec{r}_1 \mathcal{U} _1(\vec{r}_1) + \frac{e^{2\beta \mu }}{2\lambda _T^6} \int d\vec{r}_1 d\vec{r}_2 \mathcal{U} _2 (\vec{r}_1,\vec{r}_2) + \frac{1}{3!}\ldots + \\
+			     &+ \frac{1}{2}\left(\frac{e^{2\beta \mu }}{\lambda _T^6} \int d\vec{r}_1 \int d\vec{r}_2 \ \mathcal{U} _1(\vec{r}_1) \mathcal{U} _1 (\vec{r}_2) +  \frac{e^{3\beta \mu }}{\lambda _T^9} \int d\vec{r}_1 \int d\vec{r}_2 \int d\vec{r}_3\ \mathcal{U} _1(\vec{r}_1) \mathcal{U} _2(\vec{r}_2, \vec{r}_3) +\ldots
+\right) 	
+	\end{split}
+\end{split}
+\] 
+dove l'ultima riga deriva dal termine al quadrato tra parentesi graffe nella forma esponenziale di $\mathcal{Z} $.
+In questo modo, eguagliando ciascun coefficiente per ogni potenza di $\alpha  = e^{\beta \mu }/\lambda _T^3$, si vede che, perch\'e le due espressioni coincidano, deve valere
+\[
+	\begin{split}
+		&W_1(\vec{r}_1) = \mathcal{U} _1(\vec{r}_1) \hspace{1cm} W_2(\vec{r}_1,\vec{r}_2) = \mathcal{U} _2(\vec{r}_1,\vec{r}_2)+ \mathcal{U} _1(\vec{r}_1) \mathcal{U} _1(\vec{r}_2)\\
+		&\begin{split}
+			W_3(\vec{r}_1, \vec{r}_2,\vec{r}_3) =&\ \mathcal{U} _3 (\vec{r}_1, \vec{r}_2, \vec{r}_3) + \mathcal{U} _1(\vec{r}_1) \mathcal{U} _2(\vec{r}_2,\vec{r}_3) \\
+							     &+\mathcal{U} _1(\vec{r}_2)\mathcal{U} _2(\vec{r}_1, \vec{r}_3) + \mathcal{U} _1(\vec{r}_3) \mathcal{U} _2(\vec{r}_1,\vec{r}_2) + \mathcal{U} _1(\vec{r}_1)\mathcal{U} _1(\vec{r}_2)\mathcal{U} _1(\vec{r}_3)
+		\end{split}
+	\end{split}
+\] 
+In generale, si vede che
+\[
+	\begin{split}
+		W_N (\vec{r}_1,\ldots,\vec{r}_N) =&\ \mathcal{U} _N(\vec{r}_1,\ldots,\vec{r}_N) \\
+						  &+ \sum_{\alpha =2}^{N} \frac{1}{\alpha !} \sum_{p_1=1}^{N-\alpha+1 }\cdots \sum_{p_\alpha =1}^{N-\alpha +1} \frac{N!}{p_1!p_2!\ldots p_\alpha !} \mathcal{U} _{p_1} \cdots \mathcal{U} _{p_\alpha } \delta \left(N - \sum_{\gamma=1}^{\alpha } p_\gamma\right)   
+	\end{split}
+\] 
+In questa formula, il termine $\frac{1}{\alpha !}$ tiene conto delle possibili permutazioni delle $\mathcal{U}_i$ in un termine che ne coinvolge il prodotto, come $\mathcal{U} _1 \mathcal{U} _2 = \mathcal{U} _2 \mathcal{U} _1$; il termine $\frac{N!}{p_1! \ldots p_\alpha !}$, invece, tiene conto della possibilit\`a di permutare le posizioni delle particelle che compaiono negli argomenti di una data $\mathcal{U} _k$, come $\mathcal{U} _2 (\vec{r}_1,\vec{r}_2) = \mathcal{U} _2 ( \vec{r}_2, \vec{r}_1)$. 
+Quest'ultimo \`e dovuto al fatto che le particelle sono identiche e si dovr\`a integrare su tutto lo spazio, pertanto i contributi saranno equivalenti sia che si chiami $\vec{r}_1$, che $\vec{r}_2$.
+\begin{osservazione}
+Si pu\`o far corrispondere ogni funzione di Mayer $f_{ij} $ che compare in una $W_N$ ad un grafo di $N$ vertici, dove il vertice $i$ e il vertice $j$ sono connessi.
+Similmente, il prodotto di $f_{12} f_{23} $ in $W_3$, per esempio, \`e assimilabile ad un grafo di $3$ vertici, dove le connessioni sono tra $1$ e $2$ e tra $2$ e $3$.
+In questo senso, si vede che 
+\[
+W_3 = 1 + f_{12} + f_{13}+ f_{23}+ f_{12}f_{23}+f_{13}f_{23}+f_{13}f_{12}+f_{12}f_{13}f_{23}
+\] 
+\`e somma di grafi connessi (non separabili in sottografi), cio\`e le $f_{12}f_{23}$, $f_{13}f_{23}$, $f_{13}f_{12}$ e $f_{12}f_{13}f_{23}$, e grafi non connessi, dati dai termini rimanenti.
+In generale, ogni $W_N$ segue la stessa logica: \`e somma di tutti i possibili grafi con $N$ vertici. 
+Si pu\`o vedere, invece, che le $\mathcal{U} _\ell $, invece, sono esclusivamente legate a grafi connessi perch\'e, in $W_N$, la $\mathcal{U} _N$ \`e l'unica indecomponibile, per cui deve corrispondere al grafo completamente connesso con $N$ vertici.
+Allora, l'espansione in cumulanti permette di considerare esclusivamente i termini corrispondenti a grafi connessi.
+\end{osservazione}
+Per continuare lo studio di $\mathcal{Z} $, si definisce 
+\[
+b_\ell := \frac{1}{\ell !}\frac{1}{V} \int d\vec{r}_1 \ldots d\vec{r}_\ell \mathcal{U} _\ell (\vec{r}_1,\ldots,\vec{r}_\ell )
+\] 
+dove il fattore $1 / V$ serve a rendere $b_\ell $ intensivo, visto che, come si vedr\`a, l'integrale porta un fattore pari a $V$.
+Con questa definizione, si ha:
+\[
+\mathcal{Z}  = \exp \left[ V \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\lambda _T^{3\ell }}b_\ell  \right] 
+\] 
+\newpage
+\appendix
 
-
-
-
+\section{Appendice sezione 1}
+\subsection{Test di consistenza}
+Riprendere da lezione 8, 7:49.
 
 
 
