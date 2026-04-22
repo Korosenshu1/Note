@@ -436,9 +436,9 @@ Per studiare $Z_N$, si definiscono le \textit{funzioni di Mayer} $f_{ij} := e^{-
 \[
 Z_N(T,V) = \int d^N \vec{r}\ \prod_{i<j} (1+f_{ij} )
 \] 
-Inoltre, si introduce la quantit\`a $W_N(\vec{r}_1,\ldots,\vec{r}_N)$, la cui giustificazione arriver\`a pi\`u avanti, tale per cui 
+Inoltre, si introduce la quantit\`a $W_N(\vec{r}_1,\ldots,\vec{r}_N)=\prod_{i<j} (1+f_{ij} )$, la cui giustificazione arriver\`a pi\`u avanti, tale per cui 
 \begin{equation}\label{ncumexp}
-\mathcal{Z} (T,V,\mu ) = \sum_{N=0}^{+\infty} \frac{e^{\beta \mu N}}{N!\lambda _T^{3N} } \int d^N \vec{r}\ W_N(\vec{r}_1,\ldots,\vec{r}_n)
+\mathcal{Z} (T,V,\mu ) = \sum_{N=0}^{+\infty} \frac{e^{\beta \mu N}}{N!\lambda _T^{3N} } \int d^N \vec{r}\ W_N(\vec{r}_1,\ldots,\vec{r}_N)
 \end{equation}
 \subsubsection{Espansione in cumulanti}
 Per comodit\`a, essendo che si dovr\`a valutare $\log \mathcal{Z} $, si scrive 
@@ -492,25 +492,230 @@ Allora, l'espansione in cumulanti permette di considerare esclusivamente i termi
 \end{osservazione}
 Per continuare lo studio di $\mathcal{Z} $, si definisce 
 \[
-b_\ell := \frac{1}{\ell !}\frac{1}{V} \int d\vec{r}_1 \ldots d\vec{r}_\ell \mathcal{U} _\ell (\vec{r}_1,\ldots,\vec{r}_\ell )
+b_\ell := \frac{1}{\ell !}\frac{1}{V} \int d\vec{r}_1 \ldots d\vec{r}_\ell\ \mathcal{U} _\ell (\vec{r}_1,\ldots,\vec{r}_\ell )
 \] 
 dove il fattore $1 / V$ serve a rendere $b_\ell $ intensivo, visto che, come si vedr\`a, l'integrale porta un fattore pari a $V$.
 Con questa definizione, si ha:
 \[
 \mathcal{Z}  = \exp \left[ V \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\lambda _T^{3\ell }}b_\ell  \right] 
 \] 
+\subsubsection{Equazione di stato ed espansione del viriale}
+Grazie all'espansione in cumulanti, si pu\`o calcolare direttamente il gran potenziale:
+\[
+	\begin{split}
+		&\Omega = - \kappa _B T \log \mathcal{Z}  = - V \kappa _B T \sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell \\
+		&\Omega = - pV \implies p = \kappa _B T \sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell  
+	\end{split}
+\] 
+Per\`o $\alpha  = e^{\beta \mu }/ \lambda _T^3$ coinvolge il potenziale chimico; per eliminarlo si considera che
+\[
+	\langle N \rangle= \Eval{- \frac{\partial \Omega }{\partial \mu } }{T,V}{} \implies \frac{\langle N \rangle}{V} =\sum_{\ell =1}^{+\infty} \ell \alpha ^\ell b_\ell 
+\] 
+Per invertire la relazione ed esprimere $\mu $ in termini di $\langle N \rangle$, si espande la somma e si cerca una relazione ricorrente.
+Unendo le espressioni per $p$ e $\langle N \rangle/V$ trovate, si ha:
+\[
+\frac{pV}{\langle N \rangle\kappa _B T} = \frac{\sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell }{\sum_{\ell =1}^{+\infty } \ell \alpha ^\ell b_\ell } \stackrel{!}{=} \sum_{\ell =1}^{+\infty} \left(\frac{\langle N \rangle}{V}\right) ^{\ell -1}  B_\ell  
+\] 
+L'ultima uguaglianza \`e nota come \textit{espansione del viriale} ed \`e ottenuta imponendo che il rapporto tra le due serie restituisca una singola serie, i cui coefficienti $B_\ell $ sono noti come \textit{coefficienti del viriale}.
+
+Al solito, per trovare i coefficienti, si sviluppano le due somme, con l'ipotesi di $\alpha \ll 1$ (corrispondente a bassa densit\`a) e si eguagliano i coefficienti dei termini con stesso ordine di sviluppo:
+\[
+	\begin{split}
+		&\frac{\sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell }{\sum_{\ell =1}^{+\infty } \ell \alpha ^\ell b_\ell }=\sum_{\ell }^{} B_\ell \left(\sum_{j}^{} j \alpha ^j b_j\right) ^{\ell -1} \\
+		& \frac{b_1 \alpha  + b_2 \alpha ^2 + b_3\alpha ^3 + \ldots}{b_1\alpha +2 b_2 \alpha ^2 + 3 b_3 \alpha ^3+\ldots} = B_1 +B_2 \left(b_1\alpha  + 2b_2 \alpha ^2\right)  + B_3\left( b_1^2 \alpha ^2 + 4 b_1b_2 \alpha ^3 + \ldots \right) 
+	\end{split}
+\] 
+Intanto si semplifica un $\alpha $ nel rapporto a sinistra; l'idea \`e di sviluppare il denominatore, portandolo al numeratore. 
+Prima di farlo, si osserva che $b_1 = 1$; infatti, $\mathcal{U} _1 = W_1 = 1$, da cui
+\[
+b_1 = \frac{1}{V}\int d\vec{r}_1\ \mathcal{U} _1(\vec{r}_1) = \frac{V}{V} =1
+\] 
+Allora 
+\[
+\frac{b_1}{b_1+2b_2\alpha +3b_3\alpha ^2+\ldots} = \frac{1}{1+2b_2\alpha +3b_3\alpha ^2+\ldots} \simeq 1-2b_2\alpha - 3b_3\alpha ^2 + \ldots + 4b_2^2 \alpha ^2 + 9 b_2b_3\alpha ^3 +\ldots
+\] 
+In questo modo, si vede che il termine senza $\alpha $ \`e $B_1 = 1$; per i termini in $\alpha $, invece, si ha $B_2 = b_2 - 2 b_2 = - b_2$.
+La regola generale \`e 
+\[
+	B_n = -\frac{1}{(n-2)!Vn} \sum \Bigg\{\substack{\text{grafi con n vertici che rimangono connessi}\\ \text{se si toglie un vertice e le sue connessioni con gli altri}}\Bigg\}
+\] 
+Quelli descritti nella somma sono detti \textit{grafi completamente connessi}.
+Riprendendo l'espansione del viriale, si vede che
+\[
+\frac{pV}{\langle N \rangle\kappa _B T}= B_1 + B_2 \frac{\langle N \rangle}{V} + \ldots = 1 - b_2 \frac{\langle N \rangle}{V}+\ldots
+\] 
+dove 
+\[
+b_2 = \frac{1}{2} \int d\vec{r}\ f_{12} (\vec{r})
+\] 
+A meno di un segno meno derivante dalla definizione di funzione di Mayer data in questa trattazione, l'equazione di stato
+\[
+\frac{pV}{\langle N \rangle\kappa _B T} = 1 - b_2 \frac{\langle N \rangle}{V}
+\] 
+\`e esattamente quella che permette di ritrovare l'equazione di Van der Waals.
+
+Si pu\`o calcolare il fattore correttivo successivo a Van der Waals; svolgendo il calcolo, si trova 
+\[
+B_3 = 4b_2^2 - 2 b_3 = 4 \left(-\frac{1}{2}\int d\vec{r} \ f(\vec{r})\right) ^2 - 2 \frac{1}{6V} \int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ \left(3 f_{12}f_{23} + f_{12}f_{13}f_{23}\right) 
+\] 
+Tramite il cambio di variabili 
+\begin{equation}\label{cv}
+\begin{cases}
+	\vec{R}_1 = \vec{r}_1 - \vec{r}_2 \\
+	\vec{R}_2 = \vec{r}_2 - \vec{r}_3\\
+	\vec{R}_3 = 2  \vec{r}_3 - \vec{r}_1
+\end{cases}
+\end{equation}
+si pu\`o dimostrare che\footnote{Nell'ultima uguaglianza, si sta sottintendendo che gli integrali di $f_{12}f_{23}$, $f_{12}f_{13}$ e $f_{13}f_{23}$ sono uguali.} 
+\[
+-\frac{1}{V} \int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ f_{12}f_{23} = -\frac{1}{V} \int d\vec{R}_1 d\vec{R}_2 d\vec{R}_3 f\left(\lvert \vec{R}_1 \rvert \right)  f\left(\lvert \vec{R}_2 \rvert \right) 
+\] 
+per cui l'integrale in $d\vec{R}_3$ porta un volume, che si semplifica con il $1 / V$ davanti e, quindi, questo si semplifica con $4 \left(-\frac{1}{2} \int d\vec{r} \ f(\vec{r})\right) ^2$. 
+Ne segue che
+\[
+B_3 = -\frac{1}{3V} \int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ f_{12}f_{23}f_{13}
+\] 
+in accordo con la formula generale per $B_n$, visto che si dimostra che l'unico grafo completamente connesso con $3$ vertici \`e quello in cui tutti e tre i punti sono connessi.
+\subsubsection{Sfere rigide}
+Si considera il caso in cui le particelle del gas sono delle sfere rigide (hard spheres) ed interagiscono, quindi, solo a contatto.
+Questo viene formalizzato nel potenziale 
+\[
+v_{HS} (r) = \begin{cases}
+	+\infty &,\ r< \sigma \\
+	0 &,\ r> \sigma 
+\end{cases}
+\] 
+dove $\sigma $ rappresenta il raggio delle sfere.
+Tramite la sostituzione $\vec{R} = \vec{r}_1 + \vec{r}_2$ e $\vec{r}= \vec{r}_1 - \vec{r}_2$, si pu\`o calcolare
+\[
+B_2 = - \frac{1}{2V}\int d\vec{R} \int d\vec{r} \ \left(e^{-\beta v(r)}-1\right)  = -2 \pi \int dr \ r^2 \left(e^{-\beta v(r)}-1\right) = \frac{2\pi}{3}\sigma ^3
+\] 
+dove, nell'ultimo integrale, si \`e passati in coordinate polari.
+Per $B_3$, invece, utilizzando il cambio di variabili in \ref{cv}, si ha:
+\[
+\begin{split}
+	B_3 &= -\frac{1}{3V}\int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ f_{12}f_{23}f_{13}\\
+	    &= -\frac{1}{3V}\int d\vec{R}_1 d\vec{R}_2 d\vec{R}_3\  \left(e^{-\beta v(R_1)}-1\right) \left(e^{-\beta v(R_2)}-1\right)\left(e^{-\beta v(R_3)}-1\right)
+\end{split}
+\] 
+Ne segue che, per come \`e costruito $v_{HS} $, se $r<\sigma $, allora $f=-1$; se $r>\sigma $, allora $f=0$.
+Nel caso 1D, per avere un integrando non-banale, si devono verificare le condizioni
+\[
+\begin{cases}
+	\lvert R_1 \rvert <\sigma \\
+	\lvert R_2 \rvert < \sigma \\
+	\lvert R_1-R_2 \rvert < \sigma 
+\end{cases}
+\] 
+da cui si ottiene il dominio di integrazione.
+L'area di questo dominio di integrazione \`e $D = \frac{6}{8}(2\sigma )^2$, per cui si ottiene 
+\[
+B_3 = \frac{1}{3}\int_{D} dR_1dR_2 = \frac{1}{3}\frac{6 }{8}(2\sigma )^2 = \sigma ^2
+\] 
+Nel caso 3D, invece, individuare il dominio di integrazione \`e pi\`u complicato. 
+Si utilizza il cambio di variabili 
+\[
+\begin{cases}
+	\vec{q} = \vec{R}_1 - \vec{R}_2 \\
+	\vec{Q} = \frac{1}{2} \left(\vec{R}_1 + \vec{R}_2\right) 
+\end{cases}
+\] 
+da cui si ottiene
+\[
+B_3 = -\frac{1}{3} \int_{D} d\vec{q}d\vec{Q} \left(e^{-\beta v\left(\lvert \vec{Q}+ \vec{q}/2 \rvert\right) }-1\right) \left(e^{-\beta v\left(\lvert \vec{Q} - \vec{q}/2 \rvert\right) }-1\right)\left(e^{-\beta v\left(\lvert \vec{q} \rvert\right) }-1\right)
+\] 
+Ne segue che i vincoli per ottenere il dominio di integrazione $D$ sono:
+\[
+\begin{cases}
+	\lvert \vec{Q}+ \vec{q}/2 \rvert <\sigma \\
+	\lvert \vec{Q} - \vec{q}/2 \rvert <\sigma \\
+	\lvert \vec{q} \rvert <\sigma 
+\end{cases}
+\] 
+Questi permettono di descrivere $D$ come la regione di intersezione tra due sfere di raggio $\sigma $; sapendo che il volume di una calotta sferica di altezza $h$ di una sfera di raggio $R$ \`e $V_{\text{cap}} = \frac{\pi}{3}h^2 (3R-h)$, si conclude che
+\[
+B_3 = \frac{1}{3} \iint_{D} d\vec{q} d\vec{Q} = \frac{1}{3}\int_{D} d\vec{q} 2V_\text{cap} = \frac{5}{18}\pi^2 \sigma ^6
+\] 
+dove $R=\sigma $, visto che le sfere in considerazione hanno raggio $\sigma $.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
+
+
 \appendix
 
 \section{Appendice sezione 1}
 \subsection{Test di consistenza}
-Riprendere da lezione 8, 7:49.
+Si assume che $\mathcal{U} _\ell $ rappresenti un grafo connesso di dimensione $\ell $; si fa vedere che l'espansione in cumulanti \`e una somma su grafi connessi.
+Per farlo, si considera l'espressione
+\[
+W_N = \sum_{\left\{ m_\ell  \right\} }^* \prod_\ell \mathcal{U} _\ell 
+\] 
+giustificata dall'associazione delle $f_{ij} $ con una connessione tra i vertici $i$ e $j$.
+Il significato \`e scomporre ogni grafo di $N$ vertici in termini delle sue componenti connesse.
+L'indice $m_\ell $ indica il numero di componenti connesse in un grafo di $N$ vertici e soddisfa $\sum_{\ell }^{} m_\ell\cdot \ell = N $: dovendo il grafo complessivo essere di $N$ vertici, visto che nella $m_\ell $-esima componente connessa, ci sono $\ell $ vertici, la somma su $\ell $ restituisce il numero totale di vertici, cio\`e $N$.
 
-
-
-
-
-
+L'apice $*$ indica che si dovrebbe includere un fattore combinatorio correttivo perch\'e grafi diversi restituiscono lo stesso integrale, ma, per il momento, lo si sottintende, anche se questo \`e pari a 
+\[
+\frac{N!}{\prod_\ell m_\ell !(\ell !)^{m_\ell } }
+\] 
+dove
+\begin{itemize}
+	\item $N!$ tiene conto di tutte le permutazioni delle particelle;
+	\item $1/\ell!$ poiché $\mathcal{U}_\ell$ è una somma di grafi su $\ell$ vertici, l'integrale su $d^\ell r$ non deve contare come distinte le permutazioni interne al cluster se le particelle sono identiche;
+	\item $1/m_\ell!$ evita di contare più volte la stessa configurazione scambiando tra loro $m_\ell$ cluster identici di dimensione $\ell$.
+\end{itemize}
+visto che le particelle sono indistinguibili.
+Allora si ha, introducendo alla fine il fattore di conteggio e il vincolo $\sum_{\ell }^{} m_\ell \cdot \ell =N$, che
+\[
+	\begin{split}
+		Z_N &= \sum_{\left\{ m_\ell  \right\} }^{*} \prod_\ell \int d^N \vec{r}  \ \mathcal{U} _\ell  = \sum_{\left\{ m_\ell  \right\}}^{*} \int d^N \vec{r} \ \prod _\ell \mathcal{U} _\ell \\
+		    &= \sum_{\left\{ m_\ell  \right\} } \prod_\ell \frac{N!}{m_\ell !(\ell !)^{m_\ell } }\left(\ell ! V b_\ell \right) ^{m_\ell } \delta \left(N - \sum_{\ell }^{} \ell \cdot m_\ell \right) 
+	\end{split}
+\] 
+Questo fattore correttivo si vuole rimuovere, per cui risulta utile il formalismo gran canonico che introduce una somma su $N$ per farlo sparire.
+Prendendo $\alpha  = e^{\beta \mu }/\lambda _T^3$, si ha:
+\[
+	\begin{split}
+		\mathcal{Z}  &= \sum_{N=0}^{+\infty} \frac{\alpha ^N}{\cancel{N!}}\sum_{\left\{ m_\ell  \right\}}^{} \prod_\ell \frac{\cancel{N!}}{m_\ell ! \cancel{(\ell !)^{m_\ell } }}V^{m_\ell } \cancel{(\ell !)^{m_\ell }} b_\ell ^{m_\ell } \\
+			     &= \sum_{m_1,m_2,\ldots = 0} ^{+\infty} \prod_\ell \frac{1}{m_\ell !}(Vb_\ell \alpha ^\ell )^{m_\ell }  
+	\end{split}
+\] 
+dove le due somme si sono sostituite con delle multi-somme sulle componenti connesse di qualunque lunghezza\footnote{Si avr\`a $m_1$ di lunghezza $1$, $m_2$ di lunghezza $2$ e cos\`i via. Queste arrivano fino a $+\infty$ perch\'e si considerano somme di componenti connesse con sempre pi\`u vertici, per cui si dovr\`a considerare, per esempio, anche il grafo di infiniti vertici senza connessioni, associato a $m_1\to +\infty$.}, avendo sommato su $N$ da $0$ a infinito, e si \`e scritto $\alpha^N = \alpha ^{\sum_{\ell }^{} \ell \cdot m_\ell }  $.
+Per finire, si osserva che:
+\[
+\mathcal{Z}  = \prod_{\ell =1} ^{+\infty} \sum_{m_\ell =0}^{+\infty} \frac{1}{m_\ell !} \left(Vb_\ell \alpha ^\ell \right) ^{m_\ell } = \exp \left(V \sum_{\ell =1}^{+\infty} b_\ell \alpha ^\ell \right) 
+\] 
+che \`e proprio l'espansione in cumulanti trovata, concludendo che questa coinvolge somme solo su grafi connessi.
 
 
 
