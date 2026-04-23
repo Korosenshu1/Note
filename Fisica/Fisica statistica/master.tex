@@ -214,7 +214,7 @@ title=#1
 \newpage
 \tableofcontents 
 \newpage
-\section{Termodinamica e meccanica statistica classica}
+\section{Meccanica statistica classica dei sistemi interagenti}
 \subsection{Sistemi interagenti}
 Si considera un gas di $N$ particelle descritto da un'hamiltoniana 
 \[
@@ -576,7 +576,7 @@ Ne segue che
 B_3 = -\frac{1}{3V} \int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ f_{12}f_{23}f_{13}
 \] 
 in accordo con la formula generale per $B_n$, visto che si dimostra che l'unico grafo completamente connesso con $3$ vertici \`e quello in cui tutti e tre i punti sono connessi.
-\subsubsection{Sfere rigide}
+\subsubsection{Espansione del viriale per sfere rigide}
 Si considera il caso in cui le particelle del gas sono delle sfere rigide (hard spheres) ed interagiscono, quindi, solo a contatto.
 Questo viene formalizzato nel potenziale 
 \[
@@ -585,7 +585,7 @@ v_{HS} (r) = \begin{cases}
 	0 &,\ r> \sigma 
 \end{cases}
 \] 
-dove $\sigma $ rappresenta il raggio delle sfere.
+dove $\sigma $ rappresenta il doppio del raggio delle sfere\footnote{Se $r<\sigma $, con $\sigma = 2R$ e $R$ raggio della singola sfera, allora significa che due sfere si stanno compenetrando, per cui il potenziale deve valere infinito in accordo con l'assunzione di sfere rigide.}.
 Tramite la sostituzione $\vec{R} = \vec{r}_1 + \vec{r}_2$ e $\vec{r}= \vec{r}_1 - \vec{r}_2$, si pu\`o calcolare
 \[
 B_2 = - \frac{1}{2V}\int d\vec{R} \int d\vec{r} \ \left(e^{-\beta v(r)}-1\right)  = -2 \pi \int dr \ r^2 \left(e^{-\beta v(r)}-1\right) = \frac{2\pi}{3}\sigma ^3
@@ -634,9 +634,167 @@ Ne segue che i vincoli per ottenere il dominio di integrazione $D$ sono:
 \] 
 Questi permettono di descrivere $D$ come la regione di intersezione tra due sfere di raggio $\sigma $; sapendo che il volume di una calotta sferica di altezza $h$ di una sfera di raggio $R$ \`e $V_{\text{cap}} = \frac{\pi}{3}h^2 (3R-h)$, si conclude che
 \[
-B_3 = \frac{1}{3} \iint_{D} d\vec{q} d\vec{Q} = \frac{1}{3}\int_{D} d\vec{q} 2V_\text{cap} = \frac{5}{18}\pi^2 \sigma ^6
+B_3 = \frac{1}{3} \iint_{D} d\vec{q} d\vec{Q} = \frac{1}{3}\int_{D} d\vec{q}\ 2V_\text{cap} = \frac{5}{18}\pi^2 \sigma ^6
 \] 
 dove $R=\sigma $, visto che le sfere in considerazione hanno raggio $\sigma $.
+
+\subsubsection{Sfere rigide in 1D}
+In realt\`a, in 1D, il problema delle sfere rigide si pu\`o risolvere esattamente. 
+Le particelle vivono in uno spazio 1D (segmento), che si assume essere $[0,L]$.
+Si indica con $a$ il diametro della singola sfera.
+La posizione di ogni sfera, relativa all'estremit\`a destra di tale sfera\footnote{Cio\`e $x_i$ rappresenta il bordo destro della sfera $i$-esima.}, \`e indicata con $x_i, \ i=1,\ldots,N$, con la convenzione per cui pi\`u piccolo \`e il pedice, pi\`u la particella si trova vicina a $0$; in questo modo, sono ordinate lungo il segmento $[0,L]$, con $x_N$ quella pi\`u vicina ad $L$.
+
+Si fissa il numero di particelle a $N$ e si usa il formalismo canonico. 
+Si nota che la posizione delle particelle, visto l'ordinamento dato, non pu\`o essere arbitraria; la particella $x_i$ \`e sempre compresa tra la particella $x_{i-1} $ e $x_{i+1} $ e non possono compenetrarsi. 
+Il possibile spazio in cui si pu\`o trovare \`e tra $x_{i-1} +a$ e $L-(N-i)a$ perch\'e pi\`u a sinistra di $x_{i-1} +a$ non pu\`o andare altrimenti compenetrerebbe la particella $i-1$-esima e il potenziale varrebbe $+\infty$, portando integrando nullo; allo stesso tempo, non pu\`o trovarsi pi\`u a destra dello spazio occupato se tutte le sfere dalla $i+1$-esima alla $N$-esima fossero tutte attaccate a partire dall'estremit\`a $L$, altrimenti, di nuovo, si avrebbe integrando nullo. 
+Questo significa che la funzione di partizione canonica si esprime come
+\[
+Z  = \frac{1}{h^N} \int d^N p \ e^{-\beta  p^2 / 2m} \int_{a} ^{L-(N-1)a} dx_1 \cdots \int_{x_{N-2} +a} ^{L-a} dx_{N-1} \int_{X_{N-1} +a} ^L dx_N
+\] 
+Gli integrali relativi al potenziale si possono calcolare iterativamente.
+Si nota che 
+\[
+	\begin{split}
+		&I_N = \int_{x_{N-1} +a} ^L dx_N = L-(x_{N-1} +a) \hspace{1cm} I_{N-1} = \frac{1}{2} \big(L - (x_{N-2} +2a)\big) ^2\\
+		&\vdots\\
+		& I_{N-k} = \frac{1}{(k+1)!}\Big[L-\big(x_{N-k+1} +(k+1)a\big)\Big]^{k+1} \\
+		&\vdots\\
+		&I_1 = \frac{1}{N!}\big[L-(x_0+Na)\big]^N
+	\end{split}
+\] 
+con $x_0=0$, visto che si \`e preso, come bordo sinistro, $0$.
+In questo modo, si conclude che 
+\[
+Z = \frac{1}{N!\lambda _T^N}(L-Na)^N
+\] 
+Per trovare l'equazione di stato, a questo punto, essendo nel formalismo canonico, si calcola l'energia libera di Helmholtz $F = -\kappa _B T \log Z$, visto che $Z$ \`e nota, e, poi, si ottiene la \textit{pressione} 
+\[
+	f = -\Eval{\frac{\partial F}{\partial L} }{T}{}
+\] 
+dove si \`e indicata con $f$ perch\'e, essendo in 1D, non si deriva rispetto al volume, ma rispetto alla lunghezza, trovando a tutti gli effetti una forza.
+Svolgendo il conto, si trova che 
+\[
+f = \kappa _B T \frac{N}{L-Na}
+\] 
+Sviluppando questo in approssimazione di bassa densit\`a $\rho = N / L \ll 1$, si trova l'espansione del viriale vista precedentemente:
+\[
+\frac{fL}{N\kappa _B T}= \frac{L}{L-Na}\simeq 1 + a \rho  + a^2 \rho ^2 + \ldots
+\] 
+che \`e consistente con i coefficienti trovati nella sezione precedente.
+\subsection{Densit\`a, funzioni di correlazione ed equazione di stato}
+\subsubsection{Densit\`a}
+
+
+L'idea \`e arrivare a ottenere una equazione di stato espressa in termini di funzioni di correlazione a due punti densit\`a-densit\`a, invece che tramite espansione del viriale.
+
+Per farlo, si deve intanto dare una definizione di densit\`a, associata alla probabilit\`a di trovare una particella in una posizione.
+La probabilit\`a che le $N$-particelle del sistema si trovino nelle posizioni $\vec{r}_1,\ldots, \vec{r}_N$ rispettivamente \`e data da 
+\[
+p (\vec{r}_1,\ldots,\vec{r}_N) = \frac{1}{Z_N} e^{-\beta \sum_{i<j}^{} v_{ij} (\vec{r}_i-\vec{r}_j)}
+\] 
+dove si sta tralasciando la parte relativa agli impulsi, visto che quella dipendente dalle coordinate \`e quella pi\`u complicata da integrare.
+La densit\`a di particelle in un punto si pu\`o definire, allora, come la probabilit\`a di trovare una particella in tale punto $\vec{r}$ e tutte le altre altrove:
+\[
+n_1(\vec{r}) := \left\langle \sum_{k=1}^{N} \delta (\vec{r}-\vec{r}_k) \right\rangle = \frac{1}{Z_N}\sum_{k=1}^{N} \int d^N \vec{r} \ \delta (\vec{r}-\vec{r}_k) e^{-\beta  \sum_{i<j}^{} v_{ij} }
+\] 
+dove la media \`e intesa come media di ensemble.
+In condizioni di simmetria del sistema, cio\`e gas omogeneo, isotropo, con particelle identiche eccetera, ogni integrale \`e uguale e, semplificando la $\delta $ con l'integrale rispetto a $d\vec{r}_1$, si ottiene
+\begin{equation}
+n_1(\vec{r}) = N \int d\vec{r}_2 \ldots d\vec{r}_N\ p (\vec{r},\vec{r}_2,\ldots,\vec{r}_N)
+\end{equation}
+Questo si pu\`o generalizzare a pi\`u particelle; per esempio, si pu\`o definire la funzione di correlazione densit\`a-densit\`a
+\[
+	n_2(\vec{r}_1,\vec{r}_2) := \left\langle \sum_{i=1}^{N} \delta (\vec{r}_1- \vec{r}_i) \sum_{j\neq i}^{N} \delta (\vec{r}_2- \vec{r}_j) \right\rangle
+\] 
+corrispondente a trovare la prima particella in $\vec{r}_1$ e un'altra, diversa, particella in $\vec{r}_2$.
+In condizioni di simmetria come nel caso precedente, essendo indifferente quali coppie di particelle si considerano, si conclude che
+\begin{equation}
+	n_2(\vec{r}_1, \vec{r}_2) = N(N-1) \int d\vec{r}_3 \ldots d\vec{r}_N \ p(\vec{r}_1, \vec{r}_2,\vec{r}_3,\ldots, \vec{r}_N)
+\end{equation}
+con $\vec{r}_1$ e $\vec{r}_2$ fissati, mentre le altre coordinate sono integrate su tutto lo spazio. 
+Il fattore $N(N-1)$ corrisponde all'argomento combinatorio di poter assegnare $N$ particelle in $\vec{r}_1$ e, avendone gi\`a assegnata una, quelle disponibili per $\vec{r}_2$ sono $N-1$.
+Pi\`u in generale, si pu\`o definire
+\[
+n_k (\vec{r}_1,\ldots,\vec{r}_k) = \frac{N!}{(N-k)!} \int d\vec{r}_{k+1} \ldots d\vec{r}_N \ p(\vec{r}_1,\ldots,\vec{r}_N)
+\] 
+\subsubsection{Equazione di stato}
+
+Quella pi\`u importante rimane la $n_2$ perch\'e si pu\`o dimostrare che entra direttamente nell'equazione di stato.
+Per vederlo, si procede per conto diretto.
+Si considera che, indicando con $K$ l'energia cinetica e $U$ quella potenziale, si ottiene\footnote{Il risultato della parte cinetica \`e giustificato dal fatto che \`e relativa ad un gas perfetto, avendola separata da quella potenziale.}:
+\[
+	\begin{split}
+		\langle E \rangle &= \langle K \rangle + \langle U \rangle= \frac{3}{2}N\kappa _B T - \frac{1}{Z_N}\frac{\partial Z_N}{\partial \beta } \\
+				  &= \frac{3}{2}N\kappa _BT + \frac{1}{Z_N}\sum_{i<j}^{} \int d\vec{r}_1 \ldots d\vec{r}_N \ v(\vec{r}_{ij} ) e^{-\beta  \sum_{i<j}^{} v(\vec{r}_{ij}) }\\
+				  &= \frac{3}{2}N\kappa _BT + \frac{1}{2} \int d\vec{r}_1 d\vec{r}_2\ v(\vec{r}_{12} ) n_2(\vec{r}_1,\vec{r}_2)
+	\end{split}
+\] 
+questo sempre sotto le opportune ipotesi di omogeneit\`a, isotropia, particelle identiche eccetera, da cui il fattore $\frac{N(N-1)}{2}$ perch\'e tutti quegli integrali sono uguagli e il fattore conta le combinazioni di $i,j$, per $i\neq j$.
+
+Per arrivare alla funzione di stato, si calcola $p = - \Eval{\frac{\partial F}{\partial V} }{T}{}=\frac{1}{\beta }\frac{\partial }{\partial V} \log Z_N$, immaginando il caso pi\`u semplice per svolgere i calcoli in cui il sistema sia confinato in un volume $V = L^3$.
+In questo modo
+\[
+\frac{\partial }{\partial V} \log Z_N = \frac{L}{3V} \frac{1}{Z_N}\frac{\partial Z_N}{\partial L} 
+\] 
+Per terminare il calcolo, si definisce il cambio di variabili $\vec{s}_{ij} = \vec{r}_{ij} / L$ (si divide ogni componente di $\vec{r}_{ij} $ per $L$); in questo modo, svolgendo i calcoli, si trova 
+\[
+p = \frac{N\kappa _B T}{V} - \frac{1}{6V} \int d\vec{r}_1 d\vec{r}_2 \ \left[ \vec{r}_{12} \cdot \frac{\partial v(\vec{r}_{12} )}{\partial \vec{r}_{12} }  \right] n (\vec{r}_1,\vec{r}_2)
+\] 
+Da questa espressione, si conclude che la $n_2(\vec{r}_1, \vec{r}_2)$ determina la termodinamica del sistema.
+Questo vuol dire che, per studiare un sistema, o si calcola l'espansione in clusters, oppure si cerca un modo per calcolare la $n_2$.
+
+\subsubsection{Equazione di Born-Green}
+
+Questa \`e un'equazione differenziale che permette di determinare $n_2(\vec{r}_1,\vec{r}_2)$; inoltre, rappresenta un esempio particolare di \textit{gerarchia BBGKY} (Bogoljubov-Born-Green-Kirkwood-Yvon), che sono equazioni differenziali per trovare la funzione di correlazione $k$-esima.
+
+Per ricavare l'equazione di Born-Green, si considera il seguente passaggio:
+\[
+\begin{split}
+	\frac{\partial }{\partial \vec{r}_1} n_2(\vec{r}_1,\vec{r}_2) &= \frac{N(N-1)}{Z_N} \int d\vec{r}_3 \ldots d\vec{r}_N \ \frac{\partial }{\partial \vec{r}_1} \left( e ^{-\beta \sum_{i<j}^{} v(\vec{r}_i -\vec{r}_j)}\right) \\
+								      &= \frac{N(N-1)}{Z_N} \int d\vec{r}_3 \ldots d\vec{r}_N (-\beta ) \left[ \frac{\partial }{\partial \vec{r}_1} v(\vec{r}_1 - \vec{r}_2) + \frac{\partial }{\partial \vec{r}_1} \sum_{j\ge 3}^{} v(\vec{r}_1 -\vec{r}_j) \right]  e^{-\beta \sum_{i<j}^{} v_{ij} }\\
+								      &= -\beta  \left[ \frac{\partial }{\partial \vec{r}_1} v(\vec{r}_1 -\vec{r}_2) n_2(\vec{r}_1, \vec{r}_2) \right] - \beta \frac{N(N-1)}{Z_N}\int d\vec{r}_3 \ldots d\vec{r}_N \left(\sum_{j\ge 3}^{} \frac{\partial }{\partial \vec{r}_j} v_{1j} \right) e^{-\beta \sum_{i<j}^{} v_{ij} }
+\end{split}
+\] 
+Ora si pu\`o usare il fatto che si considerano sistemi omogenei, isotropi, con particelle indistinguibili, per cui la somma su $j\ge 3$ restituisce termini tutti uguali tra loro, il che fa comparire un fattore $N-2$. 
+A questo punto, nel secondo termine, si ritrova proprio la $n_3$, per cui si ricava proprio l'equazione di Born-Green cercata:
+\begin{equation}
+	\vec{\nabla }_1 n_2 (\vec{r}_1 , \vec{r}_2) = -\beta \left(\vec{\nabla }_1 v(\vec{r}_{12} )\right) n_2(\vec{r}_1, \vec{r}_2) - \beta \int d\vec{r}_3 \left(\vec{\nabla }_1 v(\vec{r}_{13} )\right) n_3(\vec{r}_1,\vec{r}_2,\vec{r}_3)
+\end{equation}
+\begin{osservazione}
+Da questa equazione, per ottenere la $n_2$, \`e necessario conoscere preliminarmente la $n_3$; applicando lo stesso discorso alla $n_3$, si arriva a trovare una catena di equazioni differenziali che non si chiudono, similmente a quanto succede per la gerarchia BBGKY.
+\end{osservazione}
+Per proseguire il calcolo, si utilizza l'\textit{approssimazione di Kirkwood}:
+\begin{equation}
+	n_3 ( \vec{r}_1, \vec{r}_2, \vec{r}_3) \simeq \frac{n_2(\vec{r}_{12}) n_2(\vec{r}_{13}) n_2(\vec{r}_{23} ) }{n_1^3}
+\end{equation}
+Un argomento di natura probabilistica permette di validare questa approssimazione, qualora le particelle del gas siano sufficientemente diluite; questo \`e in accordo col fatto che tale approssimazione deve, in qualche modo, ricondurre l'equazione di stato a quanto trovato tramite lo sviluppo in clusters.
+In particolare, l'assunzione che si fa \`e dire che le tre particelle in $\vec{r}_1$, $\vec{r}_2$ e $\vec{r}_3$ non sono tutte e tre vicine, ossia che solo due tra queste interagiscono, ossia si compenetrano, visto il potenziale in considerazione.
+
+Ora si giustifica tale approssimazione in questo caso appena descritto tramite un'interpretazione probabilistica.
+Per la formula di Bayes, si ha che
+\[
+p(\vec{r}_1,\vec{r}_2, \vec{r}_3) = p(\vec{r}_3  \mid \vec{r}_1,\vec{r}_2) p(\vec{r}_1,\vec{r}_2)
+\] 
+Assumendo che trovare la particella $3$ in $\vec{r}_3$ non influenzi il trovare la particella $1$ in $\vec{r}_1$, si pu\`o approssimare $p(\vec{r}_3  \mid \vec{r}_1, \vec{r}_2) \simeq p(\vec{r}_3 \mid \vec{r}_2)$.
+Per la stessa motivazione, essendo i due eventi indipendenti, si pu\`o anche approssimare $p(\vec{r}_1,\vec{r}_3) \simeq p(\vec{r}_1) p(\vec{r}_3)$.
+Mettendo tutto insieme, si ottiene:
+\[
+	p(\vec{r}_1,\vec{r}_2, \vec{r}_3) = \underbracket{\frac{p(\vec{r_3},\vec{r}_2)}{p(\vec{r}_2)}}_{= p(\vec{r}_3 \mid \vec{r}_2)}  p(\vec{r}_1, \vec{r}_2) \underbracket{\frac{p(\vec{r}_1,\vec{r}_3)}{p(\vec{r}_1)p(\vec{r}_3)}}_{=1} = \frac{p(\vec{r}_1,\vec{r}_2) p(\vec{r}_2,\vec{r}_3)p(\vec{r}_1,\vec{r}_3)}{p(\vec{r}_1)p(\vec{r}_2)p(\vec{r}_3)}
+\] 
+in completa consistenza con l'approssimazione di Kirkwood.
+\newpage
+\section{Transizioni di fase}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
