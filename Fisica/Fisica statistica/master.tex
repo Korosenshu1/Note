@@ -5,11 +5,8 @@
 \usepackage{amsbsy} % Bold math symbols
 \makeindex
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{tcolorbox}
-\tcbuselibrary{theorems}
-\tcbuselibrary{skins}
-\tcbuselibrary{breakable}
+\usepackage[T1]{fontenc}
 \usepackage{varwidth}
 \usepackage{textcomp}
 \usepackage{amsmath, amssymb}
@@ -46,69 +43,42 @@
 % svolgimento
 \newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
 
-
-%%%%% tcolorbox setup
-
-% Teorema e proposizione
-\newtcbtheorem[number within=section]{teorema}{Teorema}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{th}
-
-\newtcbtheorem[number within=section]{prop}{Proposizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm,arc =.5 mm, colframe=blue!10, coltitle=black, fonttitle=\bfseries, colback=blue!5!white, theorem style=plain apart}{prop}
-
-
-
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
 
 
-% Definizione
-\definecolor{greendef}{HTML}{b8d8be}
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
 
-\newtcbtheorem[number within=section]{definizione}{Definizione}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=greendef, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colback=greendef!50!white}{def}
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
 
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
 
-% Esempio
-\theoremstyle{definition}
-\newtheorem{esempio}{Esempio}
-
-%\definecolor{empurple}{HTML}{6e5e89}
-
-%\newtcbtheorem{esempio}{Esempio}{left=0mm,arc=0mm, colframe=empurple!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain, colback=empurple!20!white, colframe=empurple!90!white, boxrule=1pt, sharp corners, top=.2mm,bottom=.2mm}{es}
-
-\tcolorboxenvironment{esempio}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{greendef}}
-
-\numberwithin{esempio}{section}
-
-
-% Lemma e Corollario
-\definecolor{lemcor}{HTML}{a78d8a}
-
-\newtcbtheorem[number within=section]{lemma}{Lemma}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{lem}
-
-\newtcbtheorem[number within=section]{corollario}{Corollario}
-{breakable, top=0.2mm, bottom=0.2mm, boxrule=0mm, arc=.5mm, colframe=lemcor!10!white, coltitle=black, fonttitle=\bfseries, theorem style = plain apart, colframe=lemcor!50!white,colback=lemcor!20!white}{cor}
-
-
-
-% Osservazione
-\theoremstyle{definition}
-\newtheorem{osservazione}{Osservazione}
-
-\definecolor{coloros}{HTML}{6e5e89}
-
-\tcolorboxenvironment{obs}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{coloros}}
-
-\numberwithin{osservazione}{section}
-
-% Nota
-\newtheorem{nota}{Nota}
-
-\definecolor{ncol}{HTML}{f9ebbe}
-
-\tcolorboxenvironment{nota}{blanker,breakable,left=5mm,before skip=10pt,after skip=10pt, borderline west={1mm}{0pt}{ncol}}
-
-\numberwithin{nota}{section}
 
 %% Generic box
 \newtcolorbox{eqbox}[1][]
@@ -785,15 +755,81 @@ in completa consistenza con l'approssimazione di Kirkwood.
 \newpage
 \section{Transizioni di fase}
 
+Si manifestano come discontinuit\`a nelle propriet\`a termodinamiche di un sistema.
+Queste possono tradursi in:
+\begin{enumerate}[(a).]
+	\item cambiamento dello stato del sistema, ossia passaggio da liquido a solido, per esempio;
+	\item cambiamento della \textit{simmetria del sistema}, come per esempio l'arrangiamento dei dipoli magnetici in un ferromagnete e in un paramagnete\footnote{Con questo si intende, per esempio, il passaggio da ferromagnete a paramagnete. Questo cambiamento porta i dipoli, tutti allineati lungo una direzione. ad arrangiarsi casualmente, cio\`e si passa da un arrangiamento simmetrico ad uno non-simmetrico};
+	\item cambiamenti nella topologia del sistema, cio\`e una modifica nelle propriet\`a globali del sistema, non individuabili localmente.
+\end{enumerate}
+\begin{definizione}
+	[Ordine di una transizione di fase]
+	Secondo Ehrenfest, l'ordine di una transizione di fase \`e l'ordine della prima derivata discontinua dei potenziali termodinamici.
+\end{definizione}
 
+\begin{esempio}
+	Si possono verificare discontinuit\`a nella densit\`a o nell'entropia; entrambi questi casi sono spesso legati a cambiamenti di stato:
+	\[
+		V = \Eval{\frac{\partial G}{\partial p} }{T}{} \hspace{1cm}S = -\Eval{\frac{\partial G}{\partial T} }{p}{}
+	\] 
+	Visto che la discontintui\`a \`e presente nel primo ordine di derivazione del potenziale di Gibbs, questi cambiamenti di stato sono transizioni di fase del primo ordine, secondo Ehrenfest.
+\end{esempio}
+\begin{esempio}
+	Si pu\`o avere una magnetizzazione 
+	\[
+		m = - \Eval{\frac{\partial F}{\partial H} }{T,V}{}
+	\] 
+	continua, ma si potrebbero avere disconitnuit\`a, o divergenze, della suscettivit\`a magnetica 
+	\[
+	\chi := \frac{\partial m}{\partial H} 
+	\] 
+	Questo, quindi, corrisponde ad una transizione di fase del secondo ordine e un esempio concreto in cui si verifica \`e il passaggio da ferromagnete a paramagnete e viceversa.
+\end{esempio}
+\begin{osservazione}
+In realt\`a, non vi sono differenze sostanziali tra le transizioni di fase del secondo e ordini superiori; inoltre, spesso capita che il problema non sia una discontinuit\`a, ma divergenze, come per la suscettivit\`a magnetica. 
+Per questo motivo, la classificazione secondo Ehrenfest non \`e utilizzata.
 
+Si parla, ad oggi, di transizioni del primo ordine e di transizioni \textit{continue}, cio\`e tutte quelle che non hanno disconitnuit\`a nella derivata prima.
+\end{osservazione}
 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Le transizioni di fase del primo ordine nei diagrammi di fase corrispondono alle linee rosse continue; le transizioni di fase del secondo ordine, invece, si verificano nelle regioni attorno al punto in cui una di queste linee rosse si blocca, cio\`e attorno al punto critico. 
 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=1\columnwidth]{pd.jpg}
+	\end{minipage}
+\end{center}
+		L'equazione di stato di van der Waals permette di descrivere proprio quello che succede attorno a questi punti critici; in realt\`a, permette di individuare proprio quel valore di temperatura, la temperatura critica, per cui, in un diagramma $(\rho ,T)$ si distinguono regioni in cui il sistema \`e gassoso (tipicamente a densit\`a basse), liquido (tipicamente a densit\`a alte) e in cui i due stati coesistono.
 
+		In prossimit\`a dei punti critici, si vedr\`a che sar\`a possibile individuare la divergenza di alcune quantit\`a. 
+		Per esempio, nelle vicinanze di punti critici, si possono osservare degli andamenti divergenti di alcune quantit\`a, come
+		\[
+		\begin{split}
+			&k_T \sim \lvert T-T_C \rvert ^{-\gamma} \\
+			& C_V \sim \lvert T-T_C \rvert ^{-\alpha }
+		\end{split}
+		\] 
+	con $\gamma$ e $\alpha $ noti come \textit{esponenti critici}.
+\subsection{Teoria di Yang e Lee}
+Permettono di individuare le transizioni di fase come singolarit\`a che nascono dalla funzione di partizione.
+Si parte dalla funzione di gran partizione, in quanto si intende studiare il sistema tramite il formalismo gran canonico; si ha 
+\[
+\mathcal{Z} (z,T,V) = \sum_{N=0}^{M} z^N Z(N,T,V)
+\] 
+con $z$ fugacit\`a, $Z$ la funzione di partizione canonica, e si deve avere $M<+\infty$ qualora il sistema sia finito, ossia nel caso in cui $V$ sia limitato\footnote{Questo perch\'e le particelle non possono sovrapporsi, quindi in un volume finito, se ne possono avere un numero finito.}.
 
-
-
-
+Nel caso in cui la somma sia finita, non ci si aspettano comportamenti strani:
+\[
+\mathcal{Z} = 1+zZ(1,T,V) + z^2 Z(2,T,V) + \ldots + z^M Z(M,T,V) > 1
+\] 
+dove il $>1$ \`e dato dal fatto che $z=e^{\beta \mu }$ e le funzioni di partizione canoniche sono sempre positive.
+Ne segue che $\mathcal{Z} $ \`e un polinomio di grado $M$ in $z$, per cui ammette esattamente $M$ radici nel campo complesso.
 
 
 
