@@ -28,6 +28,7 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
@@ -281,7 +282,7 @@ Z_N \simeq V^N e ^{- aN^2 / (2V)}
 \] 
 Questa \`e l'espressione di \textit{campo medio}. 
 
-\subsubsection{Equazione di Van der Waals}
+\subsubsection{Equazione di van der Waals}
 
 
 
@@ -317,7 +318,7 @@ Questo pu\`o essere riscritto in una forma pi\`u nota:
 	\left(p+\frac{a_w}{V^2}\right) \left(V-b_w\right) = N\kappa _B
 \end{equation}
 dove $b_w = \frac{N}{2}V_b$ e $a_w = \frac{1}{2}N^2 \kappa _B D	$.
-Questa \`e l'\textit{equazione di stato di Van der Waals} (da cui i pedici $w$ in $a_w$ e $b_w$).
+Questa \`e l'\textit{equazione di stato di van der Waals} (da cui i pedici $w$ in $a_w$ e $b_w$).
 Questa equazione permette di dire che, sotto le ipotesi trattate, in particolare quella di gas diluito, il gas si pu\`o descrivere tramite l'equazione di stato del gas perfetto, a patto di correggere pressione e volume opportunamente:
 \begin{itemize}
 	\item il volume deve essere corretto perch\'e le particelle non sono puntiformi, ma occupano un volume (sono circa sfere), quindi non possono sovrapporsi (viene diminuito tramite $b_w$);
@@ -337,7 +338,7 @@ Quando $T=T_c$, invece, l'equazione diventa $(V-V_c)^3= 0$ e presenta un punto d
 \end{equation}
 Si vedr\`a che questo punto, chiamato \textit{punto critico}, \`e relativo ad una transizione di fase del secondo ordine; i tre punti di volume corrispondenti ad un certo valore di pressione nel caso di $T<T_c$, una volta corretti, si vedranno corrispondere ad una transizione di fase del primo ordine. 
 \begin{osservazione}
-Definendo $\overline{p}= p / p_c$, $\overline{V} = V / V_c$ e $\overline{T} = T / T_c$, l'equazione di Van der Waals si scrive come
+Definendo $\overline{p}= p / p_c$, $\overline{V} = V / V_c$ e $\overline{T} = T / T_c$, attorno al punto critico, l'equazione di van der Waals si pu\`o scrivere come
 \[
 \left(\overline{p} + \frac{3}{\overline{V}^2}\right) \left(\overline{V}-\frac{1}{3}\right) = \frac{8}{3}\overline{T}
 \] 
@@ -349,9 +350,9 @@ Si nota che questa non contiene alcuna informazione sulla natura del gas in esam
 	\begin{minipage}
 		{.45\columnwidth}
 		Per risolvere il problema della zona instabile nel caso $T<T_c$, Maxwell ha proposto il seguente argomento.
-		Il problema risiede nel fatto che, passando al grafico $(V,F)$ tramite $F = \int p \ dV$ a $T$ fissata, si vede che la curva prevista da Van der Waals non minimizza l'energia libera di Helmholtz, causa dell'instabilit\`a.
+		Il problema risiede nel fatto che, passando al grafico $(V,F)$ tramite $F = \int p \ dV$ a $T$ fissata, si vede che la curva prevista da van der Waals non minimizza l'energia libera di Helmholtz, causa dell'instabilit\`a.
 
-		Allora si deve sostituire la parte prevista da Van der Waals con una retta orizzontale a pressione $p_1=p_2$ che, nel grafico $(V,F)$, sia la tangente alla curva nei punti $V_1$ e $V_2$.
+		Allora si deve sostituire la parte prevista da van der Waals con una retta orizzontale a pressione $p_1=p_2$ che, nel grafico $(V,F)$, sia la tangente alla curva nei punti $V_1$ e $V_2$.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
@@ -377,7 +378,7 @@ Infine, si nota che, durante l'intera retta rossa individuata da Maxwell, la sos
 
 \subsection{Espansioni in clusters}
 Si tratta di sviluppi di natura perturbativa, fondati sull'assunzione di gas con densit\`a \textit{piccola}.
-Permette una descrizione pi\`u accurata e generale di un sistema composto da un gas reale; si ritrover\`a il caso di Van der Waals come sviluppo al primo ordine non-banale.
+Permette una descrizione pi\`u accurata e generale di un sistema composto da un gas reale; si ritrover\`a il caso di van der Waals come sviluppo al primo ordine non-banale.
 \begin{osservazione}
 Questi sviluppi sono adeguati quando il sistema non si trova vicino a transizioni di fase, le quali sono caratterizzate da non-analiticit\`a delle variabili termodinamiche del sistema.
 \end{osservazione}
@@ -522,9 +523,9 @@ A meno di un segno meno derivante dalla definizione di funzione di Mayer data in
 \[
 \frac{pV}{\langle N \rangle\kappa _B T} = 1 - b_2 \frac{\langle N \rangle}{V}
 \] 
-\`e esattamente quella che permette di ritrovare l'equazione di Van der Waals.
+\`e esattamente quella che permette di ritrovare l'equazione di van der Waals.
 
-Si pu\`o calcolare il fattore correttivo successivo a Van der Waals; svolgendo il calcolo, si trova 
+Si pu\`o calcolare il fattore correttivo successivo a van der Waals; svolgendo il calcolo, si trova 
 \[
 B_3 = 4b_2^2 - 2 b_3 = 4 \left(-\frac{1}{2}\int d\vec{r} \ f(\vec{r})\right) ^2 - 2 \frac{1}{6V} \int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ \left(3 f_{12}f_{23} + f_{12}f_{13}f_{23}\right) 
 \] 
@@ -911,14 +912,407 @@ Questo punto reale \`e proprio il punto critico ed \`e dove si verificano le tra
 	allora $\mathcal{Z} (z,T,V) = 0 \iff \lvert z \rvert =1$.
 \end{teorema}
 \begin{osservazione}
-Questo teorema permette di concludere che un'eventuale transizione di fase, per un sistema del tipo previsto dal teorema, pu\`o verificarsi esclusivamente per $z=1$.
+Questo teorema permette di concludere che un'eventuale transizione di fase, per un sistema del tipo previsto dal teorema, pu\`o verificarsi esclusivamente per $z=1$, visto che gli zeri di $\mathcal{Z} (z)$ sono sulla circonferenza unitaria in $\mathbb{C}$.
 \end{osservazione}
+Se $\theta _k$ sono le fasi delle radici di $\mathcal{Z} $, allora, nel caso del potenziale considerato sopra, si pu\`o scrivere, imponendo anche $\mathcal{Z} (0) = 1$, che
+\[
+\mathcal{Z}  = \prod_k \frac{z-e^{i\theta _k}}{- e ^{-i\theta _k}}
+\] 
+Essendo interessati al limite termodinamico, per\`o, la produttoria non va pi\`u bene perch\'e \`e su indice discreto.
+L'idea \`e di definire una funzione di distribuzione $g(\theta )$, con $\theta \in [0,2\pi)$, che indica come sono distribuiti gli zeri nel limite termodinamico.
+Inoltre, essendo le radici di $\mathcal{Z} (z)$ coppie di complessi coniugati, deve valere anche
+\[
+g(\theta ) = g(-\theta )
+\] 
+In questo modo, nel limite termodinamico, si ha:
+\[
+\log\mathcal{Z} =\sum_{k}^{} \log \left(\frac{z-e^{-i\theta _k}}{-e ^{-i\theta _k}}\right) \longrightarrow V \int_{0} ^{\pi} d\theta  \ g(\theta ) \log\left(\frac{z- e^{-i\theta }}{-e^{-i\theta }}\right) 
+\] 
+Visto che $g(\theta )=g(-\theta )$, l'integrale tra $0$ e $\pi$ sar\`a uguale a quello tra $\pi$ e $2\pi$.
+Ne segue che
+\[
+	\begin{split}
+		\log \mathcal{Z}  &= V \int_{0} ^{\pi} d\theta \ g(\theta ) \log \left(\frac{z-e^{-i\theta }}{-e^{-i\theta }}\right) + V \int_{\pi}^{2\pi} d\theta \ g(\theta ) \log \left(\frac{z-e^{-i\theta}}{-e^{-i\theta }}\right)  \\
+				  &= V \int_{0} ^{\pi} d\theta \ g(\theta ) \log \left(\frac{z-e^{-i\theta }}{-e^{-i\theta }}\right) + V \int_{0}^{\pi} d\theta \ g(-\theta ) \log \left(\frac{z-e^{i\theta}}{-e^{i\theta }}\right) \\
+				  &=V \int_{0} ^\pi d\theta \ g(\theta ) \log \left[ \frac{z-e^{-i\theta }}{-e^{-i\theta }} \frac{z- e^{i\theta }}{- e^{i\theta }} \right] \\
+				  &= V \int_{0} ^\pi d\theta  \ g(\theta ) \log\left(z^2 + 1 - 2z \cos \theta \right) 
+	\end{split}
+\] 
+In questo modo, si ottiene che
+\[
+\begin{cases}
+	\displaystyle \frac{p}{\kappa _B T} = \int_{0} ^\pi d\theta \ g(\theta ) \log\left(z^2 + 1 - 2z \cos \theta \right) \\
+	\\
+	\displaystyle \frac{1}{v} = \frac{1}{V}z\frac{\partial }{\partial z} \log\mathcal{Z}  = 2z \int_{0} ^\pi d\theta \ g(\theta ) \frac{z-\cos \theta }{z_2 + 1 - 2z \cos \theta }
+\end{cases}
+\] 
+Da queste formule, si deduce che la singolarit\`a pu\`o avvenire solamente nel punto $(\theta ,z) = (0,1)$, quando $g(\theta =0) \neq 0 $.
+Inoltre, tutte le informazioni sul sistema si ottengono a partire dalla conoscenza di $g(\theta )$.
+\subsection{Esponenti critici in van der Waals}
+Si considera il caso di van der Waals con tutte le assunzioni del caso. 
+In prossimit\`a del punto critico, vale la legge degli stati corrispondenti:
+\[
+\left(\overline{p}+\frac{3}{\overline{V}^2}\right) \left(\overline{V}-\frac{1}{3}\right) = \frac{8}{3}\overline{T}
+\] 
+con $\overline{p}= p / p_c$, $\overline{V}= V / V_c$ e $\overline{T} = T / T_c$.
+Si definiscono le variabili ridotte 
+\[
+p' = \frac{p-p_c}{p_c}\hspace{1cm}v' = \frac{V-V_c}{V_c} \hspace{1cm} t' = \frac{T-T_c}{T_c}
+\] 
+con $p,v,t \ll 1$.
+In fisica, sono attualmente noti 6 \textit{esponenti critici}; nella seguente trattazione, se ne evidenzieranno 4 che caratterizzano la classe delle transizioni di fase di cui fa parte van der Waals (cio\`e che \`e descritto da van der Waals).
+\begin{enumerate}[(1).]
+	\item Si considera $t=0$. 
+		Allora
+		\[
+		\frac{\partial p}{\partial V} = \frac{\partial ^2p}{\partial V^2} = 0
+		\] 
+		perch\'e nel punto critico (si sta studiando il caso di estrema vicinanza a tale punto) si ha un punto di flesso nel diagramma $(V,p)$ a $T=T_C$, condizione imposta da $t = 0$.
+		Ne segue che 
+		\[
+		p \sim v^\delta 
+		\] 
+		con $\delta = 3$. 
+		Questo \`e sintomo del fatto che $p(V)$ (che si traduce nell'andamento di $p'(v')$) \`e un polinomio, le cui derivate prima e seconda sono nulle, per cui il primo esponente non-nullo \`e il terzo.
+		Per verificarlo, basta imporre $T=T_c$ nella legge degli stati corrispondenti e studiare l'andamento di $p(V)$.
+	\item Si ricorda che
+		\[
+			C_V = T \Eval{\frac{\partial S}{\partial T} }{V}{} = \Eval{\frac{\partial U}{\partial T} }{V}{}
+		\] 
+		Nel caso di van der Waals, si ricorda che l'energia interna \`e pari a 
+		\[
+		U = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \log Z_N = \frac{3}{2}N \kappa _B T + \frac{\partial }{\partial \beta } \left(\frac{N^2}{2}\frac{a}{V}\right) 
+		\] 
+		con 
+		\[
+		a = 4\pi \int dr \ r^2 \left(1- e ^{-\beta  v(r)}\right) \propto \beta 
+		\] 
+		se $\beta \ll 1$.
+		Quindi 
+		\[
+		U \simeq \frac{3}{2} N \kappa _B T + \frac{N^2}{V} 2\pi \int dr \ r^2 v(r)
+		\] 
+		e, allora
+		\[
+		C_V = \frac{3}{2}N \kappa _B \implies C_V \sim t ^{-\alpha }
+		\] 
+		con $\alpha  = 0$ in questo caso perch\'e risulta costante.
+	\item La compressibilit\`a isoterma \`e pari a
+		\[
+			k_T = - \frac{1}{V \Eval{\frac{\partial p}{\partial V} }{T}{}}
+		\] 
+		con 
+		\[
+			\Eval{\frac{\partial p}{\partial V} }{T}{} = - \frac{N\kappa _B T}{(V-b)^2}+ \frac{2a}{V^3}=\frac{N\kappa _B}{4b^2}(T_c-T)
+		\] 
+		utilizzando il valore $T_c = \frac{8}{27}\frac{a}{b}\frac{1}{N\kappa _B}$.
+		Questo implica che 
+		\[
+		k_T \sim \lvert t \rvert ^{-\gamma}
+		\] 
+		con $\gamma=1$.
+		Questo significa che $k_T$ diverge in prossimit\`a del punto critico, comportando forti fluttuazioni nel numero di particelle e invalidando, allora, l'equivalenza del gran canonico con gli altri ensemble.
+	\item Si va a studiare il caso in cui gas e liquido coesistono secondo il diagramma $(\rho ,T)$. 
+		\begin{center}
+			\begin{minipage}
+				{.45\columnwidth}
+				Si \`e interessati a capire qual \`e l'andamento della densit\`a del liquido $\rho _\text{liq}$ e del gas $\rho _\text{gas}$ nel tendere al punto critico, percorrendo la cupola della parabola.
+				In particolare, si stimer\`a la differenza $\rho _\text{liq}- \rho _\text{gas}$ in funzione della temperatura.
+				Per farlo, si considera $T<T_c$, visto che, sopra questo valore, il sistema \`e nello stato gassoso e, quindi, non c'\`e coesistenza.
+			\end{minipage}
+			\hfill
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+		\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
+
+    % Assi
+    \draw[->, thick] (0,0) -- (0,5) node[above] {$T$};
+    \draw[->, thick] (0,0) -- (7,0) node[right] {$\rho$};
+
+    % Linea critica Tc
+    \draw[dashed, thick] (0,3.55) -- (6.7,3.55);
+    \node[left] at (0,3.55) {$T_c$};
+
+    % Curva a cupola (coexistence dome)
+    \draw[thick]
+        (1.0,1.1)
+        .. controls (1.7,2.7) and (2.6,3.4) .. (3.5,3.55)
+        .. controls (4.4,3.4) and (5.2,2.7) .. (6.0,1.1);
+
+    % Punto critico
+    \fill[red] (3.5,3.55) circle (2.2pt);
+
+    % Etichette
+    \node at (0.55,1.75) {\footnotesize gas};
+    \node at (6.75,1.75) {\footnotesize liquido};
+    \node at (3.5,1.75) {\footnotesize coesistenza};
+    \node at (3.45,4) {\footnotesize gas};
+
+\end{tikzpicture}
+			\end{minipage}
+		\end{center}
+Invertendo la legge degli stati corrispondenti, si vede che
+\[
+\frac{p}{p_c}=\frac{8 T / T_c}{3 \overline{V}-1}- \frac{3}{\overline{V}^2}
+\] 
+Da van der Waals e a seguito della costruzione di Maxwell, si sa che ci sono una serie di volumi che corrispondono tutti alla stessa pressione, i cui estremi corrispondono ad uno stato gassoso (a sinistra) e uno stato liquido (a destra).
+Per questa ragione, tale equazione sar\`a soddisfatta da entrambi questi volumi, ottenendo che
+\[
+	\begin{split}
+		&\frac{p}{p_c} = \frac{8 T / T_c}{3 \overline{V}_\text{liq}-1} - \frac{3}{\overline{V}_\text{liq}^2}= \frac{8 T / T_c}{3 \overline{V}_\text{gas}-1} - \frac{3}{\overline{V}_\text{gas}^2}\\
+		&\Rightarrow \frac{T}{T_c} = \frac{\left(3\overline{V}_\text{liq}-1\right) \left(3\overline{V}_\text{gas}-1\right) \left(\overline{V}_\text{liq}+\overline{V}_\text{gas}\right) }{8 \overline{V}^2_\text{gas} \overline{V}^2_\text{liq}}
+	\end{split}
+\] 
+		\begin{center}
+			\begin{minipage}
+				{.45\columnwidth}
+Si suppone, ora, che $\overline{V}_\text{gas} = \frac{V_c+\varepsilon }{V_c}$ e $\overline{V}_\text{liq}=\frac{V_c-\varepsilon }{V_c}$, ossia che questi due valori si discostino di un arbitrario $\varepsilon >0$ rimanendo sulla parabola, cio\`e lungo la retta per cui restituiscono uguale pressione in regime di coesistenza.
+In questo caso, si pu\`o approssimare 
+\[
+\frac{T}{T_c} = 1- \frac{\varepsilon ^2}{4V_c^2}+ \operatorname{O} (\varepsilon ^4)
+\] 
+			\end{minipage}
+			\hfill
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
+
+% Assi
+\draw[->, thick] (0,0) -- (0,5) node[above] {$T$};
+\draw[->, thick] (0,0) -- (7,0) node[right] {$V$};
+
+% Cupola (coexistence dome)
+\draw[thick]
+    (1.2,1.0)
+    .. controls (2.0,2.8) and (3.0,3.6) .. (3.8,3.7)
+    .. controls (4.6,3.6) and (5.5,2.8) .. (6.2,1.0);
+
+% Punto critico (rosso)
+\fill[red] (3.8,3.7) circle (2.2pt);
+
+% Punto sulla curva (nero)
+\fill (5.1,2.9) circle (2pt);
+\fill (2.5,2.9) circle (2pt);
+
+% Linea orizzontale tratteggiata dal punto nero
+\draw[dashed] (0,2.9) -- (5.1,2.9);
+
+% Linea verticale tratteggiata (azzurra)
+\draw[dashed, blue] (5.1,0) -- (5.1,2.9);
+\draw[dashed, blue] (2.5,0) -- (2.5,2.9);
+
+% Linea verticale da punto critico a asse x
+\draw[dashed] (3.8,3.7) -- (3.8,0);
+
+% Etichette
+\node at (1.3,3.1) {\footnotesize liq.};
+\node at (6.5,3.0) {\footnotesize gas};
+\node at (3.25,1.9) {\footnotesize coes.};
+
+% Etichetta Vc
+\node[below] at (3.8,0) {$V_c$};
+
+% Frecce epsilon (a sinistra e destra di Vc)
+\draw[<->, blue] (2.5,-1) -- (3.8,-1);
+\draw[<->, blue] (3.8,-1) -- (5.1,-1);
+
+\node[blue] at (3.15,-1.3) {$\varepsilon$};
+\node[blue] at (4.45,-1.3) {$\varepsilon$};
+
+\end{tikzpicture}
+			\end{minipage}
+		\end{center}
+Da questa, si ricava che 
+\[
+\varepsilon \sim -t ^{\beta }
+\] 
+con $\beta  = 1 / 2$. 
+Questa, in particolare, \`e valida per $t<0$, ossia per valori $T<T_c$; si vede che, per $t>0$, si ha $\varepsilon = 0$.
+\end{enumerate}
+Si far\`a vedere, nel seguito, un altro sistema i cui esponenti $\alpha ,\beta ,\gamma, \delta $ sono gli stessi di questo, anche se il sistema in questione si studia sotto tutt'altro punto di vista, ossia transizioni di fase che riguardano le sue propriet\`a magnetiche.
+Questo \`e dovuto al fatto che i due sistemi fanno parte della stessa \textit{classe di universalit\`a}, il che ha a che fare con le assunzioni sul sistema, pi\`u che l'aspetto che se ne intende studiare.
+Di fatto, si riutilizzeranno le assunzioni di gas rarefatto, approssimato al primo ordine dell'espansione in clusters, eccetera.
+\subsection{Modello di Ising in campo medio}
+Per schematizzare in modo elementare un sistema magnetico in meccanica statistica classica, si introducono delle variabili $S_i$ che possono assumere valori esclusivamente pari a $\pm 1$.
+L'idea \`e di assegnare queste variabili ad ogni particella all'interno di un reticolo e determiner\`a il comportamento della particella ad allinearsi con il campo magnetico esterno.
+Il modello di Ising \`e caratterizzato da un hamiltoniana 
+\[
+H = - J \sum_{\langle i,j \rangle}^{} S_iS_j - h \sum_{i}^{} S_i
+\] 
+dove $J$ \`e la costante di accoppiamento, $\langle i,j \rangle$ somma, dato $i$, sui prossimi vicini alla particella $i$-esima nel reticolo (cio\`e sulle particelle \textit{connesse} alla $i$-esima direttamente), e $h$ \`e il campo magnetico.
+Se $J>0$, il sistema sar\`a ferromagnetico perch\'e $H$ assume valore minimo quando la particella $i$-esima \`e allineata con i suoi vicini, altrimenti, per $J<0$, si ha un comportamento anti-ferromagnetico. 
 
 
+		\begin{center}
+			\begin{minipage}
+				{.45\columnwidth}
+Prendendo $h=0$ e $J>0$, si pu\`o osservare una transizione da paramagnete (ordinamento casuale degli $S_i$) a ferromagnete passando da alte temperature ($\beta \sim 0$) a basse temperature ($\beta \to  +\infty$).
+Questo individua una transizione di fase per cui la magnetizzazione $m$, che si trover\`a essere $\langle S_i \rangle$ (valor medio), ha un punto di discontinuit\`a ad una certa $T_c$, sopra cui \`e costante e pari a zero.
+			\end{minipage}
+			\hfill
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+				\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
 
+% Assi
+\draw[->, thick] (0,0) -- (7,0) node[right] {$T$};
+\draw[->, thick] (0,0) -- (0,5) node[above] {$\langle S_i \rangle$};
 
+% Punto critico
+\coordinate (Tc) at (3.2,0);
+\fill (Tc) circle (2pt);
 
+% Etichetta Tc
+\node[below] at (Tc) {$T_c$};
 
+% Curva (fase ordinata) - rossa
+\draw[thick, red]
+    (0,3.6)
+    .. controls (1.5,3.4) and (2.5,2.2) .. (3.2,0);
+
+% Linea per T > Tc (fase disordinata) - blu
+\draw[thick, blue] (3.2,0) -- (6.5,0);
+
+% Etichetta punto critico con freccia
+\draw[->] (4.8,2.5) -- (3.25,0.1);
+\node at (5.2,2.7) {\footnotesize punto critico};
+
+\end{tikzpicture}
+			\end{minipage}
+		\end{center}
+		In realt\`a, non \`e sistematico che si verifichi questo andamento, ma dipende dal tipo di reticolo considerato.
+\subsubsection{Soluzione del modello di Ising}
+Per risolvere il modello di Ising, ossia calcolare tutte le quantit\`a termodinamiche necessarie, \`e necessario determinare 
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} e^{-\beta H\left(\left\{ S_i \right\} \right) }
+\] 
+\begin{osservazione}
+Si usa il formalismo canonico perch\'e il numero di particelle \`e fissato dal numero di reticoli del sistema.
+\end{osservazione}
+Si definisce la magnetizzazione del sito $i$-esimo come $m_i = \langle S_i \rangle$; in questo modo, si pu\`o esprimere ogni variabile $S_i$ in termini del suo valor medio e delle sue fluttuazioni come 
+\[
+S_i = m_i + \delta S_i
+\] 
+Calcolare la somma per ottenere $Z$ \`e molto difficile, per cui si fa uso dell'approssimazione di Weiss (o di campo medio), per cui si assume che le $\delta S_i$ siano molto piccole.
+Si ha
+\[
+H = - J  \sum_{\langle i,j \rangle}^{} S_iS_j - h \sum_{i=1}^{N} S_i = - J \sum_{\langle i,j \rangle}^{} (m_i + \delta S_i) (m_j + \delta S_j) - h \sum_{i=1}^{N} (m_i+ \delta S_i)
+\] 
+Assumendo anche invarianza per traslazioni, si pu\`o scrivere che $m_i = m, \ \forall i$.
+Sviluppando il prodotto e semplificando il secondo ordine delle fluttuazioni per l'approssimazione di campo medio, si trova:
+\[
+	\begin{split}
+		m_i m_j + m_i \delta S_j + m_j \delta S_i + \cancel{\delta S_i \delta S_j}&=m^2 + m(\delta S_i + \delta S_j)\\
+											  &=m^2 + m \big[ (S_i - m) + (S_j - m) \big] \\
+											  &= -m^2 + m(S_i + S_j)
+	\end{split}
+\] 
+In questo modo, si ha
+\[
+	\begin{split}
+		H &\simeq - J \sum_{i=1}^{N} \sum_{j_\text{p.v.}}^{} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
+		  &= - J y \frac{1}{2} \sum_{i=1}^{N} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
+		  &= \frac{1}{2}Jy m^2 N - (h + mJy) \sum_{i=1}^{N} S_i
+	\end{split}
+\] 
+dove $j_\text{p.v.}$ indica le particelle $j$-esime prime vicine con la $i$-esima e $y$ \`e il numero di primi vicini di un sito nel reticolo.
+Il fattore $\frac{1}{2}$ serve per evitare di contare due volte le stesse coppie di particelle.
+Il fattore $h+mJy$ si dice \textit{campo magnetico efficace} ed \`e importante notare che dipende dalla magnetizzazione $m$ del sistema.
+Allora 
+\[
+	\begin{split}
+		Z &= C \sum_{\left\{ S_i \right\} }^{} e^{\beta (h + mJy) \sum_{i}^{} S_i} = C \prod_i \sum_{S_i = \pm 1}^{} e^{\beta (h+mJy)S_i}\\
+		  &=C \prod_i \left[ e^{\beta (h+mJy)}+ e ^{-\beta (h+mJy)} \right] = 2^N C \cosh\left(\beta h + \beta mJy\right) ^N
+	\end{split}
+\] 
+dove $C$ \`e una costante moltiplicativa legata alla presenza del termine costante (rispetto alle quantit\`a termodinamiche di interesse) $\frac{1}{2}Jy m^2 N$ nell'hamiltoniana.
+Dalla termodinamica, la magnetizzazione del sistema \`e pari a 
+\[
+m = \frac{1}{N} \left(\frac{1}{\beta }\frac{\partial }{\partial h} \log Z\right) _{h=0}  = \tanh \left(\beta h + \beta m Jy\right)_{h=0} =\tanh \left(\beta mJy\right) 
+\] 
+e si vede che la magnetizzazione compare sia a destra che a sinistra.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+\begin{tikzpicture}[scale=1]
+    % Assi coordinati
+    \draw[->, thick] (-3,0) -- (3,0) node[right] {$m$};
+    \draw[->, thick] (0,-1.5) -- (0,1.5) node[left] {$f(m)$};
+
+    % Retta y=m
+    \draw[thick] (-1.2,-1.2) -- (1.2,1.2) node[above right] {\footnotesize$f(m)=m$};
+    \draw[dashed] (-1.5,-1.5) -- (-1.2,-1.2);
+    \draw[dashed] (1.2,1.2) -- (1.5,1.5);
+
+    % Curva y=tanh(...) con pendenza < 1
+    \draw[domain=-2:2, samples=100, thick, cyan!80!blue] plot (\x, {1.5*tanh(0.4*\x)});
+    \draw[dashed, cyan!80!blue] (2, {1.5*tanh(0.4*2)}) -- (2.5, {1.5*tanh(0.4*2.5)});
+    \draw[dashed, cyan!80!blue] (-2, {1.5*tanh(0.4*-2)}) -- (-2.5, {1.5*tanh(0.4*-2.5)});
+    
+    % Etichetta curva
+    \node[cyan!80!blue, right] at (0.8, 0.4) {\footnotesize$f(m)=\tanh(\beta m J y)$};
+
+    % Origine e radice banale
+    \fill[red] (0,0) circle (1.5pt) node[below right] {\footnotesize$m=0$};
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+		\begin{tikzpicture}[scale=1]
+    % Assi coordinati
+    \draw[->, thick] (-3,0) -- (3,0) node[right] {$m$};
+    \draw[->, thick] (0,-1.5) -- (0,1.5) node[left] {$f(m)$};
+
+    % Retta y=m
+    \draw[thick] (-1.2,-1.2) -- (1.2,1.2);
+    \draw[dashed] (-1.5,-1.5) -- (-1.2,-1.2);
+    \draw[dashed] (1.2,1.2) -- (1.5,1.5);
+
+    % Curva y=tanh(...) con pendenza > 1
+    \draw[domain=-2:2, samples=100, thick, cyan!80!blue] plot (\x, {1.5*tanh(\x)});
+    \draw[dashed, cyan!80!blue] (2, {1.5*tanh(2)}) -- (2.5, {1.5*tanh(2.5)});
+    \draw[dashed, cyan!80!blue] (-2, {1.5*tanh(-2)}) -- (-2.5, {1.5*tanh(-2.5)});
+
+    % Punti di intersezione
+    \fill[red] (0,0) circle (1.5pt) node[below right] {\footnotesize$m=0$};
+    \fill[red] (1.293,1.293) circle (1.5pt);
+    \fill[red] (-1.293,-1.293) circle (1.5pt);
+
+    % Linee di proiezione sulle ascisse
+    \draw[dashed, red] (1.293,1.293) -- (1.293,0) node[below right] {\footnotesize$+m^*$};
+    \draw[dashed, red] (-1.293,-1.293) -- (-1.293,0) node[above left] {\footnotesize$-m^*$};
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+Questi due grafici individuano i due casi possibili, a seconda del coefficiente angolare della retta $f(m) = m$.
+Il caso a sinistra \`e associato a 
+\[
+	\Eval{\frac{\partial \tanh(\beta mJy)}{\partial m} }{m=0}{} <1 \iff \beta J y <1
+\] 
+mentre il secondo caso \`e individuato dalla condizione 
+\[
+	\Eval{\frac{\partial \tanh(\beta mJy)}{\partial m} }{m=0}{} >1 \iff \beta J y >1
+\] 
+Questa differenza tra i valori possibili della magnetizzazione permette di individuare una temperatura critica:
+\[
+\beta _c Jy = 1 \iff \frac{1}{\kappa _B T_c}Jy = 1 \iff T_c  = \frac{Jy}{\kappa _B}
+\] 
+che coincide proprio con la temperatura critica a cui avviene la transizione di fase introdotta alla fine della scorsa sezione.
+\begin{osservazione}
+	I valori $m^*$ e $-m^*$ sono simmetrici e sono legate al fatto che il grafico di $m(T)$ a fine della scorsa lezione pu\`o avere un ramo rosso nella parte superiore del piano, o uno perfettamente specchiato nella parte inferiore.
+\end{osservazione}
+In particolare, il caso $T>T_c \Rightarrow m=0$ corrisponde al caso paramagnetico, mentre il caso $T<T_c$, che permette $m=0, +m^*, - m^*$, corrisponde al caso ferromagnetico.
+\begin{boxenv}[]
+\begin{center}
+	Riprendere da lezione 12. Scrivere $F$.
+\end{center}
+\end{boxenv}
 
 
 
