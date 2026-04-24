@@ -816,7 +816,7 @@ Si parla, ad oggi, di transizioni del primo ordine e di transizioni \textit{cont
 		\end{split}
 		\] 
 	con $\gamma$ e $\alpha $ noti come \textit{esponenti critici}.
-\subsection{Teoria di Yang e Lee}
+\subsection{Teoria di Lee-Yang}
 Permette di individuare le transizioni di fase come singolarit\`a nella funzione di partizione.
 Si parte dalla funzione di gran partizione, in quanto si intende studiare il sistema tramite il formalismo gran canonico; si ha 
 \[
@@ -830,13 +830,89 @@ Nel caso in cui la somma sia finita, non ci si aspettano comportamenti strani:
 \] 
 dove il $>1$ \`e dato dal fatto che $z=e^{\beta \mu }$ e le funzioni di partizione canoniche sono sempre positive.
 Ne segue che $\mathcal{Z} $ \`e un polinomio di grado $M$ in $z$, per cui ammette esattamente $M$ radici nel campo complesso.
-Indicando con $\zeta_1,\ldots,\zeta_M$ le sue radici, assumendo che siano tutte distinte, si pu\`o scrivere 
+Indicando con $\xi _1,\ldots,\xi _M$ le sue radici, assumendo che siano tutte distinte, si pu\`o scrivere 
 \[
-\mathcal{Z} (z) = \prod_{N=1} ^M \left(1-\frac{z}{\zeta_N}\right) 
+\mathcal{Z} (z) = \prod_{N=1} ^M \left(1-\frac{z}{\xi _N}\right) 
 \] 
+Visto che $\mathcal{Z} (0) = 1$ e le $Z$ sono tutte positive, con $z>1$, si vede che le $\xi _k$ non possono appartenere alla retta reale positiva.
+In realt\`a, quello che si pu\`o far vedere \`e che le radici sono a coppie di complessi coniugati, cio\`e se $\xi _j$ \`e radice, allora $\xi _j^*$ anche lo \`e.
+Questo \`e dato dal fatto che la funzione di gran partizione deve essere una funzione reale, ossia invariante sotto coniugio complesso\footnote{Il discorso non esclude la possibilit\`a di radici sulla retta reale negativa; se, per\`o, $\xi _k$ \`e una radice fisicamente ammissibile, allora deve essere complessa ed \`e radice anche il suo complesso coniugato.}. 
 
+Per il formalismo gran canonico, si ha
+\[
+\begin{cases}
+	\displaystyle \frac{p}{\kappa _B T} = \frac{1}{V}\log\mathcal{Z} (z,T,V)\\
+	\\
+	\displaystyle \frac{1}{v}= \frac{\langle N \rangle}{V}=\frac{1}{V}z\frac{\partial }{\partial z} \log\mathcal{Z} (z,T,V)
+\end{cases}
+\] 
+Ora, se $V$ \`e finito, quindi $N<+\infty$, non ci si aspettano singolarit\`a; anzi, il sistema \`e stabile: si ha $p>0$ e, essendo
+\[
+v = \frac{V}{z \partial _z \log\mathcal{Z} } \implies \Eval{\frac{\partial v}{\partial z} }{T}{} = -V \frac{\partial _z \log\mathcal{Z} + z \partial _z^2 \log\mathcal{Z} }{(z\partial _z\log\mathcal{Z} )^2}\\
+\] 
+vale
+\[
+	\begin{split}
+		\Eval{\frac{\partial p}{\partial v} }{T}{} &=  \Eval{\frac{\partial p}{\partial z} \frac{\partial z}{\partial v} }{T}{} = \left(\frac{\kappa _B T}{V}\frac{\partial }{\partial z} \log\mathcal{Z} \right) \frac{1}{\Eval{\frac{\partial v}{\partial z} }{T}{}}\\
+							   &= -\frac{\kappa _B T}{V^2}\frac{z^2 \left(\partial _z\log\mathcal{Z} \right) ^3}{\partial _Z \log\mathcal{Z} +z \partial _z^2 \log\mathcal{Z} } < 0
+	\end{split}
+\] 
+Quest'ultima entra nella compresibilit\`a isoterma $k_T ^{-1} = - v \Eval{\frac{\partial p}{\partial v} }{T}{}$, che risulta, quindi, negativa, senza risultare in instabilit\`a.
 
+Se, al contrario, $V\to +\infty$, le equazioni riportate sopra diventano:
+\[
+\begin{cases}
+	\displaystyle \frac{p}{\kappa _B T }= \lim_{V \to +\infty} \frac{1}{V}\log\mathcal{Z} \\
+	\\
+	\displaystyle \frac{1}{v}=\lim_{V \to +\infty} \frac{1}{V} z \frac{\partial }{\partial z} \log\mathcal{Z} 
+\end{cases}
+\] 
+In questo caso, il limite pu\`o causare problemi, anche perch\'e non \`e chiaro in principio se si possa scambiare con la derivata parziale. 
+La teoria di Lee-Yang prevede i seguenti teoremi, che permettono di capire quando nascono singolarit\`a nel caso $V\to +\infty$.
 
+\begin{teorema}
+Il limite 
+\[
+\mathcal{F}_V (z) = \lim_{V \to +\infty} \frac{1}{V}\log\mathcal{Z} 
+\] 
+esiste per ogni valore di $z>0$. 
+Inoltre, il risultato di tale limite \`e una funzione continua e non decrescente in $z$.
+In generale, poi, $\mathcal{F} (z)$ non dipende da $V$, a patto che la sua superficie non aumenti pi\`u velocemente di $V^{2 / 3}$ (a meno di frattali, quindi).
+\end{teorema}
+\begin{teorema}
+Se $R$ \`e una regione del piano complesso in cui non sono presenti zeri di $\mathcal{Z} $, allora $\mathcal{F} _V(z)$ converge uniformemente sull'asse reale positivo, per $V\to +\infty$.
+\end{teorema}
+Come conseguenza di questo secondo teorema, la teoria matematica afferma che \`e possibile scambiare il limite con la derivata e questo corrisponde ai casi in cui non si verificano singolarit\`a.
+Ne segue che, nella regione $R$, il sistema \`e termodinamicamente stabile, con 
+\[
+\frac{p}{\kappa _B T } = \mathcal{F} _\infty(z) \hspace{1cm} v^{-1}(z) = z \frac{\partial }{\partial z} \mathcal{F} _\infty(z)
+\] 
+e si pu\`o dimostrare che $p>0$ e $\frac{\partial p}{\partial v}  < 0$.
+
+Per evidenziare la stabilit\`a termodinamica in $R$, si nota che, il primo teorema assicura $\frac{\partial p}{\partial z} \ge  0$, cio\`e $p(z)$ \`e una funzione crescente; inoltre, si pu\`o vedere che $v^{-1}$ non decresce in funzione di $z$ perch\'e
+\[
+z \frac{\partial }{\partial z} \frac{1}{v}= z \frac{\partial }{\partial x} \left(z \frac{\partial }{\partial z} \frac{1}{V}\log\mathcal{Z} \right) \propto \operatorname{Var} N
+\] 
+per quanto visto nella trattazione del formalismo gran canonico. Visto che le fluttuazioni di $N$ devono essere positive, allora $v^{-1}$ deve essere crescente in $z$ (cio\`e $\partial _z v^{-1}\ge 0$).
+Combinando questi due risultati, eliminando la fugacit\`a, si ottiene $\frac{\partial p}{\partial v} \le 0$, cio\`e la pressione decresce con l'aumentare del volume, il che individua una regione di stabilit\`a termodinamica per il sistema.
+
+Quello che la teoria di Lee-Yang permette di comprendere \`e che, se $V<+\infty$, la funzione di gran partizione \`e analitica in $z$, quindi neanche $p$ e $v$.
+Nel caso in cui $V\to +\infty$, invece, gli zeri di $\mathcal{Z} (z)$ possono accumularsi e tendere arbitrariamente vicino all'asse reale; questo significa che esister\`a un punto di tale asse reale attorno al quale non si riesce a trovare una regione libera da zeri.
+Questo punto reale \`e proprio il punto critico ed \`e dove si verificano le transizioni di fase.
+\begin{teorema}
+	[Teorema del cerchio]
+	Per un sistema con particelle disposte a reticolo (cio\`e senza sovrapporsi) e soggette a potenziale della forma 
+	\[
+	v_{ij} = \begin{cases}
+		+\infty &,\ i=j\\
+		<0 &,\ i\neq j
+	\end{cases}
+	\] 
+	allora $\mathcal{Z} (z,T,V) = 0 \iff \lvert z \rvert =1$.
+\end{teorema}
+\begin{osservazione}
+Questo teorema permette di concludere che un'eventuale transizione di fase, per un sistema del tipo previsto dal teorema, pu\`o verificarsi esclusivamente per $z=1$.
+\end{osservazione}
 
 
 

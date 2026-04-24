@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  23 APR 2026 20:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  24 APR 2026 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1351,25 +1351,28 @@ File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
 Package pdftex.def Info: pd.jpg  used on input line 805.
 (pdftex.def)             Requested size: 187.57352pt x 164.25514pt.
- [20 <./pd.jpg>] [21] [22]
+ [20 <./pd.jpg>] [21] [22] [23] [24]
 
 Package caption Warning: Unused \captionsetup[table] on input line 127.
 See the caption package documentation for explanation.
 
-[23] (./master.aux)
+[25] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 45336 strings out of 467525
- 1058818 string characters out of 5425862
+ 45346 strings out of 467525
+ 1058967 string characters out of 5425862
  1713799 words of memory out of 5000000
- 73482 multiletter control sequences out of 15000+600000
+ 73485 multiletter control sequences out of 15000+600000
  690647 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,26n,121p,11245b,663s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
 
@@ -1401,10 +1404,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (23 pages, 530261 bytes).
+Output written on master.pdf (25 pages, 540348 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 407 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
  172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
