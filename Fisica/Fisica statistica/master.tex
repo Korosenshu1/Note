@@ -1181,6 +1181,8 @@ Questo individua una transizione di fase per cui la magnetizzazione $m$, che si 
 \node at (5.2,2.7) {\footnotesize punto critico};
 
 \end{tikzpicture}
+\captionof{figure}{Magnetizzazione in funzione della temperatura.}
+\label{m-T}
 			\end{minipage}
 		\end{center}
 		In realt\`a, non \`e sistematico che si verifichi questo andamento, ma dipende dal tipo di reticolo considerato.
@@ -1308,11 +1310,263 @@ che coincide proprio con la temperatura critica a cui avviene la transizione di 
 	I valori $m^*$ e $-m^*$ sono simmetrici e sono legate al fatto che il grafico di $m(T)$ a fine della scorsa lezione pu\`o avere un ramo rosso nella parte superiore del piano, o uno perfettamente specchiato nella parte inferiore.
 \end{osservazione}
 In particolare, il caso $T>T_c \Rightarrow m=0$ corrisponde al caso paramagnetico, mentre il caso $T<T_c$, che permette $m=0, +m^*, - m^*$, corrisponde al caso ferromagnetico.
-\begin{boxenv}[]
+Per capire quali di queste soluzioni sono fisicamente ammissibili (nel caso $T<T_c$), si studia l'energia libera e si vede a quali di queste corrisponde un suo minimo.
+L'energia libera \`e data da
+\[
+	\begin{split}
+		F &= -\kappa _B T \log Z = \frac{1}{2} Jy N m^2 - \kappa _B T N \log \Big[2\cosh\big(\beta h+\beta mJy\big)\Big]\\
+		  &= F_0 + \frac{a}{2}m^2 + \frac{b}{4!}m^4 - \lambda hm + \ldots
+	\end{split}
+\] 
+dove si \`e usato lo sviluppo per $h,m \ll 1$ e che $\log(\cosh \epsilon ) = \frac{\epsilon ^2}{2}- \frac{\epsilon ^4}{12}+\ldots$ per $\epsilon \ll 1$.
+In questa espressione, si ha
+\[
+F_0=-N\kappa _B T \log 2 \hspace{.5cm} a = N \frac{Jy}{\kappa _B T } \left(\kappa _B T - Jy\right)  \hspace{.5cm} b = 2N \kappa _B T \left(\frac{Jy}{\kappa _B T}\right) ^4 \hspace{.5cm}\lambda = 2N \frac{Jy}{\kappa _B T}
+\] 
+con $a \sim T-T_c$, visto che $T_c = Jy / \kappa _B$.
+Si nota che l'equazione $m=\tanh(\beta mJy)$ equivale alla condizione 
+\[
+	\Eval{\frac{\partial F}{\partial m} }{h=0}{} = 0 \iff \cancel{JyN}m - \kappa _B T \cancel{N} \frac{\big[ \sinh(\beta mJy) \big] \beta \cancel{Jy}}{\cosh(\beta mJy)}=0 \iff m - \tanh(\beta mJy) = 0
+\] 
+quindi i valori $m=0,m^*,-m^*$ sono gi\`a punti stazionari.
+Dallo sviluppo di $F$, si vede che, essendo $b,\lambda >0$ e $F_0 < 0$, si possono avere due casi distinti:
+\begin{itemize}
+	\item se $T>T_c$, ossia $a>0$, $F$ \`e una quartica con concavit\`a verso l'alto e un unico minimo:
 \begin{center}
-	Riprendere da lezione 12. Scrivere $F$.
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+				\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
+
+% Assi
+\draw[->, thick] (-3,0) -- (3,0) node[right] {\footnotesize$m$};
+\draw[->, thick] (0,-3) -- (0,3) node[above] {\footnotesize$F$};
+
+% Parabola principale
+\draw[thick] plot[domain=-2:2, samples=100] (\x, {0.8*\x*\x - 2});
+
+% Ramo tratteggiato (continuazione metastabile)
+\draw[dashed] plot[domain=1.2:2.2, samples=50] (\x, {0.8*\x*\x - 2});
+\draw[dashed] plot[domain=-2.2:-1.2, samples=50] (\x, {0.8*\x*\x - 2});
+
+% Punto minimo
+\fill[red] (0,-2) circle (2pt);
+
+% Etichette
+\node at (2.2,3) {\footnotesize$[h=0]$};
+\node[below right] at (0,0) {\footnotesize$0$};
+\node[below] at (.5,-2) {\footnotesize$F_0$};
+\node[below] at (-0.7,-2) {\footnotesize$m=0$};
+
+\end{tikzpicture}
+			\end{minipage}
+			\hfill
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
+
+% Assi
+\draw[->, thick] (-3,0) -- (3,0) node[right] {\footnotesize$m$};
+\draw[->, thick] (0,-3) -- (0,3) node[above] {\footnotesize$F$};
+
+% Parabola inclinata (campo esterno)
+\draw[thick] plot[domain=-2:2, samples=100] (\x, {0.8*\x*\x - 0.8*\x - 1.5});
+
+% Rami tratteggiati (continuazioni)
+\draw[dashed] plot[domain=1.2:2.2, samples=50] (\x, {0.8*\x*\x - 0.8*\x - 1.5});
+\draw[dashed] plot[domain=-2.2:-1.2, samples=50] (\x, {0.8*\x*\x - 0.8*\x - 1.5});
+
+% Etichetta
+\node at (2.2,3) {\footnotesize$[h\neq 0]$};
+
+\end{tikzpicture}
+			\end{minipage}
 \end{center}
+	\item se $T<T_c$, ossia $a<0$, $F$ ha due punti di minimo, $\pm m^*$ e $m=0$ \`e un massimo locale, con la particolarit\`a che, quando $h\neq 0$, uno di questi due punti di minimo viene favorito dal sistema, a seconda della sua tendenza ad allinearsi o meno col campo magnetico esterno:
+\begin{center}
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+				\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.9]
+
+% Assi
+\draw[->, thick] (-3,0) -- (3,0) node[right] {\footnotesize$m$};
+\draw[->, thick] (0,-3) -- (0,3) node[above] {\footnotesize$F$};
+
+% Potenziale a doppio minimo (quartico)
+\draw[thick] plot[domain=-2.1:2.1, samples=200]
+    (\x, {0.4*(\x*\x - 1.2)^2 - 1.8});
+
+% Minimi
+\fill[red] (-1.1,-1.8) circle (2pt);
+\fill[red] (1.1,-1.8) circle (2pt);
+\fill[red] (0,-1.225) circle (2pt);
+
+% Linee verticali tratteggiate (m*)
+\draw[dashed, red] (-1.1,0) -- (-1.1,-1.8);
+\draw[dashed, red] (1.1,0) -- (1.1,-1.8);
+
+% Etichette
+\node at (2.2,2.8) {\footnotesize$[h=0]$};
+\node at (-1.1,0.4) {\footnotesize$-m^*$};
+\node at (1.1,0.4) {\footnotesize$+m^*$};
+\node at (0.2,-1) {\footnotesize$F_0$};
+
+\end{tikzpicture}
+			\end{minipage}
+			\hfill
+			\begin{minipage}
+				{.45\columnwidth}
+				\centering
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.9]
+
+% Assi
+\draw[->, thick] (-3,0) -- (3,0) node[right] {$m$};
+\draw[->, thick] (0,-3) -- (0,3) node[above] {$F$};
+
+% Parametro (campo)
+\def\h{0.6}
+
+% Funzione
+\draw[thick, domain=-1.6:1.8, samples=200]
+    plot (\x, {(\x*\x -1)^2 - \h*\x -1.5});
+
+
+% Minimi (posizionati manualmente ma coerenti)
+\coordinate (minR) at (1.066, {((1.066*1.066-1)^2 - \h*1.066 -1.5)});
+\coordinate (minL) at (-0.915, {((-0.915*-0.915-1)^2 - \h*(-0.915)-1.5)});
+
+% Linee verticali tratteggiate (m*)
+\draw[dashed, red] (-0.915,0) -- (-0.915,{((-0.915*-0.915-1)^2 - \h*(-0.915)-1.5)});
+\draw[dashed, red] (1.066,0) -- (1.066,{((1.066*1.066-1)^2 - \h*1.066 -1.5)});
+
+
+% Punto stabile (minimo globale)
+\fill[red] (minR) circle (2.2pt);
+
+% Punto metastabile (minimo locale)
+\draw[red, thick] (minL) circle (2.2pt);
+
+% Etichetta
+\node at (2.2,3) {\footnotesize$[h\neq 0]$};
+
+\end{tikzpicture}
+			\end{minipage}
+\end{center}
+\end{itemize}
+In assenza di campo magnetico, il valore $m^* \to 0$ con continuit\`a per $T\to T_c^-$ e si ottiene proprio un grafico simile a quello in figura \ref{m-T}.
+In realt\`a, quando $h=0$, come gi\`a accennato, si potrebbe creare un andamento speculare (specchiato) per $m<0$, corrispondente all'andamento di $-m^*$, visto che l'energia libera \`e simmetrica per scambio di segno in $m$.
+Quando si prende $h\neq 0$, per\`o, si ha una rottura della simmetria del sistema: la comparsa del termine lineare in $F$ evidenzia una preferenza per un valore di $m$, che sia positivo o negativo.
+Questo implica che, nel grafico $m(T)$, comparir\`a solo una delle due branche, a seconda del segno del minimo preferito dal sistema.
+Se $T>T_c$, invece, l'azione del campo magnetico causa al pi\`u uno shift, ma la fisica del sistema non cambia.
+
+Questo andamento di $m(T)$, per $T<T_c$, corrisponde proprio ad una transizione di fase continua nel punto critico $T = T_c$.
+\subsubsection{Rottura di simmetria}
+In questo caso, si parla di simmetria $\mathbb{Z}_2$, corrispondente all'inversione di segno degli $S_i$.
+Per capire cosa si intende per rottura di simmetria, si riprende la funzione di partizione
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} \exp \left[ -\beta \left(H(h=0) - h \sum_{i=1}^{N} S_i\right)  \right] 
+\] 
+dove si \`e evidenziata la componente asimmetrica per scambio di segno negli $S_i$, ossia $h \sum_{i}^{} S_i$, scrivendo $H(h=0) = -J \sum_{\langle i,j \rangle}^{} S_iS_j$, che invece \`e simmetrica.
+La rottura di simmetria emerge dal fatto che i limiti
+\[
+\lim_{N\to +\infty}\lim_{h\to 0}\langle m\rangle
+\qquad\text{e}\qquad
+\lim_{h\to 0}\lim_{N\to +\infty}\langle m\rangle
+\]
+non coincidono. Nel primo caso si annulla il campo prima di prendere il limite termodinamico, e quindi il sistema rimane simmetrico. Nel secondo caso, invece, si prende prima il limite $N\to +\infty$: sotto la temperatura critica il sistema presenta due stati degeneri con magnetizzazione $\pm m^*$, e un campo infinitesimo seleziona uno dei due rami; mandando, poi, $h\to 0^\pm$, la magnetizzazione resta non nulla, segnalando la rottura spontanea di simmetria.
+
+\subsubsection{Esponenti critici}
+
+Essendo interessati agli esponenti critici, cio\`e all'andamento di certe quantit\`a in un intorno del punto critico, si pu\`o utilizzare l'approssimazione 
+\[
+F \simeq F_0 + \frac{a}{2}m^2 + \frac{b}{4!}m^4 - \lambda hm
+\] 
+fatta per $m\ll 1$ perch\'e, attorno al punto critico, $m\simeq 0$.
+Inoltre, si assumer\`a, per la validit\`a dell'approssimazione sopra, anche $h $ sufficientemente piccolo.
+Utilizzando questa espressione, si pu\`o ricavare il valore di $m^*$, che ora si indicher\`a con $m_0$:
+\begin{equation}\label{mis}
+	\Eval{\frac{\partial F}{\partial m} }{m_0}{} = 0 \implies am_0 + \frac{b}{6}m_0^3 - \lambda h = 0
+\end{equation}
+\begin{enumerate}[(1).]
+	\item Considerando $h=0$, si ha $m_0 =0$, oppure $m_0 = \pm \sqrt{-6a / b} $, che ha senso se $T<T_c$, per cui $a < 0$. 
+		Ricordando che $a \sim T-T_c$, si conclude che $m_0 \sim \lvert T - T_c \rvert ^{\beta }$, con $\beta = 1/2$, proprio come nel caso di van der Waals.
+	\item Ora si considera la suscettivit\`a magnetica $\chi  = \Eval{\frac{\partial m_0}{\partial h} }{m_0=0}{}$.
+		Per $T>T_c$ e $h$ piccolo, si ha $m_0 \sim h / a$ per l'equazione $\ref{mis}$, da cui
+		\[
+		\chi \sim \frac{1}{a} \sim \lvert T-T_0 \rvert ^{-\gamma}
+		\] 
+		con $\gamma = 1$.
+		Se $T<T_c$, derivando rispetto ad $h$ l'equazione \ref{mis}, si trova 
+		\[
+		a \chi  + \frac{b}{2}m_0^2 \chi  = \lambda 
+		\] 
+	Utilizzando che $m_0 \simeq 0$ attorno al punto critico, si pu\`o trascurare il termine quadratico e, di nuovo, si trova $\chi \sim 1 / a$.
+\item Si considera $T = T_c$, per cui $a = 0$ e $\frac{b}{6}m_0^3 = \lambda h$, per l'equazione \ref{mis}.
+	Allora si trova che 
+	\[
+	m_0 \sim h ^{1 / \delta }
+	\] 
+	con $\delta = 3$.
+\item Si considera la capacit\`a termica 
+	\[
+		C = T \Eval{\frac{\partial S}{\partial T} }{h=0, T=T_c}{} = - T_c \Eval{\frac{\partial^2 F(m_0)}{\partial T^2} }{h=0, T=T_c}{}
+	\] 
+	Considerando la solita espressione approssimata per $F$, si trova che
+	\[
+	F(m_0) = \begin{cases}
+		F_0 &,\ T\ge T_c\\
+		F_0 - \frac{3}{4}N\kappa _B T \frac{(T_c-T)^2}{T_c^2} &,\ T<T_c
+	\end{cases}
+	\] 
+	Si vede allora che $F$ e la sua derivata prima rispetto a $T$ sono continue, ma la sua derivata seconda no:
+	\[
+	C = \begin{cases}
+		\displaystyle -T_c \frac{\partial ^2F_0}{\partial T^2}  =0 &,\ T\ge T_c\\
+		\\
+		\displaystyle \frac{3}{2}N\kappa _B &,\ T<T_c
+	\end{cases} \implies C \sim \lvert T-T_c \rvert ^{-\alpha }
+	\] 
+	con $\alpha  = 0$.
+\end{enumerate}
+Si vede, allora, che il modello di Ising in campo medio fa parte della stessa classe di universalit\`a di van der Waals, in quanto gli esponenti critici sono uguali.
+\subsubsection{Problemi del modello}
+Dalla sezione precedente, si \`e evidenziato che $\chi $ tende a divergere. 
+Per\`o, $\chi  \propto \operatorname{Var} M$, con $M$ magnetizzazione del sistema; questo \`e un problema perch\'e l'approssimazione di campo medio \`e basata proprio sul considerare piccole tali fluttuazioni.
+
+Si vede che
+\[
+M : = \sum_{i}^{} \langle S_i \rangle = \frac{\sum_{i}^{} \sum_{\left\{ S_j \right\} } S_i e^{-\beta H} }{\sum_{\left\{ S_j \right\} }^{} e^{-\beta H}} = \frac{1}{\beta } \frac{\partial }{\partial h} \log Z
+\] 
+Ora, se 
+\[
+H = H_0\left(\left\{ S_j \right\} \right) - \sum_{j}^{} h S_j
+\] 
+si ha
+\[
+	\begin{split}
+		M &= \sum_{i}^{} \frac{\sum_{\left\{ S_j \right\} }^{} S_i e^{-\beta (H_0-\sum_{j}^{} S_jh)}}{\sum_{\left\{ S_j \right\} }^{} e^{-\beta (H_0-\sum_{j}^{} S_j h }}\\
+		  &\simeq \frac{\sum_{i}^{} \langle S_i \rangle_0 + \beta h \sum_{i,j}^{} \langle S_iS_j \rangle_0}{1 + \beta h \sum_{i}^{} \langle S_i \rangle_0}\\
+		  &\simeq \beta h \left[ \sum_{i,j}^{} \langle S_iS_j \rangle_0 - \sum_{i}^{} \langle S_i \rangle_0 \sum_{j}^{} \langle S_j \rangle_0 \right]  + \sum_{i}^{} \langle S_i \rangle_0
+	\end{split}
+\] 
+da cui $\chi \propto \frac{1}{n} \left(\langle M^2 \rangle-\langle M \rangle^2\right) \propto \operatorname{Var} M$.
+Per\`o si \`e anche visto che $\chi \sim t ^{-\gamma}$, con $\gamma=1$, che diverge. 
+Questo \`e dato dal fatto che il campo medio non tratta bene le interazioni spin-spin, da cui segue $\operatorname{Var} M = 0$.
+Si deve cercare un modo alternativo per studiare questo caso.
+
+\subsection{Teorie di campo classiche}
+\begin{boxenv}[]
+\centering Riprendere da 24:30, lezione 12
 \end{boxenv}
+
+
+
+
+
+
+
+
 
 
 
