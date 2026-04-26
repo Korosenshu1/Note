@@ -1,0 +1,229 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage[T1]{fontenc}
+\usepackage{varwidth}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[italian]{babel}
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di Astrofisica}
+\author{Manuel Deodato}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{notazione}{Notazione}[section]
+
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+% Font
+\usepackage[osf]{newpxtext}
+\usepackage{newpxmath}
+\usepackage{sansiwona}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Teoria del trasporto radiativo}
+
+
+
+
+
+
+
+
+
+\newpage
+\appendix
+\section{Grandezze fondamentali}
+In astrofisica, si usa il sistema CGS per le unit\`a di misura, ma grammi e centimetri sono scomodi per le misurazioni degli oggetti di interesse, quindi si utilizzano unit\`a derivate.
+\begin{itemize}
+	\item Massa solare: $1\, M_{\odot} \approx 2 \times 10^{33}\, \mathrm{g} $.
+
+		Le masse delle stelle si aggirano nell'intervallo $0.08 \div 300 \ M_{\odot} $.
+		Per le masse delle galassie, invece, si \`e sull'ordine di $10^{11}\ M_{\odot} $.
+		Si stima che siano presenti, nell'universo visibile, un totale di $10^{11}$ galassie.
+	\item Distanze.
+
+		Per le distanze, si fa riferimento alla distanza Terra-Sole e si individua $1\, \mathrm{AU}  = 1.5 \times 10^{13}\, \mathrm{cm} $.
+Si utilizza il raggio Terra-Sole per calcolare la distanza delle stelle tramite triangolazione.
+In particolare, si definisce la parallasse annua come $\pi$ e rappresenta l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole.
+\begin{center}
+	\includegraphics[width=.9\columnwidth]{parallax.jpg}
+\end{center}
+In questo modo, si ha che 
+\[
+\tan \pi = \frac{1\, \mathrm{AU} }{d}
+\] 
+con $d$ distanza tra sole e stella in questione.
+Essendo le stelle molto distanti, si considera l'approssimazione $\pi\ll 1$, per cui $\tan \pi \simeq \pi$ e, quindi, $\pi = 1\, \mathrm{AU} / d$.
+
+Visto che gli angoli sono estremamente piccoli, invece di usare i radianti, si fa uso degli arcosecondi.
+In questo senso, si definisce una unit\`a di misura per la distanza, il parsec, corrispondente ad una distanza tale che $\pi = 1 \, \mathrm{arcsec} $.
+Allora $d[\mathrm{pc} ] = 1[\mathrm{AU} ]/\pi[\mathrm{arcsec}] $.
+\item Quanto alle scale temporali, il sole ha $4.57$ miliardi di anni, mentre l'universo ha $13.8$ miliardi di anni.
+\end{itemize}
+\end{document}
