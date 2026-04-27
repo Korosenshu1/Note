@@ -1648,11 +1648,77 @@ Inoltre, la condizione $1 / \beta _c k =1 $ permette di individuare la temperatu
 La differenza rispetto alla precedente trattazione \`e che, ora, $\psi $ \`e un campo, cio\`e \`e una variabile della posizione.
 Precedentemente, la magnetizzazione si assumeva costante; in questo caso, nonostante l'assunzione che ogni campo $\psi _i$ sia uguale per ogni sito del reticolo, si pu\`o inserire l'informazione che $\psi =\psi (x)$ e studiare le fluttuazioni.
 \end{osservazione}
-\subsubsection{Energia libera e fluttuazioni}
+Sotto approssimazione di $\psi $ piccoli, si pu\`o scrivere la $f(\psi )$ sviluppando con Taylor il termine con $\log\left(\cosh \psi\right) $, da cui si ricava
+\[
+	f(\psi) \simeq \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}\psi _j - \frac{1}{2} \sum_{i}^{} \psi _i^2 + \frac{1}{12} \sum_{i}^{} \psi _i^4
+\] 
+Per trattare l'altro termine, si usa la trasformata di Fourier; questo perch\'e il sistema \`e invariante sotto traslazioni e la trasformata di Fourier permette di renderlo pi\`u semplice.
+Tramite questa, si scrive una generica funzione $g(\vec{r}_i)$, con $\vec{r}_i$ posizione dei siti del reticolo, come
+\[
+	g(\vec{r}_i) = \frac{1}{N} \sum_{\vec{q}}^{} \widetilde{g}(\vec{q}) e^{i \vec{q} \cdot \vec{r}_i}
+\] 
+dove, con condizioni al bordo periodiche, si ha $\vec{q}=\frac{2\pi}{N}(n_x,n_y,n_z)$, per $n_\alpha = 0,1,\ldots,N_{\alpha -1} $ e $N = N_x N_y N_z$.
+Applicandola alla $f$, si ottiene
+\[
+	\begin{split}
+		f(\psi ) &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i,j}^{} J^{-1}_{ij} e^{i \vec{q}\cdot \vec{r}_i + i \vec{q}' \cdot \vec{r}_j} \\
+			 &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i,j}^{} J^{-1 }_{ij} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_j)} e^{i (\vec{q}+ \vec{q}')\cdot  \vec{r}_j}
+	\end{split}
+\] 
+dove, nell'ultima uguaglianza, si \`e moltiplicato e diviso per $e^{-i\vec{q}\cdot \vec{r}_j}$. 
+Usando l'invarianza per traslazioni, il termine $J_{ij}^{-1} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_j)} $ dipende solamente dalla distanza $d = \lvert i - j \rvert $ tra i vari siti, quindi si pu\`o eliminare un grado di libert\`a e far variare un solo indice, scrivendo 
+\[
+	\begin{split}
+		f (\psi ) &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}\overbracket{\sum_{j}^{} e^{i(\vec{q}+\vec{q}') \cdot \vec{r}_j}}^{= N \delta _{\vec{q}, -\vec{q}'} } \\
+			  &= \frac{1}{2N} \sum_{\vec{q}}^{} \psi _{\vec{q}}  \psi _{-\vec{q}}  J^{-1}(q)
+	\end{split}
+\] 
+con 
+\[
+J^{-1}(q) := \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}
+\] 
+Per comprendere il significato di $J^{-1}(q)$, si guarda la trasformata di Fourier di $J$:
+\[
+	\begin{split}
+		J (\vec{q},\vec{q}') &= \sum_{i,j}^{} J_{ij} e^{-i  \vec{q}\cdot \vec{r}_i} e^{- \vec{q}' \cdot \vec{r}_j} = \sum_{i,j}^{} J_{ij} e^{-i \vec{q}\cdot (\vec{r}_i - \vec{r}_j)} e ^{-i (\vec{q} +\vec{q}') \cdot \vec{r}_j}\\
+				     &= \sum_{i}^{} J_{ij_0} e^{-i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )} \delta _{\vec{q},\vec{q}'} = J(\vec{q})
+	\end{split}
+\] 
+dove si sono utilizzate le stesse argomentazioni del calcolo precedente. 
+Quindi, si vede che $J(\vec{q})$ coincide proprio con la trasformata di Fourier di $J$.
 
+\subsubsection{Applicazione al modello di Ising}
+La $J$ trattata finora \`e del tutto generica, quindi la si deve definire in maniera opportuna per poter rivedere il modello di Ising.
+Data la relazione 
+\[
+\beta J \sum_{\langle i,j \rangle}^{} S_i S_j = \frac{1}{2}\sum_{i,j}^{} S_i J_{ij} S_j
+\] 
+la matrice $J$, nel caso 3D e per un reticolo quadrato di passo $a$, deve essere della forma
+\[
+J_{ij}  = \beta J \left[ \delta _{i,i\pm \hat{x}} + \delta _{i , i\pm \hat{y}} + \delta _{i,i\pm \hat{z}} \right] 
+\] 
+da cui si ottiene 
+\[
+J(\vec{q}) = \beta J \sum_{\hat{k}=\hat{x},\hat{y},\hat{z}}^{} \left(e^{iq_k a} + e^{-iq_k a}\right) = 2\beta J \sum_{\hat{k}}^{} \cos (q_k a)
+\] 
+Vista la sua definizione, \`e facile convincersi che $J^{-1}(\vec{q}) = 1 / J(\vec{q})$.
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 13
+	\centering Riprendere da lezione 13 -13:29
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
