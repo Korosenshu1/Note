@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  26 APR 2026 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  27 APR 2026 11:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -919,15 +919,61 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 ) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks55
-) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+) (/usr/share/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+Package: circuitikz 2026/02/04{} The CircuiTikz circuit drawing package version 1.8.5
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowinset=\dimen376
 \pgfarrowlength=\dimen377
 \pgfarrowwidth=\dimen378
 \pgfarrowlinewidth=\dimen379
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgftransformnonlinearflatness=\dimen380
+) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@curvilinear@time@a=\dimen381
+\pgf@curvilinear@length@a=\dimen382
+\pgf@curvilinear@length@b=\dimen383
+\pgf@curvilinear@length@c=\dimen384
+\pgf@curvilinear@length@d=\dimen385
+)
+\pgf@arrows@the@rigidity=\dimen386
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfpu.code.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
+\pgf@circ@count@a=\count396
+\pgf@circ@count@b=\count397
+\pgf@circ@count@c=\count398
+\pgf@circ@res@up=\dimen387
+\pgf@circ@res@down=\dimen388
+\pgf@circ@res@zero=\dimen389
+\pgf@circ@res@left=\dimen390
+\pgf@circ@res@right=\dimen391
+\pgf@circ@res@other=\dimen392
+\pgf@circ@res@step=\dimen393
+\pgf@circ@res@temp=\dimen394
+\pgf@circ@Rlen=\dimen395
+\pgf@circ@scaled@Rlen=\dimen396
+\pgfstartlinewidth=\dimen397
+) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex
+\ctikz@scratchbox=\box130
+) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex
+\ctikz@vif@count=\count399
+) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
+\pgf@circ@res@count=\count400
+) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex
+\pgfcirc@labelshift=\dimen398
+) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-\babel@savecnt=\count396
+\babel@savecnt=\count401
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
@@ -935,29 +981,28 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
-\U@D=\dimen380
+\U@D=\dimen399
 \l@unhyphenated=\language91
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count397
-
-(/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
+\bbl@dirlevel=\count402
+ (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
-\it@lettering=\count398
-\it@doublequoteactive=\count399
-\it@ISOcompliance=\count400
+\it@lettering=\count403
+\it@doublequoteactive=\count404
+\it@ISOcompliance=\count405
 )) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
 \FN@temptoken=\toks56
-\footnotemargin=\dimen381
+\footnotemargin=\dimen400
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count401
+\c@abspage=\count406
 )
-\c@pp@a@footnote=\count402
+\c@pp@a@footnote=\count407
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
 Package footmisc Info: Declaring symbol style wiley on input line 566.
@@ -967,17 +1012,17 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 618.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@esempio=\count403
-\c@definizione=\count404
-\c@prop=\count405
-\c@teorema=\count406
-\c@lemma=\count407
-\c@corollario=\count408
-\c@osservazione=\count409
-\c@notazione=\count410
-\c@esercizio=\count411
-Package hyperref Info: Option `colorlinks' set `true' on input line 135.
-Package hyperref Info: Option `breaklinks' set `true' on input line 135.
+\c@esempio=\count408
+\c@definizione=\count409
+\c@prop=\count410
+\c@teorema=\count411
+\c@lemma=\count412
+\c@corollario=\count413
+\c@osservazione=\count414
+\c@notazione=\count415
+\c@esercizio=\count416
+Package hyperref Info: Option `colorlinks' set `true' on input line 136.
+Package hyperref Info: Option `breaklinks' set `true' on input line 136.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -998,7 +1043,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 170.
+(scrartcl)              package `tocloft' on input line 171.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1029,8 +1074,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip108
 \cftfigindent=\skip109
 \cftfignumwidth=\skip110
-\c@lofdepth=\count412
-\c@lotdepth=\count413
+\c@lofdepth=\count417
+\c@lotdepth=\count418
 \cftbeforelottitleskip=\skip111
 \cftafterlottitleskip=\skip112
 \cftbeforetabskip=\skip113
@@ -1042,7 +1087,7 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen382
+\ttl@leftsep=\dimen401
 ) (/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
 Package: newpxtext 2025/06/07 v1.542 LaTeX and unicode LaTeX support for TeXGyrePagellaX (Michael Sharpe)
  `newpxtext' v1.542, 2025/06/07 Text macros taking advantage of TeXGyre Pagella and its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
@@ -1054,11 +1099,11 @@ Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
 \XKV@tempa@toks=\toks58
 \XKV@tempb@toks=\toks59
 )
-\XKV@depth=\count414
+\XKV@depth=\count419
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count415
-\xs_countb=\count416
+\xs_counta=\count420
+\xs_countb=\count421
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
@@ -1068,7 +1113,7 @@ LaTeX Font Info:    Setting zplLF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplTLF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplOsF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplTOsF sub-encoding to TS1/0 on input line 40.
-\zpl@cnt=\count417
+\zpl@cnt=\count422
  (/usr/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
 Package: fontaxes 2026-01-02 v2.0.2 Font selection axes (deprecated)
 Applying: [2024-11-01] Use figureversions if present on input line 74.
@@ -1077,20 +1122,20 @@ Package: figureversions 2025-04-29 v1.0.1 Figure versions
 )
 Already applied: [0000-00-00] Fall back to v1 on input line 76.
 )
-\zpl@sixem=\dimen383
-\zpl@y=\dimen384
-\zpl@x=\dimen385
-\zpl@tmpdima=\dimen386
-\zpl@tmpdimb=\dimen387
-\zpl@tmpdimc=\dimen388
-\zpl@tmpdimd=\dimen389
-\zpl@tmpdime=\dimen390
-\zpl@tmpdimf=\dimen391
-\zpl@dimA=\dimen392
-\zpl@dimAA=\dimen393
-\zpl@dimB=\dimen394
-\zpl@dimBB=\dimen395
-\zpl@dimC=\dimen396
+\zpl@sixem=\dimen402
+\zpl@y=\dimen403
+\zpl@x=\dimen404
+\zpl@tmpdima=\dimen405
+\zpl@tmpdimb=\dimen406
+\zpl@tmpdimc=\dimen407
+\zpl@tmpdimd=\dimen408
+\zpl@tmpdime=\dimen409
+\zpl@tmpdimf=\dimen410
+\zpl@dimA=\dimen411
+\zpl@dimAA=\dimen412
+\zpl@dimB=\dimen413
+\zpl@dimBB=\dimen414
+\zpl@dimC=\dimen415
 LaTeX Info: Redefining \oldstylenums on input line 807.
 LaTeX Font Info:    Trying to load font information for T1+zplLF on input line 815.
  (/usr/share/texmf-dist/tex/latex/newpx/t1zpllf.fd
@@ -1115,7 +1160,7 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 \px@tA=\toks60
 \px@tB=\toks61
 \px@su=\read5
-\px@Isdigit=\count418
+\px@Isdigit=\count423
 
 amsthm NOT loaded
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 224.
@@ -1197,8 +1242,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \symlargesymbolsPXA=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
 (Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 347.
-\px@cntz=\count419
-\px@IsAlNum=\count420
+\px@cntz=\count424
+\px@IsAlNum=\count425
 \px@sbptoks=\toks62
 LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 502.
 LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 503.
@@ -1231,8 +1276,8 @@ LaTeX Info: Redefining \openbox on input line 2565.
 Package: sansiwona 
  (/usr/share/texmf-dist/tex/latex/iwona/iwona.sty
 Package: iwona 2005/10/03 v.1.2 Iwona package (MW)
-\c@mv@iwona=\count421
-\c@mv@iwonabold=\count422
+\c@mv@iwona=\count426
+\c@mv@iwonabold=\count427
 LaTeX Font Info:    Overwriting symbol font `operators' in version `iwona'
 (Font)                  OT1/minzpl/m/n --> OT1/iwonam/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `iwona'
@@ -1277,56 +1322,56 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 184.
+(scrartcl)           before \begin{document} on input line 185.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count423
+\BKM@id=\count428
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 184.
+(Font)              scaled to size 10.95pt on input line 185.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 184.
-LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 184.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 185.
+LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 185.
  (/usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 184.
-LaTeX Font Info:    Trying to load font information for U+npxexa on input line 184.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 185.
+LaTeX Font Info:    Trying to load font information for U+npxexa on input line 185.
  (/usr/share/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 184.
-LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line 184.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 185.
+LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line 185.
  (/usr/share/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
 File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 184.
-LaTeX Font Info:    Trying to load font information for LMX+npxexx on input line 184.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 185.
+LaTeX Font Info:    Trying to load font information for LMX+npxexx on input line 185.
  (/usr/share/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
 File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
 )
-LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    ... okay on input line 185.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1364,16 +1409,16 @@ LaTeX Font Info:    ... okay on input line 184.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count424
-\scratchdimen=\dimen397
-\scratchbox=\box130
-\nofMPsegments=\count425
-\nofMParguments=\count426
+\scratchcounter=\count429
+\scratchdimen=\dimen416
+\scratchbox=\box131
+\nofMPsegments=\count430
+\nofMParguments=\count431
 \everyMPshowfont=\toks63
-\MPscratchCnt=\count427
-\MPscratchDim=\dimen398
-\MPnumerator=\count428
-\makeMPintoPDFobject=\count429
+\MPscratchCnt=\count432
+\MPscratchDim=\dimen417
+\MPnumerator=\count433
+\makeMPintoPDFobject=\count434
 \everyMPtoPDFconversion=\toks64
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1387,30 +1432,30 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 184.
-LaTeX Info: Command `\ddddot' is already robust on input line 184.
-Package hyperref Info: Link coloring ON on input line 184.
+LaTeX Info: Command `\dddot' is already robust on input line 185.
+LaTeX Info: Command `\ddddot' is already robust on input line 185.
+Package hyperref Info: Link coloring ON on input line 185.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 184.
+ on input line 185.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen399
-\c__nicematrix_innersep_middle_dim=\dimen400
-LaTeX Info: Redefining \it@ocap on input line 184.
-LaTeX Info: Redefining \it@ccap on input line 184.
-\c@mv@tabular=\count430
-\c@mv@boldtabular=\count431
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 185.
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen418
+\c__nicematrix_innersep_middle_dim=\dimen419
+LaTeX Info: Redefining \it@ocap on input line 185.
+LaTeX Info: Redefining \it@ccap on input line 185.
+\c@mv@tabular=\count435
+\c@mv@boldtabular=\count436
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 186.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 185.
+(Font)              scaled to size 12.0pt on input line 186.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 185.
+(Font)              scaled to size 12.0pt on input line 186.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.toc
@@ -1455,49 +1500,73 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 
  [2]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 189.
+(Font)              scaled to size 15.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 189.
- [3]
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 204.
+(Font)              scaled to size 20.0pt on input line 190.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 14.2pt on input line 208.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 214.
+LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 246.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 14.2pt on input line 246.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 10.36594pt on input line 246.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 7.81003pt on input line 246.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 255.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 255.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 257.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 9.0pt on input line 257.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 7.3pt on input line 257.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 5.5pt on input line 257.
+LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 257.
+ [3{/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 287.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 204.
-<parallax.jpg, id=28, 602.25pt x 296.10625pt>
+(Font)              scaled to size 10.95pt on input line 287.
+<parallax.jpg, id=37, 602.25pt x 296.10625pt>
 File: parallax.jpg Graphic file (type jpg)
 <use parallax.jpg>
-Package pdftex.def Info: parallax.jpg  used on input line 215.
+Package pdftex.def Info: parallax.jpg  used on input line 298.
 (pdftex.def)             Requested size: 375.14705pt x 184.45598pt.
 
 
-Package caption Warning: Unused \captionsetup[figure] on input line 127.
+Package caption Warning: Unused \captionsetup[table] on input line 129.
 See the caption package documentation for explanation.
 
-
-Package caption Warning: Unused \captionsetup[table] on input line 128.
-See the caption package documentation for explanation.
-
-[4{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc} <./parallax.jpg>] (./master.aux)
+[4{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc} <./parallax.jpg>] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 47265 strings out of 467525
- 1084138 string characters out of 5425862
- 1713813 words of memory out of 5000000
- 75441 multiletter control sequences out of 15000+600000
- 677288 words of font info for 94 fonts, out of 8000000 for 9000
+ 65676 strings out of 467525
+ 1639864 string characters out of 5425862
+ 2539369 words of memory out of 5000000
+ 93774 multiletter control sequences out of 15000+600000
+ 723235 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 124i,7n,121p,11245b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb>
-Output written on master.pdf (4 pages, 144138 bytes).
+ 124i,11n,121p,11245b,951s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (4 pages, 175128 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  34 words of extra memory for PDF output out of 10000 (max. 10000000)
 

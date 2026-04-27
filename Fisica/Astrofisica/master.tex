@@ -28,7 +28,8 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
@@ -187,6 +188,88 @@ title=#1
 \tableofcontents 
 \newpage
 \section{Teoria del trasporto radiativo}
+Si studia la propagazione delle radiazioni elettromagnetiche dalla sorgente che si desidera osservare fino all'osservatore stesso, trascurando le interazioni microscopiche di tale radiazione con il mezzo che separa sorgente e osservatore, bens\`i concentrandosi sulle sue interazioni a livello macroscopico.
+\begin{figure}[!ht]
+\centering
+\resizebox{1\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\fontsize{14.2pt}{18.5pt}\selectfont]
+\draw [ color={rgb,255:red,255; green,175; blue,0}, draw opacity=1 , fill={rgb,255:red,255; green,175; blue,0}, fill opacity=1] (-1.125,16.875) -- (-0.875,16.5) -- (-0.625,16.875) -- (-0.875,17.25) -- cycle;
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.875,16.125) {Sorgente};
+\draw  (4.5,18.25) rectangle (12,15);
+\draw [-{Stealth[scale=1.5]}, ] (0.375,16.625) -- (3.625,16.625);
+\draw [-{Stealth[scale=1.5]}, ] (12.5,16.625) -- (15.875,16.625);
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (17.25,15.125) {Osservatore};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (8.25,16.625) {Mezzo};
+\draw (16.875,17.75) to[short] (17.875,16.75);
+\draw (17.875,16.75) to[short] (16.875,15.75);
+\draw (17,17.625) to[short] (17,15.875);
+\end{circuitikz}
+}%
+\end{figure}
+L'assunzione alla base della trattazione \`e che le scale dimensionali dei mezzi attraversati dalla radiazione siano molto maggiori rispetto alla lunghezza d'onda della radiazione stessa.
+In questo limite, la propagazione della radiazione pu\`o essere assunta rettilinea.
+
+Le variabili tramite cui si descrive il campo di radiazione sono $\vec{r}$, $t$ e $\hat{k}$, rispettivamente posizione, tempo e versore d'onda.
+L'oggetto che permetter\`a di descrivere il campo della radiazione \`e l'\textit{intensit\`a specifica monocromatica} $I_\nu (\vec{r},t,\hat{k})$.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si definisce studiando l'energia trasferita dalla radiazione su una superficie infinitesima $dA$, con versore normale $\hat{n}$.
+	La quantit\`a di energia trasferita a questa superficie da una radiazione che si muove lungo $\hat{k}$, con frequenza compresa tra $\nu $ e $\nu +d\nu $, entro un angolo solido $d\Omega $ e che si trova in $\vec{r}$ al tempo $t$, \`e data da 
+	\[
+	dE = I_\nu (\vec{r},t,\hat{k}) \hat{k}\cdot \hat{n} \ dAdtd\Omega d\nu 
+	\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+\resizebox{.6\columnwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\fontsize{14.2pt}{18.5pt}\selectfont]
+\draw [short] (0,13.875) -- (1.25,15.125);
+\draw [short] (1.25,15.125) -- (0,16.375);
+\draw [short] (0,16.375) -- (-1.25,15.125);
+\draw [short] (0,13.875) -- (-1.25,15.125);
+\draw [ color={rgb,255:red,255; green,255; blue,255}, draw opacity=1 , fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1] (0,15.125) circle (0.125cm);
+\draw [-{Stealth[scale=1.5]}, ] (0,15.125) -- (1.25,16.375);
+\draw [-{Stealth[scale=1.5]}, ] (0,15.125) -- (1.25,18.5);
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (-0.125,14.75) {$\vec{r}$};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.25,16.25) {$dA$};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (1.5,16.125) {$\hat{n}$};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (1.5,18.5) {$\hat{k}$};
+\draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1 , rotate around={-14:(1.25,18.5)}] (1.25,18.5) ellipse (0.875cm and 0.375cm);
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (2.5,18.375) {$d\Omega$};
+\draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1, short] (0,15.125) -- (0.375,18.625);
+\draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1, short] (0,15.125) -- (2.125,18.25);
+\end{circuitikz}}%
+	\end{minipage}
+\end{center}
+Indicando, poi, con $\theta $ l'angolo tra $\hat{k}$ e $\hat{n}$, si pu\`o scrivere
+\[
+	dE = I_\nu (\vec{r},t,\hat{k}) \cos \theta  \ dAdtd\Omega d\nu 
+\] 
+Si osserva, quindi, che $I_\nu $ ha le dimensioni di 
+\[
+\frac{\text{energia}}{\text{superficie }\text{tempo } \text{angolo solido } \text{frequenza}}
+\] 
+In CGS, allora, le sue unit\`a di misura sono $[I_\nu ] = \mathrm{erg} \, \mathrm{cm} ^{-2} \, \mathrm{s} ^{-1}\, \mathrm{sr} ^{-1} \, \mathrm{Hz} ^{-1}$\footnote{Nell'espressione, $\mathrm{erg} $ \`e l'unit\`a di misura dell'energia e $\mathrm{sr} $ \`e lo steradiante, per la misura adimensionale degli angoli solidi.}.
+L'intensit\`a specifica permette di determinare il campo di radiazione, per cui l'intera teoria del trasporto radiativo si basa sul trovare questa quantit\`a.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

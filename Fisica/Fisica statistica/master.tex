@@ -1224,17 +1224,17 @@ dove $j_\text{p.v.}$ indica le particelle $j$-esime prime vicine con la $i$-esim
 Il fattore $\frac{1}{2}$ serve per evitare di contare due volte le stesse coppie di particelle.
 Il fattore $h+mJy$ si dice \textit{campo magnetico efficace} ed \`e importante notare che dipende dalla magnetizzazione $m$ del sistema.
 Allora 
-\[
+\begin{equation}\label{cic}
 	\begin{split}
 		Z &= C \sum_{\left\{ S_i \right\} }^{} e^{\beta (h + mJy) \sum_{i}^{} S_i} = C \prod_i \sum_{S_i = \pm 1}^{} e^{\beta (h+mJy)S_i}\\
 		  &=C \prod_i \left[ e^{\beta (h+mJy)}+ e ^{-\beta (h+mJy)} \right] = 2^N C \cosh\left(\beta h + \beta mJy\right) ^N
 	\end{split}
-\] 
+\end{equation}
 dove $C$ \`e una costante moltiplicativa legata alla presenza del termine costante (rispetto alle quantit\`a termodinamiche di interesse) $\frac{1}{2}Jy m^2 N$ nell'hamiltoniana.
 Dalla termodinamica, la magnetizzazione del sistema \`e pari a 
-\[
+\begin{equation}\label{mising}
 m = \frac{1}{N} \left(\frac{1}{\beta }\frac{\partial }{\partial h} \log Z\right) _{h=0}  = \tanh \left(\beta h + \beta m Jy\right)_{h=0} =\tanh \left(\beta mJy\right) 
-\] 
+\end{equation}
 e si vede che la magnetizzazione compare sia a destra che a sinistra.
 \begin{center}
 	\begin{minipage}
@@ -1556,20 +1556,103 @@ Questo \`e dato dal fatto che il campo medio non tratta bene le interazioni spin
 Si deve cercare un modo alternativo per studiare questo caso.
 
 \subsection{Teorie di campo classiche}
+Riprendendo l'espressione della funzione di partizione canonica per il modello di Ising, con $h=0 $ momentaneamente, questa si pu\`o generalizzare, tramite una \textit{matrice di connettivit\`a}, come
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} \exp \left[ \frac{1}{2}\sum_{i,j}^{} S_i J_{ij} S_j \right] 
+\] 
+con $\beta $ incluso in $J_{ij} $, somma su $i,j$ generici la cui connessione \`e verificata da $J_{ij} $ e $\frac{1}{2}$ fattore combinatorio per evitare di contare, al solito, le coppie $(i,j)$ e $(j,i)$ che danno risultati uguali.
+
+Per continuare, \`e necessario utilizzare il seguente risultato per integrali gaussiani:
+\[
+\int d^N x \ \exp \left[ -\frac{1}{2}\sum_{i,j}^{} x_i A_{ij} x_j + \sum_{i}^{} B_i x_i \right] = \sqrt{\frac{(2\pi)^N}{\det A}}  e^{\frac{1}{2}\sum_{i,j}^{} B_i (A^{-1})_{ij} B_j} 
+\] 
+dove $A$ \`e una matrice definita positiva.
+Questo generalizza l'espressione 
+\[
+\int dx \ e^{-ax^2 + bx}= \sqrt{\frac{\pi}{a}} e^{b^2 / 4 a}
+\] 
+\begin{proof}
+Si nota che
+\[
+\begin{split}
+	-\frac{1}{2}\sum_{i,j}^{} x_iA_{ij} x_j + \sum_{i}^{} B_ix_i &=-\frac{1}{2} \vec{x}^\top A \vec{x} + \frac{1}{2} \left(\vec{B}^\top \vec{x} + \vec{x}^\top \vec{B}\right) \\
+								     &= -\frac{1}{2} \left(\vec{x}^\top - \vec{B}^\top A^{-1}\right) A \underbracket{\left(\vec{x}-A^{-1}\vec{B}\right)}_{=  \vec{y}}   + \frac{1}{2} \vec{B}^\top A^{-1} \vec{B}\\
+								     &= -\frac{1}{2}\vec{y}^\top A \vec{y} +\frac{1}{2}\vec{B}^\top A^{-1}\vec{B}
+\end{split}
+\] 
+Visto che $A$ \`e definita positiva, si pu\`o diagonalizzare, per cui esiste una matrice $O$ tale che $\Lambda = O^\top AO$ \`e diagonale.
+Allora la dimostrazione si pu\`o concludere prendendo $\vec{z}$ tale che $\vec{y}= O \vec{z}$, da cui $\vec{y}^\top A \vec{y} = \vec{z}^\top \Lambda \vec{z}$; infatti, si ha
+\[
+\int d^N y \ e^{-\frac{1}{2}\vec{y}^\top A \vec{y}} = \det O \int d^N z e^{-\frac{1}{2}\vec{z}^\top \Lambda \vec{z}} =\int d^N z \ e^{-\frac{1}{2}\sum_{j}^{} z_j^2 \lambda _j}= \prod_{i=1} ^N \sqrt{\frac{2\pi}{\lambda _j}} 
+\] 
+dove i $\lambda _j$ sono gli autovalori di $A$, corrispondenti, quindi, alla diagonale di $\Lambda $.
+L'altro termine \`e costante e compare come fattore all'esponenziale, proprio come previsto dalla formula.
+\end{proof}
+Per utilizzare questo risultato, si prendono $B_i = S_i$, $A = J ^{-1}$ e $x_i = \psi _i$, per cui
+\[
+Z = Z_0 \frac{1}{2^N} \int_{-\infty} ^{+\infty}  d \psi _1 \int_{-\infty} ^{+\infty}  d \psi _2 \ldots \int_{-\infty} ^{+\infty}  d \psi _N \ \sum_{\left\{ S_i \right\} }^{} e^{-\frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1})_{ij} \psi _j + \sum_{i}^{} S_i \psi _i}
+\] 
+con $Z_0= 2^N \sqrt{\frac{\det (J^{-1})}{(2\pi)^N}} $.
+La comodit\`a \`e che la somma sugli $\left\{ S_i \right\} $ agisce solo sul secondo addendo dell'esponenziale, mentre l'altro va fuori dalla somma.
+Si ha
+\[
+\sum_{\left\{ S_i \right\} }^{} e^{\sum_{i}^{} S_i \psi _i} = \prod_i \left(\sum_{S_i = \pm 1}^{} e^{S_i \psi _i}\right) = 2^N e^{\sum_{i}^{} \log(\cosh \psi _i)}
+\] 
+per lo stesso conto fatto in \ref{cic}.
+Allora\footnote{Le parentesi quadre stanno ad indicare che $f$ \`e un funzionale.}
+\[
+	Z = Z_0 \int d^N \psi e^{-f [\psi ]}\, , \ \ \ \text{ con } \ \ f [\psi ] = \frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1}) \psi _j - \sum_{i}^{} \log \big(\cosh \psi _i\big) 
+\] 
+Aggiungere il campo magnetico, ora, \`e facile:
+\[
+	f[\psi ] = \frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1})_{ij}  \psi _j - \sum_{i}^{} \log \left[ \cosh \left(\psi _i + \overline{h}_i\right)  \right] 
+\] 
+dove il termine $\overline{h}_i$ include $\beta $.
+Un altra operazione comoda \`e riscalare le variabili $\psi _i$ in modo che 
+\[
+	f[\psi ] = \frac{1}{2} \sum_{i,j}^{} (\psi_i -\overline{h}_i) (J^{-1})_{ij} (\psi _j - \overline{h}_j) - \sum_{i}^{} \log \left[ \cosh \psi _i \right] 
+\] 
+Per svolgere l'integrale di $Z$, si usa l'approssimazione di punto sella: si immagina di sviluppare l'integrando attorno al punto stazionario $\overline{\psi }$:
+\[
+	Z \simeq Z_0 e^{-f [\overline{\psi }]}
+\] 
+valida nel limite in cui le fluttuazioni dell'integrando attorno a questo punto sono molto piccole.
+Per determinare il vettore $\overline{\psi }$, si impone $\Eval{\frac{\partial f}{\partial \psi _i} }{\psi _i = \overline{\psi }_i}{}=0$, da cui
+\[
+\sum_{j}^{} (J^{-1})_{ij} \psi _j = \tanh \psi _i
+\] 
+Si assume invarianza per traslazioni (quindi anche campo magnetico uniforme, condizioni al contorno invarianti per traslazioni); in questo modo, $\psi _i = \psi , \ \forall i = 1,\ldots,N$ e, dalla scelta
+\[
+\begin{cases}
+	\beta m J y = \psi \\
+	m = \sum_{j}^{} (J^{-1})_{ij} \psi 
+\end{cases}
+\] 
+si nota l'equivalenza con l'equazione \ref{mising}, cio\`e $\psi \sim m$.
+Infine, si pu\`o definire 
+\[
+\sum_{j}^{} (J^{-1}) _{ij}  = \frac{1}{\beta  k}
+\] 
+per esplicitare la dipendenza dalla temperatura\footnote{Questo \`e dovuto al fatto che, inizialmente, si era inclusa $\beta $ nella matrice di connettivit\`a; in questo modo, la si esplicita nuovamente}, dove $k$ contiene le informazioni sulla connettivit\`a del sistema, che, in analogia con la trattazione secondo Weiss, coincide con $Jy$.
+Cos\`i facendo, si conclude che 
+\begin{equation}
+	\frac{1}{\beta k} \psi  = \tanh \psi 
+\end{equation}
+Le soluzioni sono gi\`a note dalla trattazione precedente: visto che la tangente iperbolica ha pendenza $1$ in $0$, si ha che:
+\begin{itemize}
+	\item  se $1/\beta k> 1$, allora si ha un'unica soluzione $\psi =0$;
+	\item se $1 / \beta k < 1$, allora si hanno le soluzioni $\psi = 0, \ \pm\psi ^*$.
+\end{itemize}
+Inoltre, la condizione $1 / \beta _c k =1 $ permette di individuare la temperatura critica tramite $\beta _c = 1 / k$.
+\begin{osservazione}
+La differenza rispetto alla precedente trattazione \`e che, ora, $\psi $ \`e un campo, cio\`e \`e una variabile della posizione.
+Precedentemente, la magnetizzazione si assumeva costante; in questo caso, nonostante l'assunzione che ogni campo $\psi _i$ sia uguale per ogni sito del reticolo, si pu\`o inserire l'informazione che $\psi =\psi (x)$ e studiare le fluttuazioni.
+\end{osservazione}
+\subsubsection{Energia libera e fluttuazioni}
+
 \begin{boxenv}[]
-\centering Riprendere da 24:30, lezione 12
+\centering Riprendere dalla lezione 13
 \end{boxenv}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
