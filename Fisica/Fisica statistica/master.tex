@@ -1621,7 +1621,7 @@ Per determinare il vettore $\overline{\psi }$, si impone $\Eval{\frac{\partial f
 \[
 \sum_{j}^{} (J^{-1})_{ij} \psi _j = \tanh \psi _i
 \] 
-Si assume invarianza per traslazioni (quindi anche campo magnetico uniforme, condizioni al contorno invarianti per traslazioni); in questo modo, $\psi _i = \psi , \ \forall i = 1,\ldots,N$ e, dalla scelta
+Per ritrovare il caso di Weiss, si assume invarianza per traslazioni (quindi anche campo magnetico uniforme, condizioni al contorno invarianti per traslazioni); in questo modo, $\psi _i = \psi , \ \forall i = 1,\ldots,N$ e, dalla scelta
 \[
 \begin{cases}
 	\beta m J y = \psi \\
@@ -1646,9 +1646,9 @@ Le soluzioni sono gi\`a note dalla trattazione precedente: visto che la tangente
 Inoltre, la condizione $1 / \beta _c k =1 $ permette di individuare la temperatura critica tramite $\beta _c = 1 / k$.
 \begin{osservazione}
 La differenza rispetto alla precedente trattazione \`e che, ora, $\psi $ \`e un campo, cio\`e \`e una variabile della posizione.
-Precedentemente, la magnetizzazione si assumeva costante; in questo caso, nonostante l'assunzione che ogni campo $\psi _i$ sia uguale per ogni sito del reticolo, si pu\`o inserire l'informazione che $\psi =\psi (x)$ e studiare le fluttuazioni.
+Precedentemente, la magnetizzazione si assumeva costante; in questo caso, invece, si vedr\`a che si pu\`o inserire l'informazione che $\psi =\psi (x)$ e studiare le fluttuazioni.
 \end{osservazione}
-Sotto approssimazione di $\psi $ piccoli, si pu\`o scrivere la $f(\psi )$ sviluppando con Taylor il termine con $\log\left(\cosh \psi\right) $, da cui si ricava
+Sotto approssimazione di $\psi_i $ piccoli, si pu\`o scrivere la $f(\psi )$ sviluppando con Taylor il termine con $\log\left(\cosh \psi\right) $, da cui si ricava
 \[
 	f(\psi) \simeq \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}\psi _j - \frac{1}{2} \sum_{i}^{} \psi _i^2 + \frac{1}{12} \sum_{i}^{} \psi _i^4
 \] 
@@ -1687,7 +1687,7 @@ Per comprendere il significato di $J^{-1}(q)$, si guarda la trasformata di Fouri
 dove si sono utilizzate le stesse argomentazioni del calcolo precedente. 
 Quindi, si vede che $J(\vec{q})$ coincide proprio con la trasformata di Fourier di $J$.
 
-\subsubsection{Applicazione al modello di Ising}
+\subsubsection{Teoria di Ginzburg-Landau}
 La $J$ trattata finora \`e del tutto generica, quindi la si deve definire in maniera opportuna per poter rivedere il modello di Ising.
 Data la relazione 
 \[
@@ -1702,17 +1702,74 @@ da cui si ottiene
 J(\vec{q}) = \beta J \sum_{\hat{k}=\hat{x},\hat{y},\hat{z}}^{} \left(e^{iq_k a} + e^{-iq_k a}\right) = 2\beta J \sum_{\hat{k}}^{} \cos (q_k a)
 \] 
 Vista la sua definizione, \`e facile convincersi che $J^{-1}(\vec{q}) = 1 / J(\vec{q})$.
+Osservando che
+\[
+		\frac{1}{\sum_{k}^{} \cos(q_ka)} =  \frac{1}{d} \frac{1}{\left[ 1-\left(1-\frac{1}{d}\sum_{k}^{} \cos(q_ka)\right)  \right] } \simeq \frac{1}{d}\left(1+1 -\frac{1}{d}\sum_{k}^{} \cos(q_ka)\right) 
+\] 
+dove si \`e espanso in serie, sotto l'assunzione di passo reticolare $a \ll 1$, si pu\`o scrivere 
+\[
+	\begin{split}
+		\frac{1}{2N} \sum_{\vec{q}}^{} \psi _{\vec{q}} \psi _{-\vec{q}} J^{-1}(\vec{q})&= \frac{1}{2N(2\beta J)} \sum_{\vec{q}}^{} \psi _{\vec{q}} \frac{1}{\sum_{k}^{} \cos(q_ka)}\psi _{-\vec{q}} \\
+											       &\simeq \frac{1}{2} \frac{1}{2d \beta JN} \sum_{\vec{q}}^{} \psi _{\vec{q}} \left[1 + \frac{1}{d}\left(d - \sum_{k}^{} \cos(q_ka)\right) \right] \psi _{-\vec{q}} 
+	\end{split}
+\] 
+Il termine nuovo ottenuto con questa trattazione \`e quello relativo a 
+\[
+\sum_{\vec{q}}^{} \psi _{\vec{q}} \left(d - \sum_{k}^{} \cos(q_ka)\right) \psi _{-\vec{q}} 
+\] 
+Anti-trasformando per tornare nello spazio reale, questo termine diventa
+\[
+	\begin{split}
+		\sum_{\vec{q}}^{} \sum_{i,j}^{} e^{-i \vec{q}\cdot \vec{r}_i}\psi _i &\Bigg[d - \sum_{k}^{} \overbracket{\frac{1}{2}\left(e^{i q_k a} + e^{-i q_ka}\right)}^{= \cos (q_ka)}  \Bigg] e^{i \vec{q}\cdot \vec{r}_j}\psi _j =\\
+		&= \frac{N}{2} \left(2d \sum_{i}^{} \psi _i^2 - \sum_{i,\hat{k}}^{} \psi _i \psi _{i \pm a \hat{k}} \right) \propto \frac{N}{2} \sum_{\langle i,j \rangle}^{} \left(\psi _i - \psi _j\right) ^2
+	\end{split}
+\] 
+Mettendo tutto insieme, si conclude che, per $\psi \ll 1$, si ha
+\[
+	f(\psi ) \simeq  \frac{1}{2} \sum_{i}^{} \left(\frac{1}{y \beta J}-1\right) \psi _i^2 + {\color{asdf}\frac{\widetilde{c}}{\beta J}\sum_{\langle i,j \rangle}^{} (\psi _i-\psi _j)^2 }+ \frac{1}{12} \sum_{i}^{} \psi _i^4
+\] 
+con $y = 2d$ \textit{numero di coordinazione}, cio\`e conta quanti primi vicini ci sono, data la dimensione $d$ del reticolo (assumendolo quadrato), dove $\widetilde{c}$ incorpora tutti i fattori non inclusi. 
+Inoltre, $\widetilde{c}/ \beta J > 0$, cos\`i come $\frac{1}{12}>0$; al contrario
+\[
+\frac{1}{y\beta J}-1 \begin{cases}
+	<0 &,\ \text{ se } \beta >\beta _c\\
+	>0 &,\ \text{ se } \beta <\beta _c
+\end{cases}
+\] 
+Il termine colorato \`e quello che, nella trattazione con Weiss, non compariva e che permette di descrivere correttamente le fluttuazioni. 
+D'altra parte, si vede anche che, nel caso in cui $\psi _i = \psi , \ \forall i$, cio\`e il campo \`e omogeneo su tutto il reticolo, tale termine si annulla e si trova il caso ottenuto con Weiss.
+
+Nel passaggio al continuo, cio\`e per passo reticolare estremamente piccolo, si pu\`o scrivere $\psi _i \longrightarrow \psi (\vec{x})$. 
+Utilizzando l'approssimazione di punto sella, per cui l'energia libera risulta pari a $F = F_0 + \kappa _B T f(\psi )$, si ottiene che 
+\[
+	F[\psi (\vec{x})] = F_0 +  \int d^d \vec{x} \ \left\{ \frac{1}{2} a \psi ^2 (\vec{x}) + \frac{1}{2} c \lvert \vec{\nabla }\psi (\vec{x}) \rvert^2 + u \psi ^4 (\vec{x}) - \lambda \psi (\vec{x})  \right\} 
+\] 
+dove 
+\begin{itemize}
+	\item $a\sim (T-T_c)$;
+\item $c>0$, altrimenti le fluttuazioni potrebbero essere arbitrariamente grandi\footnote{Il funzionale tenderebbe a minimizzarsi, quindi a massimizzare $\lvert \vec{\nabla }\psi  \rvert^2$, per cui le fluttuazioni aumenterebbero {\color{red}(da controllare)}.} e si avrebbe instabilit\`a nel sistema;
+	\item $u > 0$, altrimenti $F$ non sarebbe limitata inferiormente\footnote{Infatti, aumentando $\psi $, il termine $- \lvert u \rvert \psi ^4$, in assunzione $u<0$, dominerebbe e non si avrebbe un limite inferiore, rendendo necessario arrivare ad un termine di potenza superiore, proporzionale a $\psi ^6$.};
+	\item $\lambda $ \`e il campo esterno.
+\end{itemize}
+Questa espressione \`e nota come \textit{energia libera di Ginzburg-Landau.} 
+\begin{osservazione}
+\begin{enumerate}[(1).]
+	\item In assenza di campo esterno ($\lambda =0$), il funzionale $F[\psi ]$ \`e pari rispetto al campo $\psi (\vec{x})$, cio\`e si osserva invarianza rispetto alla simmetria di $\mathbb{Z}_2$ nella funzione di partizione.
+		Gli unici termini che possono rompere tale simmetria sono quelli di campo magnetico, in quanto sono gli unici termini dispari, anche se in questo sviluppo si \`e arrivati solo fino al primo ordine, in assunzione di $\psi \ll 1$.
+	\item L'approssimazione di punto sella garantisce che $\psi $ sia proporzionale alla magnetizzazione, caratterizzando, dunque, il \textit{parametro d'ordine} della transizione paramagnete/ferromagnete; si vedr\`a che, in generale, i termini che si trascurano in questa approssimazione e che garantiscono tale proporzionalit\`a portano a esponenti critici che non sempre sono quelli attesi.
+	\item Se $\psi (\vec{x})$ non \`e uniforme, l'energia libera aumenta, visto che $\lvert \vec{\nabla }\psi (\vec{x}) \rvert >0$; questo permette di concludere che l'ipotesi di omogeneit\`a di Weiss \`e ragionevole, in quanto tende a minimizzare l'energia.
+	\item Il termine $\psi ^4$, con $u>0$, \`e necessario a garantire la stabilit\`a del sistema; infatti, senza di questo, nel caso di $a<0$, l'energia libera non avrebbe un punto di minimo, visto che non sarebbe limitata inferiormente e, quindi, il sistema sarebbe instabile.
+	\item L'assunzione $\psi \to 0$ \`e fatta perch\'e interessati al comportamento del sistema vicino al punto critico. 
+		Inoltre, l'espressione ottenuta per $F[\psi (\vec{x})]$, basata su punto sella e $\psi \ll 1$, in realt\`a \`e un assunzione di partenza del modello di Ginzburg-Landau, non il punto di arrivo.
+		Cio\`e tale teoria si prefigge di avere uno sviluppo di $F$ in potenze pari in $\psi $, incluse quelle relative alle fluttuazioni (tipo $\lvert \vec{\nabla }\psi (\vec{x}) \rvert ^2$), mentre le potenze dispari sono solo quelle proporzionali al campo.
+	\item Nella teoria di Ginzburg-Landau, le fluttuazioni di $\psi (\vec{x})$ rispetto al suo valore di punto sella (cosa che garantisce l'essere il parametro d'ordine in $\vec{x}$) si trascurano completamente.
+		Per tale ragione, gli esponenti critici risulteranno identici a quelli trovati con Weiss, quantomeno $\alpha$, $\beta$, $\gamma$ e $\delta $.
+\end{enumerate}
+\end{osservazione}
+\subsubsection{Esponenti critici}
 \begin{boxenv}[]
-	\centering Riprendere da lezione 13 -13:29
+\centering Riprendere da lezione 14, 20:48
 \end{boxenv}
-
-
-
-
-
-
-
-
 
 
 
