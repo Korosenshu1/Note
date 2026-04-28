@@ -1767,9 +1767,60 @@ Questa espressione \`e nota come \textit{energia libera di Ginzburg-Landau.}
 \end{enumerate}
 \end{osservazione}
 \subsubsection{Esponenti critici}
+Si definisce la funzione di correlazione del parametro d'ordine
+\[
+\Gamma(\vec{x}- \vec{x}') = \left\langle \psi (\vec{x}) \psi (\vec{x}')  \right\rangle - \langle \psi (\vec{x}) \rangle \langle \psi (\vec{x}') \rangle
+\] 
+In questo modo, si pu\`o scrivere che
+\[
+\psi (\vec{x}) = \int d^d \vec{x}' \ \Gamma(\vec{x}-\vec{x}') \lambda (\vec{x}')
+\] 
+Assumendo che il campo esterno $\lambda $ sia uniforme, dato che la suscettivit\`a \`e espressa come
+\[
+\chi (\vec{x}) = \int d^d \vec{x}' \ \Gamma(\vec{x}- \vec{x}') 
+\] 
+si ha che
+\[
+\psi (\vec{x}) \sim \chi \lambda 
+\] 
+Si usa ancora la trasformata di Fourier:
+\[
+\psi (\vec{q}) = \int d^d \vec{x} \ e^{-i \vec{q}\cdot \vec{x}}\psi (\vec{x}) \hspace{1cm} \psi (\vec{x}) = \frac{1}{(2\pi)^d} \int d^d \vec{q} \ e^{i \vec{q}\cdot \vec{x}}
+\] 
+Tramite la trasformata, si pu\`o scrivere che
+\[
+\vec{\nabla }\psi (\vec{x}) = \frac{1}{(2\pi)^d} \int d^d \vec{q }\ (i\vec{q}) e^{i \vec{q}\cdot \vec{x}}\psi (\vec{q})
+\] 
+Si ricorda il risultato 
+\[
+\delta (\vec{x}) = \frac{1}{(2\pi)^d} \int d^d \vec{q} \ e^{i \vec{q}\cdot \vec{x}}
+\] 
+L'energia libera di Ginzburg-Landau trasformata con Fourier diventa:
+\[
+	F [ \psi (\vec{q}) ] \simeq F_0 + c \int d^d \vec{q} \left\{ \frac{1}{2}a \psi ^2 (\vec{q}) + \frac{1}{2} c \lvert \vec{q} \rvert ^2 \psi ^2 (\vec{q}) - \lambda \psi (\vec{q}) \right\} 
+\] 
+dove si \`e trascurato il termine in $\psi ^4$ perch\'e, per semplicit\`a, si \`e assunto $T>T_c$, per cui $a>0$.
+Si nota che, per l'espressione approssimata ottenuta sopra per $F$, i modi a impulso $\vec{q}$ differente siano indipendenti tra loro, cio\`e in $F$ non si intrecciano $\psi (\vec{q})$ a impulsi $\vec{q}$ differenti; per questo motivo si pu\`o studiare la condizione di minimizzazione dell'energia libera semplicemente imponendo 
+\[
+\frac{\partial F}{\partial \psi (\vec{q})} = 0 
+\] 
+da cui si ricava la condizione 
+\[
+	(a + cq^2) \psi (\vec{q}) = \lambda \implies \psi (\vec{q}) = \frac{\lambda}{a + cq^2}
+\] 
+In questa approssimazione, allora, $\Gamma (\vec{q}) \sim 1 / (a+cq^2)$; tramite trasformata di Fourier inversa, si ha:
+\[
+\Gamma\left(\lvert \vec{x} \rvert \right)  = \frac{1}{(2\pi)^d} \int d^d \vec{q} \frac{e ^{i \vec{q}\cdot \vec{x}}}{a + cq^2}
+\] 
 \begin{boxenv}[]
-\centering Riprendere da lezione 14, 20:48
+	\centering Riprendere da 40:23
 \end{boxenv}
+
+
+
+
+
+
 
 
 
