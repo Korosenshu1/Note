@@ -1810,19 +1810,59 @@ da cui si ricava la condizione
 \] 
 In questa approssimazione, allora, $\Gamma (\vec{q}) \sim 1 / (a+cq^2)$; tramite trasformata di Fourier inversa, si ha:
 \[
-\Gamma\left(\lvert \vec{x} \rvert \right)  = \frac{1}{(2\pi)^d} \int d^d \vec{q} \frac{e ^{i \vec{q}\cdot \vec{x}}}{a + cq^2}
+\Gamma\left(\lvert \vec{x} \rvert \right)  = \frac{1}{(2\pi)^d} \int d^d \vec{q}\ \frac{e ^{i \vec{q}\cdot \vec{x}}}{a + cq^2}\propto \frac{e^{-r / \xi }}{r^{d-2}}
 \] 
+L'idea per risolvere questo integrale \`e trasformarlo in un integrale gaussiano negli impulsi come
+\[
+\int_{0} ^{+\infty} du \int d^d \vec{q} \ e^{-u (a+cq^2) + i \vec{q }\cdot \vec{x}}
+\] 
+Chiamando $\lvert \vec{x} \rvert = r$ e prendendo $\xi ^2 = c / a$, si ha la forma generale 
+\[
+\Gamma(r) \propto \frac{e^{-r / \xi }}{r ^{d-2+eta}}
+\] 
+nota come \textit{forma di Ornstein-Zernike}.
+In questa forma generale, si ha $\xi \sim \lvert T -T_c \rvert ^{-\nu }$; nel caso in questione, si vede che $\eta =0 $ e $\nu  = 1 / 2$.
+
+Questa formula \`e importante per osservare che:
+\begin{itemize}
+	\item se $r\gg \xi $, allora $\Gamma \sim e^{-r / \xi }$;
+	\item se $r \ll \xi $, allora $\Gamma \sim r^{2 - d + \eta}$.
+\end{itemize}
+Sostanzialmente, $\xi $ funge da lunghezza scala del sistema: al punto critico, $\xi $ diverge, per cui le correlazioni decadono a legge di potenza in $r$, il che vuol dire che punti molto distanti tra loro sentiranno comunque interazioni potenzialmente non trascurabili; lontano dal punto critico, $\xi $ \`e finita e, quindi, le correlazioni decadono esponenzialmente in $r$, il che vuol dire che le correlazioni tra punti sufficientemente distanti sono trascurabili.
+
+L'importanza degli esponenti critici \`e che questi permettono di descrivere univocamente il comportamento macroscopico del sistema, in quanto quello microscopico, nei pressi di una transizione di fase, non \`e significativo.
+Si \`e visto che questi esponenti non dipendono dal sistema che si sta considerando, quanto pi\`u dalle assunzioni che si applicano al sistema stesso, per cui permettono di dividere i sistemi in \textit{classi di universalit\`a}: due sistemi sono nella stessa classe se, nei pressi di una transizione di fase, hanno gli stessi esponenti critici, cio\`e si comportano allo stesso modo.
+\subsubsection{Validit\`a del campo medio: argomento di Ginzburg}
+
+Per la validit\`a dell'approssimazione di campo medio, si richiede
+\[
+\frac{\left\langle \delta S_i \delta S_j \right\rangle}{m^2} \ll 1
+\] 
+quando $r \sim \xi $, condizione che corrisponde a chiedere $\operatorname{Var} A / \langle A \rangle^2 \ll 1$, per una certa quantit\`a $A$.
+Utilizzando il fatto che 
+\[
+\left\langle \delta S_i \delta S_j \right\rangle \sim \Gamma (r = \lvert i-j \rvert ) \sim \frac{e^{-r / \xi }}{r^{d-2+\eta}}
+\] 
+e che $m^2 \sim\lvert t \rvert ^{2\beta } $, $\xi \sim \lvert t \rvert ^{-\nu }$, ponendo $r = \xi $, si trova che $\Gamma(r=\xi ) \sim\xi ^{2 - d - \eta} \sim\lvert t \rvert ^{-\nu (2-d-\eta)}$.
+Allora, si conclude che
+\[
+\frac{\Gamma(r=\xi )}{m^2}\sim \frac{\lvert t \rvert ^{-\nu (2-d-\eta)}}{\lvert t \rvert ^{2\beta } } = \lvert t \rvert ^{-\nu (2-d-\eta)=2\beta }\ll 1
+\] 
+Questo, nel limite $t = (T-T_c)/T_c \to 0$, si verifica se l'esponente \`e positivo, ossia
+\[
+- \nu (e-d-\eta) - 2\beta > 0 \iffd > 2 - \eta + \frac{2\beta }{\nu }
+\] 
+Prendendo il caso del campo medio, per cui si ha $\eta = 0$, $\beta  = \nu  =  1/2$, si ottiene che deve valere $d > 4$.
+Risolvendo il modello di Ising dalla funzione di partizione, infatti, si trova che:
+\begin{itemize}
+	\item nel caso 1D, non c'\`e alcuna transizione di fase;
+	\item nel caso 2D, c'\`e transizione, ma gli esponenti critici sono diversi dal campo medio;
+	\item nel caso 3D, c'\`e transizione, ma gli esponenti critici sono diversi dal campo medio;
+	\item nel caso 4D, si hanno gli stessi esponenti critici, anche se la condizione $d>4$ non \`e soddisfatta.
+\end{itemize}
 \begin{boxenv}[]
-	\centering Riprendere da 40:23
+\centering Riprendere dalla lezione 15.	
 \end{boxenv}
-
-
-
-
-
-
-
-
 
 
 
