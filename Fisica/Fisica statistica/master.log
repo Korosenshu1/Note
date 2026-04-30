@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  29 APR 2026 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  30 APR 2026 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -538,7 +538,7 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip70
 \thanksmargin=\skip71
 \droptitle=\skip72
-) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (/usr/share/texmf-dist/tex/latex/braket/braket.sty) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
  (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
@@ -634,71 +634,31 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip73
-) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
- (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks44
-\t@pgfplots@tokb=\toks45
-\t@pgfplots@tokc=\toks46
-\pgfplots@tmpa=\dimen286
-\c@pgfplots@coordindex=\count336
-\c@pgfplots@scanlineindex=\count337
- (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count338
-) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count339
-\t@pgfplotstable@a=\toks47
-) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count340
- (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen287
-\pgfdecoratedremainingdistance=\dimen288
-\pgfdecoratedinputsegmentcompleteddistance=\dimen289
-\pgfdecoratedinputsegmentremainingdistance=\dimen290
-\pgf@decorate@distancetomove=\dimen291
-\pgf@decorate@repeatstate=\count341
-\pgfdecorationsegmentamplitude=\dimen292
-\pgfdecorationsegmentlength=\dimen293
-)
-\tikz@lib@dec@box=\box79
-) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count342
-\pgfplots@xmin@reg=\dimen294
-\pgfplots@xmax@reg=\dimen295
-\pgfplots@ymin@reg=\dimen296
-\pgfplots@ymax@reg=\dimen297
-\pgfplots@zmin@reg=\dimen298
-\pgfplots@zmax@reg=\dimen299
-) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
- (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
-File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
-\c@tracingmulticols=\count343
-\mult@box=\box80
-\multicol@leftmargin=\dimen300
-\c@unbalance=\count344
-\c@collectmore=\count345
-\doublecol@number=\count346
-\multicoltolerance=\count347
-\multicolpretolerance=\count348
-\full@width=\dimen301
-\page@free=\dimen302
-\premulticols=\dimen303
-\postmulticols=\dimen304
+\c@tracingmulticols=\count336
+\mult@box=\box79
+\multicol@leftmargin=\dimen286
+\c@unbalance=\count337
+\c@collectmore=\count338
+\doublecol@number=\count339
+\multicoltolerance=\count340
+\multicolpretolerance=\count341
+\full@width=\dimen287
+\page@free=\dimen288
+\premulticols=\dimen289
+\postmulticols=\dimen290
 \multicolsep=\skip74
 \multicolbaselineskip=\skip75
-\partial@page=\box81
-\last@line=\box82
-\mc@boxedresult=\box83
-\maxbalancingoverflow=\dimen305
-\mult@rightbox=\box84
-\mult@grightbox=\box85
-\mult@firstbox=\box86
-\mult@gfirstbox=\box87
+\partial@page=\box80
+\last@line=\box81
+\mc@boxedresult=\box82
+\maxbalancingoverflow=\dimen291
+\mult@rightbox=\box83
+\mult@grightbox=\box84
+\mult@firstbox=\box85
+\mult@gfirstbox=\box86
+\@tempa=\box87
 \@tempa=\box88
 \@tempa=\box89
 \@tempa=\box90
@@ -734,17 +694,16 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \@tempa=\box120
 \@tempa=\box121
 \@tempa=\box122
-\@tempa=\box123
-\c@minrows=\count349
-\c@columnbadness=\count350
-\c@finalcolumnbadness=\count351
-\last@try=\dimen306
-\multicolovershoot=\dimen307
-\multicolundershoot=\dimen308
-\mult@nat@firstbox=\box124
-\colbreak@box=\box125
-\mc@col@check@num=\count352
-\g__mc_curr_col_int=\count353
+\c@minrows=\count342
+\c@columnbadness=\count343
+\c@finalcolumnbadness=\count344
+\last@try=\dimen292
+\multicolovershoot=\dimen293
+\multicolundershoot=\dimen294
+\mult@nat@firstbox=\box123
+\colbreak@box=\box124
+\mc@col@check@num=\count345
+\g__mc_curr_col_int=\count346
 ) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
@@ -753,34 +712,34 @@ Package tocbasic Info: Loading of class-dependent code for package caption3
 
  (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen309
-\captionmargin=\dimen310
-\caption@leftmargin=\dimen311
-\caption@rightmargin=\dimen312
-\caption@width=\dimen313
-\caption@indent=\dimen314
-\caption@parindent=\dimen315
-\caption@hangindent=\dimen316
+\caption@tempdima=\dimen295
+\captionmargin=\dimen296
+\caption@leftmargin=\dimen297
+\caption@rightmargin=\dimen298
+\caption@width=\dimen299
+\caption@indent=\dimen300
+\caption@parindent=\dimen301
+\caption@hangindent=\dimen302
 )
-\c@caption@flags=\count354
-\c@continuedfloat=\count355
+\c@caption@flags=\count347
+\c@continuedfloat=\count348
 Package caption Info: hyperref package is loaded.
 ) (/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks48
-\thm@bodyfont=\toks49
-\thm@headfont=\toks50
-\thm@notefont=\toks51
-\thm@headpunct=\toks52
+\thm@style=\toks44
+\thm@bodyfont=\toks45
+\thm@headfont=\toks46
+\thm@notefont=\toks47
+\thm@headpunct=\toks48
 \thm@preskip=\skip76
 \thm@postskip=\skip77
 \thm@headsep=\skip78
-\dth@everypar=\toks53
+\dth@everypar=\toks49
 ) (/usr/share/texmf-dist/tex/latex/xpatch/xpatch.sty (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2026-01-19 L3 programming layer (loader) 
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count356
+\l__color_backend_stack_int=\count349
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
  (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -791,141 +750,182 @@ Class scrartcl Info: amsthm's \deferred@thm@head patched.
 Package: import 2020/04/01  v 6.2
 ) (/usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
-) (/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+)
+(/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
 Package: nicematrix 2026/02/22 v7.7 Enhanced arrays with the help of PGF/TikZ
  (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Rollback for package 'array' requested -> date 2025/06/08.
          Best approximation is the release introduced on 2024-06-01.
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen317
-\ar@mcellbox=\box126
-\extrarowheight=\dimen318
-\NC@list=\toks54
+\col@sep=\dimen303
+\ar@mcellbox=\box125
+\extrarowheight=\dimen304
+\NC@list=\toks50
 \extratabsurround=\skip79
 \backup@length=\skip80
-\ar@cellbox=\box127
+\ar@cellbox=\box126
 )
-\l__nicematrix_tmpc_dim=\dimen319
-\l__nicematrix_tmpd_dim=\dimen320
-\l__nicematrix_tmpc_int=\count357
-\g__nicematrix_env_int=\count358
-\l__nicematrix_the_array_box=\box128
-\g__nicematrix_NiceMatrixBlock_int=\count359
-\g__nicematrix_notes_caption_int=\count360
-\l__nicematrix_columns_width_dim=\dimen321
-\l__nicematrix_col_width_dim=\dimen322
-\g__nicematrix_row_total_int=\count361
-\g__nicematrix_col_total_int=\count362
-\g__nicematrix_last_row_node_int=\count363
-\l__nicematrix_key_nb_rows_int=\count364
-\g__nicematrix_blocks_wd_dim=\dimen323
-\g__nicematrix_blocks_ht_dim=\dimen324
-\g__nicematrix_blocks_dp_dim=\dimen325
-\l__nicematrix_width_dim=\dimen326
-\l__nicematrix_tabular_width_dim=\dimen327
-\l__nicematrix_rule_width_dim=\dimen328
-\l__nicematrix_old_iRow_int=\count365
-\l__nicematrix_old_jCol_int=\count366
-\l__nicematrix_X_columns_dim=\dimen329
-\l__nicematrix_brace_shift_dim=\dimen330
-\l__nicematrix_x_initial_dim=\dimen331
-\l__nicematrix_y_initial_dim=\dimen332
-\l__nicematrix_x_final_dim=\dimen333
-\l__nicematrix_y_final_dim=\dimen334
-\g__nicematrix_dp_row_zero_dim=\dimen335
-\g__nicematrix_ht_row_zero_dim=\dimen336
-\g__nicematrix_ht_row_one_dim=\dimen337
-\g__nicematrix_dp_ante_last_row_dim=\dimen338
-\g__nicematrix_ht_last_row_dim=\dimen339
-\g__nicematrix_dp_last_row_dim=\dimen340
-\g__nicematrix_width_last_col_dim=\dimen341
-\g__nicematrix_width_first_col_dim=\dimen342
-\g__nicematrix_ddots_int=\count367
-\g__nicematrix_iddots_int=\count368
-\g__nicematrix_delta_x_one_dim=\dimen343
-\g__nicematrix_delta_y_one_dim=\dimen344
-\g__nicematrix_delta_x_two_dim=\dimen345
-\g__nicematrix_delta_y_two_dim=\dimen346
-\l__nicematrix_row_min_int=\count369
-\l__nicematrix_row_max_int=\count370
-\l__nicematrix_col_min_int=\count371
-\l__nicematrix_col_max_int=\count372
-\l__nicematrix_initial_i_int=\count373
-\l__nicematrix_initial_j_int=\count374
-\l__nicematrix_final_i_int=\count375
-\l__nicematrix_final_j_int=\count376
-\l__nicematrix_start_int=\count377
-\l__nicematrix_end_int=\count378
-\l__nicematrix_local_start_int=\count379
-\l__nicematrix_local_end_int=\count380
-\g__nicematrix_static_num_of_col_int=\count381
-\l__nicematrix_rounded_corners_dim=\dimen347
-\l__nicematrix_tab_rounded_corners_dim=\dimen348
-\l__nicematrix_offset_dim=\dimen349
-\l__nicematrix_line_width_dim=\dimen350
-\g__nicematrix_block_box_int=\count382
-\l__nicematrix_submatrix_extra_height_dim=\dimen351
-\l__nicematrix_submatrix_left_xshift_dim=\dimen352
-\l__nicematrix_submatrix_right_xshift_dim=\dimen353
-\l__nicematrix_first_row_int=\count383
-\l__nicematrix_first_col_int=\count384
-\l__nicematrix_last_row_int=\count385
-\l__nicematrix_last_col_int=\count386
-\c@tabularnote=\count387
-\g__nicematrix_tabularnote_int=\count388
-\c@nicematrix_draft=\count389
-\l__nicematrix_cell_space_top_limit_dim=\dimen354
-\l__nicematrix_cell_space_bottom_limit_dim=\dimen355
-\l__nicematrix_xdots_inter_dim=\dimen356
-\l__nicematrix_xdots_shorten_start_dim=\dimen357
-\l__nicematrix_xdots_shorten_end_dim=\dimen358
-\l__nicematrix_xdots_radius_dim=\dimen359
-\l__nicematrix_left_margin_dim=\dimen360
-\l__nicematrix_right_margin_dim=\dimen361
-\l__nicematrix_extra_left_margin_dim=\dimen362
-\l__nicematrix_extra_right_margin_dim=\dimen363
-\c__nicematrix_max_l_dim=\dimen364
-\l__nicematrix_position_int=\count390
-\l__nicematrix_multiplicity_int=\count391
-\l__nicematrix_brace_yshift_dim=\dimen365
+\l__nicematrix_tmpc_dim=\dimen305
+\l__nicematrix_tmpd_dim=\dimen306
+\l__nicematrix_tmpc_int=\count350
+\g__nicematrix_env_int=\count351
+\l__nicematrix_the_array_box=\box127
+\g__nicematrix_NiceMatrixBlock_int=\count352
+\g__nicematrix_notes_caption_int=\count353
+\l__nicematrix_columns_width_dim=\dimen307
+\l__nicematrix_col_width_dim=\dimen308
+\g__nicematrix_row_total_int=\count354
+\g__nicematrix_col_total_int=\count355
+\g__nicematrix_last_row_node_int=\count356
+\l__nicematrix_key_nb_rows_int=\count357
+\g__nicematrix_blocks_wd_dim=\dimen309
+\g__nicematrix_blocks_ht_dim=\dimen310
+\g__nicematrix_blocks_dp_dim=\dimen311
+\l__nicematrix_width_dim=\dimen312
+\l__nicematrix_tabular_width_dim=\dimen313
+\l__nicematrix_rule_width_dim=\dimen314
+\l__nicematrix_old_iRow_int=\count358
+\l__nicematrix_old_jCol_int=\count359
+\l__nicematrix_X_columns_dim=\dimen315
+\l__nicematrix_brace_shift_dim=\dimen316
+\l__nicematrix_x_initial_dim=\dimen317
+\l__nicematrix_y_initial_dim=\dimen318
+\l__nicematrix_x_final_dim=\dimen319
+\l__nicematrix_y_final_dim=\dimen320
+\g__nicematrix_dp_row_zero_dim=\dimen321
+\g__nicematrix_ht_row_zero_dim=\dimen322
+\g__nicematrix_ht_row_one_dim=\dimen323
+\g__nicematrix_dp_ante_last_row_dim=\dimen324
+\g__nicematrix_ht_last_row_dim=\dimen325
+\g__nicematrix_dp_last_row_dim=\dimen326
+\g__nicematrix_width_last_col_dim=\dimen327
+\g__nicematrix_width_first_col_dim=\dimen328
+\g__nicematrix_ddots_int=\count360
+\g__nicematrix_iddots_int=\count361
+\g__nicematrix_delta_x_one_dim=\dimen329
+\g__nicematrix_delta_y_one_dim=\dimen330
+\g__nicematrix_delta_x_two_dim=\dimen331
+\g__nicematrix_delta_y_two_dim=\dimen332
+\l__nicematrix_row_min_int=\count362
+\l__nicematrix_row_max_int=\count363
+\l__nicematrix_col_min_int=\count364
+\l__nicematrix_col_max_int=\count365
+\l__nicematrix_initial_i_int=\count366
+\l__nicematrix_initial_j_int=\count367
+\l__nicematrix_final_i_int=\count368
+\l__nicematrix_final_j_int=\count369
+\l__nicematrix_start_int=\count370
+\l__nicematrix_end_int=\count371
+\l__nicematrix_local_start_int=\count372
+\l__nicematrix_local_end_int=\count373
+\g__nicematrix_static_num_of_col_int=\count374
+\l__nicematrix_rounded_corners_dim=\dimen333
+\l__nicematrix_tab_rounded_corners_dim=\dimen334
+\l__nicematrix_offset_dim=\dimen335
+\l__nicematrix_line_width_dim=\dimen336
+\g__nicematrix_block_box_int=\count375
+\l__nicematrix_submatrix_extra_height_dim=\dimen337
+\l__nicematrix_submatrix_left_xshift_dim=\dimen338
+\l__nicematrix_submatrix_right_xshift_dim=\dimen339
+\l__nicematrix_first_row_int=\count376
+\l__nicematrix_first_col_int=\count377
+\l__nicematrix_last_row_int=\count378
+\l__nicematrix_last_col_int=\count379
+\c@tabularnote=\count380
+\g__nicematrix_tabularnote_int=\count381
+\c@nicematrix_draft=\count382
+\l__nicematrix_cell_space_top_limit_dim=\dimen340
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen341
+\l__nicematrix_xdots_inter_dim=\dimen342
+\l__nicematrix_xdots_shorten_start_dim=\dimen343
+\l__nicematrix_xdots_shorten_end_dim=\dimen344
+\l__nicematrix_xdots_radius_dim=\dimen345
+\l__nicematrix_left_margin_dim=\dimen346
+\l__nicematrix_right_margin_dim=\dimen347
+\l__nicematrix_extra_left_margin_dim=\dimen348
+\l__nicematrix_extra_right_margin_dim=\dimen349
+\c__nicematrix_max_l_dim=\dimen350
+\l__nicematrix_position_int=\count383
+\l__nicematrix_multiplicity_int=\count384
+\l__nicematrix_brace_yshift_dim=\dimen351
 ) (/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
  (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count392
-\calc@Bcount=\count393
-\calc@Adimen=\dimen366
-\calc@Bdimen=\dimen367
+\calc@Acount=\count385
+\calc@Bcount=\count386
+\calc@Adimen=\dimen352
+\calc@Bdimen=\dimen353
 \calc@Askip=\skip81
 \calc@Bskip=\skip82
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count394
+\calc@Ccount=\count387
 \calc@Cskip=\skip83
 ) (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count395
-\l_MT_multwidth_dim=\dimen368
+\g_MT_multlinerow_int=\count388
+\l_MT_multwidth_dim=\dimen354
 \origjot=\skip84
-\l_MT_shortvdotswithinadjustabove_dim=\dimen369
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen370
-\l_MT_above_intertext_sep=\dimen371
-\l_MT_below_intertext_sep=\dimen372
-\l_MT_above_shortintertext_sep=\dimen373
-\l_MT_below_shortintertext_sep=\dimen374
-\xmathstrut@box=\box129
-\xmathstrut@dim=\dimen375
+\l_MT_shortvdotswithinadjustabove_dim=\dimen355
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen356
+\l_MT_above_intertext_sep=\dimen357
+\l_MT_below_intertext_sep=\dimen358
+\l_MT_above_shortintertext_sep=\dimen359
+\l_MT_below_shortintertext_sep=\dimen360
+\xmathstrut@box=\box128
+\xmathstrut@dim=\dimen361
 ) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
-\@enLab=\toks55
+\@enLab=\toks51
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen376
-\pgfarrowlength=\dimen377
-\pgfarrowwidth=\dimen378
-\pgfarrowlinewidth=\dimen379
-) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+\pgfarrowinset=\dimen362
+\pgfarrowlength=\dimen363
+\pgfarrowwidth=\dimen364
+\pgfarrowlinewidth=\dimen365
+) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
+ (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks52
+\t@pgfplots@tokb=\toks53
+\t@pgfplots@tokc=\toks54
+\pgfplots@tmpa=\dimen366
+\c@pgfplots@coordindex=\count389
+\c@pgfplots@scanlineindex=\count390
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count391
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count392
+\t@pgfplotstable@a=\toks55
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count393
+
+(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen367
+\pgfdecoratedremainingdistance=\dimen368
+\pgfdecoratedinputsegmentcompleteddistance=\dimen369
+\pgfdecoratedinputsegmentremainingdistance=\dimen370
+\pgf@decorate@distancetomove=\dimen371
+\pgf@decorate@repeatstate=\count394
+\pgfdecorationsegmentamplitude=\dimen372
+\pgfdecorationsegmentlength=\dimen373
+)
+\tikz@lib@dec@box=\box129
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count395
+\pgfplots@xmin@reg=\dimen374
+\pgfplots@xmax@reg=\dimen375
+\pgfplots@ymin@reg=\dimen376
+\pgfplots@ymax@reg=\dimen377
+\pgfplots@zmin@reg=\dimen378
+\pgfplots@zmax@reg=\dimen379
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count396
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
@@ -976,8 +976,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \c@osservazione=\count409
 \c@notazione=\count410
 \c@esercizio=\count411
-Package hyperref Info: Option `colorlinks' set `true' on input line 135.
-Package hyperref Info: Option `breaklinks' set `true' on input line 135.
+Package hyperref Info: Option `colorlinks' set `true' on input line 137.
+Package hyperref Info: Option `breaklinks' set `true' on input line 137.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -998,7 +998,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 170.
+(scrartcl)              package `tocloft' on input line 172.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1149,7 +1149,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 183.
+(scrartcl)           before \begin{document} on input line 185.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1157,28 +1157,28 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count420
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 183.
+(Font)              scaled to size 10.95pt on input line 185.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1239,28 +1239,26 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 183.
-
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 183.
-
+Package hyperref Info: Link coloring ON on input line 185.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen399
 \c__nicematrix_innersep_middle_dim=\dimen400
-LaTeX Info: Redefining \it@ocap on input line 183.
-LaTeX Info: Redefining \it@ccap on input line 183.
+
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+LaTeX Info: Redefining \it@ocap on input line 185.
+LaTeX Info: Redefining \it@ccap on input line 185.
 \c@mv@tabular=\count427
 \c@mv@boldtabular=\count428
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 184.
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 186.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 184.
+(Font)              scaled to size 12.0pt on input line 186.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 184.
+(Font)              scaled to size 12.0pt on input line 186.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.toc
@@ -1283,58 +1281,58 @@ File: uesint.fd
 
  [2]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 188.
+(Font)              scaled to size 15.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 188.
+(Font)              scaled to size 20.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 13.0pt on input line 189.
+(Font)              scaled to size 13.0pt on input line 191.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 13.0pt on input line 189.
+(Font)              scaled to size 13.0pt on input line 191.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 199.
+(Font)              scaled to size 8.0pt on input line 201.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 199.
+(Font)              scaled to size 9.0pt on input line 201.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 199.
+(Font)              scaled to size 6.0pt on input line 201.
  [3]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 228.
+(Font)              scaled to size 12.0pt on input line 230.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 244.
+(Font)              scaled to size 10.95pt on input line 246.
  [4]
-Overfull \hbox (16.2985pt too wide) detected at line 278
+Overfull \hbox (16.2985pt too wide) detected at line 280
 [][] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 ' [] [] ' [] []
  []
 
 [5]
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 324.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 326.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 324.
-<vdw.png, id=112, 655.44875pt x 521.95pt>
+(Font)              scaled to size 10.95pt on input line 326.
+<vdw.png, id=120, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
-Package pdftex.def Info: vdw.png  used on input line 331.
+Package pdftex.def Info: vdw.png  used on input line 333.
 (pdftex.def)             Requested size: 208.41644pt x 165.96815pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
-<max-constr-vdw.png, id=121, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=129, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
-Package pdftex.def Info: max-constr-vdw.png  used on input line 361.
+Package pdftex.def Info: max-constr-vdw.png  used on input line 363.
 (pdftex.def)             Requested size: 150.05937pt x 220.59213pt.
  [7 <./vdw.png> <./max-constr-vdw.png>] [8]
-Overfull \hbox (5.02264pt too wide) detected at line 431
+Overfull \hbox (5.02264pt too wide) detected at line 433
 []
  []
 
 [9] [10]
-Overfull \hbox (29.02325pt too wide) detected at line 507
+Overfull \hbox (29.02325pt too wide) detected at line 509
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ' \OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 b[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 b[][] \OT1/cmr/m/n/10.95 + [] + 4\OML/cmm/m/it/10.95 b[][] \OT1/cmr/m/n/10.95 + 9\OML/cmm/m/it/10.95 b[]b[][] \OT1/cmr/m/n/10.95 + []
  []
 
@@ -1342,65 +1340,73 @@ Overfull \hbox (29.02325pt too wide) detected at line 507
 Overfull \vbox (1.31133pt too high) has occurred while \output is active []
 
  [13] [14] [15] [16]
-Overfull \hbox (1.87082pt too wide) in paragraph at lines 719--720
+Overfull \hbox (1.87082pt too wide) in paragraph at lines 721--722
 \T1/zpltosf/m/n/10.95 pre-sen-ta un esem-pio par-ti-co-la-re di \T1/zpltosf/m/it/10.95 ge-rar-chia BB-G-KY \T1/zpltosf/m/n/10.95 (Bogoljubov-Born-Green-Kirkwood-
  []
 
 
-Overfull \hbox (58.54832pt too wide) detected at line 728
+Overfull \hbox (58.54832pt too wide) detected at line 730
 []
  []
 
 [17] [18] [19]
-<pd.jpg, id=214, 702.625pt x 615.29875pt>
+<pd.jpg, id=222, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
-Package pdftex.def Info: pd.jpg  used on input line 806.
+Package pdftex.def Info: pd.jpg  used on input line 808.
 (pdftex.def)             Requested size: 187.57352pt x 164.25514pt.
  [20 <./pd.jpg>] [21] [22] [23] [24]
-Overfull \hbox (3.20259pt too wide) in paragraph at lines 1052--1053
+Overfull \hbox (3.20259pt too wide) in paragraph at lines 1054--1055
  [][] 
  []
 
 [25] [26]
-Underfull \hbox (badness 1371) in paragraph at lines 1184--1184
+Underfull \hbox (badness 1371) in paragraph at lines 1186--1186
 [][]|\T1/zpltosf/m/n/9 Ma-gne-tiz-za-zio-ne in fun-zio-ne del-la
  []
 
 [27]
-Overfull \hbox (11.95016pt too wide) in paragraph at lines 1263--1264
+Overfull \hbox (11.95016pt too wide) in paragraph at lines 1265--1266
  [][] 
  []
 
 
-Overfull \hbox (0.85635pt too wide) in paragraph at lines 1292--1293
+Overfull \hbox (0.85635pt too wide) in paragraph at lines 1294--1295
  [][] 
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35]
-Overfull \hbox (3.01218pt too wide) in paragraph at lines 1659--1662
+Overfull \hbox (3.01218pt too wide) in paragraph at lines 1661--1664
 \T1/zpltosf/m/n/10.95 dove, con con-di-zio-ni al bor-do pe-rio-di-che, si ha $[] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 n[]; n[]; n[]\OT1/cmr/m/n/10.95 )$\T1/zpltosf/m/n/10.95 , per $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; [] ; N[]$
  []
 
 [36] [37] [38] [39] [40] [41] [42] [43]
+Overfull \hbox (0.46481pt too wide) detected at line 1930
+\OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = [] [] [] = [] [] []
+ []
 
-Package caption Warning: Unused \captionsetup[table] on input line 128.
+[44] [45] [46] [47] [48] [49]
+
+Package caption Warning: Unused \captionsetup[table] on input line 130.
 See the caption package documentation for explanation.
 
-[44] (./master.aux)
+[50] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 47644 strings out of 467525
- 1108167 string characters out of 5425862
- 1727084 words of memory out of 5000000
- 75723 multiletter control sequences out of 15000+600000
+ 48113 strings out of 467525
+ 1121081 string characters out of 5425862
+ 1746067 words of memory out of 5000000
+ 76174 multiletter control sequences out of 15000+600000
  690647 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 124i,26n,121p,11245b,941s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,28n,121p,11245b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exist, replaced by a fixed one
 
@@ -1447,10 +1453,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (44 pages, 638137 bytes).
+Output written on master.pdf (50 pages, 667802 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
- 489 compressed objects within 5 object streams
- 139 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 284 words of extra memory for PDF output out of 10000 (max. 10000000)
 

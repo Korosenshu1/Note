@@ -14,8 +14,8 @@
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{titling}
+\usepackage{braket}
 \usepackage[linktocpage]{hyperref}
-\usepackage{pgfplots}
 \usepackage{multicol}
 \setlength{\columnsep}{2em}
 \usepackage{caption}
@@ -29,6 +29,8 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
@@ -1860,9 +1862,272 @@ Risolvendo il modello di Ising dalla funzione di partizione, infatti, si trova c
 	\item nel caso 3D, c'\`e transizione, ma gli esponenti critici sono diversi dal campo medio;
 	\item nel caso 4D, si hanno gli stessi esponenti critici, anche se la condizione $d>4$ non \`e soddisfatta.
 \end{itemize}
+
+\subsection{Modello di Ising oltre il campo medio}
+\subsubsection{Argomento di Peierls}
+
+Si considera un modello di Ising in 1D a range variabile, ossia descritto dall'hamiltoniana
+\[
+H = - J \sum_{i,j=1}^{N} \frac{1}{\lvert i - j \rvert ^{\gamma}}S_iS_j
+\] 
+con $\gamma$ \textit{range} delle interazioni.
+Si osserva che, per $\gamma\to +\infty$, si ritrova il modello di Ising standard, che collega solamente due spin immediatamente vicini; nel caso di $\gamma < +\infty$, invece, le interazioni con spin pi\`u lontani decadono come una legge di potenza.
+
+Per iniziare, si considera l'hamiltoniana di Ising standard 
+\[
+H_\infty = -J \sum_{i}^{} S_iS_{i+1} 
+\] 
+essendo relativa a $\gamma\to +\infty$.
+Si vogliono studiare le due seguenti configurazioni del sistema:
+\begin{enumerate}[(1).]
+	\item configurazione ferromagnetica, data esclusivamente da spin up $\ldots\, \uparrow \ \uparrow\ \uparrow\ \uparrow \ \ldots $;
+	\item configurazione a due domini ferromagnetici, data da tutti spin up fino a un certo sito e tutti spin down da l\`i in poi $\ldots\, \uparrow \ \uparrow \ \uparrow\ \uparrow \ \downarrow\ \downarrow \ \downarrow\ \downarrow \, \ldots$.
+\end{enumerate}
+Nella configurazione a due domini, la coppia di spin $\uparrow\ \downarrow$ \`e detta \textit{muro del dominio} ed \`e responsabile per un'energia pi\`u alta rispetto alla configurazione completamente ferromagnetica.
+Infatti, nella configurazione ferromagnetica, si ha un'energia pari a $-JN$, assumendo un reticolo 1D con $N$ siti; al contrario, per la configurazione a due domini, si hanno tutti $+1$ per i prodotti $S_i S_{i+1} $ (un sito \`e accoppiato esclusivamente con il successivo), tranne che per il muro, per cui si ha un $-1$. 
+Per questo motivo, nella configurazione a due domini, l'energia del sistema \`e $-J(N-1) + J$, quindi 
+\[
+\Delta E = E_{2} - E_1 = -J(N-1) + J + JN= 2J
+\] 
+Per capire qual \`e, tra i due, il sistema termodinamicamente pi\`u stabile, \`e necessario minimizzare il potenziale termodinamico opportuno: a temperatura $T=0$, la configurazione termodinamicamente pi\`u stabile \`e quella con $E$ minore; se $T>0$, invece, \`e necessario considerare il contributo entropico e, quindi, \`e necessario minimizzare l'energia libera $F$.
+Per stimare questo contributo, si ricorda che l'entropia \`e definita come $\kappa _B \log \left(\text{n. microstati accessibili}\right) $; visto che la configurazione con tutti spin allineati \`e una sola, mentre la seconda consente di spostare il muro in una qualunque delle posizioni (nel limite termodinamico), si pu\`o dire che 
+\[
+\Delta S = S_{2} -S_1 \simeq \kappa _B \log N \implies \Delta F = \Delta E - T\Delta S = 2J - \kappa _B T \log N
+\] 
+Ad una certa $T>0$ fissata, allora, nel limite termodinamico, si ha $\Delta F < 0$, ossia $F_1 > F_2$, per cui si conclude che la configurazione (2) \`e quella termodinamicamente pi\`u stabile.
+
+Questo argomento si pu\`o ripetere, confrontando la configurazione (2)	con una configurazione in cui si sono due muri; interando il discorso, si conclude che il sistema tende a generare pi\`u muri possibili, concludendo che, per ogni temperatura positiva, la configurazione scelta dal sistema non potr\`a mai essere ferromagnetica, ma si tender\`a sempre ad una configurazione paramagnetica.
+Se ne conclude che, per $H_\infty$ a temperatura $T>0$, non ci si aspettano transizioni di fase.
+
+Il discorso si pu\`o estendere anche a $\gamma < +\infty$. 
+Per calcolare il $\Delta E$, si considera la configurazione (2) come composta da $N / 2$ spin up e $N / 2$ spin down, con muro posto in $n=0$; cio\`e, facendo variare $n$ da $-N/2$ a $+ N / 2$, si percorrono tutti gli $N$ siti, incontrando il muro in $n=0$.
+Secondo questo ragionamento, si pu\`o scrivere 
+\[
+\Delta E = 2J \sum_{n = - N / 2}^{0} \sum_{n' = 1}^{N / 2} \frac{1}{\lvert n-n' \rvert ^{\gamma}}
+\] 
+Nel limite termodinamico, per $N \to  + \infty$, si pu\`o passare al continuo:
+\[
+\Delta E \simeq 2 J \int_{-\infty} ^0 dn \int_{0} ^{+\infty}  dn' \ \frac{1}{(n'-n)^{\gamma}}
+\] 
+dove si \`e rimosso il modulo perch\'e $n'>n$ sempre.
+Questi integrali si possono risolvere e si trova che diversi valori di $\gamma$ portano a comportamenti diversi del sistema\footnote{Soluzione dell'integrale e motivazione dei risultati in appendice (\ref{peint}).}.
+\begin{itemize}
+	\item Se $\gamma < 1$, allora $\Delta E \sim N^\alpha $, per qualche $\alpha >0 $, quindi diverge come un polinomio; ne segue che $\Delta F = \Delta E - T\Delta S > 0$ perch\'e $T \Delta S\sim \log N$, quindi $F_{2} > F_1$.
+	\item Se $\gamma <2$, allora $\Delta E \sim N^{2- \gamma}$, quindi ci si trova nel caso precedente e, di nuovo, $F_2 > F_1$.
+	\item Se $\gamma=2$, $\Delta E \sim \log N$ e questa trattazione \`e troppo rozza per predire un comportamento definito, visto che si ha la differenza di due termini con uguale andamento nel limite termodinamico.
+	\item Se $\gamma > 2$, invece, si trova che $\Delta E \to - \infty$, per cui $F_2<F_1$.
+\end{itemize}
+L'argomento di Peierls, dunque, ammette transizioni di fase paramagnete-ferromagnete a temperatura finita esclusivamente se $\gamma<2$.
+\begin{osservazione}
+La precedente trattazione assume $h=0$, cio\`e assenza di campo esterno.
+\end{osservazione}
+
+\subsubsection{Soluzione esatta del modello di Ising}
+Si considera il modello di Ising 1D standard, cio\`e con $H = - J \sum_{j=1}^{N} S_j S_{j+1}  - h \sum_{j=1}^{N} S_j$, e lo si risolve esattamente.
+La funzione di partizione \`e data da
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} \exp \left[ \beta \sum_{j}^{} S_jS_{j+1} + \beta h \sum_{j}^{} S_j \right] = \sum_{\left\{ S_i \right\} }^{} \exp \left[ \beta \sum_{j}^{} \left(S_jS_{j+1} +\frac{1}{2}h \left(S_j + S_{j+1} \right) \right)  \right] 
+\] 
+dove l'ultima uguaglianza \`e giustificata dalle assunzioni di condizioni al contorno periodiche (cos\`i da avere l'espressione ben definita per $j=N$ e $j+1 = 1$ di conseguenza) e invarianza per traslazioni, per cui si distribuisce il campo esterno uniformemente su ciascuna coppia di spin, da cui il fattore $1 / 2$.
+
+Per risolverlo, si introduce la tecnica della matrice di trasferimento, definita come
+\[
+T_{SS'}  = \exp\left[ \beta  \left( J S S' + \frac{h}{2}(S+S') \right) \right] 
+\] 
+che, nel formalismo della meccanica quantistica, si pu\`o esprimere anche come $T_{SS'} = \braket{S|T|S'} $.
+Per capire meglio come \`e fatta tale matrice, si parte dal fatto che $S$ e $S'$ possono essere pari solamente a $\pm 1$, quindi sono ben definite le mappe
+\[
+S = +1 \longmapsto \begin{pmatrix} 1\\0 \end{pmatrix} \hspace{1cm}S = - 1 \longmapsto \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+\] 
+Di conseguenza, si pu\`o rappresentare $T$ in termini della base spin up, spin down:
+\[
+	T = \begin{pmatrix} T_{+1,\,+1}  & T_{+1,\, -1} \\ T_{-1,\, +1} & T_{-1,\, -1} \end{pmatrix}  = \begin{pmatrix} e^{\beta (J+h)} & e^{-\beta J} \\ e^{-\beta J} & e ^{\beta (J-h)}\end{pmatrix} 
+\] 
+Allora \`e chiaro che 
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} \braket{S_1|T|S_2}  \braket{S_2|T|S_3} \cdot  \ldots \cdot \braket{S_N|T|S_1}  
+\] 
+Visto che $\sum_{\left\{ S_i \right\} }^{} = \sum_{S_1=\pm 1}^{} \sum_{S_2=\pm 1}^{} \ldots $, allora 
+\[
+	\begin{split}
+		Z &= \sum_{S_1}^{} \bra{S_1} T \overbracket{\left\{ \sum_{S_2}^{} \ket{S_2} \bra{S_2}  \right\}}^{= \operatorname{Id} }  T \overbracket{\left\{ \sum_{S_3}^{} \ket{S_3} \bra{S_3}  \right\}}^{=\operatorname{Id} }  \cdot  \ldots \cdot \overbracket{\left\{ \sum_{S_N}^{} \ket{S_N} \bra{S_N}  \right\}}^{= \operatorname{Id} }  \ket{S_1} \\
+		  & = \sum_{S_1}^{} \braket{S_1|T^N|S_1} = \operatorname{Tr} T^N
+	\end{split}
+\] 
+Visto che $T$ \`e reale e simmetrica, si diagonalizza: $T = ODO^\top$, per cui
+\[
+T^N = (ODO^{-1}) (ODO^{-1}) \cdots (ODO^{-1}) = OD^NO^{-1}
+\] 
+Usando il fatto che la traccia, si ha che $\operatorname{Tr}  T^N = \operatorname{Tr} (OD^N O^{-1}) = \operatorname{Tr} (O O ^{-1}D^N) = \operatorname{Tr} D^N$; se $\lambda _+,\, \lambda _-$ sono gli autovalori di $T$, si ha 
+\[
+	D = \begin{pmatrix} \lambda _+ & 0 \\ 0 & \lambda _- \end{pmatrix} \implies Z = \lambda _+^N + \lambda _-^N 
+\] 
+Calcolando il determinante di $T$, si ottiene che 
+\[
+\lambda _{\pm}  = e^{\beta J} \left[ \cosh (\beta h) \pm \sqrt{\sinh^2 (\beta h) + e ^{-4 \beta J}}  \right] 
+\] 
+con $\lambda _+ > \lambda _-$, per cui $Z \sim \lambda _+ ^{N}$ nel limite termodinamico.
+Da questo, si ricava che 
+\[
+F = - \kappa _B T \log Z = - \kappa _B T N \log \lambda _+
+\] 
+da cui la magnetizzazione \`e pari a 
+\[
+M = -\frac{\partial F}{\partial h} = \frac{N \sinh (\beta h)}{\sqrt{\sinh^2 (\beta h) + e^{-4 \beta J}} }
+\] 
+Si nota che, essendo la magnetizzazione per sito pari a $M / N$ ed essendo
+\[
+\lim_{h \to 0} \lim_{N \to +\infty} \frac{M}{N} = 0
+\] 
+non vi \`e magnetizzazione nel sistema in assenza di campo esterno e, quindi, non vi \`e alcuna transizione di fase, per ogni $T>0$.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xlabel={$h$},
+    ylabel={$\frac{M}{N}$},
+    xmin=-3, xmax=3,
+    ymin=-1.2, ymax=1.2,
+    xtick=\empty,
+    ytick={-1,0,1},
+    samples=200,
+    domain=-3:3,
+    width=10cm,
+    height=6cm,
+    legend pos=north west,
+    legend style={font=\footnotesize},
+    tick label style={font=\footnotesize},
+    label style={font=\footnotesize},
+]
+
+% Curva T1 (più ripida)
+\addplot[black, thick] {tanh(1.2*x)};
+\addlegendentry{$T_1$}
+
+% Curva T2 (meno ripida)
+\addplot[blue, thick] {tanh(0.6*x)};
+\addlegendentry{$T_2$}
+
+% Punto origine
+\addplot[only marks, mark=*, red] coordinates {(0,0)};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+Con un ragionamento analogo, si possono trovare anche le funzioni di correlazione.
+Definendo 
+\[
+	(S \mid S') : = \exp \left[ \beta JS S' + \frac{\beta h}{2}(S+S')\right] 
+\] 
+si pu\`o scrivere
+\[
+	\begin{split}
+		\langle S_n \, S_{n+r}  \rangle &= \frac{1}{Z}\sum_{\left\{ S_i \right\} }^{} (S_1 \mid S_2) (S_2 \mid S_3) \cdot \ldots\cdot (S_{n-1}  \mid S_n) S_n (S_n  \mid S_{n+1} ) \cdot  \ldots\\
+						&=\frac{1}{Z} \operatorname{Tr} \Big(T_1T_2\cdot \ldots \cdot T_{n-1} O_n T_n T_{n+1} \cdot \ldots \cdot T_{n+r-1} O_{n+r} T_{n+r} \cdot \ldots\cdot T_N  \Big) 
+	\end{split}
+\] 
+dove $O_n$ \`e una matrice relativa al fattore $S_n$ nell'espressione alla prima riga, che conta gli stati dello spin $n$-esimo; questa si pu\`o scrivere come
+\[
+	O = O_n=O_{n+r}  = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
+\] 
+Quindi 
+\[
+\langle S_nS_{n+r}  \rangle = \frac{1}{Z} \operatorname{Tr} \Big(T^{n-1} O T^r O T^{N - (n-1+r)}\Big) = \frac{1}{Z} \operatorname{Tr} \Big(OT^rOT^{N-r}\Big)
+\] 
+Ora si assume $h=0$; in questo caso
+\[
+	T = \begin{pmatrix} e^{\beta J} & e^{-\beta J}\\ e^{-\beta J} & e^{\beta J}\end{pmatrix} 
+\] 
+Essendo simmetrica e reale, si diagonalizza con $T = UDU^{-1}$, dove
+\[
+	U = \frac{1}{\sqrt{2} } \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} 
+\] 
+Gli autovalori di $T$, quindi la diagonale di $D$, si trovano essere 
+\[
+\lambda _{\pm} = e^{\beta J} \left(1 \pm e^{-2\beta J}\right) 
+\] 
+Sostituendo, dunque, si vede che
+\[
+\begin{split}
+	\langle S_n \, S_{n+r}  \rangle&= \frac{1}{Z}\operatorname{Tr} \Big[O\left(U D^r U ^{-1}\right) O \left(UD^{N-r}U^{-1}\right)  \Big]\\
+				       &=\frac{1}{Z}\operatorname{Tr} \Big[\underbracket{\big(U^{-1}O U\big)}_{=\sigma } D^r \underbracket{\big(U^{-1}O U\big)}_{=\sigma } D^{N-r}\Big]
+\end{split}
+\] 
+con 
+\[
+	\sigma = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} 
+\] 
+matrice che inverte le componenti di un vettore.
+Si conclude che
+\[
+\begin{split}
+	&\begin{split}
+		\langle S_n \, S_{n+r}  \rangle &= \frac{1}{Z} \operatorname{Tr} \left[ \begin{pmatrix} 0& 1\\ 1&0 \end{pmatrix} \begin{pmatrix} \lambda _+^r &0\\ 0 & \lambda _-^r \end{pmatrix} \begin{pmatrix} 0& 1 \\ 1 &0 \end{pmatrix} \begin{pmatrix} \lambda _+^{N-r} & 0 \\ 0 & \lambda _-^{N-r} \end{pmatrix}  \right] \\
+						&\sim \left(\frac{\lambda _-}{\lambda _+}\right) ^r = \left(\frac{1- e^{-2\beta J}}{1 + e ^{-2\beta J}}\right) ^r = \big[\tanh (\beta J)\big]^r
+	\end{split}\\
+	\\
+	&\Rightarrow \langle Sn \, S_{n+r}  \rangle \sim e^{-ar / \xi }\ , \ \ \text{ con } \ \, \xi = - \frac{a}{\log\big[ \tanh(\beta J) \big] }
+\end{split}
+\] 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Questa espressione permette di concludere che le funzioni di correlazione decadono esponenzialmente, con lunghezza caratteristica $\xi $.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+    axis lines=left,
+    xlabel={$\beta J$},
+    ylabel={$\xi / a$},
+    xmin=0, xmax=2,
+    ymin=0, ymax=5,
+    samples=200,
+    domain=0.01:2,
+    width=8cm,
+    height=6cm,
+    xtick=\empty,
+    ytick=\empty,
+    label style={font=\footnotesize},
+    tick label style={font=\footnotesize},
+]
+
+% Curva principale: xi = -1/log(tanh(x))
+\addplot[blue, thick] {-1/ln(tanh(x))};
+
+% Estensione tratteggiata (asintotica)
+\addplot[blue, dashed, domain=1.5:2.5] {-1/ln(tanh(x))};
+
+% Annotazioni
+\node at (axis cs:0.2,1.2) {\footnotesize $T \to +\infty$};
+\node at (axis cs:1.4,4.4) {\footnotesize $T \to 0$};
+
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 15
+\centering Riprendere da 1:28:15, lezione 15.
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1933,6 +2198,40 @@ Per finire, si osserva che:
 \mathcal{Z}  = \prod_{\ell =1} ^{+\infty} \sum_{m_\ell =0}^{+\infty} \frac{1}{m_\ell !} \left(Vb_\ell \alpha ^\ell \right) ^{m_\ell } = \exp \left(V \sum_{\ell =1}^{+\infty} b_\ell \alpha ^\ell \right) 
 \] 
 che \`e proprio l'espansione in cumulanti trovata, concludendo che questa coinvolge somme solo su grafi connessi.
+
+\subsection{Integrale nell'argomento di Peierls}\label{peint}
+Si studia l'integrale
+\[
+I(\gamma) := \int_{-\infty} ^0 dn \int_{0} ^{+\infty} dn' \ \frac{1}{(n'-n)^\gamma}
+\] 
+Intanto, si manda $n\to -n$, cos\`i da ottenere 
+\[
+I(\gamma) = \int_{0} ^{+\infty} dn \int_{0} ^{+\infty} dn' \ \frac{1}{(n'+n)^{\gamma}}
+\] 
+Poi si considera il cambio di variabili $u=n'+n$ e $v=n'$; queste relazioni sono ovviamente invertibili e lo jacobiano \`e 
+\[
+	J = \det \begin{pmatrix} \partial _u n' & \partial_ v n' \\ \partial _u n & \partial _v n \end{pmatrix} = \det \begin{pmatrix} 0 & 1 \\ 1 & - 1 \end{pmatrix} = -1
+\] 
+Allora $\lvert J \rvert =1 \implies dn\, dn' = du\, dv$.
+Quanto agli estremi di integrazione, si hanno $n,n'\ge 0$, con $n'=v$ e $n=u-v$, per cui $v\ge 0$ e $u-v\ge 0$, per cui $u\ge v$.
+Se ne conclude, dunque, che
+\[
+I(\gamma) = \int_{0} ^{+\infty}du \int_{0} ^u dv \ \frac{1}{u^{\gamma}} = \int_{0}^{+\infty} u ^{1- \gamma}\ du
+\] 
+Per risolverlo e capirne l'andamento, si introducono i cutoff $\alpha $ e $L$ per cui
+\[
+I_{\alpha ,L} (\gamma) = \int_{\alpha }^{L} u ^{1- \gamma}\ du = \begin{cases}
+	\displaystyle \frac{L^{2-\gamma}- \alpha ^{2-\gamma}}{2-\gamma} &,\ \text{ se } \gamma\neq 2\\
+	\\
+	\displaystyle \log \frac{L}{\alpha } &,\ \text{ se } \gamma = 2
+\end{cases}
+\] 
+Si distinguono i seguenti casi:
+\begin{itemize}
+	\item se $\gamma = 2$, si ha divergenza logaritmica sia per $\alpha \to 0$, sia per $L \to  + \infty$;
+	\item se $\gamma< 2$, allora $2 - \gamma > 0$ e, quindi, il termine $L^{2-\gamma} \to  +\infty$, mentre $\alpha ^{2-\gamma}$ resta finito, quindi $I(\gamma) \sim L^{2 - \gamma}$;
+	\item se $\gamma > 2$, allora $2- \gamma < 0 $, per cui, nel limite $\alpha \to 0$, $L \to +\infty$, si ha $I(\gamma) \sim a ^{2 - \gamma}$.
+\end{itemize}
 
 
 
