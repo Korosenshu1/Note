@@ -1864,7 +1864,7 @@ Risolvendo il modello di Ising dalla funzione di partizione, infatti, si trova c
 \end{itemize}
 
 \subsection{Modello di Ising oltre il campo medio}
-\subsubsection{Argomento di Peierls}
+\subsubsection{Argomento di Peierls per Ising 1D}
 
 Si considera un modello di Ising in 1D a range variabile, ossia descritto dall'hamiltoniana
 \[
@@ -1922,7 +1922,7 @@ L'argomento di Peierls, dunque, ammette transizioni di fase paramagnete-ferromag
 La precedente trattazione assume $h=0$, cio\`e assenza di campo esterno.
 \end{osservazione}
 
-\subsubsection{Soluzione esatta del modello di Ising}
+\subsubsection{Soluzione esatta del modello di Ising 1D}
 Si considera il modello di Ising 1D standard, cio\`e con $H = - J \sum_{j=1}^{N} S_j S_{j+1}  - h \sum_{j=1}^{N} S_j$, e lo si risolve esattamente.
 La funzione di partizione \`e data da
 \[
@@ -2066,55 +2066,162 @@ Si conclude che
 						&\sim \left(\frac{\lambda _-}{\lambda _+}\right) ^r = \left(\frac{1- e^{-2\beta J}}{1 + e ^{-2\beta J}}\right) ^r = \big[\tanh (\beta J)\big]^r
 	\end{split}\\
 	\\
-	&\Rightarrow \langle Sn \, S_{n+r}  \rangle \sim e^{-ar / \xi }\ , \ \ \text{ con } \ \, \xi = - \frac{a}{\log\big[ \tanh(\beta J) \big] }
+	&\Rightarrow \langle S_n \, S_{n+r}  \rangle \sim e^{-ar / \xi }\ , \ \ \text{ con } \ \, \xi = - \frac{a}{\log\big[ \tanh(\beta J) \big] }
 \end{split}
 \] 
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
 Questa espressione permette di concludere che le funzioni di correlazione decadono esponenzialmente, con lunghezza caratteristica $\xi $.
+Si vede, dunque, che per $T\to $, si ha $\xi \to +\infty$; in questo caso, il sistema \`e completamente disordinato perch\'e la correlazione \`e assente e gli spin si orientano in modo del tutto casuale.
+Se, invece, $T \to 0$, allora $\xi \to +\infty$ e si ha il caso banale del ferromagnete perfetto in cui tutti gli spin si polarizzano, ma \`e un caso poco interessante perch\'e si stanno assumendo nulle fluttuazioni termiche.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
 		{.45\columnwidth}
 	\centering
-	\begin{tikzpicture}[scale=0.8]
-\begin{axis}[
-    axis lines=left,
-    xlabel={$\beta J$},
-    ylabel={$\xi / a$},
-    xmin=0, xmax=2,
-    ymin=0, ymax=5,
-    samples=200,
-    domain=0.01:2,
-    width=8cm,
-    height=6cm,
-    xtick=\empty,
-    ytick=\empty,
-    label style={font=\footnotesize},
-    tick label style={font=\footnotesize},
-]
+	\begin{tikzpicture}
 
-% Curva principale: xi = -1/log(tanh(x))
-\addplot[blue, thick] {-1/ln(tanh(x))};
+\draw[->, thick] (0,0) -- (5,0) node[right] {$\beta J$};
+\draw[->, thick] (0,0) -- (0,5.5) node[above] {$\xi/a$};
 
-% Estensione tratteggiata (asintotica)
-\addplot[blue, dashed, domain=1.5:2.5] {-1/ln(tanh(x))};
 
-% Annotazioni
-\node at (axis cs:0.2,1.2) {\footnotesize $T \to +\infty$};
-\node at (axis cs:1.4,4.4) {\footnotesize $T \to 0$};
+\draw[blue, thick]
+(0,0)
+.. controls (0.01,1.5) and (0.7, 2.7) .. (1,3.0)
+.. controls (1.08, 3.1) and (1.4,3.3) .. (2,3.5)
+.. controls (3.1,3.9) and (3.3,4.7) .. (3.35,5.5)
+;
 
-\end{axis}
+\fill (0,0) circle (2pt);
+
+\node at (4,5.2) {$T \to 0$};
+
+\node at (1,0.7) {$T \to \infty$};
+
 \end{tikzpicture}
 	\end{minipage}
 \end{center}
+Questo significa che, a temperatura finita, le funzioni di correlazione decadono esponenzialmente, con una lunghezza caratteristica dipendente dalla temperatura in questione, ma sempre, indipendentemente, con andamento esponenziale.
+Questo scenario \`e tipico per tutti i sistemi 1D a corto raggio, per i quali, quindi, si ha assenza di fenomeni critici.
+
+\subsubsection{Argomento di Peierls per Ising 2D}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Si considera un reticolo quadrato di spin, con un campo esterno tale che quelli posti sul bordo siano tutti up. 
+Questo si considera irrilevante nel limite $N\to +\infty$.
+All'interno, gli spin $\downarrow$ si racchiudono in un circuito direzionato in senso orario, che \`e univocamente individuato da una lunghezza $b\ge 4$ e un indice $i = i(b) \in \mathbb{N}$.
+La lunghezza $b$ \`e determinata contando uno spessore di una unit\`a per ogni spin down adiacente al lato considerato.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=.5]
+
+% --- BOX PRINCIPALE ---
+\draw[thick] (0,0) rectangle (10,10);
+
+% --- FRECCE AI BORDI (spin up) ---
+\foreach \x in {0.5,1.5,...,9.5} {
+    \draw[->] (\x,10.2) -- (\x,10.8);
+    \draw[->] (\x,-0.8) -- (\x,-0.2);
+}
+\foreach \y in {0.5,1.5,...,9.5} {
+    \draw[->] (-0.3,\y-0.2) -- (-0.3,\y+0.4);
+    \draw[->] (10.3,\y-0.2) -- (10.3,\y+0.4);
+}
+
+% --- CLUSTER 1 (b=8) ---
+\draw[red, thick]
+(2,6) -- (4,6) -- (4,5) -- (3,5) -- (3,4) -- (2,4) -- cycle;
+\node[red] at (3,6.5) {\footnotesize$b=8$};
+
+\foreach \p in {(2.5,5.5),(3.5,5.5),(2.5,4.5)} {
+    \node at \p {$\downarrow$};
+}
+
+% --- CLUSTER 2 (b=4) ---
+\draw[red, thick]
+(7,3) rectangle (8,4);
+\node[red] at (7.5,4.5) {\footnotesize $b=4$};
+
+\node at (7.5,3.5) {$\downarrow$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Questo argomento consiste nel dare una stima del numero medio di spin down, $\langle N_- \rangle$, presenti all'interno del reticolo, a partire dal fatto che
+\[
+N_- = \sum_{b,i}^{} A(b,i) \chi (b,i)
+\] 
+dove $A(b,i)$ rappresenta l'area del circuito individuato da $b$ e $i$, mentre $\chi (b,i)$ \`e una funzione caratteristica che scarta i circuiti da non considerare.
+Si ha $A(b,i)\le b^2 / 16$ perch\'e il circuito pi\`u grande costruibile \`e quello quadrato che occupa tutto il reticolo, mentre il numero dei possibili circuiti di lunghezza $b$, $n$, soddisfa
+\[
+n(b) \le N \times 3 \times 3 \times \ldots\times 3 = 3^{b-1}N
+\] 
+perch\'e si hanno $N$ siti possibili da cui partire e, una volta tracciato il primo segmento, per non percorrerlo di nuovo (essendo il reticolo quadrato), si hanno solamente 3 possibili vie e, lo stesso, si ripete per ogni step fino all'ultimo.
+Per stimare
+\[
+\langle N_- \rangle= \sum_{b,i}^{} A(b,i) \langle \chi (b,i) \rangle
+\] 
+si considera che
+\[
+\langle \chi (b,i) \rangle = \frac{\sum_{S}^{*} e^{-\beta E(\left\{ S \right\} )}}{\sum_{S}^{} e^{-\beta E(S)}}
+\] 
+dove l'apice $*$ indica che si considerano solo delle configurazioni ammissibili, cio\`e quelle che, al loro interno, contengono solamente spin down e li racchiudono in senso orario.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Sia $C$ una configurazione ammessa in $*$, cio\`e contenente solo spin down e tutti spin up all'esterno.
+\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+		\begin{tikzpicture}[scale=.7]
+
+\draw[red, thick]
+(2,6) -- (4,6) -- (4,5) -- (3,5) -- (3,4) -- (2,4) -- cycle;
+\node[] at (3,6.5) {\footnotesize$C$};
+
+\foreach \p in {(2.5,5.5),(3.5,5.5),(2.5,4.5)} {
+    \node at \p {$\downarrow$};
+}
+
+\draw[red, thick]
+(5,6) -- (7,6) -- (7,5) -- (6,5) -- (6,4) -- (5,4) -- cycle;
+\node[] at (6,6.5) {\footnotesize$C^*$};
+
+\foreach \p in {(5.5,5.5),(6.5,5.5),(5.5,4.5)} {
+    \node at \p {$\uparrow$};
+}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Si definisce $C^*$ come la configurazione $C$ con spin up all'interno, al posto degli spin down, mentre quelli fuori rimangono invariati in up.
+Allora si pu\`o scrivere che 
+\[
+E_C = E_{C^*} +2Jb
+\] 
+visto che $b$ rappresenta il numero di spin down lungo i bordi, che quindi creano una differenza di energia pari a $+2J$ con una configurazione di tutti spin up.
+In questo modo, si pu\`o stimare che
+\[
+	\langle \chi (b,i) \rangle \le  \frac{\sum_{S}^{*} e^{-\beta E(S)}}{\sum_{S}^{*} \left(e^{-\beta E(S)} + e^{-\beta E(S^*)}\right) }\le  e^{-2Jb \beta }
+\] 
+per cui
+\[
+\langle N_- \rangle \le \sum_{b}^{} \frac{b^2}{16}\sum_{i}^{} e^{-2jb \beta }
+\] 
+Visto che $b=4,6,8,\ldots$, mentre $i=1,2,\ldots,n(b)$ e $n(b)\le 3^{b-1}N$, si ottiene che
+\[
+\frac{\langle N_- \rangle}{N}\le \frac{4y^2}{12(1-y)^3}\left(1-\frac{3}{4}y + \frac{1}{4}y^2\right)\ , \ \, \text{ con }  \ \ \ y = 9 e^{-4 \beta J}
+\] 
+Per $T\ll 1\Rightarrow \beta \gg 1$, allora, $y \ll 1$, per cui $\langle N_- \rangle< \frac{N}{2}$.
 \begin{boxenv}[]
-\centering Riprendere da 1:28:15, lezione 15.
+\centering Riprendere dalla lezione 16
 \end{boxenv}
-
-
-
 
 
 
@@ -2199,7 +2306,7 @@ Per finire, si osserva che:
 \] 
 che \`e proprio l'espansione in cumulanti trovata, concludendo che questa coinvolge somme solo su grafi connessi.
 
-\subsection{Integrale nell'argomento di Peierls}\label{peint}
+\subsection{Integrale nell'argomento di Peierls 1D}\label{peint}
 Si studia l'integrale
 \[
 I(\gamma) := \int_{-\infty} ^0 dn \int_{0} ^{+\infty} dn' \ \frac{1}{(n'-n)^\gamma}
