@@ -2152,12 +2152,12 @@ La lunghezza $b$ \`e determinata contando uno spessore di una unit\`a per ogni s
 \end{tikzpicture}
 	\end{minipage}
 \end{center}
-Questo argomento consiste nel dare una stima del numero medio di spin down, $\langle N_- \rangle$, presenti all'interno del reticolo, a partire dal fatto che
+Questo argomento consiste nel dare una stima del numero medio di spin down, $\langle N_- \rangle$, presenti all'interno del reticolo, a partire dal fatto che\footnote{Questa relazione \`e assicurata dal fatto che ogni spin adiacente a un lato porta un conteggio di una unit\`a per quello stesso lato, quindi il numero di spin down presenti in $(b,i)$ \`e proprio $A(b,i)$.}
 \[
 N_- = \sum_{b,i}^{} A(b,i) \chi (b,i)
 \] 
-dove $A(b,i)$ rappresenta l'area del circuito individuato da $b$ e $i$, mentre $\chi (b,i)$ \`e una funzione caratteristica che scarta i circuiti da non considerare.
-Si ha $A(b,i)\le b^2 / 16$ perch\'e il circuito pi\`u grande costruibile \`e quello quadrato che occupa tutto il reticolo, mentre il numero dei possibili circuiti di lunghezza $b$, $n$, soddisfa
+dove $A(b,i)$ rappresenta l'area del circuito individuato da $b$ e $i$, mentre $\chi (b,i)$ \`e una funzione caratteristica che scarta i circuiti da non considerare: vale $1$ se il circuito $(b,i)$ racchiude tutti gli spin down, ossia se confina unicamente con spin up, e vale $0$ altrimenti.
+Si ha $A(b,i)\le b^2 / 16$ perch\'e il circuito pi\`u grande costruibile \`e quello quadrato che occupa tutto il reticolo\footnote{Si nota che $(b / 4)^2$ \`e l'area di un quadrato di perimetro $b$.}, mentre il numero dei possibili circuiti di lunghezza $b$, $n$, soddisfa
 \[
 n(b) \le N \times 3 \times 3 \times \ldots\times 3 = 3^{b-1}N
 \] 
@@ -2168,9 +2168,10 @@ Per stimare
 \] 
 si considera che
 \[
-\langle \chi (b,i) \rangle = \frac{\sum_{S}^{*} e^{-\beta E(\left\{ S \right\} )}}{\sum_{S}^{} e^{-\beta E(S)}}
+\langle \chi (b,i) \rangle = \frac{\sum_{S}^{*} e^{-\beta E( S )}}{\sum_{S}^{} e^{-\beta E(S)}}
 \] 
-dove l'apice $*$ indica che si considerano solo delle configurazioni ammissibili, cio\`e quelle che, al loro interno, contengono solamente spin down e li racchiudono in senso orario.
+dove l'apice $*$ indica che si considerano solo delle configurazioni ammissibili.
+Il termine al numeratore rappresenta la somma su tutte le configurazioni ammissibili, mentre quello al denominatore rappresenta la somma su tutte le configurazioni possibili.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -2210,20 +2211,131 @@ In questo modo, si pu\`o stimare che
 \[
 	\langle \chi (b,i) \rangle \le  \frac{\sum_{S}^{*} e^{-\beta E(S)}}{\sum_{S}^{*} \left(e^{-\beta E(S)} + e^{-\beta E(S^*)}\right) }\le  e^{-2Jb \beta }
 \] 
-per cui
+La prima disuguaglianza \`e data dal fatto che $\sum_{S}^{*} \left(e^{-\beta E(S)} + e^{-\beta E(S^*)}\right) $ \`e pi\`u piccolo della somma su tutte le configurazioni possibili, cio\`e il denominatore \`e pi\`u piccolo di quello in $\langle \chi (b,i) \rangle$; la seconda, invece, si ottiene usando che $E(S) = E(S^*) + 2Jb$:
 \[
-\langle N_- \rangle \le \sum_{b}^{} \frac{b^2}{16}\sum_{i}^{} e^{-2jb \beta }
+\frac{\sum_{S}^{*} e^{-\beta E(S)}}{\sum_{S}^{*} \left(e^{-\beta E(S)} + e^{-\beta E(S^*)}\right) } = \frac{\sum_{S}^{*} e^{-\beta E(S)}}{\sum_{S}^{*} \left(e^{-\beta E(S)} + e^{2Jb \beta } e^{-\beta E(S)}\right) }\le \frac{\sum_{S}^{*} e^{-\beta E(S)}}{e^{2J b \beta }\sum_{S}^{*} e^{-\beta E(S)}} = e^{-2J b \beta }
+\] 
+Allora
+\[
+\langle N_- \rangle \le \sum_{b}^{} \frac{b^2}{16}\sum_{i}^{} e^{-2Jb \beta }
 \] 
 Visto che $b=4,6,8,\ldots$, mentre $i=1,2,\ldots,n(b)$ e $n(b)\le 3^{b-1}N$, si ottiene che
 \[
-\frac{\langle N_- \rangle}{N}\le \frac{4y^2}{12(1-y)^3}\left(1-\frac{3}{4}y + \frac{1}{4}y^2\right)\ , \ \, \text{ con }  \ \ \ y = 9 e^{-4 \beta J}
+\frac{\langle N_- \rangle}{N} \le \frac{1}{16}\sum_{b=4,6,8,\ldots}^{} b^2 e^{-2Jb \beta } 3^{b-1} = \frac{1}{48}\sum_{b}^{} b^2 3^b e^{-2 J b \beta }
+\] 
+Ora si prende $x=3 e^{-2  J \beta }$ e si pone $i= b / 2$; cos\`i facendo:
+\[
+\frac{\langle N_- \rangle}{N}\le \frac{1}{48}\sum_{i=2,3,4,\ldots}^{} (2i)^2 x ^{2i} = \frac{1}{12} \left[ \sum_{i=1}^{+\infty} \left(i^2 x ^{2i}\right) -x^2 \right] 
+\] 
+Infine, si prende $y = x^2 = 9 e^{-4 J \beta }$ e si osserva che 
+\[
+\sum_{i=1}^{+\infty} i^2 y ^i = \frac{y^2+y}{(1-y)^3}
+\] 
+risultato ottenuto valutando il seguente risultato per la serie geometria 
+\[
+	\left(y \frac{d}{dy}\right) ^2 \sum_{i=0}^{+\infty} y^i = (1-y)^{-1}
+\] 
+Mettendo tutto insieme, si trova che
+\[
+\frac{\langle N_- \rangle}{N}\le \frac{4y^2}{12(1-y)^3}\left(1-\frac{3}{4}y + \frac{1}{4}y^2\right)
 \] 
 Per $T\ll 1\Rightarrow \beta \gg 1$, allora, $y \ll 1$, per cui $\langle N_- \rangle< \frac{N}{2}$.
+Questo dimostra che, sotto una certa temperatura, il sistema acquisisce una magnetizzazione non-nulla.
+\begin{osservazione}
+Queste argomentazioni di Peierls sono qualitative e servono unicamente per mostrare che, in 2D (e in 1D con $\gamma<2$), ci si aspetta la comparsa di una fase ferromagnetica sotto una certa temperatura $T_c$, ma non permette di stimare questo valore quantitativamente, n\'e gli esponenti critici.
+\end{osservazione}
+\subsection{Universalit\`a e gruppo di rinormalizzazione}
+\subsubsection{Leggi di scala}
+Gli esponenti trovati, per $t = (T-T_c)/T_c$, nel caso di sistemi magnetici, sono
+\[
+	\begin{array}
+		{l l l}
+		C_v \sim\lvert t \rvert ^{-\alpha } &\hspace{1cm} \psi \sim\lvert t \rvert ^ \beta \ (t<0) & \hspace{1cm}\chi \sim\lvert t \rvert ^{-\gamma}\\
+		\psi \sim h^{1 / \delta } \ (t=0) &\hspace{1cm} \Gamma(r) \sim \frac{e^{-r / \xi }}{r ^{d - 2 + \eta}} &\hspace{1cm} \xi \sim\lvert t \rvert ^{-\nu }
+	\end{array}
+\] 
+con $\psi $ parametro d'ordine, $\chi $ suscettivit\`a, $\xi $ lunghezza di scala, $h$ campo magnetico, $d$ dimensione fisica dello spazio in cui si trova il sistema.
+Questi non sono tutti indipendenti tra loro; infatti, si hanno le seguenti quattro relazioni, note col nome di \textit{leggi di scala}, che permettono di determinare gli altri, a partire dalla conoscenza di due soli esponenti critici.
+\[
+\begin{cases}
+	\alpha  + 2 \beta  + \gamma = 2 & \text{(Rushbrooke)}\\
+	\beta \delta  = \beta  + \gamma &\text{(Widom)}\\
+	\gamma = \nu (2-\eta) & \text{(Fisher)}\\
+	2 - \alpha  = \nu  d & \text{(Josephson)}
+\end{cases}
+\] 
+Il fatto che solo due esponenti critici siano indipendenti d\`a origine al concetto di \textit{universalit\`a}, alla base di cui vi \`e la teoria del gruppo di rinormalizzazione. 
+\begin{osservazione}
+Se $\xi $ diverge nel punto critico, allora il sistema diventa \textit{self-similare}: indipendente dalla scala considerata del sistema, questo presenta sempre le stesse caratteristiche, analogamente ai frattali.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 16
+L'assunzione alla base di questa teoria \`e l'\textbf{ipotesi di scala}: vicino al punto critico, una quantit\`a le cui dimensioni sono di $L ^{-D}$ ($L$ lunghezza) \`e proporzionale a $\xi ^{-D}$.
 \end{boxenv}
-
-
+Si osservano i seguenti risultati derivanti dall'ipotesi di scala.
+\begin{enumerate}[(1).]
+	\item $F / \kappa _B T = \log Z$ \`e una quantit\`a adimensionale per definizione; allora
+		\[
+		\frac{1}{V}\frac{F}{\kappa _B T} \sim \xi ^{-d}
+		\] 
+		visto che $[F / (\kappa _B T V)]= L^{-d}$.
+	\item Per le relazioni degli esponenti critici $[\Gamma] = L^{2- d - \eta} $; visto che $\Gamma(r) := \langle \psi (0) \psi (r) \rangle- \langle \psi (0) \rangle\langle \psi (r) \rangle$, si ha che $[\psi ] = [\Gamma]^{1 / 2}$, quindi 
+		\[
+		\psi \sim \xi  ^{\frac{2- d - \eta }{2}}
+		\] 
+	\item Per definizione
+		\[
+		\chi (\vec{r}) : = \int d^d \vec{r} \ \Gamma(\vec{r})
+		\] 
+		Allora $[\chi ] = [\Gamma \cdot V] = L^{2 - d -\eta}L^{d}$, visto l'integrale sul volume, quindi
+		\[
+			\chi \sim\xi ^{2-\eta}
+		\] 
+	\item La magnetizzazione totale \`e data da $M = - \frac{\partial F}{\partial h} $, per cui $[h] = \left[ \frac{F}{M} \right] = \left[ \frac{F}{m\cdot V} \right]  $, dove $m$ \`e la magnetizzazione per singolo sito del reticolo.
+		Vista la definizione di parametro d'ordine e visto che $F / \kappa _B T $ \`e adimensionale, si conclude che
+		\[
+			[h] = \left[ \frac{1}{\psi \cdot V} \right] = \frac{1}{L^{\frac{2 - d - \eta}{2}}} \frac{1}{L^d} = L ^{- \frac{2+ d - \eta}{2}} \implies h \sim\xi ^{- \frac{2+d -\eta}{2}}
+		\] 
+\end{enumerate}
+Si possono combinare queste quattro osservazioni con il fatto che $\xi \sim \lvert t \rvert ^{-\nu }$ e con le definizioni delle quantit\`a termodinamiche.
+\begin{enumerate}[(1).]
+	\item \textit{Relazione di Josephson}.
+		Chiamando $f = F / V$, si ha 
+		\[
+			c_V = - T \Eval{\frac{\partial ^2 f}{\partial T^2} }{V}{} \sim \lvert t \rvert ^{-\alpha }
+		\] 
+		dove $c_V = C_V / m$ \`e il calore specifico a volume costante (con $m$ massa).
+		Allora
+		\[
+		f \sim \lvert t \rvert ^{2 - \alpha }
+		\] 
+		vicino al punto critico.
+		Essendo, per l'osservazione (1)	precedente, $f \sim\xi ^{-d}$ e $\xi \sim \lvert t \rvert ^{-\nu }$, si ha $\lvert t \rvert ^{\nu d} \sim \lvert t \rvert ^{2 - \alpha }$, da cui si ottiene la relazione $2 - \alpha = \nu  d$.
+	\item \textit{Relazione di Fisher}. 
+		Si ha $\chi \sim \lvert t \rvert ^{-\gamma}$, quindi $\lvert t \rvert ^{-\gamma}\sim\xi ^{2-\eta}\sim\lvert t \rvert ^{\nu (\eta-2)}$, da cui $\gamma = \nu (2-\eta)$.
+	\item \textit{Relazioni di Rushbrook e Widom}. Si considera, intanto, che $\psi \sim\lvert t \rvert ^{\beta }\Rightarrow \lvert t \rvert ^{\beta }\sim\xi ^{\frac{2-\eta-d}{2}}\sim \lvert t \rvert ^{\nu (\eta+d-2) / 2}$ e, quindi
+		\[
+		\beta = \frac{1}{2}\nu (\eta+d-2)
+		\tag{a}
+		\] 
+	Inoltre, $\psi \sim h ^{1 / \delta }$ e $\psi \sim \lvert t \rvert ^{\beta }$, quindi $\lvert t \rvert ^\beta \sim h^{1 / \delta } \Rightarrow  h \sim\lvert t \rvert ^{\beta  \delta }$.
+	Visto che $h \sim\xi ^{-(2+d-\eta) / 2}$, allora $\lvert t \rvert ^{\beta \delta }\sim \lvert t \rvert ^{\nu (2+d-\eta)/2}$, da cui
+	\[
+	\beta  \delta  = \frac{\nu}{2} (2+d-\eta)
+	\tag{b}
+	\] 
+	Da $\text{(b)}-\text{(a)}$, si trova, usando Fisher, la relazione di Widom:
+	\[
+		\beta \delta - \beta  = \nu (2 - \eta) = \gamma \implies \beta \delta = \beta  + \gamma
+	\] 
+	Da $\text{(b)}+\text{(a)}$, invece, e dall'utilizzo delle relazioni di Fisher prima e Widom dopo, si ottiene la relazione di Rushbrooke:
+	\[
+	\beta  + \beta \delta = \nu  d = 2 - \alpha \implies 2 - \alpha  - \beta  = \beta  \delta  = \beta  + \gamma
+	\] 
+	da cui $\alpha  + 2\beta  + \gamma = 2$.
+\end{enumerate}
+\begin{boxenv}[]
+\centering Riprendere da lezione 17
+\end{boxenv}
 
 
 
