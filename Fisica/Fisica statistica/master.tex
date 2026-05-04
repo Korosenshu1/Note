@@ -39,7 +39,7 @@
 
 % Titles 
 \title{Note di Fisica statistica}
-\author{Manuel Deodato}
+\author{}
 \date{}
 
 
@@ -187,6 +187,115 @@ title=#1
 \newpage
 \tableofcontents 
 \newpage
+\section{Introduzione alla meccanica statistica}
+\subsection{Principi della meccanica statistica}
+
+Per $\mathcal{N}$ copie dello stesso sistema, se il microstato $i$-esimo si estrae $\mathcal{N} _i$ volte, la probabilit\`a che venga estratto \`e data da 
+\[
+p_i = \frac{\mathcal{N} _i}{\mathcal{N} }
+\] 
+Il fatto che i microstati si contino con indice discreto \`e dato dal fatto che occupano una porzione di un certo volume nello spazio delle fasi.
+I principi sono i seguenti.
+\begin{enumerate}[(a).]
+	\item \textbf{Principio di equiprobabilit\`a.} Cellette di uguale volume nello spazio delle fasi hanno, a priori, la stessa probabilit\`a di essere estratte.
+	\item \textbf{Ammissibilit\`a delle estrazioni.} Gli stati in cui il sistema si pu\`o trovare devono rispettare certe condizioni legate a variabili macroscopiche, che definiscono l'ensemble con cui si descrive il sistema.
+		\begin{itemize}
+			\item \textit{Ensemble microcanonico:} sono costanti $N$, $V$ e $E$ (energia totale), quindi sono accessibili solo i microstati con energia fissa pari a $E$.
+			\item \textit{Ensemble canonico:} sono costanti $N$, $V$ e $T$ (sistema a contatto con bagno termico) ed \`e nota l'energia interna del sistema:
+				\[
+				U = \langle E \rangle = \frac{1}{\mathcal{N} } \sum_{i}^{} \mathcal{N} _i E_i = \sum_{i}^{} p_i E_i 
+				\] 
+			\item \textit{Ensemble gran canonico:} sono costanti $T$, $V$ e $\mu $, in quanto il sistema scambia energia e particelle con l'ambiente, a temperatura e potenziale chimico costanti.
+		\end{itemize}
+	\item Per $\mathcal{N} \to +\infty$, si considera solo la distribuzione pi\`u probabile, mentre le altre sono trascurabili.
+\end{enumerate}
+Ora si stabilisce come si calcola la probabilit\`a di una distribuzione.
+Si indica con la successione $\left\{ i_k \right\} _{k=1} ^\mathcal{N} $ una successione di indici, dove $i_k$ rappresenta il microstato in cui si trova la copia $k$-esima del sistema.
+Visto che ogni sequenza \`e equiprobabile, la probabilit\`a di una deve essere proporzionale alla sua molteplicit\`a $\mathcal{M} $, cio\`e al numero di sequenze distinte di estrazioni che portano ad una identica distribuzione\footnote{Per esempio, se $\mathcal{N}=3$, con due uscite nel microstato $1$ e una uscita nel microstato $2$ (cio\`e $N_1=2$ e $N_2=1$), si ha le sequenze $i_k$ che portano alla stessa distribuzione sono $(1,1,2)$, $(1,2,1)$, $(2,1,1)$.}.
+Allora, la distribuzione pi\`u probabile sar\`a quella con $\mathcal{M} $ pi\`u alto.
+
+Per determinare la molteplicit\`a, si considera che permutare due indici relativi allo stesso microstato lascia invariata la successione\footnote{Ad esempio $({\color{red}1},{\color{blue}1},2)=({\color{blue}1},{\color{red}1},2)$.}, quindi 
+\[
+\mathcal{M} (\mathcal{N} _1,\mathcal{N} _2,\ldots) = \frac{\mathcal{N} !}{\mathcal{N} _1! \mathcal{N} _2! \cdots} = \frac{\mathcal{N} !}{\prod_i \mathcal{N} _i!}
+\] 
+Per $\mathcal{N} \to +\infty$, si pu\`o usare la formula di Stirling:
+\[
+\log \mathcal{N} ! \simeq \mathcal{N} \big(\log\mathcal{N} -1\big) 
+\] 
+da cui
+\[
+\begin{split}
+	\log\mathcal{M} &\simeq \mathcal{N} (\log\mathcal{N} -1) - \sum_{i}^{} \mathcal{N} _i ( \log\mathcal{N} _i - 1) = \mathcal{N} \log\mathcal{N}- \sum_{i}^{} \mathcal{N} _i \log\mathcal{N} _i\\
+			&= \mathcal{N} \log\mathcal{N} -\mathcal{N} \sum_{i}^{} p_i(\log p_i + \log\mathcal{N} ) = - \mathcal{N} \sum_{i}^{} p_i \log p_i
+\end{split}
+\] 
+dove si \`e usato che $\sum_{i}^{} \mathcal{N} _i = \mathcal{N} $, $\mathcal{N} _i = \mathcal{N} p_i$ e $\sum_{i}^{} p_i = 1$.
+Visto che si deve massimizzare $\mathcal{M} $, la costante $\mathcal{N} $ \`e ininfluente, quindi si considera 
+\begin{equation}
+	\log\mathcal{M} \simeq - \sum_{i}^{} p_i \log p_i
+\end{equation}
+L'entropia, in meccanica statistica, si definisce come
+\begin{equation}
+	S = -\kappa _B \sum_{i}^{} p_i \log p_i
+\end{equation}
+Il logaritmo serve a renderla estensiva, mentre $\mathcal{M} $, in un certo senso, misura l'ignoranza sul sistema.
+Questo motiva $S \propto \log\mathcal{M} $; la costante di proporzionalit\`a si pu\`o dimostrare essere proprio $\kappa _B$.
+
+\subsection{Ensemble canonico}
+Si ammette la possibilit\`a che il sistema scambi energia con l'ambiente, il quale funge da bagno termico e mantiene $T$ costante.
+Si assume, inoltre, che $N_B \gg N_S$ (il bagno ha molte pi\`u particelle del sistema), ma comunque entrambi rilevanti a livello macroscopico.
+
+Si tratta l'universo con il formalismo microcanonico, visto che la sua energia \`e costante; allora
+\[
+E < E_S + E_B < E+ \Delta E
+\] 
+con $E$ energia universo e $\Delta E$ incertezza associata.
+Per avere una buona definizione di bagno termico, deve anche valere $E_B \gg E_S$.
+Visto che $E_B$ ed $E_S$ sono vincolate dall'energia $E$ dell'universo, si pu\`o assumere che la distribuzione del sistema sia 
+\[
+\rho _S \left(\left\{ \vec{q}_S \right\} , \left\{ \vec{p}_S \right\} \right) \sim \Gamma_B(E_B)
+\] 
+con $\Gamma(E_B)$ numero di microstati del bagno a energia $E_B$.
+Per il terzo principio della meccanica statistica, ci si limita a considerare il valore $\overline{E}_B$ che massimizza $\Gamma_B$, con altri trascurabili; allora
+\[
+	S_B(E_B) = \kappa _B \log\Gamma_B(E_B) \simeq S_B(E) - E_S\Eval{\frac{\partial S_B}{\partial E_B} }{E_B=E}{}+\ldots
+\] 
+ottenuto sviluppando ad $E$.
+Usando che $\frac{1}{T}=\Eval{\frac{\partial S}{\partial E} }{V}{}$, si ha $S_B(E_B) \simeq S_B(E) - E_S / T$, da cui 
+\[
+\Gamma_B(E_B) = \Gamma_B(E-E_S) \simeq e^{\frac{1}{\kappa _B} S_B(E)}e^{-\frac{E_S}{\kappa _BT}}
+\] 
+da cui $\rho _S \sim e^{-E_S / (\kappa _B T)}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Meccanica statistica classica dei sistemi interagenti}
 \subsection{Sistemi interagenti}
 Si considera un gas di $N$ particelle descritto da un'hamiltoniana 
@@ -211,7 +320,7 @@ Conoscendo $Z_N$, si ricava tutta la fisica del sistema.
 Infatti:
 \[
 \begin{split}
-	&F= -\frac{1}{\beta }\log \left[\frac{1}{N!}\left(\frac{2\pi m }{h^2 \beta }\right)^{3N / 2}  \right]  - \frac{1}{\beta }\log Z_n\\
+	&F= -\frac{1}{\beta }\log \left[\frac{1}{N!}\left(\frac{2\pi m }{h^2 \beta }\right)^{3N / 2}  \right]  - \frac{1}{\beta }\log Z_N\\
 	& U = - \frac{\partial }{\partial \beta } \log Z = \frac{3}{2} N \kappa _B T + \kappa _B T^2 \Eval{\frac{\partial }{\partial T} \log Z_N}{T}{}\\
 	& p = \Eval{- \frac{\partial F}{\partial V}}{T}{} = \kappa _B T \Eval{\frac{\partial }{\partial V} \log Z_N}{T}{}
 \end{split}
@@ -317,7 +426,7 @@ In questo modo, l'equazione di stato diventa
 \] 
 Questo pu\`o essere riscritto in una forma pi\`u nota:
 \begin{equation}
-	\left(p+\frac{a_w}{V^2}\right) \left(V-b_w\right) = N\kappa _B
+	\left(p+\frac{a_w}{V^2}\right) \left(V-b_w\right) = N\kappa _B T
 \end{equation}
 dove $b_w = \frac{N}{2}V_b$ e $a_w = \frac{1}{2}N^2 \kappa _B D	$.
 Questa \`e l'\textit{equazione di stato di van der Waals} (da cui i pedici $w$ in $a_w$ e $b_w$).
@@ -424,7 +533,7 @@ Si studia la relazione tra le espressioni in \ref{ncumexp} e \ref{cumexp}, espli
 \begin{split}
 	& \mathcal{Z}  = 1 + \frac{e^{\beta \mu }}{\lambda _T^3}  \int d\vec{r}_1 W_1 (\vec{r}_1) + \frac{e^{2 \beta \mu }}{2! \lambda _T^6} \int d\vec{r}_1 d\vec{r}_2 \ W_2 (\vec{r}_1, \vec{r}_2)+\ldots \\
 	&\begin{split}
-		\mathcal{Z}  &= 1 + \left\{ \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\ell ! \lambda ^{3\ell } } \int d^\ell \vec{r}\mathcal{U} _\ell  \right\} + \frac{1}{2} \left\{ \ldots \right\} ^2 + \ldots\\
+		\mathcal{Z}  &= 1 + \left\{ \sum_{\ell =1}^{+\infty} \frac{e^{\beta \mu \ell }}{\ell ! \lambda ^{3\ell } } \int d^\ell \vec{r}\ \mathcal{U} _\ell  \right\} + \frac{1}{2} \left\{ \ldots \right\} ^2 + \ldots\\
 			     &\simeq 1 +  \frac{e^{\beta \mu }}{\lambda _T^3} \int d\vec{r}_1 \mathcal{U} _1(\vec{r}_1) + \frac{e^{2\beta \mu }}{2\lambda _T^6} \int d\vec{r}_1 d\vec{r}_2 \mathcal{U} _2 (\vec{r}_1,\vec{r}_2) + \frac{1}{3!}\ldots + \\
 			     &+ \frac{1}{2}\left(\frac{e^{2\beta \mu }}{\lambda _T^6} \int d\vec{r}_1 \int d\vec{r}_2 \ \mathcal{U} _1(\vec{r}_1) \mathcal{U} _1 (\vec{r}_2) +  \frac{e^{3\beta \mu }}{\lambda _T^9} \int d\vec{r}_1 \int d\vec{r}_2 \int d\vec{r}_3\ \mathcal{U} _1(\vec{r}_1) \mathcal{U} _2(\vec{r}_2, \vec{r}_3) +\ldots
 \right) 	
@@ -493,10 +602,12 @@ L'ultima uguaglianza \`e nota come \textit{espansione del viriale} ed \`e ottenu
 
 Al solito, per trovare i coefficienti, si sviluppano le due somme, con l'ipotesi di $\alpha \ll 1$ (corrispondente a bassa densit\`a) e si eguagliano i coefficienti dei termini con stesso ordine di sviluppo:
 \[
-	\begin{split}
-		&\frac{\sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell }{\sum_{\ell =1}^{+\infty } \ell \alpha ^\ell b_\ell }=\sum_{\ell }^{} B_\ell \left(\sum_{j}^{} j \alpha ^j b_j\right) ^{\ell -1} \\
-		& \frac{b_1 \alpha  + b_2 \alpha ^2 + b_3\alpha ^3 + \ldots}{b_1\alpha +2 b_2 \alpha ^2 + 3 b_3 \alpha ^3+\ldots} = B_1 +B_2 \left(b_1\alpha  + 2b_2 \alpha ^2\right)  + B_3\left( b_1^2 \alpha ^2 + 4 b_1b_2 \alpha ^3 + \ldots \right) 
-	\end{split}
+	\begin{array}
+		{c c}
+		&\displaystyle \frac{\sum_{\ell =1}^{+\infty} \alpha ^\ell b_\ell }{\sum_{\ell =1}^{+\infty } \ell \alpha ^\ell b_\ell }=\sum_{\ell }^{} B_\ell \left(\sum_{j}^{} j \alpha ^j b_j\right) ^{\ell -1} \\
+		\\
+		& \displaystyle \frac{b_1 \alpha  + b_2 \alpha ^2 + b_3\alpha ^3 + \ldots}{b_1\alpha +2 b_2 \alpha ^2 + 3 b_3 \alpha ^3+\ldots} = B_1 +B_2 \left(b_1\alpha  + 2b_2 \alpha ^2+\ldots\right)  + B_3\left( b_1^2 \alpha ^2 + 4 b_1b_2 \alpha ^3 + \ldots \right) 
+	\end{array}
 \] 
 Intanto si semplifica un $\alpha $ nel rapporto a sinistra; l'idea \`e di sviluppare il denominatore, portandolo al numeratore. 
 Prima di farlo, si osserva che $b_1 = 1$; infatti, $\mathcal{U} _1 = W_1 = 1$, da cui
@@ -505,7 +616,10 @@ b_1 = \frac{1}{V}\int d\vec{r}_1\ \mathcal{U} _1(\vec{r}_1) = \frac{V}{V} =1
 \] 
 Allora 
 \[
-\frac{b_1}{b_1+2b_2\alpha +3b_3\alpha ^2+\ldots} = \frac{1}{1+2b_2\alpha +3b_3\alpha ^2+\ldots} \simeq 1-2b_2\alpha - 3b_3\alpha ^2 + \ldots + 4b_2^2 \alpha ^2 + 9 b_2b_3\alpha ^3 +\ldots
+	\begin{split}
+		\frac{b_1}{b_1+2b_2\alpha +3b_3\alpha ^2+\ldots} &= \frac{1}{1+2b_2\alpha +3b_3\alpha ^2+\ldots} \\
+								 &\simeq 1-2b_2\alpha - 3b_3\alpha ^2 + \ldots + 4b_2^2 \alpha ^2 + 9 b_2b_3\alpha ^3 +\ldots
+	\end{split}
 \] 
 In questo modo, si vede che il termine senza $\alpha $ \`e $B_1 = 1$; per i termini in $\alpha $, invece, si ha $B_2 = b_2 - 2 b_2 = - b_2$.
 La regola generale \`e 
@@ -516,10 +630,6 @@ Quelli descritti nella somma sono detti \textit{grafi completamente connessi}.
 Riprendendo l'espansione del viriale, si vede che
 \[
 \frac{pV}{\langle N \rangle\kappa _B T}= B_1 + B_2 \frac{\langle N \rangle}{V} + \ldots = 1 - b_2 \frac{\langle N \rangle}{V}+\ldots
-\] 
-dove 
-\[
-b_2 = \frac{1}{2} \int d\vec{r}\ f_{12} (\vec{r})
 \] 
 A meno di un segno meno derivante dalla definizione di funzione di Mayer data in questa trattazione, l'equazione di stato
 \[
@@ -535,7 +645,7 @@ Tramite il cambio di variabili
 \begin{equation}\label{cv}
 \begin{cases}
 	\vec{R}_1 = \vec{r}_1 - \vec{r}_2 \\
-	\vec{R}_2 = \vec{r}_2 - \vec{r}_3\\
+	\vec{R}_2 = \vec{r}_3 - \vec{r}_2\\
 	\vec{R}_3 = 2  \vec{r}_3 - \vec{r}_1
 \end{cases}
 \end{equation}
@@ -558,21 +668,23 @@ v_{HS} (r) = \begin{cases}
 	0 &,\ r> \sigma 
 \end{cases}
 \] 
-dove $\sigma $ rappresenta il doppio del raggio delle sfere\footnote{Se $r<\sigma $, con $\sigma = 2R$ e $R$ raggio della singola sfera, allora significa che due sfere si stanno compenetrando, per cui il potenziale deve valere infinito in accordo con l'assunzione di sfere rigide.}.
-Tramite la sostituzione $\vec{R} = \vec{r}_1 + \vec{r}_2$ e $\vec{r}= \vec{r}_1 - \vec{r}_2$, si pu\`o calcolare
+dove $\sigma $ rappresenta il diametro delle sfere\footnote{Se $r<\sigma $, con $\sigma = 2R$ e $R$ raggio della singola sfera, allora significa che due sfere si stanno compenetrando, per cui il potenziale deve valere infinito in accordo con l'assunzione di sfere rigide.}.
+Tramite la sostituzione $\vec{R} = \frac{\vec{r}_1 + \vec{r}_2}{2}$ e $\vec{r}= \vec{r}_1 - \vec{r}_2$, si pu\`o calcolare
 \[
-B_2 = - \frac{1}{2V}\int d\vec{R} \int d\vec{r} \ \left(e^{-\beta v(r)}-1\right)  = -2 \pi \int dr \ r^2 \left(e^{-\beta v(r)}-1\right) = \frac{2\pi}{3}\sigma ^3
+B_2 = - \frac{1}{2V}\int d\vec{R} \int d\vec{r} \ \left(e^{-\beta v(\lvert \vec{r} \rvert )}-1\right)  = -2 \pi \int dr \ r^2 \left(e^{-\beta v(r)}-1\right) = \frac{2\pi}{3}\sigma ^3
 \] 
 dove, nell'ultimo integrale, si \`e passati in coordinate polari.
 Per $B_3$, invece, utilizzando il cambio di variabili in \ref{cv}, si ha:
 \[
 \begin{split}
 	B_3 &= -\frac{1}{3V}\int d\vec{r}_1 d\vec{r}_2 d\vec{r}_3 \ f_{12}f_{23}f_{13}\\
-	    &= -\frac{1}{3V}\int d\vec{R}_1 d\vec{R}_2 d\vec{R}_3\  \left(e^{-\beta v(R_1)}-1\right) \left(e^{-\beta v(R_2)}-1\right)\left(e^{-\beta v(R_3)}-1\right)
+	    &= -\frac{1}{3V}\int d\vec{R}_1 d\vec{R}_2 d\vec{R}_3\  \left(e^{-\beta v(\lvert \vec{R}_1 \rvert )}-1\right) \left(e^{-\beta v(\lvert \vec{R}_2 \rvert )}-1\right)\left(e^{-\beta v(\lvert \vec{R}_1 - \vec{R}_2\rvert )}-1\right)\\
 \end{split}
 \] 
-Ne segue che, per come \`e costruito $v_{HS} $, se $r<\sigma $, allora $f=-1$; se $r>\sigma $, allora $f=0$.
-Nel caso 1D, per avere un integrando non-banale, si devono verificare le condizioni
+Per come \`e costruito $v_{HS} $, se $r<\sigma $, allora $f=-1$; se $r>\sigma $, allora $f=0$. 
+Utilizzando questo comportamento del potenziale, si possono calcolare gli integrali individuando il dominio di integrazione corretto.
+
+Nel caso 1D, ad esempio, per avere un integrando non-banale, si devono verificare le condizioni
 \[
 \begin{cases}
 	\lvert R_1 \rvert <\sigma \\
@@ -2374,7 +2486,52 @@ Si possono combinare queste quattro osservazioni con il fatto che $\xi \sim \lve
 
 \appendix
 
-\section{Appendice sezione 1}
+\section{Appendice}
+\subsection{Nozioni termodinamiche di base}
+\begin{itemize}
+	\item Per il primo principio, si ha $\Delta E = Q - W$, con $\Delta E $ variazione di energia interna.
+		Per un sistema generale che coinvolge lavoro meccanico, magnetico, elettrico e scambio di particelle di natura diversa, si ha
+		\[
+		\delta W =P dV - H  dM - E dP - \big(\mu _1 dN_1 + \mu 2 dN_2 +\ldots\big) 
+		\] 
+	In generale, $\delta W = \sum_{i}^{} F_i dx_i$, con $F_i$ forza generalizzata (intensiva) e $x_i$ spostamento generalizzato (estensivo).
+\item Per trasformazione reversibile, l'entropia \`e data da 
+	\begin{equation}
+	dS = \frac{\delta Q_\text{rev}}{T}
+	\end{equation}
+	Per trasformazioni generiche, vale $dS \ge \frac{\delta Q}{T}$ e l'uguaglianza vale solo per trasformazioni reversibili.
+\item Per trasformazioni generiche
+	 \begin{equation}
+	 	dE + \delta W \le TdS
+	 \end{equation}
+\end{itemize}
+\subsubsection{Potenziali termodinamici}
+Combinando primo e secondo principio, nel caso di processi che coinvolgono solo lavoro meccanico, si ha
+\begin{equation}
+	dE \le TdS - \delta W = TdS - PdV + \mu dN
+\end{equation}
+ammettendo scambio di particelle di un solo costituente.
+Se il processo avviene ad entropia, volume e numero di particelle costanti, $dE \le 0$, cio\`e l'energia rimane invariata, o tende verso il minimo.
+Altrimenti, si considerano i seguenti potenziali termodinamici:
+\begin{itemize}
+	\item \textbf{Energia libera di Helmholtz:} $F = E - TS$, da cui
+	\begin{equation}
+		dF \le -PdV - SdT +\mu dN 
+	\end{equation}	
+\item \textbf{Energia libera di Gibbs:} $G = F+PV = E - TS + PV$, da cui
+	\begin{equation}
+		dG \le  VdP - SdT + \mu dN
+	\end{equation}
+\item \textbf{Entalpia:} $H = E + PV$, da cui
+	\begin{equation}
+		dH \le TdS + VdP + \mu dN
+	\end{equation}
+\item \textbf{Gran potenziale:} $\Omega = E -TS - \mu dN$, da cui
+\begin{equation}
+	d\Omega \le -SdT - PdV - N d\mu 
+\end{equation}	
+\end{itemize}
+
 \subsection{Test di consistenza}
 Si assume che $\mathcal{U} _\ell $ rappresenti un grafo connesso di dimensione $\ell $; si fa vedere che l'espansione in cumulanti \`e una somma su grafi connessi.
 Per farlo, si considera l'espressione
