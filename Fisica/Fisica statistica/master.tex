@@ -821,7 +821,7 @@ In questo modo
 \[
 \frac{\partial }{\partial V} \log Z_N = \frac{L}{3V} \frac{1}{Z_N}\frac{\partial Z_N}{\partial L} 
 \] 
-Per terminare il calcolo, si definisce il cambio di variabili $\vec{s}_{ij} = \vec{r}_{ij} / L$ (si divide ogni componente di $\vec{r}_{ij} $ per $L$); in questo modo, svolgendo i calcoli, si trova 
+Per terminare il calcolo, si definisce il cambio di variabili $\vec{s}_{i} = \vec{r}_{i} / L$ (si divide ogni componente di $\vec{r}_{i} $ per $L$); in questo modo, svolgendo i calcoli, si trova 
 \[
 p = \frac{N\kappa _B T}{V} - \frac{1}{6V} \int d\vec{r}_1 d\vec{r}_2 \ \left[ \vec{r}_{12} \cdot \frac{\partial v(\vec{r}_{12} )}{\partial \vec{r}_{12} }  \right] n (\vec{r}_1,\vec{r}_2)
 \] 
@@ -951,8 +951,7 @@ Indicando con $\xi _1,\ldots,\xi _M$ le sue radici, assumendo che siano tutte di
 \] 
 Visto che $\mathcal{Z} (0) = 1$ e le $Z$ sono tutte positive, con $z>1$, si vede che le $\xi _k$ non possono appartenere alla retta reale positiva.
 In realt\`a, quello che si pu\`o far vedere \`e che le radici sono a coppie di complessi coniugati, cio\`e se $\xi _j$ \`e radice, allora $\xi _j^*$ anche lo \`e.
-Questo \`e dato dal fatto che la funzione di gran partizione deve essere una funzione reale, ossia invariante sotto coniugio complesso\footnote{Il discorso non esclude la possibilit\`a di radici sulla retta reale negativa; se, per\`o, $\xi _k$ \`e una radice fisicamente ammissibile, allora deve essere complessa ed \`e radice anche il suo complesso coniugato.}. 
-
+Questo \`e dato dal fatto che la funzione di gran partizione deve essere una funzione reale, ossia invariante sotto coniugio complesso. 
 Per il formalismo gran canonico, si ha
 \[
 \begin{cases}
@@ -988,19 +987,19 @@ La teoria di Lee-Yang prevede i seguenti teoremi, che permettono di capire quand
 \begin{teorema}
 Il limite 
 \[
-\mathcal{F}_V (z) = \lim_{V \to +\infty} \frac{1}{V}\log\mathcal{Z} 
+\mathcal{F} (z) = \lim_{V \to +\infty} \frac{1}{V}\log\mathcal{Z} 
 \] 
 esiste per ogni valore di $z>0$. 
 Inoltre, il risultato di tale limite \`e una funzione continua e non decrescente in $z$.
 In generale, poi, $\mathcal{F} (z)$ non dipende da $V$, a patto che la sua superficie non aumenti pi\`u velocemente di $V^{2 / 3}$ (a meno di frattali, quindi).
 \end{teorema}
 \begin{teorema}
-Se $R$ \`e una regione del piano complesso in cui non sono presenti zeri di $\mathcal{Z} $, allora $\mathcal{F} _V(z)$ converge uniformemente sull'asse reale positivo, per $V\to +\infty$.
+Se $R$ \`e una regione del piano complesso in cui non sono presenti zeri di $\mathcal{Z} $, allora $\mathcal{F} _V(z)$ converge uniformemente sui compatti di $Rq$, per $V\to +\infty$.
 \end{teorema}
 Come conseguenza di questo secondo teorema, la teoria matematica afferma che \`e possibile scambiare il limite con la derivata e questo corrisponde ai casi in cui non si verificano singolarit\`a.
 Ne segue che, nella regione $R$, il sistema \`e termodinamicamente stabile, con 
 \[
-\frac{p}{\kappa _B T } = \mathcal{F} _\infty(z) \hspace{1cm} v^{-1}(z) = z \frac{\partial }{\partial z} \mathcal{F} _\infty(z)
+\frac{p}{\kappa _B T } = \mathcal{F}(z) \hspace{1cm} v^{-1}(z) = z \frac{\partial }{\partial z} \mathcal{F} (z)
 \] 
 e si pu\`o dimostrare che $p>0$ e $\frac{\partial p}{\partial v}  < 0$.
 
