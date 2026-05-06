@@ -971,9 +971,9 @@ vale
 							   &= -\frac{\kappa _B T}{V^2}\frac{z^2 \left(\partial _z\log\mathcal{Z} \right) ^3}{\partial _Z \log\mathcal{Z} +z \partial _z^2 \log\mathcal{Z} } < 0
 	\end{split}
 \] 
-Quest'ultima entra nella compresibilit\`a isoterma $k_T ^{-1} = - v \Eval{\frac{\partial p}{\partial v} }{T}{}$, che risulta, quindi, negativa, senza risultare in instabilit\`a.
+Quest'ultima entra nella compresibilit\`a isoterma $k_T ^{-1} = - v \Eval{\frac{\partial p}{\partial v} }{T}{}$, che risulta, quindi, positiva, senza risultare in instabilit\`a.
 
-Se, al contrario, $V\to +\infty$, le equazioni riportate sopra diventano:
+Se, al contrario, nel limite termodinamico, le equazioni riportate sopra diventano:
 \[
 \begin{cases}
 	\displaystyle \frac{p}{\kappa _B T }= \lim_{V \to +\infty} \frac{1}{V}\log\mathcal{Z} \\
@@ -981,8 +981,8 @@ Se, al contrario, $V\to +\infty$, le equazioni riportate sopra diventano:
 	\displaystyle \frac{1}{v}=\lim_{V \to +\infty} \frac{1}{V} z \frac{\partial }{\partial z} \log\mathcal{Z} 
 \end{cases}
 \] 
-In questo caso, il limite pu\`o causare problemi, anche perch\'e non \`e chiaro in principio se si possa scambiare con la derivata parziale. 
-La teoria di Lee-Yang prevede i seguenti teoremi, che permettono di capire quando nascono singolarit\`a nel caso $V\to +\infty$.
+In questo caso, il limite pu\`o causare problemi, anche perch\'e non \`e chiaro in principio se si possa scambiare con la derivata parziale, visto che la $\mathcal{Z} $, essendo ora una somma infinita di termini, pu\`o presentare punti di non analiticit\`a. 
+La teoria di Lee-Yang prevede i seguenti teoremi, che permettono di capire quando nascono singolarit\`a.
 
 \begin{teorema}
 Il limite 
@@ -994,7 +994,7 @@ Inoltre, il risultato di tale limite \`e una funzione continua e non decrescente
 In generale, poi, $\mathcal{F} (z)$ non dipende da $V$, a patto che la sua superficie non aumenti pi\`u velocemente di $V^{2 / 3}$ (a meno di frattali, quindi).
 \end{teorema}
 \begin{teorema}
-Se $R$ \`e una regione del piano complesso in cui non sono presenti zeri di $\mathcal{Z} $, allora $\mathcal{F} _V(z)$ converge uniformemente sui compatti di $Rq$, per $V\to +\infty$.
+Se $R$ \`e una regione del piano complesso in cui non sono presenti zeri di $\mathcal{Z} $, allora $\mathcal{F} _V(z)$ converge uniformemente sui compatti di $R$, per $V\to +\infty$.
 \end{teorema}
 Come conseguenza di questo secondo teorema, la teoria matematica afferma che \`e possibile scambiare il limite con la derivata e questo corrisponde ai casi in cui non si verificano singolarit\`a.
 Ne segue che, nella regione $R$, il sistema \`e termodinamicamente stabile, con 
@@ -1005,7 +1005,7 @@ e si pu\`o dimostrare che $p>0$ e $\frac{\partial p}{\partial v}  < 0$.
 
 Per evidenziare la stabilit\`a termodinamica in $R$, si nota che, il primo teorema assicura $\frac{\partial p}{\partial z} \ge  0$, cio\`e $p(z)$ \`e una funzione crescente; inoltre, si pu\`o vedere che $v^{-1}$ non decresce in funzione di $z$ perch\'e
 \[
-z \frac{\partial }{\partial z} \frac{1}{v}= z \frac{\partial }{\partial x} \left(z \frac{\partial }{\partial z} \frac{1}{V}\log\mathcal{Z} \right) \propto \operatorname{Var} N
+z \frac{\partial }{\partial z} \frac{1}{v}= z \frac{\partial }{\partial z} \left(z \frac{\partial }{\partial z} \frac{1}{V}\log\mathcal{Z} \right) \propto \operatorname{Var} N
 \] 
 per quanto visto nella trattazione del formalismo gran canonico. Visto che le fluttuazioni di $N$ devono essere positive, allora $v^{-1}$ deve essere crescente in $z$ (cio\`e $\partial _z v^{-1}\ge 0$).
 Combinando questi due risultati, eliminando la fugacit\`a, si ottiene $\frac{\partial p}{\partial v} \le 0$, cio\`e la pressione decresce con l'aumentare del volume, il che individua una regione di stabilit\`a termodinamica per il sistema.
@@ -1039,7 +1039,7 @@ g(\theta ) = g(-\theta )
 \] 
 In questo modo, nel limite termodinamico, si ha:
 \[
-\log\mathcal{Z} =\sum_{k}^{} \log \left(\frac{z-e^{-i\theta _k}}{-e ^{-i\theta _k}}\right) \longrightarrow V \int_{0} ^{\pi} d\theta  \ g(\theta ) \log\left(\frac{z- e^{-i\theta }}{-e^{-i\theta }}\right) 
+\log\mathcal{Z} =\sum_{k}^{} \log \left(\frac{z-e^{-i\theta _k}}{-e ^{-i\theta _k}}\right) \longrightarrow V \int_{0} ^{2\pi} d\theta  \ g(\theta ) \log\left(\frac{z- e^{-i\theta }}{-e^{-i\theta }}\right) 
 \] 
 Visto che $g(\theta )=g(-\theta )$, l'integrale tra $0$ e $\pi$ sar\`a uguale a quello tra $\pi$ e $2\pi$.
 Ne segue che
@@ -1094,7 +1094,7 @@ In fisica, sono attualmente noti 6 \textit{esponenti critici}; nella seguente tr
 		\] 
 		Nel caso di van der Waals, si ricorda che l'energia interna \`e pari a 
 		\[
-		U = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \log Z_N = \frac{3}{2}N \kappa _B T + \frac{\partial }{\partial \beta } \left(\frac{N^2}{2}\frac{a}{V}\right) 
+		U = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \log Z_N = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \left(\frac{N^2}{2}\frac{a}{V}\right) 
 		\] 
 		con 
 		\[
@@ -1118,7 +1118,7 @@ In fisica, sono attualmente noti 6 \textit{esponenti critici}; nella seguente tr
 		\[
 			\Eval{\frac{\partial p}{\partial V} }{T}{} = - \frac{N\kappa _B T}{(V-b)^2}+ \frac{2a}{V^3}=\frac{N\kappa _B}{4b^2}(T_c-T)
 		\] 
-		utilizzando il valore $T_c = \frac{8}{27}\frac{a}{b}\frac{1}{N\kappa _B}$.
+		utilizzando il valore $T_c = \frac{8}{27}\frac{a}{b}\frac{1}{N\kappa _B}$ e il fatto che $V = V_c = 3b$, essendo interessati al comportamento di $k_T$ nei pressi del punto critico.
 		Questo implica che 
 		\[
 		k_T \sim \lvert t \rvert ^{-\gamma}
@@ -1322,7 +1322,8 @@ Sviluppando il prodotto e semplificando il secondo ordine delle fluttuazioni per
 	\begin{split}
 		m_i m_j + m_i \delta S_j + m_j \delta S_i + \cancel{\delta S_i \delta S_j}&=m^2 + m(\delta S_i + \delta S_j)\\
 											  &=m^2 + m \big[ (S_i - m) + (S_j - m) \big] \\
-											  &= -m^2 + m(S_i + S_j)
+											  &= -m^2 + m(S_i + S_j)\\
+											  & = -m^2 + 2mS_i
 	\end{split}
 \] 
 In questo modo, si ha
@@ -1420,7 +1421,7 @@ Questa differenza tra i valori possibili della magnetizzazione permette di indiv
 \] 
 che coincide proprio con la temperatura critica a cui avviene la transizione di fase introdotta alla fine della scorsa sezione.
 \begin{osservazione}
-	I valori $m^*$ e $-m^*$ sono simmetrici e sono legate al fatto che il grafico di $m(T)$ a fine della scorsa lezione pu\`o avere un ramo rosso nella parte superiore del piano, o uno perfettamente specchiato nella parte inferiore.
+	I valori $m^*$ e $-m^*$ sono simmetrici e sono legati al fatto che il grafico di $m(T)$ a fine della scorsa lezione pu\`o avere un ramo rosso nella parte superiore del piano, o uno perfettamente specchiato nella parte inferiore.
 \end{osservazione}
 In particolare, il caso $T>T_c \Rightarrow m=0$ corrisponde al caso paramagnetico, mentre il caso $T<T_c$, che permette $m=0, +m^*, - m^*$, corrisponde al caso ferromagnetico.
 Per capire quali di queste soluzioni sono fisicamente ammissibili (nel caso $T<T_c$), si studia l'energia libera e si vede a quali di queste corrisponde un suo minimo.
