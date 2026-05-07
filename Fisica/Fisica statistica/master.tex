@@ -2393,7 +2393,7 @@ Questi non sono tutti indipendenti tra loro; infatti, si hanno le seguenti quatt
 \] 
 Il fatto che solo due esponenti critici siano indipendenti d\`a origine al concetto di \textit{universalit\`a}, alla base di cui vi \`e la teoria del gruppo di rinormalizzazione. 
 \begin{osservazione}
-Se $\xi $ diverge nel punto critico, allora il sistema diventa \textit{self-similare}: indipendente dalla scala considerata del sistema, questo presenta sempre le stesse caratteristiche, analogamente ai frattali.
+Se $\xi $ diverge nel punto critico, allora il sistema diventa \textit{auto-similare}: indipendente dalla scala considerata del sistema, questo presenta sempre le stesse caratteristiche, analogamente ai frattali.
 \end{osservazione}
 \begin{boxenv}[]
 L'assunzione alla base di questa teoria \`e l'\textbf{ipotesi di scala}: vicino al punto critico, una quantit\`a le cui dimensioni sono di $L ^{-D}$ ($L$ lunghezza) \`e proporzionale a $\xi ^{-D}$.
@@ -2460,11 +2460,267 @@ Si possono combinare queste quattro osservazioni con il fatto che $\xi \sim \lve
 	\] 
 	da cui $\alpha  + 2\beta  + \gamma = 2$.
 \end{enumerate}
+\subsubsection{Argomento di Widom}
+Da osservazioni sperimentali, si hanno i due seguenti punti:
+\begin{enumerate}[(I).]
+	\item vicino al punto critico, il parametro d'ordine \`e 
+		\[
+		\psi \sim \begin{cases}
+			0 &,\ t > 0\\
+			\lvert t \rvert ^{\beta } &,\ t< 0
+		\end{cases}
+		\] 
+		nel caso $h = 0$;
+	\item per $T = T_c$ (cio\`e $t = 0$), allora $\psi  \sim h^{1 / \delta }$;
+	\item vicino al punto critico, la suscettivit\`a magnetica \`e $\chi \sim\lvert t \rvert ^{-\gamma}$.
+\end{enumerate}
+L'argomento di Widom si basa sul combinare queste due osservazioni sperimentali per determinare una forma del parametro d'ordine.
+Si ipotizza che
+\begin{equation}\label{wip}
+\psi  = \lvert  t  \rvert ^{\beta } F^{\pm} _\psi  \left(\frac{h}{t^\Delta }\right) 
+\end{equation}
+dove $F^{\pm} = F+$, per $t>0$, mentre $F^{\pm} = F^-$, per $t< 0 $.
+Per il punto (I), si deve avere 
+\[
+	F^+_\psi  = 0 \hspace{1cm} F^-_\psi (h=0) = \text{cost.}
+\] 
+Supponendo $h \neq 0$, ci si aspetta che le quantit\`a che descrivono il sistema si comportino in modo liscio, ad eccetto, eventualmente, della magnetizzazione, nel tendere al punto critico.
+Si impone, allora, che\footnote{Si considera solo la $F^-$ perch\'e $F^+ = 0$.}
+\[
+\lim_{h \to 0} F^- (x) \sim x^\lambda 
+\] 
+Sotto questa ipotesi, si ha $\psi  \sim \lvert t \rvert ^{\beta } (h / t^\Delta )^\lambda $.
+Per il punto (II), si ha:
+\[
+\begin{cases}
+	1 / \delta = \lambda  \\ 
+	\beta  - \lambda  \Delta = 0 
+\end{cases}
+\] 
+Dall'ipotesi di Widom (\ref{wip}), la suscettivit\`a magnetica \`e 
+\[
+	\chi = \Eval{\frac{\partial \psi }{\partial h}}{h=0}{}  \implies \chi \sim \lvert t \rvert ^{\beta  - \Delta }F'_\psi (h=0)
+\] 
+Per il punto (III), allora $\gamma = \Delta  - \beta $.
+Mettendo tutto insieme, si trova 
+\[
+\beta  = \lambda \Delta  = \frac{\Delta}{\delta } \implies \beta \delta = \Delta  = \gamma + \beta 
+\] 
+che \`e proprio la relazione di Widom nelle leggi di scala.
+
+\subsubsection{Omogeneit\`a}
+Imponendo una relazione analoga a \ref{wip} per le altre funzioni termodinamiche, come l'energia libera, si possono ritrovare tutte le leggi di scala; una funzione che soddisfa una tale relazione si dice \textit{omogenea}.
+L'omogeneit\`a permette di codificare l'invarianza di scala che si verifica nei pressi del punto critico dovuta alla divergenza del parametro di scala.
+
+Per descrivere l'ipotesi, si considera una generica funzione $f(q)$, nella generica variabile $q$.
+La richiesta che la $f$ sia omogenea in $q$ equivale a dire che, riscalando $q' = b^{D_q}q$, allora 
+\[
+f(q') = b^{D_f}f(q)
+\] 
+dove $D_f$ \`e la dimensione di $f$, mentre $D_q$ \`e quella di $q$. 
+Per esempio, nel caso della funzione di correlazione $\Gamma(x) \sim x^{-p}$ (con $ p = d+ \eta - 2$), prendendo $x' = x / b$, allora $\Gamma(x') = b^p \Gamma(x)$.
+ 
+Si vuole applicare questa ipotesi di omogeneit\`a alla funzione $f = F / V$ (energia per unit\`a di volume), con $f = f(h,t)$.
+L'ipotesi di omogeneit\`a consiste nella validit\`a delle due seguenti relazioni
+\[
+\begin{cases}
+	h' = b ^{D_h}h \\
+	t' = b ^{D_t}t 
+\end{cases} \hspace{1cm} f(h',t') = b^d f(h,t)
+\] 
+con $h$ campo magnetico e $t = T- T_c$.
+Ora si determinano $D_t$ e $D_h$.
+\begin{itemize}
+	\item Sapendo che $\xi \sim\lvert t \rvert ^{-\nu }$, allora $\lvert t \rvert \sim \xi ^{-1 / \nu }$. 
+		Se $\xi ' = \xi  / b$, allora
+		\[
+		t ' = b^{D_t} t \sim b^{D_t} \xi ^{- 1 / \nu } = b ^{D_t} b^{- 1 / \nu } \left(\xi '\right) ^{-1 / \nu }
+		\] 
+	Perch\'e si continui ad avere $t' \sim \left(\xi '\right) ^{- 1 / \nu }$, allora, \`e necessario avere $D_t = 1 / \nu $.
+\item Si ha $h \sim\xi ^{(\eta - d - 2 ) / 2}$. Per $\xi ' = \xi  / b$, si ha
+	\[
+	h ' = b ^{D_h}h \sim b ^{D_h}\xi ^{(\eta - d - 2 ) / 2} \sim b^{D_h}b ^{\frac{\eta - d - 2}{2}} \left(\xi '\right) ^{\frac{\eta - d - 2}{2}}
+	\] 
+	Dalla richiesta $h'\sim (\xi ')^{\frac{\eta - d - 2}{2}}$, si ottiene $D_h = \frac{2 + d - \eta }{2}$.
+\end{itemize}
+Si fissa il riscalamento in in modo che $\lvert t' \rvert =1$, cio\`e $b = \lvert t \rvert ^{-1 / D_t}$.
+Cos\`i facendo, essendo $f(h,t) = b^{-d}f(h',t')$, si trova che
+\[
+f(h,t) = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{-d} f(h',1) \implies f(h,t) = \lvert t \rvert ^{d / D_t} \widetilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) 
+\] 
+dove si \`e usato che $h ' = b^{D_h}h = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{D_h}h$ e la $\widetilde{f}$ \`e ottenuta eliminando la dipendenza da $t'$ (fissato a $1$) nella $f(h',t')$.
+
+Dalle relazioni degli esponenti critici, si ottengono delle relazioni che, opportunamente combinate in modo algebrico, unitamente con i valori trovati per $D_h$ e $D_t$, permettono di ritrovare le leggi di scala.
+\begin{enumerate}[(1).]
+	\item $f\sim\lvert t \rvert ^{2- \alpha }\implies 2 - \alpha = d / D_t$.
+	\item $\psi  \sim \lvert t \rvert ^{\beta }$ e $\psi  = - \Eval{\frac{\partial f}{\partial h} }{h=0}{}$ permette di concludere che
+		\[
+		\beta  = \frac{d}{D_t} - \frac{D_h}{D_t} = \frac{d-D_h}{D_t}
+		\] 
+	\item $\chi \sim\lvert t \rvert ^{-\gamma}$ e $\chi = \Eval{\frac{\partial \psi }{\partial h} }{h=0}{}$ implica che
+		\[
+		\gamma = - \left(\frac{d}{D_t}-2 \frac{D_h}{D_t}\right)  = \frac{2D_h - d}{D_t}
+		\] 
+	\item $\psi \sim h^{1 / \delta }$ implica che 
+		\[
+		\psi  = - \frac{\partial f}{\partial h}  = - \lvert t \rvert ^{\frac{d-D_h}{D_t}} \widetilde{f}\left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right)  \sim h^{1 / \delta } \sim h ^{1 / \delta }
+		\] 
+		Questo andamento \`e vero se 
+		\[
+		\widetilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) \sim \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) ^{1 / \delta } \implies \lvert t \rvert ^{\frac{d - D_h}{D_t} - \frac{D_h}{\delta D_t}} h^{1 / \delta } \sim h ^{1 / \delta } \iff \delta = \frac{D_h}{d-D_h}
+		\] 
+\end{enumerate}
+Per esempio, secondo queste relazioni, si ritrova la legge di scala di Rushbrooke:
+\[
+	\begin{split}
+		\alpha  + 2\beta  + \gamma &= \left(2 -\frac{d}{D_t}\right) + \left(2 \frac{d-D_h}{D_t}\right) + \left(\frac{2D_h - d}{D_t}\right)\\
+					   &= 2 + \cancel{\frac{-d + 2 d - 2D_h + 2D_h - d}{D_t}} = 2
+	\end{split}
+\] 
+
+\subsubsection{Gruppo di rinormalizzazione}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	L'idea alla base del gruppo di rinormalizzazione \`e, a partire da un reticolo, raggruppare i siti in modo da creare un nuovo reticolo con meno siti e una scala di lunghezze diverse, rinormalizzando i gradi di libert\`a del reticolo.
+	Per esempio, a destra, per un reticolo quadrato, si crea un nuovo reticolo ottenuto dal raggruppamento di un \textit{blocco} di quattro siti del reticolo originario.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1]
+
+% Reticolo fine
+\foreach \x in {0,1,2,3}
+    \draw[] (\x,-1) -- (\x,4);
+
+\foreach \y in {0,1,2,3}
+    \draw[] (-1,\y) -- (4,\y);
+
+% Punti del reticolo originale
+\foreach \x in {0,1,2,3}
+{
+    \foreach \y in {0,1,2,3}
+    {
+        \filldraw (\x,\y) circle (1.5pt);
+    }
+}
+
+% Blocchi tratteggiati
+\draw[dashed,color=asdf] (-0.3,-0.3) rectangle (1.3,1.3);
+\draw[dashed,color=asdf] (1.7,-0.3) rectangle (3.3,1.3);
+
+\draw[dashed,color=asdf] (-0.3,1.7) rectangle (1.3,3.3);
+\draw[dashed,color=asdf] (1.7,1.7) rectangle (3.3,3.3);
+
+% Reticolo rinormalizzato (rosso)
+\draw[red,thick] (0.5,-1) -- (0.5,4);
+\draw[red,thick] (2.5,-1) -- (2.5,4);
+
+\draw[red,thick] (-1,0.5) -- (4,0.5);
+\draw[red,thick] (-1,2.5) -- (4,2.5);
+
+% Siti rinormalizzati
+\filldraw[red] (0.5,0.5) circle (2pt);
+\filldraw[red] (2.5,0.5) circle (2pt);
+\filldraw[red] (0.5,2.5) circle (2pt);
+\filldraw[red] (2.5,2.5) circle (2pt);
+
+\node at (-1,1.3) {\scriptsize \color{asdf} blocco};
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Continuando l'esempio del reticolo quadrato, se nel reticolo di partenza (nero) si avevano $N^2$ siti, nel reticolo finale (rosso) se ne dovranno avere $(N / 2)^2$ perch\'e si raggruppano due siti per ogni dimensione.
+Tenendo a mente gli spin, si passa da $\left\{ S_i \right\}_{i=1}  ^{N^2} \longrightarrow \left\{ S'_i \right\} _{i' =1} ^{(N/2)^2} $, dove
+\[
+S_i ' = \begin{cases}
+	1 &,\ \displaystyle \sum_{i \in \text{blocco}}^{} S_i > 0 \\
+	-1 &,\ \displaystyle \sum_{i \in \text{blocco}}^{} S_i < 0 \\
+	S_1 &,\ \displaystyle \sum_{i \in \text{blocco}}^{} S_i = 0 \\
+\end{cases}
+\] 
+per la regola di maggioranza.
+Considerando il caso del modello di Ising, l'obiettivo \`e partire da 
+\[
+H = - J \sum_{\langle i,j \rangle}^{} S_iS_j - h \sum_{i}^{} S_i \hspace{1cm} Z = \sum_{\left\{ S_i \right\} }^{} e^{-\beta H\left(\left\{ S_i \right\} \right) } := e ^{- N f(h,t)}
+\] 
+con $f = -\frac{1}{N}\log Z = \frac{F}{N\kappa _BT}$ e ottenere, nel reticolo finale
+\[
+H'\left(\left\{ S'_i \right\} \right)  = - J' \sum_{\langle i,j \rangle}^{} S'_i S'_j - h' \sum_{i}^{} S'_i \hspace{1cm} Z ' = \sum_{\left\{ S'_i \right\} }^{} e^{-\beta H ' \left(\left\{ S'_i \right\} \right) } = e^{-N' f(h',t')} \stackrel{(\star)}{=} e^{-Nf (h,t)}
+\] 
+con $J'\neq J$ e $h' \neq h$ in generale.
+Cio\`e si vogliono modificare le scale di lunghezza, ma avere una fisica del sistema che \`e analoga prima e dopo la trasformazione, cosa assicurata da ($\star$).
+Nel caso del reticolo quadrato, la scala di lunghezza cambia con $b=2$. 
+In generale, il numero di siti \`e $N' = b^{-d}N$\footnote{Diverso dall'$N$ riportato sopra, che indica il numero di siti per ciascuna dimensione, mentre questo rappresenta il numero di siti totali.}; in un reticolo quadrato (piano) come questo, si ha $b=d=2$, infatti $N ' = N / 4 $.
+Affinch\'e la relazione ($\star$) sia vera, si deve avere che la $f$ \`e omogenea:
+\[
+f(h,t) = \frac{N'}{N} f(h',t') = b^{-d} f( h',t')
+\] 
+con $t' = b^{A}t$ e $h'=b^{B}h$.
+Questa assunzione, quindi, implica la \textit{relazione di omogeneit\`a}.
+
+In generale (non necessariamente Ising, ma spin interagenti in modo arbitrario), si considera
+\[
+H \left(\left\{ S_i \right\} \right) = \sum_{\alpha }^{} K_\alpha S_\alpha \hspace{1cm} S_ \alpha  = \prod_{i \in I_\alpha } S_i
+\] 
+Per esempio, si pu\`o avere 
+\[
+H = K_1 \sum_{i}^{} S_i + K_2 \sum_{\langle i,j \rangle}^{} S_iS_j + \widetilde{K}_2 \sum_{\langle \langle i,j \rangle \rangle}^{} S_iS_j + \ldots + k_3 \sum_{\langle i,j,k \rangle}^{} S_iS_jS_k +\ldots
+\] 
+In ogni caso, vale
+\[
+\sum_{\left\{ S_i \right\} }^{} H\left(\left\{ S_i \right\} \right) =0
+\] 
+perch\'e si sommano sia le componenti up, che quelle down, quindi si annullano a vicenda.
+Nel raggruppamento dei siti, le nuove variabili di spin del blocco $S'_B = g(S_B)$, dove $g$ \`e una relazione che, nel caso trattato precedentemente, potrebbe essere la regola di maggioranza.
+Poi si introduce una probabilit\`a 
+\[
+P_B \left(\left\{ S_B \right\} \right)  := \delta \left(S'_B , g(S_B)\right)  = \begin{cases}
+	1 &,\ \text{ se } \left\{ S_B \right\} \text{ restituisce } S'_B\\
+	0 &,\ \text{ se } \left\{ S_B \right\}\text{ non restituisce } S'_B\\
+\end{cases}
+\] 
+cio\`e \`e pari a $1$ se lo spin risultante dal blocco $\left\{ S_B \right\} $ coincide con $S'_B$.
+Pi\`u in generale, si definisce
+\[
+P\left(\left\{ S' \right\} , \left\{ S \right\} \right) = \prod_B P_B \left(\left\{ S_B \right\} \right) 
+\] 
+che \`e pari a $1$ se $\left\{ S \right\} $ raggruppati restituiscono $\left\{ S' \right\} $ e $0$ altrimenti.
+Allora devono valere le due seguenti relazioni:
+\[
+P\left(\left\{ S' \right\} ,\left\{ S \right\} \right) \ge 0 \hspace{1cm}\sum_{\left\{ S' \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right) =1
+\] 
+Questo permette di scrivere che
+\[
+Z = \sum_{\left\{ S \right\} }^{} e^{- H \left(\left\{ S \right\} \right) }= \sum_{\left\{ S' \right\} }^{} \sum_{\left\{ S \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right)  e^{-H\left(\left\{ S \right\} \right) } \overset{\text{def}}{=} e^{-N\mu } \sum_{\left\{ S' \right\} }^{} e^{-H' \left(\left\{ S' \right\} \right) }
+\] 
+dove si \`e inglobato $\beta $ nelle costanti $J,h$, o $K_\alpha $ pi\`u in generale, e si \`e definito
+\[
+e^{-H' \left(\left\{ S' \right\} \right) } := e^{N\mu }\sum_{\left\{ S \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right)  e^{-H \left(\left\{ S \right\} \right) }
+\] 
+con $\mu $ determinato dal fatto che $\sum_{\left\{ S' \right\} }^{} H \left(\left\{ S' \right\} \right) = 0$.
+Si richiede, ora, che $H'$ abbia la stessa forma di $H$:
+\[
+H'\left(\left\{ S' \right\} \right) = \sum_{\alpha }^{} K_\alpha ' S'_\alpha 
+\] 
+Di fatto, la teoria del gruppo di rinormalizzazione consiste nello studiare come cambiano le costanti di accoppiamento $K_\alpha \longrightarrow K_\alpha '$.
+Allora si \`e partiti da $e^{-N f(K)}= \sum_{\left\{ S \right\} }^{} e^{-H \left(\left\{ S \right\} \right) }$ e si \`e arrivati a 
+\[
+	e^{-N' f(K')}= \sum_{\left\{ S' \right\} }^{} e^{-H' \left(\left\{ S' \right\} \right) }= e ^{N \mu }\sum_{S}^{} \overbracket{\sum_{S'}^{} P\left(\left\{ S' \right\} , \left\{ S \right\}\right)    }^{=1} e^{-H\left(\left\{ S \right\} \right) } = e^{N\mu }\sum_{\left\{ S \right\} }^{} e^{-H\left(\left\{ S \right\} \right) }
+\] 
+da cui
+\[
+f(K) = \mu (K) + b ^{-d}f(K')
+\] 
+con $\mu (K)$ costante.
+
+Il gruppo di rinormalizzazione consiste, quindi, in una trasformazione, detta \textit{trasformazione RG}, $K \longrightarrow K' = R(K)$ legate al cambio di scala del sistema al \textit{passo successivo}: ogni trasformazione RG raggruppa un sito in un blocco di \textit{passo successivo} (per esempio, nel reticolo quadrato, si incorpora un altro sito per dimensione); interando, si pu\`o arrivare al riscalamento del sistema desiderato.
+Questo si pu\`o ripetere infinite volte perch\'e, nel limite termodinamico, si hanno infiniti siti.
+
 \begin{boxenv}[]
-\centering Riprendere da lezione 17
+\centering Riprendere dalla lezione 18
 \end{boxenv}
-
-
 
 
 

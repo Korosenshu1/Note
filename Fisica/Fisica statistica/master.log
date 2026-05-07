@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  7 MAY 2026 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  7 MAY 2026 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1311,7 +1311,7 @@ Overfull \hbox (16.2985pt too wide) detected at line 389
  []
 
 [9]
-<vdw.png, id=164, 655.44875pt x 521.95pt>
+<vdw.png, id=170, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
 Package pdftex.def Info: vdw.png  used on input line 442.
@@ -1321,7 +1321,7 @@ Package pdftex.def Info: vdw.png  used on input line 442.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10]
-<max-constr-vdw.png, id=172, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=178, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
 Package pdftex.def Info: max-constr-vdw.png  used on input line 472.
@@ -1347,7 +1347,7 @@ Overfull \hbox (58.54832pt too wide) detected at line 842
  []
 
 [21] [22] [23]
-<pd.jpg, id=264, 702.625pt x 615.29875pt>
+<pd.jpg, id=270, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
 Package pdftex.def Info: pd.jpg  used on input line 920.
@@ -1387,25 +1387,39 @@ Overfull \hbox (5.93895pt too wide) detected at line 2344
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^T [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[]
  []
 
-[54] [55] [56] [57] [58] [59] [60]
+[54] [55] [56] [57]
+Overfull \vbox (1.00212pt too high) has occurred while \output is active []
+
+ [58] [59]
+Overfull \hbox (5.5636pt too wide) detected at line 2651
+\OML/cmm/m/it/10.95 H[] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 J[] [] S[]S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 h[] [] S[] Z[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[] [] e[]
+ []
+
+[60] [61] [62] [63] [64] [65]
 
 Package caption Warning: Unused \captionsetup[table] on input line 130.
 See the caption package documentation for explanation.
 
-[61] (./master.aux)
+[66] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 48187 strings out of 467525
- 1121940 string characters out of 5425862
- 1747100 words of memory out of 5000000
- 76202 multiletter control sequences out of 15000+600000
+ 48214 strings out of 467525
+ 1122217 string characters out of 5425862
+ 1747179 words of memory out of 5000000
+ 76211 multiletter control sequences out of 15000+600000
  690647 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exist, replaced by a fixed one
 
@@ -1467,10 +1481,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (61 pages, 700441 bytes).
+Output written on master.pdf (66 pages, 721379 bytes).
 PDF statistics:
- 774 PDF objects out of 1000 (max. 8388607)
- 652 compressed objects within 7 object streams
- 199 named destinations out of 1000 (max. 500000)
- 348 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 830 PDF objects out of 1000 (max. 8388607)
+ 702 compressed objects within 8 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 
