@@ -28,7 +28,20 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows.meta,decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{
+    flow/.style={
+        postaction={
+            decorate,
+            decoration={
+                markings,
+                mark=at position 0.55 with {\arrow{>}}
+            }
+        }
+    }
+}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage[italian]{babel}
@@ -1722,7 +1735,7 @@ Per utilizzare questo risultato, si prendono $B_i = S_i$, $A = J ^{-1}$ e $x_i =
 Z = Z_0 \frac{1}{2^N} \int_{-\infty} ^{+\infty}  d \psi _1 \int_{-\infty} ^{+\infty}  d \psi _2 \ldots \int_{-\infty} ^{+\infty}  d \psi _N \ \sum_{\left\{ S_i \right\} }^{} e^{-\frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1})_{ij} \psi _j + \sum_{i}^{} S_i \psi _i}
 \] 
 con $Z_0= 2^N \sqrt{\frac{\det (J^{-1})}{(2\pi)^N}} $.
-La comodit\`a \`e che la somma sugli $\left\{ S_i \right\} $ agisce solo sul secondo addendo dell'esponenziale, mentre l'altro va fuori dalla somma.
+La comodit\`a \`e che la somma sugli $\left\{ S_i \right\} $ agisce solo sul secondo addendo dell'esponenziale, mentre l'altro va fuori.
 Si ha
 \[
 \sum_{\left\{ S_i \right\} }^{} e^{\sum_{i}^{} S_i \psi _i} = \prod_i \left(\sum_{S_i = \pm 1}^{} e^{S_i \psi _i}\right) = 2^N e^{\sum_{i}^{} \log(\cosh \psi _i)}
@@ -1730,14 +1743,19 @@ Si ha
 per lo stesso conto fatto in \ref{cic}.
 Allora\footnote{Le parentesi quadre stanno ad indicare che $f$ \`e un funzionale.}
 \[
-	Z = Z_0 \int d^N \psi e^{-f [\psi ]}\, , \ \ \ \text{ con } \ \ f [\psi ] = \frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1}) \psi _j - \sum_{i}^{} \log \big(\cosh \psi _i\big) 
+	Z = Z_0 \int d^N \ \psi e^{-f [\psi ]}\, , \ \ \ \text{ con } \ \ f [\psi ] = \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}_{ij}  \psi _j - \sum_{i}^{} \log \big(\cosh \psi _i\big) 
 \] 
-Aggiungere il campo magnetico, ora, \`e facile:
+Aggiungere il campo magnetico, ora, \`e facile\footnote{Inglobando $\beta $ nel campo magnetico, nella via pi\`u generale questo dipende dal sito, pertanto la funzione di partizione sar\`a 
+\[
+Z = \sum_{\left\{ S_i \right\} }^{} \exp \left[ \frac{1}{2}\sum_{i,j}^{} S_i J_{ij} S_j + \sum_{i}^{} \overline{h}_i S_i \right] 
+\] 
+dove la barra su $\overline{h}_i$ indica che include anche $\beta $.
+}:
 \[
 	f[\psi ] = \frac{1}{2} \sum_{i,j}^{} \psi _i (J^{-1})_{ij}  \psi _j - \sum_{i}^{} \log \left[ \cosh \left(\psi _i + \overline{h}_i\right)  \right] 
 \] 
 dove il termine $\overline{h}_i$ include $\beta $.
-Un altra operazione comoda \`e riscalare le variabili $\psi _i$ in modo che 
+Un'altra operazione comoda \`e riscalare le variabili $\psi _i$ in modo che 
 \[
 	f[\psi ] = \frac{1}{2} \sum_{i,j}^{} (\psi_i -\overline{h}_i) (J^{-1})_{ij} (\psi _j - \overline{h}_j) - \sum_{i}^{} \log \left[ \cosh \psi _i \right] 
 \] 
@@ -2371,7 +2389,7 @@ Questo dimostra che, sotto una certa temperatura, il sistema acquisisce una magn
 \begin{osservazione}
 Queste argomentazioni di Peierls sono qualitative e servono unicamente per mostrare che, in 2D (e in 1D con $\gamma<2$), ci si aspetta la comparsa di una fase ferromagnetica sotto una certa temperatura $T_c$, ma non permette di stimare questo valore quantitativamente, n\'e gli esponenti critici.
 \end{osservazione}
-\subsection{Universalit\`a e gruppo di rinormalizzazione}
+\subsection{Omogeneit\`a e gruppo di rinormalizzazione}
 \subsubsection{Leggi di scala}
 Gli esponenti trovati, per $t = (T-T_c)/T_c$, nel caso di sistemi magnetici, sono
 \[
@@ -2578,7 +2596,7 @@ Per esempio, secondo queste relazioni, si ritrova la legge di scala di Rushbrook
 	\end{split}
 \] 
 
-\subsubsection{Gruppo di rinormalizzazione}
+\subsubsection{Introduzione al gruppo di rinormalizzazione}
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -2666,7 +2684,7 @@ H \left(\left\{ S_i \right\} \right) = \sum_{\alpha }^{} K_\alpha S_\alpha \hspa
 \] 
 Per esempio, si pu\`o avere 
 \[
-H = K_1 \sum_{i}^{} S_i + K_2 \sum_{\langle i,j \rangle}^{} S_iS_j + \widetilde{K}_2 \sum_{\langle \langle i,j \rangle \rangle}^{} S_iS_j + \ldots + k_3 \sum_{\langle i,j,k \rangle}^{} S_iS_jS_k +\ldots
+H = K_1 \sum_{i}^{} S_i + K_2 \sum_{\langle i,j \rangle}^{} S_iS_j + \widetilde{K}_2 \sum_{\langle \langle i,j \rangle \rangle}^{} S_iS_j + \ldots + K_3 \sum_{\langle i,j,k \rangle}^{} S_iS_jS_k +\ldots
 \] 
 In ogni caso, vale
 \[
@@ -2713,21 +2731,236 @@ da cui
 \[
 f(K) = \mu (K) + b ^{-d}f(K')
 \] 
-con $\mu (K)$ costante.
+con $\mu (K)$ costante\footnote{Qui $K$ \`e il vettore di componenti $K_\alpha $.}.
 
 Il gruppo di rinormalizzazione consiste, quindi, in una trasformazione, detta \textit{trasformazione RG}, $K \longrightarrow K' = R(K)$ legate al cambio di scala del sistema al \textit{passo successivo}: ogni trasformazione RG raggruppa un sito in un blocco di \textit{passo successivo} (per esempio, nel reticolo quadrato, si incorpora un altro sito per dimensione); interando, si pu\`o arrivare al riscalamento del sistema desiderato.
 Questo si pu\`o ripetere infinite volte perch\'e, nel limite termodinamico, si hanno infiniti siti.
+\subsubsection{Punti fissi nella teoria RG}
+Considerando un vettore $K^*$ di costanti di accoppiamenti tale che $K^* = R (K^*)$, cio\`e invariante sotto trasformazione RG, questo descrive un sistema la cui fisica risulta indipendente dalla scala utilizzata per studiarlo.
+La lunghezza di correlazione, in questi casi, pu\`o valere:
+\begin{itemize}
+	\item $\xi  = 0$, corrispondente a sistemi a temperatura infinita che, quindi, risultano disordinati a qualunque scala, senza distinzioni (caso banale);
+	\item $\xi  = +\infty$, corrispondente a punti critici.
+\end{itemize}
+Si definisce $K^{(n+1)} : = R\left(K^{(n)}\right) $ per indicare le costanti ottenute passando dall'applicazione $n$-esima della trasformazione a quella $n+1$-esima.
+Visto che $K^* = R(K^*)$, si pu\`o scrivere banalmente
+\[
+K ^{(n+1)} - K ^* = R\left(K^{(n)}\right)  - K^*
+\] 
+L'utilit\`a di questa scrittura \`e linearizzare $R$ attorno a $K^*$:
+\[
+R\left(K^{(n)}\right) \simeq R(K^*) + W \left(K^{(n)}- K^*\right) 
+\] 
+dove la matrice $W$ \`e data da 
+\[
+	W_{\alpha \beta } = \Eval{\frac{\partial R_\alpha (K)}{\partial K_\beta } }{K=K^*}{}
+\] 
+Si diagonalizza $W$ per trovarne gli autovalori che determinano il riscalamento del sistema lungo l'autovettore ad esso relativo, il che permette di capire come agisce $R$.
+In particolare, si cercano gli \textit{autovettori sinistri} 
+\[
+\phi W = \lambda \phi 
+\] 
+e gli autovalori associati.
+Tramite tali autovettori, si definisco i \textit{campi di scala}:
+\[
+v^{(n)}:= \sum_{\alpha }^{} \phi _\alpha  \left(K^{(n)}- K^* \right) _\alpha 
+\] 
+dove $\phi _\alpha $ \`e la componente $\alpha $-esima del vettore $\phi $.
+I campi di scala sono interessanti perch\'e 
+\[
+	\begin{split}
+		v^{(n+1)}&= \sum_{\alpha }^{} \phi _\alpha \left(K^{(n+1)} - K^*\right) _\alpha = \sum_{\alpha }^{} \phi _\alpha W_{\alpha \beta } \left( K^{(n)}- K^*\right) _\beta \\
+			 &= \sum_{\beta }^{} \lambda \phi _\beta \left(K^{(n)}-K^*\right) _\beta  = \lambda v ^{(n)}
+	\end{split}
+\] 
+Cio\`e i campi di scala sono tali per cui, sotto la trasformazione $R$, vengono riscalati dell'autovalore associato all'autovettore $\phi $ che li definisce.
+Scrivendo $\lambda = b^{y}$, con $b$ scala di lunghezza del sistema (nel reticolo quadrato, $b=2$), si pu\`o individuare $y$ come la dimensione di $v$.
+L'introduzione dei campi di scaling \`e l'esser passati da un set $\left\{ K_1,K_2,\ldots \right\} $ al set $\left\{ v_1,v_2,\ldots \right\} $\footnote{Le $K_\alpha $ e $v_i$ sono, rispettivamente, le componenti dei vettori $K$ e $v$.} tramite cui
+\[
+f(v) = \mu (v) + b^{-d} f(v')
+\] 
+dove $v'_j=\lambda _j v_j$.
+Questi campi assumono una rilevanza a seconda dell'autovalore $\lambda _j$; infatti, a seconda che questo sia minore o maggiore di $1$, iterando infinite volte la trasformazione, tendono o meno a zero.
+Per tale ragione, se $\lambda _j < 1$, $v_j$ si dice \textit{campo irrilevante}; se $\lambda _j > 1$, si dice \textit{campo rilevante}; se $\lambda _j = 1$, si dice \textit{campo marginale} nel senso che la trattazione non permette di comprenderne il comportamento.
+\subsubsection{Applicazione al modello di Ising 1D}
+Si considera $H = - J \sum_{j}^{} S_j S_{j+1}  - h \sum_{j}^{} S_j$, la cui soluzione esatta si \`e visto essere legata alla matrice di trasferimento 
+\[
+	T = \begin{pmatrix} e^{\beta (J+h)} & e ^{-\beta J}\\ e^{-\beta J} & e^{(J-h)} \end{pmatrix} = \begin{pmatrix} 1 / uv & u \\ u & v / u \end{pmatrix} 
+\] 
+dove si sono definite le variabili $u = e^{-\beta J}$ e $v = e^{-\beta h}$.
+Si sceglie di raggruppare gli spin della catena 1D di Ising a coppie, quindi si prende $b=2$.
+\begin{center}
+	\begin{tikzpicture}[scale=1]
 
+%========================
+% Riga superiore
+%========================
+
+% linea
+\draw[thick] (-1,0) -- (8,0);
+
+% spin originali
+\foreach \x in {0,1,2,3,4,5,6,7}
+{
+    \filldraw[black] (\x,0) circle (2pt);
+}
+
+% blocchi b=2
+\foreach \x in {0,2,4,6}
+{
+    \draw[color=asdf,dashed,thick]
+    (\x-0.25,-0.18) rectangle (\x+1.25,0.18);
+}
+
+% etichette
+\node[above] at (0,.2) {\small $S_j$};
+\node[above] at (1,.2) {\small $S_{j+1}$};
+
+% freccia scala b
+\draw[green!60!black,<->]
+(-0.05,-0.55) -- (1.05,-0.55);
+
+\node[green!60!black] at (0.5,-0.95) {\small $b=2$};
+
+% puntini
+\draw[thick,dashed] (-1,0) -- (-2,0);
+\draw[thick,dashed] (8,0) -- (9,0);
+
+%========================
+% Freccia RG
+%========================
+
+\draw[->] (3.5,-1.1) -- (3.5,-2.1);
+
+\node[right] at (3.5,-1.6) {\small$RG$};
+
+%========================
+% Riga inferiore
+%========================
+
+% linea coarse-grained
+\draw[thick] (-1,-3) -- (8,-3);
+
+% spin rinormalizzati
+\foreach \x in {0.5,2.5,4.5,6.5}
+{
+    \filldraw[color=asdf] (\x,-3) circle (2pt);
+}
+
+% etichetta
+\node[above,color=asdf] at (0.5,-3) {\small $S'_j$};
+
+% puntini
+\draw[thick,dashed] (-1,-3) -- (-2,-3);
+\draw[thick,dashed] (8,-3) -- (9,-3);
+\end{tikzpicture}
+\end{center}
+Visto che si stanno raggruppando i siti a coppie, la soluzione del reticolo con i siti {\color{asdf}blu} \`e ottenuta tramite la matrice 
+\[
+	T^2 = T \cdot T = \begin{pmatrix} u ^2 + 1 / u^2 v^2 & v + 1 / v \\ v + 1 / v & u ^2 + v^2 / u^2 \end{pmatrix} 
+\] 
+Si vogliono trovare delle nuove variabili $u',v'$ tali che 
+\[
+	T ' = C \begin{pmatrix} 1 / u' v ' & u' \\ u ' & v ' / u ' \end{pmatrix} 
+\] 
+coincide con $T^2$, cio\`e risolve il problema, ma ha la stessa forma di $T^2$.
+Inoltre, la costante $C$ \`e ininfluente perch\'e non compare nei potenziali termodinamici.
+Dal confronto delle due matrici, si trova che
+\[
+\begin{cases}
+	C / u' v' = u^2 + +1 / u^2 v^2 \\
+	C u'  v + 1 / v \\
+	C v ' / u ' = u^2 + v^2 / u^2
+\end{cases}\implies \begin{cases}
+	\displaystyle u'= \frac{\left(v+1 / v\right) ^{1 / 2}}{\left(u^4 + 1 / u^4 + v^2 + 1 / v^2\right) ^{1 / 4}}\\
+	\displaystyle v' = \frac{(u^4 + v^2 ) ^{1 / 2}}{(u^4 + 1 / v^2 ) ^{ 1 / 2}}\\
+	C = (v+ 1 / v )^{ 1/2} (u^4 + 1 / u^4 + v^2 + 1 / v^2 ) ^{1 / 4}
+\end{cases}
+\] 
+Per semplificare le espressioni, si prendono $x = u^4=e^{-4 \beta J}$ e $y = v^2= e^{-2\beta  h}$, per cui
+\[
+\begin{cases}
+	\displaystyle x' = x \frac{(1+y)^2}{(x+y)(1+xy)}\\
+	\displaystyle y' = y \frac{x+y}{1+xy}
+\end{cases}
+\]
+Supponendo $J,h >0 $, allora $x,y \in [0,1]$.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Si vuole studiare il comportamento di un punto $(x,y)$ iterando la trasformazione pi\`u volte. 
+		In questo modo, si pu\`o costruire il grafico a destra.
+		I punti fissi della trasformazione, evidenziati in rosso nel grafico, si trovano essere $(x^*,y^*) = (1,y^*),\ \forall y^* \in [0,1]$, $(x^*,y^*) = (0,1)$ e $(x^*,y^*) = (0,0)$.
+		Le frecce, invece, indicano la direzione di un punto che si trova lungo quella curva nel caso in cui si iteri la trasformazione pi\`u volte, per cui questo grafico \`e detto \textit{flusso di normalizzazione}.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=5]
+
+% Assi
+\draw[->] (0,0) -- (1.15,0) node[right] {$x$};
+\draw[->] (0,0) -- (0,1.15) node[above] {$y$};
+
+% Tacche e label
+\node[left] at (0,1) {$1$};
+\node[below] at (1,0) {$1$};
+\node[below left] at (0,0) {$0$};
+
+% Bordo rosso
+\draw[red, very thick] (1,0) -- (1,1);
+
+
+% Linea tratteggiata superiore
+\draw[dashed] (0,1) -- (1,1);
+
+% Frecce sugli assi
+\draw[->] (0,0) -- (0.5,0);
+\draw[->] (0,1) -- (0,0.5);
+\draw[->,dashed] (0,1) -- (0.5,1);
+
+% Curve di flusso
+\draw[flow]
+    (0,1)
+    .. controls (0.15,0.92) and (0.30,0.55) ..
+    (1,0.35);
+
+\draw[flow]
+    (0,1)
+    .. controls (0.14,0.80) and (0.35,0.35) ..
+    (1,0.18);
+
+\draw[flow]
+    (0,1)
+    .. controls (0.12,0.65) and (0.28,0.18) ..
+    (1,0.09);
+
+\draw[flow]
+    (0,1)
+    .. controls (0.08,0.50) and (0.18,0.08) ..
+    (1,0.04);
+
+\draw[flow]
+    (0,1)
+    .. controls (0.04,0.30) and (0.08,0.02) ..
+    (1,0.015);
+
+% Punti fissi rossi
+\fill[red] (0,1) circle (0.015);
+\fill[red] (0,0) circle (0.015);
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+In questo senso, il punto $(0,1)$ \`e \textit{repulsivo}: spostandosi leggermente da esso, si finisce da un'altra parte del grafico; al contrario, la retta rossa definisce punti \textit{attrattivi} perch\'e, spostandosi da essi, ci si ritorna.
+Il punto $(0,0)$, invece, \`e sia attrattivo, che repulsivo, a seconda di dove ci si sposta.
+
+Dalle definizioni, si vede che $x=1 \iff -4 \beta  J = 0$, che corrisponde a $\beta  \to  0$, o $T\to +\infty$, il che equivale a spin non correlati ($\xi =0$), quindi senza una fisica interessante alla base.
+Al contrario, i punti della linea attrattiva corrispondono, a meno di casi limite $J,h\to +\infty$, a temperatura nulla, cio\`e $\beta \to +\infty$.
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 18
+\centering Lezione 18, 57:54
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
