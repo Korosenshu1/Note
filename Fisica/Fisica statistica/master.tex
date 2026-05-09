@@ -371,7 +371,7 @@ Se le particelle $i$ e $j$ sono vicine, si scrive che $\vec{x}_i \sim \vec{x}_j$
 \begin{osservazione}
 	Se $\vec{x}' \not \sim \vec{x}_i, \ \forall i=1,\ldots, N$, allora $e ^{- \beta \sum_{j}^{} v(\vec{x}' - \vec{x}_j)} \simeq 1$, per cui $Z_{N+1} \simeq VZ_N$.
 \end{osservazione}
-Trascurando il caso banale nell'osservazione, rimane da studiare il caso $\vec{x}' \sim \vec{x}_i$, per qualche $i=1,\ldots,N$.
+\noindent Trascurando il caso banale nell'osservazione, rimane da studiare il caso $\vec{x}' \sim \vec{x}_i$, per qualche $i=1,\ldots,N$.
 In questo caso, si pu\`o considerare $e^{-\beta  \sum_{i<j}^{} v (\vec{x}_i - \vec{x}_j)} \simeq 1$, da cui
 \[
 Z_{N+1}  \simeq \frac{\displaystyle \int d \vec{x}' \int d ^N \vec{x}\ e^{-\beta  \sum_{i}^{} v(\vec{x}' - \vec{x}_i)} }{V^N} Z_N
@@ -506,7 +506,7 @@ Permette una descrizione pi\`u accurata e generale di un sistema composto da un 
 \begin{osservazione}
 Questi sviluppi sono adeguati quando il sistema non si trova vicino a transizioni di fase, le quali sono caratterizzate da non-analiticit\`a delle variabili termodinamiche del sistema.
 \end{osservazione}
-Si utilizza il formalismo gran canonico per studiare un gas descritto dall'hamiltoniana
+\noindent Si utilizza il formalismo gran canonico per studiare un gas descritto dall'hamiltoniana
 \[
 H = \sum_{i}^{} \frac{p_i^2}{2m} + \sum_{i<j}^{} v\left(\lvert \vec{r}_i - \vec{r}_j \rvert \right) 
 \] 
@@ -585,7 +585,7 @@ In generale, ogni $W_N$ segue la stessa logica: \`e somma di tutti i possibili g
 Si pu\`o vedere, invece, che le $\mathcal{U} _\ell $, invece, sono esclusivamente legate a grafi connessi perch\'e, in $W_N$, la $\mathcal{U} _N$ \`e l'unica indecomponibile, per cui deve corrispondere al grafo completamente connesso con $N$ vertici.
 Allora, l'espansione in cumulanti permette di considerare esclusivamente i termini corrispondenti a grafi connessi.
 \end{osservazione}
-Per continuare lo studio di $\mathcal{Z} $, si definisce 
+\noindent Per continuare lo studio di $\mathcal{Z} $, si definisce 
 \[
 b_\ell := \frac{1}{\ell !}\frac{1}{V} \int d\vec{r}_1 \ldots d\vec{r}_\ell\ \mathcal{U} _\ell (\vec{r}_1,\ldots,\vec{r}_\ell )
 \] 
@@ -861,7 +861,7 @@ A questo punto, nel secondo termine, si ritrova proprio la $n_3$, per cui si ric
 \begin{osservazione}
 Da questa equazione, per ottenere la $n_2$, \`e necessario conoscere preliminarmente la $n_3$; applicando lo stesso discorso alla $n_3$, si arriva a trovare una catena di equazioni differenziali che non si chiudono, similmente a quanto succede per la gerarchia BBGKY.
 \end{osservazione}
-Per proseguire il calcolo, si utilizza l'\textit{approssimazione di Kirkwood}:
+\noindent Per proseguire il calcolo, si utilizza l'\textit{approssimazione di Kirkwood}:
 \begin{equation}
 	n_3 ( \vec{r}_1, \vec{r}_2, \vec{r}_3) \simeq \frac{n_2(\vec{r}_{12}) n_2(\vec{r}_{13}) n_2(\vec{r}_{23} ) }{n_1^3}
 \end{equation}
@@ -1040,7 +1040,7 @@ Questo punto reale \`e proprio il punto critico ed \`e dove si verificano le tra
 \begin{osservazione}
 Questo teorema permette di concludere che un'eventuale transizione di fase, per un sistema del tipo previsto dal teorema, pu\`o verificarsi esclusivamente per $z=1$, visto che gli zeri di $\mathcal{Z} (z)$ sono sulla circonferenza unitaria in $\mathbb{C}$.
 \end{osservazione}
-Se $\theta _k$ sono le fasi delle radici di $\mathcal{Z} $, allora, nel caso del potenziale considerato sopra, si pu\`o scrivere, imponendo anche $\mathcal{Z} (0) = 1$, che
+\noindent Se $\theta _k$ sono le fasi delle radici di $\mathcal{Z} $, allora, nel caso del potenziale considerato sopra, si pu\`o scrivere, imponendo anche $\mathcal{Z} (0) = 1$, che
 \[
 \mathcal{Z}  = \prod_k \frac{z-e^{i\theta _k}}{- e ^{-i\theta _k}}
 \] 
@@ -1335,7 +1335,7 @@ Z = \sum_{\left\{ S_i \right\} }^{} e^{-\beta H\left(\left\{ S_i \right\} \right
 \begin{osservazione}
 Si usa il formalismo canonico perch\'e il numero di particelle \`e fissato dal numero di reticoli del sistema.
 \end{osservazione}
-Si definisce la magnetizzazione del sito $i$-esimo come $m_i = \langle S_i \rangle$; in questo modo, si pu\`o esprimere ogni variabile $S_i$ in termini del suo valor medio e delle sue fluttuazioni come 
+\noindent Si definisce la magnetizzazione del sito $i$-esimo come $m_i = \langle S_i \rangle$; in questo modo, si pu\`o esprimere ogni variabile $S_i$ in termini del suo valor medio e delle sue fluttuazioni come 
 \[
 S_i = m_i + \delta S_i
 \] 
@@ -1451,7 +1451,7 @@ che coincide proprio con la temperatura critica a cui avviene la transizione di 
 \begin{osservazione}
 	I valori $m^*$ e $-m^*$ sono simmetrici e sono legati al fatto che il grafico di $m(T)$ a fine della scorsa lezione pu\`o avere un ramo rosso nella parte superiore del piano, o uno perfettamente specchiato nella parte inferiore.
 \end{osservazione}
-In particolare, il caso $T>T_c \Rightarrow m=0$ corrisponde al caso paramagnetico, mentre il caso $T<T_c$, che permette $m=0, +m^*, - m^*$, corrisponde al caso ferromagnetico.
+\noindent In particolare, il caso $T>T_c \Rightarrow m=0$ corrisponde al caso paramagnetico, mentre il caso $T<T_c$, che permette $m=0, +m^*, - m^*$, corrisponde al caso ferromagnetico.
 Per capire quali di queste soluzioni sono fisicamente ammissibili (nel caso $T<T_c$), si studia l'energia libera e si vede a quali di queste corrisponde un suo minimo.
 L'energia libera \`e data da
 \[
@@ -1795,7 +1795,7 @@ Inoltre, la condizione $1 / \beta _c k =1 $ permette di individuare la temperatu
 La differenza rispetto alla precedente trattazione \`e che, ora, $\psi $ \`e un campo, cio\`e \`e una variabile della posizione.
 Precedentemente, la magnetizzazione si assumeva costante; in questo caso, invece, si vedr\`a che si pu\`o inserire l'informazione che $\psi =\psi (x)$ e studiare le fluttuazioni.
 \end{osservazione}
-Sotto approssimazione di $\psi_i $ piccoli, si pu\`o scrivere la $f(\psi )$ sviluppando con Taylor il termine con $\log\left(\cosh \psi\right) $, da cui si ricava
+\noindent Sotto approssimazione di $\psi_i $ piccoli, si pu\`o scrivere la $f(\psi )$ sviluppando con Taylor il termine con $\log\left(\cosh \psi\right) $, da cui si ricava
 \[
 	f(\psi) \simeq \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}\psi _j - \frac{1}{2} \sum_{i}^{} \psi _i^2 + \frac{1}{12} \sum_{i}^{} \psi _i^4
 \] 
@@ -2955,12 +2955,262 @@ Supponendo $J,h >0 $, allora $x,y \in [0,1]$.
 \end{center}
 In questo senso, il punto $(0,1)$ \`e \textit{repulsivo}: spostandosi leggermente da esso, si finisce da un'altra parte del grafico; al contrario, la retta rossa definisce punti \textit{attrattivi} perch\'e, spostandosi da essi, ci si ritorna.
 Il punto $(0,0)$, invece, \`e sia attrattivo, che repulsivo, a seconda di dove ci si sposta.
-
+\begin{osservazione}
 Dalle definizioni, si vede che $x=1 \iff -4 \beta  J = 0$, che corrisponde a $\beta  \to  0$, o $T\to +\infty$, il che equivale a spin non correlati ($\xi =0$), quindi senza una fisica interessante alla base.
-Al contrario, i punti della linea attrattiva corrispondono, a meno di casi limite $J,h\to +\infty$, a temperatura nulla, cio\`e $\beta \to +\infty$.
+Al contrario, i punti della linea attrattiva corrispondono a temperatura nulla, cio\`e $\beta \to +\infty$, e campo magnetico infinito ($y=0$), oppure nullo ($y=1$).
+Nel secondo caso, se $h=0$, il sistema si polarizza a seconda degli accoppiamenti tra gli spin; nel primo caso, il sistema si polarizza in direzione del campo magnetico. 
+Questo permette di evidenziare che, nel caso 1D, non vi sono transizioni di fase, in quanto i punti fissi corrispondono a:
+\begin{itemize}
+	\item sistemi completametne disordinati ($T=+\infty\Rightarrow \xi =0$);
+	\item sistemi senza fluttuazioni termiche, ossia completamente ordinati ($T=0\Rightarrow \xi = +\infty$).
+\end{itemize}
+\end{osservazione}
+\noindent Si studia il comportamento della mappa in approssimazione lineare attorno al punto $(0,1)$.
+Si prende 
+\[
+X = \begin{pmatrix} x \\ y \end{pmatrix} \hspace{1cm} X^* = \begin{pmatrix} x^* \\ y^* \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+\] 
+Indicando con $f$ la trasformazione RG, si \`e trovato che
+\[
+f(X) = \begin{pmatrix} f_1(x,y) \\ f_2(x,y) \end{pmatrix}  \hspace{1cm} f_1 = x \frac{1+y^2}{(x+y)(1+xy)} \hspace{1cm} f_2 = y \frac{x+y}{1 + xy}
+\] 
+per cui l'azione linearizzata della trasformazione in un punto nelle vicinanze di $X^*$ \`e data da
+\[
+	X^* + \Delta X' = f \left(X^* + \Delta X\right)  \simeq f(X^*) + \Eval{\frac{\partial f}{\partial X} }{X^*}{}\cdot \Delta X + \operatorname{O} \left(\Delta X^2\right) 
+\] 
+con 
+\[
+	\Eval{\frac{\partial f}{\partial X} }{X^*}{} = \Eval{\begin{pmatrix} \partial _x f_1 & \partial _y f_1 \\ \partial _x f_2 & \partial _y f_2 \end{pmatrix} }{X^*}{} = \begin{pmatrix} 4 & 0 \\ 0 & 2 \end{pmatrix} 
+\] 
+Allora
+\[
+	\Delta X' = \begin{pmatrix} \Delta x' \\ \Delta y' \end{pmatrix} = \begin{pmatrix} 4 & 0 \\ 0 &2  \end{pmatrix} \begin{pmatrix} \Delta x \\ \Delta y \end{pmatrix} 
+\] 
+La forma della matrice \`e dovuta all'aver scelto $b=2$ in questo caso; in generale, avrebbe $b^2$ al posto di $4$ e $b$ al posto di $2$.
+Si trova anche, quindi, che le direzioni privilegiate lungo cui la trasformazione riscala il sistema sono proprio $x$ e $y$.
+
+Si considera, ora, l'energia libera riscalata, che si indica con $\overline{F} = \frac{F}{\kappa_BT N}$ per non confonderla con la trasformazione $f$.
+Si vuole che questa coincide con la sua forma riscalata, ossia
+\[
+\overline{F}(\Delta x, \Delta y) = - \frac{1}{N} \log Z_N (\Delta x, \Delta y) \stackrel{!}{=} -\frac{1}{N'b} \log Z_{N'} \left(\Delta x' , \Delta y'\right) 
+\] 
+essendo $N' = N / b$.
+Utilizzando la relazione appena ottenuta, si ha
+\[
+\overline{F}(\Delta x, \Delta y) = \frac{1}{b} \overline{F} \left(b^2 \Delta x , b \Delta y\right) 
+\] 
+In principio, $b$ \`e un parametro di scala che si pu\`o fissare arbitrariamente; immaginando di non voler utilizzare $b=2$ e di richiedere, invece, che $\Delta x' = 1$, si deve avere $b = \Delta x ^{-1 / 2}$, da cui
+\[
+\overline{F} (\Delta x , \Delta y) = \Delta x  ^{1 / 2} \overline{F}\left(1 ,  \frac{\Delta y}{\Delta x ^{-1 / 2}}\right) = \Delta x ^{1 / 2} \widetilde{F}  \left(\frac{\Delta y}{\Delta x ^{1 / 2}}\right) 
+\] 
+avendo definito $\widetilde{F}$ in modo da togliere la dipendenza da $1$.
+Visto che $\Delta x = x-x^* = x - 0 = x = e^{-4\beta J}$ e $\Delta y = y-1 = e^{-2\beta  h}-1 \simeq -2\beta  h$ (per $\Delta y$ piccolo), si ha
+\[
+\overline{F} (\Delta x,\Delta y) = e^{-2 \beta J} \widetilde{F} \left(2 \beta h e^{2\beta J}\right) 
+\] 
+dove si pu\`o trascurare il fattore $2$ nell'argomento della $\widetilde{F}$ perch\'e si \`e interessati ad andamenti asintotici.
+Visto che si \`e in 1D, ci si aspetta che $[\overline{F}] = 1 / L \Rightarrow \overline{F}\sim\xi^{-1} $.
+Immaginando che $\xi \sim e^{2 \beta J}$, cio\`e la sua divergenza sia catturata dal prefattore $e^{-2 \beta J}$, si ha $\overline{F} \sim \xi ^{-1}\widetilde{F}$.
+Dalla soluzione esatta del problema, si ricava che
+\[
+	\xi  = - \frac{a}{\log\big[\tanh(\beta J)\big]} \xrightarrow{\ \beta J \to +\infty \ } e^{2 \beta J}
+\] 
+cio\`e si ritrova esattamente quanto ottenuto con al teoria del gruppo di rinormalizzazione, in prossimit\`a di $\beta \to +\infty$ e $h \to  0$.
+
+\newpage
+
+\section{Introduzione alla fisica statistica quantistica}
+La descrizione di un sistema quantistico \`e ottenuta tramite gli stati $\ket{\psi } \in \mathcal{H} $, la cui evoluzione temporale \`e descritta da 
+\[
+i \hbar \frac{ d\ket{\psi } }{d t} = \hat{H} \ket{\psi } 
+\] 
+con $\hat{H}$ operatore hamiltoniano.
+Gli osservabili sono gli operatori $\hat{O}$, il cui valore medio \`e ottenuto tramite il valore di aspettazione nello stato $\psi $ \`e $O = \braket{\psi |\hat{O}|\psi } $.
+In meccanica statistica, si \`e interessati alle \textit{misture di stati}: dati $\left\{ \ket{\psi _\lambda }  \right\} _\lambda $ un insieme di stati, la matrice densit\`a \`e definita come
+\[
+\rho  = \sum_{\lambda }^{} p_\lambda \ket{\psi _\lambda } \bra{\psi _\lambda }  
+\] 
+con $p_\lambda $ una certa distribuzione di probabilit\`a, con $\sum_{\lambda }^{} p_\lambda  = 1$ e $p_\lambda  \ge  0$.
+\begin{osservazione}
+Dal punto di vista matematico, $\rho $ \`e un operatore, ma dal punto di vista fisico, rappresenta uno stato quantistico statistico (motivo per cui non si scrive $\hat{\rho }$) ed \`e legato al fatto che, generalmente, non si conosce lo stato in cui si trova il sistema, ma si ha una probabilit\`a con cui si trova in uno, o gli altri, per cui si usa $\rho $.
+\end{osservazione}
+\noindent La matrice densit\`a permette di generalizzare il valore medio di un osservabile per una mistura di stati:
+\[
+O = \operatorname{Tr} \left(\hat{O}\rho \right) 
+\] 
+Si pu\`o far vedere che $\rho $ \`e autoaggiunto, ha autovalori non-negativi, $\operatorname{Tr} \rho  =1$ e, per uno stato puro, $\rho ^2 = \rho $; in generale, invece, $\operatorname{Tr} \rho ^2 < 1$.
+L'evoluzione temporale per la matrice densit\`a, per sistemi isolati, \`e data dall'equazione di Liouville-von Neumann:
+\begin{equation}
+i\hbar  \frac{d \rho }{d t} = \left[ \hat{H},\rho  \right] 
+\end{equation}
+\begin{osservazione}
+In questa trattazione, si \`e interessati esclusivamente a stati di equilibrio, per i quali $\left[ \hat{H}, \rho   \right]  = 0$.
+\end{osservazione}
+\noindent Si diagonalizza l'hamiltoniano: $\hat{H } \ket{\phi _n}  = E_n \ket{\phi _n} $, per cui si ha che $\ket{\psi (t)} = \sum_{n}^{} c_n(t) \ket{\phi _n} $.
+Si utilizza la seguente assunzione, che \`e l'analogo quantistico del principio di equiprobabilit\`a a priori: se l'energia del sistema \`e fissata ad $E$ entro un certo intervallo $\Delta E$, allora, in media temporale, si ha
+\[
+\lvert c_n(t) \rvert ^2 = \begin{cases}
+	\text{cost.}&,\ \text{ se } E < E_n < E+\Delta E\\
+	0 &,\ \text{ altrimenti }
+\end{cases}
+\] 
+dove $E_n$ \`e l'energia del sistema associata allo stato $\ket{\phi _n} $.
+Quello che si sta dicendo con questa assunzione \`e che, fissando l'energia del sistema ad $E$ pi\`u un certo errore $\Delta E$, l'evoluzione temporale del sistema \`e vincolata agli stati che si trovano in tale range energetico, con l'aggiunta che questi stati in questo range sono \textit{visitabili} con uguale probabilit\`a dal sistema.
+Un'altra assunzione \`e quella del \textit{postulato delle fasi random}: in media temporale, il sistema visita gli stati in modo incoerente:
+\[
+c_n(t) c_m(t) = 0, \ \forall n\neq m
+\] 
+Questo significa che non ci sono coerenze tra autostati diversi.
+\subsection{Ensemble statistici}
+Per il microcanonico ($E$ fissata), si definisce 
+\[
+\rho  = \frac{1}{\Gamma(E)} \sum_{E<E_n< E+\Delta E}^{} \ket{\phi _n} \bra{\phi _n} \hspace{.5cm} \text{con }\hspace{.5cm} \Gamma(E) = \operatorname{Tr} \left(\sum_{E<E_n<E+\Delta E}^{} \ket{\phi _n} \bra{\phi _n} \right)  
+\] 
+con entropia $S(E,V) = \kappa _B \log\Gamma(E)$.
+\begin{osservazione}
+Questo permette di comprendere e risolvere tutte le eccezioni al terzo principio della termodinamica: $\displaystyle \lim_{T \to 0} S = \kappa _B \log g$, con $g$ degenerazione dello stato fondamentale. In particolare, se il sistema ha un solo stato fondamentale, $g=1\Rightarrow \log g = 0$, per cui $S \to  0$.
+\end{osservazione}
+\noindent Per l'ensemble canonico ($N$ fissato), si definisce 
+\[
+ 	\rho = \frac{1}{Z} e^{-\beta \hat{H}}\hspace{.5cm} \text{con }\hspace{.5cm} Z(T,V,N) = \operatorname{Tr} \left[ e^{-\beta \hat{H}} \right] 
+\] 
+Per il gran canonico, invece, si ha 
+\[
+\rho  = \frac{1}{\mathcal{Z} } e^{-\beta \left(\hat{H}- \mu  \hat{N}\right) }\hspace{.5cm} \text{con }\hspace{.5cm} \mathcal{Z} =\sum_{N=0}^{+\infty} z^N Z(T,V,N)
+\] 
+e $\hat{N}$ operatore numero.
+\begin{osservazione}
+Nel gran canonico, il numero di particelle $N$ non \`e fissato, quindi lo spazio di Hilbert del sistema \`e ottenuto come somma diretta di spazi con numero $N$ di particelle: 
+\[
+\mathcal{H} = \bigoplus_{N=0} ^{+\infty} \mathcal{H} _N
+\] 
+\end{osservazione}
+\subsection{Gas ideale quantistico}
+Si considerano $N$ particelle quantistiche non interagenti e identiche, per cui
+\[
+\hat{H} = \frac{1}{2m} \sum_{i=1}^{N} \hat{\mathbf{p} }_i ^2
+\] 
+con $\hat{\mathbf{p} }_i = - i\hbar \nabla _i$ vettore degli operatori momento lungo ciascuno dei tre assi ($x$, $y$ e $z$) relativo alla particella $i$-esima.
+Si distingue la trattazione per i seguenti tipi di sistemi.
+\begin{itemize}
+	\item \textit{Sistemi bosonici}: autofunzioni simmetriche rispetto allo scambio di due particelle.
+	\item \textit{Sistemi fermionici}: autofunzioni anti-simmetriche rispetto allo scambio di due particelle, da cui origina il principio di esclusione di Pauli (se due particelle avessero stesso numero quantico, l'antisimmetria restituirebbe uno zero).
+	\item \textit{Sistemi di Boltzmann}: seguono una statistica semi-classica inesistente in natura, per cui non si ha nessuna propriet\`a di simmetria/anti-simmetria per scambio di particelle. 
+		Per questi sistemi, occorre introdurre il fattore correttivo di Gibbs $1 / N!$.
+\end{itemize}
+Gli autostati e le autoenergie del sistema, comprensivi della costante di normalizzazione, sono
+\[
+u_\mathbf{p}  (\mathbf{x} ) = \frac{1}{\sqrt{V} } e^{- \frac{i}{\hbar } \mathbf{p}  \cdot \mathbf{x} } \hspace{1cm} \varepsilon _p = \frac{p^2}{2m}
+\] 
+per ogni particella. 
+Considerando gas in una scatola cubica, $V=L^3$; con condizioni al bordo periodiche, si ha
+\[
+\mathbf{p}  = \frac{2 \pi \hbar }{L} \mathbf{m} 
+\] 
+e $\mathbf{m}  \in \mathbb{Z}^3$.
+\begin{osservazione}
+Nel passaggio al continuo, si ha
+\[
+\sum_{\mathbf{p} }^{} \longrightarrow \frac{V}{h^3}\int d^3 p 
+\] 
+in quanto lo spazio dei momenti \`e discretizzato, con due punti separati da una distanza $\Delta = \frac{2\pi \hbar }{L}$ per ogni dimensione.
+Questo significa che ogni stato nello spazio degli impulsi occupa un volume pari a 
+\[
+	(\Delta p_x ) (\Delta p_y) (\Delta p_z) = \left(\frac{2\pi \hbar }{L}\right) ^3 = \frac{h^3}{V}
+\] 
+e, quindi, il numero di stati in $d^3p$ \`e $\frac{d^3 p}{h^3 / V} = \frac{V}{h^3}d^3p$.
+\end{osservazione}
+\noindent Uno stato \`e identificato da un set di numeri di occupazione $\left\{ n_\mathbf{p}  \right\} $ che permette di identificare quante particelle corrispondono al momento $\mathbf{p} $ e, pertanto, con onda piana $u_\textbf{p}$.
+La differenza tra i vari tipi di sistemi elencati sopra, in questa trattazione, entra proprio nelle possibilit\`a degli $n_\mathbf{p} $: non si pu\`o avere pi\`u di un fermione per momento $\mathbf{p} $, quindi $n_\mathbf{p} = 0, 1$; per bosoni, invece, non si hanno vincoli.
+Per Boltzmann, invece, $n_\mathbf{p} $ pu\`o essere arbitrario, ma una certa sequenza $\left\{ n_\mathbf{p}  \right\} $ pu\`o essere associata a pi\`u stati differenti, per un totale di $\frac{N!}{\prod_\mathbf{p} n_\mathbf{p} !}$\footnote{Il numeratore considera tutte le possibili combinazioni; il denominatore si riferisce al fatto che, scambiando due particelle con uguale momento, si ha ancora lo stesso stato}, perch\'e non vi \`e alcun discorso riguardo simmetrie per scambio di particelle.
+In Boltzmann, si dovr\`a anche tenere conto del fattore correttivo di Gibbs, che semplificher\`a l'$N!$ al numeratore.
+\begin{osservazione}
+Studiare questo sistema con il formalismo microcanonico \`e pi\`u complicato.
+Si ha 
+\[
+\Gamma(E) = \sum_{\left\{ n_i \right\} }^{*} W \left(\left\{ n_i \right\} \right) 
+\] 
+dove $W\left(\left\{ n_i \right\} \right) $ conta il numero di stati associati alla sequenza $\left\{ n_i \right\} $.
+L'asterisco si riferisce al fatto che l'energia e il numero di particelle sono fissati da $E = \sum_{i}^{} \varepsilon _i n_i$ e $N = \sum_{i}^{} n_i$. 
+Questa somma \`e complicata e si fa in approssimazione di punto sella, cio\`e limitandosi alla sequenza che massimizza il valore di $W$; in questo modo, si pu\`o trovare $S\simeq \kappa _B \log W\left(\left\{ \overline{n}_i \right\} \right) $, con sequenza che deve essere ottenuta imponendo i vincoli riportati sopra, cosa che si ottiene con l'utilizzo dei moltiplicatori di Lagrange.
+Per tali ragioni, non si procede alla trattazione con il microcanonico.
+\end{osservazione}
+\subsubsection{Gas perfetto con ensemble gran canonico}
+Si considera preliminarmente\footnote{La traccia, per sistemi non interagenti, \`e banale.}
+\[
+Z(T,V,N) = \sum_{\left\{ n_\mathbf{p}  \right\} }^{*} g\left(\left\{ n_\mathbf{p}  \right\} \right) e^{-\beta E\left(\left\{ n_\mathbf{p}  \right\} \right) }
+\] 
+dove l'asterisco \`e ancora riferito al vincolo $\sum_{\mathbf{p} }^{} n_\mathbf{p}  = N$ numero totale di particelle fissato e l'energia del sistema \`e nota, pari a $E = \sum_{\mathbf{p} }^{} n_\mathbf{p} \varepsilon _\mathbf{p} $.
+La funzione $g\left(\left\{ n_\mathbf{p}  \right\} \right) $ stabilisce l'ammissibilit\`a della frequenza e si comporta differentemente a seconda della statistica:
+\[
+g\left(\left\{ n_\mathbf{p}  \right\} \right)  = \begin{cases}
+	1 & \text{ per } n_\mathbf{p} = 0,1 \hspace{.3cm} \text{(fermioni)}\\
+	1 & \text{ per } n_\mathbf{p} \text{ arbitrario } \hspace{.3cm} \text{(bosoni)}\\
+	\left(\frac{\cancel{N!}}{\prod_\mathbf{p} n_\mathbf{p} !}\right) \frac{1}{\cancel{N!}}& \text{ per } n_\mathbf{p} \text{ arbitrario } \hspace{.3cm}\text{(Boltzmann)}
+\end{cases} 
+\] 
+\begin{itemize}
+	\item Caso della statistica di Boltzmann.
+
+		In questo caso, si ha
+		\[
+			Z = \sum_{\left\{ n_1,n_1,\ldots \right\} }^{*} \left[ \frac{e^{-\beta n_0 \varepsilon _0}}{n_0!} \frac{e^{-\beta n_1 \varepsilon _1}}{n_1!} \cdot \ldots \right] = \frac{1}{N!}\left[ e^{-\beta \varepsilon _0}+ e^{-\beta  \varepsilon _1}+ \ldots\right] ^N
+		\] 
+	dove, nella seconda uguaglianza, si \`e fatto uso del teorema multinomiale:
+	\[
+	\left(x_1+\ldots + x_m\right) ^N = \sum_{k_1+\ldots+k_m = N}^{} \left(\frac{N!}{k_1! \cdots k_m!}\right) \prod_{j=1} ^m x_j^{k_j}  
+	\] 
+	Allora, nel limite termodinamico:
+	\[
+		Z = \frac{1}{N!}\left(\sum_{\mathbf{p} }^{} e^{-\beta  \varepsilon _\mathbf{p} }\right) ^N \xrightarrow{\hspace{.5cm}} \frac{1}{N!}\left(\frac{V}{h^3}\int d^3 p \ e^{-\beta \frac{p^2}{2m}}\right) ^N = \frac{V^N}{N! h^{3N}} \big(2\pi m \kappa _B T\big) ^{3N / 2}
+	\] 
+	ed \`e identico al caso classico.
+\item Caso di bosoni e fermioni.
+
+	Questi due casi sono pi\`u complicati a causa del vincolo $N = \sum_{\mathbf{p} }^{} n_\mathbf{p} $, motivo per cui conviene passare alla funzione di gran partizione, che permette di sommare via $N$.
+	\[
+		\begin{split}
+			\mathcal{Z} (z,T,V) &= \sum_{N=0}^{+\infty} z^N Z(T,V,N) = \sum_{N=0}^{+\infty} \sum_{\left\{ n_\mathbf{p}  \right\} }^{*} z ^{\sum_{\mathbf{p} }^{} n_\mathbf{p} } e^{-\beta  \sum_{\mathbf{p}}^{} n_\mathbf{p} \varepsilon _\mathbf{p} }\\
+					    &= \sum_{\left\{ n_\mathbf{p}  \right\} }^{} z^{\sum_{\mathbf{p} }^{} n_\mathbf{p} } e^{-\beta  \sum_{\mathbf{p} }^{} n_\mathbf{p} \varepsilon _\mathbf{p} } = \prod_\mathbf{p} \left[ \sum_{\left\{ n_\mathbf{p}  \right\} }^{} z^{n_\mathbf{p} }e^{-\beta n_\mathbf{p} \varepsilon _\mathbf{p} } \right] 
+		\end{split}
+	\] 
+dove la somma su opportune sequenze \`e stata eliminata dall'aver sommato su tutti i possibili $N$ da $0$ a infinito e la $g\left(\left\{ n_\mathbf{p}  \right\} \right) = 1$ sia nel caso dei bosoni, che in quello dei fermioni.
+
+Nel caso particolare dei fermioni, $n_\mathbf{p} = 0$, oppure $1$, quindi
+\[
+\mathcal{Z}  = \prod_\mathbf{p} \left(1 + z e^{-\beta \varepsilon _\mathbf{p} }\right) 
+\] 
+da cui 
+\[
+\langle N \rangle = z \frac{\partial }{\partial z} \log\mathcal{Z} = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }+1}
+\] 
+che \`e proprio la \textit{statistica di Fermi-Dirac}.
+
+Nel limite termodinamico e sviluppando in serie il logaritmo, si pu\`o scrivere che 
+\[
+	\log \mathcal{Z}  = \sum_{\mathbf{p}}^{} \log\left(1+ z e^{-\beta \varepsilon _\mathbf{p} }\right) \xrightarrow{\hspace{.4cm}} \frac{V}{h^3} \int d^3 p \ \log\left(1 + z e^{- \frac{\beta n p^2}{2m}}\right) = \frac{V}{\lambda _T^3} \sum_{n=1}^{+\infty} \frac{(-1)^{n+1}z^n}{n^{5 / 2}}
+\] 
+dove si \`e usato che il logaritmo si sviluppa come
+\[
+\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n} \ \text{ con } \ \ \varepsilon  = z e^{-\beta p^2 / 2m}
+\] 
+Definendo 
+\[
+f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }
+\] 
+si pu\`o scrivere che
+\[
+\begin{cases}
+	\displaystyle \log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{v}{\lambda _T^3} f_{5 / 2} (z)\\
+	\\
+	\displaystyle \langle N \rangle= z \frac{\partial }{\partial z} \log \mathcal{Z}  \implies \frac{1}{v} = \frac{\langle N \rangle}{v}=\frac{1}{\lambda _T^3} f_{3/2} (z)
+\end{cases}
+\] 
+\end{itemize}
 \begin{boxenv}[]
-\centering Lezione 18, 57:54
+\centering Riprendere da lezione 19
 \end{boxenv}
+
 
 
 
