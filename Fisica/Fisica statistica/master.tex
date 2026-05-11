@@ -432,7 +432,7 @@ v(r) = \begin{cases}
 	       v(r)<0&\, r \in (b,+\infty)
 \end{cases}
 \] 
-Nella seconda approssimazione, invece, si \`e assunto il caso di \textbf{alte temperature}, corrispondente a $\beta \ll 1$, per sviluppare l'esponenziale al primo ordine.
+Nella seconda approssimazione, invece, si \`e assunto che $\lvert \beta v(r) \rvert \ll 1$, corrispondente a potenziale debole rispetto a $\kappa _B T$, per sviluppare l'esponenziale al primo ordine.
 In questo modo, l'equazione di stato diventa 
 \[
 \frac{pV}{N\kappa _BT}\simeq 1+\frac{N}{2} \frac{V_b}{V}-\frac{ND}{2VT}
@@ -3135,24 +3135,23 @@ L'asterisco si riferisce al fatto che l'energia e il numero di particelle sono f
 Questa somma \`e complicata e si fa in approssimazione di punto sella, cio\`e limitandosi alla sequenza che massimizza il valore di $W$; in questo modo, si pu\`o trovare $S\simeq \kappa _B \log W\left(\left\{ \overline{n}_i \right\} \right) $, con sequenza che deve essere ottenuta imponendo i vincoli riportati sopra, cosa che si ottiene con l'utilizzo dei moltiplicatori di Lagrange.
 Per tali ragioni, non si procede alla trattazione con il microcanonico.
 \end{osservazione}
-\subsubsection{Gas perfetto con ensemble gran canonico}
-Si considera preliminarmente\footnote{La traccia, per sistemi non interagenti, \`e banale.}
+\noindent Si considera preliminarmente\footnote{La traccia, per sistemi non interagenti, \`e banale.}
 \[
 Z(T,V,N) = \sum_{\left\{ n_\mathbf{p}  \right\} }^{*} g\left(\left\{ n_\mathbf{p}  \right\} \right) e^{-\beta E\left(\left\{ n_\mathbf{p}  \right\} \right) }
 \] 
 dove l'asterisco \`e ancora riferito al vincolo $\sum_{\mathbf{p} }^{} n_\mathbf{p}  = N$ numero totale di particelle fissato e l'energia del sistema \`e nota, pari a $E = \sum_{\mathbf{p} }^{} n_\mathbf{p} \varepsilon _\mathbf{p} $.
-La funzione $g\left(\left\{ n_\mathbf{p}  \right\} \right) $ stabilisce l'ammissibilit\`a della frequenza e si comporta differentemente a seconda della statistica:
+La funzione $g\left(\left\{ n_\mathbf{p}  \right\} \right) $ stabilisce la molteplicit\`a degli stati relativi alla sequenza $\left\{ n_\mathbf{p}  \right\} $:
 \[
 g\left(\left\{ n_\mathbf{p}  \right\} \right)  = \begin{cases}
 	1 & \text{ per } n_\mathbf{p} = 0,1 \hspace{.3cm} \text{(fermioni)}\\
 	1 & \text{ per } n_\mathbf{p} \text{ arbitrario } \hspace{.3cm} \text{(bosoni)}\\
-	\left(\frac{\cancel{N!}}{\prod_\mathbf{p} n_\mathbf{p} !}\right) \frac{1}{\cancel{N!}}& \text{ per } n_\mathbf{p} \text{ arbitrario } \hspace{.3cm}\text{(Boltzmann)}
+        \displaystyle \frac{1}{\prod_\mathbf{p} n_\mathbf{p} !}& \text{ per } n_\mathbf{p} \text{ arbitrario } \hspace{.3cm}\text{(Boltzmann)}
 \end{cases} 
 \] 
-\begin{itemize}
-	\item Caso della statistica di Boltzmann.
+dove, nel caso di Boltzmann, si \`e tenuto conto del fattore correttivo di Gibbs e del fattore correttivo legato all'assenza di simmetria per scambio di praticelle, il cui prodotto $\frac{N!}{\prod_\mathbf{p} n_\mathbf{p} !} \frac{1}{N!}$ restituisce il fattore di conteggio corretto.
+\vspace{.5cm}
 
-		In questo caso, si ha
+\textbf{Caso della statistica di Boltzmann.} In questo caso, si ha
 		\[
 			Z = \sum_{\left\{ n_1,n_1,\ldots \right\} }^{*} \left[ \frac{e^{-\beta n_0 \varepsilon _0}}{n_0!} \frac{e^{-\beta n_1 \varepsilon _1}}{n_1!} \cdot \ldots \right] = \frac{1}{N!}\left[ e^{-\beta \varepsilon _0}+ e^{-\beta  \varepsilon _1}+ \ldots\right] ^N
 		\] 
@@ -3165,9 +3164,9 @@ g\left(\left\{ n_\mathbf{p}  \right\} \right)  = \begin{cases}
 		Z = \frac{1}{N!}\left(\sum_{\mathbf{p} }^{} e^{-\beta  \varepsilon _\mathbf{p} }\right) ^N \xrightarrow{\hspace{.5cm}} \frac{1}{N!}\left(\frac{V}{h^3}\int d^3 p \ e^{-\beta \frac{p^2}{2m}}\right) ^N = \frac{V^N}{N! h^{3N}} \big(2\pi m \kappa _B T\big) ^{3N / 2}
 	\] 
 	ed \`e identico al caso classico.
-\item Caso di bosoni e fermioni.
+	\vspace{.5cm}
 
-	Questi due casi sono pi\`u complicati a causa del vincolo $N = \sum_{\mathbf{p} }^{} n_\mathbf{p} $, motivo per cui conviene passare alla funzione di gran partizione, che permette di sommare via $N$.
+	\textbf{Funzione di gran partizione.} I casi di bosoni e fermioni sono pi\`u complicati a causa del vincolo $N = \sum_{\mathbf{p} }^{} n_\mathbf{p} $, motivo per cui conviene passare alla funzione di gran partizione, che permette di sommare via $N$:
 	\[
 		\begin{split}
 			\mathcal{Z} (z,T,V) &= \sum_{N=0}^{+\infty} z^N Z(T,V,N) = \sum_{N=0}^{+\infty} \sum_{\left\{ n_\mathbf{p}  \right\} }^{*} z ^{\sum_{\mathbf{p} }^{} n_\mathbf{p} } e^{-\beta  \sum_{\mathbf{p}}^{} n_\mathbf{p} \varepsilon _\mathbf{p} }\\
@@ -3175,8 +3174,9 @@ g\left(\left\{ n_\mathbf{p}  \right\} \right)  = \begin{cases}
 		\end{split}
 	\] 
 dove la somma su opportune sequenze \`e stata eliminata dall'aver sommato su tutti i possibili $N$ da $0$ a infinito e la $g\left(\left\{ n_\mathbf{p}  \right\} \right) = 1$ sia nel caso dei bosoni, che in quello dei fermioni.
+\vspace{.5cm}
 
-Nel caso particolare dei fermioni, $n_\mathbf{p} = 0$, oppure $1$, quindi
+\textbf{Caso dei fermioni.} Nel caso particolare dei fermioni, $n_\mathbf{p} = 0$, oppure $1$, quindi
 \[
 \mathcal{Z}  = \prod_\mathbf{p} \left(1 + z e^{-\beta \varepsilon _\mathbf{p} }\right) 
 \] 
@@ -3185,31 +3185,100 @@ da cui
 \langle N \rangle = z \frac{\partial }{\partial z} \log\mathcal{Z} = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }+1}
 \] 
 che \`e proprio la \textit{statistica di Fermi-Dirac}.
-
 Nel limite termodinamico e sviluppando in serie il logaritmo, si pu\`o scrivere che 
 \[
 	\log \mathcal{Z}  = \sum_{\mathbf{p}}^{} \log\left(1+ z e^{-\beta \varepsilon _\mathbf{p} }\right) \xrightarrow{\hspace{.4cm}} \frac{V}{h^3} \int d^3 p \ \log\left(1 + z e^{- \frac{\beta n p^2}{2m}}\right) = \frac{V}{\lambda _T^3} \sum_{n=1}^{+\infty} \frac{(-1)^{n+1}z^n}{n^{5 / 2}}
 \] 
-dove si \`e usato che il logaritmo si sviluppa come
+dove si \`e usato lo sviluppo del logaritmo $\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n}$, con $ \varepsilon  = z e^{-\beta p^2 / 2m}$.
+Infine, definendo $f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }$, si pu\`o scrivere che $\log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{V}{\lambda _T^3} f_{5 / 2} (z)$, da cui
 \[
-\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n} \ \text{ con } \ \ \varepsilon  = z e^{-\beta p^2 / 2m}
+	\begin{cases}
+		\displaystyle \langle N \rangle= z \frac{\partial }{\partial z} \log \mathcal{Z} \\
+		\\
+		\displaystyle \frac{1}{v} = \frac{\langle N \rangle}{v}=\frac{1}{\lambda _T^3} f_{3/2} (z)
+	\end{cases}
 \] 
-Definendo 
+Queste due equazioni permettono di studiare tutta la termodinamica di un gas di fermioni liberi (non interagenti). 
+In ogni caso, visto che compare la fugacit\`a, quindi il potenziale chimico, la si deve esplicitare in funzione di $\langle N \rangle$ nella seconda equazione e sostituirla nella prima per ottenere l'equazione di stato; questo procedimento, in apparenza banale, si tratter\`a pi\`u avanti sotto certe approssimazioni.
+\vspace{.5cm}
+
+\textbf{Caso dei bosoni.} In questo caso, $n_\mathbf{p} $ pu\`o assumere qualsiasi valore intero, quindi la somma in
 \[
-f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }
+\mathcal{Z} = \prod_\mathbf{p} \left\{ \sum_{n_\mathbf{p} }^{} \left(ze^{-\beta \varepsilon _\mathbf{p} }\right) ^{n_\mathbf{p} } \right\} 
 \] 
-si pu\`o scrivere che
+si pu\`o interpretare come serie geometrica: $\sum_{n=0}^{+\infty} x^n = \frac{1}{1-x}$, per $\lvert x  \rvert <1$.
+La richiesta $\lvert ze^{-\beta \varepsilon _\mathbf{p} } \rvert < 1$ implica la necessit\`a di ipotizzare $0\le z\le 1$, ma si dovr\`a prestare attenzione al caso $p =0$, che porter\`a alla condensazione di Bose-Einstein.
+Sotto tale ipotesi e trascurando il termine $p=0$ nella somma, si ha
+\[
+\mathcal{Z} = \prod_\mathbf{p} \frac{1}{1- ze^{-\beta  \varepsilon _\mathbf{p} }}
+\] 
+Nel limite termodinamico, si ha
+\[
+	\begin{split}
+		\log\mathcal{Z} \xrightarrow{\ \ } - \frac{V}{h^3}\int d^3 p \ \log \left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) &= -\frac{V}{h^3} \sum_{n=1}^{+\infty} \frac{z^n}{n} \int d^3 p \ e^{-\beta n p^2 / 2m}\\ 
+																	& = \frac{V}{h^3}\sum_{n=1}^{+\infty} \frac{z^n}{n}\left(\frac{2\pi \kappa _BT m}{n}\right) ^{3 / 2} = \frac{V}{\lambda _T^3}\sum_{n=1}^{+\infty} \frac{z^n}{n^{5 / 2}}\\
+																	&= \frac{V}{\lambda _T^3}g_{5 / 2} (z)
+	\end{split}
+\] 
+dove si \`e definito $g_\alpha (z) = \sum_{n=1}^{+\infty} \frac{z^n}{n^\alpha }$.
+Allora
 \[
 \begin{cases}
-	\displaystyle \log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{v}{\lambda _T^3} f_{5 / 2} (z)\\
+	\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3}g_{5 / 2} (z) {\color{asdf}\ -\ \frac{1}{V}\log(1-z)}\\
 	\\
-	\displaystyle \langle N \rangle= z \frac{\partial }{\partial z} \log \mathcal{Z}  \implies \frac{1}{v} = \frac{\langle N \rangle}{v}=\frac{1}{\lambda _T^3} f_{3/2} (z)
+	\displaystyle \langle N \rangle = z \frac{\partial }{\partial z}  \log\mathcal{Z} = z \frac{V}{\lambda _T^3} g_{3 / 2} (z) {\color{asdf}\ +\ \frac{1}{V}\frac{z}{1-z}}
 \end{cases}
 \] 
-\end{itemize}
+dove, in {\color{asdf}blu}, \`e riportato il contributo, inizialmente trascurato, relativo al punto $p = 0$ nella somma, che porta ad un termine aggiuntivo $+ \log\frac{1}{1-z}$ nell'espressione di $\log \mathcal{Z} $.
+Le equazioni nel sistema determinano tutta la termodinamica per un gas di bosoni non interagenti.
+\begin{osservazione}
+La statistica di Bose-Einstein si ottiene da $\log \mathcal{Z} $ come
+\[
+\langle N \rangle= z \frac{\partial }{\partial z}  \log\mathcal{Z}  = - z \frac{\partial }{\partial z} \sum_{\mathbf{p} }^{} \left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }-1}
+\] 
+\end{osservazione}
+\subsection{Limite classico}
+Si considera un sistema generico di $N$ particelle descritto dall'hamiltoniano $\hat{H} = \hat{K} + \hat{\Omega }$, dove $\hat{K} = -\frac{\hbar ^2}{2m}\sum_{i=1}^{N} \nabla _i^2$ \`e la parte cinetica, mentre la parte delle interazioni si assume essere della forma
+\[
+\hat{\Omega }\left(\mathbf{r} _1, \ldots , \mathbf{r} _N\right)  = \sum_{i<j}^{} \hat{v} \left(\lvert \mathbf{r} _i - \mathbf{r} _j \rvert \right) 
+\] 
+cio\`e di interazione a due corpi dipendente unicamente dalla distanza.
+Ad $N$ fissato, si ha
+\[
+	\begin{split}
+		Z_N = \operatorname{Tr} \left[ e^{-\beta \hat{H}} \right]  &= \sum_{n}^{} \Braket{\phi _n|e^{-\beta \hat{H}}|\phi _n} \\
+									   &= \int d^N \mathbf{r} \ \phi _n^* (\mathbf{r} _1, \ldots, \mathbf{r} _N) e^{-\beta \hat{H}} \phi _n (\mathbf{r}_1,\ldots,\mathbf{r} _N) 
+	\end{split}
+\] 
+a seconda che lo spazio di Hilbert sia discreto, o continuo, con base $\left\{ \ket{\phi _n}  \right\} $ data da $\hat{H}\ket{\phi _n} = E_n \ket{\phi _n} $.
+Se $\hat{\Omega }= 0$, si ha un sistema di particelle libere e si conosce la base delle autofunzioni di $\hat{H}$ (per esempio, per fermioni, si usa il determinante di Slater, mentre per i bosoni la funzione d'onda simmetrizzata).
+In prima quantizzazione, si ha
+\[
+\psi _{\mathbf{p}_1 ,\ldots, \mathbf{p} _N} (\mathbf{r} _1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!} } \sum_{\pi}^{} \delta _\pi \left\{ u_{\mathbf{p}_1}(\pi\mathbf{r} _1) u_{\mathbf{p} _2} (\pi\mathbf{r} _2) \cdots u_{\mathbf{p} _N} (\pi \mathbf{r} _N)   \right\} 
+\] 
+con $u_\mathbf{p} (\mathbf{r} ) = \frac{1}{\sqrt{V} }e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }$ autostati di singola particella, $\mathbf{p} = \frac{2\pi \hbar }{L}$ con $\mathbf{n} \in \mathbb{Z}^3$ (con $V=L^3$); la somma su $\pi$ si riferisce alla somma su tutte le possibili permutazioni possibili di $N$ elementi (in questo caso, permutazioni delle posizioni delle $N$ particelle) e, infine, $\delta _\pi = 1$ sempre per bosoni, mentre \`e pari a $-1$ ogni qualvolta si esegue un numero dispari di scambi di due fermioni.
+Secondo questa formula, nel caso dei fermioni per esempio, la funzione d'onda \`e ottenuta con il determinante di Slater come annunciato:
+\[
+	\psi _{\mathbf{p} _1,\ldots, \mathbf{p} _N} (\mathbf{r} _1,\ldots,\mathbf{r} _N) = \frac{1}{\sqrt{N!} } \det \begin{pmatrix} u_{\mathbf{p} _1} (\mathbf{r} _1) & u_{\mathbf{p} _2} (\mathbf{r} _1) &\ldots & u_{\mathbf{p} _N} (\mathbf{r} _1)\\u_{\mathbf{p} _1} (\mathbf{r} _2) & u_{\mathbf{p} _2} (\mathbf{r} _2) &\ldots & u_{\mathbf{p} _N} (\mathbf{r} _2)\\ \vdots & \vdots & \ddots & \vdots \\ u_{\mathbf{p} _1} (\mathbf{r} _N)&u_{\mathbf{p} _2} (\mathbf{r} _N)&\ldots& u_{\mathbf{p} _N} (\mathbf{r} _N)\end{pmatrix} 
+\] 
+\begin{osservazione}
+Per fermioni, i momenti $\mathbf{p} _1,\ldots,\mathbf{p} _N$ in $\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} $ devono essere distinti per il principio di esclusione di Pauli.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere da lezione 19
+\centering Riprendere da lezione 20 45:18
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
