@@ -3036,17 +3036,18 @@ Dal punto di vista matematico, $\rho $ \`e un operatore, ma dal punto di vista f
 \end{osservazione}
 \noindent La matrice densit\`a permette di generalizzare il valore medio di un osservabile per una mistura di stati:
 \[
-O = \operatorname{Tr} \left(\hat{O}\rho \right) 
+O = \operatorname{Tr}  (\hat{O}\rho)
 \] 
 Si pu\`o far vedere che $\rho $ \`e autoaggiunto, ha autovalori non-negativi, $\operatorname{Tr} \rho  =1$ e, per uno stato puro, $\rho ^2 = \rho $; in generale, invece, $\operatorname{Tr} \rho ^2 < 1$.
 L'evoluzione temporale per la matrice densit\`a, per sistemi isolati, \`e data dall'equazione di Liouville-von Neumann:
 \begin{equation}
-i\hbar  \frac{d \rho }{d t} = \left[ \hat{H},\rho  \right] 
+	i\hbar  \frac{d \rho }{d t} = [\hat{H},\rho ]
 \end{equation}
 \begin{osservazione}
-In questa trattazione, si \`e interessati esclusivamente a stati di equilibrio, per i quali $\left[ \hat{H}, \rho   \right]  = 0$.
+	In questa trattazione, si \`e interessati esclusivamente a stati di equilibrio, per i quali $ [\hat{H}, \rho] = 0$.
 \end{osservazione}
-\noindent Si diagonalizza l'hamiltoniano: $\hat{H } \ket{\phi _n}  = E_n \ket{\phi _n} $, per cui si ha che $\ket{\psi (t)} = \sum_{n}^{} c_n(t) \ket{\phi _n} $.
+\subsection{Ensemble statistici}
+Si diagonalizza l'hamiltoniano: $\hat{H } \ket{\phi _n}  = E_n \ket{\phi _n} $, per cui si ha che $\ket{\psi (t)} = \sum_{n}^{} c_n(t) \ket{\phi _n} $.
 Si utilizza la seguente assunzione, che \`e l'analogo quantistico del principio di equiprobabilit\`a a priori: se l'energia del sistema \`e fissata ad $E$ entro un certo intervallo $\Delta E$, allora, in media temporale, si ha
 \[
 \lvert c_n(t) \rvert ^2 = \begin{cases}
@@ -3061,7 +3062,6 @@ Un'altra assunzione \`e quella del \textit{postulato delle fasi random}: in medi
 c_n(t) c_m(t) = 0, \ \forall n\neq m
 \] 
 Questo significa che non ci sono coerenze tra autostati diversi.
-\subsection{Ensemble statistici}
 Per il microcanonico ($E$ fissata), si definisce 
 \[
 \rho  = \frac{1}{\Gamma(E)} \sum_{E<E_n< E+\Delta E}^{} \ket{\phi _n} \bra{\phi _n} \hspace{.5cm} \text{con }\hspace{.5cm} \Gamma(E) = \operatorname{Tr} \left(\sum_{E<E_n<E+\Delta E}^{} \ket{\phi _n} \bra{\phi _n} \right)  
@@ -3190,10 +3190,10 @@ Nel limite termodinamico e sviluppando in serie il logaritmo, si pu\`o scrivere 
 	\log \mathcal{Z}  = \sum_{\mathbf{p}}^{} \log\left(1+ z e^{-\beta \varepsilon _\mathbf{p} }\right) \xrightarrow{\hspace{.4cm}} \frac{V}{h^3} \int d^3 p \ \log\left(1 + z e^{- \frac{\beta n p^2}{2m}}\right) = \frac{V}{\lambda _T^3} \sum_{n=1}^{+\infty} \frac{(-1)^{n+1}z^n}{n^{5 / 2}}
 \] 
 dove si \`e usato lo sviluppo del logaritmo $\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n}$, con $ \varepsilon  = z e^{-\beta p^2 / 2m}$.
-Infine, definendo $f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }$, si pu\`o scrivere che $\log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{V}{\lambda _T^3} f_{5 / 2} (z)$, da cui
+Infine, definendo $f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }$, si pu\`o scrivere che $\log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{V}{\lambda _T^3} f_{5 / 2} (z)$; unitamente col fatto che $\langle N \rangle = z \partial _z \log \mathcal{Z} $, si ha:
 \[
 	\begin{cases}
-		\displaystyle \langle N \rangle= z \frac{\partial }{\partial z} \log \mathcal{Z} \\
+		\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3} f_{5 / 2} (z)\\
 		\\
 		\displaystyle \frac{1}{v} = \frac{\langle N \rangle}{v}=\frac{1}{\lambda _T^3} f_{3/2} (z)
 	\end{cases}
@@ -3234,7 +3234,7 @@ Le equazioni nel sistema determinano tutta la termodinamica per un gas di bosoni
 \begin{osservazione}
 La statistica di Bose-Einstein si ottiene da $\log \mathcal{Z} $ come
 \[
-\langle N \rangle= z \frac{\partial }{\partial z}  \log\mathcal{Z}  = - z \frac{\partial }{\partial z} \sum_{\mathbf{p} }^{} \left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }-1}
+\langle N \rangle= z \frac{\partial }{\partial z}  \log\mathcal{Z}  = - z \frac{\partial }{\partial z} \sum_{\mathbf{p} }^{} \log\left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }-1}
 \] 
 \end{osservazione}
 \subsection{Limite classico}
@@ -3375,7 +3375,6 @@ dove
 	\item $1/\ell!$ poiché $\mathcal{U}_\ell$ è una somma di grafi su $\ell$ vertici, l'integrale su $d^\ell r$ non deve contare come distinte le permutazioni interne al cluster se le particelle sono identiche;
 	\item $1/m_\ell!$ evita di contare più volte la stessa configurazione scambiando tra loro $m_\ell$ cluster identici di dimensione $\ell$.
 \end{itemize}
-visto che le particelle sono indistinguibili.
 Allora si ha, introducendo alla fine il fattore di conteggio e il vincolo $\sum_{\ell }^{} m_\ell \cdot \ell =N$, che
 \[
 	\begin{split}
