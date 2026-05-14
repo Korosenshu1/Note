@@ -3256,21 +3256,124 @@ In prima quantizzazione, si ha
 \[
 \psi _{\mathbf{p}_1 ,\ldots, \mathbf{p} _N} (\mathbf{r} _1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!} } \sum_{\pi}^{} \delta _\pi \left\{ u_{\mathbf{p}_1}(\pi\mathbf{r} _1) u_{\mathbf{p} _2} (\pi\mathbf{r} _2) \cdots u_{\mathbf{p} _N} (\pi \mathbf{r} _N)   \right\} 
 \] 
-con $u_\mathbf{p} (\mathbf{r} ) = \frac{1}{\sqrt{V} }e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }$ autostati di singola particella, $\mathbf{p} = \frac{2\pi \hbar }{L}$ con $\mathbf{n} \in \mathbb{Z}^3$ (con $V=L^3$); la somma su $\pi$ si riferisce alla somma su tutte le possibili permutazioni possibili di $N$ elementi (in questo caso, permutazioni delle posizioni delle $N$ particelle) e, infine, $\delta _\pi = 1$ sempre per bosoni, mentre \`e pari a $-1$ ogni qualvolta si esegue un numero dispari di scambi di due fermioni.
-Secondo questa formula, nel caso dei fermioni per esempio, la funzione d'onda \`e ottenuta con il determinante di Slater come annunciato:
+con $u_\mathbf{p} (\mathbf{r} ) = \frac{1}{\sqrt{V} }e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }$ autostati di singola particella e $\mathbf{p} = \frac{2\pi \hbar }{L}\mathbf{n} $, con $\mathbf{n} \in \mathbb{Z}^3$ (con $V=L^3$); la somma su $\pi$ si riferisce alla somma su tutte le possibili permutazioni possibili di $N$ elementi (in questo caso, permutazioni delle posizioni delle $N$ particelle) e, infine, $\delta _\pi = 1$ sempre per bosoni, mentre \`e pari a $-1$ ogni qualvolta si esegue un numero dispari di scambi di due fermioni.
+\vspace{.5cm}
+
+\textbf{Caso dei fermioni.} Secondo questa formula, nel caso dei fermioni, la funzione d'onda \`e ottenuta con il determinante di Slater:
 \[
 	\psi _{\mathbf{p} _1,\ldots, \mathbf{p} _N} (\mathbf{r} _1,\ldots,\mathbf{r} _N) = \frac{1}{\sqrt{N!} } \det \begin{pmatrix} u_{\mathbf{p} _1} (\mathbf{r} _1) & u_{\mathbf{p} _2} (\mathbf{r} _1) &\ldots & u_{\mathbf{p} _N} (\mathbf{r} _1)\\u_{\mathbf{p} _1} (\mathbf{r} _2) & u_{\mathbf{p} _2} (\mathbf{r} _2) &\ldots & u_{\mathbf{p} _N} (\mathbf{r} _2)\\ \vdots & \vdots & \ddots & \vdots \\ u_{\mathbf{p} _1} (\mathbf{r} _N)&u_{\mathbf{p} _2} (\mathbf{r} _N)&\ldots& u_{\mathbf{p} _N} (\mathbf{r} _N)\end{pmatrix} 
+\] 
+Se ne pu\`o verificare la normalizzazione per calcolo diretto:
+\[
+\braket{\psi _{\mathbf{p} _1 ,\ldots, \mathbf{p} _N} |\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} }  = \int d^N \mathbf{r}  \ \frac{1}{N!} \sum_{\pi}^{} \sum_{\sigma }^{} \Big(u_{\mathbf{p} _1} (\pi \mathbf{r} _1) u_{\mathbf{p} _1} (\sigma \mathbf{r} _1)\Big) \ldots \Big(u_{\mathbf{p} _N} (\pi\mathbf{r} _N) u_{\mathbf{p} _N} (\sigma \mathbf{r} _N )\Big)
+\] 
+Per l'antisimmetria rispetto allo scambio di due particelle, si deve avere $\pi \mathbf{r} _i = \sigma \mathbf{r} _i$; pertanto, una sommatoria si cancella e si rimane con
+\[
+\braket{\psi _{\mathbf{p} _1 ,\ldots, \mathbf{p} _N} |\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} }  = \int d^N \mathbf{r} \sum_{\pi}^{} \frac{1}{N!} \lvert u_{\mathbf{p} _1} (\pi\mathbf{r} _1) \rvert ^2 \ldots \lvert u_{\mathbf{r} _N} (\pi\mathbf{r} _N) \rvert ^2
+\] 
+Visto come sono definite le $u_\mathbf{p} $, ogni modulo quadro \`e pari a $1 / V$, per $N$ fattori totali; inoltre, la somma su $\pi$ porta un $N!$, pari al numero di permutazioni possibili di $N$ elementi, per cui
+\[
+\braket{\psi _{\mathbf{p} _1 ,\ldots, \mathbf{p} _N} |\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} }  = \int d^N \mathbf{r} \frac{1}{N!} \frac{1}{V^N} N! = V^N \int d^N\mathbf{r}  = 1
+\] 
+Se le sequenze $\left\{ \mathbf{p} _i \right\} $ e $\left\{ \mathbf{q} _i \right\} $ sono, a meno di permutazioni, diverse, allora, per l'ortonormalit\`a delle $u_\mathbf{p} $, si deve avere
+\[
+\braket{\psi _{\mathbf{p}_1,\ldots,\mathbf{p} _N }|\psi _{\mathbf{q}_1,\ldots,\mathbf{q} _N }}  = 0
 \] 
 \begin{osservazione}
 Per fermioni, i momenti $\mathbf{p} _1,\ldots,\mathbf{p} _N$ in $\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} $ devono essere distinti per il principio di esclusione di Pauli.
 \end{osservazione}
+\vspace{.5cm}
+
+\textbf{Caso dei bosoni.} Mentre rimane vero che $\braket{\psi _{\mathbf{p}_1,\ldots,\mathbf{p} _N }|\psi _{\mathbf{q} _1,\ldots,\mathbf{q} _N} } = 0$, non \`e assicurato che le funzioni d'onda siano normalizzate; in generale, infatti
+\[
+\braket{\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} |\psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} } = \prod_\mathbf{p} \left(n_\mathbf{p} !\right) 
+\] 
+\begin{esempio}
+Come esempio del caso appena descritto, si vede che la funzione d'onda di due bosoni ad uguale momento \`e
+\[
+\psi _{\mathbf{p} , \mathbf{p} } = \frac{1}{\sqrt{2} } \Big(u_\mathbf{p} (\mathbf{r} _1) u_\mathbf{p} (\mathbf{r} _2) + u_\mathbf{p} (\mathbf{r} _2) u_\mathbf{p} (\mathbf{r} _1)\Big) = \frac{2}{\sqrt{2} } u_\mathbf{p} (\mathbf{r} _1) u_\mathbf{p} (\mathbf{r} _2)
+\] 
+il cui modulo quadro \`e pari a $2$.
+\end{esempio}
+\noindent Per risolvere la normalizzazione, si pu\`o ridefinire la funzione d'onda come
+\[
+\widetilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} = \frac{1}{\sqrt{\prod_\mathbf{p} (n_\mathbf{p} )!} }\psi _{\mathbf{p} _1,...,\mathbf{p} _N} 
+\] 
+In ogni caso, conviene rimanere con le funzioni d'onda non normalizzate perch\'e, nel calcolare la traccia di un generico osservabile $\hat{O}$, si ha
+\[
+	\begin{split}
+		\operatorname{Tr} [ \hat{O} ]  &= \sum_{\left\{ \mathbf{p} _1,\ldots,\mathbf{p} _N \right\} }^{*} \Braket{\widetilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} |\hat{O}|\widetilde{\psi } _{\mathbf{p} _1,\ldots,\mathbf{p} _N} } = \sum_{\mathbf{p} _1,\ldots,\mathbf{p} _N}^{} \frac{\prod_\mathbf{p} (n_\mathbf{p} !)}{N!} \braket{\widetilde{\psi }|\hat{O}|\widetilde{\psi }} \\
+					       & = \frac{1}{N!} \sum_{\mathbf{p} _1, \ldots, \mathbf{p} _N}^{} \braket{\psi |\hat{O}|\psi } 
+	\end{split}
+\] 
+dove $*$ indica che la somma \`e vincolata sulle sequenze $\left\{ \mathbf{p} _i \right\} $ che individuano funzioni d'onda differenti; esplicitando il coefficiente combinatorio che le conta per ottenere una somma non-vincolata; si ritrovano le funzioni d'onda non normalizzate.
+\subsubsection{Funzione di partizione e limite classico delle statistiche quantistiche}
+
+Avendo trovato una base rispetto a cui $\hat{H}$ \`e diagonale, calcolare la traccia di $e^{-\beta \hat{H}}$ \`e immediato:
+\[
+Z_N = \operatorname{Tr} \left[ e^{-\beta \hat{H}} \right]  = \frac{1}{N!} \sum_{\mathbf{p} _1,\ldots,\mathbf{p} _N}^{} \int d^N \mathbf{r} \ \left\lvert \psi _{\mathbf{p} _1,\ldots,\mathbf{p} _N} (\mathbf{r} _1,\ldots,\mathbf{r} _N) \right\rvert ^2 e^{-\frac{\beta}{2m} \sum_{i=1}^{N} p_i^2}
+\] 
+Nel limite termodinamico, passando al continuo, si ha
+\[
+	Z_N = \frac{V^N}{N! h^{3N}} \int d^N \mathbf{p} \int d^N\mathbf{r} \ \frac{e^{- \frac{\beta}{2m} \sum_{}^{} p_i^2}}{N!} \sum_{\pi,\sigma }^{} \delta _\pi\delta _\sigma \Big[u^* _{\mathbf{p} _1} (\pi\mathbf{r} _1) u_{\mathbf{p} _1} (\sigma \mathbf{r} _1) \Big] \ldots \Big[u^*_{\mathbf{p} _N} (\pi\mathbf{r} _N) u_{ \mathbf{p} _N} (\sigma \mathbf{r} _N)\Big]
+\] 
+Visto che si integra su tutto lo spazio, si pu\`o evitare di tenere le due sommatorie distinte; piuttosto se pu\`o fissare una e far variare unicamente l'altra, ottenendo un fattore $N!$ che si semplifica con quello presente al denominatore. 
+Sfruttando anche la definizione delle $u_\mathbf{p} $, si pu\`o scrivere 
+\[
+Z_N = \frac{1}{N!h^{3N}} \int d^N\mathbf{p} \int d^N \mathbf{r}  \sum_{\pi}^{} \delta _\pi \left[ e^{\frac{i}{\hbar }\mathbf{p} _1\cdot  \big(\pi\mathbf{r} _1 -\mathbf{r} _1\big)} \cdot \ldots \cdot e^{\frac{i}{\hbar }\mathbf{p} _N \cdot \big(\pi\mathbf{r} _N -\mathbf{r} _N\big)}\right] e^{-\frac{\beta }{2m}\sum_{i}^{} p_i^2}
+\] 
+Definendo 
+\[
+f(\mathbf{z} ) = \frac{\displaystyle \int d\mathbf{p} \ e^{-\frac{\beta}{2m} \mathbf{p} ^2 + \frac{i}{\hbar }\mathbf{p} \cdot \mathbf{z} }}{\displaystyle \int d\mathbf{p}\ e^{-\frac{\beta}{2m} \mathbf{p} ^2}}
+\] 
+si ha
+\[
+Z_N = \frac{1}{N!\lambda _T^{3N}} \sum_{\pi}^{} \delta _\pi \int d^N\mathbf{r} \ f(\pi\mathbf{r} _1 - \mathbf{r} _1) \ldots f(\pi\mathbf{r} _N - \mathbf{r} _N)
+\] 
+Usando, poi, che $\int dx \ e^{-ax^2 + bx} = \sqrt{\frac{\pi}{a}}  e^{b^2 / 4a}$, si conclude che $f(\mathbf{z} ) = e^{- \frac{m\mathbf{z} ^2}{2\beta \hbar ^2}} = e^{- \frac{\pi\mathbf{z} ^2}{\lambda _T^2}}$.
+Nel limite $\lambda _T \to 0$, corrispondente a $T\to +\infty$ (o equivalentemente $\hbar \to 0$), si vede che $f(\mathbf{z} ) \simeq 0$, tranne nel caso $\lvert \mathbf{z}  \rvert \to 0$; per questa ragione, il contributo maggiore in questo limite si ottiene nel caso in cui ogni argomento della $f$ \`e pari a $0$, per cui $f(0) = 1$, cosa che si verifica nel caso della permutazione identica.
+All'ordine zero, quindi, si trova 
+\[
+Z_N \simeq \frac{1}{N!\lambda _T^{3N}} \int d^N \mathbf{r}  \ f(0) \cdot \ldots\cdot f(0) = \frac{V^N}{N!\lambda _T^{3N} }
+\] 
+e si ottiene la termodinamica del gas ideale classico.
+
+Il primo ordine, invece, si ottiene considerando esclusivamente le permutazioni che scambiano un'unica coppia di coordinate, in modo che, nel prodotto, rimanga solamente $f(\pi\mathbf{r} _i - \mathbf{r} _i ) f(\pi\mathbf{r} _j - \mathbf{r} _j ) = f(\mathbf{r} _j - \mathbf{r} _i) f(\mathbf{r} _i - \mathbf{r} _j) = f(\mathbf{r} _i - \mathbf{r} _j) ^2 := f_{ij} ^2$.
+In questo caso, il $\delta _\pi$ sar\`a $1$ per bosoni e $-1$ per fermioni, per cui
+\[
+Z_N \simeq \frac{1}{N! \lambda _T^{3N}} \int d^N \mathbf{r}  \left(1 \pm \sum_{i<j}^{} f_{ij} ^2\right) 
+\] 
+Volendo troncare lo sviluppo al primo ordine, in assunzione di $f \ll 1$, si pu\`o approssimare
+\[
+1 \pm \sum_{i<j}^{} f_{ij} ^2 \simeq \prod_{i<j} \left(1 \pm f_{ij} ^2\right) 
+\] 
+trascurando i termini dati dal prodotto di pi\`u di una $f$.
+In questo modo, si pu\`o scrivere
+\[
+	Z_N \simeq \frac{1}{N!\lambda _T^{3N}} \int d^N \mathbf{r} \ e^{ \sum_{i<j}^{} \log\left(1\pm f_{ij}^2 \right)}
+\] 
+dove
+\[
+\widetilde{v}_{ij} : = -\frac{1}{\beta }\log \left(1\pm e^{\frac{-2\pi\lvert \mathbf{r} _i - \mathbf{r} _j \rvert^2 }{\lambda _T^2}}\right) 
+\] 
+si pu\`o interpretare come uno pseudo-potenziale dovuto alla statistica delle particelle considerate.
+Si parla di pseudo-potenziale perch\'e non \`e realmente presente, ma \`e l'effetto originato in prima approssimazione dalle statistiche quantistiche.
+Si vede che \`e attrattivo per i bosoni, essendo $\widetilde{v}_{ij} <0$, mentre \`e repulsivo per i fermioni.
+\subsubsection{Caso di particelle interagenti}
+Prendendo, ora, $\hat{\Omega }\neq 0$, si deve utilizzare la formula di Baker-Campbell-Hausdorff per scrivere
+\[
+e^{-\beta \left(\hat{K}+\hat{\Omega }\right) }\simeq e^{-\beta \hat{K}}e^{-\beta \hat{\Omega }} \exp\left[ -\frac{1}{2}\beta ^2 \left[ \hat{K},\hat{\Omega } \right] + \operatorname{O} (\beta ^3) \right] 
+\] 
+Trascurando i termini di ordine $\beta ^2$ e superiori, si ottiene
+\[
+	\begin{split}
+		Z_N &\simeq \frac{1}{N!\lambda _T^{3N}} \int d^N \mathbf{r} \sum_{\pi}^{} \delta _\pi f(\pi\mathbf{r} _1 - \mathbf{r} _1) \ldots f(\pi\mathbf{r} _N - \mathbf{r} _N) e^{-\beta \sum_{i<j}^{} v_{ij} }\\
+		    &\simeq \frac{1}{N!\lambda _T^{3N}} \int d^N\mathbf{r}  \ e^{\sum_{i<j}^{} \log\left(1\pm f_{ij} \right) } e^{-\beta \sum_{i<j}^{} v_{ij} }
+	\end{split}
+\] 
 \begin{boxenv}[]
-\centering Riprendere da lezione 20 45:18
+\centering Riprendere dalla lezione 21
 \end{boxenv}
-
-
-
-
 
 
 

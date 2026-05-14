@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  14 MAY 2026 10:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  14 MAY 2026 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1311,7 +1311,7 @@ Overfull \hbox (16.2985pt too wide) detected at line 402
  []
 
 [9]
-<vdw.png, id=182, 655.44875pt x 521.95pt>
+<vdw.png, id=186, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
 Package pdftex.def Info: vdw.png  used on input line 455.
@@ -1321,7 +1321,7 @@ Package pdftex.def Info: vdw.png  used on input line 455.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10]
-<max-constr-vdw.png, id=191, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=195, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
 Package pdftex.def Info: max-constr-vdw.png  used on input line 485.
@@ -1347,7 +1347,7 @@ Overfull \hbox (58.54832pt too wide) detected at line 855
  []
 
 [21] [22] [23]
-<pd.jpg, id=282, 702.625pt x 615.29875pt>
+<pd.jpg, id=286, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
 Package pdftex.def Info: pd.jpg  used on input line 933.
@@ -1408,22 +1408,27 @@ Overfull \hbox (3.10439pt too wide) in paragraph at lines 3050--3052
 \T1/zpltosf/m/n/10.95 Si dia-go-na-liz-za l'ha-mil-to-nia-no: $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 E[] []$\T1/zpltosf/m/n/10.95 , per cui si ha che $[] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 c[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) []$\T1/zpltosf/m/n/10.95 .
  []
 
-[68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78]
+[68] [69] [70] [71] [72] [73] [74] [75]
+Overfull \hbox (21.82494pt too wide) detected at line 3319
+\OML/cmm/m/it/10.95 Z[] \OT1/cmr/m/n/10.95 = [] [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 p [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 r [] [] \OML/cmm/m/it/10.95 ^^N[]^^N[][]u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[] [] []\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[]
+ []
+
+[76] [77] [78] [79] [80] [81]
 
 Package caption Warning: Unused \captionsetup[table] on input line 143.
 See the caption package documentation for explanation.
 
-[79] (./master.aux)
+[82] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 48419 strings out of 467525
- 1127105 string characters out of 5425862
+ 48427 strings out of 467525
+ 1127187 string characters out of 5425862
  1748472 words of memory out of 5000000
- 76371 multiletter control sequences out of 15000+600000
+ 76373 multiletter control sequences out of 15000+600000
  702056 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1509,10 +1514,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (79 pages, 834642 bytes).
+Output written on master.pdf (82 pages, 846992 bytes).
 PDF statistics:
- 982 PDF objects out of 1000 (max. 8388607)
- 824 compressed objects within 9 object streams
- 251 named destinations out of 1000 (max. 500000)
- 420 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1007 PDF objects out of 1200 (max. 8388607)
+ 846 compressed objects within 9 object streams
+ 257 named destinations out of 1000 (max. 500000)
+ 436 words of extra memory for PDF output out of 10000 (max. 10000000)
 
