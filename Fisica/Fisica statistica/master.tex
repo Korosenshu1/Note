@@ -1122,13 +1122,13 @@ Visto che $p = \overline{P}-1$, si ha $p \simeq -\frac{3}{2}v^3$, per cui $p \si
 		\] 
 		Nel caso di van der Waals, si ricorda che l'energia interna \`e pari a 
 		\[
-		U = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \log Z_N = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \left(\frac{N^2}{2}\frac{a}{V}\right) 
+		U = \frac{3}{2}N \kappa _B T - \frac{\partial }{\partial \beta } \log Z_N = \frac{3}{2}N \kappa _B T + \frac{\partial }{\partial \beta } \left(\frac{N^2}{2}\frac{a}{V}\right) 
 		\] 
 		con 
 		\[
-		a = 4\pi \int dr \ r^2 \left(1- e ^{-\beta  v(r)}\right) \propto \beta 
+		a = 4\pi \int dr \ r^2 \left(1- e ^{-\beta  v(r)}\right) \simeq 4\pi \beta  \int dr \ r^2 v(r)
 		\] 
-		se $\beta \ll 1$.
+		visto che la teoria \`e in regime di $\lvert \kappa _B T \rvert \gg \lvert v(r) \rvert $.
 		Quindi 
 		\[
 		U \simeq \frac{3}{2} N \kappa _B T + \frac{N^2}{V} 2\pi \int dr \ r^2 v(r)
@@ -1195,13 +1195,13 @@ Visto che $p = \overline{P}-1$, si ha $p \simeq -\frac{3}{2}v^3$, per cui $p \si
 		\end{center}
 Invertendo la legge degli stati corrispondenti, si vede che
 \[
-\frac{p}{p_c}=\frac{8 T / T_c}{3 \overline{V}-1}- \frac{3}{\overline{V}^2}
+\frac{P}{P_c}=\frac{8 T / T_c}{3 \overline{V}-1}- \frac{3}{\overline{V}^2}
 \] 
 Da van der Waals e a seguito della costruzione di Maxwell, si sa che ci sono una serie di volumi che corrispondono tutti alla stessa pressione, i cui estremi corrispondono ad uno stato gassoso (a sinistra) e uno stato liquido (a destra).
 Per questa ragione, tale equazione sar\`a soddisfatta da entrambi questi volumi, ottenendo che
 \[
 	\begin{split}
-		&\frac{p}{p_c} = \frac{8 T / T_c}{3 \overline{V}_\text{liq}-1} - \frac{3}{\overline{V}_\text{liq}^2}= \frac{8 T / T_c}{3 \overline{V}_\text{gas}-1} - \frac{3}{\overline{V}_\text{gas}^2}\\
+		&\frac{P}{P_c} = \frac{8 T / T_c}{3 \overline{V}_\text{liq}-1} - \frac{3}{\overline{V}_\text{liq}^2}= \frac{8 T / T_c}{3 \overline{V}_\text{gas}-1} - \frac{3}{\overline{V}_\text{gas}^2}\\
 		&\Rightarrow \frac{T}{T_c} = \frac{\left(3\overline{V}_\text{liq}-1\right) \left(3\overline{V}_\text{gas}-1\right) \left(\overline{V}_\text{liq}+\overline{V}_\text{gas}\right) }{8 \overline{V}^2_\text{gas} \overline{V}^2_\text{liq}}
 	\end{split}
 \] 
@@ -1350,8 +1350,7 @@ Sviluppando il prodotto e semplificando il secondo ordine delle fluttuazioni per
 	\begin{split}
 		m_i m_j + m_i \delta S_j + m_j \delta S_i + \cancel{\delta S_i \delta S_j}&=m^2 + m(\delta S_i + \delta S_j)\\
 											  &=m^2 + m \big[ (S_i - m) + (S_j - m) \big] \\
-											  &= -m^2 + m(S_i + S_j)\\
-											  & = -m^2 + 2mS_i
+											  &= -m^2 + m(S_i + S_j)
 	\end{split}
 \] 
 In questo modo, si ha
@@ -1654,7 +1653,7 @@ Utilizzando questa espressione, si pu\`o ricavare il valore di $m^*$, che ora si
 	\[
 		C = T \Eval{\frac{\partial S}{\partial T} }{h=0, T=T_c}{} = - T_c \Eval{\frac{\partial^2 F(m_0)}{\partial T^2} }{h=0, T=T_c}{}
 	\] 
-	Considerando la solita espressione approssimata per $F$, si trova che
+	Considerando la solita espressione approssimata per $F$ e facendo uso dell'equazione \ref{mis} per il caso $T<T_c$, si trova che\footnote{Per $T>T_c$, si ha $m_0=0$.}
 	\[
 	F(m_0) = \begin{cases}
 		F_0 &,\ T\ge T_c\\
@@ -1664,7 +1663,7 @@ Utilizzando questa espressione, si pu\`o ricavare il valore di $m^*$, che ora si
 	Si vede allora che $F$ e la sua derivata prima rispetto a $T$ sono continue, ma la sua derivata seconda no:
 	\[
 	C = \begin{cases}
-		\displaystyle -T_c \frac{\partial ^2F_0}{\partial T^2}  =0 &,\ T\ge T_c\\
+		0 &,\ T\ge T_c\\
 		\\
 		\displaystyle \frac{3}{2}N\kappa _B &,\ T<T_c
 	\end{cases} \implies C \sim \lvert T-T_c \rvert ^{-\alpha }
@@ -1687,12 +1686,12 @@ H = H_0\left(\left\{ S_j \right\} \right) - \sum_{j}^{} h S_j
 si ha
 \[
 	\begin{split}
-		M &= \sum_{i}^{} \frac{\sum_{\left\{ S_j \right\} }^{} S_i e^{-\beta (H_0-\sum_{j}^{} S_jh)}}{\sum_{\left\{ S_j \right\} }^{} e^{-\beta (H_0-\sum_{j}^{} S_j h }}\\
+		M &= \sum_{i}^{} \frac{\sum_{\left\{ S_j \right\} }^{} S_i e^{-\beta (H_0-\sum_{j}^{} S_jh)}}{\sum_{\left\{ S_j \right\} }^{} e^{-\beta (H_0-\sum_{j}^{} S_j h )}}\\
 		  &\simeq \frac{\sum_{i}^{} \langle S_i \rangle_0 + \beta h \sum_{i,j}^{} \langle S_iS_j \rangle_0}{1 + \beta h \sum_{i}^{} \langle S_i \rangle_0}\\
 		  &\simeq \beta h \left[ \sum_{i,j}^{} \langle S_iS_j \rangle_0 - \sum_{i}^{} \langle S_i \rangle_0 \sum_{j}^{} \langle S_j \rangle_0 \right]  + \sum_{i}^{} \langle S_i \rangle_0
 	\end{split}
 \] 
-da cui $\chi \propto \frac{1}{n} \left(\langle M^2 \rangle-\langle M \rangle^2\right) \propto \operatorname{Var} M$.
+da cui $\chi \propto \frac{1}{N} \left(\langle M^2 \rangle-\langle M \rangle^2\right) \propto \operatorname{Var} M$, dove si \`e indicato $\langle \cdot  \rangle_0$ la media statistica con $h=0$.
 Per\`o si \`e anche visto che $\chi \sim t ^{-\gamma}$, con $\gamma=1$, che diverge. 
 Questo \`e dato dal fatto che il campo medio non tratta bene le interazioni spin-spin, da cui segue $\operatorname{Var} M = 0$.
 Si deve cercare un modo alternativo per studiare questo caso.
@@ -3237,7 +3236,7 @@ La statistica di Bose-Einstein si ottiene da $\log \mathcal{Z} $ come
 \langle N \rangle= z \frac{\partial }{\partial z}  \log\mathcal{Z}  = - z \frac{\partial }{\partial z} \sum_{\mathbf{p} }^{} \log\left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }-1}
 \] 
 \end{osservazione}
-\subsection{Limite classico}
+\subsection{Limite semiclassico}
 Si considera un sistema generico di $N$ particelle descritto dall'hamiltoniano $\hat{H} = \hat{K} + \hat{\Omega }$, dove $\hat{K} = -\frac{\hbar ^2}{2m}\sum_{i=1}^{N} \nabla _i^2$ \`e la parte cinetica, mentre la parte delle interazioni si assume essere della forma
 \[
 \hat{\Omega }\left(\mathbf{r} _1, \ldots , \mathbf{r} _N\right)  = \sum_{i<j}^{} \hat{v} \left(\lvert \mathbf{r} _i - \mathbf{r} _j \rvert \right) 
@@ -3371,12 +3370,47 @@ Trascurando i termini di ordine $\beta ^2$ e superiori, si ottiene
 		    &\simeq \frac{1}{N!\lambda _T^{3N}} \int d^N\mathbf{r}  \ e^{\sum_{i<j}^{} \log\left(1\pm f_{ij} \right) } e^{-\beta \sum_{i<j}^{} v_{ij} }
 	\end{split}
 \] 
+Lo studio di questi integrali si pu\`o fare tramite tecniche perturbative come gli sviluppi in cluster, per esempio, con una trattazione simile a quella nel caso classico.
+Tuttavia, si studia meglio con il formalismo della seconda quantizzazione.
+\subsection{Bosoni non interagenti}
+\subsubsection{Condensazione di Bose-Einstein}
+
+Si studia il caso di particelle libere e di massa $m$\footnote{Si trascurano fotoni e quasi-particelle, come fononi, per cui non vi \`e conservazione del numero di particelle e, quindi, non si ha un numero di particelle ben definito.}.
+Si \`e trovato che\footnote{Si osserva che $\frac{1}{v} = \frac{\langle N \rangle}{V}= n$ densit\`a media.}
+\begin{equation}\label{dbec}
+\frac{1}{v} = \frac{\langle N \rangle}{V} = \frac{1}{\lambda _T ^3} g_{3 / 2}  (z) + \frac{1}{V} \frac{z}{1-z}
+\end{equation}
+con $z = e^{\beta \mu }$ fugacit\`a e $g_{3 / 2} (z) = \sum_{n=1}^{+\infty} \frac{z^n}{n^{3 / 2}}$, con $0\le z \le  1$ (per assicurare la convergenza della serie geometrica).
+Si vede che $g_{3 / 2} (z)$ \`e monotona crescente in $z \in  \left[ 0,1 \right] $, con $g _{3 / 2} (0) = 0 $ e $g_{3 / 2} (1) = \zeta\left(3 / 2\right) \approx 2.61$.
+Questo valore in $1$ \`e raggiunto con pendenza verticale perch\'e la derivata prima diverge; infatti:
+\[
+g'_\alpha  = \sum_{n=1}^{+\infty} \frac{z^{n-1}}{n^{\alpha -1}} \implies \lim_{z \to 1} g ' _{3 / 2} (z)= + \infty
+\] 
+Questo comporta che, tralasciando il termine $z / (V(1-z))$ in \ref{dbec}, se $\frac{\lambda _T^3}{v} > g_{3 / 2} (1)$, allora l'equazione non pu\`o essere soddisfatta.
+La condizione limite $\frac{\lambda _T^3}{v} = g_{3 / 2} (1)$ individua un volume critico, o, analogamente, una temperatura critica: essendo $\lambda _T = \sqrt{2 \pi \hbar ^2 / m\kappa _B T} $, si ha
+\[
+	\kappa _B T_c = \frac{2\pi \hbar ^2}{m \Big[v g _{3 / 2} (1)\Big]^{2 / 3}} \hspace{1cm} v_c = \frac{\lambda _T ^3}{g_{3 / 2} (1)}
+\] 
+Quindi, il caso $\frac{\lambda _T^3}{v} > g_{3 / 2} (1)$ si traduce in una temperatura del sistema $T < T_c$; in questo caso, allora, per avere la validit\`a dell'equazione \ref{dbec} si necessita del termine aggiuntivo relativo a $\mathbf{p} =0$.
+
+Visto che, nel limite termodinamico (cio\`e $N,V \to +\infty$ con $v$ costante), il contributo di $\frac{1}{V} \frac{z}{1-z}$ \`e rilevante solo se $z=1$, si conclude che:
+\begin{itemize}
+	\item per $T<T_c$, si deve necessariamente avere $z\to 1$, altrimenti l'equazione \ref{dbec} non ha soluzione;
+	\item per $T>T_c$, il termine additivo non \`e pi\`u rilevante perch\'e si pu\`o ottenere una soluzione $z<1$ da $\lambda _T^3 / v = g_{3 / 2} (z)$.
+\end{itemize}
+Mettendo insieme questi due punti, si ha che, nel limite termodinamico
+\[
+z = \begin{cases}
+	1 &,\ T\le T_c\\
+	\text{soluzione di } \frac{\lambda _T^3}{v}=g_{3 / 2} (z) &,\ T>T_c
+\end{cases}
+\] 
+\begin{osservazione}
+Il discorso si pu\`o interpretare come segue: nel considerare una temperatura $T<T_c$, gli stati eccitati ($\lvert \mathbf{p} \rvert  >0$) non possono contenere tutta la densit\`a, in quanto le particelle si accumulano nello stato fondamentale ($\lvert \mathbf{p}  \rvert =0$), portando una densit\`a dello stato fondamentale $n_0$ macroscopicamente rilevante, per cui se ne deve considerare il termine relativo.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 21
+\centering Riprendere lezione 21 da 42:00
 \end{boxenv}
-
-
-
 
 
 
