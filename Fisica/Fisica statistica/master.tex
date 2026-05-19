@@ -3212,22 +3212,22 @@ Sotto tale ipotesi e trascurando il termine $p=0$ nella somma, si ha
 \mathcal{Z} = \prod_\mathbf{p} \frac{1}{1- ze^{-\beta  \varepsilon _\mathbf{p} }}
 \] 
 Nel limite termodinamico, si ha
-\[
+\begin{equation}\label{c2d}
 	\begin{split}
 		\log\mathcal{Z} \xrightarrow{\ \ } - \frac{V}{h^3}\int d^3 p \ \log \left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) &= -\frac{V}{h^3} \sum_{n=1}^{+\infty} \frac{z^n}{n} \int d^3 p \ e^{-\beta n p^2 / 2m}\\ 
 																	& = \frac{V}{h^3}\sum_{n=1}^{+\infty} \frac{z^n}{n}\left(\frac{2\pi \kappa _BT m}{n}\right) ^{3 / 2} = \frac{V}{\lambda _T^3}\sum_{n=1}^{+\infty} \frac{z^n}{n^{5 / 2}}\\
 																	&= \frac{V}{\lambda _T^3}g_{5 / 2} (z)
 	\end{split}
-\] 
+\end{equation}
 dove si \`e definito $g_\alpha (z) = \sum_{n=1}^{+\infty} \frac{z^n}{n^\alpha }$.
 Allora
-\[
+\begin{equation}\label{bni}
 \begin{cases}
 	\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3}g_{5 / 2} (z) {\color{asdf}\ -\ \frac{1}{V}\log(1-z)}\\
 	\\
-	\displaystyle \langle N \rangle = z \frac{\partial }{\partial z}  \log\mathcal{Z} = z \frac{V}{\lambda _T^3} g_{3 / 2} (z) {\color{asdf}\ +\ \frac{1}{V}\frac{z}{1-z}}
+	\displaystyle \langle N \rangle = z \frac{\partial }{\partial z}  \log\mathcal{Z} =  \frac{V}{\lambda _T^3} g_{3 / 2} (z) {\color{asdf}\ +\ \frac{1}{V}\frac{z}{1-z}}
 \end{cases}
-\] 
+\end{equation}
 dove, in {\color{asdf}blu}, \`e riportato il contributo, inizialmente trascurato, relativo al punto $p = 0$ nella somma, che porta ad un termine aggiuntivo $+ \log\frac{1}{1-z}$ nell'espressione di $\log \mathcal{Z} $.
 Le equazioni nel sistema determinano tutta la termodinamica per un gas di bosoni non interagenti.
 \begin{osservazione}
@@ -3393,10 +3393,21 @@ La condizione limite $\frac{\lambda _T^3}{v} = g_{3 / 2} (1)$ individua un volum
 \] 
 Quindi, il caso $\frac{\lambda _T^3}{v} > g_{3 / 2} (1)$ si traduce in una temperatura del sistema $T < T_c$; in questo caso, allora, per avere la validit\`a dell'equazione \ref{dbec} si necessita del termine aggiuntivo relativo a $\mathbf{p} =0$.
 
-Visto che, nel limite termodinamico (cio\`e $N,V \to +\infty$ con $v$ costante), il contributo di $\frac{1}{V} \frac{z}{1-z}$ \`e rilevante solo se $z=1$, si conclude che:
+Visto che, nel limite termodinamico (cio\`e $N,V \to +\infty$ con $v$ costante), il contributo di $\frac{1}{V} \frac{z}{1-z}$ \`e rilevante solo se $z=1$, si concludono i due seguenti punti.
 \begin{itemize}
-	\item per $T<T_c$, si deve necessariamente avere $z\to 1$, altrimenti l'equazione \ref{dbec} non ha soluzione;
-	\item per $T>T_c$, il termine additivo non \`e pi\`u rilevante perch\'e si pu\`o ottenere una soluzione $z<1$ da $\lambda _T^3 / v = g_{3 / 2} (z)$.
+	\item $T<T_c \iff z=1$.
+	\begin{itemize}
+		\item[$(\Rightarrow )$] Sia $T<T_c\iff n>\frac{1}{\lambda _T^3}g_{3 / 2} (1)$.
+			Se non fosse $z=1$, l'equazione \ref{dbec} non potrebbe essere soddisfatta e si avrebbe l'assurdo $n = \frac{1}{\lambda _T^3}g_{3 / 2} (z)$, con $z \in \left[ 0,1 \right] $ perch\'e il termine aggiuntivo relativo allo stato fondamentale tende a zero perch\'e moltiplicato per $1 / V$.
+		\item[$(\Leftarrow)$] Sia $z = 1$. 
+			In questo caso, il termine aggiuntivo \`e rilevante e finito, per cui $n > \frac{1}{\lambda _T^3}g_{3 / 2} (1)$.
+	\end{itemize}
+	\item $T>T_c \iff z<1$.
+	\begin{itemize}
+		\item[$(\Rightarrow )$] Sia $T>T_c \iff n< \frac{1}{\lambda _T^3}g_{3 / 2} (1) $ e, quindi, non potrebbe essere $z=1$, altrimenti $n>\frac{1}{\lambda _T^3}g_{3 / 2} (1)$ dall'equazione \ref{dbec} per $z=1$.
+		\item[$(\Leftarrow)$] Sia $z<1$.
+			Allora, necessariamente, $T<T_c$ altrimenti $n > \frac{1}{\lambda _T^3}g_{3 / 2} (1)$ e sarebbe necessario $z=1$, da cui l'assurdo.
+	\end{itemize}
 \end{itemize}
 Mettendo insieme questi due punti, si ha che, nel limite termodinamico
 \[
@@ -3408,9 +3419,184 @@ z = \begin{cases}
 \begin{osservazione}
 Il discorso si pu\`o interpretare come segue: nel considerare una temperatura $T<T_c$, gli stati eccitati ($\lvert \mathbf{p} \rvert  >0$) non possono contenere tutta la densit\`a, in quanto le particelle si accumulano nello stato fondamentale ($\lvert \mathbf{p}  \rvert =0$), portando una densit\`a dello stato fondamentale $n_0$ macroscopicamente rilevante, per cui se ne deve considerare il termine relativo.
 \end{osservazione}
+\noindent Proseguendo la precedente osservazione, si pu\`o dire che $\frac{\langle N_0 \rangle}{N}\neq 0$ (o non trascurabile), con $N_0$ il numero di bosoni nel fondamentale ($\lvert \mathbf{p}  \rvert =0$), solo se $z=1$, ossia $T\le T_c$.
+Si identifica questa condizione con il realizzarsi della \textit{condensazione di Bose-Einstein}.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Inoltre, inserendo la definizione di $\langle N_ 0\rangle$ in \ref{dbec}, si vede che, per $z=1$
+\[
+	\begin{split}
+	&\frac{g_{3 / 2} (1)}{\lambda _T^3} + \frac{\langle N_0 \rangle}{V} = \frac{\langle N \rangle}{V}\\
+	&\Rightarrow \frac{\langle N_0 \rangle}{N} = 1 - \frac{V}{\langle N \rangle}\frac{g_{3 / 2} (1)}{\lambda _T^3} = 1 - \left(\frac{T}{T_c}\right) ^{3 / 2}
+	\end{split}
+\] 
+Invece, se $z < 1$, allora $\langle N_0 \rangle / \langle N \rangle \to 0$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+    width=9cm,
+    height=6cm,
+    axis lines=middle,
+    xmin=0, xmax=1.3,
+    ymin=0, ymax=1.15,
+    xtick=\empty,
+    ytick=\empty,
+    domain=0:1,
+    samples=200,
+    smooth,
+    clip=false,
+]
+% Condensate fraction for T <= Tc
+\addplot[black,thick] {1 - x^(3/2)};
+% Zero for T >= Tc
+\addplot[black,thick, domain=1:1.29] {0};
+\node at (.1,1.1) {$\frac{\langle N_0 \rangle}{\langle N \rangle}$};
+\node at (1.3,-.1) {$T$};
+\draw[fill] (0,1) circle (1.2pt);
+\node at (-.05,1) {$1$};
+\node at (1,-.1) {$T_c$};
+\draw[fill] (1,0) circle (1.2pt);
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Si vuole capire, ora, se ci pu\`o essere condensazione per valori $\lvert \mathbf{p}  \rvert >0$, cio\`e per stati diversi dal fondamentale nel caso di bosoni non interagenti.
+\begin{osservazione}
+Nel limite termodinamico, $V,N\to +\infty$ e $N / V$ \`e costante, quindi $V$ e $N$ scalano allo stesso modo, per cui nel seguito si divide per $V$, invece di $N$.
+\end{osservazione}
+\noindent Si ha 
+\[
+\frac{\langle n_\mathbf{p}  \rangle}{V} = \frac{1}{V} \frac{1}{z^{-1}e^{\beta \epsilon _\mathbf{p} }-1} \le \frac{1}{V} \frac{1}{e^{\beta \epsilon _\mathbf{p} }-1} \le \frac{1}{V} \frac{1}{\beta \epsilon _\mathbf{p} }
+\] 
+dove si \`e prima eliminato $z^{-1}$, poi tenuto solo il primo ordine di sviluppo dell'esponenziale e rimosso gli altri.
+Visto che
+\[
+\epsilon _\mathbf{p} = \frac{1}{2m} \left(\frac{2\pi\hbar ^2}{L}\right) ^2 \lvert \mathbf{n}  \rvert ^2
+\] 
+con $\mathbf{n}  \in \mathbb{Z}^3$ per via delle condizioni al bordo, si conclude che
+\[
+\frac{\langle n_\mathbf{p}  \rangle}{V}\le \frac{1}{L^3} \left(\frac{\beta}{2m} \left(\frac{2\pi\hbar ^2}{L}\right) ^2 \lvert \mathbf{n}  \rvert^2 \right) ^{-1} \sim \frac{1}{L}
+\] 
+che, quindi, va a $0$ nel limite termodinamico.
+Questo implica che non si pu\`o avere condensazione per altri stati oltre il fondamentale.
+\subsubsection{Condensazione in 2D}
+In 2D (come in 1D per analoghe motivazioni), la condensazione non si pu\`o avere.
+Ripercorrendo i calcoli fatti per arrivare all'equazione \ref{dbec}, in particolare in \ref{c2d}, gli integrali in $d^3 p$ diventano integrali in $d^2 p$, visto che si scende di una dimensione, per cui, invece di ottenere una $g_{5 / 2} (z)$, si ha $g_{4/2} (z)=g_{2} (z)$.
+Di conseguenza, nel calcolare $\langle N \rangle$, si rimane con una quantit\`a, relativamente agli stati eccitati, proporzionale a $g_1(z)$, la quale \`e chiaramente divergente per $z=1$.
+Questa divergenza assicura la possibilit\`a di coprire tutti i valori di $n$, senza necessit\`a di considerare il termine relativo allo stato fondamentale e, quindi, senza dover introdurre una condensazione.
+\subsubsection{Condensazione come transizione di fase}
+Si pu\`o interpretare la condensazione come transizione di fase continua.
+Questa visione nasce dal fatto che la $z$ \`e definita a intervalli a seconda che $T$ sia minore o maggiore di $T_c$.
+Si nota che, nel limite termodinamico, il termine\footnote{Questo \`e dato dal fatto che $\frac{1}{V}\frac{z}{1-z}$ \`e finito nel limite termodinamico, per $z\to 1$, quindi $1-z$ deve essere una grandezza estensiva proporzionale a $N$, per cui $\log (1-z) \sim \log N$ e, allora, $\frac{1}{V}\log(1-z) \to 0$.}
+\[
+\frac{1}{V} \log(1-z) \to 0
+\] 
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+Quindi, si pu\`o scrivere, risolvendo l'equazione in \ref{bni}, che
+\[
+\frac{p}{\kappa _B T }= \begin{cases}
+	g_{5 / 2} (1) / \lambda _T^3 &,\ T\le T_c\\
+	g_{5 / 2} (z) / \lambda _T^3 &,\ T>T_c
+\end{cases}
+\] 
+I punti di intersezione in $v=0$ sono le pressioni di vapore $p_0(T)$ relative alla pressione mantenuta costante durante le transizioni di fase.
+Il loro valore \`e dato da
+\[
+p_0(T) = \frac{\kappa _B T }{\lambda _T^3}g_{5 / 2} (1)
+\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.1]
+
+% Assi
+\draw[->, thick] (0,0) -- (6,0) node[below] {$v$};
+\draw[->, thick] (0,0) -- (0,5) node[left] {$P$};
+
+
+% Isoterma T2 > T1
+\draw[thick]
+    (0.8,4.0) -- (2,4.0)
+    .. controls (2.2,3.6) and (3,1.2) ..
+    (5,.7);
+
+% Isoterma T1
+\draw[thick]
+    (0.8,2.4) -- (2.5,2.4)
+    .. controls (2.6,2) and (3.5,.6) ..
+    (5,0.4);
+
+
+% Etichette
+\node[blue!40!white] at (1.2,2.6) {\footnotesize BEC};
+
+
+\node[right] at (2.7,2.9) {\small $T_2>T_1$};
+\node[right] at (3.2,.6) {\small $T_1$};
+\draw[fill,green!70!black] (2.5,2.4) circle (1pt);
+\draw[fill,green!70!black] (2,4) circle (1pt);
+\draw[dashed,green!70!black] (2.5,2.4) -- (2.5,0);
+\draw[dashed,green!70!black] (2,4) -- (2,0);
+\draw[fill,green!70!black] (2.5,0) circle (1pt);
+\draw[fill,green!70!black] (2,0) circle (1pt);
+\node at (2.8,-0.3) {\footnotesize $v_c(T_1)$};
+\node at (1.7,-0.3) {\footnotesize $v_c(T_2)$};
+% Segmenti blu del condensato
+\draw[blue!40!white, very thick] (0,4.0) -- (2,4.0);
+\draw[blue!40!white, very thick] (0,2.4) -- (2.5,2.4);
+
+\node at (-.5,4) {\footnotesize $p_0(T_2)$};
+\node at (-.5,2.4) {\footnotesize $p_0(T_1)$};
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Per queste pressioni, vista la presenza del tratto orizzontale relativo alla BEC, si pu\`o scrivere un'equazione analoga a quella di Clausius-Clapeyron:
+\[
+\frac{d p_0}{d T}  = \frac{\ell }{T \Delta v}
+\] 
+con $ \ell = \frac{5}{2}\kappa _B T \frac{g_{5 / 2} (1)}{g_{3 / 2} (1)}$ \textit{calore latente della transizione} (da BEC a normale) e $\Delta v = v_c - 0=v_c$ \textit{lunghezza del plateau} (che parte da zero in questo caso).
+
+Si possono calcolare 
+\[
+U = \frac{3}{2}pV \hspace{1cm} F = \mu N - pV
+\] 
+con $\mu  = -\kappa _B T \log z$. 
+Da questo, si ottiene che 
+\[
+S = \frac{1}{T} (U - F) = \begin{cases}
+	\displaystyle \frac{5}{2} \frac{\kappa _B v}{\lambda _T^3}g_{5 / 2} (1) &,\ T\le T_c\\
+	\\
+	\displaystyle \frac{5}{2} \frac{\kappa _B v}{\lambda _T^3}g_{5 / 2} (z) - \kappa _B \log z &,\ T>T_c
+\end{cases} \ \ \implies \lim_{z \to 1} S = \frac{\ell}{T}
+\] 
+dove il limite $z\to 1$ equivale al limite $T\to T_c$.
+Si pu\`o anche calcolare la capacit\`a termica $C_V = \Eval{\frac{\partial U}{\partial T}}{V}{} $ e trovare che 
+\[
+\frac{C_V}{N} = \begin{cases}
+	\displaystyle \frac{15}{4} \kappa _B \frac{v}{\lambda _T^3}g_{5 / 2} (1) &,\ T\le T_c\\
+	\\
+	\displaystyle \frac{15}{4} \kappa _B \frac{v}{\lambda _T^3}g_{5 / 2} (z)-\frac{9}{4}\kappa _B \frac{g_{3 / 2} (z)}{g_{1 / 2} (z)} &,\ T< T_c\\
+\end{cases}
+\] 
+per cui si ha che $C_V \sim T^{3 / 2}$ per $T\to 0$, mentre $C_V \sim \frac{3}{2}N\kappa _B$ per $T\to +\infty$.
+Infine, si vede che, mentre entropia ed energia interna sono continue, la capcit\`a termica presenta una discontinuit\`a in $T=T_c$.
 \begin{boxenv}[]
-\centering Riprendere lezione 21 da 42:00
+\centering Riprendere dalla lezione 22
 \end{boxenv}
+
+
+
+
+
 
 
 
