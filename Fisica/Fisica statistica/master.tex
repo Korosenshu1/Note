@@ -3190,13 +3190,13 @@ Nel limite termodinamico e sviluppando in serie il logaritmo, si pu\`o scrivere 
 \] 
 dove si \`e usato lo sviluppo del logaritmo $\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n}$, con $ \varepsilon  = z e^{-\beta p^2 / 2m}$.
 Infine, definendo $f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }$, si pu\`o scrivere che $\log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{V}{\lambda _T^3} f_{5 / 2} (z)$; unitamente col fatto che $\langle N \rangle = z \partial _z \log \mathcal{Z} $, si ha:
-\[
+\begin{equation}\label{fni}
 	\begin{cases}
 		\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3} f_{5 / 2} (z)\\
 		\\
 		\displaystyle \frac{1}{v} = \frac{\langle N \rangle}{v}=\frac{1}{\lambda _T^3} f_{3/2} (z)
 	\end{cases}
-\] 
+\end{equation}
 Queste due equazioni permettono di studiare tutta la termodinamica di un gas di fermioni liberi (non interagenti). 
 In ogni caso, visto che compare la fugacit\`a, quindi il potenziale chimico, la si deve esplicitare in funzione di $\langle N \rangle$ nella seconda equazione e sostituirla nella prima per ottenere l'equazione di stato; questo procedimento, in apparenza banale, si tratter\`a pi\`u avanti sotto certe approssimazioni.
 \vspace{.5cm}
@@ -3236,6 +3236,23 @@ La statistica di Bose-Einstein si ottiene da $\log \mathcal{Z} $ come
 \langle N \rangle= z \frac{\partial }{\partial z}  \log\mathcal{Z}  = - z \frac{\partial }{\partial z} \sum_{\mathbf{p} }^{} \log\left(1-ze^{-\beta \varepsilon _\mathbf{p} }\right) = \sum_{\mathbf{p} }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }-1}
 \] 
 \end{osservazione}
+\vspace{.5cm}
+
+\textbf{Energia interna.} Avendo utilizzato una base rispetto a cui l'hamiltoniano \`e diagonale, l'energia interna si pu\`o calcolare senza che compaiano operatori nell'espressione:
+\[
+E = \frac{1}{\mathcal{Z}}\sum_{N=0}^{+\infty} z^N \sum_{\left\{ n_\mathbf{p}  \right\} }^{*} e^{-\beta \sum_{\mathbf{p} }^{} n_\mathbf{p} \varepsilon _\mathbf{p} } \left\{ \sum_{\mathbf{p} }^{} n_\mathbf{p} \varepsilon _\mathbf{p}  \right\} = - \frac{\partial }{\partial \beta } \log\mathcal{Z} 
+\] 
+dove l'asterisco $*$ indica che i valori di $n_\mathbf{p} $ devono essere aggiustati a seconda della statistica considerata.
+Indicando con $(f / g)_\alpha (z)$ il fatto che bisogna inserire $f_\alpha $ o $g_\alpha $ a seconda che si abbia a che fare con fermioni, o bosoni rispettivamente, l'energia interna risulta pari a 
+\begin{equation}\label{giei}
+	\begin{array}
+		{c}
+\displaystyle E(z,T,V)  =V \left(\frac{2\pi m }{h^2}\right) ^{3 / 2} \Big[ (f / g)_{5 / 2} (z) \Big]  \left(-\frac{\partial }{\partial \beta } \beta ^{-3 / 2}\right) = \frac{3}{2} \frac{1}{\beta } \log \mathcal{Z} \\
+\\
+\displaystyle \Rightarrow E = \frac{3}{2}pV
+	\end{array}
+\end{equation}
+Si nota che questa espressione \`e indipendente dalla statistica considerata (informazione contenuta in $p$) ed \`e sempre vera per gas ideali.
 \subsection{Limite semiclassico}
 Si considera un sistema generico di $N$ particelle descritto dall'hamiltoniano $\hat{H} = \hat{K} + \hat{\Omega }$, dove $\hat{K} = -\frac{\hbar ^2}{2m}\sum_{i=1}^{N} \nabla _i^2$ \`e la parte cinetica, mentre la parte delle interazioni si assume essere della forma
 \[
@@ -3565,7 +3582,7 @@ Per queste pressioni, vista la presenza del tratto orizzontale relativo alla BEC
 \] 
 con $ \ell = \frac{5}{2}\kappa _B T \frac{g_{5 / 2} (1)}{g_{3 / 2} (1)}$ \textit{calore latente della transizione} (da BEC a normale) e $\Delta v = v_c - 0=v_c$ \textit{lunghezza del plateau} (che parte da zero in questo caso).
 
-Si possono calcolare 
+Usando l'equazione \ref{giei}, si ha 
 \[
 U = \frac{3}{2}pV \hspace{1cm} F = \mu N - pV
 \] 
@@ -3589,12 +3606,94 @@ Si pu\`o anche calcolare la capacit\`a termica $C_V = \Eval{\frac{\partial U}{\p
 \] 
 per cui si ha che $C_V \sim T^{3 / 2}$ per $T\to 0$, mentre $C_V \sim \frac{3}{2}N\kappa _B$ per $T\to +\infty$.
 Infine, si vede che, mentre entropia ed energia interna sono continue, la capcit\`a termica presenta una discontinuit\`a in $T=T_c$.
+
+\subsection{Fermioni non interagenti}
+Si riprendono le equazioni \ref{fni}:
+\[
+\begin{cases}
+	\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3}f_{5 / 2} (z)\\
+\\
+\displaystyle \frac{1}{v}= \frac{1}{\lambda _T^3}f_{3 / 2} (z)
+\end{cases}\ \, , \ \ \text{ con } \ \ \ f_{\alpha } (z) = \sum_{n=1}^{+\infty} (-1)^{n+1} \frac{z^n}{n^\alpha }
+\] 
+con $z \in [ 0,+\infty ) $ al contrario dei bosoni.
+\vspace{.5cm}
+
+\textbf{Caso $\mathbf{z}$ piccolo.} Questo corrisponde al \textit{limite classico} $\lambda _T^3 / v \ll 1$ (alte temperature, o basse densit\`a), infatti $\lambda _T^3 / v=f_{3 / 2} (z) \simeq z \to 0$, troncando lo sviluppo al primo ordine.
+La statistica, in questa approssimazione, ha la forma di Boltzmann classica:
+\[
+\langle n_\mathbf{p}  \rangle = \frac{1}{z^{-1}e^{\beta \varepsilon _\mathbf{p} }+1} \simeq z e^{-\beta \varepsilon _\mathbf{p} } \simeq \frac{\lambda _T^3}{v}e^{-\beta \varepsilon _\mathbf{p} }
+\] 
+usando che 
+\begin{equation}
+	f_{3 / 2} (z) = z - \frac{z^2}{2^{3 / 2}}+\frac{z^3}{3^{3 / 2}} + \ldots = \frac{\lambda _T^3}{v}
+	\tag{$\dagger $}
+\end{equation}
+e approssimando $z\simeq \frac{\lambda _T^3}{v}$.
+Nella relazione $(\dagger )$ si pu\`o mettere in evidenza $z = \frac{\lambda _T^3}{v} + \frac{z^2}{2^{3/2}} - \frac{z^3}{3^{3 / 2}}+\ldots$ per scrivere che
+\[
+\frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3} \left(\left\{ \frac{\lambda _T^3}{v}+\frac{z^2}{2^{3 / 2}} + \ldots \right\} - \frac{z^2}{2^{5 / 2}}+ \ldots\right) = \frac{1}{v}+\frac{1}{\lambda _T^3} \frac{z^2}{2^{5 / 2}}
+\] 
+Visto che $z^2 \simeq \frac{\lambda _{T} ^6}{v^2}$, evidenziando solo i termini in $z^2$, si ha
+\[
+\frac{pv}{\kappa _B T} = 1 + \frac{1}{2^{5 / 2}}\frac{\lambda _T^3}{v} + \ldots 
+\] 
+che ha una forma analoga all'espansione del viriale in meccanica statistica classica:
+\[
+\frac{pV}{\langle N \rangle\kappa _B T } = \sum_{\ell =1}^{+\infty} B_\ell (T) \left(\frac{\langle N \rangle}{V}\right) ^{\ell -1}
+\] 
+Confrontando i termini dello sviluppo, si vede anche che $B_2 = \frac{\lambda _T^3}{2^{5 / 2}} = \frac{1}{2} \left(\frac{\pi \hbar ^2}{m\kappa _B T }\right) ^{3 / 2}$, corrispondente, per quanto visto nel limite semi-classico, ad un potenziale repulsivo.
+Si osserva, infine, che nel limite di alte temperature questo termine svanisce e ci si ritrova in assenza totale di interazioni, corrispondente al caso classico.
+\vspace{.5cm}
+
+\textbf{Caso $\mathbf{z} $ grande.} Questo \`e il \textit{limite quantistico} corrispondente a $\lambda _T^3 / v \gg 1$, equivalente a sistema con temperatura molto bassa, o densit\`a molto alta.
+Si pu\`o trovare un'espansione in serie, nota col nome di \textit{espansione di Bohr-Sommerfeld}, per le $f_{3 / 2}(z)$ e $f_{5 / 2} (z)$.
+Questa prevede di partire dalle $f_\alpha $ in forma integrale. 
+Tale forma si ottiene ripercorrendo i passaggi per la trattazione del gas di fermioni e vedendo che la $f_\alpha $ veniva introdotta dall'espansione in serie del logaritmo; lasciando intatto il logaritmo, si ha che
+\[
+f_{5 / 2} (z) = \frac{\lambda _T ^3}{h^3} \int d \mathbf{p} \ \log\left(1+z e^{-\beta \varepsilon _\mathbf{p} }\right) = \frac{4}{\sqrt{\pi} } \int _0^{+\infty} dy \ y ^2 \log\left(1+ z e^{-y^2}\right) 
+\] 
+prendendo $y^2 = \frac{\beta }{2m}p^2$ e integrando sulle variabili angolari $\theta ,\varphi $.
+Dalla definizione in termini di serie, $f_{3 / 2} (z) = z \frac{d }{d z} f_{5 / 2} (z)$, per cui 
+\[
+f_{3 / 2} (z) = \frac{4}{\sqrt{\pi} } \int _0^{+\infty} dy\ \frac{y^2 }{z^{-1}e^{y^2}+1}=\frac{4}{\sqrt{\pi} } \int _0^{+\infty}dy \  \frac{y^2}{e^{y^2 - \nu }+1}
+\] 
+dove si \`e preso $\nu = \beta \mu \Rightarrow \nu =\log z$.
+Definendo, poi, $t = y^2$ e integrando per parti, si ha
+\[
+f_{3 / 2} (z) = \frac{4}{3\sqrt{\pi} }\int _{0} ^{+\infty} dt \ \frac{t^{3 / 2} e^{t - \nu }}{\left(e^{t-\nu } + 1\right) ^2}
+\] 
+Infine, per $u = t - \nu $, si ottiene
+\[
+f_{3 / 2} (z) = \frac{4}{3\sqrt{\pi} }\int _{-\nu } ^{+\infty}  du \ \frac{(u+\nu )^{3 / 2}e^{u}}{\left(e^{u}+1\right) ^2}
+\] 
+Visto che si sta trattando il limite $z\gg 1$, si pu\`o assumere per comodit\`a di calcolo che $-\nu \to -\infty$; allora l'integrale si pu\`o far partire da $-\infty$.
+Questo \`e anche giustificato dal fatto che
+\[
+\frac{e^{u }}{(e^u +1)^2 }= (e^u + 1)^{-1} (e^{-u} + 1)^{-1}
+\] 
+che \`e una quantit\`a estremamente piccata in $u=0$ e decade esponenzialmente allontanandosi dal picco, quindi ha poca importanza cosa succede lontano da $u=0$.
+Per questa stessa ragione, poi, \`e possibile espandere $(u+\nu )^{3 / 2}$ per $\lvert u \rvert  \ll 1$ come
+\[
+	(u+\nu )^{ 3 / 2} = \nu ^{3 / 2} + \frac{3}{2} \nu ^{1 / 2} u + \frac{3}{8} \nu ^{-1 / 2} u^2 + \ldots
+\] 
+In questo modo, si ha che
+\[
+f_{3 / 2} (z) = \frac{4}{3\sqrt{\pi} } \left(I_0\nu ^{3 / 2} + I_1 \frac{3}{2}\nu ^{1 / 2} + I_2 \frac{3}{8}\nu ^{- 1 / 2}+\ldots\right) 
+\] 
+dove 
+\[
+I_n = \int _{-\infty}^{+\infty} du \ \frac{u^n e^u}{(e^u+1)^2}
+\] 
+sono integrali noti.
+Questi soddisfano $I_0=1$, $I_{2n+1} =0  $ perch\'e $e^u (e^u+1)^{-2}$ \`e una funzione pari, mentre $u^{2n+1}$ \`e dispari, e $I_{2n} = 4n (1-2^{1-2n})(2n-1)!\zeta(2n)$, perci\`o
+\[
+f_{3 / 2} (z) = \frac{4}{3\sqrt{\pi} }\left[ (\log z)^{3 / 2}+\frac{\pi^2}{8}(\log z ) ^{- 1 /2} +\ldots \right] 
+\] 
+Si osserva, infine, che, a differenza dei bosoni, l'equazione $f_{3 / 2} (z) = \frac{\lambda _T^3}{v}$ ha sempre soluzione perch\'e $f_{3/2} (z)$ copre tutto l'asse reale positivo, per cui non vi \`e condensazione per i fermioni.
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 22
+\centering Riprendere dalla lezione 23
 \end{boxenv}
-
-
-
 
 
 
