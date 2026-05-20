@@ -3691,16 +3691,71 @@ Questi soddisfano $I_0=1$, $I_{2n+1} =0  $ perch\'e $e^u (e^u+1)^{-2}$ \`e una f
 f_{3 / 2} (z) = \frac{4}{3\sqrt{\pi} }\left[ (\log z)^{3 / 2}+\frac{\pi^2}{8}(\log z ) ^{- 1 /2} +\ldots \right] 
 \] 
 Si osserva, infine, che, a differenza dei bosoni, l'equazione $f_{3 / 2} (z) = \frac{\lambda _T^3}{v}$ ha sempre soluzione perch\'e $f_{3/2} (z)$ copre tutto l'asse reale positivo, per cui non vi \`e condensazione per i fermioni.
+\vspace{.5cm}
+
+\textbf{Limite di basse temperature.} Nel considerare $T\to 0$ nella trattazione di $z\gg 1$, si pu\`o troncare al primo ordine l'espansione di Sommerfeld:
+\[
+	\frac{\lambda _T^3}{v} \simeq \frac{4}{3\sqrt{\pi} } (\log z ) ^{3 / 2}
+\] 
+Ora si pu\`o definire $\mu _0$ associato al limite $T\to  0$ tramite
+\[
+\mu _0 = \frac{1}{\beta }\log z = \frac{1}{\beta } \left(\frac{3\sqrt{\pi} }{4v}\right) ^{2 / 3} \frac{2\pi \hbar ^2}{m}\beta  = \frac{\hbar ^2}{2m} \left(\frac{6 \pi ^2}{v}\right) ^{2 / 3}
+\] 
+Sempre per $T\ll 1$, allora si pu\`o approssimare
+\[
+\langle n_\mathbf{p}  \rangle \simeq \frac{1}{e^{\beta (\varepsilon _\mathbf{p} -\mu _0)}+1}
+\] 
+Allora, per $T\to 0$, si hanno due possibilit\`a per il numero di occupazione: se $\varepsilon _\mathbf{p} < \mu _0$, allora $\langle n_\mathbf{p}  \rangle\to 1$; altrimenti $\langle n_\mathbf{p}  \rangle\to 0$.
+Il potenziale chimico $\mu _0$ definisce l'\textit{energia di Fermi} del sistema: per $T\to 0$, sono popolati esclusivamente gli stati che hanno energia inferiore rispetto a quella di Fermi, per conseguenza diretta del principio di esclusione di Pauli.
+
+Questo fatto si pu\`o vedere considerando il fatto che
+\[
+	N = \Eval{\sum_{\mathbf{p} }^{}\langle n_\mathbf{p}  \rangle}{T=0}{} = \sum_{\lvert \mathbf{p}  \rvert < \lvert \mathbf{p} _\text{max} \rvert }^{}1
+\] 
+dove $\lvert \mathbf{p} _\text{max} \rvert $ \`e il massimo valore di momento che un fermione pu\`o avere. 
+Nel limite termodinamico, passando al continuo, si ha
+\[
+N = \frac{V}{h^3}\int _{\lvert \mathbf{p}  \rvert <\lvert \mathbf{p} _\text{max} \rvert }  d\mathbf{p}  = \frac{4\pi V}{h^3} \int_0^{\lvert \mathbf{p} _\text{max} \rvert } p^2 \ dp = \frac{4\pi V}{3h^3}p_\text{max}^3
+\] 
+da cui 
+\[
+p_\text{max} = \left(\frac{3h^3}{4 \pi V}\right) ^{1 / 3} \implies \varepsilon _\text{max} = \frac{p_\text{max}^2}{2m}=\frac{\hbar ^2}{2m}\left(\frac{6\pi^2}{v}\right) ^{2 / 3}  = \mu _0
+\] 
+La notazione usata solitamente \`e $\varepsilon _F$ per l'energia di Fermi $\varepsilon _\text{max}= \mu _0$ e $p_F$ per il momento di Fermi $p_\text{max}$.
+
+\vspace{.5cm}
+
+\textbf{Termodinamica del sistema.} A partire da $f_{3 / 2} (z) = \frac{\lambda _T^3}{v}$, facendo uso dell'espansione di Sommerfeld, si pu\`o scrivere che
+\[
+1 = \frac{v}{\lambda _T^3} f_{3 / 2} (z) = \frac{v}{\lambda _T^3} \left\{ \frac{4}{3 \sqrt{\pi} } (\beta \mu )^{3 / 2}  + \frac{\pi^{3 / 2} }{6} (\beta \mu )^{- 1 / 2}  + \ldots  \right\} 
+\] 
+Rimaneggiando l'espressione, si trova che
+\[
+\mu  = \varepsilon _F - \frac{\pi^2}{12}\varepsilon _F \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \operatorname{O} \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^4
+\] 
+In questo modo, si determina $z$ e, quindi, si pu\`o sostituire in $\frac{p}{\kappa _B T } = \frac{1}{\lambda _T^3}f_{5 / 2} (z)$.
+
+In alternativa, si pu\`o partire dal calcolare l'energia interna, che, con calcoli analoghi a quelli fatti precedentemente per la $f_{3 / 2} (z)$, si trova essere
+\[
+U = \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p}  \langle n_\mathbf{p}  \rangle \longrightarrow \frac{V}{h^3}\int d\mathbf{p}  \ \frac{p^2}{2m}\frac{1}{e^{\beta \left(p^2 / 2m - \mu \right) }+1} = \frac{3}{5}N \varepsilon _F \left\{ 1 + \frac{5}{12}\pi^2 \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2+\ldots \right\} 
+\] 
+dove il termine $\frac{3}{5}N \varepsilon _F$ \`e l'energia del sistema a $T\to 0$, cio\`e ottenuta da 
+\[
+\sum_{\lvert \mathbf{p}  \rvert < \lvert \mathbf{p} _F \rvert }^{} \frac{p^2}{2m} = \ldots = \frac{3}{5}N\varepsilon _F
+\] 
+con passaggi intermedi relativi al passare all'integrale e svolgere procedimenti analoghi a quanto fatto prima.
+Ora, utilizzando la relazione \ref{giei}, si pu\`o arrivare all'equazione di stato:
+\[
+U = \frac{3}{2}pV \implies p = \frac{2}{5}\frac{\varepsilon _F}{v} \left\{ 1 + \frac{5}{12}\pi^2 \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \ldots \right\} 
+\] 
+Per $T\to 0$, si possono scartare le potenze superiori all'ordine $2$ in $T$ nell'espressione di $p$, per cui si trova che 
+\[
+	C_V = \Eval{\frac{\partial U}{\partial T} }{V}{} \sim T
+\] 
+e, quindi $C_V \to 0$ per $T\to 0$, in accordo col terzo principio della termodinamica. 
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 23
+\centering Riprendere dalla lezione 23, 30:49
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
