@@ -3707,7 +3707,6 @@ Sempre per $T\ll 1$, allora si pu\`o approssimare
 \] 
 Allora, per $T\to 0$, si hanno due possibilit\`a per il numero di occupazione: se $\varepsilon _\mathbf{p} < \mu _0$, allora $\langle n_\mathbf{p}  \rangle\to 1$; altrimenti $\langle n_\mathbf{p}  \rangle\to 0$.
 Il potenziale chimico $\mu _0$ definisce l'\textit{energia di Fermi} del sistema: per $T\to 0$, sono popolati esclusivamente gli stati che hanno energia inferiore rispetto a quella di Fermi, per conseguenza diretta del principio di esclusione di Pauli.
-
 Questo fatto si pu\`o vedere considerando il fatto che
 \[
 	N = \Eval{\sum_{\mathbf{p} }^{}\langle n_\mathbf{p}  \rangle}{T=0}{} = \sum_{\lvert \mathbf{p}  \rvert < \lvert \mathbf{p} _\text{max} \rvert }^{}1
@@ -3730,9 +3729,9 @@ La notazione usata solitamente \`e $\varepsilon _F$ per l'energia di Fermi $\var
 1 = \frac{v}{\lambda _T^3} f_{3 / 2} (z) = \frac{v}{\lambda _T^3} \left\{ \frac{4}{3 \sqrt{\pi} } (\beta \mu )^{3 / 2}  + \frac{\pi^{3 / 2} }{6} (\beta \mu )^{- 1 / 2}  + \ldots  \right\} 
 \] 
 Rimaneggiando l'espressione, si trova che
-\[
+\begin{equation}\label{pf}
 \mu  = \varepsilon _F - \frac{\pi^2}{12}\varepsilon _F \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \operatorname{O} \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^4
-\] 
+\end{equation}
 In questo modo, si determina $z$ e, quindi, si pu\`o sostituire in $\frac{p}{\kappa _B T } = \frac{1}{\lambda _T^3}f_{5 / 2} (z)$.
 
 In alternativa, si pu\`o partire dal calcolare l'energia interna, che, con calcoli analoghi a quelli fatti precedentemente per la $f_{3 / 2} (z)$, si trova essere
@@ -3753,16 +3752,99 @@ Per $T\to 0$, si possono scartare le potenze superiori all'ordine $2$ in $T$ nel
 	C_V = \Eval{\frac{\partial U}{\partial T} }{V}{} \sim T
 \] 
 e, quindi $C_V \to 0$ per $T\to 0$, in accordo col terzo principio della termodinamica. 
+
+Nel limite $T\to 0$, si vede che la pressione non si annulla, ma tende al valore costante $p = \frac{2}{5}\frac{\varepsilon _F}{v}$; questa si dice \textit{pressione di degenerazione} ed \`e dovuta al principio di Pauli: visto che due fermioni non possono occupare lo stesso stato, il gas tende ad espandersi, per cui si genera una pressione fittizia legata alla statistica delle particelle.
+
+Infine, usando lo sviluppo in \ref{pf}, si vede che, per $T\neq 0$, il numero medio di occupazione \`e dato da 
+\[
+\langle n_\mathbf{p}  \rangle = \frac{1}{e^{\beta \left(p^2 / 2m - \mu \right) }+1}
+\] 
+con $\mu = \varepsilon _F + \alpha T^2 + \ldots\neq \mu _0$ (con $\alpha $ generico coefficiente), per cui il suo andamento in funzione dell'energia sar\`a pi\`u smussato, come evidenziato di seguito.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[>=Latex, scale=1]
+  % Assi
+  \draw[->] (0,0) -- (6.2,0) node[right] {$\varepsilon_\mathbf{p} $};
+  \draw[->] (0,0) -- (0,4.2) node[above] {$\langle n_\mathbf{p} \rangle$};
+
+  % Livello 1
+  \draw[red, thick] (0,3) -- (3,3);
+  \draw[red, thick] (3,0) -- (6,0);
+
+  % Linea tratteggiata in corrispondenza di \mu_0 = \varepsilon_F
+  \draw[dashed] (3,0) -- (3,3);
+
+  % Etichette
+  \node[left] at (0,3) {$1$};
+  \node[below] at (3,0) {$\varepsilon_F$};
+  \node[red] at (4.5,4) {$T=0$};
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[>=Latex, scale=1]
+  % Assi
+  \draw[->] (0,0) -- (6.2,0) node[right] {$\varepsilon_\mathbf{p} $};
+  \draw[->] (0,0) -- (0,4.2) node[above] {$\langle n_\mathbf{p} \rangle$};
+
+  % Linea di riferimento a 1
+  \draw[gray!70,dashed,thick] (0,3) -- (5,3);
+  \node at (-0.2,3) {$1$};
+  % Livello di Fermi
+  \draw[dashed,gray!70,thick] (3,0) -- (3,3);
+  \node[below] at (3,0) {$\varepsilon_F$};
+
+  % Curva di occupazione media (schizzo tipo Fermi-Dirac)
+  \draw[blue, thick, smooth]
+    (0,3)
+    .. controls (1,3) and (1.2,2.95) .. (1.5,2.9)
+    .. controls (2.2,2.7) and (2.7,2) .. (3,1.5)
+    .. controls (3.5,.75) and (3.9,0.32) .. (4,0.29)
+    .. controls (4.5,0.06) and (5,.06) .. (6, 0.05);
+  % Etichette
+  \node[blue] at (4.5,4) {$T\neq 0$};
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+\subsubsection{Propriet\`a magnetiche di un gas di fermioni}
+Si \`e interessati a studiare la suscettivit\`a magnetica $\chi _T$, ad una certa temperatura $T$, di un gas di fermioni non interagenti sotto l'azione di un campo magnetico esterno $\mathrm{H}$; la sua espressione \`e data da 
+\[
+	\chi _T = \Eval{\frac{\partial m}{\partial \mathrm{H} } }{T,\mathrm{H} \to 0}{}
+\] 
+che esprime, quindi, la variazione della magnetizzazione del sistema al variare dell'intensit\`a del campo esterno.
+A seconda che $\chi _T$ sia maggiore o minore di zero, si distinguono due comportamenti diversi del sistema:
+\begin{itemize}
+	\item se $\chi _T > 0$, il sistema si dice \textit{paramagnetico}, caso in cui gli spin si allineano al verso del campo;
+	\item se $\chi _T < 0$, il sistema si dice \textit{diamagnetico}, caso in cui gli spin si allineano in verso opposto al verso del campo.
+\end{itemize}
+L'hamiltoniano del sistema \`e dato da 
+\[
+\hat{H} = \sum_{i=1}^{N} \left\{ \frac{1}{2m} \left(\hat{\mathbf{p} }_i - \frac{q}{c}\hat{\mathbf{A} }\right) ^2 - \mu _0 \hat{\pmb{\sigma }} _i \cdot \hat{\mathbf{H} } \right\} 
+\] 
+dove il termine $\left(\hat{\mathbf{p} }_i - \frac{q}{c}\hat{\mathbf{A} }\right) ^2$ \`e legato all'avere un fermione carico in un campo magnetico, che origina il \textit{diamagnetismo di Landau}, mentre il termine $\mu _0 \hat{\pmb{\sigma }} _i \cdot \hat{\mathbf{H} }$ \`e legato all'interazione tra spin e campo, che origina il \textit{paramagnetismo di Pauli}.
+In questa espressione, nel caso di elettroni, $\mu _0$ \`e il magnetone di Bohr, $q = -e$ e $\hat{\pmb{\sigma } }_i$ sono le matrici di Pauli.
+\vspace{.5cm}
+
+\textbf{Interazione spin-campo.} Per il momento, si tralascia la parte di interazione carica-campo e si studia
+\[
+\hat{H} = \sum_{i=1}^{N} \left(\frac{\hat{\mathbf{p} }_i ^2}{2m} - \mu _0 \hat{\pmb{\sigma } }_i \cdot \hat{\mathbf{H} }\right) 
+\] 
+In opportuna base, gli autovalori di $\hat{\pmb{\sigma } }_i \cdot \hat{\mathbf{H} }$ sono $S_i\mathrm{H} $, con $S_i = \pm 1$, per cui
+\[
+E = \sum_{\mathbf{p} }^{} \left(n^+_\mathbf{p} + n^-_\mathbf{p} \right) \frac{p^2}{2m} - \sum_{\mathbf{p} }^{}\mu _0 \left(n^+_\mathbf{p} - n ^- _\mathbf{p} \right) \mathrm{H} 
+\] 
+con $n^\pm_\mathbf{p} $ numero di fermioni a impulso $\mathbf{p} $ e spin $\pm 1$.
+Nel calcolo della funzione di partizione canonica, si ha il vincolo $N = \sum_{\mathbf{p} }^{} \left(n^+_\mathbf{p}  + n_\mathbf{p} ^-\right) $, per cui
+\[
+	Z_N(T,\mathrm{H} ) = \sum_{\left\{ n^+_\mathbf{p} ,n^-_\mathbf{p}  \right\} }^{*} \exp \left[ - \beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} \left(n^+_\mathbf{p} +n^-_\mathbf{p} \right) + \beta \mu _0 \mathrm{H} \sum_{\mathbf{p} }^{}\left(n_\mathbf{p} ^+ - n^-_\mathbf{p} \right)  \right]
+\] 
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 23, 30:49
+\centering Riprendere da lezione 23 1:13:24
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
