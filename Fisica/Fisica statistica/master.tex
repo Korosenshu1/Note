@@ -3842,9 +3842,86 @@ Nel calcolo della funzione di partizione canonica, si ha il vincolo $N = \sum_{\
 \[
 	Z_N(T,\mathrm{H} ) = \sum_{\left\{ n^+_\mathbf{p} ,n^-_\mathbf{p}  \right\} }^{*} \exp \left[ - \beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} \left(n^+_\mathbf{p} +n^-_\mathbf{p} \right) + \beta \mu _0 \mathrm{H} \sum_{\mathbf{p} }^{}\left(n_\mathbf{p} ^+ - n^-_\mathbf{p} \right)  \right]
 \] 
+Definendo $N^\pm = \sum_{\mathbf{p} }^{} n^\pm_\mathbf{p} $, si pu\`o riscrivere $Z_N$, con i vincoli relativi a ciascuna $N^\pm$ e $N = N^+ + N^-$, come
+\[
+	\begin{split}
+		Z_N &= \sum_{N^+=0}^{N} \sum_{\left\{ n^+_\mathbf{p} , n^-_\mathbf{p}  \right\} }^{*_1 *_2} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} \left(n^+_\mathbf{p}  + n^-_\mathbf{p} \right) }e^{\beta \mu _0 \mathrm{H} (2N^+ - N)}\\
+		    &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0N(2N^+ - N)} \sum_{\left\{ n^+_\mathbf{p}  \right\} }^{*_1} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^+_\mathbf{p} } \sum_{\left\{ n_\mathbf{p} ^- \right\} }^{*_2} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^-_\mathbf{p} }
+	\end{split}
+\] 
+dove le somme su $\left\{ n_\mathbf{p} ^+ \right\} $ e $\left\{ n_\mathbf{p} ^- \right\} $ sono, rispettivamente, funzioni di partizione per $N^+$ e $N^-$ fermioni liberi senza campo magnetico, o interazioni, per cui se ne conosce l'espressione.
+Questi termini si indicano con $Z_{N^+} ^{(0)}$ e $Z_{N^-} ^{(0)}$.
+Per fermioni liberi, l'energia libera \`e $F_N^{(0)} = - \kappa _B T \log Z_N^{(0)} $; usando questa espressione, si pu\`o scrivere
+\[
+	\begin{split}
+		Z_N(T,V,\mathrm{H} ) &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0 N (2N^+ - N) - \beta \left\{ F_{N^+} ^{(0)} (T,V) + F_{N-N^+} ^{(0)}(T,V) \right\} }\\
+				     & = \sum_{N^+ = 0}^{} e^{\beta f (N^+)}
+	\end{split}
+\] 
+Ora si fa un'approssimazione di punto sella: sia $\overline{N}^+$ il valore per cui $e^{\beta f(N^+)}$ \`e massimo, cio\`e soddisfa $f(\overline{N}^+) = \max_{N^+} f(N^+)$; in questo caso, allora $e^{\beta f(\overline{N}^+)} \le Z_N \le N e^{\beta f(\overline{N}^+)}$ e si assume che 
+\[
+Z_N \simeq e^{\beta f(\overline{N}^+)}\implies \frac{1}{\beta }\log Z_N
+\] 
+con $f(N^+) = 2\mu _0 \mathrm{H} N^+ - \beta \mu _0 \mathrm{H} N - F_{N^+} ^{(0)}- f_{N-N^+} ^{(0)}$.
+Tale valore $\overline{N}^+$ si ottiene da $\partial _{N^+} f |_{\overline{N}^+} =0$, cio\`e
+\[
+	2\mu _0 \mathrm{H} - \Eval{\frac{\partial F^{(0)}}{\partial N} }{\overline{N}^+}{} + \Eval{\frac{\partial F^{(0)}}{\partial N} }{N-\overline{N}^+}{} = 0 \iff \mu ^{(0)}(\overline{N}^+) - \mu ^{(0)} (N-\overline{N}^+) = 2\mu _0 \mathrm{H} 
+\] 
+Il potenziale chimico $\mu ^{(0)}$ \`e relativo ad un gas di fermioni liberi, ottenuto sopra nei due limiti rilevanti, pertanto si distinguono il caso classico, da quello quantistico.
+\begin{itemize}
+	\item \textit{Limite classico.} 
+
+		Si ha $z\simeq \lambda _T^3 / v$, per cui $\mu ^{(0)} \simeq \frac{1}{\beta }\log \frac{\lambda _T^3}{v}$, con $v = V / N$.
+		Sostituendo, si ottiene 
+		\[
+		\log \left(\frac{\lambda _T^3}{V}\overline{N}^+\right)  - \log \left(\frac{\lambda _T^3}{V}\left(N-\overline{N}^+\right) \right) = 2 \beta \mu _0 \mathrm{H} 
+		\] 
+	Definendo lo \textit{sbilanciamento} $r = \frac{2 \overline{N}^+}{N}-1$, si ottiene
+	\[
+	\log \left(\frac{1+r}{1-r}\right) = 2 \beta \mu _0 \mathrm{H} \implies r = \tanh \left(\beta \mu _0 \mathrm{H} \right) \simeq \beta \mu _0 \mathrm{H} 
+	\] 
+nel limite $\beta \to 0$.
+Allora, la magnetizzazione \`e data da 
+\[
+m = \mu _0 \frac{2\overline{N}^+ - N}{V} = \mu _0 \frac{Nr}{V}\simeq \beta  \frac{\mu _0^2}{v} \mathrm{H} \implies \chi  \simeq \beta  \frac{\mu _0^2}{v}
+\] 
+Si conclude che $\chi > 0 $, $\chi \sim 1 / T$ e $\chi \propto \mu _0^2$.
+\item \textit{Limite quantistico.} 
+
+	In questo caso, si ha l'espansione di Sommerfeld per il potenziale chimico, che si scrive come $\mu ^{(0)} = \varepsilon _F - \frac{\pi^2}{12}\varepsilon _F \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \ldots$, da cui
+	\[
+	\varepsilon _F (2\overline{N}^+) - \varepsilon _F(2N-2\overline{N}^+) - \frac{\pi^2}{12}\ldots = 2\mu _0 \mathrm{H} 
+	\] 
+dove i fattori $2$ sono per un pi\`u accurato conteggio relativo al grado di libert\`a dovuto allo spin.	
+Sostituendo $\varepsilon _F(2N) = \frac{\hbar ^2}{2m}\left(\frac{6 \pi^2 N}{V}\right) ^{2 / 3}$, si ottiene
+\[
+	\frac{2\mu _0 \mathrm{H} }{\varepsilon _F(N)}\simeq (1+r)^{2 / 3} - (1-r)^{2 / 3} - \frac{\pi^2}{12} \left(\frac{\kappa _B T}{\varepsilon _F(N)}\right) ^2 \big[(1+r)^{2 / 3} - (1-r)^{- 2 /3}\big]
+\] 
+Nel limite $T\to 0$ e ipotizzando $\lvert r \rvert \ll 1$, ossia non si hanno situazioni sbilanciate a livello di spin nel sistema\footnote{Questa \`e una situazione termodinamicamente tipica nei casi di $\mathrm{H} $ piccoli.}, si trova che 
+\[
+r \simeq \frac{3 \mu _0 \mathrm{H} }{2 \varepsilon _F(N)} \implies \chi = \frac{\partial }{\partial \mathrm{H} } \left(\mu _0 \frac{r}{v}\right)  \simeq \frac{3\mu _0^2}{2\varepsilon _F(N) v}
+\] 
+Come nel caso precedente, si trova ancora che $\chi >0$ e $\chi \propto \mu _0^2$.
+Volendo includere la correzione per la temperatura all'ordine successivo, si troverebbe
+\[
+\chi \simeq \frac{3\mu _0^2}{2 \varepsilon _F(N)v} \left[ 1 - \frac{\pi^2}{12}\left(\frac{\kappa _B T}{\varepsilon _F(N)}\right) ^2 \right] 
+\] 
+\end{itemize}
 \begin{boxenv}[]
-\centering Riprendere da lezione 23 1:13:24
+\centering Riprendere dalla lezione 24
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
