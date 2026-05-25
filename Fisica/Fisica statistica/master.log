@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  21 MAY 2026 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  25 MAY 2026 20:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -421,6 +421,9 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ==> First Aid for varwidth.sty applied!
 (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (/usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip65
@@ -482,14 +485,14 @@ LaTeX Info: Redefining \] on input line 2951.
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/share/texmf-dist/tex/latex/esint/esint.sty
 Package: esint 
-\symlargesymbolsA=\mathgroup6
+\symlargesymbolsA=\mathgroup7
 )
 
 Class scrartcl Warning: Usage of package `titlesec' together
@@ -499,7 +502,7 @@ Class scrartcl Warning: Usage of package `titlesec' together
 (scrartcl)              and several others to re-configure section
 (scrartcl)              headings.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `titlesec' on input line 15.
+(scrartcl)              package `titlesec' on input line 16.
 
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
@@ -976,8 +979,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \c@osservazione=\count409
 \c@notazione=\count410
 \c@esercizio=\count411
-Package hyperref Info: Option `colorlinks' set `true' on input line 150.
-Package hyperref Info: Option `breaklinks' set `true' on input line 150.
+Package hyperref Info: Option `colorlinks' set `true' on input line 151.
+Package hyperref Info: Option `breaklinks' set `true' on input line 151.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -998,7 +1001,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 185.
+(scrartcl)              package `tocloft' on input line 186.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1149,7 +1152,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 198.
+(scrartcl)           before \begin{document} on input line 199.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1157,28 +1160,28 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count420
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 198.
+(Font)              scaled to size 10.95pt on input line 199.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1239,7 +1242,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 198.
+Package hyperref Info: Link coloring ON on input line 199.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen399
@@ -1247,23 +1250,27 @@ Package caption Info: End \AtBeginDocument code.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \it@ocap on input line 198.
-LaTeX Info: Redefining \it@ccap on input line 198.
+LaTeX Info: Redefining \it@ocap on input line 199.
+LaTeX Info: Redefining \it@ccap on input line 199.
 \c@mv@tabular=\count427
 \c@mv@boldtabular=\count428
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 199.
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 200.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 199.
+(Font)              scaled to size 12.0pt on input line 200.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 199.
+(Font)              scaled to size 12.0pt on input line 200.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.toc
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
 (Font)              scaled to size 10.95pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1281,32 +1288,32 @@ File: uesint.fd
 
  [3]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 203.
+(Font)              scaled to size 15.0pt on input line 204.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 203.
+(Font)              scaled to size 20.0pt on input line 204.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 13.0pt on input line 204.
+(Font)              scaled to size 13.0pt on input line 205.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 13.0pt on input line 204.
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 216.
+(Font)              scaled to size 13.0pt on input line 205.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 217.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 216.
+(Font)              scaled to size 10.95pt on input line 217.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 216.
+(Font)              scaled to size 10.95pt on input line 217.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 227.
+(Font)              scaled to size 8.0pt on input line 228.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 227.
+(Font)              scaled to size 9.0pt on input line 228.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 227.
+(Font)              scaled to size 6.0pt on input line 228.
  [4{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] [5] [6] [7]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 352.
+(Font)              scaled to size 12.0pt on input line 353.
  [8]
-Overfull \hbox (16.2985pt too wide) detected at line 402
+Overfull \hbox (16.2985pt too wide) detected at line 403
 [][] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 ' [] [] ' [] []
  []
 
@@ -1314,7 +1321,7 @@ Overfull \hbox (16.2985pt too wide) detected at line 402
 <vdw.png, id=199, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
-Package pdftex.def Info: vdw.png  used on input line 455.
+Package pdftex.def Info: vdw.png  used on input line 456.
 (pdftex.def)             Requested size: 208.41644pt x 165.96815pt.
 
 
@@ -1324,25 +1331,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <max-constr-vdw.png, id=207, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
-Package pdftex.def Info: max-constr-vdw.png  used on input line 485.
+Package pdftex.def Info: max-constr-vdw.png  used on input line 486.
 (pdftex.def)             Requested size: 150.05937pt x 220.59213pt.
  [11 <./vdw.png> <./max-constr-vdw.png>] [12]
-Overfull \hbox (5.02264pt too wide) detected at line 555
+Overfull \hbox (5.02264pt too wide) detected at line 556
 []
  []
 
 [13] [14]
-Overfull \hbox (12.3961pt too wide) detected at line 624
+Overfull \hbox (12.3961pt too wide) detected at line 625
 []
  []
 
 [15] [16] [17] [18] [19] [20]
-Overfull \hbox (1.87082pt too wide) in paragraph at lines 846--847
+Overfull \hbox (1.87082pt too wide) in paragraph at lines 847--848
 \T1/zpltosf/m/n/10.95 pre-sen-ta un esem-pio par-ti-co-la-re di \T1/zpltosf/m/it/10.95 ge-rar-chia BB-G-KY \T1/zpltosf/m/n/10.95 (Bogoljubov-Born-Green-Kirkwood-
  []
 
 
-Overfull \hbox (58.54832pt too wide) detected at line 855
+Overfull \hbox (58.54832pt too wide) detected at line 856
 []
  []
 
@@ -1350,30 +1357,30 @@ Overfull \hbox (58.54832pt too wide) detected at line 855
 <pd.jpg, id=298, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
-Package pdftex.def Info: pd.jpg  used on input line 933.
+Package pdftex.def Info: pd.jpg  used on input line 934.
 (pdftex.def)             Requested size: 187.57352pt x 164.25514pt.
  [24 <./pd.jpg>] [25] [26] [27] [28] [29]
-Overfull \hbox (3.20259pt too wide) in paragraph at lines 1193--1194
+Overfull \hbox (3.20259pt too wide) in paragraph at lines 1194--1195
  [][] 
  []
 
 [30]
-Underfull \hbox (badness 1371) in paragraph at lines 1325--1325
+Underfull \hbox (badness 1371) in paragraph at lines 1326--1326
 [][]|\T1/zpltosf/m/n/9 Ma-gne-tiz-za-zio-ne in fun-zio-ne del-la
  []
 
 [31] [32]
-Overfull \hbox (11.95016pt too wide) in paragraph at lines 1404--1405
+Overfull \hbox (11.95016pt too wide) in paragraph at lines 1405--1406
  [][] 
  []
 
 
-Overfull \hbox (0.85635pt too wide) in paragraph at lines 1433--1434
+Overfull \hbox (0.85635pt too wide) in paragraph at lines 1434--1435
  [][] 
  []
 
 [33] [34] [35] [36] [37] [38] [39]
-Overfull \hbox (3.01218pt too wide) in paragraph at lines 1805--1808
+Overfull \hbox (3.01218pt too wide) in paragraph at lines 1806--1809
 \T1/zpltosf/m/n/10.95 dove, con con-di-zio-ni al bor-do pe-rio-di-che, si ha $[] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 n[]; n[]; n[]\OT1/cmr/m/n/10.95 )$\T1/zpltosf/m/n/10.95 , per $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; [] ; N[]$
  []
 
@@ -1455,7 +1462,7 @@ Overfull \hbox (21.54973pt too wide) in paragraph at lines 3810--3811
 
 [86] [87] [88] [89] [90] [91] [92]
 
-Package caption Warning: Unused \captionsetup[table] on input line 143.
+Package caption Warning: Unused \captionsetup[table] on input line 144.
 See the caption package documentation for explanation.
 
 [93] (./master.aux)
@@ -1465,11 +1472,11 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 48516 strings out of 467525
- 1128466 string characters out of 5425862
- 1787595 words of memory out of 5000000
- 76430 multiletter control sequences out of 15000+600000
- 702674 words of font info for 111 fonts, out of 8000000 for 9000
+ 48559 strings out of 467525
+ 1129400 string characters out of 5425862
+ 1787786 words of memory out of 5000000
+ 76463 multiletter control sequences out of 15000+600000
+ 703828 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1569,7 +1576,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (93 pages, 906902 bytes).
+Output written on master.pdf (93 pages, 906975 bytes).
 PDF statistics:
  1121 PDF objects out of 1200 (max. 8388607)
  948 compressed objects within 10 object streams

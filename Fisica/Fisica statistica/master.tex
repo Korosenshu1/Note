@@ -9,6 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{varwidth}
 \usepackage{textcomp}
+\usepackage{mathrsfs}
 \usepackage{amsmath, amssymb}
 \usepackage{esint}
 \usepackage{titlesec}
@@ -1807,7 +1808,7 @@ dove, con condizioni al bordo periodiche, si ha $\vec{q}=\frac{2\pi}{N}(n_x,n_y,
 Applicandola alla $f$, si ottiene
 \[
 	\begin{split}
-		f(\psi ) &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i,j}^{} J^{-1}_{ij} e^{i \vec{q}\cdot \vec{r}_i + i \vec{q}' \cdot \vec{r}_j} \\
+		  \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}\psi _j&= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i,j}^{} J^{-1}_{ij} e^{i \vec{q}\cdot \vec{r}_i + i \vec{q}' \cdot \vec{r}_j} \\
 			 &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i,j}^{} J^{-1 }_{ij} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_j)} e^{i (\vec{q}+ \vec{q}')\cdot  \vec{r}_j}
 	\end{split}
 \] 
@@ -1815,23 +1816,22 @@ dove, nell'ultima uguaglianza, si \`e moltiplicato e diviso per $e^{-i\vec{q}\cd
 Usando l'invarianza per traslazioni, il termine $J_{ij}^{-1} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_j)} $ dipende solamente dalla distanza $d = \lvert i - j \rvert $ tra i vari siti, quindi si pu\`o eliminare un grado di libert\`a e far variare un solo indice, scrivendo 
 \[
 	\begin{split}
-		f (\psi ) &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}\overbracket{\sum_{j}^{} e^{i(\vec{q}+\vec{q}') \cdot \vec{r}_j}}^{= N \delta _{\vec{q}, -\vec{q}'} } \\
-			  &= \frac{1}{2N} \sum_{\vec{q}}^{} \psi _{\vec{q}}  \psi _{-\vec{q}}  J^{-1}(q)
+		 \frac{1}{2} \sum_{i,j}^{} \psi _i J^{-1}\psi _j &= \frac{1}{2N^2} \sum_{\vec{q},\vec{q}'}^{} \psi _{\vec{q}} \psi _{\vec{q}'}  \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}\overbracket{\sum_{j}^{} e^{i(\vec{q}+\vec{q}') \cdot \vec{r}_j}}^{= N \delta _{\vec{q}, -\vec{q}'} } \\
+			  &= \frac{1}{2N} \sum_{\vec{q}}^{} \psi _{\vec{q}}  \psi _{-\vec{q}}  J^{-1}(\vec{q})
 	\end{split}
 \] 
 con 
 \[
-J^{-1}(q) := \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}
+J^{-1}(\vec{q}) := \sum_{i}^{} J^{-1}_{ij_0} e^{i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )}
 \] 
-Per comprendere il significato di $J^{-1}(q)$, si guarda la trasformata di Fourier di $J$:
+Per comprendere il significato di $J^{-1}(\vec{q})$, si guarda la trasformata di Fourier di $J$:
 \[
 	\begin{split}
 		J (\vec{q},\vec{q}') &= \sum_{i,j}^{} J_{ij} e^{-i  \vec{q}\cdot \vec{r}_i} e^{- \vec{q}' \cdot \vec{r}_j} = \sum_{i,j}^{} J_{ij} e^{-i \vec{q}\cdot (\vec{r}_i - \vec{r}_j)} e ^{-i (\vec{q} +\vec{q}') \cdot \vec{r}_j}\\
-				     &= \sum_{i}^{} J_{ij_0} e^{-i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )} \delta _{\vec{q},\vec{q}'} = J(\vec{q})
+				     &= N\sum_{i}^{} J_{ij_0} e^{-i \vec{q}\cdot (\vec{r}_i -\vec{r}_{j_0} )} \delta _{\vec{q},\vec{q}'} = J(\vec{q})
 	\end{split}
 \] 
 dove si sono utilizzate le stesse argomentazioni del calcolo precedente. 
-Quindi, si vede che $J(\vec{q})$ coincide proprio con la trasformata di Fourier di $J$.
 
 \subsubsection{Teoria di Ginzburg-Landau}
 La $J$ trattata finora \`e del tutto generica, quindi la si deve definire in maniera opportuna per poter rivedere il modello di Ising.
@@ -1893,7 +1893,7 @@ Utilizzando l'approssimazione di punto sella, per cui l'energia libera risulta p
 dove 
 \begin{itemize}
 	\item $a\sim (T-T_c)$;
-\item $c>0$, altrimenti le fluttuazioni potrebbero essere arbitrariamente grandi\footnote{Il funzionale tenderebbe a minimizzarsi, quindi a massimizzare $\lvert \vec{\nabla }\psi  \rvert^2$, per cui le fluttuazioni aumenterebbero {\color{red}(da controllare)}.} e si avrebbe instabilit\`a nel sistema;
+\item $c>0$, altrimenti le fluttuazioni potrebbero essere arbitrariamente grandi\footnote{Il funzionale tenderebbe a minimizzarsi, quindi a massimizzare $\lvert \vec{\nabla }\psi  \rvert^2$, per cui le fluttuazioni aumenterebbero.} e si avrebbe instabilit\`a nel sistema;
 	\item $u > 0$, altrimenti $F$ non sarebbe limitata inferiormente\footnote{Infatti, aumentando $\psi $, il termine $- \lvert u \rvert \psi ^4$, in assunzione $u<0$, dominerebbe e non si avrebbe un limite inferiore, rendendo necessario arrivare ad un termine di potenza superiore, proporzionale a $\psi ^6$.};
 	\item $\lambda $ \`e il campo esterno.
 \end{itemize}
@@ -1912,7 +1912,7 @@ Questa espressione \`e nota come \textit{energia libera di Ginzburg-Landau.}
 		Per tale ragione, gli esponenti critici risulteranno identici a quelli trovati con Weiss, quantomeno $\alpha$, $\beta$, $\gamma$ e $\delta $.
 \end{enumerate}
 \end{osservazione}
-\subsubsection{Esponenti critici}
+\subsubsection{Lunghezza di correlazione}
 Si definisce la funzione di correlazione del parametro d'ordine
 \[
 \Gamma(\vec{x}- \vec{x}') = \left\langle \psi (\vec{x}) \psi (\vec{x}')  \right\rangle - \langle \psi (\vec{x}) \rangle \langle \psi (\vec{x}') \rangle
@@ -1931,7 +1931,7 @@ si ha che
 \] 
 Si usa ancora la trasformata di Fourier:
 \[
-\psi (\vec{q}) = \int d^d \vec{x} \ e^{-i \vec{q}\cdot \vec{x}}\psi (\vec{x}) \hspace{1cm} \psi (\vec{x}) = \frac{1}{(2\pi)^d} \int d^d \vec{q} \ e^{i \vec{q}\cdot \vec{x}}
+\psi (\vec{q}) = \int d^d \vec{x} \ e^{-i \vec{q}\cdot \vec{x}}\psi (\vec{x}) \hspace{1cm} \psi (\vec{x}) = \frac{1}{(2\pi)^d} \int d^d \vec{q} \ e^{i \vec{q}\cdot \vec{x}} \psi (\vec{q})
 \] 
 Tramite la trasformata, si pu\`o scrivere che
 \[
@@ -1943,10 +1943,10 @@ Si ricorda il risultato
 \] 
 L'energia libera di Ginzburg-Landau trasformata con Fourier diventa:
 \[
-	F [ \psi (\vec{q}) ] \simeq F_0 + c \int d^d \vec{q} \left\{ \frac{1}{2}a \psi ^2 (\vec{q}) + \frac{1}{2} c \lvert \vec{q} \rvert ^2 \psi ^2 (\vec{q}) - \lambda \psi (\vec{q}) \right\} 
+	F [ \psi (\vec{q}) ] \simeq F_0 + C \int d^d \vec{q} \left\{ \frac{1}{2}a \psi ^2 (\vec{q}) + \frac{1}{2} c \lvert \vec{q} \rvert ^2 \psi ^2 (\vec{q}) - \lambda \psi (\vec{q}) \right\} 
 \] 
 dove si \`e trascurato il termine in $\psi ^4$ perch\'e, per semplicit\`a, si \`e assunto $T>T_c$, per cui $a>0$.
-Si nota che, per l'espressione approssimata ottenuta sopra per $F$, i modi a impulso $\vec{q}$ differente siano indipendenti tra loro, cio\`e in $F$ non si intrecciano $\psi (\vec{q})$ a impulsi $\vec{q}$ differenti; per questo motivo si pu\`o studiare la condizione di minimizzazione dell'energia libera semplicemente imponendo 
+Si nota che, per l'espressione approssimata ottenuta sopra per $F$, i modi a impulso $\vec{q}$ differente sono indipendenti tra loro, cio\`e in $F$ non si intrecciano $\psi (\vec{q})$ a impulsi $\vec{q}$ differenti; per questo motivo si pu\`o studiare la condizione di minimizzazione dell'energia libera semplicemente imponendo 
 \[
 \frac{\partial F}{\partial \psi (\vec{q})} = 0 
 \] 
@@ -1964,7 +1964,7 @@ L'idea per risolvere questo integrale \`e trasformarlo in un integrale gaussiano
 \] 
 Chiamando $\lvert \vec{x} \rvert = r$ e prendendo $\xi ^2 = c / a$, si ha la forma generale 
 \[
-\Gamma(r) \propto \frac{e^{-r / \xi }}{r ^{d-2+eta}}
+\Gamma(r) \propto \frac{e^{-r / \xi }}{r ^{d-2+\eta}}
 \] 
 nota come \textit{forma di Ornstein-Zernike}.
 In questa forma generale, si ha $\xi \sim \lvert T -T_c \rvert ^{-\nu }$; nel caso in questione, si vede che $\eta =0 $ e $\nu  = 1 / 2$.
@@ -1992,7 +1992,7 @@ Utilizzando il fatto che
 e che $m^2 \sim\lvert t \rvert ^{2\beta } $, $\xi \sim \lvert t \rvert ^{-\nu }$, ponendo $r = \xi $, si trova che $\Gamma(r=\xi ) \sim\xi ^{2 - d - \eta} \sim\lvert t \rvert ^{-\nu (2-d-\eta)}$.
 Allora, si conclude che
 \[
-\frac{\Gamma(r=\xi )}{m^2}\sim \frac{\lvert t \rvert ^{-\nu (2-d-\eta)}}{\lvert t \rvert ^{2\beta } } = \lvert t \rvert ^{-\nu (2-d-\eta)=2\beta }\ll 1
+\frac{\Gamma(r=\xi )}{m^2}\sim \frac{\lvert t \rvert ^{-\nu (2-d-\eta)}}{\lvert t \rvert ^{2\beta } } = \lvert t \rvert ^{-\nu (2-d-\eta)-2\beta }\ll 1
 \] 
 Questo, nel limite $t = (T-T_c)/T_c \to 0$, si verifica se l'esponente \`e positivo, ossia
 \[
