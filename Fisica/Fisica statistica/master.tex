@@ -1802,7 +1802,7 @@ Precedentemente, la magnetizzazione si assumeva costante; in questo caso, invece
 Per trattare l'altro termine, si usa la trasformata di Fourier; questo perch\'e il sistema \`e invariante sotto traslazioni e la trasformata di Fourier permette di renderlo pi\`u semplice.
 Tramite questa, si scrive una generica funzione $g(\vec{r}_i)$, con $\vec{r}_i$ posizione dei siti del reticolo, come
 \[
-	g(\vec{r}_i) = \frac{1}{N} \sum_{\vec{q}}^{} \widetilde{g}(\vec{q}) e^{i \vec{q} \cdot \vec{r}_i}
+	g(\vec{r}_i) = \frac{1}{N} \sum_{\vec{q}}^{} \tilde{g}(\vec{q}) e^{i \vec{q} \cdot \vec{r}_i}
 \] 
 dove, con condizioni al bordo periodiche, si ha $\vec{q}=\frac{2\pi}{N}(n_x,n_y,n_z)$, per $n_\alpha = 0,1,\ldots,N_{\alpha -1} $ e $N = N_x N_y N_z$.
 Applicandola alla $f$, si ottiene
@@ -1872,10 +1872,10 @@ Anti-trasformando per tornare nello spazio reale, questo termine diventa
 \] 
 Mettendo tutto insieme, si conclude che, per $\psi \ll 1$, si ha
 \[
-	f(\psi ) \simeq  \frac{1}{2} \sum_{i}^{} \left(\frac{1}{y \beta J}-1\right) \psi _i^2 + {\color{asdf}\frac{\widetilde{c}}{\beta J}\sum_{\langle i,j \rangle}^{} (\psi _i-\psi _j)^2 }+ \frac{1}{12} \sum_{i}^{} \psi _i^4
+	f(\psi ) \simeq  \frac{1}{2} \sum_{i}^{} \left(\frac{1}{y \beta J}-1\right) \psi _i^2 + {\color{asdf}\frac{\tilde{c}}{\beta J}\sum_{\langle i,j \rangle}^{} (\psi _i-\psi _j)^2 }+ \frac{1}{12} \sum_{i}^{} \psi _i^4
 \] 
-con $y = 2d$ \textit{numero di coordinazione}, cio\`e conta quanti primi vicini ci sono, data la dimensione $d$ del reticolo (assumendolo quadrato), dove $\widetilde{c}$ incorpora tutti i fattori non inclusi. 
-Inoltre, $\widetilde{c}/ \beta J > 0$, cos\`i come $\frac{1}{12}>0$; al contrario
+con $y = 2d$ \textit{numero di coordinazione}, cio\`e conta quanti primi vicini ci sono, data la dimensione $d$ del reticolo (assumendolo quadrato), dove $\tilde{c}$ incorpora tutti i fattori non inclusi. 
+Inoltre, $\tilde{c}/ \beta J > 0$, cos\`i come $\frac{1}{12}>0$; al contrario
 \[
 \frac{1}{y\beta J}-1 \begin{cases}
 	<0 &,\ \text{ se } \beta >\beta _c\\
@@ -2563,9 +2563,9 @@ Ora si determinano $D_t$ e $D_h$.
 Si fissa il riscalamento in in modo che $\lvert t' \rvert =1$, cio\`e $b = \lvert t \rvert ^{-1 / D_t}$.
 Cos\`i facendo, essendo $f(h,t) = b^{-d}f(h',t')$, si trova che
 \[
-f(h,t) = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{-d} f(h',1) \implies f(h,t) = \lvert t \rvert ^{d / D_t} \widetilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) 
+f(h,t) = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{-d} f(h',1) \implies f(h,t) = \lvert t \rvert ^{d / D_t} \tilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) 
 \] 
-dove si \`e usato che $h ' = b^{D_h}h = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{D_h}h$ e la $\widetilde{f}$ \`e ottenuta eliminando la dipendenza da $t'$ (fissato a $1$) nella $f(h',t')$.
+dove si \`e usato che $h ' = b^{D_h}h = \left(\lvert t \rvert ^{-1 / D_t}\right) ^{D_h}h$ e la $\tilde{f}$ \`e ottenuta eliminando la dipendenza da $t'$ (fissato a $1$) nella $f(h',t')$.
 
 Dalle relazioni degli esponenti critici, si ottengono delle relazioni che, opportunamente combinate in modo algebrico, unitamente con i valori trovati per $D_h$ e $D_t$, permettono di ritrovare le leggi di scala.
 \begin{enumerate}[(1).]
@@ -2580,11 +2580,11 @@ Dalle relazioni degli esponenti critici, si ottengono delle relazioni che, oppor
 		\] 
 	\item $\psi \sim h^{1 / \delta }$ implica che 
 		\[
-		\psi  = - \frac{\partial f}{\partial h}  = - \lvert t \rvert ^{\frac{d-D_h}{D_t}} \widetilde{f}\left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right)  \sim h^{1 / \delta } \sim h ^{1 / \delta }
+		\psi  = - \frac{\partial f}{\partial h}  = - \lvert t \rvert ^{\frac{d-D_h}{D_t}} \tilde{f}\left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right)  \sim h^{1 / \delta } \sim h ^{1 / \delta }
 		\] 
 		Questo andamento \`e vero se 
 		\[
-		\widetilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) \sim \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) ^{1 / \delta } \implies \lvert t \rvert ^{\frac{d - D_h}{D_t} - \frac{D_h}{\delta D_t}} h^{1 / \delta } \sim h ^{1 / \delta } \iff \delta = \frac{D_h}{d-D_h}
+		\tilde{f} \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) \sim \left(\frac{h}{\lvert t \rvert ^{D_h / D_t}}\right) ^{1 / \delta } \implies \lvert t \rvert ^{\frac{d - D_h}{D_t} - \frac{D_h}{\delta D_t}} h^{1 / \delta } \sim h ^{1 / \delta } \iff \delta = \frac{D_h}{d-D_h}
 		\] 
 \end{enumerate}
 Per esempio, secondo queste relazioni, si ritrova la legge di scala di Rushbrooke:
@@ -2683,7 +2683,7 @@ H \left(\left\{ S_i \right\} \right) = \sum_{\alpha }^{} K_\alpha S_\alpha \hspa
 \] 
 Per esempio, si pu\`o avere 
 \[
-H = K_1 \sum_{i}^{} S_i + K_2 \sum_{\langle i,j \rangle}^{} S_iS_j + \widetilde{K}_2 \sum_{\langle \langle i,j \rangle \rangle}^{} S_iS_j + \ldots + K_3 \sum_{\langle i,j,k \rangle}^{} S_iS_jS_k +\ldots
+H = K_1 \sum_{i}^{} S_i + K_2 \sum_{\langle i,j \rangle}^{} S_iS_j + \tilde{K}_2 \sum_{\langle \langle i,j \rangle \rangle}^{} S_iS_j + \ldots + K_3 \sum_{\langle i,j,k \rangle}^{} S_iS_jS_k +\ldots
 \] 
 In ogni caso, vale
 \[
@@ -3000,16 +3000,16 @@ Utilizzando la relazione appena ottenuta, si ha
 \] 
 In principio, $b$ \`e un parametro di scala che si pu\`o fissare arbitrariamente; immaginando di non voler utilizzare $b=2$ e di richiedere, invece, che $\Delta x' = 1$, si deve avere $b = \Delta x ^{-1 / 2}$, da cui
 \[
-\overline{F} (\Delta x , \Delta y) = \Delta x  ^{1 / 2} \overline{F}\left(1 ,  \frac{\Delta y}{\Delta x ^{-1 / 2}}\right) = \Delta x ^{1 / 2} \widetilde{F}  \left(\frac{\Delta y}{\Delta x ^{1 / 2}}\right) 
+\overline{F} (\Delta x , \Delta y) = \Delta x  ^{1 / 2} \overline{F}\left(1 ,  \frac{\Delta y}{\Delta x ^{-1 / 2}}\right) = \Delta x ^{1 / 2} \tilde{F}  \left(\frac{\Delta y}{\Delta x ^{1 / 2}}\right) 
 \] 
-avendo definito $\widetilde{F}$ in modo da togliere la dipendenza da $1$.
+avendo definito $\tilde{F}$ in modo da togliere la dipendenza da $1$.
 Visto che $\Delta x = x-x^* = x - 0 = x = e^{-4\beta J}$ e $\Delta y = y-1 = e^{-2\beta  h}-1 \simeq -2\beta  h$ (per $\Delta y$ piccolo), si ha
 \[
-\overline{F} (\Delta x,\Delta y) = e^{-2 \beta J} \widetilde{F} \left(2 \beta h e^{2\beta J}\right) 
+\overline{F} (\Delta x,\Delta y) = e^{-2 \beta J} \tilde{F} \left(2 \beta h e^{2\beta J}\right) 
 \] 
-dove si pu\`o trascurare il fattore $2$ nell'argomento della $\widetilde{F}$ perch\'e si \`e interessati ad andamenti asintotici.
+dove si pu\`o trascurare il fattore $2$ nell'argomento della $\tilde{F}$ perch\'e si \`e interessati ad andamenti asintotici.
 Visto che si \`e in 1D, ci si aspetta che $[\overline{F}] = 1 / L \Rightarrow \overline{F}\sim\xi^{-1} $.
-Immaginando che $\xi \sim e^{2 \beta J}$, cio\`e la sua divergenza sia catturata dal prefattore $e^{-2 \beta J}$, si ha $\overline{F} \sim \xi ^{-1}\widetilde{F}$.
+Immaginando che $\xi \sim e^{2 \beta J}$, cio\`e la sua divergenza sia catturata dal prefattore $e^{-2 \beta J}$, si ha $\overline{F} \sim \xi ^{-1}\tilde{F}$.
 Dalla soluzione esatta del problema, si ricava che
 \[
 	\xi  = - \frac{a}{\log\big[\tanh(\beta J)\big]} \xrightarrow{\ \beta J \to +\infty \ } e^{2 \beta J}
@@ -3313,12 +3313,12 @@ il cui modulo quadro \`e pari a $2$.
 \end{esempio}
 \noindent Per risolvere la normalizzazione, si pu\`o ridefinire la funzione d'onda come
 \[
-\widetilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} = \frac{1}{\sqrt{\prod_\mathbf{p} (n_\mathbf{p} )!} }\psi _{\mathbf{p} _1,...,\mathbf{p} _N} 
+\tilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} = \frac{1}{\sqrt{\prod_\mathbf{p} (n_\mathbf{p} )!} }\psi _{\mathbf{p} _1,...,\mathbf{p} _N} 
 \] 
 In ogni caso, conviene rimanere con le funzioni d'onda non normalizzate perch\'e, nel calcolare la traccia di un generico osservabile $\hat{O}$, si ha
 \[
 	\begin{split}
-		\operatorname{Tr} [ \hat{O} ]  &= \sum_{\left\{ \mathbf{p} _1,\ldots,\mathbf{p} _N \right\} }^{*} \Braket{\widetilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} |\hat{O}|\widetilde{\psi } _{\mathbf{p} _1,\ldots,\mathbf{p} _N} } = \sum_{\mathbf{p} _1,\ldots,\mathbf{p} _N}^{} \frac{\prod_\mathbf{p} (n_\mathbf{p} !)}{N!} \braket{\widetilde{\psi }|\hat{O}|\widetilde{\psi }} \\
+		\operatorname{Tr} [ \hat{O} ]  &= \sum_{\left\{ \mathbf{p} _1,\ldots,\mathbf{p} _N \right\} }^{*} \Braket{\tilde{\psi }_{\mathbf{p} _1,\ldots,\mathbf{p} _N} |\hat{O}|\tilde{\psi } _{\mathbf{p} _1,\ldots,\mathbf{p} _N} } = \sum_{\mathbf{p} _1,\ldots,\mathbf{p} _N}^{} \frac{\prod_\mathbf{p} (n_\mathbf{p} !)}{N!} \braket{\tilde{\psi }|\hat{O}|\tilde{\psi }} \\
 					       & = \frac{1}{N!} \sum_{\mathbf{p} _1, \ldots, \mathbf{p} _N}^{} \braket{\psi |\hat{O}|\psi } 
 	\end{split}
 \] 
@@ -3370,11 +3370,11 @@ In questo modo, si pu\`o scrivere
 \] 
 dove
 \[
-\widetilde{v}_{ij} : = -\frac{1}{\beta }\log \left(1\pm e^{\frac{-2\pi\lvert \mathbf{r} _i - \mathbf{r} _j \rvert^2 }{\lambda _T^2}}\right) 
+\tilde{v}_{ij} : = -\frac{1}{\beta }\log \left(1\pm e^{\frac{-2\pi\lvert \mathbf{r} _i - \mathbf{r} _j \rvert^2 }{\lambda _T^2}}\right) 
 \] 
 si pu\`o interpretare come uno pseudo-potenziale dovuto alla statistica delle particelle considerate.
 Si parla di pseudo-potenziale perch\'e non \`e realmente presente, ma \`e l'effetto originato in prima approssimazione dalle statistiche quantistiche.
-Si vede che \`e attrattivo per i bosoni, essendo $\widetilde{v}_{ij} <0$, mentre \`e repulsivo per i fermioni.
+Si vede che \`e attrattivo per i bosoni, essendo $\tilde{v}_{ij} <0$, mentre \`e repulsivo per i fermioni.
 \subsubsection{Caso di particelle interagenti}
 Prendendo, ora, $\hat{\Omega }\neq 0$, si deve utilizzare la formula di Baker-Campbell-Hausdorff per scrivere
 \[
@@ -3827,9 +3827,8 @@ L'hamiltoniano del sistema \`e dato da
 \] 
 dove il termine $\left(\hat{\mathbf{p} }_i - \frac{q}{c}\hat{\mathbf{A} }\right) ^2$ \`e legato all'avere un fermione carico in un campo magnetico, che origina il \textit{diamagnetismo di Landau}, mentre il termine $\mu _0 \hat{\pmb{\sigma }} _i \cdot \hat{\mathbf{H} }$ \`e legato all'interazione tra spin e campo, che origina il \textit{paramagnetismo di Pauli}.
 In questa espressione, nel caso di elettroni, $\mu _0$ \`e il magnetone di Bohr, $q = -e$ e $\hat{\pmb{\sigma } }_i$ sono le matrici di Pauli.
-\vspace{.5cm}
 
-\textbf{Interazione spin-campo.} Per il momento, si tralascia la parte di interazione carica-campo e si studia
+Per la seguente trattazione, si tralascia la parte di interazione carica-campo e si studia
 \[
 \hat{H} = \sum_{i=1}^{N} \left(\frac{\hat{\mathbf{p} }_i ^2}{2m} - \mu _0 \hat{\pmb{\sigma } }_i \cdot \hat{\mathbf{H} }\right) 
 \] 
@@ -3907,14 +3906,49 @@ Volendo includere la correzione per la temperatura all'ordine successivo, si tro
 \chi \simeq \frac{3\mu _0^2}{2 \varepsilon _F(N)v} \left[ 1 - \frac{\pi^2}{12}\left(\frac{\kappa _B T}{\varepsilon _F(N)}\right) ^2 \right] 
 \] 
 \end{itemize}
+\begin{osservazione}
+I comportamenti della suscettivit\`a evidenziano la natura paramagnetica del sistema considerato.
+\end{osservazione}
+
+\subsubsection{Fermioni carichi in campo magnetico}
+Si studia il gas di fermioni governato dall'hamiltoniano\footnote{Si considera il caso degli elettroni in particolare, per cui si pone $q = -e$.}
+\[
+\hat{H} = \frac{1}{2m}\sum_{i=1}^{N}  \left(\hat{\mathbf{p} }_i + \frac{e}{c} \hat{\mathbf{A} }\right) ^2 = \sum_{i}^{} \hat{H}_i
+\] 
+cio\`e trascurando le interazioni spin-campo magnetico e studiando solamente quelle tra carica e campo.
+Si esprimono autovalori e autovettori di ogni $\hat{H}_i$\footnote{L'hamiltoniano del sistema si pu\`o scrivere come somma di quelli di singolo fermione perch\'e questi non interagiscono tra di loro.} come $\hat{H}_i \psi  = \varepsilon _i \psi $.
+Questa trattazione dar\`a origine ai \textit{livelli di Landau}.
+
+Si considera campo magnetico $\mathbf{H}  = \mathrm{H} \hat{z}$ e ci si mette in \textit{gauge di Landau}: $\mathbf{A}  = (- \mathrm{H} y ,0,0)$, che soddisfa $\nabla \times \mathbf{A}  = \mathbf{H} $.
+Allora 
+\[
+\hat{H}_i = \frac{1}{2m} \left(\hat{p}_{i,x} - \frac{e}{c} \mathrm{H} \hat{y} \right) ^2 + \frac{\hat{p}_{i,y} ^2}{2m} + \frac{\hat{p}_{i,z}^2 }{2m}
+\] 
+Si assume che 
+\[
+\psi _{p_x,p_z}  (x,y,z) = e^{\frac{i}{\hbar }\left(p_x x + p_z z\right) } f(y)
+\] 
+siano autofunzioni di $\hat{H}_i$; allora deve valere
+\[
+\left[ \frac{1}{2m} \left(p_x - \frac{e\mathrm{H} }{c}\hat{y}\right) ^2 + \frac{\hat{p}_y^2}{2m} \right] f(y) = \tilde{\varepsilon } f(y)
+\] 
+dove $\tilde{\varepsilon } = \varepsilon_i - \frac{p_z^2}{2m}$.
+Qui si sta sempre facendo il discorso per singola particella, quindi $\varepsilon _i$ soddisfa $\hat{H}_i\psi = \varepsilon _i\psi$.
+Inoltre, nell'espressione sopra, $p_x$ compare come numero e non operatore per come sono fatte le autofunzioni e si \`e rimossa la parte relativa a $\hat{p}_z^2/2m$ perch\'e l'hamiltoniano \`e diagonale in questo termine e si sa che \`e risolto tramite un'onda piana, quindi non si \`e interessati a trattarlo.
+Sostituendo $y_0 = \frac{cp_x}{ e \mathrm{H} }$ e $\omega _c = \frac{e\mathrm{H} }{mc}$ frequenza di ciclotrone, \`e evidente che si ha l'hamiltoniano di un oscillatore armonico:
+\[
+\left[ \frac{1}{2m} \hat{p}_y^2 + \frac{1}{2} m \omega_c^2 \left(\hat{y}- \hat{y}_0\right) ^2 \right] f(y) = \tilde{\varepsilon }f(y)
+\] 
+Si sa che gli autovettori $f(y)$ sono polinomi di Hermite, mentre gli autovalori sono ottenuti come $\tilde{\varepsilon }(j) = \hbar \omega_c \left(j + \frac{1}{2}\right) $, con $j=0,1,2,\ldots$, quindi gli autovalori di $\hat{H}_i$ sono
+\[
+\varepsilon _i (p_z,j) = \frac{p_z^2}{2m} + \hbar \omega_c \left(j + \frac{1}{2}\right) 
+\] 
+\begin{osservazione}
+Questa espressione evidenzia il punto fondamentale della teoria di Landau: \`e presente una degenerazione, indipendente dal livello energetico (cio\`e da $p_z$ e $j$), relativa alla scelta di $p_x$, in quanto $\varepsilon_i $ non vi dipende.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 24
+\centering Riprendere da lezione 24, 30:00
 \end{boxenv}
-
-
-
-
-
 
 
 
