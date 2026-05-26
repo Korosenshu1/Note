@@ -27,7 +27,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{circuitikz}
-\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes}
+\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta}
 \usepackage[italian]{babel}
 % Font
 \usepackage{fontspec}
@@ -319,6 +319,7 @@ Se la radiazione \`e isotropa, allora $J_\nu  = \frac{I_\nu }{4\pi} \int d\Omega
 		\coordinate (C) at (0,0);
 		\draw[dashed] ($(B)!-0.5!(A)$) -- (A);
 		\pic[draw, "\scriptsize$\theta_c$", angle eccentricity=1.3, angle radius=0.65cm] {angle=C--A--B};
+		\pic[draw, angle eccentricity=0.4,angle radius=0.2cm] {right angle=C--B--A};
 		\draw (0,0) -- ({1*cos(135)}, {1*sin(135)});
 		\node at ({.5*cos(135)+.2}, {.5*sin(135)+.2}) {\footnotesize$R$};
 		\draw[dashed] (0,0) -- (2,0) node[above] {\footnotesize$P$};
@@ -338,9 +339,78 @@ F = \int I \cos \theta  \ d\Omega = 2\pi B \int _0^{\theta _c}  \cos \theta  \si
 Per\`o si sa che $\sin \theta _c = R / r$, quindi $F = \pi B \left(R / r\right) ^2$.
 Sulla superficie, $r= R$, quindi $F(R) = \pi B$.
 \end{esempio}
+\subsection{Propagazione nel vuoto}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si studia, ora, cosa succede all'intensit\`a di una radiazione che si propaga nel vuoto tra un punto $\vec{r}$ e un punto $\vec{r}'$ posti lungo $\hat{k}$.
+	L'energia trasportata \`e quella che attraversa sia $dA$ che $dA'$. 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.3]
+		\node[text=gray!60!black] at (3,0.5) {\scriptsize$d\Omega $};
+		\node[text=blue!60!white] at (3,-0.5) {\scriptsize$d\Omega' $};
+		\draw[gray!80!black] (1,0) -- (5,0.5);
+		\draw[gray!80!black] (1,0) -- (5,-0.5);
+		\draw[blue!60!white] (1,0.5) -- (5,0);
+		\draw[blue!60!white] (1,-0.5) -- (5,0);
+		\draw[green!60!black, pattern={Lines[angle=45, distance=3pt, line width=0.4pt]},pattern color=green!60!black] (1,0) ellipse (0.25 and 0.5);
+		\draw[green!60!black, pattern={Lines[angle=45, distance=3pt, line width=0.4pt]},pattern color=green!60!black] (5,0) ellipse (0.3 and 0.5);
+		\node[text=green!60!black] at (0.7,0.7) {\scriptsize$dA$};
+		\node[text=green!60!black] at (4.7,0.7) {\scriptsize$dA'$};
+		\draw[->] (0,0) -- (6,0) node[right] {\scriptsize$\hat{k}$};
+		\draw[fill] (1,0) circle (1.2pt) node[below] {\scriptsize$\vec{r}$};
+		\draw[fill] (5,0) circle (1.2pt) node[below] {\scriptsize$\vec{r}'$};
+		\draw[-stealth] (1,0) -- ({1+0.75*cos(45)},{0.75*sin(45)}) node[above] {\scriptsize $\hat{n}$};
+		\draw[-stealth] (5,0) -- ({5+0.75*cos(25)},{0.75*sin(25)}) node[above] {\scriptsize $\hat{n}'$};
+		\draw[dashed] (1,-0.7) -- (5,-0.7);
+		\draw[thick] (1,-0.65) -- (1,-0.75);
+		\draw[thick] (5,-0.65) -- (5,-0.75);
+		\node at (3,-0.9) {\scriptsize$R$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Quella che attraversa $dA$ \`e $dE = I_\nu  (\vec{r},t , \hat{k}) \hat{k}\cdot \hat{n} \ dA\, dt\, d\Omega\, d\nu $, dove $d\Omega $ \`e l'angolo solido tale per cui la radiazione, nel punto $\vec{r}$, vede esattamente $dA'$, quindi \`e $d\Omega  = \hat{k}\cdot \hat{n}' \frac{dA'}{R^2}$.
+Quella che attraversa $dA'$ \`e, invece, data da $dE' = I_\nu  (\vec{r}' , t' , \hat{k}) \hat{k}\cdot \hat{n}' \ dA'\, dt \, d\Omega ' \, d\nu $, con $d\Omega ' = \hat{k}\cdot \hat{n} \frac{dA}{R^2}$.
+Visto che la propagazione avviene nel vuoto, $dE = dE'$, da cui, esplicitando $d\Omega $ e $d\Omega '$, si trova che $I_\nu (\vec{r}, t, \hat{k}) = I_\nu (\vec{r}' , t' , \hat{k})$; questo significa che l'intensit\`a di una radiazione che si propaga nel vuoto lungo una stessa direzione rimane invariata.
+
+Utilizzando questa relazione per uno spostamento infinitesimo da $dA$, cio\`e usando il ragionamento per $\vec{r}$ e $\vec{r} + d\vec{r}$, si ha che 
+\[
+	\begin{split}
+		\Delta E &= \Big[I_\nu (\vec{r}+d\vec{r}, t+dt , \hat{k}) - I_\nu (\vec{r},t,\hat{k})\Big] dA\, dt \, d\Omega \, d\nu \\
+			 &= \left[ \frac{1}{c}\frac{\partial I_\nu }{\partial t} + \hat{k}\cdot \vec{\nabla }I_\nu  \right]  ds \, dA \,dt \, d\Omega \, d\nu 
+	\end{split}
+\] 
+con $dt = ds / c$, da cui si ottiene 
+\begin{equation}
+	\frac{1}{c} \frac{\partial I_\nu }{\partial t} + \hat{k}\cdot \vec{\nabla }I_\nu  = 0
+\end{equation}
+nel vuoto.
+\begin{osservazione}
+Il fatto che $I_\nu $ rimanga costante nel vuoto \`e legato al fatto che \`e un flusso per unit\`a di angolo solido: indipendentemente dalla distanza dalla sorgente, la si vedr\`a brillare allo stesso modo, tuttavia al distanza fa variare l'angolo solido, per cui il flusso che raggiunge l'osservatore varier\`a di conseguenza tramite la legge $F \propto 1 / r^2$ trovata sopra.
+\end{osservazione}
+\subsection{Propagazione in un mezzo}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 2, 50:00.
+\centering Riprendere dalla lezione 3
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
