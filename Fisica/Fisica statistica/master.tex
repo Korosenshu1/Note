@@ -2170,7 +2170,7 @@ si pu\`o scrivere
 						&=\frac{1}{Z} \operatorname{Tr} \Big(T_1T_2\cdot \ldots \cdot T_{n-1} O_n T_n T_{n+1} \cdot \ldots \cdot T_{n+r-1} O_{n+r} T_{n+r} \cdot \ldots\cdot T_N  \Big) 
 	\end{split}
 \] 
-dove $O_n$ \`e una matrice relativa al fattore $S_n$ nell'espressione alla prima riga, che conta gli stati dello spin $n$-esimo; questa si pu\`o scrivere come
+dove $T_k = \braket{S_k|T|S_{k+1} } $ e $O_n$ \`e una matrice relativa al fattore $S_n$ nell'espressione alla prima riga, che conta gli stati dello spin $n$-esimo; questa si pu\`o scrivere come
 \[
 	O = O_n=O_{n+r}  = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
 \] 
@@ -2217,7 +2217,7 @@ Si conclude che
 	\begin{minipage}
 		{.45\columnwidth}
 Questa espressione permette di concludere che le funzioni di correlazione decadono esponenzialmente, con lunghezza caratteristica $\xi $.
-Si vede, dunque, che per $T\to $, si ha $\xi \to +\infty$; in questo caso, il sistema \`e completamente disordinato perch\'e la correlazione \`e assente e gli spin si orientano in modo del tutto casuale.
+Si vede, dunque, che per $T\to +\infty$, si ha $\xi \to 0$; in questo caso, il sistema \`e completamente disordinato perch\'e la correlazione \`e assente e gli spin si orientano in modo del tutto casuale.
 Se, invece, $T \to 0$, allora $\xi \to +\infty$ e si ha il caso banale del ferromagnete perfetto in cui tutti gli spin si polarizzano, ma \`e un caso poco interessante perch\'e si stanno assumendo nulle fluttuazioni termiche.
 	\end{minipage}
 	\hfill
@@ -2285,10 +2285,14 @@ La lunghezza $b$ \`e determinata contando uno spessore di una unit\`a per ogni s
 \foreach \p in {(2.5,5.5),(3.5,5.5),(2.5,4.5)} {
     \node at \p {$\downarrow$};
 }
+\draw[-stealth,red,thick] (2,6) -- (3,6);
+\draw[-stealth,red,thick] (3,4) -- (2,4);
 
 % --- CLUSTER 2 (b=4) ---
 \draw[red, thick]
 (7,3) rectangle (8,4);
+\draw[-stealth,red,thick] (7,4) -- (8,4);
+\draw[-stealth,red,thick] (8,3) -- (7,3);
 \node[red] at (7.5,4.5) {\footnotesize $b=4$};
 
 \node at (7.5,3.5) {$\downarrow$};
@@ -2301,7 +2305,7 @@ Questo argomento consiste nel dare una stima del numero medio di spin down, $\la
 N_- = \sum_{b,i}^{} A(b,i) \chi (b,i)
 \] 
 dove $A(b,i)$ rappresenta l'area del circuito individuato da $b$ e $i$, mentre $\chi (b,i)$ \`e una funzione caratteristica che scarta i circuiti da non considerare: vale $1$ se il circuito $(b,i)$ racchiude tutti gli spin down, ossia se confina unicamente con spin up, e vale $0$ altrimenti.
-Si ha $A(b,i)\le b^2 / 16$ perch\'e il circuito pi\`u grande costruibile \`e quello quadrato che occupa tutto il reticolo\footnote{Si nota che $(b / 4)^2$ \`e l'area di un quadrato di perimetro $b$.}, mentre il numero dei possibili circuiti di lunghezza $b$, $n$, soddisfa
+Si ha $A(b,i)\le b^2 / 16$ perch\'e il circuito contenente pi\`u spin down costruibile \`e quello quadrato\footnote{Si nota che $(b / 4)^2$ \`e l'area di un quadrato di perimetro $b$.}, mentre il numero $n(b)$ dei possibili circuiti di lunghezza $b$ soddisfa
 \[
 n(b) \le N \times 3 \times 3 \times \ldots\times 3 = 3^{b-1}N
 \] 
@@ -2375,7 +2379,7 @@ Infine, si prende $y = x^2 = 9 e^{-4 J \beta }$ e si osserva che
 \[
 \sum_{i=1}^{+\infty} i^2 y ^i = \frac{y^2+y}{(1-y)^3}
 \] 
-risultato ottenuto valutando il seguente risultato per la serie geometria 
+relazione ottenuta valutando il seguente risultato per la serie geometria 
 \[
 	\left(y \frac{d}{dy}\right) ^2 \sum_{i=0}^{+\infty} y^i = (1-y)^{-1}
 \] 
