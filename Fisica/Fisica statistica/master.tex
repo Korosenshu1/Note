@@ -2377,18 +2377,14 @@ Ora si prende $x=3 e^{-2  J \beta }$ e si pone $i= b / 2$; cos\`i facendo:
 \] 
 Infine, si prende $y = x^2 = 9 e^{-4 J \beta }$ e si osserva che 
 \[
-\sum_{i=1}^{+\infty} i^2 y ^i = \frac{y^2+y}{(1-y)^3}
-\] 
-relazione ottenuta valutando il seguente risultato per la serie geometria 
-\[
-	\left(y \frac{d}{dy}\right) ^2 \sum_{i=0}^{+\infty} y^i = (1-y)^{-1}
+\sum_{i=1}^{+\infty} i^2 y ^i=\sum_{i=0}^{+\infty} i^2 y ^i=\left(y \frac{d}{dy}\right) ^2 \sum_{i=0}^{+\infty} y^i = \left(y\frac{d }{d y} \right) ^2(1-y)^{-1} =\frac{y^2+y}{(1-y)^3}
 \] 
 Mettendo tutto insieme, si trova che
 \[
 \frac{\langle N_- \rangle}{N}\le \frac{4y^2}{12(1-y)^3}\left(1-\frac{3}{4}y + \frac{1}{4}y^2\right)
 \] 
-Per $T\ll 1\Rightarrow \beta \gg 1$, allora, $y \ll 1$, per cui $\langle N_- \rangle< \frac{N}{2}$.
-Questo dimostra che, sotto una certa temperatura, il sistema acquisisce una magnetizzazione non-nulla.
+Per $T\ll 1\Rightarrow \beta \gg 1$, allora, $y \ll 1$ e $\langle N_- \rangle / N \ll 1$, perci\`o esiste una certa temperatura $T_c$ sotto cui $\langle N_- \rangle< \frac{N}{2}$.
+Questo dimostra che, sotto una certa temperatura $T_c$, quindi, il sistema acquisisce una magnetizzazione non-nulla.
 \begin{osservazione}
 Queste argomentazioni di Peierls sono qualitative e servono unicamente per mostrare che, in 2D (e in 1D con $\gamma<2$), ci si aspetta la comparsa di una fase ferromagnetica sotto una certa temperatura $T_c$, ma non permette di stimare questo valore quantitativamente, n\'e gli esponenti critici.
 \end{osservazione}
