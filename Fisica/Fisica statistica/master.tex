@@ -2170,7 +2170,7 @@ si pu\`o scrivere
 						&=\frac{1}{Z} \operatorname{Tr} \Big(T_1T_2\cdot \ldots \cdot T_{n-1} O_n T_n T_{n+1} \cdot \ldots \cdot T_{n+r-1} O_{n+r} T_{n+r} \cdot \ldots\cdot T_N  \Big) 
 	\end{split}
 \] 
-dove $T_k = \braket{S_k|T|S_{k+1} } $ e $O_n$ \`e una matrice relativa al fattore $S_n$ nell'espressione alla prima riga, che conta gli stati dello spin $n$-esimo; questa si pu\`o scrivere come
+dove $T_k$ agisce tra $S_k$ e $S_{k+1} $\footnote{Si ha $T_k = T$, per ogni $k$; il pedice serve solo a indicare l'indice fra cui le si inseriscono per tenerne meglio conto.} e $O_n$ \`e una matrice relativa al fattore $S_n$ nell'espressione alla prima riga, che conta gli stati dello spin $n$-esimo; questa si pu\`o scrivere come
 \[
 	O = O_n=O_{n+r}  = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
 \] 
@@ -3943,12 +3943,150 @@ Si sa che gli autovettori $f(y)$ sono polinomi di Hermite, mentre gli autovalori
 \[
 \varepsilon _i (p_z,j) = \frac{p_z^2}{2m} + \hbar \omega_c \left(j + \frac{1}{2}\right) 
 \] 
+noti col nome di \textit{livelli di Landau}.
 \begin{osservazione}
 Questa espressione evidenzia il punto fondamentale della teoria di Landau: \`e presente una degenerazione, indipendente dal livello energetico (cio\`e da $p_z$ e $j$), relativa alla scelta di $p_x$, in quanto $\varepsilon_i $ non vi dipende.
 \end{osservazione}
-\begin{boxenv}[]
-\centering Riprendere da lezione 24, 30:00
-\end{boxenv}
+\noindent Si assume, ora, $V= L^3$ e che il minimo del potenziale $y_0 \in \left[ 0,L \right] $.
+Questa assunzione permette di ottenere un vincolo per $p_x$:
+\[
+y_0 = \frac{c}{e\mathrm{H} } \frac{2\pi \hbar }{L}n_x \implies n_x \in \left[ 0,g \right], \ g = \frac{e\mathrm{H} }{hc}L^2
+\] 
+visto che $p_x$ \`e il momento relativo ad una particella libera, con $n_x \in \mathbb{Z}$.
+La quantit\`a $g$, allora, rappresenta la \textit{degenerazione} relativa a $p_x$, uguale per ciascun livello energetico $\varepsilon _i(p_z,j)$.
+\begin{osservazione}
+Il fatto che la degenerazione di ciascun livello dipenda dall'intensit\`a del campo magnetico esterno implica che i fermioni tenderanno ad accumularsi nei livelli di Landau pi\`u bassi, in caso di campo magnetico intenso.
+Pertanto, il campo magnetico applicato permette di modificare sensibilmente le propriet\`a magnetiche del sistema; in particolare, si vedr\`a l'effetto della degenerazione elevata sulla suscettivit\`a magnetica, che sar\`a relativamente bassa.
+\end{osservazione}
+\noindent La funzione di gran partizione \`e data, chiamando $\lambda = \left\{ p_z ,j,\alpha ,s \right\} $ l'indice che individua un livello energetico, da
+\[
+\mathcal{Z}  = \prod_\lambda \left(1+ z e^{-\beta \varepsilon _\lambda }\right) \implies \log \mathcal{Z} = 2g \sum_{j}^{} \sum_{p_z}^{} \log \left( 1 + ze^{-\beta \varepsilon (p_z,j)}\right) 
+\] 
+dove $2$ viene dalla degenerazione rispetto allo spin $s$ e $g$ dalla degenerazione rispetto a $p_x$, individuata da $\alpha = 1 ,\ldots, g$.
+Passando al continuo, si ha
+\[
+\log\mathcal{Z}  = 2g \sum_{j=0}^{+\infty} \frac{L}{h}\int dp_z \ \log \left(1 + z e^{-\beta \varepsilon (p_z,j)}\right) 
+\] 
+Per eliminare la fugacit\`a, si deve calcolare il numero medio di particelle tramite la distribuzione di Fermi-Dirac:
+\[
+\langle N \rangle= \sum_{\lambda }^{} \frac{1}{z^{-1}e^{\beta \varepsilon _\lambda }+1} \longrightarrow 2g \frac{L}{h}\sum_{j=0}^{+\infty} \int dp_z \ \frac{1}{z^{-1}e^{\beta \varepsilon (p_z,j)}+1}
+\] 
+Questi calcoli sono molto difficili, pertanto si studia il sistema nei due limiti notevoli: quello classico e quello quantistico.
+\vspace{.5cm}
+
+\textbf{Limite classico.} Per $z\to 0$, si pu\`o scrivere $\log\left(1 + ze^{-\beta \varepsilon }\right) \simeq ze^{-\beta \varepsilon }$, per cui
+\[
+	\begin{split}
+		\log\mathcal{Z}  &\simeq \frac{2zgL}{h}\sum_{j=0}^{+\infty} \int_{-\infty} ^{+\infty} dp_z e^{-\beta \left[ \frac{p_z^2}{2m}+\hbar \omega_c \left(j + \frac{1}{2}\right)  \right] }\\
+				 &=\frac{2zgL}{h} \left( \int dp_z \ e^{-\beta \frac{p_z^2}{2m}} \right) \left( \sum_{j=0}^{+\infty} e^{-\beta \hbar \omega_c \left(j + \frac{1}{2}\right) } \right) \\
+				 &= \frac{zgL}{\lambda _T}\frac{e^{-x}}{1 - e^{-2x}}
+	\end{split}
+\] 
+dove si \`e usato che l'integrale in $dp_z$ \`e un integrale gaussiano, mentre la serie \`e una serie geometria, per $x = \frac{1}{2}\beta \hbar \omega_c$.
+Per $x$ molto piccolo, si pu\`o approssimare
+\[
+\log\mathcal{Z} \simeq \frac{zV}{\lambda _T^3} \left[ 1-\frac{1}{24}\left(\frac{\hbar \omega_c}{\kappa _B T}\right) ^2 \right] 
+\] 
+Riprendendo il limite classico per i fermioni visto in passato, si pu\`o approssimare $z \simeq \lambda _T^3 / v$.
+Usando, poi, che $\chi = \Eval{\frac{\partial m}{\partial \mathrm{H} } }{T,\, \mathrm{H} \to 0}{}$ e $m = - \frac{1}{V}\Eval{\frac{\partial F}{\partial \mathrm{H} } }{T}{}$, si trova notando che la dipendenza da $\mathrm{H} $ \`e in $\omega_c = \frac{e\mathrm{H} }{mc}$, che
+\[
+	\chi = \Eval{\frac{\kappa _B T }{V}\frac{\partial ^2 }{\partial \mathrm{H} ^2}  \log\mathcal{Z}}{T,\, \mathrm{H} \to  0}{} \simeq - \frac{1}{3\kappa _B T v}\left(\frac{e \hbar }{2mc}\right) ^2
+\] 
+Cos\`i si conclude che $\chi <0$ e si ha il caso diamagnetico, $\chi \propto \frac{1}{T}$ e il suo valore \`e indipendente dal segno della carica, essendo $\chi \propto e^2$.
+\vspace{.5cm}
+
+\textbf{Limite quantistico.} Si considera $z\to +\infty$. 
+Per $T\to 0$, si ha un effetto oscillatorio di $\chi $, periodiche in $1 / \mathrm{H} $; questo \`e noto come \textit{effetto di de Haas-van Alphen}.
+
+Non si intende studiare questo in quanto complicato a livello di conti; piuttosto, ci si mette nel limite $\kappa _B T \ll \hbar \omega_c$ e si ipotizza che $p_z$ sia costante, per cui $\varepsilon _j \simeq \hbar \omega_c (j + 1 / 2)$, con $j=0,1,2,\ldots$, $\omega_c = \frac{e\mathrm{H} }{mc}$.
+A ciascuno di questi livelli, \`e associata la degenerazione $g = \frac{e\mathrm{H} }{h c}L^2$, sulla base di cui si definisce 
+\[
+\mathrm{H} _0 = N \frac{\mathrm{H} }{g} = \frac{hc}{e}\frac{N}{L^2 }
+\] 
+Questo \`e tale che, se $\mathrm{H} > \mathrm{H} _0$, tutti i fermioni si trovano nello stato fondamentale relativo a $j=0$.
+Sostanzialmente, si sta dicendo che lo stato fondamentale ha degenerazione maggiore di $N$.
+\begin{itemize}
+	\item Se $\mathrm{H} > \mathrm{H} _0$, allora $E_0= N \varepsilon _0 = N \mu _0 \mathrm{H} $, con $\mu _0 = \frac{e \hbar }{2 m c}$, perch\'e ogni fermione \`e nel ground state (il pedice $0$ indica che \`e l'energia relativa a $T=0$).
+	\item Se $\mathrm{H} < \mathrm{H} _0$, allora si popolano i livelli energetici superiori al ground state.
+		Supponendo di avere i livelli riempiti fino a $j$ (cio\`e $\varepsilon _0 ,\ldots, \varepsilon _j$ sono tutti pieni), allora il livello $(j+1)$-esimo \`e parzialmente occupato; questo caso si verifica quando $g(j+1)<N<g(j+2)$, relativo a 
+		\[
+		\frac{1}{j+2} < \frac{\mathrm{H} }{\mathrm{H} _0}< \frac{1}{j+1}
+		\] 
+		L'energia del sistema, in questo caso, \`e data da 
+		\[
+		E_0 = g \sum_{k=0}^{j} \varepsilon _k + \left[ N - (j+1)g \right] \varepsilon _{j+1} = -N\mu _0 \frac{\mathrm{H} ^2}{\mathrm{H} _0} (j^2 + 3j + 2) + N\mu _0 \mathrm{H} (2j+3)
+		\] 
+\end{itemize}
+In questo modo, si calcola $m = -\frac{1}{V} \frac{\partial E}{\partial \mathrm{H} } $ e, conseguentemente, $\chi  = \Eval{\frac{\partial m}{\partial \mathrm{H} } }{\mathrm{H} \to 0}{}$, da cui si ricava che
+\[
+\chi  = \begin{cases}
+	0 &,\ \mathrm{H} > \mathrm{H} _0\\
+	\\
+	\displaystyle \frac{2\mu _0 n}{\mathrm{H} _0}(j^2 + 3j + 2) &,\ \displaystyle \frac{\mathrm{H} _0}{j+2}<\mathrm{H} < \frac{\mathrm{H} _0}{j+1}
+\end{cases}
+\] 
+con $n= N / V$.
+\begin{center}
+	\begin{tikzpicture}
+		\draw[-stealth,thick] (-0.5,0) -- (7,0) node[below] {\footnotesize$\mathrm{H} / \mathrm{H} _0$};
+		\draw[-stealth,thick] (0,-0.5) -- (0,4) node[above left] {$\frac{\chi}{2\mu _0n / \mathrm{H} _0}$};
+		\draw[thick] (5,0.1) -- (5,-0.1) node[below] {\scriptsize$1$};
+		\draw[thick] (2.5,0.1) -- (2.5,-0.1) node[below] {$\frac{1}{2}$};
+		\draw[thick] (1.5,0.1) -- (1.5,-0.1) node[below] {$\frac{1}{3}$};
+		\draw[thick] (1,0.1) -- (1,-0.1) node[below] {$\frac{1}{4}$};
+		\draw[thick] (0.1,3.5) -- (-0.1,3.5) node[left] {\scriptsize $12$};
+		\draw[thick] (0.1,2) -- (-0.1,2) node[left] {\scriptsize $6$};
+		\draw[thick] (0.1,1) -- (-0.1,1) node[left] {\scriptsize $2$};
+		\draw[green!70!white] (5,0) -- (6.9,0);
+		\draw[green!70!black] (5,1) -- (2.5,1);
+		\draw[green!70!black] (2.5,2) -- (1.5,2);
+		\draw[green!70!black] (1.5,3.5) -- (1,3.5);
+		\draw[dashed,thick] (5,1)--(5,0);
+		\draw[dashed,thick] (2.5,2)--(2.5,0);
+		\draw[dashed,thick] (1.5,3.5)--(1.5,0);
+		\draw[dashed,thick] (1,3.5)--(1,0);
+		\draw (0.6,-.48) -- (0.6,-0.48) node {\footnotesize$\dots$};
+	\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{osservazione}
+Dal punto di vista classico, il potenziale vettore $\mathbf{A} $ non altera il comportamento del sistema e, quindi, non si osservano gli effetti relativi al diamagnetismo di Landau. 
+Infatti, nel considerare $H = \sum_{i}^{} \frac{1}{2m} \left(\mathbf{p} _i + \frac{e}{c} \mathbf{A} \right) ^2$, classicamente si trova che
+\[
+Z = \int d^N \mathbf{q}  \int d^N \mathbf{p} \ e^{-\beta H}
+\] 
+ed \`e possibile riassorbire l'offset $\frac{e}{c}\mathbf{A} $ tramite $\mathbf{p} ' = \mathbf{p}  + \frac{e}{c}\mathbf{A} $, rendendo $Z$ indipendente dal potenziale vettore.
+\end{osservazione}
 
 
 
