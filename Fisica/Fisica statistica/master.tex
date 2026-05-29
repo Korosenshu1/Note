@@ -4107,7 +4107,7 @@ A questo punto, si definisce lo \textit{spazio di Fock} come
 \] 
 dove $\mathcal{F} _k = \mathcal{S} (\mathcal{H} ^k)$ per bosoni, mentre $\mathcal{F} _k = \mathcal{A} (\mathcal{H} ^k)$ per fermioni, cio\`e \`e la somma diretta di spazi di Hilbert simmetrici o anti-simmetrici di un numero arbitrario di particelle, con $\mathcal{F} _0$ che contiene solo il vuoto $\ket{0} $.
 In questo modo, si pu\`o definire l'operatore di creazione di una particella $\hat{a}^\dagger _\lambda : \mathcal{F} _N \to \mathcal{F} _{N+1} $, dove $\lambda $ \`e un indice che individua i possibili livelli energetici del sistema.
-Si fa uso della base dei numeri di occupazione $\left\{ n_\lambda  \right\} _{\lambda} $, per cui $\ket{n_0,\, n_1 ,\, n_2,\,\ldots} $ \`e lo stato, detto \textit{stato di Fock}, del sistema i cui livelli energetici $\lambda =0,1,\ldots$ sono popolati con i rispettivi $n_\lambda $.
+Si fa uso della rappresentazione degli stati tramite numeri di occupazione $\left\{ n_\lambda  \right\} _{\lambda} $, per cui $\ket{n_0,\, n_1 ,\, n_2,\,\ldots} $ \`e lo stato, detto \textit{stato di Fock}, del sistema i cui livelli energetici $\lambda =0,1,\ldots$ sono popolati con i rispettivi $n_\lambda $.
 Nel caso di bosoni, $n_\lambda $ \`e un arbitrario intero, mentre, per fermioni, questo \`e vincolato a essere $0$ o $1$.
 In questo senso, allora, l'operatore di creazione agisce come
 \[
@@ -4134,6 +4134,10 @@ In maniera analoga, si definisce un operatore di distruzione $\hat{a}_\lambda :\
 \[
 \hat{a}_k \ket{n_1,\, n_2,\, \ldots,\, n_j ,\, \ldots}  = \zeta^{s_j}\sqrt{n_j} \ket{n_1,\, n_2,\, \ldots,\, n_j-1 ,\, \ldots}
 \] 
+Tramite questi due, \`e possibile introdurre l'\textit{operatore numero} come $\hat{n}_\alpha = \hat{a}^\dagger _\alpha  \hat{a}_\alpha $, che \`e tale per cui
+\[
+\hat{n}_\alpha \ket{n_1 ,\, n_2 ,\, \ldots,\, n_\alpha ,\, \ldots} = n_\alpha \ket{n_1 ,\, n_2 ,\, \ldots,\, n_\alpha ,\, \ldots}
+\] 
 \subsubsection{Algebra degli operatori di creazione e distruzione}
 A seconda che il sistema considerato sia fermionico o bosonico, gli operatori di creazione e di distruzione devono soddisfare delle specifiche regole di commutazione.
 
@@ -4152,10 +4156,10 @@ Per questi ultimi, si osserva che, nel caso $j=k$, si ritrova un'altra formulazi
 La seconda quantizzazione permette di formalizzare le regole di commutazione e anti-commutazione negli operatori di creazione e distruzione, rendendone la trattazione pi\`u facile.
 \end{osservazione}
 \begin{osservazione}
-A meno di specificare regole di commutazione/anti-commutazione, gli operatori di creazione e distribuzione sono generali e non sono riferiti a bosoni, o fermioni.
+A meno di specificare regole di commutazione/anti-commutazione, gli operatori di creazione e distruzione sono generali e non sono riferiti a bosoni, o fermioni.
 \end{osservazione}
 \subsubsection{Cambio di base}
-Date le basi $\left\{ \ket{\lambda }  \right\} , \ \left\{ \ket{\lambda '}  \right\} $, facendo uso della relazione di completezza, si ha
+Date le basi $\left\{ \ket{\lambda }  \right\} , \ \left\{ \ket{\lambda '}  \right\} $ per gli stati di singola particella, facendo uso della relazione di completezza, si ha
 \[
 \ket{\lambda '} = \sum_{\lambda }^{}\ket{\lambda } \braket{\lambda |\lambda '} 
 \] 
@@ -4171,10 +4175,53 @@ Allora, per \textbf{sistemi bosonici}, le regole di commutazione sono preservate
 \end{split}
 \] 
 Per \textbf{sistemi fermionici}, passando per procedimenti analoghi, si vede che sono conservate anche le regole di anti-commutazione.
+\begin{osservazione}
+	Come notazione di commutatore e anti-commutatore, si possono usare $+$ e $-$ rispettivamente al pedice di $[\cdot ,\cdot ]$.
+\end{osservazione}
+\subsubsection{Operatori di campo}
 
+Si pu\`o generalizzare la trattazione sopra al continuo, cio\`e usando numeri quantici continui. 
+Ad esempio, si pu\`o definire $\psi _\lambda (x) = \braket{x|\lambda } $ rappresentazione delle coordinate per gli stati $\ket{\lambda } $ e definire gli \textit{operatori di campo} 
+\[
+\hat{\psi }(x) = \sum_{\lambda }^{} \hat{a}_\lambda \psi _\lambda  = \sum_{\lambda }^{} \braket{x|\lambda } \hat{a}_\lambda  \hspace{1cm}\hat{\psi }^\dagger (x) = \sum_{\lambda }^{}\psi _\lambda ^* \hat{a}^\dagger _\lambda = \sum_{\lambda }^{} \braket{\lambda |x} \hat{a}^\dagger _\lambda 
+\] 
+\begin{osservazione}
+Queste somme potrebbero essere integrali, qualora gli indici $\lambda $ non fossero discreti.
+\end{osservazione}
+\noindent Il significato di questi operatori di campo \`e di creare (o distruggere) una particella (bosonica o fermionica, a seconda delle regole di commutazione/anti-commutazione) nello stato $\ket{x} $.
+Viceversa, si possono definire gli operatori di creazione e distruzione a partire dagli operatori di campo:
+\[
+\hat{a}_\lambda  = \int  dx  \ \braket{\lambda |x}  \hat{\psi }(x) \hspace{1cm} \hat{a}_\lambda^\dagger = \int dx\ \braket{x|\lambda } \hat{\psi }^\dagger (x)
+\] 
+\begin{esempio}
+Considerando $\ket{\lambda } $ come gli stati dei momenti $\ket{p} $, l'operatore di campo assume la forma
+\[
+\hat{\psi }(\mathbf{x} ) = \sum_{\mathbf{p} }^{} \braket{\mathbf{x} |\mathbf{p} } \hat{a}_\mathbf{p} \ \, , \ \ \braket{\mathbf{x} |\mathbf{p} } = \frac{1}{\sqrt{V} }e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{x} }
+\] 
+\end{esempio}
+\noindent L'idea degli operatori di campo \`e quella di poter cambiare rappresentazione a seconda delle necessit\`a: invece di creare o distruggere particelle negli stati $\ket{\lambda } $ tramite $\hat{a}_\lambda $ e $\hat{a}^\dagger _\lambda $, si pu\`o applicare la creazione/distruzione nelle posizioni, per esempio, tramite $\hat{\psi}  (x)$ o $\hat{\psi} ^\dagger  (x)$.
+
+Analogamente agli operatori di creazione/distruzione, gli operatori di campo devono soddisfare delle regole di commutazione/anti-commutazione:
+\[
+	[\hat{\psi }(\mathbf{x} ) , \hat{\psi }^\dagger (\mathbf{x}' ) ] _{\pm} = \delta (\mathbf{x} -\mathbf{x} ')\hspace{1cm} [ \hat{\psi }(\mathbf{x} ) , \hat{\psi }(\mathbf{x} ')]_\pm = [ \hat{\psi }^\dagger (\mathbf{x} ) , \hat{\psi }^\dagger (\mathbf{x} ')]_\pm = 0
+\] 
+\subsubsection{Operatori a un corpo in seconda quantizzazione}
+Per operatore a un corpo, si intende un operatore che, su un sistema di $N$ particelle, in prima quantizzazione, si scrive come
+\[
+\hat{O}_1 = \sum_{i=1}^{N} \hat{o}_1(i)
+\] 
+dove gli $\hat{o}_1$ agiscono sulla singola particella $i$-esima. Per esempio, l'operatore energia cinetica \`e $\hat{T}_1 = \sum_{i}^{} \frac{\hat{p}_i^2}{2m_i}$.
+In seconda quantizzazione, data $\left\{ \ket{\alpha }  \right\} $ una base di singola particella in cui $\hat{o}_1$ \`e diagonale ($\hat{o}_1 \ket{\alpha } = o_{1\alpha } \ket{\alpha } $), si scrive che 
+\[
+\hat{O}_1 = \sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{a}_\alpha  =\sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{n}_\alpha 
+\] 
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 26
+\centering Riprendere dalla lezione 26, 30:00
 \end{boxenv}
+
+
+
+
 
 
 
