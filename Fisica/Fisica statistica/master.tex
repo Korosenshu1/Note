@@ -3574,6 +3574,8 @@ p_0(T) = \frac{\kappa _B T }{\lambda _T^3}g_{5 / 2} (1)
 \node at (-.5,4) {\footnotesize $p_0(T_2)$};
 \node at (-.5,2.4) {\footnotesize $p_0(T_1)$};
 \end{tikzpicture}
+\captionof{figure}{Grafico $p(v)$ a $T$ fissata.}
+\label{pvbec}
 	\end{minipage}
 \end{center}
 Per queste pressioni, vista la presenza del tratto orizzontale relativo alla BEC, si pu\`o scrivere un'equazione analoga a quella di Clausius-Clapeyron:
@@ -4215,9 +4217,203 @@ In seconda quantizzazione, data $\left\{ \ket{\alpha }  \right\} $ una base di s
 \[
 \hat{O}_1 = \sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{a}_\alpha  =\sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{n}_\alpha 
 \] 
-\begin{boxenv}[]
-\centering Riprendere dalla lezione 26, 30:00
-\end{boxenv}
+Si pu\`o cambiare base e scrivere
+\[
+\hat{O}_1 = \sum_{\lambda ,\mu }^{}\braket{\mu |\hat{o}_1|\lambda } \hat{a}_\mu ^\dagger \hat{a}_\lambda 
+\] 
+utilizzando le regole del cambiamento di base per gli operatori di creazione e distruzione.
+In questo modo, un hamiltoniano che, in prima quantizzazione, si scriveva come
+\[
+\hat{H} = \sum_{i=1}^{N} \left(\frac{p_i^2}{2m} + U_i (\mathbf{r} )\right) 
+\] 
+si pu\`o scrivere, tramite la rappresentazione delle coordinate, cio\`e degli autovettori $\left\{ \ket{\mathbf{r} }  \right\} $ di $U(\mathbf{r} )$, come
+\[
+\hat{H}= \int d\mathbf{r}  \int d\mathbf{r} ' \ \left[ - \frac{\hbar ^2}{2m}\braket{\mathbf{r} |\nabla ^2|\mathbf{r} '} \hat{\psi } ^\dagger (\mathbf{r} ) \hat{\psi } (\mathbf{r} ')\right] + \int d\mathbf{r} \ U(\mathbf{r} ) \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi} (\mathbf{r} )
+\] 
+dove l'integrale del potenziale sottintende che $U(\mathbf{r} )$ \`e diagonale in $\left\{ \ket{\mathbf{r} }  \right\} $.
+L'espressione si semplifica ulteriormente notando che $\braket{\mathbf{r} |\nabla ^2| \mathbf{r} '}  = \nabla ^2 \delta (\mathbf{r} -\mathbf{r} ')$, per cui
+\begin{equation}
+\hat{H}= \int d\mathbf{r} \ \hat{\psi }^\dagger (\mathbf{r} ) \left[ -\frac{\hbar ^2}{2m}\nabla ^2 + U(\mathbf{r} ) \right] \hat{\psi }(\mathbf{r} )
+\end{equation}
+Questa \`e la scrittura di un hamiltoniano in seconda quantizzazione per sistemi standard NON interagenti.
+\subsubsection{Operatori a due corpi in seconda quantizzazione}
+Per descrivere le interazioni che generalmente si incontreranno, come visto in meccanica statistica classica, \`e necessario e, per lo pi\`u, sufficiente studiare gli operatori a due corpi.
+In prima quantizzazione, questi si scrivono come
+\[
+	\hat{O}_2 = \sum_{m<n}^{} \hat{o}_2 (m,n) = \frac{1}{2} \sum_{\substack{m,n\\ m\neq n}}^{} \hat{o}_2(m,n)
+\] 
+Per riscriverli con il formalismo della seconda quantizzazione, si assume che $\left\{ \ket{\alpha ,\,\gamma}  \right\} $ sia una base rispetto a cui $\hat{o}_2$ sia diagonale: $\hat{o}_2 \ket{\alpha ,\, \gamma} = o_{2, \alpha \gamma} \ket{\alpha ,\, \gamma} $\footnote{I valori $\alpha , \gamma$ non indicizzano le particelle su cui agiscono gli operatori, ma indicano lo stato in cui le due particelle si trovano; essendo uno stato a due particelle, in generale, sar\`a necessario utilizzare due variabili per descriverlo, uno relativo alla prima particella, l'altro relativo alla seconda.}. 
+In questo modo, si ha che
+\[
+\hat{O}_2 =\frac{1}{2}\sum_{\alpha ,\gamma}^{} \braket{\alpha ,\, \gamma|\hat{o}_2|\alpha ,\, \gamma}   \hat{P}_{\alpha \gamma} =\frac{1}{2}\sum_{\alpha ,\gamma}^{} o_{2,\alpha \gamma}  \hat{P}_{\alpha \gamma} 
+\] 
+con $\hat{P}_{\alpha \gamma} $ operatore che conta quante coppie di particelle si trovano negli stati di singola particella $\ket{\alpha } $ e $\ket{\gamma} $.
+Pertanto, si avr\`a che:
+\begin{itemize}
+	\item se $\ket{\alpha } =\ket{\gamma} $, allora il numero di coppie di particelle \`e $n_\alpha (n_\alpha -1)$;
+	\item se $\ket{\alpha } \neq \ket{\gamma} $, allora il numero \`e $n_\alpha n_\gamma$.
+\end{itemize}
+Per questa ragione, visto che $\hat{P}_{\alpha \gamma} $ \`e diagonale su $\left\{ \ket{\alpha ,\, \gamma}  \right\} $, si pu\`o scrivere che $\hat{P}_{\alpha \gamma}  = \hat{n}_\alpha \hat{n}_{\gamma}  - \delta _{\alpha \gamma} \hat{n}_\alpha $.
+In termini degli operatori di creazione e distruzione, si ha
+\[
+\hat{P}_{\alpha \gamma}  = \left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) \left(\hat{a}^\dagger _\gamma \hat{a}_\gamma\right) - \delta _{\alpha \gamma} \left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) = \hat{a}^\dagger _\alpha \hat{a}^\dagger _\gamma \hat{a} _\gamma \hat{a}_\alpha 
+\] 
+dove l'ultima uguaglianza \`e un'espressione valida sia per bosoni che fermioni, ottenuta tramite le regole di commutazione/anti-commutazione.
+\begin{proof}
+	Usando le regole di commutazione per bosoni, si trova che:
+\[
+\begin{split}
+	\left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) \left(\hat{a}^\dagger _\gamma \hat{a}_\gamma\right) - \delta _{\alpha \gamma} \left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) & = \hat{a}^\dagger _\alpha  \left(\hat{a}^\dagger _\gamma \hat{a}_\alpha  + \delta _{\alpha \gamma} \right) \hat{a}_\gamma- \delta _{\alpha \gamma} \left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) \\
+																								&= \hat{a}^\dagger _\alpha \hat{a}^\dagger _\gamma \hat{a}_\alpha  \hat{a}_\gamma + \hat{a}_\alpha ^\dagger \hat{a}_\gamma\delta _{\alpha \gamma} - \delta _{\alpha \gamma} \hat{a}^\dagger _\alpha \hat{a}_\alpha \\
+		        &=\hat{a}^\dagger _\alpha  \hat{a}^\dagger _\gamma \hat{a}_\alpha  \hat{a}_\gamma = \hat{a}^\dagger _\alpha  \hat{a}^\dagger _\gamma \hat{a}_\gamma\hat{a}_\alpha  
+\end{split}
+\] 
+Per i fermioni, invece, si ha:
+\[
+\begin{split}
+	\left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) \left(\hat{a}^\dagger _\gamma \hat{a}_\gamma\right) - \delta _{\alpha \gamma} \left(\hat{a}^\dagger _\alpha \hat{a}_\alpha \right) & = \hat{a}^\dagger _\alpha \left(-\hat{a}^\dagger _\gamma \hat{a}_\alpha  + \delta _{\alpha \gamma} \right) \hat{a}_\gamma - \delta _{\alpha  \gamma}  \hat{a}^\dagger _\alpha  \hat{a}_\alpha \\
+																								&=-\hat{a}^\dagger _\alpha \hat{a}^\dagger _\gamma \hat{a}_\alpha  \hat{a}_\gamma + \hat{a}^\dagger _\alpha  \hat{a}_\gamma + \hat{a}^\dagger _\alpha  \hat{a}_\gamma \delta _{\alpha \gamma} - \delta _{\alpha  \gamma}  \hat{a}^\dagger _\alpha \hat{a}_\alpha \\
+																								&= - \hat{a}^\dagger _\alpha  \hat{a}^\dagger _\gamma \hat{a}_\alpha  \hat{a}_\gamma = \hat{a}^\dagger _\alpha  \hat{a}^\dagger _\gamma \hat{a}_\gamma \hat{a}_\alpha  
+\end{split}
+\] 
+\end{proof}
+\noindent Si conclude che $\hat{O}_2 = \frac{1}{2}\sum_{\alpha ,\gamma}^{} o_{2,\alpha \gamma} \hat{a}^\dagger _\alpha  \hat{a}^\dagger _\gamma \hat{a}_\gamma \hat{a}_\alpha $.
+Cambiando base, facendo uso delle relazioni per il cambiamento di base, si trova, in generale, che 
+\[
+\hat{O}_2 = \frac{1}{2}\sum_{\lambda , \mu , \rho ,\nu }^{} \braket{\lambda \mu |\hat{o}_2|\rho \nu } \hat{a}^\dagger _\lambda \hat{a}^\dagger _\mu \hat{a}_\nu \hat{a}_\rho 
+\] 
+Il potenziale di un'interazione a due corpi dipendente solo dalla distanza $\lvert \mathbf{r} -\mathbf{r} ' \rvert $, allora, si scrive come
+\begin{equation}
+	\hat{V}_2 = \frac{1}{2} \int d\mathbf{r}  \int d\mathbf{r} ' \ V_2 \left(\lvert \mathbf{r} -\mathbf{r} ' \rvert \right) \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }^\dagger (\mathbf{r} ') \hat{\psi }(\mathbf{r} ') \hat{\psi }(\mathbf{r} )
+\end{equation}
+Quindi, la forma pi\`u generale di hamiltoniano che si tratter\`a \`e:
+\begin{equation}
+	\begin{split}
+		\hat{H} = \int d\mathbf{r} \  & \hat{\psi }^\dagger (\mathbf{r} ) \left[ \frac{\hbar ^2}{2m}\nabla ^2 + U (\mathbf{r} ) \right] \hat{\psi }(\mathbf{r} ) \\
+					      &+ \frac{1}{2} \int d\mathbf{r}  \int d\mathbf{r} ' \ V_2 \left(\lvert \mathbf{r} -\mathbf{r} ' \rvert \right) \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }^\dagger (\mathbf{r} ') \hat{\psi }(\mathbf{r} ') \hat{\psi }(\mathbf{r} )
+	\end{split}
+\end{equation}
+\subsection{Gas di bosoni interagenti}
+Nel caso ideale, si ricorda l'andamento di $p(v)$ in figura \ref{pvbec}; avendo la pressione costante a $p = \frac{\kappa _B T }{\lambda _T^3} g_{5 / 2} (1)$ nella formazione del condensato, la compressibilit\`a isoterma diverge:
+\[
+	k_T^{-1} = -v \Eval{\frac{\partial p}{\partial v} }{T}{} = 0
+\] 
+Per\`o questo non \`e un caso realistico: con anche la minima interazione, $k_T$ \`e finita.
+
+Si descrive il caso di gas di Bose interagente tramite la matrice densit\`a ad un corpo che, tramite il formalismo della seconda quantizzazione, \`e data da
+\[
+n^{(1)} (\mathbf{r} ,\mathbf{r} ') = \langle \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }(\mathbf{r} ') \rangle
+\] 
+\begin{osservazione}
+In prima quantizzazione, questa si scriveva come
+\[
+n^{(1)} (\mathbf{r} ,\mathbf{r} ') = N \int d\mathbf{r} _2 \ldots d\mathbf{r} _N \ \psi ^* (\mathbf{r} , \mathbf{r} _2,\ldots,\mathbf{r} _N) \psi (\mathbf{r} ' , \mathbf{r} _2,\ldots,\mathbf{r} _N)
+\] 
+\end{osservazione}
+\noindent I termini diagonali sono dati da 
+\[
+n^{(1)} (\mathbf{r} ,\mathbf{r} ) \equiv n^{(1)}(\mathbf{r} ) = \langle \hat{\psi }^\dagger (\mathbf{r}) \hat{\psi }(\mathbf{r)}  \rangle
+\] 
+e rappresentano la densit\`a di particelle nel punto $\mathbf{r} $.
+I termini fuori diagonale, invece, permettono di ricavare 
+\[
+n(\mathbf{p} ) = \langle \hat{\psi }^\dagger (\mathbf{p} ) \hat{\psi }(\mathbf{p} ) \rangle = \frac{1}{(2\pi\hbar )^3} \int d\mathbf{R}  \int d\mathbf{s}  \ e^{\frac{i}{\hbar } \mathbf{p} \cdot \mathbf{s} }n^{(1)}\left(\mathbf{R} +\frac{\mathbf{s} }{2}, \mathbf{R} -\frac{\mathbf{s} }{2}\right) 
+\] 
+dove si \`e esplicitato che
+\[
+\hat{\psi }(\mathbf{p} ) = \int d\mathbf{r} \ \braket{\mathbf{p} |\mathbf{r} } \hat{\psi }(\mathbf{r} ) = \frac{1}{(2\pi\hbar )^{ 3 / 2}} \int d\mathbf{r}  \ e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }\hat{\psi }(\mathbf{r} )
+\] 
+e si \`e usato il cambio di variabili in centro di massa e relativa: $\mathbf{R}  = \frac{1}{2}(\mathbf{r} +\mathbf{r} ')$ e $\mathbf{s} = \mathbf{r} -\mathbf{r} '$.
+Tramite trasformata di Fourier, si trova
+\[
+n^{(1)}(\mathbf{s} ) = \frac{1}{V}\int d\mathbf{p} \ n(\mathbf{p} ) e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{s} }
+\] 
+In questo modo, si vede che:
+\begin{itemize}
+	\item in assenza di BEC, la $n(\mathbf{p} )$ \`e una funzione regolare per $\lvert \mathbf{p} \rvert  \to 0$ e $n^{(1)}(\mathbf{s} ) \to 0$, per $\lvert \mathbf{s}  \rvert \to +\infty$;
+	\item in presenza di BEC, invece, si pu\`o scrivere $n(\mathbf{p} ) = N_0 \delta (\mathbf{p} ) + \tilde{n}(\mathbf{p} )$, dove il termine $N_0 \delta (\mathbf{p} )$ rappresenta la parte condensata del sistema, per cui 
+		\[
+			n^{(1)}(\mathbf{s} ) \xrightarrow{\ s\to +\infty \ } \frac{N_0}{V}=n_0
+		\] 
+\end{itemize}
+\begin{center}
+	\begin{tikzpicture}[
+    x=1.15cm,
+    y=1.15cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+
+% Parametri
+\def\yN{3.0}
+\def\yNzero{1.55}
+\def\xmax{7.3}
+\def\ymax{3.8}
+
+% Linea tratteggiata a n0
+\draw[dashed,gray!70] (0,\yNzero) -- (7.1,\yNzero);
+
+% Assi
+\draw[thick,->] (-0.45,0) -- (\xmax,0)
+    node[below] {\footnotesize $s=\lvert \mathbf r-\mathbf r' \rvert$};
+
+\draw[thick,->] (0,-0.45) -- (0,\ymax)
+    node[above] {\footnotesize $n^{(1)}(s)$};
+
+% Tacche e etichette
+\draw[thick] (-0.08,\yN) -- (0.08,\yN);
+\node[left] at (0,\yN) {\footnotesize $n$};
+
+\draw[thick] (-0.08,\yNzero) -- (0.08,\yNzero);
+\node[left] at (0,\yNzero) {\footnotesize $n_0$};
+
+
+
+% Curva rossa: condensato
+\draw[red!70!black,thick,smooth]
+plot coordinates {
+    (0,3.00)
+    (0.35,2.99)
+    (0.80,2.92)
+    (1.35,2.78)
+    (2.00,2.55)
+    (2.70,2.28)
+    (3.50,2.02)
+    (4.30,1.82)
+    (5.20,1.68)
+    (6.20,1.60)
+    (7.10,1.56)
+};
+
+% Curva blu: non condensato
+\draw[blue!70!gray,thick,smooth]
+plot coordinates {
+    (0,3.00)
+    (0.25,2.96)
+    (0.60,2.84)
+    (1.00,2.55)
+    (1.45,2.10)
+    (1.95,1.50)
+    (2.45,0.90)
+    (2.95,0.45)
+    (3.35,0.20)
+    (3.75,0.10)
+    (4.15,0.07)
+    (5,0.04)
+    (7.1,0.02)
+};
+
+% Testi
+\node[red!70!black]  at (6,2.00) {\scriptsize condensato $(T<T_c)$};
+\node[blue!70!gray] at (6,0.25) {\scriptsize sistema non condensato $(T>T_c)$};
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
 
 
 
