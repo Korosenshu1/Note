@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.9)  26 MAY 2026 12:56
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.9)  29 MAY 2026 02:06
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -999,10 +999,12 @@ File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex)) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count399
+)) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-
-(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+ (/usr/share/texmf-dist/tex/generic/babel/luababel.def
 \bbl@readstream=\read4
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 118.
@@ -1098,7 +1100,7 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \babelcatcodetablenum=\catcodetable16
 \bbl@pattcodes=\catcodetable17
 )
-\babel@savecnt=\count399
+\babel@savecnt=\count400
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
@@ -1115,24 +1117,24 @@ Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
-\it@lettering=\count400
-\it@doublequoteactive=\count401
-\it@ISOcompliance=\count402
+\it@lettering=\count401
+\it@doublequoteactive=\count402
+\it@ISOcompliance=\count403
  (/usr/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex UTF-8 Italian hyphenation patterns (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex) (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-it.tex)))) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count403
-\l__fontspec_language_int=\count404
-\l__fontspec_strnum_int=\count405
-\l__fontspec_tmp_int=\count406
-\l__fontspec_tmpa_int=\count407
-\l__fontspec_tmpb_int=\count408
-\l__fontspec_tmpc_int=\count409
-\l__fontspec_em_int=\count410
-\l__fontspec_emdef_int=\count411
-\l__fontspec_strong_int=\count412
-\l__fontspec_strongdef_int=\count413
+\l__fontspec_script_int=\count404
+\l__fontspec_language_int=\count405
+\l__fontspec_strnum_int=\count406
+\l__fontspec_tmp_int=\count407
+\l__fontspec_tmpa_int=\count408
+\l__fontspec_tmpb_int=\count409
+\l__fontspec_tmpc_int=\count410
+\l__fontspec_em_int=\count411
+\l__fontspec_emdef_int=\count412
+\l__fontspec_strong_int=\count413
+\l__fontspec_strongdef_int=\count414
 \l__fontspec_tmpa_dim=\dimen399
 \l__fontspec_tmpb_dim=\dimen400
 \l__fontspec_tmpc_dim=\dimen401
@@ -1311,9 +1313,9 @@ LaTeX Encoding Info:    Redeclaring text symbol \textdiv (encoding TS1) on input
 )) (/usr/share/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
 Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting with LuaLaTeX
 Lua module: lualatex-math 2013/08/03 v1.3 Patches for mathematics typesetting with LuaLaTeX)
-\g__um_fam_int=\count414
-\g__um_fonts_used_int=\count415
-\l__um_primecount_int=\count416
+\g__um_fam_int=\count415
+\g__um_fonts_used_int=\count416
+\l__um_primecount_int=\count417
 \g__um_primekern_muskip=\muskip19
  (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 
@@ -1440,9 +1442,9 @@ Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
 \footnotemargin=\dimen402
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count417
+\c@abspage=\count418
 )
-\c@pp@a@footnote=\count418
+\c@pp@a@footnote=\count419
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
 Package footmisc Info: Declaring symbol style wiley on input line 566.
@@ -1452,15 +1454,15 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 618.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@esempio=\count419
-\c@definizione=\count420
-\c@prop=\count421
-\c@teorema=\count422
-\c@lemma=\count423
-\c@corollario=\count424
-\c@osservazione=\count425
-\c@notazione=\count426
-\c@esercizio=\count427
+\c@esempio=\count420
+\c@definizione=\count421
+\c@prop=\count422
+\c@teorema=\count423
+\c@lemma=\count424
+\c@corollario=\count425
+\c@osservazione=\count426
+\c@notazione=\count427
+\c@esercizio=\count428
 Package hyperref Info: Option `colorlinks' set `true' on input line 140.
 Package hyperref Info: Option `breaklinks' set `true' on input line 140.
 
@@ -1514,8 +1516,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip108
 \cftfigindent=\skip109
 \cftfignumwidth=\skip110
-\c@lofdepth=\count428
-\c@lotdepth=\count429
+\c@lofdepth=\count429
+\c@lotdepth=\count430
 \cftbeforelottitleskip=\skip111
 \cftafterlottitleskip=\skip112
 \cftbeforetabskip=\skip113
@@ -1541,7 +1543,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count430
+\BKM@id=\count431
 )) (./master.aux)
 \openout1 = master.aux
 
@@ -1602,16 +1604,16 @@ LaTeX Font Info:    ... okay on input line 185.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count431
+\scratchcounter=\count432
 \scratchdimen=\dimen404
 \scratchbox=\box131
-\nofMPsegments=\count432
-\nofMParguments=\count433
+\nofMPsegments=\count433
+\nofMParguments=\count434
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count434
+\MPscratchCnt=\count435
 \MPscratchDim=\dimen405
-\MPnumerator=\count435
-\makeMPintoPDFobject=\count436
+\MPnumerator=\count436
+\makeMPintoPDFobject=\count437
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1694,18 +1696,12 @@ Overfull \hbox (25.08667pt too wide) in paragraph at lines 373--374
  [][] 
  []
 
-[5]
-<parallax.jpg, id=61, 602.25pt x 296.10625pt>
-File: parallax.jpg Graphic file (type jpg)
-<use parallax.jpg>
-Package luatex.def Info: parallax.jpg  used on input line 445.
-(luatex.def)             Requested size: 375.14705pt x 184.45598pt.
-
+[5] [6]
 
 Package caption Warning: Unused \captionsetup[table] on input line 133.
 See the caption package documentation for explanation.
 
-[6<./parallax.jpg>] (./master.aux)
+(./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1713,20 +1709,20 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 69620 strings out of 476076
+ 70074 strings out of 476076
  100000,2848258 words of node,token memory allocated
  2209 words of node memory still in use:
    17 hlist, 12 vlist, 2 rule, 16 disc, 4 local_par, 22 glue, 12 kern, 7 penalty, 84 glyph, 106 attribute, 103 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:1,2:1963,3:670,4:68,5:515,6:33,7:5301,8:51,9:864,10:19,11:668,12:1
- 90857 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:3544,3:1335,4:124,5:515,6:33,7:5301,8:51,9:864,10:19,11:668,12:1
+ 91299 multiletter control sequences out of 65536+600000
  121 fonts using 39261095 bytes
- 124i,19n,114p,11244b,1168s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,19n,421p,11244b,1207s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf>
-Output written on master.pdf (6 pages, 73446 bytes).
+Output written on master.pdf (6 pages, 59256 bytes).
 
-PDF statistics: 134 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 133 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream
  23 named destinations out of 1000 (max. 1048576)
  61 words of extra memory for PDF output out of 10000 (max. 100000000)

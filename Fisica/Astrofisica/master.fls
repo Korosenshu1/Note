@@ -314,6 +314,10 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texmf-dist/tex/generic/babel/luababel.def
 INPUT /etc/texmf/tex/generic/config/language.dat
@@ -407,6 +411,4 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
-INPUT ./parallax.jpg
-INPUT ./parallax.jpg
 INPUT ./master.aux

@@ -27,7 +27,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{circuitikz}
-\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta}
+\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
 \usepackage{fontspec}
@@ -440,9 +440,102 @@ In astrofisica, si usa il sistema CGS per le unit\`a di misura, ma grammi e cent
 
 		Per le distanze, si fa riferimento alla distanza Terra-Sole e si individua $1\, \mathrm{AU}  = 1.5 \times 10^{13}\, \mathrm{cm} $.
 Si utilizza il raggio Terra-Sole per calcolare la distanza delle stelle tramite triangolazione.
-In particolare, si definisce la parallasse annua come $\pi$ e rappresenta l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole.
+In particolare, si definisce la parallasse annua come l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole e si indica con $\pi$.
 \begin{center}
-	\includegraphics[width=.9\columnwidth]{parallax.jpg}
+	\begin{tikzpicture}[scale=0.8]
+		% Rette 
+		\coordinate (A) at ({3*cos(160)},{3*sin(160)});
+		\coordinate (B) at ({3*cos(340)},{3*sin(340)});
+		\coordinate (C) at ({8*cos(20)},{8*sin(20)});
+		\coordinate (D) at ({4*cos(200)},{4*sin(200)});
+		\coordinate (O) at (0,0);
+		\path[name path=AB] (A) -- (B);
+		\path[name path=CD] (C) -- (D);
+		\draw[gray!30!white] (A) -- (B);
+		\draw[gray!30!white] (C) -- (D);
+		\pic[draw,angle radius=4mm,color=gray!50!white]{right angle=C--O--B};
+
+
+		% Ellisse
+		\path[name path=ell] (0,0) ellipse (2.5 and 1.5);
+		\draw (0,0) ellipse (2.5 and 1.5);
+	
+		% Intersezioni retta AB ed ellisse e Terre
+		\path[name intersections={of=AB and ell, by={P,Q}}];
+		\path[name intersections={of=CD and ell, by={R,S}}];
+		\draw[fill,color=blue!20!white] (P) circle (3pt);
+		\draw[fill,color=blue!40!black] (P) circle (2.6pt);
+		\draw[fill,color=blue!20!white] (Q) circle (3pt);
+		\draw[fill,color=blue!40!black] (Q) circle (2.6pt);
+		\draw[fill,color=blue!20!white] (R) circle (3pt);
+		\draw[fill,color=blue!40!black] (R) circle (2.6pt);
+		\draw[fill,color=blue!20!white] (S) circle (3pt);
+		\draw[fill,color=blue!40!black] (S) circle (2.6pt);
+		\draw[color=blue!70!black] (P) node[above] {\footnotesize$E$};
+		\draw[color=blue!70!black] (Q) node[below] {\footnotesize$E'$};
+
+		\draw[fill,color=blue!20!white] (0,1.5) circle (3pt);
+		\draw[fill,color=blue!40!black] (0,1.5) circle (2.6pt);
+		\draw[fill,color=blue!20!white] (0,-1.5) circle (3pt);
+		\draw[fill,color=blue!40!black] (0,-1.5) circle (2.6pt);
+
+		% Oggetto stellare
+		\coordinate (SE) at (6,4);
+		\draw[dashed, red!30!black,opacity=0.6] (0,0) -- (SE);
+		\coordinate (Z) at ($(0,0)!1.4!(SE)$);
+		\draw[dashed, red!30!black,opacity=0.6] (SE) -- (Z);
+
+			% Rette P,Q con ellisse oggetto stellare
+			\coordinate (P') at ($(P)!1.5!(SE)$);
+			\coordinate (Q') at ($(Q)!1.5!(SE)$);
+			\path[name path=QQ'] (Q) -- (Q');
+			\path[name path=PP'] (P) -- (P');
+			\path[name path=ell'] (Z) ellipse (1.1 and 0.5);
+			\path[name intersections={of=QQ' and ell', by={E,F}}];
+			\path[name intersections={of=PP' and ell', by={G,H}}];
+			\draw[dotted, red!30!black,opacity=1] (Q) -- (E);
+			\draw[dotted, red!30!black,opacity=1] (P) -- (H);
+			\draw[red!30!black,opacity=0.25,thin] (E) -- (H);
+			\draw[red!30!black] (E) node[above left] {\scriptsize $V'$};
+			\draw[red!30!black] (H) node[below right] {\scriptsize $V$};
+
+			\path[name path=SR](SE) -- ($(SE) - (0,5)$);
+			\path[name intersections={of=CD and SR, by={X,Y}}];
+			\draw[red!30!black,dashed,opacity=0.4] (SE) -- (X);
+
+		\draw[fill, red!40!black] (SE) circle (4pt) node[above left] {\footnotesize $S$};
+		\draw[fill, red!55!black] (SE) circle (3.95pt);
+		\draw[fill, red!40!black] (SE) circle (3.7pt);
+		\draw[red!30!black,opacity=1] (Z) ellipse (1.1 and 0.5);
+		\draw[fill, color=red!40!black] (Z) circle (1pt);
+		\draw[fill, color=red!40!black] (H) circle (1pt);
+		\draw[fill, color=red!40!black] (E) circle (1pt);
+		\pic[fill,draw,angle radius=8mm,color=red!50!black,opacity=0.5]{angle=P--SE--Q};
+		\pic[draw,angle radius=8.1mm,color=red!60!black,opacity=1]{angle=P--SE--Q};
+		\node[color=red!60!black,opacity=1] at ($(SE)-(.95,0.9)$) {\footnotesize$\pi$};
+
+		% Sole
+		\draw[fill, color=yellow!70!white] (0,0) circle (5pt);
+		\draw[fill, color=yellow!60!white] (0,0) circle (4.9pt);
+		\draw[fill, color=yellow!50!white] (0,0) circle (4.8pt);
+		\draw[color=yellow!70!black] (0,-.10) node[below] {\scriptsize Sole};
+
+		% AU
+		\coordinate (PE) at ($(P)-(0.5,0.5)$);
+		\coordinate (QE) at ($(Q)-(0.5,0.5)$);
+		\path let
+  \p1 = ($(D)-(C)$),
+  \n1 = {veclen(\x1,\y1)}
+in
+coordinate (V)  at ($(PE)+({1mm*\x1/\n1},{1mm*\y1/\n1})$)
+coordinate (Vp) at ($(PE)+({-1mm*\x1/\n1},{-1mm*\y1/\n1})$)
+coordinate (W)  at ($(QE)+({1mm*\x1/\n1},{1mm*\y1/\n1})$)
+coordinate (Wp) at ($(QE)+({-1mm*\x1/\n1},{-1mm*\y1/\n1})$);
+		\draw[color=blue!60!gray,opacity=0.5,dashed] (PE) -- (QE);
+		\draw[color=blue!60!gray] (V)--(Vp);
+		\draw[color=blue!60!gray] (W)--(Wp);
+		\node[color=blue!50!gray,rotate=-20] at (-.25,-.9) {\scriptsize $1$ AU};
+	\end{tikzpicture}
 \end{center}
 In questo modo, si ha che 
 \[
@@ -456,4 +549,5 @@ In questo senso, si definisce una unit\`a di misura per la distanza, il parsec, 
 Allora $d[\mathrm{pc} ] = 1[\mathrm{AU} ]/\pi[\mathrm{arcsec}] $.
 \item Quanto alle scale temporali, il sole ha $4.57$ miliardi di anni, mentre l'universo ha $13.8$ miliardi di anni.
 \end{itemize}
+\newpage
 \end{document}
