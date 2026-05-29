@@ -4088,9 +4088,93 @@ Z = \int d^N \mathbf{q}  \int d^N \mathbf{p} \ e^{-\beta H}
 ed \`e possibile riassorbire l'offset $\frac{e}{c}\mathbf{A} $ tramite $\mathbf{p} ' = \mathbf{p}  + \frac{e}{c}\mathbf{A} $, rendendo $Z$ indipendente dal potenziale vettore.
 \end{osservazione}
 
+\newpage
 
+\section{Sistemi quantistici interagenti}
+\subsection{Introduzione alla seconda quantizzazione}
+In prima quantizzazione, per un sistema di $N$ particelle, si doveva utilizzare una funzione d'onda del tipo
+\[
+\psi _{\mathbf{p} _1,\ldots,\mathbf{p}_N }  (\mathbf{x} _1,\ldots,\mathbf{x} _N) \propto \sum_{\pi}^{} \delta _\pi \Big[u_{\mathbf{p} _1} (\pi\mathbf{x} _1) \ldots u_{\mathbf{p} _N} (\pi\mathbf{x} _N)\Big]
+\] 
+dove la somma sulle possibili permutazioni delle $N$ particelle risulta particolarmente complicata da fare nella maggior parte dei casi. 
+Per questo, si preferisce il formalismo della seconda quantizzazione
+\subsubsection{Spazio di Fock}
+Per un sistema di $N$ particelle, lo spazio di Hilbert \`e il prodotto tensore di spazi di singola particella: $\mathcal{H} ^N = \bigotimes_{i=1}^N \mathcal{H} ^{1} $. Nel caso dei bosoni, si considera esclusivamente il sottospazio delle funzioni d'onda simmetriche $\mathcal{S} (\mathcal{H} ^N)$; nel caso dei fermioni, si considera quello delle funzioni d'onda anti-simmetriche $\mathcal{A} (\mathcal{H} ^N)$.
 
+A questo punto, si definisce lo \textit{spazio di Fock} come
+\[
+\mathcal{F} = \mathcal{F} _0 \oplus \mathcal{F} _1 \oplus \ldots = \bigoplus_{N=0} ^{+\infty} \mathcal{F} _N
+\] 
+dove $\mathcal{F} _k = \mathcal{S} (\mathcal{H} ^k)$ per bosoni, mentre $\mathcal{F} _k = \mathcal{A} (\mathcal{H} ^k)$ per fermioni, cio\`e \`e la somma diretta di spazi di Hilbert simmetrici o anti-simmetrici di un numero arbitrario di particelle, con $\mathcal{F} _0$ che contiene solo il vuoto $\ket{0} $.
+In questo modo, si pu\`o definire l'operatore di creazione di una particella $\hat{a}^\dagger _\lambda : \mathcal{F} _N \to \mathcal{F} _{N+1} $, dove $\lambda $ \`e un indice che individua i possibili livelli energetici del sistema.
+Si fa uso della base dei numeri di occupazione $\left\{ n_\lambda  \right\} _{\lambda} $, per cui $\ket{n_0,\, n_1 ,\, n_2,\,\ldots} $ \`e lo stato, detto \textit{stato di Fock}, del sistema i cui livelli energetici $\lambda =0,1,\ldots$ sono popolati con i rispettivi $n_\lambda $.
+Nel caso di bosoni, $n_\lambda $ \`e un arbitrario intero, mentre, per fermioni, questo \`e vincolato a essere $0$ o $1$.
+In questo senso, allora, l'operatore di creazione agisce come
+\[
+\hat{a}^\dagger _j \ket{n_1,\, n_2 ,\, \ldots ,\, n_j,\, \ldots} =\zeta^{s_j}\sqrt{n_j+1}  \ket{n_1,\, n_2 ,\, \ldots ,\, n_{j}+1 ,\, \ldots}
+\] 
+con $\sqrt{n_j+1} $ normalizzazione e $\zeta^{s_j} $ \textit{stringa di Jordan-Wigner}, definita come
+\[
+\zeta  = \begin{cases}
+	+1 &,\ \text{bosoni}\\
+	-1 &,\ \text{fermioni}
+\end{cases} \hspace{1cm}s_j  =\sum_{k=1}^{j-1} n_k
+\] 
+ed \`e necessaria per garantire che la statistica fermionica sia ancora rispettata.
+\begin{osservazione}
+La definizione di $s_j$ implica la necessit\`a di definire un ordinamento per i livelli energetici indicizzati da $\lambda $.
+\end{osservazione}
+\noindent Tramite gli operatori di creazione, gli stati di Fock si possono scrivere come
+\[
+\ket{n_1,\, n_2,\, n_3,\, \ldots} = \frac{(\hat{a}^\dagger _1) ^{n_1} }{\sqrt{n_1} !}\frac{(\hat{a}^\dagger _2) ^{n_2} }{\sqrt{n_2} !}\frac{(\hat{a}^\dagger _3) ^{n_3} }{\sqrt{n_3} !}\ldots \ket{0}  = \left(\prod_j \frac{(\hat{a}^\dagger _j)^{n_j} }{\sqrt{n_j!} }\right) \ket{0} 
+\] 
+Questa scrittura gi\`a sottintende una scelta di ordinamento: si parte con il creare le particelle nello stato energetico pi\`u alto, scendendo mano mano; tendenzialmente, questo si riscriver\`a, iniziando ad aggiungere le particelle dal fondamentale.
 
+In maniera analoga, si definisce un operatore di distruzione $\hat{a}_\lambda :\mathcal{F} _N \to \mathcal{F} _{N-1} $, che agisce come
+\[
+\hat{a}_k \ket{n_1,\, n_2,\, \ldots,\, n_j ,\, \ldots}  = \zeta^{s_j}\sqrt{n_j} \ket{n_1,\, n_2,\, \ldots,\, n_j-1 ,\, \ldots}
+\] 
+\subsubsection{Algebra degli operatori di creazione e distruzione}
+A seconda che il sistema considerato sia fermionico o bosonico, gli operatori di creazione e di distruzione devono soddisfare delle specifiche regole di commutazione.
+
+Per \textbf{sistemi bosonici}, definendo il commutatore come $[ \hat{A},\hat{B} ] = \hat{A}\hat{B}- \hat{B}\hat{A}$, il fatto che gli operatori debbano rispettare la simmetria delle funzioni d'onda impone le seguenti regole di commutazione:
+\[
+	[\hat{a}_j , \hat{a}^\dagger _k] = \delta _{jk}  \hspace{1cm} [\hat{a}_j , \hat{a}_k] = 0 \hspace{1cm} [\hat{a}^\dagger _j, \hat{a}^\dagger _k] = 0
+\] 
+per ogni $j,k$.
+
+Per \textbf{sistemi fermionici}, si hanno delle regole analoghe a patto di sostituire il commutatore con l'anti-commutatore $\{\hat{A},\hat{B}\} = \hat{A}\hat{B}+ \hat{B}\hat{A}$, cio\`e si hanno delle regole di anti-commutazione:
+\[
+	\{\hat{a}_j , \hat{a}^\dagger _k\} = \delta _{jk}  \hspace{1cm} \{\hat{a}_j , \hat{a}_k\} = 0 \hspace{1cm} \{\hat{a}^\dagger _j, \hat{a}^\dagger _k\} = 0
+\] 
+Per questi ultimi, si osserva che, nel caso $j=k$, si ritrova un'altra formulazione del principio di Pauli: $(\hat{a}_j^\dagger)^2 = (\hat{a}_j)^2 = 0 $.
+\begin{osservazione}
+La seconda quantizzazione permette di formalizzare le regole di commutazione e anti-commutazione negli operatori di creazione e distruzione, rendendone la trattazione pi\`u facile.
+\end{osservazione}
+\begin{osservazione}
+A meno di specificare regole di commutazione/anti-commutazione, gli operatori di creazione e distribuzione sono generali e non sono riferiti a bosoni, o fermioni.
+\end{osservazione}
+\subsubsection{Cambio di base}
+Date le basi $\left\{ \ket{\lambda }  \right\} , \ \left\{ \ket{\lambda '}  \right\} $, facendo uso della relazione di completezza, si ha
+\[
+\ket{\lambda '} = \sum_{\lambda }^{}\ket{\lambda } \braket{\lambda |\lambda '} 
+\] 
+Se $\hat{a}^\dagger _\lambda \ket{0} = \ket{\lambda } $, l'operatore di creazione per $\lambda '$ si esprime come
+\[
+	\hat{a}^\dagger _{\lambda '} = \sum_{\lambda }^{} \hat{a}^\dagger _\lambda \braket{\lambda |\lambda '} \xrightarrow{\hspace{.3cm}\dagger \hspace{.3cm}} \hat{a}_{\lambda '} = \sum_{\lambda }^{}\braket{\lambda '|\lambda } \hat{a}_\lambda 
+\] 
+Allora, per \textbf{sistemi bosonici}, le regole di commutazione sono preservate sotto cambiamento di base:
+\[
+\begin{split}
+	[\hat{a}_{\lambda '} , \hat{a}^\dagger _{\mu '} ] &= \sum_{\lambda ,\mu }^{}\left[ \braket{\lambda '|\lambda } \hat{a}_\lambda , \hat{a}^\dagger _\mu \braket{\mu |\mu '}  \right] =\sum_{\lambda ,\mu }^{}\braket{\lambda '|\lambda } \braket{\mu |\mu '} \underbracket{[\hat{a}_\lambda ,\hat{a}^\dagger _\mu ]}_{=\delta _{\lambda \mu } } \\
+	&=\sum_{\lambda }^{} \braket{\lambda '|\lambda } \braket{\lambda |\mu '} =\bra{\lambda '} \left(\sum_{\lambda }^{}\ket{\lambda } \bra{\lambda }\right) \ket{\mu'}  = \braket{\lambda '|\mu '} = \delta _{\lambda ' ,\,\mu '} 
+\end{split}
+\] 
+Per \textbf{sistemi fermionici}, passando per procedimenti analoghi, si vede che sono conservate anche le regole di anti-commutazione.
+
+\begin{boxenv}[]
+\centering Riprendere dalla lezione 26
+\end{boxenv}
 
 
 
