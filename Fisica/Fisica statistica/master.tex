@@ -4287,7 +4287,7 @@ Il potenziale di un'interazione a due corpi dipendente solo dalla distanza $\lve
 	\hat{V}_2 = \frac{1}{2} \int d\mathbf{r}  \int d\mathbf{r} ' \ V_2 \left(\lvert \mathbf{r} -\mathbf{r} ' \rvert \right) \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }^\dagger (\mathbf{r} ') \hat{\psi }(\mathbf{r} ') \hat{\psi }(\mathbf{r} )
 \end{equation}
 Quindi, la forma pi\`u generale di hamiltoniano che si tratter\`a \`e:
-\begin{equation}
+\begin{equation}\label{h2}
 	\begin{split}
 		\hat{H} = \int d\mathbf{r} \  & \hat{\psi }^\dagger (\mathbf{r} ) \left[ \frac{\hbar ^2}{2m}\nabla ^2 + U (\mathbf{r} ) \right] \hat{\psi }(\mathbf{r} ) \\
 					      &+ \frac{1}{2} \int d\mathbf{r}  \int d\mathbf{r} ' \ V_2 \left(\lvert \mathbf{r} -\mathbf{r} ' \rvert \right) \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }^\dagger (\mathbf{r} ') \hat{\psi }(\mathbf{r} ') \hat{\psi }(\mathbf{r} )
@@ -4298,7 +4298,7 @@ Nel caso ideale, si ricorda l'andamento di $p(v)$ in figura \ref{pvbec}; avendo 
 \[
 	k_T^{-1} = -v \Eval{\frac{\partial p}{\partial v} }{T}{} = 0
 \] 
-Per\`o questo non \`e un caso realistico: con anche la minima interazione, $k_T$ \`e finita.
+Per\`o questo non \`e un caso realistico perch\'e non si osserva empiricamente; infatti, si vedr\`a che, anche con la minima interazione, $k_T$ risulta finita.
 
 Si descrive il caso di gas di Bose interagente tramite la matrice densit\`a ad un corpo che, tramite il formalismo della seconda quantizzazione, \`e data da
 \[
@@ -4312,25 +4312,27 @@ n^{(1)} (\mathbf{r} ,\mathbf{r} ') = N \int d\mathbf{r} _2 \ldots d\mathbf{r} _N
 \end{osservazione}
 \noindent I termini diagonali sono dati da 
 \[
-n^{(1)} (\mathbf{r} ,\mathbf{r} ) \equiv n^{(1)}(\mathbf{r} ) = \langle \hat{\psi }^\dagger (\mathbf{r}) \hat{\psi }(\mathbf{r)}  \rangle
+n^{(1)} (\mathbf{r} ,\mathbf{r} )  = \langle \hat{\psi }^\dagger (\mathbf{r}) \hat{\psi }(\mathbf{r)}  \rangle := n(\mathbf{r} )
 \] 
-e rappresentano la densit\`a di particelle nel punto $\mathbf{r} $.
-I termini fuori diagonale, invece, permettono di ricavare 
+e rappresentano, quindi, la densit\`a di particelle nel punto $\mathbf{r} $, visto che $\hat{n}(\mathbf{r} ) = \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }(\mathbf{r} )$.
+I termini fuori diagonale, invece, permettono di ricavare $n(\mathbf{p} )$; infatti, usando la trasformata di Fourier per cambiare base e la lineari\`a del valor medio:
 \[
-n(\mathbf{p} ) = \langle \hat{\psi }^\dagger (\mathbf{p} ) \hat{\psi }(\mathbf{p} ) \rangle = \frac{1}{(2\pi\hbar )^3} \int d\mathbf{R}  \int d\mathbf{s}  \ e^{\frac{i}{\hbar } \mathbf{p} \cdot \mathbf{s} }n^{(1)}\left(\mathbf{R} +\frac{\mathbf{s} }{2}, \mathbf{R} -\frac{\mathbf{s} }{2}\right) 
+	\begin{split}
+		n(\mathbf{p} ) :&= \langle \hat{\psi }^\dagger (\mathbf{p} )\hat{\psi }(\mathbf{p})  \rangle = \frac{1}{(2\pi \hbar )^3} \int d\mathbf{r} \int d\mathbf{r} ' \ e^{\frac{i}{\hbar }(\mathbf{r}' -\mathbf{r}) \cdot \mathbf{p} } \langle \hat{\psi }^\dagger (\mathbf{r} ) \hat{\psi }(\mathbf{r}' ) \rangle\\
+				&= \frac{1}{(2\pi\hbar )^3} \int d\mathbf{r} \int d\mathbf{r} ' \ e^{\frac{i}{\hbar }(\mathbf{r} ' - \mathbf{r} ) \cdot \mathbf{p} }\ n^{(1)}(\mathbf{r} ,\mathbf{r} ')
+	\end{split}
 \] 
-dove si \`e esplicitato che
+Cambiando variabili in centro di massa e relativa $\mathbf{R}  = \frac{1}{2}(\mathbf{r} +\mathbf{r} ')$ e $\mathbf{s} = \mathbf{r} -\mathbf{r} '$, si trova 
 \[
-\hat{\psi }(\mathbf{p} ) = \int d\mathbf{r} \ \braket{\mathbf{p} |\mathbf{r} } \hat{\psi }(\mathbf{r} ) = \frac{1}{(2\pi\hbar )^{ 3 / 2}} \int d\mathbf{r}  \ e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }\hat{\psi }(\mathbf{r} )
+n(\mathbf{p} ) = \frac{1}{(2\pi\hbar )^3} \int d\mathbf{R}  \int d\mathbf{s}  \ e^{\frac{i}{\hbar } \mathbf{p} \cdot \mathbf{s} }\ n^{(1)}\left(\mathbf{R} +\frac{\mathbf{s} }{2}, \mathbf{R} -\frac{\mathbf{s} }{2}\right) 
 \] 
-e si \`e usato il cambio di variabili in centro di massa e relativa: $\mathbf{R}  = \frac{1}{2}(\mathbf{r} +\mathbf{r} ')$ e $\mathbf{s} = \mathbf{r} -\mathbf{r} '$.
 Tramite trasformata di Fourier, si trova
 \[
-n^{(1)}(\mathbf{s} ) = \frac{1}{V}\int d\mathbf{p} \ n(\mathbf{p} ) e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{s} }
+n^{(1)}(\mathbf{s} ) = \frac{1}{V}\int d\mathbf{p} \ e^{-\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{s} }\ n(\mathbf{p} )
 \] 
 In questo modo, si vede che:
 \begin{itemize}
-	\item in assenza di BEC, la $n(\mathbf{p} )$ \`e una funzione regolare per $\lvert \mathbf{p} \rvert  \to 0$ e $n^{(1)}(\mathbf{s} ) \to 0$, per $\lvert \mathbf{s}  \rvert \to +\infty$;
+	\item in assenza di BEC, la $n(\mathbf{p} )$ \`e una funzione regolare per $\lvert \mathbf{p} \rvert  \to 0$ (cio\`e l'assenza di condensato non comporta la presenza di delta di Dirac) e, quindi, per il lemma di Riemann-Lebesgue, si ha $n^{(1)}(\mathbf{s} ) \to 0$, per $\lvert \mathbf{s}  \rvert \to +\infty$;
 	\item in presenza di BEC, invece, si pu\`o scrivere $n(\mathbf{p} ) = N_0 \delta (\mathbf{p} ) + \tilde{n}(\mathbf{p} )$, dove il termine $N_0 \delta (\mathbf{p} )$ rappresenta la parte condensata del sistema, per cui 
 		\[
 			n^{(1)}(\mathbf{s} ) \xrightarrow{\ s\to +\infty \ } \frac{N_0}{V}=n_0
@@ -4410,8 +4412,78 @@ plot coordinates {
 
 \end{tikzpicture}
 \end{center}
+\begin{osservazione}
+Si nota che, in presenza di condensato, la correlazione $n^{(1)}(s)$ tende ad una costante per $s\to +\infty$; questo rappresenta l'osservazione empirica per cui, se un certo numero di bosoni condensano a $\lvert \mathbf{p}  \rvert =0$, questi si comportano, macroscopicamente, come un'unica onda, a formare una sorta di sistema rigido.
+Questo fenomeno \`e chiamato \textit{ordinamento a lungo raggio}.
+\end{osservazione}
+\subsubsection{Approssimazione di Bogoliubov}
+La seguente trattazione presuppone sistemi isotropi e omogenei a temperature sufficientemente basse da osservare la formazione di BEC.
+In questo modo, la frazione condensata $N_0 / N$ \`e macroscopica: nel limite termodinamico, il rapporto $N_0 / N$ \`e finito, per cui $N_0\gg 1$.
+Questo permette di utilizzare le seguenti approssimazioni:
+\[
+	\hat{a}_0 \ket{N_0} \propto \ket{N_0 -1} \approx \ket{N_0} \hspace{1cm}\hat{a}_0^\dagger \ket{N_0} \propto \ket{N_0 + 1} \approx \ket{N_0} \hspace{1cm}[\hat{a}_0 , \hat{a}_0 ^\dagger ] \approx 0
+\] 
+dove gli $\hat{a}_\lambda , \ \hat{a}^\dagger _\lambda $ considerati sono relativi ai momenti discreti $\mathbf{p} $, perci\`o $\hat{a}_0, \ \hat{a}_0^\dagger $ agiscono sul numero di bosoni a momento $\lvert \mathbf{p}  \rvert =0$.
+Le ipotesi di lavoro dell'approssimazione di Bogoliubov, quindi, sono:
+\[
+\hat{a}_0 = \sqrt{N_0}\ \hat{\operatorname{Id} } \hspace{1cm}\hat{a}^\dagger _0 = \sqrt{N_0}\ \hat{\operatorname{Id} } \hspace{1cm} \langle \hat{a}^\dagger _0 \hat{a}_0 \rangle = N_0
+\] 
+In questo modo
+\[
+\hat{\psi }(\mathbf{r} ) = \sum_{\mathbf{p} }^{} \braket{\mathbf{r} |\mathbf{p} } \hat{a}_\mathbf{p}  = \braket{\mathbf{r} |\mathbf{p} = 0} \hat{a}_0 + \sum_{\mathbf{p} \neq 0 }^{}\hat{a}_\mathbf{p} \hspace{1cm} \braket{\mathbf{r} |\mathbf{p} } =\frac{1}{\sqrt{V} }e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }
+\] 
+con tutti i termini relativi a $\mathbf{p} \neq 0$ che sono trascurabili rispetto ad $\hat{a}_0 $, permettendo una sorta di sviluppo perturbativo: 
+\[
+\hat{\psi }(\mathbf{r} ) = \psi_0 (\mathbf{r} )+ \delta \hat{\psi }(\mathbf{r} ) \ \, \text{ con }\ \ \ \langle \hat{\psi }(\mathbf{r} ) \rangle = \psi _0(\mathbf{r} )
+\] 
+dove $\delta \hat{\psi }(\mathbf{r} )$ rappresenta le \textit{fluttuazioni quantistiche}, mentre $\psi _0(\mathbf{r} )$ \`e una sorta di campo classico che descrive la BEC, visto che non \`e un operatore (non altera lo stato su cui agisce). 
+Visto che, in generale, $\psi _0(\mathbf{r} )$ \`e un numero complesso, si pu\`o scrivere in forma polare come
+\[
+\psi _0 (\mathbf{r} ) = \sqrt{n_0}  e^{is (\mathbf{r} )}
+\] 
+dove $s(\mathbf{r} )$ \`e una fase, di cui non si vedr\`a la forma.
+Ora si applicano queste assunzioni all'hamiltoniano generale trovato in \ref{h2}, operando, preliminarmente, il cambio di base
+\[
+\hat{\psi }(\mathbf{r} ) = \frac{1}{\sqrt{V} } \sum_{\mathbf{p} }^{} \hat{a}_\mathbf{p}  e^{\frac{i}{\hbar }\mathbf{p} \cdot \mathbf{r} }
+\] 
+con l'idea di disaccoppiare i momenti con $\mathbf{p} =0$ e quelli con $\mathbf{p} \neq 0$.
+In questo modo
+\[
+	\begin{split}
+		\hat{H}= &\ \frac{\hbar }{2mV} \sum_{\mathbf{p} ,\mathbf{q} } \int d\mathbf{r}  \ \left(- \frac{i}{\hbar }\mathbf{p} \right) \left(\frac{i}{\hbar }\mathbf{q} \right) e^{\frac{i}{\hbar }(\mathbf{q} -\mathbf{p} ) \cdot \mathbf{r} }\hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{q} \\
+			 &+ \frac{1}{2V^2} \sum_{\mathbf{u} ,\mathbf{v} ,\mathbf{p}_1, \mathbf{p} _2}^{} \int d\mathbf{r} \int d\mathbf{r} ' \ e^{\frac{i}{\hbar }\left(- \mathbf{u} \cdot \mathbf{r} -\mathbf{v} \cdot \mathbf{r} ' + \mathbf{p} _1 \cdot \mathbf{r} + \mathbf{p} _2 \cdot \mathbf{r} '\right) } V(\mathbf{r} -\mathbf{r} ') \hat{a}^\dagger _\mathbf{u} \hat{a}^\dagger _\mathbf{v} \hat{a}_{\mathbf{p} _1} \hat{a}_{\mathbf{p} _2}
+	\end{split}
+\] 
+L'integrale del primo termine \`e banale: la dipendenza da $\mathbf{r} $ si ritrova esclusivamente in $e^{\frac{i}{\hbar }(\mathbf{q} -\mathbf{p} ) \cdot \mathbf{r} }$, che porta una $\delta (\mathbf{q} - \mathbf{p} )$.
 
-
+Il secondo termine, invece, si valuta cambiando variabili $(\mathbf{r} ,\mathbf{r} ') \to (\mathbf{R} ,\mathbf{s} )$, con $\mathbf{r} = \mathbf{R}  + \mathbf{s} /2$ e $\mathbf{r} ' = \mathbf{R} - \mathbf{s} /2$; in questo modo, l'integrale rispetto a $\mathbf{R} $ restituisce una $\delta \left(\mathbf{p} _1 + \mathbf{p} _2 - \mathbf{u} - \mathbf{v} \right) $.
+Questa delta sottolinea la conservazione del momento: nel distruggere particelle a $\mathbf{p} _1, \mathbf{p} _2$ e nella creazione di particelle a momento $\mathbf{u} ,\mathbf{v} $ tramite $\hat{a}_\mathbf{u} ^\dagger \hat{a}^\dagger _\mathbf{v} \hat{a}_{\mathbf{p_1} } \hat{a}_{\mathbf{p} _2} $, vale $\mathbf{p} _1 +\mathbf{p} _2 = \mathbf{u} + \mathbf{v} $.
+Sostituendo, poi, $V(\mathbf{q} ) = \int V(\mathbf{s} ) e^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{s} } \ d\mathbf{s} $, si ottiene
+\[
+\hat{H} = \sum_{\mathbf{p} }^{} \frac{p^2}{2m} \hat{a}_\mathbf{p}^\dagger  \hat{a}_\mathbf{p} + \frac{1}{2V} \sum_{\mathbf{p} _1, \mathbf{p} _2, \mathbf{q} }^{} V(\mathbf{q} ) \hat{a}^\dagger _{\mathbf{p} _1 + \mathbf{q} } \hat{a}^\dagger _{\mathbf{p} _2 - \mathbf{q} }  \hat{a}_{\mathbf{p} _1} \hat{a}_{\mathbf{p} _2} 
+\] 
+Si nota che, fino a questo punto, la trattazione \`e esatta; ora si applicano le seguenti assunzioni:
+\begin{enumerate}[(a).]
+	\item $\hat{a}_0, \ \hat{a}_0^\dagger = \sqrt{N_0}\ \hat{\operatorname{Id} }$ per Bogoliubov;
+	\item ipotesi di gas diluito che permette di validare $V(\mathbf{q} )$ costante, ottenuta assumendo un potenziale di contatto $V(\mathbf{r} ) = g \delta( \mathbf{r} )$.
+\end{enumerate}
+In questo modo, si trova che
+\[
+\hat{H}=\sum_{\mathbf{p} }^{}\frac{p^2}{2m} \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p} +\frac{g}{2V}\sum_{\mathbf{p} _1,\mathbf{p} _2,\mathbf{q} }^{} \hat{a}^\dagger _{\mathbf{p} _1+ \mathbf{q} } \hat{a}^\dagger _{\mathbf{p} _2-\mathbf{q} } \hat{a}_{\mathbf{p}_1 } \hat{a}_{\mathbf{p} _2} 
+\] 
+L'idea, ora, \`e di scomporre tutte le somme in termini relativi a impulso nullo e trascurare gli altri; tenendo conto delle varie combinazioni possibili nel secondo termine, si rimane con
+\[
+	\hat{H}\simeq \sum_{\mathbf{p} }^{} \frac{p^2}{2m}\hat{a}_\mathbf{p} ^\dagger \hat{a}_\mathbf{p}  + \frac{g}{2V} \left[ N_0^2 + 2N_0 \sum_{\mathbf{p} \neq 0}^{} \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}_\mathbf{p} + \hat{a}^\dagger _{-\mathbf{p} } \hat{a}_{-\mathbf{p} }  \right)+N_0 \sum_{\mathbf{p} \neq 0}^{}\left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}^\dagger _{-\mathbf{p} } + \hat{a}_\mathbf{p} \hat{a}_{-\mathbf{p} } \right)   \right] 
+\] 
+\begin{osservazione}
+Si osserva che, per via della forma del secondo termine, l'hamiltoniano \`e tale per cui il momento totale \`e conservato, ma non il numero di particelle: \`e come se il condensato agisse da bagno per la fase normale.
+Questo si traduce nel fatto che le particelle del condensato non rimangono sempre nel condensato: posso eccitarsi ed entrare nella fase normale e, viceversa, quelle della fase normale posso entrare nel condensato.
+\end{osservazione}
+\noindent La comodit\`a nell'aver fatto queste approssimazioni ed essere arrivati ad un hamiltoniano di questa forma sta nel fatto che, ora, \`e una forma quadratica negli operatori $\hat{a}$ e $\hat{a}^\dagger $, per cui si pu\`o diagonalizzare.
+L'idea sar\`a definire un cambio di base che permette di diagonalizzare gli operatori di creazione e distruzione e, quindi, diagonalizzare $\hat{H}$.
+\begin{boxenv}[]
+\centering Riprendere da lezione 27, 1:16:40
+\end{boxenv}
 
 
 
