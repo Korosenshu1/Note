@@ -4481,9 +4481,102 @@ Questo si traduce nel fatto che le particelle del condensato non rimangono sempr
 \end{osservazione}
 \noindent La comodit\`a nell'aver fatto queste approssimazioni ed essere arrivati ad un hamiltoniano di questa forma sta nel fatto che, ora, \`e una forma quadratica negli operatori $\hat{a}$ e $\hat{a}^\dagger $, per cui si pu\`o diagonalizzare.
 L'idea sar\`a definire un cambio di base che permette di diagonalizzare gli operatori di creazione e distruzione e, quindi, diagonalizzare $\hat{H}$.
+
+\subsubsection{Trasformazione di Bogoliubov}
+Si pu\`o riscrivere l'hamiltoniano in un modo migliore, usando che il numero totale di particelle si pu\`o rappresentare come
+\[
+N = N_0 + \frac{1}{2}\sum_{\mathbf{p} \neq 0}^{} \left(\hat{a}^\dagger _\mathbf{p}\hat{a}_\mathbf{p} + \hat{a}^\dagger _{-\mathbf{p}} \hat{a}_{-\mathbf{p} }   \right) 
+\] 
+dove il fattore $1 / 2$ \`e dato dal fatto che quelle coppie si contano due volte, visto che la somma su $\mathbf{p} $ coinvolge sia quelli positivi, che quelli negativi; in questo modo, si sono contati gli operatori numero in tutti i modi possibili.
+Ponendo $n = N / V$, si ha
+\[
+	\hat{H}\simeq \frac{gn^2V}{2} + \frac{1}{2}\sum_{\mathbf{p} \neq 0}^{}\left[ \left(\frac{p^2}{2m}+gn\right) \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}_\mathbf{p} + \hat{a} ^\dagger _{-\mathbf{p} } \hat{a}_{-\mathbf{p} }\right) + gn \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}^\dagger _{-\mathbf{p} } + \hat{a}_\mathbf{p} \hat{a}_{-\mathbf{p} } \right)  \right] 
+\] 
+Per diagonalizzare $\hat{H}$, si usa la \textit{trasformazione di Bogoliubov} (nota anche come rotazione di Bogoliubov): si prendono
+\begin{equation}\label{apbp}
+\begin{cases}
+	\hat{a}_\mathbf{p} = u_p \hat{b}_\mathbf{p}  + v_p\hat{b}^\dagger _{-\mathbf{p} } \\
+	\hat{a}^\dagger _\mathbf{p} = u_p\hat{b}^\dagger _\mathbf{p} +v_p \hat{b}_{-\mathbf{p} } 
+\end{cases}
+\end{equation}
+con $u_p ,v_p \in \mathbb{R}$ sfericamente simmetrici in $\mathbf{p} $ e $\hat{b}_\mathbf{p} , \hat{b}^\dagger _\mathbf{p} $ sono nuovi operatori che soddisfano la statistica bosonica $[\hat{b}_\mathbf{p} ,\hat{b}^\dagger _\mathbf{q} ] = \delta _{\mathbf{p} \mathbf{q} } $ e descrivono delle quasi-particelle, quindi, bosoniche.
+Questa condizione, per\`o, \`e versa se e solo se $u^2 _p-v^2_p =1, \ \forall \mathbf{p} $, quindi si deve avere
+\[
+\begin{cases}
+	u_p = \cosh \alpha _p \\
+	v_p = \sinh\alpha _{p } 
+\end{cases}
+\] 
+con $\alpha _p$ da determinare.
+Quello che si pu\`o dimostrare \`e che un'opportuna scelta di $\alpha _p $ permette di eliminare i termini $\hat{b}^\dagger _{\mathbf{p} } \hat{b}^\dagger _{-\mathbf{p} } $ e $\hat{b}_\mathbf{p} \hat{b}_{-\mathbf{p} } $ da $\hat{H}$ per ottenere che
+\[
+\hat{H} \simeq E_0 + \sum_{\mathbf{p} }^{} \varepsilon (p ) \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p} 
+\] 
+con $E_0 = g \frac{n^2V}{2}$. I valori in questa espressione si ottengono dal processo per determinare l'$\alpha _p$ voluto; questa condizione \`e soddisfatta se 
+\[
+\frac{gn}{2}\left(u_p ^2 + v_p ^2\right) + \left(\frac{p^2}{2m}+ gn\right) u_p v_p = 0 \implies \coth 2\alpha _p = -\frac{1}{gn}\left(\frac{p^2}{2m}+gn\right) 
+\] 
+Allora
+\[
+u_p = \sqrt{\frac{p^2 / 2m + gn}{2\varepsilon (p)} +\frac{1}{2}} \hspace{1cm}v_p = -\sqrt{\frac{p^2 / 2m + gn}{2 \varepsilon (p)}-\frac{1}{2}} 
+\] 
+dove
+\begin{equation}\label{lgde}
+\varepsilon (p) = \sqrt{\frac{gn}{m}p^2 + \left(\frac{p^2}{2m}\right) ^2} 
+\end{equation}
+\subsubsection{Stato fondamentale e stati eccitati}
+Partendo da 
+\[
+\hat{H} = E_0 + \sum_{\mathbf{p}}^{} \varepsilon (p) \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p} 
+\] 
+lo stato fondamentale si ottiene da quello che minimizza il valore di energia sopra; essendo $\varepsilon (p) > 0$, l'unica possibilit\`a \`e prendere lo stato di vuoto rispetto alle quasi-particelle, in modo che $\hat{b}_\mathbf{p} \ket{\text{g.s.}} = 0 , \ \forall \mathbf{p} $.
+Da questo, si pu\`o vedere che la compressibilit\`a non diverge pi\`u: usando che $p - \frac{\partial E_0}{\partial V} =\frac{1}{2}gn^2$, ricordando che $n = N / V$, si ottiene
+\[
+	k_T^{-1} = \Eval{-V \frac{\partial p}{\partial V} }{T}{} = V \frac{1}{2}g N^2 \frac{2}{V^3} = gn^2 \implies k_T = \frac{1}{gn^2}
+\] 
+Gi\`a con queste approssimazioni, si vede che la compressibilit\`a non diverge pi\`u, in quanto $g\neq 0$, contrariamente al caso ideale.
+
+Per gli stati eccitati, si tiene in considerazione la legge di dispersione di $\varepsilon (p)$ in \ref{lgde} e, utilizzando il fatto che l'hamiltoniano delle quasi particelle \`e libero, si pu\`o scrivere che queste seguono una statistica di Bose-Einstein:
+\[
+N_\mathbf{p}  = \langle \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p}  \rangle= \frac{1}{e^{\beta \varepsilon (p)}-1}
+\] 
+con $\mu =0$ ($z=1$); quest'ultima assunzione \`e giustificata dal fatto che si sta studiando il caso di temperature molto basse, per cui, seppur $z\neq 1$, si ha $z\to 1$.
+
+Questo vale per le quasi-particelle. Per\`o si \`e interessati a studiare il comportamento delle particelle bosoniche originali; per farlo, si vuole calcolare $\langle \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p}  \rangle$.
+Moltiplicando le due espressioni in \ref{apbp} e togliendo i termini con $\langle \hat{b}_\mathbf{p} \hat{b}_{-\mathbf{p} }  \rangle$ e $\langle \hat{b}_\mathbf{p}^\dagger  \hat{b}^\dagger _{-\mathbf{p} }  \rangle$ in quanto nulli\footnote{Non sono autostati di uno stato a numero di particelle definito {\color{red}(da vedere)}.}, si ottiene che
+\[
+\langle \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p}  \rangle= \lvert v_p \rvert ^2 + \lvert u_p \rvert ^2 \langle \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p}  \rangle + \lvert v_p \rvert ^2 \langle \hat{b}^\dagger _{-\mathbf{p} } \hat{b}_{-\mathbf{p} }  \rangle
+\] 
+
+Si studiano, infine, le eccitazioni del sistema, studiando il comportamento asintotico della legge di dispersione in \ref{lgde}.
+\begin{itemize}
+	\item Nel limite $p\to 0$, si ha $\varepsilon (p) \sim \sqrt{\frac{gn}{m}} p$, corrispondente ad uno spettro fononico, in quanto la legge di dispersione \`e lineare. 
+		I modi a basse energie, quindi, sono dei fononi.
+	\item Nel limite $p\to +\infty$, si trova $\varepsilon (p) \sim \frac{p_2}{2m} + gn = \frac{p^2}{2m} + \mu $, in quanto 
+		\[
+			\mu  = \Eval{\frac{\partial E}{\partial N} }{V}{} \approx gn
+		\] 
+		In questo caso, quindi, si hanno particelle libere.
+\end{itemize}
+La transizione tra i due regimi si osserva quando 
+\[
+\left(\frac{p^2}{2m}\right) ^2 \sim \frac{gn}{m}p^2 \implies p \sim \sqrt{\sqrt{4 mgn} } 
+\] 
+corrispondente ad una lunghezza scala $\xi = \hbar  / p  = \frac{\hbar }{\sqrt{4mgn} }$, nota col nome di \textit{healing length}.
+\begin{osservazione}
+Questo vale per le particelle libere; per capire il comportamento delle particelle originali, \`e necessario invertire le trasformazioni di Bogoliubov.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere da lezione 27, 1:16:40
+\centering Riprendere dalla lezione 28
 \end{boxenv}
+
+
+
+
+
+
+
+
 
 
 
