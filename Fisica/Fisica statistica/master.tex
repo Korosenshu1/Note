@@ -4565,13 +4565,108 @@ corrispondente ad una lunghezza scala $\xi = \hbar  / p  = \frac{\hbar }{\sqrt{4
 \begin{osservazione}
 Questo vale per le particelle libere; per capire il comportamento delle particelle originali, \`e necessario invertire le trasformazioni di Bogoliubov.
 \end{osservazione}
+\subsection{Sistemi fermionici interagenti}
+Si considera un cristallo di ioni che non si deforma e si studia il moto degli elettroni all'interno di questo cristallo.
+La presenza degli ioni genera, nel reticolo, un potenziale per gli elettroni
+\[
+\hat{V}_r(\mathbf{r} )  = \sum_{\mathbf{R} }^{} \hat{V}_i^{\mathbf{R} } (\mathbf{r} )
+\] 
+dove $\hat{V}_i$ \`e il potenziale di singolo ione e $\mathbf{R} $ \`e la posizione di ciascuno ione.
+Questo \`e periodico, visto che il cristallo ha una struttura regolare. 
+
+Si assume che gli ioni siano molto distanti tra loro, in modo da considerare che un elettrone in una zona del reticolo \`e soggetto unicamente al potenziale di uno ione.
+In questo modo, si ha la seguente equazione agli autovalori:
+\[
+\left\{ \frac{\hat{p}^2}{2m} + \hat{V}^\mathbf{R} (\mathbf{r} ) \right\} \phi _n^\mathbf{R}  (\mathbf{r} ) = \varepsilon _n^\mathbf{R} \phi _n^\mathbf{R} (\mathbf{r} )
+\] 
+In presenza di $N$ elettroni, allora, l'energia totale \`e $E = \sum_{i=1}^{N} \varepsilon _{n_i} ^{\mathbf{R} _i}$.
+In prima quantizzazione, la funzione d'onda del sistema \`e $\psi _N$ ottenuta dal determinante di Slater delle $\phi _{n_i} ^{\mathbf{R} _i} $, per $i=1,\ldots,N$.
+
+Immaginando di avere, ora, ioni pi\`u vicini, allora si dovranno considerare interazioni tra ioni vicini; nel caso di comunicazioni $\mathbf{R} \longleftrightarrow \mathbf{R} ' \neq \mathbf{R} $, il termine di potenziale nell'equazione agli autovalori dovr\`a essere corretto tramite
+\[
+\Delta \hat{V}^\mathbf{R} (\mathbf{r} ) = \sum_{\mathbf{R} ' \neq \mathbf{R} }^{}\hat{V}_t ^{\mathbf{R} '} (\mathbf{r} )
+\] 
+Inoltre, avvicinandosi gli ioni, si avvicinano anche gli elettroni localizzati attorno a ciascuno ione, per cui, ora, vale
+\[
+\braket{\phi _n^\mathbf{R} |\phi _n^{\mathbf{R} '} } \neq 0
+\] 
+per cui non si pu\`o pi\`u utilizzare il determinante di Slater e lo studio del problema in prima quantizzazione diventa molto difficile da trattare.
+L'avvicinarsi degli ioni comporta, per gli elettroni, la possibilit\`a di tunneling da un sito all'altro, in quanto $ \braket{\phi _n^{\mathbf{R} }|\phi _n ^{\mathbf{R} '}}\neq 0$; questo effetto \`e misurato tramite  
+\[
+t _{n,n'} ^{\mathbf{R} ,\mathbf{R} '}  = - \Braket{\phi _n^\mathbf{R} |\Delta \hat{V}^\mathbf{R} (\mathbf{r} )|\phi _{n'} ^{\mathbf{R'}} } 
+\] 
+Per tenerne conto, si passa in seconda quantizzazione e si definisce l'operatore di creazione di un elettrone come
+\begin{equation}
+c^\dagger _{\mathbf{R} ,n, \sigma }  = \int d\mathbf{r} \ \phi _{\mathbf{R} ,n , \sigma } \psi ^\dagger (\mathbf{r} )
+\end{equation}
+dove $\sigma $ tiene conto dello spin e 
+\[
+\phi _{\mathbf{R} ,n,\sigma } (\mathbf{r} ) = \braket{\mathbf{r} |\mathbf{R} ,n,\sigma } 
+\] 
+In queste espressioni, quindi, $\mathbf{R} $ \`e la posizione del sito nel reticolo, $n$ \`e un indice orbitale e $\sigma $ \`e lo spin.
+Analogamente, si definisce 
+\[
+\hat{c}_{\mathbf{R} ,n , \sigma } = \int d\mathbf{r}  \ \phi ^*_{\mathbf{R} ,n,\sigma } \hat{\psi }(\mathbf{r} )
+\] 
+In questo modo, l'hamiltoniano del sistema si pu\`o scrivere come
+\[
+\hat{H} = \sum_{\mathbf{R} ,n , \sigma }^{} \varepsilon _{\mathbf{R} , n }  \hat{c}^\dagger _{\mathbf{R} ,n,\sigma }  \hat{c}_{\mathbf{R} ,n,\sigma }  - \sum_{\mathbf{R} ,\mathbf{R} '}^{} \sum_{n,m,\sigma }^{} \left\{ t_{n,m} ^{\mathbf{R} ,\mathbf{R} '} \hat{c}^\dagger _{\mathbf{R} ,n,\sigma } \hat{c}_{\mathbf{R} ' , m ,\sigma } + \left(t_{n,m} ^{\mathbf{R} ,\mathbf{R} '} \right)^* \hat{c}^\dagger _{\mathbf{R} ',m,\sigma } \hat{c}_{\mathbf{R} ,n,\sigma }   \right\} 
+\] 
+Di seguito, si spiegano i termini introdotti in $\hat{H}$.
+\begin{itemize}
+	\item Il primo termine rappresenta l'energia nel caso in cui il sistema non fosse stato soggetto ad alcuna interazione, motivo per cui non si specifica neanche l'indice di spin nelle energie.
+	\item Il secondo termine, invece, descrive fisicamente l'effetto di tunneling tra un sito e l'altro: gli operatori di creazione e distruzione eliminano un elettrone da un sito, in un certo orbitale, e lo ricreano in un altro, con stesso spin.
+	\item Nel secondo termine, si somma anche l'aggiunto perch\'e l'hamiltoniano deve risultare hermitiano.
+	\item Si osserva che l'ordine con cui figurano gli operatori di creazione e distruzione \`e importante, visto che si sta trattando il caso di fermioni.
+\end{itemize}
+Questo rimane un hamiltoniano di un sistema non interagente, in quanto la presenza di tunneling non costituisce, effettivamente, un'interazione.
+\subsubsection{Modello di tight binding}
+Questo modello si basa sulle seguenti ipotesi.
+\begin{itemize}
+	\item Si ipotizza che il tunneling avvenga solo tra siti adiacenti, per cui si assume $t \sim e^{-\lvert \mathbf{R} -\mathbf{R} ' \rvert / \xi }$, con $\xi $ una certa lunghezza caratteristica.
+	\item Si assume che si possa avere solo $n=1$.
+	\item Si assume che gli ioni siano tutti uguali, per cui si pu\`o imporre che 
+		\[
+		t^{\mathbf{R} ,\mathbf{R} '} _{n,m} = \delta _{nm} \delta _{\mathbf{R} ', \mathbf{R} \pm \mathbf{a} } t
+		\] 
+	con $\mathbf{a} $ passo reticolare e $t$ ampiezza. Sostanzialmente, si vuole imporre che $\mathbf{R} $ e $\mathbf{R} '$ siano primi vicini e che gli ioni siano tutti uguali, per cui $t^{\mathbf{R} ,\mathbf{R} '} _{n,m} $ non dipende dalle coppie $\mathbf{R} ,\mathbf{R} '$.
+	Per la stessa ragione, si pu\`o supporre che 
+	\[
+	\varepsilon _{\mathbf{R} ,n} =\delta _{n,1} \cdot \mu 
+	\] 
+	dove $\mu $ \`e un termine che si vedr\`a avere a che fare con il potenziale chimico e si \`e imposto che si possa avere solo $n=1$.
+\end{itemize}
+Sotto queste ipotesi, l'hamiltoniano \`e
+\begin{equation}
+\hat{H} = \mu  \sum_{j,\sigma }^{}  \hat{c}^\dagger _{j,\sigma } \hat{c}_{j,\sigma } - t \sum_{\left\{ i,j \right\} }^{}\sum_{\sigma }^{} \left(\hat{c}^\dagger _{i,\sigma } \hat{c}_{j,\sigma } + \hat{c}^\dagger _{j,\sigma } \hat{c}_{i,\sigma } \right) 
+\end{equation}
+Il secondo termine \`e relativo all'\textit{hopping} tra un sito e l'altro, mentre il primo termine coinvolge il potenziale chimico perch\'e si vede essere $\sim \mu \cdot N$; di fatto, si definisce l'operatore numero di elettroni nel reticolo come
+\[
+\hat{N}=\sum_{j,\sigma }^{} \hat{c}^\dagger _{j,\sigma } \hat{c}_{j,\sigma } 
+\] 
+Si nota che il numero di elettroni del sistema \`e una costante del moto, in quanto $[\hat{N},\hat{H}] = 0$.
+Per questa ragione, il primo termine rappresenta un offset costante in energia e, conseguentemente, il comportamento del sistema sar\`a descritto unicamente dal termine di hopping.
+Per studiarlo, si introduce la trasformata di Fourier quantistica per gli operatori $\hat{c}$ e $\hat{c}^\dagger $ e si suppone, per semplicit\`a, di essere in 1D:
+\[
+\hat{c}^\dagger _{k,\sigma }  = \frac{1}{\sqrt{N} }\sum_{j}^{} e^{ik x_j}\hat{c}_{j,\sigma } ^\dagger \hspace{1cm} \hat{c}^\dagger _{k,\sigma }  = \frac{1}{\sqrt{N} }\sum_{j}^{} e^{-ik x_j}\hat{c}_{j,\sigma }  
+\] 
+dove $j$ \`e un indice che rappresenta il sito del reticolo considerato.
+Inoltre, indicando con $M$ il numero di ioni del sistema, si ha $k = \frac{2\pi}{L}n$ e $L=M a$, con $k \in \big[ - \pi / a , \pi / a \big) $ che individua la prima zona di Brillouin.
+Questi operatori trasformati, come si pu\`o dimostrare, soddisfano le regole di anti-commutazione, pertanto sono dei buoni operatori fermionici; inoltre, permettono di riscrivere l'hamiltoniano come
+\[
+\hat{H} = -\frac{t}{N} \sum_{j,\sigma }^{} \sum_{k,q}^{}  \left(e^{-i kx _j}e^{i q (x_j + a)} \hat{c}^\dagger _{k\sigma } \hat{c}_{q\sigma } +e^{i kx _j}e^{-i q (x_j + a)} \hat{c}^\dagger _{q\sigma } \hat{c}_{k\sigma }\right) 
+\] 
+Utilizzando che
+\[
+e^{-ikx_j}e^{iq(x_j+a)} = e^{i(k-q)x_j}\left(e^{iqa}+ e^{-iqa}\right) 
+\] 
+e che, sommando su $j$, il termine $e^{-i(k-q)x_j}$ fa comparire una $\delta _{k,q} $, si scrive che
+\[
+\hat{H} = \sum_{k,\sigma }^{} (-2t \cos ka) \hat{c}^\dagger _{k\sigma } \hat{c}_{k\sigma } 
+\] 
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 28
+\centering Riprendere dalla lezione 29
 \end{boxenv}
-
-
-
-
 
 
 
