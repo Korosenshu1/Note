@@ -4863,14 +4863,31 @@ Questo sistema \`e chiamato \textit{isolante di banda}.
 Verificando l'energia relativa allo stato fondamentale per questo sistema, si vede che questa \`e inferiore rispetto a quella ottenuta per il sistema gapless; questo significa che, a livello fisico, la dimerizzazione \`e pi\`u stabile del reticolo omogeneo, per cui il sistema tende ad uno stato di disomogeneit\`a per abbassare l'energia\footnote{Questo \`e quello che si verifica nel caso ideale, cio\`e in assenza di interazioni tra fermioni e per $T\to 0$.}. 
 Questo fenomeno si chiama \textit{instabilit\`a di Peierls}.
 
-\subsubsection{Interazioni tra elettroni}
+\subsubsection{Modello di Hubbard}
+Si considera un potenziale di interazione tra elettroni della forma generale
+\[
+\hat{V}_e = \frac{1}{2} \sum_{\sigma ,\sigma '}^{} \int d\mathbf{r}  \int d\mathbf{r} ' \ V\left(\lvert \mathbf{r} -\mathbf{r} ' \rvert \right) \hat{\psi }^\dagger _\sigma (\mathbf{r} ) \hat{\psi }^\dagger _{\sigma '} (\mathbf{r} ') \hat{\psi }_{\sigma '} (\mathbf{r} ') \hat{\psi }_\sigma (\mathbf{r} )
+\] 
+Tramite procedimenti analoghi a quelli fatti prima, si ha
+\[
+		\hat{V}_e = \operatorname{}  \sum_{\mathbf{R} }^{} U_{\mathbf{R} ,\mathbf{R} }  \hat{n}_{\mathbf{R} ,  \uparrow} \hat{n}_{\mathbf{R} ,\downarrow}  + \sum_{\mathbf{R} '\neq \mathbf{R} }^{} U_{\mathbf{R} ,\mathbf{R} '} \hat{n}_\mathbf{R} \hat{n}_{\mathbf{R} '} + \sum_{\mathbf{R}' \neq \mathbf{R} }^{} \sum_{\sigma ,\sigma '}^{} J_{\mathbf{R} ,\mathbf{R} '} \hat{c}^\dagger _{\mathbf{R} ,\sigma } \hat{c}^\dagger _{\mathbf{R}' ,\sigma '}  \hat{c}_{\mathbf{R} ,\sigma '} \hat{c}_{\mathbf{R} ' , \sigma } 
+\] 
+con $\hat{n}_{\mathbf{R} ,\sigma } $ operatore numero, tale che $\hat{n}_\mathbf{R} = \sum_{\sigma }^{} \hat{n}_{\mathbf{R} ,\sigma } $.
+Al di l\`a dell'espressione e come ci si arriva, \`e importante considerare che, tipicamente, \`e il primo termine (quello diagonale) a dominare sugli altri: nell'approssimazione in cui si trascurano tutti gli altri termini, si ha il \textit{modello di Hubbard}:
+\[
+\hat{H}=-t \sum_{\langle i,j \rangle}^{} \sum_{\sigma }^{} \left(\hat{c}^\dagger _{i,\sigma } \hat{c}_{j,\sigma } + \hat{c}^\dagger _{j,\sigma } \hat{c}_{i,\sigma } \right) + U \sum_{j}^{} \hat{n}_{j,\uparrow} \hat{n}_{j,\downarrow} 
+\] 
+La soluzione esatta a questo problema si riesce a trovare esattamente in 1D tramite l'ansatz di Bethe, ma non verr\`a trattato, mentre, in dimensioni superiori, si usano approssimazioni.
+
+Quello che \`e interessante notare \`e che, in half filling, se $U \gg t$, si ha un materiale isolante, chiamato \textit{isolante di Mott}: avendo un elettrone per ogni sito ed essendo il termine di interazione dominante rispetto a quello di hopping, il sistema tender\`a a fissare un elettrone per ciascun sito ed eviter\`a qualunque effetto per cui si possano trovare pi\`u elettroni per ione.
+Questo gap energetico \`e indotto esclusivamente dalle interazioni elettrone-elettrone.
+
+Modificando il rapporto $U / t$, \`e possibile incorrere in una transizione di fase quantistica in cui il sistema non \`e pi\`u isolante, ma diventa un conduttore.
+Questa transizione di fase \`e tanto pi\`u apparente quanto piccola \`e la temperatura: a temperatura nulla, la transizione presenta esattamente le propriet\`a delle transizioni di fase classiche, manifestando discontinuit\`a nei potenziali.
+
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 29, 1:18:00
+\centering Riprendere dalla lezione 30
 \end{boxenv}
-
-
-
-
 
 
 
