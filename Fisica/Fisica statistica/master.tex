@@ -29,8 +29,7 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,decorations.pathreplacing}
-\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,decorations.markings, patterns}
 
 \tikzset{
     flow/.style={
@@ -44,6 +43,7 @@
     }
 }
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
 \pgfplotsset{compat=1.18}
 \usepackage[italian]{babel}
 % To reset footnote numbering each page
@@ -4640,40 +4640,233 @@ Sotto queste ipotesi, l'hamiltoniano \`e
 \begin{equation}
 \hat{H} = \mu  \sum_{j,\sigma }^{}  \hat{c}^\dagger _{j,\sigma } \hat{c}_{j,\sigma } - t \sum_{\left\{ i,j \right\} }^{}\sum_{\sigma }^{} \left(\hat{c}^\dagger _{i,\sigma } \hat{c}_{j,\sigma } + \hat{c}^\dagger _{j,\sigma } \hat{c}_{i,\sigma } \right) 
 \end{equation}
-Il secondo termine \`e relativo all'\textit{hopping} tra un sito e l'altro, mentre il primo termine coinvolge il potenziale chimico perch\'e si vede essere $\sim \mu \cdot N$; di fatto, si definisce l'operatore numero di elettroni nel reticolo come
+Il secondo termine \`e relativo all'\textit{hopping} tra un sito e l'altro, mentre il primo termine coinvolge il potenziale chimico perch\'e si vede essere $\sim \mu \cdot M$, con $M$ numero di elettroni del sistema; di fatto, si definisce l'operatore numero di elettroni nel reticolo come
 \[
-\hat{N}=\sum_{j,\sigma }^{} \hat{c}^\dagger _{j,\sigma } \hat{c}_{j,\sigma } 
+\hat{M}=\sum_{j,\sigma }^{} \hat{c}^\dagger _{j,\sigma } \hat{c}_{j,\sigma } 
 \] 
-Si nota che il numero di elettroni del sistema \`e una costante del moto, in quanto $[\hat{N},\hat{H}] = 0$.
+Si nota che il numero di elettroni del sistema \`e una costante del moto, in quanto $[\hat{M},\hat{H}] = 0$.
 Per questa ragione, il primo termine rappresenta un offset costante in energia e, conseguentemente, il comportamento del sistema sar\`a descritto unicamente dal termine di hopping.
 Per studiarlo, si introduce la trasformata di Fourier quantistica per gli operatori $\hat{c}$ e $\hat{c}^\dagger $ e si suppone, per semplicit\`a, di essere in 1D:
 \[
 \hat{c}^\dagger _{k,\sigma }  = \frac{1}{\sqrt{N} }\sum_{j}^{} e^{ik x_j}\hat{c}_{j,\sigma } ^\dagger \hspace{1cm} \hat{c} _{k,\sigma }  = \frac{1}{\sqrt{N} }\sum_{j}^{} e^{-ik x_j}\hat{c}_{j,\sigma }  
 \] 
-dove $j$ \`e un indice che rappresenta il sito del reticolo considerato.
-Inoltre, indicando con $M$ il numero di ioni del sistema, si ha $k = \frac{2\pi}{L}n$ e $L=M a$, con $k \in \big[ - \pi / a , \pi / a \big) $ che individua la prima zona di Brillouin.
+\begin{center}
+	\begin{tikzpicture}
+		\draw[] (0,0) -- (8,0);
+		\draw[dashed] (8,0) -- (10,0);
+		\draw[] (10,0) -- (12,0);
+		\foreach \i in {2,4,6,8,10}{
+			\draw[thick] (\i,-0.10) -- (\i,0.10);
+		}
+		\draw[very thick] (0,-0.15) -- (0,0.15) node[above] {\footnotesize $0$};
+		\draw[very thick] (12,-0.15) -- (12,0.15) node[above] {\footnotesize $L$};
+		\node[above] at (2,0) {\footnotesize $a$};
+		\node[above] at (4,0) {\footnotesize $2a$};
+		\node[above] at (6,0) {\footnotesize $3a$};
+
+		\draw[] (0,-1) -- (8,-1);
+		\draw[dashed] (8,-1) -- (10,-1);
+		\draw[] (10,-1) -- (12,-1);
+		\foreach \i in {2,4,6,8,10}{
+			\draw[fill] (\i,-1) circle (1.25pt) ;
+		}
+		\draw[fill] (0,-1) circle (2pt);
+		\draw[fill] (12,-1) circle (2pt);
+		\node[below] at (-0.5,-1) {\footnotesize $j$};
+		\node[below] at (12,-1) {\footnotesize $N-1$};
+		\node[below] at (0,-1) {\footnotesize $0$};
+		\node[below] at (2,-1) {\footnotesize $1$};
+		\node[below] at (4,-1) {\footnotesize $2$};
+		\node[below] at (6,-1) {\footnotesize $3$};
+	\end{tikzpicture}
+\end{center}
+dove $j$ \`e un indice che rappresenta il sito del reticolo considerato e $N$ indica il numero di ioni del sistema.
+Si ha:
+\[
+ L=N a\hspace{1cm}k = \frac{2\pi}{L}n=\frac{2\pi}{Na} n \in \bigg[-\frac{\pi}{a}, \frac{\pi}{a}\bigg)\hspace{1cm} n = -\frac{N}{2}, - \frac{N}{2}+1 ,\ldots, \frac{N}{2}-1
+\] 
+con $k$ che individua la prima zona di Brillouin.
 Questi operatori trasformati, come si pu\`o dimostrare, soddisfano le regole di anti-commutazione, pertanto sono dei buoni operatori fermionici; inoltre, permettono di riscrivere l'hamiltoniano come
 \[
-\hat{H} = -\frac{t}{N} \sum_{j,\sigma }^{} \sum_{k,q}^{}  \left(e^{-i kx _j}e^{i q (x_j + a)} \hat{c}^\dagger _{k\sigma } \hat{c}_{q\sigma } +e^{i kx _j}e^{-i q (x_j + a)} \hat{c}^\dagger _{q\sigma } \hat{c}_{k\sigma }\right) 
+	\begin{split}
+		\hat{H} &= -\frac{t}{N} \sum_{j,\sigma }^{} \sum_{k,q}^{}  \left(e^{-i kx _j}e^{i q (x_j + a)} \hat{c}^\dagger _{k\sigma } \hat{c}_{q\sigma } +e^{i kx _j}e^{-i q (x_j + a)} \hat{c}^\dagger _{q\sigma } \hat{c}_{k\sigma }\right) \\
+			&= - \frac{t}{N} \sum_{j,\sigma }^{} \sum_{k,q}^{} \bigg\{ e^{-i (k-q)x_j} \big(\underbracket{e^{iqa}+ e^{-iqa}}_{=2\cos qa} \big) \hat{c}^\dagger _{k\sigma } \hat{c}_{q\sigma }  \bigg\} \\
+			&= \sum_{k,\sigma }^{} (-2t \cos ka) \hat{c}^\dagger _{k\sigma } \hat{c}_{k\sigma } =-2t \sum_{k,\sigma }^{} \cos (ka) \ \hat{n}_{k,\sigma } 
+	\end{split}
 \] 
-Utilizzando che
+dove si \`e usato che $\frac{1}{N}\sum_{j}^{} e^{i(k-q) x_j} = \delta _{kq} $ e si \`e definito $\hat{n}_{k,\sigma } = \hat{c}^\dagger _{k,\sigma } \hat{c}_{k,\sigma } $ operatore numero in spazio $k$.
+Sfruttando la trasformata di Fourier, quindi, si \`e potuto scrivere $\hat{H}$ in forma diagonale, da cui si vede che l'energia del sistema \`e legata ad una legge di dispersione in cui compare il $\cos (ka)$.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+In realt\`a, il grafico \`e discreto, in quanto ogni punto \`e separato di un $\Delta k = \frac{2\pi}{Na}$; conseguentemente, il numero di stati possibili, tenendo conto della degenerazione legata allo spin, si ha
 \[
-e^{-ikx_j}e^{iq(x_j+a)} = e^{i(k-q)x_j}\left(e^{iqa}+ e^{-iqa}\right) 
+2\cdot \frac{k_\text{max}- k_\text{min}}{\Delta k}= 2N 
 \] 
-e che, sommando su $j$, il termine $e^{-i(k-q)x_j}$ fa comparire una $\delta _{k,q} $, si scrive che
+Nel limite termodinamico, per\`o, il numero di stati permessi tende al continuo e viene ben rappresentato dalla curva.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    axis lines = middle,
+    xmin=-1.2*pi, xmax=1.2*pi,
+    ymin=-1.2, ymax=1.2,
+    xtick={-pi,-pi/2,pi/2,pi},
+    xticklabels={\footnotesize $-\pi$,\footnotesize$-\pi/2$,\footnotesize$\pi/2$,\footnotesize$\pi$},
+    yticklabels={\footnotesize $-1$,\footnotesize$1$},
+    ytick={-1,1},
+    xlabel={\footnotesize $ka$},
+    ylabel={\footnotesize $E/2t$},
+]
+\addplot[thick,name path=band,domain=-pi:pi,samples=200] {-cos(deg(x))};
+
+% asse y=0
+\addplot[
+name path=zero,
+draw=none,
+domain=-pi:pi
+] {0};
+
+% area tratteggiata
+\addplot[
+pattern=north east lines,
+pattern color=blue!60!gray,
+draw=none
+] fill between[
+of=band and zero,
+soft clip={domain=-pi/2:pi/2}
+];
+\node[color=blue!60!gray] at (1.9,-0.5) {\footnotesize half filling};
+\node[color=blue!60!gray,below] at (1.9,-0.5) {\footnotesize ($T=0$)};
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Considerando il caso di half filling ($N$ elettroni su $N$ siti), per $T=0$, si vede popolata tutta la zona per $E / 2t < 0$, come riportato in figura.
+Essendo il sistema \textit{gapless}, cio\`e la differenza di energia tra lo stato fondamentale e il primo eccitato va a zero nel limite termodinamico, si vede che, a $T>0$, anche infinitesima, si pu\`o facilmente osservare l'eccitazione a stati energetici superiori; questo comportamento, rende il sistema un \textit{conduttore}.
+
+In alcuni casi, si possono sviluppare, nel limite termodinamico, dei gap finiti di energia che impediscono un comportamento del sistema da conduttore puro.
+Alcuni esempi di questi casi sono i seguenti:
+\begin{enumerate}[(a).]
+	\item si aggiungono disomogeneit\`a nel tight binding;
+	\item si aggiungono interazioni tra fermioni.
+\end{enumerate}
+\subsubsection{Dimerizzazione}
+
+Si considera ancora il modello di tight binding 1D, modificando, per\`o, il valore di $t$ a seconda dei siti coinvolti:
 \[
-\hat{H} = \sum_{k,\sigma }^{} (-2t \cos ka) \hat{c}^\dagger _{k\sigma } \hat{c}_{k\sigma } 
+t_{j,j+1} = t \Big\{ 1+ (-1)^j\Delta \Big\} 
 \] 
+Sostanzialmente, a seconda che il sito di partenza sia pari o dispari, si avr\`a un diverso accoppiamento per l'hopping; per esempio, si definiscono $t_1$ come l'accoppiamento tra siti con $j$ pari e $t_2$ quello con siti dispari.
+Si definisce, poi, una cella relativamente alla coppia di siti tra cui si forma un certo accoppiamento, per esempio a partire da siti dispari.
+\begin{center}
+	\begin{tikzpicture}
+		\draw[color=red!60!gray,thick] (4,0) -- (6,0);
+		\draw[color=red!60!gray,thick] (1,0) -- (2,0);
+		\draw[color=red!60!gray,thick] (8,0) -- (9,0);
+		\node[above,color=blue!60!gray] at (3,0) {\footnotesize $t_1$};
+		\node[above,color=red!60!gray] at (5,0) {\footnotesize $t_2$};
+		\node[above,color=blue!60!gray] at (7,0) {\footnotesize $t_1$};
+		\draw[dashed,thick] (0,0) -- (1,0);
+		\draw[dashed,thick] (9,0) -- (10,0);
+		\foreach \i in {2,6}{
+			\draw[color=blue!60!gray,thick] (\i,0) -- (\i+2,0);
+		}
+		\foreach \i in {2,4,6,8}{
+			\draw[fill] (\i,0) circle (1.5pt);
+		}
+		\draw[dashed] (3,0) ellipse (1.05 and .5);
+		\draw[dashed] (7,0) ellipse (1.05 and .5);
+		\node at (3,-.75) {\footnotesize cella};
+	\end{tikzpicture}
+\end{center}
+Usando il raggruppamento in celle, il sistema diventa periodico, dove ogni cella contiene due siti: si definiscono degli operatori $\hat{c}_{j\sigma } ^\dagger $, che agisce sui siti dispari, e $\hat{d}^\dagger _{j\sigma } $, che agisce su quelli pari; in questo modo
+\[
+\hat{H} = - t (1-\Delta ) \sum_{j,\sigma }^{} \left\{ \hat{c}^\dagger _{j\sigma } \hat{d}_{j\sigma } + \hat{d}^\dagger _{j\sigma } \hat{c}_{j\sigma }  \right\} - t (1+\Delta ) \sum_{j,\sigma }^{} \left\{ \hat{c}^\dagger _{j+1,\sigma } \hat{d}_{j\sigma } + \hat{d}^\dagger _{j\sigma } \hat{c}_{j+1,\sigma }  \right\}
+\] 
+Per semplificarla, si usa ancora la trasformata di Fourier; se ne definiscono, in particolare, due, ognuna che considera $N / 2$ siti:
+\[
+\hat{c}_{k,\sigma }  = \frac{1}{\sqrt{N / 2} } \sum_{j \text{ dispari}}^{} e^{-i k x_j}\hat{c}_{j\sigma } \hspace{1cm} \hat{d}_{k,\sigma }  = \frac{1}{\sqrt{ N / 2} } \sum_{j \text{ pari}}^{} e^{-ikx_j}\hat{d}_{j\sigma } 
+\] 
+In questo modo, si trova che
+\[
+	\begin{split}
+		\hat{H} = &  - t_1 \sum_{j,\sigma }^{}\sum_{k,q}^{} \left\{ e^{-ikx_j}e^{iqx_j}\hat{c}^\dagger _{k\sigma } \hat{d}_{q\sigma } +e^{ikx_j}e^{-iqx_j}\hat{d}^\dagger _{q\sigma } \hat{c}_{k\sigma }  \right\} \\
+			  & - t_2 \sum_{j,\sigma }^{} \sum_{k,q}^{} \left\{ e^{-ik(x_j +2a)}e^{iqx_j}\hat{c}^\dagger _{k\sigma } \hat{d}_{q\sigma } +  e^{ik(x_j +2a)}e^{-iqx_j} \hat{d}^\dagger_{q\sigma } \hat{c} _{k\sigma }\right\} 
+	\end{split}
+\] 
+Questo si pu\`o compattare in linguaggio matriciale:
+\[
+	\hat{H} = \sum_{k,\sigma }^{} \begin{pmatrix} \hat{c}^\dagger _{k\sigma } & \hat{d}^\dagger _{k\sigma }  \end{pmatrix} \begin{pmatrix} 0 & - t_1 - t_2 e^{-ik 2a}\\ - t_1 - t_2 e^{ik 2a} & 0 \end{pmatrix} \begin{pmatrix} \hat{c}_{k\sigma } \\ \hat{d}_{k\sigma }  \end{pmatrix}= \sum_{k,\sigma }^{}\hat{\mathfrak{c} }_{k\sigma } ^\dagger  \mathcal{H} _k \hat{\mathfrak{c} }_{k\sigma } 
+\] 
+dove $\hat{\mathfrak{c} }_{k\sigma } $ \`e il vettore di operatori di distruzione, chiamato \textit{spinore}, e 
+\[
+	\mathcal{H} _k = \Big[\overbracket{-t_1-t_2 \cos (2ka)}^{A_k} \Big]\sigma _x + \Big[\overbracket{-t_2\sin (2ka)}^{B_k} \Big]\sigma _y = \begin{pmatrix} 0 & A_k - i B_k\\ A_k + i B_k & 0  \end{pmatrix} 
+\] 
+con $\sigma _x,\sigma _y$ matrici di Pauli.
+Ora, diagonalizzando la matrice $\mathcal{H} _k$, si ottengono tutte le informazioni sul sistema.
+Gli autovalori di $\mathcal{H} _k$ sono 
+\[
+\lambda _{\pm} = \pm \sqrt{A_k^2 + B_k^2}  = \pm 2t \sqrt{1 - (1-\Delta ^2) \sin^2 (ka)} 
+\] 
+Questi modi normali sono le energie delle quasi-particelle che diagonalizzano l'hamiltoniano:
+\[
+	\hat{H} = \sum_{k,\sigma }^{} \hat{\mathfrak{D}}^\dagger _{k\sigma } \begin{pmatrix} \lambda _{\pm,k} &0 \\ 0 & \lambda _{-,k}  \end{pmatrix}  \hat{\mathfrak{D} }_{k\sigma  } 
+\] 
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+	Avendo diagonalizzato l'hamiltoniano, si possono studiare i livelli energetici: si osserva un gap energetico tra le due bande di possibili stati energetici pari a $2\Delta $.
+	Si nota, inoltre, che gli stati ammissibili nelle due bande \`e pari a $N / 2$, in quanto ogni trasformata di Fourier \`e stata fatta su $N / 2$ siti.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=2]
+
+% Assi
+\draw[thick,->] (-1.8,0) -- (1.8,0) node[right] {$ka$};
+\draw[thick,->] (0,-1.3) -- (0,1.3) node[above] {$E/2t$};
+
+% Tacche asse x
+\draw[very thick] (-1.57,0.03) -- (-1.57,-0.03) node[below] {$-\pi/2$};
+\draw[very thick] ( 1.57,0.03) -- ( 1.57,-0.03) node[below] {$\pi/2$};
+
+% Bande
+\draw[thick,domain=-1.57:1.57,samples=200]
+    plot (\x,{sqrt(1-(1-0.25)*sin(\x r)^2)});
+
+\draw[thick,domain=-1.57:1.57,samples=200]
+    plot (\x,{-sqrt(1-(1-0.25)*sin(\x r)^2)});
+
+% Livelli ±Delta
+\draw[dashed] (-1.7,0.5) -- (1.7,0.5);
+\draw[dashed] (-1.7,-0.5) -- (1.7,-0.5);
+
+\node[left] at (0,0.6) {$\Delta$};
+\node[left] at (0,-0.6) {$-\Delta$};
+
+% Indicazione gap
+\draw[<->,red,thick] (0.35,-0.5) -- (0.35,0.5);
+\node[red,right] at (0.35,0.2) {$2\Delta$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Ad half filling per $T\to 0$, si popola esclusivamente la banda inferiore e, anche per $T>0$, \`e necessario un certo quantitativo di energia per saltare a stati di energia superiore.
+Questo sistema \`e chiamato \textit{isolante di banda}.
+
+Verificando l'energia relativa allo stato fondamentale per questo sistema, si vede che questa \`e inferiore rispetto a quella ottenuta per il sistema gapless; questo significa che, a livello fisico, la dimerizzazione \`e pi\`u stabile del reticolo omogeneo, per cui il sistema tende ad uno stato di disomogeneit\`a per abbassare l'energia\footnote{Questo \`e quello che si verifica nel caso ideale, cio\`e in assenza di interazioni tra fermioni e per $T\to 0$.}. 
+Questo fenomeno si chiama \textit{instabilit\`a di Peierls}.
+
+\subsubsection{Interazioni tra elettroni}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 29
+\centering Riprendere dalla lezione 29, 1:18:00
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
