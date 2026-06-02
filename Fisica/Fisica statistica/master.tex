@@ -2490,7 +2490,7 @@ Da osservazioni sperimentali, si hanno i seguenti punti:
 	\item per $T = T_c$ (cio\`e $t = 0$), allora $\psi  \sim h^{1 / \delta }$;
 	\item vicino al punto critico, la suscettivit\`a magnetica \`e $\chi \sim\lvert t \rvert ^{-\gamma}$.
 \end{enumerate}
-L'argomento di Widom si basa sul combinare queste osservazioni sperimentali per determinare una forma del parametro d'ordine.
+L'argomento di Widom si basa sul combinare queste osservazioni sperimentali per determinare una forma del parametro d'ordine e si vedr\`a portare alla relazione di Widom.
 Si ipotizza che
 \begin{equation}\label{wip}
 \psi  = \lvert  t  \rvert ^{\beta } F^{\pm} _\psi  \left(\frac{h}{t^\Delta }\right) 
@@ -2526,7 +2526,7 @@ che \`e proprio la relazione di Widom nelle leggi di scala.
 
 \subsubsection{Omogeneit\`a}
 Imponendo una relazione analoga a \ref{wip} per le altre funzioni termodinamiche, come l'energia libera, si possono ritrovare tutte le leggi di scala; una funzione che soddisfa una tale relazione si dice \textit{omogenea}.
-L'omogeneit\`a permette di codificare l'invarianza di scala che si verifica nei pressi del punto critico dovuta alla divergenza del parametro di scala.
+L'omogeneit\`a permette di codificare l'invarianza di scala che si verifica nei pressi del punto critico dovuta alla divergenza del parametro di scala; in questo modo, quindi, si generalizza quanto visto con l'argomento di Widom, partendo da un ragionamento pi\`u generale e basato unicamente sul fatto che il sistema, nel punto critico, deve essere indipendente dalla scala col quale lo si osserva (cio\`e deve valere l'ipotesi di scala).
 
 Per descrivere l'ipotesi, si considera una generica funzione $f(q)$, nella generica variabile $q$.
 La richiesta che la $f$ sia omogenea in $q$ equivale a dire che, riscalando $q' = b^{D_q}q$, allora 
@@ -2595,6 +2595,7 @@ Per esempio, secondo queste relazioni, si ritrova la legge di scala di Rushbrook
 \] 
 
 \subsubsection{Introduzione al gruppo di rinormalizzazione}
+La seguente trattazione \`e basata sul mostrare perch\'e l'ipotesi di scala porta naturalmente alla richiesta che la funzione $f= F / V$ sia omogenea, imponendo che la fisica del sistema sia la stessa, indipendentemente dalla scala con cui lo si studia (nei pressi del punto critico).
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -2603,9 +2604,9 @@ Per esempio, secondo queste relazioni, si ritrova la legge di scala di Rushbrook
 	\end{minipage}
 	\hfill
 	\begin{minipage}
-		{.45\columnwidth}
+		{.5\columnwidth}
 	\centering
-	\begin{tikzpicture}[scale=1]
+	\begin{tikzpicture}[scale=1.3]
 
 % Reticolo fine
 \foreach \x in {0,1,2,3}
@@ -2709,29 +2710,29 @@ P\left(\left\{ S' \right\} ,\left\{ S \right\} \right) \ge 0 \hspace{1cm}\sum_{\
 \] 
 Questo permette di scrivere che
 \[
-Z = \sum_{\left\{ S \right\} }^{} e^{- H \left(\left\{ S \right\} \right) }= \sum_{\left\{ S' \right\} }^{} \sum_{\left\{ S \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right)  e^{-H\left(\left\{ S \right\} \right) } \overset{\text{def}}{=} e^{-N\mu } \sum_{\left\{ S' \right\} }^{} e^{-H' \left(\left\{ S' \right\} \right) }
+Z = e^{-N f(K)}= \sum_{\left\{ S \right\} }^{} e^{- H \left(\left\{ S \right\} \right) }= \sum_{\left\{ S' \right\} }^{} \sum_{\left\{ S \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right)  e^{-H\left(\left\{ S \right\} \right) } \overset{\text{def}}{=} e^{-N\mu } \sum_{\left\{ S' \right\} }^{} e^{-H' \left(\left\{ S' \right\} \right) }
 \] 
 dove si \`e inglobato $\beta $ nelle costanti $J,h$, o $K_\alpha $ pi\`u in generale, e si \`e definito
 \[
 e^{-H' \left(\left\{ S' \right\} \right) } := e^{N\mu }\sum_{\left\{ S \right\} }^{} P\left(\left\{ S' \right\} , \left\{ S \right\} \right)  e^{-H \left(\left\{ S \right\} \right) }
 \] 
-con $\mu $ determinato dal fatto che $\sum_{\left\{ S' \right\} }^{} H \left(\left\{ S' \right\} \right) = 0$.
-Si richiede, ora, che $H'$ abbia la stessa forma di $H$:
-\[
-H'\left(\left\{ S' \right\} \right) = \sum_{\alpha }^{} K_\alpha ' S'_\alpha 
-\] 
-Di fatto, la teoria del gruppo di rinormalizzazione consiste nello studiare come cambiano le costanti di accoppiamento $K_\alpha \longrightarrow K_\alpha '$.
-Allora si \`e partiti da $e^{-N f(K)}= \sum_{\left\{ S \right\} }^{} e^{-H \left(\left\{ S \right\} \right) }$ e si \`e arrivati a 
+con $\mu $ legato al fatto che il numero di siti cambia e determinato da $\sum_{\left\{ S' \right\} }^{} H' \left(\left\{ S' \right\} \right) = 0$.
+Si richiede anche che $H'$ abbia la stessa forma di $H$, cio\`e $H'\left(\left\{ S' \right\} \right) = \sum_{\alpha }^{} K_\alpha ' S'_\alpha $.
+Quindi, si ha
 \[
 	e^{-N' f(K')}= \sum_{\left\{ S' \right\} }^{} e^{-H' \left(\left\{ S' \right\} \right) }= e ^{N \mu }\sum_{S}^{} \overbracket{\sum_{S'}^{} P\left(\left\{ S' \right\} , \left\{ S \right\}\right)    }^{=1} e^{-H\left(\left\{ S \right\} \right) } = e^{N\mu }\sum_{\left\{ S \right\} }^{} e^{-H\left(\left\{ S \right\} \right) }
 \] 
-da cui
+Imponendo l'uguaglianza, si trova che deve valere
 \[
 f(K) = \mu (K) + b ^{-d}f(K')
 \] 
-con $\mu (K)$ costante\footnote{Qui $K$ \`e il vettore di componenti $K_\alpha $.}.
+con $\mu (K)$ costante\footnote{Qui $K$ \`e il vettore di componenti $K_\alpha $.}, per cui non altera la fisica del sistema.
 
-Il gruppo di rinormalizzazione consiste, quindi, in una trasformazione, detta \textit{trasformazione RG}, $K \longrightarrow K' = R(K)$ legate al cambio di scala del sistema al \textit{passo successivo}: ogni trasformazione RG raggruppa un sito in un blocco di \textit{passo successivo} (per esempio, nel reticolo quadrato, si incorpora un altro sito per dimensione); interando, si pu\`o arrivare al riscalamento del sistema desiderato.
+La teoria del gruppo di rinormalizzazione consiste, quindi, nello studiare una trasformazione, detta \textit{trasformazione RG}
+\[
+K \longmapsto K' = R(K)
+\] 
+che riscala il sistema: ogni iterazione della mappa raggruppa un sito in un blocco di \textit{passo successivo} (per esempio, nel reticolo quadrato, si incorpora un altro sito per dimensione); interando, si pu\`o arrivare al riscalamento del sistema desiderato.
 Questo si pu\`o ripetere infinite volte perch\'e, nel limite termodinamico, si hanno infiniti siti.
 \subsubsection{Punti fissi nella teoria RG}
 Considerando un vettore $K^*$ di costanti di accoppiamenti tale che $K^* = R (K^*)$, cio\`e invariante sotto trasformazione RG, questo descrive un sistema la cui fisica risulta indipendente dalla scala utilizzata per studiarlo.
