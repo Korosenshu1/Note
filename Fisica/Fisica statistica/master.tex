@@ -4887,9 +4887,140 @@ Modificando il rapporto $U / t$, \`e possibile incorrere in una transizione di f
 Questa transizione di fase \`e tanto pi\`u apparente quanto piccola \`e la temperatura: a temperatura nulla, la transizione presenta esattamente le propriet\`a delle transizioni di fase classiche, manifestando discontinuit\`a nei potenziali.
 
 \subsubsection{Modello di Heisenberg}
+Il modello di Hubbard tiene in considerazione i gradi di libert\`a di spin e di carica; si fa vedere che, per $U \gg t$ in half filling, il grado di libert\`a di carica non contribuisce, perch\'e si ha un elettrone per singolo sito, e si mostra che l'hamiltoniano si pu\`o scrivere come
+\[
+\hat{H} =  \frac{4t^2}{U} \sum_{\langle i,j \rangle}^{} \hat{\mathbf{S} }_i \cdot \hat{\mathbf{S} }_j
+\] 
+con 
+\[
+\hat{\mathbf{S} }_i = \begin{pmatrix} \hat{S}_{i,x} \\ \hat{S}_{i,y} \\ \hat{S}_{i,z}  \end{pmatrix} = \frac{1}{2} \begin{pmatrix} \hat{\sigma }_{i,x} \\ \hat{\sigma }_{i,y} \\ \hat{\sigma }_{i,z}  \end{pmatrix} 
+\] 
+operatori di spin, esprimibili tramite matrici di Pauli. 
+Questo hamiltoniano definisce il \textit{modello di Heisenberg} per spin $1 / 2$ e la sua forma evidenzia un'interazione di natura anti-ferromagnetica, visto il segno del termine di interazione degli spin.
+\begin{osservazione}
+Il problema non \`e tanto pi\`u facile da trattare a livello analitico, ma si mostra la possibilit\`a di rimuovere un grado di libert\`a.
+\end{osservazione}
+
+Per ricavare questa forma, si scrive l'hamiltoniana di Hubbard in forma perturbativa come $\hat{H}_b = \hat{H}_0 + \delta \hat{H} $, con $\hat{H}_0$ termine di interazione e $\delta \hat{H}$ termine di hopping, il quale si assume piccolo rispetto ad $\hat{H}_0$.
+Ci si mette in half filling e si considera, preliminarmente, una coppia di siti, con una coppia di elettroni.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Si rappresenta uno stato, specificando lo spin lungo $z$ nel primo sito e spin lungo $z$ nel secondo sito.
+		Il sistema \`e composto da uno stato fondamentale, ottenuto da quattro possibili combinazioni di spin: $\ket{\uparrow,\uparrow} , \ \ket{\uparrow,\downarrow} , \ \ket{\downarrow, \uparrow} ,\ \ket{\downarrow,\downarrow} $, in cui i due elettroni si trovano in siti diversi, e da due stati eccitati $\ket{\uparrow\downarrow,0} , \ \ket{0,\uparrow\downarrow} $, i cui i due elettroni condividono lo stesso sito, necessariamente con spin opposto.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.3]
+		\foreach \i in {2, 3, 4, 5}{
+			\draw[thick] (\i,0) -- (\i+.5,0);
+		}
+		\foreach \i in {2.5, 4.5}{
+			\draw[thick] (\i,3) -- (\i+.5,3);
+		}
+		\draw[stealth-stealth] (1.5,0) -- (1.5,3);
+		\node[left] at (1.5,1.5) {\footnotesize$U$};
+		\node at (3.75,-0.5) {\footnotesize $\left\{ \ket{\uparrow,\uparrow} , \ \ket{\uparrow,\downarrow} ,\ \ket{\downarrow,\uparrow} , \ \ket{\downarrow,\downarrow}  \right\} $};
+		\node at (3.75, 2.5) {\footnotesize $\left\{ \ket{\uparrow\downarrow,0} , \ \ket{0, \uparrow\downarrow}  \right\} $};
+		\draw[stealth-] (5.7,0) -- (6.2,0) node[right] {\footnotesize ground};
+		\node at (6.5,3) { $\hat{H}_0$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Visto che $U$ pesa molto rispetto a $t$, gli stati eccitati rispetto ad $\hat{H}_0$ si trascurano, cio\`e non si tiene conto della possibilit\`a di avere due spin in un singolo sito.
+
+Come base per il ground, si scelgono gli stati di tripletto e di singoletto, relativi a $\ket{S,\ S_z} $:
+\[
+\hspace{1cm}\begin{cases}
+	\ket{1,1} = \ket{\uparrow, \uparrow} \\
+	\ket{1,0} = \displaystyle \frac{1}{\sqrt{2} } \big(\ket{\uparrow,\downarrow} + \ket{\downarrow,\uparrow} \big) \\
+	\ket{1,-1} = \ket{\downarrow,\downarrow} 
+\end{cases} \hspace{1cm} \ket{0,0} = \frac{1}{\sqrt{2} } \big(\ket{\uparrow,\downarrow} - \ket{\downarrow,\uparrow} \big) 
+\] 
+Su due di questi stati, il termine perturbativo si annulla: l'hopping sugli stati $\ket{\uparrow,\uparrow} $ e $\ket{\downarrow,\downarrow} $ deve fare zero, altrimenti si andrebbero a inserire due stati con uguale spin nello stesso livello energetico, cosa impedita dal principio di Pauli.
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 30
+Per svolgere i calcoli con gli operatori di creazione e distruzione, viste le regole di anti-commutazione, \`e necessario scegliere un ordinamento. Si seguono i due seguenti punti:
+\begin{itemize}
+	\item per i siti, si costruisce da quello con indice pi\`u alto, verso quello con indice pi\`u basso;
+	\item per gli spin, si sceglie prima lo spin up.
+\end{itemize}
 \end{boxenv}
+
+\begin{esempio}
+Si svolge il calcolo per mostrare che $\delta \hat{H} \ket{\uparrow,\uparrow} =0 $. 
+Per l'ordinamento scelto sopra, $\ket{\uparrow,\uparrow} = \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\uparrow}\ket{0,0}  $.
+Inoltre, si nota che la somma sullo spin consiste di solo lo spin up perch\'e il termine con spin down contiene degli operatori di distruzione $\hat{c}_{i,\downarrow} $ che, agendo su $\ket{0} $, restituiscono il vettore nullo per definizione.
+Allora, si vede che
+\[
+	\begin{split}
+	&\hat{c}^\dagger _{1,\uparrow} \hat{c}_{2,\uparrow} \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\uparrow} \ket{0} =- \overbracket{(\hat{c}^\dagger _{1,\uparrow} )^2}^{=0} \hat{c}_{2,\uparrow} \hat{c}^\dagger _{2,\uparrow} \ket{0} = 0 \\
+	&\hat{c}^\dagger _{2,\uparrow} \hat{c}_{1,\uparrow} \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\uparrow} \ket{0} = \hat{c}_{1,\uparrow} \hat{c}^\dagger _{1,\uparrow} (\hat{c}^\dagger _{2,\uparrow} )^2 \ket{0}  = 0
+	\end{split}
+\] 
+da cui $\delta \hat{H} \ket{\uparrow,\uparrow} =0$.
+\end{esempio}
+\noindent Allora $\delta \hat{H} \ket{1,1} = \delta \hat{H} \ket{1,-1} =0$.
+Per gli altri due termini, si calcola come agisce sugli stati $\ket{\uparrow,\downarrow} $ e $\ket{\downarrow,\uparrow} $.
+Si osserva che, per $\ket{\uparrow,\downarrow} = \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\downarrow} \ket{0} $, si ha:
+\[
+	\left(\cancel{\hat{c}^\dagger _{1,\uparrow} \hat{c}_{2,\uparrow}} + \hat{c}^\dagger _{2,\uparrow}\hat{c}_{1,\uparrow} +\hat{c}^\dagger _{1,\downarrow} \hat{c}_{2,\downarrow} + \cancel{\hat{c}^\dagger _{2,\downarrow} \hat{c}_{1,\downarrow}}  \right) \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\downarrow} \ket{0} = \left(\hat{c}^\dagger _{2,\uparrow}\hat{c}_{1,\uparrow} +\hat{c}^\dagger _{1,\downarrow} \hat{c}_{2,\downarrow} \right) \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\downarrow} \ket{0}
+\] 
+visto che si formano $(\hat{c}^\dagger _{i,\sigma } )^2$.
+Per finire, basta osservare che $\hat{c}_{i,\sigma } \hat{c}^\dagger _{i,\sigma } = 1$, per cui 
+\[
+\delta \hat{H} \ket{\uparrow,\downarrow} = - t \left(\hat{c}^\dagger _{2,\uparrow} \hat{c}^\dagger _{2,\downarrow}  - \hat{c}^\dagger _{1,\downarrow} \hat{c}^\dagger _{1,\uparrow} \right) \ket{0} 
+\] 
+Analogamente, si trova che $\delta \hat{H} \ket{\downarrow,\uparrow}=t(\hat{c}^\dagger _{2,\uparrow} \hat{c}^\dagger _{2,\downarrow}  - \hat{c}^\dagger _{1,\downarrow} \hat{c}^\dagger _{1,\uparrow} ) \ket{0}  $.
+Questo permette di concludere che:
+\[
+\delta \hat{H} \ket{1,0} =0 \hspace{1cm}\delta \hat{H}\ket{0,0} = -\frac{2t}{\sqrt{2} } \big(\ket{\uparrow\downarrow,0} + \ket{0,\uparrow\downarrow} \big) 
+\] 
+Pertanto, il secondo ordine perturbativo\footnote{Il primo \`e relativo al fondamentale, mentre $\delta \hat{H}$ porta solo stati eccitati, quindi \`e nullo.} (degenere), indicando con $\ket{s} $ il singoletto e $\ket{m} $ gli stati $\ket{\uparrow\downarrow,0} $ e $\ket{0,\uparrow\downarrow} $, \`e 
+\[
+\delta E^{(2)}_{\ket{s} } = \sum_{m\neq s}^{} \frac{\braket{s|\delta \hat{H}|m} \braket{m|\delta \hat{H}|s} }{E_s^{(0)}- E_m^{(0)}} = \frac{2t \cdot 2t}{0 - U}= - \frac{4t^2}{U}
+\] 
+In $U\gg t$, quindi, l'effetto dell'hopping \`e quello di portare il sistema nello stato di singoletto, quindi il sistema pu\`o essere descritto da un hamiltoniano che proietta gli stati sul singoletto, con un'ampiezza proprio pari a $\delta E^{(2)}_{\ket{s} } $, mentre il tripletto rimane invariato.
+Questa operazione di proiezione si pu\`o scrivere tramite il termine di Heisenberg $\hat{\mathbf{S} }_i \cdot \hat{\mathbf{S} }_j$; infatti:
+\[
+\hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 = \frac{1}{2}\left[ \left(\hat{\mathbf{S} }_1 + \hat{\mathbf{S} }_2\right) ^2 - \hat{\mathbf{S} }_1 ^2 - \hat{\mathbf{S} }_2 ^2 \right]
+\] 
+Applicato sul singoletto, questo restituisce $-\frac{3}{4}$; per il tripletto, invece, si ha $\frac{1}{4}$.
+In questo modo, il proiettore sul singoletto \`e 
+\[
+\hat{P}(i,j) = \frac{1}{4} - \hat{\mathbf{S} }_i \cdot \hat{\mathbf{S} }_j
+\] 
+perch\'e \`e l'identit\`a sul singoletto, mentre si annulla sul tripletto.
+Allora, per due siti, si ha l'hamiltoniano efficace
+\[
+	\hat{H}_\text{eff} (1,2) = - J \hat{\mathbf{S} }_1 \cdot \hat{\mathbf{S} }_2 + \cancel{\text{cost}} 
+\] 
+con $J = -\frac{4t^2}{U}$ e il termine costante si trascura (relativo a $1 / 4 $ nel proiettore).
+Allora, per $N$ siti, si trova proprio l'hamiltoniano di Heisenberg:
+\[
+\hat{H} = \frac{4t^2}{U}\sum_{\langle i,j \rangle}^{} \hat{\mathbf{S} }_i \cdot \hat{\mathbf{S} }_j
+\] 
+\subsection{Modello di Ising quantistico 1D}
+\`E definito, in dimensione generica, come
+\[
+\hat{H} = - J \sum_{\langle i,j \rangle}^{} \hat{\sigma }_i ^z \hat{\sigma }_j^z - g \sum_{i}^{} \hat{\sigma }^x_i
+\] 
+dove le dimensioni entrano nel reticolo, quindi negli indici $i,j$. 
+In 1D, per esempio, $\langle i,j \rangle$ si concretizza in $(i,i-1)$ e $(i,i+1)$.
+Con questo hamiltoniano, si parla di modello di Ising in \textit{campo trasverso} in quanto compare un termine $\hat{\sigma }^x_i$, che \`e relativo ad un termine di campo magnetico lungo una direzione ($x$ in questo caso) ortogonale al termine di interazione $\hat{\sigma }^z_i\hat{\sigma} ^z_j$.
+Si fissa $J>0$ (quindi \`e il sistema \`e ferromagnetico) e si prende $g>0$ per convenzione.
+\subsubsection{Caso di temperatura nulla}
+\begin{boxenv}[]
+\centering Riprendere dalla lezione 30, 57:00
+\end{boxenv}
+
+
+
+
+
+
+
 
 
 
