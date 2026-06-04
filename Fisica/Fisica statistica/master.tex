@@ -5010,14 +5010,59 @@ dove le dimensioni entrano nel reticolo, quindi negli indici $i,j$.
 In 1D, per esempio, $\langle i,j \rangle$ si concretizza in $(i,i-1)$ e $(i,i+1)$.
 Con questo hamiltoniano, si parla di modello di Ising in \textit{campo trasverso} in quanto compare un termine $\hat{\sigma }^x_i$, che \`e relativo ad un termine di campo magnetico lungo una direzione ($x$ in questo caso) ortogonale al termine di interazione $\hat{\sigma }^z_i\hat{\sigma} ^z_j$.
 Si fissa $J>0$ (quindi \`e il sistema \`e ferromagnetico) e si prende $g>0$ per convenzione.
-\subsubsection{Caso di temperatura nulla}
+\begin{osservazione}
+La differenza principale col caso classico \`e che, classicamente, gli spin puntano in un'unica direzione; qui, gli spin possono essere orientati lungo un'intera sfera unitaria, quindi il caso classico si avrebbe orientando il termine magnetico lungo $z$, invece che lungo $x$.
+Il termine di campo genera un effetto che \`e sostanzialmente analogo a quello della temperatura nel caso classico nel far fluttuare l'orientazione degli spin.
+
+Inoltre, non si aggiunge un termine di campo magnetico lungo $z$ perch\'e complicherebbe estremamente la soluzione del sistema.
+\end{osservazione}
+\subsubsection{Casi limite del sistema}
+Classicamente, si individuava un valore di temperatura critica; ora si fissa la temperatura a zero e si fanno variare i parametri $g$ e $J$, per l'osservazione precedente.
+Si andranno a studiare, quindi, i casi: (a) $g / J \gg 1$; (b) $g / J \ll 1$.
+\vspace{.5cm}
+
+\textbf{Caso (a).} Nel caso in cui domina il campo magnetico trasverso, lo stato fondamentale \`e relativo a spin scorrelati tra loro e puntano tutti lungo $x$:
+\[
+\ket{\psi _\text{gs}} \simeq \prod_j \ket{\leftarrow} _j
+\] 
+dove
+\[
+	\begin{split}
+		&\ket{\leftarrow} = \frac{1}{\sqrt{2} }\big(\ket{\uparrow} +\ket{\downarrow} \big)\hspace{1cm}\hat{\sigma }^x \ket{\leftarrow} = \ket{\leftarrow} \\
+		&\ket{\rightarrow} = \frac{1}{\sqrt{2} }\big(\ket{\uparrow} -\ket{\downarrow} \big)\hspace{1cm}\hat{\sigma }^x \ket{\rightarrow} = -\ket{\rightarrow}
+	\end{split}
+\] 
+cio\`e $\ket{\leftarrow} $ e $\ket{\rightarrow} $ sono gli autovettori di $\hat{\sigma }^x$.
+Pi\`u precisamente, tramite teoria perturbativa in $1 / g$, si vede che il correlatore
+\[
+\braket{\psi _\text{gs}|\hat{\sigma }^z_i \hat{\sigma }^z_j|\psi _\text{gs}} \sim e^{- \lvert i-j \rvert / \xi }
+\] 
+con $\xi $ certa lunghezza di correlazione finita.
+Nel caso in cui $g\to +\infty$, il correlatore tende a zero, in quanto gli spin sono totalmente scorrelati; di fatto, $\hat{\sigma }^z \ket{\leftarrow} =0$.
+\vspace{.5cm}
+
+\textbf{Caso (b).} Nel caso di $g=0$, lo stato fondamentale \`e degenere, in quanto vi sono due possibili disposizioni del sistema: tutti spin up o tutti spin down
+\[
+\ket{\psi _{\text{gs},1} }  = \prod_j \ket{\uparrow} _j \hspace{1cm} \ket{\psi _{\text{gs}, 2} }  =\prod_j \ket{\downarrow} _j
+\] 
+Cio\`e il sistema \`e invariante per scambio da tutti spin up a tutti spin down, espressa tramite l'operatore $\hat{P}=\prod_j \hat{\sigma }_j^x$:
+\[
+\hat{P}\ket{\psi _{\text{gs},1} } = \ket{\psi _{\text{gs},2} }  \hspace{1cm} \hat{P} \ket{\psi _{\text{gs},2} } = \ket{\psi _{\text{gs},1} } 
+\] 
+Infatti, si pu\`o dimostrare, usando le regole di commutazione delle matrice di Pauli, che $[\hat{H}, \hat{P}] = 0$, per cui si pu\`o trovare una base comune per i due:
+\[
+\ket{\phi _{1,2} } = \frac{1}{\sqrt{2} } \big(\ket{\psi _{\text{gs},1} } \pm \ket{\psi _{\text{gs}} ,2}  \big)
+\] 
+A $g>0$ (piccolo), invece, tramite teoria perturbativa in $g$, si pu\`o dimostrare che 
+\[
+\lim_{\lvert i-j \rvert  \to +\infty} \braket{\psi _\text{gs}|\hat{\sigma }^z_i \hat{\sigma }^z_j|\psi _\text{gs}} = m_0^2 \neq 0
+\] 
+con $0<m_0^2< 1$.
+Per taglie finite (cio\`e per lunghezza della catena $L<+\infty$), la degenerazione dello stato fondamentale sparisce e si osserva un unico stato fondamentale, che commuta con $\hat{P}$; inoltre $\braket{\psi _\text{gs}|\hat{\sigma }_i^2|\psi _\text{gs}} =0$.
+Per $L\to +\infty$, cio\`e nel limite termodinamico, si recupera la degenerazione
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 30, 57:00
+\centering Riprendere da lezione 30, 1:17:00
 \end{boxenv}
-
-
-
-
 
 
 
