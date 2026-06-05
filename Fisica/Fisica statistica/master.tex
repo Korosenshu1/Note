@@ -4907,8 +4907,11 @@ Il termine di campo genera un effetto che \`e sostanzialmente analogo a quello d
 
 Inoltre, non si aggiunge un termine di campo magnetico lungo $z$ perch\'e complicherebbe estremamente la soluzione del sistema.
 \end{osservazione}
-\subsubsection{Casi limite del sistema}
-Classicamente, si individuava un valore di temperatura critica; ora si fissa la temperatura a zero e si fanno variare i parametri $g$ e $J$, per l'osservazione precedente.
+\subsubsection{Introduzione}
+\begin{boxenv}[]
+\centering Nel seguito, si d\`a una descrizione qualitativa del sistema e delle caratteristiche che si possono osservare.
+\end{boxenv}
+\noindent Classicamente, si individuava un valore di temperatura critica; ora si fissa la temperatura a zero e si fanno variare i parametri $g$ e $J$, per l'osservazione precedente.
 Si andranno a studiare, quindi, i casi: (a) $g / J \gg 1$; (b) $g / J \ll 1$.
 \vspace{.5cm}
 
@@ -4944,16 +4947,101 @@ Infatti, si pu\`o dimostrare, usando le regole di commutazione delle matrice di 
 \[
 \ket{\phi _{1,2} } = \frac{1}{\sqrt{2} } \big(\ket{\psi _{\text{gs},1} } \pm \ket{\psi _{\text{gs}} ,2}  \big)
 \] 
+Inoltre, in questo regime $g=0$, si vede che il correlatore \`e
+\[
+\braket{\psi _{\text{gs},1 / 2} |\hat{\sigma }_i^z \hat{\sigma }^z_j|\psi _{\text{gs},1 / 2} }  = 1
+\] 
+con $\psi _{\text{gs},1 / 2}$ che indica l'equivalenza di usare l'uno o l'altro stato.
 A $g>0$ (piccolo), invece, tramite teoria perturbativa in $g$, si pu\`o dimostrare che 
 \[
 \lim_{\lvert i-j \rvert  \to +\infty} \braket{\psi _\text{gs}|\hat{\sigma }^z_i \hat{\sigma }^z_j|\psi _\text{gs}} = m_0^2 \neq 0
 \] 
 con $0<m_0^2< 1$.
-Per taglie finite (cio\`e per lunghezza della catena $L<+\infty$), la degenerazione dello stato fondamentale sparisce e si osserva un unico stato fondamentale, che commuta con $\hat{P}$; inoltre $\braket{\psi _\text{gs}|\hat{\sigma }_i^2|\psi _\text{gs}} =0$.
-Per $L\to +\infty$, cio\`e nel limite termodinamico, si recupera la degenerazione
+Inoltre, per taglie finite (cio\`e per lunghezza della catena $L<+\infty$), la degenerazione dello stato fondamentale sparisce e si osserva un unico stato fondamentale, che commuta, quindi, con $\hat{P}$.
+La richiesta di avere un singolo stato fondamentale implica l'impossibilit\`a di trovare, nello stato fondamentale del sistema, una certa simmetria di spin up e spin down come nel caso $g=0$, altrimenti l'operatore parit\`a non potrebbe mandarlo in se stesso e si avrebbe degenerazione.
+La richiesta di commutazione con la parit\`a per questo stato fondamentale si traduce in $\braket{\psi _\text{gs}|\hat{\sigma }_i^2|\psi _\text{gs}} =0$.
+
+In ogni caso, studiando il limite termodinamico, quindi per $L\to +\infty$, si osserva la ricomparsa della degenerazione dello stato fondamentale\footnote{Questa non si manifesta nella comparsa degli stessi $\ket{\psi _{\text{gs},1 / 2} } $ visti in precedenza, ma in qualcosa di pi\`u complicato.}. 
+Studiando il correlatore in questo caso, si pu\`o osservare una correzione:
+\[
+\braket{\psi_\text{gs} |\hat{\sigma }_i^z \hat{\sigma }_j^z|\psi _\text{gs}} \simeq m_0^2 + e^{- \lvert i - j \rvert / \xi }
+\] 
+dove $\xi  \equiv \xi (g)$ finita\footnote{In realt\`a, anche la $\xi $ introdotta nel caso (a) \`e dipendente da $g$, quindi \`e una $\xi (g)$.}. 
+Questo evidenzia come, dopotutto, non ci sia molta differenza tra il caso (a) e il caso (b), a parte la presenza di una magnetizzazione finita nel secondo; tuttavia, \`e possibile dimostrare che non i due casi perturbativi non possono essere collegati analiticamente: nel mezzo (nel limite termodinamico), accade un fenomeno non descrivibile perturbativamente, riconducibile ad una transizione di fase.
+Si pu\`o vedere, poi, che il punto critico in 1D \`e $(g / J)_c = 1$.
+\begin{center}
+	\begin{tikzpicture}
+		\draw[-stealth](0,0) -- (10,0) node[below right] {\footnotesize $g / J$};
+		\draw[thick] (0,-0.10) -- (0,0.10);
+		\draw[very thick,red!70!gray] (5,-0.10) -- (5,0.10);
+		\node[below] at (0,0) {\footnotesize $0$};
+		\node[below,red!60!gray] at (5,0) {\footnotesize $\left(g / J\right) _c$};
+		\node[above] at (8.5,0) {\footnotesize $\langle \hat{\sigma }^z_i \hat{\sigma }_j^z \rangle\sim 0$};
+		\node[above] at (1.5,0) {\footnotesize $\langle \hat{\sigma }^z_i \hat{\sigma }_j^z \rangle\sim m_0^2$};
+		\node[below] at (7.5,0) {\footnotesize paramagnete};
+		\node[below] at (7.5,-0.3) {\footnotesize quantistico};
+		\node[below] at (2.5,0) {\footnotesize ferromagnete};
+		\node[below] at (2.5,-0.3) {\footnotesize quantistico};
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Di fatto, si pu\`o vedere che l'andamento del correlatore in $g / J$ \`e analogo a quello che si vedeva nel modello di Ising classico per la magnetizzazione al variare della temperatura.
+	Questo evidenzia come, effettivamente, il parametro $g$ nel caso quantistico sortiscano un effetto analogo alla temperatura nel caso classico.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=.8]
+
+% Assi
+\draw[->, thick] (0,0) -- (7,0) node[right] {$g / J$};
+\draw[->, thick] (0,0) -- (0,5) node[above] {$\langle \hat{\sigma }^z _i \hat{\sigma }^z _j\rangle$};
+
+
+% Etichetta Tc
+\node[below] at (Tc) {$\left(g/J\right)_c $};
+
+% Curva (fase ordinata) - rossa
+\draw[thick, blue!30!white]
+    (0,3.6)
+    .. controls (1.5,3.4) and (2.5,2.2) .. (3.2,0);
+\node[left] at (0,3.6) {$1$};
+% Linea per T > Tc (fase disordinata) - blu
+\draw[thick, blue!50!gray] (3.2,0) -- (6.75,0);
+% Punto critico
+\coordinate (Tc) at (3.2,0);
+\fill (Tc) circle (2pt);
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Vicino alla transizione e nel limite termodinamico ($L\to +\infty$), si osservano i seguenti fenomeni.
+\begin{itemize}
+	\item Il gap tra stato fondamentale (spazio degenere in cui vivono gli stati fondamentali) e primo stato eccitato si chiude, con un andamento dato da (ponendo $J=1$)
+		\[
+		\Delta \sim \lvert g- g_c \rvert ^{z \nu }
+		\] 
+	Qui, $z$ e $\nu $ sono esponenti critici, con $\nu $ analogo a quello visto per Ising classico, mentre $z$ \`e un nuovo esponente critico legato specificatamente a questo tipo di transizioni di fase.
+\item La lunghezza di correlazione diverge come $\xi \sim \lvert g - g_c \rvert ^{\nu }$, analogamente al caso classico.
+\end{itemize}
+Infine, la scelta di studiare la correlazione lungo $z$ \`e relativa al fatto che, lungo $x$ non si osservano fenomeni critici; di fatto, la magnetizzazione lungo $z$
+\[
+\psi = M^z = \frac{1}{L} \sum_{i=1}^{L} \braket{\psi _\text{gs}|\hat{\sigma }^z_i|\psi _\text{gs}} 
+\] 
+si comporta da buon parametro d'ordine, visto che \`e non-nullo nella fase in cui la simmetria \`e rotta e si annulla nella fase simmetrica, mentre $M^x$ non manifesta comportamenti simili.
+
+\subsubsection{Soluzione analitica del modello in 1D}
 \begin{boxenv}[]
-\centering Riprendere da lezione 30, 1:17:00
+\centering Riprendere dalla lezione 31
 \end{boxenv}
+
+
+
+
+
+
 
 
 
