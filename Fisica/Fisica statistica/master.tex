@@ -5109,10 +5109,67 @@ Visto che $\hat{n}_j = \hat{c}_j^\dagger \hat{c}_j$, l'hamiltoniana trasformata 
 \begin{osservazione}
 Un ragionamento analogo si pu\`o applicare anche al modello di Heisenberg, ma si vede comparire un termine quartico, legato ad un'interazione tra le densit\`a di fermioni, per cui tutta la trattazione a seguire viene meno. 
 \end{osservazione}
-
+\begin{osservazione}
+	[Esempi in cui la stringa non si annulla]
+	Aggiungendo un termine di \textit{campo longitudinale} (quindi lungo $x$ in questa trattazione, cio\`e orientato lungo la direzione di spin), la stringa $\hat{k}_j$ non scompare e si ha la formazione di termini non quadratici:
+	\[
+	- h \sum_{j}^{} \hat{\sigma }_j^x = - h \sum_{j}^{} (\hat{\sigma }_j^+ + \hat{\sigma }_j^-) \longmapsto - h \sum_{j}^{} \hat{k}_j (\hat{c}_j^\dagger + \hat{c}_j)
+	\] 
+Un altro caso si osserva se l'accoppiamento non fosse tra primi vicini (per esempio in 2D); in questo caso, infatti, si avrebbe un termine di interazione della forma $-J \sum_{j,\ell }^{} \hat{\sigma }_j^x \hat{\sigma _\ell }^x$, con $\ell >j$, dove 
+\[
+\hat{\sigma }_j^+ \hat{\sigma }^-_\ell \longmapsto (\hat{k}_j \hat{c}^\dagger _j) (\hat{k}_\ell \hat{c}_\ell ) = \hat{c}^\dagger _j \prod_{j\le m\le \ell } \left(1-2 \hat{n}_m\right)\hat{c}_\ell 
+\] 
+\end{osservazione}
+\subsubsection{Condizioni al bordo periodiche}
+\begin{center}
+	\begin{minipage}
+		{.6\columnwidth}
+	La richiesta di avere condizioni al bordo periodiche e avere invarianza per traslazioni porta a necessitare che i siti siano sostanzialmente disposti su un cerchio.
+	Indicando con $L$ il numero di siti, il problema, qui, \`e dato dall'interazione tra il termine $L$-esimo e il primo; infatti, tramite trasformazione di Jordan-Wigner, essendo $\hat{k}_1 = 1$, si trova 
+	\[
+	\hat{\sigma }^+_L \hat{\sigma }^-_1 \longmapsto \hat{k}_L \hat{c}^\dagger _L \hat{c}_1
+	\] 
+	Il termine $\hat{k}_L$ coinvolge una produttoria fino a $L-1$, che si pu\`o espandere fino a $L$ aggiungendo un segno negativo legato al fatto che, essendo presente $\hat{c}^\dagger _L$ prima dell'operatore numero, il sito $L$ \`e pieno e $\hat{n}_L = 1$, quindi il prodotto aggiuntivo porta un $-1$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.30\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) circle (2);
+		\draw[red!60!gray, very thick] ({2*cos(120)},{2*sin(120)}) arc[start angle=120, end angle=150, radius=2];
+		\foreach \i in {0,30,...,360}{
+			\draw[fill] ({2*cos(\i)}, {2*sin(\i)}) circle (1.5pt);
+		}
+		\node[above] at (0,2) {\footnotesize $2$};
+		\node[above] at ({2*cos(60)},{2*sin(60)}) {\footnotesize $3$};
+		\node[above] at ({2*cos(120)},{2*sin(120)}) {\footnotesize $1$};
+		\node[above left] at ({2*cos(150)},{2*sin(150)}) {\footnotesize $L$};
+		\node[left] at ({2*cos(180)},{2*sin(180)}) {\footnotesize $L-1$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+In definitiva, si ha
+\[
+\hat{\sigma }_L^+ \hat{\sigma }_1 ^ - \longmapsto \left[ \prod_{i=1} ^L \left(1-2\hat{n}_i\right)  \right] \hat{c}^\dagger _L \hat{c}_1
+\] 
+Questo prodotto nella stringa \`e indice della parit\`a del numero totale di fermioni presenti nella catena, indicato con $N_f$; infatti, per ogni fermione presente, si aggiunge un fattore $-1$, per cui si ha $\hat{\sigma }_L^+ \hat{\sigma }_1 ^ - \longmapsto - (-1)^{N_f} \hat{c}^\dagger _L \hat{c}_1$.
+Questo segno negativo dato dalla parit\`a o meno della catena pu\`o portare la comparsa di un legame con segno opposto tra il sito $L$ e $1$:
+\begin{itemize}
+	\item per $N_f$ dispari, si hanno condizioni al bordo periodiche (PBC) e 
+		\[
+		\hat{H}_\text{pbc} = - J \sum_{j=1}^{L} \left(\hat{c}_j^\dagger \hat{c}_{j+1} + \ldots\right)  - g \sum_{j=1}^{L} \left(2\hat{n}_j - 1\right)
+		\] 
+	\item per $N_f$ pari, si hanno condizioni al bordo anti-periodiche (ABC) e 	
+		\[
+		\hat{H}_\text{abc} = - J \sum_{j=1}^{L-1} \left(\hat{c}^\dagger _{j} \hat{c}_{j+1} \ldots\right) - g \sum_{j=1}^{L} (2\hat{n}_j - 1) + J\left(\hat{c}^\dagger _L \hat{c}_1 +\ldots\right) 
+		\] 
+\end{itemize}
+con $\hat{c}_{L+1} \equiv \hat{c}_1$ e $\hat{c}_{L+1} ^\dagger \equiv \hat{c}^\dagger _1$.
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 32
+\centering Riprendere da lezione 32, 33:00
 \end{boxenv}
+
 
 
 
