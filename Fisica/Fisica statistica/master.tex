@@ -5032,19 +5032,87 @@ Infine, la scelta di studiare la correlazione lungo $z$ \`e relativa al fatto ch
 \] 
 si comporta da buon parametro d'ordine, visto che \`e non-nullo nella fase in cui la simmetria \`e rotta e si annulla nella fase simmetrica, mentre $M^x$ non manifesta comportamenti simili.
 
-\subsubsection{Soluzione analitica del modello in 1D}
+\subsubsection{Trasformazione di Jordan-Wigner}
+Questa soluzione si basa sul mappare queste particelle di spin $1 / 2$ in fermioni spinless, cio\`e passare da questo sistema descritto tramite gli operatori rappresentati dalle matrici di Pauli $\hat{\sigma }_i^{\alpha }$ ad un sistema descritto tramite gli operatori di creazione e distruzione $\hat{c}_i, \ \hat{c}^\dagger _i$.
+Mentre le matrici di Pauli soddisfano le regole di commutazione 
+\[
+	[\hat{\sigma }_i^\alpha , \hat{\sigma }_j ^\beta ] = \delta _{ij} \left[ 2 i \varepsilon _{\alpha  \beta  \gamma} \hat{\sigma }_i^\gamma \right] 
+\] 
+gli operatori di creazione e distruzione soddisfano le regole di anti-commutazione
+\[
+	\{\hat{c}_i, \hat{c}_j^\dagger \} = \delta _{ij} \hspace{1cm} \{\hat{c}_i, \hat{c}_j\} = \{\hat{c}_i^\dagger , \hat{c}_j^\dagger \} = 0 
+\] 
+Il passaggio (mapping) da un sistema all'altro si ottiene tramite la \textit{trasformazione di Jordan-Wigner}.
+\begin{esempio}
+	[Tentativo di mapping] Si potrebbe pensare di definire gli operatori di scambio 
+	\[
+	\hat{\sigma }_j ^{\pm} = \frac{1}{2} \left(\hat{\sigma }_j^x \pm i \hat{\sigma }_j^y\right) 
+	\] 
+	che mandano uno spin up in down e viceversa. 
+	In questo, il mapping si potrebbe individuare come 
+	\[
+	\hat{\sigma }_j^{+}\longmapsto \hat{c}_j^\dagger  \hspace{1cm} \hat{\sigma }_j^- \longmapsto \hat{c}_j
+	\] 
+cio\`e si associa l'operatore di scambio in spin up con l'operatore di creazione, mentre quello in spin down con l'operatore di distruzione; cos\`i facendo, \`e come se si individuasse $\ket{\downarrow} \equiv \ket{0} $ (vuoto) e $\ket{\uparrow} \equiv \ket{1} $.
+Il problema \`e che questa formulazione funziona bene solamente su singolo sito, mentre su pi\`u siti non soddisfano le regole di commutazione desiderate.
+\end{esempio}
+\noindent Il mapping corretto, invece, si ottiene tramite la \textit{stringa di Jordan-Wigner}:
+\begin{equation}
+		\hat{\sigma }_j^{-}= \left[ \prod_{i < j} \left(1 - 2 \hat{n}_i\right)  \right] \hat{c}_j = \left[ e^{i \pi \sum_{i<j}^{} \hat{n}_i} \right] \hat{c}_j\hspace{1cm}\hat{\sigma }_j^+ = \hat{c}_j ^\dagger \left[ \prod_{i<j} \left(1-2\hat{n}_i\right)  \right] 
+\end{equation}
+dove $\hat{n}_i = \hat{c}^\dagger _i \hat{c}_i$ \`e l'operatore numero. 
+Si osserva che, nell'espressione di $\hat{\sigma }_j^+$, l'operatore $\hat{c}_j^\dagger $ commuta con la stringa, quindi si potrebbe anche portare a destra, e $\hat{n}_i ^\dagger  = \hat{n}_i$. 
+Per comodit\`a, si definisce $\hat{k}_j:=\prod_{i<j} \left(1 - 2 \hat{n}_i\right) $ come la stringa di Jordan-Wigner; in questa, si evidenzia come $i < j$ implichi la necessit\`a di definire un ordinamento, in accordo col fatto che gli operatori fermionici soddisfano delle regole di anti-commutazione.
+Infine, si pu\`o dimostrare che il mapping trasforma anche le relative regole di commutazione, ma si omette.
+\begin{osservazione}
+L'ordinamento \`e banale in 1D, mentre diventa complicato in dimensioni superiori: si vengono a creare interazioni non locali secondo qualunque ordinamento scelto, per cui la trasformazione perde di utili\`a.
+\end{osservazione}
+\noindent Ora si vede come si trasforma questo modello di Ising nel modello fermionico.
+Per semplicit\`a, si scambiano $x$ e $z$, quindi si considera 
+\[
+\hat{H} = - J \sum_{j}^{} \hat{\sigma }_j^x \hat{\sigma }_{j+1} ^x - g \sum_{j}^{} \hat{\sigma }_j^z
+\] 
+Tramite gli operatori di alzamento e abbassamento, si ha $\hat{\sigma }_j^x = \hat{\sigma }_j ^+ + \hat{\sigma _j }^-$, visto che
+\[
+	\hat{\sigma }^x = \begin{pmatrix} 0&1 \\ 1 &0  \end{pmatrix} \hspace{.5cm}\hat{\sigma }^+ = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \hspace{.5cm} \hat{\sigma }^- \begin{pmatrix}  0  & 1 \\ 0 & 0  \end{pmatrix}  
+\] 
+In questo modo:
+\[
+	\hat{H} = - J \sum_{j}^{} \Big[\hat{\sigma }_j^+ \hat{\sigma }^- _{j+1} + \hat{\sigma }_j^- \hat{\sigma }_{j+1} ^+ + \hat{\sigma }_j^+ \hat{\sigma }_{j+1} ^+	+ \hat{\sigma }_j ^- \hat{\sigma }_{j+1} ^-\Big]-g \sum_{j}^{} \hat{\sigma }_j^z
+\] 
+\begin{osservazione}
+Si vede che i termini $\hat{\sigma }_j^+ \hat{\sigma }^- _{j+1}$, $ \hat{\sigma }_j^- \hat{\sigma }_{j+1} ^+$ conservano le eccitazioni lungo l'asse $z$, mentre gli altri due termini no; questi ultimi sono detti \textit{termini di anomalia} e sono quelli pi\`u complicati da trattare a livello analitico.
+\end{osservazione}
+\noindent Applicando la trasformazione di Jordan-Wigner, si ha che
+\[
+\hat{\sigma }_j^z = 2 \hat{\sigma }_j^+ \hat{\sigma }_j^- - 1 \longmapsto 2 (\hat{k}_j \hat{c}^\dagger _j)(\hat{k}_j \hat{c}_j) - 1 = 2 \hat{n}_j - 1
+\] 
+dove si \`e usato il fatto che $\hat{c}_j^\dagger \hat{k}_j = \hat{k}_j \hat{c}^\dagger _j$ e che $\hat{k}_j^2 = 1$\footnote{Visto che $1-2 \hat{n}_i$ pu\`o assumere valore pari a $\pm 1$, elevandolo al quadrato (cosa permessa perch\'e ogni fattore commuta con l'altro e si possono avvicinare fattori uguali e scriverli al quadrato), si ottiene necessariamente $1$, quindi $\hat{k}_j^2$ \`e il prodotto di tanti $1$, per cui restituisce $1$.}.
+Ora si devono valutare i prodotti:
+\[
+	\begin{split}
+		\hat{\sigma }^+_j \hat{\sigma }^-_{j+1} \longmapsto (\hat{c}^\dagger _j \hat{k}_j ) ( \hat{k}_{j+1} \hat{c}_{j+1} ) &= \hat{c}^\dagger _j \left[ \hat{k}_j \hat{k}_{j+1}  \right] \hat{c}_{j+1} \\
+																    &=\hat{c}^\dagger _j \left(\prod_{i<j} 1 - 2 \hat{n}_i\right) \left(\prod_{\ell  < j+1} 1-2 \hat{n}_\ell  \right) \hat{c}_{j+1} \\
+																    & = \hat{c}^\dagger _j (1-2\hat{n}_j) \hat{c}_{j+1} 
+	\end{split}
+\] 
+usando lo stesso fatto di prima per cui $\hat{k}_j^2 = 1$ e, dunque, l'unico termine che sopravvive \`e quello dato da $\ell = j$ nella seconda produttoria, che non trova un termine con cui accoppiarsi nella prima.
+Ora, usando il fatto che l'operatore di creazione $\hat{c}^\dagger _j$ applicato sullo stato pieno (in cui c'\`e gi\`a un fermione) restituisce $0$, si ha che l'espressione \`e non-banale se e solo se $\hat{n}_j = 0$, cio\`e la posizione $j$-esima \`e vuota. Allora si conclude che 
+\[
+\hat{\sigma }_j ^+ \hat{\sigma }_{j+1} ^- \longmapsto \hat{c}_j^\dagger \hat{c}_{j+1} 
+\] 
+Per ragionamenti analoghi, si possono ricavare espressioni simili per i termini rimanenti; cos\`i facendo, l'hamiltoniana di Ising trasformata \`e
+\[
+	\hat{H} \longmapsto - J \sum_{j}^{} \Big[\hat{c}^\dagger _j \hat{c}_{j+1} + \hat{c}^\dagger _{j+1} \hat{c}_j + \hat{c}_j^\dagger \hat{c}_{j+1} ^\dagger + \hat{c}_{j+1} \hat{c}_j\Big] - g \sum_{j}^{} \left(2 \hat{n}_j -1\right) 
+\] 
+Visto che $\hat{n}_j = \hat{c}_j^\dagger \hat{c}_j$, l'hamiltoniana trasformata \`e quadratica negli operatori fermionici, per cui non sono presenti veri e propri termini di interazione: questi termini quadratici corrispondono, piuttosto, a spostare fermioni da un sito all'altro.
+\begin{osservazione}
+Un ragionamento analogo si pu\`o applicare anche al modello di Heisenberg, ma si vede comparire un termine quartico, legato ad un'interazione tra le densit\`a di fermioni, per cui tutta la trattazione a seguire viene meno. 
+\end{osservazione}
+
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 31
+\centering Riprendere dalla lezione 32
 \end{boxenv}
-
-
-
-
-
-
-
-
-
 
 
 
