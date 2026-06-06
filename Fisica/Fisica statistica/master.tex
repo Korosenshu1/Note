@@ -5166,8 +5166,131 @@ Questo segno negativo dato dalla parit\`a o meno della catena pu\`o portare la c
 		\] 
 \end{itemize}
 con $\hat{c}_{L+1} \equiv \hat{c}_1$ e $\hat{c}_{L+1} ^\dagger \equiv \hat{c}^\dagger _1$.
+\begin{osservazione}
+Nel limite termodinamico, cio\`e per $L\to +\infty$, questa differenza scompare, ma \`e molto rilevante altrimenti.
+Infatti, si vedr\`a che questo termine aggiuntivo \`e responsabile per la comparsa della degenerazione nel caso ferromagnetico a $L$ finito.
+\end{osservazione}
+\subsubsection{Diagonalizzazione dell'hamiltoniano}
+Avendo invarianza per traslazioni, si passa in trasformata di Fourier, scrivendo
+\[
+\hat{c}_j = \frac{1}{\sqrt{L} }\sum_{k}^{} \hat{d}_k e^{- \frac{2\pi }{L} k_j} ,\  j = 1 ,\ldots, L
+\] 
+La scelta dei $k$ dipende dalla parit\`a $(-1)^{N_f}$: $\hat{c}_{L+1} = \pm \hat{c}_1$, con $+$ se $N_f$ \`e dispari (PBC), o $-$ se $N_f$ \`e pari (ABC).
+Questo equivale a richiedere che $e^{i \frac{2\pi}{L}k L} = \pm 1$ a seconda del caso; per convenzione, perch\'e questa condizione sia verificata, si prende
+\[
+\begin{split}
+	&j = \begin{cases}
+		-\frac{L}{2} +1 ,\, -\frac{L}{2}+2,\ldots,\, \frac{L}{2}-1,\, \frac{L}{2} & \big(L \text{ pari}\big)\\
+		-\frac{L-1}{2} ,\, -\frac{L-3}{2},\ldots,\, \frac{L-3}{2},\, \frac{L-1}{2} & \big(L \text{ dispari}\big)
+	\end{cases}\\
+	&\Rightarrow k = \begin{cases}
+		-\frac{L}{2} +1 ,\, -\frac{L}{2}+2,\ldots,\, \frac{L}{2}-1,\, \frac{L}{2} & \big(N_f+L \text{ pari}\big)\\
+		-\frac{L-1}{2} ,\, -\frac{L-3}{2},\ldots,\, \frac{L-3}{2},\, \frac{L-1}{2} & \big(N_f+L \text{ dispari}\big)
+	\end{cases}
+\end{split}
+\] 
+Trascurando momentaneamente i problemi legati alla condizione di periodicit\`a, in generale, si ha che $\hat{H}=\sum_{k>0}^{}\hat{H}_k$, dove $\hat{H}_k$ accoppia i modi per $-k$ e $k$.
+Di fatto, passando in trasformata di Fourier, si trova 
+\[
+\hat{H} = - J \sum_{k}^{} \left[ \hat{d}^\dagger _k \hat{d}_k \left(e^{i \frac{2\pi}{L}k} + e^{-i \frac{2\pi }{L}k} + \frac{2g}{J}\right) + e^{i \frac{2\pi}{L}k}\left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} + \hat{d}_k \hat{d}_{-k} \right) - \frac{g}{J}  \right] 
+\] 
+.dove si sono svolti passaggi analoghi a quanto visto per il tight binding.
+Allora\footnote{{\color{red} Controllare un fattore $2$.}}
+\[
+	\hat{H}_k = \underbracket{- 2 \left[ J \cos \left( \frac{2\pi k}{L}\right) +g  \right]}_{= f_k}  \left(\hat{d}^\dagger _k \hat{d}_k -\hat{d}_{-k} \hat{d}^\dagger _{-k} \right) \underbracket{-2i J \sin \left(\frac{2\pi k }{L}\right) }_{-i g_k}  \left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} - \hat{d}_{-k} \hat{d}_k\right) 
+\] 
+Questo si pu\`o scrivere in un modo pi\`u sintetico facendo uso della notazione spinoriale:
+\[
+	\hat{H}_k = \begin{pmatrix} \hat{d}^\dagger _k & \hat{d}_{-k}  \end{pmatrix} \begin{pmatrix} f_k & - i g_k \\ i g_k & - f_k \end{pmatrix} \begin{pmatrix} \hat{d}_k \\ \hat{d}^\dagger _{-k}  \end{pmatrix} \equiv \pmb{\Psi} _k^\dagger \mathcal{H} _k \pmb{\Psi} _k
+\] 
+dove 
+\[
+	\pmb{\Psi} _k = \begin{pmatrix} \hat{d}_k \\ \hat{d}^\dagger _k \end{pmatrix} \hspace{1cm} \mathcal{H} _k = \begin{pmatrix} f_ k & - i g_k \\ i g_k & - f_k \end{pmatrix} = f_k \hat{\sigma }^z + g_k \hat{\sigma }^y
+\] 
+La matrice $\mathcal{H} _k$ si diagonalizza tramite una rotazione in $x$, individuata da $\hat{R}_x (\theta _k)$, con $\theta _k = \arctan ( g_k / f_k)$ angolo reale; pi\`u precisamente
+\[
+	\hat{R}_x (\theta _k) = e^{i \frac{\theta _k}{2}\hat{\sigma }^x} = \cos \left(\frac{\theta _k}{2}\right) \operatorname{Id}  + i \sin \left(\frac{\theta _k}{2}\right) \hat{\sigma }^x = \begin{pmatrix} \cos \theta  _ k / 2 &  - i \sin \theta  _k / 2\\ -i \sin \theta _k / 2 & \cos \theta _k / 2\end{pmatrix} 
+\] 
+Pertanto, facendo uso del fatto che la rotazione \`e unitaria
+\[
+	\hat{H}_k = \pmb{\Psi} _k ^\dagger \mathcal{H} _k \pmb{\Psi} _k = \pmb{\Psi} _k^\dagger \underbracket{\hat{R}_x (\theta _k) \hat{R}_x^\dagger (\theta _k)}_{=1} \mathcal{H} _k\underbracket{ \hat{R}_x (\theta _k) \hat{R}^\dagger _x (\theta _k) }_{=1} \pmb{\Psi} _k = \pmb{\Phi} _k^\dagger  \begin{pmatrix} \varepsilon _k & 0 \\ 0 & - \varepsilon _k\end{pmatrix} \pmb{\Phi} _k
+\] 
+con
+\[
+	\begin{split}
+		&\pmb{\Phi} _k = \hat{R}^\dagger _k (\theta _k) \pmb{\Psi} _k = \begin{pmatrix} \cos \theta  _ k / 2 & - i \sin \theta  _k / 2 \\ - i \sin \theta _k / 2 & \cos \theta _k / 2 \end{pmatrix} \begin{pmatrix} \hat{d}_k \\ \hat{d}^\dagger _{-k}  \end{pmatrix} \equiv \begin{pmatrix} \hat{b}_k \\ \hat{b}^\dagger _{-k}  \end{pmatrix} \\
+		& \varepsilon _k = 2 J \sqrt{1 + \frac{g^2}{J^2} + \frac{2g}{J}\cos \left(\frac{2\pi k}{L}\right) }
+	\end{split}
+\] 
+Qui, gli operatori $\hat{b}_k, \ \hat{b}^\dagger _{-k} $ sono relativi alle quasi-particelle di Bogoliubov, tramite cui si diagonalizza il problema, analoghe a quelle viste per i bosoni.
+Le espressioni per questi operatori si ottengono definendo 
+\[
+u_k = \cos \theta _k / 2 = f_k / \varepsilon _k \hspace{1cm} v_ k = \sin \theta _k / 2  = g_ k / \varepsilon _k
+\] 
+e usando la \textit{trasformazione di Bogoliubov} 
+\[
+\begin{cases}
+	\hat{b}_k = u _k \hat{d}_k - i v_k \hat{d}^\dagger _{-k} \\
+	\hat{b}^\dagger _{-k}  = - i v _k \hat{d}_k + u _k \hat{d}^\dagger _{-k} 
+\end{cases}
+\] 
+Si pu\`o dimostrare, facendo uso del fatto che $u_k^2 + v_k ^2 = 1$, che $\hat{b}_k$ e $\hat{b}^\dagger _k$ soddisfano le regole di anti-commutazione, quindi sono operatori fermionici.
+In definitiva, si ha
+\[
+\hat{H} _k = \varepsilon _k \left(\hat{b}_k^\dagger \hat{b}_k + \hat{b}^\dagger _{-k} \hat{b}_{-k} -1\right) 
+\] 
+\subsubsection{Stato fondamentale e stati eccitati}
+Lo stato fondamentale si vede essere, analogamente a quanto visto per i bosoni, lo stato di vuoto delle quasi particelle, indicato con $\ket{\Omega } $, che, quindi, soddisfa $\hat{b}_k \ket{\Omega } , \ \forall k$.
+	\begin{center}
+		\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    axis lines=middle,
+    xmin=0, xmax=3.45,
+    ymin=0, ymax=5.4,
+    width=14cm,
+    height=7cm,
+    samples=200,
+    domain=0:pi,
+    xtick={3.14159},
+    xticklabels={$ \pi $},
+    ytick=\empty,
+    xlabel={$ \dfrac{2\pi \tilde{k}}{L} $},
+    xlabel style={at={(axis description cs:1.02,0.03)},anchor=west},
+    ylabel={$ \varepsilon_{\tilde{k}} $},
+    ylabel style={at={(axis description cs:0.02,1.02)},anchor=south},
+    clip=false,
+]
+
+% g != 1
+\def\g{1.6}
+\addplot[thick, smooth, domain=0:pi] {2*sqrt(1+\g*\g-2*\g*cos(deg(x)))};
+\node[anchor=west] at (axis cs:1.35,4.55) {$g\neq 1$};
+
+% g = 1
+\addplot[thick, smooth, domain=0:pi] {2*sqrt(2-2*cos(deg(x)))};
+\node[anchor=west] at (axis cs:1.55,2.55) {$g=1$};
+
+
+% mark the left value 2|g-1|
+\node[anchor=east] at (axis cs:0,1.2) {$2|g-1|$};
+
+% annotations
+\node[rotate=30] at (axis cs:0.50,2.5) {\scriptsize quadratico $\propto \tilde{k}^2$};
+\node[rotate=30] at (axis cs:0.55,0.55) {\scriptsize lineare $\propto \tilde{k}$};
+
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{Andamento dell'energia delle quasi-particelle del sistema.}
+\end{center}
+	Ora si studia l'andamento dell'energia.
+	Per semplicit\`a, si definisce una sua versione traslata per $\tilde{k}= k -  L / 2$, da cui $\varepsilon _{\tilde{k}} = 2 \sqrt{1 + g^2 - 2g \cos( 2\pi \tilde{k} / L )}  $, con $J = 1$.
+	Si vede che, per $g=1$, si ha un sistema gapless per cui passare al primo stato eccitato costa arbitrariamente poco in energia, al contrario del caso per $g\neq 1$.
+\begin{osservazione}
+Per tutta questa trattazione, non si \`e considerato il problema (relativo al caso di taglia finita) relativo a $N_f$ pari o dispari e si tratter\`a opportunamente pi\`u avanti.
+\end{osservazione}
+
 \begin{boxenv}[]
-\centering Riprendere da lezione 32, 33:00
+\centering Riprendere dalla lezione 33
 \end{boxenv}
 
 
