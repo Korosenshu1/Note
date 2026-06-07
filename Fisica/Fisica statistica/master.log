@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 22:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1331,7 +1331,7 @@ File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 341.
-<vdw.png, id=224, 655.44875pt x 521.95pt>
+<vdw.png, id=228, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
 Package pdftex.def Info: vdw.png  used on input line 348.
@@ -1341,7 +1341,7 @@ Package pdftex.def Info: vdw.png  used on input line 348.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
-<max-constr-vdw.png, id=233, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=237, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
 Package pdftex.def Info: max-constr-vdw.png  used on input line 378.
@@ -1367,7 +1367,7 @@ Overfull \hbox (58.54832pt too wide) detected at line 748
  []
 
 [19] [20] [21]
-<pd.jpg, id=324, 702.625pt x 615.29875pt>
+<pd.jpg, id=328, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
 Package pdftex.def Info: pd.jpg  used on input line 826.
@@ -1516,17 +1516,22 @@ Overfull \hbox (19.40938pt too wide) in paragraph at lines 5306--5307
  [][] 
  []
 
-[122] [123] [124] [125] [126] [127] (./master.aux)
+[122] [123] [124] [125]
+Overfull \hbox (38.60374pt too wide) detected at line 5476
+\OT1/cmr/m/n/10.95 ^^E[] = []  \OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ) = [] [] \OML/cmm/m/it/10.95 e[]e[] [] [] [][] d^^^ e[][]
+ []
+
+[126] [127] [128] [129] [130] [131] [132] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 50114 strings out of 467525
- 1166150 string characters out of 5425862
- 1844071 words of memory out of 5000000
- 77877 multiletter control sequences out of 15000+600000
+ 50137 strings out of 467525
+ 1166502 string characters out of 5425862
+ 1843129 words of memory out of 5000000
+ 77888 multiletter control sequences out of 15000+600000
  708037 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2224s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1655,10 +1660,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zpl
 b.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (127 pages, 1067929 bytes).
+Output written on master.pdf (132 pages, 1085211 bytes).
 PDF statistics:
- 1467 PDF objects out of 1728 (max. 8388607)
- 1252 compressed objects within 13 object streams
- 388 named destinations out of 1000 (max. 500000)
- 664 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1506 PDF objects out of 1728 (max. 8388607)
+ 1286 compressed objects within 13 object streams
+ 400 named destinations out of 1000 (max. 500000)
+ 680 words of extra memory for PDF output out of 10000 (max. 10000000)
 

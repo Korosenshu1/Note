@@ -5318,7 +5318,7 @@ Per taglia finita, dunque, si osserva che
 \begin{osservazione}
 Per tutta questa trattazione, non si \`e considerato il problema (relativo al caso di taglia finita) relativo a $N_f$ pari o dispari e si tratter\`a opportunamente pi\`u avanti.
 \end{osservazione}
-\subsubsection{Accoppiamento dei momenti}
+\subsubsection{Accoppiamento dei momenti e stati fondamentali}
 
 Ora si considera il problema dell'accoppiamento dei momenti legato alle condizioni al contorno. 
 Tenendo in considerazione i valori di $k$ possibili stabiliti in \ref{kval} a seconda della parit\`a di $N_f$, le possibilit\`a sono riassunte nella seguente tabella.
@@ -5375,22 +5375,203 @@ Formalmente, si scrive che $\mathcal{H}  = \mathcal{H} _{+}  \oplus \mathcal{H} 
 	\end{tikzpicture}
 	\end{minipage}
 \end{center}
-Dal grafico sopra, si possono trarre le seguenti conclusioni.
-\begin{itemize}
-	\item Si prende $g>1$, relativo alla fase paramagnetica. 
-		Dal grafico sopra, \`e evidente che $\varepsilon _{L / 2} , \varepsilon _0 < 0$, quindi i modi $k=0, L / 2$ sono energeticamente favoriti da $\hat{H}_0$ e $\hat{H}_{L / 2} $.
+
+\textbf{Caso $\mathbf{g>1}$.} Questo corrisponde ad una fase paramagnetica.
+Dal grafico sopra, \`e evidente che $\varepsilon _{L / 2} , \varepsilon _0 < 0$, quindi i modi $k=0, L / 2$ sono energeticamente favoriti da $\hat{H}_0$ e $\hat{H}_{L / 2} $.
 		
 		Se $L$ \`e pari, si devono distinguere i casi $N_f$ pari e $N_f$ dispari.
 		Nel primo caso, l'hamiltoniano \`e $\sum_{k>0}^{} \hat{H}_k$ e lo stato fondamentale \`e quello di vuoto delle quasi-particelle.
 		Nel secondo caso, invece, si ha $\sum_{k>0}^{} \hat{H}_k + \hat{H}_0 + \hat{H}_{ L / 2}$, per cui sorge un problema: gli $\hat{H}_k$ restituiscono energia minima per tutti gli altri modi vuoti, mentre gli altri due termini vogliono aggiungere particelle con modi $k=0,L / 2$; cos\`i facendo, per\`o, si finisce in $N_f$ pari.
 		Quindi, il ground state in questo caso non \`e quello a energia idealmente pi\`u bassa; piuttosto, il sistema preferir\`a riempire con una singola quasi-particella il modo a energia minore, ossia quello per $k=0$.
-
 		Mettendo tutto insieme, si vede che i due ground state, per $N_f$ pari e dispari, non si trovano a contatto, non sono in competizione, in quanto la differenza di energia tra i due \`e finita.
-\end{itemize}
 
+		Se $L$ \`e dispari, si ha una condizione analoga: se $N_f$ pari, si considera $\hat{H}_{\text{abc}} $, ma la minimizzazione ideale richiederebbe di avere il vuoto per gli $\hat{H}_k$ e una particella in $L / 2$ per $\hat{H}_{L / 2} $, che porterebbe a $N_f$ dispari, quindi questo minimo non \`e mai raggiungibile; se $N_f$ \`e dispari, si ha una situazione identica, ma con $\hat{H}_0$, quindi, in questo caso, il minimo ideale si pu\`o raggiungere perch\'e si prende il vuoto per ogni $k$ accoppiati e una particella in $k=0$. 
+\vspace{.5cm}
+
+\textbf{Caso $\mathbf{g<-1}$.} Anche questo caso corrisponde ad una fase paramagnetica. 
+Si vede dal grafico che $\varepsilon _0, \ \varepsilon _{L / 2}  > 0$.
+Per $L$ pari, di nuovo $\hat{H}_\text{abc}$ permette di raggiungere il minimo ideale; se $N_f$ dispari, per\`o, visto che $\varepsilon _0, \ \varepsilon _{L / 2}  > 0$, non si vorrebbe mettere neanche una particella, ma $0$ non \`e pari, quindi il ground state non \`e ammesso.
+Verificando per ragionamenti analoghi, anche per $L$ dispari si ha un caso in cui il ground state \`e ammesso e un altro in cui no.
+\vspace{.5cm}
+
+\textbf{Caso $\mathbf{-1 < g< 1} $.} Questo \`e il caso della fase ferromagnetica.
+Qui succede qualcosa di diverso rispetto ai casi precedenti: entrambe le opzioni, $N_f$ pari e dispari, ammettono ground state.
+Questo \`e dato dal fatto che, in questo range, $\varepsilon _0 < 0$, mentre $\varepsilon _{L / 2} > 0$, per cui:
+\begin{itemize}
+	\item se $L$ \`e pari, $\hat{H}_\text{abc}$ ammette ground state come al solito, mentre anche $\hat{H}_\text{pbc}$ lo ammette perch\'e, questa volta, la minimizzazione dell'energia \`e legata solo ad aggiungere una particella in $k=0$, quindi il vincolo $N_f$ dispari \`e ancora soddisfatto;
+	\item se $L$ \`e dispari, invece, $\hat{H}_\text{abc}$ ammette ground state perch\'e non si vuole una particella per $k = L / 2$, in quanto aumenterebbe l'energia, quindi $N_f$ pari \`e soddisfatto, mentre $\hat{H}_\text{pbc}$ ha ground state perch\'e $\varepsilon _0 < 0 $ permette di minimizzare l'energia avendo una particella in $k=0$ e vuoto per tutto il resto.
+\end{itemize}
+\vspace{.5cm}
+
+La presenza di due ground state \`e il motivo per cui si presenta la degenerazione nella fase ferromagnetica nel limite termodinamico: nel caso di taglia finita, i due ground state appartenenti ai due sottospazi di Hilbert differenti sono separati da un gap energetico finito, la cui differenza \`e un esponenziale in $L$; mandando $L\to +\infty$, allora, questa differenza tende a zero.
+Nella fase paramagnetica, invece, gli stati sono separati da un gap che non dipende da $L$, per cui anche nel limite termodinamico, rimangono distinti.
+\begin{osservazione}
+La fisica del sistema sarebbe rimasta identica, nel caso in cui non si fosse assunta invarianza per traslazioni, ma i calcoli si sarebbero complicati notevolmente.
+\end{osservazione}
+\begin{osservazione}
+Volendo, \`e possibile studiare come si popolano gli stati eccitati, fenomeno che segue la distribuzione di Fermi-Dirac per effetto di eccitazione del sistema legato ad una temperatura finita.
+\end{osservazione}
+\subsubsection{Funzioni di correlazione}
+Si fa uso del teorema di Wick per concludere che, avendo a che fare con un hamiltoniano diagonalizzabile e quadratico, \`e sufficiente calcolare i correlatori a due punti (correlatori della forma $\langle c c^\dagger  \rangle, \langle c c \rangle,\ldots$) per esprimere la funzione di correlazione.
+Per calcolare questi correlatori, si introducono gli \textit{operatori di Majorana}:
+\[
+\hat{\gamma}_{2j - 1}  = \left(\prod_{i < j} \hat{\sigma }_i ^z\right) \hat{\sigma }_j^x \hspace{1cm} \hat{\gamma}_{2j}  = \left(\prod _{i < j} \hat{\sigma }_i^z\right) \hat{\sigma }_j^y
+\] 
+che soddisfano $\hat{\gamma}_\ell  = \hat{\gamma}_{\ell } ^\dagger $, con $\ell = -L , - L + 1 ,\ldots, L - 1$; il fatto che siano $2L$ \`e legato alla loro autoaggiuntezza.
+Assumendo $L$ dispari, si considera 
+\[
+j = - \frac{L-1}{2} , \ - \frac{L-3}{2}, \ \ldots,\ \frac{L-1}{2} 
+\] 
+In termini degli operatori fermionici, questi si scrivono come 
+\begin{equation}\label{mdef}
+\hat{\gamma}_{2j - 1}  = \hat{c}^\dagger _j + \hat{c}_j \hspace{1cm} \hat{\gamma}_{2j}  = -i \left(\hat{c}^\dagger _j - \hat{c}_j\right) 
+\end{equation}
+Conoscere il correlatore di questi operatori permetter\`a di scrivere qualunque funzione di correlazione, ma \`e prima necessario calcolare i correlatori a due punti dei $\hat{\gamma}_\ell $. 
+Allora, si costruisce la matrice di correlazione a due punti di Majorana
+\[
+	(\Gamma_L)_{m,n} = \langle \hat{\gamma}_ m \hat{\gamma}_n \rangle  , \ m,n = - L ,\ldots, L -1 
+\] 
+Per calcolare questo correlatore sul ground state, \`e necessario tradurre l'azione degli operatori di Majorana in termini degli operatori di Bogoliubov, in quanto si sa che il ground state \`e il vuoto delle quasi-particelle.
+Infatti, si sa che il ground state \`e tale per cui $\hat{b}_k \ket{\text{gs}} = 0 , \ \forall k$, che \`e equivalente a $\bra{\text{gs}} \hat{b}^\dagger _k=0, \ \forall k$, per cui
+\[
+\langle \hat{b}_k \hat{b}_{k'}  \rangle= 0 \hspace{1cm} \langle \hat{b}^\dagger _k \hat{b}_{k'}  \rangle = 0 \hspace{1cm} \langle \hat{b}^\dagger _k \hat{b}^\dagger _{k'}  \rangle= 0
+\] 
+per ogni $k$ sul ground state.
+L'unico non nullo, evidentemente, \`e $\langle \hat{b}_k \hat{b}_{k'}^\dagger  \rangle = \delta _{k k'} $.
+\begin{osservazione}
+In uno stato termico, cio\`e volendo calcolare il valor medio su uno stato eccitato a temperatura $\beta $, si deve passare per la traccia; in ogni caso, vale $\langle \hat{b}^\dagger _k \hat{b}^\dagger _{k'}  \rangle_\beta = \langle \hat{b}_k \hat{b}_{k'}  \rangle_\beta  = 0$.
+Invece
+\[
+\langle \hat{b}_k \hat{b}_{k'} ^\dagger  \rangle_\beta  = \frac{\delta _{kk'} }{1 + e^{\beta  \varepsilon _k}}= \delta _{k k'} - \langle \hat{b}_{k'} \hat{b}^\dagger _k \rangle_\beta 
+\] 
+\end{osservazione}
+\noindent Allora si scrivono $\hat{\gamma}_\ell $ in funzione dei $\hat{b}_k$; si segue lo schema seguente per arrivare al risultato finale.
+\begin{center}
+	\begin{tikzpicture}
+		\node at (0,0) {$\left\{ \hat{\gamma}_{\ell }  \right\} $};
+		\node at (3,0) {$\{ \hat{c}_j  \} $};
+		\node at (6,0) {$\{ \hat{d}_k \} $};
+		\node at (9,0) {$\{ \hat{b}_k  \} $};
+		\draw[-stealth] (0.5,0) -- (2.5,0);
+		\draw[-stealth] (3.5,0) -- (5.5,0);
+		\draw[-stealth] (6.5,0) -- (8.5,0);
+		\node[above] at (1.5,0) {\footnotesize def.};
+		\node[above] at (4.5,0) {\footnotesize Fourier};
+		\node[above] at (7.5,0) {\footnotesize Bogoliubov};
+	\end{tikzpicture}
+\end{center}
+Mettendo insieme tutti i passaggi, si ottiene che
+\[
+	\begin{pmatrix} \gamma_{2 j -1}  \\ \gamma_{2j}  \end{pmatrix} = \frac{1}{\sqrt{L} } \sum_{k}^{} e^{i \frac{2\pi }{L}k_j} \underbracket{\begin{pmatrix} 1 & 1 \\ i & - i \end{pmatrix}}_{(\star)}  \begin{pmatrix} u_k & i v_k \\ i v_k & u_k  \end{pmatrix} \begin{pmatrix} \hat{b}_k \\ \hat{b}_{-k} ^\dagger \end{pmatrix} 
+\] 
+dove la matrice $(\star)$ serve per scambiare i $\hat{c}_j$ per le relazioni in \ref{mdef} e la matrice con gli $u_k$ e $v_k$ deriva dall'espressione degli operatori di Bogoliubov.
+Facendo il conto, si pu\`o vedere che 
+\[
+	(\Gamma_L)_{m,n} =\delta _{m,n} + i (\Lambda )_{m,n}  \hspace{1cm} \Lambda = \begin{pmatrix} \Pi _0 & \Pi _1 & \cdots & \Pi_{L-1}\\ -\Pi_1 & \Pi_0 & \cdots & \Pi _{L-2} \\ \vdots & \vdots & \ddots & \vdots \\ -\Pi_{L-1}  & - \Pi _{L-2} & \cdots & \Pi _0\end{pmatrix} 
+\] 
+Si nota che $\Lambda $ \`e anti-simmetria a blocchi perch\'e relativa a fermioni; ragionamenti simili si possono vedere anche per bosoni.
+I blocchi sono
+\[
+	\Pi_j = \begin{pmatrix} 0 & g(j) \\ - g(j) & 0  \end{pmatrix}  \hspace{.5cm} g(j) = \frac{1}{L}\sum_{k}^{} e^{i \frac{2\pi}{L}k_j}e^{i \frac{\theta _k}{2}}\xrightarrow{\, \ L\to +\infty \ \, } \frac{1}{2\pi} \int _0^{2\pi} d\phi  \ e^{i \phi_j} \frac{J \cos \phi  + g - i J \sin\phi }{\lvert J \cos \phi  + g - i J \sin \phi  \rvert }
+\] 
+Per scrivere $\langle \hat{\sigma}^\alpha  _i \hat{\sigma }_j^\beta \rangle$, si riprendono le definizioni degli operatori di Majorana e si invertono:
+\[
+\hat{\sigma }_j^x = \bigg(\prod_{i < j} \hat{\sigma }_i^z\bigg) \hat{\gamma}_{2j-1} \hspace{1cm}\hat{\sigma }_j^y = \bigg(\prod_{i < j} \hat{\sigma }_i^z\bigg) \hat{\gamma}_{2j}  \hspace{1cm} i \hat{\sigma }_j^z = \hat{\sigma }_j^x \hat{\sigma }_j^y = \hat{\gamma}_{2j-1} \hat{\gamma}_{2j} 
+\] 
+visto che la catena al quadrato fa $1$.
+Allora
+\[
+\langle \hat{\sigma }^x_j \hat{\sigma }_\ell ^x \rangle= \big\langle \hat{\gamma}_{2j-1} \hat{\gamma}_{2j-1} \hat{\gamma}_{2j}  \hat{\gamma}_{2j+1} \ldots \hat{\gamma}_{2\ell  -1}   \big\rangle=\big\langle \hat{\gamma}_{2j} \ldots \hat{\gamma}_{2\ell -1}  \big\rangle
+\] 
+dove si \`e usato che
+\[
+	\hat{\gamma}_{2j-1} \hat{\gamma}_{2j-1} = \left(\hat{c}^\dagger _j + \hat{c}_j\right) \left(\hat{c}_j^\dagger + \hat{c}_j\right)  = \cancel{\hat{c}_j^\dagger \hat{c}_j^\dagger} + \underbracket{\hat{c}_j ^\dagger \hat{c}_j + \hat{c}_j \hat{c}_j ^\dagger}_{=1}   +\cancel{ \hat{c}_j \hat{c}_j}= 1
+\] 
+Il teorema di Wick permette di concludere che questo correlatore si scrive come prodotto di correlatori a due punti; cos\`i facendo, si arriva a calcolare
+\[
+\lim_{\lvert \ell -j \rvert  \to +\infty} \langle \hat{\sigma }_j^x \hat{\sigma }_\ell ^x \rangle = \psi ^2 \hspace{1cm} \psi  = \begin{cases}
+	(1-g^2 ) ^{1 / \delta } &,\ \lvert g \rvert <1\\
+	0&,\ \lvert g \rvert >1
+\end{cases}
+\] 
+con $\psi $ parametro d'ordine della transizione.
+
+\subsubsection{Catena di Kitaev}
+Si considera il modello di Ising con condizioni al contorno aperte, ossia con hamiltoniano della forma
+\[
+\hat{H} = - J \sum_{j=1}^{L-1} \hat{\sigma }_j ^x \hat{\sigma }^x _{j+1} - g \sum_{j}^{} \hat{\sigma }_j^z
+\] 
+Si fissa $g=0$.
+In questo modo, ripercorrendo i passi fatti in precedenza con la trasformazione di Jordan-Wigner, si ha
+\[
+	\begin{split}
+		\hat{H}&= - J \sum_{j=1}^{L-1} \left(\hat{c}^\dagger _j \hat{c}_{j+1} + \hat{c}_j^\dagger \hat{c}^\dagger _{j+1} + \hat{c}^\dagger _{j+1} \hat{c}_j + \hat{c}_{j+1} \hat{c}_j\right) \\
+		       &= -J \sum_{j=1}^{L-1} \left(\hat{c}^\dagger _j - \hat{c}_j\right) \left(\hat{c}^\dagger _{j+1} + \hat{c}_{j+1} \right) 
+	\end{split}
+\] 
+Usando gli operatori di Majorana, si pu\`o scrivere, ulteriormente
+\[
+\hat{H} = i J \sum_{j=1}^{L-1} \hat{\gamma}_{j,2} \hat{\gamma}_{j+1,1} 
+\] 
+con $\hat{\gamma}_{j,1} := \hat{\gamma}_{2j-1} $ e $\hat{\gamma}_{j,2} := \hat{\gamma}_{2j} $.
+In questo modo, ad ogni sito, si associano due operatori di Majorana: l'hamiltoniano collega il secondo operatore di Majorana del sito $j$, col primo operatore del sito $j+1$.
+Geometricamente, questo fatto si pu\`o schematizzare come segue.
+\begin{center}
+	\begin{tikzpicture}
+		\draw (0,0) -- (10,0);
+		\foreach \i in {0,2,4,6,8,10}{
+			\draw[fill] (\i,0) circle (1.5pt);
+			\draw[-stealth] (\i,-0.25) -- (\i,-0.75);
+			\draw[thick, dashed, blue!60!gray] (\i,-1.2) ellipse (.40 and .20);
+			\draw[fill,blue!60!gray] ({\i - 0.15},-1.2) circle (1.5pt);
+			\draw[fill,blue!60!gray] ({\i + 0.15},-1.2) circle (1.5pt);
+		}
+		\node[above] at (0,0.15) {\scriptsize fermioni};
+		\node[blue!60!gray] at (-1.25,-1.2) {\scriptsize Majorana};
+		\foreach \j in {0,2,4,6,8}{
+			\draw[very thick,blue!60!gray,opacity=0.4] ({\j+0.15},-1.2) -- ({\j+2-0.15},-1.2);
+		}
+		\draw[very thick,red!60!gray,opacity=0.4] (-0.15,-1.2) -- (-0.4,-1.2);
+		\draw[very thick,red!60!gray,opacity=0.4,dotted] (-0.4,-1.2) -- (-0.6,-1.2);
+		\draw[very thick,red!60!gray,opacity=0.4] ({10+0.15},-1.2) -- ({10+0.4},-1.2);
+		\draw[very thick,red!60!gray,opacity=0.4,dotted] ({10+0.4},-1.2) -- ({10+0.6},-1.2);
+		\node[red!60!gray] at ({10+1.5},-1) {\scriptsize fermione};
+		\node[red!60!gray] at ({10+1.5},-1.3) {\scriptsize delocalizzato};
+	\end{tikzpicture}
+\end{center}
+Il punto interessante \`e che il primo operatore del primo sito e l'ultimo operatore dell'ultimo sito non compaiono nell'hamiltoniano, visto che si sono scelte condizioni al bordo aperte: questi due contribuiscono alla formazione di un modo a energia zero.
+
+Pi\`u nel dettaglio, la somma di due Majorana forma un fermione:
+\[
+\hat{c}_j^\dagger = \frac{1}{2}\left(\hat{\gamma}_{j,1} + i \hat{\gamma}_{j,2} \right) \hspace{1cm} \hat{c}_j = \frac{1}{2}\left(\hat{\gamma}_{j,1} - i \hat{\gamma}_{j , 2} \right)  
+\] 
+Questo significa che si pu\`o far comparire, andando a sommare e sottrarre gli operatori ai bordi che non figurano nell'hamiltoniano, un fermione che \`e delocalizzato per met\`a sul bordo sinistro e per met\`a sul destro:
+\[
+\hat{\tilde{c}}^\dagger = \frac{1}{2}\left(\hat{\gamma}_{1,1} + i \hat{\gamma}_{L,2} \right) 
+\] 
+Inoltre, \`e a energia zero, in quanto non figura esplicitamente nell'hamiltoniano.
+L'idea particolarmente interessante dietro questo artificio \`e il suo utilizzo in computazione quantistica, per esempio: avendo un fermione in due zone arbitrariamente distanti tra loro, viene naturale immaginare che possa essere resistente a perturbazioni locali nel sistema.
+La costruzione di questa catena \`e legata a \textit{Kitaev}, da cui il nome.
+\begin{osservazione}
+Questa costruzione non \`e sempre possibile; per esempio, in questo caso, si \`e dovuto prendere $g=0$.
+\end{osservazione}
 \begin{boxenv}[]
-\centering Riprendere da lezione 33, 31:00
+\centering Riprendere dalla lezione 34
 \end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
