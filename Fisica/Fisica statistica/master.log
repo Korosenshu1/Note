@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 00:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -882,62 +882,69 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 ) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks51
+) (/usr/share/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen362
+\c@nlinenum=\count389
+\TeXr@lab=\toks52
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen362
-\pgfarrowlength=\dimen363
-\pgfarrowwidth=\dimen364
-\pgfarrowlinewidth=\dimen365
+\pgfarrowinset=\dimen363
+\pgfarrowlength=\dimen364
+\pgfarrowwidth=\dimen365
+\pgfarrowlinewidth=\dimen366
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen366
-\pgfdecoratedremainingdistance=\dimen367
-\pgfdecoratedinputsegmentcompleteddistance=\dimen368
-\pgfdecoratedinputsegmentremainingdistance=\dimen369
-\pgf@decorate@distancetomove=\dimen370
-\pgf@decorate@repeatstate=\count389
-\pgfdecorationsegmentamplitude=\dimen371
-\pgfdecorationsegmentlength=\dimen372
+\pgfdecoratedcompleteddistance=\dimen367
+\pgfdecoratedremainingdistance=\dimen368
+\pgfdecoratedinputsegmentcompleteddistance=\dimen369
+\pgfdecoratedinputsegmentremainingdistance=\dimen370
+\pgf@decorate@distancetomove=\dimen371
+\pgf@decorate@repeatstate=\count390
+\pgfdecorationsegmentamplitude=\dimen372
+\pgfdecorationsegmentlength=\dimen373
 )
 \tikz@lib@dec@box=\box129
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
  (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks52
-\t@pgfplots@tokb=\toks53
-\t@pgfplots@tokc=\toks54
-\pgfplots@tmpa=\dimen373
-\c@pgfplots@coordindex=\count390
-\c@pgfplots@scanlineindex=\count391
- (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count392
+\t@pgfplots@toka=\toks53
+\t@pgfplots@tokb=\toks54
+\t@pgfplots@tokc=\toks55
+\pgfplots@tmpa=\dimen374
+\c@pgfplots@coordindex=\count391
+\c@pgfplots@scanlineindex=\count392
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count393
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count393
-\t@pgfplotstable@a=\toks55
+\c@pgfplotstable@counta=\count394
+\t@pgfplotstable@a=\toks56
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count394
- (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count395
-\pgfplots@xmin@reg=\dimen374
-\pgfplots@xmax@reg=\dimen375
-\pgfplots@ymin@reg=\dimen376
-\pgfplots@ymax@reg=\dimen377
-\pgfplots@zmin@reg=\dimen378
-\pgfplots@zmax@reg=\dimen379
+\c@pgfplotslibrarysurf@no=\count395
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count396
+\pgfplots@xmin@reg=\dimen375
+\pgfplots@xmax@reg=\dimen376
+\pgfplots@ymin@reg=\dimen377
+\pgfplots@ymax@reg=\dimen378
+\pgfplots@zmin@reg=\dimen379
+\pgfplots@zmax@reg=\dimen380
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fillbetween.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibraryfillbetween.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
-\pgf@intersect@solutions=\count396
+\pgf@intersect@solutions=\count397
 )) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibrarydecorations.softclip.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfcontrib/pgflibraryfillbetween.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.decorations.softclip.code.tex)) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-\babel@savecnt=\count397
+\babel@savecnt=\count398
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
@@ -945,28 +952,28 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
-\U@D=\dimen380
+\U@D=\dimen381
 \l@unhyphenated=\language91
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count398
+\bbl@dirlevel=\count399
  (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
-\it@lettering=\count399
-\it@doublequoteactive=\count400
-\it@ISOcompliance=\count401
+\it@lettering=\count400
+\it@doublequoteactive=\count401
+\it@ISOcompliance=\count402
 )) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
-\FN@temptoken=\toks56
-\footnotemargin=\dimen381
+\FN@temptoken=\toks57
+\footnotemargin=\dimen382
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count402
+\c@abspage=\count403
 )
-\c@pp@a@footnote=\count403
+\c@pp@a@footnote=\count404
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
 Package footmisc Info: Declaring symbol style wiley on input line 566.
@@ -976,17 +983,17 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 618.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@esempio=\count404
-\c@definizione=\count405
-\c@prop=\count406
-\c@teorema=\count407
-\c@lemma=\count408
-\c@corollario=\count409
-\c@osservazione=\count410
-\c@notazione=\count411
-\c@esercizio=\count412
-Package hyperref Info: Option `colorlinks' set `true' on input line 151.
-Package hyperref Info: Option `breaklinks' set `true' on input line 151.
+\c@esempio=\count405
+\c@definizione=\count406
+\c@prop=\count407
+\c@teorema=\count408
+\c@lemma=\count409
+\c@corollario=\count410
+\c@osservazione=\count411
+\c@notazione=\count412
+\c@esercizio=\count413
+Package hyperref Info: Option `colorlinks' set `true' on input line 152.
+Package hyperref Info: Option `breaklinks' set `true' on input line 152.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1007,7 +1014,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 186.
+(scrartcl)              package `tocloft' on input line 187.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1038,8 +1045,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip108
 \cftfigindent=\skip109
 \cftfignumwidth=\skip110
-\c@lofdepth=\count413
-\c@lotdepth=\count414
+\c@lofdepth=\count414
+\c@lotdepth=\count415
 \cftbeforelottitleskip=\skip111
 \cftafterlottitleskip=\skip112
 \cftbeforetabskip=\skip113
@@ -1051,7 +1058,7 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen382
+\ttl@leftsep=\dimen383
 ) (/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
 Package: newpxtext 2025/06/07 v1.542 LaTeX and unicode LaTeX support for TeXGyrePagellaX (Michael Sharpe)
  `newpxtext' v1.542, 2025/06/07 Text macros taking advantage of TeXGyre Pagella and its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
@@ -1059,15 +1066,15 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
  (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks57
-\XKV@tempa@toks=\toks58
-\XKV@tempb@toks=\toks59
+\XKV@toks=\toks58
+\XKV@tempa@toks=\toks59
+\XKV@tempb@toks=\toks60
 )
-\XKV@depth=\count415
+\XKV@depth=\count416
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count416
-\xs_countb=\count417
+\xs_counta=\count417
+\xs_countb=\count418
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
@@ -1077,7 +1084,7 @@ LaTeX Font Info:    Setting zplLF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplTLF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplOsF sub-encoding to TS1/0 on input line 40.
 LaTeX Font Info:    Setting zplTOsF sub-encoding to TS1/0 on input line 40.
-\zpl@cnt=\count418
+\zpl@cnt=\count419
  (/usr/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
 Package: fontaxes 2026-01-02 v2.0.2 Font selection axes (deprecated)
 Applying: [2024-11-01] Use figureversions if present on input line 74.
@@ -1086,20 +1093,20 @@ Package: figureversions 2025-04-29 v1.0.1 Figure versions
 )
 Already applied: [0000-00-00] Fall back to v1 on input line 76.
 )
-\zpl@sixem=\dimen383
-\zpl@y=\dimen384
-\zpl@x=\dimen385
-\zpl@tmpdima=\dimen386
-\zpl@tmpdimb=\dimen387
-\zpl@tmpdimc=\dimen388
-\zpl@tmpdimd=\dimen389
-\zpl@tmpdime=\dimen390
-\zpl@tmpdimf=\dimen391
-\zpl@dimA=\dimen392
-\zpl@dimAA=\dimen393
-\zpl@dimB=\dimen394
-\zpl@dimBB=\dimen395
-\zpl@dimC=\dimen396
+\zpl@sixem=\dimen384
+\zpl@y=\dimen385
+\zpl@x=\dimen386
+\zpl@tmpdima=\dimen387
+\zpl@tmpdimb=\dimen388
+\zpl@tmpdimc=\dimen389
+\zpl@tmpdimd=\dimen390
+\zpl@tmpdime=\dimen391
+\zpl@tmpdimf=\dimen392
+\zpl@dimA=\dimen393
+\zpl@dimAA=\dimen394
+\zpl@dimB=\dimen395
+\zpl@dimBB=\dimen396
+\zpl@dimC=\dimen397
 LaTeX Info: Redefining \oldstylenums on input line 807.
 LaTeX Font Info:    Trying to load font information for T1+zplLF on input line 815.
  (/usr/share/texmf-dist/tex/latex/newpx/t1zpllf.fd
@@ -1120,8 +1127,8 @@ File: t1zpltosf.fd 2021/05/25 v1.0 font definition file for T1/zpl/tosf
 Package: sansiwona 
  (/usr/share/texmf-dist/tex/latex/iwona/iwona.sty
 Package: iwona 2005/10/03 v.1.2 Iwona package (MW)
-\c@mv@iwona=\count419
-\c@mv@iwonabold=\count420
+\c@mv@iwona=\count420
+\c@mv@iwonabold=\count421
 LaTeX Font Info:    Overwriting symbol font `operators' in version `iwona'
 (Font)                  OT1/cmr/m/n --> OT1/iwonam/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `iwona'
@@ -1158,36 +1165,36 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 199.
+(scrartcl)           before \begin{document} on input line 200.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count421
+\BKM@id=\count422
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 199.
+(Font)              scaled to size 10.95pt on input line 200.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1225,17 +1232,17 @@ LaTeX Font Info:    ... okay on input line 199.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count422
-\scratchdimen=\dimen397
+\scratchcounter=\count423
+\scratchdimen=\dimen398
 \scratchbox=\box130
-\nofMPsegments=\count423
-\nofMParguments=\count424
-\everyMPshowfont=\toks60
-\MPscratchCnt=\count425
-\MPscratchDim=\dimen398
-\MPnumerator=\count426
-\makeMPintoPDFobject=\count427
-\everyMPtoPDFconversion=\toks61
+\nofMPsegments=\count424
+\nofMParguments=\count425
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count426
+\MPscratchDim=\dimen399
+\MPnumerator=\count427
+\makeMPintoPDFobject=\count428
+\everyMPtoPDFconversion=\toks62
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
@@ -1248,26 +1255,26 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 199.
+Package hyperref Info: Link coloring ON on input line 200.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen399
-\c__nicematrix_innersep_middle_dim=\dimen400
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen400
+\c__nicematrix_innersep_middle_dim=\dimen401
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \it@ocap on input line 199.
-LaTeX Info: Redefining \it@ccap on input line 199.
-\c@mv@tabular=\count428
-\c@mv@boldtabular=\count429
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 200.
+LaTeX Info: Redefining \it@ocap on input line 200.
+LaTeX Info: Redefining \it@ccap on input line 200.
+\c@mv@tabular=\count429
+\c@mv@boldtabular=\count430
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 201.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 201.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 200.
+(Font)              scaled to size 12.0pt on input line 201.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.toc
@@ -1294,142 +1301,142 @@ File: uesint.fd
 
  [4]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 204.
+(Font)              scaled to size 15.0pt on input line 205.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 204.
+(Font)              scaled to size 20.0pt on input line 205.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 13.0pt on input line 205.
+(Font)              scaled to size 13.0pt on input line 206.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 13.0pt on input line 205.
+(Font)              scaled to size 13.0pt on input line 206.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 215.
+(Font)              scaled to size 8.0pt on input line 216.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 215.
+(Font)              scaled to size 9.0pt on input line 216.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 215.
+(Font)              scaled to size 6.0pt on input line 216.
  [5]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 244.
+(Font)              scaled to size 12.0pt on input line 245.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 260.
+(Font)              scaled to size 10.95pt on input line 261.
  [6]
-Overfull \hbox (16.2985pt too wide) detected at line 294
+Overfull \hbox (16.2985pt too wide) detected at line 295
 [][] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 ' [] [] ' [] []
  []
 
 [7]
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 340.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 341.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 340.
-<vdw.png, id=222, 655.44875pt x 521.95pt>
+(Font)              scaled to size 10.95pt on input line 341.
+<vdw.png, id=224, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
-Package pdftex.def Info: vdw.png  used on input line 347.
+Package pdftex.def Info: vdw.png  used on input line 348.
 (pdftex.def)             Requested size: 208.41644pt x 165.96815pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
-<max-constr-vdw.png, id=231, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=233, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
-Package pdftex.def Info: max-constr-vdw.png  used on input line 377.
+Package pdftex.def Info: max-constr-vdw.png  used on input line 378.
 (pdftex.def)             Requested size: 150.05937pt x 220.59213pt.
  [9 <./vdw.png> <./max-constr-vdw.png>] [10]
-Overfull \hbox (5.02264pt too wide) detected at line 447
+Overfull \hbox (5.02264pt too wide) detected at line 448
 []
  []
 
 [11] [12]
-Overfull \hbox (12.3961pt too wide) detected at line 516
+Overfull \hbox (12.3961pt too wide) detected at line 517
 []
  []
 
 [13] [14] [15] [16] [17] [18]
-Overfull \hbox (1.87082pt too wide) in paragraph at lines 738--739
+Overfull \hbox (1.87082pt too wide) in paragraph at lines 739--740
 \T1/zpltosf/m/n/10.95 pre-sen-ta un esem-pio par-ti-co-la-re di \T1/zpltosf/m/it/10.95 ge-rar-chia BB-G-KY \T1/zpltosf/m/n/10.95 (Bogoljubov-Born-Green-Kirkwood-
  []
 
 
-Overfull \hbox (58.54832pt too wide) detected at line 747
+Overfull \hbox (58.54832pt too wide) detected at line 748
 []
  []
 
 [19] [20] [21]
-<pd.jpg, id=322, 702.625pt x 615.29875pt>
+<pd.jpg, id=324, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
-Package pdftex.def Info: pd.jpg  used on input line 825.
+Package pdftex.def Info: pd.jpg  used on input line 826.
 (pdftex.def)             Requested size: 187.57352pt x 164.25514pt.
  [22 <./pd.jpg>] [23] [24] [25] [26] [27]
-Overfull \hbox (3.20259pt too wide) in paragraph at lines 1085--1086
+Overfull \hbox (3.20259pt too wide) in paragraph at lines 1086--1087
  [][] 
  []
 
 [28]
-Underfull \hbox (badness 1371) in paragraph at lines 1217--1217
+Underfull \hbox (badness 1371) in paragraph at lines 1218--1218
 [][]|\T1/zpltosf/m/n/9 Ma-gne-tiz-za-zio-ne in fun-zio-ne del-la
  []
 
 [29] [30]
-Overfull \hbox (11.95016pt too wide) in paragraph at lines 1296--1297
+Overfull \hbox (11.95016pt too wide) in paragraph at lines 1297--1298
  [][] 
  []
 
 
-Overfull \hbox (0.85635pt too wide) in paragraph at lines 1325--1326
+Overfull \hbox (0.85635pt too wide) in paragraph at lines 1326--1327
  [][] 
  []
 
 [31] [32] [33] [34] [35] [36] [37]
-Overfull \hbox (3.01218pt too wide) in paragraph at lines 1697--1700
+Overfull \hbox (3.01218pt too wide) in paragraph at lines 1698--1701
 \T1/zpltosf/m/n/10.95 dove, con con-di-zio-ni al bor-do pe-rio-di-che, si ha $[] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 n[]; n[]; n[]\OT1/cmr/m/n/10.95 )$\T1/zpltosf/m/n/10.95 , per $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; [] ; N[]$
  []
 
 [38] [39] [40] [41] [42] [43] [44] [45] [46]
-Overfull \hbox (0.46481pt too wide) detected at line 1965
+Overfull \hbox (0.46481pt too wide) detected at line 1966
 \OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = [] [] [] = [] [] []
  []
 
 [47] [48] [49] [50] [51]
-Overfull \hbox (5.93895pt too wide) detected at line 2256
+Overfull \hbox (5.93895pt too wide) detected at line 2257
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^T [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[]
  []
 
 [52] [53] [54] [55] [56] [57] [58]
-Overfull \hbox (5.5636pt too wide) detected at line 2559
+Overfull \hbox (5.5636pt too wide) detected at line 2560
 \OML/cmm/m/it/10.95 H[] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 J[] [] S[]S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 h[] [] S[] Z[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[] [] e[]
  []
 
 [59] [60] [61]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 2706.
+(Font)              scaled to size 10.0pt on input line 2707.
  [62]
-Overfull \hbox (2.76045pt too wide) in paragraph at lines 2843--2844
+Overfull \hbox (2.76045pt too wide) in paragraph at lines 2844--2845
  [][] 
  []
 
 [63] [64] [65]
-Overfull \hbox (3.10439pt too wide) in paragraph at lines 2940--2942
+Overfull \hbox (3.10439pt too wide) in paragraph at lines 2941--2943
 \T1/zpltosf/m/n/10.95 Si dia-go-na-liz-za l'ha-mil-to-nia-no: $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 E[] []$\T1/zpltosf/m/n/10.95 , per cui si ha che $[] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 c[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) []$\T1/zpltosf/m/n/10.95 .
  []
 
 [66] [67] [68] [69] [70] [71] [72] [73] [74]
-Overfull \hbox (21.82494pt too wide) detected at line 3226
+Overfull \hbox (21.82494pt too wide) detected at line 3227
 \OML/cmm/m/it/10.95 Z[] \OT1/cmr/m/n/10.95 = [] [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 p [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 r [] [] \OML/cmm/m/it/10.95 ^^N[]^^N[][]u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[] [] []\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[]
  []
 
 [75] [76] [77]
-Overfull \hbox (18.96559pt too wide) detected at line 3341
+Overfull \hbox (18.96559pt too wide) detected at line 3342
 []
  []
 
 
-Overfull \hbox (22.29446pt too wide) in paragraph at lines 3373--3374
+Overfull \hbox (22.29446pt too wide) in paragraph at lines 3374--3375
  [][] 
  []
 
@@ -1437,34 +1444,34 @@ Overfull \hbox (22.29446pt too wide) in paragraph at lines 3373--3374
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3625 \begin{equation}
+l.3626 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3625 \begin{equation}
+l.3626 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3625 \begin{equation}
+l.3626 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3625 \begin{equation}
+l.3626 \begin{equation}
                        \label{pf} [83]
-Overfull \hbox (21.54973pt too wide) in paragraph at lines 3676--3677
+Overfull \hbox (21.54973pt too wide) in paragraph at lines 3677--3678
  [][] 
  []
 
 
-Overfull \hbox (21.54973pt too wide) in paragraph at lines 3703--3704
+Overfull \hbox (21.54973pt too wide) in paragraph at lines 3704--3705
  [][] 
  []
 
 [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-Package pgfplots info on input line 4636: fill between: activating layered graphics
+Package pgfplots info on input line 4637: fill between: activating layered graphics
 \pgf@layerbox@axis background=\box131
 \pgf@layerboxsaved@axis background=\box132
 \pgf@layerbox@axis grid=\box133
@@ -1481,45 +1488,45 @@ Package pgfplots info on input line 4636: fill between: activating layered graph
 \pgf@layerboxsaved@axis descriptions=\box144
 \pgf@layerbox@axis foreground=\box145
 \pgf@layerboxsaved@axis foreground=\box146
-Package pgfplots info on input line 4636: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
+Package pgfplots info on input line 4637: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
  [107]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 4695.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 4696.
  (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [108] [109] [110]
-Overfull \hbox (17.46416pt too wide) in paragraph at lines 4820--4821
+Overfull \hbox (17.46416pt too wide) in paragraph at lines 4821--4822
  [][] 
  []
 
 [111] [112] [113] [114]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 4964.
+(Font)              scaled to size 5.0pt on input line 4965.
 
-Overfull \hbox (17.0269pt too wide) in paragraph at lines 5017--5018
+Overfull \hbox (17.0269pt too wide) in paragraph at lines 5018--5019
  [][] 
  []
 
 [115] [116] [117]
-Overfull \hbox (20.18385pt too wide) in paragraph at lines 5149--5150
+Overfull \hbox (20.18385pt too wide) in paragraph at lines 5150--5151
  [][] 
  []
 
-[118] [119] [120] [121] [122] [123] [124] [125]
+[118] [119] [120] [121]
+Overfull \hbox (19.40938pt too wide) in paragraph at lines 5306--5307
+ [][] 
+ []
 
-Package caption Warning: Unused \captionsetup[table] on input line 144.
-See the caption package documentation for explanation.
-
-[126] (./master.aux)
+[122] [123] [124] [125] [126] [127] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 49846 strings out of 467525
- 1162266 string characters out of 5425862
- 1838425 words of memory out of 5000000
- 77620 multiletter control sequences out of 15000+600000
+ 50114 strings out of 467525
+ 1166150 string characters out of 5425862
+ 1844071 words of memory out of 5000000
+ 77877 multiletter control sequences out of 15000+600000
  708037 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2224s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1648,10 +1655,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zpl
 b.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (126 pages, 1061135 bytes).
+Output written on master.pdf (127 pages, 1067929 bytes).
 PDF statistics:
- 1453 PDF objects out of 1728 (max. 8388607)
- 1239 compressed objects within 13 object streams
- 384 named destinations out of 1000 (max. 500000)
- 656 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1467 PDF objects out of 1728 (max. 8388607)
+ 1252 compressed objects within 13 object streams
+ 388 named destinations out of 1000 (max. 500000)
+ 664 words of extra memory for PDF output out of 10000 (max. 10000000)
 
