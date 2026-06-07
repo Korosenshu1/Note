@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  7 JUN 2026 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -751,10 +751,12 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 Class scrartcl Info: amsthm's \deferred@thm@head patched.
  (/usr/share/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
-) (/usr/share/texmf-dist/tex/latex/cancel/cancel.sty
-Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-(/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+(/usr/share/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
 Package: nicematrix 2026/02/22 v7.7 Enhanced arrays with the help of PGF/TikZ
  (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Rollback for package 'array' requested -> date 2025/06/08.
@@ -992,8 +994,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \c@osservazione=\count411
 \c@notazione=\count412
 \c@esercizio=\count413
-Package hyperref Info: Option `colorlinks' set `true' on input line 152.
-Package hyperref Info: Option `breaklinks' set `true' on input line 152.
+Package hyperref Info: Option `colorlinks' set `true' on input line 153.
+Package hyperref Info: Option `breaklinks' set `true' on input line 153.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1014,7 +1016,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 187.
+(scrartcl)              package `tocloft' on input line 188.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1165,7 +1167,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 200.
+(scrartcl)           before \begin{document} on input line 201.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1173,28 +1175,28 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count422
 ))
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 200.
+(Font)              scaled to size 10.95pt on input line 201.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1255,7 +1257,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 200.
+Package hyperref Info: Link coloring ON on input line 201.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen400
@@ -1263,18 +1265,18 @@ Package caption Info: End \AtBeginDocument code.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \it@ocap on input line 200.
-LaTeX Info: Redefining \it@ccap on input line 200.
+LaTeX Info: Redefining \it@ocap on input line 201.
+LaTeX Info: Redefining \it@ccap on input line 201.
 \c@mv@tabular=\count429
 \c@mv@boldtabular=\count430
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 201.
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 202.
 (/usr/share/texmf-dist/tex/latex/iwona/t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 201.
+(Font)              scaled to size 12.0pt on input line 202.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 201.
+(Font)              scaled to size 12.0pt on input line 202.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tosf.enc}] (./master.toc
@@ -1301,142 +1303,142 @@ File: uesint.fd
 
  [4]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 205.
+(Font)              scaled to size 15.0pt on input line 206.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 20.0pt on input line 205.
+(Font)              scaled to size 20.0pt on input line 206.
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 13.0pt on input line 206.
+(Font)              scaled to size 13.0pt on input line 207.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 13.0pt on input line 206.
+(Font)              scaled to size 13.0pt on input line 207.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 216.
+(Font)              scaled to size 8.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 216.
+(Font)              scaled to size 9.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 216.
+(Font)              scaled to size 6.0pt on input line 217.
  [5]
 LaTeX Font Info:    Font shape `T1/zpltosf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 245.
+(Font)              scaled to size 12.0pt on input line 246.
 LaTeX Font Info:    Font shape `T1/zpltosf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 261.
+(Font)              scaled to size 10.95pt on input line 262.
  [6]
-Overfull \hbox (16.2985pt too wide) detected at line 295
+Overfull \hbox (16.2985pt too wide) detected at line 296
 [][] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 ' [] [] ' [] []
  []
 
 [7]
-LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 341.
+LaTeX Font Info:    Trying to load font information for TS1+zpltosf on input line 342.
  (/usr/share/texmf-dist/tex/latex/newpx/ts1zpltosf.fd
 File: ts1zpltosf.fd 2021/11/24 v1.0 fd file for TS1/zpltosf
 )
 LaTeX Font Info:    Font shape `TS1/zpltosf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 341.
-<vdw.png, id=228, 655.44875pt x 521.95pt>
+(Font)              scaled to size 10.95pt on input line 342.
+<vdw.png, id=230, 655.44875pt x 521.95pt>
 File: vdw.png Graphic file (type png)
 <use vdw.png>
-Package pdftex.def Info: vdw.png  used on input line 348.
+Package pdftex.def Info: vdw.png  used on input line 349.
 (pdftex.def)             Requested size: 208.41644pt x 165.96815pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
-<max-constr-vdw.png, id=237, 284.06125pt x 417.56pt>
+<max-constr-vdw.png, id=239, 284.06125pt x 417.56pt>
 File: max-constr-vdw.png Graphic file (type png)
 <use max-constr-vdw.png>
-Package pdftex.def Info: max-constr-vdw.png  used on input line 378.
+Package pdftex.def Info: max-constr-vdw.png  used on input line 379.
 (pdftex.def)             Requested size: 150.05937pt x 220.59213pt.
  [9 <./vdw.png> <./max-constr-vdw.png>] [10]
-Overfull \hbox (5.02264pt too wide) detected at line 448
+Overfull \hbox (5.02264pt too wide) detected at line 449
 []
  []
 
 [11] [12]
-Overfull \hbox (12.3961pt too wide) detected at line 517
+Overfull \hbox (12.3961pt too wide) detected at line 518
 []
  []
 
 [13] [14] [15] [16] [17] [18]
-Overfull \hbox (1.87082pt too wide) in paragraph at lines 739--740
+Overfull \hbox (1.87082pt too wide) in paragraph at lines 740--741
 \T1/zpltosf/m/n/10.95 pre-sen-ta un esem-pio par-ti-co-la-re di \T1/zpltosf/m/it/10.95 ge-rar-chia BB-G-KY \T1/zpltosf/m/n/10.95 (Bogoljubov-Born-Green-Kirkwood-
  []
 
 
-Overfull \hbox (58.54832pt too wide) detected at line 748
+Overfull \hbox (58.54832pt too wide) detected at line 749
 []
  []
 
 [19] [20] [21]
-<pd.jpg, id=328, 702.625pt x 615.29875pt>
+<pd.jpg, id=330, 702.625pt x 615.29875pt>
 File: pd.jpg Graphic file (type jpg)
 <use pd.jpg>
-Package pdftex.def Info: pd.jpg  used on input line 826.
+Package pdftex.def Info: pd.jpg  used on input line 827.
 (pdftex.def)             Requested size: 187.57352pt x 164.25514pt.
  [22 <./pd.jpg>] [23] [24] [25] [26] [27]
-Overfull \hbox (3.20259pt too wide) in paragraph at lines 1086--1087
+Overfull \hbox (3.20259pt too wide) in paragraph at lines 1087--1088
  [][] 
  []
 
 [28]
-Underfull \hbox (badness 1371) in paragraph at lines 1218--1218
+Underfull \hbox (badness 1371) in paragraph at lines 1219--1219
 [][]|\T1/zpltosf/m/n/9 Ma-gne-tiz-za-zio-ne in fun-zio-ne del-la
  []
 
 [29] [30]
-Overfull \hbox (11.95016pt too wide) in paragraph at lines 1297--1298
+Overfull \hbox (11.95016pt too wide) in paragraph at lines 1298--1299
  [][] 
  []
 
 
-Overfull \hbox (0.85635pt too wide) in paragraph at lines 1326--1327
+Overfull \hbox (0.85635pt too wide) in paragraph at lines 1327--1328
  [][] 
  []
 
 [31] [32] [33] [34] [35] [36] [37]
-Overfull \hbox (3.01218pt too wide) in paragraph at lines 1698--1701
+Overfull \hbox (3.01218pt too wide) in paragraph at lines 1699--1702
 \T1/zpltosf/m/n/10.95 dove, con con-di-zio-ni al bor-do pe-rio-di-che, si ha $[] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 n[]; n[]; n[]\OT1/cmr/m/n/10.95 )$\T1/zpltosf/m/n/10.95 , per $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; [] ; N[]$
  []
 
 [38] [39] [40] [41] [42] [43] [44] [45] [46]
-Overfull \hbox (0.46481pt too wide) detected at line 1966
+Overfull \hbox (0.46481pt too wide) detected at line 1967
 \OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = [] [] [] = [] [] []
  []
 
 [47] [48] [49] [50] [51]
-Overfull \hbox (5.93895pt too wide) detected at line 2257
+Overfull \hbox (5.93895pt too wide) detected at line 2258
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^T [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[]
  []
 
 [52] [53] [54] [55] [56] [57] [58]
-Overfull \hbox (5.5636pt too wide) detected at line 2560
+Overfull \hbox (5.5636pt too wide) detected at line 2561
 \OML/cmm/m/it/10.95 H[] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 J[] [] S[]S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 h[] [] S[] Z[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[] [] e[]
  []
 
 [59] [60] [61]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 2707.
+(Font)              scaled to size 10.0pt on input line 2708.
  [62]
-Overfull \hbox (2.76045pt too wide) in paragraph at lines 2844--2845
+Overfull \hbox (2.76045pt too wide) in paragraph at lines 2845--2846
  [][] 
  []
 
 [63] [64] [65]
-Overfull \hbox (3.10439pt too wide) in paragraph at lines 2941--2943
+Overfull \hbox (3.10439pt too wide) in paragraph at lines 2942--2944
 \T1/zpltosf/m/n/10.95 Si dia-go-na-liz-za l'ha-mil-to-nia-no: $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 E[] []$\T1/zpltosf/m/n/10.95 , per cui si ha che $[] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 c[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) []$\T1/zpltosf/m/n/10.95 .
  []
 
 [66] [67] [68] [69] [70] [71] [72] [73] [74]
-Overfull \hbox (21.82494pt too wide) detected at line 3227
+Overfull \hbox (21.82494pt too wide) detected at line 3228
 \OML/cmm/m/it/10.95 Z[] \OT1/cmr/m/n/10.95 = [] [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 p [] \OML/cmm/m/it/10.95 d[]\OT1/cmr/bx/n/10.95 r [] [] \OML/cmm/m/it/10.95 ^^N[]^^N[][]u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[] [] []\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[\OT1/cmr/bx/n/10.95 r[]\OT1/cmr/m/n/10.95 )[]
  []
 
 [75] [76] [77]
-Overfull \hbox (18.96559pt too wide) detected at line 3342
+Overfull \hbox (18.96559pt too wide) detected at line 3343
 []
  []
 
 
-Overfull \hbox (22.29446pt too wide) in paragraph at lines 3374--3375
+Overfull \hbox (22.29446pt too wide) in paragraph at lines 3375--3376
  [][] 
  []
 
@@ -1444,34 +1446,34 @@ Overfull \hbox (22.29446pt too wide) in paragraph at lines 3374--3375
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3626 \begin{equation}
+l.3627 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3626 \begin{equation}
+l.3627 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3626 \begin{equation}
+l.3627 \begin{equation}
                        \label{pf}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3626 \begin{equation}
+l.3627 \begin{equation}
                        \label{pf} [83]
-Overfull \hbox (21.54973pt too wide) in paragraph at lines 3677--3678
+Overfull \hbox (21.54973pt too wide) in paragraph at lines 3678--3679
  [][] 
  []
 
 
-Overfull \hbox (21.54973pt too wide) in paragraph at lines 3704--3705
+Overfull \hbox (21.54973pt too wide) in paragraph at lines 3705--3706
  [][] 
  []
 
 [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-Package pgfplots info on input line 4637: fill between: activating layered graphics
+Package pgfplots info on input line 4638: fill between: activating layered graphics
 \pgf@layerbox@axis background=\box131
 \pgf@layerboxsaved@axis background=\box132
 \pgf@layerbox@axis grid=\box133
@@ -1488,53 +1490,63 @@ Package pgfplots info on input line 4637: fill between: activating layered graph
 \pgf@layerboxsaved@axis descriptions=\box144
 \pgf@layerbox@axis foreground=\box145
 \pgf@layerboxsaved@axis foreground=\box146
-Package pgfplots info on input line 4637: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
+Package pgfplots info on input line 4638: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
  [107]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 4696.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 4697.
  (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [108] [109] [110]
-Overfull \hbox (17.46416pt too wide) in paragraph at lines 4821--4822
+Overfull \hbox (17.46416pt too wide) in paragraph at lines 4822--4823
  [][] 
  []
 
 [111] [112] [113] [114]
 LaTeX Font Info:    Font shape `T1/zpltosf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 4965.
+(Font)              scaled to size 5.0pt on input line 4966.
 
-Overfull \hbox (17.0269pt too wide) in paragraph at lines 5018--5019
+Overfull \hbox (17.0269pt too wide) in paragraph at lines 5019--5020
  [][] 
  []
 
 [115] [116] [117]
-Overfull \hbox (20.18385pt too wide) in paragraph at lines 5150--5151
+Overfull \hbox (20.18385pt too wide) in paragraph at lines 5151--5152
  [][] 
  []
 
 [118] [119] [120] [121]
-Overfull \hbox (19.40938pt too wide) in paragraph at lines 5306--5307
+Overfull \hbox (19.40938pt too wide) in paragraph at lines 5307--5308
  [][] 
  []
 
 [122] [123] [124] [125]
-Overfull \hbox (38.60374pt too wide) detected at line 5476
+Overfull \hbox (38.60374pt too wide) detected at line 5477
 \OT1/cmr/m/n/10.95 ^^E[] = []  \OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ) = [] [] \OML/cmm/m/it/10.95 e[]e[] [] [] [][] d^^^ e[][]
  []
 
-[126] [127] [128] [129] [130] [131] [132] (./master.aux)
+[126] [127]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 5571.
+ (/usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [128] [129] [130] [131] [132] [133] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 50137 strings out of 467525
- 1166502 string characters out of 5425862
- 1843129 words of memory out of 5000000
- 77888 multiletter control sequences out of 15000+600000
- 708037 words of font info for 124 fonts, out of 8000000 for 9000
+ 50187 strings out of 467525
+ 1167506 string characters out of 5425862
+ 1843330 words of memory out of 5000000
+ 77925 multiletter control sequences out of 15000+600000
+ 708517 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,28n,121p,11245b,2224s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.42} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.41} has been referenced but does not exist, replaced by a fixed one
 
@@ -1658,12 +1670,12 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zpl
-b.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (132 pages, 1085211 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on master.pdf (133 pages, 1092599 bytes).
 PDF statistics:
- 1506 PDF objects out of 1728 (max. 8388607)
- 1286 compressed objects within 13 object streams
- 400 named destinations out of 1000 (max. 500000)
- 680 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1527 PDF objects out of 1728 (max. 8388607)
+ 1303 compressed objects within 14 object streams
+ 404 named destinations out of 1000 (max. 500000)
+ 688 words of extra memory for PDF output out of 10000 (max. 10000000)
 

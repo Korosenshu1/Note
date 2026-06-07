@@ -22,6 +22,7 @@
 \usepackage{caption}
 \usepackage{amsthm}
 \usepackage{import}
+\usepackage{dsfont}
 \usepackage{cancel}
 \usepackage{caption}
 \usepackage{nicematrix}
@@ -5496,7 +5497,7 @@ Il teorema di Wick permette di concludere che questo correlatore si scrive come 
 \] 
 con $\psi $ parametro d'ordine della transizione.
 
-\subsubsection{Catena di Kitaev}
+\subsubsection{Modello di Ising aperto}
 Si considera il modello di Ising con condizioni al contorno aperte, ossia con hamiltoniano della forma
 \[
 \hat{H} = - J \sum_{j=1}^{L-1} \hat{\sigma }_j ^x \hat{\sigma }^x _{j+1} - g \sum_{j}^{} \hat{\sigma }_j^z
@@ -5529,12 +5530,12 @@ Geometricamente, questo fatto si pu\`o schematizzare come segue.
 		\node[above] at (0,0.15) {\scriptsize fermioni};
 		\node[blue!60!gray] at (-1.25,-1.2) {\scriptsize Majorana};
 		\foreach \j in {0,2,4,6,8}{
-			\draw[very thick,blue!60!gray,opacity=0.4] ({\j+0.15},-1.2) -- ({\j+2-0.15},-1.2);
+			\draw[very thick,blue!60!gray,opacity=0.5] ({\j+0.15},-1.2) -- ({\j+2-0.15},-1.2);
 		}
-		\draw[very thick,red!60!gray,opacity=0.4] (-0.15,-1.2) -- (-0.4,-1.2);
-		\draw[very thick,red!60!gray,opacity=0.4,dotted] (-0.4,-1.2) -- (-0.6,-1.2);
-		\draw[very thick,red!60!gray,opacity=0.4] ({10+0.15},-1.2) -- ({10+0.4},-1.2);
-		\draw[very thick,red!60!gray,opacity=0.4,dotted] ({10+0.4},-1.2) -- ({10+0.6},-1.2);
+		\draw[very thick,red!60!gray,opacity=0.6] (-0.15,-1.2) -- (-0.4,-1.2);
+		\draw[very thick,red!60!gray,opacity=0.6,dotted] (-0.4,-1.2) -- (-0.6,-1.2);
+		\draw[very thick,red!60!gray,opacity=0.6] ({10+0.15},-1.2) -- ({10+0.4},-1.2);
+		\draw[very thick,red!60!gray,opacity=0.6,dotted] ({10+0.4},-1.2) -- ({10+0.6},-1.2);
 		\node[red!60!gray] at ({10+1.5},-1) {\scriptsize fermione};
 		\node[red!60!gray] at ({10+1.5},-1.3) {\scriptsize delocalizzato};
 	\end{tikzpicture}
@@ -5551,40 +5552,52 @@ Questo significa che si pu\`o far comparire, andando a sommare e sottrarre gli o
 \] 
 Inoltre, \`e a energia zero, in quanto non figura esplicitamente nell'hamiltoniano.
 L'idea particolarmente interessante dietro questo artificio \`e il suo utilizzo in computazione quantistica, per esempio: avendo un fermione in due zone arbitrariamente distanti tra loro, viene naturale immaginare che possa essere resistente a perturbazioni locali nel sistema.
-La costruzione di questa catena \`e legata a \textit{Kitaev}, da cui il nome.
 \begin{osservazione}
 Questa costruzione non \`e sempre possibile; per esempio, in questo caso, si \`e dovuto prendere $g=0$.
 \end{osservazione}
-\begin{boxenv}[]
-\centering Riprendere dalla lezione 34
-\end{boxenv}
+\subsection{Mapping classico-quantistico}
+Si costruisce un mapping tra il modello di Ising 1D classico in un Ising \textit{0D} quantistico, cio\`e un sistema quantistico composto da un unico spin $1 / 2$.
+Si riprende l'hamitloaniana del modello di Ising classico in 1D:
+\[
+H = -J \sum_{j}^{} S_j S_{j+1}  - g \sum_{j}^{} S_j
+\] 
+con $S_j = \pm 1$.
+La soluzione esatta si \`e ottenuta tramite le matrici di trasferimento\footnote{Nota: qualche variazione nel segno di $g$ sull'anti-diagonale rispetto a quanto trattato in origine.}
+\[
+	\hat{T} = \begin{pmatrix} e^{\beta (J+g)}& e^{\beta (-J - g)}\\ e^{\beta (-J + g)} & e^{\beta (J-g)} \end{pmatrix} \implies Z = \operatorname{Tr} \hat{T}^N
+\] 
+Si spezza $\hat{T}$ in una matrice che contiene solo $J$ e in una che contiene solo il campo esterno $g$: $\hat{T} = \hat{T}_1\hat{T}_2$, con
+\[
+	\hat{T}_1 = \begin{pmatrix} e^{\beta J} & e^{-\beta J} \\ e^{-\beta J} & e^{\beta J} \end{pmatrix} = e^{\beta J} \left(\hat{\mathds{1}} + e^{-2 \beta J}\hat{\sigma }^x\right) \hspace{1cm} \hat{T}_2 = \begin{pmatrix} e^{\beta g}& 0 \\ 0 & e^{-\beta g} \end{pmatrix} 
+\] 
+Dal modello classico, si \`e visto che
+\[
+	\xi  = - \frac{a}{\log\left[\tanh \left(\beta J\right) \right] } \xrightarrow{\, \ \beta J \to +\infty \ \, } \frac{a}{2} e^{2 \beta J}
+\] 
+In questo modo, nel limite $\beta \gg 1$, si pu\`o scrivere che
+\[
+	\hat{T}_1 \simeq  \exp\left[ a \left( -E_0 \hat{\mathds{1}}+ \frac{1}{2\xi }\hat{\sigma }^x \right)  \right] \hspace{1cm} \hat{T}_2 \simeq \exp\Big[ a \tilde{g} \hat{\sigma }^z \Big] 
+\] 
+con $E_0 = -\beta J / a$ e $\tilde{g} = \beta g / a$.
+Si impone che $\hat{T} = \hat{T}_1 \hat{T}_2 \stackrel{!}{=} e^{a \hat{O}}$; si vedr\`a che $\hat{O}$ \`e l'hamiltoniano del modello quantistico su cui si sta mappando l'Ising 1D classico.
+Assumendo $a \ll 1$, visto che $\hat{T}_1 $ e $\hat{T}_2$ sono nella forma $e^{a \hat{O}_1}$ e $e^{a \hat{O}_2}$, si pu\`o approssimare la formula di Baker-Campbell-Hausdorff come
+\[
+	e^{a \hat{O}_1}e^{a \hat{O}_2} \simeq e^{a (\hat{O}_1 + \hat{O}_2) }\implies \hat{O} = \hat{O}_1 + \hat{O}_2 = - E_0 \hat{\mathds{1}} + \frac{1}{2\xi }\hat{\sigma }^x + \tilde{g}\hat{\sigma }^z
+\] 
+Infine, definendo $\hat{H}_q = - \hat{O}$, si ha $\hat{T} = \hat{T}_1 \hat{T}_2 = e^{-a \hat{H}_q}$.
+Allora, la funzione di partizione si scrive come
+\[
+Z = \operatorname{Tr} e^{-a N\hat{H}_q} = \operatorname{Tr} e^{-\hat{H}_q / T}
+\] 
+con $T = 1 / aN = 1 / \tau $\footnote{Si pu\`o vedere $\tau $ come un tempo immaginario.}
+Per $\Delta  = 1 / \xi $, si vede che il mapping ottenuto \`e 
+\[
+	H \longrightarrow \hat{H}_q = E_0 \hat{\mathds{1}} - \frac{\Delta }{2} \hat{\sigma }^x - \tilde{g}\hat{\sigma }^z
+\] 
+dove $\Delta /2$ rappresenta un termine di campo lungo $x$, mentre $\tilde{g}$ un termine di campo lungo $z$.
+Lo spazio di Hilbert $\mathcal{H} $ del sistema quantistico \`e ottenuto come span di spin $1 / 2$, cio\`e $\mathcal{H} = \operatorname{Span}  \left\{ \ket{\uparrow} ,\ket{\downarrow}  \right\} $.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Pi\`u in generale, si possono definire mapping analoghi tra sistemi a $D$-dimensioni classiche in sistemi a $(D-1)$-dimensioni quantistiche, dove la dimensione che collassa \`e quella temporale.
 
 \newpage
 

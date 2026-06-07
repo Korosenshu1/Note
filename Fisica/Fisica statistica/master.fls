@@ -261,6 +261,8 @@ INPUT /usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/share/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/share/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
+INPUT /usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
 INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT /usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
@@ -566,6 +568,14 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tosf-t1.tfm
+INPUT /usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb
@@ -591,6 +601,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb

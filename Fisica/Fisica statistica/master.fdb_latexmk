@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex master.idx"] 0 "master.idx" "master.ind" "master" 1780863012.36058 -1
-  "master.idx" 1780863006.64005 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 0 "master.idx" "master.ind" "master" 1780869114.45378 -1
+  "master.idx" 1780869105.42093 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
   (rewritten before read)
-["pdflatex"] 1780863006.05136 "master.tex" "master.pdf" "master" 1780863012.3607 0
+["pdflatex"] 1780869104.3891 "master.tex" "master.pdf" "master" 1780869114.45393 0
   "/home/manuel/texmf/tex/latex/sansiwona/sansiwona.sty" 1740524787.62921 651 c15367d9ac0ad9b6bb6487954938dfeb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc" 1775415801 2452 388b1f44dfda03ab19527677af70e7fb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc" 1775415801 2027 f8708480c25b8150843bb94b8b39c93f ""
@@ -46,6 +46,8 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1775415801 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1775415801 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1775415801 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm" 1775415801 452 168d896d9b2ead965bf08c9db69c947f ""
+  "/usr/share/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm" 1775415801 452 dc44cdd7c88ff2b15557f125edfc277b ""
   "/usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm" 1775415801 364 55557743e6c24ee44e49bc5e8dbbe3cd ""
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tosf-t1.tfm" 1775415801 11388 16b8c118de2495495bb0ede2d8be8d43 ""
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tosf-t1.tfm" 1775415801 11908 9200b0967ea3566fc90957ba77edb80e ""
@@ -84,6 +86,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1775415801 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1775415801 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1775415801 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
+  "/usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb" 1775415801 17014 61891910dfe21ad76f9789fdafdd860e ""
   "/usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb" 1775415801 34421 79309417cbb00a4641f92d2efa583bbd ""
   "/usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb" 1775415801 271024 688cf0c9608db65f7095fefe1399a038 ""
   "/usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb" 1775415801 239385 976473371b00a448b7e9440692daa621 ""
@@ -241,6 +244,8 @@
   "/usr/share/texmf-dist/tex/latex/caption/caption.sty" 1775415801 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "/usr/share/texmf-dist/tex/latex/caption/caption3.sty" 1775415801 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty" 1775415801 1360 df2086bf924b14b72d6121fe9502fcdb ""
+  "/usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd" 1775415801 211 101be7da01334f0b54b41fbe634f1ce4 ""
+  "/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty" 1775415801 230 7bc61880b468bfd38aedc173be7c3486 ""
   "/usr/share/texmf-dist/tex/latex/environ/environ.sty" 1775415801 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1775415801 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texmf-dist/tex/latex/esint/esint.sty" 1775415801 2930 afa98ed936439dae4d7a74e105144a0f ""
@@ -331,10 +336,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1780427645 5541339 b32eb00eb34cd5c925a7827d916d9dbd ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1780427598 3765597 90c51caad082def0a2dfd5311f3dabe6 ""
-  "master.aux" 1780863012.18076 48010 5a58938af82984d4b2858d4557051cdf "pdflatex"
+  "master.aux" 1780869114.17585 48675 02913f572d09e03f01636a68755434c3 "pdflatex"
   "master.ind" 1780783525.69665 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1780862991.47365 352968 d389ad7a7ee2227c91470d040a832eec ""
-  "master.toc" 1780863012.19376 8437 af002c4f93257ecd36667fb835dbb72e "pdflatex"
+  "master.tex" 1780869114.03685 356010 b8d1fbd9f83e14472587040bd0ecd9aa ""
+  "master.toc" 1780869114.19685 8540 9b92ecbdf3df2063a19455d734491f95 "pdflatex"
   "max-constr-vdw.png" 1776760609.03808 54280 9ae40f6697ed8e428d172689416ec7e0 ""
   "pd.jpg" 1776962856.28119 99190 297b9cc47241bdd151e78ff4e2bfa896 ""
   "vdw.png" 1776758515.59855 12276 69c5e083e8f3b3953c979ead95899c34 ""
