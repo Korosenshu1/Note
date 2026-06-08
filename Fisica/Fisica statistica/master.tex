@@ -2917,7 +2917,7 @@ La descrizione di un sistema quantistico \`e ottenuta tramite gli stati $\ket{\p
 i \hbar \frac{ d\ket{\psi } }{d t} = \hat{H} \ket{\psi } 
 \] 
 con $\hat{H}$ operatore hamiltoniano.
-Gli osservabili sono gli operatori $\hat{O}$, il cui valore medio \`e ottenuto tramite il valore di aspettazione nello stato $\psi $ \`e $O = \braket{\psi |\hat{O}|\psi } $.
+Gli osservabili sono gli operatori $\hat{O}$, il cui valore medio nello stato $\ket{\psi } $ \`e dato da $O = \braket{\psi |\hat{O}|\psi } $.
 In meccanica statistica, si \`e interessati alle \textit{misture di stati}: dati $\left\{ \ket{\psi _\lambda }  \right\} _\lambda $ un insieme di stati, la matrice densit\`a \`e definita come
 \[
 \rho  = \sum_{\lambda }^{} p_\lambda \ket{\psi _\lambda } \bra{\psi _\lambda }  
@@ -2928,7 +2928,7 @@ Dal punto di vista matematico, $\rho $ \`e un operatore, ma dal punto di vista f
 \end{osservazione}
 \noindent La matrice densit\`a permette di generalizzare il valore medio di un osservabile per una mistura di stati:
 \[
-O = \operatorname{Tr}  (\hat{O}\rho)
+\langle O \rangle = \operatorname{Tr}  (\hat{O}\rho)
 \] 
 Si pu\`o far vedere che $\rho $ \`e autoaggiunto, ha autovalori non-negativi, $\operatorname{Tr} \rho  =1$ e, per uno stato puro, $\rho ^2 = \rho $; in generale, invece, $\operatorname{Tr} \rho ^2 < 1$.
 L'evoluzione temporale per la matrice densit\`a, per sistemi isolati, \`e data dall'equazione di Liouville-von Neumann:
@@ -3013,9 +3013,8 @@ Questo significa che ogni stato nello spazio degli impulsi occupa un volume pari
 e, quindi, il numero di stati in $d^3p$ \`e $\frac{d^3 p}{h^3 / V} = \frac{V}{h^3}d^3p$.
 \end{osservazione}
 \noindent Uno stato \`e identificato da un set di numeri di occupazione $\left\{ n_\mathbf{p}  \right\} $ che permette di identificare quante particelle corrispondono al momento $\mathbf{p} $ e, pertanto, con onda piana $u_\textbf{p}$.
-La differenza tra i vari tipi di sistemi elencati sopra, in questa trattazione, entra proprio nelle possibilit\`a degli $n_\mathbf{p} $: non si pu\`o avere pi\`u di un fermione per momento $\mathbf{p} $, quindi $n_\mathbf{p} = 0, 1$; per bosoni, invece, non si hanno vincoli.
-Per Boltzmann, invece, $n_\mathbf{p} $ pu\`o essere arbitrario, ma una certa sequenza $\left\{ n_\mathbf{p}  \right\} $ pu\`o essere associata a pi\`u stati differenti, per un totale di $\frac{N!}{\prod_\mathbf{p} n_\mathbf{p} !}$\footnote{Il numeratore considera tutte le possibili combinazioni; il denominatore si riferisce al fatto che, scambiando due particelle con uguale momento, si ha ancora lo stesso stato}, perch\'e non vi \`e alcun discorso riguardo simmetrie per scambio di particelle.
-In Boltzmann, si dovr\`a anche tenere conto del fattore correttivo di Gibbs, che semplificher\`a l'$N!$ al numeratore.
+La differenza tra i vari tipi di sistemi elencati sopra, in questa trattazione, entra proprio nelle possibilit\`a degli $n_\mathbf{p} $: non si pu\`o avere pi\`u di un fermione per momento $\mathbf{p} $, quindi $n_\mathbf{p} = 0, 1$; per bosoni, non si hanno vincoli; per Boltzmann, $n_\mathbf{p} $ pu\`o essere arbitrario, ma una certa sequenza $\left\{ n_\mathbf{p}  \right\} $ pu\`o essere associata a pi\`u stati differenti, per un totale di $\frac{N!}{\prod_\mathbf{p} n_\mathbf{p} !}$\footnote{Il numeratore considera tutte le possibili combinazioni; il denominatore si riferisce al fatto che, scambiando due particelle con uguale momento, si ha ancora lo stesso stato}, perch\'e non vi \`e alcun discorso riguardo simmetrie per scambio di particelle.
+Per la statistica di Boltzmann, inoltre, si dovr\`a anche tenere conto del fattore correttivo di Gibbs, che semplificher\`a l'$N!$ al numeratore.
 \begin{osservazione}
 Studiare questo sistema con il formalismo microcanonico \`e pi\`u complicato.
 Si ha 
@@ -3045,7 +3044,7 @@ dove, nel caso di Boltzmann, si \`e tenuto conto del fattore correttivo di Gibbs
 
 \textbf{Caso della statistica di Boltzmann.} In questo caso, si ha
 		\[
-			Z = \sum_{\left\{ n_1,n_1,\ldots \right\} }^{*} \left[ \frac{e^{-\beta n_0 \varepsilon _0}}{n_0!} \frac{e^{-\beta n_1 \varepsilon _1}}{n_1!} \cdot \ldots \right] = \frac{1}{N!}\left[ e^{-\beta \varepsilon _0}+ e^{-\beta  \varepsilon _1}+ \ldots\right] ^N
+			Z = \sum_{\left\{ n_0,n_1,\ldots \right\} }^{*} \left[ \frac{e^{-\beta n_0 \varepsilon _0}}{n_0!} \frac{e^{-\beta n_1 \varepsilon _1}}{n_1!} \cdot \ldots \right] = \frac{1}{N!}\left[ e^{-\beta \varepsilon _0}+ e^{-\beta  \varepsilon _1}+ \ldots\right] ^N
 		\] 
 	dove, nella seconda uguaglianza, si \`e fatto uso del teorema multinomiale:
 	\[
@@ -3079,7 +3078,7 @@ da cui
 che \`e proprio la \textit{statistica di Fermi-Dirac}.
 Nel limite termodinamico e sviluppando in serie il logaritmo, si pu\`o scrivere che 
 \[
-	\log \mathcal{Z}  = \sum_{\mathbf{p}}^{} \log\left(1+ z e^{-\beta \varepsilon _\mathbf{p} }\right) \xrightarrow{\hspace{.4cm}} \frac{V}{h^3} \int d^3 p \ \log\left(1 + z e^{- \frac{\beta n p^2}{2m}}\right) = \frac{V}{\lambda _T^3} \sum_{n=1}^{+\infty} \frac{(-1)^{n+1}z^n}{n^{5 / 2}}
+	\log \mathcal{Z}  = \sum_{\mathbf{p}}^{} \log\left(1+ z e^{-\beta \varepsilon _\mathbf{p} }\right) \xrightarrow{\hspace{.4cm}} \frac{V}{h^3} \int d^3 p \ \log\left(1 + z e^{- \frac{\beta  p^2}{2m}}\right) = \frac{V}{\lambda _T^3} \sum_{n=1}^{+\infty} \frac{(-1)^{n+1}z^n}{n^{5 / 2}}
 \] 
 dove si \`e usato lo sviluppo del logaritmo $\sum_{n=1}^{+\infty} (-1)^{n+1} \frac{\varepsilon ^n}{n}$, con $ \varepsilon  = z e^{-\beta p^2 / 2m}$.
 Infine, definendo $f_\alpha (z) = \sum_{n=1}^{+\infty} (-1)^{n+1}\frac{z^n}{n^\alpha }$, si pu\`o scrivere che $\log\mathcal{Z} = \frac{pV}{\kappa _BT}= \frac{V}{\lambda _T^3} f_{5 / 2} (z)$; unitamente col fatto che $\langle N \rangle = z \partial _z \log \mathcal{Z} $, si ha:
@@ -3118,7 +3117,7 @@ Allora
 \begin{cases}
 	\displaystyle \frac{p}{\kappa _B T} = \frac{1}{\lambda _T^3}g_{5 / 2} (z) {\color{asdf}\ -\ \frac{1}{V}\log(1-z)}\\
 	\\
-	\displaystyle \langle N \rangle = z \frac{\partial }{\partial z}  \log\mathcal{Z} =  \frac{V}{\lambda _T^3} g_{3 / 2} (z) {\color{asdf}\ +\ \frac{1}{V}\frac{z}{1-z}}
+	\displaystyle \langle N \rangle = z \frac{\partial }{\partial z}  \log\mathcal{Z} =  \frac{V}{\lambda _T^3} g_{3 / 2} (z) {\color{asdf}\ +\ \frac{z}{1-z}}
 \end{cases}
 \end{equation}
 dove, in {\color{asdf}blu}, \`e riportato il contributo, inizialmente trascurato, relativo al punto $p = 0$ nella somma, che porta ad un termine aggiuntivo $+ \log\frac{1}{1-z}$ nell'espressione di $\log \mathcal{Z} $.
