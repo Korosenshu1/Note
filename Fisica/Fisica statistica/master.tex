@@ -3385,7 +3385,7 @@ Nel limite termodinamico, $V,N\to +\infty$ e $N / V$ \`e costante, quindi $V$ e 
 dove si \`e prima eliminato $z^{-1}$, poi tenuto solo il primo ordine di sviluppo dell'esponenziale e rimosso gli altri.
 Visto che
 \[
-\epsilon _\mathbf{p} = \frac{1}{2m} \left(\frac{2\pi\hbar ^2}{L}\right) ^2 \lvert \mathbf{n}  \rvert ^2
+\epsilon _\mathbf{p} = \frac{1}{2m} \left(\frac{2\pi\hbar}{L}\right) ^2 \lvert \mathbf{n}  \rvert ^2
 \] 
 con $\mathbf{n}  \in \mathbb{Z}^3$ per via delle condizioni al bordo, si conclude che
 \[
@@ -3478,16 +3478,15 @@ con $ \ell = \frac{5}{2}\kappa _B T \frac{g_{5 / 2} (1)}{g_{3 / 2} (1)}$ \textit
 
 Usando l'equazione \ref{giei}, si ha 
 \[
-U = \frac{3}{2}pV \hspace{1cm} F = \mu N - pV
+U = \frac{3}{2}pV \hspace{1cm} F = \mu N - pV = \frac{N}{\beta } \log z- pV
 \] 
-con $\mu  = -\kappa _B T \log z$. 
 Da questo, si ottiene che 
 \[
-S = \frac{1}{T} (U - F) = \begin{cases}
+\frac{S}{N} = \frac{1}{T} (U - F) = \begin{cases}
 	\displaystyle \frac{5}{2} \frac{\kappa _B v}{\lambda _T^3}g_{5 / 2} (1) &,\ T\le T_c\\
 	\\
 	\displaystyle \frac{5}{2} \frac{\kappa _B v}{\lambda _T^3}g_{5 / 2} (z) - \kappa _B \log z &,\ T>T_c
-\end{cases} \ \ \implies \lim_{z \to 1} S = \frac{\ell}{T}
+\end{cases} \ \ \implies \lim_{z \to 1} \frac{S}{N} = \frac{\ell}{T}
 \] 
 dove il limite $z\to 1$ equivale al limite $T\to T_c$.
 Si pu\`o anche calcolare la capacit\`a termica $C_V = \Eval{\frac{\partial U}{\partial T}}{V}{} $ e trovare che 
