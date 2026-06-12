@@ -1250,8 +1250,8 @@ Sviluppando il prodotto e semplificando il secondo ordine delle fluttuazioni per
 In questo modo, si ha
 \[
 	\begin{split}
-		H &\simeq - J \sum_{i=1}^{N} \sum_{j_\text{p.v.}}^{} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
-		  &= - J y \frac{1}{2} \sum_{i=1}^{N} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
+		H &\simeq -\frac{1}{2} J \sum_{i=1}^{N} \sum_{j_\text{p.v.}}^{} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
+		  &= - \frac{1}{2}J y  \sum_{i=1}^{N} (-m^2+2mS_i) - h \sum_{i=1}^{N} S_i\\
 		  &= \frac{1}{2}Jy m^2 N - (h + mJy) \sum_{i=1}^{N} S_i
 	\end{split}
 \] 
@@ -1356,7 +1356,7 @@ L'energia libera \`e data da
 dove si \`e usato lo sviluppo per $h,m \ll 1$ e che $\log(\cosh \epsilon ) = \frac{\epsilon ^2}{2}- \frac{\epsilon ^4}{12}+\ldots$ per $\epsilon \ll 1$.
 In questa espressione, si ha
 \[
-F_0=-N\kappa _B T \log 2 \hspace{.5cm} a = N \frac{Jy}{\kappa _B T } \left(\kappa _B T - Jy\right)  \hspace{.5cm} b = 2N \kappa _B T \left(\frac{Jy}{\kappa _B T}\right) ^4 \hspace{.5cm}\lambda = 2N \frac{Jy}{\kappa _B T}
+F_0=-N\kappa _B T \log 2 \hspace{.5cm} a = N \frac{Jy}{\kappa _B T } \left(\kappa _B T - Jy\right)  \hspace{.5cm} b = 2N \kappa _B T \left(\frac{Jy}{\kappa _B T}\right) ^4 \hspace{.5cm}\lambda = N \frac{Jy}{\kappa _B T}
 \] 
 con $a \sim T-T_c$, visto che $T_c = Jy / \kappa _B$.
 Si nota che l'equazione $m=\tanh(\beta mJy)$ equivale alla condizione 
@@ -3716,16 +3716,16 @@ A seconda che $\chi _T$ sia maggiore o minore di zero, si distinguono due compor
 \end{itemize}
 L'hamiltoniano del sistema \`e dato da 
 \[
-\hat{H} = \sum_{i=1}^{N} \left\{ \frac{1}{2m} \left(\hat{\mathbf{p} }_i - \frac{q}{c}\hat{\mathbf{A} }\right) ^2 - \mu _0 \hat{\pmb{\sigma }} _i \cdot \hat{\mathbf{H} } \right\} 
+\hat{H} = \sum_{i=1}^{N} \left\{ \frac{1}{2m} \left(\hat{\mathbf{p} }_i - \frac{q}{c}\mathbf{A} \right) ^2 - \mu _0 \hat{\pmb{\sigma }} _i \cdot \mathbf{H}  \right\} 
 \] 
-dove il termine $\left(\hat{\mathbf{p} }_i - \frac{q}{c}\hat{\mathbf{A} }\right) ^2$ \`e legato all'avere un fermione carico in un campo magnetico, che origina il \textit{diamagnetismo di Landau}, mentre il termine $\mu _0 \hat{\pmb{\sigma }} _i \cdot \hat{\mathbf{H} }$ \`e legato all'interazione tra spin e campo, che origina il \textit{paramagnetismo di Pauli}.
+dove il termine $\left(\hat{\mathbf{p} }_i - \frac{q}{c}\mathbf{A} \right) ^2$ \`e legato all'avere un fermione carico in un campo magnetico, che origina il \textit{diamagnetismo di Landau}, mentre il termine $\mu _0 \hat{\pmb{\sigma }} _i \cdot \mathbf{H} $ \`e legato all'interazione tra spin e campo, che origina il \textit{paramagnetismo di Pauli}.
 In questa espressione, nel caso di elettroni, $\mu _0$ \`e il magnetone di Bohr, $q = -e$ e $\hat{\pmb{\sigma } }_i$ sono le matrici di Pauli.
 
 Per la seguente trattazione, si tralascia la parte di interazione carica-campo e si studia
 \[
-\hat{H} = \sum_{i=1}^{N} \left(\frac{\hat{\mathbf{p} }_i ^2}{2m} - \mu _0 \hat{\pmb{\sigma } }_i \cdot \hat{\mathbf{H} }\right) 
+\hat{H} = \sum_{i=1}^{N} \left(\frac{\hat{\mathbf{p} }_i ^2}{2m} - \mu _0 \hat{\pmb{\sigma } }_i \cdot \mathbf{H} \right) 
 \] 
-In opportuna base, gli autovalori di $\hat{\pmb{\sigma } }_i \cdot \hat{\mathbf{H} }$ sono $S_i\mathrm{H} $, con $S_i = \pm 1$, per cui
+In opportuna base, gli autovalori di $\hat{\pmb{\sigma } }_i \cdot \mathbf{H} $ sono $S_i\mathrm{H} $, con $S_i = \pm 1$, per cui
 \[
 E = \sum_{\mathbf{p} }^{} \left(n^+_\mathbf{p} + n^-_\mathbf{p} \right) \frac{p^2}{2m} - \sum_{\mathbf{p} }^{}\mu _0 \left(n^+_\mathbf{p} - n ^- _\mathbf{p} \right) \mathrm{H} 
 \] 
@@ -3738,7 +3738,7 @@ Definendo $N^\pm = \sum_{\mathbf{p} }^{} n^\pm_\mathbf{p} $, si pu\`o riscrivere
 \[
 	\begin{split}
 		Z_N &= \sum_{N^+=0}^{N} \sum_{\left\{ n^+_\mathbf{p} , n^-_\mathbf{p}  \right\} }^{*_1 *_2} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} \left(n^+_\mathbf{p}  + n^-_\mathbf{p} \right) }e^{\beta \mu _0 \mathrm{H} (2N^+ - N)}\\
-		    &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0N(2N^+ - N)} \sum_{\left\{ n^+_\mathbf{p}  \right\} }^{*_1} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^+_\mathbf{p} } \sum_{\left\{ n_\mathbf{p} ^- \right\} }^{*_2} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^-_\mathbf{p} }
+		    &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0\mathrm{H} (2N^+ - N)} \sum_{\left\{ n^+_\mathbf{p}  \right\} }^{*_1} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^+_\mathbf{p} } \sum_{\left\{ n_\mathbf{p} ^- \right\} }^{*_2} e^{-\beta \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p} n^-_\mathbf{p} }
 	\end{split}
 \] 
 dove le somme su $\left\{ n_\mathbf{p} ^+ \right\} $ e $\left\{ n_\mathbf{p} ^- \right\} $ sono, rispettivamente, funzioni di partizione per $N^+$ e $N^-$ fermioni liberi senza campo magnetico, o interazioni, per cui se ne conosce l'espressione.
@@ -3746,13 +3746,13 @@ Questi termini si indicano con $Z_{N^+} ^{(0)}$ e $Z_{N^-} ^{(0)}$.
 Per fermioni liberi, l'energia libera \`e $F_N^{(0)} = - \kappa _B T \log Z_N^{(0)} $; usando questa espressione, si pu\`o scrivere
 \[
 	\begin{split}
-		Z_N(T,V,\mathrm{H} ) &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0 N (2N^+ - N) - \beta \left\{ F_{N^+} ^{(0)} (T,V) + F_{N-N^+} ^{(0)}(T,V) \right\} }\\
+		Z_N(T,V,\mathrm{H} ) &= \sum_{N^+ = 0}^{N} e^{\beta \mu _0 \mathrm{H}  (2N^+ - N) - \beta \left\{ F_{N^+} ^{(0)} (T,V) + F_{N-N^+} ^{(0)}(T,V) \right\} }\\
 				     & = \sum_{N^+ = 0}^{} e^{\beta f (N^+)}
 	\end{split}
 \] 
 Ora si fa un'approssimazione di punto sella: sia $\overline{N}^+$ il valore per cui $e^{\beta f(N^+)}$ \`e massimo, cio\`e soddisfa $f(\overline{N}^+) = \max_{N^+} f(N^+)$; in questo caso, allora $e^{\beta f(\overline{N}^+)} \le Z_N \le N e^{\beta f(\overline{N}^+)}$ e si assume che 
 \[
-Z_N \simeq e^{\beta f(\overline{N}^+)}\implies \frac{1}{\beta }\log Z_N
+Z_N \simeq e^{\beta f(\overline{N}^+)}\implies \frac{1}{\beta }\log Z_N = f(\overline{N}^+)
 \] 
 con $f(N^+) = 2\mu _0 \mathrm{H} N^+ - \beta \mu _0 \mathrm{H} N - F_{N^+} ^{(0)}- f_{N-N^+} ^{(0)}$.
 Tale valore $\overline{N}^+$ si ottiene da $\partial _{N^+} f |_{\overline{N}^+} =0$, cio\`e
@@ -3806,7 +3806,7 @@ I comportamenti della suscettivit\`a evidenziano la natura paramagnetica del sis
 \subsubsection{Fermioni carichi in campo magnetico}
 Si studia il gas di fermioni governato dall'hamiltoniano\footnote{Si considera il caso degli elettroni in particolare, per cui si pone $q = -e$.}
 \[
-\hat{H} = \frac{1}{2m}\sum_{i=1}^{N}  \left(\hat{\mathbf{p} }_i + \frac{e}{c} \hat{\mathbf{A} }\right) ^2 = \sum_{i}^{} \hat{H}_i
+\hat{H} = \frac{1}{2m}\sum_{i=1}^{N}  \left(\hat{\mathbf{p} }_i + \frac{e}{c} \mathbf{A} \right) ^2 = \sum_{i}^{} \hat{H}_i
 \] 
 cio\`e trascurando le interazioni spin-campo magnetico e studiando solamente quelle tra carica e campo.
 Si esprimono autovalori e autovettori di ogni $\hat{H}_i$\footnote{L'hamiltoniano del sistema si pu\`o scrivere come somma di quelli di singolo fermione perch\'e questi non interagiscono tra di loro.} come $\hat{H}_i \psi  = \varepsilon _i \psi $.
@@ -4021,7 +4021,7 @@ La definizione di $s_j$ implica la necessit\`a di definire un ordinamento per i 
 \[
 \ket{n_1,\, n_2,\, n_3,\, \ldots} = \frac{(\hat{a}^\dagger _1) ^{n_1} }{\sqrt{n_1} !}\frac{(\hat{a}^\dagger _2) ^{n_2} }{\sqrt{n_2} !}\frac{(\hat{a}^\dagger _3) ^{n_3} }{\sqrt{n_3} !}\ldots \ket{0}  = \left(\prod_j \frac{(\hat{a}^\dagger _j)^{n_j} }{\sqrt{n_j!} }\right) \ket{0} 
 \] 
-Questa scrittura gi\`a sottintende una scelta di ordinamento: si parte con il creare le particelle nello stato energetico pi\`u alto, scendendo mano mano; tendenzialmente, questo si riscriver\`a, iniziando ad aggiungere le particelle dal fondamentale.
+Questa scrittura gi\`a sottintende una scelta di ordinamento: si parte con il creare le particelle nello stato energetico pi\`u alto, scendendo mano mano.
 
 In maniera analoga, si definisce un operatore di distruzione $\hat{a}_\lambda :\mathcal{F} _N \to \mathcal{F} _{N-1} $, che agisce come
 \[
@@ -4106,7 +4106,7 @@ Per operatore a un corpo, si intende un operatore che, su un sistema di $N$ part
 dove gli $\hat{o}_1$ agiscono sulla singola particella $i$-esima. Per esempio, l'operatore energia cinetica \`e $\hat{T}_1 = \sum_{i}^{} \frac{\hat{p}_i^2}{2m_i}$.
 In seconda quantizzazione, data $\left\{ \ket{\alpha }  \right\} $ una base di singola particella in cui $\hat{o}_1$ \`e diagonale ($\hat{o}_1 \ket{\alpha } = o_{1\alpha } \ket{\alpha } $), si scrive che 
 \[
-\hat{O}_1 = \sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{a}_\alpha  =\sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{n}_\alpha 
+\hat{O}_1 = \sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{n}_\alpha =\sum_{\alpha }^{}\braket{\alpha |\hat{o}_1|\alpha } \hat{a}_\alpha ^\dagger \hat{a}_\alpha  
 \] 
 Si pu\`o cambiare base e scrivere
 \[
