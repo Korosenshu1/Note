@@ -3625,8 +3625,15 @@ Rimaneggiando l'espressione, si trova che
 \begin{equation}\label{pf}
 \mu  = \varepsilon _F - \frac{\pi^2}{12}\varepsilon _F \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \operatorname{O} \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^4
 \end{equation}
-In questo modo, si determina $z$ e, quindi, si pu\`o sostituire in $\frac{p}{\kappa _B T } = \frac{1}{\lambda _T^3}f_{5 / 2} (z)$.
-
+In questo modo, si determina $z$ e, quindi, si pu\`o sostituire in $\frac{p}{\kappa _B T } = \frac{1}{\lambda _T^3}f_{5 / 2} (z)$, utilizzando il fatto che
+\[
+	f_{3/2} (z) = z \frac{d }{d z} f_{5 / 2} (z) = \frac{d }{d (\log z)} f_{5 / 2} (z) \implies f_{5 / 2} (z) = \int  f_{3 / 2} (z)\ d\nu
+\] 
+Cos\`i facendo, $f_{5 / 2} (z) \simeq \frac{8}{15 \sqrt{\pi} } (\beta \mu  )^{5 / 2} + \frac{\pi^2}{3 \sqrt{\pi} }(\beta \mu  ) ^{1 / 2} $, quindi si arriva a 
+\[
+p\simeq  \frac{2}{5}\frac{\varepsilon _F}{v}\left[ 1 + \frac{5}{12}\pi^2 \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 \right]  
+\] 
+\begin{osservazione}
 In alternativa, si pu\`o partire dal calcolare l'energia interna, che, con calcoli analoghi a quelli fatti precedentemente per la $f_{3 / 2} (z)$, si trova essere
 \[
 U = \sum_{\mathbf{p} }^{} \varepsilon _\mathbf{p}  \langle n_\mathbf{p}  \rangle \longrightarrow \frac{V}{h^3}\int d\mathbf{p}  \ \frac{p^2}{2m}\frac{1}{e^{\beta \left(p^2 / 2m - \mu \right) }+1} = \frac{3}{5}N \varepsilon _F \left\{ 1 + \frac{5}{12}\pi^2 \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2+\ldots \right\} 
@@ -3640,7 +3647,8 @@ Ora, utilizzando la relazione \ref{giei}, si pu\`o arrivare all'equazione di sta
 \[
 U = \frac{3}{2}pV \implies p = \frac{2}{5}\frac{\varepsilon _F}{v} \left\{ 1 + \frac{5}{12}\pi^2 \left(\frac{\kappa _B T}{\varepsilon _F}\right) ^2 + \ldots \right\} 
 \] 
-Per $T\to 0$, si possono scartare le potenze superiori all'ordine $2$ in $T$ nell'espressione di $p$, per cui si trova che 
+\end{osservazione}
+\noindent Per $T\to 0$, si possono scartare le potenze superiori all'ordine $2$ in $T$ nell'espressione di $p$, per cui si trova che 
 \[
 	C_V = \Eval{\frac{\partial U}{\partial T} }{V}{} \sim T
 \] 
