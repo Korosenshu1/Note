@@ -158,6 +158,13 @@ title=#1
 \end{center}
 }
 
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
 %Evaluate symbol
 \DeclareMathOperator{\di}{d\!}
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
@@ -219,9 +226,9 @@ L'oggetto che permetter\`a di descrivere il campo della radiazione \`e l'\textit
 	\begin{minipage}
 		{.45\columnwidth}
 	Si definisce studiando l'energia trasferita dalla radiazione su una superficie infinitesima $dA$, con versore normale $\hat{n}$.
-	La quantit\`a di energia trasferita a questa superficie da una radiazione che si muove lungo $\hat{k}$, con frequenza compresa tra $\nu $ e $\nu +d\nu $, entro un angolo solido $d\Omega $ e che si trova in $\vec{r}$ al tempo $t$, \`e data da 
+	La quantit\`a di energia trasferita a questa superficie da una radiazione che si muove lungo $\hat{k}$, con frequenza compresa tra $\nu $ e $\nu +\dd\nu $, entro un angolo solido $\dd\Omega $ e che si trova in $\vec{r}$ al tempo $t$, \`e data da 
 	\[
-	dE = I_\nu (\vec{r},t,\hat{k}) \hat{k}\cdot \hat{n} \ dAdtd\Omega d\nu 
+	\dd E = I_\nu (\vec{r},t,\hat{k}) \hat{k}\cdot \hat{n}  \dd A\dd t\dd\Omega \dd\nu 
 	\] 
 	\end{minipage}
 	\hfill
@@ -239,11 +246,11 @@ L'oggetto che permetter\`a di descrivere il campo della radiazione \`e l'\textit
 \draw [-{Stealth[scale=1.5]}, ] (0,15.125) -- (1.25,16.375);
 \draw [-{Stealth[scale=1.5]}, ] (0,15.125) -- (1.25,18.5);
 \node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (-0.125,14.75) {$\vec{r}$};
-\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.25,16.25) {$dA$};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.25,16.25) {$\dd A$};
 \node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (1.5,16.125) {$\hat{n}$};
 \node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.005cm] at (1.5,18.5) {$\hat{k}$};
 \draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1 , rotate around={-14:(1.25,18.5)}] (1.25,18.5) ellipse (0.875cm and 0.375cm);
-\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (2.5,18.375) {$d\Omega$};
+\node [font=\fontsize{14.2pt}{18.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (2.5,18.375) {$\dd\Omega$};
 \draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1, short] (0,15.125) -- (0.375,18.625);
 \draw [ color={rgb,255:red,39; green,123; blue,255}, draw opacity=1, short] (0,15.125) -- (2.125,18.25);
 \end{circuitikz}}%
@@ -251,7 +258,7 @@ L'oggetto che permetter\`a di descrivere il campo della radiazione \`e l'\textit
 \end{center}
 Indicando, poi, con $\theta $ l'angolo tra $\hat{k}$ e $\hat{n}$, si pu\`o scrivere
 \begin{equation}
-	dE = I_\nu (\vec{r},t,\hat{k}) \cos \theta  \ dAdtd\Omega d\nu 
+	\dd E = I_\nu (\vec{r},t,\hat{k}) \cos \theta   \dd A\dd t\dd\Omega \dd\nu 
 \end{equation}
 Si osserva, quindi, che $I_\nu $ ha le dimensioni di 
 \[
@@ -262,42 +269,42 @@ L'intensit\`a specifica permette di determinare il campo di radiazione, per cui 
 \marginpar{\textit{Flusso}}
 Tramite l'intensit\`a specifica, si possono esprimere il flusso monocromatico $F_\nu $ e il flusso $F$ come
 \begin{equation}
-F_\nu = \int I_\nu \cos \theta  \ d\Omega  \hspace{1cm} F = \int F_\nu \ d\nu 
+F_\nu = \int I_\nu \cos \theta \dd\Omega  \hspace{1cm} F = \int F_\nu \dd\nu 
 \end{equation}
-Si nota che, per una radiazione isotropa, $I_\nu $ non dipende da $\hat{k}$, quindi $F_\nu \propto \int \cos \theta d\Omega  = 0$.
+Si nota che, per una radiazione isotropa, $I_\nu $ non dipende da $\hat{k}$, quindi $F_\nu \propto \int \cos \theta \dd\Omega  = 0$.
 \marginpar{\textit{Pressione di radiazione} }
-L'impulso trasportato dalla radiazione \`e $dE / c$, direzionato lungo $\hat{k}$; la pressione di radiazione \`e ottenuta come il flusso dell'impulso ortogonale alla superficie su cui incide la radiazione, per cui 
+L'impulso trasportato dalla radiazione \`e $\dd E / c$, direzionato lungo $\hat{k}$; la pressione di radiazione \`e ottenuta come il flusso dell'impulso ortogonale alla superficie su cui incide la radiazione, per cui 
 \begin{equation}
-P_\nu = \int \frac{dE / c}{dA\, dt}\hat{k}\cdot \hat{n} \ d\Omega = \int \frac{I_\nu }{c} \cos ^2 \theta \ d\Omega 
+P_\nu = \int \frac{\dd E / c}{\dd A \dd t\dd\nu }\hat{k}\cdot \hat{n} \dd\Omega = \int \frac{I_\nu }{c} \cos ^2 \theta \dd\Omega 
 \end{equation}
 Se la radiazione \`e isotropa, allora
 \[
-P_\nu  = \frac{I_\nu }{c} \int \cos^2 \theta \ d\Omega = \frac{I_\nu }{c} \int _0^{2\pi} d\varphi  \int _0^\pi \cos^2 \theta \sin\theta \ d\theta = \frac{4\pi}{3}\frac{I_\nu }{c}
+P_\nu  = \frac{I_\nu }{c} \int \cos^2 \theta \dd\Omega = \frac{I_\nu }{c} \int _0^{2\pi} \dd\varphi  \int _0^\pi \cos^2 \theta \sin\theta \dd\theta = \frac{4\pi}{3}\frac{I_\nu }{c}
 \] 
 \marginpar{\textit{Densit\`a di energia}}
 La densit\`a di energia trasmessa dalla radiazione \`e l'energia per unit\`a di volume 
 \[
-dV = dAds \cos \theta  = dA cdt \cos \theta 
+\dd V = \dd A \dd s \cos \theta  = \dd A \, c\dd t\ \cos \theta 
 \] 
-con $ds = cdt$ tratto percorso in tempo $dt$, quindi 
+con $\dd s = c\dd t$ tratto percorso in tempo $\dd t$, quindi 
 \begin{equation}
-u_\nu  = \int \frac{I_\nu }{c} \ d\Omega \hspace{1cm} u = \int u_\nu  \ d\nu  
+u_\nu  = \int \frac{I_\nu }{c} \dd\Omega \hspace{1cm} u = \int u_\nu  \dd\nu  
 \end{equation}
 Per radiazione isotropa, si ha
 \[
 u_\nu  = \frac{4\pi }{c} I_\nu \implies P_\nu  = \frac{u_\nu }{3}
 \] 
 \marginpar{\textit{Intensit\`a specifica media}}
-\`E definita come media rispetto all'angolo solido:
+L'intensit\`a specifica media \`e definita come media rispetto all'angolo solido:
 \begin{equation}
-J_\nu  = \frac{\int I_\nu  \ d\Omega }{\int d\Omega }= \frac{1}{4\pi} \int I_\nu  \ d\Omega 
+J_\nu  = \frac{\int I_\nu  \dd\Omega }{\int \dd\Omega }= \frac{1}{4\pi} \int I_\nu  \dd\Omega 
 \end{equation}
 In questo modo, si trova che
 \[
 u_\nu  = \frac{4\pi}{c} J_\nu 
 \] 
 \begin{osservazione}
-Se la radiazione \`e isotropa, allora $J_\nu  = \frac{I_\nu }{4\pi} \int d\Omega = I_\nu $.
+Se la radiazione \`e isotropa, allora $J_\nu  = \frac{I_\nu }{4\pi} \int \dd\Omega = I_\nu $.
 \end{osservazione}
 \begin{esempio} [Sfera uniformemente brillante]
 \ 
@@ -334,7 +341,7 @@ Se la radiazione \`e isotropa, allora $J_\nu  = \frac{I_\nu }{4\pi} \int d\Omega
 \end{center}
 Il flusso \`e, allora, determinato da se il segmento che parte da $P$ e lungo $r$ interseca o meno la sfera:
 \[
-F = \int I \cos \theta  \ d\Omega = 2\pi B \int _0^{\theta _c}  \cos \theta  \sin \theta  \ d\theta  = 2\pi B\frac{1 - \cos^2 \theta _c}{2} = \pi B \sin^2 \theta _c
+F = \int I \cos \theta  \dd\Omega = 2\pi B \int _0^{\theta _c}  \cos \theta  \sin \theta  \dd\theta  = 2\pi B\frac{1 - \cos^2 \theta _c}{2} = \pi B \sin^2 \theta _c
 \] 
 Per\`o si sa che $\sin \theta _c = R / r$, quindi $F = \pi B \left(R / r\right) ^2$.
 Sulla superficie, $r= R$, quindi $F(R) = \pi B$.
@@ -344,23 +351,23 @@ Sulla superficie, $r= R$, quindi $F(R) = \pi B$.
 	\begin{minipage}
 		{.45\columnwidth}
 	Si studia, ora, cosa succede all'intensit\`a di una radiazione che si propaga nel vuoto tra un punto $\vec{r}$ e un punto $\vec{r}'$ posti lungo $\hat{k}$.
-	L'energia trasportata \`e quella che attraversa sia $dA$ che $dA'$. 
+	L'energia trasportata \`e quella che attraversa sia $\dd A$ che $\dd A'$. 
 	\end{minipage}
 	\hfill
 	\begin{minipage}
 		{.5\columnwidth}
 	\centering
 	\begin{tikzpicture}[scale=1.3]
-		\node[text=gray!60!black] at (3,0.5) {\scriptsize$d\Omega $};
-		\node[text=blue!60!white] at (3,-0.5) {\scriptsize$d\Omega' $};
+		\node[text=gray!60!black] at (3,0.5) {\scriptsize$\dd\Omega $};
+		\node[text=blue!60!white] at (3,-0.5) {\scriptsize$\dd\Omega' $};
 		\draw[gray!80!black] (1,0) -- (5,0.5);
 		\draw[gray!80!black] (1,0) -- (5,-0.5);
 		\draw[blue!60!white] (1,0.5) -- (5,0);
 		\draw[blue!60!white] (1,-0.5) -- (5,0);
 		\draw[green!60!black, pattern={Lines[angle=45, distance=3pt, line width=0.4pt]},pattern color=green!60!black] (1,0) ellipse (0.25 and 0.5);
 		\draw[green!60!black, pattern={Lines[angle=45, distance=3pt, line width=0.4pt]},pattern color=green!60!black] (5,0) ellipse (0.3 and 0.5);
-		\node[text=green!60!black] at (0.7,0.7) {\scriptsize$dA$};
-		\node[text=green!60!black] at (4.7,0.7) {\scriptsize$dA'$};
+		\node[text=green!60!black] at (0.7,0.7) {\scriptsize$\dd A$};
+		\node[text=green!60!black] at (4.7,0.7) {\scriptsize$\dd A'$};
 		\draw[->] (0,0) -- (6,0) node[right] {\scriptsize$\hat{k}$};
 		\draw[fill] (1,0) circle (1.2pt) node[below] {\scriptsize$\vec{r}$};
 		\draw[fill] (5,0) circle (1.2pt) node[below] {\scriptsize$\vec{r}'$};
@@ -373,18 +380,18 @@ Sulla superficie, $r= R$, quindi $F(R) = \pi B$.
 	\end{tikzpicture}
 	\end{minipage}
 \end{center}
-Quella che attraversa $dA$ \`e $dE = I_\nu  (\vec{r},t , \hat{k}) \hat{k}\cdot \hat{n} \ dA\, dt\, d\Omega\, d\nu $, dove $d\Omega $ \`e l'angolo solido tale per cui la radiazione, nel punto $\vec{r}$, vede esattamente $dA'$, quindi \`e $d\Omega  = \hat{k}\cdot \hat{n}' \frac{dA'}{R^2}$.
-Quella che attraversa $dA'$ \`e, invece, data da $dE' = I_\nu  (\vec{r}' , t' , \hat{k}) \hat{k}\cdot \hat{n}' \ dA'\, dt \, d\Omega ' \, d\nu $, con $d\Omega ' = \hat{k}\cdot \hat{n} \frac{dA}{R^2}$.
-Visto che la propagazione avviene nel vuoto, $dE = dE'$, da cui, esplicitando $d\Omega $ e $d\Omega '$, si trova che $I_\nu (\vec{r}, t, \hat{k}) = I_\nu (\vec{r}' , t' , \hat{k})$; questo significa che l'intensit\`a di una radiazione che si propaga nel vuoto lungo una stessa direzione rimane invariata.
+Quella che attraversa $\dd A$ \`e $\dd E = I_\nu  (\vec{r},t , \hat{k}) \hat{k}\cdot \hat{n} \dd A\dd t\dd\Omega\dd\nu $, dove $\dd\Omega $ \`e l'angolo solido tale per cui la radiazione, nel punto $\vec{r}$, vede esattamente $\dd A'$, quindi \`e $\dd \Omega  = \hat{k}\cdot \hat{n}' \frac{\dd A'}{R^2}$.
+Quella che attraversa $\dd A'$ \`e, invece, data da $\dd E' = I_\nu  (\vec{r}' , t' , \hat{k}) \hat{k}\cdot \hat{n}' \dd A'\dd t \dd \Omega ' \dd\nu $, con $\dd\Omega ' = \hat{k}\cdot \hat{n} \frac{\dd A}{R^2}$.
+Visto che la propagazione avviene nel vuoto, $\dd E = \dd E'$, da cui, esplicitando $\dd \Omega $ e $\dd \Omega '$, si trova che $I_\nu (\vec{r}, t, \hat{k}) = I_\nu (\vec{r}' , t' , \hat{k})$; questo significa che l'intensit\`a di una radiazione che si propaga nel vuoto lungo una stessa direzione rimane invariata.
 
-Utilizzando questa relazione per uno spostamento infinitesimo da $dA$, cio\`e usando il ragionamento per $\vec{r}$ e $\vec{r} + d\vec{r}$, si ha che 
+Utilizzando questa relazione per uno spostamento infinitesimo da $\dd A$, cio\`e usando il ragionamento per $\vec{r}$ e $\vec{r} + \dd\vec{r}$, si ha che 
 \[
 	\begin{split}
-		\Delta E &= \Big[I_\nu (\vec{r}+d\vec{r}, t+dt , \hat{k}) - I_\nu (\vec{r},t,\hat{k})\Big] dA\, dt \, d\Omega \, d\nu \\
-			 &= \left[ \frac{1}{c}\frac{\partial I_\nu }{\partial t} + \hat{k}\cdot \vec{\nabla }I_\nu  \right]  ds \, dA \,dt \, d\Omega \, d\nu 
+		\Delta E &= \Big[I_\nu (\vec{r}+\dd\vec{r}, t+\dd t , \hat{k}) - I_\nu (\vec{r},t,\hat{k})\Big] \dd A\dd t \dd\Omega \dd\nu \\
+			 &= \left[ \frac{1}{c}\frac{\partial I_\nu }{\partial t} + \hat{k}\cdot \vec{\nabla }I_\nu  \right]  \dd s \dd A  \dd t \dd\Omega \dd\nu 
 	\end{split}
 \] 
-con $dt = ds / c$, da cui si ottiene 
+con $\dd t = \dd s / c$, da cui si ottiene 
 \begin{equation}
 	\frac{1}{c} \frac{\partial I_\nu }{\partial t} + \hat{k}\cdot \vec{\nabla }I_\nu  = 0
 \end{equation}
