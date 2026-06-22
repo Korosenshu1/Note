@@ -4356,7 +4356,7 @@ L'integrale del primo termine \`e banale: la dipendenza da $\mathbf{r} $ si ritr
 
 Il secondo termine, invece, si valuta cambiando variabili $(\mathbf{r} ,\mathbf{r} ') \to (\mathbf{R} ,\mathbf{s} )$, con $\mathbf{r} = \mathbf{R}  + \mathbf{s} /2$ e $\mathbf{r} ' = \mathbf{R} - \mathbf{s} /2$; in questo modo, l'integrale rispetto a $\mathbf{R} $ restituisce una $\delta \left(\mathbf{p} _1 + \mathbf{p} _2 - \mathbf{u} - \mathbf{v} \right) $.
 Questa delta sottolinea la conservazione del momento: nel distruggere particelle a $\mathbf{p} _1, \mathbf{p} _2$ e nella creazione di particelle a momento $\mathbf{u} ,\mathbf{v} $ tramite $\hat{a}_\mathbf{u} ^\dagger \hat{a}^\dagger _\mathbf{v} \hat{a}_{\mathbf{p_1} } \hat{a}_{\mathbf{p} _2} $, vale $\mathbf{p} _1 +\mathbf{p} _2 = \mathbf{u} + \mathbf{v} $.
-Sostituendo, poi, $V(\mathbf{q} ) = \int V(\mathbf{s} ) e^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{s} } \ d\mathbf{s} $, si ottiene
+Usando questo vincolo per scrivere $\mathbf{v}  = \mathbf{p} _1 + \mathbf{p} _2 - \mathbf{u} $ e sostituendo $V(\mathbf{q} ) = \int V(\mathbf{s} ) e^{-\frac{i}{\hbar }\mathbf{q} \cdot \mathbf{s} } \ d\mathbf{s} $, si ottiene
 \[
 \hat{H} = \sum_{\mathbf{p} }^{} \frac{p^2}{2m} \hat{a}_\mathbf{p}^\dagger  \hat{a}_\mathbf{p} + \frac{1}{2V} \sum_{\mathbf{p} _1, \mathbf{p} _2, \mathbf{q} }^{} V(\mathbf{q} ) \hat{a}^\dagger _{\mathbf{p} _1 + \mathbf{q} } \hat{a}^\dagger _{\mathbf{p} _2 - \mathbf{q} }  \hat{a}_{\mathbf{p} _1} \hat{a}_{\mathbf{p} _2} 
 \] 
@@ -4369,7 +4369,7 @@ In questo modo, si trova che
 \[
 \hat{H}=\sum_{\mathbf{p} }^{}\frac{p^2}{2m} \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p} +\frac{g}{2V}\sum_{\mathbf{p} _1,\mathbf{p} _2,\mathbf{q} }^{} \hat{a}^\dagger _{\mathbf{p} _1+ \mathbf{q} } \hat{a}^\dagger _{\mathbf{p} _2-\mathbf{q} } \hat{a}_{\mathbf{p}_1 } \hat{a}_{\mathbf{p} _2} 
 \] 
-L'idea, ora, \`e di scomporre tutte le somme in termini relativi a impulso nullo e trascurare gli altri; tenendo conto delle varie combinazioni possibili nel secondo termine, si rimane con
+L'idea, ora, \`e di scomporre le somme, lasciando al pi\`u un impulso libero e diverso da zero, trascurando gli altri; tenendo conto delle varie combinazioni possibili nel secondo termine, si rimane con
 \[
 	\hat{H}\simeq \sum_{\mathbf{p} }^{} \frac{p^2}{2m}\hat{a}_\mathbf{p} ^\dagger \hat{a}_\mathbf{p}  + \frac{g}{2V} \left[ N_0^2 + 2N_0 \sum_{\mathbf{p} \neq 0}^{} \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}_\mathbf{p} + \hat{a}^\dagger _{-\mathbf{p} } \hat{a}_{-\mathbf{p} }  \right)+N_0 \sum_{\mathbf{p} \neq 0}^{}\left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}^\dagger _{-\mathbf{p} } + \hat{a}_\mathbf{p} \hat{a}_{-\mathbf{p} } \right)   \right] 
 \] 
@@ -4386,7 +4386,7 @@ Si pu\`o riscrivere l'hamiltoniano in un modo migliore, usando che il numero tot
 N = N_0 + \frac{1}{2}\sum_{\mathbf{p} \neq 0}^{} \left(\hat{a}^\dagger _\mathbf{p}\hat{a}_\mathbf{p} + \hat{a}^\dagger _{-\mathbf{p}} \hat{a}_{-\mathbf{p} }   \right) 
 \] 
 dove il fattore $1 / 2$ \`e dato dal fatto che quelle coppie si contano due volte, visto che la somma su $\mathbf{p} $ coinvolge sia quelli positivi, che quelli negativi; in questo modo, si sono contati gli operatori numero in tutti i modi possibili.
-Ponendo $n = N / V$, si ha
+Ponendo $n = N / V$ e trascurando i termini di ordine superiore al secondo negli operatori di creazione e distruzione dalla sostituzione di $N$, si ha
 \[
 	\hat{H}\simeq \frac{gn^2V}{2} + \frac{1}{2}\sum_{\mathbf{p} \neq 0}^{}\left[ \left(\frac{p^2}{2m}+gn\right) \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}_\mathbf{p} + \hat{a} ^\dagger _{-\mathbf{p} } \hat{a}_{-\mathbf{p} }\right) + gn \left(\hat{a}^\dagger _{\mathbf{p} } \hat{a}^\dagger _{-\mathbf{p} } + \hat{a}_\mathbf{p} \hat{a}_{-\mathbf{p} } \right)  \right] 
 \] 
@@ -4397,7 +4397,7 @@ Per diagonalizzare $\hat{H}$, si usa la \textit{trasformazione di Bogoliubov} (n
 	\hat{a}^\dagger _\mathbf{p} = u_p\hat{b}^\dagger _\mathbf{p} +v_p \hat{b}_{-\mathbf{p} } 
 \end{cases}
 \end{equation}
-con $u_p ,v_p \in \mathbb{R}$ sfericamente simmetrici in $\mathbf{p} $ e $\hat{b}_\mathbf{p} , \hat{b}^\dagger _\mathbf{p} $ sono nuovi operatori che soddisfano la statistica bosonica $[\hat{b}_\mathbf{p} ,\hat{b}^\dagger _\mathbf{q} ] = \delta _{\mathbf{p} \mathbf{q} } $ e descrivono delle quasi-particelle, quindi, bosoniche.
+con $u_p ,v_p \in \mathbb{R}$ sfericamente simmetrici in $\mathbf{p} $ e $\hat{b}_\mathbf{p} , \hat{b}^\dagger _\mathbf{p} $ sono nuovi operatori che devono soddisfare la statistica bosonica $[\hat{b}_\mathbf{p} ,\hat{b}^\dagger _\mathbf{q} ] = \delta _{\mathbf{p} \mathbf{q} } $, per cui descrivono delle quasi-particelle bosoniche.
 Questa condizione, per\`o, \`e versa se e solo se $u^2 _p-v^2_p =1, \ \forall \mathbf{p} $, quindi si deve avere
 \[
 \begin{cases}
@@ -4410,7 +4410,7 @@ Quello che si pu\`o dimostrare \`e che un'opportuna scelta di $\alpha _p $ perme
 \[
 \hat{H} \simeq E_0 + \sum_{\mathbf{p} }^{} \varepsilon (p ) \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p} 
 \] 
-con $E_0 = g \frac{n^2V}{2}$. I valori in questa espressione si ottengono dal processo per determinare l'$\alpha _p$ voluto; questa condizione \`e soddisfatta se 
+con $E_0 \simeq g \frac{n^2V}{2}$. I valori in questa espressione si ottengono dal processo per determinare l'$\alpha _p$ voluto; questa condizione \`e soddisfatta se 
 \[
 \frac{gn}{2}\left(u_p ^2 + v_p ^2\right) + \left(\frac{p^2}{2m}+ gn\right) u_p v_p = 0 \implies \coth 2\alpha _p = -\frac{1}{gn}\left(\frac{p^2}{2m}+gn\right) 
 \] 
@@ -4428,7 +4428,7 @@ Partendo da
 \hat{H} = E_0 + \sum_{\mathbf{p}}^{} \varepsilon (p) \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p} 
 \] 
 lo stato fondamentale si ottiene da quello che minimizza il valore di energia sopra; essendo $\varepsilon (p) > 0$, l'unica possibilit\`a \`e prendere lo stato di vuoto rispetto alle quasi-particelle, in modo che $\hat{b}_\mathbf{p} \ket{\text{g.s.}} = 0 , \ \forall \mathbf{p} $.
-Da questo, si pu\`o vedere che la compressibilit\`a non diverge pi\`u: usando che $p - \frac{\partial E_0}{\partial V} =\frac{1}{2}gn^2$, ricordando che $n = N / V$, si ottiene
+Da questo, si pu\`o vedere che la compressibilit\`a non diverge pi\`u: usando che $p = \frac{\partial E_0}{\partial V} =\frac{1}{2}gn^2$, ricordando che $n = N / V$, si ottiene
 \[
 	k_T^{-1} = \Eval{-V \frac{\partial p}{\partial V} }{T}{} = V \frac{1}{2}g N^2 \frac{2}{V^3} = gn^2 \implies k_T = \frac{1}{gn^2}
 \] 
@@ -4441,7 +4441,7 @@ N_\mathbf{p}  = \langle \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p}  \rangle=
 con $\mu =0$ ($z=1$); quest'ultima assunzione \`e giustificata dal fatto che si sta studiando il caso di temperature molto basse, per cui, seppur $z\neq 1$, si ha $z\to 1$.
 
 Questo vale per le quasi-particelle. Per\`o si \`e interessati a studiare il comportamento delle particelle bosoniche originali; per farlo, si vuole calcolare $\langle \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p}  \rangle$.
-Moltiplicando le due espressioni in \ref{apbp} e togliendo i termini con $\langle \hat{b}_\mathbf{p} \hat{b}_{-\mathbf{p} }  \rangle$ e $\langle \hat{b}_\mathbf{p}^\dagger  \hat{b}^\dagger _{-\mathbf{p} }  \rangle$ in quanto nulli\footnote{Non sono autostati di uno stato a numero di particelle definito {\color{red}(da vedere)}.}, si ottiene che
+Moltiplicando le due espressioni in \ref{apbp} e togliendo i termini con $\langle \hat{b}_\mathbf{p} \hat{b}_{-\mathbf{p} }  \rangle$ e $\langle \hat{b}_\mathbf{p}^\dagger  \hat{b}^\dagger _{-\mathbf{p} }  \rangle$ in quanto nulli, si ottiene che
 \[
 \langle \hat{a}^\dagger _\mathbf{p} \hat{a}_\mathbf{p}  \rangle= \lvert v_p \rvert ^2 + \lvert u_p \rvert ^2 \langle \hat{b}^\dagger _\mathbf{p} \hat{b}_\mathbf{p}  \rangle + \lvert v_p \rvert ^2 \langle \hat{b}^\dagger _{-\mathbf{p} } \hat{b}_{-\mathbf{p} }  \rangle
 \] 
@@ -4866,7 +4866,7 @@ Si osserva che, per $\ket{\uparrow,\downarrow} = \hat{c}^\dagger _{1,\uparrow} \
 	\left(\cancel{\hat{c}^\dagger _{1,\uparrow} \hat{c}_{2,\uparrow}} + \hat{c}^\dagger _{2,\uparrow}\hat{c}_{1,\uparrow} +\hat{c}^\dagger _{1,\downarrow} \hat{c}_{2,\downarrow} + \cancel{\hat{c}^\dagger _{2,\downarrow} \hat{c}_{1,\downarrow}}  \right) \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\downarrow} \ket{0} = \left(\hat{c}^\dagger _{2,\uparrow}\hat{c}_{1,\uparrow} +\hat{c}^\dagger _{1,\downarrow} \hat{c}_{2,\downarrow} \right) \hat{c}^\dagger _{1,\uparrow} \hat{c}^\dagger _{2,\downarrow} \ket{0}
 \] 
 visto che si formano $(\hat{c}^\dagger _{i,\sigma } )^2$.
-Per finire, basta osservare che $\hat{c}_{i,\sigma } \hat{c}^\dagger _{i,\sigma } = 1$, per cui 
+Per finire, basta osservare che $\hat{c}_{i,\sigma } \hat{c}^\dagger _{i,\sigma } = \mathds{1}$, per cui 
 \[
 \delta \hat{H} \ket{\uparrow,\downarrow} = - t \left(\hat{c}^\dagger _{2,\uparrow} \hat{c}^\dagger _{2,\downarrow}  - \hat{c}^\dagger _{1,\downarrow} \hat{c}^\dagger _{1,\uparrow} \right) \ket{0} 
 \] 
