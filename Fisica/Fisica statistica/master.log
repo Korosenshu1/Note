@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  22 JUN 2026 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  23 JUN 2026 18:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1512,15 +1512,13 @@ Overfull \hbox (17.0269pt too wide) in paragraph at lines 5024--5025
  [][] 
  []
 
-[115] [116] [117]
-Overfull \hbox (20.18385pt too wide) in paragraph at lines 5156--5157
- [][] 
- []
-
-[118] [119] [120] [121]
+[115] [116] [117] [118] [119] [120] [121]
 Overfull \hbox (19.40938pt too wide) in paragraph at lines 5312--5313
  [][] 
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [122] [123] [124] [125]
 Overfull \hbox (38.60374pt too wide) detected at line 5482
@@ -1536,7 +1534,7 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  50186 strings out of 467525
  1167495 string characters out of 5425862
- 1843396 words of memory out of 5000000
+ 1845586 words of memory out of 5000000
  77924 multiletter control sequences out of 15000+600000
  708517 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1669,7 +1667,7 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on master.pdf (133 pages, 1092840 bytes).
+Output written on master.pdf (133 pages, 1092585 bytes).
 PDF statistics:
  1526 PDF objects out of 1728 (max. 8388607)
  1302 compressed objects within 14 object streams
