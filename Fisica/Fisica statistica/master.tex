@@ -5191,20 +5191,20 @@ Queste diverse possibili condizioni al bordo, in trasformata di Fourier, si trad
 		-\frac{L-1}{2} ,\, -\frac{L-3}{2},\ldots,\, \frac{L-3}{2},\, \frac{L-1}{2} & \big(L \text{ dispari}\big)
 	\end{cases}\\
 	&\Rightarrow k = \begin{cases}
-		-\frac{L}{2} +1 ,\, -\frac{L}{2}+2,\ldots,\, \frac{L}{2}-1,\, \frac{L}{2} & \big(N_f+L \text{ pari}\big)\\
-		-\frac{L-1}{2} ,\, -\frac{L-3}{2},\ldots,\, \frac{L-3}{2},\, \frac{L-1}{2} & \big(N_f+L \text{ dispari}\big)
+		-\frac{L}{2} +1 ,\, -\frac{L}{2}+2,\ldots,\, \frac{L}{2}-1,\, \frac{L}{2} & \big(N_f+L \text{ dispari}\big)\\
+		-\frac{L-1}{2} ,\, -\frac{L-3}{2},\ldots,\, \frac{L-3}{2},\, \frac{L-1}{2} & \big(N_f+L \text{ pari}\big)
 	\end{cases}
 \end{split}
 \end{equation}
 Trascurando momentaneamente i problemi legati alla condizione di periodicit\`a, in generale, si ha che $\hat{H}=\sum_{k>0}^{}\hat{H}_k$, dove $\hat{H}_k$ accoppia i modi per $-k$ e $k$.
 Di fatto, passando in trasformata di Fourier, si trova 
 \[
-\hat{H} = - J \sum_{k}^{} \left[ \hat{d}^\dagger _k \hat{d}_k \left(e^{i \frac{2\pi}{L}k} + e^{-i \frac{2\pi }{L}k} + \frac{2g}{J}\right) + e^{i \frac{2\pi}{L}k}\left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} + \hat{d}_k \hat{d}_{-k} \right) - \frac{g}{J}  \right] 
+\hat{H} = - J \sum_{k}^{} \left[ \hat{d}^\dagger _k \hat{d}_k \left(e^{i \frac{2\pi}{L}k} + e^{-i \frac{2\pi }{L}k} + \frac{2g}{J}\right) + e^{-i \frac{2\pi}{L}k}\left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} + \hat{d}_k \hat{d}_{-k} \right) - \frac{g}{J}  \right] 
 \] 
 dove si sono svolti passaggi analoghi a quanto visto per il tight binding.
-Allora\footnote{{\color{red} Controllare un fattore $2$.}}
+Allora, raggruppando i termini con $k$ e $-k$, si ha
 \[
-	\hat{H}_k = \underbracket{- 2 \left[ J \cos \left( \frac{2\pi k}{L}\right) +g  \right]}_{= f_k}  \left(\hat{d}^\dagger _k \hat{d}_k -\hat{d}_{-k} \hat{d}^\dagger _{-k} \right) \underbracket{-2i J \sin \left(\frac{2\pi k }{L}\right) }_{-i g_k}  \left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} - \hat{d}_{-k} \hat{d}_k\right) 
+	\hat{H}_k = \underbracket{- 2 \left[ J \cos \left( \frac{2\pi k}{L}\right) +g  \right]}_{= f_k}  \left(\hat{d}^\dagger _k \hat{d}_k -\hat{d}_{-k} \hat{d}^\dagger _{-k} \right)+ \underbracket{2i J \sin \left(\frac{2\pi k }{L}\right) }_{-i g_k}  \left(\hat{d}^\dagger _k \hat{d}^\dagger _{-k} - \hat{d}_{-k} \hat{d}_k\right) 
 \] 
 Questo si pu\`o scrivere in un modo pi\`u sintetico facendo uso della notazione spinoriale:
 \[
@@ -5247,7 +5247,7 @@ In definitiva, si ha
 \hat{H} _k = \varepsilon _k \left(\hat{b}_k^\dagger \hat{b}_k + \hat{b}^\dagger _{-k} \hat{b}_{-k} -1\right) 
 \] 
 \subsubsection{Stato fondamentale e stati eccitati}
-Lo stato fondamentale si vede essere, analogamente a quanto visto per i bosoni, lo stato di vuoto delle quasi particelle, indicato con $\ket{\Omega } $, che, quindi, soddisfa $\hat{b}_k \ket{\Omega } , \ \forall k$.
+Lo stato fondamentale si vede essere, analogamente a quanto visto per i bosoni, lo stato di vuoto delle quasi particelle, indicato con $\ket{\Omega } $, che, quindi, soddisfa $\hat{b}_k \ket{\Omega } = 0, \ \forall k$.
 \begin{center}
 		\begin{tikzpicture}[scale=0.75]
 \begin{axis}[
@@ -5343,8 +5343,8 @@ Tenendo in considerazione i valori di $k$ possibili stabiliti in \ref{kval} a se
 \noindent Sostituendo i relativi valori, si vede che $\hat{H}_0 = - 2 (J+g) \hat{n}_0 + g $ e $ \hat{H}_{L / 2}  = 2 ( J - g) \hat{n}_{L / 2}  + g$, con $\hat{n}_0 = \hat{d}^\dagger _0 \hat{d}_0$ e $\hat{n}_{L / 2}  = \hat{d}^\dagger _{L / 2}  \hat{d}_{L / 2} $.
 Ora, il sistema che si sta studiando ha un totale di $L$ siti, per cui lo spazio di Hilbert $\mathcal{H} $ relativo ha dimensione $2^L$.
 Il numero di fermioni, per\`o, non \`e fissato; per tale ragione, $\mathcal{H} $ contiene due sottospazi disgiunti, uno relativo a $N_f$ pari, l'altro relativo a $N_f$ dispari.
-Questo si traduce in due hamiltoniani differenti, a seconda del sottospazio in cui ci si trova; l'idea \`e studiare gli stati fondamentali del sistema relativi ai due sottospazio di Hilbert distinti e confrontare i loro valori energetici.
-Formalmente, si scrive che $\mathcal{H}  = \mathcal{H} _{+}  \oplus \mathcal{H} _-$, con $\mathcal{H} _+$ relativo a $N_f$ pari e $\mathcal{H} _-$ relativo a $N_f$ dispari; nel primo, si avr\`a $\hat{H}_\text{abc}$; nel secondo, $\hat{H}_\text{pbc}$.
+Questo si traduce in due hamiltoniani differenti, a seconda del sottospazio in cui ci si trova; l'idea \`e studiare gli stati fondamentali del sistema relativi ai due sottospazi di Hilbert distinti e confrontare i loro valori energetici.
+Formalmente, si scrive che $\mathcal{H}  = \mathcal{H} _{+}  \oplus \mathcal{H} _-$, con $\mathcal{H} _+$ relativo a $N_f$ pari e $\mathcal{H} _-$ relativo a $N_f$ dispari: nel primo, si avr\`a $\hat{H}_\text{abc}$; nel secondo, $\hat{H}_\text{pbc}$.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -5408,7 +5408,6 @@ Questo \`e dato dal fatto che, in questo range, $\varepsilon _0 < 0$, mentre $\v
 	\item se $L$ \`e dispari, invece, $\hat{H}_\text{abc}$ ammette ground state perch\'e non si vuole una particella per $k = L / 2$, in quanto aumenterebbe l'energia, quindi $N_f$ pari \`e soddisfatto, mentre $\hat{H}_\text{pbc}$ ha ground state perch\'e $\varepsilon _0 < 0 $ permette di minimizzare l'energia avendo una particella in $k=0$ e vuoto per tutto il resto.
 \end{itemize}
 \vspace{.5cm}
-
 La presenza di due ground state \`e il motivo per cui si presenta la degenerazione nella fase ferromagnetica nel limite termodinamico: nel caso di taglia finita, i due ground state appartenenti ai due sottospazi di Hilbert differenti sono separati da un gap energetico finito, la cui differenza \`e un esponenziale in $L$; mandando $L\to +\infty$, allora, questa differenza tende a zero.
 Nella fase paramagnetica, invece, gli stati sono separati da un gap che non dipende da $L$, per cui anche nel limite termodinamico, rimangono distinti.
 \begin{osservazione}
