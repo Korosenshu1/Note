@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  19 JUN 2026 11:27
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  28 JUN 2026 17:45
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1709,21 +1709,23 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 70077 strings out of 476076
+ 70079 strings out of 476076
  100000,2848258 words of node,token memory allocated
- 2209 words of node memory still in use:
-   17 hlist, 12 vlist, 2 rule, 16 disc, 4 local_par, 22 glue, 12 kern, 7 penalty, 84 glyph, 106 attribute, 103 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:1,2:3544,3:1335,4:124,5:425,6:33,7:5369,8:53,9:980,10:19,11:668,12:1
- 91302 multiletter control sequences out of 65536+600000
- 123 fonts using 40156087 bytes
- 124i,19n,421p,11244b,1207s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 2222 words of node memory still in use:
+   17 hlist, 12 vlist, 2 rule, 16 disc, 4 local_par, 23 glue, 12 kern, 7 penalty, 84 glyph, 108 attribute, 103 glue_spec, 55 attribute_list, 2 write nodes
+   avail lists: 1:1,2:3601,3:1355,4:134,5:425,6:33,7:5368,8:53,9:980,10:19,11:668,12:1
+ 91303 multiletter control sequences out of 65536+600000
+ 123 fonts using 40156215 bytes
+ 124i,19n,421p,11244b,1217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf>
-Output written on master.pdf (6 pages, 59848 bytes).
+Output written on master.pdf (6 pages, 60532 bytes).
 
-PDF statistics: 133 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 1048576)
+PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 1048576)
  61 words of extra memory for PDF output out of 10000 (max. 100000000)
 

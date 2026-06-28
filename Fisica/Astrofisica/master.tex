@@ -447,7 +447,7 @@ In astrofisica, si usa il sistema CGS per le unit\`a di misura, ma grammi e cent
 
 		Per le distanze, si fa riferimento alla distanza Terra-Sole e si individua $1\, \mathrm{AU}  = 1.5 \times 10^{13}\, \mathrm{cm} $.
 Si utilizza il raggio Terra-Sole per calcolare la distanza delle stelle tramite triangolazione.
-In particolare, si definisce la parallasse annua come l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole e si indica con $\pi$.
+In particolare, si definisce la parallasse annua come l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole e si indica con $\pi$\footnote{Si ricrea l'ellisse descritta dalla stella legata all'orbita della terra attorno al Sole durante un anno solare; di questa ellisse, la parallasse rappresenta il semi-asse maggiore, relativo alle due posizioni della Terra poste su una retta ortogonale alla retta che unisce il Sole con la stella in questione. In questo modo, si ottiene la situazione in figura.}.
 \begin{center}
 	\begin{tikzpicture}[scale=0.8]
 		% Rette 
@@ -517,8 +517,8 @@ In particolare, si definisce la parallasse annua come l'angolo che sottende una 
 		\draw[fill, color=red!40!black] (Z) circle (1pt);
 		\draw[fill, color=red!40!black] (H) circle (1pt);
 		\draw[fill, color=red!40!black] (E) circle (1pt);
-		\pic[fill,draw,angle radius=8mm,color=red!50!black,opacity=0.5]{angle=P--SE--Q};
-		\pic[draw,angle radius=8.1mm,color=red!60!black,opacity=1]{angle=P--SE--Q};
+		\pic[fill,draw,angle radius=8mm,color=red!50!black,opacity=0.5]{angle=O--SE--Q};
+		\pic[draw,angle radius=8.1mm,color=red!60!black,opacity=1]{angle=O--SE--Q};
 		\node[color=red!60!black,opacity=1] at ($(SE)-(.95,0.9)$) {\footnotesize$\pi$};
 
 		% Sole
@@ -528,7 +528,7 @@ In particolare, si definisce la parallasse annua come l'angolo che sottende una 
 		\draw[color=yellow!70!black] (0,-.10) node[below] {\scriptsize Sole};
 
 		% AU
-		\coordinate (PE) at ($(P)-(0.5,0.5)$);
+		\coordinate (PE) at ($(0,0)-(0.5,0.5)$);
 		\coordinate (QE) at ($(Q)-(0.5,0.5)$);
 		\path let
   \p1 = ($(D)-(C)$),
