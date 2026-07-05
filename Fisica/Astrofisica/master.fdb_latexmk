@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1782661499.91308 "master.tex" "master.pdf" "master" 1782661509.76466 0
+["lualatex"] 1783289031.7795 "master.tex" "master.pdf" "master" 1783289048.31285 0
   "/etc/texmf/tex/generic/config/language.dat" 1775736722.23014 5983 24e8ca975bb2fef3ba51d5d3ebd6bb34 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/libertinusmath-regular.luc" 1779742599.18566 676850 6f995e31a3a9530f090a8fece44f6329 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/libertinusserif-bold.luc" 1779742597.22365 371573 dfe788721cd34a159ec51b607558a5d5 ""
@@ -12,7 +12,7 @@
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-regular.luc" 1779742333.13343 127633 016a4c28e10eb59270470cc7dce3ce79 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc" 1779742333.52843 128152 d8fe2fd108a6e0388d74395935c42ec8 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmsans17-regular.luc" 1779742333.22343 127849 912fc304b7ef2b6c7c29b30da55eceff ""
-  "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1781860078.0297 20304 2f51ee1d2db788518477861f571a4e3b ""
+  "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1783275052.58083 21967 a143db0f1ac53a9fb6261b6aa1cfc522 ""
   "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1772195826.82982 442644 1603a8b3a9b14f59efe3b162d78b13e3 ""
   "/usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf" 1775415801 588848 85516be07e4691c1817fa657a3ec9349 ""
   "/usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf" 1775415801 293908 003f648d1099bbe7726ab437f2ee75ac ""
@@ -262,9 +262,13 @@
   "/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1775415801 4674 ff006c14a0adf55e7318570f962bcbbb ""
   "/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1775415801 10176 c2fc1c663b3f3899ddac6e6ed3fb1d7e ""
   "/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1775415801 678 4792914a8f45be57bb98413425e4c7af ""
+  "/usr/share/texmf-dist/tex/latex/makecell/makecell.sty" 1775415801 15773 2dd7dde1ec1c2a3d0c85bc3b273e04d8 ""
   "/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty" 1775415801 62711 3b0ed1d68b598a75677c10d16646d5e5 ""
   "/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1775415801 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "/usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty" 1775415801 427800 9847e17a682981bbf330174cd7d94a94 ""
+  "/usr/share/texmf-dist/tex/latex/pgf-spectra/pgf-spectra.data.NIST.tex" 1775415801 207708 f76a4cdfeea847b2edad5a8c9896bb5b ""
+  "/usr/share/texmf-dist/tex/latex/pgf-spectra/pgf-spectra.input.library.tex" 1775415801 2446 74415cac7d2e6dc56a17c03a63daf086 ""
+  "/usr/share/texmf-dist/tex/latex/pgf-spectra/pgf-spectra.sty" 1775415801 92285 fd0d5facc05da40b6c862b3ffa3df200 ""
   "/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1775415801 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty" 1775415801 373 00b204b1d7d095b892ad31a7494b0373 ""
   "/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty" 1775415801 21013 f4ff83d25bb56552493b030f27c075ae ""
@@ -346,10 +350,16 @@
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1775415801 13566 16df94dd2de231b2bca0aaa0190941fe ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1780427645 5541339 b32eb00eb34cd5c925a7827d916d9dbd ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1780427522 5657097 b7e0a377adc6402ba14811147621ab6d ""
-  "master.aux" 1782661509.2923 3016 1dc34ece50d9178b59467787646a8153 "lualatex"
-  "master.ind" 1780007057.07836 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1782661497.79727 24280 37ff488128e278831741a84ce9401b4e ""
-  "master.toc" 1782661509.2953 577 10b7d035a00f2ffd044aa3d0951bf627 "lualatex"
+  "CaH-S.png" 1783284848.21414 157160 9104e0e04ce470be886896f6d84fd4e7 ""
+  "c1.png" 1783251072.40471 671043 fbff4fb874f13b695f741af67cbb4609 ""
+  "c2.png" 1783251087.77177 602540 edad36db968093daec4a8cc37805853f ""
+  "h1.png" 1783251097.16781 608969 808d51cf3fb662cb9fb00c99badc5d8d ""
+  "h2.png" 1783251104.92583 512720 e98e0d0abf87920b4e534059d99ef663 ""
+  "master.aux" 1783289047.66333 8425 d0f2e75096551933a987a33275d63648 "lualatex"
+  "master.ind" 1783271700.38013 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
+  "master.tex" 1783289009.78469 47382 f0a96db2558e845e5c02f3665f48d700 ""
+  "master.toc" 1783289047.67133 1281 43843969f65eddf18bd514532a72fb5d "lualatex"
+  "sunspec.png" 1783252392.68198 165088 abb0e518794c64ec0e88f0454576b5d2 ""
   (generated)
   "master.aux"
   "master.idx"
@@ -357,8 +367,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1780007056.99623 "master.idx" "master.ind" "master" 1782661509.76451 0
-  "master.idx" 1782661501.15455 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1783271700.26801 "master.idx" "master.ind" "master" 1783289048.31264 0
+  "master.idx" 1783289033.01928 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

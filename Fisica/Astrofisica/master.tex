@@ -25,8 +25,10 @@
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{makecell}
 \usepackage{tikz}
 \usepackage{circuitikz}
+\usepackage{pgf-spectra}
 \usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
@@ -401,10 +403,519 @@ Il fatto che $I_\nu $ rimanga costante nel vuoto \`e legato al fatto che \`e un 
 \end{osservazione}
 \subsection{Propagazione in un mezzo}
 \begin{boxenv}[]
-\centering Riprendere dalla lezione 3
+\begin{center}
+	Da completare\ldots
+\end{center}
 \end{boxenv}
 
+\newpage 
 
+\section{Classificazioni delle stelle}
+\subsection{Sistemi fotometrici}
+La prima classificazione stellare fu in termini di \textit{luminosit\`a} decrescente.
+Questa prevedeva sei classi, dove la prima differiva per un fattore $100$ rispetto alla sesta.
+Pertanto, la definizione di \textit{magnitudine apparente} di una stella \`e 
+\begin{equation}
+	m_1-m_2 = - 2.5 \log_{10}\left(\frac{\ell _1}{\ell _2}\right)  
+\end{equation}
+La luminosit\`a registrata \`e ottenuta come
+\[
+\ell \propto \int _{\lambda _1} ^{\lambda _2} f(\lambda ) T(\lambda ) \dd \lambda 
+\] 
+in quanto non \`e possibile registrare il flusso su tutte le frequenze contemporaneamente, dove $T(\lambda ) = R(\lambda ) K(\lambda )Q(\lambda ) A(\lambda )$ tiene conto, rispettivamente, delle propriet\`a di riflessivit\`a delle ottiche, delle propriet\`a del filtro, dell'efficienza quantica del rivelatore e dell'atmosfera.
+\begin{osservazione}
+Ogni misurazione di magnitudine \`e relativa: il riferimento pi\`u comune, pertanto chiamato \textit{riferimento fotometrico}, \`e Vega. 
+Tale magnitudine di riferimento si indica con $m_0$.
+Quando si usa questo come riferimento fotometrico, si parla di \textit{Vegamag} (cio\`e magnitudine nel riferimento di Vega).
+\end{osservazione}
+\noindent Nel pedice della magnitudine, si specifica anche il filtro utilizzato, come $U$, $V$, $B$ eccetera (ultravioletto, visibile, blu). 
+In figura \ref{kl}, \`e riportato un andamento approssimativo della $K(\lambda )$ per filtri a banda larga.
+\begin{center}
+	\begin{tikzpicture}[scale=0.6]
+\begin{axis}[
+    width=15cm,
+    height=10cm,
+    xmin=3000, xmax=10000,
+    ymin=0, ymax=100,
+    xlabel={Wavelength (\AA)},
+    ylabel={Transmission (\%)},
+    xtick={3000,4000,5000,6000,7000,8000,9000,10000},
+    scaled x ticks = false,
+    ytick={0,20,40,60,80,100},
+    axis lines=box,
+    tick align=outside,
+    enlargelimits=false,
+    clip=false,
+    samples=250,
+]
+
+% U
+\addplot[black, thick, domain=3000:10000]
+{
+    75/(1 + exp(-(x-3380)/55)) / (1 + exp((x-3920)/60))
+};
+
+% B
+\addplot[black, thick, domain=3000:10000]
+{
+    73/(1 + exp(-(x-3780)/60)) / (1 + exp((x-4920)/85))
+};
+
+% V
+\addplot[black, thick, domain=3000:10000]
+{
+    90/(1 + exp(-(x-4950)/45)) / (1 + exp((x-5850)/90))
+};
+
+% R (Kron-Cousins)
+\addplot[black, thick, domain=3000:10000]
+{
+    84/(1 + exp(-(x-5900)/55)) / (1 + exp((x-7450)/420))
+};
+
+% I (Mould I)
+\addplot[black, thick, domain=3000:10000]
+{
+    78/(1 + exp(-(x-7350)/55)) / (1 + exp((x-9000)/110))
+};
+
+\node[anchor=west] at (axis cs:3500,58) {U};
+\node[anchor=west] at (axis cs:4300,58) {B};
+\node[anchor=west] at (axis cs:5250,58) {V};
+\node[anchor=west] at (axis cs:6450,58) {R};
+\node[anchor=west] at (axis cs:7800,58) {Mould I};
+
+\node[anchor=west] at (axis cs:5950,87) {(Kron-Cousins)};
+
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{$K(\lambda )$ per i vari tipi di filtri.}
+\label{kl}
+\end{center}
+\marginpar{\textit{Magnitudine bolometrica}} 
+Ad una magnitudine misurata con un certo filtro $i$, $m_i$, si pu\`o aggiungere una correzione, detta correzione bolometrica $\mathrm{BC} $ per ottenere la magnitudine bolometrica, cio\`e la magnitudine misurata se fosse possibile misurare tutto il flusso, per cui
+\[
+m_\text{bol}= m_i + \mathrm{BC} 
+\] 
+\marginpar{\textit{Magnitudine assoluta}}
+La magnitudine apparente vista finora dipende dalla distanza dalla stella; si definisce la magnitudine assoluta $M$ come la magnitudine apparente della stessa stella ad una distanza di $10$ pc.
+Il flusso prodotto a distanza $d$ \`e $f_d = (R / d)^2\pi I $, mentre quello prodotto a $10$ pc \`e $f_{10} = (R / 10)^2 \pi I$; allora 
+\[
+m - M = -2.5 \log_{10}  \left(\frac{100}{d^2}\right) = -5 \log_{10} \left(\frac{10}{d}\right) = -5 + 5 \log d
+\] 
+Si pu\`o tenere conto dell'assorbimento, nel caso in cui la radiazione non si propaghi nel vuoto, aggiungendo un termine $A_\nu $.
+
+\marginpar{\textit{Indice di colore}}
+La differenza di magnitudini della stessa stella $m_{\star,i} - m_{\star,j} $ ottenute con filtri diversi $i,j$ \`e chiamata indice di colore.
+Questo permette di ottenere importante informazioni riguardanti la temperatura della stella: per una stella molto calda, ad esempio, il flusso tendere\`a ad essere pi\`u concentrato nel blu, che nel rosso ad esempio.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+	\includegraphics[width=\columnwidth]{h1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{h2}
+	\end{minipage}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+	\includegraphics[width=\columnwidth]{c1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{c2}
+	\end{minipage}
+	\captionof{figure}{Effetto della temperatura sul flusso ottenuto con diversi filtri: stelle pi\`u fredde avranno un indice di colore B-V pi\`u piccolo, mentre stelle pi\`u calde lo avranno maggiore.}
+\end{center}
+
+
+\subsection{Spettro del Sole}
+La formazione di righe spettrali nelle stelle \`e strettamente legato ad un gradiente di temperatura presente tra la sorgente della radiazione e l'ultimo punto da cui questa viene riemessa prima di giungere al rivelatore.
+Lo studio dello spettro del Sole ha portato la scoperta dell'elio, elemento chimico che mostra la sua riga tipica di assorbimento nel giallo attorno ai $560$ nm ed \`e stato osservato in condizioni di eclissi solare, in quanto normalmente oscurato da altre righe.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{sunspec.png}
+	\caption{Spettro visibile del Sole.}
+	\label{fig:sunspec}
+\end{figure}
+
+\noindent Tra le righe pi\`u importanti, si osservano le seguenti.
+\begin{itemize}
+	\item Il doppietto del sodio neutro a $589$ nm e $589.6$ nm: il sodio tende a ionizzarsi con l'aumentare della temperatura, pertanto \`e facile trovarlo nelle zone pi\`u esterne dell'atmosfera stellare. 
+		Inoltre, una gravit\`a maggiore favorir\`a una pressione maggiore, quindi un numero maggiore di urti tra le particelle. 
+		Il verificarsi di urti perturba i livelli energetici e allarga le righe, per cui valutare la larghezza delle righe del sodio pu\`o dare indicazioni sulle condizioni dell'atmosfera stellare.
+	\item La serie di Balmer, che corrisponde a transizioni orbitali nell'idrogeno neutro verso il livello $n=2$.
+		L'intensit\`a di queste righe \`e strettamente vincolata ad avere una popolazione sufficiente di atomi di idrogeno non-ionizzati e con elettroni nel livello $n=2$, per cui si possono ottenere informazioni sulla temperatura superficiale della stella.
+		Inoltre, l'idrogeno \`e particolarmente suscettibile all'effetto Stark: la presenza di una densit\`a elettronica elevata (legata ad altrettanto elevata gravit\`a superficiale) porta la formazione di campi elettrici che, per effetto Stark, modificano i livelli energetici dell'idrogeno, provocando un allargamento di riga.
+		Anche questo, quindi, \`e un ottimo indicatore circa le dimensioni e la gravit\`a della stella.
+	\item Righe CaII H e K, relative a lunghezze d'onda, rispettivamente, di $396.85$ nm e $393.37$ nm.
+		Il calcio \`e molto poco presente, per\`o si ionizza facilmente nella fotosfera solare. 
+		Inoltre, questo \`e un ottimo indicatore dell'attivit\`a magnetica della stella, in quanto queste righe si formano nella cromosfera, regione stellare situata tra la corona e la fotosfera, che \`e particolarmente sensibile agli effetti termici provocati dai campi magnetici.
+\end{itemize}
+\subsection{Serie dell'idrogeno}
+
+La prima ad essere stata registrata \`e stata la serie di Balmer, individuata dalla formula
+\[
+\lambda  = (364.6 \text{ nm}) \frac{n^2}{n^2 - 4}
+\] 
+il cui primo valore individua la riga $H_\alpha $ a circa $656$ nm e si sposta nel blu e verso l'ultravioletto dai valori successivi. 
+Questa termina ad una lunghezza d'onda di circa $364$ nm, valore in corrispondenza del quale si pu\`o osservare il \textit{salto di Balmer} in stelle ``non troppo calde'', come si vedr\`a.
+Successivamente, si individuarono altre righe, come quelle di Lyman, o Paschen; tutte queste si uniscono tramite la \textit{legge di Rydberg-Ritz} 
+\[
+\frac{1}{\lambda }= R \left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right) 
+\] 
+con $R = 1.097 \times 10^7 \text{ m}^{-1}$.
+La serie di Balmer si ha a seguito di transizioni al livello $n=2$; quella di Lyman, a $n=1$; quella di Paschen, a $n=3$. 
+\begin{boxenv}[]
+La natura di queste \`e esclusivamente quantistica e legata al fatto che l'energia del livello $n$-esimo \`e
+\[
+E_n = -\frac{1}{n^2} \frac{2\pi^2m e^4}{h^2}
+\] 
+da cui la frequenza della radiazione emessa \`e
+\[
+\nu  = \frac{\Delta E}{h} = \frac{E_2-E_1}{h} = \frac{2\pi ^2 m e^4}{h^3} \left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right) \hspace{1cm} T = \frac{2\pi^2 m e^4}{h^3 c}
+\] 
+\end{boxenv}
+\subsection{Classificazione spettrale di Harvard}
+Basata sul classificare le stelle in base al loro spettro: O, B, A, F, G, K, M.
+Si introdussero, poi, delle sottoclassi indicate da lettera di riferimento, seguita da un numero arabo, e altre due classi, la T e la Y, dopo la M.
+In seguito, si concluse che questo ordinamento segue un andamento decrescente con la temperatura effettiva; infatti, non si osservano solo differenze nelle righe di assorbimento, ma anche nella parte continua dello spettro.
+\begin{table}[ht]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|p{2.6cm}|p{2.0cm}|p{2.3cm}|p{2.3cm}|p{2.9cm}|p{2cm}|}
+\hline
+\textbf{Classe} &
+\centering\textbf{Temperatura effettiva} &
+\centering\textbf{Colore relativo a Vega} &
+\centering\textbf{Massa in sequenza principale\\($M_\odot$)} &
+\centering\textbf{Raggio in sequenza principale\\($R_\odot$)} &
+\centering\textbf{Luminosità in sequenza principale\\($L_\odot$, bolometrica)} &
+\centering\textbf{Righe dell'idrogeno}
+\tabularnewline
+\hline
+
+\textbf{O} &
+$\geq 33\,000\,\mathrm{K}$ &
+blu &
+$\geq 16$ &
+$\geq 6.6$ &
+$\geq 30\,000$ &
+Deboli
+\\ \hline
+
+\textbf{B} &
+$10\,000$--$33\,000\,\mathrm{K}$ &
+bianco-azzurro &
+2.1--16 &
+1.8--6.6 &
+25--30\,000 &
+Medie
+\\ \hline
+
+\textbf{A} &
+$7\,300$--$10\,000\,\mathrm{K}$ &
+bianco &
+1.4--2.1 &
+1.4--1.8 &
+5--25 &
+Forti
+\\ \hline
+
+\textbf{F} &
+$6\,000$--$7\,300\,\mathrm{K}$ &
+bianco-giallastro &
+1.04--1.4 &
+1.15--1.4 &
+1.5--5 &
+Medie
+\\ \hline
+
+\textbf{G} &
+$5\,300$--$6\,000\,\mathrm{K}$ &
+giallo &
+0.8--1.04 &
+0.96--1.15 &
+0.6--1.5 &
+Deboli
+\\ \hline
+
+\textbf{K} &
+$3\,900$--$5\,300\,\mathrm{K}$ &
+arancione chiaro &
+0.45--0.8 &
+0.7--0.96 &
+0.08--0.6 &
+Molto deboli
+\\ \hline
+
+\textbf{M} &
+$2\,300$--$3\,900\,\mathrm{K}$ &
+rosso-arancione chiaro &
+0.08--0.45 &
+$\leq 0.7$ &
+$\leq 0.08$ &
+Molto deboli
+\\ \hline
+
+\end{tabular}
+}
+\end{table}
+Si pu\`o vedere che il massimo dell'intensit\`a delle righe della serie di Balmer \`e raggiunto in corrispondenza delle stelle di classe A0; analogamente la riga del sodio \`e pi\`u intensa, tanto pi\`u la stella \`e fredda, quindi aumenta di intensit\`a con il diminuire della temperatura.
+Le B2, ad una temperatura $T_\text{eff} = 22000$ K, raggiungono il massimo delle righe di He I, mentre le K0 raggiungono il massimo delle righe di Ca II.
+Lo spettro delle stelle pi\`u fredde \`e molto pi\`u complesso di quello delle stelle pi\`u calde.
+\subsection{Popolazione di idrogeno}
+
+Si intende motivare la presenza di righe di Balmer pi\`u intense per le stelle di classe A, da cui si conclude anche il perch\'e della presenza marcata del salto di Balmer, relativo ad una depressione, rispetto ad un andamento tipico del corpo nero, dell'intensit\`a in prossimit\`a dei 364 nm, per stelle di classe B ed A in particolare e la sua assenza in quelle di classe O.
+
+Tutto questo \`e strettamente legato alla popolazione di idrogeno predisposta a emettere radiazioni della serie di Balmer, quindi idrogeno non-ionizzato e eccitato allo stato $n=2$.
+Per stimare questo, sar\`a necessario, da una parte valutare la popolazione di idrogeno eccitato, rispetto a quello nello stato fondamentale; dall'altra, studiare l'andamento della presenza di idrogeno ionizzato con la temperatura. 
+Combinando questi due andamenti, si osserver\`a un picco nella popolazione di idrogeno eccitato a $n=2$ per temperature di circa $10000$ K, quindi esattamente in corrispondenza della temperatura delle stelle di classe A0.
+\begin{center}
+	\begin{minipage}
+		{.39\columnwidth}
+Assumendo di essere in LTE, si pu\`o usare la distribuzione di Boltzmann per stimare la popolazione di idrogeno in $n=2$, $N_2$, rispetto a quella nel fondamentale, $N_1$:
+\[
+\frac{N_2}{N_1} = \frac{g_2}{g_1} \exp \left(-\frac{E_2-E_1}{\kappa _B T}\right) 
+\] 
+dove $E_2-E_1=10.2$ eV e $g_n = 2n^2$, quindi $ g_2 / g_1 = 4$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.6\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.6]
+\begin{axis}[
+    width=13cm,
+    height=9cm,
+    xmin=5000, xmax=25000,
+    ymin=0, ymax=0.04,
+    xlabel={Temperature (K)},
+    ylabel={$N_2/(N_1+N_2)$},
+    axis lines=box,
+    grid=none,
+    tick style={black},
+    major tick length=3pt,
+    minor tick length=2pt,
+    xtick={5000,10000,15000,20000,25000},
+    ytick={0,0.01,0.02,0.03,0.04},
+    label style={font=\small},
+    tick label style={font=\small},
+]
+
+% Curva qualitativa con forma simile al grafico di riferimento
+\addplot[
+    black,
+    thick,
+    domain=5000:25000,
+    samples=200,
+]
+{0.034*((x-5000)/20000)^4};
+
+% Linea verticale per A0
+\draw[dashed, blue!50!gray, thick] (axis cs:9500,0) -- (axis cs:9500,0.04);
+\node[anchor=south west,blue!50!gray] at (axis cs:9500,0.001) {\footnotesize A0};
+
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+\begin{boxenv}[]
+Si mostra il procedimento per ricavare $N_2/N_1$. 
+La funzione di partizione di un atomo di idrogeno \`e $Z = \sum_{i}^{} g_i e^{-E_i / \kappa _B T}$, dove $g_i$ \`e la degenerazione di ciascun livello energetico. 
+Allora la probabilit\`a che l'elettrone occupi il livello energetico $i$-esimo \`e
+\[
+P_i = \frac{1}{Z} g_i e^{-E_i / \kappa _B T}
+\] 
+Questo significa che, per un gas di $N$ atomi di idrogeno, il numero di atomi nel livello $i$-esimo \`e $N_i = N P_i$, quindi
+\[
+\frac{N_2}{N_1} = \frac{P_2}{P_1} = \frac{g_2}{g_1} \exp\left(- \frac{E_2 - E_1}{\kappa _B T }\right) 
+\] 
+\end{boxenv}
+\noindent Cercando il valore di $T$ per cui $N_2 / N_1 =1$, si trova
+\[
+4 \exp \left(- \frac{10.2 \text{ eV}}{\kappa _B T}\right) \implies T \approx 85000\text{ K}
+\] 
+Questo evidenzia come, in realt\`a, sarebbe presente pi\`u idrogeno in $n=2$ per stelle di temperature ben superiori a quelle delle stelle di classe A; il problema \`e che sopra un certo valore di temperatura, l'idrogeno si ionizza. 
+Per tenerne conto, si utilizza l'\textit{equazione di Saha}\footnote{La sua validit\`a \`e sempre ristretta all'LTE, ma anche a densit\`a non troppo elevate; per esempio, non vale nei nuclei delle stelle. Di fatto, per densit\`a molto alte, \`e presente un'altra causa di ionizzazione: la ionizzazione per pressione. Questa \`e dovuta al fatto che gli urti fra le particelle diminuiscono l'energia necessaria per ionizzare un atomo.}:
+\[
+\frac{N_{i+1} }{N_i} = \frac{2\kappa _B T Z_{i+1} }{P_e Z_i} \left(\frac{2\pi m_e\kappa _B T}{h^2}\right) ^{3 / 2} e^{- \chi _i /  \kappa _B T}
+\] 
+dove $N_{i} $ \`e la popolazione dell'atomo ionizzato $i$-volte, $Z_i$ \`e la funzione di partizione, $\chi _i$ \`e il potenziale di ionizzazione dell'atomo ionizzato $i$-volte e $P_e$ \`e la temperatura del gas di elettroni.
+\begin{osservazione}
+Aumentando $P_e$, a $T$ costante, aumenta la densit\`a di elettroni nel sistema, quindi aumenta la probabilit\`a di ricombinazione e, quindi, diminuisce la popolazione di specie ionizzate.
+\end{osservazione}
+Considerando un valore tipico di $P_e \sim 20\text{ N}/\text{m}^2$, l'equazione di Saha permette di concludere che: a $T=8300$ K, il $5\%$ dell'idrogeno \`e ionizzato; a $T=9600$ K, il $50\%$ \`e ionizzato; a $T = 11300$ K, il $95\%$ \`e ionizzato. 
+Pesando la curva di Boltzmann con l'equazione di Saha, si ottiene l'andamento corretto, dato da
+\[
+\frac{N_2}{N_\text{tot}} = \frac{N_2}{N_1+N_2} \frac{N_{I} }{N_\text{tot}} = \frac{N_2 / N_1}{ 1+ N_2 / N_1} \frac{1}{1 + N_{II}  / N_I}
+\] 
+dove $N_1 + N_2$ \`e idrogeno neutro, quindi $N_I$. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[yscale=0.6,xscale=0.5]
+\begin{axis}[
+    width=12cm,
+    height=8cm,
+    xmin=6500, xmax=13500,
+    ymin=0, ymax=1,
+    axis lines=box,
+    xlabel={Temperature (K)},
+    ylabel={$N_{\mathrm{II}}/N_{\mathrm{tot}}$},
+    xtick={6500,10000,13500},
+    ytick={0,0.1,0.2,...,1.0},
+    tick align=outside,
+    tick style={black},
+    label style={font=\large},
+    tick label style={font=\large},
+    axis line style={black},
+    clip=false,
+]
+
+% Curva
+\addplot[
+    very thick,
+    black,
+    domain=6500:13500,
+    samples=400,
+] {1/(1+exp(-(x-9600)/450))};
+
+% Linee tratteggiate
+\draw[dashed, thick] (axis cs:6500,0.5) -- (axis cs:9600,0.5);
+\draw[dashed, thick] (axis cs:9600,0) -- (axis cs:9600,0.5);
+
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+		\begin{tikzpicture}[yscale=0.6,xscale=0.5]
+\begin{axis}[
+    width=11.5cm,
+    height=8cm,
+    xmin=5000, xmax=25000,
+    ymin=0, ymax=9,
+    axis lines=left,
+    xlabel={Temperature (K)},
+    ylabel={$N_2/N_{\mathrm{tot}}\,(10^{-6})$},
+    xtick={5000,10000,15000,20000,25000},
+    xticklabels={5000,10\,000,15\,000,20\,000,25\,000},
+    ytick={0,1,...,9},
+    tick align=outside,
+    tick style={black},
+    axis line style={black},
+    label style={font=\large},
+    tick label style={font=\large},
+    clip=false,
+]
+
+% Curva: Boltzmann pesata con Saha per H, Pe = 20 N/m^2
+% N2/Ntot = [N2/N1] * [N_HI/Ntot]
+% N2/N1 = 4 exp(-10.2 eV / kT)
+% N_HI/Ntot = 1 / (1 + N_II/N_I)
+% N_II/N_I = (2pi m_e k / h^2)^(3/2) * (kT/Pe) * exp(-13.6 eV / kT)
+% con Pe = 20 Pa e U_I ~ 2, U_II = 1
+
+\addplot[
+    very thick,
+    black,
+    domain=5000:25000,
+    samples=400,
+]
+{
+    1e6 *
+    (4*exp(-10.2*11604.518/x)) /
+    (1 + 1.666914862e-3*pow(x,2.5)*exp(-13.6*11604.518/x))
+};
+
+% Linea verticale tratteggiata
+\draw[dashed, thick] (axis cs:9900,0) -- (axis cs:9900,8.8);
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+	\captionof{figure}{A sinistra, grafico dell'equazione di Saha; a destra, popolazione di idrogeno in $n=2$ pesato con Saha.}
+\end{center}
+\begin{osservazione}
+Il risultato \`e ovviamente approssimativo, in quanto si \`e assunta una atmosfera stellare composta esclusivamente da idrogeno e in LTE, da cui la differenza dal reale valore di $9520$ K. 
+\end{osservazione}
+\subsection{Popolazione del calcio}
+Si vuole mostrare perch\'e le righe del calcio sono pi\`u profonde di quelle della serie di Balmer nel sole.
+Questo ha strettamente a che fare con la popolazione di specie chimica utile a produrre tali righe; di fatto, si vedr\`a che ci sono sensibilmente molti pi\`u atomi di calcio II, pi\`u che atomi di idrogeno nel primo livello eccitato.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{cAH-S.png}
+	\caption{Spettro solare che evidenzia la profondit\`a delle righe del calcio II rispetto a quelle della serie di Balmer.}
+	\label{fig:cAH-S-png}
+\end{figure}
+Per fare i conti, si utilizzeranno i seguenti valori di $T_\text{eff} = 5777$ K e $P_e = 1.5 \text{ N m}^{-2}$. 
+Inoltre, tali profondit\`a sembrano assurde perch\'e il numero di atomi di calcio presenti nel Sole, rapportati con quelli di idrogeno, \`e di $1 / 500,000$.
+
+Per capire l'abbondanza di idrogeno propenso a produrre tali righe, si considera $\chi _i = 13.6$ eV, per cui
+\[
+	\begin{split}
+		&\left[\frac{N_2}{N_1}\right] _{\mathrm{H I}}  = \frac{g_2}{g_1}\exp\left(-\frac{E_2-E_1}{\kappa _B T}\right)= 5.06 \times 10^{-9}\approx \frac{1}{200,000,000}\\
+		&\left[ \frac{N_{I I} }{N_I} \right] _\mathrm{H}  = \frac{2\kappa _B T Z_{i+1} }{P_eZ_i} \left(\frac{2\pi m _e \kappa _B T }{h^2}\right) ^{3 / 2} e^{-\chi _i / \kappa _B T} = 7.70 \times 10^{-5}\approx \frac{1}{13,000}\\
+		&\Rightarrow \frac{N_2}{N_\text{tot}} = \frac{N_2}{N_1+N_2}  \frac{N_I}{N_\text{tot}}=5.06 \times 10^{-9}
+	\end{split}
+\] 
+per cui solo un atomo di idrogeno ogni $2 \times 10^8$ \`e nel primo livello eccitato e, quindi, in grado di produrre righe di Balmer.
+
+Per il calcio, invece, si ha $\chi _i = 6.11$ eV, mentre le funzioni di partizione si possono trovare tabulate e pari a $Z_I = 1.32$ e $Z_{I I} = 2.30$; allora:
+\[
+\left[ \frac{N_{I I}}{N_I} \right] _\mathrm{Ca} = 918
+\] 
+Questo evidenzia come il calcio sia, in gran parte ionizzato: si trova solo un atomo di calcio I ogni $918$ atomi di calcio II.
+Le righe H ($396.8$ nm) e K ($393,3$ nm) sono prodotte da transizioni dallo stato fondamentale del calcio; facendo come esempio solo il calcolo per la riga $K$, usando che $E_2-E_1 = 3.12$ eV, $g_1 = 2$ e $g_2 = 4$, si trova che
+\[
+\left[ \frac{N_2}{N_1} \right] _{\mathrm{Ca II} } = \frac{g_2}{g_1} \exp\left(- \frac{E_2-E_1}{\kappa _B T}\right) = 3.79 \times 10^{-3} = \frac{1}{264}
+\] 
+Per cui molti atomi di calcio II sono nel fondamentale, quindi in grado di produrre la riga K.
+Mettendo insieme le due informazioni, si vede che
+\[
+\begin{split}
+	\left[ \frac{N_1}{N_\text{tot}} \right] _\mathrm{Ca II} &\simeq \left[ \frac{N_1}{N_1 + N_2} \right] _{\mathrm{Ca II} } \left[ \frac{N_{I I} }{N_\text{tot}} \right] _{\mathrm{Ca} } = \frac{1}{1+ \left[ N_2 / N_1 \right] _\mathrm{Ca II} } \frac{\left[ N_{I I } / N_I \right] _\mathrm{Ca} }{1 + \left[ N_{I I } / N_I \right] _{\mathrm{Ca} } }\\
+								&= \frac{1}{1+ 3.79 \times 10^{-3}} \frac{918}{1+918}= 0.995
+\end{split}
+\] 
+cio\`e il $99.5\%$ di calcio \`e ionizzato e nello stato fondamentale.
+Allora, per rapportare la quantit\`a di atomi di idrogeno in grado di produrre righe di Balmer e atomi di calcio in grado di produrre righe H e K si usa il rapporto $1:500,000$:
+\[
+500,000 \times 5.06 \times 10^{-9}\approx \frac{1}{395}
+\] 
+da cui per ogni atomo di idrogeno nel primo eccitato, ci sono $395$ atomi di calcio II nel fondamentale.
+
+\subsection{Classificazione MKK}
+
+\`E un perfezionamento della scala di Harvard: ad ogni classe della forma $X0$\footnote{Lettere tra O, B, A, F, G, K, M, L, T, Y e numeri da $0$ a $9$. Storicamente quelle di classe O partivano da 5; con moderni avanzamenti, \`e tipico partire da 2, mentre O0 e O1 non sono comunemente utilizzati.} si fa seguire un numero romano da 0 a VII che ne indica la luminosit\`a.
+\begin{table}[h!]
+	\centering
+	\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline
+	0 & I & II & III & IV & V & VI & VII\\
+\hline
+	Ipergiganti&Supergiganti & Giganti brillanti & Giganti & Subgiganti & Nane & Subnane & Nane bianche\\
+	\hline
+\end{tabular}
+	}
+\end{table}
+
+\noindent Visto che $F = \sigma T_\text{eff}^4$ ed essendo la luminosit\`a della stella (se questa ha raggio $R$) pari $L = 4\pi R^2 F$, si trova che
+\[
+L = 4\pi R^2 \sigma T_\text{eff}^4
+\] 
+Allora, fissata la temperatura effettiva, la luminosit\`a pu\`o variare al variare del raggio e, quindi, a parit\`a di massa (legata alla temperatura), si ha la densit\`a.
 
 
 
