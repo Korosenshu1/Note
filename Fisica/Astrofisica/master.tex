@@ -1045,9 +1045,87 @@ Si distinguono i casi in cui il corpo sia in caduta libera (free fall), relativo
 All'equilibrio idrostatico, i due termini devono essere dello stesso ordine di grandezza: $\tau _\text{ff}\sim\tau _\text{exp}$. 
 In questo caso, si parla di \textit{tempo scala idrodinamico} $\tau _\text{idr}$.
 
-Per stabilire la validit\`a dell'approssimazione nel caso delle stelle, si considera un tempo scala evolutivo $\tau _\text{ev}$, riferito al tempo su cui si osservano variazioni nelle grandezze caratteristiche della stella in questione, e lo si confronta con il tempo scala idrodinamico: se $\tau _\text{ev} \gg \tau _\text{idr}$, allora, con buona approssimazione, vale l'assunzinoe di equilibrio idrodinamico.
+Per stabilire la validit\`a dell'approssimazione nel caso delle stelle, si considera un tempo scala evolutivo $\tau _\text{ev}$, riferito al tempo su cui si osservano variazioni nelle grandezze caratteristiche della stella in questione, e lo si confronta con il tempo scala idrodinamico: se $\tau _\text{ev} \gg \tau _\text{idr}$, allora, con buona approssimazione, vale l'assunzione di equilibrio idrodinamico.
+Nel caso del sole, si ha $\overline{\rho }_\odot = 1.4 \text{ g/cm}^3$, quindi $\tau_{\text{ff},\odot} \sim 30$ min, per cui si pu\`o concludere che l'approssimazione di equilibrio idrostatico \`e valida, visto che $\tau _\text{ev}\sim 10^{10} $ yr.
+\subsection{Pressione e temperatura centrali}
+Avendo appurato la validit\`a dell'approssimazione di equilibrio idrostatico, si ha $\frac{\partial P}{\partial r} = -  \frac{Gm \rho }{r^2}<0$, quindi la pressione diminuisce con l'aumentare di $r$.
+Si stima, nel caso del Sole, la pressione centrale. 
+Scrivendo l'equazione di equilibrio come rapporto incrementale e indicando con $P_\text{sup}$ la pressione sulla superficie e con $P_c$ quella centrale, si ha
+\[
+	\frac{P_\text{sup} - P_c}{R} =- G \frac{M}{2} \frac{\overline{\rho }}{R^2}
+\] 
+con $P_\text{sup}\approx 0$, da cui $P_c\sim 5 \times 10 ^{18} \text{ dyme/cm}^2$.
+Con metodi pi\`u raffinati, si trova che $P_{c,\odot} = 2.6 \times 10^{17} \text{ dyme/cm}^2 $.
 
+Quanto alla temperatura centrale, \`e necessaria un'equazione di stato $P(\rho ,T)$.
+Assumendo valida l'equazione del gas perfetto, si pu\`o scrivere 
+\[
+P = n \kappa _B T = \frac{\rho }{\mu  m_H} \kappa _B T 
+\] 
+con $\mu = \overline{m} / m_H$ peso molecolare medio.
+In prima approssimazione, questo modello \`e veritiero nel senso che la temperatura del Sole, come di moltissime altre stelle, \`e elevata: $T_{c,\odot} \approx 1.6 \times 10^7 $ K.
+Nonostante questo, si dovrebbe far uso di un'equazione di stato che tenga anche conto delle interazioni nel gas.
+\begin{osservazione}
+L'implicazione pressione grande $\Rightarrow $ temperatura grande \`e estremamente dipendente dall'equazione di stato che modella il nucleo.
+Si possono trovare dei casi, come nelle nane bianche, in cui la pressione non \`e legata alla temperatura tramite l'equazione di stato, ma $P \sim \rho ^n$.
+\end{osservazione}
+\noindent Durante la loro evoluzione, le stelle tendono a perdere energia per via della dispersione di calore prodotto tramite reazioni termonucleari nel nucleo; questo calore tende a disperdersi in quanto fondamentalmente isolate: la stella pi\`u vicina al Sole \`e Proxima Centauri, ad una distanza di $\sim 1.4 \text{ pc} \sim 4 \times 10 ^{18}$ cm, per cui $\frac{d}{R_\odot} \sim 0.6 \times 10 ^8$, quindi $V / V_\odot \sim 10^{23}$, con $V$ volume vuoto attorno al Sole.
+Tuttavia, visto che la relazione tra pressione e temperatura \`e legata dall'equazione di stato, le stelle degeneri, come le nane bianche, non diminuiscono il loro raggio durante la loro vita, ma si raffreddano solamente.
 
+\subsection{Teorema del viriale}
+Mette in relazione energia gravitazionale ed energia cinetica.
+Si considera una stella all'equilibrio idrostatico; moltiplicando ambo i membri l'equazione di equilibrio per $V(r) \dd r = \frac{4}{3}\pi r^3 \dd r$, si ottiene
+\[
+V(r) \dd P = -\frac{1}{3} \frac{Gm}{r} \dd m
+\] 
+con $\dd  m = 4\pi r^2 \rho  \dd r$.
+Integrando:
+\[
+\int V(r) \dd P = \cancel{VP|_0^R} - \int P \dd V
+\] 
+dove si \`e usato che $P(R) = 0$ e $V(0) = 0$. 
+Per l'altro termine, si ha
+\[
+- \int \frac{G m }{r} \dd m = \Omega 
+\] 
+con $\Omega $ energia potenziale gravitazionale.
+Allora:
+\begin{equation}
+	\Omega = -3 \int P \dd V
+\end{equation}
+\begin{osservazione}
+Questa ha validit\`a del tutto generale riguardo le propriet\`a termodinamiche del gas; si \`e ricavata soltanto sull'assunzione di equilibrio idrostatico.
+\end{osservazione}
+\noindent In assunzione di gas non-relativistico, si ha $P = \frac{2}{3} \frac{K}{V}$, per cui 
+\begin{equation}
+	\Omega + 2K = 0
+\end{equation}
+
+\subsubsection{Gas perfetto}
+In questo caso, $\dd K = \frac{3}{2}\kappa _B T \dd N$ e $\dd m = \mu m_H \dd N$, per cui
+\[
+	\dd K = \frac{3}{2} \frac{\mathcal{R} }{\mu }T \dd m
+\] 
+con $\mathcal{R} $ costante del gas perfetto.
+Si ricorda che $\dd U = c_V T \dd m$ e calore specifico a volume e pressione costante sono in relazione tramite $c_P - c_V = \mathcal{R} /\mu $ e $\gamma = c_P / c_V$, per cui $\dd U = \frac{R}{\mu }\frac{T}{\gamma-1} \dd m$, da cui $\dd K = \frac{3}{2} \left(\gamma- 1\right)  \dd U$.
+Assumendo che $\gamma$ sia costante, si pu\`o integrare per ottenere
+\begin{equation}
+	K = \frac{3}{2} \left(\gamma- 1\right)  U
+\end{equation}
+L'energia della stella si pu\`o scrivere come $E = \Omega  + U$, assumendo che non vi siano reazioni nucleari, per cui $U$ rappresenta solo l'energia interna legata all'agitazione termica; in questo modo, si possono scrivere due equazioni, una in termini dell'energia potenziale gravitazionale, l'altra in termini dell'energia interna:
+\begin{equation}
+		E = \frac{3\gamma - 4}{3 (\gamma - 1)} \Omega \hspace{2cm} E = - (3 \gamma- 4) U
+\end{equation}
+Dalla richiesta che la stella sia all'equilibrio, cio\`e sia autogravitante, visto che $\Omega <0$, si deve avere $E<0$, per cui $\gamma\ge \frac{4}{3}$.
+Da uno studio approfondito della stabilit\`a del sistema, si evidenzia che $\gamma < \frac{4}{3}$ definisce un sistema instabile che non \`e all'equilibrio idrostatico e tende a disperdersi.
+
+Ora, se la perdita di energia della stella \`e esclusivamente legata all'irraggiamento, la luminosit\`a \`e $L = - \dot{E} > 0$\footnote{Se ci fossero altri fenomeni che dissipano energia, come la produzione di neutrini, si dovrebbero aggiungere a $L$.}, si ha $\dot{E}<0$; dalle relazioni sopra, segue che $\dot{\Omega }<0\Rightarrow \dot{R}$ e $\dot{U}> 0 \Rightarrow \dot{K}> 0 \Rightarrow \dot{T}>0$.
+\begin{osservazione}
+Questa catena di implicazioni, nel caso di assenza di reazioni nucleari attive, la perdita di energia nella stella ne comporta una contrazione e, allo stesso tempo, un aumento della temperatura.
+Questo risultato dipende dall'assunzione di gas perfetto; un modello pi\`u preciso, per stelle regolare da un'equazione di stato dipendente \textit{significativamente} dalla temperatura, in assenza di reazioni termonucleari, porta ad un risultato analogo.
+Stelle di questo tipo sono a capacit\`a termica negativa: perdendo energia si scaldano.
+Lo stesso non accade nelle nane bianche, per esempio, le quali sono a capacit\`a termica positiva.
+\end{osservazione}
 
 
 
