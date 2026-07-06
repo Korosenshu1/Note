@@ -918,6 +918,136 @@ L = 4\pi R^2 \sigma T_\text{eff}^4
 Allora, fissata la temperatura effettiva, la luminosit\`a pu\`o variare al variare del raggio e, quindi, a parit\`a di massa (legata alla temperatura), si ha la densit\`a.
 
 
+\newpage
+
+\section{Struttura ed evoluzione stellare}
+\subsection{Equilibrio idrostatico}
+\begin{center}
+	\begin{minipage}
+		{.6\columnwidth}
+		L'atmosfera stellare compone solo una minima frazione dell'intera massa della stella; la rimanente parte, \`e contenuta nel nucleo. 
+		La massa di una stella \`e molto importante: una stella \`e un ammasso gassoso autogravitante, ossia la forza di gravit\`a e le forze di pressione interne devono essere in equilibrio. 
+		Visto che la forza di gravit\`a \`e estremamente debole, \`e necessaria una grande massa perch\'e il gas non tenda a disperdersi.
+
+		Si indica con $R$ il raggio della stella e con $r$ la coordinata radiale.
+		Assumendo simmetria sferica, le variabili della stella dipendono solo da $r$ e dal tempo, per cui $P = P(r,t)$, $\rho = \rho (r,t)$, $T=T(r,t)$ e $m=m(r,t)$; riguardo quest'ultima, visto che rappresenta la massa contenuta in una sfera di raggio $r$ al tempo $t$, la massa della stella si pu\`o indicare con $M(t) = m(R,t)$.
+
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.30\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+	\draw (0,0) circle (2cm);
+	\draw[gray] (0,0) circle (1.5cm);
+	\draw[-stealth,thick] (0,0) -- ({2*cos(30)}, {2*sin(30)});
+	\node[below right] at ({1*cos(30)},{1*sin(30)}) {\footnotesize $\vec{R}$};
+	\draw[-stealth,thick] (0,0) -- (0, 1.5);
+	\node[right] at (0,1) {\footnotesize $\vec{r}$};
+
+
+        % Seconda figura
+	\fill[
+	    pattern={
+		Lines[
+		    angle=45,
+		    distance=4pt,
+		    line width=0.5pt,
+		]
+	    },
+	    pattern color=blue!60!gray,
+	    opacity=0.4,
+	    even odd rule
+	] (0,-5) circle (1.5cm) 
+	(0,-5) circle (1.25cm);
+        \node[blue!30!white,below left] at ({1.3*cos(35)},{-5+1.3*sin(35)}) {\footnotesize $\dd m$};
+
+	% Pressione interna
+	\draw[-stealth,very thick, orange!30] (-.75,-5) -- (-1.25,-5);
+	\draw[-stealth,very thick, orange!30] (.75,-5) -- (1.25,-5);
+	\draw[-stealth,very thick, orange!30] (0,-4.25) -- (0,-3.75);
+	\draw[-stealth,very thick, orange!30] (0,-5.75) -- (0,-6.25);
+	\node[orange!30] at (-1,-4.75) {\footnotesize $P$};
+	% Pressione esterna
+	\draw[-stealth,very thick, orange!70] (-2,-5) -- (-1.5,-5);
+	\draw[-stealth,very thick, orange!70] (2,-5) -- (1.5,-5);
+	\draw[-stealth,very thick, orange!70] (0,-7) -- (0,-6.5);
+	\draw[-stealth,very thick, orange!70] (0,-3) -- (0,-3.5);
+	\node[orange!70] at (-.25,-6.75) {\footnotesize $P$};
+	% Gravità
+	\draw[-stealth,very thick, green!60!black] ({-1.5*cos(45)},{-5+1.5*sin(45)}) -- ({-1*cos(45)},{-5+1*sin(45)});
+	\draw[-stealth,very thick, green!60!black] ({1.5*cos(45)},{-5+1.5*sin(45)}) -- ({1*cos(45)},{-5+1*sin(45)});
+	\draw[-stealth,very thick, green!60!black] ({-1.5*cos(45)},{-5-1.5*sin(45)}) -- ({-1*cos(45)},{-5-1*sin(45)});
+	\draw[-stealth,very thick, green!60!black] ({1.5*cos(45)},{-5-1.5*sin(45)}) -- ({1*cos(45)},{-5-1*sin(45)});
+	\node[green!60!black] at ({1*cos(55)},{-5.+1*sin(55)}) {\footnotesize $g$};
+	% Cerchi
+	\draw[thick,opacity=0.6] (0,-5) circle (2cm);
+	\draw[thick,opacity=0.6] (0,-5) circle (1.25cm);
+	\draw[thick,opacity=0.4,dashed] (0,-5) circle (1.5cm);
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+\marginpar{\textit{Equazione di continuit\`a}}
+La massa contenuta nel guscio \`e 
+\[
+\dd m (r,t) = \frac{\partial m}{\partial r}\dd r + \frac{\partial m}{\partial t}  \dd t
+\] 
+Visto che, in generale
+\[
+m(r,t) = \int_0^{r} 4\pi r'^2 \rho (r',t) \dd r'
+\] 
+si ha
+\[
+\frac{\partial m}{\partial r} = 4 \pi r^2 \rho \hspace{2cm} \frac{\partial m}{\partial t} = -4\pi r^2 \rho v
+\] 
+dove $\partial _t m$ \`e ottenuta dal fatto che la variazione di massa corrisponde ad un flusso che abbandona il guscio con velocit\`a $v$.
+Dall'uguaglianza delle derivate seconde, si ricava l'equazione di continuit\`a (per un sistema a simmetria sferica):
+\begin{equation}
+\frac{\partial \rho }{\partial t}  + \frac{1}{r^2} \frac{\partial }{\partial r}  \big(r^2 \rho  v\big) = \frac{\partial \rho }{\partial t}  + \vec{\nabla }\cdot \big(\rho \vec{v}\big)=0
+\end{equation}
+\marginpar{\textit{Equilibrio idrostatico}}
+Per studiare la condizione di equilibrio della stella, si richiede che la forza risultante delle forze che agiscono su un guscio infinitesimo, di massa $\dd m$ e raggio $\dd r$, sia nulla.
+Questa risultante \`e data dalla pressione dello strato interno verso l'esterno, dalla pressione dello strato esterno verso l'interno e dalla forza di gravit\`a.
+
+Si indica il campo gravitazionale con $\vec{g}(r,t) = -g(r,t) \hat{r}$, dove $g(r,t) = \frac{Gm(r,t)}{r^2}$. 
+Per semplicit\`a, si fissa un istante $t$ e si trascura la dipendenza dal tempo; allora, la condizione di equilibrio \`e data da 
+\[
+	\big[P(r) - P(r+dr)\big]4 \pi r^2 - g(r) 4\pi r^2 \rho  dr = 0
+\] 
+dove $P(r)$ \`e la pressione interna che spinge verso l'esterno il guscio, $P(r+dr)$ \`e la pressione esterna che spinge il guscio verso l'interno e l'ultimo termine \`e legato alla forza di gravit\`a, con $4\pi r^2 \rho dr$ massa del guscio.
+Questa \`e verificata quando 
+\begin{equation}
+	\frac{\partial P}{\partial r}  = - g(r) \rho  = - \frac{G m \rho }{r^2}
+\end{equation}
+dove $P$ \`e la \textit{pressione totale}, quindi dovuta sia alla radiazione, sia dovuta a nuclei atomici ed elettroni.
+\subsection{Validit\`a della condizione di equilibrio idrostatico}
+Si vuole stabilire se \`e valida la condizione di equilibrio idrostatico nelle stelle.
+In assenza di equilibrio, si ha l'equazione del moto
+\begin{equation}
+	\rho  \frac{\partial ^2 r}{\partial t^2}  = - \frac{\partial P}{\partial r}  - \frac{G m \rho }{r^2}
+\end{equation}
+Si distinguono i casi in cui il corpo sia in caduta libera (free fall), relativo a $\frac{\partial P}{\partial r}  =0 $ e il caso in cui sia nullo il termine gravitazionale.
+\begin{enumerate}[(a).]
+	\item Per $\frac{\partial P}{\partial r} = 0$, l'equazione del moto \`e $\rho  \frac{\partial ^2 r}{\partial t^2}  = - \frac{G m \rho }{r^2}$.
+		Il tempo scala di questa caduta libera, $\tau_\text{ff} $, si definisce come
+		\[
+		 \left\lvert \frac{\partial ^2 r}{\partial t^2}  \right\rvert = \frac{R}{\tau _\text{ff}^2}\Rightarrow  \frac{Gm}{r^2} \sim \frac{GM}{R^2} = \frac{R}{\tau _\text{ff}^2} \implies \tau _\text{ff} = \sqrt{\frac{R^3}{GM}}  \sim \frac{1}{\sqrt{G \overline{\rho }} }
+		\] 
+		con $\overline{\rho }$ densit\`a media della stella.
+	\item Per termine gravitazionale nullo, si ha $\rho \frac{\partial ^2 r}{\partial  t^2} = - \frac{\partial P}{\partial r} $.
+		Visto che $\frac{\partial P}{\partial r} < 0$, l'accelerazione \`e diretta verso l'esterno della stella, quindi questo caso corrisponde ad un esplosione. 
+		Il tempo scala di esplosione $\tau _\text{exp}$ \`e definito come
+		\[
+		\left\lvert \frac{\partial ^2r}{\partial t^2}  \right\rvert  = \frac{R}{\tau _\text{exp}^2}\Rightarrow \frac{1}{\rho }\frac{\partial P}{\partial r}  \sim \frac{1}{\rho }\frac{P}{R} = \frac{R}{\tau _\text{exp}^2}\implies \tau _\text{exp} \sim R \sqrt{\frac{\rho }{P}} \sim \frac{R}{c_s}
+		\] 
+		dove $\sqrt{\rho  / P} $ ha la forma della velocit\`a del suono $c_s$.
+\end{enumerate}
+All'equilibrio idrostatico, i due termini devono essere dello stesso ordine di grandezza: $\tau _\text{ff}\sim\tau _\text{exp}$. 
+In questo caso, si parla di \textit{tempo scala idrodinamico} $\tau _\text{idr}$.
+
+Per stabilire la validit\`a dell'approssimazione nel caso delle stelle, si considera un tempo scala evolutivo $\tau _\text{ev}$, riferito al tempo su cui si osservano variazioni nelle grandezze caratteristiche della stella in questione, e lo si confronta con il tempo scala idrodinamico: se $\tau _\text{ev} \gg \tau _\text{idr}$, allora, con buona approssimazione, vale l'assunzinoe di equilibrio idrodinamico.
+
+
 
 
 
