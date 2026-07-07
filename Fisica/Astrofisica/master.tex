@@ -1140,14 +1140,65 @@ Lo stesso non accade nelle nane bianche, per esempio, le quali sono a capacit\`a
 Nella fase di nascita della stella, si verifica esattamente una di queste due situazioni: nel caso in cui la stella non arrivi proprio ad innescare le reazioni, e si formano le \textit{nane brune}, stelle di massa molto piccola, vicino a quella di Giove.
 Questo dilemma, si ripropone ogni qualvolta la stella esaurisce il combustibile alla base delle reazioni: se riesce a raggiungere una temperatura tale da innescarne altre, continua, altrimenti degenera.
 Pi\`u grande \`e la massa della stella, pi\`u in futuro si arriver\`a alla degenerazione.
+\subsubsection{Gas monoatomico}
+Gran parte del gas che costituisce le stelle \`e monoatomico; in questo caso, $\gamma = \frac{5}{3}$, quindi
+\[
+\begin{cases}
+	E = \Omega  / 2 = - U \\
+	K = U
+\end{cases} \implies \begin{cases}
+	L = - \dot{\Omega } / 2 \\ 
+	L = \dot{U}
+\end{cases}
+\] 
+per cui $\dot{K} = - \dot{\Omega } / 2$.
+In questo caso, si vede che met\`a energia gravitazionale finisce in luminosit\`a, quindi viene dispersa, mentre l'altra met\`a finisce in energia cinetica, cio\`e in agitazione termica.
+\subsection{Tempo scala di evoluzione stellare}
+Riprendendo la catena \ref{scat}, si vuole stimare il tempo scala su cui avvengono l'aumento della temperatura e la contrazione.
+Questo sar\`a dato dal rapporto tra l'energia a disposizione e la velocit\`a con cui questa viene dispersa.
+\begin{osservazione}
+Questa valutazione si far\`a nel caso di assenza di reazioni termonucleari e in approssimazione di gas perfetto monoatomico.
+\end{osservazione}
+\noindent L'energia potenziale \`e
+\[
+\Omega  = - \int \frac{G m \dd m}{r}
+\] 
+Non conoscendo $m(r,t)$ e $\rho (r,t)$, si svolge il calcolo assumendo $\rho  = \text{cost.}$, per cui 
+\[
+\Omega  = - \frac{3}{5} G \frac{M^2}{R}
+\] 
+Visto che $M_\odot = 2\times 10^{33}$ g e $R_\odot = 7 \times 10^{10}$ cm, allora $|\Omega | / 2\approx 1.1 \times 10 ^{48}$ erg.
+Tramite un calcolo pi\`u preciso, dovuto alla conoscenza di $\rho (r,t)$, si ottiene $\Omega _\odot \approx 4 \times 10^{48}$ erg.
+Allora, sapendo che $L_\odot \approx 3.8 \times 10^{33} \text{ erg s}^{-1}$, si ha\footnote{Il pedice $KH$ indica ``Kelvin-Helmholtz''.}
+\[
+\tau _\text{KH} = \frac{\lvert \Omega /2 \rvert }{L} = \frac{3}{10} \frac{GM^2}{RL} \approx 9 \times 10^{6} \text{ yr} 
+\] 
+Dal calcolo pi\`u preciso, invece, si trova $\tau _\text{KH} \approx 20 \times 10 ^{6}$ yr.
 
+Inizialmente, si pens\`o che l'energia prodotta dal Sole fosse legata a reazioni chimiche, come quelle di combustione; con queste, per\`o, l'energia rilasciata per quantit\`a di massa \`e $\sim 4\times 10^{12} \text{ erg g}^{-1}$, quindi, essendo $M_\odot \approx 2 \times 10^{33}$ g, si esaurirebbe l'energia in un tempo scala
+\[
+\tau _\text{chem} = \frac{4 \times 10^{12} \text{ erg g}^{-1} \times 2\times 10^{33}\text{ g}}{4 \times 10^{33} \text{ erg s}^{-1}} \sim 10^{5}\text{ yr}
+\] 
+che \`e molto pi\`u piccolo dell'attuale et\`a del Sole di $\tau _\odot = 4.57$ Gyr\footnote{Questa viene ricavata con estrema precisione tramite radio-datazione.}.
 
+Successivamente, si pens\`o a reazioni di fissione nucleare. Il problema con queste \`e che la sorgente di energia aggiuntiva deve dipendere dalla temperatura perch\'e le stelle come il Sole sono a capacit\`a termica negativa: questi due fattori, combinati, originano il meccanismo che permette alle stelle di rimanere in equilibrio stazionario.
+Infatti:
+\begin{itemize}
+	\item se l'energia prodotta non bilancia quella persa per luminosit\`a, la stella, per il viriale, si contrae, quindi aumenta la densit\`a e si scalda, per cui l'energia prodotta aumenta fino a bilanciare la contrazione;
+	\item viceversa, se l'energia prodotta \`e maggiore di quella persa, la stella si espande, per cui si riduce la temperatura e, allora, l'energia prodotta.
+\end{itemize}
+Questo sistema \`e fondamentalmente un termostato che regola la temperatura interna della stella per far s\`i che le reazioni producano esattamente l'energia necessaria per l'equilibrio.
+Tuttavia, la radioattivit\`a non soddisfa questo meccanismo, per cui le reazioni di fissione non possono essere alla base della produzione energetica nelle stelle.
 
-
-
-
-
-
+Si associa, quindi, questa produzione energetica a reazioni termonucleari. 
+L'energia a riposo del sole \`e $E = M_{\odot} c^2 = 2\times 10^{54}$ erg. 
+Considerando la reazione di produzione di elio a partire da 4 atomi di idrogeno ($m_\text{H} c^2 = 931$ MeV), si origina un difetto di massa di $(4m_\text{H} - m_{\text{He}}) c^2 = 26.73 $ MeV, pari al $0.7\%$ dell'energia a riposo iniziale; assumendo che la stella sia composta unicamente da idrogeno, il prodotto di questa reazione termonucleare produce, complessivamente, $0.7\% \times  M_{\odot} c^2\approx 2\times  10^{52}$ erg, da cui si ottiene un tempo scala
+\[
+\frac{M_\odot c^2 \times 0.007}{L_\odot } \approx 10^{11} \text{ yr}
+\] 
+Da un calcolo pi\`u esatto, specie legato al fatto che non tutto l'idrogeno viene trasformato in elio, si trova il \textit{tempo scala nucleare} $\tau _{N,\odot } \sim 10^{10}$ yr per la conversione di idrogeno in elio.
+Si osserva, infine, che $\tau _\text{ff} \ll \tau _\text{KH} \ll \tau _N$.
+\subsection{Equazione di conservazione dell'energia}
 
 
 
