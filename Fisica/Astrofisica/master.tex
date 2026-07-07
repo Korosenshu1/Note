@@ -1197,8 +1197,100 @@ Considerando la reazione di produzione di elio a partire da 4 atomi di idrogeno 
 \frac{M_\odot c^2 \times 0.007}{L_\odot } \approx 10^{11} \text{ yr}
 \] 
 Da un calcolo pi\`u esatto, specie legato al fatto che non tutto l'idrogeno viene trasformato in elio, si trova il \textit{tempo scala nucleare} $\tau _{N,\odot } \sim 10^{10}$ yr per la conversione di idrogeno in elio.
-Si osserva, infine, che $\tau _\text{ff} \ll \tau _\text{KH} \ll \tau _N$.
+Si osserva, che $\tau _\text{ff} \ll \tau _\text{KH} \ll \tau _N$.
+\begin{osservazione}
+Quando la stella raggiunge la condizione di equilibrio termico, cio\`e l'energia prodotta dalle reazioni termonucleari \`e uguale all'energia persa per luminosit\`a (o luminosit\`a pi\`u neutrini), entra in una fase di \textit{stop nucleare}; questo, per\`o, non blocca l'evoluzione della stella: il processo di fusione nucleare porta ad una diminuzione del numero di nuclei atomici per unit\`a di volume, quindi $n$ diminuisce in $P = n \kappa _B T$, quindi, a parit\`a di temperatura, diminuisce la pressione.
+A bilanciare la forza di gravit\`a, tuttavia, \`e proprio il gradiente di pressione, per cui la stella finisce per contrarsi e, quindi, per aumentare la propria temperatura.
+Il tempo scala su cui avviene questo processo, per\`o, \`e quello su cui avvengono le reazioni termonucleari nel nucleo, cio\`e $\tau_N$.
+\end{osservazione}
 \subsection{Equazione di conservazione dell'energia}
+
+Si indica con $L(r,t)$ la quantit\`a di energia per unit\`a di tempo che attraversa la superficie sferica di raggio $r$.
+La differenza tra la quantit\`a di energia che che entra nella superficie sferica di raggio $r$ e quella che esce dalla superficie di raggio $r+\dd r$ deve essere pari all'energia che viene prodotta o distrutta all'interno del guscio di spessore $\dd r$, per la conservazione dell'energia.
+Allora
+\[
+\frac{\partial L}{\partial r}  = 4\pi r ^2 \rho  \varepsilon 
+\] 
+con $[\varepsilon ] = \text{erg g}^{-1}\text{ s}^{-1}$. 
+Questo rappresenta il coefficiente di energia nucleare (prodotta o assorbita) all'interno di un guscio infinitesimo ed \`e ottenuto come somma di tre contributi: $\varepsilon = \varepsilon _N + \varepsilon _g - \varepsilon _\nu $.
+In questa espressione, $\varepsilon _N$ \`e il coefficiente di produzione di energia nucleare; $\varepsilon _g$ \`e il coefficiente di energia gravitazionale, anche se \`e definito come 
+\[
+\varepsilon _g = - \frac{d Q}{d t} = - T \frac{d S}{d t} 
+\] 
+quindi tiene conto della quantit\`a di calore scambiato dalle trasformazioni termodinamiche all'interno del guscio infinitesimo.
+Questo diventa importante quando la stella \`e governata dal viriale ed evolve con tempi scala $\tau _\text{KH}$, altrimenti \`e trascurabile, visto che $\tau _\text{KH}\ll\tau _N$.
+Infine, $\varepsilon _\nu $ \`e relativo all'energia dei neutrini, i quali escono dalla stella senza interagire in alcun modo, quindi sottraendo l'energia che si portano dietro alla struttura, da cui il segno negativo\footnote{Il cammino libero medio di un neutrino nel piombo, alla stessa energia che possiederebbe dopo esser stato prodotto nel sole, \`e di qualche anno luce, per cui la stella gli risulta fondamentalmente trasparente.}.
+\subsection{Trasporto di energia nelle stelle}
+Dal trasporto radiativo negli interni stellari, si \`e trovato che
+\[
+\frac{\partial T}{\partial r} = - \frac{3}{4a c} \frac{\kappa _R \rho }{T^3} F_\text{rad}
+\] 
+cio\`e la presenza di un gradiente di temperatura deve necessariamente essere associato ad un trasporto energetico dovuto alle radiazioni.
+Oltre al trasporto energetico dovuto alla radiazione, sono presenti anche gli effetti di conduzione e di convezione.
+
+Negli interni stellari, il gradiente di temperatura si pu\`o stimare (nel caso del sole), come 
+\[
+\frac{\Delta T}{\Delta r} \approx \frac{T_{c,\odot }  - T_{\text{eff},\odot } }{R_\odot } \sim 1.4 \times 10^{-4} \text{ K cm}^{-1}
+\] 
+Il cammino libero medio di un fotone nel sole \`e di $\overline{\ell } \sim 2$ cm, quindi la variazione di temperatura sulla distanza media percorsa da un fotone \`e di $\Delta T \sim 3\times 10^{-4} $ K, per cui 
+\[
+\frac{\Delta T}{T} \sim 10^{-10}\div 10^{-11}
+\] 
+per cui l'approssimazione di LTE relativa ad ogni processo di emissione/assorbimento fotonico \`e ben giustificata e il processo di trasporto dell'energia tramite fotoni \`e un processo diffusivo.
+
+\subsubsection{Trasporto conduttivo}
+L'equazione della conduzione del calore \`e della forma $F_\text{cond} = - D_\text{cond} \frac{d T}{d r} $; essendo molto simile, in forma, all'equazione del trasporto radiativo, si introduce un'\textit{opacit\`a conduttiva} $\kappa _\text{cond}$ in modo che si possa scrivere 
+\marginpar{\textit{Opacit\`a conduttiva}} 
+\[
+D_\text{cond} = \frac{4 a c}{3} \frac{T^3}{\kappa _\text{cond}\rho } \implies F_\text{cond} = - \frac{4ac}{3} \frac{T^3}{\kappa _\text{cond}\rho } \frac{d T}{d r} 
+\] 
+e unirla all'equazione del trasporto radiativo come
+\[
+F = F_\text{rad} + F_\text{cond} = - \frac{4 ac}{3} \frac{T^3}{\overline{\kappa }\rho } \frac{\partial  T}{\partial  r}  \hspace{1cm} \frac{1}{\overline{\kappa }} = \frac{1}{\kappa _R} + \frac{1}{\kappa _\text{cond}}
+\] 
+\marginpar{\textit{Equilibrio radiativo}}
+In assenza di convezione, allora, il flusso totale coincide con quello per radiazione e conduzione; in questo caso, si parla di \textit{equilibrio radiativo} e, quindi
+\begin{equation}
+	\frac{\partial T}{\partial r} = - \frac{3}{4ac} \frac{\overline{\kappa }\rho }{T^3} \frac{L(r,t)}{4\pi r^2}
+\end{equation}
+visto che $F=F_\text{tot}=L(r,t) / (4\pi r^2)$.
+
+\marginpar{\textit{Rilevanza di $\kappa _\text{cond}$}}
+Nel nucleo di stelle come il Sole, il cammino libero medio dei fotoni \`e molto pi\`u grande di quello degli elettroni\footnote{Gli elettroni, vista la loro massa, sono i mediatori pi\`u efficienti del trasporto conduttivo, cio\`e hanno pi\`u possibilit\`a di spostarsi da zone pi\`u calde a zone pi\`u fredde, rispetto ad un intero atomo.}, per cui $\kappa _R \ll \kappa _\text{cond} \implies \overline{\kappa } \simeq \kappa _R$ e, quindi, il trasporto \`e quasi esclusivamente radiativo.
+\begin{osservazione}
+La conduzione, invece, diventa dominante a densit\`a molto elevate; in questi casi, infatti, dovendo ricorrere a statistiche quantistiche per l'elevata degenerazione elettronica, il principio di esclusione di Pauli fa s\`i che molti degli urti degli elettroni con le particelle circostanti vengano soppressi, in quanto molti stati in cui l'elettrone coinvolto nell'urto potrebbe finire sono gi\`a occupati. 
+Questo riduce il numero di urti possibili e, quindi, aumenta il cammino libero medio.
+\end{osservazione}
+\subsubsection{Trasporto convettivo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

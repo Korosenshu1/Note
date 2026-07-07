@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  7 JUL 2026 14:16
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  7 JUL 2026 16:51
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1638,27 +1638,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--500
 []\TU/LibertinusSerif(0)/m/it/10.95 Ma-gni-tu-di-ne
  []
 
-<h1.png, id=104, 1183.42125pt x 877.02657pt>
+<h1.png, id=110, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
 Package luatex.def Info: h1.png  used on input line 515.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
-<h2.png, id=105, 1182.66844pt x 874.01532pt>
+<h2.png, id=111, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
 Package luatex.def Info: h2.png  used on input line 521.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
-<c1.png, id=106, 1192.455pt x 879.285pt>
+<c1.png, id=112, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
 Package luatex.def Info: c1.png  used on input line 526.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
-<c2.png, id=107, 1175.14032pt x 878.53218pt>
+<c2.png, id=113, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
 Package luatex.def Info: c2.png  used on input line 532.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
-<sunspec.png, id=108, 1181.91562pt x 354.57469pt>
+<sunspec.png, id=114, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
 Package luatex.def Info: sunspec.png  used on input line 543.
@@ -1689,7 +1689,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 670--670
  []
 
 [9] [10]
-<cAH-S.png, id=129, 825.83531pt x 433.62pt>
+<cAH-S.png, id=135, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
 Package luatex.def Info: cAH-S.png  used on input line 857.
@@ -1704,7 +1704,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1008--1008
 []\TU/LibertinusSerif(0)/m/it/10.95 Equi-li-brio
  []
 
-[14] [15] [16] [17] [18] [19] [20] [21] (./master.aux)
+[14] [15] [16] [17] [18] [19] [20]
+Underfull \hbox (badness 3746) in paragraph at lines 1243--1243
+[]\TU/LibertinusSerif(0)/m/it/10.95 Opa-ci-tà con-
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1258--1258
+[]\TU/LibertinusSerif(0)/m/it/10.95 Ri-le-van-za di
+ []
+
+[22] [23] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1712,14 +1722,18 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 71211 strings out of 476076
+ 71228 strings out of 476076
  125007,3417909 words of node,token memory allocated
- 4503 words of node memory still in use:
-   32 hlist, 22 vlist, 2 rule, 45 disc, 9 local_par, 52 glue, 20 kern, 17 penalty, 210 glyph, 292 attribute, 103 glue_spec, 147 attribute_list, 2 write nodes
-   avail lists: 1:2,2:6298,3:3289,4:134,5:611,6:116,7:7178,8:74,9:1198,10:23,11:886,12:1
- 92339 multiletter control sequences out of 65536+600000
- 148 fonts using 49001851 bytes
+ 5614 words of node memory still in use:
+   42 hlist, 28 vlist, 2 rule, 58 disc, 12 local_par, 1 math, 70 glue, 24 kern, 23 penalty, 275 glyph, 352 attribute, 103 glue_spec, 177 attribute_list, 2 write nodes
+   avail lists: 1:2,2:6208,3:3282,4:134,5:607,6:113,7:7094,8:74,9:1182,10:23,11:901,12:1
+ 92346 multiletter control sequences out of 65536+600000
+ 150 fonts using 49803779 bytes
  124i,20n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.9'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.8'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.7'
 
@@ -1735,10 +1749,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on master.pdf (21 pages, 2871816 bytes).
+Output written on master.pdf (23 pages, 2881079 bytes).
 
-PDF statistics: 345 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 88 named destinations out of 1000 (max. 1048576)
- 202 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 379 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 1048576)
+ 226 words of extra memory for PDF output out of 10000 (max. 100000000)
 
