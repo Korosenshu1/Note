@@ -30,7 +30,6 @@
 \usepackage{circuitikz}
 \usepackage{pgf-spectra}
 \usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
-\usetikzlibrary{decorations.pathmorphing}
 \usepackage[italian]{babel}
 % Font
 \usepackage{fontspec}
@@ -1370,18 +1369,78 @@ Intuitivamente, la formazione di convezione \`e legata al fatto che, superata un
 \end{osservazione}
 
 \subsubsection{Trasporto di energia tramite convezione}
+Assumendo la presenza di convezione, pertanto la bolla viene trasportata e non soppressa, questa viagger\`a per una certa distanza e, ad un certo punto si dissolver\`a. 
+Essendo in presenza di convezione, il criterio di Schwarzschild impone che $\nabla > \nabla _\text{ad}$\footnote{Si scrive $\nabla $ perch\'e, in presenza di convezione, il gradiente ambientale non \`e pi\`u solo quello radiativo.}; visto che la temperatura ambientale varia con $\nabla $, mentre la temperatura della bolla con $\nabla _\text{ad}$, il fatto che si abbia una maggiore variazione della temperatura ambientale, quindi una sua maggior diminuzione, implica che $T_2^* > T_2$.
+Analogamente, le bolle che viaggiano verso il basso avranno temperatura minore di quella esterna.
+Questo processo, quindi, sta globalmente riducendo il gradiente di temperatura della stella.
+Quando si innesta la convezione, quindi, si ha la seguente catena di disuguaglianze:
+\begin{equation}
+	\nabla _\text{ad} < \nabla  < \nabla _\text{rad}
+\end{equation}
+La prima ($\nabla_\text{ad} < \nabla $) si verifica perch\'e, se fosse $\nabla _\text{ad} = \nabla $, si avrebbe uno spostamento di materia, ma non uno di energia; la seconda, invece, vale perch\'e la convezione diminuisce il gradiente ambientale rispetto alla sola presenza di diffusione radiativa.
 
+Il flusso totale, in presenza di convezione, \`e $F_\text{tot} = \frac{L(r)}{4\pi r^2} = F_\text{rad} + F_\text{cond} + F_\text{conv}$: quando si innesca la convezione, si pu\`o vedere che il termine $F_\text{conv}$ diventa rapidamente dominante; pi\`u \`e efficiente il trasporto convettivo, pi\`u $\nabla $ si allontana da $\nabla _\text{rad}$ e tende ad essere dell'ordine di $\nabla _\text{ad}$.
 
+\marginpar{\textit{Superadiabaticit\`a}}
+Nel caso dei nuclei convettivi, nonostante si parli di \textbf{supereadiabaticit\`a} in riferimento alla differenza $\nabla - \nabla _\text{ad} > 0$, si pu\`o osservare che tale differenza \`e molto piccola, quantomeno dal punto di vista numerico, e pu\`o essere approssimato a quello adiabatico.
+Negli inviluppi convettivi, invece, la convezione \`e meno efficiente, per cui $\nabla - \nabla _\text{ad}$ \`e pi\`u grande.
 
+\subsubsection{Teoria della lunghezza di rimescolamento}
+Si vuole trovare un'equazione che leghi $F_\text{tot}$ e il gradiente di temperatura anche nelle regioni in cui vi \`e convezione.
+La variazione di temperatura interna alla bolla ed esterna nel punto di arrivo della bolla in questione \`e data da 
+\[
+\delta T = T_2^* - T_2 = \left(\left\lvert \frac{d T}{d r}  \right\rvert - \left\lvert \frac{d T}{d r}  \right\rvert _\text{ad}\right) \dd r:= \Delta \nabla T \dd r
+\] 
+dove $\Delta \nabla T$ \`e chiamata \textit{superadiabaticit\`a}.
+Conoscendo il gradiente adiabatico, questa si scrive come
+\[
+	\nabla _\text{ad} = 1 - \frac{1}{\gamma} = \Eval{\frac{d \log T}{d  \log P } }{\text{ad}}{} \implies \Delta \nabla T = \frac{d T}{d r}  - \left(1- \frac{1}{\gamma}\right) \frac{T}{P} \frac{d P}{d r} 
+\] 
+Visto che la trasformazione avviene a pressione costante (perch\'e si \`e assunto che bolla ed ambiente abbiano sempre stessa pressione), il calore scambiato dalla bolla \`e
+\[
+c_P \rho  \delta T = c_P \rho  \Delta \nabla T \dd r
+\] 
+Essendo interessati al flusso di questa quantit\`a, supponendo che la velocit\`a media delle bolle sia $v$, si trova che
+\[
+F_\text{conv} = c_P \rho  v \Delta \nabla T \dd r
+\] 
+La variazione di densit\`a tra ambiente e bolla, tramite lo stesso ragionamento di prima, utilizzando di avere a che fare con gas perfetto e che $\mu $ \`e costante, si pu\`o scrivere che
+\[
+\delta \rho  = \left(\left\lvert \frac{d \rho }{d r}  \right\rvert - \left\lvert \frac{d \rho }{d r}  \right\rvert _\text{ad}\right) = - \frac{\rho }{T} \delta T = - \frac{\rho }{T}\Delta \nabla T \dd r
+\] 
+La teoria della \textit{mixing length}, si prende $\dd r= \ell $, detta, appunto, lunghezza di rimescolamento, che corrisponde ad una sorta di cammino libero medio.
+La forza responsabile del trasporto della bolla \`e la spinta di Archimede; visto che si sta facendo una trattazione approssimativa, generalmente si prende una sorta di valor medio aggiungendo un fattore $1 / 2$, per cui $\overline{F} = \frac{1}{2} g \delta \rho $; per il teorema delle forze vive, si pu\`o ottenere la velocit\`a: $\frac{1}{2}\rho  v^2 = \overline{F}\ell $, da cui 
+\[
+v = \ell ^{1 / 2} \sqrt{\frac{g}{\rho }\delta \rho  }  \implies \overline{v} = \frac{\ell ^{1/2}}{2} \sqrt{\frac{g}{\rho }\delta \rho } 
+\] 
+dove $\overline{v}$ \`e una sorta di media ottenuta sempre tramite l'aggiunta del fattore $1 / 2$.
+A questo punto, si pu\`o ottenere l'espressione per il flusso convettivo:
+\begin{equation}
+	F_\text{conv} = c_P \rho  \left(\frac{Gm}{T\ell ^{2}}\right) ^{ 1 / 2} \Delta \nabla T ^{3/2} \frac{\ell ^2}{2}
+\end{equation}
+Si osservano le grandezze da cui dipende questo flusso:
+\[
+F_\text{conv} \propto \ell ^2 \hspace{1cm} F_\text{conv} \propto \Delta \nabla T ^{3 /2} \hspace{1cm} F_\text{conv } \propto c_P \rho 
+\] 
+In particolare, l'ultima proporzionalit\`a implica che, a parit\`a di superadiabaticit\`a e mixing length, la convezione genera un flusso maggiore nelle zone a maggiore densit\`a e calore specifico, motivo per cui \`e molto pi\`u rilevante nei nuclei stellari, che negli inviluppi.
+Inoltre, la presenza del termine $\Delta \nabla T$ in $F_\text{conv}$ evidenzia la possibilit\`a di trovare tra relazione gradiente di temperatura e flusso in presenza di convezione.
 
+La lunghezza di rimescolamento si pu\`o esprimere come
+\[
+\ell  = \alpha  H_P = -\alpha \frac{d r}{d \log P} 
+\] 
+con $H_P$ altezza di scala di pressione e $\alpha $ parametro empirico, da calibrare tramite esperimenti e si pu\`o considerare $\alpha \approx 2$.
 
+Considerando punti della stella in cui $r = R_\odot / 2$, $T\sim 10^6$ K, si ottiene $\ell \sim R_\odot  / 10$, motivo per cui l'innesco di moti convettivi porta un contributo non trascurabile di flusso $F_\text{conv}$, cio\`e $\ell \gg 1$ porta $F_\text{conv} \gg 1$.
+Assumendo, molto grossolanamente che $F_\text{tot} \simeq F_\text{conv}$, la superadiabaticit\`a necessaria per trasportare tale flusso \`e $\Delta \nabla T \sim 2 \times 10^{-10} \text{ K cm}^{-1}$; ricordando che, nel caso del Sole, $\overline{\left\lvert \frac{d T}{d r}  \right\rvert }\sim 2\times 10^{-4} \text{ K cm}^{-1}$, si vede che $\Delta \nabla T / \overline{\left\lvert \frac{d T}{d r}  \right\rvert } \sim 10^{-6}$.
+Quindi, nei nuclei convettivi, la superadiabaticit\`a relativa al gradiente termico \`e molto piccolo, quindi $\nabla \gtrsim \nabla _\text{ad}$.
 
-
-
-
-
-
-
+Negli inviluppi convettivi, invece, $\ell $ diminuisce e $c_P \rho $ diminuisce, quindi, a parit\`a di $\Delta \nabla T$, il flusso di energia dovuto alla convezione diminuisce; volendo trasportare lo stesso flusso, allora, \`e necessario aumentare la superadiabaticit\`a, per cui aumenta la differenza $\nabla - \nabla _\text{ad}$.
+\begin{osservazione}
+	Nelle stelle con inviluppi convettivi, il gradiente di temperatura nella regione \`e $\nabla $, che dipende direttamente da $F_\text{conv}$, a sua volta dipendente da $\ell $.
+	Ne segue che il valore della temperatura effettiva dipende da $\ell $, il quale non \`e determinabile tramite principi primi, e, quindi, non si pu\`o predire teoricamente tale valore di temperatura.
+	Al contrario, per nuclei convettivi con inviluppo all'equilibrio, la temperatura effettiva non \`e legata ad alcun parametro libero in quanto il gradiente di temperatura \`e descritto da $\nabla _\text{rad}$, che si sa calcolare.
+\end{osservazione}
 
 
 
