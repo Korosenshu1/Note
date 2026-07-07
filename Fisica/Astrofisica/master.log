@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  7 JUL 2026 16:51
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  7 JUL 2026 20:59
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1289,13 +1289,13 @@ Package fontspec Info:
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 41.
+(Font)              `operators' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/LibertinusMath(1)/m/n on input line 41.
+(Font)                  OT1/cmr/m/n --> TU/LibertinusMath(1)/m/n on input line 42.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 41.
+(Font)              `operators' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/LibertinusMath(1)/b/n on input line 41.
+(Font)                  OT1/cmr/bx/n --> TU/LibertinusMath(1)/b/n on input line 42.
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "Libertinus Math/B" (it probably
@@ -1319,13 +1319,13 @@ Package fontspec Info:
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 41.
+(Font)              `symbols' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/LibertinusMath(2)/m/n on input line 41.
+(Font)                  OMS/cmsy/m/n --> TU/LibertinusMath(2)/m/n on input line 42.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 41.
+(Font)              `symbols' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/LibertinusMath(2)/b/n on input line 41.
+(Font)                  OMS/cmsy/b/n --> TU/LibertinusMath(2)/b/n on input line 42.
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "Libertinus Math/B" (it probably
@@ -1349,22 +1349,22 @@ Package fontspec Info:
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 41.
+(Font)              `largesymbols' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/m/n on input line 41.
+(Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/m/n on input line 42.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 41.
+(Font)              `largesymbols' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line 41.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+(Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 41.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 42.
  (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 ) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
@@ -1395,8 +1395,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \c@osservazione=\count431
 \c@notazione=\count432
 \c@esercizio=\count433
-Package hyperref Info: Option `colorlinks' set `true' on input line 142.
-Package hyperref Info: Option `breaklinks' set `true' on input line 142.
+Package hyperref Info: Option `colorlinks' set `true' on input line 143.
+Package hyperref Info: Option `breaklinks' set `true' on input line 143.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1417,7 +1417,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 184.
+(scrartcl)              package `tocloft' on input line 185.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1470,7 +1470,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 194.
+(scrartcl)           before \begin{document} on input line 195.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1479,26 +1479,26 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 )) (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 195.
+LaTeX Font Info:    ... okay on input line 195.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1553,30 +1553,30 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 194.
+Package hyperref Info: Link coloring ON on input line 195.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 194.
+ on input line 195.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen413
 \c__nicematrix_innersep_middle_dim=\dimen414
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  TU/LibertinusMath(1)/m/n --> TU/LibertinusSerif(0)/m/n on input line 194.
+(Font)                  TU/LibertinusMath(1)/m/n --> TU/LibertinusSerif(0)/m/n on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/LibertinusSerif(0)/m/it on input line 194.
+(Font)                  OT1/cmr/m/it --> TU/LibertinusSerif(0)/m/it on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/LibertinusSerif(0)/b/n on input line 194.
+(Font)                  OT1/cmr/bx/n --> TU/LibertinusSerif(0)/b/n on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 194.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 194.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 194.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 195.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 194.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 195.
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
@@ -1598,123 +1598,141 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 \g__cctab_next_cctab=\catcodetable18
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 195.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 196.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <15> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 197.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 198.
 
 (./master.toc)
 \tf@toc=\write5
 
 \openout5 = master.toc
  [2]
-LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 258.
+LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 259.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 277--277
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []\TU/LibertinusSerif(0)/m/it/10.95 Pres-sio-ne di
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
 []\TU/LibertinusSerif(0)/m/it/10.95 Den-si-tà di
  []
 
 [4]
-Overfull \hbox (25.08667pt too wide) in paragraph at lines 382--383
+Overfull \hbox (25.08667pt too wide) in paragraph at lines 383--384
  [][] 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 495--495
+Underfull \hbox (badness 10000) in paragraph at lines 496--496
 []\TU/LibertinusSerif(0)/m/it/10.95 Ma-gni-tu-di-ne
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 500--500
+Underfull \hbox (badness 10000) in paragraph at lines 501--501
 []\TU/LibertinusSerif(0)/m/it/10.95 Ma-gni-tu-di-ne
  []
 
-<h1.png, id=110, 1183.42125pt x 877.02657pt>
+<h1.png, id=114, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
-Package luatex.def Info: h1.png  used on input line 515.
+Package luatex.def Info: h1.png  used on input line 516.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
-<h2.png, id=111, 1182.66844pt x 874.01532pt>
+<h2.png, id=115, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
-Package luatex.def Info: h2.png  used on input line 521.
+Package luatex.def Info: h2.png  used on input line 522.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
-<c1.png, id=112, 1192.455pt x 879.285pt>
+<c1.png, id=116, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
-Package luatex.def Info: c1.png  used on input line 526.
+Package luatex.def Info: c1.png  used on input line 527.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
-<c2.png, id=113, 1175.14032pt x 878.53218pt>
+<c2.png, id=117, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
-Package luatex.def Info: c2.png  used on input line 532.
+Package luatex.def Info: c2.png  used on input line 533.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
-<sunspec.png, id=114, 1181.91562pt x 354.57469pt>
+<sunspec.png, id=118, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
-Package luatex.def Info: sunspec.png  used on input line 543.
+Package luatex.def Info: sunspec.png  used on input line 544.
 (luatex.def)             Requested size: 333.46758pt x 100.03767pt.
 [7<./h1.png><./h2.png><./c1.png><./c2.png>] [8<./sunspec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 670--670
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
 []|\TU/LibertinusSerif(0)/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--670
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
 []|\TU/LibertinusSerif(0)/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--670
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
 []|\TU/LibertinusSerif(0)/m/n/10 aran-cio-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--670
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
 []|\TU/LibertinusSerif(0)/m/n/10 rosso-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--670
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
 \TU/LibertinusSerif(0)/m/n/10 arancione
  []
 
 [9] [10]
-<cAH-S.png, id=135, 825.83531pt x 433.62pt>
+<cAH-S.png, id=139, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
-Package luatex.def Info: cAH-S.png  used on input line 857.
+Package luatex.def Info: cAH-S.png  used on input line 858.
 (luatex.def)             Requested size: 333.46758pt x 175.09244pt.
  [11] [12<./CaH-S.png>] [13]
-Underfull \hbox (badness 2005) in paragraph at lines 990--990
+Underfull \hbox (badness 2005) in paragraph at lines 991--991
 []\TU/LibertinusSerif(0)/m/it/10.95 Equa-zio-ne di
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1008
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1009
 []\TU/LibertinusSerif(0)/m/it/10.95 Equi-li-brio
  []
 
 [14] [15] [16] [17] [18] [19] [20]
-Underfull \hbox (badness 3746) in paragraph at lines 1243--1243
+Underfull \hbox (badness 3746) in paragraph at lines 1244--1244
 []\TU/LibertinusSerif(0)/m/it/10.95 Opa-ci-tà con-
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1258--1258
+Underfull \hbox (badness 10000) in paragraph at lines 1259--1259
 []\TU/LibertinusSerif(0)/m/it/10.95 Ri-le-van-za di
  []
 
-[22] [23] (./master.aux)
+
+Overfull \hbox (0.99991pt too wide) in paragraph at lines 1295--1297
+ [][] 
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1331
+[]\TU/LibertinusSerif(0)/m/it/10.95 Sem-pli-fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1331
+\TU/LibertinusSerif(0)/m/it/10.95 ca-zio-ne del
+ []
+
+
+Overfull \vbox (1.01004pt too high) has occurred while \output is active []
+
+ [23] [24] [25] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1722,14 +1740,18 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 71228 strings out of 476076
+ 71250 strings out of 476076
  125007,3417909 words of node,token memory allocated
- 5614 words of node memory still in use:
-   42 hlist, 28 vlist, 2 rule, 58 disc, 12 local_par, 1 math, 70 glue, 24 kern, 23 penalty, 275 glyph, 352 attribute, 103 glue_spec, 177 attribute_list, 2 write nodes
-   avail lists: 1:2,2:6208,3:3282,4:134,5:607,6:113,7:7094,8:74,9:1182,10:23,11:901,12:1
- 92346 multiletter control sequences out of 65536+600000
- 150 fonts using 49803779 bytes
+ 7028 words of node memory still in use:
+   52 hlist, 34 vlist, 2 rule, 78 disc, 15 local_par, 1 math, 92 glue, 28 kern, 30 penalty, 368 glyph, 414 attribute, 103 glue_spec, 208 attribute_list, 2 write nodes
+   avail lists: 1:2,2:6115,3:3275,4:134,5:654,6:110,7:6979,8:118,9:1166,10:23,11:881,12:1
+ 92354 multiletter control sequences out of 65536+600000
+ 150 fonts using 49804435 bytes
  124i,20n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.11'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.10'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.9'
 
@@ -1749,10 +1771,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on master.pdf (23 pages, 2881079 bytes).
+Output written on master.pdf (25 pages, 2893865 bytes).
 
-PDF statistics: 379 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 1048576)
- 226 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 410 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 1048576)
+ 242 words of extra memory for PDF output out of 10000 (max. 100000000)
 
