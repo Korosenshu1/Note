@@ -1410,9 +1410,9 @@ La variazione di densit\`a tra ambiente e bolla, tramite lo stesso ragionamento 
 \] 
 La teoria della \textit{mixing length}, si prende $\dd r= \ell $, detta, appunto, lunghezza di rimescolamento, che corrisponde ad una sorta di cammino libero medio.
 La forza responsabile del trasporto della bolla \`e la spinta di Archimede; visto che si sta facendo una trattazione approssimativa, generalmente si prende una sorta di valor medio aggiungendo un fattore $1 / 2$, per cui $\overline{F} = \frac{1}{2} g \delta \rho $; per il teorema delle forze vive, si pu\`o ottenere la velocit\`a: $\frac{1}{2}\rho  v^2 = \overline{F}\ell $, da cui 
-\[
+\begin{equation}\label{vconv}
 v = \ell ^{1 / 2} \sqrt{\frac{g}{\rho }\delta \rho  }  \implies \overline{v} = \frac{\ell ^{1/2}}{2} \sqrt{\frac{g}{\rho }\delta \rho } 
-\] 
+\end{equation}
 dove $\overline{v}$ \`e una sorta di media ottenuta sempre tramite l'aggiunta del fattore $1 / 2$.
 A questo punto, si pu\`o ottenere l'espressione per il flusso convettivo:
 \begin{equation}
@@ -1441,11 +1441,50 @@ Negli inviluppi convettivi, invece, $\ell $ diminuisce e $c_P \rho $ diminuisce,
 	Ne segue che il valore della temperatura effettiva dipende da $\ell $, il quale non \`e determinabile tramite principi primi, e, quindi, non si pu\`o predire teoricamente tale valore di temperatura.
 	Al contrario, per nuclei convettivi con inviluppo all'equilibrio, la temperatura effettiva non \`e legata ad alcun parametro libero in quanto il gradiente di temperatura \`e descritto da $\nabla _\text{rad}$, che si sa calcolare.
 \end{osservazione}
+\subsubsection{Validit\`a dell'equilibrio idrostatico in presenza di moti convettivi}
+I moti convettivi sono moti macroscopici di materia; si vuole valutare se possono alterare l'equilibrio idrostatico della stella.
 
+Utilizzando la relazione in \ref{vconv} e calcolandola in una zona intermedia della regione convettiva del Sole (tanto per dare una stima), si ottiene una velocit\`a delle bolle 
+\[
+v_b \sim \sqrt{g \ell  \frac{\delta \rho }{\rho }} \sim 0.03 \text{ km/s}
+\] 
+dove si \`e usato $g \sim 300 \text{ m/s}^2$, $\ell \sim 10^{7} \text{ m}$ e $\delta \rho  / \rho \sim 10 ^{-7}$.
+Questa si pu\`o confrontare con la velocit\`a media delle particelle, la quale dipende dalla temperatura; per $T \sim 10^{6}\div 10^{7}$ K, si ha
+\[
+v_p \sim \sqrt{\frac{3 \kappa _B T }{\mu  m_H}} \sim 100 \text{ km/s}
+\] 
+Visto che $v_b / v_p \sim 10^{-4}$ e che $P\propto v^2$, allora $P_\text{conv} \sim 10^{-8} P_\text{gas}$, quindi il contributo della convezione risulta trascurabile.
 
+Un'altra argomentazione, invece, si basa sul valutare i tempi scala.
+Si definisce il \textit{tempo scala di rimescolamento} come il tempo che le bolle impiegano a fare il loro percorso; utilizzando nuovamente $\ell \sim R_\odot / 10$, si ottiene 
+\[
+\tau _\text{mix} = \frac{\ell }{v_b} \sim 20 \text{ giorni} \gg \tau _\text{ff}
+\] 
+quindi la struttura riesce a mantenersi all'equilibrio idrostatico, in quanto ha il tempo di riassestarsi a seguito di moti convettivi.
+\begin{osservazione}
+	Anche se irrilevante per valutare la validit\`a dell'equilibrio idrostatico, si osserva che $\tau _\text{mix} \ll \tau _\text{KH} \ll \tau _N$, i quali si ricordano essere dell'ordine dei milioni e dei miliardi di anni rispettivamente.
+	Dal punto di vista dei tempi scala evolutivi, quindi, la convezione si pu\`o considerare istantanea.
+	Questo consente, nel caso di nuclei convettivi, di considerare la distribuzione chimica omogenea all'interno del nucleo stesso, visto che la convezione \`e un processo di rimescolamento della materia.
+	Lo stesso non si pu\`o dire di nuclei non convettivi, in cui le reazioni termonucleari modificano la materia solamente nelle regioni in cui sono attive.
+\end{osservazione}
+\subsection{Equazioni di struttura -- recap}
+Finora, si sono trovate le seguenti equazioni fondamentali per la descrizione della struttura stellare:
+\[
+	\begin{split}
+		&\frac{\partial m}{\partial r} = 4 \pi r ^2 \rho   \hspace{3cm}\frac{\partial P}{\partial r} = - \frac{Gm \rho }{r^2} \\
+		&\frac{\partial L}{\partial r} = 4 \pi r^2 \rho  \varepsilon \hspace{3cm} \frac{\partial T}{\partial r} = \begin{cases}
+			\displaystyle - \frac{3}{4ac} \frac{\overline{\kappa }\rho }{T^3} \frac{L}{4 \pi r^2}&,\ \text{eq. radiativo}\\
+			\\
+			\displaystyle \left\lvert \frac{\partial T}{\partial r}  \right\rvert _\text{conv} &,\ \text{eq. convettivo}
+		\end{cases}
+	\end{split}
+\] 
+Nonostante quelle della riga di sopra coinvolgano la struttura della stella, queste si vedono figurare in quelle che, invece, descrivono il profilo energetico, visto che compare la densit\`a.
+Risolvere le equazioni di struttura stellare equivale a risolvere queste equazioni simultaneamente per ottenere il comportamento della stella al variare di $r$, ad un istante fissato, e poi vedere come evolve nel tempo.
+Per fare ci\`o, per\`o, \`e necessaria la conoscenza di una grande quantit\`a di \textit{input fisici}, come i termini che compongono $\varepsilon$, per esempio.
+\subsection{Termodinamica per gli interni stellari}
 
-
-
+35:00
 
 
 
