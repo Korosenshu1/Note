@@ -71,6 +71,7 @@
 \newtheorem{lemma}{Lemma}[teorema]
 \newtheorem{corollario}{Corollario}[teorema]
 \newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
 \newtheorem{notazione}{Notazione}[section]
 
 \newtheoremstyle{style1}% name of the style to be used
@@ -1479,13 +1480,114 @@ Finora, si sono trovate le seguenti equazioni fondamentali per la descrizione de
 		\end{cases}
 	\end{split}
 \] 
-Nonostante quelle della riga di sopra coinvolgano la struttura della stella, queste si vedono figurare in quelle che, invece, descrivono il profilo energetico, visto che compare la densit\`a.
-Risolvere le equazioni di struttura stellare equivale a risolvere queste equazioni simultaneamente per ottenere il comportamento della stella al variare di $r$, ad un istante fissato, e poi vedere come evolve nel tempo.
-Per fare ci\`o, per\`o, \`e necessaria la conoscenza di una grande quantit\`a di \textit{input fisici}, come i termini che compongono $\varepsilon$, per esempio.
-\subsection{Termodinamica per gli interni stellari}
+Queste equazioni descrivono bene come variano le propriet\`a strutturali ed energetiche della stella, ma, per risolverle, \`e necessario trovare altre equazioni che diano indicazioni sul comportamento della materia, cio\`e ottenere delle relazioni del tipo 
+\[
+P = P(\rho ,T \left\{ \chi _i \right\} ) \hspace{2cm} \varepsilon =\varepsilon (\rho , T , \left\{ \chi _i \right\} ) \hspace{2cm} \kappa = \kappa (\rho ,T ,\left\{ \chi _i \right\} )
+\] 
 
-La pressione totale negli interni stellari \`e ottenuta dal contributo del gas e dal contenuto della pressione di radiazione: $ P = P_\text{gas} + P_\text{rad}$.
-Si vede, per\`o, che l'approssimazione di LTE \`e soddisfatta, per cui $P_\text{rad} = \frac{a}{3}T^4$.
+\subsection{Equazione di stato per gli interni stellari}
+
+L'obiettivo \`e cercare di capire in che modo descrivere la relazione $P(\rho ,T, \left\{ \chi _i \right\} )$.
+In particolare la pressione totale negli interni stellari \`e ottenuta dal contributo del gas e dal contenuto della pressione di radiazione: $ P = P_\text{gas} + P_\text{rad}$; si vede, per\`o, che la condizione di LTE \`e una buona approssimazione per gli interni stellari, quindi $P_\text{rad} = \frac{a}{3}T^4$.
+Il termine con cui bisogna lavorare, invece, \`e $P_\text{gas}$. 
+\begin{assunzione}
+	Per semplificare la trattazione, si assumer\`a che il gas nell'intero nucleo sia completamente ionizzato; in questo modo, il termine $\chi _i$ relativo alla composizione chimica diventa semplicemente un termine di abbondanza in massa $X_i$.
+	Senza questa assunzione, si dovrebbe fare una descrizione pi\`u accurata utilizzando l'equazione di Saha per ottenere la popolazione di materia ionizzata e non.
+\end{assunzione}
+\noindent Utilizzando ancora l'equazione di stato del gas perfetto, assunzione che poi verr\`a opportunamente affrontata, si ha 
+\[
+P_\text{gas} = n \kappa _B T = \frac{\rho }{\mu  m_H} \kappa _B T
+\] 
+Vista l'assunzione di gas completamente ionizzato, si separa il contributo della pressione in un contributo legato agli ioni e uno legato agli elettroni: $P_\text{gas} = P_e + P$ e la densit\`a totale di particelle sar\`a $n = n_e + n$.
+Si definisce l'\textit{abbondanza in massa} dell'elemento $i$-esimo come
+\[
+X_i = \frac{\text{massa dell'elemento } i }{\text{massa totale del gas}}
+\] 
+dove l'indice $i$ spazia su tutti gli elementi della tavola periodica.
+Tuttavia, si indica con $X$ l'abbondanza dell'idrogeno, con $Y$ quella dell'elio-4 e con $Z$ tutta quella degli elementi rimanenti.
+La densit\`a numerica, atomica ed elettronica, per l'elemento chimico $i$-esimo, allora, \`e data da
+\[
+	\begin{split}
+		&n_i = \frac{\rho }{A_i m_H} X_i \hspace{2cm} n_{e,i} = Z_in_i = \frac{\rho }{A_i m_H} X_i Z_i\\
+		&\Rightarrow n_i + n_{e,i} = \frac{\rho }{A_i m_H } X_i ( 1 + Z_i)
+	\end{split}
+\] 
+con $Z_i$ numero atomico.
+Sommando su tutti gli elementi, si ottiene
+\[
+n = \sum_{i}^{} n_i + n_{e, i}  = \frac{\rho }{m_H} \sum_{i}^{} X_i \frac{1+ Z_i}{A_i} \equiv \frac{\rho }{\mu m_H}
+\] 
+Separando la somma per idrogeno, elio e metalli rimanenti, facendo uso del fatto che, per ciascuno di questi ultimi, vale $\frac{Z_i}{A_i}\approx\frac{1}{2}$, si conclude che
+\[
+\frac{1}{\mu } \approx \frac{X}{1}(1+1) + \frac{Y}{4}(1+2) + \sum_{i}^{} X_i \frac{1+Z_i}{A_i} \simeq 2X + \frac{3}{4}Y + \sum_{i}^{} X_i \frac{Z_i}{A_i} \approx 2X + \frac{3}{4}Y + \frac{Z}{2}
+\] 
+Infine, utilizzando il fatto che $X+Y+Z = 1$, il peso molecolare degli elettroni vale
+\[
+\frac{1}{\mu _e} = \sum_{i}^{} X_i \frac{Z_i}{A_i} \approx X + \frac{Y}{2} + \frac{Z}{2} = \frac{X+1}{2}
+\] 
+da cui si vede che l'abbondanza degli elettroni \`e dipendente quasi esclusivamente dalla presenza di idrogeno, mentre tutti gli altri elementi partecipano con un termine $\frac{1}{2}$.
+\begin{osservazione}
+Ora si hanno tutti gli elementi per l'equazione di stato.
+Questa, per\`o, \`e valida esclusivamente per un gas ideale classico, cio\`e per un gas non-interagente, non-relativistico e non-quantistico.
+\end{osservazione}
+\noindent Di seguito, si analizza la validit\`a di tale equazione di stato e quando pu\`o venire meno.
+
+\subsubsection{Caso classico non-quantistico}
+
+Il limite classico non-quantistico si ha quando la distanza media tra le particelle \`e $a \gg \lambda$, con $a\sim \left(\frac{4}{3}\pi n\right) ^{-1 / 3}$; infatti, si sta richiedendo che la distanza che separa due particelle \`e molto maggiore della lunghezza d'onda associata alla loro funzione d'onda, per cui non interagiscono a livello quantistico.
+Per definizione, se la densit\`a aumenta, $a$ diminuisce, per cui si pu\`o arrivare al caso in cui $a \sim \lambda$ e la trattazione classica non \`e pi\`u valida.
+
+I neutroni, inoltre, degenerano molto pi\`u rapidamente dei nuclei; infatti, essendo in LTE, la loro energia cinetica \`e identica $\langle E_k \rangle = \frac{3}{2} \kappa _B T$, per cui deve valere
+\[
+\frac{p_p^2}{2m_p} = \frac{p_e^2}{2m_e} \implies p_p = \sqrt{\frac{m_p}{m_e}} p_e \gg p_e
+\] 
+visto che $m_p \approx 2\times 10^3 m_e$.
+Questo si proietta sulle lunghezze d'onda, per cui risulta che $\lambda _p = h / p_p \ll h / p_e = \lambda _e$.
+
+La lunghezza d'onda media della funzione d'onda di una generica particella a temperatura $T$ si ottiene tramite la lunghezza d'onda termica di de Broglie $\Lambda = h / \sqrt{2 \pi m \kappa  _B T } $.
+\begin{itemize}
+	\item Considerando il caso del Sole, assumendo che sia composto di solo idrogeno, usando $T_{c,\odot } = 1.6 \times 10 ^{ 7 }$ K e $\rho _{c , \odot } \approx 150 \text{ g  cm}^{-3}$, si trova 
+\[
+\frac{\Lambda _p}{a_p} \sim 0.03 \hspace{2cm} \frac{\Lambda _e}{a_e} \sim 1.3
+\] 
+da cui si evidenzia che, mentre i nuclei si possono considerare classici, gli elettroni iniziano a degenerare.
+\item Per una gigante rossa (a fine vita) di solo elio, si pu\`o usare $T_c = 10 ^8$ K e $\rho _c = 10^6 \text{ g cm}^{-3}$, da cui
+	\[
+	\frac{\Lambda _\mathrm{H_e}  }{a_\mathrm{H_e} } \sim 0.07 \hspace{2cm} \frac{\Lambda _e}{a_e} \sim 8
+	\] 
+	In questo caso, quindi, la degenerazione elettronica \`e ancora pi\`u elevata.
+\item Per una nana bianca, la degenerazione elettronica \`e molto pi\`u grande; infatti, usando $T\sim 2 \times 10^{6}$ K e $\overline{\rho }\sim 3 \times 10^6 \text{ g cm}^{-3}$ , si ottiene $\Lambda _e / a_e \sim 96$.
+\end{itemize}
+Nel caso delle nane bianche, si pu\`o considerare il gas di elettroni come completamente degenere, per cui l'energia termica \`e molto pi\`u piccola rispetto all'energia di fermi e
+\[
+P_e \propto \left(\frac{\rho }{\mu }\right) ^{5 / 3}
+\] 
+Si vede, quindi, sparire la dipendenza dalla temperatura.
+
+\subsubsection{Caso classico non-relativistico}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
