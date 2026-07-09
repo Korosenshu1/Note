@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  9 JUL 2026 12:30
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  9 JUL 2026 20:22
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1639,27 +1639,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 501--501
 []\TU/LibertinusSerif(0)/m/it/10.95 Ma-gni-tu-di-ne
  []
 
-<h1.png, id=130, 1183.42125pt x 877.02657pt>
+<h1.png, id=132, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
 Package luatex.def Info: h1.png  used on input line 516.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
-<h2.png, id=131, 1182.66844pt x 874.01532pt>
+<h2.png, id=133, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
 Package luatex.def Info: h2.png  used on input line 522.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
-<c1.png, id=132, 1192.455pt x 879.285pt>
+<c1.png, id=134, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
 Package luatex.def Info: c1.png  used on input line 527.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
-<c2.png, id=133, 1175.14032pt x 878.53218pt>
+<c2.png, id=135, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
 Package luatex.def Info: c2.png  used on input line 533.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
-<sunspec.png, id=134, 1181.91562pt x 354.57469pt>
+<sunspec.png, id=136, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
 Package luatex.def Info: sunspec.png  used on input line 544.
@@ -1690,7 +1690,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 671--671
  []
 
 [9] [10]
-<cAH-S.png, id=155, 825.83531pt x 433.62pt>
+<cAH-S.png, id=157, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
 Package luatex.def Info: cAH-S.png  used on input line 858.
@@ -1743,7 +1743,7 @@ Overfull \hbox (2.44615pt too wide) in paragraph at lines 1425--1428
 \TU/LibertinusSerif(0)/m/n/10.95 In par-ti-co-la-re, l’ul-ti-ma pro-por-zio-na-li-tà im-pli-ca che, a pa-ri-tà di su-pe-ra-dia-ba-ti-ci-tà e mi-xing length,
  []
 
-[26] [27] [28] [29] [30] [31] [32] [33] (./master.aux)
+[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1751,14 +1751,16 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 71300 strings out of 476076
+ 71311 strings out of 476076
  125007,3417909 words of node,token memory allocated
- 7640 words of node memory still in use:
-   55 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 98 glue, 30 kern, 32 penalty, 392 glyph, 500 attribute, 103 glue_spec, 251 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5986,3:3273,4:154,5:665,6:109,7:6949,8:118,9:1161,10:24,11:917,12:1
- 92376 multiletter control sequences out of 65536+600000
- 150 fonts using 49803943 bytes
+ 7671 words of node memory still in use:
+   55 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 99 glue, 30 kern, 32 penalty, 392 glyph, 508 attribute, 103 glue_spec, 255 attribute_list, 2 write nodes
+   avail lists: 1:2,2:5974,3:3274,4:158,5:666,6:109,7:6948,8:118,9:1161,10:24,11:917,12:1
+ 92379 multiletter control sequences out of 65536+600000
+ 151 fonts using 50204907 bytes
  124i,23n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.14'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.13'
 
@@ -1786,10 +1788,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on master.pdf (33 pages, 2932807 bytes).
+Output written on master.pdf (35 pages, 2939218 bytes).
 
-PDF statistics: 503 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
- 140 named destinations out of 1000 (max. 1048576)
- 306 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 523 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
+ 148 named destinations out of 1000 (max. 1048576)
+ 314 words of extra memory for PDF output out of 10000 (max. 100000000)
 

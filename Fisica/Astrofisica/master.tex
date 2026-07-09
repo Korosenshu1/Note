@@ -1641,16 +1641,49 @@ Di fatto, la struttura meccanica \`e governata dagli elettroni degeneri, mentre 
 
 \subsection{Opacit\`a radiativa negli interni stellari}
 
+Dopo aver capito come si comporta la materia, quindi aver studiato i possibili scenari di modello per l'equazione di stato, si passa ad analizzare come avviene il trasporto di energia radiativa all'interno della stella, cio\`e come la materia interagisce con la radiazione dal nucleo, fino all'atmosfera. 
+In sostanza, il prossimo passo da fare \`e studiare l'input fisico $\kappa (\rho ,T , \left\{ \chi _i \right\} )$.
+
+Visto che il nucleo stellare \`e in regime diffusivo, utilizzando l'equilibrio termico locale, si arriva a definire l'opacit\`a media di Rosseland come 
+\[
+\frac{1}{\kappa _R}= \frac{\displaystyle \int \frac{1}{\kappa _\nu }\frac{d B_\nu }{d T} \dd \nu }{\displaystyle \int \frac{d B_\nu }{d T} \dd \nu } 
+\] 
+I processi che contribuiscono all'opacit\`a nel trasporto della radiazione dal nucleo fino alla fotosfera sono i seguenti.
+\begin{enumerate}[(a).]
+	\item \textbf{Assorbimento bound-bound} (bb): assorbimento termico di un fotone da parte di un elettrone legato, con sua conseguente transizione ad uno stato pi\`u eccitato.
+		Il processo inverso \`e l'\textit{emissione spontanea}.
+	\item \textbf{Assorbimento bound-free} (bf): fotoionizzazione di un atomo, in cui un elettrone legato effettua una transizione nel continuo.
+		Il processo inverso \`e la \textit{ricombinazione}.
+	\item \textbf{Assorbimento free-free} (ff): assorbimento \textit{vero} di un fotone da parte di un elettrone libero. Perch\'e questo processo si verifichi, affinch\'e sia conservata l'energia, \`e necessario che l'elettrone risenta del campo generato da un nucleo.
+		Visto che questo processo dipende inversamente dalla massa, lo si considera solo nel caso degli elettroni.
+		Il processo inverso \`e la \textit{bremsstrahlung}.
+	\item \textbf{Scattering elettronico}: il fotone non viene assorbito, bens\`i diffuso dagli elettroni. 
+		Questo processo consiste nello \textit{scattering Thomson} nel caso non-relativistico e nello \textit{scattering Compton} nel regime relativistico.
+\end{enumerate}
+
+\subsubsection{Dipendenza dalla temperatura}
 
 
+La dipendenza dalla temperatura \`e legata al fatto che $\kappa _\nu $ dipende molto dalla frequenza e lo spettro della radiazione presente dipende da $T$.
+Per esempio, in un processo di \textit{assorbimento bound-free} per un atomo di idrogeno, \`e necessario che il fotone incidente abbia un'energia di almeno
+\[
+\chi _{\mathrm{H} ,n}  = \frac{13.6}{n^2} \text{ eV}
+\] 
+con $n$ livello energetico in cui si trova l'atomo prima dell'interazione\footnote{Per esempio, nel caso di $n=1$, si ha il \textit{limite di Lyman}; per $n=2$, invece, si ha il \textit{salto di Balmer}.}.
+La sezione d'urto del processo si pu\`o dimostrare essere
+\[
+	\sigma _\nu \propto \begin{cases}
+		0 &,\ h \nu < \chi \\
+		\nu ^{-3} &,\ h\nu \ge \chi 
+	\end{cases}
+\] 
+per cui, visto che $\alpha _\nu  = \kappa _\nu  \rho  = \sigma _\nu n$, si collega l'opacit\`a alla frequenza, dipendenza contenuta in $\sigma _\nu$.
+Ora, perch\'e questo processo effettivamente abbia modo di verificarsi, \`e anche necessario che vi sia della radiazione alla \textit{giusta} frequenza.
+Per questa ragione, pi\`u fotoni alla giusta frequenza si trovano in una data regione dell'atmosfera, maggiore sar\`a $\kappa _R$; viceversa, se diminuisce il numero di fotoni alla stessa energia, nonostante $\kappa _\nu $ rimanga elevato (visto non dipende dal numero di fotoni), $\kappa _R$ diminuisce perch\'e $B_\nu $ \`e molto basso, quindi anche $\partial _T B_\nu $ lo \`e.
+Inoltre, il picco della funzione $\frac{\partial B_\nu }{\partial T} $ si trova per $x:=\frac{h\nu_\text{max} }{\kappa _B T}\approx 3.83$, per cui si avr\`a un maggiore contributo all'opacit\`a per frequenze in un intorno di $x$.
 
-
-
-
-
-
-
-
+Ragionamenti analoghi si possono fare anche per i processi bb e ff.
+Per quest'ultimo in particolare, si ha una dipendenza dalla temperatura indotta dalla velocit\`a $v$ relativa degli elettroni rispetto al nucleo; infatti, la sezione d'urto \`e $\sigma _\nu  \propto v^{-1} \nu ^{-3}$.
 
 
 
