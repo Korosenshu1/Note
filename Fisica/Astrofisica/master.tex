@@ -1566,18 +1566,80 @@ Si vede, quindi, sparire la dipendenza dalla temperatura.
 
 \subsubsection{Caso classico non-relativistico}
 
+Si distinguono due casi: il gas \`e non-degenere, ossia $\kappa _B T \ll mc^2 $; il gas \`e elettronicamente degenere, ossia $\varepsilon _F \ll m_e c^2$ ($\Leftrightarrow p_F \ll m_e c$).
+\begin{boxenv}[]
+Per vedere il perch\'e di queste condizioni, relativisticamente $E = \sqrt{p^2 c^2 + m^2 c^4} $; per quantit\`a di moto molto piccole, cio\`e $p \ll m c$, si ha $E \simeq mc^2 + \frac{p^2}{2m}$. 
+Allora, il limite non-relativistico si ottiene per $p \ll m c$, dove l'energia cinetica \`e fissata dalla temperatura: $\langle E_k \rangle = \frac{3}{2} \kappa _B T $, per cui si richiede che $\kappa _B T \ll mc^2$.
+\end{boxenv}
 
+\begin{itemize}
+	\item \textbf{Caso non-degenere.} 
+Le energie a riposo per elettrone e protone sono, rispettivamente, $m_p c^2 = 938$ MeV e $m_e c^2 = 0.5$ MeV, per cui si vede subito che \`e molto pi\`u facile che siano gli elettroni ad essere relativistici, che non i protoni.
+Infatti, per evitare correzioni relativistiche, si deve avere $T \ll 6 \times 10 ^{9}$ K per gli elettroni e $T \ll 10^{13}$ K per i protoni.
+\item \textbf{Caso degenere.} 
+	In questo caso, gli elettroni sono degeneri e la loro energia non \`e pi\`u quella cinetica, ma quella di Fermi, per cui si studia il rapporto $x_r = p_F / m_e c$.
 
+	Visto che, a temperatura nulla, gli elettroni riempiono interamente la superficie di Fermi, sono contenuti in un volume (nello spazio degli impulsi) pari a $\frac{4}{3} \pi p_F^2$; ma ogni stato occupa un volume $(2\pi \hbar )^3$, quindi $n_e = p_F^2 / (3 \pi ^2 \hbar ^3)$, da cui $p_F = \hbar (3\pi^2 n_e)^{1 / 3}$.
+	Inoltre, si ha
+	\[
+	n_e = \frac{\rho }{\mu _e m_H} = \frac{\rho }{m_H} \sum_{i}^{} \frac{X_i Z_i}{A_i}
+	\] 
+	Supponendo per semplicit\`a che il nucleo sia composto da una sola specie chimica con numero atomico $Z$ e un numero di massa $A$, si conclude che $X = 1$ e $1 / \mu _e = Z/A$.
+	Allora
+	\[
+	x_r = \frac{\hbar (3 \pi^2 n_e)^{ 1 / 3}}{m_e c} = \frac{\hbar }{m_e c} (3 \pi ^2 N_A) ^{ 1 / 3} \left(\frac{Z}{A}\rho \right) ^{ 1 / 3}
+	\] 
+	Valutando $Z / A \sim 1 / 2$, si ha $x_r \gtrsim 1$ quando $\rho \gtrsim 2 \times 10 ^{6} \text{ g/cm}^3$.
 
+	Nel caso delle giganti rosse, ad esempio, si ha $\rho  \sim 10^{6} \text{g/cm}^3$ e $x_r \approx 0.8$, quindi non \`e propriamente corretto trascurare le correzioni relativistiche.
+	Nelle nane bianche, invece, si ha $\overline{\rho } \sim 3 \times  10^g \text{ g/cm}^3$ e $x_r\approx 1.2$.
+\end{itemize}
+Nel limite ultra-relativistico, la pressione per un gas completamente degenere ($T = 0$\footnote{La condizione $T=0$ deriva dalla condizione $T\ll T_F = \varepsilon _F / \kappa _B$; per nane bianche, $T_F \sim 10^{10}$ K, quindi effettivamente $T\ll T_F$.}, approssimazione buona per nane bianche)
+\[
+P_e = \left(\frac{3}{\pi}\right) ^{1 / 3} \frac{hc }{8 m _H ^{4 / 3}} \left(\frac{\rho}{\mu _e} \right) ^{4 / 3} \implies P_e \propto \left(\frac{\rho}{\mu _e}\right)  ^{4  / 3}
+\] 
+La diminuzione dell'esponente da $5 / 3$ (caso non-relativistico) a $4 / 3$ nel caso relativistico \`e il motivo per cui si trova una massa limite, detta \textit{massa di Chandrasekar}, sopra cui le nane bianche diventano stabili ed implodono.
 
+\subsubsection{Validit\`a dell'assunzione di gas perfetto}
 
+Si cerca di capire quando \`e valido trascurare le interazioni coulombiane, per cui si introduce il coefficiente di accoppiamento coulombiano 
+\[
+\Gamma = \frac{\left(Ze\right) ^2}{a \kappa _B T} 
+\] 
+con $a = (4 \pi n / 3)^{- 1 / 3}$ e $n= \rho / (A_i m_H)$, dove si \`e schematizzato il potenziale di interazione coulombiana $U_C \sim (Ze)^2 / a$.
 
+Nel caso di una sola specie chimica (OCP: \textit{one component plasma}), si pu\`o scrivere che
+\[
+\begin{split}
+	&\Gamma_i = \frac{(Z_i e)^2}{a_i \kappa _B T } = \frac{(Z_i e)^2}{\kappa _B  T} \left(\frac{4 \pi }{3} \frac{N_A}{A_i}\right) ^{1 / 3 } \rho ^{1/3}\\
+	& \Gamma_e = \frac{e^2}{ \kappa _B T } \frac{1}{a_e} = \frac{e^2}{\kappa _B T } Z_i^{1 / 3} \left(\frac{4 \pi }{3} n_i\right) ^{1 / 3} = \Gamma_i Z_i^{-5 / 3}
+\end{split}
+\] 
+dove si \`e inserito $a_e = \left(\frac{4 \pi }{3} n_e\right) ^{ - 1 / 3}$ e $n_e = Z_i n_i $, per cui si conclude che $\Gamma_e < \Gamma_i$.
+Questo significa che se l'interazione coulombiana tra i nuclei \`e trascurabile, a maggior ragione lo \`e quella tra gli elettroni.
+\begin{osservazione}
+Si trascura il termine di interazione elettrone-ione perch\'e, per le propriet\`a dei plasmi in cui tale interazione \`e rilevante entro una lunghezza caratteristica, nota come \textit{lunghezza di Debeye}. 
+\end{osservazione}
+\noindent Nel caso degenere, invece, si dovrebbe considerare un termine di accoppiamento in cui figura l'energia di Fermi:
+\[
+\widetilde{\Gamma}_e = \frac{e^2}{a_e \varepsilon _F} \sim \left(\frac{\rho }{\mu _e}\right) ^{ - 1 / 3}
+\] 
+\begin{osservazione}
+Si nota che, nel caso non-degenere, le interazioni risultano tanto pi\`u trascurabili, quanto pi\`u sono distanti le particelle tra di loro; per elettroni degeneri, invece, si verifica l'opposto, in quanto, a densit\`a molto alte, il principio di esclusione di Pauli costringe gli elettroni ad occupare stati a pi\`u alta energia: tanto maggiore \`e $\varepsilon _F$ (quindi tanto maggiore \`e la densit\`a, quindi la vicinanza tra le particelle), tanto minore sar\`a l'accoppiamento coulombiano.
+\end{osservazione}
+\begin{itemize}
+	\item Per l'idrogeno nel Sole: $\Gamma_i = \Gamma_e \sim 0.07$.
+	\item Per elio in una gigante rossa: $\Gamma_i \sim 0.58$ e $\widetilde{\Gamma}_e \sim 0.01$.
+	\item Per ossigeno in una nana bianca: $\Gamma_i \sim 550$ e $\widetilde{\Gamma}_e \sim 0.008$.
+\end{itemize}
+\begin{osservazione}
+Riguardo le nane bianche, si osserva che l'interazione ione-ione non \`e trascurabile, per cui mentre la componente elettronica \`e ben descritta come gas ideale, quella ionica no. 
+Tuttavia, essendo in presenza di densit\`a molto elevate, l'energia di Fermi del gas di elettroni degenere \`e talmente alta da rendere il contributo degli ioni alla pressione strutturale della stella trascurabile.
+Quindi, mentre non \`e possibile non tenere conto della presenza di interazioni coulombiane tra gli ioni, nelle nane bianche, questa si pu\`o trascurare se si intende studiare la pressione che influisce sulla loro struttura, mentre se ne deve tenere conto qualora si volessero indagare gli stati della materia.
+Di fatto, la struttura meccanica \`e governata dagli elettroni degeneri, mentre la struttura microscopica del reticolo materiale del nucleo \`e fortemente influenza dalle interazioni tra gli ioni.
+\end{osservazione}
 
-
-
-
-
-
+\subsection{Opacit\`a radiativa negli interni stellari}
 
 
 
