@@ -750,11 +750,11 @@ Per tenerne conto, si utilizza l'\textit{equazione di Saha}\footnote{La sua vali
 \[
 \frac{N_{i+1} }{N_i} = \frac{2\kappa _B T Z_{i+1} }{P_e Z_i} \left(\frac{2\pi m_e\kappa _B T}{h^2}\right) ^{3 / 2} e^{- \chi _i /  \kappa _B T}
 \] 
-dove $N_{i} $ \`e la popolazione dell'atomo ionizzato $i$-volte, $Z_i$ \`e la funzione di partizione, $\chi _i$ \`e il potenziale di ionizzazione dell'atomo ionizzato $i$-volte e $P_e$ \`e la temperatura del gas di elettroni.
+dove $N_{i} $ \`e la popolazione dell'atomo ionizzato $i$-volte, $Z_i$ \`e la funzione di partizione, $\chi _i$ \`e il potenziale di ionizzazione dell'atomo ionizzato $i$-volte e $P_e$ \`e la pressione del gas di elettroni.
 \begin{osservazione}
 Aumentando $P_e$, a $T$ costante, aumenta la densit\`a di elettroni nel sistema, quindi aumenta la probabilit\`a di ricombinazione e, quindi, diminuisce la popolazione di specie ionizzate.
 \end{osservazione}
-Considerando un valore tipico di $P_e \sim 20\text{ N}/\text{m}^2$, l'equazione di Saha permette di concludere che: a $T=8300$ K, il $5\%$ dell'idrogeno \`e ionizzato; a $T=9600$ K, il $50\%$ \`e ionizzato; a $T = 11300$ K, il $95\%$ \`e ionizzato. 
+\noindent Considerando un valore tipico di $P_e \sim 2\text{ N}/\text{m}^2$, l'equazione di Saha permette di concludere che: a $T=8300$ K, il $5\%$ dell'idrogeno \`e ionizzato; a $T=9600$ K, il $50\%$ \`e ionizzato; a $T = 11300$ K, il $95\%$ \`e ionizzato. 
 Pesando la curva di Boltzmann con l'equazione di Saha, si ottiene l'andamento corretto, dato da
 \[
 \frac{N_2}{N_\text{tot}} = \frac{N_2}{N_1+N_2} \frac{N_{I} }{N_\text{tot}} = \frac{N_2 / N_1}{ 1+ N_2 / N_1} \frac{1}{1 + N_{II}  / N_I}
@@ -851,7 +851,7 @@ dove $N_1 + N_2$ \`e idrogeno neutro, quindi $N_I$.
 Il risultato \`e ovviamente approssimativo, in quanto si \`e assunta una atmosfera stellare composta esclusivamente da idrogeno e in LTE, da cui la differenza dal reale valore di $9520$ K. 
 \end{osservazione}
 \subsection{Popolazione del calcio}
-Si vuole mostrare perch\'e le righe del calcio sono pi\`u profonde di quelle della serie di Balmer nel sole.
+Si vuole mostrare perch\'e le righe del calcio sono pi\`u profonde di quelle della serie di Balmer nel Sole.
 Questo ha strettamente a che fare con la popolazione di specie chimica utile a produrre tali righe; di fatto, si vedr\`a che ci sono sensibilmente molti pi\`u atomi di calcio II, pi\`u che atomi di idrogeno nel primo livello eccitato.
 \begin{figure}[htpb]
 	\centering
@@ -1004,7 +1004,7 @@ si ha
 dove $\partial _t m$ \`e ottenuta dal fatto che la variazione di massa corrisponde ad un flusso che abbandona il guscio con velocit\`a $v$.
 Dall'uguaglianza delle derivate seconde, si ricava l'equazione di continuit\`a (per un sistema a simmetria sferica):
 \begin{equation}
-\frac{\partial \rho }{\partial t}  + \frac{1}{r^2} \frac{\partial }{\partial r}  \big(r^2 \rho  v\big) = \frac{\partial \rho }{\partial t}  + \vec{\nabla }\cdot \big(\rho \vec{v}\big)=0
+\frac{\partial \rho }{\partial t}  + \frac{1}{r^2} \frac{\partial }{\partial r}  \big(r^2 \rho  v\big) = 0
 \end{equation}
 \marginpar{\textit{Equilibrio idrostatico}}
 Per studiare la condizione di equilibrio della stella, si richiede che la forza risultante delle forze che agiscono su un guscio infinitesimo, di massa $\dd m$ e raggio $\dd r$, sia nulla.
@@ -1047,7 +1047,7 @@ All'equilibrio idrostatico, i due termini devono essere dello stesso ordine di g
 In questo caso, si parla di \textit{tempo scala idrodinamico} $\tau _\text{idr}$.
 
 Per stabilire la validit\`a dell'approssimazione nel caso delle stelle, si considera un tempo scala evolutivo $\tau _\text{ev}$, riferito al tempo su cui si osservano variazioni nelle grandezze caratteristiche della stella in questione, e lo si confronta con il tempo scala idrodinamico: se $\tau _\text{ev} \gg \tau _\text{idr}$, allora, con buona approssimazione, vale l'assunzione di equilibrio idrodinamico.
-Nel caso del sole, si ha $\overline{\rho }_\odot = 1.4 \text{ g/cm}^3$, quindi $\tau_{\text{ff},\odot} \sim 30$ min, per cui si pu\`o concludere che l'approssimazione di equilibrio idrostatico \`e valida, visto che $\tau _\text{ev}\sim 10^{10} $ yr.
+Nel caso del Sole, si ha $\overline{\rho }_\odot = 1.4 \text{ g/cm}^3$, quindi $\tau_{\text{ff},\odot} \sim 30$ min, per cui si pu\`o concludere che l'approssimazione di equilibrio idrostatico \`e valida, visto che $\tau _\text{ev}\sim 10^{10} $ yr.
 \subsection{Pressione e temperatura centrali}
 Avendo appurato la validit\`a dell'approssimazione di equilibrio idrostatico, si ha $\frac{\partial P}{\partial r} = -  \frac{Gm \rho }{r^2}<0$, quindi la pressione diminuisce con l'aumentare di $r$.
 Si stima, nel caso del Sole, la pressione centrale. 
@@ -1192,7 +1192,7 @@ Questo sistema \`e fondamentalmente un termostato che regola la temperatura inte
 Tuttavia, la radioattivit\`a non soddisfa questo meccanismo, per cui le reazioni di fissione non possono essere alla base della produzione energetica nelle stelle.
 
 Si associa, quindi, questa produzione energetica a reazioni termonucleari. 
-L'energia a riposo del sole \`e $E = M_{\odot} c^2 = 2\times 10^{54}$ erg. 
+L'energia a riposo del Sole \`e $E = M_{\odot} c^2 = 2\times 10^{54}$ erg. 
 Considerando la reazione di produzione di elio a partire da 4 atomi di idrogeno ($m_\text{H} c^2 = 931$ MeV), si origina un difetto di massa di $(4m_\text{H} - m_{\text{He}}) c^2 = 26.73 $ MeV, pari al $0.7\%$ dell'energia a riposo iniziale; assumendo che la stella sia composta unicamente da idrogeno, il prodotto di questa reazione termonucleare produce, complessivamente, $0.7\% \times  M_{\odot} c^2\approx 2\times  10^{52}$ erg, da cui si ottiene un tempo scala
 \[
 \frac{M_\odot c^2 \times 0.007}{L_\odot } \approx 10^{11} \text{ yr}
@@ -1220,7 +1220,7 @@ In questa espressione, $\varepsilon _N$ \`e il coefficiente di produzione di ene
 \] 
 quindi tiene conto della quantit\`a di calore scambiato dalle trasformazioni termodinamiche all'interno del guscio infinitesimo.
 Questo diventa importante quando la stella \`e governata dal viriale ed evolve con tempi scala $\tau _\text{KH}$, altrimenti \`e trascurabile, visto che $\tau _\text{KH}\ll\tau _N$.
-Infine, $\varepsilon _\nu $ \`e relativo all'energia dei neutrini, i quali escono dalla stella senza interagire in alcun modo, quindi sottraendo l'energia che si portano dietro alla struttura, da cui il segno negativo\footnote{Il cammino libero medio di un neutrino nel piombo, alla stessa energia che possiederebbe dopo esser stato prodotto nel sole, \`e di qualche anno luce, per cui la stella gli risulta fondamentalmente trasparente.}.
+Infine, $\varepsilon _\nu $ \`e relativo all'energia dei neutrini, i quali escono dalla stella senza interagire in alcun modo, quindi sottraendo l'energia che si portano dietro alla struttura, da cui il segno negativo\footnote{Il cammino libero medio di un neutrino nel piombo, alla stessa energia che possiederebbe dopo esser stato prodotto nel Sole, \`e di qualche anno luce, per cui la stella gli risulta fondamentalmente trasparente.}.
 \subsection{Trasporto di energia nelle stelle}
 Dal trasporto radiativo negli interni stellari, si \`e trovato che
 \[
@@ -1229,11 +1229,11 @@ Dal trasporto radiativo negli interni stellari, si \`e trovato che
 cio\`e la presenza di un gradiente di temperatura deve necessariamente essere associato ad un trasporto energetico dovuto alle radiazioni.
 Oltre al trasporto energetico dovuto alla radiazione, sono presenti anche gli effetti di conduzione e di convezione.
 
-Negli interni stellari, il gradiente di temperatura si pu\`o stimare (nel caso del sole), come 
+Negli interni stellari, il gradiente di temperatura si pu\`o stimare (nel caso del Sole), come 
 \[
 \frac{\Delta T}{\Delta r} \approx \frac{T_{c,\odot }  - T_{\text{eff},\odot } }{R_\odot } \sim 1.4 \times 10^{-4} \text{ K cm}^{-1}
 \] 
-Il cammino libero medio di un fotone nel sole \`e di $\overline{\ell } \sim 2$ cm, quindi la variazione di temperatura sulla distanza media percorsa da un fotone \`e di $\Delta T \sim 3\times 10^{-4} $ K, per cui 
+Il cammino libero medio di un fotone nel Sole \`e di $\overline{\ell } \sim 2$ cm, quindi la variazione di temperatura sulla distanza media percorsa da un fotone \`e di $\Delta T \sim 3\times 10^{-4} $ K, per cui 
 \[
 \frac{\Delta T}{T} \sim 10^{-10}\div 10^{-11}
 \] 
@@ -1748,7 +1748,7 @@ In astrofisica, si usa il sistema CGS per le unit\`a di misura, ma grammi e cent
 
 		Per le distanze, si fa riferimento alla distanza Terra-Sole e si individua $1\, \mathrm{AU}  = 1.5 \times 10^{13}\, \mathrm{cm} $.
 Si utilizza il raggio Terra-Sole per calcolare la distanza delle stelle tramite triangolazione.
-In particolare, si definisce la parallasse annua come l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al sole e si indica con $\pi$\footnote{Si ricrea l'ellisse descritta dalla stella legata all'orbita della terra attorno al Sole durante un anno solare; di questa ellisse, la parallasse rappresenta il semi-asse maggiore, relativo alle due posizioni della Terra poste su una retta ortogonale alla retta che unisce il Sole con la stella in questione. In questo modo, si ottiene la situazione in figura.}.
+In particolare, si definisce la parallasse annua come l'angolo che sottende una unit\`a astronomica percorso dalla stella nel corso di mezza rivoluzione della Terra attorno al Sole e si indica con $\pi$\footnote{Si ricrea l'ellisse descritta dalla stella legata all'orbita della terra attorno al Sole durante un anno solare; di questa ellisse, la parallasse rappresenta il semi-asse maggiore, relativo alle due posizioni della Terra poste su una retta ortogonale alla retta che unisce il Sole con la stella in questione. In questo modo, si ottiene la situazione in figura.}.
 \begin{center}
 	\begin{tikzpicture}[scale=0.8]
 		% Rette 
@@ -1849,13 +1849,13 @@ In questo modo, si ha che
 \[
 \tan \pi = \frac{1\, \mathrm{AU} }{d}
 \] 
-con $d$ distanza tra sole e stella in questione.
+con $d$ distanza tra Sole e stella in questione.
 Essendo le stelle molto distanti, si considera l'approssimazione $\pi\ll 1$, per cui $\tan \pi \simeq \pi$ e, quindi, $\pi = 1\, \mathrm{AU} / d$.
 
 Visto che gli angoli sono estremamente piccoli, invece di usare i radianti, si fa uso degli arcosecondi.
 In questo senso, si definisce una unit\`a di misura per la distanza, il parsec, corrispondente ad una distanza tale che $\pi = 1 \, \mathrm{arcsec} $.
 Allora $d[\mathrm{pc} ] = 1[\mathrm{AU} ]/\pi[\mathrm{arcsec}] $.
-\item Quanto alle scale temporali, il sole ha $4.57$ miliardi di anni, mentre l'universo ha $13.8$ miliardi di anni.
+\item Quanto alle scale temporali, il Sole ha $4.57$ miliardi di anni, mentre l'universo ha $13.8$ miliardi di anni.
 \end{itemize}
 \newpage
 \end{document}
