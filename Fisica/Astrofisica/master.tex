@@ -32,11 +32,13 @@
 \usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
-\usepackage{fontspec}
-\setmainfont{Libertinus Serif}
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif}
 
-\usepackage{unicode-math}
-\setmathfont{Libertinus Math}
+%\usepackage{unicode-math}
+%\setmathfont{Libertinus Math}
+
+
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
 \usepackage{setspace}
@@ -1662,12 +1664,18 @@ I processi che contribuiscono all'opacit\`a nel trasporto della radiazione dal n
 \end{enumerate}
 
 \subsubsection{Dipendenza dalla temperatura}
-\begin{boxenv}[]
-Scrivere $\kappa _\nu \propto \nu ^{-n}\Rightarrow \kappa _R \propto T^{-n}$.
-\end{boxenv}
-
-
-La dipendenza dalla temperatura \`e legata al fatto che $\kappa _\nu $ dipende molto dalla frequenza e lo spettro della radiazione presente dipende da $T$.
+Si nota, dapprima, che se $\kappa _\nu \propto \nu ^{-n}$, allora $\kappa _R \propto T^{-n}$; infatti, scrivendo $\kappa _\nu = A \nu ^{-n}$, con $A$ indipendente da $\nu $, prendendo $x = h\nu /\kappa _BT$, vale
+\[
+	\begin{split}
+		\frac{d B_\nu }{d T}  &= \frac{d }{d T} \left(\frac{2h}{c^2} \frac{\nu ^3}{e^{-h\nu / \kappa _B T}-1}\right) = \frac{2h \nu ^3}{c^2} \frac{e^{-h \nu  / \kappa _B T }}{\left(e^{-h\nu /\kappa _B T } - 1\right) ^2} \frac{h\nu }{\kappa _B T^2} = \frac{2 \kappa _B \nu ^2}{c^2} \frac{e^{-x}}{(e^{-x}-1)^2}x^2\\
+				      &= \frac{2 \kappa _B ^3 T^2}{h^2 c^2} \frac{e^{-x}}{(e^{-x}-1)^2} x^4
+	\end{split}
+\] 
+e che $\nu ^{n}= (\kappa _B T / h)^n x^n$, quindi\footnote{Nel cambio di variabili nell'integrale, \`e necessario tenere conto anche del fattore $T$ derivante da $\dd \nu = \frac{\kappa _B T }{h} \dd x$, anche se non cambia il risultato.}
+\[
+	\frac{1}{\kappa _R} \propto \frac{T^{3+n} }{T^3} \frac{ \displaystyle \int x^{4 + n} \frac{e^{-x}}{(e^{-x}-1)^2}\dd x}{\displaystyle \int x^4 \frac{e^{-x}}{(e^{-x}-1)^2}\dd x}\propto T^n
+\] 
+Di fatto, la dipendenza dalla temperatura \`e legata al fatto che $\kappa _\nu $ dipende molto dalla frequenza e lo spettro della radiazione presente dipende da $T$.
 Per esempio, in un processo di \textit{assorbimento bound-free} per un atomo di idrogeno, \`e necessario che il fotone incidente abbia un'energia di almeno
 \[
 \chi _{\mathrm{H} ,n}  = \frac{13.6}{n^2} \text{ eV}
@@ -1686,25 +1694,121 @@ Per questa ragione, pi\`u fotoni alla giusta frequenza si trovano in una data re
 Inoltre, il picco della funzione $\frac{\partial B_\nu }{\partial T} $ si trova per $x:=\frac{h\nu_\text{max} }{\kappa _B T}\approx 3.83$, per cui si avr\`a un maggiore contributo all'opacit\`a per frequenze in un intorno di $x$.
 
 Ragionamenti analoghi si possono fare anche per i processi bb e ff.
-Per quest'ultimo in particolare, si ha una dipendenza dalla temperatura indotta dalla velocit\`a $v$ relativa degli elettroni rispetto al nucleo; infatti, la sezione d'urto \`e $\sigma _\nu  \propto v^{-1} \nu ^{-3}$.
+Per quest'ultimo in particolare, si ha una dipendenza dalla temperatura indotta dalla velocit\`a $v$ relativa degli elettroni rispetto al nucleo; infatti, la sezione d'urto \`e $\sigma _\nu  \propto v^{-1} \nu ^{-3}$, in cui, secondo la distribuzione di Boltzmann, $v \propto \sqrt{T}$.
+Pi\`u in generale, se un gas \`e descritto da distribuzioni dipendenti dalla temperatura, in LTE, la velocit\`a delle particelle \`e ottenuta tramite la distribuzione di Maxwell-Boltzmann, per cui comparir\`a un fattore $\sqrt{T} $.
 
+L'unico caso in cui questo non si verifica \`e per lo scattering Thomson, in cui non vi \`e dipendenza dalla frequenza, quindi l'opacit\`a non dipender\`a dalla temperatura; infatti
+\[
+\sigma _e = \frac{8 \pi}{ 3} \left(\frac{e^2}{m_ec^2}\right) ^2 \approx 7 \times 10 ^{-25} \text{ cm}^2
+\] 
+Il contributo di questa sezione d'urto, per\`o, \`e rilevante solo quando \`e l'unico termine non-nullo, visto che ha un valore molto piccolo.
+In questo caso, l'opacit\`a \`e espressa da $\kappa _e \rho  = n_e \sigma _e$; nel caso di completa ionizzazione degli atomi, si ha $n_e = \frac{\rho }{\mu _e m_H}$ e $\mu _e = \frac{2}{1+X}$, da cui
+\[
+\kappa _e = \sigma _e \frac{1+X}{2m_H} \approx 0.2 (1+X)
+\] 
+Si evidenzia, dunque, che il termine di opacit\`a relativa allo scattering dipende esclusivamente dall'abbondanza in massa dell'idrogeno.
+\begin{osservazione}
+	In presenza di degenerazione elettronica, tutti i processi che coinvolgono elettroni liberi nello stato finale vengono attenuati dal fatto che quello stato finale deve essere accessibile.
+	Maggiore \`e la degenerazione, quindi, minore sar\`a la frequenza di questi processi, in quanto gli stati finali vengono limitato notevolmente, per cui l'opacit\`a diminuir\`a.
+\end{osservazione}
+\begin{osservazione}
+	Per ogni termine dell'opacit\`a monocromatica \`e necessario conoscere al sezione d'urto e la popolazione relativi a ciascun livello energetico, a ciascun livello di ionizzazione e a ciascuna specie chimica; fatto questo, si pu\`o passare alla media di Rosseland.
+	Visto il gran numero di informazioni, il calcolo \`e spesso molto complicato.
+\end{osservazione}
+\noindent \`E necessario tenere in considerazione correzioni legate ad emissione stimolata: se un certo processo consiste nell'assorbimento di un fotone, il quale poi viene riemesse e reintrodotto nel fascio, non si pu\`o contare come contributo all'opacit\`a, ma si deve rimuovere.
+Ovviamente, questo non succede in processi di scattering, ma si verifica per tutti gli altri; si vedr\`a che la forma corretta di opacit\`a monocromatica complessiva \`e
+\begin{equation}
+	\kappa _\nu  = \big[\kappa _{\nu , \text{bb}} + \kappa _{\nu , \text{bf}}  + \kappa _{\nu , \text{ff}}   \big] \left(1 - e^{-h\nu /\kappa _B T}\right)  + \kappa _{e} 
+\end{equation}
+\subsubsection{Legge di Kramers e andamento con la temperatura}
+Questa legge afferma che l'opacit\`a ha un andamento del tipo $\kappa _R \propto \rho  T^{-3.5}$, cio\`e diminuisce con l'aumentare della temperatura ed aumenta con l'aumentare della densit\`a.
+Questo, per\`o, descrive bene solamente una parte del grafico di $\kappa _R(T)$: per temperature pi\`u basse, l'opacit\`a diminuisce, invece di aumentare all'infinito, e, per temperature molto alte, si osserva che diminuisce fino ad un plateau, perdendo anche la dipendenza dalla densit\`a.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+La diminuzione al diminuire della temperatura \`e legata al fatto che, sempre pi\`u atomi saranno neutri e nello stato fondamentale, per cui i fotoni che possono partecipare in processi di assorbimento sono solo quelli con energia tale per una transizione dallo stato fondamentale; per l'idrogeno, per esempio, l'energia necessaria \`e di circa $10$ eV, per cui sono necessarie frequenze molto elevate.
 
+All'aumentare della temperatura, invece, gli atomi iniziano a ionizzarsi finch\'e non lo saranno completamente.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{kt.png}
+	\end{minipage}
+\end{center}
+Questo, quindi, impedisce la formazione di processi bf e bb; inoltre, il processo ff ha sezione d'urto proporzionale a $1 / \sqrt{T} $, per cui sar\`a irrilevante sopra una certa soglia, per cui l'unico termine che sopravvive \`e quello legato allo scattering Thomson.
+Visto che quest'ultimo non dipende n\'e dalla temperatura, n\'e dalla densit\`a, si osserva un plateau.
 
+In atmosfera, il processo di scattering \`e particolarmente rilevante per stelle molto massicce, le quali hanno una temperatura nella fotosfera sufficiente ad avere la maggior parte degli atomi gi\`a ionizzati.
 
+\begin{osservazione}
+Studiando i processi opacitivi in termini di temperatura e densit\`a, si vede che:
+\begin{itemize}
+	\item fissata la densit\`a e aumentando la temperatura, si arriva nella zona in cui l'unico contributo \`e lo scattering elettronico;
+	\item fissata la temperatura, all'aumentare della densit\`a si arriva nella zona in cui l'opacit\`a radiativa non \`e pi\`u rilevante, in quanto si \`e in presenza di degenerazione, per cui il contributo principale \`e legato alla conduzione.
+\end{itemize}
+\end{osservazione}
+\noindent Nel grafico, si osserva che i picchi dell'opacit\`a (al variare della densit\`a) sono contenuti nell'intervallo $10^4 \div 10^5$ K; questo \`e dovuto al fatto che, in questo intervallo, si ha la parziale ionizzazione degli elementi pi\`u abbondanti, cio\`e idrogeno ed elio.	
 
+Visto che il gradiente radiativo cresce al crescere dell'opacit\`a, o del flusso, in questo intervallo di temperature si osserver\`a anche un elevato gradiente radiativo.
+Se, per\`o, questo supera il gradiente adiabatico, la regione diventa instabile e si innescano moti convettivi; ci aspetterebbe dunque, che la presenza di moti convettivi si presenti in occorrenza di questi picchi e, di fatto, \`e esattamente quanto si osserva negli inviluppi stellari.
 
+Infine, si nota che, secondo il grafico, l'atmosfera solare, per esempio, dovrebbe essere sostanzialmente trasparente, in quanto l'opacit\`a \`e pressocch\'e nulla; questo non si verifica per il fatto che elettroni liberi, dovuti alla ionizzazione di metalli, si legano all'idrogeno neutro per formare lo ione $\mathrm{H} ^-$.
+L'energia necessaria per liberare l'elettrone aggiuntivo \`e di circa $0.75$ eV ed \`e responsabile per l'opacit\`a continua che impedisce all'atmosfera di essere trasparente.
+\subsubsection{Coefficienti di Einstein}
 
+Si considera un atomo con due livelli energetici per cui $E_2 - E_1 = h\nu _0$.
+Il coefficiente $A_{21}$ \`e la probabilit\`a di transizione per unit\`a di tempo, dovuta ad emissione spontanea, da $2\to 1$.
+Il coefficiente di assorbimento $B_{12}$, invece, descrive la transizione $1\to 2$ dovuta ad assorbimento ed \`e tale che $B_{12} \overline{J}$ \`e la probabilit\`a di transizione per unit\`a di tempo legata a tale processo, con
+\[
+\overline{J } = \int_0 ^{+\infty} J_\nu  \phi (\nu ) \dd \nu \hspace{1cm} J_\nu = \frac{1}{4\pi} \int I_\nu \dd \Omega 
+\] 
+e $\phi (\nu )$ profilo di riga.
+Il processo opposto descrive l'emissione stimolata, cio\`e per transizione $2\to 1$ a seguito di incidenza di una radiazione sull'atomo, e $B_{21}\overline{J}$ ne rappresenta la probabilit\`a per unit\`a di tempo.
 
-
-
-
-
-
-
-
-
-
-
+Assumendo che il mezzo sia all'equilibrio termodinamico\footnote{Il risultato vale in generale, ma si ricava in questo caso.}, si ha che il numero di transizioni $1\to 2$ \`e uguale, in media, a quello $2\to 1$, per cui
+\[
+n_1 B_{12}\overline{J} = n_2A_{21} + n_2 B_{21} \overline{J}
+\] 
+con $n_i$ numero di atomi per unit\`a di volume nello stato $i$, con $i=1,2$.
+In questo modo, si ha
+\[
+\overline{J} = \frac{n_2A_{21}}{ n_1 B_{12} - n_2 B_{21}}  = \frac{A_{21} / B_{21}}{\frac{n_1}{n_2}\frac{B_{12}}{B_{21}} - 1}
+\] 
+Visto che si \`e all'equilibrio termodinamico, i numeri di occupazione dipendono esclusivamente dalle collisioni e sono descritti dalla statistica di Boltzmann, per cui 
+\[
+\frac{n_1}{n_2} = \frac{g_1}{g_2} \exp \left(\frac{h\nu _0}{\kappa _B T}\right) \implies \overline{J} = \frac{A_{21} / B_{21}}{\frac{g_1}{g_2}\frac{B_{12}}{B_{21}}e^{ h \nu _0 / \kappa _B T} - 1}
+\] 
+All'equilibrio termodinamico, per\`o, il campo di radiazione deve essere isotropo, per cui $J_\nu = I_\nu$ e, inoltre, $I_\nu  = B_\nu (T)$, quindi $J_\nu  = B_\nu (T)$.
+Usando, poi, che $B_\nu $ si pu\`o considerare costante nel range di frequenze in cui $\phi _\nu \neq 0$, si approssima $\overline{J} \simeq B_\nu (T)$.
+In conclusione, si ha
+\[
+	g_1 B_{12} = g_2 B_{21} \hspace{2cm} A_{12} = \frac{2h}{c^2} \nu ^3 B_{21}
+\] 
+\begin{osservazione}
+Anche se la derivazione \`e stata fatta in assunzione di equilibrio termodinamico, essendo propriet\`a atomiche, sono valide in generale.
+\end{osservazione}
+\noindent L'emissivit\`a monocromatica riferita al processo di emissione spontanea, allora, si scrive come
+\[
+	j_\nu \frac{h\nu }{4\pi} n_2 A_{21} \phi (\nu -\nu _0)
+\] 
+L'emissivit\`a totale, dunque, \`e
+\[
+j_{\nu _0} = \int j_\nu \dd \nu = \frac{h\nu _0}{4 \pi} n_2 A_{21}
+\] 
+A questo punto, si pu\`o correggere il coefficiente di assorbimento per l'emissione stimolata:
+\[
+\alpha _\nu = \frac{h\nu }{4\pi}\big[ n_1B_{12} \phi (\nu -\nu _0) - n_2 B_{21} \phi (\nu -\nu _0) \big] = \frac{h\nu }{4\pi} n_1 B_{12} \phi (\nu -\nu _0) \left[ 1- \frac{n_2g_1}{n_1g_2} \right] 
+\] 
+\begin{osservazione}
+I profili di riga dovrebbero essere diversi per ogni processo (emissione spontanea, stimolata e assorbimento), ma si approssimano per essere circa uguali e si usa lo stesso profilo indistintamente.
+\end{osservazione}
+\noindent Visto che $n_2 / n_1$ \`e dato da Boltzmann, si ha
+\[
+\alpha _{\nu _0}  = \int \alpha _\nu  \dd \nu  = \frac{h\nu _0}{4 \pi } n_1 B_{12} \left[ 1 - \exp \left(- \frac{h\nu _0}{\kappa _B T}\right)  \right] 
+\] 
+il che giustifica il fattore correttivo utilizzato in $\kappa _\nu $.
 
 
 
