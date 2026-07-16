@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  14 JUL 2026 11:54
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  16 JUL 2026 09:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -8,7 +8,7 @@ L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended collection.
-luaotfload | conf : Root cache directory is "/var/lib/texmf/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names".
 luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-resolved path "/usr/share/texmf-dist/tex/luatex/luaotfload/fontloader-2023-12-28.lua".
 Lua-only attribute luaotfload@noligature = 1
 luaotfload | init : Context OpenType loader version 3.134
@@ -17,7 +17,7 @@ Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
 Inserting `luaotfload.define_font' in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "/var/lib/texmf/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/manuel/.texlive/texmf-var/luatex-cache/generic/names".
 Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
 Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
@@ -70,7 +70,7 @@ Package scrartcl Info: You've used standard option `11pt'.
 Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input line 2489.
  (/usr/share/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
 File: scrsize11pt.clo 2026/02/02 v3.49.2 KOMA-Script font size class option (11pt)
-luaotfload | db : Font names database loaded from /var/lib/texmf/luatex-cache/generic/names/luaotfload-names.luc.gz) (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
+luaotfload | db : Font names database loaded from /home/manuel/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz) (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2026/02/02 v3.49.2 KOMA-Script package (type area)
 \ta@bcor=\skip50
 \ta@div=\count273
@@ -1027,7 +1027,94 @@ Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTe
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 118.
 \l@nohyphenation=\language3
-\l@italian=\language4
+\l@arabic=\language4
+\l@farsi=\language5
+\l@pinyin=\language6
+\l@belarusian=\language7
+\l@bulgarian=\language8
+\l@churchslavonic=\language9
+\l@kazakh=\language10
+\l@mongolian=\language11
+\l@mongolianlmc=\language12
+\l@russian=\language13
+\l@serbian=\language14
+\l@serbianc=\language15
+\l@ukrainian=\language16
+\l@czech=\language17
+\l@slovak=\language18
+\l@ukenglish=\language19
+\l@usenglishmax=\language20
+\l@albanian=\language21
+\l@croatian=\language22
+\l@danish=\language23
+\l@dutch=\language24
+\l@estonian=\language25
+\l@finnish=\language26
+\l@schoolfinnish=\language27
+\l@friulan=\language28
+\l@hungarian=\language29
+\l@icelandic=\language30
+\l@irish=\language31
+\l@kurmanji=\language32
+\l@classiclatin=\language33
+\l@latin=\language34
+\l@liturgicallatin=\language35
+\l@latvian=\language36
+\l@lithuanian=\language37
+\l@macedonian=\language38
+\l@bokmal=\language39
+\l@nynorsk=\language40
+\l@occitan=\language41
+\l@piedmontese=\language42
+\l@romanian=\language43
+\l@romansh=\language44
+\l@slovenian=\language45
+\l@swedish=\language46
+\l@turkish=\language47
+\l@uppersorbian=\language48
+\l@welsh=\language49
+\l@basque=\language50
+\l@french=\language51
+\l@german-x-2024-02-28=\language52
+\l@ngerman-x-2024-02-28=\language53
+\l@german=\language54
+\l@ngerman=\language55
+\l@swissgerman=\language56
+\l@ancientgreek=\language57
+\l@ibycus=\language58
+\l@greek=\language59
+\l@monogreek=\language60
+\l@italian=\language61
+\l@afrikaans=\language62
+\l@armenian=\language63
+\l@coptic=\language64
+\l@esperanto=\language65
+\l@ethiopic=\language66
+\l@georgian=\language67
+\l@hebrew=\language68
+\l@assamese=\language69
+\l@bengali=\language70
+\l@gujarati=\language71
+\l@hindi=\language72
+\l@kannada=\language73
+\l@malayalam=\language74
+\l@marathi=\language75
+\l@oriya=\language76
+\l@pali=\language77
+\l@panjabi=\language78
+\l@tamil=\language79
+\l@telugu=\language80
+\l@indonesian=\language81
+\l@interlingua=\language82
+\l@sanskrit=\language83
+\l@thai=\language84
+\l@turkmen=\language85
+\l@vietnamese=\language86
+\l@polish=\language87
+\l@portuguese=\language88
+\l@catalan=\language89
+\l@galician=\language90
+\l@spanish=\language91
 \babelcatcodetablenum=\catcodetable16
 \bbl@pattcodes=\catcodetable17
 )
@@ -1040,7 +1127,7 @@ LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) o
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
 \U@D=\dimen405
-\l@unhyphenated=\language5
+\l@unhyphenated=\language92
  (/usr/share/texmf-dist/tex/generic/babel/luababel.def
 \bbl@attr@locale=\attribute4
 ) (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
@@ -1424,18 +1511,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1387--1387
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
-<kt.png, id=400, 407.02063pt x 465.23813pt>
+<kt.png, id=404, 407.02063pt x 465.23813pt>
 File: kt.png Graphic file (type png)
 <use kt.png>
-Package luatex.def Info: kt.png  used on input line 1737.
+Package luatex.def Info: kt.png  used on input line 1738.
 (luatex.def)             Requested size: 187.57352pt x 214.40257pt.
- [39<./kt.png>] [40] [41]
-<ben.jpg, id=425, 394.1124pt x 277.5168pt>
+ [39] [40<./kt.png>] [41]
+<ben.jpg, id=428, 394.1124pt x 277.5168pt>
 File: ben.jpg Graphic file (type jpg)
 <use ben.jpg>
-Package luatex.def Info: ben.jpg  used on input line 1836.
+Package luatex.def Info: ben.jpg  used on input line 1837.
 (luatex.def)             Requested size: 187.57352pt x 132.08015pt.
- [42<./ben.jpg>] [43] [44] [45] (./master.aux)
+ [42] [43<./ben.jpg>] [44] [45] [46] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1443,14 +1530,18 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 65142 strings out of 476076
+ 65249 strings out of 476076
  125011,3417909 words of node,token memory allocated
- 7997 words of node memory still in use:
-   59 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 108 glue, 44 kern, 36 penalty, 392 glyph, 558 attribute, 102 glue_spec, 280 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5900,3:3270,4:164,5:591,6:113,7:6956,8:122,9:1328,10:30,11:1000
- 86236 multiletter control sequences out of 65536+600000
+ 8023 words of node memory still in use:
+   59 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 110 glue, 44 kern, 36 penalty, 392 glyph, 562 attribute, 102 glue_spec, 282 attribute_list, 2 write nodes
+   avail lists: 1:2,2:5894,3:3270,4:164,5:591,6:113,7:6954,8:122,9:1328,10:30,11:964
+ 86340 multiletter control sequences out of 65536+600000
  114 fonts using 8232391 bytes
  124i,23n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.18'
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.17'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.16'
 
@@ -1485,10 +1576,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (45 pages, 3516960 bytes).
+Output written on master.pdf (46 pages, 3518323 bytes).
 
-PDF statistics: 729 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 173 named destinations out of 1000 (max. 1048576)
+PDF statistics: 737 PDF objects out of 1000 (max. 8388607)
+ 610 compressed objects within 7 object streams
+ 176 named destinations out of 1000 (max. 1048576)
  354 words of extra memory for PDF output out of 10000 (max. 100000000)
 

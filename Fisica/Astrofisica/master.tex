@@ -1399,20 +1399,21 @@ Conoscendo il gradiente adiabatico, questa si scrive come
 \[
 	\nabla _\text{ad} = 1 - \frac{1}{\gamma} = \Eval{\frac{d \log T}{d  \log P } }{\text{ad}}{} \implies \Delta \nabla T = \frac{d T}{d r}  - \left(1- \frac{1}{\gamma}\right) \frac{T}{P} \frac{d P}{d r} 
 \] 
-Visto che la trasformazione avviene a pressione costante (perch\'e si \`e assunto che bolla ed ambiente abbiano sempre stessa pressione), il calore scambiato dalla bolla \`e
+Visto che la trasformazione avviene a pressione costante (perch\'e si \`e assunto che bolla ed ambiente abbiano sempre stessa pressione), il calore scambiato dalla bolla per unit\`a di volume \`e
 \[
 c_P \rho  \delta T = c_P \rho  \Delta \nabla T \dd r
 \] 
-Essendo interessati al flusso di questa quantit\`a, supponendo che la velocit\`a media delle bolle sia $v$, si trova che
+Essendo interessati al flusso della quantit\`a di calore scambiato, supponendo che la velocit\`a media delle bolle sia $v$\footnote{In questo modo, da calore per unit\`a di volume, moltiplicando per $v$, si passa a calore per unit\`a di tempo e di superficie.}, si trova che
 \[
 F_\text{conv} = c_P \rho  v \Delta \nabla T \dd r
 \] 
-La variazione di densit\`a tra ambiente e bolla, tramite lo stesso ragionamento di prima, utilizzando di avere a che fare con gas perfetto e che $\mu $ \`e costante, si pu\`o scrivere che
+La variazione di densit\`a tra ambiente e bolla, tramite lo stesso ragionamento di prima (cio\`e utilizzando di avere a che fare con gas perfetto, che $\mu $ \`e costante e che le pressioni interna ed esterna alla bolla sono sempre all'equilibrio), si pu\`o scrivere come
 \[
 \delta \rho  = \left(\left\lvert \frac{d \rho }{d r}  \right\rvert - \left\lvert \frac{d \rho }{d r}  \right\rvert _\text{ad}\right) = - \frac{\rho }{T} \delta T = - \frac{\rho }{T}\Delta \nabla T \dd r
 \] 
-La teoria della \textit{mixing length}, si prende $\dd r= \ell $, detta, appunto, lunghezza di rimescolamento, che corrisponde ad una sorta di cammino libero medio.
-La forza responsabile del trasporto della bolla \`e la spinta di Archimede; visto che si sta facendo una trattazione approssimativa, generalmente si prende una sorta di valor medio aggiungendo un fattore $1 / 2$, per cui $\overline{F} = \frac{1}{2} g \delta \rho $; per il teorema delle forze vive, si pu\`o ottenere la velocit\`a: $\frac{1}{2}\rho  v^2 = \overline{F}\ell $, da cui 
+Nella teoria della \textit{mixing length}, si prende $\dd r= \ell $, detta, appunto, \textit{lunghezza di rimescolamento}; questa corrisponde ad una sorta di cammino libero medio delle bolle.
+La forza responsabile del trasporto della bolla \`e la spinta di Archimede; visto che si sta facendo una trattazione approssimativa, generalmente si prende una sorta di valor medio aggiungendo un fattore $1 / 2$, per cui $\overline{F} = \frac{1}{2} g \delta \rho $. 
+Per il teorema delle forze vive, si pu\`o ottenere la velocit\`a: $\frac{1}{2}\rho  v^2 = \overline{F}\ell $, da cui 
 \begin{equation}\label{vconv}
 v = \ell ^{1 / 2} \sqrt{\frac{g}{\rho }\delta \rho  }  \implies \overline{v} = \frac{\ell ^{1/2}}{2} \sqrt{\frac{g}{\rho }\delta \rho } 
 \end{equation}
@@ -1500,7 +1501,7 @@ Il termine con cui bisogna lavorare, invece, \`e $P_\text{gas}$.
 \[
 P_\text{gas} = n \kappa _B T = \frac{\rho }{\mu  m_H} \kappa _B T
 \] 
-Vista l'assunzione di gas completamente ionizzato, si separa il contributo della pressione in un contributo legato agli ioni e uno legato agli elettroni: $P_\text{gas} = P_e + P$ e la densit\`a totale di particelle sar\`a $n = n_e + n$.
+Vista l'assunzione di gas completamente ionizzato, si separa il contributo della pressione in un contributo legato agli ioni e uno legato agli elettroni: $P_\text{gas} = P_e + P_I$ e la densit\`a totale di particelle sar\`a $n = n_e + n_I$.
 Si definisce l'\textit{abbondanza in massa} dell'elemento $i$-esimo come
 \[
 X_i = \frac{\text{massa dell'elemento } i }{\text{massa totale del gas}}
@@ -1510,14 +1511,14 @@ Tuttavia, si indica con $X$ l'abbondanza dell'idrogeno, con $Y$ quella dell'elio
 La densit\`a numerica, atomica ed elettronica, per l'elemento chimico $i$-esimo, allora, \`e data da
 \[
 	\begin{split}
-		&n_i = \frac{\rho }{A_i m_H} X_i \hspace{2cm} n_{e,i} = Z_in_i = \frac{\rho }{A_i m_H} X_i Z_i\\
-		&\Rightarrow n_i + n_{e,i} = \frac{\rho }{A_i m_H } X_i ( 1 + Z_i)
+		&n_{I,i}  = \frac{\rho }{A_i m_H} X_i \hspace{2cm} n_{e,i} = Z_in_{I,i}  = \frac{\rho }{A_i m_H} X_i Z_i\\
+		&\Rightarrow n_{I,i}  + n_{e,i} = \frac{\rho }{A_i m_H } X_i ( 1 + Z_i)
 	\end{split}
 \] 
 con $Z_i$ numero atomico.
 Sommando su tutti gli elementi, si ottiene
 \[
-n = \sum_{i}^{} n_i + n_{e, i}  = \frac{\rho }{m_H} \sum_{i}^{} X_i \frac{1+ Z_i}{A_i} \equiv \frac{\rho }{\mu m_H}
+n = \sum_{i}^{} n_{I,i}  + n_{e, i}  = \frac{\rho }{m_H} \sum_{i}^{} X_i \frac{1+ Z_i}{A_i} \equiv \frac{\rho }{\mu m_H}
 \] 
 Separando la somma per idrogeno, elio e metalli rimanenti, facendo uso del fatto che, per ciascuno di questi ultimi, vale $\frac{Z_i}{A_i}\approx\frac{1}{2}$, si conclude che
 \[
@@ -1539,7 +1540,7 @@ Questa, per\`o, \`e valida esclusivamente per un gas ideale classico, cio\`e per
 Il limite classico non-quantistico si ha quando la distanza media tra le particelle \`e $a \gg \lambda$, con $a\sim \left(\frac{4}{3}\pi n\right) ^{-1 / 3}$; infatti, si sta richiedendo che la distanza che separa due particelle \`e molto maggiore della lunghezza d'onda associata alla loro funzione d'onda, per cui non interagiscono a livello quantistico.
 Per definizione, se la densit\`a aumenta, $a$ diminuisce, per cui si pu\`o arrivare al caso in cui $a \sim \lambda$ e la trattazione classica non \`e pi\`u valida.
 
-I neutroni, inoltre, degenerano molto pi\`u rapidamente dei nuclei; infatti, essendo in LTE, la loro energia cinetica \`e identica $\langle E_k \rangle = \frac{3}{2} \kappa _B T$, per cui deve valere
+Gli elettroni, inoltre, degenerano molto pi\`u rapidamente dei nuclei; infatti, essendo in LTE, la loro energia cinetica \`e identica $\langle E_k \rangle = \frac{3}{2} \kappa _B T$, per cui deve valere
 \[
 \frac{p_p^2}{2m_p} = \frac{p_e^2}{2m_e} \implies p_p = \sqrt{\frac{m_p}{m_e}} p_e \gg p_e
 \] 
@@ -1581,7 +1582,7 @@ Infatti, per evitare correzioni relativistiche, si deve avere $T \ll 6 \times 10
 \item \textbf{Caso degenere.} 
 	In questo caso, gli elettroni sono degeneri e la loro energia non \`e pi\`u quella cinetica, ma quella di Fermi, per cui si studia il rapporto $x_r = p_F / m_e c$.
 
-	Visto che, a temperatura nulla, gli elettroni riempiono interamente la superficie di Fermi, sono contenuti in un volume (nello spazio degli impulsi) pari a $\frac{4}{3} \pi p_F^2$; ma ogni stato occupa un volume $(2\pi \hbar )^3$, quindi $n_e = p_F^2 / (3 \pi ^2 \hbar ^3)$, da cui $p_F = \hbar (3\pi^2 n_e)^{1 / 3}$.
+	Visto che, a temperatura nulla, gli elettroni riempiono interamente la superficie di Fermi, sono contenuti in un volume (nello spazio degli impulsi) pari a $\frac{4}{3} \pi p_F^3$; ma ogni stato occupa un volume $(2\pi \hbar )^3$, quindi $n_e = p_F^3 / (3 \pi ^2 \hbar ^3)$\footnote{In questo calcolo, si \`e anche tenuto conto della degenerazione legata allo spin, quindi si \`e moltiplicato per $2$.}, da cui $p_F = \hbar (3\pi^2 n_e)^{1 / 3}$.
 	Inoltre, si ha
 	\[
 	n_e = \frac{\rho }{\mu _e m_H} = \frac{\rho }{m_H} \sum_{i}^{} \frac{X_i Z_i}{A_i}
@@ -1600,7 +1601,7 @@ Nel limite ultra-relativistico, la pressione per un gas completamente degenere (
 \[
 P_e = \left(\frac{3}{\pi}\right) ^{1 / 3} \frac{hc }{8 m _H ^{4 / 3}} \left(\frac{\rho}{\mu _e} \right) ^{4 / 3} \implies P_e \propto \left(\frac{\rho}{\mu _e}\right)  ^{4  / 3}
 \] 
-La diminuzione dell'esponente da $5 / 3$ (caso non-relativistico) a $4 / 3$ nel caso relativistico \`e il motivo per cui si trova una massa limite, detta \textit{massa di Chandrasekar}, sopra cui le nane bianche diventano stabili ed implodono.
+La diminuzione dell'esponente da $5 / 3$ (caso non-relativistico) a $4 / 3$ nel caso relativistico \`e il motivo per cui si trova una massa limite, detta \textit{massa di Chandrasekar}, sopra cui le nane bianche diventano instabili ed implodono.
 
 \subsubsection{Validit\`a dell'assunzione di gas perfetto}
 
@@ -1726,7 +1727,7 @@ Questo, per\`o, descrive bene solamente una parte del grafico di $\kappa _R(T)$:
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
-La diminuzione al diminuire della temperatura \`e legata al fatto che, sempre pi\`u atomi saranno neutri e nello stato fondamentale, per cui i fotoni che possono partecipare in processi di assorbimento sono solo quelli con energia tale per una transizione dallo stato fondamentale; per l'idrogeno, per esempio, l'energia necessaria \`e di circa $10$ eV, per cui sono necessarie frequenze molto elevate.
+La diminuzione al diminuire della temperatura \`e legata al fatto che sempre pi\`u atomi saranno neutri e nello stato fondamentale, per cui i fotoni che possono partecipare in processi di assorbimento sono solo quelli con energia tale per una transizione dallo stato fondamentale; per l'idrogeno, per esempio, l'energia necessaria \`e di circa $10$ eV, per cui sono necessarie frequenze molto elevate.
 
 All'aumentare della temperatura, invece, gli atomi iniziano a ionizzarsi finch\'e non lo saranno completamente.
 	\end{minipage}
