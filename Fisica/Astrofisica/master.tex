@@ -194,6 +194,10 @@ title=#1
 % Personalizzazione scritta indice
 
 
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+
 \begin{document}
 \maketitle
 \newpage
@@ -1840,15 +1844,153 @@ In questo modo, se la massa totale del prodotto \`e inferiore di quella iniziale
 Le reazioni di interesse nelle stelle partono dalla produzione di elio-4 a partire da idrogeno, fino ad arrivare al ferro-56.
 Una catena di reazioni produce lo $0.9\%$ della massa a riposo iniziale, dove l'$80\%$ di questa frazione (circa lo $0.7\%$ della massa a riposo iniziale) \`e ottenuto dalla conversione di idrogeno in elio.
 
+\subsubsection{Barriera coulombiana}
+Perch\'e due nuclei atomici possano essere fusi insieme, \`e necessario sovrastare la forza repulsiva dovuta all'interazione coulombiana.
+Il raggio di un nucleo \`e dato da $R(A) \approx 1.3 A^{1 / 3} \text{ fm}$, per cui il picco di tale repulsione \`e dato da $E_C = \frac{Z_1Z_2 e^2}{R(A)} \propto \frac{Z_1 Z_2}{A^{1/3}}$.
 
+L'energia a disposizione dei nuclei per sovrastare questa barriera \`e di origine termica e i nuclei stellari sono, in buona approssimazione, in LTE; per questa ragione, si confronta $E_C$ con $E_T = \kappa _B T = 8.61 \times 10^{-11}\text{ MeV/K} \cdot T$. 
+Scrivendo $T_6 = T / 10^6$ (cio\`e temperatura in unit\`a di un milione di gradi), si ha $E_T = (0.86 \times 10^{-4}) T_6 \text{ MeV}$.
+Nel caso di due protoni nel Sole, $T_{c, \odot } \approx 1.5 \times 10^{7} K\Rightarrow T_6 = 15\text{ K}$, per cui $E_T\sim 1 \text{ keV}$, mentre $E_C \approx 1.1\text{ MeV}$.
+Secondo questo ragionamento, avendo $\kappa _B T \ll E_C$, i protoni non avrebbero sufficiente energia per fondersi; inoltre, assumendo anche che vi siano protoni sufficientemente energetici nella coda della distribuzione di Boltzmann (visto che il nucleo \`e in LTE), si avrebbe $e^{- E_C / \kappa _B T} \sim e^{-10^3} \approx -10^{434}$, con un numero totale di particelle nel Sole che \`e $\sim 10^{57}$: il numero di particelle che si presta ad avere energie simili \`e $\propto 10^{57} \times 10^{-434} \ll 1$.
+Classicamente, quindi, questo processo \`e impossibile.
+\subsubsection{Probabilit\`a di Gamow}
+Quantisticamente, la funzione d'onda di una particella decresce esponenzialmente per distanze prossime a quelle della barriera, ma non diventa nulla, cio\`e si deve considerare l'effetto tunneling. 
+La \textit{probabilit\`a di penetrazione} ottenuta da Gamow \`e 
+\[
+P_G = e^{-2\pi \eta } \hspace{1cm} \eta = \frac{Z_1 Z_2 e^2}{\hbar v} = \frac{Z_1Z_2e^2}{\hbar \sqrt{E} }\sqrt{\frac{m}{2}} 
+\] 
+con $v$ velocit\`a relativa tra le particelle e $m = \frac{m_1m_2}{m_1+m_2}$ la rispettiva massa ridotta.
+Si nota che $P_G$ decresce al crescere della carica delle particelle.
+Si vede, inoltre, che questa cresce al crescere di $v$, la quale dipende da $\sqrt{T} $ (essendo gli interni stellari in LTE), quindi all'aumentare della temperatura, aumenta la probabilit\`a di penetrazione. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Tuttavia, aumentando $T$, si finisce nella coda della distribuzione di Boltzmann, quindi sempre meno particelle potranno penetrare la barriera con quella probabilit\`a.
+Si avr\`a, quindi, che le reazioni termonucleari saranno possibili all'interno di un range di temperature, detto \textit{finestra di Gamow}, e il picco del rate con cui avvengono \`e noto come \textit{picco di Gamow}.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{gp.png}
+	\end{minipage}
+\end{center}
+La sezione d'urto di questo processo dipende da $P_G$, dalla sezione d'urto geometrica \textit{quantistica} $\pi^2\lbar$ (con $\lbar = \hbar  / p$) e dal fattore astrofisico $S(E)$, che comprende tutti i processi relativi alla fisica nucleare della reazione; allora
+\begin{equation}
+	\sigma (E) = \frac{S(E)}{E} e^{-2\pi \eta }
+\end{equation}
+\begin{osservazione}
+Data una reazione $A + x \to  B +y$, questa segue due step: nel primo, si ha $A+x \to C^*$, con $C^*$ nucleo composto eccitato; nel secondo, $C^*\to B+y$.
+Ci sono, inoltre, quattro possibili risultati finali:
+\begin{itemize}
+	\item $C^* \to A+x$ a seguito di uno scattering elastico, o anelastico; 
+	\item $C^* \to C+ \gamma$ a seguito di una cattura radiativa;
+	\item $C^* \to B+y$ a seguito della produzione di nuovi elementi.
+\end{itemize}
+I processi mediati da interazione forte hanno sezione d'urto maggiore, seguiti dai processi di cattura radiativa e, infine, da quelli mediati dall'interazione debole.
+\end{osservazione}
+\noindent Si \`e trovato che 
+\[
+\frac{d L}{d r} = 4 \pi r^2 \rho  \varepsilon 
+\] 
+con $\varepsilon = \varepsilon _N + \varepsilon _g - \varepsilon _\nu $. 
+Si vorrebbe determinare, data l'energia prodotta dalla reazione, il coefficiente $\varepsilon _N$.
+Per arrivare a questo risultato, si parte dal ricavare il rate delle reazione; successivamente, si calcola l'energia prodotta per unit\`a di tempo e massa associata a questo coefficiente $\varepsilon _N$.
 
+Per ottenere il rate con cui avvengono le reazioni, si considera un fascio incidente di particelle, indicizzate da $j$, a velocit\`a $v$ su un bersaglio di particelle, indicizzate da $i$.
+Per ogni $j$, il rate di collisione \`e dato da $n_i\sigma v$; per tutte le particelle del fascio incidente, si ha:
+\begin{equation}
+	n_{ij}  = \frac{n_i n_j \sigma v}{1 + \delta _{ij} }
+\end{equation}
+dove il denominatore evita doppi conteggi.
+Realisticamente, per\`o, non \`e vero che ogni particella ha la stessa velocit\`a $v$, per cui si sostituisce $\sigma v \to \langle \sigma v \rangle$, dove 
+\[
+\langle \sigma v \rangle = \int \sigma (v) v f(v) \dd v= \int \sigma (E) v(E) f(E) \dd E
+\] 
+con $f(v)$ distribuzione di Maxwell delle velocit\`a, poi portata in termini energetici in cui $f(E)$ comprende lo jacobiano della trasformazione.
+In questo modo, introducendo il $Q$-valore del processo $Q_{ij} $, si ha 
+\[
+\varepsilon _{ij}  = \frac{n_{ij} }{\rho }Q_{ij}  =  \frac{1}{1+\delta _{ij} }\frac{Q_{ij} \rho }{m_H^2}\frac{X_i X_j}{A_iA_j} \langle \sigma v \rangle
+\] 
+Si nota che $\left[ \varepsilon _{ij}  \right] = \text{erg g}^{-1}\text{ cm}^{-1}$ e che $\varepsilon _N = \sum_{i,j}^{} \varepsilon _{ij} $.
+A patto di conoscere il $Q$-valore, \`e sufficiente ottenere il rate per $\varepsilon _{ij} $. 
+\[
+	\begin{split}
+		\langle \sigma v \rangle &= \int \frac{S(E)}{E}e^{-2\pi \eta } \sqrt{\frac{2E}{m}} f(E) \dd E\\
+					 &=\frac{1}{\sqrt{\pi m} } \left(\frac{2}{\kappa _B T}\right) ^{3 / 2} \int S(E) \exp\left[ - \frac{E}{\kappa _B T} - \frac{Z_1Z_2e^2}{\hbar \sqrt{E} } \sqrt{\frac{m}{2}} \right] \dd E
+	\end{split}
+\] 
+dove si \`e usato che 
+\[
+f(E) = \frac{2}{\sqrt{\pi} }\frac{\sqrt{E} }{(\kappa _B T)^{3 / 2}} e^{-E / \kappa _B T}
+\] 
+Ora, prendendo $\beta =\frac{Z_1Z_2e^2}{\hbar }\sqrt{\frac{m}{2}}$ e considerando che $S(E)$, attorno al picco di Gamow, \`e circa costante, quindi pu\`o fissare al valore $E_0$ in corrispondenza del picco e lo si pu\`o portare fuori dall'integrale, si rimane con
+\[
+\langle \sigma v \rangle = \frac{S(E_0)}{\sqrt{\pi m }  } \left(\frac{2}{\kappa _B T}\right) ^{3 / 2} \int \exp\left[ -\frac{E}{\kappa _B T} - \frac{\beta }{\sqrt{E} } \right] \dd E
+\] 
+Ora si prende $g(E) = - \left(\frac{E}{\kappa _B T } + \frac{\beta}{\sqrt{E} }\right) $; imponendo nulla la sua derivata prima, si trova il punto del picco 
+\[
+E_0 = \left(\frac{\beta \kappa _B T}{2}\right) ^{2 / 3} 
+\] 
+Inoltre, definendo $\tau = \frac{3E_0}{\kappa _BT }$, si pu\`o verificare che $g(E_0) = -\tau $.
+Questo parametro indica quando lontano nella coda della distribuzione di Boltzmann si verifica il picco di Gamow. 
+Per esempio, nel caso del Sole, per una coppia di protoni, si ha $E_0 / \kappa _B T \sim 5$; nel caso di due nuclei di $^{12} \mathrm{C} $, invece, si ha $E_0 / \kappa _BT \sim 10^2$.
+Inoltre, definendo $I_\text{max} = e^{-\tau }$, visto che $\tau \sim T^{-1 / 3}$, si ha che il picco $g(E_0)=-\tau \sim T^{-1 / 3} $ cresce lentamente con la temperatura, mentre $I_\text{max}$ cresce esponenzialmente con essa.
+Questo accenna gi\`a all'elevata dipendenza dalla temperatura del reaction rate che si vedr\`a pi\`u avanti.
+Inoltre, a temperatura fissata, aumentando la carica $I_\text{max}$ decresce esponenzialmente.
 
+\subsubsection{Reaction rate}
 
+Per risolvere l'integrale e avere una stima di quanto valga $\langle \sigma v \rangle$, quindi $n_{ij} $, si studia $J = \int _0^{+\infty} e^{g(E)}\dd E$. 
+La risoluzione si basa sullo sviluppare in serie $g(E)$ attorno a $g(E_0)$:
+\[
+	g(E) \simeq g(E_0) + \cancel{g'(E_0) (E-E_0)} + \frac{1}{2} g''(E_0) (E-E_0)^2 = -\tau - \frac{\tau }{4} \left(\frac{E}{E_0}-1\right) ^2
+\] 
+per cui, cambiando variabile con $\xi  = \frac{\sqrt{\tau } }{2} \left(\frac{E}{E_0}-1\right) $ e $\dd E = \frac{2E_0}{\sqrt{\tau } }\dd \xi $, si ottiene
+\[
+	\begin{split}
+		J &\simeq e^{-\tau } \int _0^{+\infty} \exp \left[ - \frac{\tau}{4} \left(\frac{E}{E_0}-1\right) ^2 \right] \dd E = \frac{2E_0}{\sqrt{\tau } } e^{-\tau } \int _{- \tau  / \sqrt{2} } ^{+\infty} e^{-\xi ^2} \dd \xi \\
+		  &\approx  \frac{2E_0}{\sqrt{\tau } }e^{-\tau } \int _{-\infty} ^{+\infty} e^{-\xi ^2}\dd \xi = \frac{2\sqrt{\pi} }{3}\kappa _BT \sqrt{\tau }  e^{-\tau }
+	\end{split}
+\] 
+Allora 
+\[
+\langle \sigma v \rangle = \frac{S(E_0)}{\sqrt{\pi m} } \left(\frac{2}{\kappa _BT}\right) ^{3 / 2}\frac{2\sqrt{\pi} }{3}\kappa _BT \sqrt{\tau }  e^{-\tau }= \frac{4}{3}S(E_0) \sqrt{\frac{2}{m}} \frac{\sqrt{\tau } e^{-\tau }}{\sqrt{\kappa _BT} }
+\] 
+Visto che $1 / \sqrt{\kappa _B T} \propto \tau ^{3 / 2} $, si evince che $\langle \sigma v \rangle \propto \tau ^2 e^{-\tau }$ o, equivalentemente, $\langle \sigma v \rangle \propto T^{-2 / 3} e^{-\tau }$.
 
+Per finire, si osserva che, essendo $\langle \sigma v \rangle\propto T^{-2 / 3} e^{-\tau }$, allora
+\[
+\log \langle \sigma v \rangle = \text{cost.} - \frac{2}{3} \log T - \tau 
+\] 
+Usando che $\frac{\partial \log \tau }{\partial \log T} = - \frac{1}{3}$, si ottiene che 
+\[
+\frac{\partial \log \langle \sigma v \rangle}{\partial \log T}  = -\frac{2}{3} + \frac{1}{3} \tau = \frac{\tau - 2}{3}
+\] 
+Allora, conoscendo $\langle \sigma v \rangle_0$ ad una temperatura $T_0$, si ha 
+\begin{equation}
+	\langle \sigma v \rangle = \langle \sigma v \rangle_0 \left(\frac{T}{T_0}\right) ^{\nu }
+\end{equation}
+con $\nu  = \frac{\tau -2}{3}$.
+Allora, si conclude che $\langle \sigma v \rangle$, in un intorno di $T_0$, cresce con $T$ secondo una potenza $\nu $, la quale, dipende da $\tau $, che dipende dalla carica: il reaction rate, quindi $\varepsilon _N$, dipende tanto dalla temperatura, quanto pi\`u dipende dalla carica.
 
+Tramite questo meccanismo, si osserva il comportamento da termostato stellare: se la stella produce troppo poco, si restringe, quindi aumenta la sua temperatura e, allora, aumenta l'energia prodotta; viceversa, se produce troppa energia, si dilata, quindi diminuisce la sua temperatura, quindi diminuisce il reaction rate.
+In ambienti degeneri, questo non accade perch\'e la temperatura si disaccoppia dall'equazione di stato, quindi l'energia liberata viene convertita in energia cinetica, che aumenta la temperatura e, quindi, il reaction rate. 
+Questa retroazione positiva porta all'esplosione della stella.
+\subsubsection{Screening elettronico}
 
-
-
+In tutta la trattazione, si \`e trascurata la presenza degli elettroni; questi, infatti, non sono distribuiti omogeneamente nel plasma, ma si raggruppano attorno a degli ioni, schermando il loro potenziale.
+Questo comporta la correzione 
+\[
+\frac{Ze}{r} \longrightarrow \frac{Ze}{r} e^{-r / \lambda _D} \hspace{1cm} \lambda _D = \sqrt{\frac{\kappa _B T}{4 \pi e^2 \sum_{i}^{} n_e^i (Z_i+1)}} 
+\] 
+dove $\lambda _D$ \`e detta \textit{lunghezza di Debeye}.
+Nel centro del Sole, ad una distanza $r_\text{min}$ che interessa il processo di fusione nucleare, $\lambda _D / r_\text{min}\sim 10^2$, per cui l'effetto di schermatura risulter\`a trascurabile, in quanto $e^{- r_\text{min} / \lambda _D} \approx 1$.
+Il fattore correttivo del reaction rate \`e dato da
+\[
+f = \exp \frac{E_D}{ \kappa _B T } > 1 \hspace{1cm} E_D = \frac{Z_i^2 e^2}{\lambda _D}
+\] 
+dove $E_D$ \`e chiamata \textit{energia di Debeye}.
 
 
 
