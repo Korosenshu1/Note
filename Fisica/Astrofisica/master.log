@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  16 JUL 2026 17:41
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  17 JUL 2026 00:31
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1011,15 +1011,40 @@ Package: pgf-spectra 07/07/2024 pgf-spectra v3.0.1a
 \wlc@lorr=\dimen402
 \wlc@lorg=\dimen403
 \wlc@lorb=\dimen404
-) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+) (/usr/share/texmf-dist/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
+ (/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
+) (/usr/share/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count404
+\g__chemgreek_tmpa_int=\count405
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count406
+\__mhchem_arrow_extPgfLength_skip=\skip85
+\mhchem@minispace@tmp=\skip86
+\mhchem@minibackspace@tmp=\skip87
+\mhchem@bondwidth=\skip88
+\mhchem@bondheight=\skip89
+\mhchem@smallbondwidth@tmpA=\skip90
+\mhchem@smallbondwidth@tmpB=\skip91
+\mhchem@smallbondwidth=\skip92
+\mhchem@bondtmp@minussidebearingleft=\skip93
+\mhchem@bondtmp@minussidebearingright=\skip94
+\l__mhchem_option_version_int=\count407
+\mhchem@option@minusmathsidebearingleft=\dimen405
+\mhchem@option@minusmathsidebearingright=\dimen406
+\mhchem@option@minustextsidebearingleft=\dimen407
+\mhchem@option@minustextsidebearingright=\dimen408
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
-\pgf@intersect@solutions=\count404
+\pgf@intersect@solutions=\count408
 )) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
  (/usr/share/texmf-dist/tex/generic/babel/luababel.def
@@ -1118,7 +1143,7 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \babelcatcodetablenum=\catcodetable16
 \bbl@pattcodes=\catcodetable17
 )
-\babel@savecnt=\count405
+\babel@savecnt=\count409
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
@@ -1126,7 +1151,7 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
-\U@D=\dimen405
+\U@D=\dimen409
 \l@unhyphenated=\language92
  (/usr/share/texmf-dist/tex/generic/babel/luababel.def
 \bbl@attr@locale=\attribute4
@@ -1135,18 +1160,18 @@ Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
-\it@lettering=\count406
-\it@doublequoteactive=\count407
-\it@ISOcompliance=\count408
+\it@lettering=\count410
+\it@doublequoteactive=\count411
+\it@ISOcompliance=\count412
  (/usr/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex UTF-8 Italian hyphenation patterns (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex) (/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-it.tex)))) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
 \FN@temptoken=\toks56
-\footnotemargin=\dimen406
+\footnotemargin=\dimen410
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count409
+\c@abspage=\count413
 )
-\c@pp@a@footnote=\count410
+\c@pp@a@footnote=\count414
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
 Package footmisc Info: Declaring symbol style wiley on input line 566.
@@ -1156,18 +1181,18 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 618.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@esempio=\count411
-\c@definizione=\count412
-\c@prop=\count413
-\c@teorema=\count414
-\c@lemma=\count415
-\c@corollario=\count416
-\c@osservazione=\count417
-\c@assunzione=\count418
-\c@notazione=\count419
-\c@esercizio=\count420
-Package hyperref Info: Option `colorlinks' set `true' on input line 145.
-Package hyperref Info: Option `breaklinks' set `true' on input line 145.
+\c@esempio=\count415
+\c@definizione=\count416
+\c@prop=\count417
+\c@teorema=\count418
+\c@lemma=\count419
+\c@corollario=\count420
+\c@osservazione=\count421
+\c@assunzione=\count422
+\c@notazione=\count423
+\c@esercizio=\count424
+Package hyperref Info: Option `colorlinks' set `true' on input line 146.
+Package hyperref Info: Option `breaklinks' set `true' on input line 146.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -1188,51 +1213,51 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 187.
+(scrartcl)              package `tocloft' on input line 188.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip85
-\cftbeforetoctitleskip=\skip86
-\cftaftertoctitleskip=\skip87
-\cftbeforepartskip=\skip88
-\cftpartnumwidth=\skip89
-\cftpartindent=\skip90
-\cftbeforesecskip=\skip91
-\cftsecindent=\skip92
-\cftsecnumwidth=\skip93
-\cftbeforesubsecskip=\skip94
-\cftsubsecindent=\skip95
-\cftsubsecnumwidth=\skip96
-\cftbeforesubsubsecskip=\skip97
-\cftsubsubsecindent=\skip98
-\cftsubsubsecnumwidth=\skip99
-\cftbeforeparaskip=\skip100
-\cftparaindent=\skip101
-\cftparanumwidth=\skip102
-\cftbeforesubparaskip=\skip103
-\cftsubparaindent=\skip104
-\cftsubparanumwidth=\skip105
-\cftbeforeloftitleskip=\skip106
-\cftafterloftitleskip=\skip107
-\cftbeforefigskip=\skip108
-\cftfigindent=\skip109
-\cftfignumwidth=\skip110
-\c@lofdepth=\count421
-\c@lotdepth=\count422
-\cftbeforelottitleskip=\skip111
-\cftafterlottitleskip=\skip112
-\cftbeforetabskip=\skip113
-\cfttabindent=\skip114
-\cfttabnumwidth=\skip115
+\cftparskip=\skip95
+\cftbeforetoctitleskip=\skip96
+\cftaftertoctitleskip=\skip97
+\cftbeforepartskip=\skip98
+\cftpartnumwidth=\skip99
+\cftpartindent=\skip100
+\cftbeforesecskip=\skip101
+\cftsecindent=\skip102
+\cftsecnumwidth=\skip103
+\cftbeforesubsecskip=\skip104
+\cftsubsecindent=\skip105
+\cftsubsecnumwidth=\skip106
+\cftbeforesubsubsecskip=\skip107
+\cftsubsubsecindent=\skip108
+\cftsubsubsecnumwidth=\skip109
+\cftbeforeparaskip=\skip110
+\cftparaindent=\skip111
+\cftparanumwidth=\skip112
+\cftbeforesubparaskip=\skip113
+\cftsubparaindent=\skip114
+\cftsubparanumwidth=\skip115
+\cftbeforeloftitleskip=\skip116
+\cftafterloftitleskip=\skip117
+\cftbeforefigskip=\skip118
+\cftfigindent=\skip119
+\cftfignumwidth=\skip120
+\c@lofdepth=\count425
+\c@lotdepth=\count426
+\cftbeforelottitleskip=\skip121
+\cftafterlottitleskip=\skip122
+\cftbeforetabskip=\skip123
+\cfttabindent=\skip124
+\cfttabnumwidth=\skip125
 
 
 Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing out. on input line 1156.
 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen407
+\ttl@leftsep=\dimen411
 )
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
@@ -1241,35 +1266,35 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 201.
+(scrartcl)           before \begin{document} on input line 202.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count423
+\BKM@id=\count427
 )) (./master.aux)
 \openout1 = master.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1307,16 +1332,16 @@ LaTeX Font Info:    ... okay on input line 201.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count424
-\scratchdimen=\dimen408
+\scratchcounter=\count428
+\scratchdimen=\dimen412
 \scratchbox=\box131
-\nofMPsegments=\count425
-\nofMParguments=\count426
+\nofMPsegments=\count429
+\nofMParguments=\count430
 \everyMPshowfont=\toks57
-\MPscratchCnt=\count427
-\MPscratchDim=\dimen409
-\MPnumerator=\count428
-\makeMPintoPDFobject=\count429
+\MPscratchCnt=\count431
+\MPscratchDim=\dimen413
+\MPnumerator=\count432
+\makeMPintoPDFobject=\count433
 \everyMPtoPDFconversion=\toks58
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1324,27 +1349,30 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 201.
+Package hyperref Info: Link coloring ON on input line 202.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 201.
+ on input line 202.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen410
-\c__nicematrix_innersep_middle_dim=\dimen411
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen414
+\c__nicematrix_innersep_middle_dim=\dimen415
+
+Package chemgreek Info: Activating mapping `default' on line 202.
+
 \g__cctab_next_cctab=\catcodetable18
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 202.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 203.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <15> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 204.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 205.
 
 (./master.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
@@ -1363,172 +1391,172 @@ File: uesint.fd
 
 \openout5 = master.toc
  [3]
-LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 265.
+LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 266.
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
 []\TU/lmr/m/it/10.95 Den-si-tà di
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
 []\TU/lmr/m/it/10.95 In-ten-si-tà
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
 \TU/lmr/m/it/10.95 spe-ci-fi-ca
  []
 
 [5]
-Overfull \hbox (25.8536pt too wide) in paragraph at lines 389--390
+Overfull \hbox (25.8536pt too wide) in paragraph at lines 390--391
  [][] 
  []
 
 [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 502--502
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
 []\TU/lmr/m/it/10.95 Ma-gni-tu-di-ne
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 507--507
+Underfull \hbox (badness 10000) in paragraph at lines 508--508
 []\TU/lmr/m/it/10.95 Ma-gni-tu-di-ne
  []
 
-<h1.png, id=177, 1183.42125pt x 877.02657pt>
+<h1.png, id=196, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
-Package luatex.def Info: h1.png  used on input line 522.
+Package luatex.def Info: h1.png  used on input line 523.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
-<h2.png, id=178, 1182.66844pt x 874.01532pt>
+<h2.png, id=197, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
-Package luatex.def Info: h2.png  used on input line 528.
+Package luatex.def Info: h2.png  used on input line 529.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
-<c1.png, id=179, 1192.455pt x 879.285pt>
+<c1.png, id=198, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
-Package luatex.def Info: c1.png  used on input line 533.
+Package luatex.def Info: c1.png  used on input line 534.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
-<c2.png, id=180, 1175.14032pt x 878.53218pt>
+<c2.png, id=199, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
-Package luatex.def Info: c2.png  used on input line 539.
+Package luatex.def Info: c2.png  used on input line 540.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
-<sunspec.png, id=181, 1181.91562pt x 354.57469pt>
+<sunspec.png, id=200, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
-Package luatex.def Info: sunspec.png  used on input line 550.
+Package luatex.def Info: sunspec.png  used on input line 551.
 (luatex.def)             Requested size: 333.46758pt x 100.03767pt.
 [9<./h1.png><./h2.png><./c1.png><./c2.png>] [10<./sunspec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
 []|\TU/lmr/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
 []|\TU/lmr/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
 []|\TU/lmr/m/n/10 aran-cio-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
 []|\TU/lmr/m/n/10 rosso-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
 \TU/lmr/m/n/10 arancione
  []
 
 [11] [12] [13]
-<cAH-S.png, id=213, 825.83531pt x 433.62pt>
+<cAH-S.png, id=231, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
-Package luatex.def Info: cAH-S.png  used on input line 864.
+Package luatex.def Info: cAH-S.png  used on input line 865.
 (luatex.def)             Requested size: 333.46758pt x 175.09244pt.
  [14<./CaH-S.png>] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 997--997
+Underfull \hbox (badness 10000) in paragraph at lines 998--998
 []\TU/lmr/m/it/10.95 Equa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 997--997
+Underfull \hbox (badness 10000) in paragraph at lines 998--998
 \TU/lmr/m/it/10.95 zio-ne di
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1016
 []\TU/lmr/m/it/10.95 Equi-li-brio
  []
 
 [17] [18] [19] [20] [21] [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1258--1258
+Underfull \hbox (badness 10000) in paragraph at lines 1259--1259
 []\TU/lmr/m/it/10.95 Equi-li-brio
  []
 
 
-Overfull \hbox (4.04558pt too wide) in paragraph at lines 1301--1303
+Overfull \hbox (4.04558pt too wide) in paragraph at lines 1302--1304
  [][] 
  []
 
 [25]
-Overfull \hbox (10.85544pt too wide) detected at line 1327
+Overfull \hbox (10.85544pt too wide) detected at line 1328
 \OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 [] [][] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/10.95 ) [][] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/10.95 ) [][] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95  []
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1337--1337
+Underfull \hbox (badness 10000) in paragraph at lines 1338--1338
 []\TU/lmr/m/it/10.95 Sem-pli-fi-ca-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1337--1337
+Underfull \hbox (badness 10000) in paragraph at lines 1338--1338
 \TU/lmr/m/it/10.95 zio-ne del
  []
 
 
-Overfull \hbox (25.14485pt too wide) detected at line 1350
+Overfull \hbox (25.14485pt too wide) detected at line 1351
 [][] \OML/cmm/m/it/10.95 > [][] \OT1/cmr/m/n/10.95 = [][] \OMS/cmsy/m/n/10.95 ^^@ [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  [][] \OML/cmm/m/it/10.95 > [] [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  [][][] \OML/cmm/m/it/10.95 > [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1365
 []\TU/lmr/m/it/10.95 Cau-se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1365
 \TU/lmr/m/it/10.95 dei mo-ti
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1391
+Underfull \hbox (badness 10000) in paragraph at lines 1392--1392
 []\TU/lmr/m/it/10.95 Su-pe-ra-dia-
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
-<kt.png, id=412, 407.02063pt x 465.23813pt>
+<kt.png, id=431, 407.02063pt x 465.23813pt>
 File: kt.png Graphic file (type png)
 <use kt.png>
-Package luatex.def Info: kt.png  used on input line 1742.
+Package luatex.def Info: kt.png  used on input line 1743.
 (luatex.def)             Requested size: 187.57352pt x 214.40257pt.
- [39] [40<./kt.png>] [41]
-<ben.jpg, id=436, 394.1124pt x 277.5168pt>
+ [39] [40<./kt.png>] [41] [42]
+<ben.jpg, id=459, 394.1124pt x 277.5168pt>
 File: ben.jpg Graphic file (type jpg)
 <use ben.jpg>
-Package luatex.def Info: ben.jpg  used on input line 1841.
+Package luatex.def Info: ben.jpg  used on input line 1843.
 (luatex.def)             Requested size: 187.57352pt x 132.08015pt.
- [42] [43<./ben.jpg>]
-<gp.png, id=447, 712.6625pt x 564.1075pt>
+ [43<./ben.jpg>]
+<gp.png, id=465, 712.6625pt x 564.1075pt>
 File: gp.png Graphic file (type png)
 <use gp.png>
-Package luatex.def Info: gp.png  used on input line 1875.
+Package luatex.def Info: gp.png  used on input line 1879.
 (luatex.def)             Requested size: 208.41644pt x 164.9728pt.
- [44<./gp.png>] [45] [46] [47] [48] [49] [50] (./master.aux)
+ [44<./gp.png>] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1536,14 +1564,14 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 65275 strings out of 476076
- 125011,3417909 words of node,token memory allocated
- 8149 words of node memory still in use:
-   59 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 110 glue, 44 kern, 36 penalty, 392 glyph, 604 attribute, 102 glue_spec, 303 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5831,3:3270,4:164,5:592,6:113,7:6954,8:122,9:1328,10:30,11:964
- 86352 multiletter control sequences out of 65536+600000
+ 66168 strings out of 476076
+ 125011,4101490 words of node,token memory allocated
+ 8221 words of node memory still in use:
+   59 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 110 glue, 44 kern, 36 penalty, 392 glyph, 628 attribute, 102 glue_spec, 315 attribute_list, 2 write nodes
+   avail lists: 1:2,2:5795,3:3270,4:164,5:592,6:113,7:6954,8:122,9:1898,10:30,11:964
+ 87217 multiletter control sequences out of 65536+600000
  114 fonts using 8232391 bytes
- 124i,23n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,27n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.18'
 
@@ -1582,10 +1610,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (50 pages, 3697687 bytes).
+Output written on master.pdf (54 pages, 3711646 bytes).
 
-PDF statistics: 778 PDF objects out of 1000 (max. 8388607)
- 646 compressed objects within 7 object streams
- 188 named destinations out of 1000 (max. 1048576)
- 386 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 842 PDF objects out of 1000 (max. 8388607)
+ 705 compressed objects within 8 object streams
+ 201 named destinations out of 1000 (max. 1048576)
+ 458 words of extra memory for PDF output out of 10000 (max. 100000000)
 

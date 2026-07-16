@@ -29,6 +29,7 @@
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usepackage{pgf-spectra}
+\usepackage[version=4]{mhchem}
 \usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
@@ -1815,8 +1816,9 @@ I profili di riga dovrebbero essere diversi per ogni processo (emissione spontan
 \] 
 il che giustifica il fattore correttivo utilizzato in $\kappa _\nu $.
 
-\subsection{Produzione di energia termonucleare}
-\subsubsection{Energia di legame}
+\newpage
+\section{Reazioni termonucleari negli interni stellari}
+\subsection{Energia di legame}
 Dato un nucleo di massa $m_x$ con $Z$ protoni ed $N$ neutroni (per cui $A = Z+ N $), l'\textit{energia di legame} \`e data da 
 \begin{equation}
 	E_B = (m_x - Zm_p - Nm_N) c^2 < 0 
@@ -1844,7 +1846,9 @@ In questo modo, se la massa totale del prodotto \`e inferiore di quella iniziale
 Le reazioni di interesse nelle stelle partono dalla produzione di elio-4 a partire da idrogeno, fino ad arrivare al ferro-56.
 Una catena di reazioni produce lo $0.9\%$ della massa a riposo iniziale, dove l'$80\%$ di questa frazione (circa lo $0.7\%$ della massa a riposo iniziale) \`e ottenuto dalla conversione di idrogeno in elio.
 
+\subsection{Realizzazione del processo di fusione}
 \subsubsection{Barriera coulombiana}
+
 Perch\'e due nuclei atomici possano essere fusi insieme, \`e necessario sovrastare la forza repulsiva dovuta all'interazione coulombiana.
 Il raggio di un nucleo \`e dato da $R(A) \approx 1.3 A^{1 / 3} \text{ fm}$, per cui il picco di tale repulsione \`e dato da $E_C = \frac{Z_1Z_2 e^2}{R(A)} \propto \frac{Z_1 Z_2}{A^{1/3}}$.
 
@@ -1977,7 +1981,7 @@ Allora, si conclude che $\langle \sigma v \rangle$, in un intorno di $T_0$, cres
 Tramite questo meccanismo, si osserva il comportamento da termostato stellare: se la stella produce troppo poco, si restringe, quindi aumenta la sua temperatura e, allora, aumenta l'energia prodotta; viceversa, se produce troppa energia, si dilata, quindi diminuisce la sua temperatura, quindi diminuisce il reaction rate.
 In ambienti degeneri, questo non accade perch\'e la temperatura si disaccoppia dall'equazione di stato, quindi l'energia liberata viene convertita in energia cinetica, che aumenta la temperatura e, quindi, il reaction rate. 
 Questa retroazione positiva porta all'esplosione della stella.
-\subsubsection{Screening elettronico}
+\subsection{Screening elettronico}
 
 In tutta la trattazione, si \`e trascurata la presenza degli elettroni; questi, infatti, non sono distribuiti omogeneamente nel plasma, ma si raggruppano attorno a degli ioni, schermando il loro potenziale.
 Questo comporta la correzione 
@@ -1992,7 +1996,123 @@ f = \exp \frac{E_D}{ \kappa _B T } > 1 \hspace{1cm} E_D = \frac{Z_i^2 e^2}{\lamb
 \] 
 dove $E_D$ \`e chiamata \textit{energia di Debeye}.
 
+\subsection{Combustione dell'idrogeno}
+\subsubsection{Ciclo p-p}
+Usando temperatura e fattore astrofisico centrali per il Sole, si ottiene che il reaction rate per la fusione di due protoni \`e $\langle \sigma v \rangle \sim 10^{-43} \text{ cm}^3 \text{ s}^{-1}$.
+Visto che la densit\`a di protoni nel centro del Sole \`e di $n_p \sim 10^{26} \text{ cm}^{-3}$, si ottiene che
+\[
+n_{p p} = \frac{n_p^2}{2} \langle \sigma v \rangle \sim 10^{9} \text{ cm}^{-3} \text{ s}^{-1}
+\] 
+Si pu\`o comparare col numero di collisioni, utilizzando la velocit\`a termica, osservando che $\langle \sigma v \rangle / \sigma _\text{col} v_\text{th} \sim 10^{-25}$, quindi ci saranno molti urti tra protoni, fra cui una porzione di questi supera la barriera coulombiana e, tra questi che la superano, solo alcuni fondono.
 
+Si pu\`o ricavare la variazione di $n_p$ per via dei processi di combustione:
+\[
+\frac{d n_p}{d t} = - n_{pp} (1+ \delta _{ij} ) \equiv \frac{n_p}{\tau _p}\implies \tau _p = \frac{1}{n_p \langle \sigma v \rangle} \sim 10^{17} \text{ s} \sim 10^{9}\text{ yr}
+\] 
+dove $\tau _p$ rappresenta il tempo di vita medio dell'idrogeno nel Sole a causa della combustione.
+\subsubsection{Priorit\`a delle reazioni}
+Nonostante la fusione $p+p$ presenti la barriera coulombiana pi\`u bassa, la reazione pi\`u probabile \`e $p+D$; pi\`u nel dettaglio, le reazioni sono
+\[
+p+p \to \mathrm{D} + e^{+} + \nu _e \hspace{2cm} p+D \to  ^{3} \mathrm{He} + \gamma
+\] 
+Infatti, nonostante la prima abbia un fattore di Gamow pi\`u basso per via della pi\`u bassa massa ridotta, la seconda presenta un fattore astrofisico nettamente maggiore, per cui $\sigma _{p+\mathrm{D} } \gg \sigma _{p+p} $.
+
+\subsubsection{Catena p-p}
+Questa \`e una delle possibili catene di reazioni nucleari alla fine di cui si ha la produzione di $^{4} \mathrm{He} $.
+Il $90\%$ della luminosit\`a del Sole \`e originata dalla catena $p$-$p$ I:
+\[
+	\begin{split}
+		\ce{p + p} &\longrightarrow \ce{D + e+ +\nu _e} \\
+		\ce{p + D} &\longrightarrow \ce{^{3}\mathrm{He}  + \gamma}\\
+		\ce{^{3} \mathrm{He} + ^{3} \mathrm{He}} & \longrightarrow \ce{{}^{4} \mathrm{He} + 2p}
+	\end{split}
+\] 
+L'elio prodotto alla fine di questa pu\`o reagire secondo la reazione ${}^{3} \mathrm{He} + {}^{4} \mathrm{He} \longrightarrow {}^{7} \mathrm{Be} +\gamma $.
+A seguire, si possono verificare due catene alternative, rispettivamente la catena $p$-$p$ II e la $p$-$p$ III.
+Il $9\%$ della luminosit\`a \`e dovuto alla $p$-$p$ II:
+\[
+	\begin{split}
+		\ce{^{7}Be + e-} &\longrightarrow \ce{^{7}Li + \nu _e} \\
+	\ce{^{7}Li + p } & \longrightarrow \ce{^{8} Be}\\
+	\ce{^{8} Be} &\longrightarrow \ce{^{4} He + ^{4} He} 
+	\end{split}
+\] 
+Il restante $1\%$ alla $p$-$p$ III:
+\[
+\begin{split}
+	\ce{^{7} Be + p} &\longrightarrow \ce{^{8} B + \gamma}\\
+	\ce{^{8} B}&\longrightarrow \ce{^{8} Be + e+ + \nu _e}\\
+	\ce{^{8} Be}&\longrightarrow \ce{^{4} He + ^{4} He}
+\end{split} 
+\] 
+Si osserva che le reazioni $\ce{p + p}$, $\ce{^{7} Be + e-}$ e decadimento del $\ce{^{8} B}$ producono neutrini; visto che questi non interagiscono mai dopo essere stati prodotti, la loro energia deve essere sottratta all'energia prodotta dalle reazioni.
+Nel caso di queste, l'energia dei neutrini \`e pari al $2\%$ per la prima, al $4\%$ per la seconda e $28\%$ per l'ultima.
+\subsubsection{Studio dell'abbondanza di elementi secondari}
+In alcune di queste razioni, vengono prodotti elementi secondari che sono, poi, necessari per la continuazione della catena; si vuole studiare il loro andamento nel tempo. 
+Prendendo per esempio il deuterio, la sua variazione nel tempo sar\`a legata alla produzione tramite la reazione $\ce{p+p}$ e alla sua combustione a seguito della reazione $\ce{p + D}$, quindi:
+\[
+\frac{d n_D}{d t} = \frac{n_p^2}{2} \langle \sigma _{p + p}  v \rangle - n_p n_D \langle \sigma _{p +D}  v \rangle
+\] 
+Passato sufficiente tempo, produzione e combustione sono all'equilibrio, per cui $\frac{d n_D}{d  t} = 0 $ e, quindi:
+\[
+	\left(\frac{n_D}{n_p}\right) _\text{eq} = \frac{1}{2} \frac{\langle \sigma _{p+p} v \rangle}{\langle \sigma _{p+D} v \rangle}
+\] 
+Tuttavia, visto che $\sigma _{p+D}  \gg \sigma _{p+p} $, l'abbondanza di deuterio rispetto ad idrogeno, all'equilibrio, sar\`a molto minore.
+
+
+\subsection{Ciclo CNO}
+Il ciclo principale \`e il ciclo CN, in cui i principali catalizzatori sono il carbonio e l'azoto. 
+Il ciclo \`e:
+\[
+\begin{split}
+	\ce{^{12}C + p }&\longrightarrow \ce{^{13} N + \gamma}\\
+	\ce{^{13}N } &\longrightarrow \ce{^{13} C + e+ + \nu _e}\\
+	\ce{^{13}C + p }&\longrightarrow \ce{^{14} N + \gamma}\\
+	\ce{^{14}N + p}&\longrightarrow \ce{^{15} O + \gamma}\\
+	\ce{^{15}O} & \longrightarrow \ce{^{15} N + e+ + \nu _e}\\
+	\ce{^{15}N + p}&\longrightarrow \ce{^{16} O^*} \longrightarrow \ce{^{12} C + \alpha}
+\end{split}
+\] 
+Con una probabilit\`a dell $1\%$, l'ossigeno pu\`o stabilizzarsi emettendo un fotone; da questo punto, parte il ciclo NO, in cui i catalizzatori principali sono azoto e ossigeno:
+\[
+\begin{split}
+	\ce{^{15}N + p}&\longrightarrow \ce{^{16} O^*} \longrightarrow \ce{^{16}O + \gamma }\\
+	\ce{^{16} O + p}&\longrightarrow \ce{^{17} F + \gamma}\\
+	\ce{^{17} F} &\longrightarrow \ce{^{17} O + e+ + \nu _e}\\
+	\ce{^{17} O + p}&\longrightarrow \ce{^{18} F^*} \longrightarrow \ce{^{14} N + \alpha }
+\end{split}
+\] 
+Questo continua dalla quarta reazione del ciclo CN, fino alla reazione $\ce{^{15} O}\to \ce{^{15} N + e+ + \nu _e}$, in cui si ottiene il catalizzatore con cui si \`e partiti.
+
+Alternativamente, il $\ce{^{18} F^*}$ pu\`o stabilizzarsi emettendo un fotone e originando una catena alternativa:
+\[
+\begin{split}
+	\ce{^{17} O + p}&\longrightarrow \ce{^{18} F^*} \longrightarrow \ce{^{18} F + \gamma}\\
+	\ce{^{18} F }&\longrightarrow \ce{^{18} O + e+ + \nu _e}\\
+	\ce{^{18} O + p}&\longrightarrow \ce{^{19} F^*} \longrightarrow \ce{^{15} N + \alpha }
+\end{split}
+\] 
+Di nuovo, c'\`e la possibilit\`a che il fluoro-19 si stabilizzi emettendo radiazione elettromagnetica, dando origine al seguente ciclo:
+\[
+\begin{split}
+	\ce{^{18} O + p}&\longrightarrow \ce{^{19} F^*} \longrightarrow \ce{^{19} F + \gamma}\\
+	\ce{^{19} F + p} &\longrightarrow \ce{^{20} Ne^*}\longrightarrow \ce{^{16} O + \alpha }
+\end{split}
+\] 
+Infine, c'\`e la possibilit\`a che quest'ultima finisca in $\ce{^{20} Ne + \gamma}$, terminando la catena, quindi, con una perdita di catalizzatori.
+
+Durante questi cicli, le abbondanze dei catalizzatori rimangono circa costanti, a meno dell'occrrenza della reazione $\ce{^{20} Ne + \gamma}$.
+Pi\`u correttamente, \`e la loro somma a costante, anche se l'abbondanza relativa varia; infatti essendo la reazione $\ce{^{14} N + p} \longrightarrow \ce{^{15} O + \gamma}$ molto lenta, si avr\`a un accumulo di azoto-14, mentre il carbonio-12 viene subito consumato nella prima reazione, molto rapida, mentre l'ossigeno viene trasformato in azoto, quindi passa del tempo prima che venga riprodotto.
+
+Si osserva, inoltre, una elevata occorrenza di decadimenti $\beta ^+$ legata alle numerose catture protoniche: trovandosi sempre pi\`u in casi in cui $Z > N$, si tende a ridurre questa differenza tramite decadimenti $\beta ^+$ per tornare nel caso pi\`u stabile in cui $Z= N$.
+
+Il ciclo CNO \`e estremamente dipendente dalla temperatura: mentre nella catena p-p, $\varepsilon _N$ aveva una proporzionalit\`a a $T^4$, nel ciclo CNO, si ha una proporzionalit\`a pari a $T^{15} $.
+Questo, come gi\`a accennato, \`e strettamente legato al fatto che la catena CNO coinvolge elementi con carica pi\`u alta rispetto alla catena p-p.
+\subsection{Temperature di rilevanza per CNO e catena p-p}
+In entrambi, le reazioni richiedono temperature dello stesso ordine di grandezza, ossia $\sim 10^7$ K; per\`o, alle temperature prossime a quelle del Sole, la catena $p$-$p$ \`e quella che produce effetti apprezzabili, mentre il contributo del CNO \`e quasi inesistente. 
+Vista, per\`o, l'elevata dipendenza dalla temperatura $\varepsilon _{\text{CNO}} \sim T^{18}$, anche un piccolo scostamento da quel range di temperatura ne fa aumentare la rilevanza in maniera estremamente apprezzabile, nonostante le reazioni che lo compongono siano tecnicamente possibili anche a temperature pi\`u basse.
+
+\subsection{Combustione dell'elio}
 
 
 
