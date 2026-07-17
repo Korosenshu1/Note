@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  17 JUL 2026 17:14
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.6.2)  17 JUL 2026 19:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1422,27 +1422,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 508--508
 []\TU/lmr/m/it/10.95 Ma-gni-tu-di-ne
  []
 
-<h1.png, id=218, 1183.42125pt x 877.02657pt>
+<h1.png, id=222, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
 Package luatex.def Info: h1.png  used on input line 523.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
-<h2.png, id=219, 1182.66844pt x 874.01532pt>
+<h2.png, id=223, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
 Package luatex.def Info: h2.png  used on input line 529.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
-<c1.png, id=220, 1192.455pt x 879.285pt>
+<c1.png, id=224, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
 Package luatex.def Info: c1.png  used on input line 534.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
-<c2.png, id=221, 1175.14032pt x 878.53218pt>
+<c2.png, id=225, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
 Package luatex.def Info: c2.png  used on input line 540.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
-<sunspec.png, id=222, 1181.91562pt x 354.57469pt>
+<sunspec.png, id=226, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
 Package luatex.def Info: sunspec.png  used on input line 551.
@@ -1473,7 +1473,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 678--678
  []
 
 [11] [12] [13]
-<cAH-S.png, id=253, 825.83531pt x 433.62pt>
+<cAH-S.png, id=257, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
 Package luatex.def Info: cAH-S.png  used on input line 865.
@@ -1539,19 +1539,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1392--1392
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
-<kt.png, id=453, 407.02063pt x 465.23813pt>
+<kt.png, id=457, 407.02063pt x 465.23813pt>
 File: kt.png Graphic file (type png)
 <use kt.png>
 Package luatex.def Info: kt.png  used on input line 1743.
 (luatex.def)             Requested size: 187.57352pt x 214.40257pt.
  [39] [40<./kt.png>] [41] [42]
-<ben.jpg, id=481, 394.1124pt x 277.5168pt>
+<ben.jpg, id=485, 394.1124pt x 277.5168pt>
 File: ben.jpg Graphic file (type jpg)
 <use ben.jpg>
 Package luatex.def Info: ben.jpg  used on input line 1842.
 (luatex.def)             Requested size: 187.57352pt x 132.08015pt.
  [43<./ben.jpg>]
-<gp.png, id=487, 712.6625pt x 564.1075pt>
+<gp.png, id=491, 712.6625pt x 564.1075pt>
 File: gp.png Graphic file (type png)
 <use gp.png>
 Package luatex.def Info: gp.png  used on input line 1878.
@@ -1569,7 +1569,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 2131.
 
-[52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] (./master.aux)
+[52] [53] [54] [55] [56] [57] [58] [59]
+<ht.png, id=566, 309.40594pt x 387.69844pt>
+File: ht.png Graphic file (type png)
+<use ht.png>
+Package luatex.def Info: ht.png  used on input line 2342.
+(luatex.def)             Requested size: 187.57352pt x 235.04633pt.
+<hr.png, id=567, 569.12625pt x 602.25pt>
+File: hr.png Graphic file (type png)
+<use hr.png>
+Package luatex.def Info: hr.png  used on input line 2348.
+(luatex.def)             Requested size: 187.57352pt x 198.495pt.
+ [60<./ht.png><./hr.png>] [61] [62] [63] [64] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1577,12 +1588,12 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 66204 strings out of 476076
+ 66228 strings out of 476076
  125011,4921788 words of node,token memory allocated
  8326 words of node memory still in use:
    60 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 110 glue, 44 kern, 36 penalty, 392 glyph, 660 attribute, 102 glue_spec, 331 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5747,3:3270,4:164,5:596,6:113,7:6954,8:180,9:1897,10:30,11:1044
- 87230 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:5747,3:3270,4:164,5:596,6:113,7:7095,8:180,9:1897,10:30,11:1052
+ 87246 multiletter control sequences out of 65536+600000
  114 fonts using 8232391 bytes
  124i,27n,421p,11244b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1623,10 +1634,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (62 pages, 3741940 bytes).
+Output written on master.pdf (64 pages, 4195443 bytes).
 
-PDF statistics: 934 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
- 224 named destinations out of 1000 (max. 1048576)
- 546 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 956 PDF objects out of 1000 (max. 8388607)
+ 806 compressed objects within 9 object streams
+ 228 named destinations out of 1000 (max. 1048576)
+ 562 words of extra memory for PDF output out of 10000 (max. 100000000)
 
