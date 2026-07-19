@@ -2328,7 +2328,7 @@ Nell'infrarosso, infatti, si possono osservare stelle neonate ancora circondate 
 
 \subsubsection{Diagramma HR e traccia di Hayashi}
 	I diagrammi HR (Hertzsprung-Russell) legano la luminosit\`a di una stella alla sua temperatura, la quale decresce da sinistra verso destra.
-	La fascia diagonale \`e detta \textit{sequenza principale} e contiene tutte le stelle che sono nella prima fase vitale in cui bruciano idrogeno.
+	La fascia diagonale \`e detta \textit{sequenza principale} e contiene tutte le stelle che sono nella prima fase vitale in cui bruciano idrogeno e, in prima approssimazione, hanno grossomodo tutte stesso raggio.
 	Spostandosi in alto, si trovano stelle con raggi maggiori, cos\`i come andando in verso opposto, si finisce verso stelle pi\`u piccole.
 
 Durante la sua fase iniziale, la stella si trova nella cosiddetta \textit{presequenza principale}; qui, si trova all'equilibrio idrostatico, ma \`e ancora troppo fredda per innescare le reazioni termonucleari, per cui brilla consumando energia gravitazionale ed evolve tramite il viriale, quindi si contrae con tempo scala $\tau _\text{KH}$, aumentando $T$ e $\rho $.
@@ -2345,21 +2345,100 @@ Durante la sua fase iniziale, la stella si trova nella cosiddetta \textit{preseq
 	\includegraphics[width=\columnwidth]{hr.png}
 	\end{minipage}
 \end{center}
-In questo momento, ci si trova sulla \textit{traccia di Hayashi}.
-A basse temperature, gran parte dell'idrogeno \`e neutro e l'opacit\`a \`e molto elevata in quanto ci sono molti elementi con cui la radiazione uscente pu\`o interagire, per cui $\nabla _\text{rad}$ cresce fino a raggiungere $\overline{\kappa }$ abbastanza grandi da innescare moti convettivi.
-Quindi la stella si sta contraendo, aumentando la densit\`a, quindi diminuendo il raggio, quindi diminuendo la luminosit\`a, ma mantendo la sua temperatura effettiva circa costante grazie alla convezione.
+Il percorso che segue nel diagramma HR, durante questa fase, \`e la cosiddetta \textit{traccia di Hayashi}: temporalmente, ci si trova nel momento in cui il secondo collasso si arresta e si forma una protostella; la traccia di Hayashi descrive l'andamento della protostella mentre accresce la sua massa e perde energia irradiando.
+Le temperature non sono ancora tali da innescare reazioni, per cui la prostella perde energia gravitazionale, si contrae lentamente e aumenta la temperatura centrale: il tempo scala di evoluzione \`e quello di K-H $\tau _\text{KH}\sim \frac{GM^2}{RL}$.
+Questo processo di contrazione \`e quasi-statico, ossia avviene lentamente, in quanto la protostella aggiusta continuamente la sua struttura: si ha un susseguirsi di stati di equilibrio idrostatico.
+
+A basse temperature, gran parte dell'idrogeno \`e neutro, inoltre sono presenti altre molecole e polvere circostante, quindi l'opacit\`a \`e molto elevata in quanto ci sono molti elementi con cui la radiazione uscente pu\`o interagire.
+Ne segue che $\nabla _\text{rad}$ cresce fino a violare il criterio di Schwarzschild: si ha $\nabla_\text{rad}> \nabla _\text{ad} $ e l'intera protostella \`e convettiva, in quanto, alle temperature attuali, ha opacit\`a elevata in ogni parte.
+Quindi la stella si sta contraendo, aumentando la densit\`a, quindi diminuendo il raggio, quindi diminuendo la luminosit\`a, ma mantendo la sua temperatura effettiva circa costante grazie alla convezione, in quanto il trasporto energetico \`e molto efficiente.
 Essendo $L = 4\pi R^2 \sigma T^4_\text{eff}$, il fatto che $T_\text{eff} \approx \text{cost.}$ implica che $\dot{L}<0$, visto che $\dot{\rho }> 0$.
 Questo giustifica il percorso verticale sulla traccia di Hayashi durante questa fase preliminare.
 
-La temperatura aumenta finch\'e la contrazione non viene rallentata brevemente dall'innesco di fusione del deuterio, il quale non \`e molto abbondante e viene consumato subito, senza bloccare la contrazione.
-Con l'aumento delle temperature, per\`o, l'opacit\`a diminuisce, seguendo la legge di Kramers, fino a quando il gradiente ambientale \`e tale da bloccare i moti convettivi.
+Con l'aumento delle temperature centrali, per\`o, l'opacit\`a diminuisce fino a quando il criterio di Schwarzschild viene verificato, per cui i moti convettivi nel nucleo cessano.
+L'assenza di convezione nel nucleo comporta un diverso andamento del flusso, il quale non diminuisce allo stesso modo come prima, oppure rimane costante, il che richiede, secondo $L=4\pi R^2 \sigma  T_\text{eff}^4$, un aumento della temperatura efficace: ci si sta allontanando dalla traccia di Hayashi.
 
-A questo punto, se la stella arriva a temperature di $\sim 10^7$ K, si innescano i processi di fusione dell'idrogeno e ci si allontana dalla traccia di Hayashi, entrando nella sequenza principale, che \`e la fase pi\`u duratura della vita della stella.
+Successivamente, il nucleo stellare continua ad aumentare di temperatura, finch\'e non si raggiungono $ T\sim 10^7$ K, a cui si innescano i processi di fusione dell'idrogeno; a questo punto la protostella diventa ufficialmente una stella ed entra nella sequenza principale: questa \`e la fase pi\`u duratura della vita della stella.
 Ora, la stella evolve tramite i tempi scala di combustione dell'idrogeno e si trova in un punto della sequenza principale detto \textit{ZAMS}, ossia \textit{Zero Age Main Sequence}.
-Al crescere della massa, aumentano luminosit\`a e temperatura effettiva; inoltre, stelle meno massive percorrono pi\`u tempo in presequenza, in quanto la loro forza di gravit\`a pi\`u debole rallenta il processo di contrazione.
+Al crescere della massa, essendo, ora, in equilibrio grazie all'energia prodotta dalle reazioni termonucleari, aumentano luminosit\`a e temperatura effettiva; inoltre, stelle meno massive percorrono pi\`u tempo in presequenza, in quanto la loro forza di gravit\`a pi\`u debole rallenta il processo di contrazione.
 Per masse troppo piccole, circa $0.08\, M_\odot $, la protostella non entra in sequenza principale; questa degenera e si raffredda, formando una \textit{nana bruna}.
 
 \subsubsection{Sequenza principale}
+Una volta in sequenza principale, non tutte le stelle bruciano idrogeno allo stesso modo. 
+A seconda della loro massa, quindi della loro temperatura interna, avvieranno catene p-p, oppure cicli CNO.
+Le prime saranno stelle meno massive, con temperature centrali pi\`u basse; queste, producendo meno energia (l'energia prodotta dalle reazioni scala con la temperatura), avranno un core radiativo, visto che il flusso da dissipare \`e relativamente basso.
+Il loro inviluppo, invece, risulter\`a convettivo perch\'e, a temperature pi\`u basse allontanandosi dal nucleo, ci sono molte pi\`u interazioni che un fotone pu\`o avere, quindi il trasporto radiativo non \`e sufficiente.
+
+Le stelle pi\`u massicce, invece, avranno un core convettivo perch\'e producono un'enorme quantit\`a di flusso, mentre il loro inviluppo sar\`a radiativo perch\'e la convenzione riesce a dissipare tutta l'energia prodotta nel nucleo in maniera efficiente e le temperature alte abbassano l'opacit\`a.
+
+Inoltre, stelle poco massicce, con $M \lesssim 0.5 \, M_\odot $, sono completamente convettive. 
+Questo \`e dovuto al fatto che, tipicamente, sono stelle molto fredde, pre cui l'opacit\`a radiativa diventa molto alta; inoltre, sono tipicamente molto dense, con un cammino libero medio dei fotoni relativamente basso.
+Queste caratteristiche, comuni a buona parte delle regioni della stella, fanno s\`i che questa sia prevalentemente convettiva.
+A questa massa, poi, la loro unica fase vitale \`e quella della combustione dell'idrogeno, in quanto non potranno raggiungere temperature tali da innescare altri processi di combustione.
+
+Terminato l'idrogeno da fondere nel nucleo, le stelle perdono l'equilibrio e iniziano a contrarsi, aumentando la temperatura del nucleo ed evolvendo tramite $\tau _\text{KH}$. 
+Durante questo processo, prima di raggiungere le temperature necessarie per innescare la fusione dell'idrogeno, le regioni circostanti al nucleo raggiungono le temperature necessarie per fondere l'idrogeno.
+
+Ora, la stella si allontana dalla sequenza principale: la combustione dell'idrogeno nel guscio del nucleo comporta un aumento del raggio, una diminuzione (o costanza) della temperatura superficiale e un aumento della luminosit\`a.
+Questo punto di allontanamento \`e detto \textit{turn-off} ed \`e estremamente dipendente dal tipo di stella; quelle pi\`u massicce, infatti, per via del core convettivo, tendono ad avere una composizione chimica sempre omogenea, per cui terminato l'idrogeno da fondere nel nucleo, \`e terminato ovunque nelle regioni in cui le temperature sono tali da avviare la fusione.
+Per queste stelle, lo spostamento verso la regione delle giganti rosse \`e pi\`u brusco per questa ragione.
+
+\subsubsection{Giganti rosse}
+Per stelle di massa non troppo alta ($M\lesssim 2.5 \, M_\odot $), la fusione di idrogeno nella shell del nucleo, il quale aumenta la quantit\`a di elio che finisce nel nucleo stesso, e l'assenza di temperature sufficienti per la produzione di energia nel nucleo fanno s\`i che quest'ultimo si contragga sempre pi\`u fino ad entrare in regime di degenerazione. 
+Raggiunte temperature sufficientemente alte, si innescano i processi $3\alpha $; se temperature simili non vengono raggiunte, la stella morir\`a da nana bianca.
+Visto che la produzione di elio avviene in un nucleo degenere, temperatura e pressione non sono pi\`u correlate, quindi il nucleo di elio non si espande: la temperatura del nucleo aumenta per l'energia prodotta dalle reazioni, la quale aumenta perch\'e aumenta il reaction rate di tali reazioni. 
+Questa retroazione \`e chiamata \textit{flash dell'elio}, in quanto le reazioni si accendono, raggiungendo elevati quantitativi di energia. 
+L'energia prodotta, per\`o, viene impiegata quasi immediatamente per rimuovere la degenerazione nel nucleo, il quale si espande, si raffredda, quindi la combustione dell'elio si stabilizza.
+
+Per stelle non-degeneri, quindi sufficientemente massicce, tutto questo non si verifica e la temperatura necessaria per l'innesco della combustione dell'elio si raggiunge pi\`u rapidamente.
+
+\subsubsection{Ramo orizzontale e loop dell'elio}
+
+\subsubsection{Ramo asintotico e fasi terminali}
+
+\subsubsection{Deformazione delle nebulose e nascita di stelle pi\`u ricche}
+
+\subsection{Studio di diagrammi HR}
+
+\subsection{Sistemi binari}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 
