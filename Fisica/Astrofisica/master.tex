@@ -410,11 +410,207 @@ nel vuoto.
 Il fatto che $I_\nu $ rimanga costante nel vuoto \`e legato al fatto che \`e un flusso per unit\`a di angolo solido: indipendentemente dalla distanza dalla sorgente, la si vedr\`a brillare allo stesso modo, tuttavia al distanza fa variare l'angolo solido, per cui il flusso che raggiunge l'osservatore varier\`a di conseguenza tramite la legge $F \propto 1 / r^2$ trovata sopra.
 \end{osservazione}
 \subsection{Propagazione in un mezzo}
+
+Per studiare la propagazione della radiazione in un mezzo, si introducono i coefficienti di emissione ed assorbimento, rispettivamente
+\[
+\frac{d I_\nu }{d s}  = j_\nu \hspace{2cm} \frac{d I_\nu }{d s}  = - \alpha _\nu I_\nu 
+\] 
+In caso di emissione ed assorbimento insieme, si scrive
+\begin{equation}
+\frac{d I_\nu }{d s}  = j_\nu  - \alpha _\nu I_\nu 
+\end{equation}
+Inoltre, dalle definizioni, si vede che 
+\[
+	\dd E = j_\nu  \dd V \dd t \dd \Omega \dd \nu \hspace{2cm} \dd E = -\alpha _\nu I_\nu \dd V \dd t \dd \Omega \dd \nu 
+\] 
+dove si \`e usato che $\dd V = \dd A \dd s \cos \theta $.
+\`E importante notare che, per il coefficiente di assorbimento, si ha $\alpha _\nu  = \rho  \kappa _\nu  = n \sigma _\nu $, dove $\kappa _\nu $ \`e l'\textbf{opacit\`a radiativa}, mentre $\sigma _\nu $ \`e la sezione d'urto del processo di assorbimento e $n$ \`e la densit\`a di assorbitori.
+\begin{osservazione}
+Il coefficiente di emissione $j_\nu $ riguarda l'emissione spontanea del mezzo, ossia la radiazione che produce senza che venga preliminarmente stimolato tramite interazione.
+Il termine $\alpha _\nu $, invece, pu\`o essere sia negativo che positivo, in quanto \`e convenzionalmente adibito a rappresentare anche i fenomeni di emissione stimolata.
+\end{osservazione}
+\noindent Un'altra quantit\`a molto importante \`e la \textbf{profondit\`a ottica}:
+\begin{equation}
+	\dd \tau _\nu := \alpha _\nu  \dd s\implies \tau _\nu (s) = \int _{s_0} ^s \alpha_\nu  (s') \dd s'
+\end{equation}
+Per capirne il significato fisico, usando $\dd s= \alpha _\nu ^{-1}\dd \tau _\nu $, in presenza di solo assorbimento, si ha:
+\[
+	\cancel{\alpha _\nu} \frac{d I_\nu }{d\tau _\nu }  = - \cancel{\alpha _\nu}  I_\nu \implies I_\nu (\tau _\nu ) = I_\nu (0) e^{- \tau _\nu }
+\] 
+Allora:
+\begin{itemize}
+	\item se $\tau _\nu  \gg 1$, il mezzo \`e detto \textit{otticamente spesso} e si ha $I_\nu (\tau _\nu ) \simeq 0$;
+	\item se $\tau _\nu  \ll 1 $, il mezzo \`e detto \textit{otticamente sottile} e si ha $I_\nu (\tau _\nu )\simeq I_\nu (0)$.
+\end{itemize}
+Infine, si introduce la \textbf{funzione sorgente} $S_\nu = j_\nu /\alpha _\nu $; in questo modo, si pu\`o scrivere che 
+\[
+ \frac{d I_\nu }{d \tau _\nu } = S_\nu -I_\nu \implies I_\nu (\tau _\nu ) = I_\nu (0) e^{-\tau _\nu } + \int _0^{\tau _\nu } S_\nu (\tau '_\nu ) e^{-(\tau _\nu -\tau '_\nu )}\dd \tau _\nu '
+\] 
+\subsubsection{Mezzo omogeneo}
+In assunzione di mezzo omogeneo, le propriet\`a del mezzo non dipendono dal punto in cui le si osserva; in particolare, quindi, $\alpha _\nu (s) \equiv \alpha _\nu $ non dipende da $s$, per cui $\tau _\nu(s) = \alpha _\nu (s-s_0) \equiv \alpha _\nu \ell $.
+Equivalentemente, $S_\nu $ non dipende da $\tau _\nu $, quindi
+\begin{equation}
+	\begin{split}
+		I_\nu (\tau _\nu ) &= I_\nu(0) e^{-\tau _\nu } + S_\nu \int _0^{\tau _\nu } e^{-(\tau _\nu -\tau '_\nu )}\dd \tau '_\nu \\
+				   &=  I_\nu (0) e^{-\tau _\nu } + S_\nu \left(1-e^{-\tau _\nu }\right) 
+	\end{split}
+\end{equation}
+Distinguendo i casi di mezzo sottile e mezzo spesso, si osserva che:
+\begin{itemize}
+	\item se $\tau _\nu \gg 1$, allora $I_\nu (\tau _\nu ) \simeq S_\nu $, cio\`e la radiazione dimentica la sorgente e si adegua al rateo di emissione/assorbimento del mezzo;
+	\item se $\tau _\nu  \ll 1 $, allora $I_\nu (\tau _\nu ) \simeq I_\nu (0) + \tau _\nu \big( S_\nu - I_\nu (0)\big)$.
+\end{itemize}
+Nel caso di mezzo otticamente spesso, si ottiene la legge di Kirchoff: all'equilibrio termodinamico, $I_\nu \simeq B_\nu (T)$, quindi $I_\nu \simeq S_\nu \simeq B_\nu (T)$.
+
+Nel caso di mezzo otticamente, sottile, invece, si osserva che:
+\begin{itemize}
+	\item se $I_\nu (0) > S_\nu $, allora si hanno righe di assorbimento, corrispondenti ad un mezzo pi\`u freddo della sorgente;
+	\item se $I_\nu (0) < S_\nu $, allora si hanno righe di emissione, corrispondenti ad un mezzo pi\`u caldo della sorgente.
+\end{itemize}
+Infatti, se l'intensit\`a della radiazione nel mezzo, in assunzione di equilibrio termodinamico, \`e maggiore di quella della sorgente $I_\nu (0)$, allora deve valere necessariamente $S_\nu \simeq B_\nu (T_\text{mezzo}) > B_\nu (T_{sorg} )\simeq I_\nu (0)$, quindi $T_\text{mezzo} > T_\text{sorg}$.
+
+\subsection{Corpo opaco}
+
+Si considera un corpo opaco ($\tau \gg 1$) all'equilibrio termodinamico; allora
+\[
+I_\nu  = B_\nu  = \frac{2h}{c^2}\frac{\nu ^3}{e^{h\nu  / \kappa _B T} -1 }
+\] 
+La \textbf{legge di spostamento di Wien} afferma che
+\begin{equation}
+	h \nu _\text{max} = 2.82 \, \kappa _B T \iff \lambda _\text{max} T = 0.29\text{ cm K}
+\end{equation}
+Queste rappresentano frequenza e lunghezza d'onda massima rispetto a cui l'intensit\`a specifica \`e massima per un corpo all'equilibrio termodinamico a temperatura $T$ fissata.
 \begin{boxenv}[]
-\begin{center}
-	Da completare\ldots
-\end{center}
+\begin{osservazione}
+Per ottenere la condizione sulla frequenza, basta porre pari a zero la derivata di $B_\nu (T)$; per ottenere la condizione sulla lunghezza d'onda, invece, si deve modificare la distribuzione da frequenze a lunghezze d'onda: ponendo $\nu  = c / \lambda $ ed essendo $B_\nu \dd \nu  = B_\lambda \dd \lambda $, allora 
+\[
+B_\lambda  = B_\nu  \left\lvert \frac{d \nu }{d \lambda }  \right\rvert = B_\nu  \frac{c}{\lambda ^2}
+\] 
+Tramite operazioni simili su $B_\lambda $, si trova la condizione riportata sopra.
+\end{osservazione}
 \end{boxenv}
+\begin{osservazione}
+Nel caso del Sole, si ha $T \approx 5800$ K, per cui $\lambda _\text{max} \approx 500$ nm, che corrisponde ad una radiazione nel verde.
+Tuttavia, essendo la distribuzione di copro nero a $T\approx 5800$ K molto ambia, l'intensit\`a non cambia molto spostandosi attorno a questo valore; la percezione del colore del Sole ad occhio nudo, infatti, satura rapidamente verso il bianco, a meno di effetti di assorbimento legati all'atmosfera terrestre.
+\end{osservazione}
+\noindent Per un corpo all'equilibrio termodinamico, la radiazione \`e isotropa, per cui la densit\`a di energia \`e data da
+\[
+u_\nu  = \frac{4\pi}{c} B_\nu (T) \implies u = aT^4 \ \ \text{ con } \, a = \frac{8 \pi ^6 k^4}{15 c^3 h^3}
+\] 
+Inoltre, il flusso sulla superficie del corpo restituisce la \textbf{legge di Stefann-Boltzmann}:
+\[
+F = \pi B(T) = \sigma T^4 \ \ \text{ con } \, \sigma \frac{ac}{4}
+\] 
+\subsection{Temperature}
+
+\`E possibile mettere in relazione grandezze di temperature di un corpo nero con le caratteristiche di una stella, da cui le seguenti tre definizioni.
+\begin{itemize}
+	\item \textbf{Temperatura di brillanza:} temperatura $T_B$ a cui un corpo nero emetterebbe radiazione con uguale intensit\`a di quella registrata, ossia $I_\nu = B_\nu (T_B)$.
+	\item \textbf{Temperatura di colore:} temperatura a cui un corpo nero ha spettro con picco nella stessa frequenza della radiazione osservata, ossia $h\nu = 2.82 \, \kappa _B T_c$.
+	\item \textbf{Temperatura effettiva:} temperatura a cui un corpo nero produce un flusso uguale a quello osservato, ossia $F = \sigma T_\text{eff}^4$.
+\end{itemize}
+
+\subsection{Trasporto radiativo in atmosfera stellare}
+\subsubsection{LTE e atmosfera a piani paralleli}
+Non potendo parlare di stelle come corpi in equilibrio termodinamico globale, ci si limita ad operare in regioni che si possono considerare tali; si parla, quindi, di equilibrio termodinamico (o termico) locale (LTE).
+Questa assunzione \`e valida quando il cammino libero medio dei fotoni $\langle \ell _\nu  \rangle \ll \frac{T}{\lvert \nabla T \rvert }$, cio\`e quando un fotone percorre, mediamente, una lunghezza inferiore a quella necessaria per misurare variazioni a livello termico.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Un'altra approssimazione fondamentale per lo studio del trasporto radiativo in atmosfera stellare \`e quella di atmosfera a piani paralleli.
+Con questa, si immagina che tutte le grandezze termodinamiche della stella siano costanti lungo la superficie sferica di raggio $r$, per cui ognuna di queste dipender\`a solamente dalla distanza dal centro.
+Indicando quest'ultima con $\vec{z}=z \hat{r}$ e immaginando che la radiazione si propaghi lungo $\vec{s}$, si ha $\dd z = \cos \theta  \dd s$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\coordinate (O) at (0,1);
+		\coordinate (A) at (0,5);
+		\coordinate (B) at (2,5);
+
+		\node[color=gray] at (2,3) {\footnotesize $\dd s$};
+		\node[color=gray] at (-1.25,3) {\footnotesize $\dd z$};
+		\draw[stealth-stealth, thick, gray] (-2,2) -- (-2,4);
+		\draw[stealth-stealth, thick, gray] (1,2) -- (2,4);
+		\draw[-stealth,thick] (0,0) -- (0,5) node[above] {\footnotesize $\vec{z}$};
+		\draw[-stealth,shorten <= -1cm,thick] (0,1) -- (2,5) node[above] {\footnotesize $\vec{s}$};
+		\pic [draw, "\footnotesize $\theta$", angle radius=8mm] {angle = B--O--A};
+		\draw[dashed, gray, thick] (-3,2) -- (3,2);
+		\draw[dashed, gray, thick] (-3,4) -- (3,4);
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+\noindent Visto che la radiazione si propaga lungo $\vec{s}$, si indica $I_\nu (s)=I_\nu (z,\theta ) = I_\nu (z,\mu )$, con $\mu  = \cos \theta $.
+Visto, poi, che $\dd \tau _\nu  = - \alpha \dd s=-\alpha / \mu  \dd z$ perch\'e si \`e preso $\dd s$ crescente verso l'esterno della stella, l'equazione del trasporto si esprime come
+\begin{equation}
+	\mu \frac{d I_\nu (\tau _\nu ,\mu )}{d\tau _\nu} = - S_\nu + I_\nu
+\end{equation}
+In assunzione di solo assorbimento, si ottiene che
+\begin{equation}
+	I_\nu (\tau _\nu , \mu ) = - \int _{\tau _0}^{\tau _\nu } \frac{S_\nu (\tau '_\nu )}{\mu } e^{-\frac{\tau '_\nu  - \tau _\nu }{\mu }}\dd \tau '_\nu 
+\end{equation}
+\begin{osservazione}
+Per raggi uscenti dal centro della stella, si ha $0\le \lvert \mu  \rvert \le 1$ e si considera $\tau _{\nu _0} \approx +\infty$, cio\`e la stella \`e un mezzo otticamente spesso.
+\end{osservazione}
+\subsubsection{Sviluppo in condizioni di quasi-isotropia}
+
+Si vuole studiare la propagazione di una radiazione elettromagnetica da una profondit\`a $\tau _\nu $, in cui si ha LTE, quindi $S_\nu (\tau _\nu ) B_\nu (\tau _\nu )$, ad una generica profondit\`a $\tau '_\nu $ sufficientemente vicina a $\tau _\nu $.
+Allora, si pu\`o scrivere che
+\[
+S_\nu (\tau '_\nu ) \simeq S_\nu (\tau_ \nu ) + (\tau '_\nu  - \tau _\nu ) \frac{\partial B_\nu }{\partial \tau _\nu } 
+\] 
+Per raggi uscenti, allora, l'intensit\`a \`e data da 
+\begin{equation}
+	I_\nu = - \int _{+\infty}^{\tau _\nu } \frac{S_\nu (\tau '_\nu )}{\mu }e^{- \frac{\tau '_\nu - \tau _\nu }{\mu }} \dd \tau '_\nu =\frac{1}{\mu } \int _{\tau _\nu }^{+\infty}S_\nu (\tau '_\nu )e^{- \frac{\tau '_\nu - \tau _\nu }{\mu }} \dd \tau '_\nu \simeq B_\nu (\tau _\nu ) + \mu  \frac{d B_\nu }{d \tau _\nu } 
+\end{equation}
+\begin{osservazione}
+Il primo termine dello sviluppo \`e isotropo, mentre il secondo no, visto il fattore $\mu $.
+\end{osservazione}
+\noindent Tramite questo sviluppo, si ricavano tutte le altre grandezze di interesse al primo ordine non-nullo; visto che il flusso \`e l'unica quantit\`a ad essere nulla per radiazione isotropa, sar\`a l'unica che coinvolger\`a la derivata di $B_\nu $:
+\[
+\begin{split}
+	&u_\nu  = \frac{2\pi}{c} \int_{-1}^{+1} I_\nu  \dd \mu = \frac{4\pi}{c} B_\nu (\tau _\nu ) \hspace{2cm} F_\nu  = 2 \pi \int _{-1}^{+1} I_\nu  \mu  \dd \mu  = \frac{4\pi}{3} \frac{d B_\nu }{d \tau _\nu } \\
+	& P_\nu  = \frac{2\pi}{c} \int _{-1} ^{+1} I_\nu \mu ^2 \dd \mu  = \frac{4\pi }{3c} B_\nu (\tau _\nu ) = \frac{u_\nu }{3}
+\end{split}
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage 
 
