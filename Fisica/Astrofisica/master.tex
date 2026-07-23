@@ -552,7 +552,7 @@ In assunzione di solo assorbimento, si ottiene che
 	I_\nu (\tau _\nu , \mu ) = - \int _{\tau _0}^{\tau _\nu } \frac{S_\nu (\tau '_\nu )}{\mu } e^{-\frac{\tau '_\nu  - \tau _\nu }{\mu }}\dd \tau '_\nu 
 \end{equation}
 \begin{osservazione}
-Per raggi uscenti dal centro della stella, si ha $0\le \lvert \mu  \rvert \le 1$ e si considera $\tau _{\nu _0} \approx +\infty$, cio\`e la stella \`e un mezzo otticamente spesso.
+Per raggi uscenti dal centro della stella, si ha $0\le \mu \le 1$ e si considera $\tau _{\nu _0} \approx +\infty$, cio\`e la stella \`e un mezzo otticamente spesso.
 \end{osservazione}
 \subsubsection{Sviluppo in condizioni di quasi-isotropia}
 
@@ -575,13 +575,73 @@ Il primo termine dello sviluppo \`e isotropo, mentre il secondo no, visto il fat
 	& P_\nu  = \frac{2\pi}{c} \int _{-1} ^{+1} I_\nu \mu ^2 \dd \mu  = \frac{4\pi }{3c} B_\nu (\tau _\nu ) = \frac{u_\nu }{3}
 \end{split}
 \] 
+\subsubsection{Atmosfera grigia}
+In approssimazione di atmosfera grigia, si considerano $\alpha _\nu $ e $j_\nu $ indipendenti dalla frequenza, per cui si scrive direttamente $\alpha , \, j, \, \tau $. 
+Questo permette di calcolare facilmente gli integrali rispetto alle frequenze e ottenere i momenti zero e primo dell'equazione del trasporto radiativo 
+\[
+\mu  \frac{\partial I_\nu (\tau, \mu )}{\partial \tau } = - S_\nu  + I_\nu 
+\] 
+direttamente.
+Per il \textit{momento zero}, si integra rispetto ad angolo solido e frequenze
+\begin{equation}
+	\frac{1}{4\pi}\frac{\partial F}{\partial \tau } =  J  - S
+\end{equation}
+Per il \textit{momento primo}, invece, si integra rispetto ad angolo solido e frequenze la stessa equazione, ma moltiplicata per $\mu $: 
+\begin{equation}
+ \frac{\partial P}{\partial \tau } = \frac{F}{c}
+\end{equation}
+Assumendo \textbf{equilibrio radiativo}, cio\`e considerando l'assenza di pozzi e sorgenti di energia nell'atmosfera, si ha $\frac{d F}{d \tau } = 0$, quindi $ J = S$; inoltre, si pu\`o integrare il momento primo per trovare
+\[
+P = \frac{F}{c}(\tau +q)
+\] 
+\subsubsection{Approssimazione di Eddington}
+In condizioni di equilibrio radiativo, visto che vale $J=S$, usando $P = u / 3 $ e $u = \frac{4\pi }{c} J $, si conclude che
+\[
+S(\tau ) = \frac{3F}{4\pi} (\tau  + q)
+\] 
+Ne segue che, per una radiazione uscente dalla stella, si ha
+\begin{equation*}
+	I(0,\mu )= \int _0^{+\infty} \frac{S(\tau ')}{\mu }e^{- \frac{\tau '}{\mu }}\dd \tau ' = \frac{3F}{4\pi}(\mu +q)
+\end{equation*}
+Per determinare $q$, si considera 
+\[
+F = 2\pi \int _{0}^{1} I(0,\mu ) \mu \dd \mu = \frac{3F}{2} \int _{0}^{1} (\mu +q)\mu  \dd \mu \Rightarrow 1 = \frac{1}{2} + \frac{3}{4}q\implies q = \frac{2}{3}
+\] 
+Da questo, si conclude che
+\begin{equation}
+	I(0,\mu ) =  \frac{3F}{4\pi}\left(\mu +\frac{2}{3}\right) 
+\end{equation}
+Riprendendo $u = \frac{4\pi}{c}S$ e usando che, in LTE, $u = a T^4$ e $F = \sigma T_\text{eff}^4$, si ha
+\[
+a  T^4=u = \frac{4\pi}{c} \left[\frac{3F}{4\pi}\left(\tau  + \frac{2}{3}\right) \right] = \frac{3F}{c}\left(\tau  + \frac{2}{3}\right) = \frac{3\sigma }{c}T_\text{eff}^4 \left(\tau  + \frac{2}{3}\right) 
+\] 
+da cui
+\begin{equation}
+	T^4 = \frac{3\sigma }{ac}T_\text{eff}^4 \left(\tau  + \frac{2}{3}\right) 
+\end{equation}
+\begin{osservazione}
+Visto che $T_\text{eff}$ \`e la temperatura a cui un corpo nero emette uno spettro identico a quello registrato dalla stella, allora $\tau  = 2 / 3$ \`e la profondit\`a a cui si trova la \textit{fotosfera}, visto che $T^4(\tau  = 2 /3 ) = T^4 _\text{eff}$.
+\end{osservazione}
+\subsubsection{Limb darkening}
+Da
+\[
+	I(0,\mu ) =  \frac{3F}{4\pi}\left(\mu +\frac{2}{3}\right) 
+\] 
+si vede che l'intensit\`a \`e massima per $\mu =1$, per cui la stella apparir\`a pi\`u brillante verso il centro che verso i bordi.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+I fotoni uscenti con $\mu  = 1$ provengono, tendenzialmente, da regioni pi\`u interne, quindi pi\`u calde, rispetto ai fotoni provenienti da bordi; per la legge di spostamento, questo vuol dire che i fotoni uscenti con $\mu =1$ hanno frequenze maggiori rispetto a quelli delle zone periferiche.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.7\columnwidth]{ld.jpeg}
+	\end{minipage}
+\end{center}
 
-
-
-
-
-
-
+\subsubsection{Formazione di righe spettrali}
 
 
 
