@@ -643,10 +643,177 @@ I fotoni uscenti con $\mu  = 1$ provengono, tendenzialmente, da regioni pi\`u in
 
 \subsubsection{Formazione di righe spettrali}
 
+La formazione di righe spettrali si giustifica all'infuori dell'approssimazione di atmosfera grigia; infatti, un'opacit\`a costante al variare di $\nu $ non produrrebbe una variazione dello spettro di corpo nero, come si vedr\`a.
+Quindi, mentre $\frac{d F}{d \tau }  = 0$, non \`e detto che $F_\nu $ lo sia.
+Tenendo conto della correzione anisotropa per una radiazione uscente, ortogonale alla superficie, si ha
+\[
+I_\nu (0,1) = B_\nu (\tau _\nu = 0 ) + \frac{d B_\nu }{d \tau _\nu } \simeq B_\nu (\tau _\nu =1)
+\] 
+\begin{osservazione}
+Questa relazione per $I_\nu (0,1)$ evidenzia come, per una radiazione uscente con $\mu = 1$, lo spettro sia quello di un corpo nero a profondit\`a $\tau _\nu  = 1$.
+\end{osservazione}
+\noindent Considerando un profilo di $\alpha _\nu$ del tipo
+\[
+\alpha _\nu  = \begin{cases}
+	\alpha _C &,\ \nu \in [0,\nu _0)\cup ( \nu _0+\Delta \nu , +\infty  ) \\
+	\alpha _L &,\ \nu \in [\nu _0 , \nu _0 +\Delta \nu ]
+\end{cases}
+\] 
+l'unit\`a \`e raggiunta per $\ell _\nu = 1 / \alpha _\nu $, per cui pi\`u intensa \`e la riga, meno profondo sar\`a lo strato da cui proviene la radiazione.
+All'aumentare della profondit\`a, la temperatura sale, per cui $T_C > T_L$: lo spettro risultante sar\`a una sorta di composizione degli spettri di corpo nero alle temperature $T_C$ e $T_L$, come mostrato in figura sotto. 
+\marginpar{\color{red}Scrivere cammino libero medio.}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+    width=9cm,
+    height=5cm,
+    xmin=0,xmax=7,
+    ymin=0,ymax=3,
+    axis lines=left,
+    xtick=\empty,
+    ytick=\empty,
+    xlabel={$\nu$},
+    ylabel={$I_\nu$},
+    every axis x label/.style={at={(ticklabel* cs:1)},anchor=west},
+    every axis y label/.style={at={(ticklabel* cs:1)},anchor=south},
+]
 
+%---------------------------------------
+% Parametri della riga
+%---------------------------------------
 
+\def\nuL{2.40}      % centro della riga
+\def\dnu{0.40}      % larghezza della riga
 
+%---------------------------------------
+% Corpo nero caldo B_nu(T_C)
+%---------------------------------------
 
+% Prima della riga
+\addplot[
+    thick,
+    domain=0:{\nuL-\dnu/2},
+    samples=150
+]
+{3.3*x^3*exp(-1.2*x)};
+
+% Dopo la riga
+\addplot[
+    thick,
+    domain={\nuL+\dnu/2}:8,
+    samples=150
+]
+{3.3*x^3*exp(-1.2*x)};
+
+%---------------------------------------
+% Corpo nero freddo B_nu(T_L)
+%---------------------------------------
+
+% Curva completa (solo riferimento)
+\addplot[
+    gray,
+    thick,
+    domain=0:8,
+    samples=200
+]
+{2.0*x^3*exp(-1.2*x)};
+
+% Tratto che sostituisce il continuo nella riga
+\addplot[
+    thick,
+    domain={\nuL-\dnu/2}:{\nuL+\dnu/2},
+    samples=100
+]
+{2.0*x^3*exp(-1.2*x)};
+
+%---------------------------------------
+% Salto verticale sinistro
+%---------------------------------------
+
+\draw[thick]
+(axis cs:{\nuL-\dnu/2},
+{2.0*(\nuL-\dnu/2)^3*exp(-1.2*(\nuL-\dnu/2))})
+--
+(axis cs:{\nuL-\dnu/2},
+{3.3*(\nuL-\dnu/2)^3*exp(-1.2*(\nuL-\dnu/2))});
+
+%---------------------------------------
+% Salto verticale destro
+%---------------------------------------
+
+\draw[thick]
+(axis cs:{\nuL+\dnu/2},
+{2.0*(\nuL+\dnu/2)^3*exp(-1.2*(\nuL+\dnu/2))})
+--
+(axis cs:{\nuL+\dnu/2},
+{3.3*(\nuL+\dnu/2)^3*exp(-1.2*(\nuL+\dnu/2))});
+
+%---------------------------------------
+% Etichette
+%---------------------------------------
+
+\node at (axis cs:2.75,2.85)
+{\footnotesize$B_\nu(T_C)$};
+
+\node[color=gray] at (axis cs:3,1) {\footnotesize $B_\nu(T_L)$};
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,
+    height=5cm,
+    xmin=0,xmax=4.5,
+    ymin=0,ymax=2,
+    axis lines=left,
+    xtick=\empty,
+    ytick=\empty,
+    xlabel={$\nu$},
+    ylabel={$\alpha_\nu$},
+    every axis x label/.style={at={(ticklabel* cs:1)},anchor=west},
+    every axis y label/.style={at={(ticklabel* cs:1)},anchor=south},
+]
+
+% continuo
+\addplot[
+    thick,
+    domain=0:1.5
+]{0.8};
+
+\addplot[
+    thick,
+    domain=2:4
+]{0.8};
+
+% linea
+\addplot[
+    thick
+] coordinates{
+(1.5,0.8)
+(1.5,1.45)
+(2,1.45)
+(2,0.8)
+};
+
+% etichette
+\node at (axis cs:2.2,1.58) {$\alpha_L$};
+\node[right] at (axis cs:10,0.82) {$\alpha_c$};
+\node[below] at (axis cs:4,0) {$\nu_L$};
+
+\end{axis}
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Si nota, comunque, che $\tau _\nu =1$ per certe frequenze pu\`o corrispondere a regioni dell'atmosfera stellare sensibilmente pi\`u calde della fotosfera, come la corona: in questo caso, visto che lo spettro della stella proviene dalla fotosfera, si osserveranno delle righe di emissione.
+Per il Sole, ad esempio, mentre $T_\text{eff} \approx 5777$ K, la temperatura della corona \`e $\approx 10^6$ K.
+\subsubsection{Larghezza equivalente}
 
 
 
