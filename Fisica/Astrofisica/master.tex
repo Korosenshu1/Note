@@ -814,7 +814,24 @@ All'aumentare della profondit\`a, la temperatura sale, per cui $T_C > T_L$: lo s
 Si nota, comunque, che $\tau _\nu =1$ per certe frequenze pu\`o corrispondere a regioni dell'atmosfera stellare sensibilmente pi\`u calde della fotosfera, come la corona: in questo caso, visto che lo spettro della stella proviene dalla fotosfera, si osserveranno delle righe di emissione.
 Per il Sole, ad esempio, mentre $T_\text{eff} \approx 5777$ K, la temperatura della corona \`e $\approx 10^6$ K.
 \subsubsection{Larghezza equivalente}
-
+Per quantificare la profondit\`a di una riga, si usa la \textit{larghezza equivalente}:
+\[
+W(\lambda _0) = \frac{A(\lambda _0)}{I_C} = \int _{\lambda _1} ^{\lambda _2} \left(1- \frac{I_\lambda }{I_C}\right) \dd \lambda  \hspace{1cm} A(\lambda _0) = \int _{\lambda _1} ^{\lambda _2} (I_C - I_\lambda ) \dd \lambda 
+\] 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{le.png}
+\end{figure}
+In questo modo, si ottiene la larghezza di un rettangolo di altezza $I_C$ e di area uguale a quella contenuta tra $I_C$ e $I_\lambda $.
+Questa sarebbe esattamente la larghezza della riga nel caso in cui vi fosse assorbimento totale, cio\`e nel caso in cui $I_\lambda = 0 $ tra $\lambda _1$ e $\lambda _2$.
+\subsubsection{Allargamento di riga}
+Una riga spettrale non potr\`a mai corrispondere con un'esatta delta di Dirac, in quanto diversi fenomeni contribuiscono a renderla meno discontinua e pi\`u \textit{larga}.
+\begin{itemize}
+	\item \textit{Allargamento naturale}.
+	\item \textit{Allargamento collisionale}.
+	\item \textit{Allargamento Doppler}.
+\end{itemize}
+\subsection{Trasporto radiativo negli interni stellari}
 
 
 
