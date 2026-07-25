@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1784974983.18157 "master.tex" "master.pdf" "master" 1784974995.26764 0
+["lualatex"] 1784987929.92034 "master.tex" "master.pdf" "master" 1784987942.11263 0
   "/etc/texmf/tex/generic/config/language.dat" 1783332169.03496 2850 b86a6c5c7bf423c3902454d7e037ed0f ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1775415801 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1775415801 118828 4d461c73423fe2666dad2ff0dfc3ca68 ""
@@ -8,7 +8,6 @@
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf" 1775415801 110400 d844cffffa1af59f9d2bb1bfdb6f1a2c ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf" 1775415801 110248 1d75fdc9dbe45e70de83ff6cc79a81c9 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf" 1775415801 112212 f133bf18e62239f8946eb96eb60e2777 ""
-  "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf" 1775415801 117248 5a8fd8a072f6ecf1b09ddab198b66a1d ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf" 1775415801 111948 cee9e390fd6d23cfb4d6871ba2a9ee5b ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf" 1775415801 118380 8daef0cf3da6e8a21b49050d3cc157b6 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf" 1775415801 112680 8bab1cbacdfe2fe22ce627aaf5174f5d ""
@@ -380,8 +379,6 @@
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1783926428.8677 127657 842a8e48deccc1ef18d5ed9dce3da0d0 ""
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman17-regular.luc" 1783926428.99128 128908 ccf80dfcecb7977dbece1d07fe79e048 ""
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1783926429.35967 128503 9f9337cc9a431405725ba453ef815ca4 ""
-  "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman7-italic.luc" 1783926432.15166 135978 ced229caab1b4d1188e2036d1cf415a7 ""
-  "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman8-italic.luc" 1783926439.12766 135533 f34012e31605ede762b18f5ef52e44a5 ""
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1783926429.52767 128133 ca99fbcb51839e722a9efbe9c8541add ""
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman9-italic.luc" 1783926432.09566 135825 ea35eace66775b5a90f7b7cc96fa96c6 ""
   "/var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman9-regular.luc" 1783926429.16767 127947 41c3a1d8f04c341c66aa8cf8c3c0c7c1 ""
@@ -404,10 +401,10 @@
   "kt.png" 1783938943.45517 246640 1f9a02de97f56cc7a2d99cac7fb0c9b7 ""
   "ld.jpeg" 1784878653.3372 8408 00c442106ff85edf9884fe4335f08fa1 ""
   "le.png" 1784891621.88397 51513 0e96f649d87e60fdf725a7996f58ba51 ""
-  "master.aux" 1784974994.90723 64432 83a6b9a05fce58eb2ed3be54726a699d "lualatex"
+  "master.aux" 1784987941.77272 64466 d0ca770e8ac8ddbc08ee4cf016faf6a4 "lualatex"
   "master.ind" 1784970822.63602 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1784974969.50323 235317 e34a22e98264fb70bc9c7870b17feea9 ""
-  "master.toc" 1784974994.93123 11270 8a16e88889856d3e40ad6300d03fc39a "lualatex"
+  "master.tex" 1784987929.8534 235594 689233628002f37ec5bbc8eb4b3c07e3 ""
+  "master.toc" 1784987941.79153 11270 1e45a87f9f39877f316978d009430e12 "lualatex"
   "sunspec.png" 1783330600.41452 165088 abb0e518794c64ec0e88f0454576b5d2 ""
   (generated)
   "master.aux"
@@ -416,8 +413,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1784970822.60455 "master.idx" "master.ind" "master" 1784974995.26753 0
-  "master.idx" 1784974983.75396 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1784970822.60455 "master.idx" "master.ind" "master" 1784987942.11252 0
+  "master.idx" 1784987930.47919 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

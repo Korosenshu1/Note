@@ -281,13 +281,11 @@ Si osserva, quindi, che $I_\nu $ ha le dimensioni di
 \] 
 In CGS, allora, le sue unit\`a di misura sono $[I_\nu ] = \mathrm{erg} \, \mathrm{cm} ^{-2} \, \mathrm{s} ^{-1}\, \mathrm{sr} ^{-1} \, \mathrm{Hz} ^{-1}$\footnote{Nell'espressione, $\mathrm{erg} $ \`e l'unit\`a di misura dell'energia e $\mathrm{sr} $ \`e lo steradiante, per la misura adimensionale degli angoli solidi.}.
 L'intensit\`a specifica permette di determinare il campo di radiazione, per cui l'intera teoria del trasporto radiativo si basa sul trovare questa quantit\`a.
-\marginpar{\textit{Flusso}}
 Tramite l'intensit\`a specifica, si possono esprimere il flusso monocromatico $F_\nu $ e il flusso $F$ come
 \begin{equation}
 F_\nu = \int I_\nu \cos \theta \dd\Omega  \hspace{1cm} F = \int F_\nu \dd\nu 
 \end{equation}
 Si nota che, per una radiazione isotropa, $I_\nu $ non dipende da $\hat{k}$, quindi $F_\nu \propto \int \cos \theta \dd\Omega  = 0$.
-\marginpar{\textit{Pressione di radiazione} }
 L'impulso trasportato dalla radiazione \`e $\dd E / c$, direzionato lungo $\hat{k}$; la pressione di radiazione \`e ottenuta come il flusso dell'impulso ortogonale alla superficie su cui incide la radiazione, per cui 
 \begin{equation}
 P_\nu = \int \frac{\dd E / c}{\dd A \dd t\dd\nu }\hat{k}\cdot \hat{n} \dd\Omega = \int \frac{I_\nu }{c} \cos ^2 \theta \dd\Omega 
@@ -296,7 +294,6 @@ Se la radiazione \`e isotropa, allora
 \[
 P_\nu  = \frac{I_\nu }{c} \int \cos^2 \theta \dd\Omega = \frac{I_\nu }{c} \int _0^{2\pi} \dd\varphi  \int _0^\pi \cos^2 \theta \sin\theta \dd\theta = \frac{4\pi}{3}\frac{I_\nu }{c}
 \] 
-\marginpar{\textit{Densit\`a di energia}}
 La densit\`a di energia trasmessa dalla radiazione \`e l'energia per unit\`a di volume 
 \[
 \dd V = \dd A \dd s \cos \theta  = \dd A \, c\dd t\ \cos \theta 
@@ -309,7 +306,6 @@ Per radiazione isotropa, si ha
 \[
 u_\nu  = \frac{4\pi }{c} I_\nu \implies P_\nu  = \frac{u_\nu }{3}
 \] 
-\marginpar{\textit{Intensit\`a specifica media}}
 L'intensit\`a specifica media \`e definita come media rispetto all'angolo solido:
 \begin{equation}
 J_\nu  = \frac{\int I_\nu  \dd\Omega }{\int \dd\Omega }= \frac{1}{4\pi} \int I_\nu  \dd\Omega 
@@ -1052,12 +1048,10 @@ In figura \ref{kl}, \`e riportato un andamento approssimativo della $K(\lambda )
 \captionof{figure}{$K(\lambda )$ per i vari tipi di filtri.}
 \label{kl}
 \end{center}
-\marginpar{\textit{Magnitudine bolometrica}} 
 Ad una magnitudine misurata con un certo filtro $i$, $m_i$, si pu\`o aggiungere una correzione, detta correzione bolometrica $\mathrm{BC} $ per ottenere la magnitudine bolometrica, cio\`e la magnitudine misurata se fosse possibile misurare tutto il flusso, per cui
 \[
 m_\text{bol}= m_i + \mathrm{BC} 
 \] 
-\marginpar{\textit{Magnitudine assoluta}}
 La magnitudine apparente vista finora dipende dalla distanza dalla stella; si definisce la magnitudine assoluta $M$ come la magnitudine apparente della stessa stella ad una distanza di $10$ pc.
 Il flusso prodotto a distanza $d$ \`e $f_d = (R / d)^2\pi I $, mentre quello prodotto a $10$ pc \`e $f_{10} = (R / 10)^2 \pi I$; allora 
 \[
@@ -1065,7 +1059,6 @@ m - M = -2.5 \log_{10}  \left(\frac{100}{d^2}\right) = -5 \log_{10} \left(\frac{
 \] 
 Si pu\`o tenere conto dell'assorbimento, nel caso in cui la radiazione non si propaghi nel vuoto, aggiungendo un termine $A_\nu $.
 
-\marginpar{\textit{Indice di colore}}
 La differenza di magnitudini della stessa stella $m_{\star,i} - m_{\star,j} $ ottenute con filtri diversi $i,j$ \`e chiamata indice di colore.
 Questo permette di ottenere importante informazioni riguardanti la temperatura della stella: per una stella molto calda, ad esempio, il flusso tendere\`a ad essere pi\`u concentrato nel blu, che nel rosso ad esempio.
 \begin{center}
@@ -1547,7 +1540,6 @@ Allora, fissata la temperatura effettiva, la luminosit\`a pu\`o variare al varia
 \end{tikzpicture}
 	\end{minipage}
 \end{center}
-\marginpar{\textit{Equazione di continuit\`a}}
 La massa contenuta nel guscio \`e 
 \[
 \dd m (r,t) = \frac{\partial m}{\partial r}\dd r + \frac{\partial m}{\partial t}  \dd t
@@ -1565,7 +1557,6 @@ Dall'uguaglianza delle derivate seconde, si ricava l'equazione di continuit\`a (
 \begin{equation}
 \frac{\partial \rho }{\partial t}  + \frac{1}{r^2} \frac{\partial }{\partial r}  \big(r^2 \rho  v\big) = 0
 \end{equation}
-\marginpar{\textit{Equilibrio idrostatico}}
 Per studiare la condizione di equilibrio della stella, si richiede che la forza risultante delle forze che agiscono su un guscio infinitesimo, di massa $\dd m$ e raggio $\dd r$, sia nulla.
 Questa risultante \`e data dalla pressione dello strato interno verso l'esterno, dalla pressione dello strato esterno verso l'interno e dalla forza di gravit\`a.
 
@@ -1800,7 +1791,6 @@ per cui l'approssimazione di LTE relativa ad ogni processo di emissione/assorbim
 
 \subsubsection{Trasporto conduttivo}
 L'equazione della conduzione del calore \`e della forma $F_\text{cond} = - D_\text{cond} \frac{d T}{d r} $; essendo molto simile, in forma, all'equazione del trasporto radiativo, si introduce un'\textit{opacit\`a conduttiva} $\kappa _\text{cond}$ in modo che si possa scrivere 
-\marginpar{\textit{Opacit\`a conduttiva}} 
 \[
 D_\text{cond} = \frac{4 a c}{3} \frac{T^3}{\kappa _\text{cond}\rho } \implies F_\text{cond} = - \frac{4ac}{3} \frac{T^3}{\kappa _\text{cond}\rho } \frac{d T}{d r} 
 \] 
@@ -1808,14 +1798,12 @@ e unirla all'equazione del trasporto radiativo come
 \[
 F = F_\text{rad} + F_\text{cond} = - \frac{4 ac}{3} \frac{T^3}{\overline{\kappa }\rho } \frac{\partial  T}{\partial  r}  \hspace{1cm} \frac{1}{\overline{\kappa }} = \frac{1}{\kappa _R} + \frac{1}{\kappa _\text{cond}}
 \] 
-\marginpar{\textit{Equilibrio radiativo}}
 In assenza di convezione, allora, il flusso totale coincide con quello per radiazione e conduzione; in questo caso, si parla di \textit{equilibrio radiativo} e, quindi
 \begin{equation}
 	\frac{\partial T}{\partial r} = - \frac{3}{4ac} \frac{\overline{\kappa }\rho }{T^3} \frac{L(r,t)}{4\pi r^2}
 \end{equation}
 visto che $F=F_\text{tot}=L(r,t) / (4\pi r^2)$.
 
-\marginpar{\textit{Rilevanza di $\kappa _\text{cond}$}}
 Nel nucleo di stelle come il Sole, il cammino libero medio dei fotoni \`e molto pi\`u grande di quello degli elettroni\footnote{Gli elettroni, vista la loro massa, sono i mediatori pi\`u efficienti del trasporto conduttivo, cio\`e hanno pi\`u possibilit\`a di spostarsi da zone pi\`u calde a zone pi\`u fredde, rispetto ad un intero atomo.}, per cui $\kappa _R \ll \kappa _\text{cond} \implies \overline{\kappa } \simeq \kappa _R$ e, quindi, il trasporto \`e quasi esclusivamente radiativo.
 \begin{osservazione}
 La conduzione, invece, diventa dominante a densit\`a molto elevate; in questi casi, infatti, dovendo ricorrere a statistiche quantistiche per l'elevata degenerazione elettronica, il principio di esclusione di Pauli fa s\`i che molti degli urti degli elettroni con le particelle circostanti vengano soppressi, in quanto molti stati in cui l'elettrone coinvolto nell'urto potrebbe finire sono gi\`a occupati. 
@@ -1887,7 +1875,6 @@ da cui si ottiene il \textbf{criterio di stabilit\`a di Schwarzschild}:
 \begin{equation}
 	\frac{1}{\gamma} \frac{d \log P}{d r} > \frac{d \log \rho }{d r} 
 \end{equation}
-\marginpar{\textit{Semplificazione del criterio}}
 Per ottenere il criterio in una forma pi\`u semplice, si usano le due seguenti approssimazioni, spesso verificate:
 \begin{enumerate}[(a).]
 	\item il gas che costituisce il plasma nel nucleo sia un gas perfetto, per cui $P = n \kappa _B T = \frac{\rho}{\mu m_H}\kappa _B T$;
@@ -1899,7 +1886,10 @@ In questo modo, usando l'equazione del gas perfetto con $\mu $ costante, si ha
 \] 
 Inserendo questa relazione nell'equazione di stabilit\`a, si ha
 \[
-	\frac{1}{\gamma P } \frac{d P}{d r}  > \frac{1}{\rho } \frac{d \rho }{d r}  = \frac{1}{P} \frac{d P}{d r} - \frac{1}{T} \frac{d T}{d r} \implies \frac{1}{T} \frac{d T}{d r} > \left(1 - \frac{1}{\gamma}\right) \frac{1}{P} \frac{d P}{d r} \implies \frac{P}{T} \frac{d T}{d P} \cancel{\frac{d P}{d r}}  > \left(1 - \frac{1}{\gamma}\right) \cancel{\frac{d P}{d r} }
+	\begin{split}
+		&\frac{1}{\gamma P } \frac{d P}{d r}  > \frac{1}{\rho } \frac{d \rho }{d r}  = \frac{1}{P} \frac{d P}{d r} - \frac{1}{T} \frac{d T}{d r} \implies \frac{1}{T} \frac{d T}{d r} > \left(1 - \frac{1}{\gamma}\right) \frac{1}{P} \frac{d P}{d r} \\
+		&\Rightarrow \frac{P}{T} \frac{d T}{d P} \cancel{\frac{d P}{d r}}  > \left(1 - \frac{1}{\gamma}\right) \cancel{\frac{d P}{d r} }\implies \frac{d \log T}{d \log P}  > 1-\frac{1}{\gamma}
+	\end{split}
 \] 
 In astrofisica, si definisce $\nabla := \frac{d \log T}{d \log P} $.
 Inizialmente, si \`e in condizioni di equilibrio radiativo, per cui il gradiente sopra \`e $\nabla _\text{rad}$.
@@ -1914,12 +1904,10 @@ Mentre $\nabla$ collega pressione e temperatura in punti diversi, quindi esprime
 \[\tag{\dagger}
 \nabla _\text{rad} = \frac{d \log T}{d \log P} = \frac{P}{T} \frac{d T}{d P}  = \frac{P}{T} \frac{d T}{d r}  \frac{d r}{d P} \propto \frac{d T}{d r} = - \frac{3}{4ac}\frac{\overline{\kappa }\rho }{T^3} \frac{L(r)}{4 \pi r^2}
 \] 
-\marginpar{\textit{Cause dei moti convettivi}}
 Allora si vede che l'aumento del gradiente radiativo, collegato ad un aumento del gradiente di temperatura, si pu\`o verificare per due motivazioni: o aumenta $\overline{\kappa }$, o aumenta il flusso.
 
 Lo sviluppo di moti convettivi a causa di un flusso troppo grande che rende $\nabla _\text{rad} > \nabla _\text{ad}$ si osserva nei nuclei di alcune stelle (con inviluppo in equilibrio) ed \`e legato al tipo di reazioni termonucleari che avvengono; lo sviluppo di moti convettivi negli inviluppi (con nucleo in equilibrio), invece, \`e legato all'opacit\`a, che \`e $\overline{\kappa }\simeq \kappa _R$, visto che si \`e fuori dal nucleo.
 
-\marginpar{\textit{Stabilit\`a sulla luminosit\`a}} 
 Ricordando che $\frac{d P}{d r} = - \frac{Gm \rho }{r^2}$, sostituendolo nella relazione ($\dagger$), si ottiene una relazione che impone il vincolo di stabilit\`a sulla luminosit\`a in un punto:
 \begin{equation}
 	L(r) < \frac{16 \pi ac G}{3 \overline{\kappa }} \left(1- \frac{1}{\gamma}\right) \frac{T^4}{P}m
@@ -1941,7 +1929,6 @@ La prima ($\nabla_\text{ad} < \nabla $) si verifica perch\'e, se fosse $\nabla _
 
 Il flusso totale, in presenza di convezione, \`e $F_\text{tot} = \frac{L(r)}{4\pi r^2} = F_\text{rad} + F_\text{cond} + F_\text{conv}$: quando si innesca la convezione, si pu\`o vedere che il termine $F_\text{conv}$ diventa rapidamente dominante; pi\`u \`e efficiente il trasporto convettivo, pi\`u $\nabla $ si allontana da $\nabla _\text{rad}$ e tende ad essere dell'ordine di $\nabla _\text{ad}$.
 
-\marginpar{\textit{Superadiabaticit\`a}}
 Nel caso dei nuclei convettivi, nonostante si parli di \textbf{supereadiabaticit\`a} in riferimento alla differenza $\nabla - \nabla _\text{ad} > 0$, si pu\`o osservare che tale differenza \`e molto piccola, quantomeno dal punto di vista numerico, e pu\`o essere approssimato a quello adiabatico.
 Negli inviluppi convettivi, invece, la convezione \`e meno efficiente, per cui $\nabla - \nabla _\text{ad}$ \`e pi\`u grande.
 
@@ -2029,10 +2016,14 @@ quindi la struttura riesce a mantenersi all'equilibrio idrostatico, in quanto ha
 	Lo stesso non si pu\`o dire di nuclei non convettivi, in cui le reazioni termonucleari modificano la materia solamente nelle regioni in cui sono attive.
 \end{osservazione}
 \subsection{Equazioni di struttura -- recap}
-Finora, si sono trovate le seguenti equazioni fondamentali per la descrizione della struttura stellare:
+Finora, si sono trovate le seguenti equazioni fondamentali per la descrizione della struttura stellare.
+Le seguenti descrivono la struttura della stella:
+\[
+		\frac{\partial m}{\partial r} = 4 \pi r ^2 \rho   \hspace{3cm}\frac{\partial P}{\partial r} = - \frac{Gm \rho }{r^2} \\
+\] 
+Le seguenti, invece, descrivono la stella dal punto di vista energetico:
 \[
 	\begin{split}
-		&\frac{\partial m}{\partial r} = 4 \pi r ^2 \rho   \hspace{3cm}\frac{\partial P}{\partial r} = - \frac{Gm \rho }{r^2} \\
 		&\frac{\partial L}{\partial r} = 4 \pi r^2 \rho  \varepsilon \hspace{3cm} \frac{\partial T}{\partial r} = \begin{cases}
 			\displaystyle - \frac{3}{4ac} \frac{\overline{\kappa }\rho }{T^3} \frac{L}{4 \pi r^2}&,\ \text{eq. radiativo}\\
 			\\
@@ -2412,10 +2403,14 @@ Classicamente, quindi, questo processo \`e impossibile.
 Quantisticamente, la funzione d'onda di una particella decresce esponenzialmente per distanze prossime a quelle della barriera, ma non diventa nulla, cio\`e si deve considerare l'effetto tunneling. 
 La \textit{probabilit\`a di penetrazione} ottenuta da Gamow \`e 
 \[
-P_G = e^{-2\pi \eta } \hspace{1cm} \eta = \frac{Z_1 Z_2 e^2}{\hbar v} = \frac{Z_1Z_2e^2}{\hbar \sqrt{E} }\sqrt{\frac{m}{2}} 
+P_G \propto \frac{1}{\sqrt{E} } e^{-2\pi \eta } \hspace{1cm} \eta = \frac{Z_1 Z_2 e^2}{\hbar v} = \frac{Z_1Z_2e^2}{\hbar \sqrt{E} }\sqrt{\frac{m}{2}} 
 \] 
 con $v$ velocit\`a relativa tra le particelle e $m = \frac{m_1m_2}{m_1+m_2}$ la rispettiva massa ridotta.
-Si nota che $P_G$ decresce al crescere della carica delle particelle.
+\begin{osservazione}
+	Facendo il conto nel caso del Sole per la reazione $\ce{p + p}$, si ha $P_G \sim 10^{-20}$, notevolmente pi\`u grande di $10^{-434}$.
+	Questo evidenzia come le reazioni nucleari nelle stelle siano molto inefficienti, cio\`e molto rare rispetto agli urti; quando avvengono, per\`o, producono una grande quantit\`a di energia e questo \`e proprio il motivo per cui vivono cos\`i a lungo.
+\end{osservazione}
+\noindent Si nota che $P_G$ decresce al crescere della carica delle particelle.
 Si vede, inoltre, che questa cresce al crescere di $v$, la quale dipende da $\sqrt{T} $ (essendo gli interni stellari in LTE), quindi all'aumentare della temperatura, aumenta la probabilit\`a di penetrazione. 
 \begin{center}
 	\begin{minipage}
@@ -2438,7 +2433,7 @@ La sezione d'urto di questo processo dipende da $P_G$, dalla sezione d'urto geom
 Data una reazione $A + x \to  B +y$, questa segue due step: nel primo, si ha $A+x \to C^*$, con $C^*$ nucleo composto eccitato; nel secondo, $C^*\to B+y$.
 Ci sono, inoltre, quattro possibili risultati finali:
 \begin{itemize}
-	\item $C^* \to A+x$ a seguito di uno scattering elastico, o anelastico; 
+	\item $C^* \to A+x$ a seguito di uno scattering elastico, o $C^* \to A^* + x$ di uno anelastico; 
 	\item $C^* \to C+ \gamma$ a seguito di una cattura radiativa;
 	\item $C^* \to B+y$ a seguito della produzione di nuovi elementi.
 \end{itemize}
@@ -2453,11 +2448,11 @@ Si vorrebbe determinare, data l'energia prodotta dalla reazione, il coefficiente
 Per arrivare a questo risultato, si parte dal ricavare il rate delle reazione; successivamente, si calcola l'energia prodotta per unit\`a di tempo e massa associata a questo coefficiente $\varepsilon _N$.
 
 Per ottenere il rate con cui avvengono le reazioni, si considera un fascio incidente di particelle, indicizzate da $j$, a velocit\`a $v$ su un bersaglio di particelle, indicizzate da $i$.
-Per ogni $j$, il rate di collisione \`e dato da $n_i\sigma v$; per tutte le particelle del fascio incidente, si ha:
+Per ogni $j$, il numero di interazioni per unit\`a di tempo con le particelle $i$ \`e dato da $n_i\sigma v$; per tutte le particelle del fascio incidente, si ha:
 \begin{equation}
 	n_{ij}  = \frac{n_i n_j \sigma v}{1 + \delta _{ij} }
 \end{equation}
-dove il denominatore evita doppi conteggi.
+dove il denominatore evita doppi conteggi, nel caso in cui le particelle $i$ e le particelle $j$ siano della stessa specie.
 Realisticamente, per\`o, non \`e vero che ogni particella ha la stessa velocit\`a $v$, per cui si sostituisce $\sigma v \to \langle \sigma v \rangle$, dove 
 \[
 \langle \sigma v \rangle = \int \sigma (v) v f(v) \dd v= \int \sigma (E) v(E) f(E) \dd E
@@ -2479,7 +2474,7 @@ dove si \`e usato che
 \[
 f(E) = \frac{2}{\sqrt{\pi} }\frac{\sqrt{E} }{(\kappa _B T)^{3 / 2}} e^{-E / \kappa _B T}
 \] 
-Ora, prendendo $\beta =\frac{Z_1Z_2e^2}{\hbar }\sqrt{\frac{m}{2}}$ e considerando che $S(E)$, attorno al picco di Gamow, \`e circa costante, quindi pu\`o fissare al valore $E_0$ in corrispondenza del picco e lo si pu\`o portare fuori dall'integrale, si rimane con
+Ora, prendendo $\beta =\frac{Z_1Z_2e^2}{\hbar }\sqrt{\frac{m}{2}}$ e considerando che $S(E)$, attorno al picco di Gamow, \`e circa costante\footnote{Il fattore astrofisico, in genere, ha una dipendenza estremamente debole dall'energia, a meno che non ci si trovi in condizioni di risonanza.}, quindi pu\`o fissare al valore $E_0$ in corrispondenza del picco e lo si pu\`o portare fuori dall'integrale, si rimane con
 \[
 \langle \sigma v \rangle = \frac{S(E_0)}{\sqrt{\pi m }  } \left(\frac{2}{\kappa _B T}\right) ^{3 / 2} \int \exp\left[ -\frac{E}{\kappa _B T} - \frac{\beta }{\sqrt{E} } \right] \dd E
 \] 

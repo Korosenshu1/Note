@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  25 JUL 2026 12:23
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.7.6)  25 JUL 2026 15:58
  restricted system commands enabled.
  file:line:error style messages enabled.
 **master.tex
@@ -1310,23 +1310,8 @@ File: uesint.fd
 \openout5 = master.toc
  [4] [5]
 LaTeX Font Info:    Calculating math sizes for size <14.2> on input line 271.
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
-[]\TU/lmr/m/it/10.95 Den-si-tà di
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--312
-[]\TU/lmr/m/it/10.95 In-ten-si-tà
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--312
-\TU/lmr/m/it/10.95 spe-ci-fi-ca
- []
-
-[7]
-Overfull \hbox (25.8536pt too wide) in paragraph at lines 395--396
+ [6] [7]
+Overfull \hbox (25.8536pt too wide) in paragraph at lines 391--392
  [][] 
  []
 
@@ -1334,15 +1319,15 @@ Overfull \hbox (25.8536pt too wide) in paragraph at lines 395--396
 <ld.jpeg, id=359, 448.67625pt x 448.67625pt>
 File: ld.jpeg Graphic file (type jpg)
 <use ld.jpeg>
-Package luatex.def Info: ld.jpeg  used on input line 654.
+Package luatex.def Info: ld.jpeg  used on input line 650.
 (luatex.def)             Requested size: 131.30089pt x 131.29718pt.
 
-Overfull \hbox (45.75911pt too wide) in paragraph at lines 776--777
+Overfull \hbox (45.75911pt too wide) in paragraph at lines 772--773
  [][] 
  []
 
 
-Overfull \hbox (18.40474pt too wide) in paragraph at lines 824--825
+Overfull \hbox (18.40474pt too wide) in paragraph at lines 820--821
  [][] 
  []
 
@@ -1350,65 +1335,56 @@ Overfull \hbox (18.40474pt too wide) in paragraph at lines 824--825
 <le.png, id=365, 715.473pt x 390.258pt>
 File: le.png Graphic file (type png)
 <use le.png>
-Package luatex.def Info: le.png  used on input line 836.
+Package luatex.def Info: le.png  used on input line 832.
 (luatex.def)             Requested size: 333.46758pt x 181.89088pt.
- [16<./le.png>] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1055
-[]\TU/lmr/m/it/10.95 Ma-gni-tu-di-ne
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1060
-[]\TU/lmr/m/it/10.95 Ma-gni-tu-di-ne
- []
-
+ [16<./le.png>] [17] [18] [19] [20]
 <h1.png, id=401, 1183.42125pt x 877.02657pt>
 File: h1.png Graphic file (type png)
 <use h1.png>
-Package luatex.def Info: h1.png  used on input line 1075.
+Package luatex.def Info: h1.png  used on input line 1068.
 (luatex.def)             Requested size: 187.57352pt x 139.00226pt.
 <h2.png, id=402, 1182.66844pt x 874.01532pt>
 File: h2.png Graphic file (type png)
 <use h2.png>
-Package luatex.def Info: h2.png  used on input line 1081.
+Package luatex.def Info: h2.png  used on input line 1074.
 (luatex.def)             Requested size: 187.57352pt x 138.61836pt.
 <c1.png, id=403, 1192.455pt x 879.285pt>
 File: c1.png Graphic file (type png)
 <use c1.png>
-Package luatex.def Info: c1.png  used on input line 1086.
+Package luatex.def Info: c1.png  used on input line 1079.
 (luatex.def)             Requested size: 187.57352pt x 138.30028pt.
 <c2.png, id=404, 1175.14032pt x 878.53218pt>
 File: c2.png Graphic file (type png)
 <use c2.png>
-Package luatex.def Info: c2.png  used on input line 1092.
+Package luatex.def Info: c2.png  used on input line 1085.
 (luatex.def)             Requested size: 187.57352pt x 140.21948pt.
 <sunspec.png, id=405, 1181.91562pt x 354.57469pt>
 File: sunspec.png Graphic file (type png)
 <use sunspec.png>
-Package luatex.def Info: sunspec.png  used on input line 1103.
+Package luatex.def Info: sunspec.png  used on input line 1096.
 (luatex.def)             Requested size: 333.46758pt x 100.03767pt.
-[21<./h1.png><./h2.png><./c1.png><./c2.png>] [22<./sunspec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
+ [21<./h1.png><./h2.png><./c1.png><./c2.png>] [22<./sunspec.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
 []|\TU/lmr/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
 []|\TU/lmr/m/n/10 bianco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
 []|\TU/lmr/m/n/10 aran-cio-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
 []|\TU/lmr/m/n/10 rosso-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
 \TU/lmr/m/n/10 arancione
  []
 
@@ -1416,109 +1392,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 1230--1230
 <cAH-S.png, id=436, 825.83531pt x 433.62pt>
 File: cAH-S.png Graphic file (type png)
 <use cAH-S.png>
-Package luatex.def Info: cAH-S.png  used on input line 1417.
+Package luatex.def Info: cAH-S.png  used on input line 1410.
 (luatex.def)             Requested size: 333.46758pt x 175.09244pt.
- [26<./CaH-S.png>] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1550--1550
-[]\TU/lmr/m/it/10.95 Equa-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1550--1550
-\TU/lmr/m/it/10.95 zio-ne di
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1568--1568
-[]\TU/lmr/m/it/10.95 Equi-li-brio
- []
-
-[29] [30] [31] [32] [33] [34] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1811--1811
-[]\TU/lmr/m/it/10.95 Equi-li-brio
- []
-
-
-Overfull \hbox (4.04558pt too wide) in paragraph at lines 1854--1856
+ [26<./CaH-S.png>] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+Overfull \hbox (4.04558pt too wide) in paragraph at lines 1842--1844
  [][] 
  []
 
 [37]
-Overfull \hbox (10.85544pt too wide) detected at line 1880
+Overfull \hbox (10.85544pt too wide) detected at line 1868
 \OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 [] [][] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/10.95 ) [][] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/10.95 ) [][] \OMS/cmsy/m/n/10.95 ' \OML/cmm/m/it/10.95  []
  []
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 1890--1890
-[]\TU/lmr/m/it/10.95 Sem-pli-fi-ca-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1890--1890
-\TU/lmr/m/it/10.95 zio-ne del
- []
-
-
-Overfull \hbox (25.14485pt too wide) detected at line 1903
-[][] \OML/cmm/m/it/10.95 > [][] \OT1/cmr/m/n/10.95 = [][] \OMS/cmsy/m/n/10.95 ^^@ [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  [][] \OML/cmm/m/it/10.95 > [] [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  [][][] \OML/cmm/m/it/10.95 > [] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1917--1917
-[]\TU/lmr/m/it/10.95 Cau-se
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1917--1917
-\TU/lmr/m/it/10.95 dei mo-ti
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 1944--1944
-[]\TU/lmr/m/it/10.95 Su-pe-ra-dia-
- []
-
-[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
-<kt.png, id=634, 407.02063pt x 465.23813pt>
+[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
+<kt.png, id=633, 407.02063pt x 465.23813pt>
 File: kt.png Graphic file (type png)
 <use kt.png>
-Package luatex.def Info: kt.png  used on input line 2295.
+Package luatex.def Info: kt.png  used on input line 2286.
 (luatex.def)             Requested size: 187.57352pt x 214.40257pt.
  [51] [52<./kt.png>] [53] [54]
-<ben.jpg, id=662, 394.1124pt x 277.5168pt>
+<ben.jpg, id=661, 394.1124pt x 277.5168pt>
 File: ben.jpg Graphic file (type jpg)
 <use ben.jpg>
-Package luatex.def Info: ben.jpg  used on input line 2394.
+Package luatex.def Info: ben.jpg  used on input line 2385.
 (luatex.def)             Requested size: 187.57352pt x 132.08015pt.
  [55<./ben.jpg>]
-<gp.png, id=668, 712.6625pt x 564.1075pt>
+<gp.png, id=667, 712.6625pt x 564.1075pt>
 File: gp.png Graphic file (type png)
 <use gp.png>
-Package luatex.def Info: gp.png  used on input line 2430.
+Package luatex.def Info: gp.png  used on input line 2425.
 (luatex.def)             Requested size: 208.41644pt x 164.9728pt.
  [56<./gp.png>] [57] [58] [59] [60] [61] [62] [63]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2682.
+(hyperref)                removing `math shift' on input line 2677.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 2682.
+(hyperref)                removing `\alpha' on input line 2677.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2682.
+(hyperref)                removing `math shift' on input line 2677.
 
 [64] [65] [66] [67] [68] [69] [70] [71]
-<ht.png, id=744, 309.40594pt x 387.69844pt>
+<ht.png, id=747, 309.40594pt x 387.69844pt>
 File: ht.png Graphic file (type png)
 <use ht.png>
-Package luatex.def Info: ht.png  used on input line 2891.
+Package luatex.def Info: ht.png  used on input line 2886.
 (luatex.def)             Requested size: 187.57352pt x 235.04633pt.
-<hr.png, id=745, 569.12625pt x 602.25pt>
+<hr.png, id=748, 569.12625pt x 602.25pt>
 File: hr.png Graphic file (type png)
 <use hr.png>
-Package luatex.def Info: hr.png  used on input line 2897.
+Package luatex.def Info: hr.png  used on input line 2892.
 (luatex.def)             Requested size: 187.57352pt x 198.495pt.
  [72<./ht.png><./hr.png>] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] (./master.aux)
  ***********
@@ -1528,14 +1454,16 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 66360 strings out of 476076
- 156270,4921788 words of node,token memory allocated
- 8930 words of node memory still in use:
-   59 hlist, 36 vlist, 2 rule, 85 disc, 16 local_par, 1 math, 111 glue, 44 kern, 36 penalty, 392 glyph, 862 attribute, 102 glue_spec, 432 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5645,3:3269,4:174,5:605,6:114,7:8927,8:169,9:1758,10:34,11:1375
- 87266 multiletter control sequences out of 65536+600000
- 114 fonts using 8232391 bytes
+ 66361 strings out of 476076
+ 125007,4921788 words of node,token memory allocated
+ 2926 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 23 glue, 4 kern, 1 glyph, 688 attribute, 102 glue_spec, 345 attribute_list, 2 write nodes
+   avail lists: 1:2,2:5786,3:3288,4:173,5:610,6:123,7:8927,8:169,9:1755,10:34,11:1375
+ 87265 multiletter control sequences out of 65536+600000
+ 112 fonts using 7969015 bytes
  124i,27n,421p,11244b,2235s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.20'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.19'
 
@@ -1574,12 +1502,12 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.3'
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
-</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (92 pages, 4508409 bytes).
+</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (92 pages, 4507469 bytes).
 
-PDF statistics: 1355 PDF objects out of 1440 (max. 8388607)
+PDF statistics: 1352 PDF objects out of 1440 (max. 8388607)
  1169 compressed objects within 12 object streams
- 334 named destinations out of 1000 (max. 1048576)
+ 336 named destinations out of 1000 (max. 1048576)
  938 words of extra memory for PDF output out of 10000 (max. 100000000)
 
