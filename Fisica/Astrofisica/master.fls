@@ -352,6 +352,8 @@ INPUT /var/lib/texmf/luatex-cache/generic/fonts/otl/lmsans10-regular.luc
 INPUT /var/lib/texmf/luatex-cache/generic/fonts/otl/lmsans17-regular.luc
 INPUT /var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman12-regular.luc
 INPUT /var/lib/texmf/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
+INPUT ./front.jpg
+INPUT ./front.jpg
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /var/lib/texmf/luatex-cache/generic/fonts/otl/lmsans12-regular.luc
 INPUT ./master.toc
@@ -474,6 +476,7 @@ INPUT ./hr.png
 INPUT ./hr.png
 INPUT ./master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb

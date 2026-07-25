@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1784892636.94806 "master.tex" "master.pdf" "master" 1784892649.19618 0
+["lualatex"] 1784974983.18157 "master.tex" "master.pdf" "master" 1784974995.26764 0
   "/etc/texmf/tex/generic/config/language.dat" 1783332169.03496 2850 b86a6c5c7bf423c3902454d7e037ed0f ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1775415801 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1775415801 118828 4d461c73423fe2666dad2ff0dfc3ca68 ""
@@ -63,6 +63,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1775415801 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1775415801 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1775415801 32442 c975af247b6702f7ca0c299af3616b80 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb" 1775415801 30212 b6aafa449db0097a6b9b890f66741063 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1775415801 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1775415801 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1775415801 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
@@ -394,6 +395,7 @@
   "ben.jpg" 1784022119.37045 121620 8ab5b87f315c69f81c2f9e4fbb54f1fe ""
   "c1.png" 1783330600.40254 671043 fbff4fb874f13b695f741af67cbb4609 ""
   "c2.png" 1783330600.40254 602540 edad36db968093daec4a8cc37805853f ""
+  "front.jpg" 1784971900.88347 135348 e8a685ab982442f57331eb475906c7f7 ""
   "gp.png" 1784804978.12434 160438 4d55cbf39885a55f09fb92fe095e1062 ""
   "h1.png" 1783330600.40254 608969 808d51cf3fb662cb9fb00c99badc5d8d ""
   "h2.png" 1783330600.40254 512720 e98e0d0abf87920b4e534059d99ef663 ""
@@ -402,10 +404,10 @@
   "kt.png" 1783938943.45517 246640 1f9a02de97f56cc7a2d99cac7fb0c9b7 ""
   "ld.jpeg" 1784878653.3372 8408 00c442106ff85edf9884fe4335f08fa1 ""
   "le.png" 1784891621.88397 51513 0e96f649d87e60fdf725a7996f58ba51 ""
-  "master.aux" 1784892648.8177 62189 5aec5aed8aab912e9676efb4a7194595 "lualatex"
-  "master.ind" 1784892624.53555 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1784892572.47157 226953 f35b9987ea9bc2809624ad8995b46091 ""
-  "master.toc" 1784892648.83955 10858 f1c461079895cb8eb18d0ed12b29c674 "lualatex"
+  "master.aux" 1784974994.90723 64432 83a6b9a05fce58eb2ed3be54726a699d "lualatex"
+  "master.ind" 1784970822.63602 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
+  "master.tex" 1784974969.50323 235317 e34a22e98264fb70bc9c7870b17feea9 ""
+  "master.toc" 1784974994.93123 11270 8a16e88889856d3e40ad6300d03fc39a "lualatex"
   "sunspec.png" 1783330600.41452 165088 abb0e518794c64ec0e88f0454576b5d2 ""
   (generated)
   "master.aux"
@@ -414,8 +416,8 @@
   "master.pdf"
   "master.toc"
   (rewritten before read)
-["makeindex master.idx"] 1784892624.50547 "master.idx" "master.ind" "master" 1784892649.19608 0
-  "master.idx" 1784892637.5513 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex master.idx"] 1784970822.60455 "master.idx" "master.ind" "master" 1784974995.26753 0
+  "master.idx" 1784974983.75396 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "master.ilg"
   "master.ind"

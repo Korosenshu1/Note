@@ -201,6 +201,11 @@ title=#1
 
 \begin{document}
 \maketitle
+\vspace{9cm}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\columnwidth]{front.jpg}
+\end{figure}
 \newpage
 \tableofcontents 
 \newpage
@@ -509,7 +514,16 @@ F = \pi B(T) = \sigma T^4 \ \ \text{ con } \, \sigma \frac{ac}{4}
 	\item \textbf{Temperatura di colore:} temperatura a cui un corpo nero ha spettro con picco nella stessa frequenza della radiazione osservata, ossia $h\nu = 2.82 \, \kappa _B T_c$.
 	\item \textbf{Temperatura effettiva:} temperatura a cui un corpo nero produce un flusso uguale a quello osservato, ossia $F = \sigma T_\text{eff}^4$.
 \end{itemize}
-
+\subsubsection{Cammino libero medio in un mezzo opaco}
+Il cammino medio che un fotone percorre attraverso un mezzo opaco, prima di venire assorbito, \`e ottenuto considerando che la probabilit\`a che percorra $\tau _\nu $ \`e proprio $e^{-\tau _\nu }$; allora
+\[
+\langle \tau _\nu  \rangle = \int _0^{+\infty} \tau _\nu  e^{- \tau _\nu }\dd \tau _\nu  = 1
+\] 
+Nel caso di mezzo omogeneo, si ha $\tau _\nu  = \alpha _\nu  \ell _\nu $, per cui $1=\langle \tau _\nu  \rangle = \alpha _\nu  \langle \ell _\nu  \rangle=\alpha _\nu \overline{\ell }_\nu $, quindi il cammino libero medio percorso \`e dato da 
+\[
+\overline{\ell }_\nu  = \frac{1}{\alpha _\nu }
+\] 
+Nel caso di mezzi disomogenei, invece, si definisce un \textit{cammino libero medio locale} in maniera del tutto analoga.
 \subsection{Trasporto radiativo in atmosfera stellare}
 \subsubsection{LTE e atmosfera a piani paralleli}
 Non potendo parlare di stelle come corpi in equilibrio termodinamico globale, ci si limita ad operare in regioni che si possono considerare tali; si parla, quindi, di equilibrio termodinamico (o termico) locale (LTE).
@@ -661,7 +675,6 @@ Questa relazione per $I_\nu (0,1)$ evidenzia come, per una radiazione uscente co
 \] 
 l'unit\`a \`e raggiunta per $\ell _\nu = 1 / \alpha _\nu $, per cui pi\`u intensa \`e la riga, meno profondo sar\`a lo strato da cui proviene la radiazione.
 All'aumentare della profondit\`a, la temperatura sale, per cui $T_C > T_L$: lo spettro risultante sar\`a una sorta di composizione degli spettri di corpo nero alle temperature $T_C$ e $T_L$, come mostrato in figura sotto. 
-\marginpar{\color{red}Scrivere cammino libero medio.}
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -828,14 +841,113 @@ Questa sarebbe esattamente la larghezza della riga nel caso in cui vi fosse asso
 Una riga spettrale non potr\`a mai corrispondere con un'esatta delta di Dirac, in quanto diversi fenomeni contribuiscono a renderla meno discontinua e pi\`u \textit{larga}.
 \begin{itemize}
 	\item \textit{Allargamento naturale}.
+		Questo \`e strettamente legato al principio di indeterminazione, per il quale $\Delta E \Delta t \ge  \hbar $. 
+		Di fatto, se un atomo ha un tempo di vita medio del livello eccitato in questione, questo comporter\`a un'elevata incertezza energetica.
+		Data $\gamma_\text{rad} = \sum_{m<n} A_{mn}$, con $A_{mn}$ coefficienti di Einstein, frequenza di decadimento dal livello $n$ al livello $m$, il profilo di riga \`e descritto da una lorentziana:
+		\[
+		\phi (\nu ) = \frac{\gamma}{4\pi} \frac{1}{(\nu -\nu _0)^2 + \left(\frac{\gamma}{4 \pi }\right)^2 }
+		\] 
 	\item \textit{Allargamento collisionale}.
+		Questo \`e dovuto agli urti fra le particelle, la cui velocit\`a \`e indicata con $v_T$ e data dall'agitazione termica.
+		La frequenza delle collisioni \`e ottenuta tramite $\nu _\text{coll} = n \sigma _\text{coll} v_T$ e, di nuovo, il profilo di riga \`e descritto da una lorentziana.
+		Unendo il contributo naturale a quello collisionale definendo $\Gamma = \gamma_\text{rad} + 2 \nu _\text{coll}$, il profilo di riga \`e
+		\[
+		\phi (\nu ) = \frac{\Gamma}{4\pi} \frac{1}{(\nu -\nu _0)^2 + \left(\frac{\Gamma}{4\pi}\right) ^2}
+		\] 
 	\item \textit{Allargamento Doppler}.
+		Anche questo \`e strettamente legato all'agitazione termica delle particelle, ma, in particolar modo, allo spostamento durante l'emissione della radiazione nella stessa direzione lungo cui la si riceve.
+		Se la radiazione emessa ha frequenza $\nu _0 = (E_2 - E_1) / h$, dovuta alla transizione $2 \to  1$ di un elettrone con $E_2 > E_1$, l'effetto Doppler\footnote{La velocit\`a termica $v_T = \sqrt{2 \kappa _B T / m} $ \`e molto minore di $c$, per cui si parla di effetto esclusivamente classico.} trasla tale frequenza a 
+		\[
+		\nu  = \nu _0 \left(1 + \frac{v_r}{c}\right) 
+		\] 
+		con $v_r$ velocit\`a di moto dell'elettrone lungo la direzione di interesse.
+		Visto che ogni atomo avr\`a una velocit\`a termica diversa, legata alla distribuzione di Boltzmann, si osserver\`a uno spettro con picco in $\nu _0$, ma con code attorno ad esso, e non a forma di delta di Dirac.
+
+		Per ottenere il profilo di riga, il numero di particelle con velocit\`a compresa tra $v_r$ e $v_r + \dd v_r$ segue la distribuzione di Boltzmann:
+		\[
+		\dd n(v_r) = n \sqrt{\frac{na}{2\kappa _BT }} \exp \left(- \frac{mv_r^2}{2 \kappa _B T}\right) \dd v_r
+		\] 
+		Visto che $\nu = \nu _0 (1 + v_r / c)$ per effetto Doppler, si ha $\dd v_R = \frac{c}{\nu _0}\dd \nu $, per cui il profilo di riga \`e dato da 
+		\[
+		\phi (\nu ) = \frac{1}{\sqrt{\pi} \Delta \nu _D } \exp \left(- \frac{(\nu -\nu _0)^2}{\Delta \nu _D^2}\right) 
+		\] 
+		con $\Delta \nu _D = \frac{\nu _0}{c}\sqrt{\frac{2\kappa _B T }{m}} $ \textit{larghezza Doppler}.
+
+		L'effetto Doppler pu\`o anche essere originato dai moti convetetivi, producendo un profilo di riga analogo, ma indipendente da $T$.
+		Se la velocit\`a delle turbolenze \`e $\tilde{v}$, la larghezza Doppler complessiva diventa
+		\[
+		\Delta \nu _D = \frac{\nu _0}{c} \sqrt{\frac{2 \kappa _ B T }{m } + \tilde{v}^2} 
+		\] 
+		Visto, poi, che $\frac{\lambda - \lambda _0}{\lambda _0} = \frac{\nu  - \nu _0}{\nu _0}$, il profilo di riga in termini di $\lambda $ \`e dato da 
+		\[
+		\phi (\lambda  ) = \sqrt{\frac{mc^2}{2 \pi \kappa _ B T \lambda _0^2}}  \exp \left(- \frac{mc^2 (\lambda -\lambda _0)^2}{2 \kappa _B T \lambda _0^2}\right) 
+		\] 
+		che \`e una gaussiana con deviazione standard e larghezza, rispettivamente
+		\[
+		\sigma _\lambda = \sqrt{\frac{\kappa _B T }{mc^2}} \lambda _0 \hspace{1cm} \text{FWHM} = \sqrt{\frac{8 \kappa _B T \log 2}{mc^2}} \lambda _0
+		\] 
 \end{itemize}
 \subsection{Trasporto radiativo negli interni stellari}
+Si vuole studiare il flusso uscente dal nucleo di una stella in cui si assume valido l'LTE.
+\subsubsection{Media di Rosseland}
+Il momento primo dell'equazione del trasporto \`e valido a frequenza fissata, cio\`e vale la relazione 
+\[
+\frac{d P_\nu }{d \tau _\nu } = \frac{F_\nu }{c} \implies F_\nu  = - \frac{c}{\alpha _\nu }\frac{d P_\nu }{d z} 
+\] 
+Per ottenere una relazione generale integrata nelle frequenze, si impone una relazione della forma 
+\[
+F = - \frac{c}{\alpha _R} \frac{d P}{d z} 
+\] 
+dove il coefficiente $\alpha _R$, detto \textit{coefficiente di assorbimento medio di Rosseland}, \`e quello che la rende vera.
+Questo, secondo le due relazioni (a frequenza fissata e non), \`e dato da 
+\[
+\frac{1}{\alpha _R} = \frac{\int \frac{1}{\alpha _\nu }\frac{d P_\nu }{d z}\dd \nu  }{\int \frac{d P_\nu }{d z} \dd \nu }
+\] 
+Poi, visto che 
+\[
+\frac{d P_\nu }{d z} = \frac{4\pi}{3c} \frac{\partial B_\nu }{\partial T} \frac{d T}{d z} 
+\] 
+si ha 
+\[
+\frac{1}{\alpha _R} = \frac{\int \frac{1}{\alpha _\nu }\frac{d B_\nu }{d T} \dd \nu }{\int \frac{d B_\nu }{d T} \dd \nu }
+\] 
+In astrofisica, risulta molto pi\`u comodo usare l'opacit\`a radiativa, in quanto \`e il valore che si conosce; usando la relazione $\alpha  _ \nu  = \rho  \kappa _\nu $, si ottiene l'\textit{opacit\`a media di Rosseland} in modo analogo:
+\begin{equation}
+\frac{1}{\kappa _R} = \frac{\displaystyle \int \frac{1}{\kappa _\nu }\frac{d B_\nu }{d T} \dd \nu }{\displaystyle \int \frac{d B_\nu }{d T} \dd \nu }
+\end{equation}
+Visto che vale l'LTE, il flusso totale della radiazione \`e dato, usando $P = u / 3$ e $u = a T^4$, da
+\begin{equation}
+	F = - \frac{4 a c}{3} \frac{T^3}{\kappa _R \rho } \frac{d T}{d z} 
+\end{equation}
+\subsubsection{Diffusione dei fotoni in una stella}
+Si stima il cammino libero medio di un fotone all'interno di una stella.
+Durante il suo percorso, un fotone viene continuamente assorbito, riemesso, o diffuso; tra un evento e l'altro, percorre una distanza $\ell _\nu  = \frac{1}{\alpha _\nu } = \frac{1}{\kappa _\nu \rho }$.
+Utilizzando l'opacit\`a media di Rosseland, il valore totale del cammino libero medio \`e
+\[
+\overline{\ell } = \frac{1}{\kappa _R \rho }
+\] 
+Questo valore, nel caso del Sole, usando $M_\odot \approx 2 \times 10^{33} $ g, $R\approx 7 \times 10^{10} $ cm, quindi $\rho  \approx 1.4 \text{ g cm}^{-3}$, e $\kappa _R \approx 0.4 \text{ cm}^2 \text{ g}^{-1}$, \`e pari a 
+\[
+\overline{\ell } \approx 2\text{ cm} \hspace{1cm} \overline{\ell } / R \approx 3 \times 10^{-11}
+\] 
+\subsubsection{Random walk}
 
-
-
-
+Si vuole stimare il tempo necessario perch\'e un fotone che parte dal nucleo impiega ad uscire dalla stella, dati i processi di interazione con la materia circostante.
+Il suo cammino, proprio per queste interazioni, si spezzer\`a in $N$ passi, ciascuno di lunghezza (esatta) $\ell _i$ tra l'$i$-esimo e l'$(i+1)$-esimo evento, per cui $L = \ell _1 + \ldots \ell _N$.
+Si vuole determinare lo spostamento quadratico medio $\langle L^2 \rangle$; in questa espressione, i termini misti scompaiono perch\'e le distanze percorse tra un evento e l'altro sono indipendenti, quindi
+\[
+\langle L^2 \rangle = \langle \ell _1^2 \rangle + \ldots \langle \ell _{N} ^2 \rangle \approx N \langle  \ell ^2 \rangle = N \overline{\ell }^2\implies \sqrt{\langle L^2 \rangle}  = R = \overline{\ell } \sqrt{N} 
+\] 
+dove $R$ \`e il raggio della stella.
+Usando i valori per il Sole, ricordando che $\overline{\ell }\approx 2$ cm, si ha $N = \left(R / \overline{\ell }\right) ^2 \approx 10^{21}$.
+Per ottenere il tempo necessario per l'uscita, si considera che la durata media di ogni passo \`e $\Delta t \sim \overline{\ell } / c$, per cui
+\[
+\Delta t_\text{tot} \sim N \frac{\overline{\ell }}{c} \approx 5000 \text{ yr}
+\] 
+Da una stima pi\`u accurata, che tiene conto dell'opacit\`a della stella, si ottiene $3 \times 10^6$ yr.
+\begin{osservazione}
+Questo evidenzia come, se le reazioni termonucleari nel nucleo della stella cessassero, l'informazione arriverebbe in superficie dopo un tempo $\Delta t _\text{tot}$.
+\end{osservazione}
 
 
 
