@@ -1,0 +1,304 @@
+%!TEX program = lualatex
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{pgf-spectra}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
+\usepackage[italian]{babel}
+% Font
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif}
+
+%\usepackage{unicode-math}
+%\setmathfont{Libertinus Math}
+
+
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di Cosmologia}
+\author{Manuel Deodato}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
+\newtheorem{notazione}{Notazione}[section]
+
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Introduzione}
+\subsection{Sviluppi storici in cosmologia}
+\subsubsection{Paradosso di Olbers (1826)}
+Il contesto storico in cui si presenta questa trattazione vede l'universo come infinito, eterno, statico, omogeneo, isotropo; ci si riferir\`a a questo modello come \textit{cosmologia newtoniana}, che rappresenta lo studio dell'universo prima della relativit\`a generale, quindi facendo uso della gravit\`a proposta da Newton.
+
+Il paradosso di Olbers, noto anche come \textit{paradosso del cielo stellato}, evidenzia come se l'universo presentasse le caratteristiche evidenziate sopra, allora lungo ogni direzione nel cielo si deve poter osservare almeno una stella; per questa ragione, il cielo dovrebbe apparire completamente luminoso.
+Il flusso di luce ricevuta sulla superficie terrestre \`e dato da
+\[
+\Phi_s = \int _0^{+\infty} \frac{L_\odot }{4 \pi r^2} n_s 4 \pi r^2 \dd r
+\] 
+con $n_s$ densit\`a delle stelle e $L_\odot $ luminosit\`a stellare (posta per semplicit\`a pari a quella del Sole).
+In questo integrale, $\dd N = n_s 4 \pi r^2 \dd r$ rappresenta il numero di stelle contenute in un guscio sferico di raggio $r$ e spessore $\dd r$.
+Per assunzione, $n_s$ deve essere uniforme, quindi
+\[
+\Phi_s = L_\odot  n_s \int _0^{+\infty} \dd r = +\infty
+\] 
+L'\textit{ipotesi di Olbers} si propone di risolvere questo problema assumendo l'esistenza di polvere nel mezzo interstellare/intergalattico, che causa l'assorbimento della radiazione proveniente dalle stelle.
+Questo, per\`o, non pu\`o funzionare: una nube che assorbe la radiazione tende, per tempi sufficientemente lunghi, a scaldarsi ed emettere come un corpo nero alla stessa temperatura delle stelle, finendo per avere lo stesso identico problema di partenza.
+
+\subsubsection{Instabilit\`a gravitazionale dell'universo di Newton}
+
+Il problema della stabilit\`a si basa su come risponde l'universo newtoniano ad una piccola perturbazione di densit\`a.
+Partendo dal vedere l'universo come contenente materia distribuita uniformemente al suo interno, l'idea della sua stabilit\`a si fonda sul fatto che, in presenza di una distribuzione completamente omogenea, non esiste una direzione privilegiata e una configurazione statica pu\`o essere considerata in equilibrio ideale.
+Tuttavia, questa situazione di equilibrio \`e solamente ideale: immaginando che, per qualunque ragione, una regione diventi leggermente pi\`u densa della media, questa eserciterebbe un'attrazione maggiore sulle zone circostanti, richiamando altra materia.
+Quest'accrescimento nella regione in questione e la rispettiva diminuzione delle regioni da cui la materia viene sottratta.
+Si evidenzia, allora, come il sistema non smorza piccole perturbazioni di densit\`a, ma le alimenta, risultando, di conseguenza, instabile.
+
+Dal punto di vista dinamico, l'equazione del moto per un guscio sferico di raggio $R(t)$ contenente una massa $M$ \`e
+\[
+\ddot{R} = - \frac{GM}{R^2}
+\] 
+Se il sistema \`e inizialmente fermo, allora $\dot{R} = 0$, per\`o si vede che $\ddot{R} < 0$, per cui il raggio inizia a diminuire e si verifica un collasso, il che alimenta le perturbazioni iniziali nella densit\`a.
+Su tempi scala sufficientemente lunghi, quindi, l'universo newtoniano non pu\`o esistere, in quanto instabile.
+
+Nel 1895, Seeliger ipotizza che \textit{la gravit\`a su grandi distanze venga schermata}, cio\`e propone che il potenziale gravitazionale diventi
+\[
+\Phi(r)  = G \int \frac{\rho}{r} \dd ^3 r \longrightarrow G \int \frac{\rho }{r} e^{-\lambda r}\dd ^3r
+\] 
+Sotto questa ipotesi, l'equazione di Poisson $\nabla ^2 \Phi = 4 \pi G \rho  $ diventa 
+\[
+ \nabla ^2 \Phi - \lambda \Phi = 4 \pi G \rho 
+\] 
+Questa idea \`e poi ripresa da Einstein nel suo modello cosmologico, prendendo il nome di \textit{costante cosmologia}.
+
+\subsubsection{Cosmologia relativistica}
+
+La cosmologia relativistica nasce dalla relativit\`a generale e viene introdotta, per la prima volta, in un articolo di Einstein del 1917.
+Questo articolo sulla cosmologia nasce dalla necessit\`a di risolvere problemi intrinseci alla relativit\`a generale. 
+I principi e risultati generali di questa teoria sono i seguenti.
+\begin{itemize}
+	\item \textit{Principio di relativit\`a}: le leggi della fisica hanno la stessa forma in tutti i sistemi di riferimento, anche non-inerziali, purch\'e siano scritte in forma covariante.
+	\item \textit{Principio di equivalenza}: localmente, gli effetti di un campo gravitazionale uniforme sono indistinguibili da quelli di un sistema accelerato; da questo, segue l'equivalenza tra massa inerziale e massa gravitazionale.
+	\item \textit{Principio di covarianza generale}: le leggi della fisica devono mantenere la stessa forma sotto qualsiasi trasformazione di coordinate.
+		Questo comporta che non esistono sistemi di riferimento privilegiati e che la descrizione fisica non dipende dalle coordinate scelte.
+	\item \textit{Gravit\`a come geometria.} 
+		La gravit\`a non \`e una forza: la presenza di massa ed energia curva lo spaziotempo e le particelle libere seguono le geodetiche di tale geometria.
+		In sostanza, la materia curva lo spaziotempo e la geometria dello spaziotempo caratterizza il moto della materia.
+	\item \textit{Principio di corrispondenza:} la relativit\`a generale si riduce alla gravitazione di Newton per campo gravitazionale debole e velocit\`a inferiori a quelle della luce.
+\end{itemize}
+L'universo di Einstein ha, come caratteristiche principali, \textit{staticit\`a} e \textit{chiusura}.
+Tuttavia, l'universo descritto dall'equazione di Einstein
+\[
+G_{\mu \nu }  = 8 \pi G T_{\mu \nu } 
+\] 
+con $G_{\mu \nu } $ tensore di Einstein e $T_{\mu \nu } $ tensore energia-impulso, non descrive un universo statico, ma uno dinamico.
+La dinamicit\`a, ai tempi, non era una propriet\`a nota e non era desiderata, per cui Einstein, ispirandosi al metodo proposto da Seelinger, introduce un termine di schermaggio:
+\[
+G_{\mu \nu }  - \Lambda g_{\mu \nu }  = 8 \pi G T_{\mu  \nu } 
+\] 
+dove $g_{\mu \nu } $ \`e la metrica dello spazio tempo, mentre $\Lambda $ \`e la \textit{costante cosmologica}.
+
+Questo nuovo modello risolve il paradosso di Olbers, in quanto le equazioni di Einstein, sotto assunzione di universo statico e pieno di materia, producono un universo a curvatura positiva, quindi chiuso e, dunque, di volume finito, eliminando la divergenza nell'integrale: l'estremo superiore non \`e pi\`u $+\infty$.
+Tuttavia, si ha ancora il problema dell'instabilit\`a.
+L'equazione originale descriveva un universo in cui non si aveva staticit\`a: o si aveva espansione, o si aveva un collasso.
+La costante cosmologica produce un effetto repulsivo su grande scala: la materia tende a formare collassi; la costante cosmologica produce espansioni.
+Un opportuno valore di $\Lambda $ permette di ottenere staticit\`a.
+Tuttavia, il problema della stabilit\`a rimane: uno squilibrio di densit\`a, che sia un aumento, o una diminuzioneo, comporta, rispettivamente, un collasso, oppure un'espansione (quest'ultima, legata a $\Lambda $).
+\begin{boxenv}[]
+\centering Riprendere da 39:00
+\end{boxenv}
+\subsection{Fondamenti di relativit\`a generale}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
