@@ -1,0 +1,223 @@
+%!TEX program = lualatex
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{pgf-spectra}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
+\usepackage[italian]{babel}
+% Font
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif}
+
+%\usepackage{unicode-math}
+%\setmathfont{Libertinus Math}
+
+
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di Fluidodinamica}
+\author{}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
+\newtheorem{notazione}{Notazione}[section]
+
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+
+
+%%%%%%%%%% Medie con integrali multipli
+\def\Yint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iint}
+\def\YYint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\iint}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.51\wd0}}
+\def\longdash{{-}\mkern-3.5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\tiltlongdash{\rotatebox[origin=c]{15}{$\longdash$}}
+\def\fiint{\Yint\tiltlongdash}
+
+\def\Zint#1{\mathchoice
+    {\YYint\displaystyle\textstyle{#1}}%
+    {\YYint\textstyle\scriptstyle{#1}}%
+    {\YYint\scriptstyle\scriptscriptstyle{#1}}%
+    {\YYint\scriptscriptstyle\scriptscriptstyle{#1}}%
+      \!\iiint}
+      \def\tilongdash{\mkern6mu{-}\mkern-4mu{-}\mkern-5mu{-}} 
+   % consider using "\mkern-7.5mu" if esint package is loaded
+\def\titiltlongdash{\rotatebox[origin=c]{15}{$\tilongdash$}}
+\def\fiiint{\Zint\titiltlongdash}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Fondamenti teorici}
+
+\subsection{Basi del modello}
+La descrizione del moto di un fluido si basa sulla descrizione del moto di alcune sue particelle; in particolare, si studia il comportamento di un insieme di queste sue particelle, detto \textit{elemento fluido}.
+Si assegna, a questo elemento fluido, una certa massa $m$ e lo si studia come fosse un punto materiale:
+\[
+\mathbf{F}  = m\mathbf{a}  \hspace{3cm} \begin{cases}
+	\displaystyle \frac{d \mathbf{x} }{d t} = \mathbf{v} \big(\mathbf{x} (t) , t\big)\\
+	\mathbf{x} (0) = \mathbf{x} _0
+\end{cases} 
+\] 
+Questa trattazione presuppone che non vi sia necessit\`a di specificare altre informazioni sull'elemento fluido che si sta studiando.
+Di fatto, questo elemento fluido avr\`a un suo volume, cio\`e una sua forma, e, durante l'evoluzione temporale, non \`e assicurato che questo rimanga uguale.
+Per il momennto, si assume, per\`o, che non vi sia necessit\`a di considerare questi aspetti.
+
+
+\end{document}
