@@ -27,18 +27,16 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{pgf-spectra}
 \usepackage[version=4]{mhchem}
 \usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
-%\usepackage{fontspec}
-%\setmainfont{Libertinus Serif}
-
-%\usepackage{unicode-math}
-%\setmathfont{Libertinus Math}
-
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont[
+	Numbers=OldStyle
+]{XITS}
+\setmathfont{XITS Math}
 
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
@@ -244,7 +242,7 @@ Nel 1895, Seeliger ipotizza che \textit{la gravit\`a su grandi distanze venga sc
 \] 
 Sotto questa ipotesi, l'equazione di Poisson $\nabla ^2 \Phi = 4 \pi G \rho  $ diventa 
 \[
- \nabla ^2 \Phi - \lambda \Phi = 4 \pi G \rho 
+	(\nabla^2 - \lambda^2) \Phi = 4 \pi G \rho 
 \] 
 Questa idea \`e poi ripresa da Einstein nel suo modello cosmologico, prendendo il nome di \textit{costante cosmologia}.
 
@@ -282,12 +280,13 @@ La costante cosmologica produce un effetto repulsivo su grande scala: la materia
 Un opportuno valore di $\Lambda $ permette di ottenere staticit\`a.
 Tuttavia, il problema della stabilit\`a rimane: uno squilibrio di densit\`a, che sia un aumento, o una diminuzioneo, comporta, rispettivamente, un collasso, oppure un'espansione (quest'ultima, legata a $\Lambda $).
 
-Nel 1918, Shr\"odinger ipotizza che il termine cosmologico possa essere interpretato come il tensore energia-impulso di un fluido a pressione $P < 0$; in questo modo, la costante cosmologica non \`e pi\`u una forzatura matematica, ma acquisisce un significato ben preciso e si possono riscrivere le equazioni di Einstein come
+Nel 1918, Schr\"odinger ipotizza che il termine cosmologico possa essere interpretato come il tensore energia-impulso di un fluido a pressione $P < 0$; in questo modo, la costante cosmologica non \`e pi\`u una forzatura matematica, ma acquisisce un significato ben preciso e si possono riscrivere le equazioni di Einstein come
 \[
 	G_{\mu  \nu  }  = 8 \pi G T_{\mu  \nu  }  \hspace{1cm} T_{\mu \nu }  = T_{\mu \nu } ^\text{materia} + T_{\mu \nu }^\text{(P>0)}
 \] 
 \subsubsection{Evidenze dell'espansione cosmologica}
-Le prime osservazioni delle alte velocit\`a delle galassie esterne furono ottenute da Slipher nel 1917 tramite analisi spettrale delle righe di emissione.
+Tra il 1912 e il 1917, molte misurazioni delle velocit\`a delle galassie erano state ottenute da Slipher, tramite analisi spettrale delle righe di emissione.
+Si osserv\`o, inoltre, che la maggior parte delle galassie mostrava un red-shift nello spettro, mentre alcune, come M31, un blue-shift.
 
 La successiva determinazione delle distanze da tali galassie \`e stata ottenuta tramite il metodo delle cefeidi variabili, visto che, per distanze cos\`i grandi, il metodo della parallasse non funziona bene.
 Questo metodo si basa sul fatto che la magnitudine assoluta di queste stelle \`e dipendente esclusivamente dal relativo periodo di pulsazione tramite la relazione
@@ -310,7 +309,7 @@ Nel 1929, Hubble ricava, dall'osservazione di numerose galassie tramite il metod
 \begin{equation}
 	v = H_0d
 \end{equation}
-con $H_0 \approx 70 \text{ km s}^{-1} \text{ Mpc}$ costante di Hubble.
+con $H_0 \approx 70 \text{ km s}^{-1} \text{ Mpc}^{-1}$ costante di Hubble.
 In realt\`a, la velocit\`a $v$ non \`e propriamente un osservabile, in quanto si misura il red-shift; sar\`a opportuno, quindi, esprimere la legge di Hubble in termini del red-shift.
 
 \subsubsection{Universo di Einstein-de Sitter}
