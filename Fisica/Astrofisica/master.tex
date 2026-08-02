@@ -30,7 +30,7 @@
 \usepackage{circuitikz}
 \usepackage{pgf-spectra}
 \usepackage[version=4]{mhchem}
-\usetikzlibrary{arrows.meta,calc,positioning, angles,quotes,patterns.meta,intersections}
+\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
 % Font
 %\usepackage{fontspec}
@@ -2633,7 +2633,10 @@ Passato sufficiente tempo, produzione e combustione sono all'equilibrio, per cui
 Tuttavia, visto che $\sigma _{\mathrm{pD} }  \gg \sigma _{\mathrm{pp} } $, l'abbondanza di deuterio rispetto ad idrogeno, all'equilibrio, sar\`a molto minore.
 
 
-\subsection{Ciclo CNO}
+\subsubsection{Ciclo CNO}
+In questo caso, si parla di \textit{ciclo} in quanto nelle reazioni a seguire, compaiono dei \textit{catalizzatori} che vengono riprodotti in reazioni successive.
+Questo metodo di combustione dell'idrogeno, qualora i catalizzatori necessari perch\'e avvenga siano sufficientemente abbondanti, diventa rilevante per $T \gtrsim 1.5 \times 10^7$ K, cio\`e inizia a competere con la catena p-p.
+
 Il ciclo principale \`e il ciclo CN, in cui i principali catalizzatori sono il carbonio e l'azoto. 
 Il ciclo \`e:
 \[
@@ -2672,19 +2675,63 @@ Di nuovo, c'\`e la possibilit\`a che il fluoro-19 si stabilizzi emettendo radiaz
 	\ce{^{19}F + p} &\longrightarrow \ce{^{20}Ne^*}\longrightarrow \ce{^{16}O + \alpha }
 \end{split}
 \] 
-Infine, c'\`e la possibilit\`a che quest'ultima finisca in $\ce{^{20} Ne + \gamma}$, terminando la catena, quindi, con una perdita di catalizzatori.
+Infine, c'\`e la possibilit\`a che quest'ultima finisca in $\ce{^{20}Ne + \gamma}$, terminando la catena, quindi, con una perdita di catalizzatori, visto che il $\ce{^{20}Ne}$ non compare in nessuna reazione precedente.
+\begin{center}
+\begin{tikzpicture}
+	\node (C1) at (0,0) {$\ce{^{12}C}$};
+	\node (C2) at (1,1) {$\ce{^{13}N}$};
+	\node (C3) at (1,0) {$\ce{^{13}C}$};
+	\node (C4) at (2,1) {$\ce{^{14}N}$};
+	\node (C5) at (3,2) {$\ce{^{15}O}$};
+	\node (C6) at (3,1) {$\ce{^{15}N}$};
+	\node (C7) at (4,2) {$\ce{^{16}O}$};
+	\node (C8) at (5,3) {$\ce{^{17}F}$};
+	\node (C9) at (5,2) {$\ce{^{17}O}$};
+	\node (C10) at (6,3) {$\ce{^{18}F}$};
+	\node (C11) at (6,2) {$\ce{^{18}O}$};
+	\node (C12) at (7,3) {$\ce{^{19}F}$};
 
-Durante questi cicli, le abbondanze dei catalizzatori rimangono circa costanti, a meno dell'occrrenza della reazione $\ce{^{20}Ne + \gamma}$.
-Pi\`u correttamente, \`e la loro somma a costante, anche se l'abbondanza relativa varia; infatti essendo la reazione $\ce{^{14}N + p} \longrightarrow \ce{^{15}O + \gamma}$ molto lenta, si avr\`a un accumulo di azoto-14, mentre il carbonio-12 viene subito consumato nella prima reazione, molto rapida, mentre l'ossigeno viene trasformato in azoto, quindi passa del tempo prima che venga riprodotto.
+	\draw[-stealth,thick] (C1) -- (C2);
+	\draw[-stealth,thick] (C2) -- (C3);
+	\draw[-stealth,thick] (C3) -- (C4);
+	\draw[-stealth,thick] (C4) -- (C5);
+	\draw[-stealth,thick] (C5) -- (C6);
+	\draw[-stealth,thick] (C6) -- (C7);
+	\draw[-stealth,thick] (C7) -- (C8);
+	\draw[-stealth,thick] (C8) -- (C9);
+	\draw[-stealth,thick] (C9) -- (C10);
+	\draw[-stealth,thick] (C10) -- (C11);
+	\draw[-stealth,thick] (C11) -- (C12);
 
+	\draw[dashed,-stealth,thick] (C6) -- (3,-.75) -| ($(C1.south)+(.175,0)$);
+	\draw[dashed,-stealth,thick] ($(C9.south)+(.175,0)$) -- (5.175,.25) -| ($(C4.south)+(.175,0)$);
+	\draw[dashed,-stealth,thick] ($(C11.south)+(.175,0)$) -- (6.175,-.25) -| ($(C6.south)+(.25,0)$);
+	\draw[dashed,-stealth,thick] ($(C12.south)+(.175,0)$) -- (7.175,1.25) -| ($(C7.south)+(.25,0)$);
+	\node at (1.5,-.5) {\tiny CNO I};
+	\node at (4,.5) {\tiny CNO II};
+	\node at (4.75,0) {\tiny CNO III};
+	\node at (6.75,1) {\tiny CNO IV};
+
+	\draw[-stealth,thick] (9,2.5) -- (9.5,3);
+	\node at (9.85,2.75) {\tiny $(\mathrm{p} ,\gamma)$};
+
+	\draw[-stealth,thick] (9,2) -- (9,1.5);
+	\node at (9.35,1.75) {\tiny $\beta ^+$};
+	
+	\draw[stealth-, thick, dashed] (9,1) -- (9,0.5) -- (10,.5) -- (10, 1);
+	\node at (10.5, .75) {\tiny $(\mathrm{p} ,\alpha )$};
+\end{tikzpicture}
+\end{center}
+Durante questi cicli, le abbondanze dei catalizzatori rimangono circa costanti, a meno dell'occorrenza della reazione $\ce{^{20}Ne + \gamma}$\footnote{\`E possibile considerare, in ottima approssimazione, che non vi siano perdite di catalizzatori a seguito della produzione di $\ce{^{20}Ne}$; infatti, il rapporto di produzione di $\ce{^{20}Ne}$ e di occorrenza del ciclo CNO \`e di circa $1 : 10^9$.}.
+Pi\`u correttamente, quando il ciclo arriva all'equilibrio, rate di distruzione e creazione di ciascun elemento sono uguali, anche se l'abbondanza relativa varia; infatti essendo la reazione $\ce{^{14}N + p} \longrightarrow \ce{^{15}O + \gamma}$ molto lenta, si avr\`a un accumulo di azoto-14, mentre il carbonio-12 viene subito consumato nella prima reazione, molto rapida, mentre l'ossigeno viene trasformato in azoto, quindi passa del tempo prima che venga riprodotto.
 Si osserva, inoltre, una elevata occorrenza di decadimenti $\beta ^+$ legata alle numerose catture protoniche: trovandosi sempre pi\`u in casi in cui $Z > N$, si tende a ridurre questa differenza tramite decadimenti $\beta ^+$ per tornare nel caso pi\`u stabile in cui $Z= N$.
-
-Il ciclo CNO \`e estremamente dipendente dalla temperatura: mentre nella catena p-p, $\varepsilon _N$ aveva una proporzionalit\`a a $T^4$, nel ciclo CNO, si ha una proporzionalit\`a pari a $T^{15} $.
-Questo, come gi\`a accennato, \`e strettamente legato al fatto che la catena CNO coinvolge elementi con carica pi\`u alta rispetto alla catena p-p.
-\subsection{Temperature di rilevanza per CNO e catena p-p}
+\subsubsection{Temperature di rilevanza per CNO e catena p-p}
 In entrambi, le reazioni richiedono temperature dello stesso ordine di grandezza, ossia $\sim 10^7$ K; per\`o, alle temperature prossime a quelle del Sole, la catena p-p \`e quella che produce effetti apprezzabili, mentre il contributo del CNO \`e quasi inesistente. 
 Vista, per\`o, l'elevata dipendenza dalla temperatura $\varepsilon _{\text{CNO}} \sim T^{18}$, anche un piccolo scostamento da quel range di temperatura ne fa aumentare la rilevanza in maniera estremamente apprezzabile, nonostante le reazioni che lo compongono siano tecnicamente possibili anche a temperature pi\`u basse.
+Si ha, infatti, che per $T\lesssim 1.5\times 10^7$ K, domina la catena p-p; per $T\simeq 1.8\div 2 \times 10^7$ K, catena p-p e ciclo CNO producono contributi confrontabili; per $T\gtrsim 2\times 10^7$ K, domina il CNO.
 
+Tuttavia, per temperature pi\`u alte, cio\`e con $T \gtrsim 5\div 8 \times 10^7$ K, la probabilit\`a che $\ce{^{13}N}$ decada per $\beta ^+$ prima di catturare un protone diventa molto bassa, quindi non si osserva pi\`u il ciclo CNO visto sopra, ma una sua altra versione, detta \textit{ciclo CNO veloce}.
+Queste condizioni termiche non sono tipiche delle stelle della sequenza principale; il ciclo CNO veloce, pertanto, si osserver\`a principalmente in ambienti esplosivi, o particolarmente estremi.
 \subsection{Combustione dell'elio e produzione di elementi metallici}
 
 Si osservano delle reazioni di combustione dell'elio che coinvolgono la produzione di elementi metallici, in particolare il $\ce{^{8} Be}$ e $\ce{^{5} Li}$ tramite le reazioni
