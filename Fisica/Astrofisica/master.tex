@@ -2758,7 +2758,7 @@ La possibilit\`a di avere una temperatura favorevole per molto tempo nelle stell
 \end{split}
 \] 
 \subsubsection{Livello di Hoyle}
-La reazione di produzione di carbonio-12 tramite berillio-8 \`e estremamente inefficiente, per via del tempo di decadimento $\tau \sim 10^{-16}$ s tramite la reazione $\ce{^{8}Be \longrightarrow ^{4}He + ^{4}He}$; inoltre, il poco carbonio che poteva essere prodotto in questo modo poteva reagire tramite $\ce{^{12}C + \alpha \longrightarrow ^{16}O + \gamma}$.
+La reazione di produzione di carbonio-12 tramite berillio-8 \`e estremamente inefficiente, per via del tempo di decadimento $\tau \sim 10^{-16}$ s tramite la reazione $\ce{^{8}Be \longrightarrow ^{4}He + ^{4}He}$; inoltre, il poco carbonio che poteva essere prodotto in questo modo, a queste temperature di $\sim 10^8$ K, poteva reagire tramite $\ce{^{12}C + \alpha \longrightarrow ^{16}O + \gamma}$.
 Allo stesso tempo, nelle stelle, si potevano osservare abbondanze di carbonio ed ossigeno confrontabili. 
 L'idea, di Hoyle, fu quella di introdurre\footnote{Questo fu poi dimostrato sperimentalmente da Fowler: si trov\`o un livello eccitato per il carbonio-12 ad un'energia prossima a quella del sistema $\ce{^{8}Be + \alpha }$, tenendo conto delle velocit\`a termiche tipiche a cui avveniva la combustione dell'elio, dimostrando l'ipotesi proposta.} la presenza di un livello risonante per il carbonio-12 attorno all'energia del sistema $\ce{^{8}Be +\alpha }$, in modo da rendere molto pi\`u probabile la formazione del nucleo composto eccitato $\ce{^{12}C^*}$, il quale pu\`o, poi, stabilizzarsi tramite $\ce{^{12}C^*} \longrightarrow \ce{^{12}C +\gamma}$, oppure pu\`o tornare al berillio tramite $\ce{^{12}C^*} \longrightarrow \ce{^{8}Be +\alpha }$.
 In sostanza, la scoperta del livello risonante del carbonio-12 a $7.65$ MeV ha consentito di trovare una sezione d'urto del processo molto maggiore a quella prevista precedentemente, portando un conseguente aumento del reaction rate.
@@ -2841,20 +2841,24 @@ La cattura neutronica pu\`o avvenire per due processi.
 Alcuni dei nuclei formati tramite cattura elettronica, in particolare tramite processi r, risultano particolarmente stabili e non reagiscono pi\`u per cattura elettronica. 
 Questo avviene perch\'e i livelli energetici del nucleo sono raggruppati in gusci, similmente a quanto succede per gli elettroni: quando un guscio viene riempito, il nucleo raggiunge una configurazione particolarmente stabile; questi tenderanno ad addensarsi, generando i picchi in abbondanza osservati.
 I numeri atomici corrispondenti al riempimento di questi gusci sono detti \textit{numeri magici}.
+
+Mentre la produzione di elementi pesanti tramite processi s si verifica durante il normale ciclo vitale della stella\footnote{Per questo, per\`o, \`e comunque necessario avere una densit\`a non trascurabile di neutroni, che si ottiene principalmente da processi quali $\ce{^{13}C(\alpha ,n)^{16}O}$ e $\ce{^{22}Ne(\alpha ,n)^{25}Mg}$; pertanto, non tutte le stelle arriveranno a produrre elementi pesanti, ma solo quelle pi\`u massive.}, i processi r sono caratteristici di eventi estremamente catastrofici, tra i quali vi \`e principalmente la fusione di due stelle di neutroni.
 \subsection{Produzione di neutrini}
 I neutrini prodotti dalle reazioni di fusione, come gi\`a accennato, non interagiscono affatto con la materia stellare; di fatto, si pu\`o calcolare che il loro cammino libero medio, nel caso del Sole, \`e di $\sim 10^9\, R_\odot $; nel caso di nane bianche, invece, \`e di $\sim 10^5 \, R_\text{WD}$.
 Questi, quindi, rappresentano dei canali di raffreddamento per le stelle.
 
-Tra i processi che contribuiscono maggiormente a $\varepsilon _\nu $, si ha la cattura elettronica.
+Il termine di perdita energetica $\varepsilon _\nu $ non contiene informazioni riguardo i neutrini prodotti durante le reazioni nucleari; infatti, di questo si tiene gi\`a conto aggiustando il Q-valore della reazione, rimuovendo l'energia relativa ai neutrini, per cui il coefficiente $\varepsilon _N$ \`e gi\`a al netto di questa sorgente di raffreddamento.
+Tra i processi che contribuiscono maggiormente a $\varepsilon _\nu $, vi \`e la cattura elettronica.
 In ambienti molto densi, per esempio il nucleo ferroso di una stella prossima al collasso, l'energia degli elettroni liberi \`e sufficientemente alta da consentire la reazione 
 \[
 	\ce{(Z,A) + e-} \longrightarrow \ce{(Z-1,A) + \nu }
 \] 
 che consiste nella conversione di un protone nucleare in un neutrone.
-Se il nuovo nucleo ottenuto \`e instabile, pu\`o subire un decadimento $\beta $:
+Se il nuovo nucleo ottenuto \`e instabile, pu\`o subire un decadimento $\beta $
 \[
 	\ce{(Z-1,A)} \longrightarrow \ce{(Z,A) + e- + \overline{\nu }}
 \] 
+nel quale viene riprodotto il nucleo di partenza, che rimane suscettibile a ripetere il ciclo, fintanto che il flusso di elettroni \`e sufficientemente energetico.
 Nel ciclo complessivo, quindi, si \`e osservata la produzione di una coppia $\nu +\overline{\nu }$; questo \`e noto col nome di \textbf{processo Urca}.
 
 Altri processi, minoritari, che concorrono alla produzione di neutrini (quindi alla perdita di energia), sono:
@@ -2887,7 +2891,7 @@ Dall'equazione del trasporto, all'equilibrio radiativo, invece, si ottiene che
 \[
 \frac{\partial T}{\partial r}  = - \frac{3}{4a c} \frac{\overline{k} \rho }{T^3} \frac{L}{4 \pi r^2} \Rightarrow \frac{T}{R} \propto \frac{1}{T^3} \frac{M}{R^3} \frac{L}{R^2} \implies L \propto \frac{(TR)^4}{M} \propto M^3
 \] 
-Inoltre, visto che $L = 4 \pi r^2 \sigma T_\text{eff}^4$ e $T \propto M / R$, si ottiene che 
+Inoltre, visto che $L = 4 \pi R^2 \sigma T_\text{eff}^4$ e $T \propto M / R$, si ottiene che 
 \[
 L \propto T_\text{eff}^6
 \] 
@@ -2950,10 +2954,10 @@ Nell'infrarosso, infatti, si possono osservare stelle neonate ancora circondate 
 
 \subsubsection{Diagramma HR e traccia di Hayashi}
 	I diagrammi HR (Hertzsprung-Russell) legano la luminosit\`a di una stella alla sua temperatura, la quale decresce da sinistra verso destra.
-	La fascia diagonale \`e detta \textit{sequenza principale} e contiene tutte le stelle che sono nella prima fase vitale in cui bruciano idrogeno e, in prima approssimazione, hanno grossomodo tutte stesso raggio.
+	La fascia diagonale \`e detta \textit{sequenza principale} e contiene tutte le stelle che sono nella prima fase vitale in cui bruciano idrogeno.
 	Spostandosi in alto, si trovano stelle con raggi maggiori, cos\`i come andando in verso opposto, si finisce verso stelle pi\`u piccole.
 
-Durante la sua fase iniziale, la stella si trova nella cosiddetta \textit{presequenza principale}; qui, si trova all'equilibrio idrostatico, ma \`e ancora troppo fredda per innescare le reazioni termonucleari, per cui brilla consumando energia gravitazionale ed evolve tramite il viriale, quindi si contrae con tempo scala $\tau _\text{KH}$, aumentando $T$ e $\rho $.
+Durante la sua fase iniziale, la stella si trova nella cosiddetta \textit{presequenza principale}; qui, si trova all'equilibrio idrostatico, ma \`e ancora troppo fredda per innescare le reazioni termonucleari, per cui brilla consumando energia gravitazionale ed evolve tramite il viriale, contraendosi con tempi scala $\tau _\text{KH}$, aumentando $T$ e $\rho $.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -2968,12 +2972,11 @@ Durante la sua fase iniziale, la stella si trova nella cosiddetta \textit{preseq
 	\end{minipage}
 \end{center}
 Il percorso che segue nel diagramma HR, durante questa fase, \`e la cosiddetta \textit{traccia di Hayashi}: temporalmente, ci si trova nel momento in cui il secondo collasso si arresta e si forma una protostella; la traccia di Hayashi descrive l'andamento della protostella mentre accresce la sua massa e perde energia irradiando.
-Le temperature non sono ancora tali da innescare reazioni, per cui la prostella perde energia gravitazionale, si contrae lentamente e aumenta la temperatura centrale: il tempo scala di evoluzione \`e quello di K-H $\tau _\text{KH}\sim \frac{GM^2}{RL}$.
 Questo processo di contrazione \`e quasi-statico, ossia avviene lentamente, in quanto la protostella aggiusta continuamente la sua struttura: si ha un susseguirsi di stati di equilibrio idrostatico.
 
-A basse temperature, gran parte dell'idrogeno \`e neutro, inoltre sono presenti altre molecole e polvere circostante, quindi l'opacit\`a \`e molto elevata in quanto ci sono molti elementi con cui la radiazione uscente pu\`o interagire.
+A basse temperature, gran parte dell'idrogeno \`e neutro, inoltre sono presenti altre molecole e polvere circostante, quindi l'opacit\`a \`e molto elevata, visto che ci sono molti elementi con cui la radiazione uscente pu\`o interagire.
 Ne segue che $\nabla _\text{rad}$ cresce fino a violare il criterio di Schwarzschild: si ha $\nabla_\text{rad}> \nabla _\text{ad} $ e l'intera protostella \`e convettiva, in quanto, alle temperature attuali, ha opacit\`a elevata in ogni parte.
-Quindi la stella si sta contraendo, aumentando la densit\`a, quindi diminuendo il raggio, quindi diminuendo la luminosit\`a, ma mantendo la sua temperatura effettiva circa costante grazie alla convezione, in quanto il trasporto energetico \`e molto efficiente.
+Quindi la stella si sta contraendo, aumentando la densit\`a, quindi diminuendo il raggio, quindi diminuendo la luminosit\`a, ma mantenendo la sua temperatura effettiva circa costante grazie alla convezione, in quanto il trasporto energetico \`e molto efficiente.
 Essendo $L = 4\pi R^2 \sigma T^4_\text{eff}$, il fatto che $T_\text{eff} \approx \text{cost.}$ implica che $\dot{L}<0$, visto che $\dot{\rho }> 0$.
 Questo giustifica il percorso verticale sulla traccia di Hayashi durante questa fase preliminare.
 
