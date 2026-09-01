@@ -2990,10 +2990,10 @@ Per masse troppo piccole, circa $0.08\, M_\odot $, la protostella non entra in s
 \subsubsection{Sequenza principale}
 Una volta in sequenza principale, non tutte le stelle bruciano idrogeno allo stesso modo. 
 A seconda della loro massa, quindi della loro temperatura interna, avvieranno catene p-p, oppure cicli CNO.
-Le prime saranno stelle meno massive, con temperature centrali pi\`u basse; queste, producendo meno energia (l'energia prodotta dalle reazioni scala con la temperatura), avranno un core radiativo, visto che il flusso da dissipare \`e relativamente basso.
+Le prime saranno stelle meno massive, con temperature centrali pi\`u basse; queste, producendo meno energia (l'energia prodotta dalle reazioni scala con la temperatura), avranno un core radiativo, visto che il flusso da trasportare \`e relativamente basso.
 Il loro inviluppo, invece, risulter\`a convettivo perch\'e, a temperature pi\`u basse allontanandosi dal nucleo, ci sono molte pi\`u interazioni che un fotone pu\`o avere, quindi il trasporto radiativo non \`e sufficiente.
 
-Le stelle pi\`u massicce, invece, avranno un core convettivo perch\'e producono un'enorme quantit\`a di flusso, mentre il loro inviluppo sar\`a radiativo perch\'e la convenzione riesce a dissipare tutta l'energia prodotta nel nucleo in maniera efficiente e le temperature alte abbassano l'opacit\`a.
+Le stelle pi\`u massicce, invece, avranno un core convettivo perch\'e producono un'enorme quantit\`a di flusso, mentre il loro inviluppo sar\`a radiativo perch\'e la convenzione riesce a trasportare efficacemente tutta l'energia prodotta nel nucleo e le temperature alte abbassano l'opacit\`a.
 
 Inoltre, stelle poco massicce, con $M \lesssim 0.5 \, M_\odot $, sono completamente convettive. 
 Questo \`e dovuto al fatto che, tipicamente, sono stelle molto fredde, per cui l'opacit\`a radiativa diventa molto alta; inoltre, sono tipicamente molto dense, con un cammino libero medio dei fotoni relativamente basso.
@@ -3006,24 +3006,54 @@ Durante questo processo, prima di raggiungere le temperature necessarie per inne
 Ora, la stella si allontana dalla sequenza principale e si avvia verso la \textit{subgiant branch}: la combustione dell'idrogeno nel guscio del nucleo comporta un aumento del raggio per via dell'elevata quantit\`a di energia prodotta dalla fusione di idrogeno nella shell, viste le alte temperature a cui viene portata dalla contrazione contro il nucleo.
 Questo aumento di produzione di energia, porta una dilatazione della della stella, che aumenta il suo raggio notevolmente e diminuisce, meno bruscamente, la sua temperatura efficace.
 Per questa ragione, secondo la legge $L = 4\pi R^2 \sigma T_\text{eff}^4$, si verifica un aumento della luminosit\`a.
-Il punto di allontanamento dalla sequenza principale \`e detto \textit{turn-off} ed \`e estremamente dipendente dal tipo di stella; quelle pi\`u massicce, infatti, per via del core convettivo, tendono ad avere una composizione chimica sempre omogenea, per cui terminato l'idrogeno da fondere nel nucleo, \`e terminato ovunque nelle regioni in cui le temperature sono tali da avviare la fusione.
-Per queste stelle, lo spostamento verso la regione delle giganti rosse \`e pi\`u brusco per questa ragione.
 
+Il punto di allontanamento dalla sequenza principale \`e detto \textit{turn-off} ed \`e estremamente dipendente dal tipo di stella; quelle pi\`u massicce, infatti, per via del core convettivo, tendono ad avere una composizione chimica sempre omogenea, per cui terminato l'idrogeno da fondere nel nucleo, \`e terminato ovunque nelle regioni in cui le temperature sono tali da permettere la fusione.
+Nondimeno, la zona convettiva nel core copre, tipicamente, una regione pi\`u ampia di quella del nucleo, per cui vi sar\`a una fase anche per queste stelle in cui viene bruciato dell'idrogeno fuori dal nucleo.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Per questa ragione, queste stelle attraverseranno diverse frasi, anche se brevi per via del reaction rate, in cui si brucia idrogeno in strati esterni al nucleo; poi la convezione lo porta fuori dalle regioni a temperature ottimali per la combustione e la stella riprender\`a a contrarsi, finch\'e l'abbondanza di idrogeno in stati esterni non \`e pi\`u tale da impedire il collasso.
+Questo comportamento giustifica l'andamento sensibilmente diverso rispetto alle stelle meno massive, come evidenziato nei seguenti diagrammi HR.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{hrev.jpg}
+	\end{minipage}
+\end{center}
+In sostanza, nelle stelle pi\`u massive, il core convettivo porta a bruciare tutto l'idrogeno presente nella regione convettiva, creando una marcata discontinuit\`a al di fuori: questo porta a cambiamenti repentini tra fase di h-burning e fase di instabilit\`a dovuta all'esaurimento di carburante in cui la stella si contrae.
+Nelle stelle di massa $\sim 1\, M_\odot $, invece, non si hanno queste fasi marcate: in un nucleo radiativo, man mano che termina l'idrogeno, la stella si contrae e strati leggermente pi\`u esterni arrivano a temperature tali da iniziare a bruciare idrogeno, in modo che la contrazione e la combustione di idrogeno in strati pi\`u esterni avvenga in parallelo e in modo meno brusco.
+\begin{osservazione}
+La regione convettiva nelle stelle a core convettivo \`e sensibilmente pi\`u grande della regione in cui si hanno le temperature a cui si ha la combustione dell'idrogeno.
+\end{osservazione}
 \subsubsection{Giganti rosse}
-Per stelle di massa non troppo alta ($M\lesssim 2.5 \, M_\odot $), la fusione di idrogeno nella shell del nucleo, il quale aumenta la quantit\`a di elio che finisce nel nucleo stesso, e l'assenza di temperature sufficienti per la produzione di energia nel nucleo fanno s\`i che quest'ultimo si contragga sempre pi\`u fino ad entrare in regime di degenerazione. 
+L'innesco della combustione di idrogeno in uno strato attorno al nucleo \`e alimentato dalla crescente temperatura del nucleo stesso dovuta alla sua contrazione. 
+A questo punto, l'elevata energia prodotta da questo strato fa s\`i che l'inviluppo (che risulter\`a convettivo) si dilati e si raffreddi di conseguenza: la stella entra nel ramo delle giganti rosse.
+\begin{center}
+	\begin{minipage}
+		{.6\columnwidth}
+	Per stelle di massa non troppo alta ($M\lesssim 2.5 \, M_\odot $), la fusione di idrogeno nella shell del nucleo, che aumenta la quantit\`a di elio che finisce nel nucleo stesso, e l'assenza di temperature sufficienti per la produzione di energia nel nucleo fanno s\`i che quest'ultimo si contragga sempre pi\`u fino ad entrare in regime di degenerazione. 
 Raggiunte temperature sufficientemente alte, si innescano i processi $3\alpha $; se temperature simili non vengono raggiunte, la stella morir\`a da nana bianca.
 Visto che la produzione di elio avviene in un nucleo degenere, temperatura e pressione non sono pi\`u correlate, quindi il nucleo di elio non si espande: la temperatura del nucleo aumenta per l'energia prodotta dalle reazioni, la quale aumenta perch\'e aumenta il reaction rate di tali reazioni. 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.35\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{rgb-m}
+	\end{minipage}
+\end{center}
 Questa retroazione \`e chiamata \textit{flash dell'elio}, in quanto le reazioni si accendono, raggiungendo elevati quantitativi di energia. 
 L'energia prodotta, per\`o, viene impiegata quasi immediatamente per rimuovere la degenerazione nel nucleo, il quale si espande, si raffredda, quindi la combustione dell'elio si stabilizza.
-Prima della fase di flash dell'elio, la stella raggiunge il picco di luminosit\`a: per il meccanismo spiegato sopra e per il fatto che le reazioni di fusione nella shell continuano a depositare elio nel nucleo, rendendolo pi\`u massimo e garantendogli una forza di gravit\`a maggiore, la shell si contrae sempre pi\`u.
-
-Per stelle non-degeneri, quindi sufficientemente massicce, tutto questo non si verifica e la temperatura necessaria per l'innesco della combustione dell'elio si raggiunge pi\`u rapidamente.
-
+Prima della fase di flash dell'elio, la stella raggiunge il picco di luminosit\`a: per il meccanismo spiegato sopra e per il fatto che le reazioni di fusione nella shell continuano a depositare elio nel nucleo, rendendolo pi\`u massivo e garantendogli una forza di gravit\`a maggiore, la shell si contrae sempre pi\`u.
+Per stelle sufficientemente massicce, invece, le temperature necessarie per innescare la combustione dell'elio si raggiungono prima che il nucleo diventi degenere, abbandonando l'RGB prima delle stelle meno massive.
+In entrambi i casi, 
 \subsubsection{Ramo orizzontale e loop dell'elio}
 
-Dopo il flash dell'elio, si instaura nuovamente il meccanismo di termostato nucleare della stella, in quanto la degenerazione non c'\`e pi\`u, quindi la stella si dilata o contrae a seconda dell'energia necessaria per bilanciarsi.
-Durante questo processo di assestamento, la shell che prima partecipava attivamente nella produzione di energia tramite combustione dell'idrogeno, ora viene riportata alla normalit\`a: il nucleo, ora non pi\`u degenere, si espande ed esercita una minore attrazione gravitazionale sugli strati immediatamente sovrastanti, per cui si ha una conseguente espansione della shell di idrogeno, che si raffredda e riduce il rate di combustione.
-Tramite questo processo, la stella lascia la cima del ramo delle giganti rosse e si stabilizza sul ramo orizzontale.
+Dopo il flash dell'elio, si instaura nuovamente il meccanismo di termostato nucleare della stella, in quanto la degenerazione non c'\`e pi\`u.
+Durante questo processo di assestamento, la shell che prima partecipava attivamente nella produzione di energia tramite combustione dell'idrogeno, ora viene riportata alla normalit\`a: il nucleo, ora non pi\`u degenere, si espande ed esercita una minore attrazione gravitazionale sugli strati immediatamente sovrastanti, per cui si ha una conseguente espansione della shell di idrogeno, che si raffredda e riduce il rate di combustione, rimanendo comunque attivo.
+In questo stadio, in cui la stella ha un nucleo (convettivo, visto il rate della $3\alpha $) che brucia elio e una shell che lo circonda e brucia idrogeno: la stella lascia la cima del ramo delle giganti rosse e si stabilizza sul ramo orizzontale.
 La struttura del nucleo, in questo momento, \`e un nucleo convettivo di elio, circondato da una zona radiativa di elio, a sua volta racchiusa dalla shell radiativa di idrogeno.
 Come gi\`a accennato, in questa prima fase, la stella tende a dilatarsi a seguito della perdita della degenerazione, diminuendo la sua densit\`a, che porta ad una rarefazione dell'inviluppo; inoltre, la sua massa varia poco anche durante il processo di combustione, grazie al fatto che la shell di idrogeno riforniva il nucleo di combustibile, prima del flash.
 
@@ -3287,7 +3317,7 @@ A seconda della loro massa, le nane bianche possono essere di tre tipi diversi:
 \subsection{Modello di Mestel}
 Questo \`e un modello semplificato per studiare il raffreddamento di una nana bianca.
 L'idea alla base \`e che non ci sia alcun tipo di reazione nucleare rilevante: l'oggetto brilla consumando la propria energia termica residua. 
-Inoltre, si trascura qualunque perdita di energia legata ai neutrini, pensando alla nana bianca come un sistema che dissipa energia esclusivamente tramite radiazione elettromagnetica.
+Inoltre, si trascura qualunque perdita di energia legata ai neutrini, pensando alla nana bianca come un sistema che trasporta energia esclusivamente tramite radiazione elettromagnetica.
 In questo modo:
 \[
 \frac{d L}{d m} = \varepsilon _N + \varepsilon _g - \varepsilon _\nu \simeq \varepsilon _g \implies L = - \int _0^M T \frac{d S}{d t} \dd m
