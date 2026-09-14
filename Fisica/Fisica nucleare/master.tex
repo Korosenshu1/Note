@@ -1,0 +1,240 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
+\usepackage[italian]{babel}
+% Font
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif}
+
+%\usepackage{unicode-math}
+%\setmathfont{Libertinus Math}
+
+
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di\\ \vspace{.15cm} Fisica nucleare}
+\author{}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
+\newtheorem{notazione}{Notazione}[section]
+
+\newtheoremstyle{style1}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries\color{red}}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+\theoremstyle{style1}
+\newtheorem{esercizio}{Esercizio}[section]
+
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Propriet\`a generali dei nuclei atomici}
+Le scale rilevanti per lo studio dei nuclei atomici sono:
+\begin{itemize}
+	\item \textit{lunghezze} di $\sim 10^{-15}$ m;
+	\item \textit{densit\`a} di $\sim 10^{14}\text{ g}/\text{cm}^3$;
+	\item \textit{energie} di $\sim 1$ MeV.
+\end{itemize}
+Le forze rilevanti, invece, sono dovute all'interazione nucleare forte e debole.
+\subsection{Modello nucleare p-e}
+Si assume che il nucleo atomico sia composto da elettroni e protoni distribuiti omogeneamente a formare una sfera di raggio $R$.
+In questo modello, si indica con $A$ il numero dei protoni e con $A-Z$ il numero degli elettroni nel nucleo.
+Allora, la massa del nucleo \`e data da 
+\[
+M = A\cdot m_p + (A-Z) \cdot m_e \approx A\cdot m_p
+\] 
+essendo $m_p \gg m_e$.
+Questo \`e in accordo con quanto teorizzato da Aston (1922), per cui $M = A \cdot m_{\ce{^1H}}$.
+La carica del nucleo, allora, si trova essere 
+\[
+Q = A\cdot e - (A-Z) \cdot e = Z\cdot e
+\] 
+Cos\`i facendo, l'atomo \`e globalmente neutro se gli orbitano attorno $Z$ elettroni.
+Ciononostante, il modello presenta una serie di problemi.
+\begin{itemize}
+	\item \textbf{Energia di legame degli elettroni.} 
+
+		Si fissa $R = 5$ Fm e, usando la relazione di indeterminazione di Heisenberg, si trova che 
+		\[
+		\begin{cases}
+			\Delta p_x \Delta x \sim \frac{\hbar }{2}\\
+			\Delta x \sim R\\
+			\Delta p_x \sim p_x
+		\end{cases} \implies p_x \sim \frac{\hbar }{2R} = \frac{1}{2} \frac{\hbar c }{R} \frac{1}{c}
+		\] 
+		con $\hbar c \approx 200 $ MeV Fm. 
+		Allora
+		\[
+		p c = c \sqrt{p_x^2 + p_y^2 + p_z^2} \sim \frac{\sqrt{3} }{2} \frac{\hbar c}{R} \approx 34.6 \text{ MeV}
+		\] 
+		Trascurando il termine $m_e c^2$, si conclude che
+		\[
+		E = \sqrt{(pc)^2 + (m_e c^2)^2} \sim T_e = pc \approx 34.6 \text{ MeV}
+		\] 
+		con $T_e$ energia cinetica dell'elettrone.
+		L'energia potenziale di un elettrone sulla superficie di un nucleo interamente composto da protoni \`e ottenibile tramite il teorema di Gauss, secondo cui questo nucleo si pu\`o assimilare ad una carica puntiforme di carica pari alla carica totale dell'insieme di protoni:
+		\[
+			U_\text{coul} = - \frac{e^2 A}{ 4\pi \varepsilon _0 R} = - \underbracket{\frac{e^2}{4 \pi \varepsilon _0 R \hbar c}}_{= \alpha } \hbar c \frac{A}{R}
+		\] 
+	con $\alpha \approx 1 / 137$ costante di struttura fine.	
+	Per un atomo di media grandezza, quindi con $A = 40$ per esempio, usando $R = 5$ Fm, si trova che $U_\text{coul} \approx -12 $ MeV.
+	L'energia di un elettrone si stima essere, quindi, una quantit\`a positiva, per cui il nucleo non rimarrebbe legato.
+\item \textbf{Momento angolare totale e spin.} 
+	Il momento angolare totale \`e dato da $\mathbf{J} = \mathbf{L}  + \mathbf{S} $, con $\mathbf{L} $ che ha associato un numero quantico intero.
+	Quanto allo spin, invece, si ha 
+	\[
+	\mathbf{S}  = \sum_{i=1}^{A} \mathbf{s} _{p_i} + \sum_{j=1}^{A-Z} \mathbf{s} _{e_j}
+	\] 
+	cio\`e \`e dato dallo spin totale dei protoni, pi\`u quello totale degli elettroni.
+	Prendendo per esempio l'azoto-14, che secondo questo modello \`e composto da 14 protoni e 7 elettroni, risulta $\mathbf{S} $ con numero quantico semi-intero (visto che $14 + 7 = 21$ \`e dispari), quindi anche $\mathbf{J} $ ha numero quantico semi-intero; tuttavia, si \`e misurato sperimentalmente che tale momento angolare totale sarebbe dovuto essere pari a $1$.
+\end{itemize}
+
+
+
+
+
+\end{document}
