@@ -180,7 +180,7 @@ Le scale rilevanti per lo studio dei nuclei atomici sono:
 	\item \textit{energie} di $\sim 1$ MeV.
 \end{itemize}
 Le forze rilevanti, invece, sono dovute all'interazione nucleare forte e debole.
-\subsection{Modello nucleare p-e}
+\subsection{Modello nucleare p-e e modello p-n}
 Si assume che il nucleo atomico sia composto da elettroni e protoni distribuiti omogeneamente a formare una sfera di raggio $R$.
 In questo modello, si indica con $A$ il numero dei protoni e con $A-Z$ il numero degli elettroni nel nucleo.
 Allora, la massa del nucleo \`e data da 
@@ -231,10 +231,58 @@ Ciononostante, il modello presenta una serie di problemi.
 	\] 
 	cio\`e \`e dato dallo spin totale dei protoni, pi\`u quello totale degli elettroni.
 	Prendendo per esempio l'azoto-14, che secondo questo modello \`e composto da 14 protoni e 7 elettroni, risulta $\mathbf{S} $ con numero quantico semi-intero (visto che $14 + 7 = 21$ \`e dispari), quindi anche $\mathbf{J} $ ha numero quantico semi-intero; tuttavia, si \`e misurato sperimentalmente che tale momento angolare totale sarebbe dovuto essere pari a $1$.
+\item \textbf{Momento di dipolo magnetico dei nuclei.} 
+
+	\begin{center}
+		\begin{minipage}
+			{.6\columnwidth}
+		Classicamente, la corrente associata al moto orbitale di un elettrone \`e data da $i = e / T = \frac{2}{2\pi r } v$; questa genera un momento magnetico 
+		\[
+		\mu  = i S = \frac{e}{2\pi r } v \pi r^2 = \frac{1}{2} e v r
+		\] 
+		\end{minipage}
+		\hfill
+		\begin{minipage}
+			{.3\columnwidth}
+			\begin{tikzpicture}
+			\draw (0,0) ellipse (1.75cm and 0.5cm);
+			\draw[-stealth] (0,0) -- (0,1.5) node[above] {\footnotesize $\pmb{\mu }$};
+			\draw[-stealth] (0,0) -- (1.75,0); 
+			\node at (0.725, .15) {\footnotesize$\mathbf{r}$};
+			\draw[color=blue!60!white,fill] (1.75,0) circle (2pt) node[right] {\tiny $e^-$};
+			\draw[-stealth, color=blue!60!white, thick] (1.75,0) -- (1.75,.5) node[above] {\tiny $\mathbf{v} _e$};
+			\end{tikzpicture}
+		\centering
+		\end{minipage}
+	\end{center}
+		Inoltre, il momento angolare \`e $\ell = mvr$ (visto che $\mathbf{v} \perp \mathbf{r} $), per cui $\mu = \frac{e}{2m}\ell $.
+		Quantisticamente, invece, i momenti magnetici dovuti al momento angolare e allo spin, rispettivamente, sono
+		\[
+		\pmb{\mu } _\ell = g _\ell  \frac{e\hbar }{2m}\frac{\pmb{\ell } }{\hbar }\hspace{2cm}\pmb{\mu } _s = g _s  \frac{e\hbar }{2m}\frac{\mathbf{s} }{\hbar }
+		\] 
+	dove $g_\ell $ e $g_s$ sono fattori numerici adimensionali. 
+	Si definisce, in generale, la grandezza $\mu _0 = \frac{e\hbar }{2m}$, detta \textit{magnetone}; a partire da questa, le grandezze
+	\[
+	\mu _B = \frac{e\hbar }{2m_e} \approx 5.79 \times 10^{-11} \text{ MeV}/\text{T} \hspace{1cm} \mu _N = \frac{e\hbar }{2m_p} \approx 3.15 \times 10^{-14} \text{ MeV}/\text{T}
+	\] 
+	sono dette, rispettivamente, \textit{magnetone di Bohr} e \textit{magnetone nucleare}.
+	Si vede che $\mu _N / \mu _B = m_e / m_p \approx 2 \times 10^{-3}$, per cui $\mu \sim \mu _B$; empiricamente, invece, si osserva che $\mu \sim \mu _N$.
 \end{itemize}
+Il modello del nucleo composto da neutroni e protoni non si ebbe prima del 1932, data in cui Chadwick rilev\`o il neutrone: nello stesso anno, il nuovo modello nucleare venne proposto da Heinseberg, Majorana e Ivanenko.
+In questo, si indica con $Z$ il numero dei protoni; con $N$ il numero dei neutroni e con $A = N+Z$ il numero dei nucleoni.
+Gli atomi con stesso $A$ sono detti \textit{isobari}; quelli con stesso $Z$ sono detti \textit{isotopi}; quelli con stesso $N$ sono detti \textit{isotoni}.
 
+Si sa che $m_p \approx 938.272 \text{ MeV}/c^2$, $m_n \approx 939.565 \text{ MeV}/c^2$ e che $m_e \approx 0.51 \text{ MeV}/c^2$.
+\`E utile ricordare anche che $m_n - m_p\approx 1.293 \text{ MeV}/c^2$.
+Il protone \`e una particella stabile, mentre il neutrone no: la reazione 
+\[
+	\ce{n} \to p + e- + \overline{\nu }_e
+\] 
+avviene spontaneamente, con un tempo di vita $\tau _n = 885.7 \pm 0.8$ s.
 
+\subsection{Distribuzione della carica in un nucleo}
+Sperimentalmente, si sa che il raggio di un nucleo \`e nell'intervallo $2\div 6$ Fm.
 
-
+Per studiare la distribuzione della carica in un nucleo si fa scattering elastico tramite elettroni.
 
 \end{document}
