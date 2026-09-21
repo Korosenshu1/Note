@@ -22,6 +22,7 @@
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{tikz}
 \usepackage[version=4]{mhchem}
@@ -363,6 +364,9 @@ M = \frac{E}{c^2} = \sum_{i=1}^{N} m_i^0 + \frac{1}{c^2}E_\text{cin} + \frac{1}{
 \] 
 dove $E_\text{cin}$ \`e la componente cinetica, mentre $E_\text{int}$ \`e la componente d'interazione dell'energia.
 Definendo $E' = Mc^2 - \sum_{}^{} m_i^0 c^2 = E_\text{cin} + E_\text{int}$, si osserva che nel caso di un sistema legato deve valere $E' < 0$.
+
+\subsection{Energia di legame}
+
 A questo punto, si definisce \textit{binding energy} 
 \begin{equation}
 B := - E' = \sum_{i=1}^{N} m_i^0 c^2 - Mc^2 = - \big(E_\text{cin} + E_\text{int}\big)
@@ -387,8 +391,142 @@ Visto che $m_p + m_e = M_a (\ce{^1H}) + b_e$, con $b_e = 13.6$ eV, si pu\`o scri
 \begin{equation}
 	B(A,Z) = ZM_a(\ce{^1H}) + Nm_n - M_a(\ce{^AX}) {\color{violet} \ +\  Zb_e - B_e}
 \end{equation}
-dove i termini {\color{violet}colorati} sono generalmente trascurabili.
+dove i termini {\color{violet}colorati}, in prima approssimazione, si elidono a vicenda; sperimentalmente, infatti, si ha la relazione $B_e = 13.6\, Z^{12 / 5}$ eV, da cui si vede che $B_e$ cresce pi\`u rapidamente dell'altro termine.
+
 In questo modo, l'espressione di $B(A,Z)$ dipende dalla massa atomica, misurabile con uno spettrometro di massa, senza dover rimuovere gli elettroni.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+	Si osserva che, per $A\gtrsim 20$, $B / A \sim \text{cost.}$, con una separazione di al pi\`u $1$ MeV tra i valori dei vari nuclei. 
+Questo suggerisce che la forza forte sia una forza a corto raggio.
+	In figura, \`e evidenziato un nucleo prossimo al massimo della curva: il ferro-56 \`e indicato come il pi\`u stabile, con un $B / A \approx 8.790$; in realt\`a sono pi\`u stabili il ferro-58 e nichel-62, con $B/A$ di, rispettivamente, $8.792$ e $8.795$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{BA.jpg}
+	\end{minipage}
+\end{center}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Nucleo &
+$A$ &
+$B$ [MeV] &
+$B/A$ [MeV/nucleone] &
+$\mathcal{N}$ &
+$B/\mathcal{N}$ [MeV/coppia]
+\\
+\midrule
+${}^{2}\mathrm{H}$   & 2   & 2.225   & 1.112 & 1     & 2.225 \\
+${}^{3}\mathrm{H}$   & 3   & 8.482   & 2.827 & 3     & 2.827 \\
+${}^{3}\mathrm{He}$  & 3   & 7.718   & 2.573 & 3     & 2.573 \\
+${}^{4}\mathrm{He}$  & 4   & 28.296  & 7.074 & 6     & 4.716 \\
+${}^{6}\mathrm{Li}$  & 6   & 31.994  & 5.332 & 15    & 2.133 \\
+${}^{7}\mathrm{Li}$  & 7   & 39.245  & 5.606 & 21    & 1.869 \\
+${}^{8}\mathrm{Be}$  & 8   & 56.500  & 7.063 & 28    & 2.018 \\
+${}^{12}\mathrm{C}$  & 12  & 92.162  & 7.680 & 66    & 1.396 \\
+${}^{14}\mathrm{N}$  & 14  & 104.659 & 7.476 & 91    & 1.150 \\
+${}^{16}\mathrm{O}$  & 16  & 127.619 & 7.976 & 120   & 1.063 \\
+${}^{20}\mathrm{Ne}$ & 20  & 160.645 & 8.032 & 190   & 0.846 \\
+${}^{28}\mathrm{Si}$ & 28  & 236.537 & 8.448 & 378   & 0.626 \\
+${}^{40}\mathrm{Ca}$ & 40  & 342.052 & 8.551 & 780   & 0.439 \\
+${}^{56}\mathrm{Fe}$ & 56  & 492.254 & 8.790 & 1540  & 0.320 \\
+${}^{62}\mathrm{Ni}$ & 62  & 545.259 & 8.795 & 1891  & 0.288 \\
+${}^{120}\mathrm{Sn}$& 120 & 1020.5  & 8.504 & 7140  & 0.143 \\
+${}^{208}\mathrm{Pb}$& 208 & 1636.43 & 7.867 & 21528 & 0.0760 \\
+${}^{238}\mathrm{U}$ & 238 & 1801.69 & 7.570 & 28203 & 0.0639 \\
+\bottomrule
+\end{tabular}
+\caption{Si elencano le energie di legame per diversi elementi, i rapporti $B / A$ e $B / \mathcal{N} $, dove $\mathcal{N} = \frac{1}{2} A(A-1) $ \`e il \textit{numero di coppie}, cio\`e quante coppie di nucleoni si possono formare a partire da un numero totale di nucleoni $A$.}
+\end{table}
+\begin{osservazione}
+Per nuclei leggeri, $B\sim \mathcal{N}$, mentre per $A$ pi\`u grandi si arriva ad una saturazione. 
+Questo \`e un altro indizio importante per poter concludere che la forza forte \`e una forza a corto raggio, in quanto se i nucleoni non interagissero tutti fra loro, $B / \mathcal{N} $ continuerebbe a crescere.
+\end{osservazione}
+\begin{osservazione}[Collasso del nucleo]
+	Dai dati sperimentali, si pu\`o stimare che il raggio d'azione della forza forte deve essere di circa $1$ fm, visto che da nuclei pi\`u pesanti che hanno raggio di $\sim 2\div 3 $ fm, il rapporto $B / \mathcal{N} $ inizia a diminuire. 
+
+	Si \`e portati a pensare, a questo punto, alla possibilit\`a di un collasso dei nuclei, in cui questi hanno raggio crescente fino a raggiungere un valore di saturazione coincidente col raggio di interazione della forza forte.
+	Questo, per\`o, \`e in completo disaccordo con le osservazioni: se cos\`i fosse, $B / \mathcal{N} $ dovrebbe essere crescente all'aumentare di $A$, visto che tutti i nucleoni sarebbero nel raggio di interazione, e il raggio nucleare non dovrebbe andare come $A ^{1 / 3}$, ma essere circa costante. 
+	Inoltre, l'andamento della distribuzione di carica in visto precedentemente, ma $\rho _\text{ch}(r)$ dovrebbe aumentare, all'aumentare di $A$, e dovrebbe andare a zero in prossimit\`a dello stesso valore per tutti i nuclei.
+\end{osservazione}
+\noindent Questa osservazione permette di concludere che la forza forte ha anche una componente repulsiva che impedisce collassi, con un'energia potenziale nucleone-nucleone $V_{\text{NN}}(r)$ che ha la forma di un potenziale di Lennard-Jones; questa diventa repulsiva per $r\lesssim 0.5$ fm e assume il suo valore minimo per $r \sim 1$ fm (maggiore attrazione).
+\subsection{Formula semi-empirica di massa}
+Avendo osservato che, per $A$ abbastanza grande, quindi per la maggioranza degli elementi, $B / A$ \`e costante, si ha la relazione $B = a_V \, A$; visto anche che $R = r_0 A^{1 / 3}$, si ha che $B \sim A \sim R^3 \sim V$, con $V$ volume del nucleo.
+\subsubsection{Modello a goccia del nucleo}
+Nel ragionamento sopra, si pu\`o evidenziare un parallelismo con la modellizzazione di una goccia d'acqua: indicando con $A$ il numero di particelle in essa contenute, si pu\`o scrivere che il suo raggio \`e
+\[
+R = \left(\frac{3m }{ 4\pi \rho  _0}\right) ^{ 1/3 } A^{1 / 3 } \equiv r_0 A^{1 / 3} \Rightarrow A \sim R^3 \sim V\ \, , \ \ \  \rho _0 = \frac{mA }{V}
+\] 
+In questa analogia, l'energia di legame $B$ \`e il \textit{calore latente di vaporizzazione} $Q_\text{vap} = C_\text{vap} M$, con $C_\text{vap}$ \textit{calore specifico latente di vaporizzazione} e $M \simeq m \, A$ massa della goccia, che coincide con l'energia necessaria a strappare via le particelle dalla goccia, cio\`e farla evaporare. 
+L'analogo del termine di volume $a_V$, invece, \`e $C_\text{vap}$, che \`e l'energia necessaria per vaporizzare un'unit\`a di massa.
+
+Il modello a goccia permette di prendere l'analogia della tensione superficiale e spostarla al caso dei nuclei atomici. 
+In entrambi i casi (goccia e nucleo), i potenziali hanno un andamento simile e sono a corto raggio.
+Questo \`e importante perch\'e particelle pi\`u lontane non sentono necessariamente la presenza di tutte le altre; allora, quelle sulla superficie avranno necessariamente un'energia di legame inferiore rispetto alle particelle interne\footnote{In questo caso, si parla di un \textit{costo} in energia perch\'e prendendo un volumetto interno all'oggetto in esame e isolandolo, si forma una superficie che porta quello stesso oggetto a subire un calo nell'energia di legame complessiva, in quanto le particelle pi\`u esterne non sono connesse con le altre nel resto del corpo pi\`u grande.}.
+Si pu\`o, allora, definire un'energia di superficie, che fa diminuire l'energia di legame, $E_\text{sup} = \sigma S$, dove $\sigma $ \`e la \textit{tensione superficiale}.
+Sostituendo l'espressione per la superficie, si ottiene
+\begin{equation}
+E_\text{sup} = 4\pi \sigma  R^2 = 4 \pi \sigma r_0^2 A^{2 / 3} \equiv a_S A^{2 / 3} \ \, , \ \ \ \sigma  = \frac{a_S}{4 \pi r_0^2}
+\end{equation}
+Nel caso dei nuclei atomici, si stima $a_S \approx 18.5$ MeV (tramite fit delle masse nucleari), che porta ad ottenere un valore di tensione superficiale pari a $\sigma \approx 1 \text{ MeV}/\text{fm}^2$.
+
+\subsubsection{Interazione coulombiana}
+La presenza di protoni nei nuclei atomici genera un contributo repulsivo, tra questi, dovuto alla forza elettrostatica.
+Essendo, questa, un'interazione a lungo raggio, ci si aspetta che il termine relativo scali col numero di coppie di protoni $\mathcal{N} \sim Z^2$.
+Per stimarlo, si assume che la distribuzione di carica nel nucleo sia una funzione a gradino 
+\[
+\rho (r) = \begin{cases}
+	\rho _0 &,\ r \le R\\
+	0 &,\ r > R
+\end{cases} \ \, , \ \ \ \rho _0 = \frac{Ze}{\frac{4}{3} \pi R^3}
+\] 
+Ne segue che 
+\begin{equation}
+	E_e = \frac{3}{5} \frac{e^2}{4 \pi \varepsilon _0} \frac{Z^2}{R} = \frac{3}{5} \frac{e^2}{4\pi \varepsilon _0 r_0} \frac{Z^2}{A^{1 / 3}} \equiv a_C \frac{Z^2}{A^{1 / 3}}
+\end{equation}
+
+\subsubsection{Contributi quantistici}
+Per i termini ottenuti fino ad adesso, si avrebbe
+\[
+B(A,Z) = a_V A - a_S A^{2 / 3} - a_C \frac{Z^2}{A^{1 / 3}}
+\] 
+Fissando $A$, si nota che il valore massimo dell'energia di legame si ottiene per $Z = 0$, cio\`e per $A = N$. 
+Questo suggerirebbe che un nucleo con $A$ nucleoni \`e pi\`u stabile se composto interamente da neutroni, vista la repulsione elettrostatica; tuttavia, questo non si verifica perch\'e si deve tenere conto anche del fatto che protoni e neutroni sono due specie di fermioni identici, per cui, nel sistema legato, questi verranno disposti sui relativi livelli energetici.
+
+In questo senso, un nucleo di soli neutroni occupa molti pi\`u livelli che nel caso in cui le $A$ particelle si distribuiscono nei livelli energetici di protoni e neutroni.
+Pertanto, un sistema di soli neutroni ha un'energia di Fermi molto pi\`u alta rispetto a quella di un sistema composto da neutroni e protoni in uguale numero\footnote{Per nuclei leggeri, $Z = N$, mentre, all'aumentare di $A$, si sviluppa uno squilibrio di neutroni.}.
+
+La repulsione coulombiana \`e compensata dal termine quantistico di simmetria\footnote{Questo si ottiene vedendo il nucleo atomico come una miscela di due gas di fermioni di specie diverse e non-interagente.} 
+\begin{equation}
+	B_\text{sym} = - a_\text{sym} \frac{(N-Z)^2}{A}
+\end{equation}
+A questo termine, se ne deve aggiungere un ultimo, detto \textit{termine di pairing}, che dipende se protoni e neutroni sono in numero pari-pari, pari-dispari, o dispari dispari:
+\begin{equation}
+	\delta = \begin{cases}
+		a_P A^{-3 / 4} &\ \text{(pari-pari)}\\
+		0 &\ \text{(dispari-pari)}\\
+		-a_P A^{-3 / 4} &\ \text{(dispari-dispari)}\\
+	\end{cases}
+\end{equation}
+Ha origine dall'evidenza sperimentale per cui i nuclei atomici con numero di neutroni e protoni pari sono pi\`u legati di quelli in cui uno \`e dispari e l'altro \`e pari, a loro volta pi\`u legati di quelli nel caso in cui sia neutroni che protoni siano dispari, ed \`e legato al fatto che una coppia di nucleoni in un livello energetico possa disporsi in modo da avere $J=0$ e abbassare, conseguentemente, l'energia di legame. 
+
+\subsubsection{Formula di Weizs\"acker}
+Mettendo insieme tutti i contributi trovati finora, si ottiene 
+\begin{equation}
+	B(A,Z) = a_V A - a_S A^{2 / 3} - a_C \frac{Z(Z-1)}{A ^{1 / 3}} - a_\text{sym} \frac{(N-Z)^2}{A} + \delta(A,Z)
+\end{equation}
+Nonostante alcuni coefficienti si possano stimare teoricamente, i loro valori sono ottenuti sperimentalmente:
+\begin{equation}
+	\begin{array}
+		{l l l}
+		a_V = 15.68 \text{ MeV} & a_S = 18.56 \text{ MeV} & a_C = 0.717 \text{ MeV} \\
+		a_\text{sym} = 28.1 \text{ MeV} & a_P = 34 \text{ MeV} &
+	\end{array}
+\end{equation}
 
 
 

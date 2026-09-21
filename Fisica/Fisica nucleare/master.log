@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  16 SEP 2026 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  21 SEP 2026 17:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -841,21 +841,41 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 ) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks53
+) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen367
+\lightrulewidth=\dimen368
+\cmidrulewidth=\dimen369
+\belowrulesep=\dimen370
+\belowbottomsep=\dimen371
+\aboverulesep=\dimen372
+\abovetopsep=\dimen373
+\cmidrulesep=\dimen374
+\cmidrulekern=\dimen375
+\defaultaddspace=\dimen376
+\@cmidla=\count385
+\@cmidlb=\count386
+\@aboverulesep=\dimen377
+\@belowrulesep=\dimen378
+\@thisruleclass=\count387
+\@lastruleclass=\count388
+\@thisrulewidth=\dimen379
 ) (/usr/share/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen367
-\c@nlinenum=\count385
+\rotheadsize=\dimen380
+\c@nlinenum=\count389
 \TeXr@lab=\toks54
 ) (/usr/share/texmf-dist/tex/latex/mhchem/mhchem.sty
 Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
  (/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
-) (/usr/share/texmf-dist/tex/latex/chemgreek/chemgreek.sty
-Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
-\l__chemgreek_tmpa_int=\count386
-\g__chemgreek_tmpa_int=\count387
 )
-\l__mhchem_ce_distanceFromLastComma_int=\count388
+(/usr/share/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count390
+\g__chemgreek_tmpa_int=\count391
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count392
 \__mhchem_arrow_extPgfLength_skip=\skip83
 \mhchem@minispace@tmp=\skip84
 \mhchem@minibackspace@tmp=\skip85
@@ -866,18 +886,17 @@ Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use 
 \mhchem@smallbondwidth=\skip90
 \mhchem@bondtmp@minussidebearingleft=\skip91
 \mhchem@bondtmp@minussidebearingright=\skip92
-\l__mhchem_option_version_int=\count389
-\mhchem@option@minusmathsidebearingleft=\dimen368
-\mhchem@option@minusmathsidebearingright=\dimen369
-\mhchem@option@minustextsidebearingleft=\dimen370
-\mhchem@option@minustextsidebearingright=\dimen371
-)
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+\l__mhchem_option_version_int=\count393
+\mhchem@option@minusmathsidebearingleft=\dimen381
+\mhchem@option@minusmathsidebearingright=\dimen382
+\mhchem@option@minustextsidebearingleft=\dimen383
+\mhchem@option@minustextsidebearingright=\dimen384
+) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen372
-\pgfarrowlength=\dimen373
-\pgfarrowwidth=\dimen374
-\pgfarrowlinewidth=\dimen375
+\pgfarrowinset=\dimen385
+\pgfarrowlength=\dimen386
+\pgfarrowwidth=\dimen387
+\pgfarrowlinewidth=\dimen388
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
@@ -887,10 +906,10 @@ File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
-\pgf@intersect@solutions=\count390
+\pgf@intersect@solutions=\count394
 )) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-\babel@savecnt=\count391
+\babel@savecnt=\count395
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
@@ -898,28 +917,28 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
-\U@D=\dimen376
+\U@D=\dimen389
 \l@unhyphenated=\language4
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count392
+\bbl@dirlevel=\count396
  (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
-\it@lettering=\count393
-\it@doublequoteactive=\count394
-\it@ISOcompliance=\count395
+\it@lettering=\count397
+\it@doublequoteactive=\count398
+\it@ISOcompliance=\count399
 )) (/usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
 \FN@temptoken=\toks55
-\footnotemargin=\dimen377
+\footnotemargin=\dimen390
  (/usr/share/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count396
+\c@abspage=\count400
 )
-\c@pp@a@footnote=\count397
+\c@pp@a@footnote=\count401
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
 Package footmisc Info: Declaring symbol style wiley on input line 566.
@@ -929,18 +948,18 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 618.
 ) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@esempio=\count398
-\c@definizione=\count399
-\c@prop=\count400
-\c@teorema=\count401
-\c@lemma=\count402
-\c@corollario=\count403
-\c@osservazione=\count404
-\c@assunzione=\count405
-\c@notazione=\count406
-\c@esercizio=\count407
-Package hyperref Info: Option `colorlinks' set `true' on input line 114.
-Package hyperref Info: Option `breaklinks' set `true' on input line 114.
+\c@esempio=\count402
+\c@definizione=\count403
+\c@prop=\count404
+\c@teorema=\count405
+\c@lemma=\count406
+\c@corollario=\count407
+\c@osservazione=\count408
+\c@assunzione=\count409
+\c@notazione=\count410
+\c@esercizio=\count411
+Package hyperref Info: Option `colorlinks' set `true' on input line 115.
+Package hyperref Info: Option `breaklinks' set `true' on input line 115.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -961,7 +980,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 156.
+(scrartcl)              package `tocloft' on input line 157.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -992,8 +1011,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip116
 \cftfigindent=\skip117
 \cftfignumwidth=\skip118
-\c@lofdepth=\count408
-\c@lotdepth=\count409
+\c@lofdepth=\count412
+\c@lotdepth=\count413
 \cftbeforelottitleskip=\skip119
 \cftafterlottitleskip=\skip120
 \cftbeforetabskip=\skip121
@@ -1005,7 +1024,7 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
 
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen378
+\ttl@leftsep=\dimen391
 )
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
@@ -1014,33 +1033,33 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 170.
+(scrartcl)           before \begin{document} on input line 171.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count410
+\BKM@id=\count414
 )) (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1078,16 +1097,16 @@ LaTeX Font Info:    ... okay on input line 170.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count411
-\scratchdimen=\dimen379
+\scratchcounter=\count415
+\scratchdimen=\dimen392
 \scratchbox=\box84
-\nofMPsegments=\count412
-\nofMParguments=\count413
+\nofMPsegments=\count416
+\nofMParguments=\count417
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count414
-\MPscratchDim=\dimen380
-\MPnumerator=\count415
-\makeMPintoPDFobject=\count416
+\MPscratchCnt=\count418
+\MPscratchDim=\dimen393
+\MPnumerator=\count419
+\makeMPintoPDFobject=\count420
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1095,51 +1114,51 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 170.
+Package hyperref Info: Link coloring ON on input line 171.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 170.
+ on input line 171.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen381
-\c__nicematrix_innersep_middle_dim=\dimen382
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen394
+\c__nicematrix_innersep_middle_dim=\dimen395
 
-Package chemgreek Info: Activating mapping `default' on line 170.
+Package chemgreek Info: Activating mapping `default' on line 171.
 
-LaTeX Info: Redefining \it@ocap on input line 170.
-LaTeX Info: Redefining \it@ccap on input line 170.
+LaTeX Info: Redefining \it@ocap on input line 171.
+LaTeX Info: Redefining \it@ccap on input line 171.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting
-italian.ldf    on input line 170.
+italian.ldf    on input line 171.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 171.
+(Font)              size <20.74> substituted on input line 172.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 171.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 172.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 173.
+(Font)              size <14.4> substituted on input line 174.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <15> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 173.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 174.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/sc' in size <15> not available
-(Font)              size <14.4> substituted on input line 173.
+(Font)              size <14.4> substituted on input line 174.
 
 (./master.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
@@ -1160,36 +1179,41 @@ File: uesint.fd
  [2]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 175.
+(Font)              size <14.4> substituted on input line 176.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 175.
+(Font)              size <20.74> substituted on input line 176.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 183.
+(Font)              size <12> substituted on input line 184.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 183.
+(Font)              size <12> substituted on input line 184.
 
 [3{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4]
-<cd1.jpg, id=57, 334.24875pt x 221.82875pt>
+<cd1.jpg, id=69, 334.24875pt x 221.82875pt>
 File: cd1.jpg Graphic file (type jpg)
 <use cd1.jpg>
-Package pdftex.def Info: cd1.jpg  used on input line 303.
+Package pdftex.def Info: cd1.jpg  used on input line 304.
 (pdftex.def)             Requested size: 187.57352pt x 124.49063pt.
  [5 <./cd1.jpg>] [6] [7]
+<BA.jpg, id=88, 394.1124pt x 277.5168pt>
+File: BA.jpg Graphic file (type jpg)
+<use BA.jpg>
+Package pdftex.def Info: BA.jpg  used on input line 408.
+(pdftex.def)             Requested size: 229.25935pt x 161.43411pt.
+ [8 <./BA.jpg>] [9]
+Overfull \vbox (0.9631pt too high) has occurred while \output is active []
 
-Package caption Warning: Unused \captionsetup[figure] on input line 106.
+ [10] [11]
+
+Package caption Warning: Unused \captionsetup[figure] on input line 107.
 See the caption package documentation for explanation.
 
-
-Package caption Warning: Unused \captionsetup[table] on input line 107.
-See the caption package documentation for explanation.
-
-[8] (./master.aux)
+[12] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1201,18 +1225,27 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 45157 strings out of 469504
- 1069108 string characters out of 5470379
- 1743759 words of memory out of 5000000
- 73138 multiletter control sequences out of 15000+600000
- 640949 words of font info for 90 fonts, out of 8000000 for 9000
+ 45274 strings out of 469504
+ 1070961 string characters out of 5470379
+ 1750667 words of memory out of 5000000
+ 73228 multiletter control sequences out of 15000+600000
+ 641294 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,15n,121p,11245b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on master.pdf (8 pages, 290353 bytes).
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on master.pdf (12 pages, 467959 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
