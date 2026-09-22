@@ -13,6 +13,7 @@
 \usepackage{titling}
 \usepackage[linktocpage]{hyperref}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{caption}
 \usepackage{amsthm}
 \usepackage{import}
@@ -388,7 +389,7 @@ L'energia di legame atomica, per un atomo neutro, \`e data da
 \] 
 dove $M_a(\ce{^A_ZX})$ indica la massa del nucleo.
 Visto che $m_p + m_e = M_a (\ce{^1H}) + b_e$, con $b_e = 13.6$ eV, si pu\`o scrivere che
-\begin{equation}
+\begin{equation}\label{bmass}
 	B(A,Z) = ZM_a(\ce{^1H}) + Nm_n - M_a(\ce{^AX}) {\color{violet} \ +\  Zb_e - B_e}
 \end{equation}
 dove i termini {\color{violet}colorati}, in prima approssimazione, si elidono a vicenda; sperimentalmente, infatti, si ha la relazione $B_e = 13.6\, Z^{12 / 5}$ eV, da cui si vede che $B_e$ cresce pi\`u rapidamente dell'altro termine.
@@ -516,7 +517,7 @@ Ha origine dall'evidenza sperimentale per cui i nuclei atomici con numero di neu
 
 \subsubsection{Formula di Weizs\"acker}
 Mettendo insieme tutti i contributi trovati finora, si ottiene 
-\begin{equation}
+\begin{equation}\label{semf}
 	B(A,Z) = a_V A - a_S A^{2 / 3} - a_C \frac{Z(Z-1)}{A ^{1 / 3}} - a_\text{sym} \frac{(N-Z)^2}{A} + \delta(A,Z)
 \end{equation}
 Nonostante alcuni coefficienti si possano stimare teoricamente, i loro valori sono ottenuti sperimentalmente:
@@ -528,10 +529,489 @@ Nonostante alcuni coefficienti si possano stimare teoricamente, i loro valori so
 	\end{array}
 \end{equation}
 
+\subsection{Decadimenti nucleari}
+
+Si distinguono tre tipi di decadimenti in cui un nucleo atomico si trasforma in un'altra specie nucleare a seguito dell'emissione di particelle.
+Ognuna delle seguenti reazioni nucleari soddisfa una serie di \textit{conservazioni}, come quella della carica elettrica, del numero di nucleoni e del numero leptonico.
+\begin{itemize}
+	\item \textit{Decadimenti $\alpha $:} in questi, la specie nucleare emette un nucleo di elio-4 tramite la reazione
+		\begin{equation}
+			\ce{^A_ZX} \to \ce{^{A-4}_{Z-2}Y + \alpha}
+		\end{equation}
+		Questi decadimenti sono tipici di nuclei pi\`u pesanti.
+	\item \textit{Decadimenti $\beta $:} questi sono una classe di decadimenti, in cui le componenti del nucleo subiscono reazioni diverse.
+		\begin{itemize}
+			\item \textit{Decadimenti $\beta ^-$:} decade un neutrone interno al nucleo, con le reazioni
+			\begin{equation}
+			\ce{n} \to  \ce{p + e- + \overline{\nu }_e} \hspace{1cm} \ce{^A_ZX} \to \ce{^A_{Z+1}Y + e- + \overline{\nu }_e}
+			\end{equation}	
+		\item \textit{Decadimenti $\beta ^+$:} decade un protone interno al nucleo, tramite le reazioni
+		\begin{equation}
+		\ce{p} \to  \ce{n + e+ + \nu _e} \hspace{1cm} \ce{^A_ZX} \to  \ce{^A_{Z-1}Y + e+ + \nu_e}
+		\end{equation}	
+		Si osserva che questa reazione non pu\`o avvenire per un protone nel vuoto, in quanto il relativo \textit{Q-valore} \`e negativo (cio\`e il processo richiede energia):
+		\[
+		Q = m_p - m_n - m_e \approx -2 \text{ MeV}
+		\] 
+	dove si \`e trascurata la massa del neutrino elettronico.	
+\item \textit{Cattura elettronica:} il nucleo cattura un elettrone da una delle shell pi\`u interne e si verificano le reazioni
+\begin{equation}
+\ce{p + e-} \to  \ce{n + \nu _e} \hspace{1cm} \ce{^A_ZX + e-} \to  \ce{^A_{Z-1}Y + \nu _e} 
+\end{equation}	
+Anche questo non pu\`o avvenire ``nel vuoto'' (per esempio, nel caso di un atomo di idrogeno), in quanto il suo Q-valore \`e negativo.
+		\end{itemize}
+	\item \textit{Fissione spontanea:} \`e un processo tipico di nuclei molto pesanti, in cui la specie di partenza produce due specie nucleari e una serie di prodotti secondari (tipicamente neutroni); si ha, quindi, una reazione del tipo 
+	\begin{equation}
+		\ce{^A_ZX} \to  \ce{^{A_1}_{Z_1}Y + ^{A_2}_{Z_2}W + kn} 
+	\end{equation}	
+	dove $k$ \`e un numero intero ad indicare il numero di neutroni prodotti. 
+	Questo \`e un processo puramente statistico, in cui sia le specie nucleari prodotte, sia, quindi, il numero di neutroni variano da una reazione all'altra.
+	Le leggi di conservazione impongono che $A_1 + A_2 + k = A$, $Z_1 +  Z_2 = Z$ e che $N_1+N_2 + k = N $.
+	\begin{center}
+		\begin{minipage}
+			{.3\columnwidth}
+			In immagine, \`e riportato un grafico che illustra la probabilit\`a dei nuclei prodotti da processi di fissione di alcuni nuclei instabili.
+			Si evidenzia come vi sia una tendenza a produrre un nucleo pi\`u leggero ed un nucleo pi\`u pesante, invece che nuclei con approssimativamente uguale numero di massa.
+		\end{minipage}
+		\hfill
+		\begin{minipage}
+			{.60\columnwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{fission-yield.png}
+		\end{minipage}
+	\end{center}
+\end{itemize}
+\subsection{Stabilit\`a dei nuclei isobari}
+Si considerano tutte le specie nucleari esistenti ad $A$ costante, con l'obiettivo di determinare una condizione tramite cui individuare quella pi\`u stabile.
+L'idea \`e che, seppur per $A$ piccoli valga la condizione di simmetria $Z = N$, al suo aumentare, i nuclei tendano a sbilanciarsi verso un aumento di neutroni. 
+Questo \`e legato al fatto che, all'aumentare di $A$, il termine coulombiano diventa sempre pi\`u rilevante.
+Si considerano la relazione dell'energia di legame in termini delle masse atomiche (\ref{bmass}), in cui si elidono $Zb_e - B_e$, e la formula semi-empirica di massa (\ref{semf}); esplicitando la massa atomica $M_a(\ce{^A_ZX})$, si ottiene, ad $A$ fissato, un'equazione di secondo grado in $Z$:
+\begin{equation}
+	M_a(Z) = \alpha  Z^2 + \beta Z + \gamma - \delta 
+\end{equation}
+dove $\delta $ \`e il termine di pairing, mentre
+\begin{equation}
+	\begin{split}
+		&\alpha  = \frac{a_C}{A^{1/3}} + \frac{4 a_{\text{sym}}}{A} = \frac{a_C A^{2 / 3} + 4 a_{\text{sym}}}{A} \\
+		&\beta = M_a(\ce{^1H}) - m_n - 4 a_{\text{sym}} \approx m_p - m_e - m_n - 4 a_{\text{sym}} \\
+		&\gamma = \left(\frac{m_n - a_V + a_{\text{sym}} + a_S}{A^{1 / 3}}\right) A
+	\end{split}
+\end{equation}
+Nell'espressione di $\beta $, si \`e approssimata la massa atomica dell'atomo di idrogeno con la massa delle sue componenti (trascurando, quindi, il contributo dell'energia di legame $b_e$).
+Ora, per ottenere il valore massimo dell'energia di legame in funzione di $Z$, si deve minimizzare $M_a(Z)$ (come appare chiaro da \ref{bmass}): il minimo della parabola \`e in corrispondenza di 
+\begin{equation}
+	Z^* = - \frac{\beta }{2\alpha }\approx \frac{A}{2} \frac{m_n - m_p - m_e + 4a_\text{sym}}{a_C A^{2 / 3} + 4 a_\text{sym}} \approx \frac{A}{2} \frac{1}{1 + \frac{a_C}{4 a _\text{sym}} A^{2 / 3}}
+\end{equation}
+\begin{center}
+	\begin{minipage}
+		{.65\columnwidth}
+Si osserva, in questa espressione, che il termine $\frac{A}{2}$ rappresenta la condizione di simmetria osservata per $A$ piccoli, mentre il fattore al suo fianco corregge tale simmetria, tenendo conto del contributo crescente del termine coulombiano. 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.3\columnwidth}
+	\centering
+	\begin{tabular}
+		{c c c}
+		$A$ & $f$ & $Z^*$\\
+		$20$ & $0.955$ & $9.55$\\
+		$40$ & $0.93$ & $18.6$\\
+		$238$ & $0.8$ & $95.6$
+	\end{tabular}
+	\end{minipage}
+\end{center}
+Si definiscono $b = \frac{a_C}{4 a _\text{sym}}$ e $f = \frac{1}{1 + b A^{ 2 / 3}}$, dove $b \approx 6.4 \times 10^{-3}$. 
+La tabella raffigura diversi valori per diversi $A$.
+Nel caso dell'uranio-238 ($\ce{^{238}_{92}U}$), per esempio, $A / 2 = 119$.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=.7\columnwidth]{stab-valley.png}
+	\caption{Valle di stabilit\`a delle specie nucleari in termini dei tipi di decadimento dei nuclei instabili.}
+\end{figure}
+
+\noindent Si distinguono i casi in cui $A$ \`e pari e in cui $A$ \`e dispari: il termine di pairing modifica le catene di decadimento che subisce un nucleo instabile e anche il numero di nuclei stabili ammessi dal modello a goccia che si sta usando.
+\begin{itemize}
+	\item \textit{Caso di $A$ dispari.} 
+		In questo caso, si ha $N$ dispari e $Z$ pari, oppure $N$ pari e $Z$ dispari; ad ogni modo, il termine di pairing \`e nullo e, a fissato $A$, si individua un'unica parabola lungo cui si dispongono i nuclei al variare di $Z$: quelli pi\`u lontani da $Z^*$ tenderanno, tramite l'opportuno decadimento, a quello pi\`u prossimo allo stesso $Z^*$.
+		Pu\`o succedere che vi siano due $Z$ entrambi molto prossimi a $Z^*$: uno dei due sar\`a stabile, mentre l'altro, seppur con tempo di vita medio molto grande, decadr\`a in quello pi\`u vicino al minimo.
+	\item \textit{Caso di $A$ pari.} In questo caso, il termine di pairing \`e non-nullo e, a seconda del suo segno, gli elementi si disporranno su due parabole distanti $2 \lvert \delta \rvert $ l'una dall'altra.
+		In questo caso, \`e plausibile che il modello a goccia preveda due nuclei stabili come in figura di seguito.
+		I due punti prossimi a $Z^*$ sulla parabola inferiore non decadono; l'unico modo perch\'e quello pi\`u lontano passi a quello pi\`u vicino al minimo \`e tramite un doppio decadimento $\beta $, che \`e un evento estremamente raro.
+\end{itemize}
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+	\begin{tikzpicture}[
+    x=1.15cm,
+    y=1.15cm,
+    line cap=round,
+    line join=round,
+    scale=.7
+]
+
+%------------------------------------------------
+% Assi
+%------------------------------------------------
+\draw[->, thick] (-0.35,0) -- (7.4,0) node[below right] {\footnotesize$Z$};
+\draw[->, thick] (0,-0.25) -- (0,5.35)
+    node[above left] {\footnotesize$M_a(Z)$};
+
+%------------------------------------------------
+% Parabola: Z* = vertice
+% mu_a = 0.72 + 0.48 (Z-Z*)^2
+%------------------------------------------------
+\draw[
+    thick,
+    domain=0.65:6.75,
+    samples=120,
+    smooth
+]
+plot (\x,{0.72 + 0.48*(\x-3.75)^2});
+
+%------------------------------------------------
+% Z* = punto di minimo
+%------------------------------------------------
+\draw[
+    magenta,
+    dashed,
+    thick
+]
+(3.75,0) -- (3.75,0.72);
+
+\fill[magenta] (3.75,0.72) circle (2.5pt);
+
+\node[
+    magenta,
+    below
+]
+at (3.75,-0.02) {\footnotesize$Z^*$};
+
+%------------------------------------------------
+% Nuclei sulla parabola
+%------------------------------------------------
+
+% sinistra
+\fill[cyan!70!black] (1.30,{0.72 + 0.48*(1.30-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (1.85,{0.72 + 0.48*(1.85-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (2.40,{0.72 + 0.48*(2.40-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (2.95,{0.72 + 0.48*(2.95-3.75)^2}) circle (2.2pt);
+
+% destra
+\fill[cyan!70!black] (4.30,{0.72 + 0.48*(4.30-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (4.85,{0.72 + 0.48*(4.85-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (5.40,{0.72 + 0.48*(5.40-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (5.95,{0.72 + 0.48*(5.95-3.75)^2}) circle (2.2pt);
+
+%------------------------------------------------
+% Etichette
+%------------------------------------------------
+
+\node[cyan!70!black, left]
+at (1.30,{0.72 + 0.48*(1.30-3.75)^2})
+{\footnotesize$Z_0-4$};
+
+\node[cyan!70!black, left]
+at (1.85,{0.72 + 0.48*(1.85-3.75)^2})
+{\footnotesize$Z_0-3$};
+
+\node[cyan!70!black, left]
+at (2.40,{0.72 + 0.48*(2.40-3.75)^2})
+{\footnotesize$Z_0-2$};
+
+\node[cyan!70!black, left]
+at (2.95,{0.72 + 0.48*(2.95-3.75)^2})
+{\footnotesize$Z_0-1$};
+
+\node[cyan!70!black, right]
+at (4.30,{0.72 + 0.48*(4.30-3.75)^2})
+{\footnotesize$Z_0$};
+
+\node[cyan!70!black, right]
+at (4.85,{0.72 + 0.48*(4.85-3.75)^2})
+{\footnotesize$Z_0+1$};
+
+\node[cyan!70!black, right]
+at (5.40,{0.72 + 0.48*(5.40-3.75)^2})
+{\footnotesize$Z_0+2$};
+
+\node[cyan!70!black, right]
+at (5.95,{0.72 + 0.48*(5.95-3.75)^2})
+{\footnotesize$Z_0+3$};
+
+%------------------------------------------------
+% Decadimenti beta-
+% Ogni decadimento sposta Z -> Z+1
+%------------------------------------------------
+
+\draw[
+    orange!85!black,
+    thick,
+    ->,
+    bend left=30
+]
+(1.30,{0.72 + 0.48*(1.30-3.75)^2})
+to
+(1.85,{0.72 + 0.48*(1.85-3.75)^2});
+
+\draw[
+    orange!85!black,
+    thick,
+    ->,
+    bend left=30
+]
+(1.85,{0.72 + 0.48*(1.85-3.75)^2})
+to
+(2.40,{0.72 + 0.48*(2.40-3.75)^2});
+
+\draw[
+    orange!85!black,
+    thick,
+    ->,
+    bend left=30
+]
+(2.40,{0.72 + 0.48*(2.40-3.75)^2})
+to
+(2.95,{0.72 + 0.48*(2.95-3.75)^2});
+
+\draw[
+    orange!85!black,
+    thick,
+    ->,
+    bend left=30
+]
+(2.95,{0.72 + 0.48*(2.95-3.75)^2})
+to
+(4.30,{0.72 + 0.48*(4.30-3.75)^2});
+
+\node[
+    orange!85!black
+]
+at (2.15,3.35) {\footnotesize$\beta^-$};
+
+%------------------------------------------------
+% Decadimenti beta+
+% Ogni decadimento sposta Z -> Z-1
+%------------------------------------------------
+
+\draw[
+    violet,
+    thick,
+    ->,
+    bend right=30
+]
+(5.95,{0.72 + 0.48*(5.95-3.75)^2})
+to
+(5.40,{0.72 + 0.48*(5.40-3.75)^2});
+
+\draw[
+    violet,
+    thick,
+    ->,
+    bend right=30
+]
+(5.40,{0.72 + 0.48*(5.40-3.75)^2})
+to
+(4.85,{0.72 + 0.48*(4.85-3.75)^2});
+
+\draw[
+    violet,
+    thick,
+    ->,
+    bend right=30
+]
+(4.85,{0.72 + 0.48*(4.85-3.75)^2})
+to
+(4.30,{0.72 + 0.48*(4.30-3.75)^2});
+
+
+\node[
+    violet
+]
+at (5.05,2.75) {\footnotesize$\beta^+$};
+
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\begin{tikzpicture}[
+    x=1.15cm,
+    y=1.15cm,
+    line cap=round,
+    line join=round,
+    scale=.7
+]
+
+%------------------------------------------------
+% Assi
+%------------------------------------------------
+\draw[->, thick] (-0.35,0) -- (7.4,0) node[below right] {\footnotesize$Z$};
+\draw[->, thick] (0,-0.25) -- (0,5.35)
+    node[above left] {\footnotesize$M_a(Z)$};
+
+%------------------------------------------------
+% Parabola: Z* = vertice
+% mu_a = 0.72 + 0.48 (Z-Z*)^2
+%------------------------------------------------
+\draw[
+    thick,
+    domain=0.75:6.65,
+    samples=120,
+    smooth
+]
+plot (\x,{0.72 + 0.48*(\x-3.75)^2});
+\draw[
+    thick,
+    domain=1.5:6,
+    samples=120,
+    smooth
+]
+plot (\x,{2.5 + 0.48*(\x-3.75)^2});
+
+
+\draw[
+    magenta,
+    dashed,
+    thick
+]
+(3.75,0) -- (3.75,0.72);
+
+\fill[magenta] (3.75,0.72) circle (2.5pt);
+
+\node[
+    magenta,
+    below
+]
+at (3.75,-0.02) {\footnotesize$Z^*$};
+
+\draw[
+    orange!85!black,
+    thick,
+    opacity=0.6,
+    ->,
+    bend right=20
+]
+(0.9,{0.72 + 0.48*(0.9-3.75)^2})
+to
+(2.3,{2.5 + 0.48*(2.3-3.75)^2}); 
+
+\draw[
+    orange!85!black,
+    thick,
+    opacity=0.6,
+    ->,
+    bend right=20
+]
+(2.3,{2.5 + 0.48*(2.3-3.75)^2})
+to
+(3.3,{0.72 + 0.48*(3.3-3.75)^2});
+
+\draw[
+    orange!85!black,
+    thick,
+    opacity=0.6,
+    ->,
+    bend right=20
+]
+(4,{2.5 + 0.48*(4-3.75)^2})
+to
+(3.3,{0.72 + 0.48*(3.3-3.75)^2});
+
+\draw[
+    orange!85!black,
+    thick,
+    opacity=0.6,
+    ->,
+    bend left=20
+]
+(4,{2.5 + 0.48*(4-3.75)^2})
+to
+(4.5,{0.72 + 0.48*(4.5-3.75)^2});
+
+\draw[
+    violet,
+    thick,
+    opacity=0.6,
+    ->,
+    bend right=20
+]
+(4,{2.5 + 0.48*(4-3.75)^2})
+to
+(3.3,{0.72 + 0.48*(3.3-3.75)^2});
+
+
+\draw[
+    violet,
+    thick,
+    opacity=0.6,
+    ->,
+    bend right=20
+]
+(6.3,{0.72 + 0.48*(6.3-3.75)^2})
+to
+(5,{2.5 + 0.48*(5-3.75)^2});
+
+\draw[
+    violet,
+    thick,
+    opacity=0.6,
+    ->,
+    bend left=20
+]
+(5,{2.5 + 0.48*(5-3.75)^2})
+to
+(4.5,{0.72 + 0.48*(4.5-3.75)^2});
+
+\draw[
+    green!60!black,
+    thick,
+    ->
+]
+(4.5,{0.72 + 0.48*(4.5-3.75)^2})
+to
+(3.3,{0.72 + 0.48*(3.3-3.75)^2});
 
 
 
+\fill[cyan!70!black] (0.9,{0.72 + 0.48*(0.9-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (3.3,{0.72 + 0.48*(3.3-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (4.5,{0.72 + 0.48*(4.5-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (6.3,{0.72 + 0.48*(6.3-3.75)^2}) circle (2.2pt);
 
+
+\fill[cyan!70!black] (5,{2.5 + 0.48*(5-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (4,{2.5 + 0.48*(4-3.75)^2}) circle (2.2pt);
+\fill[cyan!70!black] (2.3,{2.5 + 0.48*(2.3-3.75)^2}) circle (2.2pt);
+
+
+
+\end{tikzpicture}
+	\end{minipage}
+	\captionof{figure}{A sinistra, la parabola nel caso di $A$ dispari; a destra, nel caso di $A$ pari.}
+\end{center}
+
+\subsection{Decadimento radioattivo dei nuclei}
+Il decadimento radioattivo \`e un processo in cui un nucleo instabile si frammenta in uno o pi\`u nuclei (stabili o instabili), con contemporanea emissione di di particelle o radiazione.
+Questo processo ha origine completamente statistica e specie nucleare ha un suo \textit{coefficiente di decadimento $\lambda $}, che indica una ``probabilit\`a'' per unit\`a di tempo perch\'e la specie in questione decada ed \`e indipendente dal tempo.
+
+Indicando con $N(t)$ il numero di nuclei ancora non decaduti al tempo $t$, si ha che $\lambda \dd t$ rappresenta la probabilit\`a di decadimento di un nucleo in un intervallo temporale tra $t$ e $t + \dd t$, quindi $N(t) \lambda \dd t $ rappresenta il numero di nuclei decaduti nello stesso istante. 
+Da questo, si ricava la legge di decadimento:
+\begin{equation}
+	\dd N = - \lambda  N(t) \dd t \implies N(t) = N_0 e^{-\lambda t}
+\end{equation}
+dove si \`e preso $t_0 =0$ e $N_0$ numero di nuclei all'istante iniziale.
+
+Si definiscono, poi, il \textit{tempo di vita media} (o \textit{half life}) $\tau  = 1 / \lambda $ e il \textit{tempo di dimezzamento} $\tau _{1 / 2}$, che sono tali per cui 
+\[
+N(\tau ) = \frac{N_0}{e}\hspace{1cm}N(\tau _{1 / 2}) = \frac{1}{2} N_0 
+\] 
+Da queste espressioni, si ha che $e^{-\lambda \tau _{1 / 2}} = 1 / 2$, per cui $\lambda \tau _{ 1 / 2} = \ln 2$; visto che $\tau  = 1 / \lambda $, si ha:
+\begin{equation}
+	\tau _{ 1 / 2 } = \tau  \ln 2
+\end{equation}
 
 
 
