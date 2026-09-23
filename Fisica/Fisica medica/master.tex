@@ -259,15 +259,31 @@ Per dare una definizione pi\`u concreta di risoluzione spaziale, si immagina l'o
 La risposta spaziale del sistema ad un punto infinitamente piccolo dell'oggetto \`e chiamata \textit{point spread functions} (PSF); una PSF molto stretta corrisponde ad un'elevata risoluzione spaziale, mentre una molto larga corrisponde ad una scarsa risoluzione spaziale.
 La larghezza associata alla PSF pu\`o essere stimata tramite la \textit{full width at half maximum}.
 
-\begin{boxenv}[]
-\centering Riprendere da -24:00.
-\end{boxenv}
+Due oggetti puntiformi vicini vengono trasferiti, tramite il sistema di imaging, in due oggetti distinti qualora si trovino ad una distanza di circa una FWHM della PSF\footnote{Questo \`e un criterio convenzionale, ma ne esistono diversi che stabiliscono distanze diverse fra i due punti alle quali questi si possono considerare risolti.}.
+Oltre questo criterio, la possibilit\`a di distinguerli dipende, concretamente, dall'intero sistema di osservazione dell'immagine, come lo schermo, il contrasto, eccetera.
 
+La risoluzione dell'immagine prodotta dipende anche dalla configurazione e dalle condizioni di operazione dello scanner; lo stesso dispositivo, infatti, pu\`o performare diversamente a seconda del protocollo\footnote{Per protocollo si intende quell'insieme di impostazioni utilizzate per l'ottenimento dell'immagine. Per esempio, l'algoritmo di ricostruzione dell'immagine, il numero di pixel/voxel, intervallo tra slice sono tutte possibili impostazioni di un certo scanner.}, ma anche delle condizioni in cui si sta acquisendo l'immagine, per esempio eventuali movimenti, condizioni di geometria, distanza, eccetera.
 
 \subsubsection{Contrasto}
 
+Il contrasto rappresenta una differenza di intensit\`a del segnale acquisito dallo scanner relativamente a regioni confinanti nell'oggetto analizzato. 
 
+Si indicano con $V_1,V_2$ le intensit\`a reali e con $C_1,C_2$ le intensit\`a misurate tramite lo scanner riferite a due regioni confinanti; tramite queste, si definiscono \textit{contrasto reale} e \textit{contrasto immagine}, rispettivamente, come
+\begin{equation}
+	C_r  = \frac{V_1-V_2}{V_1+V_2} \hspace{2cm} C_i = \frac{C_1-C_2}{C_1+C_2}
+\end{equation}
+Altre definizioni consistono nel porre al denominatore $\frac{V_1+V_2}{2}$, oppure solamente $V_2$ (analogo per $C_1,C_2$).
 
-
-
+Il contrasto immagine \`e sempre minore di quello reale per effetti legati alla fisica dell'acquisizione (es. scattering della luce), effetti di moto, effetti legati alla geometria, limitazioni tecnologiche del sistema di acquisizione (blurring dei bordi per via della risoluzione, artifatti vari, eccetera).
+\begin{osservazione}
+I valori del contrasto variano tra $0$ e $1$ per segnali non-negativi.
+\end{osservazione}
+Si definisce \textbf{risoluzione del contrasto} \`e la minima differenza dei segnali individuabile.
+I bit dell'ADC limitano il numero di livelli disponibili per la conversione, ciononostante l'occhio umano \`e in grado di distinguere al pi\`u $20$ livelli di contrasto.
+In ogni caso, con immagini digitali \`e possibile investire i livelli a disposizione percettibili per evidenziare le regioni di interesse.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{cl.png}
+	\caption{A sinistra, si sono utilizzati i livelli a disposizione per evidenziare la struttura ossea attorno ai polmoni; a destra, si sono evidenziati i tessuti molli.}
+\end{figure}
 \end{document}
