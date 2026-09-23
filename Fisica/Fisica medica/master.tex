@@ -208,17 +208,63 @@ Nell'acquisizione multimodale, una risonanza magnetica \`e tipicamente utilizzat
 Un'immagine digitale \`e una matrice di numeri, che rappresentano l'intensit\`a del segnale misurato, oppure un valore derivato da modello. 
 Complessivamente, le informazioni acquisite saranno composte da \textit{tre componenti} per immagini 2D (dimensione $x$, dimensione $y$, valore misurato) e da \textit{quattro componenti} per immagini 3D (dimensione $x$, dimensione $y$, dimensione $z$, valore misurato).
 \`E anche possibile acquisire dati con 4 componenti, in cui al posto della terza dimensione, \`e inserito il tempo, in modo da ricreare l'evoluzione temporale di un'immagine bidimensionale.
-Ogni matrice numerica costituisce un \textit{frame} dell'immagine.
+Ogni matrice numerica costituisce un \textit{frame} dell'immagine, qualora questa rappresenti una singola immagine di una sequenza temporale, oppure si parla di \textit{slice} nel caso di un singolo elemento di una sequenza spaziale.
+Il \textbf{formato} di un'immagine specifica le seguenti caratteristiche:
+\begin{itemize}
+	\item numero di pixel/voxel, tipicamente potenze di $2$;
+	\item numero di frames, o slices;
+	\item profondit\`a (\textit{depth}) della scala di grigi, o della scala di colori utilizzata;
+	\item grandezza reale di ciascun pixel, o voxel, (in mm, per esempio).
+\end{itemize}
+
+Nella conversione analogico-digitale, il numero di bit dell'ADC utilizzato incide sulla qualit\`a del segnale registrato: con $n$ bits, si ottiene un range di valori con cui campionare il segnale da convertire che \`e pari a $2^n$; per esempio, se $n=2$, si hanno $4$ livelli possibili, da $0$ a $3$, per campionare il segnale analogico e convertirlo digitalmente.
+In generale, l'errore massimo ideale legato alla conversione \`e ottenuto frazionando l'ampiezza complessiva del segnale analogico $V_\text{FS}$ per il numero di livelli a disposizione, cio\`e $\Delta = V_\text{FS}/2^N$, e osservando che la massima distanza del segnale analogico da un livello si trova esattamente a met\`a di tale range, per cui $\text{Err}_\text{max} = \Delta  / 2$.
+In questo modo, si ha la seguente tabella.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c c}
+		Bits & Range dinamico & Valori possibili (decimali) & $\text{Err}_\text{max}$\\
+	\hline
+		$2$ & $ 4$ & $0\div 3$ & $12.5 \%$\\
+		$4$ & $16$ & $0\div 15$ & $3.1 \%$\\
+		$6$ & $ 64$ & $0\div 63$ & $0.8 \%$\\
+		$8$ & $256$ & $0\div 255$ & $0.2 \%$\\
+	\hline
+	\end{tabular}
+\end{table}
+
+Una \textbf{scala di colore} mappa un valore ad un colore.
+Originariamente, per il funzionamento della tecnologia analogica, la visualizzazione delle immagini era pi\`u facilmente ottenibile in scale di grigi; questa tendenza \`e rimasta da allora, per cui in molte situazioni si usano ancora colori simili.
+Ciononostante, esistono delle scale di colore che, ad ogni valore, assegnano un codice RGB.
+Ovviamente modificare una LUT (\textit{look-up table}) non modifica l'informazione alla base, ma modifica il modo in cui questa viene visualizzata e, quindi, interpretata dall'operatore.
+Proprio per quest'ultima motivazione, una scala di colore pu\`o introdurre dei bias di percezione e nascondere dettagli altres\`i visibili in scala di grigi, o in altri colori.
+
+\subsection{Qualit\`a delle immagini}
+La qualit\`a di un'immagine digitale \`e descritta tramite i seguenti quattro parametri.
+\begin{itemize}
+	\item \textit{Risoluzione spaziale:} è la capacità di un sistema di imaging di rappresentare come distinte due strutture spazialmente vicine.
+	\item \textit{Contrasto:} è la differenza relativa tra i valori dell'immagine associati a regioni o strutture che presentano proprietà fisiche differenti.
+	\item \textit{Rumore:} indica fluttuazioni casuali nei valori assegnati a ciascuna unit\`a dell'immagine che incidono sulla nitidezza dell'immagine.
+	\item \textit{Linearit\`a spaziale:} indica la capacit\`a del sistema di riprodurre fedelmente le distanze tra i vari punti del sistema analizzato.
+\end{itemize}
+
+\subsubsection{Risoluzione spaziale}
+
+La risoluzione spaziale, quindi, \`e una caratteristica del sistema di acquisizione di poter risolvere dettagli anatomici dell'oggetto che si sta analizzando. 
+Oltretutto, incide anche sulla capacit\`a di poter distinguere due strutture spazialmente vicine.
+
+Questa abilit\`a \`e direttamente collegata sia con il contrasto del sistema di imaging, sia con la risposta del sistema che si sta misurando: avere una risoluzione spaziale notevole, ma che richiede diverse decine di minuti invalida l'acquisizione dell'immagine per via di modifiche fisiologiche nell'oggetto analizzato, come movimenti involontari, respirazione, eccetera.
+
+Per dare una definizione pi\`u concreta di risoluzione spaziale, si immagina l'oggetto in esame come composto da punti infinitamente piccoli; essendo il sistema di acquisizione non-ideale, la rappresentazione di quel punto risulter\`a in una macchia estesa e sfocata.
+La risposta spaziale del sistema ad un punto infinitamente piccolo dell'oggetto \`e chiamata \textit{point spread functions} (PSF); una PSF molto stretta corrisponde ad un'elevata risoluzione spaziale, mentre una molto larga corrisponde ad una scarsa risoluzione spaziale.
+La larghezza associata alla PSF pu\`o essere stimata tramite la \textit{full width at half maximum}.
 
 \begin{boxenv}[]
-	\centering Riprendere da pagina 16, -38:00\footnote{Fare prima da pagina 16 a 19, poi riprendere audio.}.
+\centering Riprendere da -24:00.
 \end{boxenv}
 
 
-
-
-
-
+\subsubsection{Contrasto}
 
 
 
