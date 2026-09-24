@@ -218,7 +218,7 @@ Il \textbf{formato} di un'immagine specifica le seguenti caratteristiche:
 \end{itemize}
 
 Nella conversione analogico-digitale, il numero di bit dell'ADC utilizzato incide sulla qualit\`a del segnale registrato: con $n$ bits, si ottiene un range di valori con cui campionare il segnale da convertire che \`e pari a $2^n$; per esempio, se $n=2$, si hanno $4$ livelli possibili, da $0$ a $3$, per campionare il segnale analogico e convertirlo digitalmente.
-In generale, l'errore massimo ideale legato alla conversione \`e ottenuto frazionando l'ampiezza complessiva del segnale analogico $V_\text{FS}$ per il numero di livelli a disposizione, cio\`e $\Delta = V_\text{FS}/2^N$, e osservando che la massima distanza del segnale analogico da un livello si trova esattamente a met\`a di tale range, per cui $\text{Err}_\text{max} = \Delta  / 2$.
+In generale, l'errore massimo ideale legato alla conversione \`e ottenuto frazionando l'ampiezza complessiva del segnale analogico $V_\text{FS}$ per il numero di livelli a disposizione, cio\`e $\Delta = V_\text{FS}/2^n$, e osservando che la massima distanza del segnale analogico da un livello si trova esattamente a met\`a di tale range, per cui $\text{Err}_\text{max} = \Delta  / 2$.
 In questo modo, si ha la seguente tabella.
 \begin{table}[h!]
 	\centering
@@ -286,4 +286,39 @@ In ogni caso, con immagini digitali \`e possibile investire i livelli a disposiz
 	\includegraphics[width=0.8\textwidth]{cl.png}
 	\caption{A sinistra, si sono utilizzati i livelli a disposizione per evidenziare la struttura ossea attorno ai polmoni; a destra, si sono evidenziati i tessuti molli.}
 \end{figure}
+
+\newpage 
+
+\section{Nozioni di fisica nucleare}
+I punti centrali di un decadimento nucleare $\ce{^AX} \to \ce{^BY} + P$, con $P$ prodotti secondari della reazione, sono il \textit{Q-valore}, definito da 
+\begin{equation}
+	Q = (m_X - m_Y - m_P ) c^2
+\end{equation}
+con $m$ indica la massa nucleare della relativa specie e le leggi di conservazione di \textit{carica}, \textit{numero barionico}, \textit{numero leptonico}.
+\subsection{Decadimenti $\beta $}
+
+Si distinguono i decadimenti $\beta ^+$, dai decadimenti $\beta ^-$ a seconda che la particella emessa sia, rispettivamente, un positrone, o un elettrone.
+Le reazioni che avvengono nel nucleo sono
+\[
+	\ce{p} \to  \ce{n + e+ + \nu_e} \hspace{2cm} \ce{n} \to \ce{p + e- + \overline{\nu }_e}
+\] 
+rispettivamente per $\beta ^+$ e $\beta ^-$; a livello nucleare, questo si manifesta nelle seguenti reazioni:
+\[
+	\ce{^A_ZX} \to  \ce{^A_{Z-1}Y + e+ + \nu _e} \hspace{2cm} \ce{^A_ZX}\to \ce{^A_{Z+1}Y + e- + \overline{\nu }_e}
+\] 
+Per ottenere una condizione affinch\'e questi processi possano avvenire spontaneamente, cio\`e senza fornire energia, si osserva, per esempio, il caso del decadimento $\beta ^-$:
+\[
+Q = m_X - m_Y - m_e \hspace{1cm} M_X - M_Y \approx m_X + Zm_e - m_Y - (Z+1)m_e = m_X - m_Y - m_e
+\] 
+dove $M$ \`e la massa atomica e si sono trascurate le energie di legame degli elettroni con il nucleo.
+A questo punto, quindi, si ha la condizione 
+\begin{equation}
+	Q_{\beta ^-} = m_X - m_Y - m_e \approx M_X - M_Y > 0
+\end{equation}
+
+\begin{boxenv}[]
+\centering Riprendere da pagina 19
+\end{boxenv}
+
+
 \end{document}
