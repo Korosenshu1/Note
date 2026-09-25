@@ -315,10 +315,146 @@ A questo punto, quindi, si ha la condizione
 \begin{equation}
 	Q_{\beta ^-} = m_X - m_Y - m_e \approx M_X - M_Y > 0
 \end{equation}
+Per il decadimento $\beta ^+$, invece, tramite calcoli analoghi, si ottiene che la relazione da soddisfare \`e 
+\begin{equation}
+	Q_{\beta ^+} > 0 \iff M_X - M_Y > 2m_e
+\end{equation}
+In questi decadimenti, l'energia rilasciata nel decadimento viene spartita tra elettrone (o positrone) e anti-neutrino (o neutrino); lo spettro delle possibili energie acquisite dall'elettrone \`e continuo ed \`e soddisfatta la relazione 
+\begin{equation}
+	\overline{E}_\beta  \approx \frac{1}{3} E^\text{max}_\beta 
+\end{equation}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si considera, come esempio, un decadimento $\beta ^-$ seguito da emissione di radiazione elettromagnetica. Lo xeno-133 segue la catena 
+	\[
+	\ce{^{133}Xe} \xrightarrow{\ \ \beta ^- \ \ } \ce{^{133}{Cs}^*}\xrightarrow{\ \ \gamma \ \ } \ce{^{133}Cs}
+	\] 
+	Ma vi sono diverse possibilit\`a con cui si pu\`o verificare questo decadimento, per cui si fa riferimento al diagramma.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\node at (3.25,-4.5) {\footnotesize $\ce{^{133}_{55}Cs}$};
+		\node at (0.75,.3) {\footnotesize $\ce{^{133}_{54}Xe}$};
+		\draw[very thick,color=orange] (0,0) -- (1.5,0);
 
-\begin{boxenv}[]
-\centering Riprendere da pagina 19
-\end{boxenv}
+		\draw[very thick,color=orange] (4,-.5) -- (5.5,-.5) node[right,black] {\tiny $0.384$ MeV};
+		\draw[very thick,color=orange] (4,-2.5) -- (5.5,-2.5) node[right,black] {\tiny $0.161$ MeV};
+		\draw[very thick,color=orange] (4,-3.5) -- (5.5,-3.5) node[right,black] {\tiny $0.081$ MeV};
+		\draw[very thick,color=orange] (4,-4.5) -- (5.5,-4.5) node[right,black] {\tiny $0$ MeV};
+
+
+		\draw[-stealth] (1.55,0) -- (3.95,-.5);
+		\node at (3.5, -0.15) {\tiny $\beta _1$};
+
+		\draw[-stealth] (1.55,0) -- (3.95,-2.5);
+		\node at (3.5, -1.65) {\tiny $\beta _2$};
+
+		\draw[-stealth] (1.55,0) -- (3.95,-3.5);
+		\node at (3.5, -2.5) {\tiny $\beta _3$};
+
+		\draw[stealth-stealth] (.3,0) -- (.3,-4.5);
+		\node[rotate=90] at (.15, -3.25) {\tiny $Q = 0.427$ MeV};
+
+		\draw[-stealth] (4.25, -.55) -- (4.25,-4.45);
+		\node at (4.10, -4) {\tiny $\gamma_4$};
+
+		\draw[-stealth] (4.45, -.55) -- (4.45,-3.45);
+		\node at (4.6, -3) {\tiny $\gamma_5$};
+
+		\draw[-stealth] (4.65, -.55) -- (4.65,-2.45);
+		\node at (4.8, -2) {\tiny $\gamma_6$};
+
+		\draw[-stealth] (4.9, -2.55) -- (4.9,-4.45);
+		\node at (4.75, -4) {\tiny $\gamma_3$};
+
+		\draw[-stealth] (5.2, -2.55) -- (5.2,-3.45);
+		\node at (5.35, -3) {\tiny $\gamma_1$};
+
+		\draw[-stealth] (5.4, -3.55) -- (5.4,-4.45);
+		\node at (5.25, -4) {\tiny $\gamma_2$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Lo xeno-133, quindi, pu\`o decadere in uno di tre livelli eccitati del cesio-133 tramite i canali $\beta_1, \beta _2, \beta _3$, il quale raggiunge, poi, lo stato fondamentale tramite uno dei canali $\gamma$.
+La transizione pi\`u probabile \`e la catena $(\beta _3, \, \gamma_2)$.
+
+Un altro decadimento che rientra nei decadimenti $\beta $ \`e la \textbf{cattura elettronica}, in cui il nucleo cattura un elettrone da un orbitale atomico: $\ce{p + e-} \to \ce{n + \nu _e}$.
+Al livello nucleare, si ha una reazione del tipo
+\begin{equation}
+	\ce{^A_ZX + e-} \to \ce{^A_{Z-1}Y + \nu _e}
+\end{equation}
+Svolendo i soliti conti, si conclude che, anche in questo caso, deve risultare $M_X - M_Y > 0$, perch\'e $Q_\text{EC} > 0$.
+\begin{osservazione}
+Nella reazione di diagrammi per decadimenti come quello sopra, qualora il nucleo di arrivo avesse numero atomico inferiore a quello di partenza, lo si deve orientare da destra verso sinistra.
+\end{osservazione}
+\begin{osservazione}
+Il decadimento $\beta ^+$ \`e pi\`u frequente in elementi pi\`u leggeri, rispetto al EC; questo \`e legato al fatto che, negli elementi pi\`u pesanti, gli orbitali elettronici tendono ad essere pi\`u vicini al nucleo, per cui gli elettroni vengono catturati pi\`u facilmente.
+\end{osservazione}
+\subsection{Transizioni isomeriche}
+I nuclei possono trovarsi in stati eccitati e metastabili; la differenza fra questi due sta nella vita media dello stato: se $\tau  > 10 ^{-12}$ s, lo stato \`e detto \textit{metastabile} (o \textit{isomerico}).
+Due nuclei sono detti \textit{isomeri} se uno \`e in uno stato metastabile dell'altro e il decadimento da tale stato \`e detto \textbf{transizione isomerica}.
+Questo decadimento pu\`o avvenire seguendo diversi canali, fra cui il pi\`u caratteristico \`e l'emissione di fotoni.
+
+\subsection{Conversioni interne e elettroni Auger}
+
+Un processo alternativo all'emissione di fotoni \`e la \textbf{conversione interna}.
+In questo caso, l'energia in eccesso del nucleo viene trasferita direttamente ad un elettrone, che viene conseguentemente espulso\footnote{\`E necessario che vi sia una sua espulsione, altrimenti il processo sarebbe equivalente ad un'emissione di fotoni.} dall'atomo.
+L'elettrone proviene dai gusci pi\`u interni, tipicamente K o L, e acquisisce un'energia complessiva pari a 
+\begin{equation}\label{ci-en}
+	E_e = E_\text{stato eccitato} - E_\text{legame}
+\end{equation}
+La lacuna lasciata da tale elettrone verr\`a colmata da un altro nei gusci pi\`u esterni, con conseguente emissione di fotoni.
+\begin{osservazione}
+Sia conversione interna, che $\beta ^-$ risultano in un'emissione di elettroni, ma c'\`e una differenza sostanziale: nel $\beta ^-$, l'origine dell'elettrone \`e nucleare, mentre, nella conversione interna, \`e atomica.
+Concretamente, la differenza sta negli spettri degli elettroni emessi: nel $\beta ^-$, \`e continuo; nella conversione interna \`e discreto e legato alla differenza in \ref{ci-en}.
+\end{osservazione}
+
+Un altro processo di decadimento che emette elettroni \`e quello che produce \textbf{elettroni Auger}. 
+Questi vengono prodotti quando, rispetto alla conversione interna, \`e eccitato l'atomo, piuttosto che il nucleo.
+La diseccitazione, allora, si pu\`o avere tramite l'emissione di un elettrone, la cui energia avr\`a spettro discreto come nel caso della conversione interna e con uguale relazione:
+\begin{equation}
+	E_e = E_\text{stato eccitato} - E_\text{legame}
+\end{equation}
+L'origine di questa espulsione \`e differente rispetto alla conversione interna, motivo per cui si distinguono: l'elettrone Auger viene liberato dopo aver ricevuto l'energia necessaria a seguito di una transizione, da un orbitale pi\`u esterno ad uno pi\`u interno, di un altro elettrone per coprire una lacuna.
+Sperimentalmente, si discriminano gli elettroni provenienti da un processo e dall'altro semplicemente misurandone l'energia: quelli rilasciati per conversione interna avranno energie su scale legate alle transizioni nucleari; gli elettroni Auger, invece, avranno energie legate alle transizioni tra gusci elettronici.
+
+\subsection{Decadimenti $\alpha $}
+Il decadimento $\alpha $ consiste nell'emissione di una particella $\alpha $ da parte di un nucleo (tipicamente molto pesante), originando una reazione della forma
+\begin{equation}
+	\ce{^A_ZX}\to \ce{^{A-4}_{Z-2}Y + \alpha} \hspace{3cm} Q_\alpha > 0 \iff M_X - M_Y > M_\alpha 
+\end{equation}
+Tipicamente, l'energia cinetica della particella $\alpha $ \`e compresa nel range $4 \div 8$ MeV, ma ha un range molto piccolo ($\sim 30 \text{ } \mu \text{m}$ in tessuto), motivo per cui questo decadimento \`e sfruttato per diretto contatto con l'obiettivo, come l'impianti nei tumori mediante radio-226.
+Sono, invece, di scarsi interesse come traccianti in medicina nucleare, proprio per via della loro alta interazione nei materiali.
+
+Esiste una relazione tra il tempo di dimezzamento di un radionuclide e l'energia con cui vengono emesse le particelle $\alpha $; questa prende il nome di \textit{legge di Geiger-Nuttall} e afferma che
+\begin{equation}
+	\log_{10} \tau _{1 / 2} = -a + b \frac{Z}{\sqrt{Q_\alpha } }
+\end{equation}
+con $Q_\alpha $ energia della particella $\alpha $.
+\subsection{Fissione nucleare}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
