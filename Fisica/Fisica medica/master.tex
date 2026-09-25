@@ -74,7 +74,7 @@
 {\normalfont}% name of font to use in the body of the theorem
 %{15pt}% measure of space to indent
 {0pt}% measure of space to indent
-{\noindent\bfseries\color{red}}% name of head font
+{\noindent\bfseries}% name of head font
 {}% punctuation between head and body
 { }% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
@@ -435,20 +435,57 @@ Esiste una relazione tra il tempo di dimezzamento di un radionuclide e l'energia
 	\log_{10} \tau _{1 / 2} = -a + b \frac{Z}{\sqrt{Q_\alpha } }
 \end{equation}
 con $Q_\alpha $ energia della particella $\alpha $.
+
 \subsection{Fissione nucleare}
+Si parla di \textit{fissione spontanea} quando un nucleo pesante si frammenta in due nuclei pi\`u leggeri, insieme ad una probabile emissione di neutroni. 
+Tipicamente, i due frammenti sono in rapporto $60:40$ in termini di numeri atomici e l'energia rilasciata \`e dell'ordine di $10^2$ MeV, principalmente spesa in energia cinetica nei prodotti della fissione.
+I nuclei prodotti, spesso, sono lontani dalla curva di stabilit\`a e seguono decadimenti $\beta ^-$.
 
+\subsection{Caratterizzazione dei processi di decadimento}
 
+Ciascun nucleo \`e caratterizzato da una \textit{costante di decadimento} $\lambda $, che indica la probabilit\`a per unit\`a di tempo che tale nucleo ha di subire un processo di decadimento.
 
+Indicando con $N(t)$ il numero di nuclei non-decaduti all'istante $t$, il numero di decadimenti per unit\`a di tempo atteso sar\`a $N(t) \lambda $; in questo modo, si ottiene la relazione differenziale
+\begin{equation}
+	\frac{d N}{d t}  = - \lambda N (t) \implies N(t) = N_0 e^{-\lambda t}
+\end{equation}
+con $N(t=0) = N_0$.
+Si definisce $\tau  = 1 /\lambda $ il \textit{tempo di vita medio} del nucleo e soddisfa $N(t=\tau ) = N_0 / e$.
+Si dice \textit{fattore di decadimento} (DF) il fattore $e^{-\lambda t}$, che rappresenta la frazione di nuclei rimasti al tempo $t$.
 
+Oltre al tempo di vita medio, si definisce anche il \textit{tempo di dimezzamento} $\tau _{1 / 2}$, che soddisfa $N(t = \tau _{1 / 2}) = N_0 / 2$.
+Da queste espressioni, si possono mettere in relazione i due tempi introdotti finora, che soddisfano la relazione 
+\begin{equation}
+	\tau _{1 / 2 }= \tau  \ln 2\approx 0.693\, \tau 
+\end{equation}
+Sperimentalmente, la grandezza di interesse \`e l'\textbf{attivit\`a} $A$, definita come
+\begin{equation}
+	A  = \frac{N}{\tau }= \left\lvert \frac{d N}{d t}  \right\rvert \implies A (t) = A_0 e^{- t / \tau }
+\end{equation}
+misurata in Becquerel: $1\text{ Bq}= 1 \text{ dec}/\text{s}$.
+Un'altra unit\`a di misura \`e il Curie: $1 \text{ Ci} = 3.7 \times 10^{10} \text{ dec}/\text{s}$, corrispondente all'attivit\`a di $1$ g di radio-226.
+\begin{osservazione}
+In questa definizione, si \`e assunto implicitamente che non vi sia produzione dei nuclei che decadono, ossia gli $N(t)$ non devono aumentare mai perch\'e possa valere $|\dot{N}(t) |= \lambda N$.
+In generale, $A(t) = \lambda N(t)$.
+\end{osservazione}
+\subsubsection{Datazione al carbonio}
 
+Questo metodo \`e un esempio di come vengono utilizzate le grandezze introdotte finora. 
+Si basa sul fatto che l'isotopo carbonio-14 \`e instabile, con un tempo di vita medio di $\tau  \approx 8268$ yr, e sul fatto che un organismo in grado di scambiare carbonio con l'ambiente conserva, fino a che tale scambio non cessa, il rapporto delle concentrazioni $\ce{^14C}/\ce{^12C}$ costante e pari a quello in atmosfera, il cui valore \`e $\approx 1.3 \times 10^{-12}$.
+\begin{osservazione}
+	Si nota che il carbonio-14 si origina in atmosfera tramite interazione dei neutroni derivanti dai raggi cosmici con l'azoto-14: $\ce{^{14}N + n} \to \ce{^{14}C + p}$; poi, con un tempo di dimezzamento $\tau _{1 / 2 } \approx 5700$ yr, si ha $\ce{^14C} \xrightarrow{ \beta ^- }  \ce{^{14}N + e- + \overline{\nu }_e}$. 
+\end{osservazione}
+\noindent Per utilizzare la datazione al carbonio, allora, si misura la quantit\`a di carbonio-12 presente nell'organismo, che rimane costante perch\'e $\ce{^{12}C}$ \`e stabile, e la si moltiplica per $1.3 \cdot 10^{-12}$ per ottenere la concentrazione iniziale $N^0_{14}$ di carbonio-14. 
+Dopo un'ulteriore misurazione della quantit\`a di carbonio-14 attualmente presente $N_{14}$, il tempo di vita \`e univocamente determinato dalla relazione 
+\begin{equation}
+	N_{14}(T) = N^0_{14} e^{-\lambda T} \implies T = - \frac{1}{\lambda } \ln\left(\frac{N_{14} (T)}{ N_{14}^0}\right)  
+\end{equation}
+visto che $N^0_{14}$ inizia a variare esattamente nel momento della morte dell'organismo.
 
-
-
-
-
-
-
-
+Pi\`u realisticamente, i valori che si misurano sono le attivit\`a, lasciando la relazione invariata a patto di sostituire il numero di atomi con le relative attivit\`a, in quanto si finirebbe solo per moltiplicare e dividere per la stessa quantit\`a.
+\begin{osservazione}
+Questo \`e valido a patto che non vi siano fenomeni esterni che alterano la concentrazione di carbonio-12 dell'organismo.
+\end{osservazione}
 
 
 
