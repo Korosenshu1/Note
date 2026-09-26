@@ -468,7 +468,7 @@ Un'altra unit\`a di misura \`e il Curie: $1 \text{ Ci} = 3.7 \times 10^{10} \tex
 In questa definizione, si \`e assunto implicitamente che non vi sia produzione dei nuclei che decadono, ossia gli $N(t)$ non devono aumentare mai perch\'e possa valere $|\dot{N}(t) |= \lambda N$.
 In generale, $A(t) = \lambda N(t)$.
 \end{osservazione}
-\subsubsection{Datazione al carbonio}
+\subsubsection{Datazione al carbonio e altri esempi applicativi}
 
 Questo metodo \`e un esempio di come vengono utilizzate le grandezze introdotte finora. 
 Si basa sul fatto che l'isotopo carbonio-14 \`e instabile, con un tempo di vita medio di $\tau  \approx 8268$ yr, e sul fatto che un organismo in grado di scambiare carbonio con l'ambiente conserva, fino a che tale scambio non cessa, il rapporto delle concentrazioni $\ce{^14C}/\ce{^12C}$ costante e pari a quello in atmosfera, il cui valore \`e $\approx 1.3 \times 10^{-12}$.
@@ -487,8 +487,128 @@ Pi\`u realisticamente, i valori che si misurano sono le attivit\`a, lasciando la
 Questo \`e valido a patto che non vi siano fenomeni esterni che alterano la concentrazione di carbonio-12 dell'organismo.
 \end{osservazione}
 
+\begin{esempio}
+Un'arancia di medie dimensioni contiene circa $250$ mg di potassio, di cui lo $0.0118\%$ \`e in forma radioattiva potassio-40, mentre il rimanente \`e in forma stabile potassio-39.
+Si sa che il tempo di dimezzamento del potassio-40 \`e $1.2 \times 10^{9}$ yr e che circa $1$ nucleo su $10^5$ decadono per $\beta ^+$.
+Si vuole calcolare l'attivit\`a $\beta ^+$.
+\end{esempio}
+\begin{svolgimento}
+	La percentuale riportata \`e della forma $\frac{N_{\text{K-40}}}{N_\text{tot}}$, quindi bisogna prima ottenere i numeri di atomi di potassio-40 nei 250 mg totali di arancia per poterla usare.
+	A questo scopo, si fa uso del fatto che, in prima approssimazione, l'arancia \`e interamente composta da potassio-39 (i due isotopi hanno massa diversa, quindi la percentuale non si trasporta anche sui mg e non si hanno altre informazioni):
+	\[
+		N_\text{K-39} =  \frac{0.250 \text{ g}}{39 \text{ g}/\text{mol}} 6.022 \times 10^{23}\text{ atomi}/\text{mol} = 3.86\times 10^{21}
+	\] 
+Ora si pu\`o usare il rapporto percentuale per ottenere che $N_{\text{K-40}} = 4.55 \times 10^{17}$, quindi il numero di nuclei di potassio-40 che decadono $\beta ^+$ sar\`a $N_{\beta ^+} = N_\text{K-40} \cdot 10^{-5} = 4.55 \times 10^{12}$.
+Infine, si ha che $\tau _{1 / 2} = \tau  \ln 2$, quindi $\tau = 5.83 \times 10^{16}$ s, da cui 
+\[
+A = \frac{N_{\beta ^+}}{\tau } = 7.8 \times  10^{-5} \text{ Bq}
+\] 
+che corrisponde ad una disintegrazione ogni $12.8 \times 10^{3} \text{ s} = 3.56$ h.
+\end{svolgimento}
+\subsubsection{Branching ratio}
+
+Un radionuclide pu\`o decadere seguendo un solo canale, oppure avendone a disposizione diversi.
+In quest'ultimo caso, la costante di decadimento $\lambda $ tiene conto di tutti i possibili modi di decadimento: $\lambda  = \lambda _1 + \lambda _2 + \ldots$.
+La frazione di nuclei che decade seguendo una via in particolare \`e detta \textit{branching ratio} (BR); quello corrispondente al canale $i$-esimo di decadimento, per esempio, sar\`a
+\begin{equation}
+	\operatorname{BR} _i = \frac{\lambda _i}{ \lambda }
+\end{equation}
+Similmente, se si misura l'attivit\`a di un campione composto da pi\`u radionuclidi, questa sar\`a rappresentativa delle attivit\`a dei singoli nuclei radioattivi: $A_\text{tot}(t) = \sum_{i}^{} A_i(t)$.
+\subsection{Decay correction}
+Se l'acquisizione di un'immagine biomedica avviene con tempi pi\`u lunghi rispetto alla vita media del radionuclide utilizzato, sar\`a necessario correggere i dati ottenuti relativi ad ogni singola acquisizione/frame per non introdurre artefatti. 
+In questo modo, si tiene conto della naturale diminuzione del campione utilizzato nel tempo, senza considerarla erroneamente parte dei dati misurati.
+A questo proposito, si definisce il \textit{fattore di decadimento efficace} 
+\begin{equation}
+	\operatorname{DF} _\text{eff}(t,t+\Delta t) = \frac{a_d}{a_0}\operatorname{DF} (t) = \frac{1-e^{-\lambda \Delta t}}{\lambda \Delta t} \operatorname{DF} (t)
+\end{equation}
+con 
+\[
+\frac{a_d}{a_0} = \frac{1}{e^{-\lambda t}\Delta t} \int _t ^{t+\Delta t} e^{-\lambda t} \dd t = \frac{1}{\lambda \Delta t} \left(1 - e^{-\lambda \Delta  t}\right) 
+\] 
+\begin{center}
+	\begin{minipage}
+		{.55\columnwidth}
+	Se l'attivit\`a fosse costante, infatti, il numero di eventi acquisiti nell'intervallo $\Delta t$ sarebbe proporzionale all'area $a_0$; visto che l'attivit\`a non rimane costante, per\`o, il numero di eventi rilevati nello stesso intervallo \`e $a_d$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.4\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\draw[-stealth,thick] (0,0) -- (4,0) node[below right] {\tiny$t$};
+
+	\draw[-stealth,thick] (0,0) -- (0,3) node[above left] {\tiny$A(t)$};
 
 
+    % Altezza del rettangolo:
+    % y = 2.5 e^{-1.5}
+    \pgfmathsetmacro{\h}{2.5*exp(-1.5)};
+
+    % Rettangolo interamente viola
+    \fill[violet!25]
+        (1.5,0) rectangle (2.5,\h);
+
+    % Area sotto la curva, sovrapposta
+    \fill[cyan!25, fill opacity=0.5]
+        (1.5,0)
+        --
+        plot[domain=1.5:2.5,samples=100] (\x,{2.5*exp(-\x)})
+        --
+        (2.5,0)
+        -- cycle;
+
+    % Bordo del rettangolo
+    \draw[thick]
+        (1.5,0) rectangle (2.5,\h);
+
+
+	\draw[
+	    domain=0:3.85,
+	    samples=120,
+	    smooth
+	]
+	plot (\x,{2.5*e^(-\x)});
+
+\draw[stealth-, violet] (2.25,.4) -- (2.45,.8) node[above] {\tiny $a_0$};
+\draw[stealth-, cyan] (1.75,.2) -- (1.1,.4) node[left] {\tiny $a_d$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Qualora $\lambda \Delta < 1$, il fattore $\operatorname{DF} _\text{eff}$ si pu\`o approssimare; fra i modi possibili di compiere tale approssimazione, si elencano i seguenti.
+\begin{itemize}
+	\item \textit{Valor medio}: si prende 
+		\[
+			\operatorname{DF} _\text{eff}(t,t+\Delta t) = \frac{1}{2} \big[\operatorname{DF} (t) + \operatorname{DF} (t+\Delta t)\big]
+		\] 
+		ed \`e entro l'$1\%$ se $\lambda \Delta t < 0.35$.
+	\item \textit{Punto medio dell'intervallo}: si prende
+		\[
+		\operatorname{DF} _\text{eff}(t,t+\Delta t) = \operatorname{DF} \left(t + \frac{1}{2} \Delta t\right) 
+		\] 
+		ed \`e entro l'$1\%$ se $\lambda \Delta < 0.5$.
+	\item \textit{Taylor}: si prende 
+		\[
+		\operatorname{DF} _\text{eff}(t,t+\Delta t) = \operatorname{DF} (t) \left(1 - \frac{1}{2} \lambda \Delta t\right) 
+		\] 
+		ed \`e entro l'$1\%$ se $\lambda \Delta t < 0.25$.
+\end{itemize}
+\begin{esempio}
+Calcolare il fattore di correzione (FC) da applicare al numero di conteggi acquisiti in uno studio che utilizza ossigeno-15, sapendo che l'acquisizione \`e stata effettuata in $\Delta  = 15$ s, partendo da $t=30$ s.
+Si conoscono $\tau _{1 / 2} = 122$ s, $\tau = 176$ s e $\lambda = 0.00568 \text{ s}^{-1}$, per cui $\lambda \Delta t = 0.085$.
+\end{esempio}
+\begin{svolgimento}
+Il fattore di decadimento efficace non approssimato \`e ottenuto da 
+\[
+\operatorname{DF} _\text{eff}(t,t+\Delta t) = e^{-\big(0.00568 \cdot 30\big)} \frac{1-e^{-0.085}}{0.085} = 0.808
+\] 
+per cui il fattore correttivo \`e dato da $\operatorname{FC}  = 1 / \operatorname{DF} _\text{eff} = 1.238$.
+Volendo valutare la qualit\`a dell'approssimazione con Taylor, si osserva che 
+\[
+\operatorname{DF} _\text{eff,Taylor}(t,t+\Delta t)\approx 0.843 \cdot 0.9575 = 0.807 \implies \frac{\operatorname{DF} _\text{eff} - \operatorname{DF} _\text{eff,Taylor}}{\operatorname{DF} _\text{eff}} = 0.0012\approx 0.01\%	
+\] 
+
+\end{svolgimento}
+\subsection{Catene di decadimento ed equazioni di Bateman}
 
 
 
