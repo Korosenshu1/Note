@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  26 SEP 2026 10:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  26 SEP 2026 19:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1316,7 +1316,7 @@ LaTeX Font Info:    Font shape `TS1/plxSans-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 186.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 186.
-<ct-pet.png, id=55, 1204.5pt x 722.7pt>
+<ct-pet.png, id=61, 1204.5pt x 722.7pt>
 File: ct-pet.png Graphic file (type png)
 <use ct-pet.png>
 Package pdftex.def Info: ct-pet.png  used on input line 198.
@@ -1336,7 +1336,7 @@ Overfull \hbox (0.29091pt too wide) in paragraph at lines 274--276
 \T1/plxSans-TLF/m/n/10.95 Altre de-fi-ni-zio-ni con-si-sto-no nel por-re al de-no-mi-na-to-re $[]$, op-pu-re so-la-men-te $\OML/cmssm/m/it/10.95 V[]$ \T1/plxSans-TLF/m/n/10.95 (ana-
  []
 
-<cl.png, id=79, 774.895pt x 277.035pt>
+<cl.png, id=85, 774.895pt x 277.035pt>
 File: cl.png Graphic file (type png)
 <use cl.png>
 Package pdftex.def Info: cl.png  used on input line 286.
@@ -1383,7 +1383,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [9] [10] [11] [12]
 Missing character: There is no ; in font nullfont!
-[13] [14] (./master.aux)
+[13]
+Overfull \hbox (0.97708pt too wide) detected at line 631
+[]  []
+ []
+
+[14] [15] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1394,10 +1399,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47053 strings out of 469504
- 1109056 string characters out of 5470379
+ 47081 strings out of 469504
+ 1109636 string characters out of 5470379
  1770731 words of memory out of 5000000
- 74897 multiletter control sequences out of 15000+600000
+ 74918 multiletter control sequences out of 15000+600000
  809132 words of font info for 141 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,18n,121p,11245b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1411,10 +1416,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
-Output written on master.pdf (14 pages, 1493350 bytes).
+Output written on master.pdf (15 pages, 1500981 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

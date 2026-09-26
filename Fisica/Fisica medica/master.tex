@@ -612,6 +612,48 @@ Volendo valutare la qualit\`a dell'approssimazione con Taylor, si osserva che
 \end{svolgimento}
 \subsection{Catene di decadimento ed equazioni di Bateman}
 
+Si considera, per esempio, la catena di decadimenti
+\[
+	\ce{P}\xrightarrow{\ \lambda _1\ } \ce{D} \xrightarrow{ \ \lambda _2 \ } \ce{G_d}
+\] 
+dove $P$ \`e il nucleo padre, $D$ \`e il nucleo figlio e $G_d$ \`e il nucleo figlio del figlio.
+Le equazioni che regolano questa catena, indicando con $N_1(t)$ il numero di nuclei padre e con $N_2(t)$ il numero di nuclei figlio, sono
+\[
+\begin{cases}
+	\displaystyle \frac{d N_1}{d t}  = - \lambda _1 N_1(t)\\
+	\\
+	N_1(t) = N_1(0) e^{-\lambda _1 t } 
+\end{cases} \hspace{1cm} \begin{cases}
+	\displaystyle \frac{d N_2}{d t}  = \lambda _1 N_1(t) - \lambda _2 N_2(t) = \lambda _1 N_1(0) e^{-\lambda _1 t} - \lambda _2 N_2(t) \\
+	\\
+	N_2(t) = N_1(0) \displaystyle \frac{\lambda _1 }{\lambda _2 - \lambda _1} \left(e^{-\lambda _1 t} - e^{-\lambda _2 t}\right) 
+\end{cases}
+\] 
+dove si \`e preso $N_2(0) = 0$ per la soluzione dell'equazione differenziale disomogenea di $N_2(t)$.
+Questa soluzione \`e detta \textit{equazione di Bateman} per una catena padre-figlio.	
+\begin{osservazione}
+Si osserva che se $\lambda _1 \gg \lambda _2$, a tempi molto lunghi, l'attivit\`a \`e dovuta solamente al nucleo figlio.
+\end{osservazione}
+\subsubsection{Equilibrio secolare ed equilibrio transiente}
+Si considera il caso in cui, in una catena di decadimenti, si abbia $\lambda _2 \ggg \lambda 1$ (per esempio $T_P \to +\infty$ e $T_D \lesssim 1$ hr) e $\lambda _1 \sim 0$; allora:
+\begin{equation}
+A_2(t) = A_1(0) \frac{\lambda _2}{ \lambda _2 - \lambda _1} \left(e^{-\lambda _1 t}-e^{-\lambda _2 t }\right) \simeq A_1(0) \left(1 - e^{-\lambda _2 t }\right) 
+\end{equation}
+Questa relazione prende il nome di \textbf{equilibrio secolare}: il tasso di produzione del nucleo padre e quello di decadimento del figlio si equivalgono, tendendo ad una condizione di equilibrio.
+
+Nel caso in cui si consideri $\lambda _2 \gg \lambda _1$, si pu\`o trascurare $e^{-\lambda _2 t}$ in $A_2(t)$, permettendo di scrivere che
+\begin{equation}
+	A_2(t) = A_1(0) \frac{\lambda _2 }{ \lambda _2 - \lambda _1} \left(e^{-\lambda _1 t} - e^{-\lambda _2 t}\right) \simeq \frac{\lambda _2}{\lambda _2 - \lambda _1 } A_1(t)
+\end{equation}
+Questa relazione prende il nome di equilibrio transiente ed \`e valida se tra i tempi di dimezzamento di padre e figlio c'\`e un fattore $10\div 50$; per esempio, $T_P = 8$ h e $T_D = 0.8$ h.
+
+\begin{boxenv}[]
+\centering Riprendere da pagina 67
+\end{boxenv}
+
+\subsubsection{Istante di attivit\`a massima}
+
+\subsection{Generatori}
 
 
 
