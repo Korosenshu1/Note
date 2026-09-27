@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  26 SEP 2026 19:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  27 SEP 2026 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1295,7 +1295,12 @@ File: ussmsb.fd 2024/10/15
 LaTeX Font Info:    Trying to load font information for U+ssesint on input line 3.
  (/usr/share/texmf-dist/tex/latex/sansmathfonts/ussesint.fd
 File: ussesint.fd 2024/10/15
-))
+)
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 21.
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 21.
+)
 \tf@toc=\write5
 \openout5 = `master.toc'.
 
@@ -1316,19 +1321,14 @@ LaTeX Font Info:    Font shape `TS1/plxSans-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 186.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 186.
-<ct-pet.png, id=61, 1204.5pt x 722.7pt>
+<ct-pet.png, id=64, 1204.5pt x 722.7pt>
 File: ct-pet.png Graphic file (type png)
 <use ct-pet.png>
 Package pdftex.def Info: ct-pet.png  used on input line 198.
 (pdftex.def)             Requested size: 250.10226pt x 150.06221pt.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 199.
- [3{/usr/share/texmf-dist/fonts/enc/dvips/plex/plx_koxhod.enc} <./ct-pet.png>]
-LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 221.
-LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 221.
- [4]
+ [3{/usr/share/texmf-dist/fonts/enc/dvips/plex/plx_koxhod.enc} <./ct-pet.png>] [4]
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 251.
  [5]
@@ -1336,7 +1336,7 @@ Overfull \hbox (0.29091pt too wide) in paragraph at lines 274--276
 \T1/plxSans-TLF/m/n/10.95 Altre de-fi-ni-zio-ni con-si-sto-no nel por-re al de-no-mi-na-to-re $[]$, op-pu-re so-la-men-te $\OML/cmssm/m/it/10.95 V[]$ \T1/plxSans-TLF/m/n/10.95 (ana-
  []
 
-<cl.png, id=85, 774.895pt x 277.035pt>
+<cl.png, id=86, 774.895pt x 277.035pt>
 File: cl.png Graphic file (type png)
 <use cl.png>
 Package pdftex.def Info: cl.png  used on input line 286.
@@ -1388,7 +1388,69 @@ Overfull \hbox (0.97708pt too wide) detected at line 631
 []  []
  []
 
-[14] [15] (./master.aux)
+
+Underfull \hbox (badness 2418) in paragraph at lines 645--647
+\T1/plxSans-TLF/m/n/10.95 di \T1/plxSans-TLF/b/n/10.95 equi-li-brio se-co-la-re\T1/plxSans-TLF/m/n/10.95 : il tas-so
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 645--647
+\T1/plxSans-TLF/m/n/10.95 quel-lo di de-ca-di-men-to del fi-glio
+ []
+
+<es.png, id=162, 580.1675pt x 385.44pt>
+File: es.png Graphic file (type png)
+<use es.png>
+Package pdftex.def Info: es.png  used on input line 652.
+(pdftex.def)             Requested size: 229.25935pt x 152.30888pt.
+[14]
+<et.png, id=169, 481.8pt x 354.32375pt>
+File: et.png Graphic file (type png)
+<use et.png>
+Package pdftex.def Info: et.png  used on input line 669.
+(pdftex.def)             Requested size: 206.33202pt x 151.73988pt.
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
+(Font)              scaled to size 8.0pt on input line 673.
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
+(Font)              scaled to size 6.0pt on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 673.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 673.
+
+[15 <./es.png> <./et.png>]
+<mc-gen.png, id=181, 674.52pt x 334.24875pt>
+File: mc-gen.png Graphic file (type png)
+<use mc-gen.png>
+Package pdftex.def Info: mc-gen.png  used on input line 727.
+(pdftex.def)             Requested size: 291.78174pt x 144.59119pt.
+ [16 <./mc-gen.png>]
+<cyc-prate.png, id=190, 584.1825pt x 391.4625pt>
+File: cyc-prate.png Graphic file (type png)
+<use cyc-prate.png>
+Package pdftex.def Info: cyc-prate.png  used on input line 757.
+(pdftex.def)             Requested size: 225.0905pt x 150.83597pt.
+ [17 <./cyc-prate.png>] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1399,13 +1461,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47081 strings out of 469504
- 1109636 string characters out of 5470379
+ 47127 strings out of 469504
+ 1110226 string characters out of 5470379
  1770731 words of memory out of 5000000
- 74918 multiletter control sequences out of 15000+600000
- 809132 words of font info for 141 fonts, out of 8000000 for 9000
+ 74955 multiletter control sequences out of 15000+600000
+ 835217 words of font info for 152 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 124i,18n,121p,11245b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,29n,121p,11245b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
@@ -1415,11 +1480,11 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
-Output written on master.pdf (15 pages, 1500981 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
+Output written on master.pdf (17 pages, 1747532 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 365 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

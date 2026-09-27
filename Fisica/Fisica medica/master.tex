@@ -635,27 +635,127 @@ Questa soluzione \`e detta \textit{equazione di Bateman} per una catena padre-fi
 Si osserva che se $\lambda _1 \gg \lambda _2$, a tempi molto lunghi, l'attivit\`a \`e dovuta solamente al nucleo figlio.
 \end{osservazione}
 \subsubsection{Equilibrio secolare ed equilibrio transiente}
-Si considera il caso in cui, in una catena di decadimenti, si abbia $\lambda _2 \ggg \lambda 1$ (per esempio $T_P \to +\infty$ e $T_D \lesssim 1$ hr) e $\lambda _1 \sim 0$; allora:
+Si considera il caso in cui, in una catena di decadimenti, si abbia $\lambda _2 \ggg \lambda_ 1$ (per esempio $T_P \to +\infty$ e $T_D \lesssim 1$ hr) e $\lambda _1 \sim 0$; allora:
 \begin{equation}
 A_2(t) = A_1(0) \frac{\lambda _2}{ \lambda _2 - \lambda _1} \left(e^{-\lambda _1 t}-e^{-\lambda _2 t }\right) \simeq A_1(0) \left(1 - e^{-\lambda _2 t }\right) 
 \end{equation}
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
 Questa relazione prende il nome di \textbf{equilibrio secolare}: il tasso di produzione del nucleo padre e quello di decadimento del figlio si equivalgono, tendendo ad una condizione di equilibrio.
-
+In grassetto nell'immagine, si ha l'attivit\`a totale e $T_P = 140$ yr e $T_D = 14.3$ d.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{es.png}
+	\end{minipage}
+\end{center}
 Nel caso in cui si consideri $\lambda _2 \gg \lambda _1$, si pu\`o trascurare $e^{-\lambda _2 t}$ in $A_2(t)$, permettendo di scrivere che
 \begin{equation}
 	A_2(t) = A_1(0) \frac{\lambda _2 }{ \lambda _2 - \lambda _1} \left(e^{-\lambda _1 t} - e^{-\lambda _2 t}\right) \simeq \frac{\lambda _2}{\lambda _2 - \lambda _1 } A_1(t)
 \end{equation}
-Questa relazione prende il nome di equilibrio transiente ed \`e valida se tra i tempi di dimezzamento di padre e figlio c'\`e un fattore $10\div 50$; per esempio, $T_P = 8$ h e $T_D = 0.8$ h.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+Questa relazione prende il nome di \textbf{equilibrio transiente} ed \`e valida se tra i tempi di dimezzamento di padre e figlio c'\`e un fattore $10\div 50$.
+In grassetto nell'immagine, si ha l'attivit\`a totale, e $T_P = 8$ h e $T_D = 0.8$ h.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{et.png}
+	\end{minipage}
+\end{center}
 
-\begin{boxenv}[]
-\centering Riprendere da pagina 67
-\end{boxenv}
+\subsubsection{Generatori $\ce{^{99}Mo}/\ce{^{99m}Tc}$}
+Pi\`u dell'$80\%$ delle indagini cliniche usano radiofarmaci marcati con $\ce{^{99m}Tc}$\footnote{La sigla $m$ dopo il numero di massa indica che si tratta della specie metastabile del tecnezio-99; similmente, una $g$ indicher\`a un nucleo di tecnezio-99 nello stato fondamentale.}.
+Per la produzione, si utilizzano dei generatori $\ce{^{99}Mo}/\ce{^{99m}Tc}$: il molibdeno-99 \`e il nucleo padre, che decade con $\tau _{1 / 2} = 66$ hr, e il tecnezio-99m \`e il nucleo figlio, con $\tau _{1/2} = 6$ hr; le reazioni di interesse sono:
+\begin{center}
+	\begin{minipage}
+		{.40\columnwidth}
+	\[
+	\begin{split}
+		&\ce{^{99}_{42}Mo} \to  \ce{^{99m}_{43}Tc + e- + \overline{\nu }_e}\\
+		\\
+		&\ce{^{99m}_{43}Tc}\to \ce{^{99}_{43}Tc} + \gamma
+	\end{split}
+	\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+		\draw[thick] (3,-1) -- (4.5,-1);
+		\draw[thick] (0,-2) -- (4.5,-2);
 
-\subsubsection{Istante di attivit\`a massima}
+		\draw[-stealth, thick, red!60!black] (0.75,0) -- (2.95,-1);
+		\draw[-stealth, thick, cyan!60!black] (0.75,0) -- (0.75,-1.95);
+		\draw[-stealth, thick] (3.75,-1) -- (3.75,-1.95);
+		\draw[thick] (0,0) -- (1.5,0);
+		\node at (0.75,.25) {\tiny $\ce{^{99}Mo}$};
+		\node at (3.75,-0.75) {\tiny $\ce{^{99m}Tc}$};
+		\node at (2.25,-1.75) {\tiny $\ce{^{99g}Tc}$};
 
-\subsection{Generatori}
+		\node at (4.15,-1.5) {\tiny $\gamma,6 \text{ hr}$};
+		\node[color=red!60!black] at (2.25,-0.25) {\tiny $\beta , 66\text{ hr}$};
+		\node[color=red!60!black] at (1.35,-0.55) {\tiny $88\%$};
+		\node[color=cyan!60!black] at (0.45,-0.55) {\tiny $12\%$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Visto che non tutta l'attivit\`a del molibdeno-99 contribuisce, ma solo l'$88\%$ di essa, l'attivit\`a del tecnezio-99m \`e data da 
+\begin{equation}
+	A_2(t) = A_1(t) \frac{\lambda _2 }{\lambda _2 - \lambda _1} \operatorname{BR} 
+\end{equation}
+e, per la stessa ragione, l'attivit\`a del nucleo figlio sar\`a sempre inferiore a quella del nucleo padre.
+Questo processo, quindi, tende ad un equilibrio transiente, in cui l'attivit\`a del figlio non supera l'attivit\`a del padre, ma vi rimane sotto, fino al punto in cui le due iniziano a decrescere insieme.
 
+Si pu\`o calcolare l'istante in cui l'attivit\`a del nucleo figlio (tecnezio-99m) raggiunge il suo punto di massimo: imponendo $\dot{A}_2 (t) = 0$, essendo $A_1(0)$ e $\lambda _1 \neq \lambda _2$, si ottiene la condizione $\lambda _1 e^{-\lambda _1 t} = \lambda _2 e ^{-\lambda _2 t}$, da cui $\ln \frac{\lambda _1}{ \lambda _2} + (\lambda _2 - \lambda _1) t = 0$ e
+\begin{equation}
+	t_\text{max} = \frac{1}{\lambda _2 - \lambda _1} \ln \frac{\lambda _2}{ \lambda _1} = 1.44 \frac{T_2T_1}{T_1-T_2} \ln \frac{T_1}{T_2}
+\end{equation}
+dove $T_i$ sono i tempi di dimezzamento.
+Questa \`e una relazione generale per l'equilibrio secolare e, nel caso specifico di molibdeno e tecnezio, con $T_1 = 66$ hr e $T_2 = 6	$ hr, si ha $t_\text{max}=23$ hr.
 
+I generatori $\ce{^{99}Mo}/\ce{^{99m}Tc}$ contengono una colonna di resina a cui \`e legato, in modo indissolubile, il molibdeno che rilascia, in tale resina, il tecnezio: \`e possibile, allora, \textit{eluire} (lavare) la colonna ed estrarre il tecnezio-99m.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{mc-gen.png}
+\end{figure}
+\subsection{Produzione di radionuclidi tramite ciclotroni}
 
+Alcuni isotopi, fra cui anche il tecnezio-99m tramite la reazione $\ce{^{100}Mo}(p,2n)\ce{^{99m}Tc}$, vengono prodotti attraverso il bombardamento di uno specifico bersaglio tramite particelle cariche, come protoni, deutoni, o particelle $\alpha $.
 
+L'utilit\`a dei ciclotroni \`e che, mentre nel caso del tecnezio-99m si ha un tempo di dimezzamento di $6$ hr che permette di avere luogo di produzione e luogo di utilizzo separati, in quanto si ha tempo a sufficienza per poterlo sfruttare, altri radionuclidi di particolare importanza, come l'ossigeno-15 con un $\tau _{1 / 2} \approx 2$ min o il fluoro-18 con $\tau _{1 / 2} \approx 2$ hr, non permettono una comodit\`a simile.
+\`E necessario, allora, produrre tali radionuclidi localmente per poterli utilizzare non appena ottenuti.
+
+Per esempio, la produzione del fluoro-18 avviene tramite bombardamento di acqua arricchita ($\text{H}_2$O-18) con protoni di energia $\sim 18$ MeV per avere la reazione
+\begin{equation}
+	\ce{^{18}_8O + p}\to \ce{^{18}_9F + n + \gamma}
+\end{equation}
+dove il fotone \`e il risultato di un seguente irraggiamento da parte del fluoro-18 in uno stato eccitato per arrivare al fondamentale.
+
+Nella produzione di radionuclidi tramite ciclotroni \`e importante indagare il tasso di produzione $P$ ottimale, che \`e una costante e dipende dalla corrente fornita al ciclotrone e dalla sezione d'urto del processo.
+Si ha la relazione
+\[
+\frac{d N}{d t} = P - \lambda N(t) \implies N(t) = \frac{P}{\lambda } \left(1 - e^{-\lambda t}\right) 
+\] 
+per cui si evince che bombardare troppo a lungo la targhetta, consumando energia, non si raggiungono miglioramenti significativi nel tasso produzione, limitato dal tempo di decadimento del radionuclide.
+\begin{center}
+	\begin{minipage}
+		{.35\columnwidth}
+	In figura, si ha un tempo di dimezzamento del radionuclide pari a $\tau _{1 / 2} = 2$ hr: dopo un tempo pari a $2\tau _{1 /2}$, si raggiunge il $75\%$ della massima attivit\`a, con una decrescita dell'efficienza del tasso di produzione gi\`a a partire da $t = \tau _{1 / 2}$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.6\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{cyc-prate.png}
+	\end{minipage}
+\end{center}
+In centri in cui si ha la produzione di radionuclidi, \`e possibile che si abbia la produzione di specie le cui catene di decadimento permettono, contemporaneamente, di effettuare imaging e terapia, come nel caso del rame-64: questo pu\`o decadere per $\beta ^-$ ($\sim 39\%$) in zinco-64, processo utilizzato in terapia, oppure pu\`o decadere per $\beta ^+$ ($\sim 18\%$) in uno stato eccitato del nichel-64, processo usato in diagnostica.
 \end{document}
