@@ -1075,23 +1075,163 @@ Si considera, ora, una catena di decadimenti del tipo
 \] 
 dove i nuclei di $B$ sono i soli a venire prodotti e a decadere successivamente, cio\`e si sottintende che non vi siano processi che producano $A$, n\'e processi che consumino $C$.
 
-Al solito, $\dd N_A = - \lambda _A N_A \dd t \Rightarrow N_A(t) = N_{0,A} e^{-\lambda _A t}$, mentre $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t = \lambda _A N_{0,A}e^{-\lambda _A t} - \lambda _B N_B \dd t$, per cui si ha l'equazione differenziale disomogenea
+Al solito, $\dd N_A = - \lambda _A N_A \dd t \Rightarrow N_A(t) = N_{A,0} e^{-\lambda _A t}$, mentre $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t = \lambda _A N_{A,0}e^{-\lambda _A t} - \lambda _B N_B \dd t$, per cui si ha l'equazione differenziale disomogenea
 \[
- \frac{d N_B}{d t}  + \lambda _B N_B = \lambda _A N_{0,A} e^{-\lambda _At}
+ \frac{d N_B}{d t}  + \lambda _B N_B = \lambda _A N_{A,0} e^{-\lambda _At}
 \] 
-Ovviamente, la soluzione dell'omogenea associata \`e della forma $N_B(t) = C e^{-\lambda _B t}$, mentre, per ottenere una soluzione particolare, si prende $N_B(t) = D e^{-\lambda _A t}$ e la si inserisce nell'equazione completa; cos\`i facendo, si ottiene $D = \frac{\lambda _A}{ \lambda _B - \lambda _A} N_{0,A}$.
-Per determinare $C$, si deve scegliere una condizione iniziale: per $N_B(t=0) = N_{0,B}$, si ottiene $C = N_{0,B} - \frac{\lambda _A}{\lambda _B - \lambda _A} N_{0,A}$.
+Ovviamente, la soluzione dell'omogenea associata \`e della forma $N_B(t) = C e^{-\lambda _B t}$, mentre, per ottenere una soluzione particolare, si prende $N_B(t) = D e^{-\lambda _A t}$ e la si inserisce nell'equazione completa; cos\`i facendo, si ottiene $D = \frac{\lambda _A}{ \lambda _B - \lambda _A} N_{A,0}$.
+Per determinare $C$, si deve scegliere una condizione iniziale: per $N_B(t=0) = N_{B,0}$, si ottiene $C = N_{B,0} - \frac{\lambda _A}{\lambda _B - \lambda _A} N_{A,0}$.
 Mettendo insieme soluzione particolare e soluzione dell'omogenea associata, la soluzione dell'equazione generale \`e data da
 \begin{equation}
-	N_{B}(t) = N_{0,B} e^{-\lambda _B t} + \frac{\lambda _A}{\lambda _B -\lambda _A} N_{0,A} \left[ e^{-\lambda _A t } - e ^{-\lambda _B t } \right] 
+	N_{B}(t) = N_{B,0} e^{-\lambda _B t} + \frac{\lambda _A}{\lambda _B -\lambda _A} N_{A,0} \left[ e^{-\lambda _A t } - e ^{-\lambda _B t } \right] 
 \end{equation}
 Nel caso specifico in cui $N_{B,0} = 0$, si ottiene 
 \[
-N_B(t) = \frac{\lambda _A}{ \lambda _B - \lambda _A}N_{0,A} \left[ e^{-\lambda _A t }  - e^{-\lambda _B t }  \right] 
+N_B(t) = \frac{\lambda _A}{ \lambda _B - \lambda _A}N_{A,0} \left[ e^{-\lambda _A t }  - e^{-\lambda _B t }  \right] 
 \] 
 
+\subsubsection{Istante di massima attivit\`a}
 
+Si cerca il tempo $t_m$ per cui $\mathcal{A} _B(t)$ \`e massima, il che equivale a cercare il punto in cui il numero di nuclei $N_B(t) = \mathcal{A} _B(t) / \lambda_B $ \`e massimo.
+Imponendo $\mathcal{A} _B \stackrel{!}{=} 0$, si ottiene la relazione $\lambda _B e^{-\lambda _B t_m} = \lambda _A e^{-\lambda _A t_m}$, da cui 
+\begin{equation}
+	t_m = \frac{1}{\lambda _B - \lambda _A} \ln \frac{\lambda _B}{\lambda _A} = \frac{\tau _A \tau _B}{\tau _A - \tau _B} \ln \frac{\tau _A}{ \tau _B}
+\end{equation}
+Si nota che $t_m$ \`e sempre positivo: se $\tau _A > \tau _B$, allora anche il logaritmo della frazione lo \`e; viceversa, se $\tau _A < \tau _B$, allora il coefficiente \`e negativo, ma la frazione \`e minore di $1$, quindi anche il logaritmo \`e negativo.
 
+\subsubsection{Equilibrio ideale}
 
+Riprendendo la relazione differenziale $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t$ e usando che, per definizione, $\dot{N}_B(t_m) = 0$, si ha $\lambda _A N_A(t_m) = \lambda _B N_B(t_m)$, da cui si ottiene la relazione
+\begin{equation}
+	\mathcal{A} _A (t_m) = \mathcal{A} _B (t_m)	
+\end{equation}
+che individua la condizione di \textbf{equilibrio ideale}.
 
+\subsubsection{Equilibrio secolare}
+
+Si considerano tempi $t$ per cui $\lambda _A t \ll 1$, ossia $t \ll \tau _A$; in questa regione temporale, vale l'approssimazione 
+\begin{equation}
+	N_B(t) \simeq \frac{\lambda _A}{ \lambda _B} N_{A,0} \left(1-e^{-\lambda _B t}\right) 
+\end{equation}
+dove si \`e approssimato $e^{-\lambda _A t} \simeq 1$.
+
+Considerando, pi\`u in particolare, istanti temporali per cui vale $\tau _B \ll t \ll \tau _A$, si pu\`o fare un'ulteriore approssimazione e ottenere la relazione
+\begin{equation}
+	\lambda _B N_B \simeq \lambda _A N_A \, , \ \forall t\implies \mathcal{A} _B \simeq \mathcal{A} _A \simeq \mathcal{A} _{A,0}\, , \ \forall t
+\end{equation}
+dove il ``per ogni $t$'' \`e da intendersi per gli istanti che soddisfano $\tau _B \ll t \ll \tau _A$ e $\mathcal{A} _A (t) \simeq \mathcal{A} _{A,0}$ perch\'e $t \ll\tau _A$.
+Questa relazione indica la condizione di \textbf{equilibrio secolare}.
+\begin{boxenv}[]
+	\centering \color{red!60!black} Inserire grafico (lezione 6)
+\end{boxenv}
+
+\subsubsection{Equilibrio transiente}
+
+Ora si considera il caso in cui $\lambda _A <\lambda _B$, cio\`e $\tau _A > \tau _B$.
+Nell'assunzione in cui non vi sia produzione di nuclei $A$, si ha $N_A(t) = N_{A,0}e^{-\lambda _A t}$; combinando questa con 
+\[
+N_B(t) = \frac{\lambda _A}{\lambda _B - \lambda _A} N_{A,0} \left(e^{-\lambda _A t} - e^{-\lambda _B t}\right) 
+\] 
+si ottiene che
+\begin{equation}
+	\frac{\mathcal{A} _B(t)}{\mathcal{A} _A(t)} = \frac{\lambda _B N_B(t)}{\lambda _A N_A(t)} = \frac{\lambda _B}{\lambda _B - \lambda _A} \left[ 1 - e^{-(\lambda _A - \lambda _B) t} \right] 
+\end{equation}
+con $\lambda _B - \lambda _A > 0$.
+Per regioni temporali in cui $(\lambda _B - \lambda _A ) t \gg 1$, cio\`e $t \gg \frac{\tau _A \tau _B}{\tau _A - \tau _B}$, si ha che
+\begin{equation}
+	\frac{\mathcal{A} _B(t)}{\mathcal{A} _A(t)} \simeq \frac{\lambda _B}{\lambda _B - \lambda _A} = \text{cost.}
+\end{equation}
+Questa corrisponde alla condizione di \textbf{equilibrio transiente}.
+\begin{boxenv}[]
+	\centering \color{red!60!black} Inserire grafico (lezione 6)
+\end{boxenv}
+
+\subsubsection{Catena con $\lambda _B \to \lambda _A$}
+
+Si considera, ora, il caso in cui $\lambda _B \to \lambda _A$, cio\`e valga $\lambda _B = \lambda _A (1+\varepsilon )$, con $\varepsilon \ll 1$.
+Inserendo questa espressione nell'equazione generale
+\[
+N_B(t) = N_{B,0} e^{-\lambda _B t} + \frac{\lambda _A}{\lambda _B - \lambda _A}N_{A,0}\left(e^{-\lambda _A t } - e^{-\lambda _B t}\right) 
+\] 
+si ottiene che
+\[
+\begin{split}
+	N_B(t) &= N_{B,0} e^{-\lambda _A t} e^{-\varepsilon \lambda _A t} + \frac{1}{\varepsilon } N_{A,0} \left[ e^{-\lambda _A t} - e ^{-\lambda _A t} e^{- \varepsilon \lambda _A t} \right] \\
+	       &= N_{B,0} e^{-\lambda _A t} e^{-\varepsilon \lambda _A t} + \frac{1}{\varepsilon } N_{A,0} e^{-\lambda _A t} \left(1 - e^{-\varepsilon \lambda _A t}\right) 
+\end{split}
+\] 
+Sviluppando $1 - e^{-\varepsilon \lambda _A t} \simeq \varepsilon \lambda _A t$, vale
+\begin{equation}
+	N_B(t) \simeq N_{B,0} \big[ 1- \varepsilon \lambda _A t \big] e^{-\lambda _A t} + \lambda _A N_{A,0}t e^{-\lambda _A t }
+\end{equation}
+Nel caso in cui $N_{B,0} = 0$, invece, si rimane con 
+\begin{equation}
+	N_{B}(t) = \lambda _A N_{A,0} t e^{-\lambda _A t}
+\end{equation}
+In questo caso, l'istante in cui si realizza il massimo dell'attivit\`a \`e ottenuto per $t_m = 1 / \lambda _A = \tau _A$, corrispondente a $N_B (t_m) = N_A(\tau ) = N_{A,0} / e$.
+Inoltre, per $\lambda _A = \lambda _B = \lambda $, si ha $N_B(t) = \lambda N_{A,0}t e^{-\lambda t} = \lambda t N_A(t)$, quindi $N_B(t_m) = N_A(t_m)$.
+\begin{boxenv}[]
+	\centering \color{red!60!black} Inserire grafico (lezione 6)
+\end{boxenv}
+
+\subsubsection{Equazioni di Bateman}
+
+Per una serie di decadimenti della forma
+\[
+	X_1 \xrightarrow{\ \, \lambda _1 \ \, } X_2 \xrightarrow{\ \, \lambda _2 \ \, } X_3 \xrightarrow{\ \, \lambda _3 \ \, } \ldots \xrightarrow{\ \, \lambda _{k-1} \ \, } X_k\xrightarrow{\ \, \lambda _k \ \, } X_{k+1}\xrightarrow{\ \, \lambda _{k+1} \ \, } \ldots
+\] 
+Le relazioni $N_k(t)$ sono descritte dalle equazioni di Bateman; queste sono le soluzioni del sistema di equazioni differenziali accoppiate 
+\begin{equation}\tag{{\color{green!60!black}$\blacksquare$}}
+	\begin{cases}
+	\dot{N}_1 = - \lambda _1 N_1 \\
+	\dot{N}_2 = \lambda _1 N_1 - \lambda _2 N_2\\
+	\vdots\\
+	\dot{N}_k = \lambda _{k-1}N_{k-1} - \lambda _k N_k\\
+	\vdots
+	\end{cases}
+\end{equation}
+Le soluzioni a queste si esprimono, tramite un insieme di coefficienti $\left\{ A_{jk} \right\} _{jk}$, come:
+\begin{equation}\tag{{\color{violet}$\blacksquare$}}
+	\begin{cases}
+		N_1(t) = A_{11} e^{-\lambda _1 t}\\
+		N_2(t) = A_{21} e^{-\lambda _1 t} + A_{22} e^{-\lambda _2 t} \\
+		N_3(t) = A_{31} e^{-\lambda _1 t} + A_{32} e^{-\lambda _2 t} + A_{33} e^{-\lambda _3 t}\\
+		\vdots\\
+		N_k(t) = A_{k 1} e^{-\lambda _1 t} + A_{k_2} e^{-\lambda _2 t } + \ldots + A_{k k} e^{-\lambda _k t } \\
+		\vdots
+	\end{cases}
+\end{equation}
+Tali coefficienti sono determinati tramite dal sistema ({\color{green!60!black}$\blacksquare$}) insieme con le condizioni iniziali imposte dagli $\left\{ N_{0,k} \right\}_k $: inserendo le ({\color{violet}$\blacksquare$}) in ({\color{green!60!black}$\blacksquare$}), si ottengono i coefficienti
+\begin{equation}\tag{{\color{orange}$\oplus$}}
+	A_{k,i} = A_{k-1,i} \frac{\lambda _{k-1}}{\lambda _k - \lambda _i} \, , \ k\neq i
+\end{equation}
+mentre dalle relazioni 
+\begin{equation}
+	\tag{{\color{cyan}$\oplus$}}
+	N_k(0) = N_{k,0} = A_{k 1} + \ldots + A_{k k }
+\end{equation}
+si ricavano gli $A_{ k k}$.
+\begin{esempio}
+Per ricavare i coefficienti fino ad $A_{33}$, si parte col notare che $A_{11} = N_{1,0}$, visto che $N_1(t) = N_{1,0} e^{-\lambda _1 t}$.
+Da ({\color{orange}$\oplus$}), si ricava che 
+\[
+A_{21} = A_{11} \frac{\lambda _1}{\lambda _2 - \lambda _1} = N_{1,0} \frac{\lambda _1}{ \lambda _2 - \lambda _1}
+\] 
+Da ({\color{cyan}$\oplus$}), invece, si ottiene 
+\[
+N_{2,0} = A_{21} + A_{22} \implies A_{22} = N_{2,0} - A_{21} = N_{2,0} - N_{1,0} \frac{\lambda _1}{\lambda _2 - \lambda _1}
+\] 
+Per ({\color{violet}$\blacksquare$}), si ha
+\begin{equation}
+	N_2(t) = N_{2,0} e^{-\lambda _2 t} + N_{1,0} \frac{\lambda _1}{\lambda _2 - \lambda _1} \left(e^{-\lambda _1} - e^{-\lambda _2 t}\right) 
+\end{equation}
+Iterando il procedimento, si ottengono i coefficienti per $k=3$:
+\[
+\begin{split}
+	&A_{31} = N_{1,0} \frac{\lambda _1}{\lambda _2 - \lambda _1} \frac{\lambda _2}{\lambda _3 - \lambda _1} \hspace{1cm} A_{32} = N_{2,0} \frac{\lambda _2}{\lambda _3 - \lambda _2} - N_{1,0} \frac{\lambda _1}{\lambda _2- \lambda _1} \frac{\lambda _2}{\lambda _3 - \lambda _2} \\
+	&A_{33} = N_{3,0} - N_{2,0} \frac{\lambda _2}{\lambda _3 - \lambda _2 } - N_{1,0} \frac{\lambda _1\lambda _2}{ (\lambda _3 - \lambda _2)(\lambda _3 - \lambda _1)}
+\end{split}
+\] 
+L'espressione per $N_3(t)$ si ottiene, al solito, tramite ({\color{violet}$\blacksquare$}).
+\end{esempio}
 \end{document}
