@@ -1012,15 +1012,83 @@ Da queste espressioni, si ha che $e^{-\lambda \tau _{1 / 2}} = 1 / 2$, per cui $
 \begin{equation}
 	\tau _{ 1 / 2 } = \tau  \ln 2
 \end{equation}
+Poi, si definisce la probabilit\`a che un nucleo ha di decadere nell'intervallo temporale tra $t=0$ e $t$ come
+\begin{equation}
+	P(t) = \frac{N_0 - N(t)}{N_0} \equiv \frac{\Delta N}{N_0} = 1 - e^{-\lambda t}
+\end{equation}
+cio\`e \`e il numero di decadimenti avvenuti sul numero di decadimenti possibili.
+\subsubsection{Attivit\`a di un radionuclide}
+
+Per una specie nucleare radioattiva, si definisce l'\textit{attivit\`a}  come
+\begin{equation}
+	\mathcal{A} (t) = \lambda N(t)
+\end{equation}
+e indica il numero (medio) di decadimenti per unit\`a di tempo.
+Sotto ipotesi di \textit{no radioactive growth}, ossia nel caso in cui l'abbondanza di nuclei padre non aumenti per altri processi, ma possa solo decadere, si pu\`o scrivere che 
+\[
+\dd N(t) = - \lambda  N(t) \dd t
+\] 
+ad indicare la variazione della specie $A$, equivalente, in questo caso, al numero di particelle che decadono tra $t$ e $t+\dd t$.
+Ne segue che 
+\begin{equation}
+	\mathcal{A}  = -\frac{d N}{d t}  = N_0 \lambda  e^{-\lambda t}
+\end{equation}
+L'attivit\`a, nel sistema internazionale, si misura in \textit{Becquerel} (Bq), dove $1 \text{ Bq}= 1 \text{ dec}/\text{s}$; in altri casi, si pu\`o trovare misurata in \textit{Curie} (Ci), dove $1\text{ Ci} = 3.7 \times 10^{10} \text{ Bq}$, equivalente al numero di decadimenti per unit\`a di tempo di $1$ g di radio.
+Come atteso, l'attivit\`a \`e tale per cui
+\[
+\int _0^{+\infty} \mathcal{A} (t) \dd t = \lambda N_0  \int _0^{+\infty}e^{-\lambda t}\dd t = \lambda N_0 \frac{1}{\lambda } = N_0
+\] 
+cio\`e tutti i contributi $\mathcal{A} (t) \dd t$ si sommano a $N_0$ per tempi sufficientemente lunghi.
+
+\subsubsection{Tempo di vita medio}
+
+Si motiva perch\'e $\tau  = 1/\lambda $ rappresenti il tempo di vita medio di un radionuclide.
+La distribuzione temporale dei decadimenti \`e, per definizione, l'attivit\`a $\mathcal{A} (t)$; per questa ragione, il tempo medio di decadimento di un nucleo \`e ottenuto come
+\begin{equation}
+	\langle t \rangle = \frac{\displaystyle \int _0^{+\infty}t \mathcal{A} (t) \dd t}{\displaystyle \int _0^{+\infty}\mathcal{A} (t) \dd t} = \frac{1}{N_0} \int _0^{+\infty}t \mathcal{A} (t) \dd t = \frac{1}{\lambda } \equiv \tau 
+\end{equation}
 
 
+\subsubsection{Branching ratio}
+Si considera, ora, il caso in cui un nucleo $A$ possa decadere in un nucleo $B_1$, con costante $\lambda _1$, oppure in un nucleo $B_2$, con costante $\lambda _2$.
+In questo caso, si dice che il nucleo $A$ ha un \textit{branching} (diramazione), visto che il suo decadimento pu\`o seguire due possibili strade.
+La notazione sar\`a la seguente: $N(t)$ indica il numero di nuclei di $A$ al tempo $t$; $N_1(t)$ indica il numero di nuclei di $B_1$ e $N_2(t)$ indica il numero di nuclei di $B_2$.
+In questo modo, si ha che $\dd N_1 = \lambda _1 N \dd t$ e $\dd N_2 = \lambda _2 N \dd t$, per cui la variazione totale di nuclei di $A$ \`e data da 
+\[
+\dd N = - \left(\dd N_1 + \dd N_2\right) = - (\lambda _1 + \lambda _ 2) N \dd t \equiv - \lambda N\dd t
+\] 
+dove si \`e definita una costante di decadimento totale $\lambda  = \lambda _1 + \lambda _2$.
+In questo modo, la soluzione dell'equazione differenziale \`e la solita $N(t) = N_0 e^{-\lambda t}$, con tempo di vita media di $A$ dato da
+\begin{equation}
+	\tau  = \frac{1}{\lambda }= \frac{1}{\lambda _1 + \lambda _2} = \frac{\tau _1 \tau _2}{ \tau _1 + \tau _2}
+\end{equation}
+In casi del genere, si definisce \textbf{branching ratio} del canale di decadimento $i$-esimo la quantit\`a 
+\begin{equation}
+	R_i = \frac{\lambda _i}{\lambda } = \frac{\lambda _i}{\sum_{j}^{} \lambda _j}
+\end{equation}
+ed \`e il rapporto tra il numero di decadimenti nel canale $i$ e il numero di decadimenti totali.
+\subsection{Serie di decadimenti}
 
+Si considera, ora, una catena di decadimenti del tipo 
+\[
+	A \xrightarrow{\ \, \lambda _A \ \, } B \xrightarrow{\ \, \lambda _B \ \, } C
+\] 
+dove i nuclei di $B$ sono i soli a venire prodotti e a decadere successivamente, cio\`e si sottintende che non vi siano processi che producano $A$, n\'e processi che consumino $C$.
 
-
-
-
-
-
+Al solito, $\dd N_A = - \lambda _A N_A \dd t \Rightarrow N_A(t) = N_{0,A} e^{-\lambda _A t}$, mentre $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t = \lambda _A N_{0,A}e^{-\lambda _A t} - \lambda _B N_B \dd t$, per cui si ha l'equazione differenziale disomogenea
+\[
+ \frac{d N_B}{d t}  + \lambda _B N_B = \lambda _A N_{0,A} e^{-\lambda _At}
+\] 
+Ovviamente, la soluzione dell'omogenea associata \`e della forma $N_B(t) = C e^{-\lambda _B t}$, mentre, per ottenere una soluzione particolare, si prende $N_B(t) = D e^{-\lambda _A t}$ e la si inserisce nell'equazione completa; cos\`i facendo, si ottiene $D = \frac{\lambda _A}{ \lambda _B - \lambda _A} N_{0,A}$.
+Per determinare $C$, si deve scegliere una condizione iniziale: per $N_B(t=0) = N_{0,B}$, si ottiene $C = N_{0,B} - \frac{\lambda _A}{\lambda _B - \lambda _A} N_{0,A}$.
+Mettendo insieme soluzione particolare e soluzione dell'omogenea associata, la soluzione dell'equazione generale \`e data da
+\begin{equation}
+	N_{B}(t) = N_{0,B} e^{-\lambda _B t} + \frac{\lambda _A}{\lambda _B -\lambda _A} N_{0,A} \left[ e^{-\lambda _A t } - e ^{-\lambda _B t } \right] 
+\end{equation}
+Nel caso specifico in cui $N_{B,0} = 0$, si ottiene 
+\[
+N_B(t) = \frac{\lambda _A}{ \lambda _B - \lambda _A}N_{0,A} \left[ e^{-\lambda _A t }  - e^{-\lambda _B t }  \right] 
+\] 
 
 
 
