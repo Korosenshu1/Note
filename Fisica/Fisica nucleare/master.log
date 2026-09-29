@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  28 SEP 2026 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  29 SEP 2026 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1228,100 +1228,85 @@ Overfull \hbox (11.0195pt too wide) in paragraph at lines 991--992
  [][] 
  []
 
-[15] [16] [17] [18]
+[15] [16] [17] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1149.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1149.
+(hyperref)                removing `math shift' on input line 1206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1149.
+(hyperref)                removing `\lambda' on input line 1206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\to' on input line 1149.
+(hyperref)                removing `subscript' on input line 1206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1149.
+(hyperref)                removing `\to' on input line 1206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1149.
+(hyperref)                removing `\lambda' on input line 1206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1149.
+(hyperref)                removing `subscript' on input line 1206.
 
-[19] [20]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1205 \begin{equation}
-                       \tag{{\color{orange}$\oplus$}}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1205 \begin{equation}
-                       \tag{{\color{orange}$\oplus$}}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1205 \begin{equation}
-                       \tag{{\color{orange}$\oplus$}}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1205 \begin{equation}
-                       \tag{{\color{orange}$\oplus$}}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1209 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1209 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1209 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1209 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1225 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1225 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1225 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1225 \begin{equation}
-                        [21
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1206.
+
+[20] [21
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1237 \end{document}
+l.1297 \end{equation}
+                     ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1299 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1299 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1299 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1299 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1315 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1315 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1315 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1315 \begin{equation}
+                        [22
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.10.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1327 \end{document}
                      ] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1334,10 +1319,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 45951 strings out of 469504
- 1084690 string characters out of 5470379
+ 46639 strings out of 469504
+ 1099039 string characters out of 5470379
  1758019 words of memory out of 5000000
- 73849 multiletter control sequences out of 15000+600000
+ 74536 multiletter control sequences out of 15000+600000
  642608 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,27n,121p,11245b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1351,10 +1336,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on master.pdf (21 pages, 1587299 bytes).
+Output written on master.pdf (22 pages, 1607231 bytes).
 PDF statistics:
- 453 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

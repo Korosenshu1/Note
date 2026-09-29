@@ -1121,9 +1121,39 @@ Considerando, pi\`u in particolare, istanti temporali per cui vale $\tau _B \ll 
 \end{equation}
 dove il ``per ogni $t$'' \`e da intendersi per gli istanti che soddisfano $\tau _B \ll t \ll \tau _A$ e $\mathcal{A} _A (t) \simeq \mathcal{A} _{A,0}$ perch\'e $t \ll\tau _A$.
 Questa relazione indica la condizione di \textbf{equilibrio secolare}.
-\begin{boxenv}[]
-	\centering \color{red!60!black} Inserire grafico (lezione 6)
-\end{boxenv}
+\begin{center}
+	\begin{tikzpicture}
+	\draw[->, thick] (-0.35,0) -- (10,0) node[below right] {$t$};
+
+	\draw[->, thick] (0,-0.25) -- (0,5.35)
+	    node[above left] {$N_B(t)$};
+
+	\draw[
+	    very thick,
+	    domain=0:9.9,
+	    samples=120,
+	    dashed,
+	    color=orange,
+	    smooth
+	]
+	plot (\x,4);
+
+	\draw[
+	    thick,
+	    domain=0:9.9,
+	    samples=120,
+	    color=green!70!black,
+	    smooth
+	]
+	plot (\x,{4*(1-e^(-0.5*\x))});
+	
+	\node[color=orange] at (11,4) {$\displaystyle \frac{\lambda _A}{\lambda _B}N_{A,0}$};
+
+	\draw[fill,violet] (2,{4*(1-e^(-0.5*2))}) circle (2pt);
+	\draw[dashed, violet,thick] (2,{4*(1-e^(-0.5*2))}) -- (0,{4*(1-e^(-0.5*2))}) node[left] {$\frac{\lambda _A}{\lambda _B}N_{A,0}\left(1- \frac{1}{e}\right) $};
+	\draw[dashed, violet,thick] (2,{4*(1-e^(-0.5*2))}) -- (2,0) node[below] {$\tau _B$};
+	\end{tikzpicture}
+\end{center}
 
 \subsubsection{Equilibrio transiente}
 
@@ -1142,10 +1172,37 @@ Per regioni temporali in cui $(\lambda _B - \lambda _A ) t \gg 1$, cio\`e $t \gg
 	\frac{\mathcal{A} _B(t)}{\mathcal{A} _A(t)} \simeq \frac{\lambda _B}{\lambda _B - \lambda _A} = \text{cost.}
 \end{equation}
 Questa corrisponde alla condizione di \textbf{equilibrio transiente}.
-\begin{boxenv}[]
-	\centering \color{red!60!black} Inserire grafico (lezione 6)
-\end{boxenv}
+\begin{center}
+	\begin{tikzpicture}
+	\draw[
+	    very thick,
+	    domain=0:9,
+	    samples=120,
+	    dashed,
+	    color=green!70!black,
+	    smooth
+	]
+	plot (\x,{ln(e^(4.5)*e^(-0.5*\x))});
 
+	\draw[
+	    very thick,
+	    domain=0.01120:10.37509,
+	    samples=120,
+	    color=orange,
+	    smooth
+	]
+	plot (\x,{ln((2*(1-e^(-0.5*\x)))*(e^(4.5)*e^(-0.5*\x)))});
+
+	\draw[->, thick] (-0.35,0) -- (10.5,0) node[below right] {$t$};
+
+	\draw[->, thick] (0,-0.25) -- (0,5.35)
+	    node[above left] {$\log \mathcal{A} (t) /a_0$};
+
+   	\node[color=orange] at (9.5,1.5) {$\log \mathcal{A} _B(t) / a_0$};
+   	\node[color=green!70!black] at (1.5,4.5) {$\log \mathcal{A} _B(t) / a_0$};
+	\end{tikzpicture}
+\end{center}
+Nel grafico, si specifica $a_0$ costante generica per assicurare che l'argomento del logaritmo sia adimensionale (per esempio, $a_0 = 1 \text{ Bq}$).
 \subsubsection{Catena con $\lambda _B \to \lambda _A$}
 
 Si considera, ora, il caso in cui $\lambda _B \to \lambda _A$, cio\`e valga $\lambda _B = \lambda _A (1+\varepsilon )$, con $\varepsilon \ll 1$.
@@ -1170,9 +1227,42 @@ Nel caso in cui $N_{B,0} = 0$, invece, si rimane con
 \end{equation}
 In questo caso, l'istante in cui si realizza il massimo dell'attivit\`a \`e ottenuto per $t_m = 1 / \lambda _A = \tau _A$, corrispondente a $N_B (t_m) = N_A(\tau ) = N_{A,0} / e$.
 Inoltre, per $\lambda _A = \lambda _B = \lambda $, si ha $N_B(t) = \lambda N_{A,0}t e^{-\lambda t} = \lambda t N_A(t)$, quindi $N_B(t_m) = N_A(t_m)$.
-\begin{boxenv}[]
-	\centering \color{red!60!black} Inserire grafico (lezione 6)
-\end{boxenv}
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[
+	    very thick,
+	    domain=0:10,
+	    samples=120,
+	    dashed,
+	    color=green!70!black,
+	    smooth
+	]
+	plot (\x,{4*e^(-0.35*\x)});
+
+	\draw[
+	    very thick,
+	    domain=0:10,
+	    samples=120,
+	    color=cyan!70!black,
+	    smooth
+	]
+	plot (\x,{0.35*\x*4*e^(-0.35*\x)});
+
+	\draw[->, thick] (-0.35,0) -- (10.5,0) node[below right] {$t$};
+
+	\draw[->, thick] (0,-0.25) -- (0,5.35)
+	    node[above left] {$N(t)$};
+
+   	\node[color=cyan!70!black] at (9.5,1) {$N_B(t)$};
+   	\node[color=green!70!black] at (1.5,3.5) {$N_A(t)$};
+
+	\draw[fill,violet] ({1/0.35},{4/e}) circle (2pt);
+	\draw[violet,dashed,thick] ({1/0.35},{4/e}) -- ({1/0.35},0) node[below] {$t_m$};
+	\draw[violet,dashed,thick] ({1/0.35},{4/e}) -- (0,{4/e}) node[left] {$\displaystyle \frac{N_{0,A}}{e}$};
+	\end{tikzpicture}
+\end{center}
 
 \subsubsection{Equazioni di Bateman}
 
