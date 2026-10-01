@@ -73,21 +73,7 @@
 \newtheorem{osservazione}{Osservazione}[section]
 \newtheorem{assunzione}{Assunzione}[section]
 \newtheorem{notazione}{Notazione}[section]
-
-\newtheoremstyle{style1}% name of the style to be used
-{5pt}% measure of space to leave above the theorem. E.g.: 3pt
-{5pt}% measure of space to leave below the theorem. E.g.: 3pt
-{\normalfont}% name of font to use in the body of the theorem
-%{15pt}% measure of space to indent
-{0pt}% measure of space to indent
-{\noindent\bfseries\color{red}}% name of head font
-{}% punctuation between head and body
-{ }% space after theorem head; " " = normal interword space
-{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
-
-\theoremstyle{style1}
 \newtheorem{esercizio}{Esercizio}[section]
-
 
 %% Generic box
 \newtcolorbox{eqbox}[1][]
@@ -1341,8 +1327,43 @@ Quando si tiene conto di decadimenti nucleari per processi $\alpha $ e $\beta $,
 
 \noindent Fra quelle elencate, quasi tutte sono ancora osservabili in natura, in quanto il l'emivita del capostipite \`e maggiore dell'et\`a del sistema solare, ad eccetto di quella del nettunio, che \`e considerata praticamente artificiale.
 
-\subsection{Applicazione: decadimento del potassio-40}
+Particolare attenzione va prestata ad una parte della serie dell'uranio, in cui 
+\[
+	\ce{^{238}U} \to  \ldots \to  {\color{green!50!black}\ce{^{226}Ra} \to  \ce{^{222}Rn}} \to  \ldots \ce{^{206}Pb}
+\] 
+Le rocce presenti naturalmente in natura contengono uranio (in concentrazione variabile), portando alla produzione di radon-222 instabile ad un certo punto della serie, dove il suo tempo di dimezzamento \`e $\tau _{1 / 2} \approx 4$ giorni.
+Il fatto \`e che il radon, essendo un gas nobile, si lega difficilmente ad altri elementi ed \`e presente in forma gassosa: quello che emerge dalle rocce per decadimento di nuclei precedenti nella serie si pu\`o accumulare nelle zone chiuse a diretto contatto con il terreno, come cantine, a seconda di diverse condizioni atmosferiche e del terreno attraverso cui deve passare.
+Questo pu\`o portare ad un aumento della concentrazione in tali zone chiuse, in quanto emerge continuamente dal terreno, ma viene disperso pi\`u difficilmente dall'aria in tali ambienti.
+Di per s\'e, il radon non \`e dannoso, ma lo sono i suoi prodotti; infatti, il radon inspirato viene naturalmente rimosso, visto che non interagisce con gli altri elementi, ma il discorso cambia quando questo decade: i nuclei prodotti a partire dal suo decadimento possono depositarsi sulle superfici delle vie respiratorie e continuare il ciclo di decadimento, emettendo particelle $\alpha $, che hanno un elevato potere ionizzante e un percorso di vita molto breve. 
+Questo vuol dire che, a seguito dei decadimenti, viene trasferita molta energia in un piccolo volume di tessuto, il che pu\`o provocare danni/rotture al DNA, o altre alterazioni molecolari.
 
+\subsection{Applicazione: decadimento del potassio-40}
+Sulla Terra, il potassio ($Z=19$) \`e distribuito largamente come potassio-39, per il $93.3\%$; a seguire, il $6.7\%$ appare come potassio-41, mentre lo $0.018\%$ \`e potassio-40.
+Quest'ultimo, in particolare, \`e il suo isotopo radioattivo, che decade per $\beta ^-$, oppure per cattura elettronica, con un $\tau _{ 1 / 2} = 1.248 \times 10^{9}$ yr ($\sim$ et\`a del sistema solare).
+Le possibili reazioni in cui compare sono:
+\begin{align}
+	&\ce{^{40}_{19}K} \xrightarrow{\ \, \beta ^- \ \,} \ce{_{20}^{40}Ca + e- + \overline{\nu }_e} \tag{$\text{BR}= 89.28\%\, , \ Q=1.3$ MeV} \\
+	&\ce{^{40}_{19}K + e-} \xrightarrow{\ \, \varepsilon  \ \,} \ce{_{18}^{40}Ar^* + \nu _e}\tag{$\text{BR}= 10.7\%\, , \ Q=1.5$ MeV}
+\end{align}
+Nella seconda, segue l'emissione di radiazione elettromagnetica per la diseccitazione dell'argon: $\ce{^{40}Ar^*} \to \ce{^{40}Ar} + \gamma$.
+
+Visto che si ha $Z=19$ e $N=21$, quindi con $A= 40$ pari, significa che questo \`e un nucleo del caso dispari-dispari per la teoria sviluppata con la formula semi-empirica di massa e, nel piano $(M_a(Z),Z)$, saranno presenti due parabole lungo cui avvengono i decadimenti.
+Si pu\`o osservare che l'argon-40 ($Z=18$) \`e quello pi\`u vicino al minimo della parabola rispetto al calcio-40, quindi, mentre il potassio-40 decade nell'uno o nell'altro, la configurazione dell'argon per cattura elettronica \`e quella preferibile; di fatto, nonostante sia un processo estremamente raro, si pu\`o osservare una doppia cattura elettronica che porta il calcio in argon:
+\[
+	\ce{^{40}Ca + 2e-} \to  \ce{^{40}Ar + 2\nu _e}
+\] 
+\begin{esercizio}
+In un adulto di $70$ kg, sono presenti circa $140$ g di potassio, con le percentuali riportate sopra per gli isotopi.
+Si vuole stabilire l'attivit\`a di questo campione.
+\end{esercizio}
+\begin{svolgimento}
+	Il peso atomico del potassio \`e $M = 39.098$ g\footnote{Questo corrisponde ad una mole di potassio, cio\`e a quanti grammi corrispondono $\mathcal{N} _A$ atomi di una specie.}; ne segue che il numero di moli presenti in $140$ g \`e $n = 140 / 39.098 = 3.58$ mol, per cui si hanno $N_k = n \mathcal{N} _A = 2.156 \times 10^{24}$ atomi.
+Allora l'abbondanza del potassio-40 nel campione \`e di $N_{\ce{^{40}K}} = N_k \cdot 0.018\% = 2.5 \times 10^{20}$ atomi, da cui l'attivit\`a totale del campione \`e 
+\[
+	A_{\ce{^{40}K}} = \frac{N_{\ce{^{40}K}}}{\tau } = 3.078 \times 10^{3} \text{ Bq}
+\] 
+
+\end{svolgimento}
 \subsection{Datazione al carbonio}
 
 

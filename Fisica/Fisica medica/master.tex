@@ -758,4 +758,340 @@ per cui si evince che bombardare troppo a lungo la targhetta, consumando energia
 	\end{minipage}
 \end{center}
 In centri in cui si ha la produzione di radionuclidi, \`e possibile che si abbia la produzione di specie le cui catene di decadimento permettono, contemporaneamente, di effettuare imaging e terapia, come nel caso del rame-64: questo pu\`o decadere per $\beta ^-$ ($\sim 39\%$) in zinco-64, processo utilizzato in terapia, oppure pu\`o decadere per $\beta ^+$ ($\sim 18\%$) in uno stato eccitato del nichel-64, processo usato in diagnostica.
+
+
+\newpage
+
+\section{Lezione 30/09}
+
+\subsection{La radiazione elettromagnetica}
+
+Ha uno spettro, di cui la parte visibile ne compone una piccola frazione; si lavorer\`a maggiormente con raggi x e $\gamma$. 
+L'energia \`e determinata dalla relazione 
+\begin{equation}
+	E = h \nu 
+\end{equation}
+con $h = 6.62 \times 10^{-34} \text{ J} \cdot \text{s}$ costante di Planck.
+
+Nel modello schematico dell'atomo secondo Bohr, $n$ individua ciascun guscio: le transizioni verso shell pi\`u bassi libera energia, mentre transizioni verso l'alto la richiedono. 
+Per schematizzare queste transizioni, si utilizza la \textit{notazione di Siegbahn}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{s-sch.png}
+\end{figure}
+ 
+\noindent Nell'analisi spettrale, i picchi ottenuti a seguito di eccitazione dell'atomo tramite macchina radiogena sono strettamente correlati, secondo la notazione Siegbahn, con l'energia inviata (slide 9: mancano i $K_\alpha $ e $K_\beta $ nel piombo perch\'e si sono usati raggi X con $V_\text{max} = 40$ kV.).
+
+La radiazione pu\`o essere corpuscolare o elettromagnetica; inoltre \`e non-ionizzante (NIR) se $E<10$ eV, oppure \`e ionizzante (IR) se $E\ge 10$ eV.
+\subsection{Sezione d'urto}
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si considera una reazione in cui un fascio di particelle vengono diffuse da un certo bersaglio.
+	Sia $F$ il flusso delle particelle incidenti (particelle per unit\`a di tempo e superficie), di energia $E$, e sia $N_s$ il numero medio di particelle diffuse per unit\`a di tempo e angolo solido.
+	Si definiscono, allora, la sezione d'urto differenziale e totale come
+	\[
+	\frac{d \sigma }{d \Omega }  = \frac{1}{F} \frac{d N_s}{d \Omega }  \hspace{1cm} \sigma _\text{tot} \int \frac{d \sigma }{d \Omega }  \dd \Omega 
+	\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{boxenv}[]
+	\centering Creare schema slide 11
+	\end{boxenv}
+	
+	\end{minipage}
+\end{center}
+La sezione d'urto $\sigma $ si misura in Barn: $1 \text{ b} = 10^{-24} \text{ cm}^{2}$.
+
+Per un fascio che incide ortogonalmente al bersaglio di spessore $\delta x$ e area $A$, contenente $N$ nuclei per $cm^3$, si ha
+\[
+N_S(\Omega ) = FAN \delta x \frac{d \sigma }{d \Omega } 
+\] 
+che rappresenta il numero di eventi nell'angolo solido $\dd \Omega $.
+Il numero totale di eventi, invece, sar\`a 
+\[
+N_\text{tot} = FAN\delta x \sigma 
+\] 
+La sezione d'urto indica una probabilit\`a ({\color{red}\`e una probabilit\`a?}) che la reazione avvenga.
+
+\begin{boxenv}[]
+Riportare interazione dei fotoni slide 14
+\end{boxenv}
+
+\subsection{Effetto fotoelettrico}
+
+La luce pu\`o estrarre elettroni da un materiale metallico, se possiede un'opportuna energia.
+Questa energia opportuna \`e l'energia di legame $E_B$, coincidente con il lavoro di estrazione dell'elettrone dall'atomo e dipende dalle propriet\`a del metallo e dalla sua superficie.
+
+L'energia cinetica acquisibile dall'elettrone a seguito dell'assorbimento del fotone e della sua successiva emissione \`e
+\[
+T = h \nu  - E_b - T_a
+\] 
+dove $T_a$ \`e l'energia di rinculo dell'atomo per conservazione del momento. 
+$T_a$ \`e trascurabile, visto ce $m_e \ll M_a$, quindi $T \approx h \nu  - E_b$.
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si riporta la sezione d'urto per l'effetto fotoelettrico nel caso del piombo, come funzione dell'energia del fotone incidente.
+	Le discontinuit\`a corrispondono alle energie di legame per liberare un elettrone nel relativo guscio.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{s-ef.png}
+	\end{minipage}
+\end{center}
+La sezione d'urto atomica dell'effetto fotoelettrico si pu\`o esprimere come
+\[
+\sigma _\text{fe} = \tau  = k \frac{Z^n}{(h\nu )^m}
+\] 
+con $k$ costante, e $n\approx 4$ per $h\nu  = 0.1$ MeV, mentre cresce a $n \approx 4.6$ per $h\nu  = 3$ MeV. 
+Al contrario, $m\approx 3$ a $h\nu  = 0.1$ MeV, mentre decresce a $m=1$ per $h\nu  = 5$ MeV.
+
+Per energie $h\nu  \sim 100$ keV, $\tau  \propto Z^4 / (h\nu )^3$.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fe-pb-h2o.png}
+	\caption{Sezione d'urto per acqua e piombo.}
+\end{figure}
+
+Si pu\`o studiare la distribuzione angolare dei foto-elettroni emessi per effetto fotoelettrico:
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{afe.png}
+\end{figure}
+
+\noindent All'aumentare dell'energia del foto-elettrone, questo viene emesso sempre pi\`u in avanti e ad angoli sempre pi\`u stretti.
+
+L'interazione fotoelettrica comporta la formazione di una lacuna negli shell atomici; questa verr\`a colmata da elettroni in shell pi\`u estreni, che creano altre lacune.
+Questo crea una cascata di elettroni, fino a raggiungere lo stato di minima energia.
+Tale cascata produce emissione di radiazione di fluorescenza (raggi x caratteristici dell'atomo) oppure elettroni Auger.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{augerfe.png}
+\end{figure}
+
+Si vuole studiare la probabilit\`a che si verifichi uno di questi due effetti. 
+Si definisce lo \textit{yield} $\omega_i$ come la probabilit\`a che, a seguito della vacanza generata dall'effetto fotoelettrico, sussegua emissione caratteristica (fluorescenza), per cui $1-  \omega _i$ \`e la probabilit\`a che si verifichi emissione di elettroni Auger.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{yi-fe.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{yi-fe2.png}
+	\end{minipage}
+\end{center}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fe-sh.png}
+\end{figure}
+Un'espressione approssimativa per il rapporto tra sezione d'urto fotoelettrica e quella di interazione per shell K \`e 
+\[
+\tau  / \tau _k = 1 + 0.01481 \cdot (\ln Z)^2 - 0.00079 \cdot (\ln Z)^3
+\] 
+
+\subsection{Effetto Compton}
+
+\`E uno scattering anelastico in cui un fotone di energia $h\nu $ collide con un elettrone atomico libero e stazionario.
+Sussegue la produzione di un fotone di energia $h\nu '$, emesso con angolo $\phi $ rispetto alla direzione iniziale, e l'energia cinetica acquisita dall'elettrone \`e pari a $h\nu - h\nu '$, che viene deviato di un angolo $\theta $ rispetto alla direzione iniziale del fotone incidente.
+
+Imponendo la conservazione dell'energia e della quantit\`a di moto, trattando il fotone come particella, si ricava che:
+\[
+\begin{cases}
+	h\nu  ' + T = h\nu \\
+	p_e \sin \theta  - \frac{h\nu '}{c} \sin\phi  = 0 \\
+	p_e \cos \theta  + \frac{h\nu '}{c} \cos \phi  = \frac{h\nu }{c}
+\end{cases}
+\] 
+Visto che $pc = \sqrt{T^2 + 2 m_0 c^2 T} $, si ottiene che 
+\[
+\begin{split}
+	&h\nu  ' = \frac{h\nu }{ 1 + \frac{h\nu }{m_0c^2} (1 - cos \phi )}\\
+	& T = \frac{h\nu }{m_0 c^2} \frac{h\nu (1- cos \phi  ) }{ 1+ \frac{h\nu }{m_0c^2 }(1-\cos \phi )}
+\end{split}
+\] 
+L'energia minima del fotone emesso si ha quando l'angolo di scattering del fotone \`e $\phi =180 ^\circ$ ed \`e pari a 
+\[
+h\nu '_\text{min }= \frac{h\nu}{1 + 2 \frac{h\nu }{m_0c^2}}
+\] 
+Corrisponde al fotone \textit{back-scattered}.
+\begin{itemize}
+	\item Per $\phi  = 180 ^\circ$ e $h\nu  \gg m_0 c^2$, si ha 
+		\[
+		\lim_{h\nu \to +\infty} h\nu'_\text{min} = \frac{m_0c^2}{2} \approx 256 \text{ keV}
+		\] 
+	\item se $\phi  = 90 ^\circ$ e per lo stesso limite, si ha $h\nu ' \to  m_0c^2 \approx 511$  keV.
+\end{itemize}
+Di seguito, si mettono in rapporto energia del fotone secondario e quella del primario.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{co-12.png}
+\end{figure}
+
+\noindent Visto che $T = h\nu  - h\nu '$, se decresce l'energia del fotone incidente, l'energia trasferita all'elettrone decresce di conseguenza.
+
+L'energia minima acquisibile dall'elettrone, invece, \`e per $\phi  = 0^\circ$, per cui si ha $T = 0$, visto che 
+\[
+ T = \frac{h\nu }{m_0 c^2} \frac{h\nu (1- cos \phi  ) }{ 1+ \frac{h\nu }{m_0c^2 }(1-\cos \phi )}
+\] 
+La massima acquisibile, invece, si ha per $\phi =180^\circ$, per cui l'elettrone viene emesso sulla stessa direzione di quello incidente.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{co-e.png}
+\end{figure}
+
+\noindent \`E importante comprendere come viene distribuita l'energia tra fotone ed elettrone, per esempio quando si devono sfruttare fenomeni del genere in radioterapia.
+La distribuzione energetica degli elettroni nell'effetto Compton si usa la sezione d'urto di Klein-Nishina:
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{co-kn.png}
+\end{figure}
+
+\noindent In corrispondenza di $x=0.331$, si ha la massima energia acquisibile dall'elettrone-Compton; il valore massimo \`e detto \textit{Compton edge}.
+
+L'espressione della sezione d'urto Compton prende il nome da coloro che ne hanno ricavato la forma, cio\`e Klein e Nishina. Questa \`e 
+\begin{equation}
+	\frac{d _e \sigma _{KN}(\varphi )}{d \Omega }  = \frac{r_0^2}{2} \left(\frac{h\nu '}{h\nu }\right) ^2 \left[ \frac{h\nu '}{h\nu } + \frac{h\nu }{h\nu '} - \sin^2 \varphi  \right] 
+\end{equation}
+Per basse energie ($h\nu \to $), si vede trova la sezione d'urto Thomson:
+\[
+\frac{d _e \sigma _T(\varphi )}{d \Omega } = \frac{r_0^2}{2} (1 + \cos^2 \varphi ) \implies \sigma _T = \frac{8\pi}{3} r_0^2 \approx 0.665 \text{ b}
+\] 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{co-pol.png}
+\end{figure}
+
+
+\noindent L'espressione della Klein-Nishina presuppone elettroni liberi e fermi, quindi non dipende da $Z$: \`e una sezione d'urto elettronica $_e\sigma _C \propto Z^0$.
+La sezione d'urto atomica Compton, invece, cresce linearmente con $Z$: $_a\sigma _C \propto Z$.
+
+La presenza di effetto Compton richiede l'uso di apposite griglie anti-scattering nell'imaging RX per non degradare la qualit\`a dell'immagine; in radioterapia, invece, l'effetto ha poche conseguenze, dato che il fotone scatterato \`e assimilabile al primario.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{co-gr.png}
+\end{figure}
+
+\subsection{Scattering Rayleigh}
+
+Lo scattering coerente Rayleigh \`e l'effetto di scattering di un fotone da elettroni atomici, senza che l'atomo venga eccitato o ionizzato e senza che il fotone perda energia.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ray.png}
+\end{figure}
+
+\subsection{Interazioni dei fotoni}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{phi.png}
+\end{figure}
+
+\subsection{Produzione di coppie}
+
+L'assorbimento di un fotone in un materiale pu\`o portare alla produzione di una coppia $(e^+, e^-)$ di particelle; per conservazione di energia e quantit\`a di moto non permette che questo effetto avvenga nel vuoto, ma \`e richiesta la vicinanza di una particella: un nucleo atomico o, pi\`u raramente, un elettrone.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{coppie.png}
+\end{figure}
+
+L'energia minima necessaria perch\'e il fotone possa produrre una coppia \`e 
+\begin{equation}
+	h\nu  _\text{min} = 2 m_0 c^2 \left(1 + \frac{m_0 }{m_X}\right) 
+\end{equation}
+Se $X$ \`e un nucleo atomico, allora $h\nu _\text{min} = 2m_0c^2$; nel caso di $X$ elettrone, invece, $h\nu _\text{min} = 4 m_0 c^2$.
+In quest'ultimo caso, si parla di \textit{terna}, visto che anche l'elettrone con cui \`e avvenuta l'interazione viene emesso.
+
+Per produzione in presenza di nucleo, l'energia acquisita dalle due particelle emesse \`e 
+\[
+E_{e^-} + E_{e^+} = h\nu  - 2 m_0 c^2
+\] 
+Non avranno necessariamente la stessa energia, ma, mediamente, si avr\`a 
+\[
+\overline{E} = \frac{h\nu  - 1.022 \text{ MeV}}{2}
+\] 
+Si riporta la sezione d'urto differenziale in funzione dell'angolo di emissione, assumendo che l'energia sia egualmente ripartita nella coppia, per due diverse energie del fotone incidente:
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pc-diff.png}
+\end{figure}
+
+\noindent Si ha che $\overline{\theta } \approx m_0c^2 / \overline{E}$.
+\begin{boxenv}[]
+Scrivere slide 51
+\end{boxenv}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pc-cpb.png}
+\end{figure}
+
+\begin{boxenv}[]
+Scrivere slide 53
+\end{boxenv}
+
+\subsubsection{Annichilazione del positrone}
+\begin{boxenv}[]
+Scrivere slide 54
+\end{boxenv}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ap.png}
+\end{figure}
+
+
+\subsection{Reazioni fotonucleari}
+Per un fotone assorbito dal nucleo, la reazione pi\`u probabile \`e l'emissione id un singolo neutrone; con meno probabilit\`a, sono possibili anche l'emissione di particelle cariche, raggi $\gamma$, pi\`u neutroni e frammenti di fissione.
+
+La sezione d'urto per questo processo dipende in modo molto complicato da $Z$, $A$ e abbondanza isotopica di un campione di un dato elemento; questa sezione d'urto ha un'energia di soglia e producono risonanze pronunciate.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{rf1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{rf2.png}
+	\end{minipage}
+\end{center}
+
+\noindent Queste razioni hanno importanza dal punto di vista dosimetrico e nella progettazione di schermature di sorgenti intense di fotoni o elettroni a causa delle reazioni $(\gamma,n)$; incidono poco nel calcolo della dose al paziente.
+
+\subsection{Effetti complessivi}
+
+Complessivamente, la sezione d'urto sar\`a composta da 
+\[
+\sigma _\text{tot} = \tau  + \sigma _\text{coh} + \sigma _\text{compton} + k
+\] 
+con $\tau $ per fotoelettrica, $\sigma _\text{coh}$ Rayleigh e $k$ per coppie.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{sd-cpb.png}
+\end{figure}
+
+\subsection{Attenuazione macroscopica dei fotoni} 
+\begin{boxenv}[]
+Scrivere da slide 61
+\end{boxenv}
+
+
+
+
+
 \end{document}
+
