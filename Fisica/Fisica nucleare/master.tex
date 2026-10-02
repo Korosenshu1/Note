@@ -29,6 +29,8 @@
 \usepackage[version=4]{mhchem}
 \usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
+
+
 % Font
 %\usepackage{fontspec}
 %\setmainfont{Libertinus Serif}
@@ -335,9 +337,6 @@ Questo significa che i neutroni si estendono oltre il punto in cui cade a zero l
 
 Un altro aspetto da tenere in considerazione \`e quello degli \textit{halo nuclei}, nuclei atomici in cui i neutroni (tipicamente) sono legati molto debolmente al resto del nucleo e hanno una distribuzione spaziale molto pi\`u estesa.
 Un esempio tipico \`e quello del litio-11, che si pu\`o scrivere approssimativamente come $\ce{^11Li} \simeq \ce{9^Li + n + n}$ perch\'e due neutroni possono trovarsi spazialmente molto distanti rispetto al resto del nucleo compatto.
-\begin{boxenv}[]
-\centering Creare immagini per neutron skin e halo nuclei.
-\end{boxenv}
 
 \subsection{Massa di un sistema composto}
 Siano $\left\{ m_i^0 \right\}_{i=1}^N $ le masse a riposo dei costituenti di un certo sistema legato. 
@@ -1366,6 +1365,119 @@ Allora l'abbondanza del potassio-40 nel campione \`e di $N_{\ce{^{40}K}} = N_k \
 \end{svolgimento}
 \subsection{Datazione al carbonio}
 
+Il carbonio ($Z=6$) ha vari isotopi stabili e instabili; per la datazione al radiocarbonio, si utilizza il carbonio-14, la cui concentrazione \`e data da $x_{14} = N(\ce{^{14}C}) / N(^{\text{tot}}\ce{C}) = 1.2 \times 10^{-12}$, che decade secondo la reazione
+\[
+	\ce{^{14}C}\to \ce{^{14}N + e- + \overline{\nu }_e} 
+\] 
+con $\tau = 8227$ yr.
+Si utilizza questo perch\'e si \`e osservato che il rapporto tra la concentrazione di carbonio-14 e quella di carbonio-12 \`e pressoch\'e costante in atmosfera.
 
+\subsubsection{Formazione del carbonio-14}
+La formazione del carbonio-14 in atmosfera \`e dovuta ai raggi cosmici.
+Questi sono particelle elettricamente cariche e costituiti principalmente da protoni ($\sim 90\%$) e nuclei di elio ($\sim 9\%$).
 
+Questi raggi interagiscono con i nuclei degli atomi in alta atmosfera e producono svariati tipi di particelle molto energetiche, che prendono il nome di \textit{raggi cosmici secondari}.
+L'importanza dei raggi cosmici secondari sta nella produzione di \textit{processi di spallazione nucleare}, che sono reazioni in cui un atomo viene fortemente eccitato e perde un certo numero di nucleoni, altri frammenti leggeri, o subisce fissione indotta:
+\[
+	\ce{a + ^{A}_{Z}X} \to \ce{^{A_1}_{Z_1}Y + ^{A_2}_{Z_2}W + k_n n + k_p p}
+\] 
+dove $a$ \`e una particella dei raggi primari, $k_n$ e $k_p$ sono dei numeri interi che indicano il numero di neutroni e protoni prodotti e $\ce{^{A_1}Y}$ e $\ce{^{A_2}W}$ sono i nuclei prodotti (potenzialmente a seguito di fissione).
+Questi processi hanno un rate di produzione di neutroni di $\sim 2 \text{ n}/\text{cm}^2\text{s}$, con un'energia tipica di $E_n \sim 2$ MeV.
+Quelli di interesse, per\`o, sono i neutroni termalizzati, cio\`e quelli la cui energia decresce fino ad una media di $E_\text{th} = 0.025$ eV; a queste energie, infatti, si ha la maggiore probabilit\`a che avvenga la reazione di produzione del carbonio-14 in atmosfera:
+\[
+	\ce{n + ^{14}N} \to  \ce{^{14}C + p}
+\] 
+con una sezione d'urto di $\sigma \sim 2$ b.
+Il carbonio-14 prodotto in atmosfera si comporta, chimicamente, come ogni altro isotopo di carbonio, per cui si lega a formare $\ce{^{14}CO_2}$ e, cadendo verso la superficie terrestre, entra nei cicli degli organismi, come quelli di fotosintesi delle piante.
+
+La concentrazione di carbonio-14 in atmosfera si mantiene circa costante per il fatto che la frazione di carbonio-14 che viene tolto (per suo decadimento, o per utilizzato da parte dell'ambiente sotto forma di $\ce{^{14}CO_2}$), si forma dall'interazione tra raggi cosmici secondari e azoto-14; al contempo, il carbonio-14 precedentemente rilasciato torna ad azoto-14, reintroducendo materiale per la sua produzione.
+Cos\`i facendo, si pu\`o considerare la frazione $x_{14} / x_{12}$ circa costante e approssimativamente uguale sia in atmosfera, sia negli esseri viventi che scambiano carbonio con l'esterno.
+
+\subsubsection{Decadimenti con termine di sorgente}
+Si vuole studiare quantitativamente il processo di produzione di carbonio-14 a partire dall'azoto-14 e la conseguente riproduzione di quest'ultimo a seguito del decadimento radioattivo del carbonio prodotto.
+
+Si considera una serie del tipo $\left[ S \right]  \to  A \xrightarrow{\ \, \lambda \, \ } B$, dove $\lambda_A $ \`e la costante di decadimento di $A$ e $S$ \`e la sorgente che forma nuovi nuclei di $A$.
+Si assume che la concentrazione di nuclei sorgente $Q(t)$ sia tale per cui $\dd Q = Q\dd t$, cio\`e si assume che il rate di produzione sia costante e pari a $Q$; in questo modo, $\dd N_A = Q \dd t - \lambda  N_A \dd t$, per cui 
+\begin{equation}
+	\frac{d N_A}{d t}  + \lambda  N_A = Q
+	\tag{{\color{red!70!black}$\star$}}
+\end{equation}
+L'omogenea associata $\dot{N}_A + \lambda  N_A =0 $ restituisce una soluzione della forma $N_A(t) = C e^{-\lambda  t}$.
+Per la soluzione particolare, si prende $N_A(t) \equiv D$ costante, da cui si ottiene $\lambda  D = Q \implies D  = Q / \lambda $.
+La soluzione di ({\color{red!70!black}$\star$}), allora, \`e
+\begin{equation}
+	N_A(t) = C e ^{-\lambda t} + \frac{Q}{\lambda }
+	\tag{{\color{red!70!black}$\dagger$}}
+\end{equation}
+Prendendo, come condizione iniziale, $N_A(t_0) = N_{A,0}$, dalla soluzione ({\color{red!70!black}$\dagger$}) si ottiene la costante $C$: $N_{A,0} = C + Q / \lambda \Rightarrow C = N_{A,0} - Q / \lambda $, per cui
+\begin{equation}
+	N_{A}(t) = N_{A,0} e^{-\lambda t} + \frac{Q}{\lambda } \left(1 - e^{-\lambda t}\right) 
+\end{equation}
+\begin{center}
+	\begin{tikzpicture}
+
+	\draw[
+	    very thick,
+	    domain=0:7,
+	    samples=120,
+	    dashed,
+	    color=green!70!black,
+	    smooth
+	]
+	plot (\x,{2});
+
+	\draw[
+	    very thick,
+	    domain=0:7,
+	    samples=120,
+	    color=cyan!70!black,
+	    smooth
+	]
+	plot (\x,{3*e^(-1*\x)});
+
+	\draw[
+	    very thick,
+	    domain=0:7,
+	    samples=120,
+	    color=orange,
+	    smooth
+	]
+	plot (\x,{2*(1-e^(-1*\x))});
+
+	\draw[->, thick] (-0.35,0) -- (7.5,0) node[below right] {$t$};
+
+	\draw[->, thick] (0,-0.25) -- (0,4.35)
+	    node[above left] {$N(t)$};
+    \node[color=green!70!black] at (-.25,2) {\footnotesize $\displaystyle \frac{Q}{\lambda }$};
+	\end{tikzpicture}
+	\captionof{figure}{Rappresentazione grafica della soluzione completa $N_A(t)$, dove i vari colori indicano {\color{cyan!60!black}$N_{A,0}e^{-\lambda t}$} e {\color{orange}$Q / \lambda \left(1 - e^{-\lambda t}\right) $}.}
+\end{center}
+In termini di attivit\`a, si ha $\mathcal{A} _A (t) = \lambda  N_A(t)$, per cui 
+\[
+\lim_{t \to +\infty} \mathcal{A} _A (t) = Q
+\] 
+cio\`e per $t \gg \tau  = 1 / \lambda $, si ha $x_{14}(t)\approx \text{costante}$.
+
+\subsubsection{Datazione con il carbonio-14}
+
+Se l'attivit\`a del carbonio-14 in un essere vivente \`e $\mathcal{A}_\text{viv} (t) = Q$ costante e $t_0$ \`e l'istante della sua morte, allora $\mathcal{A} (t) = \mathcal{A} _0 e^{-\lambda (t-t_0)}$, con $\mathcal{A} (t_0) = \mathcal{A} _0$.
+
+Se con $t_1$ si indica l'istante presente, si pu\`o scrivere che 
+\[
+t_1-t_0 = \tau  \ln \frac{\mathcal{A} _0}{\mathcal{A} (t_1)} = \tau  \ln \frac{\mathcal{A} _\text{viv}(t_1)}{\mathcal{A} (t_1)}
+\] 
+valore che indica l'et\`a del reperto, dove si \`e usato il fatto che $\mathcal{A}_\text{viv}(t_1) = \mathcal{A} _\text{viv}(t_0) = \mathcal{A} (t_0) $ (l'attivit\`a di un essere vivente \`e costante in ogni istante).
+
+Questo processo di datazione si basa su due ipotesi principali:
+\begin{itemize}
+	\item il valore della concentrazione di carbonio-14 nell'ambiente \`e uniforme e costante nel tempo, quindi l'attivit\`a specifica del carbonio in un organismo vivente \`e altrettanto costante;
+	\item dal momento della morte, il reperto rimane isolato, cio\`e la concentrazione di carbonio-14 del reperto decade solamente.
+\end{itemize}
+\subsubsection{Cause per la variazione di carbonio-14 nel tempo}
+
+Di seguito, si riportano possibili cause della variazione di concentrazione del carbonio-14.
+\begin{itemize}
+	\item \textbf{Variazione del flusso di raggi cosmici}, comportata da variazioni nell'attivit\`a solare, o variazione del campo magnetico terrestre.
+	\item \textbf{Attivit\`a umane}, come l'uso di combustibili fossili, che immette nuova $\ce{CO_2}$ priva di carbonio-14, abbassandone la concentrazione sul totale, oppure la produzione extra di carbonio-14 per l'esplosione di testate nucleari che rilasciano neutroni nell'atmosfera.
+\end{itemize}
 \end{document}
