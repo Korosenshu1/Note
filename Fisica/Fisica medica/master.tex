@@ -289,7 +289,7 @@ In ogni caso, con immagini digitali \`e possibile investire i livelli a disposiz
 
 \newpage 
 
-\section{Nozioni di fisica nucleare}
+\section{Fondamenti di fisica nucleare}
 I punti centrali di un decadimento nucleare $\ce{^AX} \to \ce{^BY} + P$, con $P$ prodotti secondari della reazione, sono il \textit{Q-valore}, definito da 
 \begin{equation}
 	Q = (m_X - m_Y - m_P ) c^2
@@ -762,25 +762,203 @@ In centri in cui si ha la produzione di radionuclidi, \`e possibile che si abbia
 
 \newpage
 
-\section{Lezione 30/09}
+\section{Interazione radiazione elettromagnetica -- materia}
 
 \subsection{La radiazione elettromagnetica}
 
-Ha uno spettro, di cui la parte visibile ne compone una piccola frazione; si lavorer\`a maggiormente con raggi x e $\gamma$. 
-L'energia \`e determinata dalla relazione 
-\begin{equation}
-	E = h \nu 
-\end{equation}
-con $h = 6.62 \times 10^{-34} \text{ J} \cdot \text{s}$ costante di Planck.
+Ha uno spettro, di cui la parte visibile ne compone una piccola frazione; si lavorer\`a maggiormente con raggi X e $\gamma$. 
+L'energia \`e determinata dalla relazione $E = h \nu$, con $h = 6.62 \times 10^{-34} \text{ J} \cdot \text{s}$ costante di Planck.
 
-Nel modello schematico dell'atomo secondo Bohr, $n$ individua ciascun guscio: le transizioni verso shell pi\`u bassi libera energia, mentre transizioni verso l'alto la richiedono. 
-Per schematizzare queste transizioni, si utilizza la \textit{notazione di Siegbahn}.
-\begin{figure}[h!]
+Nel modello schematico dell'atomo secondo Bohr, $n$ individua ciascun guscio: le transizioni verso shell pi\`u bassi liberano energia, mentre transizioni verso l'alto la richiedono; per ogni guscio a $n$ fissato, si hanno $\ell =0 ,\ldots,n-1$ orbitali, con $\ell =0$ orbitale $s$, $\ell = 1$ orbitale p, $\ell =2$ orbitale d e $\ell =3$ orbitale $f$.
+Ciascuno di questi \`e, poi, suddiviso in altri livelli, con $n,\ell $ fissi, al variare di $j = \ell  \pm 1/2$.
+
+Per schematizzare le transizioni tra diversi, si utilizza la \textit{notazione di Siegbahn}, nata nel campo della spettroscopia X in particolare, in quanto le transizioni di gusci pi\`u interni negli atomi pi\`u pesanti producono fotoni con energia dell'ordine del keV, quindi nel range dei raggi X.
+La nomenclatura per i gusci \`e la seguente:
+\begin{table}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{s-sch.png}
-\end{figure}
- 
-\noindent Nell'analisi spettrale, i picchi ottenuti a seguito di eccitazione dell'atomo tramite macchina radiogena sono strettamente correlati, secondo la notazione Siegbahn, con l'energia inviata (slide 9: mancano i $K_\alpha $ e $K_\beta $ nel piombo perch\'e si sono usati raggi X con $V_\text{max} = 40$ kV.).
+	\begin{tabular}{c | c c c c c}
+		$n$& $1$ & $2$ & $3$ & $4$ & $5$\\
+	\hline
+		   & K & L & M & N & O\\
+	\end{tabular}
+\end{table}
+La notazione Siegbahn prevede di indicare una transizione specificando la lettera relativa al guscio di arrivo, seguita da una lettera greca che indica la distanza dal livello da cui si proviene: $\alpha $ \`e il guscio successivo; $\beta $ \`e quello dopo il successivo e cos\`i via.
+Si riporta, di seguito, un esempio di uso della notazione Siegbahn nel caso del piombo. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[left] {$M_5$} (0,0)  --  (5.5,0);
+		\draw (0,-.5) node[left] {$M_4$} (0,-.5)  --  (5.5,-.5);
+		\draw (0,-1) node[left] {$M_3$} (0,-1)  --  (5.5,-1);
+		\draw (0,-1.5) node[left] {$M_2$} (0,-1.5)  --  (5.5,-1.5);
+		\draw (0,-2) node[left] {$M_1$} (0,-2)  --  (5.5,-2);
+
+
+		\draw (0,-3) node[left] {$L_3$} (0,-3)  --  (5.5,-3);
+		\draw (0,-3.5) node[left] {$L_2$} (0,-3.5)  --  (5.5,-3.5);
+		\draw (0,-4) node[left] {$L_1$} (0,-4)  --  (5.5,-4);
+
+
+		\draw (0,-5) node[left] {$K$} (0,-5)  --  (5.5,-5);
+
+		\draw[-stealth,thick, color=cyan!60!black] (.25,-3.5) -- (.25,-5);
+		\draw[-stealth,thick, color=cyan!60!black] (.5,-3) -- (.5,-5);
+		\draw[-stealth,thick, color=cyan!60!black] (.75,-1.5) -- (.75,-5);
+		\draw[-stealth,thick, color=cyan!60!black] (1,-1) -- (1,-5);
+
+		\draw[-stealth,thick, color=orange] (2,-1.5) -- (2,-4);
+		\draw[-stealth,thick, color=orange] (2.25,-1) -- (2.25,-4);
+
+		\draw[-stealth,thick, color=orange] (3.25,-2) -- (3.25,-3.5);
+		\draw[-stealth,thick, color=orange] (3.5,-.5) -- (3.5,-3.5);
+
+		\draw[-stealth,thick, color=orange] (4.5,-2) -- (4.5,-3);
+		\draw[-stealth,thick, color=orange] (4.75,-.5) -- (4.75,-3);
+		\draw[-stealth,thick, color=orange] (5,0) -- (5,-3);
+
+		\node at (6,.5) {$n$};
+		\node at (6,0) {$3$};
+		\node at (6,-.5) {$3$};
+		\node at (6,-1) {$3$};
+		\node at (6,-1.5) {$3$};
+		\node at (6,-2) {$3$};
+		\node at (6,-3) {$2$};
+		\node at (6,-3.5) {$2$};
+		\node at (6,-4) {$2$};
+		\node at (6,-5) {$1$};
+
+		\node at (6.5,.5) {$\ell $};
+		\node at (6.5,0) {$2$};
+		\node at (6.5,-.5) {$2$};
+		\node at (6.5,-1) {$1$};
+		\node at (6.5,-1.5) {$1$};
+		\node at (6.5,-2) {$0$};
+		\node at (6.5,-3) {$1$};
+		\node at (6.5,-3.5) {$1$};
+		\node at (6.5,-4) {$0$};
+		\node at (6.5,-5) {$0$};
+
+		\node at (7.5,.5) {$j $};
+		\node at (7.5,0) {$5 / 2$};
+		\node at (7.5,-.5) {$3 / 2$};
+		\node at (7.5,-1) {$3/2$};
+		\node at (7.5,-1.5) {$1 / 2$};
+		\node at (7.5,-2) {$ 1 / 2$};
+		\node at (7.5,-3) {$3 / 2$};
+		\node at (7.5,-3.5) {$1 / 2$};
+		\node at (7.5,-4) {$1 / 2$};
+		\node at (7.5,-5) {$1 / 2$};
+
+		\node[color=cyan!50!black] at (0.5,.5) {\footnotesize Serie K};
+		\node[color=orange] at (3.5,.5) {\footnotesize Serie L};
+	\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+			\centering
+\begin{tikzpicture}
+	\node at (0.5,0) {K$\alpha _2$};
+	\node at (1.75,0.25) {LII};
+	\node at (1.75,-0.25) {\footnotesize $15$ keV};
+	\draw[-stealth, thick] (2.25,0) -- (3.25,0);
+	\node at (4.25,0.25) {K};
+	\node at (4.25,-0.25) {\footnotesize $88$ keV};
+
+	\node at (0.5,-2) {K$\alpha _1$};
+	\node at (1.75,-1.75) {LIII};
+	\node at (1.75,-2.25) {\footnotesize $13$ keV};
+	\draw[-stealth, thick] (2.25,-2) -- (3.25,-2);
+	\node at (4.25,-1.75) {K};
+	\node at (4.25,-2.25) {\footnotesize $88$ keV};
+
+	\node at (0.5,-4) {K$\beta  _2$};
+	\node at (1.75,-3.75) {NIII};
+	\node at (1.75,-4.25) {\footnotesize $0.6$ keV};
+	\draw[-stealth, thick] (2.25,-4) -- (3.25,-4);
+	\node at (4.25,-3.75) {K};
+	\node at (4.25,-4.25) {\footnotesize $88$ keV};
+
+	\node at (0.5,-6) {L$\alpha  _1$};
+	\node at (1.75,-5.75) {MV};
+	\node at (1.75,-6.25) {\footnotesize $2.5$ keV};
+	\draw[-stealth, thick] (2.25,-6) -- (3.25,-6);
+	\node at (4.25,-5.75) {LIII};
+	\node at (4.25,-6.25) {\footnotesize $13$ keV};
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+L'energia relativa alla transizione \`e ottenuta dalla differenza dell'energia del guscio di arrivo e di quella del guscio di partenza.
+Una notazione pi\`u moderna, invece, prevede di utilizzare al solito i gusci $K,L,M,\ldots$ con i relativi sottolivelli ($K_1, L_3$, eccetera), seguiti dall'orbitale di partenza, come evidenziato nella tabella di seguito.
+\begin{table}[ht]
+    \centering
+\resizebox{\columnwidth}{!}{%
+    \begin{tabular}{lcccccccccccc}
+        \hline
+        \textbf{Elemento}
+        & \boldmath$K\,1s$
+        & \boldmath$L_1\,2s$
+        & \boldmath$L_2\,2p_{1/2}$
+        & \boldmath$L_3\,2p_{3/2}$
+        & \boldmath$M_1\,3s$
+        & \boldmath$M_2\,3p_{1/2}$
+        & \boldmath$M_3\,3p_{3/2}$
+        & \boldmath$M_4\,3d_{3/2}$
+        & \boldmath$M_5\,3d_{5/2}$
+        & \boldmath$N_1\,4s$
+        & \boldmath$N_2\,4p_{1/2}$
+        & \boldmath$N_3\,4p_{3/2}$ \\
+        \hline
+        $81$ Tl
+        & 85.530
+        & 15.347
+        & 14.698
+        & 12.658
+        & 3.704
+        & 3.416
+        & 2.957
+        & 2.485
+        & 2.389
+        & $0.8462^\dagger$
+        & $0.7205^\dagger$
+        & $0.6095^\dagger$ \\
+
+        $82$ Pb
+        & 88.005
+        & 15.861
+        & 15.200
+        & 13.035
+        & 3.851
+        & 3.554
+        & 3.066
+        & 2.586
+        & 2.484
+        & $0.8918^\dagger$
+        & $0.7619^\dagger$
+        & $0.6435^\dagger$ \\
+
+        $83$ Bi
+        & 90.524
+        & 16.388
+        & 15.711
+        & 13.419
+        & 3.999
+        & 3.696
+        & 3.177
+        & 2.688
+        & 2.580
+        & $0.939^\dagger$
+        & $0.8052^\dagger$
+        & $0.6788^\dagger$ \\
+        \hline
+    \end{tabular}
+}
+    \caption{Energie di legame degli elettroni per Tl, Pb e Bi, in keV.}
+\end{table}
+
+\noindent I picchi ottenuti a seguito di eccitazione dell'atomo tramite macchina radiogena sono strettamente correlati con l'energia inviata (slide 9: mancano i $K_\alpha $ e $K_\beta $ nel piombo perch\'e si sono usati raggi X con $V_\text{max} = 40$ kV.).
 
 La radiazione pu\`o essere corpuscolare o elettromagnetica; inoltre \`e non-ionizzante (NIR) se $E<10$ eV, oppure \`e ionizzante (IR) se $E\ge 10$ eV.
 \subsection{Sezione d'urto}
