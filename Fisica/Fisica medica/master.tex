@@ -22,14 +22,15 @@
 \usepackage{nicematrix}
 \usepackage{mathtools}
 \usepackage{enumerate}
+\setkeys{Gin}{draft}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{makecell}
+\usepackage{tikz-3dplot}
 \usepackage{tikz}
 \usepackage[version=4]{mhchem}
 \usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
 \usepackage[italian]{babel}
-
 
 % To reset footnote numbering each page
 \usepackage[perpage]{footmisc}
@@ -108,9 +109,9 @@ title=#1
 {0.7em}
 {}
 %\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
-\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{143, 188, 187}}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{111,175,139}}
 \definecolor{myblue}{HTML}{4a7aa4}
-\definecolor{mygreen}{HTML}{8fbcbb}
+\definecolor{mygreen}{HTML}{6FAF8B}
 % Personalizza la formattazione della subsection
 \titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
 
@@ -958,60 +959,97 @@ Una notazione pi\`u moderna, invece, prevede di utilizzare al solito i gusci $K,
     \caption{Energie di legame degli elettroni per Tl, Pb e Bi, in keV.}
 \end{table}
 
-\noindent I picchi ottenuti a seguito di eccitazione dell'atomo tramite macchina radiogena sono strettamente correlati con l'energia inviata (slide 9: mancano i $K_\alpha $ e $K_\beta $ nel piombo perch\'e si sono usati raggi X con $V_\text{max} = 40$ kV.).
-
+\noindent I picchi ottenuti a seguito di eccitazione dell'atomo tramite macchina radiogena sono strettamente correlati con l'energia inviata: nelle immagini di seguito, rappresentati lo spettro del piombo per una macchina radiogena con $V_\text{max} = 40$ kV nell'una e lo spettro di emissione del piombo per un range energetico pi\`u ambio, si vedono mancare le righe $K_\alpha $ e $K_\beta $; questo perch\'e, nella macchina radiogena, si usano raggi X con $V_\text{max} = 40$ kV, corrispondenti a $40$ keV di energia, insufficienti a produrre ionizzazioni nei livelli $K$ del piombo.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{pbsp1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{pbsp2.png}
+	\end{minipage}
+\end{center}
+\begin{definizione}
 La radiazione pu\`o essere corpuscolare o elettromagnetica; inoltre \`e non-ionizzante (NIR) se $E<10$ eV, oppure \`e ionizzante (IR) se $E\ge 10$ eV.
+\end{definizione}
 \subsection{Sezione d'urto}
+
 
 \begin{center}
 	\begin{minipage}
-		{.45\columnwidth}
+		{.4\columnwidth}
 	Si considera una reazione in cui un fascio di particelle vengono diffuse da un certo bersaglio.
-	Sia $F$ il flusso delle particelle incidenti (particelle per unit\`a di tempo e superficie), di energia $E$, e sia $N_s$ il numero medio di particelle diffuse per unit\`a di tempo e angolo solido.
-	Si definiscono, allora, la sezione d'urto differenziale e totale come
+	Sia $F$ il flusso delle particelle incidenti (particelle per unit\`a di tempo e superficie), di energia $E$, e sia $N_S$ il numero medio di particelle diffuse per unit\`a di tempo e angolo solido.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+	\draw[dashed,thick] (3.35,0) -- (4.5,1.25);
+	\draw[dashed,gray] (4.69151,1.08930)--(3.35,0);
+	\draw[dashed,gray] (4.30849,1.41070)--(3.35,0);
+	\draw[thick] (2.5,.15) -- (3.25,.15);
+	\draw[thick] (3.25,.15) .. controls (3.35,.15) .. (4.5,1.25);
+	\draw[very thick, dashed,opacity=0.5] (2.25,1) -- (2.75,.5) -- (2.75,-1) --(2.25,-.5) -- (2.25,1);
+	\draw[dashed] (0,0) -- (5,0);
+	\draw[fill,color=red!60!black] (3.35,0) circle (3pt);
+	\draw[color=black] (3.35,0) circle (3pt);
+	\draw[-stealth, thick] (1,.5) -- (1.75,.5);
+	\draw[-stealth, thick] (1.25,.25) -- (2,.25);
+	\draw[-stealth, thick] (.25,-.25) -- (1,-.25);
+	\draw[-stealth, thick] (1,-.5) -- (1.75,-.5);
+	\draw[-stealth, thick] (.25,.15) -- (1,.15);
+	\draw[thick,rotate around={-40:(4.5,1.25)}] (4.5,1.25) ellipse (.25 and .1);
+	\node at (4.95,1.25) {\footnotesize $\dd \Omega $};
+	\node at (1.5,1) {\footnotesize Flusso $F$};
+	\node[color=red!60!black] at (3.4,-.25) {\tiny Bersaglio};
+	\node at (1.5,1) {\footnotesize Flusso $F$};
+\end{tikzpicture}	
+	\end{minipage}
+\end{center}
+Si definiscono, allora, la sezione d'urto differenziale e totale come
 	\[
-	\frac{d \sigma }{d \Omega }  = \frac{1}{F} \frac{d N_s}{d \Omega }  \hspace{1cm} \sigma _\text{tot} \int \frac{d \sigma }{d \Omega }  \dd \Omega 
+	\frac{d \sigma }{d \Omega }  = \frac{1}{F} \frac{d N_s}{d \Omega }  \hspace{3cm} \sigma _\text{tot} = \int \frac{d \sigma }{d \Omega }  \dd \Omega 
 	\] 
+La sezione d'urto $\sigma $ si misura in Barn: $1 \text{ b} = 10^{-24} \text{ cm}^{2}$.
+Per un fascio che incide ortogonalmente su un bersaglio di spessore $\delta _x$ e area $A$, contenente $N$ nuclei per $cm^3$, il numero di particelle scatterate per unit\`a di tempo e di angolo solido \`e
+\[
+N_S(\Omega ) = F\cdot A\cdot N \cdot \delta_ x \frac{d \sigma }{d \Omega } 
+\] 
+Infatti, il numero di particelle incidenti \`e proporzionale a $F\times A$, mentre il numero di centri di interazione \`e proporzionale a $N \times \delta _x$; la sezione d'urto differenziale, invece, tiene conto della distribuzione degli eventi nell'angolo solido.
+Il numero totale di eventi, quindi, sar\`a dato da
+\[
+N_\text{tot} = F\cdot A\cdot N\cdot \delta _x \cdot \sigma 
+\] 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Si tratteranno separatamente le sezioni d'urto relative alle possibili, diverse, interazioni della radiazione elettromagnetica con la materia; queste sono schematizzate nella figura di seguito.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
 		{.45\columnwidth}
 	\centering
-	\begin{boxenv}[]
-	\centering Creare schema slide 11
-	\end{boxenv}
-	
+	\includegraphics[width=\textwidth]{photon-int.png}
 	\end{minipage}
 \end{center}
-La sezione d'urto $\sigma $ si misura in Barn: $1 \text{ b} = 10^{-24} \text{ cm}^{2}$.
-
-Per un fascio che incide ortogonalmente al bersaglio di spessore $\delta x$ e area $A$, contenente $N$ nuclei per $cm^3$, si ha
-\[
-N_S(\Omega ) = FAN \delta x \frac{d \sigma }{d \Omega } 
-\] 
-che rappresenta il numero di eventi nell'angolo solido $\dd \Omega $.
-Il numero totale di eventi, invece, sar\`a 
-\[
-N_\text{tot} = FAN\delta x \sigma 
-\] 
-La sezione d'urto indica una probabilit\`a ({\color{red}\`e una probabilit\`a?}) che la reazione avvenga.
-
-\begin{boxenv}[]
-Riportare interazione dei fotoni slide 14
-\end{boxenv}
 
 \subsection{Effetto fotoelettrico}
 
 La luce pu\`o estrarre elettroni da un materiale metallico, se possiede un'opportuna energia.
 Questa energia opportuna \`e l'energia di legame $E_B$, coincidente con il lavoro di estrazione dell'elettrone dall'atomo e dipende dalle propriet\`a del metallo e dalla sua superficie.
 
-L'energia cinetica acquisibile dall'elettrone a seguito dell'assorbimento del fotone e della sua successiva emissione \`e
+L'energia cinetica acquisibile dall'elettrone, a seguito dell'assorbimento del fotone e della sua successiva emissione, \`e
 \[
 T = h \nu  - E_b - T_a
 \] 
 dove $T_a$ \`e l'energia di rinculo dell'atomo per conservazione del momento. 
 $T_a$ \`e trascurabile, visto ce $m_e \ll M_a$, quindi $T \approx h \nu  - E_b$.
-
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -1031,55 +1069,64 @@ La sezione d'urto atomica dell'effetto fotoelettrico si pu\`o esprimere come
 \] 
 con $k$ costante, e $n\approx 4$ per $h\nu  = 0.1$ MeV, mentre cresce a $n \approx 4.6$ per $h\nu  = 3$ MeV. 
 Al contrario, $m\approx 3$ a $h\nu  = 0.1$ MeV, mentre decresce a $m=1$ per $h\nu  = 5$ MeV.
-
 Per energie $h\nu  \sim 100$ keV, $\tau  \propto Z^4 / (h\nu )^3$.
-\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{fe-pb-h2o.png}
-	\caption{Sezione d'urto per acqua e piombo.}
-\end{figure}
-
-Si pu\`o studiare la distribuzione angolare dei foto-elettroni emessi per effetto fotoelettrico:
-\begin{figure}[htpb]
+	\includegraphics[width=\columnwidth]{fe-pb-h2o.png}
+	\captionof{figure}{Sezione d'urto per acqua e piombo.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{afe.png}
-\end{figure}
-
-\noindent All'aumentare dell'energia del foto-elettrone, questo viene emesso sempre pi\`u in avanti e ad angoli sempre pi\`u stretti.
+	\includegraphics[width=\columnwidth]{afe.png}
+	\captionof{figure}{Distribuzione angolare dei fotoni emessi per effetto fotoelettrico.}
+	\end{minipage}
+\end{center}
+Dalla distribuzione angolare, si osserva che, all'aumentare dell'energia del foto-elettrone, questo viene emesso sempre pi\`u in avanti e ad angoli sempre pi\`u stretti.
 
 L'interazione fotoelettrica comporta la formazione di una lacuna negli shell atomici; questa verr\`a colmata da elettroni in shell pi\`u estreni, che creano altre lacune.
 Questo crea una cascata di elettroni, fino a raggiungere lo stato di minima energia.
-Tale cascata produce emissione di radiazione di fluorescenza (raggi x caratteristici dell'atomo) oppure elettroni Auger.
+Tale cascata produce emissione di radiazione di fluorescenza (raggi X caratteristici dell'atomo) oppure elettroni Auger.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{augerfe.png}
 \end{figure}
-
 Si vuole studiare la probabilit\`a che si verifichi uno di questi due effetti. 
 Si definisce lo \textit{yield} $\omega_i$ come la probabilit\`a che, a seguito della vacanza generata dall'effetto fotoelettrico, sussegua emissione caratteristica (fluorescenza), per cui $1-  \omega _i$ \`e la probabilit\`a che si verifichi emissione di elettroni Auger.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
 	\centering
-	\includegraphics[width=.8\columnwidth]{yi-fe.png}
+	\includegraphics[width=\columnwidth]{yi-fe.png}
 	\end{minipage}
 	\hfill
 	\begin{minipage}
-		{.45\columnwidth}
+		{.5\columnwidth}
 	\centering
-	\includegraphics[width=.8\columnwidth]{yi-fe2.png}
+	\includegraphics[width=\columnwidth]{yi-fe2.png}
 	\end{minipage}
 \end{center}
-\begin{figure}[htpb]
+Nel caso di materiali con basso $Z$, l'effetto fotoelettrico coinvolge principalmente lo shell K, ma \`e possibile anche che gli elettroni provengano da shell pi\`u esterni.
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{fe-sh.png}
 \end{figure}
-Un'espressione approssimativa per il rapporto tra sezione d'urto fotoelettrica e quella di interazione per shell K \`e 
+
+\noindent Un'espressione approssimativa per il rapporto tra sezione d'urto fotoelettrica e quella di interazione per shell K \`e 
 \[
 \tau  / \tau _k = 1 + 0.01481 \cdot (\ln Z)^2 - 0.00079 \cdot (\ln Z)^3
 \] 
 
 \subsection{Effetto Compton}
+
+\begin{boxenv}[]
+	\centering {\color{red!60!black} Riprendere da qui}
+\end{boxenv}
+
+
 
 \`E uno scattering anelastico in cui un fotone di energia $h\nu $ collide con un elettrone atomico libero e stazionario.
 Sussegue la produzione di un fotone di energia $h\nu '$, emesso con angolo $\phi $ rispetto alla direzione iniziale, e l'energia cinetica acquisita dall'elettrone \`e pari a $h\nu - h\nu '$, che viene deviato di un angolo $\theta $ rispetto alla direzione iniziale del fotone incidente.
@@ -1266,8 +1313,6 @@ con $\tau $ per fotoelettrica, $\sigma _\text{coh}$ Rayleigh e $k$ per coppie.
 \begin{boxenv}[]
 Scrivere da slide 61
 \end{boxenv}
-
-
 
 
 
