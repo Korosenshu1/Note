@@ -22,7 +22,6 @@
 \usepackage{nicematrix}
 \usepackage{mathtools}
 \usepackage{enumerate}
-\setkeys{Gin}{draft}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{makecell}
@@ -1122,35 +1121,69 @@ Nel caso di materiali con basso $Z$, l'effetto fotoelettrico coinvolge principal
 
 \subsection{Effetto Compton}
 
-\begin{boxenv}[]
-	\centering {\color{red!60!black} Riprendere da qui}
-\end{boxenv}
+\`E uno scattering anelastico in cui un fotone di energia $h\nu $ collide con un elettrone atomico.
+Sussegue l'emissione di un fotone di energia $h\nu '$, emesso con angolo $\phi $ rispetto alla direzione del fotone iniziale, e l'energia cinetica acquisita dall'elettrone, il quale viene deviato di un angolo $\theta $ rispetto alla direzione del fotone incidente, \`e pari a $h\nu - h\nu '$.
+\begin{center}
+	\begin{tikzpicture}
+	\draw[
+	    decorate,
+	    decoration={snake, amplitude=.5mm, segment length=5mm},
+	    -{Stealth},
+	    color=yellow!60!brown,
+	    thick
+	] (-3,0) -- (0,0);	
+	\draw[
+	    decorate,
+	    decoration={snake, amplitude=.5mm, segment length=5mm},
+	    -{Stealth},
+	    color=yellow!30!brown,
+	    thick
+	    ] (0,0) -- (4,-2);	
 
+    	\draw[dashed,thick,-stealth] (0,0) -- (4,0);
 
+	\draw[-stealth, thick] (0,0) -- (4,1);
 
-\`E uno scattering anelastico in cui un fotone di energia $h\nu $ collide con un elettrone atomico libero e stazionario.
-Sussegue la produzione di un fotone di energia $h\nu '$, emesso con angolo $\phi $ rispetto alla direzione iniziale, e l'energia cinetica acquisita dall'elettrone \`e pari a $h\nu - h\nu '$, che viene deviato di un angolo $\theta $ rispetto alla direzione iniziale del fotone incidente.
+	\draw[fill, color=cyan!60!black] (4,1) circle (3pt) node[above] {\footnotesize $\ce{e-}$};
+\draw[fill, color=cyan!60!black] (0,0) circle (3pt) node[above] {\footnotesize $\ce{e-}$};
 
-Imponendo la conservazione dell'energia e della quantit\`a di moto, trattando il fotone come particella, si ricava che:
+	\coordinate (O) at (0,0);
+	\coordinate (A) at (4,1);
+	\coordinate (B) at (4,-2);
+	\coordinate (C) at (4,0);
+
+	\pic[
+	     draw,
+	     "$\theta$",
+	     angle radius=15mm,
+	     angle eccentricity=1.3
+	] {angle=C--O--A};
+	\pic[
+	     draw,
+	     "$\phi$",
+	     angle radius=10mm,
+	     angle eccentricity=1.3
+	] {angle=B--O--C};
+	\end{tikzpicture}
+\end{center}
+Imponendo la conservazione dell'energia e della quantit\`a di moto, trattando il fotone come particella e in approssimazione di elettrone libero e stazionario\footnote{Cio\`e si assume di essere nel riferimento di quiete dell'elettrone e che si trascura l'energia di legame di quest'ultimo con l'atomo a cui \`e legato.}, si ricava che
 \[
 \begin{cases}
 	h\nu  ' + T = h\nu \\
-	p_e \sin \theta  - \frac{h\nu '}{c} \sin\phi  = 0 \\
-	p_e \cos \theta  + \frac{h\nu '}{c} \cos \phi  = \frac{h\nu }{c}
+	\displaystyle p_e \sin \theta  - \frac{h\nu '}{c} \sin\phi  = 0 \\
+	\displaystyle p_e \cos \theta  + \frac{h\nu '}{c} \cos \phi  = \frac{h\nu }{c}
 \end{cases}
 \] 
-Visto che $pc = \sqrt{T^2 + 2 m_0 c^2 T} $, si ottiene che 
+con $\tan\theta = \left[ \left(1 + \frac{h\nu }{m_0c^2}\right) \tan\phi  / 2 \right] ^{-1}$.
+Visto, poi, che $pc = \sqrt{T^2 + 2 m_0 c^2 T} $, si ottiene che 
 \[
-\begin{split}
-	&h\nu  ' = \frac{h\nu }{ 1 + \frac{h\nu }{m_0c^2} (1 - cos \phi )}\\
-	& T = \frac{h\nu }{m_0 c^2} \frac{h\nu (1- cos \phi  ) }{ 1+ \frac{h\nu }{m_0c^2 }(1-\cos \phi )}
-\end{split}
+	h\nu  ' = \frac{h\nu }{ 1 + \frac{h\nu }{m_0c^2} (1 - \cos \phi )}\hspace{3cm} T = \frac{h\nu }{m_0 c^2} \frac{h\nu (1- \cos \phi  ) }{ 1+ \frac{h\nu }{m_0c^2 }(1-\cos \phi )}
 \] 
 L'energia minima del fotone emesso si ha quando l'angolo di scattering del fotone \`e $\phi =180 ^\circ$ ed \`e pari a 
 \[
 h\nu '_\text{min }= \frac{h\nu}{1 + 2 \frac{h\nu }{m_0c^2}}
 \] 
-Corrisponde al fotone \textit{back-scattered}.
+condizione che corrisponde al fotone \textit{back-scattered}, cio\`e respinto indietro.
 \begin{itemize}
 	\item Per $\phi  = 180 ^\circ$ e $h\nu  \gg m_0 c^2$, si ha 
 		\[
@@ -1164,7 +1197,7 @@ Di seguito, si mettono in rapporto energia del fotone secondario e quella del pr
 	\includegraphics[width=0.8\textwidth]{co-12.png}
 \end{figure}
 
-\noindent Visto che $T = h\nu  - h\nu '$, se decresce l'energia del fotone incidente, l'energia trasferita all'elettrone decresce di conseguenza.
+\noindent Visto che $T = h\nu  - h\nu '$, se decresce l'energia del fotone incidente, l'energia trasferita all'elettrone decresce di conseguenza, andamento evidenziato in verde nell'immagine sopra.
 
 L'energia minima acquisibile dall'elettrone, invece, \`e per $\phi  = 0^\circ$, per cui si ha $T = 0$, visto che 
 \[
@@ -1173,64 +1206,89 @@ L'energia minima acquisibile dall'elettrone, invece, \`e per $\phi  = 0^\circ$, 
 La massima acquisibile, invece, si ha per $\phi =180^\circ$, per cui l'elettrone viene emesso sulla stessa direzione di quello incidente.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{co-e.png}
+	\includegraphics[width=\textwidth]{co-e.png}
 \end{figure}
-
-\noindent \`E importante comprendere come viene distribuita l'energia tra fotone ed elettrone, per esempio quando si devono sfruttare fenomeni del genere in radioterapia.
-La distribuzione energetica degli elettroni nell'effetto Compton si usa la sezione d'urto di Klein-Nishina:
-\begin{figure}[htpb]
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\`E importante comprendere come viene distribuita l'energia tra fotone ed elettrone, per esempio quando si devono sfruttare fenomeni del genere in radioterapia.
+Nel grafico, sono riportate diverse distribuzioni dell'energia di rinculo dell'elettrone al variare dell'energia del fotone incidente.
+In corrispondenza di $x=0.331$, per esempio, si ha la massima energia acquisibile dall'elettrone-Compton con fotone incidente di $0.5$ MeV; il valore massimo \`e detto \textit{Compton edge}.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{co-kn.png}
-\end{figure}
-
-\noindent In corrispondenza di $x=0.331$, si ha la massima energia acquisibile dall'elettrone-Compton; il valore massimo \`e detto \textit{Compton edge}.
-
+	\includegraphics[width=\textwidth]{co-kn.png}
+	\end{minipage}
+\end{center}
 L'espressione della sezione d'urto Compton prende il nome da coloro che ne hanno ricavato la forma, cio\`e Klein e Nishina. Questa \`e 
 \begin{equation}
 	\frac{d _e \sigma _{KN}(\varphi )}{d \Omega }  = \frac{r_0^2}{2} \left(\frac{h\nu '}{h\nu }\right) ^2 \left[ \frac{h\nu '}{h\nu } + \frac{h\nu }{h\nu '} - \sin^2 \varphi  \right] 
 \end{equation}
-Per basse energie ($h\nu \to $), si vede trova la sezione d'urto Thomson:
+Per basse energie ($h\nu \to $), si ritrova la sezione d'urto Thomson:
 \[
 \frac{d _e \sigma _T(\varphi )}{d \Omega } = \frac{r_0^2}{2} (1 + \cos^2 \varphi ) \implies \sigma _T = \frac{8\pi}{3} r_0^2 \approx 0.665 \text{ b}
 \] 
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{co-pol.png}
-\end{figure}
 
 
 \noindent L'espressione della Klein-Nishina presuppone elettroni liberi e fermi, quindi non dipende da $Z$: \`e una sezione d'urto elettronica $_e\sigma _C \propto Z^0$.
 La sezione d'urto atomica Compton, invece, cresce linearmente con $Z$: $_a\sigma _C \propto Z$.
 
-La presenza di effetto Compton richiede l'uso di apposite griglie anti-scattering nell'imaging RX per non degradare la qualit\`a dell'immagine; in radioterapia, invece, l'effetto ha poche conseguenze, dato che il fotone scatterato \`e assimilabile al primario.
-\begin{figure}[htpb]
+La presenza di effetto Compton richiede l'uso di apposite griglie anti-scattering nell'imaging RX per non degradare la qualit\`a dell'immagine; in radioterapia, invece, l'effetto ha poche conseguenze, dato che il fotone scatterato \`e assimilabile al primario, visti i range energetici tipici e la seguente distribuzione angolare al variare dell'energia del fotone incidente.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{co-gr.png}
-\end{figure}
+	\includegraphics[width=\columnwidth]{co-pol.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{co-gr.png}
+	\end{minipage}
+\end{center}
 
 \subsection{Scattering Rayleigh}
 
 Lo scattering coerente Rayleigh \`e l'effetto di scattering di un fotone da elettroni atomici, senza che l'atomo venga eccitato o ionizzato e senza che il fotone perda energia.
-\begin{figure}[htpb]
+Per questo, la reazione che corrisponde a questo processo \`e $\gamma + A \to \gamma' + A$, con $A$ atomo e $E_\gamma = E_{\gamma ' }$, ma $\mathbf{k} _\gamma \neq \mathbf{k} _{\gamma'}$.
+La sezione d'urto differenziale del processo \`e data dalla seguente espressione:
+\[
+\frac{d _a\sigma _R}{d \Omega }  = \frac{d _e\sigma _\text{Th}}{d \Omega } F(x,Z)^2 = \frac{r_e^2}{2}\left(1 + \cos^2 \theta \right)  F(x,Z)^2
+\] 
+dove $F$ \`e un fattore di forma atomico.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	L'angolo di scattering segue l'andamento mostrato in figura per due diversi modelli; si osserva che \`e pi\`u rilevante per fotoni di energia minore e per materiali con alto $Z$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{ray.png}
-\end{figure}
-
-\subsection{Interazioni dei fotoni}
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{phi.png}
-\end{figure}
+	\includegraphics[width=\textwidth]{ray.png}
+	\end{minipage}
+\end{center}
+\begin{boxenv}[]
+	{\color{red!60!black} Terminare, aggiungendo informazioni sul fattore di forma.}
+\end{boxenv}
 
 \subsection{Produzione di coppie}
 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 L'assorbimento di un fotone in un materiale pu\`o portare alla produzione di una coppia $(e^+, e^-)$ di particelle; per conservazione di energia e quantit\`a di moto non permette che questo effetto avvenga nel vuoto, ma \`e richiesta la vicinanza di una particella: un nucleo atomico o, pi\`u raramente, un elettrone.
-\begin{figure}[htpb]
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{coppie.png}
-\end{figure}
-
+	\includegraphics[width=\textwidth]{coppie.png}
+	\end{minipage}
+\end{center}
 L'energia minima necessaria perch\'e il fotone possa produrre una coppia \`e 
 \begin{equation}
 	h\nu  _\text{min} = 2 m_0 c^2 \left(1 + \frac{m_0 }{m_X}\right) 
