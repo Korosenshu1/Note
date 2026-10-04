@@ -1258,11 +1258,11 @@ La sezione d'urto differenziale del processo \`e data dalla seguente espressione
 \[
 \frac{d _a\sigma _R}{d \Omega }  = \frac{d _e\sigma _\text{Th}}{d \Omega } F(x,Z)^2 = \frac{r_e^2}{2}\left(1 + \cos^2 \theta \right)  F(x,Z)^2
 \] 
-dove $F$ \`e un fattore di forma atomico.
+dove $F(x,Z)$ \`e un fattore di forma atomico, dipendente dalla modellazione elettronica dell'atomo\footnote{A seconda del modello teorico utilizzato, pu\`o assumere un'espressione diversa. Per esempio, fattori di forma \textit{non-relativistici}, oppure \textit{relativistici}, o anche \textit{relativistici modificati}.}, mentre $\theta $ \`e l'angolo tra la direzione iniziale del fotone incidente e la direzione finale del fotone scatterato.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
-	L'angolo di scattering segue l'andamento mostrato in figura per due diversi modelli; si osserva che \`e pi\`u rilevante per fotoni di energia minore e per materiali con alto $Z$.
+	L'angolo di scattering segue l'andamento mostrato in figura per due diversi modelli: si osserva che \`e pi\`u rilevante per fotoni di energia minore e per materiali con alto $Z$, in quanto il fotone incidente pu\`o essere scatterato in una direzione ed essere mancato dal rivelatore verso cui era diretto. 
 	\end{minipage}
 	\hfill
 	\begin{minipage}
@@ -1271,30 +1271,28 @@ dove $F$ \`e un fattore di forma atomico.
 	\includegraphics[width=\textwidth]{ray.png}
 	\end{minipage}
 \end{center}
-\begin{boxenv}[]
-	{\color{red!60!black} Terminare, aggiungendo informazioni sul fattore di forma.}
-\end{boxenv}
-
+La rilevanza dello scattering Rayleigh non riguarda l'energia depositata, in quanto idealmente si ha $E_\gamma = E_{\gamma'}$, quanto pi\`u la deviazione di un fascio di radiazione elettromagnetica: che si studino fenomeni di attenuazione di raggi X, trasporto della radiazione in tessuti e materiali, formazione di immagini eccetera, \`e necessario comprendere come la radiazione viene spostata dalla direzione originaria per effetto di questo fenomeno.
 \subsection{Produzione di coppie}
 
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
-L'assorbimento di un fotone in un materiale pu\`o portare alla produzione di una coppia $(e^+, e^-)$ di particelle; per conservazione di energia e quantit\`a di moto non permette che questo effetto avvenga nel vuoto, ma \`e richiesta la vicinanza di una particella: un nucleo atomico o, pi\`u raramente, un elettrone.
+L'assorbimento di un fotone in un materiale pu\`o portare alla produzione di una coppia $(e^+, e^-)$ di particelle. 
+Per conservazione di energia e quantit\`a di moto, questo processo non pu\`o avvenire nel vuoto, ma \`e richiesta la vicinanza di una particella: un nucleo atomico o, pi\`u raramente, un elettrone.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
 		{.45\columnwidth}
 	\centering
-	\includegraphics[width=\textwidth]{coppie.png}
+	\includegraphics[width=\columnwidth]{coppie.png}
 	\end{minipage}
 \end{center}
 L'energia minima necessaria perch\'e il fotone possa produrre una coppia \`e 
 \begin{equation}
 	h\nu  _\text{min} = 2 m_0 c^2 \left(1 + \frac{m_0 }{m_X}\right) 
 \end{equation}
-Se $X$ \`e un nucleo atomico, allora $h\nu _\text{min} = 2m_0c^2$; nel caso di $X$ elettrone, invece, $h\nu _\text{min} = 4 m_0 c^2$.
-In quest'ultimo caso, si parla di \textit{terna}, visto che anche l'elettrone con cui \`e avvenuta l'interazione viene emesso.
+Se $X$ \`e un nucleo atomico, allora $h\nu _\text{min} \simeq 2m_0c^2$; nel caso di $X$ elettrone, invece, $h\nu _\text{min} = 4 m_0 c^2$.
+In quest'ultimo caso, si parla di \textit{terna}, visto che anche l'elettrone con cui \`e avvenuta l'interazione viene scatterato.
 
 Per produzione in presenza di nucleo, l'energia acquisita dalle due particelle emesse \`e 
 \[
@@ -1304,38 +1302,41 @@ Non avranno necessariamente la stessa energia, ma, mediamente, si avr\`a
 \[
 \overline{E} = \frac{h\nu  - 1.022 \text{ MeV}}{2}
 \] 
-Si riporta la sezione d'urto differenziale in funzione dell'angolo di emissione, assumendo che l'energia sia egualmente ripartita nella coppia, per due diverse energie del fotone incidente:
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Si riporta la sezione d'urto differenziale in funzione dell'angolo di emissione, assumendo che l'energia sia egualmente ripartita nella coppia, per due diverse energie del fotone incidente e considerando $\overline{\theta } \approx m_0c^2 / \overline{E}$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{pc-diff.png}
+	\end{minipage}
+\end{center}
+Dalla teoria, si sa che la sezione d'urto per la produzione di coppia in campo nucleare \`e $\kappa _n = \alpha  r_0^2 Z^2 P(\varepsilon ,Z)$ con $\alpha  = 1 / 137$ costante di struttura fine, $r_0$ raggio classico dell'elettrone, $Z$ numero atomico del nucleo e $P(\varepsilon ,Z)$ funzione dell'energia del fotone incidente e di $Z$.
+Analogamente, la sezione d'urto per produzione di coppia in campo elettronico \`e $\kappa _e = \alpha r_0^2 Z F(\varepsilon )$ dove $F(\varepsilon )$ \`e funzione della sola energia del fotone incidente.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{pc-diff.png}
+	\includegraphics[width=0.6\columnwidth]{pc-cpb.png}
 \end{figure}
 
-\noindent Si ha che $\overline{\theta } \approx m_0c^2 / \overline{E}$.
-\begin{boxenv}[]
-Scrivere slide 51
-\end{boxenv}
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{pc-cpb.png}
-\end{figure}
-
-\begin{boxenv}[]
-Scrivere slide 53
-\end{boxenv}
+\noindent Visto che la sezione d'urto della produzione di coppie in campo nucleare \`e sensibilmente pi\`u grande di quella in campo elettronico, generalmente si riporta una sezione d'urto generale relativa alla produzione di coppie, $\kappa $, che \`e data da quella in campo nucleare, corretta come segue:
+\[
+\kappa  = \kappa _n \left(1 + \frac{1}{\eta Z}\right)\, , \, \text{ con } \, \frac{1}{\eta Z} = 0 \, \text{ se }\, h\nu  < 4 m_0c^2
+\] 
 
 \subsubsection{Annichilazione del positrone}
-\begin{boxenv}[]
-Scrivere slide 54
-\end{boxenv}
 
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{ap.png}
-\end{figure}
+A seguito della produzione di coppie, segue l'annichilazione del positrone con un elettrone e la successiva emissione di fotoni.
+In questo processo, si pu\`o avere l'emissione di due fotoni di annichilazione o, pi\`u raramente, la produzione di tre fotoni, o altre particelle; il pi\`u comune, in ogni caso, \`e quello in cui vengono prodotti due fotoni.
 
+Il positrone emesso dalla produzione di coppie termalizza e annichila con un elettrone di valenza.
+In questa condizione, la quantit\`a di moto del positrone \`e trascurabile: i due fotoni verranno emessi ciascuno con un'energia di circa $511$ keV (la differenza in energia dei due fotoni \`e circa $10$ eV) e ad un angolo di circa $180^\circ$.
+Questo fenomeno \`e alla base del funzionamento della PET.
 
 \subsection{Reazioni fotonucleari}
+
 Per un fotone assorbito dal nucleo, la reazione pi\`u probabile \`e l'emissione id un singolo neutrone; con meno probabilit\`a, sono possibili anche l'emissione di particelle cariche, raggi $\gamma$, pi\`u neutroni e frammenti di fissione.
 
 La sezione d'urto per questo processo dipende in modo molto complicato da $Z$, $A$ e abbondanza isotopica di un campione di un dato elemento; questa sezione d'urto ha un'energia di soglia e producono risonanze pronunciate.

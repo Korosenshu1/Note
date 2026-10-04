@@ -709,6 +709,9 @@ INPUT ./co-gr.png
 INPUT ./co-gr.png
 INPUT ./co-gr.png
 INPUT ./co-gr.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmsmfbx9.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmsmfbx8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Italic-tlf-t1.tfm
 INPUT ./ray.png
 INPUT ./ray.png
 INPUT ./ray.png
@@ -719,6 +722,8 @@ INPUT ./coppie.png
 INPUT ./coppie.png
 INPUT ./coppie.png
 INPUT ./coppie.png
+INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-Italic-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Italic-tlf-t1--base.tfm
 INPUT ./pc-diff.png
 INPUT ./pc-diff.png
 INPUT ./pc-diff.png
@@ -729,11 +734,6 @@ INPUT ./pc-cpb.png
 INPUT ./pc-cpb.png
 INPUT ./pc-cpb.png
 INPUT ./pc-cpb.png
-INPUT ./ap.png
-INPUT ./ap.png
-INPUT ./ap.png
-INPUT ./ap.png
-INPUT ./ap.png
 INPUT ./rf1.png
 INPUT ./rf1.png
 INPUT ./rf1.png

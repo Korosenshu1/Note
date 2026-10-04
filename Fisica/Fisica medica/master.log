@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  3 OCT 2026 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  4 OCT 2026 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1557,52 +1557,55 @@ File: co-gr.png Graphic file (type png)
 Package pdftex.def Info: co-gr.png  used on input line 1249.
 (pdftex.def)             Requested size: 208.41644pt x 114.7741pt.
  [24 <./co-e.png> <./co-kn.png>]
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 1261.
+
 Underfull \hbox (badness 2600) in paragraph at lines 1265--1266
 []\T1/plxSans-TLF/m/n/10.95 L'angolo di scat-te-ring se-gue l'an-da-
  []
 
-<ray.png, id=292, 476.78125pt x 378.41376pt>
+<ray.png, id=293, 476.78125pt x 378.41376pt>
 File: ray.png Graphic file (type png)
 <use ray.png>
 Package pdftex.def Info: ray.png  used on input line 1271.
 (pdftex.def)             Requested size: 187.57352pt x 148.87416pt.
-<coppie.png, id=293, 606.265pt x 366.36874pt>
+
+Overfull \hbox (0.69011pt too wide) in paragraph at lines 1274--1275
+\T1/plxSans-TLF/m/n/10.95 La ri-le-van-za del-lo scat-te-ring Ray-lei-gh non ri-guar-da l'e-ner-gia de-po-si-ta-ta, in quan-to ideal-
+ []
+
+<coppie.png, id=294, 606.265pt x 366.36874pt>
 File: coppie.png Graphic file (type png)
 <use coppie.png>
-Package pdftex.def Info: coppie.png  used on input line 1289.
+Package pdftex.def Info: coppie.png  used on input line 1287.
 (pdftex.def)             Requested size: 187.57352pt x 113.34952pt.
-[25 <./co-pol.png> <./co-gr.png> <./ray.png> <./coppie.png>]
-<pc-diff.png, id=303, 520.94624pt x 392.46625pt>
+[25 <./co-pol.png> <./co-gr.png> <./ray.png>]
+<pc-diff.png, id=304, 520.94624pt x 392.46625pt>
 File: pc-diff.png Graphic file (type png)
 <use pc-diff.png>
-Package pdftex.def Info: pc-diff.png  used on input line 1310.
-(pdftex.def)             Requested size: 333.46758pt x 251.22543pt.
-<pc-cpb.png, id=304, 790.955pt x 682.55pt>
+Package pdftex.def Info: pc-diff.png  used on input line 1314.
+(pdftex.def)             Requested size: 208.41644pt x 157.01364pt.
+<pc-cpb.png, id=305, 811.03pt x 564.1075pt>
 File: pc-cpb.png Graphic file (type png)
 <use pc-cpb.png>
-Package pdftex.def Info: pc-cpb.png  used on input line 1320.
-(pdftex.def)             Requested size: 333.46758pt x 287.7626pt.
- [26 <./pc-diff.png>]
-<ap.png, id=312, 959.585pt x 379.4175pt>
-File: ap.png Graphic file (type png)
-<use ap.png>
-Package pdftex.def Info: ap.png  used on input line 1334.
-(pdftex.def)             Requested size: 333.46758pt x 131.85443pt.
- [27 <./pc-cpb.png> <./ap.png>]
-<rf1.png, id=321, 927.465pt x 646.415pt>
+Package pdftex.def Info: pc-cpb.png  used on input line 1321.
+(pdftex.def)             Requested size: 250.10226pt x 173.9591pt.
+ [26 <./coppie.png> <./pc-diff.png>]
+<rf1.png, id=313, 927.465pt x 646.415pt>
 File: rf1.png Graphic file (type png)
 <use rf1.png>
-Package pdftex.def Info: rf1.png  used on input line 1346.
+Package pdftex.def Info: rf1.png  used on input line 1347.
 (pdftex.def)             Requested size: 150.05937pt x 104.58253pt.
-<rf2.png, id=322, 924.45375pt x 715.67375pt>
+<rf2.png, id=314, 924.45375pt x 715.67375pt>
 File: rf2.png Graphic file (type png)
 <use rf2.png>
-Package pdftex.def Info: rf2.png  used on input line 1352.
+Package pdftex.def Info: rf2.png  used on input line 1353.
 (pdftex.def)             Requested size: 150.05937pt x 116.17001pt.
-<sd-cpb.png, id=323, 964.60374pt x 698.61pt>
+ [27 <./pc-cpb.png>]
+<sd-cpb.png, id=321, 964.60374pt x 698.61pt>
 File: sd-cpb.png Graphic file (type png)
 <use sd-cpb.png>
-Package pdftex.def Info: sd-cpb.png  used on input line 1367.
+Package pdftex.def Info: sd-cpb.png  used on input line 1368.
 (pdftex.def)             Requested size: 333.46758pt x 241.51106pt.
  [28 <./rf1.png> <./rf2.png> <./sd-cpb.png>] (./master.aux)
  ***********
@@ -1615,13 +1618,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 48333 strings out of 469504
- 1136245 string characters out of 5470379
+ 48326 strings out of 469504
+ 1136156 string characters out of 5470379
  1802388 words of memory out of 5000000
- 76095 multiletter control sequences out of 15000+600000
- 838702 words of font info for 165 fonts, out of 8000000 for 9000
+ 76087 multiletter control sequences out of 15000+600000
+ 853626 words of font info for 169 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,29n,121p,11245b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
 
@@ -1638,10 +1644,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
-Output written on master.pdf (28 pages, 4353582 bytes).
+Output written on master.pdf (28 pages, 4214491 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
- 115 named destinations out of 1000 (max. 500000)
- 406 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 416 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
