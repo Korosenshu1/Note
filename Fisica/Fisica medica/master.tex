@@ -1337,24 +1337,40 @@ Questo fenomeno \`e alla base del funzionamento della PET.
 
 \subsection{Reazioni fotonucleari}
 
-Per un fotone assorbito dal nucleo, la reazione pi\`u probabile \`e l'emissione id un singolo neutrone; con meno probabilit\`a, sono possibili anche l'emissione di particelle cariche, raggi $\gamma$, pi\`u neutroni e frammenti di fissione.
+Queste reazioni coinvolgono l'assorbimento di un fotone da parte di un nucleo, con conseguente emissione.
+Il caso pi\`u probabile corrisponde all'emissione di un singolo neutrone, ma, in probabilit\`a minore, restano possibili le emissioni di particelle cariche, raggi $\gamma$, diversi neutroni e frammenti di fissione.
 
 La sezione d'urto per questo processo dipende in modo molto complicato da $Z$, $A$ e abbondanza isotopica di un campione di un dato elemento; questa sezione d'urto ha un'energia di soglia e producono risonanze pronunciate.
+\begin{table}[h!]
+	\centering
+\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{c c c c c}
+	\hline 
+	Assorbitore & Soglia per $(\gamma,n)$ [MeV] & Soglia per $(\gamma,p)$ [MeV] & Picco di risonanza [MeV] & Percentuale di $(\gamma,n)$ sul totale\\
+	\hline
+	$\ce{^{9}Be}$ & $1.67$ & -- & -- & --\\
+	$\ce{^{12}C}$ & $18.7$ & $15.9$ & $23.0$ & $5.9$\\
+	$\ce{^{16}O}$ & $15.7$ & $12.1$ & -- & --\\
+	$\ce{^{27}Al}$ & $13.1$ & $8.3$ & $21.5$ & $3.9$\\
+	$\ce{^{63}Cu}$ & $10.8$ & $6.1$ & $17.0$ & $2.0$\\
+	$\ce{^{206}Pb}$ & $8.1$ & $7.3$ & $13.6$ & $2.7$\\
+	\hline
+	\end{tabular}
+}
+\end{table}
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
-	\centering
-	\includegraphics[width=.8\columnwidth]{rf1.png}
+		Vista l'elevata energia di soglia, questi processi hanno poca importanza dal punto di vista della dose primaria ricevuta dal paziente; hanno particolare rilevanza, invece, in radioterapia con fasci di fotoni ad alta energia, dove la produzione di neutroni pu\`o avvenire nella testata del linac, o nel paziente.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
 		{.45\columnwidth}
 	\centering
-	\includegraphics[width=.8\columnwidth]{rf2.png}
+	\includegraphics[width=\columnwidth]{rf.png}
 	\end{minipage}
 \end{center}
 
-\noindent Queste razioni hanno importanza dal punto di vista dosimetrico e nella progettazione di schermature di sorgenti intense di fotoni o elettroni a causa delle reazioni $(\gamma,n)$; incidono poco nel calcolo della dose al paziente.
 
 \subsection{Effetti complessivi}
 
@@ -1362,18 +1378,61 @@ Complessivamente, la sezione d'urto sar\`a composta da
 \[
 \sigma _\text{tot} = \tau  + \sigma _\text{coh} + \sigma _\text{compton} + k
 \] 
-con $\tau $ per fotoelettrica, $\sigma _\text{coh}$ Rayleigh e $k$ per coppie.
-\begin{figure}[htpb]
+con $\tau $ per fotoelettrica, $\sigma _\text{coh}$ per Rayleigh e $\kappa $ per coppie.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 	\centering
-	\includegraphics[width=0.8\textwidth]{sd-cpb.png}
-\end{figure}
-
+	\includegraphics[width=\columnwidth]{s-c.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{s-pb.png}
+	\end{minipage}
+\end{center}
+Si osserva che: 
+\begin{itemize}
+	\item l'effetto fotoelettrico \`e rilevante per energie $<50$ keV nel carbonio e $<800$ keV nel piombo;
+	\item lo scattering Compton decresce con l'energia dei fotoni ed \`e predominante in un ampio range energetico, pari a $100\text{ keV} \div 20\text{ MeV}$ nel carbonio e $800 \text{ keV} \div 5 $ MeV nel piombo;
+	\item al di sopra dell'energia di soglia, la produzione di coppia cresce rapidamente, fino a diventare il processo dominante per energie superiori a $10$ MeV.
+\end{itemize}
 \subsection{Attenuazione macroscopica dei fotoni} 
-\begin{boxenv}[]
-Scrivere da slide 61
-\end{boxenv}
-
-
-
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Inserendo un materiale omogeneo di spessore $x$ tra sorgente e rivelatore, lo spessore di questo materiale ridurr\`a l'intensit\`a del fascio (assunto monocromatico) da $I_0$ a $I(x)$.
+		Uno spessore $\dd x'$ ridurr\`a l'intensit\`a di $\dd I$, con 
+		\[
+		\dd I = - I \mu  \dd x'\implies I(x) = I_0 e^{-\mu x}
+		\] 
+		dove $\mu $ \`e il \textit{coefficiente di attenuazione lineare}. 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{atf.png}
+	\end{minipage}
+\end{center}
+Questo coefficiente ha le dimensioni di $\mathrm{L} ^{-1}$ ed \`e legato alla sezione d'urto tramite la relazione $\mu  = N_V \sigma _\text{tot}$, con $N_V = \mathcal{N} _A \rho  / M$.	
+Si definisce anche il \textit{coefficiente di attenuazione massico} $\mu  / \rho $, misurato in $\text{cm}^2 \text{g}^{-1}$, che \`e legato alla sezione d'urto tramite la relazione 
+\[
+\frac{\mu}{\rho } = \sigma _{\text{tot}} \frac{\mathcal{N} _A}{M}
+\] 
+Essendo indipendente dalla densit\`a, risulta particolarmente comodo da utilizzare e da tabulare.
+Il coefficiente di attenuazione massico, nel caso di misture e composti, viene approssimato come la somma pesata dei coefficienti di attenuazione massicci dei suoi componenti; indicando con $w_i$ la percentuale in peso del singolo elemento della mistura/composto, si ha
+\begin{equation}
+	\frac{\mu }{\rho } = \sum_{i}^{} w_i \frac{\mu _i}{\rho _i}
+\end{equation}
+Per esempio, nel caso dell'acqua si scriver\`a che
+\[
+	\left(\frac{\mu }{\rho }\right) _{\ce{H_2O}} = \frac{2}{18} \left(\frac{\mu }{\rho }\right) _\text{H} + \frac{16}{18} \left(\frac{\mu }{\rho }\right) _\text{O}
+\] 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.73\columnwidth]{matt-coeff.png}
+\end{figure}
 \end{document}
 
