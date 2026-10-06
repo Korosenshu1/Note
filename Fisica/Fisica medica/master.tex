@@ -1434,5 +1434,82 @@ Per esempio, nel caso dell'acqua si scriver\`a che
 	\centering
 	\includegraphics[width=0.73\columnwidth]{matt-coeff.png}
 \end{figure}
+
+\noindent Si definisce \textbf{cammino libero medio} come la distanza media percorsa dal fotone prima di interagire; per fotoni mono-energetici, l'espressione \`e data da 
+\begin{equation}
+	\overline{x} = \int _0^{+\infty}x e^{-\mu x} \dd x = \frac{1}{\mu }
+\end{equation}
+per cui si ottiene che il cammino libero medio \`e uguale allo spessore dell'assorbitore necessario per ridurre i fotoni ad una frazione pari a $1 / e=37\%$ rispetto al numero iniziale.
+Si parla, poi, di \textbf{spessore emivalente} (SEV) in riferimento allo spessore, di un dato materiale, necessario perch\'e l'intensit\`a iniziale di un fascio venga dimezzato: $I(x_{1 / 2}) = I_0 / 2$.
+Similmente ai tempi di decadimento, $x_{1 / 2} = \ln 2 / \mu $.
+
+Ora si definiscono il \textbf{coefficiente massico di trasferimento d'energia} $\mu _\text{tr}/\rho $ e \textbf{coefficiente massico di assorbimento d'energia} $\mu _\text{en}/\rho $. 
+In dosimetria, si \`e interessati a conoscere quanta energia viene assorbita dal mezzo attraversato dalla radiazione; per raggiungere questo obiettivo, \`e necessario conoscere prima quanta energia, per esempio, \`e stata trasferita agli elettroni secondari prodotti da una certa reazione e, poi, quanta di questa energia viene assorbita dal mezzo.
+
+Nel caso del coefficiente di trasferimento, si scrive che
+\begin{equation}
+	\frac{\mu _\text{tr}}{\rho }=\frac{\mu }{\rho } \frac{\langle T \rangle}{h\nu } 
+\end{equation}
+dove $\langle T \rangle$ rappresenta il valore di aspettazione dell'energia convertita in energia cinetica degli elettroni secondari nelle interazioni.
+Nel caso di pi\`u interazioni:
+\begin{equation}
+	\frac{\mu _\text{tr}}{\rho }= \sum_{i}^{} f_i \frac{\mu _i}{\rho }
+\end{equation}
+dove, a seconda dell'interazione, si ha
+\[
+		f_\text{pc} = 1 - \frac{\delta}{h \nu } \hspace{1cm} f_\text{incoh} = 1 - \frac{\langle h\nu ' \rangle + \delta }{h\nu } \hspace{1cm} f_\text{coh} = 0 \hspace{1cm} f_\text{pp} 1 - \frac{2m_0c^2}{h\nu }
+\] 
+dove $\delta $ \`e l'energia media dei raggi X caratteristici emessi e $\langle h\nu ' \rangle$ \`e l'energia media dei fotoni scatterati.
+Nella fase di rallentamento, si deve tenere anche conto del fatto che gli elettroni possono perdere energia per \textit{bremsstrahlung}.
+
+Quanto al coefficiente di assorbimento, questo \`e definito come
+\begin{equation}
+	\frac{\mu _\text{en}}{\rho } = \sum_{i}^{} (1-g_i) f_i \frac{\mu _i}{\rho } = (1-g) \frac{\mu _\text{tr}}{\rho }
+\end{equation}
+dove $g$ rappresenta la frazione di energia persa in processi radiativi. Tipicamente, $g$ \`e maggiore per elementi pi\`u pesanti e cresce con l'energia.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{cmass1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{cmass2.png}
+	\end{minipage}
+	\captionof{figure}{A sinistra, si confrontano i coefficienti di assorbimento e trasferimento per acqua e rame, mentre a destra si riportano i coefficienti massico di attenuazione lineare (linea tratteggiata), di trasferimento (linea molto tratteggiata) e di assorbimento (linea continua) per il piombo.}
+\end{center}
+Si osserva come i coefficienti di trasferimento e assorbimento coincidano per energie pi\`u basse, per via del fatto che vi \`e prevalenza di assorbimento per effetto fotoelettrico.
+
+
+\newpage
+\section{Interazione radiazione corpuscolare -- materia}
+
+Nei processi di interazione, spesso si caratterizzano le particelle tramite i parametri $\beta = v / c$ e $\gamma = 1 / \sqrt{1-\beta ^2} $.
+Questo \`e possibile perch\'e $E_\text{tot}^2 = (pc)^2 + (m_0c^2)^2$, da cui 
+\[
+	\beta  = \frac{v}{c} = \frac{pc}{E_\text{kin} + m_0c^2} = \frac{\sqrt{E_\text{kin}^2 + 2 E_\text{kin} m_0c^2} }{E_\text{kin} + m_0c^2}
+\] 
+Per esempio, un protone da $62$ MeV ha un $\beta  = 0.35$ e un $\gamma = 1.07$, mentre uno da $150$ MeV ha $\beta =0.51$ e $\gamma = 1.16$; elettroni da $4$ MeV hanno $\beta =0.99$ e $\gamma = 8.8$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
 

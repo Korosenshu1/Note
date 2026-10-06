@@ -22,6 +22,7 @@
 \usepackage{nicematrix}
 \usepackage{mathtools}
 \usepackage{enumerate}
+\usepackage{braket}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{makecell}
@@ -1599,14 +1600,142 @@ Nella parte radiale, il termine $\frac{\ell (\ell +1) \hbar ^2}{2mr^2}$ rapprese
 	\left[ - \frac{\hbar ^2}{2m}\frac{d ^2}{d r^2} + V(r) + \frac{\ell (\ell +1)\hbar ^2}{2mr^2} \right] u_\ell (r) = Eu_\ell (r)
 \end{equation}
 In base all'osservazione sperimentale per cui il deutone ha solo lo stato fondamentale come stato legato, si pu\`o assumere che valga $\ell =0$; in questo modo, si rimane con
-\begin{equation}
+\begin{equation}\label{d-deq-1}
 	\frac{d ^2}{d r^2} u(r) + \frac{2m}{\hbar ^2}\big[ E-V(r) \big] u(r)= 0 
 \end{equation}
-dove si \`e tolto il pedice $\ell $, sottintendendolo pari a $.
+dove si \`e tolto il pedice $\ell $, sottintendendolo pari a $0$.
+Per continuare, \`e necessario ipotizzare una forma per $V(r)$: si sceglie un potenziale a gradino
+\[
+V(r) = \begin{cases}
+	 - V_0 &,\ r\le b\\
+	 0 &,\ r > b
+\end{cases}
+\] 
+L'idea \`e quella di cercare una soluzione a (\ref{d-deq-1}), imponendo $E = - B = - 2.225$ MeV.
+Avendo un potenziale definito ad intervalli, si separano le soluzioni dell'equazione differenziale, imponendo alle due soluzioni ottenute il raccordo nel punto di contatto. 
+\begin{enumerate}[(1).]
+	\item Per $r\le b$, $V(r) = -V_0$, quindi $\frac{d ^2 u}{d r^2}  + \frac{2m}{\hbar ^2}\left[ V_0-B \right] u(r) = 0 $. 
+		La soluzione di questa \`e data da seni e coseni, ma si vuole che la soluzione sia regolare per $r\to 0$ come condizione al contorno: se $u(r)$ fosse un coseno, per $r\ll 1$, si avrebbe $R(r) = \frac{u(r)}{r} \sim \frac{1}{r} \to  +\infty$, per $r\to 0$; per questa ragione, la soluzione in questa regione \`e data da 
+		\begin{equation}
+			u_1(r) = \mathcal{A}  \sin(kr) \, , \text{ con} \ \ k = \frac{\sqrt{2m(V_0-B)} }{\hbar }
+		\end{equation}
+	\item Per $r>b$, si ha $V(r) = 0$, quindi si deve risolvere $\frac{d ^2u}{d r^2} - \frac{2mB}{\hbar ^2}u(r) = 0 $. 
+		La forma della soluzione \`e la somma di esponenziali; essendo interessati ad uno stato legato, si vuole che $R(r) \to 0$, per $r\to +\infty$, per cui la soluzione coinvolger\`a solamente un esponenziale con esponente negativo:
+		\begin{equation}
+			u_2(r) = \mathcal{B} e^{-\kappa r} \, \text{ con} \ \ \kappa  = \frac{\sqrt{2mB} }{\hbar }
+		\end{equation}
+\end{enumerate}
+Le condizioni di raccordo sono date da $u_1(b) = u_2(b)$ e $u'_1(b) = u'_2(b)$:
+\[
+\begin{cases}
+	\mathcal{A} \sin (kb) = \mathcal{B} e^{-\kappa b} \\
+	\mathcal{A} k \cos (kb) = - \kappa \mathcal{B} e^{-\kappa b}
+\end{cases}
+\] 
+Dividendole membro a membro, si ottiene una relazione molto importante per determinare i parametri della buca $V_0$ e $b$:
+\begin{equation}
+	k \operatorname{cotg}  (kb) = - \kappa \implies \sqrt{V_0- B} \operatorname{cotg}  \left(b \frac{\sqrt{2m(V_0-B)} }{\hbar }\right)  = - \sqrt{B} 
+\end{equation}
+Questa \`e la prima delle due relazioni necessarie per determinare i parametri della curva; si indicher\`a la relazione tra $V_0$ e $b$ ottenuta da questa equazione con $V_0 = f_1(b)$.
+\begin{osservazione}
+Si osserva preliminarmente che non tutti i valori di $V_0$ sono ammessi al variare di $b$, in quanto non ha senso considerare larghezze della buca che superano il raggio di interazione.
+\end{osservazione}
+\begin{osservazione}
+Si nota, inoltre, che lo stato fondamentale del deutone \`e uno stato \textbf{debolmente legato}: prendendo per esempio $b=2$, si ottiene $V_0\approx 35$ MeV. 
+Questo indica che, nonostante il potenziale di interazione tra protone e neutrone corrisponda ad una buca di $-35$ MeV, la loro energia di legame \`e pari a solo $-2.225$ MeV.
+In ogni caso, questo \`e in accordo col fatto che lo stato fondamentale \`e l'unico stato legato osservato.
+\end{osservazione}
+\subsubsection{Raggio quadratico medio di carica del deutone}
+Ora si impone la condizione sul raggio quadratico medio di carica, misurato essere pari a $\langle R_d^2 \rangle^{1/2} = 2.1$ fm.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Per fare ci\`o, si assume che il protone sia una particella puntiforme, in modo da validare lo schema -- e la conseguente trattazione -- semplificato riportato.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) -- (6,0);
+		\draw[dashed,yellow!30!brown,thick] (3,0) -- (3,-.25);
+		\draw[dashed,yellow!30!brown,thick] (6,0) -- (6,-.25);
+		\draw[dashed,yellow!30!brown,thick] (3,-.25) -- (6,-.25);
+		\node[color=yellow!30!brown] at (4.5,-.5) {\footnotesize$r / 2$};
+		\draw[fill,color=gray] (0,0) circle (3pt) node[above] {n};
+		\draw[fill, color=red!60!black] (6,0) circle (3pt) node[above] {p};
+		\draw[fill, color=cyan!60!black] (3,0) circle (3pt) node[above] {\footnotesize CM};
+	\node at (3,-1) {\footnotesize $r= \lvert \vec{r}_1 - \vec{r}_2 \rvert  $ distanza relativa tra i due nucleoni};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Per definizione, si ha 
+\[
+\langle R_d^2 \rangle = \frac{\displaystyle \int \left(\frac{r}{2}\right) ^2 \lvert \psi (r) \rvert ^2 \dd^3r }{\displaystyle \int \lvert \psi (r) \rvert ^2 \dd^3r}
+\] 
+dove si \`e usata la condizione di normalizzazione della funzione d'onda. 
+Ricordando che 
+\[
+	\psi (r,\theta ,\varphi ) = \sum_{\ell =0}^{+\infty} \sum_{m_\ell = -\ell  }^{+\ell } R_\ell (r) Y_{\ell ,m_\ell }(\theta, \varphi ) \hspace{1cm} \ell =0 \Rightarrow Y_{0 0 }(\theta ,\varphi ) = \frac{1}{\sqrt{4\pi} }
+\] 
+Tenendo anche a mente che $\dd^3 r= r^2 \dd r \dd \Omega $ e che $u(r) = rR(r)$, si ha:
+\[
+\begin{split}
+	\langle R^2_d \rangle &= \overbracket{\int \lvert Y_{00}(\theta ,\varphi ) \rvert ^2\dd \Omega}^{=1}  \int_0^{+\infty} \left(\frac{r}{2}\right) ^2 \overbracket{r^2\lvert R(r) \rvert ^2}^{=\lvert u(r) \rvert ^2}  \dd r = \frac{1}{4}\int _0^{+\infty} r^2 \lvert u(r) \rvert ^2\\
+			      &= \frac{\mathcal{A} }{4} \int _0^b r^2 \sin ^2 (kr) \dd r+ \frac{\mathcal{B} }{4} \int _b^{+\infty} r^2 e^{-2\kappa r} \dd r
+\end{split}
+\] 
+Per terminare il calcolo, \`e necessario determinare le costanti $\mathcal{A} $ e $\mathcal{B} $; per farlo, si utilizzeranno la condizione di normalizzazione della funzione d'onda e l'equazione di raccordo $u_1(b) = u_2(b)$.
+Per la condizione di normalizzazione, si ha
+\[
+\begin{split}
+	&1 = \int \lvert \psi (r) \rvert ^2 \dd^3 r \stackrel{\ell =0}{=} \overbracket{\int \lvert Y_{00} \rvert ^2 \dd \Omega }^{=1} \int _0^{+\infty} r^2 \lvert R(r) \rvert ^2 \dd r = \int _0^{+\infty} \lvert u(r) \rvert ^2 \dd r\\
+	& \mathcal{A} ^2 \int _0^b \sin^2 (kr) \dd r + \mathcal{B} ^2 \int _b^{+\infty} e^{-2\kappa r} \dd r = 1 \implies \frac{\mathcal{A} ^2}{2} \left[ b - \frac{1}{2k}\sin (2kb) + \frac{\mathcal{B} }{2\kappa }e^{-2\kappa b} \right] =1
+\end{split}
+\] 
+Per la condizione di raccordo, si ha $\mathcal{A}  \sin(kb) = \mathcal{B} e^{-\kappa b}$; mettendola insieme alla relazione ottenuta dalla normalizzazione, si ottiene
+\begin{equation}
+	\mathcal{A} ^2 = \frac{2\kappa }{1+\kappa b} \hspace{2cm} \mathcal{B} ^2 = \frac{2\kappa  \sin^2 (kb) e^{-2\kappa b}}{1 + \kappa b}
+\end{equation}
+Con questi valori, risolvendo i due integrali, si ottiene
+\begin{equation}
+	\langle R_d^2 \rangle = \frac{1}{8} \left[ \frac{1}{\kappa ^2} - \frac{1}{k^2} + \frac{1 + \kappa b}{\kappa }b - \frac{1}{3} \frac{\kappa b^3}{1 + \kappa b}\right] 
+\end{equation}
+In questa espressione, compaiono i parametri della buca: imponendo $\langle R_d^2 \rangle^{1 / 2} = 2.1$ fm, il termine $b$ e il termine $V_0$, che compare implicitamente in $k$, vengono legati da una seconda relazione $V_0 = f_2(b)$.
+L'intersezione tra le curve $f_1(b)$ e $f_2(b)$ permettono di ottenere la coppia di valori $(b,V_0)$ in accordo con i dati sperimentali imposti.
 
+\subsubsection{Dipendenza dallo spin}
+Si \`e assunta un'indipendenza dallo spin nell'interazione tra protone e neutrone, ma questo non \`e corretto; di seguito, se ne d\`a una motivazione.
 
+Per il deutone, si osserva sperimentalmente $J=1$, con $\vec{J} = \vec{\ell } + \vec{S}$ e $\vec{S} = \vec{s}_1 + \vec{s}_2$.
+Protone e neutrone sono fermioni, quindi hanno spin $1 / 2$ ciascuno e, per le regole di composizione del momento angolare, si conclude che $S = 0$, relativo allo \textbf{stato di singoletto}, oppure $S=1$, relativo allo \textbf{stato di tripletto}.
+Visto che, sperimentalmente, non si osserva uno stato con $J=0$, deve valere necessariamente $S=1$, ma l'indipendenza dallo spin considerata nell'interazione non vieta la possibilit\`a che il sistema si trovi nello stato $S=0$, motivo per cui si considerer\`a un potenziale
+\[
+V_{NN} = V_1(r) + \tilde{V}_2(r) \vec{s}_1 \cdot \vec{s}_2
+\] 
+dove $V_1(r)$ \`e il potenziale centrale studiato finora.
 
+La motivazione dietro il nome \textit{stato di singoletto} e \textit{stato di tripletto} \`e relativo al fatto che, potendo rappresentare ogni stato di spin con i numeri quantici relativi a $\hat{S}$ e $\hat{S}_z$ contemporaneamente (visto che $[ \hat{S}^2,\hat{S}_z ]  = 0$), si ha
+\[
+\hat{S}^2 \ket{S,S_z}  = \hbar ^2 S (S+1)\ket{S,S_z}  \hspace{2cm} \hat{S}_z \ket{S,S_z}  = \hbar S_z \ket{S,S_z} 
+\] 
+con $S_z = -S,\ldots,+S$; nel caso di $S=1$, si hanno tre possibili valori per $S_z$, quindi tre possibili stati, mentre per $S=0$, si ha solo $S_z=0$.
 
+Per riferirsi agli stati di spin, si utilizza la \textbf{notazione spettroscopica}: uno stato \`e individuato dalla notazione $^{2S+1}\ell _J$, con $\ell =0$ onda S, $\ell =1$ onda P, $\ell =2$ onda D, $\ell =3$ onda F.
+Avendo concluso che deve essere $J=1$, $\ell =0$ e $S=1$ nel deutone fondamentale, questo \`e indicato con la notazione $^{3}S_1$; lo stato di singoletto che non viene osservato sperimentalmente, invece, si indicherebbe con $^{1}S_0$, visto che \`e relativo a $\ell =0$, $S=0$ e $J=0$.
+
+\newpage
+\appendix
+\section{Matrici di Pauli}
+
+Si rappresenta l'operatore di spin tramite le matrici di Pauli: $\vec{S} = \frac{1}{2}\hbar \vec{\sigma }$, con $\vec{\sigma }= (\sigma _x, \sigma _y, \sigma _z)$ e 
+\[
+	\sigma _x = \begin{pmatrix} 0 & 1 \\ 1 & 0  \end{pmatrix}  \hspace{1cm} \sigma _y = \begin{pmatrix} 0& - i \\ i & 0  \end{pmatrix} \hspace{1cm}\sigma _z = \begin{pmatrix} 1 & 0 \\ 0 & -1  \end{pmatrix} 
+\] 
+Si hanno anche le seguenti relazioni:
+\[
+\sigma _i \sigma _j = \delta _{ij} + i \varepsilon _{ijk} \sigma _k \hspace{1cm}\sigma _i^2 = \mathrm{Id} \hspace{1cm} \sigma _x\sigma _y = i \sigma _z = - \sigma _y \sigma _x \hspace{1cm} \vec{\sigma}^2 = \sigma _x^2 + \sigma _y^2 + \sigma ^2_z = 3\cdot  \mathrm{Id} 
+\] 
 
 
 
