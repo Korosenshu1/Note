@@ -1600,7 +1600,7 @@ perci\`o, integrando in $b$ tra $b_\text{min}$ e $b_\text{max}$, si conclude che
 Il tempo di interazione $\tau $ tra particella ed elettrone \`e $\tau \sim b / v$; tenendo conto della contrazione relativistica delle lunghezze, si ottiene la stima $\tau \sim b / (\gamma v)$.
 L'approssimazione di elettrone fermo \`e valida se la sua velocit\`a orbitale \`e minore di quella della particella carica, ossia se il periodo $T$ del suo moto \`e maggiore di $\tau $:
 \[
-b \sim \tau  v \gamma < = T v \gamma \implies b_\text{max} = T v \gamma = \frac{v\gamma}{\nu }
+b \sim \tau  v \gamma \le  T v \gamma \implies b_\text{max} = T v \gamma = \frac{v\gamma}{\nu }
 \] 
 La frequenza media caratteristica degli elettroni orbitanti attorno all'atomo del materiale si pu\`o esprimere attraverso il \textit{potenziale medio di ionizzazione} $\mathcal{I} = h \nu $, quindi
 \begin{equation}
@@ -1627,8 +1627,67 @@ Si definisce il potere frenante massico come
 \begin{equation}
 	\frac{S}{\rho } =  - \frac{1}{\rho } \frac{d E}{d x} 
 \end{equation}
-\subsubsection{Formulazione di Bethe-Bloch}
+\subsubsection{Formulazione di Bethe-Bloch e limiti del modello}
 Per particelle relativistiche, il modello di Bohr non \`e sufficiente ed \`e pi\`u corretto utilizzare la formulazione di Bethe-Bloch:
+\begin{equation}
+	S = 4\pi N_A r_e^2 m_e c^2 \frac{Z_p^2}{\beta ^2}\rho \frac{Z_T}{A_T} \left[ \frac{1}{2} \ln\left(\frac{2m_e c^2 \beta ^2 \gamma^2 T_\text{max}}{\mathcal{I} ^2}\right) - \beta ^2 - \frac{\delta (\beta \gamma)}{2} - \frac{C(\beta )}{Z_T} \right] 
+\end{equation}
+dove $N_A$ \`e il numero di Avogadro, $r_e$ e $m_e$ sono il raggio e la massa dell'elettrone, $\mathcal{I}$ \`e il potenziale di ionizzazione medio del materiale e $T_\text{max}$ \`e la massima energia trasferita da una singola collisione.
+Il coefficiente numerico davanti \`e $4 \pi N_A r_e^2 m_e c^2 \approx 0.3 \text{ Mev}\, \text{cm}^2 /\text{g}$, mentre:
+\begin{itemize}
+	\item $\delta (\beta \gamma)$ \`e una correzione per l'effetto densit\`a, rilevante solo per particelle ultra-relativistiche ($\beta \approx 1$);
+	\item $C(\beta )$ \`e una correzione rilevante quando la velocit\`a della particella \`e confrontabile con quella orbitale degli elettroni, ma \`e generalmente una piccola correzione.
+\end{itemize}
+In immagine, si osserva come la correzione dovuta a $\delta $ sia rilevante solamente ad alte energie, cio\`e solo per particelle con $\beta \approx 1$. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Ad energie ultra-relativistiche, il campo elettromagnetico generato dalla particella incidente carica \`e tale da polarizzare il materiale, il quale genera un campo elettrico che si oppone a quello generato dalla carica; questo fa s\`i che ciascun elettrone venga soggetto ad un campo elettrico inferiore a quello generato dalla particella, riducendo lo stopping power.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bethe-de.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		(A) Per $0.1<\beta \gamma< 1$, il termine $1 / \beta ^2$ \`e dominante e si osserva una rapida decrescita di $dE/dx$.
+
+		(B) Punto di minimo in cui $1 / \beta ^2$ non \`e pi\`u dominante; le particelle cariche con questa energia sono dette MIPs.
+
+		(C) All'aumentare di $\beta \gamma$, si ha una risalita relativistica (logaritmica.
+
+		(D) La risalita \`e bloccata dalla correzione alla densit\`a.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{de-bg.png}
+	\end{minipage}
+\end{center}
+La Bethe-Bloch permette di caratterizzare la perdita di energia con un'accuratezza di alcuni percento.
+
+Per $0.01 < \beta \gamma < 0.05$ non esiste un modello soddisfacente; per i protoni, ad esempio, si fa riferimento alle formule empiriche di Andersen-Ziegler.
+Per particelle con $v\approx 0.01 \, c$ (circa la velocit\`a orbitale degli elettroni nei gusci esterni), invece, si usa il modello di Lindhard-Sharff, per cui $d E / dx \propto \beta $.
+Per particelle a bassissime energie, come protoni di qualche eV, infine, si verifica una cattura elettronica, quindi si ha un abbassamento della carica effettiva della particella incidente e, di conseguenza, un calo dello stopping power.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{cous-1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{cous-2.png}
+	\end{minipage}
+	\captionof{figure}{A sinistra, l'andamento dell'SP per protoni attraverso materiali differenti; a destra, l'SP per particelle diverse in acqua.}
+\end{center}
 
 \subsubsection{Curva di Bragg}
 

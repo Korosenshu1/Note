@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  7 OCT 2026 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  7 OCT 2026 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1677,7 +1677,33 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1598.
 
-[34] [35] [36] (./master.aux)
+[34] [35]
+Underfull \hbox (badness 6284) in paragraph at lines 1645--1646
+\T1/plxSans-TLF/m/n/10.95 po elet-tro-ma-gne-ti-co ge-ne-ra-to dal-la
+ []
+
+<bethe-de.png, id=399, 515.9275pt x 403.5075pt>
+File: bethe-de.png Graphic file (type png)
+<use bethe-de.png>
+Package pdftex.def Info: bethe-de.png  used on input line 1651.
+(pdftex.def)             Requested size: 187.57352pt x 146.69717pt.
+<de-bg.png, id=400, 474.77374pt x 259.97125pt>
+File: de-bg.png Graphic file (type png)
+<use de-bg.png>
+Package pdftex.def Info: de-bg.png  used on input line 1669.
+(pdftex.def)             Requested size: 187.57352pt x 102.70934pt.
+[36 <./bethe-de.png> <./dE-bg.png>]
+<cous-1.png, id=408, 612.2875pt x 453.695pt>
+File: cous-1.png Graphic file (type png)
+<use cous-1.png>
+Package pdftex.def Info: cous-1.png  used on input line 1681.
+(pdftex.def)             Requested size: 187.57352pt x 138.98944pt.
+<cous-2.png, id=409, 630.355pt x 379.4175pt>
+File: cous-2.png Graphic file (type png)
+<use cous-2.png>
+Package pdftex.def Info: cous-2.png  used on input line 1687.
+(pdftex.def)             Requested size: 208.41644pt x 125.44553pt.
+ [37 <./cous-1.png> <./cous-2.png>] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1688,10 +1714,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 48400 strings out of 469504
- 1137104 string characters out of 5470379
- 1801388 words of memory out of 5000000
- 76127 multiletter control sequences out of 15000+600000
+ 48431 strings out of 469504
+ 1137622 string characters out of 5470379
+ 1802388 words of memory out of 5000000
+ 76155 multiletter control sequences out of 15000+600000
  854318 words of font info for 171 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,29n,121p,11245b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1714,10 +1740,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
-Output written on master.pdf (36 pages, 4470018 bytes).
+Output written on master.pdf (37 pages, 4747678 bytes).
 PDF statistics:
- 656 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 146 named destinations out of 1000 (max. 500000)
- 477 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 674 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 497 words of extra memory for PDF output out of 10000 (max. 10000000)
 
