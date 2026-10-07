@@ -1494,10 +1494,143 @@ Questo \`e possibile perch\'e $E_\text{tot}^2 = (pc)^2 + (m_0c^2)^2$, da cui
 \] 
 Per esempio, un protone da $62$ MeV ha un $\beta  = 0.35$ e un $\gamma = 1.07$, mentre uno da $150$ MeV ha $\beta =0.51$ e $\gamma = 1.16$; elettroni da $4$ MeV hanno $\beta =0.99$ e $\gamma = 8.8$.
 
+\subsection{Interazioni di particelle pesanti con elettroni}
+
+Una \textit{particella pesante} \`e una particella pi\`u pesante dell'elettrone.
+Le possibili interazioni sono anelastiche, elastiche o nucleari. 
+Di seguito, si tratteranno interazioni anelastiche dovute all'\textbf{interazione coulombiana} delle particelle pesanti cariche con gli elettroni atomici.
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Siano $a$ il raggio atomico e $b$ la distanza verticale della particella dal centro dell'atomo rispetto alla direzione parallela a quella di moto della particella e passante per il centro dell'atomo.
+	A seconda di questi valori, si distinguono \textit{collisioni leggere} per $b\gg a$ e \textit{collisioni pesanti} per $b\approx a$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+		\draw[-stealth, red!50!black] (3.5,0) --++ ({cos(45)},{sin(45)});
+		\node[red!50!black,below] at ({3+cos(45)}, {sin(45)}) {\footnotesize $a$};
+		\draw (0,0) -- (5,0);
+		\draw[fill] (3.5,0) circle (3pt);
+		\draw[dashed,thick] (3.5,0) circle (1);
+		\draw[thick,cyan!60!black,stealth-stealth] (1,0) -- (1,2);
+		\draw[fill,cyan!60!black] (1,2.05) circle (2pt) node[above] {\footnotesize $\ce{e-}$};
+		\node[cyan!60!black] at (0.75,1) {\footnotesize $b$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+In queste interazioni, la perdita di energia \`e legata all'interazione coulombiana: immaginando un protone in moto verso un atomo, un elettrone pu\`o passare in una shell pi\`u esterna, quindi si ha un'eccitazione, oppure lasciare completamente l'atomo, corrispondente ad una ionizzazione.
+\begin{osservazione}
+La \textbf{massima energia} trasferita da una particella in una singola collisione \`e $4Em_0 / M$, dove $m_0$ \`e la massa dell'elettrone, mentre $M$ \`e la massa della particella incidente; nel caso di un protone, l'energia trasferita per urto \`e pari a circa $1 / 500$ dell'energia iniziale del protone stesso.
+\end{osservazione}
+
+\noindent Se nel processo, l'elettrone riceve sufficiente energia per essere lui stesso a causare ulteriori ionizzazioni, l'insieme delle particelle generate prende il nome di $\pmb{\delta }$ \textbf{ray}.
+
+Una particella carica pesante utilizzata come proiettile, quindi, viaggia in linea praticamente retta, ma perde continuamente energia cinetica a seguito delle continue interazioni coulombiane (anelastiche) con gli elettroni atomici.
+
+\subsubsection{Potere frenante}
 
 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Di seguito, si riporta un semplice modello, dovuto a Bohr, per calcolare l'energia trasferita agli elettroni, detta \textbf{potere frenante} del mezzo, da una particella carica.
+Si considera una particella pesante di massa $M$ e numero atomico $Z_p$, che si muove ad una velocit\`a $v$ in un mezzo di numero atomico $Z_T$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+	\draw (0,0) -- (1,0);	
+	\draw[fill,gray!60] (1,0) ellipse (.5cm and 2cm);
+	\draw (1,0) ellipse (.5cm and 2cm);
+	\node[gray!70] at (.85, 2.25) {\footnotesize $\dd b$};
+	\draw (3,0) ellipse (.5cm and 2cm);
+	\draw[fill,color=white] (1,0) ellipse (.35cm and 1.75cm);
+	\draw[color=red!60!black,-stealth,thick] (1,0) -- (1,1.75);
+	\node[color=red!60!black] at (1.15, 0.8) {\tiny $b$};
+	\draw (1,0) ellipse (.35cm and 1.75cm);
+	\draw (1,2) -- (3,2);
+	\draw (1,-2) -- (3,-2);
+	\draw (3,0) -- (5,0) node[below] {\footnotesize $x$};
+	\draw[fill] (-1.5,0) circle (2pt) node[above left] {\footnotesize $M$} node[below right] {\footnotesize $Z_p$};
+	\draw[-stealth,thick] (-1.5,0) -- (-0.25,0) node[above] {\footnotesize $v$};
+	\draw[gray,thick,dashed] (1,-2.5) -- (3,-2.5);
+	\draw[gray,thick,dashed] (1,-2.05) -- (1,-2.5);
+	\draw[gray,thick,dashed] (3,-2.05) -- (3,-2.5);
+	\node[gray] at (2,-2.75) {\footnotesize $\dd x$};
+	\end{tikzpicture}
+	\end{minipage}
+\end{center}
+L'impulso $\vec{I}$ acquisito da un elettrone posto ad una distanza $b$, libero e considerato fermo, avr\`a una componente parallela e una ortogonale alla direzione di moto della particella; per motivi di simmetria, $I_{| |} = 0$, mentre
+\begin{equation}
+	I_\perp = \int  F_\perp \dd t = e \int  E_\perp \dd t = e \int E_\perp \frac{d t}{d x}  \dd x = e \int E_\perp \frac{d x}{d v} 
+\end{equation}
+Il campo elettrico $E_\perp$ si pu\`o calcolare tramite il teorema di Gauss:
+\[
+\int E_\perp 2\pi b \dd x = 4 \pi Z_p e \implies \int E_\perp \dd x = \frac{2}{b}Z_p e
+\] 
+da cui 
+\begin{equation}
+I_\perp= e \int E_\perp \frac{\dd x}{v} = \frac{2 Z_p e^2}{bv}
+\end{equation}
+In questo modo, la variazione di energia cinetica \`e data da
+\begin{equation}
+	\Delta E_\text{kin} = \frac{I^2}{2m_e} = \frac{2 Z_p^2 e^4}{m_e b^2 v^2}
+\end{equation}
+Ora, il numero di elettroni contenuti in un volume $\dd V = 2\pi b \dd b \dd x$ \`e, indicando con $N_e$ la densit\`a elettronica, da
+\begin{equation}
+	N_e \dd V = Z_T N_A \frac{2 \pi b \rho \dd b \dd x}{A}
+\end{equation}
+L'energia trasferita agli elettroni del volume $\dd V$ sar\`a data, di conseguenza, da
+\[
+-\dd E(b) = \Delta E_\text{kin}(b) N_e \dd V = \frac{4 \pi Z_p^2 e^4}{m_e v^2} N_A \frac{Z_T}{A} \rho  \frac{\dd b}{b} \dd x
+\] 
+perci\`o, integrando in $b$ tra $b_\text{min}$ e $b_\text{max}$, si conclude che
+\begin{equation}
+	-\frac{d E}{d x}  = \frac{4\pi Z_p^2 e^4}{m_e v^2}N_A \frac{Z_T}{A}\rho  \ln \frac{b_\text{max}}{b_\text{min}}
+\end{equation}
 
+\subsubsection{Stima di $b_\text{min}$ e $b_{\text{max}}$}
 
+Il tempo di interazione $\tau $ tra particella ed elettrone \`e $\tau \sim b / v$; tenendo conto della contrazione relativistica delle lunghezze, si ottiene la stima $\tau \sim b / (\gamma v)$.
+L'approssimazione di elettrone fermo \`e valida se la sua velocit\`a orbitale \`e minore di quella della particella carica, ossia se il periodo $T$ del suo moto \`e maggiore di $\tau $:
+\[
+b \sim \tau  v \gamma < = T v \gamma \implies b_\text{max} = T v \gamma = \frac{v\gamma}{\nu }
+\] 
+La frequenza media caratteristica degli elettroni orbitanti attorno all'atomo del materiale si pu\`o esprimere attraverso il \textit{potenziale medio di ionizzazione} $\mathcal{I} = h \nu $, quindi
+\begin{equation}
+	b_\text{max} = \frac{v \gamma h }{ \mathcal{I} }
+\end{equation}
+Ora si valuta $b_\text{min}$. 
+Visto che l'elettrone non pu\`o essere localizzato con un'indeterminazione minore della sua lunghezza d'onda, espressa relativamente alla particella in avvicinamento, si pu\`o scrivere che $\lambda _\text{rel} \le  b$, da cui $b_\text{min} = h / p_\text{rel} = h / (m_ev_\text{rel}\gamma)$.
+Visto che si considerano elettroni fermi, si ha $v_\text{rel} = v$, quindi \`e vero che
+\begin{equation}
+	b_\text{min} = \frac{h}{m_e v\gamma}
+\end{equation}
+\subsubsection{Potere frenante e potere frenante massico}
+Si pu\`o, ora, ottenere il potere frenante:
+\begin{equation}
+	S \equiv - \frac{d E}{d x}  = \frac{4\pi Z_p^2 e^4}{m_e v^2} N_A \frac{Z_T}{A} \rho  \ln \left(\frac{m_e v^2 \gamma^2}{\mathcal{I} }\right) 
+\end{equation}
+Si nota che:
+\begin{itemize}
+	\item $d E / dx$ decresce con il quadrato della velocit\`a della particella carica, mentre cresce con il quadrato del numero atomico della stessa;
+	\item $Z_T / A \approx \text{cost}$, per cui $dE / dx$ dipende direttamente dalla densit\`a del mezzo attraversato;
+	\item l'argomento del logaritmo \`e una funzione che varia lentamente con l'energia della particella incidente, quindi le dipendenze rilevanti sono quelle riportate sopra.
+\end{itemize}
+Si definisce il potere frenante massico come
+\begin{equation}
+	\frac{S}{\rho } =  - \frac{1}{\rho } \frac{d E}{d x} 
+\end{equation}
+\subsubsection{Formulazione di Bethe-Bloch}
+Per particelle relativistiche, il modello di Bohr non \`e sufficiente ed \`e pi\`u corretto utilizzare la formulazione di Bethe-Bloch:
+
+\subsubsection{Curva di Bragg}
 
 
 

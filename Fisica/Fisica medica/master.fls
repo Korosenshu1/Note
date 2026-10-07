@@ -498,7 +498,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmssex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/ssmsam5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/ssmsbm5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/ssesint10.tfm
-OUTPUT master.toc
 INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-Bold-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Bold-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/sansmathfonts/cmsmf8.vf
@@ -507,6 +506,9 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmsmfIPiXi8.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/sansmathfonts/cmsmf10.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmsmfIPiXi10.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-t1--base.tfm
+OUTPUT master.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Bold-tlf-t1.tfm
@@ -533,8 +535,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-ts1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/plex/plx_koxhod.enc
 INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-Italic-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Italic-tlf-t1--base.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-tlf-t1.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Bold-tlf-t1.tfm
@@ -769,6 +769,9 @@ INPUT ./cmass2.png
 INPUT ./cmass2.png
 INPUT ./cmass2.png
 INPUT ./cmass2.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathfonts/cmsmfbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/ibm/plex/plxSans-Bold-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/ibm/plex/plxSans-Bold-tlf-t1--base.tfm
 INPUT master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
