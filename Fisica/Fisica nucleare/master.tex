@@ -1715,6 +1715,7 @@ V_{NN} = V_1(r) + \tilde{V}_2(r) \vec{s}_1 \cdot \vec{s}_2
 \] 
 dove $V_1(r)$ \`e il potenziale centrale studiato finora.
 
+\begin{boxenv}[]
 La motivazione dietro il nome \textit{stato di singoletto} e \textit{stato di tripletto} \`e relativo al fatto che, potendo rappresentare ogni stato di spin con i numeri quantici relativi a $\hat{S}$ e $\hat{S}_z$ contemporaneamente (visto che $[ \hat{S}^2,\hat{S}_z ]  = 0$), si ha
 \[
 \hat{S}^2 \ket{S,S_z}  = \hbar ^2 S (S+1)\ket{S,S_z}  \hspace{2cm} \hat{S}_z \ket{S,S_z}  = \hbar S_z \ket{S,S_z} 
@@ -1723,6 +1724,175 @@ con $S_z = -S,\ldots,+S$; nel caso di $S=1$, si hanno tre possibili valori per $
 
 Per riferirsi agli stati di spin, si utilizza la \textbf{notazione spettroscopica}: uno stato \`e individuato dalla notazione $^{2S+1}\ell _J$, con $\ell =0$ onda S, $\ell =1$ onda P, $\ell =2$ onda D, $\ell =3$ onda F.
 Avendo concluso che deve essere $J=1$, $\ell =0$ e $S=1$ nel deutone fondamentale, questo \`e indicato con la notazione $^{3}S_1$; lo stato di singoletto che non viene osservato sperimentalmente, invece, si indicherebbe con $^{1}S_0$, visto che \`e relativo a $\ell =0$, $S=0$ e $J=0$.
+\end{boxenv}
+
+\noindent Nel seguito, si user\`a scrivere 
+\[
+V_{N N} = V_1(r) + V_2(r) \vec{\sigma }_1 \cdot \vec{\sigma }_2
+\] 
+inserendo i coefficienti che ne escono e $\tilde{V}_2(r)$ in $V_2(r)$.
+Si pu\`o riscrivere il potenziale in termini dello spin totale:
+\[
+\hat{\vec{S}}^2 = \frac{\hbar^2}{4} \left(\vec{\sigma }_1 + \vec{\sigma }_2\right) ^2 = \frac{\hbar ^2}{4}\left(\vec{\sigma }_1^2 + \vec{\sigma }_2 ^2 + 2 \vec{\sigma }_1 \cdot \vec{\sigma }_2\right)  = \frac{\hbar ^2}{2} \left(3 + \vec{\sigma }_1 \cdot \vec{\sigma }_2\right) 
+\] 
+dove si \`e fatto uso del fatto che $\vec{\sigma }^2 = 3$.
+\`E, poi, utile calcolare il valore di aspettazione $\langle \vec{\sigma }_1 \cdot \vec{\sigma }_2 \rangle$, per il quale sar\`a sufficiente determinare $\langle \hat{S}^2 \rangle$.
+Visto che
+\[
+\hat{S}^2 \ket{S,S_z} = \hbar ^2 S(S+1) \ket{S,S_z} 
+\] 
+allora
+\[
+\langle \hat{S}^2 \rangle = \begin{cases}
+	0 &,\ \text{ per }S=0\\
+	2\hbar ^2 &,\ \text{ per } S=1 
+\end{cases} \implies \langle \vec{\sigma }_1 \cdot \vec{\sigma }_2 \rangle = \begin{cases}
+	-3 &,\ \text{ per singoletto } (S=0)\\
+	1 &,\ \text{ per tripletto } (S=1)
+\end{cases}
+\] 
+\begin{osservazione}
+Se sia $V_1(r)$ che $V_2(r)$ sono buche di potenziale (negativi), allora il sistema nello stato di tripletto significa avere una configurazione pi\`u legata; al contrario, il segno negativo dovuto allo stato di singoletto rende lo stato con $S=0$ pi\`u sfavorito come stato legato. 
+\end{osservazione}
+
+\subsubsection{Sviluppo in multipoli}
+
+Sia $\rho (\vec{r})$ una distribuzione di carica.
+Si indica con $\vec{r}$ un punto dello spazio in cui calcolare il campo generato dalla distribuzione e con $\vec{r}'$ il raggio che individua un piccolo elemento di tale distribuzione, assumendo che valga $r \gg r'$.
+Infine, si definisce $\vec{R} = \vec{r} - \vec{r}' $.
+Per costruzione, la carica totale della distribuzione \`e 
+\[
+q = \int \rho (\vec{r}) \dd ^3 r
+\] 
+mentre il potenziale elettrostatico \`e dato da 
+\[
+V(\vec{r}) = \frac{1}{4\pi \varepsilon _0} \int \frac{\rho (\vec{r}')}{\lvert \vec{r}-\vec{r}' \rvert } \dd ^3 r'
+\] 
+Usando che $R^2 = r^2 + (r')^2 - 2 r r' \cos \theta $ e che $r \gg r'$, si pu\`o riscrivere $1 / R$ facendo uso dei polinomi di Lagrange:
+\[
+\frac{1}{R} = \frac{1}{r \left[ 1 + \left(\frac{r'}{r}\right) ^2 - 2 \frac{r'}{r}\cos \theta  \right]^{1 / 2} } = \frac{1}{r} \sum_{\lambda =0}^{+\infty} \left(\frac{r'}{r}\right) ^\lambda  P_\lambda (\cos \theta )
+\] 
+dove i $P_n(x)$ sono i polinomi di Legendre, definiti da 
+\[
+P_n(x) = \frac{1}{2^n n!} \frac{d ^n}{d x^n} \left(x^2 - 1 \right) ^n
+\] 
+e con $P_0(x) = 1$, $P_1(x) = x$, $P_2(x) = \frac{1}{2}(3x^2 - 1)$, eccetera.
+In questo modo, il potenziale elettrostatico si pu\`o scrivere come
+\begin{equation}
+	\begin{split}
+		V(\vec{r}) &= \frac{1}{4 \pi \varepsilon _0} \sum_{\lambda =0}^{+\infty} \frac{1}{r^{\lambda +1}} \int \rho (\vec{r}') (r')^{\lambda } P_\lambda (\cos \theta ) \dd ^3 r'\\
+			   &= \frac{1}{4\pi \varepsilon _0} \left[ \frac{q}{r} + \frac{d}{r^2} + \frac{1}{2} \frac{Q}{r^3} + \ldots \right] 
+	\end{split}
+\end{equation}
+dove
+\[
+d = \int \rho (\vec{r}') r' \cos \theta  \dd ^3 r' \hspace{2cm} Q = \int \rho (\vec{r}') (r')^2 (3 \cos^2 \theta  - 1) \dd ^3 r'
+\] 
+sono, rispettivamente, i termini di dipolo elettrico e quadrupolo elettrico.
+
+\subsubsection{Simmetria per parit\`a}
+
+L'operatore parit\`a $\hat{P}$ \`e definito come la mappa
+\[
+x \mapsto -x \hspace{1cm} y \mapsto -y \hspace{1cm} z \mapsto -z
+\] 
+per cui $\vec{r} \mapsto -\vec{r}$.
+In coordinate sferiche, analogamente, si ha:
+\[
+r \mapsto r \hspace{1cm} \theta  \mapsto \pi - \theta  \hspace{1cm} \varphi  \mapsto \pi + \varphi 
+\] 
+Per un sistema quantistico descritto da una funzione d'onda $\psi (\vec{r})$, l'operatore parit\`a \`e definito da $\hat{P} \psi (\vec{r}) = \psi (-\vec{r})$, per cui $\hat{P}^2 = \operatorname{Id} $.
+Per studiare gli autovalori di $\hat{P}$, si considera che, se $\hat{P} \psi (\vec{r}) = \pi \psi (\vec{r})$, allora 
+\[
+\hat{P}^2 \psi (\vec{r}) = \pi \hat{P}\psi (\vec{r})
+\] 
+Combinando questa espressione col fatto che $\psi (\vec{r}) = \hat{P}^2 \psi (\vec{r})$, si conclude che $\pi^2 = 1$, cio\`e $\pi= \pm 1$.
+Questo vuol dire che 
+\[
+\hat{P} \psi (\vec{r}) = \psi (\vec{r})\ \  \text{oppure} \ \  \hat{P} \psi (\vec{r}) = - \psi (\vec{r})
+\] 
+il che equivale a dire che 
+\[
+\psi (\vec{r}) = \psi (-\vec{r}) \ \ \text{oppure} \ \ \psi (\vec{r}) = - \psi (-\vec{r})
+\] 
+Per un sistema composto a due corpi, la parit\`a del sistema complessivo si esprime in termine delle parit\`a dei singoli corpi tramite 
+\[
+\pi = \pi_1 \pi_2 (-1)^{\ell }
+\] 
+con $\ell $ momento angolare orbitale.
+Analogamente, per un sistema a $N$ corpi, si ha
+\[
+\pi = (-1)^{\sum_{i=1}^{N-1} \ell _i} \pi_1 \ldots \pi_N
+\] 
+Per un sistema a parit\`a definita, il momento di dipolo elettrico \`e nullo.
+Infatti, visto che $\rho (\vec{r})$ coincide con la probabilit\`a di avere una carica in $\vec{r}$, si ha $\rho (\vec{r}) \equiv \lvert \psi (\vec{r}) \rvert ^2$; sotto parit\`a, poi, $r' \cos \theta  \mapsto -r' \cos \theta $ e, indipendentemente dal fatto che lo stato sia pari o dispari, vale sempre $\lvert \psi (-\vec{r}) \rvert ^2 = \lvert \psi (\vec{r}) \rvert ^2$, quindi l'integrando in $d$ \`e dispari e, quindi, l'integrale su tutto lo spazio \`e nullo.
+
+Al contrario, se $\psi (\vec{r})$ \`e uno stato a parit\`a mista, cio\`e si scompone in parte pari e dispari, rispettivamente, come $\psi (\vec{r}) = \psi _p(\vec{r}) + \psi _d(\vec{r})$, si ha $\lvert \psi (\vec{r}) \rvert ^2 \neq \lvert \psi (-\vec{r}) \rvert^2 $:
+\[
+\begin{split}
+	&\lvert \psi (\vec{r}) \rvert ^2 = \lvert \psi _p(\vec{r}) \rvert ^2 + \lvert \psi _d(\vec{r}) \rvert ^2 + 2 \operatorname{Re} \left\{ \psi _p(\vec{r}) \psi _d^*(\vec{r}) \right\} \\
+	&\lvert \psi (-\vec{r}) \rvert ^2 = \lvert \psi _p(\vec{r}) \rvert ^2 + \lvert \psi _d(\vec{r}) \rvert ^2 - 2 \operatorname{Re} \left\{ \psi _p(\vec{r}) \psi _d^*(\vec{r}) \right\} \\
+\end{split}
+\] 
+In questi stati, il momento di dipolo elettrico \`e non-nullo.
+
+Nel caso in cui $[\hat{H}, \hat{P}]=0$, significa che la parit\`a del sistema \`e conservata; visto che per il deutone si ha $\pi=+1$ e la parit\`a \`e conservata, si conclude che nel suo stato legato ha momento di dipolo elettrico nullo.
+
+Si distinguono diverse grandezze fisiche e come queste si comportano sotto l'azione dell'operatore parit\`a:
+\begin{itemize}
+	\item \textit{vettori (polari)}, come $\vec{r}\mapsto -\vec{r}$, $\vec{p}\mapsto - \vec{p}$, oppure il potenziale vettore $\vec{A}\mapsto - \vec{A}$, cambiano segno;
+	\item \textit{pseudo-vettori (vettori assiali)}, come $\vec{\ell }$ o $\vec{S}$, rimangono invariati;
+	\item \textit{scalari}, ottenuti come prodotto scalare di due vettori polari, o di due vettori assiali, rimangono invariati;
+	\item \textit{pseudo-scalari}, ottenuti come prodotto scalare di un vettore assiale e di uno polare, cambiano segno, come $\vec{\ell }\cdot \vec{S}$.
+\end{itemize}
+
+\subsubsection{Momento di quadrupolo elettrico}
+
+Il momento di quadrupolo elettrico fornisce informazioni su come \`e distribuita spazialmente la carica; per questa informazione, si usa la definizione di momento di quadrupolo normalizzato 
+\[
+Q= \frac{1}{q} \int \rho (\vec{r}) \left(3z^2 - r^2\right) \dd ^3 r
+\] 
+misurato in $\text{m}^2$.
+Si ha
+\[
+\langle x^2 \rangle \equiv \frac{1}{q}\int x^2\rho (\vec{r})\dd ^3 r
+\] 
+e l'analogo per $\langle y^2 \rangle$ e $\langle z^2 \rangle$.
+Per una distribuzione a simmetria sferica, vale
+\[
+\langle z^2 \rangle = \langle x^2 \rangle= \langle y^2 \rangle = \frac{1}{3} \langle r^2 \rangle
+\] 
+motivo per cui, in questo caso, si ha $Q=0$.
+Nel caso in cui valga $Q>0$, invece, si \`e nel caso di \textbf{distribuzione prolata}, cio\`e pi\`u lunga lungo l'asse $z$, che lungo gli assi $x$ e $y$; invece, se $Q<0$, si ha una \textbf{distribuzione oblata}, cio\`e pi\`u bassa che larga.
+\begin{osservazione}
+Tipicamente, i nuclei atomici hanno $Q\neq 0$; il caso $Q =0 $ corrisponde ad un caso particolare legato alla struttura a gusci che si vedr\`a pi\`u avanti.
+\end{osservazione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \appendix
