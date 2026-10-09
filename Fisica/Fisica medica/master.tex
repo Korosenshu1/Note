@@ -1712,7 +1712,7 @@ A seconda della profondit\`a che si desidera raggiungere per il trattamento, si 
 	\item \textit{elettroni} per profondit\`a $<5$ cm, con energie di $4\div 25$ MeV. 
 \end{itemize}
 Si vede che, per nuclei, si utilizza l'energia per nucleone, in modo da confrontare pi\`u efficacemente le energie di riferimento tra specie nucleari distinte.
-\subsubsection{Range}
+\subsection{Range}
 
 \begin{center}
 	\begin{minipage}
@@ -1737,13 +1737,64 @@ Il range in questa approssimazione \`e ottenuto integrando l'inverso dello stopp
 \end{equation}
 Nonostante sia una buona approssimazione, questo range va preso come \textit{percorso medio} delle particelle; infatti, non solo in realt\`a la perdita di energia non \`e continua a causa della produzione di raggi $\delta $, ma non \`e neanche vero che le particelle viaggiano in linea retta.
 
+\subsubsection{Computazione del range-CSDA}
+
+Il calcolo esatto del range-CSDA, per\`o, \`e computazionalmente impegnativo, per cui o si ricorre ad apposito software, oppure si utilizzano leggi di scala.
+Riguardo quest'ultime, per valori $0.1<\beta \gamma< 1$, il termine $1 / \beta ^2$ risulta dominante nello stopping power, per cui 
+\[
+S \sim \frac{1}{\beta ^2}
+\] 
+In regime non-relativistico, $E_\text{kin}\sim v^2 \propto \beta ^2$, per cui
+\[
+S \sim \frac{1}{E}
+\] 
+Svolgendo l'integrale per ottenere il range, allora, si ricava
+\begin{equation}
+	R_\text{CSDA}\sim E^2
+\end{equation}
+Questo evidenzia il motivo per cui, in regioni di basse energie, piccoli aumenti di energia possono produrre variazioni significative nel range.
+
+Una valutazione approssimativa del range-CSDA pu\`o essere fatta tramite la \textbf{formula di Bragg-Kleeman}, che \`e applicabile nell'intervallo energetico di riferimento per la pratica clinica ($60 \div 430 \text{ MeV}/n$, con $n$ numero di nucleoni).
+La relazione fornita \`e 
+\begin{equation}
+	R \simeq a E_\text{kin}^P
+\end{equation}
+dove $a$ \`e una costante adimensionale e l'esponente soddisfa $1 < P < 1.8$.
+
+\begin{esempio}[Uso della formula di Bragg-Kleeman]
+	Per protoni di energie nell'intervallo $100\div 200$ MeV in acqua, si ottiene $R \approx 0.00244 \, E^{1.75} \text{ g}/\text{cm}^2$.
+	Per particelle $\alpha $ emesse da radionuclidi naturali in aria ($15\, {^\circ\text{C}}$ a $P_\text{atm}$), la formula restituisce $R\approx 0.318 \, E^{1.5}$ cm.
+\end{esempio}
+\begin{osservazione}
+Nell'esempio, si \`e prima usato il range massico, cio\`e diviso per la densit\`a, mentre poi si \`e riportato il range geometrico, da cui la differenza nelle unit\`a di misura.
+\end{osservazione}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+La formula di Bragg-Kleeman permette anche, dato il range in un materiale per una particella, di ottenere il range della stessa particella in un mezzo diverso.
+Siano $\rho _1$ la densit\`a e $A_1$ la massa atomica del primo mezzo, mentre $\rho _2$ e $A_2$ quelli del secondo; allora
+\begin{equation}
+	\frac{R_1}{R_2} \simeq \frac{\rho _2 \sqrt{A_1} }{\rho _1 \sqrt{A_2} }
+\end{equation}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bg-scale.png}
+	\end{minipage}
+\end{center}
+\subsubsection{Particelle diverse nello stesso materiale}
+
+Considerando lo stesso materiale attraversato da particelle diverse, si deve tenere conto che il range dipende sia dalla velocit\`a, sia dalla carica delle particelle.
+Si pu\`o ricorrere di nuovo alla legge di scala per ottenere il range.
+Noto, infatti, il range della prima particella $R_1$, di carica $Z_1$ e massa $M_1$, allora $R_2$ per la seconda particella di carica $Z_2$ e massa $M_2$, che viaggia alla \textbf{stessa velocit\`a} della prima, \`e dato da
+\begin{equation}
+	\frac{R_2}{R_1} \simeq \frac{M_2 Z_1^2}{M_1 Z_2^2}
+\end{equation}
 
 
-
-
-
-
-
+\subsubsection{Range straggling}
 
 
 
