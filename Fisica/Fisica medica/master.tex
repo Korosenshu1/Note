@@ -1796,13 +1796,102 @@ Noto, infatti, il range della prima particella $R_1$, di carica $Z_1$ e massa $M
 
 \subsubsection{Range straggling}
 
+La trattazione di range vista finora \`e relativa alla singola particella che penetra un mezzo; considerando un intero fascio, bisogna tenere conto del fatto che le particelle non perdono tutte la stessa energia in ciascuna interazione.
+Le fluttuazioni statistiche dell'energia rilasciata nelle varie interazioni dello ione con il mezzo producono una variazione nella lunghezza del percorso; questa fluttuazione prende il nome di \textbf{straggling longitudinale}, o \textit{range straggling}.
+Una diretta conseguenza di questo fenomeno \`e il fatto che il picco di Bragg del fascio possiede una larghezza finita, come evidenziato in figura.
+\begin{center}
+	\begin{minipage}
+		{.5\columnwidth}
+		\centering
+	\includegraphics[width=\columnwidth]{bragg-strag1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bragg-strag2.png}
+	\end{minipage}
+\end{center}
+Lo straggling su svariate interazioni \`e una distribuzione gaussiana che, in funzione della profondit\`a, ha la seguente forma:
+\begin{equation}
+	\frac{d \sigma _R}{d x} = 4\pi N e^4 \frac{\overline{Z}^2(x)}{\frac{d }{d x} E^2(x)}
+\end{equation}
+dove $N$ \`e la densit\`a elettronica del mezzo attraversato, mentre $\overline{Z}(x)$ \`e la carica effettiva della particella carica\footnote{Nelle varie interazioni, uno ione, per esempio di carbonio, pu\`o interagire in maniera da alterare il suo numero atomico $Z$, quindi si introduce $\overline{Z}$ a rappresentare la carica che effettivamente presenta al momento dell'interazione, cio\`e alla distanza $x$.}.	
+Il \textbf{range straggling relativo}, che indica la dispersione statistica dei range delle varie particelle, \`e dato da 
+\begin{equation}
+	\frac{\sigma _R}{R} = \frac{1}{\sqrt{M} } \phi \left(\frac{E}{Mc^2}\right) 		
+\end{equation}
+dove $\phi $ \`e una funzione che varia lentamente e dipende dalle caratteristiche del mezzo attraversato.
+	Visto che $\sigma _R / R$ \`e circa costante, i picchi di Bragg si allargano con la profondit\`a.
+	Nelle immagini, sono rappresentati l'energia rilasciata in acqua da protoni a sinistra e da ioni carbonio a destra, al variare della profondit\`a, quindi dell'energia iniziale.
+\begin{center}
+	\begin{minipage}
+		{.5\columnwidth}
+		\centering
+	\includegraphics[width=\columnwidth]{strag-rel1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{strag-rel2.png}
+	\end{minipage}
+\end{center}
+Considerando due particelle con lo stesso range, si pu\`o ricavare un'ulteriore legge di scala, tenendo conto del fatto che $\phi $ varia lentamente, pari a 
+\begin{equation}
+	\frac{\sigma _{R_1}}{\sigma _{R_2}} = \sqrt{\frac{M_2}{M_1}} 
+\end{equation}
+\begin{esempio}
+Nel caso di protoni e ioni carbonio, in base alla legge di scala sopra, si vede che il range straggling \`e \`e $3.5$ volte pi\`u piccolo di quello per i protoni.
+\end{esempio}
+\subsection{Scattering coulombiano multiplo}
 
 
+Oltre all'interazione dovuta agli elettroni atomici, che producono collisioni anelastiche con conseguente perdita di energia, le particelle cariche interagiscono elettrostaticamente anche con i nuclei atomici, attraverso collisioni elastiche.
 
+L'insieme delle collisioni elastiche subite dalle particelle cariche durante il loro transito nel mezzo produce il fenomeno dello scattering coulobmiano multiplo (MCS), il quale \`e responsabile dell'allargamento spaziale del fascio a seguito dell'attraversamento del mezzo.
+Questo allargamento nel piano di misura (MP) \`e descritto da una distribuzione gaussiana, alla quale \`e associata una deviazione standard $\sigma _\theta $.
 
-
-
-
+Data una particella carica con numero atomico $Z_p$, momento $p$ e velocit\`a $\beta $, la formulazione di Highland permette di calcolare la deviazione standard $\sigma _\theta $ dell'angolo di scattering in un mezzo omogeneo; indicando con $L_\text{rad}$ la lunghezza di radiazione caratteristica del mezzo, relativa alla legge $E = E_0 e^{-x / L_\text{rad}}$, e con $t$ il suo spessore massico (cio\`e $[t] = \text{g}/\text{cm}^2$), si ha
+\begin{equation}
+	\sigma _\theta = \frac{14.1\text{ MeV}}{\beta pc}Z_p \sqrt{\frac{t}{\rho L_\text{rad}}} \left[ 1 + 0.038 \ln\left(\frac{t}{\rho L_\text{rad}}\right)  \right] 
+\end{equation}
+Dalla formula, si osservano i seguenti andamenti dello scattering laterale:
+\begin{itemize}
+	\item diminuisce per particelle ad alta energia, visto che $\sigma _\theta \propto Z_p / (\beta p c)$;
+	\item aumenta con lo spessore attraversato;
+	\item aumenta con il numero atomico del materiale, visto che $L_\text{rad}\sim Z_p^{-2}$.
+\end{itemize}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+A parit\`a di range, le particelle pi\`u pesanti tendono ad avere una minore deflessione laterale.
+Di lato, si confronta la deflessione al variare della profondit\`a in acqua.
+Per protoni da $150$ MeV e ioni carbonio da $285 \text{ MeV}/n$, scelti in modo che abbiano uguale range, si pu\`o verificare che
+\[
+	(\sigma _\theta )_p \approx 3 (\sigma _\theta )_C
+\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{mcs.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Di lato, si osservano angolo di scattering $\theta $ e perdita di energia $\Delta E$ per un fascio di protoni dopo aver attraversato $1\text{ g}/\text{cm}^2$ di materiale attraversato, per vari materiali.
+	Questo permette di comprendere che la scelta del materiale dipende dal fine che si vuole raggiungere: si usa il piombo se l'intento \`e ottenere il maggiore allargamento del fascio, con il minimo dispendio energetico; si usa il berillio se si vuole ridurre molto di pi\`u l'energia del fascio, rispetto a quanto lo si allarga.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{mcs-mat.png}
+	\end{minipage}
+\end{center}
 
 
 
