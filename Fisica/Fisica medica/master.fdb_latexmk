@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex master.idx"] 1791558107.46541 "master.idx" "master.ind" "master" 1791655206.02542 0
-  "master.idx" 1791655195.68767 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1791558107.46541 "master.idx" "master.ind" "master" 1791666250.38261 0
+  "master.idx" 1791666240.38274 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
   (rewritten before read)
-["pdflatex"] 1791655194.72123 "master.tex" "master.pdf" "master" 1791655206.02558 2
+["pdflatex"] 1791666239.42311 "master.tex" "master.pdf" "master" 1791666250.38279 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1775415801 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/plex/plx_gmchnq.enc" 1775415801 2931 cae369c7281863425bd99c5c96cfb9dd ""
   "/usr/share/texmf-dist/fonts/enc/dvips/plex/plx_koxhod.enc" 1775415801 3149 276323de1530481422feb24da020d0b2 ""
@@ -81,6 +81,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb" 1775415801 24373 a91d375736817a75026663adcb2190c1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1775415801 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb" 1775415801 91932 77774952968a414cf0b2b73f9dfce1bb ""
+  "/usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsmfIPiXi10.pfb" 1775415801 2926 6c2f59bea95949309a7961f287b554fd ""
   "/usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx8.pfb" 1775415801 39465 4977b87de73ba2f8adfd24ba3dc2299b ""
   "/usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb" 1775415801 27911 5964aff9520f976137063d69478d97d8 ""
   "/usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb" 1775415801 35623 aaffdb55c0a60d18b15e3ecae9602759 ""
@@ -355,6 +356,9 @@
   "augerfe.png" 1790759427.69696 98342 dadeeddcfe3e0e0cdc583452d15c4de2 ""
   "bethe-de.png" 1791379079.42385 37456 82e430734434867b370223f79ca53b68 ""
   "bg-scale.png" 1791533449.25235 96011 2f8fc52f051969b8eaf6ec16e5707ccc ""
+  "bk-coeff.png" 1791665997.17304 73311 45a3be3bede4c5d67b86535331928117 ""
+  "bms-1.png" 1791661943.19517 33770 4b5fef453ebed7af2446d86f87ee2442 ""
+  "bms-2.png" 1791661954.22497 164282 8b13e175914e4bb3d2e36c64894c7404 ""
   "bragg-p.png" 1791391284.79352 9832 819d93ba4ae172ced70c03cbdc63326b ""
   "bragg-strag1.png" 1791554793.72115 28867 e5446f826f3bbe3c6e8b231f8567c7dd ""
   "bragg-strag2.png" 1791554800.59217 41406 e34b4843c622918c954edb4261a0d78e ""
@@ -369,6 +373,7 @@
   "coppie.png" 1790761703.94392 51690 afe963a42f373447243b6ad1ee8189ae ""
   "cous-1.png" 1791389542.34307 81681 efc760a38710c28f585a4fe6362f5f33 ""
   "cous-2.png" 1791389552.13917 167280 8e91692a4811ba85c0e43db91ade5369 ""
+  "critE.png" 1791662795.34502 71974 7b44eb2c357bef5c3e791957072f537a ""
   "ct-pet.png" 1790147090.98397 739650 e33355d6e4b3e0c2f677ed5664a444fb ""
   "cyc-prate.png" 1790524416.78819 62373 0f055dc63c8b6c87301030374ed113d6 ""
   "dE-bg.png" 1791379718.41037 9420 2f2ae3343061ed8bbe20d2d50ff8201b ""
@@ -376,10 +381,10 @@
   "et.png" 1790519910.23501 43096 91e051451fff500666b550ebde86a2e5 ""
   "fe-pb-h2o.png" 1790759151.72597 121980 866898d2b664899d13ce1bdeaa97d69a ""
   "fe-sh.png" 1790759714.23696 83310 a00326e004865284ffc08f3f57807bea ""
-  "master.aux" 1791655205.77215 26194 6a6e58ccd460635a89d67f76186beff4 "pdflatex"
+  "master.aux" 1791666250.13577 26580 1138dd809c6f5827264168a1aea58e4f "pdflatex"
   "master.ind" 1791558107.55741 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1791655189.464 109645 8351070b7e25d338c00dc46015ac193c ""
-  "master.toc" 1791655205.78315 4592 fe0cf75ef18d72e6dc525a921675e393 "pdflatex"
+  "master.tex" 1791666237.75574 117124 dedc764f93adfaa1ae1f31c2fc0449b1 ""
+  "master.toc" 1791666250.14577 4592 fe0cf75ef18d72e6dc525a921675e393 "pdflatex"
   "matt-coeff.png" 1791134565.99793 137464 4abab77fc3e44bda3b6c2daf28039107 ""
   "mc-gen.png" 1790522705.96612 50271 e84395e108e018856cef69d79a01bf78 ""
   "mcs-mat.png" 1791560145.14943 122473 230f2c40d9cf42ae5b280a1bfb2dabbd ""
@@ -395,8 +400,12 @@
   "s-c.png" 1791132909.21896 129510 84ef1dbd63927efbf2c42f8bff47dd45 ""
   "s-ef.png" 1790758892.65297 53284 b770ea59506ecbc95fd618b6e26ec209 ""
   "s-pb.png" 1791132920.10296 145231 9dddaea76afcea3b388b302d133305fd ""
+  "sp-e-cu.png" 1791660343.18772 42478 ec545932741e013baeba2eb026b5ff5c ""
+  "spme-mats.png" 1791660745.7141 51063 2c969227951279a53263dd18e1b1ce28 ""
   "strag-rel1.png" 1791558014.6922 60442 a48afb46fdc698086c87405087dd6869 ""
   "strag-rel2.png" 1791558020.86921 63950 a695f69ce25e0d2c1ee46b73a885d26d ""
+  "w-int.png" 1791665429.78772 27933 b38c32bade9d4c13b28f9d1382ead41e ""
+  "wat-e_vs_p.png" 1791659940.97293 428467 5b8ee414e8adb8d83cfaa5cd00288385 ""
   "yi-fe.png" 1790759534.28495 94807 c04f8673898eb125c616d622f1cdfa62 ""
   "yi-fe2.png" 1791020314.51997 79838 3570acbd30867c71b0cd7461131fe708 ""
   (generated)

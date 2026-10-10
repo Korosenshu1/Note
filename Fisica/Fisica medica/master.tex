@@ -1977,7 +1977,7 @@ con $\lambda $ libero cammino medio e $n$ densit\`a dei centri di interazione.
 Calcolare la probabilit\`a, per protoni con $E>200$ MeV in acqua, di avere una reazione nucleare.
 \end{esempio}
 \begin{svolgimento}
-Si ha $\sigma _R = 53A_^{2 / 3}$ mb e $P(x) = e^{-x / \lambda _\text{int}}$, con $\lambda _\text{int} = \frac{1}{n\sigma _R} = \frac{A_t ^{1 / 3}}{53 \rho  N_A}$, dove $n = \rho  N_A / A$.
+Si ha $\sigma _R = 53A_T^{2 / 3}$ mb e $P(x) = e^{-x / \lambda _\text{int}}$, con $\lambda _\text{int} = \frac{1}{n\sigma _R} = \frac{A_t ^{1 / 3}}{53 \rho  N_A}$, dove $n = \rho  N_A / A$.
 Inserendo i valori, $\lambda _\text{int} - 82.4$ cm.
 Ne segue che, in $1$ cm, si ha $e^{-1 / 82.4} = 0.99$, cio\`e soltanto l'$1\%$ dei protoni interagisce nuclearmente.
 In $20$ cm di acqua, corrispondente ad un tipico spessore di trattamento, il $20\%$ dei protoni va incontro ad interazione nucleare, senza arrivare al picco di Bragg.
@@ -1995,7 +1995,7 @@ Per quanto riguarda il contributo collisionale, l'equazione di Bethe-Bloch va co
 \begin{equation}
 	-\left(\frac{d E}{d x} \right) _\text{coll} = 4 \pi N_A r_e^2 m_e c^2 \rho \frac{Z_T}{A_T}\frac{1}{\beta ^2} \left[ \ln \left(\frac{\tau ^2 (\tau +2)}{2 \left(\mathcal{I} /m_ec^2\right) ^2}\right) +F(\tau ) - \delta (\beta \gamma) - 2 \frac{C(\beta )}{Z_T} \right] 
 \end{equation}
-Qui, $\tau $ \`e l'energia cinetica della particella carica leggera per unit\`a di $m_e c^2$, mentre 
+Qui, $\tau $ \`e l'energia cinetica della particella carica leggera per unit\`a di $m_e c^2$, ossia $\tau  = E_\text{kin} / m_e c^2$, mentre 
 \[
 F(\tau ) = \begin{cases}
 	\displaystyle 1 - \beta ^2 + \frac{\tau ^2 / 8 - (2\tau +2)\ln 2}{(\tau +1)^2} &,\ \text{ per elettroni} \\
@@ -2004,20 +2004,138 @@ F(\tau ) = \begin{cases}
 \end{cases}
 \] 
 dove la differenza delle due espressioni \`e legata al fatto che, avendo una carica opposta, il positrone interagir\`a in maniera differente con i nuclei.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\columnwidth]{wat-e_vs_p.png}
+	\caption{Si mettono a confronto gli stopping power di protone ed elettrone in acqua, evidenziando i contributi di ciascuno. Si nota, nel caso dell'elettrone, che ad alte energie la perdita inizia ad essere dominata dallo stopping power radiativo, dovuto alla bremsstrahlung.}
+\end{figure}
 
-\begin{boxenv}[]
-Slide 103, minuto 01:02:58
-\end{boxenv}
+\noindent Quanto alla perdita di energia per irraggiamento, invece, si ha la formula
+\begin{equation}
+	-\left(\frac{d E}{d x} \right) _\text{rad} = \frac{e^4 N_A \rho  E_\text{kin} Z_T (Z_T+1)}{137A_T m_e^2 c^4}\left[4 \ln \left(\frac{2E_\text{kin}}{m_ec^2}\right) - \frac{4}{3}\right] 
+\end{equation}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	In figura, si osserva la composizione dello stopping power totale, per un elettrone in rame, e le singole componenti collisionale e radiativa; la curva in puntini, invece, rappresenta lo stopping power di un protone nello stesso mezzo.
+	Si evidenziano gli andamenti del contributo radiativo e di quello collisionale, che risultano essere
+	\[
+	-\left(\frac{d E}{d x} \right) _\text{c} \sim \ln E \hspace{0.75cm} -\left(\frac{d E}{d x} \right) _\text{r} \sim E
+	\] 
+	
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{sp-e-cu.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	In questo altro grafico, invece, si riportano lo stopping power massico, collissionale in linee continue e radiativo in tratteggiato, per elettroni in acqua, alluminio e piombo, al variare dell'energia cinetica degli elettroni.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{spme-mats.png}
+	\end{minipage}
+\end{center}
+Per stimare l'energia persa a seguito di irraggiamento, \`e possibile utilizzare la formula empirica 
+\begin{equation}
+	f_\text{br} = \frac{ZE_0\, [\text{MeV}]}{3000}
+\end{equation}
+Per esempio, nel caso del piombo per elettroni da $1.71$ MeV, si ottiene $f_\text{br} = 0.047$; visto che l'energia iniziale \`e pari a $1710$ keV, si ottiene un'energia persa per canale radiativo pari a $1710\cdot 0.047 = 80.4$ keV.
 
+Elettroni con energia cinetica $E_\text{kin}$ emettono fotoni di bremsstrahlung con energia compresa tra $0$ e $E_\text{kin}$, ma la distribuzione in energia di tali fotoni \`e massima per le energie pi\`u basse, decrescendo fortemente per energie maggiori.
+Un'elevata presenza di fotoni a basse energie pu\`o solamente aumentare la dose trasferita al paziente, senza raggiungere il rivelatore e venire assorbita dagli strati superficiali; per questo motivo, in diagnostica, si \`e soliti usare appositi filtri per schermare fotoni di bassa energia e, a seconda del materiale, usarli per rafforzare il fascio utile. 
+Nel caso del tungsteno riportato nel grafico a destra, si vede che lo spettro filtrato rappresenta una minore concentrazione di fotoni nella parte iniziale dello spettro, ma presenta le righe caratteristiche dei raggi X del tungsteno: il materiale assorbe fotoni, portando la formazione di lacune, colmate poi da transizioni verso il livello K.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bms-1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bms-2.png}
+	\end{minipage}
+\end{center}
 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Al crescere dell'energia cinetica degli elettroni, quindi, lo stopping power legato al contributo radiativo diventa via via pi\`u dominante; per questa ragione si definisce un valore di energia critica, caratteristica del materiale, per cui si ha 
+	\[
+	\left(\frac{d E}{d x} \right) _c = \left(\frac{d E}{d x} \right) _r
+	\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{critE.png}
+	\end{minipage}
+\end{center}
+Per calcolare questo valore di energia critica, si pu\`o usare la seguente legge empirica:
+\begin{equation}
+	E_\text{crit} = \frac{800 \text{ MeV}}{Z + 1.2}
+\end{equation}
+Un'altra grandezza rilevante \`e la \textbf{lunghezza di radiazione} di un materiale; questa \`e la lunghezza media, in centimetri, necessaria per ridurre l'energia dell'elettrone che lo attraversa di un fattore $1 / e$ del valore iniziale \textit{solo tramite processi radiativi}.
+Il contributo relativo allo stopping power dell'elettrone si pu\`o esprimere tramite la legge
+\begin{equation}
+	\left(\frac{d E}{d x} \right) _\text{rad} = \frac{E}{X_0} \implies E(x) = E(0) e^{-x / X_0}
+\end{equation}
+dove 
+\[
+X \simeq \frac{A}{4 \alpha  N_A Z_T^2 \rho r_0^2 \ln\left(183\, Z^{-1 / 3}\right) }
+\] 
+mentre $r_0$ \`e il raggio classico dell'elettrone e $\alpha $ \`e la costante di struttura fine.
 
+Per via della loro massa, quindi, gli elettroni perdono energia con un rateo molto pi\`u basso rispetto ad altre particelle cariche e tendono ad essere deviate pi\`u facilmente, percorrendo tratti irregolari.
+Una parametrizzazione del range massico percorso dalle particelle $\beta $ \`e dovuto a Katz e Penfold:
+\begin{equation}
+	R_m = \begin{cases}
+		0.412 \, E_\beta ^{1.265-0.0954\ln E_\beta }&,\ 0.01 < E_\beta \le 2.5 \text{ MeV}\\
+		0.530 E_\beta  - 0.106 &,\ E_\beta > 2.5\text{ MeV}
+	\end{cases}
+\end{equation}
+Le particelle trattate finora sono state tutte assunte ad una certa energia, ma nella pratica clinica, non avendo a disposizione acceleratori di particelle, si utilizzano delle sorgenti che emettono raggi $\beta $; il problema di questo metodo \`e che queste sorgenti hanno uno spettro di emissione continuo.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Per esempio, una possibile sorgente \`e il tungsteno-185, che produce particelle $\beta $ con energia massima di $0.43$ MeV; questo, in vari materiali, mostra un intensit\`a del fascio emesso con andamenti nel seguente grafico.
+Da questo, si vede che, in scala semi-logaritmica, l'intensit\`a decresce linearmente.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{w-int.png}
+	\end{minipage}
+\end{center}
+Questo motiva la seguente approssimazione: l'intensit\`a di un fascio di elettroni che passa attraverso un materiale di spessore massico $t$ e con coefficiente di attenuazione $\beta $ $\mu $ \`e dato da
+\begin{equation}
+	I \simeq I_0 e^{-\mu  t}
+\end{equation}
+Questa \`e un'approssimazione per via del fatto che gli elettroni possono essere facilmente diffusi via dal fascio.
 
-
-
-
-
-
-
+A seguito della loro tendenza ad essere diffusi molto facilmente, gli elettroni possono trovarsi ad essere \textbf{back-scatterati}, tornando, quindi, indietro verso la sorgente.
+Questa \`e una caratteristica che dipende molto sia dal materiale, sia dall'energia iniziale della particella.
+In questo modo, oltre agli elettroni assorbiti dal materiale e a quelli che lo attraversano tutto, si tiene conto anche di quelli che potenzialmente tonano indietro.
+Questo viene fatto introducendo il coefficiente di backscattering
+\begin{equation}
+	\eta = \frac{\text{numero elettroni back-scatterati}}{\text{numero di elettroni incidenti}}
+\end{equation}
+Per elettroni non collimati su un materiale ad alto $Z$, come lo ioduro di sodio $\ce{NaI}$, anche l'$80\%$ di essi pu\`o essere riflesso.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\columnwidth]{bk-coeff.png}
+\end{figure}
 
 
 
