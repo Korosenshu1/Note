@@ -1737,6 +1737,44 @@ Il range in questa approssimazione \`e ottenuto integrando l'inverso dello stopp
 \end{equation}
 Nonostante sia una buona approssimazione, questo range va preso come \textit{percorso medio} delle particelle; infatti, non solo in realt\`a la perdita di energia non \`e continua a causa della produzione di raggi $\delta $, ma non \`e neanche vero che le particelle viaggiano in linea retta.
 
+\begin{esempio}
+	[Range shifter]
+	Si vuole ridurre l'energia di un fascio di protoni da $60$ MeV a $50$ MeV utilizzando una lastra di PMMA, cio\`e di $\ce{C_5O_2H_8}$.
+L'obiettivo \`e calcolare lo spessore della lastra necessario per ottenere tale riduzione.
+\end{esempio}
+\begin{svolgimento}
+Ricordando che $-\frac{d E}{d x}  = \rho  S_m(E)$, con $S_m$ stopping power massico, da cui si ottiene che $\rho \dd x= - \frac{\dd E}{S_m(E)}$ e, si deve calcolare
+\[
+\rho \Delta x = \int_{50 \text{ MeV}}^{60 \text{ MeV}} \frac{\dd E}{S_m(E)}
+\] 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Invece di svolgere l'integrale, lo si approssima a intervalli pi\`u piccoli, usando che $\rho \Delta x_i \simeq \frac{\Delta E_i}{S_m(E_i)}$. 
+Ad esempio, si usa $\Delta E = 2$ MeV per ogni intervallino, per cui sono necessarie 10 iterazioni.
+Complessivamente, allora, si accumula un $\rho \Delta x = 0.889571 \text{ g}/\text{cm}^2$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\begin{tabular}
+		{c c c}
+		MeV & $S_m \, [\text{MeV cm}^2/\text{g}] $ & $\rho \Delta x_i \, [\text{g}/\text{cm}^2]$\\
+		\hline
+		$60\to 58$ & $10.63$ & $0.188147$\\
+		$58\to 56$ & $10.93$ & $0.182983$\\
+		$56\to 54$ & $11.24$ & $0.177936$\\
+		$54\to 52$ & $11.57$ & $0.172861$\\
+		$52\to 50$ & $11.93$&$0.167645$\\
+		\hline
+			   & & $0.889571$\\
+		\hline
+	\end{tabular}
+	\end{minipage}
+\end{center}
+Ora si deve portare il risultato in unit\`a di lunghezza, quindi si moltiplica per la densit\`a $\rho =1.18\text{ g}/\text{cm}^3$, ottenendo un $\Delta x=7.5$ mm.
+\end{svolgimento}
 \subsubsection{Computazione del range-CSDA}
 
 Il calcolo esatto del range-CSDA, per\`o, \`e computazionalmente impegnativo, per cui o si ricorre ad apposito software, oppure si utilizzano leggi di scala.
@@ -1892,6 +1930,89 @@ Per protoni da $150$ MeV e ioni carbonio da $285 \text{ MeV}/n$, scelti in modo 
 	\includegraphics[width=\columnwidth]{mcs-mat.png}
 	\end{minipage}
 \end{center}
+
+\subsection{Interazioni nucleari e libero cammino medio}
+Si considera, ora, il caso in cui la particella carica arriva ad interagire direttamente con il nucleo.
+Nell'intervallo energetico $10 \text{ MeV}< E < \text{GeV}/n$, si considera il \textbf{modello abrasione-ablazione}: 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{abr-abl.png}
+\end{figure}
+
+\noindent In questo modello, si considera che la parte di proiettile e la parte di nucleo che ``entrano in contatto'' si elidono a formare una \textit{fireball}; la parte di proiettile rimanente, detta \textit{quasi-proiettile}, continua il suo cammino quasi indisturbata, mentre, similmente, il \textit{quasi-target} risente poco della collisione, ma entrambi finiscono in uno stato eccitato a seguito dell'urto.
+Nella fase successiva, cio\`e quella dell'ablazione, si osserva la formazione di frammenti per transizione agli stati fondamentali: dalla fireball, si formano frammenti meno eccitati, che decadono per multi-frammentazione; i frammenti del proiettile proseguono in avanti, seguendo circa la stesa direzione del proiettile; i frammenti del target, invece, vengono emessi quasi isotropicamente.
+
+Una parametrizzazione dell'interazione nucleare \`e quella \textbf{geometria}, ottenuta immaginando i nuclei come \textit{sfere di raggio} $a$.
+La sezione d'urto \`e ottenuta dalla differenza tra la $\sigma _\text{tot}$ e la $\sigma _\text{el}$ (sezione d'urto elastica); imponendo, quindi, che tale interazione avvenga per contatto della carica con il nucleo su cui incide, la sezione d'urto geometria dovr\`a essere della forma
+\begin{equation}
+	\sigma _R = \sigma _\text{tot} - \sigma _\text{el} = \pi (a_p + a_t)^2
+\end{equation}
+dove $a_p$ \`e il raggio della carica, mentre $a_t$ \`e quello del target.
+Visto che il raggio atomico \`e dato da $a = r_0 A^{1 / 3} - b$ (con $b$ che tiene conto dell'eventuale overlapping tra le due particelle), si ha
+\begin{equation}
+	\sigma _R = \pi r_0^2 \left(A_p^{1 / 3} + A_t ^{1 / 3} - b\right) ^2
+\end{equation}
+Questa formulazione, detta \textbf{formulazione di Bradt-Peters}, \`e adeguata per $E > 1.5\text{ GeV}/n$; per energie inferiori, \`e necessario adattarla opportunamente.
+
+Per interazioni protone-nucleo con $E_p > 200$ MeV, per esempio, la formula pu\`o essere parametrizzata come
+\begin{equation}
+	\sigma _R = 53 \cdot A_t ^{2 / 3} \text{ mb}
+\end{equation}
+Per protoni di energia inferiore, invece, \`e necessario ricorrere ad una diversa parametrizzazione:
+\begin{equation}
+	\sigma _R (E_p) = \sigma _0 f(E_p,Z_t)
+\end{equation}
+con 
+\[
+\sigma _0 = \pi r_0^2 \left[ 1  + A_t ^{1 / 3} - b_0 \left(1 + A_t ^{-1 / 3}\right)  \right] ^2 \, , \ b_0 = 2.247 - 0.915 \left(1 + A_t ^{-1 / 3}\right) 
+\] 
+e $f(E_p,Z_t)$ funzione di parametrizzazione, la cui espressione dipende dal target e dal range energetico dei proiettili.
+
+La probabilit\`a che non vi sia interazione nel tratto $x$, $P(x)$, \`e data da 
+\begin{equation}
+	P(x) = e^{- x / \lambda } = e^{-x n\sigma }
+\end{equation}
+con $\lambda $ libero cammino medio e $n$ densit\`a dei centri di interazione.
+\begin{esempio}
+Calcolare la probabilit\`a, per protoni con $E>200$ MeV in acqua, di avere una reazione nucleare.
+\end{esempio}
+\begin{svolgimento}
+Si ha $\sigma _R = 53A_^{2 / 3}$ mb e $P(x) = e^{-x / \lambda _\text{int}}$, con $\lambda _\text{int} = \frac{1}{n\sigma _R} = \frac{A_t ^{1 / 3}}{53 \rho  N_A}$, dove $n = \rho  N_A / A$.
+Inserendo i valori, $\lambda _\text{int} - 82.4$ cm.
+Ne segue che, in $1$ cm, si ha $e^{-1 / 82.4} = 0.99$, cio\`e soltanto l'$1\%$ dei protoni interagisce nuclearmente.
+In $20$ cm di acqua, corrispondente ad un tipico spessore di trattamento, il $20\%$ dei protoni va incontro ad interazione nucleare, senza arrivare al picco di Bragg.
+\end{svolgimento}
+
+
+\subsection{Interazione delle particelle cariche leggere con la materia}
+Un elettrone (o una particella leggera in generale), rispetto ad una particella carica pesante, perde energia anche tramite processi radiativi; inoltre, mentre una particella carica segue percorsi tendenzialmente rettilinei, un elettrone produce traiettorie molto pi\`u complesse mentre rallenta.
+Per questa ragione in particolare, la profondit\`a di penetrazione e la lunghezza del percorso effettivo possono essere molto diverse.
+Nel calcolare lo stopping power, \`e necessario tenere conto di entrambi questi contributi, motivo per cui si scrive
+\begin{equation}
+	\left(\frac{d E}{d x} \right) _\text{tot} = \left(\frac{d E}{d x} \right) _\text{coll} + \left(\frac{d E}{d x} \right) _\text{rad}
+\end{equation}
+Per quanto riguarda il contributo collisionale, l'equazione di Bethe-Bloch va corretta per tenere conto del fatto che l'elettrone \`e una particella sensibilmente pi\`u leggera:
+\begin{equation}
+	-\left(\frac{d E}{d x} \right) _\text{coll} = 4 \pi N_A r_e^2 m_e c^2 \rho \frac{Z_T}{A_T}\frac{1}{\beta ^2} \left[ \ln \left(\frac{\tau ^2 (\tau +2)}{2 \left(\mathcal{I} /m_ec^2\right) ^2}\right) +F(\tau ) - \delta (\beta \gamma) - 2 \frac{C(\beta )}{Z_T} \right] 
+\end{equation}
+Qui, $\tau $ \`e l'energia cinetica della particella carica leggera per unit\`a di $m_e c^2$, mentre 
+\[
+F(\tau ) = \begin{cases}
+	\displaystyle 1 - \beta ^2 + \frac{\tau ^2 / 8 - (2\tau +2)\ln 2}{(\tau +1)^2} &,\ \text{ per elettroni} \\
+	\\
+	\displaystyle 2 \ln 2 - \frac{\beta ^2}{12} \left(23 + \frac{14}{\tau +2} + \frac{10}{(\tau +2)^2} + \frac{4}{(\tau +2)^3}\right)  &,\ \text{ per positroni}
+\end{cases}
+\] 
+dove la differenza delle due espressioni \`e legata al fatto che, avendo una carica opposta, il positrone interagir\`a in maniera differente con i nuclei.
+
+\begin{boxenv}[]
+Slide 103, minuto 01:02:58
+\end{boxenv}
+
+
+
+
+
 
 
 
