@@ -171,6 +171,10 @@ title=#1
 \usepackage[sfdefault]{plex-sans}
 \usepackage{sansmathfonts}
 
+
+% 1. Aumenta lo spazio verticale (default è 1)
+\renewcommand{\arraystretch}{1.5} 
+
 \begin{document}
 \maketitle
 \newpage
@@ -2123,19 +2127,154 @@ Questo motiva la seguente approssimazione: l'intensit\`a di un fascio di elettro
 	I \simeq I_0 e^{-\mu  t}
 \end{equation}
 Questa \`e un'approssimazione per via del fatto che gli elettroni possono essere facilmente diffusi via dal fascio.
-
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 A seguito della loro tendenza ad essere diffusi molto facilmente, gli elettroni possono trovarsi ad essere \textbf{back-scatterati}, tornando, quindi, indietro verso la sorgente.
 Questa \`e una caratteristica che dipende molto sia dal materiale, sia dall'energia iniziale della particella.
 In questo modo, oltre agli elettroni assorbiti dal materiale e a quelli che lo attraversano tutto, si tiene conto anche di quelli che potenzialmente tonano indietro.
-Questo viene fatto introducendo il coefficiente di backscattering
-\begin{equation}
-	\eta = \frac{\text{numero elettroni back-scatterati}}{\text{numero di elettroni incidenti}}
-\end{equation}
-Per elettroni non collimati su un materiale ad alto $Z$, come lo ioduro di sodio $\ce{NaI}$, anche l'$80\%$ di essi pu\`o essere riflesso.
-\begin{figure}[h!]
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
 	\centering
-	\includegraphics[width=\columnwidth]{bk-coeff.png}
+	\includegraphics[width=\columnwidth]{bk-coeff1.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Questo viene fatto introducendo il coefficiente di backscattering
+\begin{equation*}
+	\eta = \frac{\text{numero elettroni back-scatterati}}{\text{numero di elettroni incidenti}}
+\end{equation*}
+Per elettroni non collimati su un materiale ad alto $Z$, come lo ioduro di sodio $\ce{NaI}$, anche l'$80\%$ di essi pu\`o essere riflesso.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{bk-coeff2.png}
+	\end{minipage}
+\end{center}
+
+
+\newpage
+\section{Radiobiologia}
+
+Le attuali conoscenze in tema di effetti delle radiazioni sull'uomo sono tutte basate su dati raccolti da:
+\begin{itemize}
+	\item incidenti, come Chernobyl, o Fukushima;
+	\item studi epidemiologici effettuati sui sopravvissuti al bombardamento di Hiroshima e Nagasaki;
+	\item studi sulle popolazioni esposte a esplosioni nucleari per scopi militari;
+	\item studi su animali da laboratorio.
+\end{itemize}
+Lo stato attuale delle conoscenze nel campo permette di avere un'ottima documentazione sugli effetti da un'esposizione acuta (cio\`e di breve durata) ad alte dosi, mentre non si hanno conoscenze solide per quanto riguarda:
+\begin{itemize}
+	\item dosi acute non troppo elevate e non ripetute;
+	\item dosi acute basse e ripetute occasionalmente;
+	\item bassissime dosi croniche.
+\end{itemize}
+
+\subsection{Interazioni tra radiazione e sistemi biologici}
+
+\subsubsection{Struttura del DNA}
+
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Il DNA \`e una struttura a doppia elica molto lunga, dell'ordine di metri, ma molto fina, dell'ordine di qualche nanometro, impacchettata nel nucleo di ogni cellula, cio\`e in uno spazio dell'ordine della decina di micron.
+Questa macromolecola \`e composta da due filamenti, a loro volta ottenuti come sequenza di nucleotidi; ciascun nucleotide \`e formato, in ordine da sinistra, da un \textit{fosfato}, da uno \textit{zucchero} (\textit{desossiribosio}) e da una \textit{base} (\textit{timina, citosina, adenina, guanina)}.
+I due filamenti sono connessi tramite legami a idrogeno tra le basi; le possibili connessioni fra queste sono \textit{timina-adenina} e \textit{guanina-citosina}. 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{dna.png}
+	\end{minipage}
+\end{center}
+
+\subsubsection{Effetti radiobiologici}
+
+A seguito dell'esposizione a radiazioni, si riporta la seguente tabella a elencare le scale temporali su cui se ne verificano gli effetti.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l}
+		\makecell[cl]{Tempo} & \makecell[cl]{Evento} & \makecell[cl]{Effetto}\\
+	\hline
+		$0$ & Irradiazione &\\
+	\hline
+		$10^{-18}$ s & Fisico & Ionizzazione/Eccitazione\\
+	\hline
+		$10^{-4}$ s & Chimico elementare & \makecell[cl]{Formazione di\\ radicali liberi \\ Effetti molecolari}\\
+	\hline
+		Secondi & Biochimico & \makecell[cl]{Rottura e formazione di \\ nuovi legami molecolari\\ Degradazione, reticolazione e \\ formazione di polimeri}\\
+	\hline
+		Minuti & \makecell[cl]{Biochimico su macromolecole\\ ad elevata dignit\`a funzionale}& \makecell[cl]{Danni a DNA, enzimi e \\ proteine funzionali}\\
+	\hline
+		Ore/giorni & \makecell[cl]{Mutazioni geniche\\ Inibizione miotica\\ Attivazione polimerasica} & \makecell[cl]{Alterazioni fenotipiche \\ o genotipiche \\ Morte cellulare \\ Riparazione dei danni}\\
+	\hline
+		Anni & \makecell[cl]{Espressione delle \\ mutazioni somatiche\\ o geniche} & \makecell[cl]{Tumori radioindotti\\ Malattie ereditarie}\\
+	\hline
+	\end{tabular}
+\end{table}
+Le conseguenze che seguono lo stadio fisico degli effetti si basano principalmente sulla formazione di \textbf{radicali liberi}, cio\`e atomi o molecole estremamente reattivi per via della presenza di uno o pi\`u elettroni spaiati, o altri prodotti in grado di alterare i legami negli stadi successivi.
+Un esempio particolarmente rilevante ed importante \`e quello della \textbf{radiolisi dell'acqua}:
+\begin{equation}
+	\begin{split}
+		&h\nu  +\ce{ H_2O \longrightarrow H_2O+ + e-}\\
+		&\ce{e- + H_2O \longrightarrow H_2O-}\\
+		&\ce{H_2O+\longrightarrow H+ + OH^\circ}\\
+		&\ce{H_2O- \longrightarrow H^{\circ} + OH-}\\
+		& \vdots 
+	\end{split}
+\end{equation}
+I radicali liberi sono indicati con il simbolo $^\circ$ e sono i principali responsabili del danno biologico da radiazione ionizzante.
+
+L'interazione della radiazione ionizzante con la materia biologica pu\`o provocare danni tramite un'\textbf{azione diretta}, oppure tramite un'\textbf{azione indiretta}.
+\begin{itemize}
+	\item \textit{Azione indiretta:} questa coinvolge l'interazione della radiazione con molecole di acqua presenti nella cellula, con conseguente produzione delle specie reattive dell'ossigeno (ROS), tra cui, per esempio, il radicale $\ce{OH^\circ}$.
+		Queste ROS si legano a molecole biologiche, inducendo la rottura di legami e la conseguente formazione di legami anomali, risultando nell'alterazione della struttura della molecola e nell'alterazione delle sue funzioni a seguito del danno.
+	\item \textit{Azione diretta:} questa coinvolge un'interazione diretta con il DNA, che pu\`o risultare nella rottura di un singolo filamento (\textit{single strand break}), o di entrambi i filamenti (double strand break) per effetto di una singola traccia, oppure di due contemporanee.
+\end{itemize}
+Il DNA rappresenta il bersaglio pi\`u sensibile alle radiazioni: la sua struttura estremamente complessa comporta una difficolt\`a altrettanto elevata nel conseguire una corretta riparazione del danno.
+Gli effetti di queste azioni sul DNA possono manifestarsi in diversi tipi di alterazioni, riportate nella seguente immagine.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{dna-damage.png}
 \end{figure}
+
+\subsection{Frazione di sopravvivenza cellulare}
+Per quanto detto, quindi, \`e importante comprendere il danno corrispondente all'esposizione a radiazioni, in modo da quantificare gli effetti e valutarne la gravit\`a.
+A questo proposito, si introduce il concetto di \textbf{frazione di sopravvivenza cellulare}.
+
+\begin{boxenv}[]
+\centering 33:30
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
