@@ -2336,14 +2336,55 @@ Il LET \`e definito come
 \begin{equation}
 	\text{LET} = \frac{d E}{d x}  \, [\text{keV}/\mu \text{m}]
 \end{equation}
-\begin{boxenv}[]
-\centering 50:00
-\end{boxenv}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	In figura, \`e riportata una simulazione degli elettroni rilasciati in acqua al variare delle particelle che la attraversano. 
+	Si vede, per esempio, che l'elio ha una distribuzione concentrata sulla traiettoria percorsa, mentre le distribuzioni di carbonio e, ancor di pi\`u, di ferro influenzano molto anche la zona circostante.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{let1.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Non \`e solo la dose rilasciata complessivamente ad essere rilevante, quindi, ma anche il profilo del rilascio: l'utilizzo di raggi X, o di particelle cariche, per esempio, coinvolge profili qualitativamente completamente diversi, come evidenziato in figura.
+\`E necessario effettuare le dovute simulazioni per comprendere quale trattamento \`e pi\`u opportuno e come modificarlo: con l'utilizzo di appositi materiali, per esempio, \`e possibile modificare la profondit\`a del picco di Bragg nel caso di particelle cariche.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{let2.png}
+	\end{minipage}
+\end{center}
 
+\subsubsection{Efficacia biologica relativa (RBE)}
 
+Utilizzando la frazione di sopravvivenza cellulare, si possono mettere a confronto le dosi di due proiettili differenti a parit\`a del danno biologico causato.
+Come riferimento standard, si \`e soliti prendere la dose dei raggi X, indicata con $D_\gamma$; in questo modo, si definisce l'efficacia biologica relativa come
+\begin{equation}
+	\text{RBE} = \Eval{\frac{D_\gamma}{D_\text{test}}}{\text{isoeffect}}{}
+\end{equation}
+In questo modo, si pu\`o passare da dose fisica a dose biologica moltiplicando per l'RBE.
+Nel caso della protonterapia, per esempio, si \`e soliti fissare l'RBE con i protoni per questioni di precauzione a 1.1; in generale, ad ogni particella proiettile si fa corrispondere il suo RBE.
 
-
-
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Studiando l'andamento dell'RBE con il LET, si osserva una curva che sale con l'aumentare del let in maniera molto lenta, andamento che distingue la fase di \textit{basso LET}, e inizia a salire molto rapidamente, nella fase di \textit{alto LET}, fino a un punto di massimo; in questo punto, si raggiunge la regione di \textbf{overkill}: la quantit\`a di energia depositata in una cellula da una singola particella \`e superiore alla quantit\`a richiesta per uccidere la cellula stessa.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{let3.png}
+	\end{minipage}
+\end{center}
 
 
 
