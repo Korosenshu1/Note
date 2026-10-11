@@ -2250,16 +2250,95 @@ Gli effetti di queste azioni sul DNA possono manifestarsi in diversi tipi di alt
 Per quanto detto, quindi, \`e importante comprendere il danno corrispondente all'esposizione a radiazioni, in modo da quantificare gli effetti e valutarne la gravit\`a.
 A questo proposito, si introduce il concetto di \textbf{frazione di sopravvivenza cellulare}.
 
+Si dice che una cellula ha \textbf{capacit\`a clonogeniche} se, posta in condizioni opportune, \`e in grado di clonarsi fino a creare una colonia di sue discendenti.
+Tenendo in considerazione questo tipo di cellule, si valuta l'impatto delle radiazioni in base a come influenzano le capacit\`a clonogeniche delle cellule con cui interagiscono.
+L'idea \`e di piantare un certo numero di cellule in un terreno opportuno e studiarne la \textit{frazione sopravvivente}, ossia il rapporto tra il numero di colonie prodotte e il numero di celle seminate.
+\begin{osservazione}
+Aumentando la dose trasmessa dalle radiazioni alla coltura, \`e necessario tenere in considerazione che le sopravvissute devono essere presenti in un numero statisticamente significativo; per questo motivo, nei risultati di seguito, si noter\`a un aumento delle cellule impiantate inizialmente con l'aumento della dose trasferita.
+\end{osservazione}
+
+\noindent Inizialmente, \`e necessario valutare l'\textbf{efficienza di placcatura}, ossia la tendenza a mantenere le capacit\`a clonogeniche nelle generazioni successive, in quanto questo fattore \`e collegato ai fattori in cui vengono poste.
+Si misurer\`a, successivamente, dopo un'incubazione di 1/2 settimane, la percentuale di cellule presenti sul numero totale coltivato, pesato con l'efficienza di placcatura; in questo modo, la frazione sopravvivente \`e definita come
+\begin{equation}
+	S = \frac{\text{n. colonie presenti}}{\text{n. cellule seminate}\cdot \text{eff. di placcatura}}
+\end{equation}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c c c}
+		Numero di cellule & Dose & \makecell[cc]{Numero di colonie\\ dopo incubazione} & \makecell[cc]{Efficienza \\ di placcatura}& Frazione sopravvivente\\
+	\hline
+		$100$ & $0$ Gy & $90$ & $0.9$ &--\\
+		$400$ & $2$ Gy & $72$ &-- &0.2\\
+		$1000$ & $4$ Gy & $36$ &-- &$0.04$\\
+		$10000$ & $6$ Gy & $45$ &-- &$0.005$\\
+	\hline
+	\end{tabular}
+\end{table}
+
+\noindent Per esempio, nel caso di $2$ Gy, si ha $S = \frac{72}{400 \cdot 0.9}=0.2$.
+Per legare la frazione sopravvivente alla dose trasferita, si possono utilizzare due modelli: uno lineare e uno lineare quadratico.
+Nel primo caso, si considera 
+\begin{equation}
+	S = e^{-\alpha D} = e^{-D / D_0}
+\end{equation}
+dove $D_0$ \`e la dose a cui il $37\%$ ($\approx 1/e$) delle cellule conserva capacit\`a clonogeniche.
+Si parla di modello lineare perch\'e in scala semi-logaritmica, questo modello \`e una retta.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+Nel modello lineare quadratico, invece, si avr\`a una forma del tipo 
+\begin{equation}
+	S = e^{-\alpha  D - \beta D^2}
+\end{equation}
+dove il parametro $\alpha $ tiene conto degli eventi one-hit, mentre il parametro $\beta $ tiene conto degli eventi two-hit.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{fs.png}
+	\end{minipage}
+\end{center}
+Il rapporto $\alpha  / \beta \, [\text{Gy}]$ indica la dose in cui si osserva uguale letalit\`a per danno singolo e per somma di subletali\footnote{Gli eventi two-hit, o subletali, sono interazioni non direttamente dannose singolarmente, ma che sommate costituiscono danni rilevanti. Visto che la probabilit\`a di due interazioni indipendenti va come il prodotto delle loro probabilit\`a, si ottiene il termine quadratico.}: se $\alpha  / \beta$ \`e maggiore, gli eventi one-hit sono rilevanti anche a dosi pi\`u alte; altrimenti, diventano pi\`u rilevanti rapidamente gli eventi two-hit. 
+
+Gli andamenti della frazione variano al variare del tipo di linea cellulare considerata (grafico a sinistra), ma \`e anche molto importante considerare lo stadio evolutivo delle cellule nella coltura, come evidenziato dal grafico a destra.
+\begin{center}
+	\begin{minipage}
+		{.35\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{fs-t.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.6\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{fs-l.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si differenziano i tessuti in \textit{late responding} e \textit{early responding}.
+	I primi sono quelli a bassa attivit\`a replicativa, come il midollo spinale, l'osso, la cartilagine, e sono caratterizzati da un bassi $\alpha  / \beta $; in questa categoria, rientrano anche i \textit{tessuti sani}.
+	I secondi, invece, sono quelli ad elevata attivit\`a replicativa, come la cute, le mucose, l'epitelio intestinale, o il midollo osseo, e sono caratterizzati da elevati $\alpha  / \beta $; in questa categoria, rientrano i \textit{tessuti neoplastici}.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{lr-er.png}
+	\end{minipage}
+\end{center}
+
+\subsubsection{Il \textit{linear energy transfer} (LET)}
+
+Il LET \`e definito come
+\begin{equation}
+	\text{LET} = \frac{d E}{d x}  \, [\text{keV}/\mu \text{m}]
+\end{equation}
 \begin{boxenv}[]
-\centering 33:30
+\centering 50:00
 \end{boxenv}
-
-
-
-
-
-
-
 
 
 
