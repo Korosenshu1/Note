@@ -1867,31 +1867,118 @@ Nel caso in cui valga $Q>0$, invece, si \`e nel caso di \textbf{distribuzione pr
 \begin{osservazione}
 Tipicamente, i nuclei atomici hanno $Q\neq 0$; il caso $Q =0 $ corrisponde ad un caso particolare legato alla struttura a gusci che si vedr\`a pi\`u avanti.
 \end{osservazione}
+\noindent Conoscendo sperimentalmente che, per il deutone, $Q_d = 0.00282\text{ barn} = 0.282\text{ fm}^2$, si vuole capire quanto grande sia questo valore, cio\`e avere un'idea di quanto si discosti da una distribuzione sferica.
+Per farlo, lo si confronta con la superficie del deutone se fosse perfettamente sferico; sapendo che $R_d = 2.1$ fm, si ottiene $S = 4 \pi R_d^2 = 55.42 \text{ fm}^2$, quindi 
+\[
+\frac{Q_d}{S} = 0.005
+\] 
+Questo indica che, come quantit\`a, la deformazione dalla simmetria sferica indicata da $Q_d$ \`e molto bassa rispetto alla superficie complessiva di un oggetto delle dimensioni del deutone; questo suggerisce che la deviazione dalla simmetria sferica sia molto piccola.
 
+\subsubsection{Contributo non centrale}
 
+La presenza di un momento di quadrupolo elettrico non-nullo, in ogni caso, suggerisce la presenza di un'anisotropia spaziale, mentre il fatto che $\ell =0$ suggerisce che la funzione d'onda del deutone nel fondamentale debba necessariamente contenere anisotropie. 
+Mettendo insieme queste cose, si arriva a concludere che la funzione d'onda deve avere una componente con momento angolare orbitale non-nullo, perci\`o essere della forma
+\begin{equation}
+	\ket{\psi _d} = a_0 \ket{^3S_1} + \sum_{\ell \neq 0}^{} a_\ell  \ket{^{2S+1}\ell _{J+1}} 
+\end{equation}
+dove gli $a_i$ sono i coefficienti il cui modulo quadro indica la probabilit\`a che il sistema si trovi nel relativo stato.
+Si \`e gi\`a accennato al fatto che, sperimentalmente, il deutone ha parti\`a positiva $\pi_d = +1$ e momento angolare totale $J_d= 1$; il fatto che lo stato sia pari implica che $\ell $ sia pari, in quanto $\pi_d=(-1)^\ell $.
+In questo modo, si possono dedurre i membri non nulli della somma in $\ket{\psi _d} $, cio\`e capire quali stati sono ammessi.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c | c}
+		$\ell $ & $S$ & $J$ & Stato\\
+	\hline
+		$0$ & $0$ & $0$ & $^{1}S_0$\\
+		$0$ & $1$ & $1$ & $^{3}S_1$\\
+		$2$ & $0$ & $2$ & $^{1}D_2$\\
+		$2$ & $1$ & $3,2,1$ & $^{3}D_3, \, ^{3}D_2,\, ^{3}D_1$\\
+		$4$ & $0$ & $4$ & $^{1}G_4$\\
+		$4$ & $1$ & $5,4,3$ & $^{3}G_5,\, ^{3}G_4,\, ^{3}G_3$\\
+	\hline
+	\end{tabular}
+\end{table}
+Di tutti questi, solamente $^{3}S_1$ e $^{3}D_1$ soddisfano $J=1$ e hanno $\ell $ pari, quindi la funzione d'onda dello stato fondamentale del deutone deve essere
+\begin{equation}
+	\ket{\psi _d}  = a_0 \ket{^{3}S_1}  + a_2 \ket{^{3}D_1} 
+\end{equation}
+dove, assumendo che 
+\[
+\braket{^{3}S_1|^{3}S_1} =1 \hspace{1cm} \braket{^{3}D_1|^{3}D_1} = 1 \hspace{1cm} \braket{^{3}S_1|^{3}D_1} =0
+\] 
+la condizione di normalizzazione $\braket{\psi _d|\psi _d} =1$ impone che $\lvert a_0 \rvert ^2 + \lvert a_2 \rvert ^2 = 1$.
+Sempre nel caso del deutone, si vede che $\lvert a_2 \rvert ^2 \simeq 4\div 5 \%$, valore che \`e in accordo col fatto che la distribuzione di carica si discosta poco dalla simmetria sferica.
 
+La presenza della sovrapposizione di uno stato con $\ell \neq 0$ nella funzione d'onda, per\`o, necessita anche di un potenziale non centrale in grado di accoppiare lo stato con $\ell =0$ e quello con $\ell =2$, altrimenti lo stato della sovrapposizione dei due non sarebbe autostato dell'hamiltoniano.
+Questo porta la necessit\`a di introdurre un termine nel potenziale di interazione nucleare che dipenda da $\vec{r}, \vec{s}_1, \vec{s}_2$, ma che abbia anche parit\`a positiva, cio\`e sia invariante sotto parit\`a.
+Essendo lo spin un vettore assiale e dovendo comparire $\vec{r}$ nell'espressione, l'unico modo \`e che l'esponente con cui compare sia pari ; questo esclude tutte le combinazioni del tipo $\vec{s}_i \cdot \vec{r}$, oppure $(\vec{s}_1 \times \vec{s}_2) \cdot \vec{r}$.
+Inoltre, si ha la seguente propriet\`a.
+\begin{prop}\label{prop1}
+Per ogni esponente $k \in \mathbb{N}$, $(\vec{s}\cdot \vec{r})^k$ pu\`o essere ridotto ad un'espressione lineare in $\vec{s}$.
+\end{prop}
+\begin{proof}
+Si considera che
+\[
+\begin{split}
+	&(\vec{s}\cdot \vec{r})^2 = \frac{\hbar ^2}{4} (\vec{\sigma }\cdot \vec{r}) \cdot (\vec{\sigma} \cdot \vec{r}) = \frac{\hbar ^2}{4}r^2\\
+	&(\vec{s}\cdot \vec{r})^3 = (\vec{s}\cdot \vec{r})^2 (\vec{s}\cdot \vec{r}) = \frac{\hbar ^2}{4}r^2 (\vec{s}\cdot \vec{r})
+\end{split}
+\] 
+dove si \`e usata la propriet\`a $(\vec{\sigma }\cdot \vec{A}) (\vec{\sigma }\cdot \vec{B}) = \vec{A}\cdot \vec{B} + i \sigma (\vec{A}\times \vec{B})$.
+Applicando un ragionamento analogo a quanto fatto per $k=3$, si considera che:
+\begin{itemize}
+	\item se $k\equiv 0 \pmod{2} $, allora $(\vec{s}\cdot \vec{r})^k$ non ha termini in $\vec{s}$;
+	\item se $k\not\equiv 0 \pmod{2} $, allora $(\vec{s}\cdot \vec{r})^{k-1}$ ha esponente pari e, per il punto precedente, non ha termini in $\vec{s}$, quindi $(\vec{s}\cdot \vec{r})^{k} = (\vec{s}\cdot \vec{r})^{k-1} (\vec{s}\cdot \vec{r})$ sar\`a lineare in $\vec{s}$.
+\end{itemize}
+\end{proof}
+\noindent Due possibili forme del potenziale potrebbero coinvolgere i seguenti termini:
+\begin{enumerate}[(I).]
+	\item $(\vec{s}_1\cdot \vec{r})(\vec{s}_2 \cdot \vec{r})$;
+	\item $(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r})$.
+\end{enumerate}
+Questi sono entrambi termini scalari, cio\`e invarianti sotto parit\`a, ma, nella forma del potenziale vista finora, sono sostanzialmente equivalenti per la seguente proposizione.
+\begin{prop}
+L'espressione (II) si pu\`o ricondurre all'espressione (I), a meno di un addendo proporzionale a $\vec{s}_1 \cdot \vec{s}_2$.
+\end{prop}
+\begin{proof}
+	Usando le propriet\`a $\vec{A}\cdot (\vec{B}\times \vec{C}) = \vec{B} \cdot (\vec{C}\times \vec{A}) = \vec{C}\cdot  (\vec{A}\times \vec{B})$ e $\vec{A}\times (\vec{B}\times \vec{C}) = (\vec{A}\cdot \vec{C}) \vec{B} - (\vec{A}\cdot \vec{B}) \vec{C}$, si ha:
+\[
+	\begin{split}
+		&\begin{split}
+	(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r}) &= \vec{s}_2 \big[ \vec{r}\times \left(\vec{s}_1 \times \vec{r}\right)  \big] = \vec{s}_2 \cdot \big[r^2 \vec{s}_1 - (\vec{r}\cdot \vec{s}_1) \vec{r}\big]\\
+								    &= r^2 (\vec{s}_1 \cdot \vec{s}_2) - (\vec{s}_1 \cdot \vec{r}) (\vec{s}_2\cdot \vec{r})
+\end{split}\\
+		&\Rightarrow  \frac{(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r})}{r^2} = \vec{s}_1 \cdot \vec{s}_2 - \frac{(\vec{s}_1\cdot \vec{r})(\vec{s}_2\cdot \vec{r})}{r^2}
+	\end{split}
+\] 
+\end{proof}
+\noindent Inoltre, l'espressione (I) \`e l'unica che ha senso considerare, in quanto ogni sua forma in cui uno dei due prodotti scalari \`e elevato a qualche potenza, per la proposizione \ref{prop1}, \`e al pi\`u lineare in $\vec{s}$, riducendosi, quindi, sempre alla stessa espressione gi\`a riportata.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In letteratura, e storicamente, la forma che si scegliere per il contributo non-centrale nel potenziale \`e 
+\begin{equation}
+	S_{12} = \frac{3 (\vec{\sigma }_1 \cdot \vec{r}) (\vec{\sigma }_2 \cdot \vec{r})}{r^2} - \vec{\sigma }_1 \cdot \vec{\sigma }_2
+\end{equation}
+In questo modo, la forma del potenziale nucleare complessiva \`e
+\begin{equation}
+	V_{N N}(\vec{r}, \vec{s}_1 ,\vec{s}_2) = V_1(r) + V_2(r) \vec{\sigma }_1 \cdot \vec{\sigma }_2 + V_3(r) S_{12}
+\end{equation}
+Ora si vuole riscrivere $S_{12}$ in termini dello spin totale del sistema.
+Si \`e gi\`a visto che $\vec{\sigma }_1 \cdot \vec{\sigma }_2 = \frac{2}{\hbar ^2}\vec{S}^2 - 3$; inoltre
+\[
+	\begin{split}
+		&\begin{split}
+	(\vec{S}\cdot \vec{r})^2 &= \left[ \frac{\hbar}{2} (\vec{\sigma }_1 + \vec{\sigma }_2) \cdot \vec{r} \right] ^2= \frac{\hbar ^2}{4} \Big[(\vec{\sigma }_1 \cdot \vec{r})^2 + (\vec{\sigma }_2 \cdot \vec{r})^2 + 2 (\vec{\sigma }_1 \cdot \vec{r}) (\vec{\sigma }_2\cdot \vec{r})\Big]\\
+				 &=\frac{\hbar^2}{2} \big[ r^2 + (\vec{\sigma }_1 \cdot \vec{r}) ( \vec{\sigma }_2 \cdot \vec{r}) \big] 
+\end{split}\\
+		&\Rightarrow (\vec{\sigma }_1 \cdot \vec{r}) (\vec{\sigma }_2 \cdot \vec{r}) = \frac{2}{\hbar ^2} (\vec{S}\cdot \vec{r})^2 - r^2
+	\end{split}
+\] 
+dove si \`e usato che $(\vec{\sigma }\cdot \vec{A}) (\vec{\sigma }\cdot \vec{B}) = \vec{A} \cdot \vec{B} + i \vec{\sigma }\cdot (\vec{A}\times \vec{B})$.
+Usando il risultato appena trovato, allora, si pu\`o scrivere che 
+\begin{equation}
+	S_{12} = \frac{2}{\hbar ^2} \left[ \frac{3 (\vec{S} \cdot \vec{r})^2}{r^2} - \vec{S}^2 \right] 
+\end{equation}
+Da questa forma, si nota che nello stato di singoletto, corrispondente a $S=0$, il \textit{termine tensoriale dell'interazione} $S_{12}=0$; in questi casi, quindi, il potenziale \`e centrale, mentre non lo \`e negli stati con $S \neq 0$.
 
 
 \newpage
