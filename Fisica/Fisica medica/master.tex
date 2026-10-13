@@ -282,7 +282,7 @@ Il contrasto immagine \`e sempre minore di quello reale per effetti legati alla 
 \begin{osservazione}
 I valori del contrasto variano tra $0$ e $1$ per segnali non-negativi.
 \end{osservazione}
-Si definisce \textbf{risoluzione del contrasto} \`e la minima differenza dei segnali individuabile.
+\noindent Si definisce \textbf{risoluzione del contrasto} \`e la minima differenza dei segnali individuabile.
 I bit dell'ADC limitano il numero di livelli disponibili per la conversione, ciononostante l'occhio umano \`e in grado di distinguere al pi\`u $20$ livelli di contrasto.
 In ogni caso, con immagini digitali \`e possibile investire i livelli a disposizione percettibili per evidenziare le regioni di interesse.
 \begin{figure}[htpb]
@@ -291,7 +291,218 @@ In ogni caso, con immagini digitali \`e possibile investire i livelli a disposiz
 	\caption{A sinistra, si sono utilizzati i livelli a disposizione per evidenziare la struttura ossea attorno ai polmoni; a destra, si sono evidenziati i tessuti molli.}
 \end{figure}
 
+\subsubsection{Fondo e rumore}
+I disturbi nelle immagini si compongono di due contributi: uno \`e dato dal \textbf{fondo}, che \`e un disturbo legato all'ambiente o al processo di acquisizione e tendenzialmente non viene ridotto da un maggiore tempo di acquisizione, e l'altro \`e dato dal \textbf{rumore}, che invece \`e un disturbo randomico legato ad effetti quantistici, elettronici, di conversione o di processo ed \`e generalmente ridotto da acquisizioni pi\`u lunghe.
+
+Il rumore di origine statistica deriva da fluttuazioni casuali negli eventi registrati ed \`e rilevante in particolare quando il numero di eventi rilevati \`e basso. 
+In questo caso, la statistica di Poisson \`e particolarmente appropriata, per cui la varianza \`e approssimativamente pari alla media e, quindi, tale rumore si pu\`o ridurre tramite un aumento del numero di eventi registrati, cio\`e inviando pi\`u particelle.
+Al contrario, modelli gaussiano sono molto utilizzati per descrivere un insieme di effetti indipendenti.
+
+Il rumore statistico collegato a conteggi \`e tipico di immagini radiografiche, o scintigrafiche; in questo caso, se $N$ \`e il numero di fotoni rivelati e, nel caso in cui il processo segue una statistica poissoniana, cio\`e nel caso in cui la registrazione di processi indipendenti non \`e correlata, la deviazione standard \`e data da $\sigma  = \sqrt{N} $; se la registrazione degli eventi \`e ripetuta $n$ volte, l'errore sul valore medio \`e dato da $\sigma _{\overline{N}} = \sigma  / \sqrt{n} $.
+
+Nella formazione di immagini digitali, i contributi al rumore possono avere varie origini, fra cui:
+\begin{itemize}
+	\item \textbf{rumore elettronico}: \`e generato dalla strumentazione, o dai tratti di trasmissione del segnale elettrico e produce fluttuazioni casuali nei valori registrati in ogni pixel;
+	\item \textbf{rumore per conversione A/D:} introdotto quando il segnale elettrico registrato viene digitalizzato;
+	\item \textbf{rumore di processo:} viene generato da errori o approssimazioni nel processo dell'immagine, producendo un effetto casuale.
+\end{itemize}
+
+\subsubsection{Rapporto segnale-rumore (SNR)}
+
+Il rapporto segnale-rumore restituisce una stima di quanto distinguibile risulta un dettaglio (segnale) dal fondo (rumore).
+Mentre il contrasto da solo non tiene conto del rumore, l'SNR si\`i.
+Questo confronta il segnale con l'ampiezza del rumore; un valore maggiore dell'SNR tendenzialmente corrisponde ad una migliore visibilit\`a delle strutture a basso contrasto, anche se l'SNR da solo non permette di predire completamente le performance della diagnostica.	
+
+Una possibile definizione dell'SNR \`e la seguente:
+\begin{equation}
+	\text{SNR} = \frac{\Sigma _\text{ROI} - \Sigma _{\text{BKG}}}{\sigma _\text{BKG}}
+\end{equation}
+dove $\Sigma _\text{ROI}$ \`e la media del segnale nella regione di interesse, $\Sigma _\text{BKG}$ \`e la media del segnale nel fondo e $\sigma _\text{BKG}$ \`e la deviazione standard del fondo.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\columnwidth]{snr-contrast.png}
+\end{figure}
+
+\noindent Risoluzione spaziale, contrasto e rumore sono tutti parametri accoppiati: migliorandone uno, potrebbe comportare un peggioramento dell'altro; tempo di acquisizione, dose e ricostruzione dell'immagine possono compensare per i trade-offs.
+
+\subsubsection{Artifatti}
+Un artifatto \`e, generalmente, una localizzata alterazione dell'immagine prodotta durante l'acquisizione o il processamento dell'immagine, e non dovuta ad un errore dell'operatore.
+Questi possono essere originati da:
+\begin{itemize}
+	\item il paziente, per esempio tramite movimenti volontari o involontari;
+	\item la procedura, per esempio nel caso di oggetti metallici lasciati nel campo di acquisizione;
+	\item il materiale, come il mezzo di contrasto;
+	\item la strumentazione, in questo caso risolvibili tramite appropriate procedure QA/QC.
+\end{itemize}
+
+\subsubsection{Filtri}
+I filtri sono metodi matematici di processamento di un'immagine digitale per la riduzione del rumore dell'immagine, oppure per evidenziare aree di interesse.
+
+I filtri di smussamento sono principalmente utilizzati per la riduzione del rumore, ma comportamento spesso un appiattimento dei contorni, riducendo il contrasto.
+
+Il funzionamento di questi filtri si basa sul prendere un certo insieme di pixel nella zona da smussare e sostituire ciascun valore con una sorta di valore medio per ciascun pixel.
+Questo processo taglia fluttuazioni ad alta frequenza, riduce il rumore, ma pu\`o diminuire dettagli molto localizzati, oppure ridurre la luminosit\`a di interfacce.
+La grandezza del nucleo di smoothing ne indica l'intensit\`a.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{smooth-ex.png}
+\end{figure}
+\subsection{Rappresentazione delle immagini}
+
+Un dataset ottenuto da una singola acquisizione viene elaborato a formare una slice 2D; uno stack di acquisizioni pu\`o essere usato per generare rappresentazioni 3D, in cui la terza dimensione \`e spaziale o temporale. 
+In ogni caso, la rappresentazione utilizzata deve essere adeguata al fine diagnostico necessario, cio\`e deve essere tale da preservare il pi\`u possibile i dettagli rilevanti per la diagnosi.
+
+Le immagini 2D sono generate dalla proiezione rispetto ad una data direzione, che sia questa laterale, obliqua, eccetera. 
+Inevitabilmente, l'analisi di immagini 2D comporta difficolt\`a nell'interpretazione dei dettagli, dovute alla sovrapposizione di strutture anatomiche, o funzionali.
+Questa sovrapposizione pu\`o portare la formazione di ombre, oppure creare effetti di sommazione, ma anche influenzare la definizione dei bordi.
+Le limitazioni dell'imaging 2D sono compensate dalla possibilit\`a di una rappresentazione tomografica dell'immagine, in cui la terza dimensione viene ricostruita sovrapponendo immagini 2D.
+
+La visualizzazione delle immagini 3D si basa sulle seguenti tre tecniche.
+\begin{itemize}
+	\item \textbf{Surface shaded display (SSD):} i toni di grigio (o di altro singolo colore) rappresentano il grado di illuminazione superficiale virtuale e non i valori assegnati al segnale rivelato. 
+		Questa tecnica \`e utile solo per visualizzare le relazioni spaziali tra strutture anatomiche: l'informazione sul contrasto \`e persa.
+	\item \textbf{Perspective volume rendering (PVR):} questo estende l'SSD, introducendo un altro valore di riferimento che, accoppiato col primo, definisce una \textit{finestra di segmentazione}. 
+		Sostanzialmente, tutti i pixel fuori da questa finestra sono resi trasparenti, in modo che soltanto le strutture all'interno del range scelto rimangono visibili.
+		Questo permette di visualizzare le strutture dall'interno, selezionando l'apposita zona, risolvendo il problema del contrasto nel caso dell'SSD.
+	\item \textbf{Maximum intensity projection (MIP):} pi\`u che una reale elaborazione 3D, questa tecnica mostra, per ogni pixel, il massimo valore incontrato lungo una certa direzione; l'effetto 3D \`e, poi, ottenuto scorrendo le varie proiezioni prese da diverse angolazioni.
+\end{itemize}
+L'SSD \`e particolarmente rilevante nella visualizzazione di superfici ossee, strutture vascolari e organi segmentati.
+La resa dell'immagine generata dipende fortemente dalla qualit\`a della segmentazione; il valore di threshold (all'aumentare del valore, si evidenziano strutture pi\`u dense) potrebbe influenzare la visualizzazione di strutture anatomiche piccole; il rumore e altri effetti possono distorcere la resa delle superfici.
+Infine, l'ombreggiatura dell'immagine \`e artificiale e non basata su misurazioni.
+\`E molto importante avere le immagini sorgente affiancate all'immagine renderizzata per escludere errori di diagnosi legati agli effetti sopra menzionati.
+
+Nel PVR, il dataset viene elaborato attraverso finestre di segmentazione e/o pi\`u complicate funzioni di trasferimento.
+Questa tecnica pu\`o essere particolarmente utile nel caso di strutture anatomiche intrecciate, come la CT di una mano, in cui \`e possibile separare la vista ossea, da quella muscolare a quella pi\`u superficiale.
+
+Il MIP, invece, \`e molto frequentemente utilizzato per la visualizzazione di immagini angiografiche, o in medicina nucleare.
+
+Le immagini biomediche seguono lo standard DICOM (Digital Imaging and COmmunication in Medicine): il file combina i dati riguardanti i pixel e dei metadati; questi ultimi descrivono tutte le caratteristiche che influenzano la presa dati per la ricostruzione dell'immagine, fra cui il paziente, il processo di acquisizione, la geometria, eccetera.
+
+
+
+
+
+
+\newpage
+
+\section{Diagnostica ad ultrasuoni}
+
+\begin{boxenv}[]
+\centering  Lezione 6: -27:00 
+\end{boxenv}
+
+\newpage
+
+\section{Lezione 13-10}
+\subsection{Strumentazione della diagnostica ad ultrasuoni}
+I materiali utilizzati per la diagnostica ad ultrasuoni sono \textit{materiali piezoelettrici}, i quali si dilatano e contraggono a seconda della tensione applicata; in questo modo, si possono generare ultrasuoni a seguito di consecutive dilatazioni e contrazioni.
+
+Gli stessi materiali possono ricevere gli ultrasuoni e produrre un segnale elettrico, agendo contemporaneamente sia da emettitori che da trasmettitori.
+In alcuni casi, si possono utilizzare sonde separate, ma tipicamente se ne usa una per entrambi gli scopi.
+\`E necessario utilizzare un gel tra pelle e strumentazione, altrimenti tutta l'onda verrebbe riflessa indietro, senza poter penetrare. ({\color{red} da vedere}).
+
+Vi sono diverse geometrie utilizzabili per l'emissione delle onde acustiche: si possono avere vettori lineari, curvilinei, sfasati ed endocavitari; per esempio, la geometria a fase \`e particolarmente utilizzata nell'imaging cardiaco/intercostale.
+
+\subsection{Formazione dell'immagine}
+Assumendo $c = 1540 \text{ m}/\text{s}$, si pu\`o capire la distanza dal tempo che l'onda ricevuta impiega a tornare al ricevitore, in modo da determinare la profondit\`a.
+Il plot visualizzato mostra tendenzialmente ampiezza in funzione della profondit\`a, in quella che viene chiamata \textit{A-mode}.
+Per la calibrazione, \`e ovviamente necessario verificare accuratamente la velocit\`a di propagazione.
+
+Un'altra modalit\`a \`e la \textit{B-mode}, in cui l'ampiezza \`e collegata ad una scala di grigi: l'ampiezza dell'eco viene codificata in luminosit\`a di pixel.
+L'acquisizione dell'immagine avviene a seguito di scan successivi su linee differenti: ciascun segnale ricevuto lungo ogni direzione viene convertito in un punto su una scala di grigi a seconda del segnale ricevuto, a formare un'immagine 2D.
+
+\subsection{Risoluzione}
+
+Si parla di risoluzione assiale lungo una certa direzione di propagazione, o di risoluzione laterale per quanto riguarda la minima distanza tra due riflettori perpendicolari al raggio che possono essere distinti.
+Inoltre, vi \`e anche una risoluzione temporale legata a quanto frequentemente si possono registrare acquisizioni.
+Il contrasto dipende dalla statistica del segnale e dal processamento del display. 
+
+\subsection{Artifatti}
+
+Riflessioni multiple di regioni forti/solide vicine possono creare un \textit{riverbero}, creando falsi echi; un esempio si ha nel caso della colonna vertebrale.. 
+Inoltre, la presenza di zone di grande attenuazione, per esempio ossa o calcoli, eliminano echi distanti.
+
+Superfici estremamente riflettenti possono creare artifatti a specchio; una massa liquida, come cisti acquose, pu\`o generare un aumento dell'eco, invece di ombre nell'immagine.
+
+\subsection{M-mode}
+Questa modalit\`a consiste nell'uso di un singolo fascio, quindi una singola linea, acquisendo informazione in funzione del tempo; questo non \`e molto utilizzato da solo, ma spesso viene usato in contemporanea con il B-mode, permettendo di avere ulteriori informazioni a seguito di una maggiore risoluzione spaziale. 
+Molto usata in ecocardiografia, mentre l'ecodoppler registra il flusso del sangue.
+
+\subsection{Immagini 3D e 4D}
+
+L'ultrasuono 3D, tipicamente usato in ostetricia, \`e ottenuto tramite molti B-mode 2D affiancati a poca distanza.
+La quarta dimensione rappresenta il tempo, ottenuta tramite acquisizioni 3D successive 
+Il maggiore quantitativo di informazione visualizzata viene al costo di un pi\`u basso frame rate e ad un maggiore costo computazionale dovuto all'elaborazione di tali informazioni.
+
+\subsection{Architettura della strumentazione}
+
+L'architettura \`e la seguente:
+\[
+\text{Generatore} \to  \text{Trasduttore} \to  \text{Ricevitore/amplificatore} \to \text{Generatore del raggio} \to  \text{Processore del segnale} \to  \ldots
+\] 
+
+\subsection{Effetti biologici e protezione}
+
+Sono due:
+\begin{itemize}
+	\item effetti di tipo termico;
+	\item effetti meccanici di cavitazione: possibile esplosione di alcuni tipi di strutture nel corpo umano.
+\end{itemize}
+Non vi sono radiazioni ionizzanti, o altri inconvenienti per il paziente ed \`e la modalit\`a diagnostica pi\`u sicura.
+
+A seguito dell'assorbimento, il tessuto si riscalda; la pressione acustica influenza l'attivit\`a di strutture bollose e si genera stress meccanico.
+Entrambi questi effetti vengono quantificati e monitorati tramite due indici, uno di coinvolgimento meccanico (MI) e uno di coinvolgimento termico (TI), mostrati sulla macchina con cui viene effettuata l'acquisizione, in modo che l'operatore possa evitare effetti collaterali nella diagnostica.
+
+I principi di sicurezza si basano su \textit{ALARA}: as low as reasonably achievable. 
+Tutto quello che influenza l'aumento dei due indici deve essere tenuto al minimo, fintantoch\'e l'immagine prodotta sia utilizzabile a scopi diagnostici.
+
+Il lato negativo maggiore \`e che \`e operatore-dipendente, cio\`e non si ha modo di avere una oggettivit\`a universale per la produzione dell'immagine.
+
+\subsection{Ecodoppler}
+Vengono sfruttate le variazioni tra l'onda emessa e quella trasdotta in termini di variazioni della frequenza dovuta al moto dell'emettitore; le cellule del sangue agiscono come emettitori acustici in movimento, in modo da poterne ricostruire il moto.
+La variazione della frequenza prevista dall'effetto Doppler \`e data da
+\[
+\Delta f = 2 f_0 v \cos \theta  / c 
+\] 
+Si devono utilizzare al pi\`u angoli $\theta $ fino a $60^\circ$ per avere un'accurata registrazione; avvicinandosi ai $90^\circ$, si produce un effetto di shift prossimo allo zero, indipendentemente dal moto reale.
+
+L'acquisizione pu\`o avvenire a onda continua, che richiede due sonde diverse per trasmissione e ricezione, oppure a onda pulsante; vi sono altrettanti modi per visualizzare l'immagine: il color-doppler permette di visualizzare il verso di scorrimento del sangue, con convenzione rosso/blu a seconda che la velocit\`a sia in avvicinamento/allontanamento, oppure la power-doppler, in cui si visualizza solo l'ampiezza, in modo da registrare la quantit\`a di sangue, senza visualizzare il verso del moto.
+
+Il doppler a onda continua produce un FOV dato dall'intersezione delle regioni coperte da ricevitore ed emettitore; questo genera una sorta di rombo, per cui una corretta acquisizione si basa sul coprire diverse regioni tramite la strumentazione, in modo da ricostruire un'immagine interpretabile.
+Viene utilizzato un filtro apposito che rimuove onde ricevute sotto i $100$ Hz, generate dal movimento di tessuti, che altrimenti oscurerebbero il segnale di interesse.
+Questo metodo permette di misurare elevate velocit\`a senza incorrere nel fenomeno dell'aliasing (senza il limite di Nyquist), legato alla frequenza di campionamento, cio\`e di registrazione del segnale: se il segnale produce un segnale a frequenza molto pi\`u alta del segnale con cui viene campionato, il segnale registrato viene alterato dal fatto che si possono registrare, per esempio, due picchi di fila, saltando il segnale nel mezzo.
+Questo invece \`e particolarmente rilevante nel momento in cui una singola sonda funge sia da emettitore che da ricevitore, in quanto \`e presente un tempo di campionamento concreto.
+
+Una limitazione \`e che non \`e possibile selezionare una profondit\`a: il segnale ricevuto \`e ottenuto da tutta la zona coperta.
+Quando \`e necessario selezionare questa profondit\`a si usa il doppler a onda pulsata.
+
+Il doppler a onda-pulsata e il B-mode vengono utilizzati insieme a formare un sistema duplex: sull'immagine B-mode, si sovrappone l'immagine generata dal doppler pulsato con falsi colori.
+
+\subsection{Realt\`a aumentata}
+
+La tecnologia \`e denominata ARUS (Augmented Reality UltraSound).
+L'obiettivo \`e di semplificare il lavoro del chirurgo che deve operare usando diagnostica ad ultrasuoni per verificare la direzione del suo strumento ed evitare errori legati all'errata ricostruzione spaziale da parte dell'operatore nel caso di utilizzo di strumentazione ad ultrasuoni 2D.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage 
+
+
+
 
 \section{Fondamenti di fisica nucleare}
 I punti centrali di un decadimento nucleare $\ce{^AX} \to \ce{^BY} + P$, con $P$ prodotti secondari della reazione, sono il \textit{Q-valore}, definito da 
@@ -2385,6 +2596,7 @@ Studiando l'andamento dell'RBE con il LET, si osserva una curva che sale con l'a
 	\includegraphics[width=\columnwidth]{let3.png}
 	\end{minipage}
 \end{center}
+
 
 
 
