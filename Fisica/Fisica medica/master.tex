@@ -278,7 +278,7 @@ Si indicano con $V_1,V_2$ le intensit\`a reali e con $C_1,C_2$ le intensit\`a mi
 \end{equation}
 Altre definizioni consistono nel porre al denominatore $\frac{V_1+V_2}{2}$, oppure solamente $V_2$ (analogo per $C_1,C_2$).
 
-Il contrasto immagine \`e sempre minore di quello reale per effetti legati alla fisica dell'acquisizione (es. scattering della luce), effetti di moto, effetti legati alla geometria, limitazioni tecnologiche del sistema di acquisizione (blurring dei bordi per via della risoluzione, artifatti vari, eccetera).
+Il contrasto immagine \`e sempre minore di quello reale per effetti legati alla fisica dell'acquisizione (es. scattering della luce), effetti di moto, effetti legati alla geometria, limitazioni tecnologiche del sistema di acquisizione (blurring dei bordi per via della risoluzione, artefatti vari, eccetera).
 \begin{osservazione}
 I valori del contrasto variano tra $0$ e $1$ per segnali non-negativi.
 \end{osservazione}
@@ -387,9 +387,66 @@ Le immagini biomediche seguono lo standard DICOM (Digital Imaging and COmmunicat
 
 \section{Diagnostica ad ultrasuoni}
 
-\begin{boxenv}[]
-\centering  Lezione 6: -27:00 
-\end{boxenv}
+Questa \`e una tecnica di imaging che usa onde meccaniche ad alta frequenza, tipicamente nell'intervallo $2\div 18 $ MHz, quindi senza i pericoli dovuti a radiazioni ionizzanti.
+Le immagini sono ricostruite dall'eco generato dai tessuti con cui l'onda prodotta interagisce.
+
+\subsection{Onde acustiche}
+
+Il suono \`e un'onda meccanica longitudinale che richiede un mezzo di propagazione per viaggiare.
+L'onda \`e costituita dalle particelle del mezzo che oscillano avanti e indietro, parallelamente alla direzione di propagazione dell'onda, creando zone di compressione e rarefazione.
+Il trasduttore genera l'impulso acustico e poi ``ascolta'' per la risposta da parte dei tessuti con cui l'onda interagisce, alternando queste modalit\`a migliaia di volte per secondo.
+L'onda sonora si caratterizza tramite la sua frequenza $f$, la sua lunghezza d'onda $\lambda $, il suo periodo $T$ e la sua ampiezza; tramite questi parametri, si pu\`o individuare la sua velocit\`a di propagazione come 
+\begin{equation}
+	c = f \times \lambda 
+\end{equation}
+In buona approssimazione, i tessuti biologici, ossa a parte, si comportano come fluidi; in questo modo, la velocit\`a di propagazione degli ultrasuoni si pu\`o esprimere come
+\begin{equation}
+	c = \left(\frac{k}{\rho _0}\right) ^{1 / 2} \, , \ k = - V \frac{\Delta p}{\Delta V}
+\end{equation}
+dove $k$ \`e la compressibilit\`a del mezzo e $\rho _0$ \`e la densit\`a media.
+La velocit\`a del suono aumenta con l'aumentare delle temperature in tutti i tessuti, ad eccezione del grasso, in cui si verifica l'andamento opposto (decresce).
+Il valore di $c$ nei polmoni \`e pressoch\'e quello in aria e dipende dal quantitativo di aria contenuta nei polmoni.
+Ad eccezione di polmoni e grasso, la velocit\`a del suono decresce all'aumentare del contenuto acquoso nei tessuti.
+
+La strumentazione per la diagnostica ad ultrasuoni assume una media fissa della velocit\`a del suono nei tessuti che \`e di circa $1540 \text{ m}/\text{s}$ per calcolare la profondit\`a dall'eco prodotto.
+Ad eccezione delle ossa, in cui la velocit\`a \`e di circa $4000\text{ m}/\text{s}$, altri tipi di tessuti, come grasso, reni, sangue, eccetera, hanno valori attorno a quello sopra indicato.
+
+Si definisce l'\textbf{impedenza acustica} come la resistenza di un tessuto al passaggio del suono; questa dipende dalla densit\`a del tessuto $\rho $ e dalla velocit\`a di propagazione $c$ come $Z = \rho \times c$.
+Ogni tessuto e organo ha una sua impedenza caratteristica; strutture adiacenti con impedenza simile risultano quasi mescolate insieme nell'immagine finale, mentre una grande differenza di impedenza tra due interfacce risulta in una grande componente riflessa e una minima componente trasmessa.
+Questo \`e il motivo principale per cui \`e necessario utilizzare un gel di accoppiamento posto tra la pelle e lo strumento di imaging col fine di eliminare il gap di impedenza tra aria e pelle.
+Questo meccanismo, nondimeno, \`e alla base del motivo per cui gli ultrasuoni riescono a distinguere organi, vasi sanguigni, patologie, eccetera sulla sola base dei tessuti di cui questi sono composti.
+
+All'interfaccia, l'energia incidente viene divisa in una componente riflessa ed una trasmessa; le relazioni angolari sono stabilite tramite le leggi di Snell.
+Quando l'onda incide ortogonalmente sull'interfaccia, impedenze simili favoriscono la trasmissione, mentre una grande differenza favorisce la componente riflessa.
+Generalmente, i tessuti \textit{morbidi} (acquosi) hanno impedenza simile, quindi l'onda riflessa \`e minima in questi casi.
+
+L'attenuazione degli ultrasuoni pu\`o avvenire per diversi fenomeni:
+\begin{itemize}
+	\item per \textbf{assorbimento}, caso in cui l'energia acustica viene trasformata in calore ed \`e il contributo dominante in tessuti morbidi;
+	\item per \textbf{scattering}, in cui l'onda viene deflessa da piccole, o irregolari, strutture;
+	\item per \textbf{divergenza}, in cui l'onda \`e formata da sempre meno particelle per via della sua dispersione all'aumentare della profondit\`a.
+\end{itemize}
+L'attenuazione aumenta sia con la profondit\`a, che con la frequenza: le onde ad altra frequenza sono attenuate molto pi\`u rapidamente, per cui sono rilevanti unicamente per l'imaging di strutture pi\`u superficiali.
+
+Quando l'onda incide ortogonalmente sulla superficie di separazione, come gi\`a accennato, parte dell'onda \`e riflessa, a formare l'eco, e parte \`e trasmessa.
+L'intensit\`a riflessa \`e espressa tramite la relazione
+\begin{equation}
+	I_r = I_i \left(\frac{Z_2 \cos \theta _i - Z_1 \cos \theta _t}{Z_2 \cos \theta _i + Z_1 \cos \theta _t}\right) ^2
+\end{equation}
+Dalla formula, si vede che la parte riflessa \`e maggiore per maggiori differenze di impedenza; si ha riflessione quasi totale quando l'interfaccia \`e tra tessuto-aria e tessuto-osso.
+Analogamente a quanto accade per le leggi di Snell nel caso della luce, quando l'onda incide obliquamente sull'interfaccia si ha 
+\[
+\frac{\sin \theta _i}{\sin \theta _t}  = \frac{c_1}{c_2} \hspace{1cm} \theta _i = \theta _r
+\] 
+Quando non vi \`e incidenza ortogonale sull'interfaccia, si possono presentare artefatti nell'immagine dovuta all'erroneo posizionamento dell'organo per via di un eco proveniente da una direzione diversa.
+
+Strutture piccole, ossia pi\`u piccole della lunghezza d'onda dell'onda inviata, scatterano il suono in maniera diffusa in varie direzioni, generano la tipica punteggiatura nelle immagini.
+Altri artefatti si verificano quando 
+\begin{itemize}
+	\item strutture con elevata impedenza, come ossa, calcificazioni, bloccano la trasmissione dell'onda, causando il fenomeno dello \textbf{shadowing} e bloccando la visualizzazione di strutture dietro di essi;
+	\item strutture molto ricche di fluido, come cisti, vescica, vasi, che attenuano pochissimo l'onda e rendono i tessuti dietro di loro pi\`u brillanti nell'immagine, causando l'\textbf{enhancement}.
+\end{itemize}
+Entrambi questi artefatti sono utilizzati per la diagnostica, invece che problemi da risolvere.
 
 \newpage
 
@@ -422,7 +479,7 @@ Il contrasto dipende dalla statistica del segnale e dal processamento del displa
 Riflessioni multiple di regioni forti/solide vicine possono creare un \textit{riverbero}, creando falsi echi; un esempio si ha nel caso della colonna vertebrale.. 
 Inoltre, la presenza di zone di grande attenuazione, per esempio ossa o calcoli, eliminano echi distanti.
 
-Superfici estremamente riflettenti possono creare artifatti a specchio; una massa liquida, come cisti acquose, pu\`o generare un aumento dell'eco, invece di ombre nell'immagine.
+Superfici estremamente riflettenti possono creare artefatti a specchio; una massa liquida, come cisti acquose, pu\`o generare un aumento dell'eco, invece di ombre nell'immagine.
 
 \subsection{M-mode}
 Questa modalit\`a consiste nell'uso di un singolo fascio, quindi una singola linea, acquisendo informazione in funzione del tempo; questo non \`e molto utilizzato da solo, ma spesso viene usato in contemporanea con il B-mode, permettendo di avere ulteriori informazioni a seguito di una maggiore risoluzione spaziale. 
