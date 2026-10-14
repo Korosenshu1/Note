@@ -1980,6 +1980,136 @@ Usando il risultato appena trovato, allora, si pu\`o scrivere che
 \end{equation}
 Da questa forma, si nota che nello stato di singoletto, corrispondente a $S=0$, il \textit{termine tensoriale dell'interazione} $S_{12}=0$; in questi casi, quindi, il potenziale \`e centrale, mentre non lo \`e negli stati con $S \neq 0$.
 
+\subsubsection{Funzione d'onda di Rarita-Schwinger}
+
+Visto che l'hamiltoniano \`e dato da $\hat{H} = \frac{p^2}{2m} + V_{N N}$, mentre $[\hat{J}^2 , \hat{H}] = 0$ e $[\hat{J}_z , \hat{H}] = 0$, si ha:
+\[
+	\begin{split}
+		&[\hat{\ell }^2 , \hat{S}_{12}] \neq 0 \hspace{1cm} [\hat{\ell }_z , \hat{S}_{12}] \neq 0 \\
+		&[\hat{S}^2 , \hat{S}_{12}] = 0 \hspace{1cm} [\hat{S}_z , \hat{S}_{12}] \neq 0
+	\end{split}
+\] 
+Questo suggerisce che il contributo non-centrale del potenziale non \`e invariante per rotazioni separate delle coordinate spaziali e di quelle di spin, ma solo per rotazioni simultanee di spazio e spin.
+Per questa ragione, per esprimere la funzione d'onda, si introducono le funzioni d'onda di angolo-spin, che sono una generalizzazione delle armoniche sferiche.
+Queste sono indicate con $\mathcal{Y} _{\ell S JJ_z}$, per cui $\mathcal{Y}  _S \equiv \mathcal{Y} _{011J_z}$ e $\mathcal{Y} _D \equiv \mathcal{Y} _{211J_z}$; in questo modo, la funzione d'onda del deutone si esprime come
+\begin{equation}
+	\psi _D = \frac{u(r)}{ r} \mathcal{Y} _S + \frac{w(r)}{r} \mathcal{Y} _D
+\end{equation}
+dove $u(r) \equiv u_\ell (r)$ con $\ell =0$, mentre $w(r) \equiv u_\ell (r)$ con $\ell =2$.
+Queste funzioni d'onda di angolo-spin possono essere espresse come prodotto di armoniche sferiche e funzioni d'onda di spin; infatti, lo stato accoppiato si pu\`o scrivere, tramite proiettore, come
+\[
+	\ket{\ell S J J_z}  = \sum_{\substack{m,S_z\\ m + S_z = J_z}}^{} \ket{\ell mS S_z} \braket{\ell mS_z S|J J_z} 
+\] 
+In rappresentazione delle coordinate, si ha:
+\begin{equation}
+	\mathcal{Y} _{\ell S J J_z} = \sum_{\substack{m, S_z \\ m+S_z = J_z}}^{} \braket{\ell mSS_z|J J_z}  Y_{\ell m} \chi _{SS_z}
+\end{equation}
+dove le $Y_{\ell m}$ sono le armoniche sferiche, mentre le $\chi _{S S_z}$ sono funzioni d'onda di spin.
+\begin{prop}
+Valgono le seguenti relazioni:
+\[
+\begin{split}
+	&\mathcal{Y} _{011J_z} = Y_{00} \chi _{1J_z}= \frac{1}{\sqrt{4\pi}}  \chi _{1J_z}\\
+	&\begin{split}
+		\mathcal{Y} _{211J_z} =& \sqrt{\frac{(3+J_z)(2+J_z)}{4\cdot 5}}  Y_{2,J_{z}+1} \chi _{1,-1} - \sqrt{\frac{(2-J_z)(2+J_z)}{2\cdot 5}} Y_{2,J_z}\chi_{10} + { } \\
+				       &{ } + \sqrt{\frac{(2-J_z)(3-J_z)}{4\cdot 5}}  Y_{2,J_z-1}\chi _{11}
+	\end{split}
+\end{split}
+\] 
+\end{prop}
+\begin{proof}
+Coefficienti di Clebsch-Gordan a parte per il cambio di base, le espressioni si ottengono tenendo a mente che $m+S_z = J_z$.
+Infatti, nel caso della $\mathcal{Y} _S$, si ha $\ell =0$, quindi $m=0$, quindi $S_z = J_z$; ne segue che l'unico termine possibile \`e $Y_{00} \chi _{1,J_z}$.
+
+Per il caso della $\mathcal{Y} _D$, corrispondente a $\ell =2$ e $S=1$, invece, si distinguono i tre casi possibili:
+\begin{itemize}
+	\item $S_z = -1\Rightarrow m = J_z + 1$, per cui si ha il termine $Y_{2,J_z + 1} \chi _{1,-1}$;
+	\item $S_z = 0 \Rightarrow  m = J_z$, quindi $Y_{2,J_z}\chi _{1,0}$;
+	\item $S_z = 1 \Rightarrow Y_{2,J_z - 1} \chi_{1,1}$.
+\end{itemize}
+\end{proof}
+\begin{prop}
+	Valgono le seguenti relazioni:
+	\begin{align}
+		&S_{12} \mathcal{Y} _S = \sqrt{8}  \mathcal{Y} _D\\
+		& S_{12} \mathcal{Y} _D = \sqrt{8}  \mathcal{Y} _S - 2 \mathcal{Y} _D
+	\end{align}
+\end{prop}
+\noindent Combinando le due proposizioni, cio\`e usando prima che $S_{12} \mathcal{Y} _S = \sqrt{8}  \mathcal{Y} _D$ e poi che $\mathcal{Y} _S = \frac{1}{\sqrt{4\pi} }\chi _{1J_z}$, si pu\`o scrivere che
+\begin{equation}
+	\psi _d = \frac{1}{\sqrt{4\pi} } \left[ \frac{u(r)}{r} + \frac{1}{\sqrt{8}}  \frac{w(r)}{r} S_{12}\right] \chi _{1J_z}
+\end{equation}
+Questa \`e nota col nome di \textit{funzione d'onda di Rarita-Schwinger}.
+\subsubsection{Equazione di Schr\"odinger con potenziale non-centrale}
+
+L'equazione di Schr\"odinger, con il potenziale $V_{N N}$ completo del termine non centrale, si scrive come
+\[
+\left\{ - \frac{\hbar ^2}{2m} \frac{1}{r^2} \Delta _r + V_C + \frac{\hat{\ell }^2}{2mr^2} + V_T S_{12} - E \right\} \psi _d = 0
+\] 
+dove $V_T$ sarebbe il $V_3(r)$ indicato nella forma completa di $V_{NN}$ precedentemente.
+Usando che
+\[
+\begin{split}
+	&\frac{1}{r^2} \Delta _r \left(\frac{u}{r}\right) = \frac{1}{r} \frac{d ^2 u }{d  r^2}  \equiv \frac{u''}{r} \hspace{2cm}\frac{1}{r^2} \Delta _r \left(\frac{w}{r}\right) \equiv \frac{w''}{r}\\
+	& \frac{\hat{\ell }^2}{2mr^2} = \frac{\hbar ^2 \ell (\ell +1)}{2mr^2}
+\end{split}
+\] 
+L'equazione diventa:
+\[
+\begin{split}
+	-\frac{\hbar ^2}{2m} &\left[ \mathcal{Y} _S \frac{u''}{r} + \mathcal{Y} _D \frac{w''}{r} \right] + \mathcal{Y} _S \left[ V_C - E \right]  \frac{u}{r} + \mathcal{Y} _D \left[ V_C - E \right]  \frac{w}{r} + { } \\
+			     & { } +6\frac{w}{r} \frac{\hbar ^2}{2mr^2}+ V_T \frac{u}{r} \sqrt{8} \mathcal{Y} _D + V_T \frac{w}{r} \left[ \sqrt{8}  \mathcal{Y} _S - 2 \mathcal{Y} _D  \right]  =0
+\end{split}
+\] 
+dove il $6$ deriva da $\ell (\ell +1)$ per $\ell  = 2 $.
+Raggruppando per $\mathcal{Y} _S $ e $\mathcal{Y} _D$ e moltiplicando per $r$, si ha:
+\begin{equation}
+	\begin{split}
+		&\left[- \frac{\hbar ^2}{2m} u'' + (V_C - E) u + \sqrt{8} V_T w \right]  \mathcal{Y} _S + { } \\
+		& { }+\left[ -\frac{\hbar^2}{2m}w '' + (V_C - E) w + \frac{3 \hbar ^2}{m r^2} w + V_T \left(\sqrt{8} u - 2 w\right)  \right] \mathcal{Y} _D = 0
+	\end{split}
+\end{equation}
+Le armoniche sferiche generalizzate sono ortonormali: indicando $\mathcal{Y} _{\ell S J J_z} \equiv \mathcal{Y} _i$, si ha $\mathcal{Y} _i \cdot \mathcal{Y} _j = \delta _{ij}$; questo fatto permette di separare l'equazione scritta sopra in un sistema di due equazioni differenziali:
+\begin{equation}
+	\begin{cases}
+		\displaystyle - \frac{\hbar ^2}{2m} u'' + (V_C - E) u + \sqrt{8}  V_T w = 0 \\ 
+		\\
+		\displaystyle -\frac{\hbar ^2}{2m}w'' + ( V_C - E) w + \frac{3 \hbar ^2 }{mr^2} w + V_T (\sqrt{8} u- 2w) = 0
+	\end{cases}
+\end{equation}
+Queste equazioni si risolvono numericamente, tenendo conto della condizione che il deutone, come stato legato, si ottiene per $E = - B$ e scegliendo opportune forme funzionali per $V_C$ e $V_T$.
+
+In ogni caso, \`e interessante studiare il limite delle due equazioni per $r\to +\infty$, o meglio per $r\gg r_\text{int}$; in questo caso, infatti, $V_C,V_T \to  0$, per cui 
+\begin{equation*}
+	\displaystyle -\frac{\hbar ^2}{2m} u'' - E u = 0 \\
+	\\
+	\displaystyle - \frac{\hbar ^2}{2m} w'' - Ew + \frac{\hbar ^2}{2m} \frac{6w }{r^2} = 0 
+\end{equation*}
+In questo caso, si trovano soluzioni analitiche che, definendo $\alpha \equiv \frac{\sqrt{2m B} }{\hbar }$, sono:
+\begin{equation}
+	\begin{cases}
+		u'' - \alpha ^2 u = 0\\
+		\\
+		\displaystyle w'' - \alpha ^2 w - \frac{6}{r^2}w = 0 
+	\end{cases} \implies \begin{cases}
+		\displaystyle u(r) = C_1 e ^{-\alpha r}\\
+		\\
+		\displaystyle w(r) = C_2 \left[ 1 + \frac{3}{\alpha r} + \frac{3}{(\alpha r)^2} \right] e^{-\alpha r}
+	\end{cases}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \appendix
