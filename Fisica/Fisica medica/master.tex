@@ -395,6 +395,12 @@ Le immagini sono ricostruite dall'eco generato dai tessuti con cui l'onda prodot
 Il suono \`e un'onda meccanica longitudinale che richiede un mezzo di propagazione per viaggiare.
 L'onda \`e costituita dalle particelle del mezzo che oscillano avanti e indietro, parallelamente alla direzione di propagazione dell'onda, creando zone di compressione e rarefazione.
 Il trasduttore genera l'impulso acustico e poi ``ascolta'' per la risposta da parte dei tessuti con cui l'onda interagisce, alternando queste modalit\`a migliaia di volte per secondo.
+L'acquisizione dell'immagine si basa sull'ascolto dell'eco prodotto dai tessuti, in modo da stimarne la profondit\`a tramite la relazione
+\begin{equation}
+	z = \frac{ct}{2}
+\end{equation}
+dove $c$ \`e la velocit\`a dell'onda nel mezzo e $t$ \`e il tempo calcolato dal momento dell'invio, motivo per cui si divide per $2$.
+
 L'onda sonora si caratterizza tramite la sua frequenza $f$, la sua lunghezza d'onda $\lambda $, il suo periodo $T$ e la sua ampiezza; tramite questi parametri, si pu\`o individuare la sua velocit\`a di propagazione come 
 \begin{equation}
 	c = f \times \lambda 
@@ -448,111 +454,142 @@ Altri artefatti si verificano quando
 \end{itemize}
 Entrambi questi artefatti sono utilizzati per la diagnostica, invece che problemi da risolvere.
 
-\newpage
-
-\section{Lezione 13-10}
 \subsection{Strumentazione della diagnostica ad ultrasuoni}
-I materiali utilizzati per la diagnostica ad ultrasuoni sono \textit{materiali piezoelettrici}, i quali si dilatano e contraggono a seconda della tensione applicata; in questo modo, si possono generare ultrasuoni a seguito di consecutive dilatazioni e contrazioni.
 
+I materiali utilizzati per la diagnostica ad ultrasuoni sono \textit{materiali piezoelettrici}, i quali si dilatano e contraggono a seconda della tensione applicata; in questo modo, si possono generare ultrasuoni a seguito di consecutive dilatazioni e contrazioni.
 Gli stessi materiali possono ricevere gli ultrasuoni e produrre un segnale elettrico, agendo contemporaneamente sia da emettitori che da trasmettitori.
 In alcuni casi, si possono utilizzare sonde separate, ma tipicamente se ne usa una per entrambi gli scopi.
-\`E necessario utilizzare un gel tra pelle e strumentazione, altrimenti tutta l'onda verrebbe riflessa indietro, senza poter penetrare. ({\color{red} da vedere}).
+Lo schema costruttivo di una generica sonda ecografica \`e il seguente
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\columnwidth]{eco-array.jpeg}
+\end{figure}
 
-Vi sono diverse geometrie utilizzabili per l'emissione delle onde acustiche: si possono avere vettori lineari, curvilinei, sfasati ed endocavitari; per esempio, la geometria a fase \`e particolarmente utilizzata nell'imaging cardiaco/intercostale.
+\noindent Una sonda ecografica ha una geometria diversa a seconda dello scopo per cui la si utilizza.
+\begin{itemize}
+	\item \textbf{Array lineare:} in questa configurazione, i cristalli piezoelettrici sono disposti su un'unica fila laterale, per questo si parla di \textit{array monodimensionale}, e tale fila poggia su una superficie piana rettangolare.
+		Tipicamente, l'attivazione dei cristalli avviene a gruppi di elementi adiacenti; per $128$ elementi, si potrebbe avere una sequenza di attivazione del tipo $1-16$, $2-17$, e cos\`i via, ma questo cambia molto a seconda del dispositivo.
+		Ciascun gruppo pu\`o essere eccitato con ritardi opportuni per focalizzare il fascio in trasmissione; in ricezione, i segnali ricevuti vengono sincronizzati e sommati elettricamente.
+
+		Per la geometria considerata, l'immagine visualizzata sar\`a approssimativamente rettangolare; lo scopo a cui adempie \`e quello di sondare strutture superficiali, o comunque relativamente vicine alla sonda, come tiroide, tendini, muscoli, cute, vasi sanguigni, eccetera.
+		In sonde moderne, \`e comunque possibile avere inclinazioni elettroniche, anche se limitate, ma vi \`e comunque differenza dagli array \textit{phased} nella modalit\`a in cui vengono impiegati gli elementi per sondare il campo.
+	\item \textbf{Array convesso:} gli elementi piezoelettrici sono disposti lungo un arco, a formare una superficie di attivazione curva, anzich\'e piana. 
+		L'unica differenza da quella lineare, dal punto di vista costruttivo, \`e appunto una disposizione su superficie curva, anzich\'e piana.
+		L'attivazione pu\`o essere a gruppi come nel caso precedente.
+
+		L'utilizzo di questa geometria \`e prevalentemente per ecografia addominale, pelvica e ostetrica; consente di esplorare organi profondi, come fegato e reni, oppure il feto.
+		Per raggiungere profondit\`a maggiori, si usano frequenze minori, a discapito di una peggiore risoluzione, ma permette una visualizzazione pi\`u ampia grazie alla sua geometria.
+	\item \textbf{Phased array:} gli elementi sono tipicamente disposti su una superficie piana e relativamente stretta, con un'apertura piccola rispetto alla regione da esplorare.
+			Quest'ultima caratteristica \`e fondamentale per poterla collocare, ad esempio, tra due coste; gli elementi devono comunque essere abbastanza ravvicinati per consentire il controllo del fascio senza creare lobi del reticolo.
+
+			A differenza di una scansione lineare sequenziale, questo tipo di array fa uso di ritardi temporali controllati per modificare la direzione del fascio.
+			Supponendo, infatti, di attivare tutti gli elementi simultaneamente, si crea un unico fronte d'onda che incide ortogonalmente sulla superficie; invece, attivandoli con ritardi progressivi, il fronte d'onda pu\`o essere inclinato a seconda della necessit\`a.
+			In ricezione, i segnali vengono ritardati e sommati in modo coerente.
+			Questo permette di sondare un'intera regione senza muovere fisicamente la sonda.
+			
+			Questo tipo di array \`e particolarmente adatto all'ecocardiografia per via del fatto che le coste ostacolano la propagazione degli ultrasuoni; sfruttando gli spazi intercostali, per\`o, si riesce ad avere una finestra adeguata per ottenere l'immagine desiderata.
+\end{itemize}
+
+
 
 \subsection{Formazione dell'immagine}
-Assumendo $c = 1540 \text{ m}/\text{s}$, si pu\`o capire la distanza dal tempo che l'onda ricevuta impiega a tornare al ricevitore, in modo da determinare la profondit\`a.
-Il plot visualizzato mostra tendenzialmente ampiezza in funzione della profondit\`a, in quella che viene chiamata \textit{A-mode}.
-Per la calibrazione, \`e ovviamente necessario verificare accuratamente la velocit\`a di propagazione.
 
-Un'altra modalit\`a \`e la \textit{B-mode}, in cui l'ampiezza \`e collegata ad una scala di grigi: l'ampiezza dell'eco viene codificata in luminosit\`a di pixel.
-L'acquisizione dell'immagine avviene a seguito di scan successivi su linee differenti: ciascun segnale ricevuto lungo ogni direzione viene convertito in un punto su una scala di grigi a seconda del segnale ricevuto, a formare un'immagine 2D.
+A seguito della ricezione dell'eco, il segnale pu\`o essere analizzato con diverse modalit\`a: la modalità A, la B, la M e la Doppler.
+\`E comunque possibile elaborare gli stessi dati con pi\`u modalit\`a per ottenere pi\`u informazioni.
+\begin{itemize}
+	\item \textbf{A-mode:} in questa modalit\`a, si registra l'ampiezza degli echi ricevuti lungo una specifica direzione al variare del tempo di ritorno, quindi della profondit\`a.
+		Il suo utilizzo \`e ora quasi minimo, ma comunque rilevante per alcune applicazioni specialistiche come in oculistica, dove pu\`o esere impiegato per misurare le distanze assiali all'interno dell'occhio.
+	\item \textbf{B-mode:} in questa modalit\`a, si registra l'intensit\`a (brightness) del segnale.
+		Ogni eco ricevuto viene convertito in punti luminosi, dove la luminosit\`a di ciascun punto dipende dall'intensit\`a del segnale ricevuto; questi punti vengono disposti a seconda della direzione di provenienza in modo da riprodurre la sezione anatomica sondata.
+		Questa modalit\`a permette una visione bidimensionale anatomica, aggiornata in tempo reale, che permette di esaminare lo stato di organi, tessuti, eccetera.
+		Il limite \`e che la sola luminosit\`a non permette di identificare in maniera univoca il tipo di tessuto.
+	\item \textbf{M-mode:} questa permette di rappresentare la posizione, in termini di profondit\`a, delle strutture che echeggiano il segnale lungo una singola linea di scansione.
+		\`E particolarmente rilevante in cardiologia, in quanto permette di misurare movimento molto rapidi con elevata risoluzione temporale.
+		Il vantaggio sta nell'elevata risoluzione temporale, dovuta al fatto che non deve ricostruire continuamente un'intera immagine bidimensionale, visto che analizza una singola linea.
+		Questo \`e per\`o anche il suo limite, visto che analizzare una singola linea non permette di comprendere con precisione la struttura che si sta sondando; per questa ragione, viene spesso usata in contemporanea con la B-mode.
+\end{itemize}
 
-\subsection{Risoluzione}
+\subsection{Risoluzione e artefatti}
 
-Si parla di risoluzione assiale lungo una certa direzione di propagazione, o di risoluzione laterale per quanto riguarda la minima distanza tra due riflettori perpendicolari al raggio che possono essere distinti.
-Inoltre, vi \`e anche una risoluzione temporale legata a quanto frequentemente si possono registrare acquisizioni.
-Il contrasto dipende dalla statistica del segnale e dal processamento del display. 
+Per immagini ecografiche, si parla di \textbf{risoluzione assiale} in riferimento alla minima distanza tra due centri riflettenti (echeggianti) lungo la direzione di propagazione dell'onda che possono essere risolti e individuati come distinti; si parla di \textbf{risoluzione laterale} in riferimento alla minima distanza tra due centri riflettenti perpendicolari alla direzione di propagazione dell'onda che possono essere distinti.
+Quest'ultima dipende dalla larghezza del raggio ed \`e maggiore nel punto focale.
 
-\subsection{Artifatti}
+Si pu\`o parlare, inoltre, di \textbf{risoluzione temporale} in riferimento alla capacit\`a dello strumento di registrare il moto della struttura riflettente nel tempo.
+Un frame rate maggiore, ovviamente, migliora la risoluzione temporale, ma comporta un numero minore di scansioni per comporre l'immagine, il che comporta un'immagine pi\`u ``sgranata''.
 
-Riflessioni multiple di regioni forti/solide vicine possono creare un \textit{riverbero}, creando falsi echi; un esempio si ha nel caso della colonna vertebrale.. 
-Inoltre, la presenza di zone di grande attenuazione, per esempio ossa o calcoli, eliminano echi distanti.
+Altri termini importanti in riferimento alle propriet\`a, dello strumento, di caratterizzazione dell'immagine sono la sua \textbf{sensibilit\`a}, cio\`e il pi\`u debole segnale che riesce a distinguere dal rumore, e il suo \textbf{range dinamico}, il quale fa riferimento al rapporto tra il segnale di massima intensit\`a e di minima intensit\`a che lo strumento riesce a mostrare su schermo.
 
-Superfici estremamente riflettenti possono creare artefatti a specchio; una massa liquida, come cisti acquose, pu\`o generare un aumento dell'eco, invece di ombre nell'immagine.
-
-\subsection{M-mode}
-Questa modalit\`a consiste nell'uso di un singolo fascio, quindi una singola linea, acquisendo informazione in funzione del tempo; questo non \`e molto utilizzato da solo, ma spesso viene usato in contemporanea con il B-mode, permettendo di avere ulteriori informazioni a seguito di una maggiore risoluzione spaziale. 
-Molto usata in ecocardiografia, mentre l'ecodoppler registra il flusso del sangue.
+I possibili artefatti nelle immagini ecografiche sono i seguenti.
+\begin{itemize}
+		\item \textbf{Riverbero:} dato un centro molto riflettente a distanza $d$ dalla sonda, questo effetto \`e responsabile per la forma di una serie di echi registrati a distanze $n\cdot d$ per via di un \textit{effetto ping-pong}, per esempio, tra centro riflettente e superficie dell'ecografo.
+			Quello che succede \`e che l'onda echeggiata indietro dal centro all'ecografo viene registrata a distanza $d$; una parte di essa viene riflessa verso la struttura fortemente riflette, che la rimanda indietro, facendo risultare il ricevimento di un'onda che ha percorso una distanza totale pari a $4d$, che quindi viene registrata come un'altra struttura posta a distanza $2d$ dallo strumento.
+		\item \textbf{Ombreggiatura:} questo effetto si forma per la presenza di un centro che assorbe estremamente bene, quindi ad impedenza acustica molto alta. 
+			Quello che si verifica \`e la presenza di una regione molto scura nell'immagine, corrispondente al fatto che strutture di questo tipo assorbono l'eco proveniente da strutture provenienti da profondit\`a pi\`u basse.
+			Questo si verifica nel caso di ossa, o di calcoli.
+		\item \textbf{Illuminazione:} la presenza di strutture minimamente assorbenti sulla direzione dell'onda genera un effetto opposto a quello dell'ombreggiatura. 
+			Gli echi provenienti da dietro strutture di questo genere, tendenzialmente liquide, vengono attenuati molto poco, risultando, quindi, pi\`u luminosi di regioni circostanti non precedute da strutture poco assorbenti.
+		\item \textbf{Effetto specchio:} questo effetto si verifica quando si registrano echi provenienti da un'interfaccia cos\`i tanto riflettente da comportarsi da \textit{specchio acustico}, quindi si riceve un eco da un tessuto che proviene sia dal tessuto stesso, sia dall'interfaccia-specchio.
+\end{itemize}
 
 \subsection{Immagini 3D e 4D}
 
-L'ultrasuono 3D, tipicamente usato in ostetricia, \`e ottenuto tramite molti B-mode 2D affiancati a poca distanza.
-La quarta dimensione rappresenta il tempo, ottenuta tramite acquisizioni 3D successive 
-Il maggiore quantitativo di informazione visualizzata viene al costo di un pi\`u basso frame rate e ad un maggiore costo computazionale dovuto all'elaborazione di tali informazioni.
+L'imaging 3D si pu\`o ottenere in due modi: meccanicamente, tramite una componente che fa oscillare l'array in direzione ortogonale a quella di propagazione dell'onda, oppure elettronicamente, tramite un trasduttore creato da una matrice di array.
+Un'immagine 4D, invece, si ottiene da continue immagini 3D, cio\`e la quarta dimensione \`e data dal tempo.
 
-\subsection{Architettura della strumentazione}
+In ostetricia in particolare sono molto diffusi algoritmi di renderizzazione delle superfici che creano falsi colori, ombre e altri dettagli, per una migliore visualizzazione del feto.
 
-L'architettura \`e la seguente:
-\[
-\text{Generatore} \to  \text{Trasduttore} \to  \text{Ricevitore/amplificatore} \to \text{Generatore del raggio} \to  \text{Processore del segnale} \to  \ldots
-\] 
+In ogni caso, il maggiore quantitativo di informazione acquisita con imaging 3D viene al costo di un pi\`u basso frame rate e ad un maggiore costo computazionale dovuto all'elaborazione di tali informazioni.
 
 \subsection{Effetti biologici e protezione}
 
-Sono due:
+Gli effetti biologici che si possono verificare tramite la diagnostica ad ultrasuoni sono principalmente i seguenti due.
 \begin{itemize}
-	\item effetti di tipo termico;
-	\item effetti meccanici di cavitazione: possibile esplosione di alcuni tipi di strutture nel corpo umano.
+	\item \textbf{Effetti termici:} l'assorbimento delle onde acustiche si traduce, almeno parzialmente, in calore; questo tipo di effetti \`e rilevante a seguito di lunghe esposizioni, oppure in modalit\`a ad alta intensit\`a, come accade in modalit\`a Doppler.
+		Le strutture colpite maggiormente sono quelle con un elevato tasso di assorbimento, come le strutture ossee.
+		Per tenere sotto controllo questo effetto, si introduce l'indice termico (TI), che \`e una stima del potenziale aumento della temperatura.
+	\item \textbf{Effetti meccanici di cavitazione:} questi consistono nella formazione, o crescita, di bolle di gas, con una loro conseguente oscillazione o collasso; oscillazioni e collassi possono portare la formazione di aree di forte pressione, oppure la formazione di onde d'urto.
+		Per tenere sotto controllo questo effetto, si utilizza l'indice meccanico (MI), che stima la probabilit\`a che avvenga.
 \end{itemize}
-Non vi sono radiazioni ionizzanti, o altri inconvenienti per il paziente ed \`e la modalit\`a diagnostica pi\`u sicura.
-
-A seguito dell'assorbimento, il tessuto si riscalda; la pressione acustica influenza l'attivit\`a di strutture bollose e si genera stress meccanico.
-Entrambi questi effetti vengono quantificati e monitorati tramite due indici, uno di coinvolgimento meccanico (MI) e uno di coinvolgimento termico (TI), mostrati sulla macchina con cui viene effettuata l'acquisizione, in modo che l'operatore possa evitare effetti collaterali nella diagnostica.
+Nei sistemi moderni, entrambi gli indici sono mostrati sul display della strumentazione, in modo che l'operatore possa operare in regime sicuro.
 
 I principi di sicurezza si basano su \textit{ALARA}: as low as reasonably achievable. 
 Tutto quello che influenza l'aumento dei due indici deve essere tenuto al minimo, fintantoch\'e l'immagine prodotta sia utilizzabile a scopi diagnostici.
 
 Il lato negativo maggiore \`e che \`e operatore-dipendente, cio\`e non si ha modo di avere una oggettivit\`a universale per la produzione dell'immagine.
 
-\subsection{Ecodoppler}
-Vengono sfruttate le variazioni tra l'onda emessa e quella trasdotta in termini di variazioni della frequenza dovuta al moto dell'emettitore; le cellule del sangue agiscono come emettitori acustici in movimento, in modo da poterne ricostruire il moto.
-La variazione della frequenza prevista dall'effetto Doppler \`e data da
-\[
-\Delta f = 2 f_0 v \cos \theta  / c 
-\] 
-Si devono utilizzare al pi\`u angoli $\theta $ fino a $60^\circ$ per avere un'accurata registrazione; avvicinandosi ai $90^\circ$, si produce un effetto di shift prossimo allo zero, indipendentemente dal moto reale.
+\subsection{Eco-doppler}
 
-L'acquisizione pu\`o avvenire a onda continua, che richiede due sonde diverse per trasmissione e ricezione, oppure a onda pulsante; vi sono altrettanti modi per visualizzare l'immagine: il color-doppler permette di visualizzare il verso di scorrimento del sangue, con convenzione rosso/blu a seconda che la velocit\`a sia in avvicinamento/allontanamento, oppure la power-doppler, in cui si visualizza solo l'ampiezza, in modo da registrare la quantit\`a di sangue, senza visualizzare il verso del moto.
+L'eco-doppler, oltre a fornire una rappresentazione in B-mode, sfrutta l'effetto Doppler per determinare velocit\`a e direzione di moto di un corpo all'interno della regione anatomica analizzata, come per esempio il sangue.
+Questa modalit\`a si basa sull'effetto Doppler, per cui un'onda ricevuta da un corpo in moto e successivamente riemessa viene ricevuta con una differenza $\Delta f$ dalla frequenza $f_0$ originaria tramite la relazione
+\begin{equation}
+	\Delta f = \frac{2f_0 v \cos \theta }{c}
+\end{equation}
+dove $v$ \`e la velocit\`a di moto del corpo e $\theta $ \`e l'angolo formato tra la direzione di moto del corpo e la direzione che unisce ricevitore e corpo stesso.
+Il fattore $2$ tiene conto del fatto che il moto influenza sia la frequenza ricevuta dal corpo, sia quella che poi riemette.
 
-Il doppler a onda continua produce un FOV dato dall'intersezione delle regioni coperte da ricevitore ed emettitore; questo genera una sorta di rombo, per cui una corretta acquisizione si basa sul coprire diverse regioni tramite la strumentazione, in modo da ricostruire un'immagine interpretabile.
-Viene utilizzato un filtro apposito che rimuove onde ricevute sotto i $100$ Hz, generate dal movimento di tessuti, che altrimenti oscurerebbero il segnale di interesse.
-Questo metodo permette di misurare elevate velocit\`a senza incorrere nel fenomeno dell'aliasing (senza il limite di Nyquist), legato alla frequenza di campionamento, cio\`e di registrazione del segnale: se il segnale produce un segnale a frequenza molto pi\`u alta del segnale con cui viene campionato, il segnale registrato viene alterato dal fatto che si possono registrare, per esempio, due picchi di fila, saltando il segnale nel mezzo.
-Questo invece \`e particolarmente rilevante nel momento in cui una singola sonda funge sia da emettitore che da ricevitore, in quanto \`e presente un tempo di campionamento concreto.
+Una limitazione di questa modalit\`a diagnostica si osserva quando l'angolo si avvicina ai $90^\circ$: in questo caso, risulta uno shift di frequenza nullo, ma non \`e possibile concludere che non vi sia moto.
+Per questa ragione, si raccomanda l'utilizzo di angoli di al pi\`u $60^\circ$.
 
-Una limitazione \`e che non \`e possibile selezionare una profondit\`a: il segnale ricevuto \`e ottenuto da tutta la zona coperta.
-Quando \`e necessario selezionare questa profondit\`a si usa il doppler a onda pulsata.
+I dati raccolti in questo modo permettono di costruire una distribuzione di frequenze Doppler relativa a tutti i centri scatteranti in moto; si grafica la frequenza in funzione del tempo, mentre l'intensit\`a del segnale ricevuto viene codificata come luminosit\`a o colore.
 
-Il doppler a onda-pulsata e il B-mode vengono utilizzati insieme a formare un sistema duplex: sull'immagine B-mode, si sovrappone l'immagine generata dal doppler pulsato con falsi colori.
-
-\subsection{Realt\`a aumentata}
-
-La tecnologia \`e denominata ARUS (Augmented Reality UltraSound).
-L'obiettivo \`e di semplificare il lavoro del chirurgo che deve operare usando diagnostica ad ultrasuoni per verificare la direzione del suo strumento ed evitare errori legati all'errata ricostruzione spaziale da parte dell'operatore nel caso di utilizzo di strumentazione ad ultrasuoni 2D.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Di seguito, si riportano le diverse modalit\`a di funzionamento di un eco-doppler.
+\begin{itemize}
+	\item \textbf{Onda continua (CW):} la sonda \`e composta da due elementi, di cui uno \`e in continua emissione, mentre l'altro \`e in continua ricezione; questa configurazione permette di misurare velocit\`a elevate senza il fenomeno dell'\textit{aliasing}.
+Questo lato positivo avviene a discapito della capacit\`a di rilevare le profondit\`a.
+		\`E molto utile quando occorre misurare velocit\`a di flusso elevate, come in alcune patologie cardiache.
+	\item \textbf{Doppler pulsato (PW):} un singolo trasduttore emette impulsi ultrasonori, ciascuno dei quali che consiste di $3\div 20$ cicli, per poi riceverli opportunamente. 
+		La ricezione funziona in modo da ``ascoltare'' gli impulsi provenienti dalla regione desiderata, detta volume campione, attivando l'ascolto solamente nella finestra temporale prevista. 
+		Per esempio, dovendo ricevere gli impulsi da una regione ad una profondit\`a di $5/6$ cm, assumendo un tempo di viaggio degli impulsi emessi inizialmente di $1.3\, \mu \text{s}/\text{mm}$, la finestra temporale da considerare \`e di $13\, \mu \text{s}$ dopo la ricezione.
+\end{itemize}
+Dei dispositivi ecografici chiamati \textbf{duplex} e \textbf{triplex} permettono di visualizzare contemporaneamente, rispettivamente, un'immagine ecografica ottenuta tramite B-mode a cui viene sovrapposto il risultato di una delle due modalit\`a Doppler e, in aggiunta, lo spettro Doppler.
+Questa sovrapposizione pu\`o avvenire nei seguenti modi.
+\begin{itemize}
+	\item \textbf{Color Doppler:} si sovrappone all'immagine B-mode una mappa colorata delle informazioni ottenute tramite eco-doppler.
+		I colori tipicamente usati sono il rosso per indicare un verso di movimento sulla direzione di emissione della sonda, mentre il blu indica il verso opposto.
+		Il tono del colore, o la saturazione, pu\`o rappresentare la velocit\`a; l'intensit\`a del colore dipende anche dalla potenza del segnale, o altre impostazioni.
+	\item \textbf{Power Doppler:} in questa modalit\`a, invece del segno della velocit\`a, si stima la potenza del segnale Doppler, cio\`e l'intensit\`a del segnale ricevuto dagli emettitori in moto.
+		Questo \`e sensibile alla presenza e quantit\`a degli emettitori in moto, ma non alla loro velocit\`a o direzione.
+\end{itemize}
 
 
 
