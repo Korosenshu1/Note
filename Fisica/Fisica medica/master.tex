@@ -2703,6 +2703,41 @@ Da queste considerazioni, si definisce l'\textit{oxygen enhancement ratio} come:
 	\text{OER}=\Eval{\frac{D_\text{hyp}}{D_\text{ox}}}{\text{isoeffect}}{}
 \end{equation}
 dove ``hyp'' fa riferimento alle cellule ipossiche, cio\`e poco ossigenate, mentre ``ox'' fa riferimento a quelle molto ossigenate.
+I tessuti ossigenati si dicono \textit{radio-sensibili}; quelli poco aerati si dicono radio-resistenti.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\columnwidth]{oer.png}
+	\caption{Curve di sopravvivenza di cellule irradiate con ioni carbonio in casi ossici e ipossici al variare della dose, per differenti LET.}
+\end{figure}
+
+\noindent Grafici del tipo sopra sono necessari per ottenere il valore di LET tale per cui sia i tessuti radio-resistenti, che quelli radio-sensibili, subiscono un uguale effetto biologico.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Al lato, si vede una figura ottenuta da uno studio che evidenzia lo ione che ha il compromesso RBE/OER migliore: da una parte, un pi\`u alto RBE implica una dose biologica minore; dall'altro, un pi\`u basso OER implica un effetto pi\`u omogeneo sui tessuti, cio\`e vi \`e meno dipendenza dalla loro ossigenazione.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{rbe-oer.png}
+	\end{minipage}
+\end{center}
+Questo permette una terapia personalizzata tenendo conto dell'ossigenazione dei tessuti del paziente, non solo di quelli sani, ma anche di quelli tumorali, tenendo conto di processi quali l'angiogenesi tumorale, o eventuali danni vascolari per esempio; eventualmente, si possono utilizzare dei radio-sensibilizzanti per il trattamento.
+Studi del genere, oltretutto, permettono l'utilizzo di ioni diversi nello stesso trattamento.
+
+\subsubsection{Tumor control probability (TCP)}
+
+Un ulteriore indice che si considera \`e la probabilit\`a di controllo del tumore, che quantifica la probabilit\`a che una determinata dose permetta di, appunto, controllare il tumore che si sta trattando.
+In realt\`a, questo dato da solo \`e abbastanza banale: una maggiore dose migliora la probabilit\`a. 
+Tuttavia, bisogna tenere in considerazione anche quanto vengono danneggiati i tessuti con la stessa radiazione utilizzata per attaccare il tumore.
+Per questa ragione, un altro indice collegato che si tiene in considerazione \`e il \textit{normal tissue complication probability} (NTCP), che quantifica la probabilit\`a che una determinata dose causi problemi ai tessuti sani.
+La composizione di queste due curve permette di ottenere la dose ottimale tramite una curva a campana, come nell'immagine di seguito.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\columnwidth]{tcp.png}
+\end{figure}
+
 
 
 
