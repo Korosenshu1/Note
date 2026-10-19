@@ -1,0 +1,322 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
+\usepackage[italian]{babel}
+
+% Font
+\usepackage[osf,largesc,theoremfont]{newpxtext}
+\usepackage{eulervm}
+
+
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Fondamenti di\\ \vspace{.15cm} interazione radiazione-materia}
+\author{}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{20}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Ottica quantistica}
+
+\subsection{Quantizzazione del campo elettromagnetico}
+
+Nel seguito, si considereranno radiazioni elettromagnetiche solamente nel vuoto per parlare della quantizzazione del campo.
+Dalle equazioni di Maxwell, allora, risulta
+\begin{equation}
+	\nabla ^2 \vec{E}(\vec{r},t) = \frac{1}{c^2} \frac{\partial ^2 \vec{E}(\vec{r},t)}{\partial t^2}  \hspace{2cm} \nabla \cdot \vec{E}(\vec{r},t) = 0
+\end{equation}
+Per trovare i modi del campo elettromagnetico, si risolvono queste due equazioni con condizioni al contorno date da una scatola cubica di lato $L$ per cui si richiedono soluzioni stazionarie sul bordo della scatola (equivalente a paretti conduttrici perfette).
+Nel caso della componente lungo $\hat{x}$, per esempio, si trova un'espressione della forma 
+\begin{equation}
+	E_x(\vec{r},t) = E_x(t) \cos (k_x x ) \sin (k_y y ) \sin(k_z z)
+\end{equation}
+in modo che le componenti tangenziali si annullino.
+Dalla condizione di annullamento al bordo, si ottiene che 
+\begin{equation}
+	k_x = \frac{\pi n_x}{L} \hspace{1cm} k_y = \frac{\pi n_y}{L} \hspace{1cm} k_z = \frac{\pi n_z}{L}
+\end{equation}
+dove $n_x,n_y,n_z \in [0,+\infty)$.
+Nello spazio $(k_x,k_y,k_z)$, il numero di modi contenuti tra $k$ e $k +\dd k$ \`e dato dal volume infinitesimo $\dd V_k = 4 \pi k^2 \dd k$, diviso per la spaziatura tra un punto e l'altro, pari a $\pi / L$ per ciascuna direzione, che porta un fattore $(\pi / L ) ^{-3}$; avendo considerato solamente numeri d'onda positivi, si sta considerando una frazione pari a $\frac{1}{2^3}$ dello spazio originale e, in pi\`u, la presenza di due polarizzazioni per ciascun modo comporta un fattore $2$\footnote{Per $\vec{R}(\vec{r},t) = \vec{E}_0 e^{i (\vec{k}\cdot \vec{r}-\omega t)}$ e $\vec{k} = k \hat{z}$, per esempio, la condizione $\nabla \cdot \vec{E} = 0 \Rightarrow  \vec{k} \cdot \vec{E}_0 = 0$,  cio\`e $E_{0z}=0$. Questo vuol dire che $\vec{E}_0 = E_{0x}\hat{x} + E_{0y}\hat{y}$, cio\`e che per ogni vettore d'onda individuato da $k_z$, si hanno due modi indipendenti: uno lungo $\hat{x}$, ossia $E_{0x}$, e uno lungo $\hat{y}$, cio\`e $E_{0y}$.}.
+Mettendo tutto insieme, la densit\`a di modi per unit\`a di volume \`e data dividendo il termine costruito sopra per $L^3$, cio\`e:
+\begin{equation*}
+	\rho (k)\dd k= \frac{ k^2 }{\pi^2}\dd k
+\end{equation*}
+Visto che $\omega = ck$, si ottiene 
+\begin{equation}
+	\rho (\omega ) \dd \omega = \frac{\omega ^2 \dd \omega}{\pi ^2 c^3}
+\end{equation}
+In questo modo, per sommare su tutti gli stati, invece di calcolare le somme sui $\vec{k}$ e sulle due polarizzazioni, si calcola $\int \frac{\omega^2}{ \pi^2 c^3} \dd \omega$, eventualmente aggiungendo il fattore $V$ per il volume.
+\begin{osservazione}
+Il considerare una densit\`a di modi per unit\`a di volume \`e utile per il fatto che, volendo studiare in seguito onde elettromagnetiche che non sono confinate in una regione di spazio, il termine $\rho (\omega ) \dd \omega$ \`e, cos\`i facendo, indipendente dal volume e, quindi, di validit\`a pi\`u generale.
+\end{osservazione}
+Sostituendo le soluzioni oscillanti accennate all'inizio, si osserva che la parte temporale soddisfa 
+\[
+\frac{\partial ^2 \vec{E}}{\partial t^2}  = - \omega ^ 2 \vec{E}(t) \implies \vec{E}(t) = \vec{E}(0) e^{-i\omega t}
+\] 
+Inoltre, l'energia del campo elettromagnetico \`e data, in MKS, da 
+\begin{equation}
+	\mathcal{E}  = \frac{1}{2} \int _V \Big[\varepsilon _0 \vec{E}^2(\vec{r},t) + \mu _0 ^{-1} \vec{B}^2 (\vec{r},t)\Big] \dd V
+\end{equation}
+dove si ricorda che $c = (\varepsilon _0 \mu _0)^{-1 / 2}$ e che
+\[
+	\nabla \times \vec{E}(\vec{r},t) = - \frac{\partial \vec{B}(\vec{r},t)}{\partial t} 
+\] 
+Si conclude che i campi soddisfano equazioni di oscillatori armonici con frequenza $\omega $ e hanno energia della stessa forma di quella di un oscillatore armonico, cio\`e \`e della forma $A p^2 + Bx^2$; infatti, si potrebbe pensare di associare al campo elettrico il ruolo di $x^2$, mentre al campo magnetico quello di $p^2$, o viceversa.
+\begin{osservazione}
+Dal discorso appena fatto, \`e ragionevole aspettarsi che, passando al caso quantistico introducendo degli operatori di campo per quello elettrico e quello magnetico, l'hamiltoniano del sistema abbia autoenergie che sono della stessa forma di quelle dell'oscillatore armonico, a meno del fatto che, invece di avere operatori impulso e posizione, si hanno i due operatori di campo.
+\end{osservazione}
+
+\noindent Dando per vera l'analogia nella precedente osservazione, si pu\`o vedere ogni singolo modo del campo elettromagnetico come un oscillatore armonico di frequenza $ \omega$ e un livello di eccitazione individuato da 
+\[
+E_n = \left(n + \frac{1}{2}\right) \hbar \omega \, , \ n = 0,1 , \ldots
+\] 
+In quest'ottica, $n$ rappresenta il numero di fotoni nel campo elettromagnetico: un fotone di frequenza $\omega$, quindi, \`e il quanto di eccitazione del modo del campo elettromagnetico relativo a tale frequenza.
+\begin{osservazione}
+Si nota la presenza di un'energia di vuoto $E_0 = \hbar \omega / 2$; questa non si misura negli esperimenti, in quanto si misura tipicamente l'eccitazione.
+\end{osservazione}
+\noindent La probabilit\`a (all'equilibrio termico) di trovare l'oscillatore armonico nel modo $n$-esimo, che secondo l'analogia corrisponde alla probabilit\`a di trovare $n$ fotoni nel campo elettromagnetico ($n$ fotoni in quel modo), \`e data da
+\begin{equation}
+	P(n) = \frac{1}{\mathcal{Z} } \exp \left(- \frac{E_n}{\kappa _B T}\right) 
+\end{equation}
+con $\mathcal{Z} = \sum_{n}^{} \exp\left(- \frac{E_n}{\kappa _B T}\right) $ funzione di partizione.
+\begin{osservazione}
+Pi\`u precisamente, questa corrisponde alla probabilit\`a di trovare un singolo oscillatore armonico eccitato al suo livello $n$-esimo, cio\`e di trovare $n$ fotoni nel suo modo.
+\end{osservazione}
+\noindent Chiamando per semplicit\`a $u = e^{- E_n / \kappa _B T}$ e usando 
+\[
+\sum_{n=0}^{+\infty} u ^ n = \frac{1}{1 - u}
+\] 
+allora $P(n) = (1-u) u ^n$.
+Per questa ragione, il numero medio di fotoni nel modo $\hbar \omega$ \`e descritto da una Bose-Einstein con $\mu  =0 $:
+\begin{equation}
+	\begin{split}
+		\langle N \rangle &= \sum_{n}^{} n P(n) = (1-u ) \sum_{n=0}^{+\infty} n U^n = (1-u) u \frac{\partial }{\partial u} \sum_{n=0}^{+\infty} u^n = \frac{u}{1-u}\\
+				  & = \frac{1}{\exp \left(\frac{\hbar \omega}{\kappa _B T}\right) - 1}
+	\end{split}
+\end{equation}
+\subsubsection{Distribuzione di corpo nero}
+La densit\`a di energia (termica) media \`e descritta dalla distribuzione di Plank per il corpo nero:
+\begin{equation}
+	\langle w_T(\omega ) \rangle \dd \omega = \langle n \rangle \hbar \omega \rho (\omega ) \dd \omega = \frac{\hbar \omega ^3}{\pi c^3} \frac{\dd \omega }{e^{\hbar \omega  / \kappa _B T }-1}
+\end{equation}
+L'espressione \`e data dal fatto che $\langle n \rangle\hbar \omega $ \`e l'energia totale media di un modo di frequenza $\omega$, cio\`e \`e il numero di fotoni che popolano tale modo per l'energia associata ad ogni quanto di eccitazione, il tutto moltiplicato per la densit\`a volumica di stati di frequenze tra $\omega$ e $\omega + \dd \omega $.
+Il massimo di questa curva \`e raggiunto per $\omega _\text{max} \approx 2.8 \frac{\kappa _B T }{\hbar }$ e ha i seguenti andamenti asintotici:
+\begin{align}
+	&\langle w_T \rangle \sim \omega ^2 \tag{$\hbar \omega  \ll \kappa _B T $}\\
+	& \langle w_T \rangle \sim \exp \left(- \frac{\hbar \omega }{\kappa _B T}\right)  \tag{$\hbar \omega \gg \kappa _B T$}
+\end{align}
+Integrando sulle frequenze, si trova la legge di Stefan-Boltzmann:
+\begin{equation}
+	\int _0^{+\infty} \langle w_T(\omega ) \rangle \dd \omega = \frac{\pi^2 (\kappa _B T)^4}{15 c^3 \hbar ^3} = \sigma T^4
+\end{equation}
+
+\subsubsection{Fluttuazioni}
+Scrivendo $u$ in funzione di $n$, si trova che 
+\[
+u =  \frac{\langle n \rangle}{1+\langle n \rangle}
+\] 
+da cui 
+\begin{equation}
+	P(n) = \frac{\langle n \rangle ^n}{\big( 1 + \langle n \rangle\big) ^{1 + n}}
+\end{equation}
+Si vedr\`a che la probabilit\`a di avere $n$ fotoni in funzione del numero medio di fotoni nel modo ha questa stessa forma anche nel caso in cui il sistema non sia all'equilibrio termodinamico; in stato di non-equilibrio, cambier\`a la distribuzione di $\langle n \rangle$, ma l'espressione di $P(n)$ \`e la stessa.
+La ``curva'' che ne risulta si vede essere sempre decrescente in $n$, quindi con $P(n=0)$ come il valore che \`e sempre pi\`u probabile, a prescindere da $\langle n \rangle$.
+Si ha, inoltre, che decresce sempre meno rapidamente all'aumentare di $\langle n \rangle$.
+
+La varianza di questa distribuzione si ottiene, al solito, come
+\[
+\sigma _n^2  = \sum_{n}^{} \left(n - \langle n \rangle\right) ^2 P(n) = \langle n^2 \rangle - \langle n \rangle^2
+\] 
+La distribuzione $P(n)$ \`e detta \textit{distribuzione geometrica} e si definiscono, in generale, i \textit{momenti fattoriali di ordine $r$} come $\langle n ( n-1) \ldots (n-r+1) \rangle$; nel caso delle distribuzioni geometriche, si sa che 
+\[
+\langle n ( n-1) \ldots (n-r+1) \rangle = r! \langle n \rangle^r
+\] 
+Si pu\`o usare questa relazione per concludere che $\langle n^2 \rangle - \langle n \rangle= \langle n (n-1) \rangle= 2 \langle n \rangle^2$, perci\`o
+\begin{equation}
+\sigma ^2_n = \langle n \rangle^2 + \langle n \rangle
+\end{equation}
+dove $\langle n \rangle^2$ si riconosce essere il contributo ``onda'', mentre $\langle n \rangle$ \`e il contributo ``particella''.
+Di fatto, la varianza segue la parte ondulatoria quando $\langle n \rangle\gg 1$, cio\`e quando mediamente ci sono molte particelle, mentre segue il contributo particellare quando $\langle n \rangle \ll 1$, cio\`e quando la popolazione \`e molto piccola.
+
+\subsubsection{Sistema a due livelli}
+Si considera un sistema a due livelli, di energie $E_1< E_2$ e popolazioni $N_1, N_2$, con $N = N_1+N_2$.
+Considerando un'interazione generica del sistema con un campo elettromagnetico, senza che campo e sistema a due livelli siano all'equilibrio, che \`e una situazione sperimentale tipica. 
+In questo senso, la densit\`a di energia media si scompone in una parte termica e in un contributo esterno: $\langle w(\omega ) \rangle = \langle w_T (\omega ) \rangle+ \langle w_E(\omega ) \rangle$.
+Si assume, cosa sicuramente verificata per $\langle w_T(\omega ) \rangle$, che $\langle w_E(\omega ) \rangle$ vari molto lentamente con $\omega $ attorno alla frequenza di transizione $\frac{E_2 -E_1}{\hbar }$.
+
+La trattazione di Einstein prevede di considerare tre possibili comportamenti del sistema: emissione spontanea, indicata dal coefficiente $A_{21}$, emissione stimolata, indicata dal coefficiente $B_{21}$, e assorbimento. 
+Visto che emissione stimolata e assorbimento coinvolgono l'interazione del sistema con un campo elettromagnetico e che l'intensit\`a della radiazione deve aumentare la probabilit\`a di transizione, si moltiplicano i coefficienti $B_{12}$ e $B_{21}$ per la densit\`a spettrale media di energia $w(\omega )$.
+In questo modo, si possono scrivere le \textbf{equazioni di rate}:
+\begin{equation}
+	\frac{d N_1}{d t}  = - \frac{d N_2}{d t}  = N_2 A_{21} - N_1 B_{12} \langle w(\omega ) \rangle + N_2 B_{21} \langle w(\omega ) \rangle
+\end{equation}
+Nel caso stazionario, vale $\dot{N}_1 = \dot{N}_2 = 0$ e all'equilibrio termodinamico, quindi $\langle w_E(\omega ) \rangle = 0$, si ottiene
+\begin{equation}
+	\langle w_T(\omega ) \rangle = \frac{A_{21}}{\frac{N_1}{B_2}B_{12} - B_{21}}
+\end{equation}
+Si conosce il rapporto tra le popolazioni all'equilibrio, visto che seguono la distribuzione di Boltzmann; assumendo che il livello $1$ abbia una degenerazione $g_1$ e che il livello $2$ abbia degenerazione $g_2$, si ha
+\[
+	\frac{N_1}{N_2} = \frac{g_1}{g_2} \overbracket{\exp \left(- \frac{E_1 - E_2}{\kappa _B T}\right) }^{= \exp \left(\frac{\hbar \omega}{\kappa _BT}\right) } \implies \langle w_T(\omega ) \rangle = \frac{A_{21}}{\displaystyle \frac{g_1}{g_2}\exp\left(\frac{\hbar \omega }{\kappa _B T}\right) B_{12}-B_21}
+\] 
+Per\`o questa deve avere la stessa forma della distribuzione di corpo nero, per cui devono valere le seguenti relazioni per i coefficienti:
+\begin{equation}
+	\begin{cases}
+		g_1 B_{12} =g_2 B_{21}\\
+		\\
+		\displaystyle A_{21} = \frac{\hbar \omega ^3}{\pi^2 c^3}B_{21}
+	\end{cases}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\end{document}
