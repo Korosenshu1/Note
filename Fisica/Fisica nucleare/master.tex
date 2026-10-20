@@ -2097,12 +2097,144 @@ In questo caso, si trovano soluzioni analitiche che, definendo $\alpha \equiv \f
 		\displaystyle w(r) = C_2 \left[ 1 + \frac{3}{\alpha r} + \frac{3}{(\alpha r)^2} \right] e^{-\alpha r}
 	\end{cases}
 \end{equation}
+\subsubsection{Momento di dipolo magnetico}
+Si \`e trovato che 
+\[
+\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z + \frac{1}{2} \left(1 - g_s^n - g_s^p\right) \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \hat{J}^2} \hat{J}_z
+\] 
+tramite cui il momento di dipolo del deutone si calcola come
+\[
+\mu _d = \braket{\psi _d|\hat{\mu }_{J_z}|\psi _d} 
+\] 
+\begin{itemize}
+	\item Momento di dipolo senza termine tensoriale.
+
+		In questo caso, $\ket{\psi _d}  = \ket{^3S_1}$, per il quale $\vec{\ell } = 0 \Rightarrow  \vec{J}= \vec{S}$, quindi
+		\[
+		\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z
+		\] 
+	Calcolando il valore di aspettazione nello stato con $m_J$ massimo, si ottiene
+	\[
+	\mu _d = \frac{1}{2} \left(g_s^n + g_s^p\right)  \braket{^3 S_1 , 1| \hat{J}_z| ^3S_1 , 1}  = \frac{1}{2} \left(g_s^n + g_s^p\right) 
+	\] 
+dove si \`e usato che $\hat{J}_z \ket{^3 S_1 , 1} =1$, essendo $m_J = 1$ e $\braket{^3S_1|^3S_1} = 1$ per normalizzazione.	
+Reintroducendo il magnetone nucleare, precedentemente posto pari a $1$, si conclude che 
+\[
+\mu _d = \frac{1}{2} \left(g_s^n + g_s^p\right)\mu _N = \mu _n + \mu _p
+\] 
+Questo significa che, in assenza di termine tensoriale, il momento di dipolo del deutone \`e la somma dei momenti di dipolo delle sue componenti libere.
+
+\item Momento di dipolo con termine tensoriale.
+
+	In questo caso, $\ket{\psi _d}  = a_0 \ket{^3 S_1}  + a_2 \ket{^3D_1} $.
+	Per il valore di aspettazione, si separa il calcolo nei due termini di $\hat{\mu }_{J_z}$; per il primo, si ottiene
+	\[
+	\mu _d^{(1)} = \frac{1}{2} \left(g_s^n + g_s^p\right)  \braket{\psi _d| \hat{J}_{z}|\psi _d} = \frac{1}{2}\left(g_s^n + g_s^p\right) \left(\lvert a_0 \rvert ^2 + \lvert a_2 \rvert ^2\right)  = \frac{1}{2}\left(g_s^n + g_s^p\right) 
+	\] 
+visto che $\lvert a_0 \rvert ^2 + \lvert a_2 \rvert ^2 = 1$ per normalizzazione di $\psi _d$ e che $\braket{^3S_1|^3 D_1}  = 0$ e $\braket{^3S_1|^3S_1} = \braket{^3D_1|^3D_1} =1$.
+Il primo termine, quindi, riporta al risultato del punto precedente.
+
+Per il secondo termine, si definisce $\hat{O} = \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \hat{J}^2} \hat{J}_z$, per cui
+\[
+	\begin{split}
+		\hat{O} \ket{\psi _d} &= a_0 \hat{O}\ket{^3S_1}  + a_2 \hat{O} \ket{^3D_1} \\
+				      &= a_0 \Eval{\frac{J(J+1) - S(S+1)}{2J(J+1)}}{^3S_1}{}\ket{^3S_1}  + a_2 \Eval{\frac{J(J+1)+\ell (\ell +1) - S(S+1)}{2J(J+1)}}{^3D_1}{} \ket{^3D_1} \\
+				      &= \frac{3}{2}a_2 \ket{^3D_1} 
+	\end{split}
+\] 
+Ne segue che $\braket{\psi _d|\hat{O}|\psi _d} = \frac{3}{2} \lvert a_2 \rvert ^2$, quindi $\mu _d^{(2)} = \frac{3}{4} \left(1- g_s^n - g_s^p\right) \lvert a_2 \rvert ^2$; esplicitando subito il magnetone nucleare, si ottiene
+\[
+\mu _d = \mu _n + \mu _p + \frac{3}{2} \left[ \frac{1}{2}\mu _N - \mu _n - \mu _p \right] \lvert a_2 \rvert ^2
+\] 
+\end{itemize}
+Dal momento di dipolo magnetico del deutone, inserendo i dati sperimentali di $\mu _d$, $\mu _n$, $\mu _p$ e $ \mu _N$, si pu\`o ricavare il peso statistico per l'onda D:
+\begin{equation}
+	p_D \equiv \lvert a_2 \rvert ^2 = \frac{2}{3} \frac{\mu _d - (\mu _n + \mu _p)}{\frac{1}{2}\mu _N - (\mu _n - \mu _p)} \approx 4\%
+\end{equation}
+Questo \`e in accordo con quanto trovato per il momento di quadrupolo elettrico: il deutone si discosta minimamente dalla simmetria sferica.
 
 
+\newpage
 
+\section{Scattering quantistico}
 
+Nella precedente definizione di sezione d'urto, si \`e utilizzato il concetto classico di traiettoria, quindi sar\`a necessario adattare la sezione d'urto nel caso quantistico.
 
+\subsection{Sezione d'urto quantistica}
 
+Si definisce genericamente la sezione d'urto come
+\begin{equation}
+	\dd \sigma  = \frac{d \sigma }{d \Omega } \dd \Omega  = \frac{\phi _\text{scatt}}{\phi _\text{inc}} \dd S
+\end{equation}
+dove $\phi _\text{scatt}$ \`e il flusso di particelle diffuse dal processo, mentre $\phi _\text{inc}$ \`e il flusso di particelle incidenti; $\dd S$, invece, \`e la superficie infinitesima attraversata dalle particelle diffuse entro un angolo solido $\dd \Omega $.
+
+I flussi sono definiti come il numero di particelle (scatterate o incidenti a seconda del flusso considerato) per unit\`a di superficie e tempo.
+Per trovare un'espressione dei flussi, si introducono i concetti di corrente di particelle incidenti e diffuse.
+Per le particelle diffuse, si ha
+\[
+\phi _\text{scatt} = \vec{j}_\text{scatt} \cdot \hat{n}_r
+\] 
+dove $\hat{n}_r$ \`e la normale alla superficie infinitesima: $\vec{j}_\text{scatt} \cdot  \dd \vec{S} = \vec{j}_\text{scatt} \cdot \hat{n}_r r^2 \dd \Omega $.
+Per le particelle incidenti, invece, la superficie che attraversano \`e ortogonale alla direzione lungo cui si propagano, per cui si ha semplicemente 
+\[
+\phi _\text{inc} = \vec{j}_\text{inc} \cdot \hat{n}_{\text{inc}} =j_\text{inc}
+\] 
+Ne segue che
+\begin{equation}
+\dd \sigma  = \frac{\vec{j}_\text{scatt} \cdot d\vec{S}}{j_\text{inc}} = \frac{\vec{j}\cdot \hat{n}_r}{j_\text{inc}} r^2 \dd \Omega 
+\end{equation}
+
+\subsection{Scattering con potenziale}
+
+Si considera, in generale, un potenziale complesso: $V = V_R + i W$.
+Se $W=0$, si ha uno scattering elastico, mentre il termine complesso \`e responsabile per processi anelastici.
+L'hamiltoniano non-relativistico, nel centro di massa, del processo \`e dato da 
+\[
+\hat{H} = \frac{\hat{p}^2}{2m} + V = -\frac{\hbar^2}{2m} \nabla ^2 + V
+\] 
+dove $m$ \`e la massa ridotta.
+
+Per descrivere il processo di scattering, si scrivono l'equazione di Schr\"odinger time-dependent e la sua complessa coniugata; moltiplicandole, rispettivamente, per $\psi ^*$\footnote{Complesso coniugato della funzione d'onda delle particelle.} e $\psi $ e poi sottraendole membro a membro, si ottiene che
+\[
+i\hbar  \left[ \psi ^* \frac{\partial \psi }{\partial t} + \psi \frac{\partial \psi ^*}{\partial t}  \right]  = \psi ^* \hat{H}\psi  - \psi (\hat{H}\psi )^* 
+\] 
+Si nota che il termine in parantesi quadre si pu\`o scrivere come $\frac{\partial }{\partial t}  (\psi \psi ^*) = \frac{\partial }{\partial t} \lvert \psi  \rvert ^2$; esplicitando $\hat{H}$ e, poi, $V$, tramite manipolazione algebrica, si arriva a scrivere che
+\begin{equation}
+	\frac{\partial }{\partial t} \lvert \psi  \rvert ^2 + \vec{\nabla }\cdot \vec{j}=\frac{2}{\hbar } W \lvert \psi  \rvert ^2
+\end{equation}
+\begin{osservazione}
+Nel caso di scattering elastico ($W=0$), allora, si ritrova l'equazione di conservazione $\partial _t \lvert \psi  \rvert ^2 + \vec{\nabla }\cdot \vec{j} = 0$.
+\end{osservazione}
+
+\noindent Ora si calcola $\vec{j}_\text{inc}$.
+Trascurando la mutua interazione tra le particelle, queste sono particelle libere con hamiltoniano $\hat{H} = -\frac{\hbar ^2}{2m} \nabla ^2$, quindi sono onde piane: $\psi  = A e^{i \vec{k}\cdot \vec{r}}$, con $\vec{k}=\vec{p}/\hbar $ e $\lvert \psi  \rvert ^2 = \lvert A \rvert ^2$.
+Allora
+\[
+	\begin{split}
+		&\vec{\nabla }\psi  = i \vec{k}\psi  \implies \psi ^* = - i \vec{k}\psi ^*\\
+		& \vec{j}_\text{inc} = \frac{\hbar }{2m} \lvert \psi  \rvert ^2 \vec{k} = \frac{\hbar }{2m} \lvert A \rvert ^2 \vec{k} = \lvert \psi  \rvert ^2 \vec{v}
+	\end{split}
+\] 
+dove si \`e usato che $\frac{\hbar \vec{k}}{2m} = \frac{\vec{p}}{m} = \vec{v}$.
+
+Per le particelle diffuse, invece, si deve calcolare la componente radiale della corrente di particelle, visto che $\phi _\text{scatt} = \vec{j}_\text{scatt} \cdot \hat{n}_r \equiv j_r$.
+Per questa ragione, \`e comodo passare in coordinate sferiche, per cui $\vec{\nabla } \cdot \hat{n}_r= \hat{n}_r \partial _r$ ({\color{red} finire di scrivere}).
+
+Per ottenere la sezione d'urto differenziale del processo, si valuta il comportamento asintotico della funzione d'onda per $r\to +\infty$; questa condizione, per un potenziale a corto raggio come quello nucleare, si traduce in $r \gg r_\text{int}$.
+In questo caso, si vede che 
+\[
+\psi (\vec{r}) \sim A ^{i \vec{k}\cdot \vec{r}} + AF(\Omega ) \frac{e^{ikr}}{r}
+\] 
+dove il termine di onde sferiche descrive le particelle diffuse; il coefficiente di queste particelle diffuse \`e ancora $A$, ad indicare che si tratta di un processo elastico.
+Il termine $F(\Omega )$ \`e detto \textit{ampiezza di scattering} e codifica la distribuzione angolare delle particelle una volta terminata l'interazione.
+Si ottiene, quindi, che 
+\[
+\phi _\text{scatt} = j_r = \frac{\hbar k}{m} \frac{\lvert A \rvert ^2}{r^2} \lvert F(\Omega ) \rvert ^2
+\] 
+Ora si pu\`o calcolare la sezione d'urto del processo:
+\begin{equation}
+\dd \sigma  = \frac{\frac{\hbar k}{m} \frac{\lvert A \rvert ^2 }{r^2} \lvert F(\omega ) \rvert ^2 r^2 \dd \Omega }{\frac{\hbar }{m} k \lvert A \rvert ^2} \implies \frac{d \sigma }{d \Omega } = \lvert F(\Omega ) \rvert ^2
+\end{equation}
 
 
 
