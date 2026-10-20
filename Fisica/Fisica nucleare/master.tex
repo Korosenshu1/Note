@@ -1645,7 +1645,7 @@ Si nota, inoltre, che lo stato fondamentale del deutone \`e uno stato \textbf{de
 Questo indica che, nonostante il potenziale di interazione tra protone e neutrone corrisponda ad una buca di $-35$ MeV, la loro energia di legame \`e pari a solo $-2.225$ MeV.
 In ogni caso, questo \`e in accordo col fatto che lo stato fondamentale \`e l'unico stato legato osservato.
 \end{osservazione}
-\subsubsection{Raggio quadratico medio di carica del deutone}
+\subsection{Raggio quadratico medio di carica del deutone}
 Ora si impone la condizione sul raggio quadratico medio di carica, misurato essere pari a $\langle R_d^2 \rangle^{1/2} = 2.1$ fm.
 \begin{center}
 	\begin{minipage}
@@ -1704,7 +1704,7 @@ Con questi valori, risolvendo i due integrali, si ottiene
 In questa espressione, compaiono i parametri della buca: imponendo $\langle R_d^2 \rangle^{1 / 2} = 2.1$ fm, il termine $b$ e il termine $V_0$, che compare implicitamente in $k$, vengono legati da una seconda relazione $V_0 = f_2(b)$.
 L'intersezione tra le curve $f_1(b)$ e $f_2(b)$ permettono di ottenere la coppia di valori $(b,V_0)$ in accordo con i dati sperimentali imposti.
 
-\subsubsection{Dipendenza dallo spin}
+\subsection{Dipendenza dallo spin}
 Si \`e assunta un'indipendenza dallo spin nell'interazione tra protone e neutrone, ma questo non \`e corretto; di seguito, se ne d\`a una motivazione.
 
 Per il deutone, si osserva sperimentalmente $J=1$, con $\vec{J} = \vec{\ell } + \vec{S}$ e $\vec{S} = \vec{s}_1 + \vec{s}_2$.
@@ -1754,6 +1754,9 @@ allora
 \begin{osservazione}
 Se sia $V_1(r)$ che $V_2(r)$ sono buche di potenziale (negativi), allora il sistema nello stato di tripletto significa avere una configurazione pi\`u legata; al contrario, il segno negativo dovuto allo stato di singoletto rende lo stato con $S=0$ pi\`u sfavorito come stato legato. 
 \end{osservazione}
+
+\subsection{Termine tensoriale dell'interazione nucleare}
+
 
 \subsubsection{Sviluppo in multipoli}
 
@@ -1846,7 +1849,7 @@ Si distinguono diverse grandezze fisiche e come queste si comportano sotto l'azi
 	\item \textit{pseudo-scalari}, ottenuti come prodotto scalare di un vettore assiale e di uno polare, cambiano segno, come $\vec{\ell }\cdot \vec{S}$.
 \end{itemize}
 
-\subsubsection{Momento di quadrupolo elettrico}
+\subsubsection{Momento di quadrupolo elettrico del deutone}
 
 Il momento di quadrupolo elettrico fornisce informazioni su come \`e distribuita spazialmente la carica; per questa informazione, si usa la definizione di momento di quadrupolo normalizzato 
 \[
@@ -2097,10 +2100,106 @@ In questo caso, si trovano soluzioni analitiche che, definendo $\alpha \equiv \f
 		\displaystyle w(r) = C_2 \left[ 1 + \frac{3}{\alpha r} + \frac{3}{(\alpha r)^2} \right] e^{-\alpha r}
 	\end{cases}
 \end{equation}
-\subsubsection{Momento di dipolo magnetico}
+\subsection{Momento di dipolo magnetico e onda D}
+
+
+\subsubsection{Momento di dipolo magnetico di spin e orbitale}
+
+In meccanica quantistica, come gi\`a accennato all'inizio del documento, si definiscono l'operatore momento di dipolo magnetico di spin totale e di spin lungo l'asse di quantizzazione come
+\[
+\hat{\vec{\mu }}_s = g_s \frac{\hat{\vec{s}}}{\hbar }\mu _N \hspace{3cm} \hat{\mu }_{s_z} = g_s \frac{\hat{s}_z}{\hbar } \mu _N
+\] 
+con $g_s$ \textit{fattore giromagnetico} e $\mu _N = \frac{e\hbar }{2m_p}$ magnetone nucleare.
+Si nota che, per definizione, vale $[\hat{\vec{\mu }}_s^2 , \hat{\mu }_{s_z}]=0$.
+
+Protoni e neutroni sono particelle a spin $1 / 2$; visto che $[\hat{s}^2 , \hat{s}_z] =0$, gli stati di spin si rappresentano nella forma $\ket{s ,m_s} $.
+I possibili stati per particelle di spin $1 / 2$ sono $\ket{1 / 2 , 1 / 2} \equiv \ket{\uparrow} $ e $\ket{1 / 2 , - 1 / 2 }  \equiv \ket{\downarrow} $.
+Per ottenere il momento di dipolo magnetico intrinseco di una particella, si calcola il valore di aspettazione per lo stato di $m_s$ pi\`u alto, cio\`e si ottiene il valore di aspettazione nello stato orientato verso l'asse di quantizzazione in modo da ottenere il valore intrinseco della particella.
+Nel caso di particelle a spin $1 / 2$, questo corrisponde calcolare il valore di aspettazione rispetto allo stato $\ket{\uparrow} $:
+\[
+\mu = \braket{\uparrow|\hat{\mu }_{s_z}|\uparrow} = \frac{g_s}{\hbar }\mu _N \braket{\uparrow|\hat{s}_z|\uparrow} =\frac{1}{2}g_s \mu _N
+\] 
+dove si \`e usato direttamente che $\hat{s}_z \ket{\uparrow}  =\frac{\hbar}{2}$ e che $\braket{\uparrow|\uparrow} =1$.
+Il fattore giromagnetico dipende dalla particella; a seconda che si abbia a che fare con protoni, neutroni, o elettroni, si specificher\`a con un apice la particella a cui \`e relativo, cio\`e $\mu _p = \frac{1}{2}g_s^p \mu _N$, o $\mu _n = \frac{1}{2} g_s^n \mu _N$.
+Sperimentalmente, si sa che $g_s^p \approx 5.59$, mentre $g_s^n \approx - 3.83$; da questi, si ottiene rispettivamente che $\mu _p \approx 2.29\,  \mu _N$, mentre $\mu _n \approx -1.91 \, \mu _N$ e, quindi, che $\mu _n + \mu _p \approx 0.88\, \mu _N$.
+
+Nel caso dell'elettrone in particolare, per\`o, l'operatore momento di dipolo magnetico \`e definito tramite il magnetone di Bohr $\mu _B = \frac{2 \hbar }{2m_e}$ come $\mu _e = \frac{1}{2}g_s^e \mu _B$.
+Sperimentalmente si misura $g_s^e = 2.0023$, mentre dall'equazione di Dirac, invece, si prevede $g_s^e = 2$; si pu\`o tenere conto di questa discrepanza tramite le \textit{correzioni radiative} della QED.
+
+Similmente alla parte di spin, gli operatori momento di dipolo magnetico orbitale totale e lungo l'asse di quantizzazione sono definiti come
+\[
+\hat{\vec{\mu }}_\ell  = g_\ell \frac{\hat{\vec{\ell }}}{\hbar }\mu _N \hspace{3cm} \hat{\mu }_{\ell _z} = g_\ell  \frac{\hat{\ell}_z}{\hbar }\mu _N
+\] 
+Analogamente a prima, visto che $[\hat{\ell }^2 , \ell _z] =0$, si ha $[\hat{\mu }_\ell ^2 , \hat{\mu }_{\ell _z}]=0$.
+Visto che i due operatori commutano, gli stati del momento angolare orbitale si esprimono come $\ket{\ell , m_\ell } $, con $\ell = 0, 1 , 2, \ldots$ e $m_\ell  \in [-\ell ,+\ell ]$.
+Il momento di dipolo magnetico orbitale, come quello di spin, \`e definito come il valore di aspettazione di $\hat{\mu }_{\ell _z}$ sullo stato di massimo $m_\ell $, cio\`e
+\[
+\mu _\ell  \equiv \braket{\ell , m_\ell =\ell |\hat{\mu }_{\ell _z}|\ell , m_\ell =\ell } 
+\] 
+Per il neutrone, si ha $g_\ell ^n =0$, mentre per il protone vale $g_\ell ^p=1$.
+
+\subsubsection{Momento di dipolo magnetico di un nucleo}
+
+Per un nucleo atomico, il momento di dipolo magnetico \`e, quindi, dato dal totale:
+\[
+\vec{\mu } = \sum_{i=1}^{N} \vec{\mu }_{s_i}^n + \sum_{i=1}^{Z} \left(\vec{\mu }_{s_i}^p + \vec{\mu }_{\ell _i}^p\right) 
+\] 
+Mentre questo quantifica il momento di dipolo magnetico legato alle singole componenti nucleari, il momento di dipolo magnetico associato ad uno stato di momento angolare totale $J$ quantifica il risultato degli accoppiamenti dei momenti delle singole componenti.
+Si ottiene definendo, in linea con quanto visto finora, gli operatori
+\[
+\hat{\vec{\mu }}_J = g_J \frac{\hat{\vec{J}}}{\hbar }\mu _N \hspace{3cm} \hat{\mu }_{J_z} = g_J \frac{\hat{J}_z}{ \hbar } \mu _N
+\] 
+Al solito, visto che $[\hat{J}^2 , \hat{J}_z] =0$, i due operatori commutano e gli stati si rappresentano come $\ket{J , m_J} $; allora, il momento di dipolo magnetico nucleare \`e dato da 
+\begin{equation}
+	\mu _\text{nuc} \equiv \braket{J , m_J = J | \hat{\mu }_{J_z}|J , m_J = J} 
+\end{equation}
+
+\subsubsection{Momento di dipolo magnetico del deutone}
+
+Nel caso del deutone, si osserva sperimentalmente che, mentre $\mu _n + \mu _p = 0.8798 \, \mu _N$, vale $\mu _d = 0.857393 \, \mu _N$.
+Per il seguito della trattazione, si porranno $\mu _N = 1 $ e $\hbar = 1$.
+Si trascura la differenza di massa tra protone e neutrone e, nel centro di massa, si indica con $\vec{r}_p$ il raggio vettore che va dal CM al protone e con $\vec{r}_n$ quello che va al neutrone.
+Visto che $m_p = m_n$, la massa ridotta \`e $m = \frac{1}{2} m_p$, mentre il raggio vettore che va dal neutrone al protone \`e indicato con $\vec{r} = \vec{r}_p - \vec{r}_n$ e, per costruzione, $\vec{r}_p = \frac{1}{2} \vec{r}$.
+Si vuole calcolare 
+\[
+\vec{\mu } = g_s^n \vec{s}_n + g_s^p \vec{s}_p + g_\ell ^p \vec{\ell }_p
+\] 
+Per il momento angolare orbitale, si ha $\vec{p} = m_p \vec{v}_p + m_n \vec{v}_n = 0$, per cui $\vec{v}_p = - \vec{v}_n$ e $\vec{v} \equiv \vec{v}_ p - \vec{v}_n = 2 \vec{v}_p$, quindi $\vec{v}_p = \frac{1}{2} \vec{v}$.
+Allora
+\[
+\vec{\ell }_p = \vec{r}_p \times  m_p \vec{v}_p = \frac{1}{2} \vec{r} \times  2 m \frac{1}{2} \vec{v} = \frac{1}{2} (\vec{r}\times m \vec{v}) = \frac{1}{2} \vec{\ell }
+\] 
+Inoltre
+\[
+g_s^n \vec{s}_n + g_s^p \vec{s}_p = \frac{1}{2} \left(g_s ^n + g_s ^p\right)  \vec{S} + \frac{1}{2} \left(g_s^n - g_s ^p\right)  \left(\vec{s}_n - \vec{s}_p\right) 
+\] 
+Mettendo tutto insieme, si trova che
+\[
+\vec{\mu } = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{S} + \frac{1}{2} \vec{\ell } + \frac{1}{2} \left(g_s^n - g_s^p\right)  \left(\vec{s}_ n - \vec{s}_p\right) 
+\] 
+Visto che $\ket{\psi_d } $ \`e uno stato a spin $S = 1$, allora si nota subito che $\braket{S=1|(\hat{\vec{s} }_n- \hat{\vec{s}}_p|S=1} = 0 $, quindi 
+\[
+\vec{\mu } = \frac{1}{2} \left(g_s^N + g_s ^p\right)  \vec{J} + \frac{1}{2} \left(1 - g_s^n - g_s^p\right)  \vec{\ell }
+\] 
+Ora si vuole proiettare il secondo termine su $\vec{J}$.
+Visto che $\vec{J} = \vec{\ell } + \vec{S}$, allora $\vec{S} = \vec{J}- \vec{\ell }$, quindi
+\[
+\vec{S}^2 = \vec{J}^2 + \vec{\ell }^2 - 2 \vec{J} \cdot \vec{\ell }\implies \vec{J}\cdot \vec{\ell } = \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2}
+\] 
+Allora 
+\begin{equation}
+	\vec{\mu }_J = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J} + \frac{1}{2}\left(1 - g_s^n - g_s ^p\right) \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2 \lvert \vec{J} \rvert ^2} \vec{J}
+\end{equation}
+Proiettando lungo l'asse $z$, si ottiene 
+\begin{equation}
+	\vec{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J}_z + \frac{1}{2}\left(1 - g_s^n - g_s^p\right)  \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2 \lvert \vec{J} \rvert ^2 } \vec{J}_z
+\end{equation}
+
+\subsubsection{Probabilit\`a dell'onda D}
+
 Si \`e trovato che 
 \[
-\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z + \frac{1}{2} \left(1 - g_s^n - g_s^p\right) \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \hat{J}^2} \hat{J}_z
+\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z + \frac{1}{2} \left(1 - g_s^n - g_s^p\right) \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \lvert \hat{\vec{J}} \rvert ^2} \hat{J}_z
 \] 
 tramite cui il momento di dipolo del deutone si calcola come
 \[
@@ -2218,7 +2317,7 @@ Allora
 dove si \`e usato che $\frac{\hbar \vec{k}}{2m} = \frac{\vec{p}}{m} = \vec{v}$.
 
 Per le particelle diffuse, invece, si deve calcolare la componente radiale della corrente di particelle, visto che $\phi _\text{scatt} = \vec{j}_\text{scatt} \cdot \hat{n}_r \equiv j_r$.
-Per questa ragione, \`e comodo passare in coordinate sferiche, per cui $\vec{\nabla } \cdot \hat{n}_r= \hat{n}_r \partial _r$ ({\color{red} finire di scrivere}).
+Per questa ragione, \`e comodo passare in coordinate sferiche, per cui $\vec{\nabla } \cdot \hat{n}_r=\partial _r$.
 
 Per ottenere la sezione d'urto differenziale del processo, si valuta il comportamento asintotico della funzione d'onda per $r\to +\infty$; questa condizione, per un potenziale a corto raggio come quello nucleare, si traduce in $r \gg r_\text{int}$.
 In questo caso, si vede che 
