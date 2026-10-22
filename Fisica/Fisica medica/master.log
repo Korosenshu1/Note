@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.11)  22 OCT 2026 11:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.22)  22 OCT 2026 20:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -967,8 +967,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \c@assunzione=\count409
 \c@notazione=\count410
 \c@esercizio=\count411
-Package hyperref Info: Option `colorlinks' set `true' on input line 111.
-Package hyperref Info: Option `breaklinks' set `true' on input line 111.
+Package hyperref Info: Option `colorlinks' set `true' on input line 122.
+Package hyperref Info: Option `breaklinks' set `true' on input line 122.
 
 
 Class scrartcl Warning: Usage of package `tocloft' together
@@ -989,7 +989,7 @@ Class scrartcl Warning: Usage of package `tocloft' together
 (scrartcl)              `part', `chapter', `section', `subsection',
 (scrartcl)              `subsubsection', `paragraph' and `subparagraph'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `tocloft' on input line 154.
+(scrartcl)              package `tocloft' on input line 165.
 
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1127,56 +1127,56 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 178.
+(scrartcl)           before \begin{document} on input line 189.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count415
 ))
-LaTeX Font Info:    Trying to load font information for T1+plxSans-TLF on input line 178.
+LaTeX Font Info:    Trying to load font information for T1+plxSans-TLF on input line 189.
  (/usr/share/texmf-dist/tex/latex/plex/T1plxSans-TLF.fd
 File: T1plxSans-TLF.fd 2025/07/27 (autoinst) Font definitions for T1/plxSans-TLF.
 )
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 178.
+(Font)              scaled to size 10.95pt on input line 189.
  (./master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 178.
-LaTeX Font Info:    Trying to load font information for OML+cmssm on input line 178.
+LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 189.
+LaTeX Font Info:    Trying to load font information for OML+cmssm on input line 189.
  (/usr/share/texmf-dist/tex/latex/sansmathfonts/omlcmssm.fd
 File: omlcmssm.fd 2024/10/15
 )
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OMS/cmsssy/m/n on input line 178.
-LaTeX Font Info:    Trying to load font information for OMS+cmsssy on input line 178.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for OMS/cmsssy/m/n on input line 189.
+LaTeX Font Info:    Trying to load font information for OMS+cmsssy on input line 189.
  (/usr/share/texmf-dist/tex/latex/sansmathfonts/omscmsssy.fd
 File: omscmsssy.fd 2024/10/15
 )
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OMX/cmssex/m/n on input line 178.
-LaTeX Font Info:    Trying to load font information for OMX+cmssex on input line 178.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 189.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 189.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 189.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for OMX/cmssex/m/n on input line 189.
+LaTeX Font Info:    Trying to load font information for OMX+cmssex on input line 189.
  (/usr/share/texmf-dist/tex/latex/sansmathfonts/omxcmssex.fd
 File: omxcmssex.fd 2024/10/15
 )
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for U/xcmss/m/n on input line 178.
-LaTeX Font Info:    Trying to load font information for U+xcmss on input line 178.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for U/xcmss/m/n on input line 189.
+LaTeX Font Info:    Trying to load font information for U+xcmss on input line 189.
  (/usr/share/texmf-dist/tex/latex/sansmathfonts/uxcmss.fd
 File: uxcmss.fd 2026/02/10
 )
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 189.
+LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 189.
+LaTeX Font Info:    ... okay on input line 189.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1231,7 +1231,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 178.
+Package hyperref Info: Link coloring ON on input line 189.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1240,49 +1240,49 @@ Package caption Info: End \AtBeginDocument code.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen395
 \c__nicematrix_innersep_middle_dim=\dimen396
 
-Package chemgreek Info: Activating mapping `default' on line 178.
+Package chemgreek Info: Activating mapping `default' on line 189.
 
-LaTeX Info: Redefining \it@ocap on input line 178.
-LaTeX Info: Redefining \it@ccap on input line 178.
+LaTeX Info: Redefining \it@ocap on input line 189.
+LaTeX Info: Redefining \it@ccap on input line 189.
 \c@mv@tabular=\count422
 \c@mv@boldtabular=\count423
-LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 178.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 178.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 178.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `tabular'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 178.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `boldtabular'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 178.
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 178.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 189.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 178.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 178.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `tabular'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 178.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `boldtabular'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 178.
-LaTeX Font Info:    Redeclaring symbol font `largesymbolsA' on input line 178.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 189.
+LaTeX Font Info:    Redeclaring symbol font `largesymbolsA' on input line 189.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `normal'
-(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 178.
+(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
-(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 178.
+(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `tabular'
-(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 178.
+(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 189.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldtabular'
-(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 178.
-LaTeX Font Info:    Trying to load font information for T1+xcmss on input line 179.
+(Font)                  U/esint/m/n --> U/ssesint/m/n on input line 189.
+LaTeX Font Info:    Trying to load font information for T1+xcmss on input line 190.
 (/usr/share/texmf-dist/tex/latex/sansmathfonts/t1xcmss.fd
 File: t1xcmss.fd 2024/10/15
 )
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 179.
+(Font)              scaled to size 12.0pt on input line 190.
 
 
 LaTeX Font Warning: Font shape `T1/plxSans-TLF/m/sc' undefined
-(Font)              using `T1/plxSans-TLF/m/n' instead on input line 179.
+(Font)              using `T1/plxSans-TLF/m/n' instead on input line 190.
 
 [1
 
@@ -1317,47 +1317,47 @@ LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
 
  [3]
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 15.0pt on input line 183.
+(Font)              scaled to size 15.0pt on input line 194.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 20.0pt on input line 183.
+(Font)              scaled to size 20.0pt on input line 194.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
-(Font)              scaled to size 13.0pt on input line 187.
+(Font)              scaled to size 13.0pt on input line 198.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 13.0pt on input line 187.
-LaTeX Font Info:    Trying to load font information for TS1+plxSans-TLF on input line 190.
+(Font)              scaled to size 13.0pt on input line 198.
+LaTeX Font Info:    Trying to load font information for TS1+plxSans-TLF on input line 201.
  (/usr/share/texmf-dist/tex/latex/plex/TS1plxSans-TLF.fd
 File: TS1plxSans-TLF.fd 2025/07/27 (autoinst) Font definitions for TS1/plxSans-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 190.
+(Font)              scaled to size 10.95pt on input line 201.
 <ct-pet.png, id=179, 1204.5pt x 722.7pt>
 File: ct-pet.png Graphic file (type png)
 <use ct-pet.png>
-Package pdftex.def Info: ct-pet.png  used on input line 202.
+Package pdftex.def Info: ct-pet.png  used on input line 213.
 (pdftex.def)             Requested size: 250.10226pt x 150.06221pt.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 203.
+(Font)              scaled to size 9.0pt on input line 214.
  [4{/usr/share/texmf-dist/fonts/enc/dvips/plex/plx_koxhod.enc} <./ct-pet.png>] [5]
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 255.
+(Font)              scaled to size 12.0pt on input line 266.
  [6]
-Overfull \hbox (0.29091pt too wide) in paragraph at lines 278--280
+Overfull \hbox (0.29091pt too wide) in paragraph at lines 289--291
 \T1/plxSans-TLF/m/n/10.95 Altre de-fi-ni-zio-ni con-si-sto-no nel por-re al de-no-mi-na-to-re $[]$, op-pu-re so-la-men-te $\OML/cmssm/m/it/10.95 V[]$ \T1/plxSans-TLF/m/n/10.95 (ana-
  []
 
 <cl.png, id=201, 774.895pt x 277.035pt>
 File: cl.png Graphic file (type png)
 <use cl.png>
-Package pdftex.def Info: cl.png  used on input line 290.
+Package pdftex.def Info: cl.png  used on input line 301.
 (pdftex.def)             Requested size: 333.46758pt x 119.21994pt.
 [7] [8 <./cl.png>]
 <snr-contrast.png, id=217, 455.7025pt x 262.9825pt>
 File: snr-contrast.png Graphic file (type png)
 <use snr-contrast.png>
-Package pdftex.def Info: snr-contrast.png  used on input line 323.
+Package pdftex.def Info: snr-contrast.png  used on input line 334.
 (pdftex.def)             Requested size: 333.46758pt x 192.44511pt.
 
-Overfull \hbox (4.16576pt too wide) in paragraph at lines 335--336
+Overfull \hbox (4.16576pt too wide) in paragraph at lines 346--347
 []\T1/plxSans-TLF/m/n/10.95 la stru-men-ta-zio-ne, in que-sto ca-so ri-sol-vi-bi-li tra-mi-te ap-pro-pria-te pro-ce-du-re QA/QC. 
  []
 
@@ -1365,619 +1365,874 @@ Overfull \hbox (4.16576pt too wide) in paragraph at lines 335--336
 <smooth-ex.png, id=225, 562.1pt x 208.78pt>
 File: smooth-ex.png Graphic file (type png)
 <use smooth-ex.png>
-Package pdftex.def Info: smooth-ex.png  used on input line 348.
+Package pdftex.def Info: smooth-ex.png  used on input line 359.
 (pdftex.def)             Requested size: 333.46758pt x 123.85767pt.
  [10 <./smooth-ex.png>] [11] [12] [13]
 <eco-array.jpeg, id=250, 1660.2025pt x 942.52126pt>
 File: eco-array.jpeg Graphic file (type jpg)
 <use eco-array.jpeg>
-Package pdftex.def Info: eco-array.jpeg  used on input line 465.
+Package pdftex.def Info: eco-array.jpeg  used on input line 476.
 (pdftex.def)             Requested size: 250.10226pt x 141.97612pt.
  [14 <./eco-array.jpeg>] [15] [16] [17] [18] [19] [20]
 <ulna-rad.png, id=284, 826.08624pt x 393.47pt>
 File: ulna-rad.png Graphic file (type png)
 <use ulna-rad.png>
-Package pdftex.def Info: ulna-rad.png  used on input line 617.
+Package pdftex.def Info: ulna-rad.png  used on input line 628.
 (pdftex.def)             Requested size: 291.78174pt x 138.97736pt.
  [21 <./ulna-rad.png>] [22]
 <xray-filter.png, id=300, 522.95375pt x 341.275pt>
 File: xray-filter.png Graphic file (type png)
 <use xray-filter.png>
-Package pdftex.def Info: xray-filter.png  used on input line 673.
+Package pdftex.def Info: xray-filter.png  used on input line 684.
 (pdftex.def)             Requested size: 200.08257pt x 130.5711pt.
-<xray-spec1.png, id=301, 533.995pt x 346.29375pt>
+ [23 <./xray-filter.png>]
+<xray-spec1.png, id=306, 533.995pt x 346.29375pt>
 File: xray-spec1.png Graphic file (type png)
 <use xray-spec1.png>
-Package pdftex.def Info: xray-spec1.png  used on input line 683.
+Package pdftex.def Info: xray-spec1.png  used on input line 696.
 (pdftex.def)             Requested size: 166.7306pt x 108.12141pt.
-<xray-spec2.png, id=302, 562.1pt x 335.2525pt>
+<xray-spec2.png, id=307, 562.1pt x 335.2525pt>
 File: xray-spec2.png Graphic file (type png)
 <use xray-spec2.png>
-Package pdftex.def Info: xray-spec2.png  used on input line 689.
+Package pdftex.def Info: xray-spec2.png  used on input line 702.
 (pdftex.def)             Requested size: 206.33202pt x 123.0593pt.
- [23 <./xray-filter.png>] [24 <./xray-spec1.png> <./xray-spec2.png>] [25] [26] [27]
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 801.
+
+Underfull \hbox (badness 2529) in paragraph at lines 714--717
+[]\T1/plxSans-TLF/m/n/10.95 I mAs de-ter-mi-na-no quan-ti elet-tro-ni
+ []
+
+<xray-ma.png, id=308, 606.265pt x 398.48875pt>
+File: xray-ma.png Graphic file (type png)
+<use xray-ma.png>
+Package pdftex.def Info: xray-ma.png  used on input line 727.
+(pdftex.def)             Requested size: 187.57352pt x 123.28702pt.
+<xray-kvp.png, id=309, 614.295pt x 400.49625pt>
+File: xray-kvp.png Graphic file (type png)
+<use xray-kvp.png>
+Package pdftex.def Info: xray-kvp.png  used on input line 733.
+(pdftex.def)             Requested size: 187.57352pt x 122.28867pt.
+[24 <./xray-spec1.png> <./xray-spec2.png> <./xray-ma.png> <./xray-kvp.png>]
+<xray-focal.png, id=318, 564.1075pt x 352.31625pt>
+File: xray-focal.png Graphic file (type png)
+<use xray-focal.png>
+Package pdftex.def Info: xray-focal.png  used on input line 750.
+(pdftex.def)             Requested size: 270.93883pt x 169.21739pt.
+ [25 <./xray-focal.png>]
+<xray-int.png, id=327, 603.25375pt x 367.3725pt>
+File: xray-int.png Graphic file (type png)
+<use xray-int.png>
+Package pdftex.def Info: xray-int.png  used on input line 768.
+(pdftex.def)             Requested size: 291.78174pt x 177.68774pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/b/n/10.95 Diffusione
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 801.
+Underfull \hbox (badness 4168) in paragraph at lines 808--808
+\T1/plxSans-TLF/b/n/10.95 coe-ren-te (Ray-
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 801.
+Underfull \hbox (badness 1735) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/m/n/10.95 Il fo-to-ne vie-ne de-via-to
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 801.
+Underfull \hbox (badness 5533) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/m/n/10.95 Più pro-ba-bi-le a bas-se
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/b/n/10.95 Effetto fo-toe-
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 808--808
+[]|$\OMS/cmsssy/m/n/10.95 / \OML/cmssm/m/it/10.95 Z[]=E[]$ \T1/plxSans-TLF/m/n/10.95 per uni-tà di
+ []
+
+
+Underfull \hbox (badness 4846) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/m/n/10.95 Principale re-spon-sa-bi-le
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/b/n/10.95 Diffusione
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 fo-to-ne da par-te di un
+ []
+
+
+Underfull \hbox (badness 4341) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 elet-tro-ne di un gu-scio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]|$\OMS/cmsssy/m/n/10.95 /$ \T1/plxSans-TLF/m/n/10.95 den-si-tà elet-tro-ni-ca;
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 qua-si in-di-pen-den-te da
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+\OML/cmssm/m/it/10.95 Z$\T1/plxSans-TLF/m/n/10.95 ; di-mi-nui-sce len-ta-
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 men-te al-l'au-men-ta-re di
+ []
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/m/n/10.95 Principale fon-te di ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/b/n/10.95 Produzione di
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 una cop-pia elettrone-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+\T1/plxSans-TLF/m/n/10.95 positrone ($\OML/cmssm/m/it/10.95 e[]=e[]$\T1/plxSans-TLF/m/n/10.95 ) in
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 808--808
+[]|\T1/plxSans-TLF/m/n/10.95 Non ri-le-van-te nel-la ra-
+ []
+
+[26 <./xray-int.png>]
+Underfull \hbox (badness 2529) in paragraph at lines 895--895
+[]|\T1/plxSans-TLF/b/n/10.95 Dimensione del-la mac-chia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--895
+[]|\T1/plxSans-TLF/b/n/10.95 Dimensione del cam-po $\OMS/cmsssy/m/n/10.95 #$
+ []
+
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 904.
+
+LaTeX Font Warning: Font shape `T1/xcmss/b/n' in size <9> not available
+(Font)              Font shape `T1/xcmss/bx/n' tried instead on input line 1022.
+
+[27] [28]
+<xray-contrast.png, id=354, 440.64626pt x 333.245pt>
+File: xray-contrast.png Graphic file (type png)
+<use xray-contrast.png>
+Package pdftex.def Info: xray-contrast.png  used on input line 1066.
+(pdftex.def)             Requested size: 208.41644pt x 157.61671pt.
+
+Underfull \hbox (badness 2512) in paragraph at lines 1073--1077
+\T1/plxSans-TLF/m/n/10.95 at-tra-ver-sa-no un ma-te-ria-le di coef-fi-
+ []
 
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 843.
+(Font)              scaled to size 10.0pt on input line 1104.
+[29 <./xray-contrast.png>]
+Underfull \hbox (badness 1087) in paragraph at lines 1240--1240
+[][]\T1/plxSans-TLF/m/n/9 Questa è un'ap-pros-si-ma-zio-ne ra-gio-ne-vo-le in par-ti-co-la-re quan-do si vo-glio-no stu-dia-re strut-tu-re
+ []
 
-Overfull \hbox (6.48993pt too wide) in paragraph at lines 882--883
+[30]
+<xray-comp.png, id=374, 587.19376pt x 368.37625pt>
+File: xray-comp.png Graphic file (type png)
+<use xray-comp.png>
+Package pdftex.def Info: xray-comp.png  used on input line 1256.
+(pdftex.def)             Requested size: 291.78174pt x 183.0466pt.
+
+Underfull \hbox (badness 4832) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Riduce la ra-dia-zio-ne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Miglioramento si-gni-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Richiede una mag-gio-re
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/b/n/10.95 Air gap (spa-zio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Aumenta la pro-ba-bi-li-tà
+ []
+
+
+Underfull \hbox (badness 5490) in paragraph at lines 1307--1307
+\T1/plxSans-TLF/m/n/10.95 che i fo-to-ni dif-fu-si non
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Riduce la ra-dia-zio-ne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Comporta in-gran-di-men-to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+\T1/plxSans-TLF/m/n/10.95 geo-me-tri-co e vin-co-li di
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Riduce lo spes-so-re del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+\T1/plxSans-TLF/m/n/10.95 tes-su-to at-tra-ver-sa-to dai
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Riduce la ra-dia-zio-ne
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 1307--1307
+\T1/plxSans-TLF/m/n/10.95 dif-fu-sa e gli ar-te-fat-ti
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 L'applicabilità di-pen-de dal
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/b/n/10.95 Correzione soft-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+[]|\T1/plxSans-TLF/m/n/10.95 Dipende dal-l'ac-cu-ra-tez-za
+ []
+
+
+Overfull \hbox (59.70602pt too wide) in paragraph at lines 1360--1361
  [][] 
  []
 
-[28]
-Underfull \hbox (badness 2635) in paragraph at lines 908--908
+[31 <./xray-comp.png>]
+Underfull \hbox (badness 3009) in paragraph at lines 1367--1369
+\T1/plxSans-TLF/m/n/10.95 eli-mi-na una par-te dei fo-to-ni dif-fu-si
+ []
+
+
+Overfull \hbox (24.7237pt too wide) in paragraph at lines 1522--1523
+ [][] 
+ []
+
+[32] [33]
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 1544.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1544.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 1544.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1544.
+
+LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 1586.
+
+Overfull \hbox (6.48993pt too wide) in paragraph at lines 1625--1626
+ [][] 
+ []
+
+[34]
+Underfull \hbox (badness 2635) in paragraph at lines 1651--1651
 [][]\T1/plxSans-TLF/m/n/9 È ne-ces-sa-rio che vi sia una sua espul-sio-ne, al-tri-men-ti il pro-ces-so sa-reb-be equi-va-len-te ad
  []
 
-[29]
+[35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 928.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 928.
+(hyperref)                removing `math shift' on input line 1671.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 928.
+(hyperref)                removing `\alpha' on input line 1671.
 
-[30] [31] [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1671.
+
+[36] [37] [38]
 Missing character: There is no ; in font nullfont!
-[33] [34]
-Overfull \hbox (0.97708pt too wide) detected at line 1134
+[39] [40]
+Overfull \hbox (0.97708pt too wide) detected at line 1877
 []  []
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 1148--1150
+Underfull \hbox (badness 2418) in paragraph at lines 1891--1893
 \T1/plxSans-TLF/m/n/10.95 di \T1/plxSans-TLF/b/n/10.95 equi-li-brio se-co-la-re\T1/plxSans-TLF/m/n/10.95 : il tas-so
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 1148--1150
+Underfull \hbox (badness 1584) in paragraph at lines 1891--1893
 \T1/plxSans-TLF/m/n/10.95 quel-lo di de-ca-di-men-to del fi-glio
  []
 
-<es.png, id=388, 580.1675pt x 385.44pt>
+<es.png, id=455, 580.1675pt x 385.44pt>
 File: es.png Graphic file (type png)
 <use es.png>
-Package pdftex.def Info: es.png  used on input line 1155.
+Package pdftex.def Info: es.png  used on input line 1898.
 (pdftex.def)             Requested size: 229.25935pt x 152.30888pt.
-<et.png, id=389, 481.8pt x 354.32375pt>
+<et.png, id=456, 481.8pt x 354.32375pt>
 File: et.png Graphic file (type png)
 <use et.png>
-Package pdftex.def Info: et.png  used on input line 1172.
+Package pdftex.def Info: et.png  used on input line 1915.
 (pdftex.def)             Requested size: 206.33202pt x 151.73988pt.
-[35 <./es.png>]
+[41 <./es.png>]
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 1176.
+(Font)              scaled to size 8.0pt on input line 1919.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 1176.
+(Font)              scaled to size 6.0pt on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1176.
+(hyperref)                removing `math shift' on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1176.
+(hyperref)                removing `\mhchem@cee' on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1176.
+(hyperref)                removing `superscript' on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1176.
+(hyperref)                removing `\mhchem@cee' on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1176.
+(hyperref)                removing `superscript' on input line 1919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1176.
+(hyperref)                removing `math shift' on input line 1919.
 
-[36 <./et.png>]
-<mc-gen.png, id=409, 674.52pt x 334.24875pt>
+[42 <./et.png>]
+<mc-gen.png, id=475, 674.52pt x 334.24875pt>
 File: mc-gen.png Graphic file (type png)
 <use mc-gen.png>
-Package pdftex.def Info: mc-gen.png  used on input line 1230.
+Package pdftex.def Info: mc-gen.png  used on input line 1973.
 (pdftex.def)             Requested size: 291.78174pt x 144.59119pt.
- [37 <./mc-gen.png>]
-<cyc-prate.png, id=418, 584.1825pt x 391.4625pt>
+ [43 <./mc-gen.png>]
+<cyc-prate.png, id=484, 584.1825pt x 391.4625pt>
 File: cyc-prate.png Graphic file (type png)
 <use cyc-prate.png>
-Package pdftex.def Info: cyc-prate.png  used on input line 1260.
+Package pdftex.def Info: cyc-prate.png  used on input line 2003.
 (pdftex.def)             Requested size: 225.0905pt x 150.83597pt.
- [38 <./cyc-prate.png>]
-Overfull \hbox (59.65366pt too wide) in paragraph at lines 1359--1360
+ [44 <./cyc-prate.png>]
+Overfull \hbox (59.65366pt too wide) in paragraph at lines 2102--2103
  [][] 
  []
 
-[39]
-<pbsp1.png, id=429, 591.20876pt x 358.33875pt>
+[45]
+<pbsp1.png, id=495, 591.20876pt x 358.33875pt>
 File: pbsp1.png Graphic file (type png)
 <use pbsp1.png>
-Package pdftex.def Info: pbsp1.png  used on input line 1469.
+Package pdftex.def Info: pbsp1.png  used on input line 2212.
 (pdftex.def)             Requested size: 166.7306pt x 101.05591pt.
-<pbsp2.png, id=430, 728.7225pt x 277.035pt>
+<pbsp2.png, id=496, 728.7225pt x 277.035pt>
 File: pbsp2.png Graphic file (type png)
 <use pbsp2.png>
-Package pdftex.def Info: pbsp2.png  used on input line 1475.
+Package pdftex.def Info: pbsp2.png  used on input line 2218.
 (pdftex.def)             Requested size: 229.25935pt x 87.15657pt.
- [40 <./pbsp1.png> <./pbsp2.png>]
-<photon-int.png, id=443, 539.01375pt x 338.26375pt>
+ [46 <./pbsp1.png> <./pbsp2.png>]
+<photon-int.png, id=509, 539.01375pt x 338.26375pt>
 File: photon-int.png Graphic file (type png)
 <use photon-int.png>
-Package pdftex.def Info: photon-int.png  used on input line 1540.
+Package pdftex.def Info: photon-int.png  used on input line 2283.
 (pdftex.def)             Requested size: 187.57352pt x 117.71275pt.
-<s-ef.png, id=444, 724.7075pt x 449.68pt>
+<s-ef.png, id=510, 724.7075pt x 449.68pt>
 File: s-ef.png Graphic file (type png)
 <use s-ef.png>
-Package pdftex.def Info: s-ef.png  used on input line 1565.
+Package pdftex.def Info: s-ef.png  used on input line 2308.
 (pdftex.def)             Requested size: 187.57352pt x 116.3857pt.
-<fe-pb-h2o.png, id=445, 834.11626pt x 586.19pt>
+<fe-pb-h2o.png, id=511, 834.11626pt x 586.19pt>
 File: fe-pb-h2o.png Graphic file (type png)
 <use fe-pb-h2o.png>
-Package pdftex.def Info: fe-pb-h2o.png  used on input line 1579.
+Package pdftex.def Info: fe-pb-h2o.png  used on input line 2322.
 (pdftex.def)             Requested size: 187.57352pt x 131.81549pt.
-<afe.png, id=446, 857.2025pt x 489.83pt>
+<afe.png, id=512, 857.2025pt x 489.83pt>
 File: afe.png Graphic file (type png)
 <use afe.png>
-Package pdftex.def Info: afe.png  used on input line 1586.
+Package pdftex.def Info: afe.png  used on input line 2329.
 (pdftex.def)             Requested size: 208.41644pt x 119.09381pt.
 
-Underfull \hbox (badness 1158) in paragraph at lines 1587--1587
+Underfull \hbox (badness 1158) in paragraph at lines 2330--2330
 [][]|\T1/plxSans-TLF/m/n/9 Di-stri-bu-zio-ne an-go-la-re dei fo-to-ni emes-si
  []
 
-[41 <./photon-int.png> <./s-ef.png>]
-Overfull \hbox (11.45538pt too wide) in paragraph at lines 1590--1591
+[47 <./photon-int.png> <./s-ef.png>]
+Overfull \hbox (11.45538pt too wide) in paragraph at lines 2333--2334
 \T1/plxSans-TLF/m/n/10.95 Dalla di-stri-bu-zio-ne an-go-la-re, si os-ser-va che, al-l'au-men-ta-re del-l'e-ner-gia del foto-elettrone,
  []
 
-<augerfe.png, id=454, 900.36375pt x 373.395pt>
+<augerfe.png, id=519, 900.36375pt x 373.395pt>
 File: augerfe.png Graphic file (type png)
 <use augerfe.png>
-Package pdftex.def Info: augerfe.png  used on input line 1597.
+Package pdftex.def Info: augerfe.png  used on input line 2340.
 (pdftex.def)             Requested size: 333.46758pt x 138.29642pt.
-<yi-fe.png, id=455, 719.68875pt x 320.19624pt>
+<yi-fe.png, id=520, 719.68875pt x 320.19624pt>
 File: yi-fe.png Graphic file (type png)
 <use yi-fe.png>
-Package pdftex.def Info: yi-fe.png  used on input line 1605.
+Package pdftex.def Info: yi-fe.png  used on input line 2348.
 (pdftex.def)             Requested size: 187.57352pt x 83.45425pt.
-<yi-fe2.png, id=456, 843.15pt x 399.4925pt>
+<yi-fe2.png, id=521, 843.15pt x 399.4925pt>
 File: yi-fe2.png Graphic file (type png)
 <use yi-fe2.png>
-Package pdftex.def Info: yi-fe2.png  used on input line 1611.
+Package pdftex.def Info: yi-fe2.png  used on input line 2354.
 (pdftex.def)             Requested size: 208.41644pt x 98.74516pt.
-<fe-sh.png, id=457, 901.3675pt x 455.7025pt>
+<fe-sh.png, id=522, 901.3675pt x 455.7025pt>
 File: fe-sh.png Graphic file (type png)
 <use fe-sh.png>
-Package pdftex.def Info: fe-sh.png  used on input line 1617.
+Package pdftex.def Info: fe-sh.png  used on input line 2360.
 (pdftex.def)             Requested size: 333.46758pt x 168.59337pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42 <./fe-pb-h2o.png> <./afe.png> <./augerfe.png> <./yi-fe.png> <./yi-fe2.png>] [43 <./fe-sh.png>]
-<co-12.png, id=479, 827.09pt x 428.60126pt>
+[48 <./fe-pb-h2o.png> <./afe.png> <./augerfe.png> <./yi-fe.png> <./yi-fe2.png>] [49 <./fe-sh.png>]
+<co-12.png, id=544, 827.09pt x 428.60126pt>
 File: co-12.png Graphic file (type png)
 <use co-12.png>
-Package pdftex.def Info: co-12.png  used on input line 1700.
+Package pdftex.def Info: co-12.png  used on input line 2443.
 (pdftex.def)             Requested size: 333.46758pt x 172.8043pt.
-<co-e.png, id=480, 940.51375pt x 293.095pt>
+<co-e.png, id=545, 940.51375pt x 293.095pt>
 File: co-e.png Graphic file (type png)
 <use co-e.png>
-Package pdftex.def Info: co-e.png  used on input line 1712.
+Package pdftex.def Info: co-e.png  used on input line 2455.
 (pdftex.def)             Requested size: 416.83289pt x 129.8969pt.
-<co-kn.png, id=481, 557.08125pt x 426.59375pt>
+<co-kn.png, id=546, 557.08125pt x 426.59375pt>
 File: co-kn.png Graphic file (type png)
 <use co-kn.png>
-Package pdftex.def Info: co-kn.png  used on input line 1725.
+Package pdftex.def Info: co-kn.png  used on input line 2468.
 (pdftex.def)             Requested size: 208.41644pt x 159.59471pt.
- [44 <./co-12.png>]
-<co-pol.png, id=488, 955.57pt x 633.36626pt>
+ [50 <./co-12.png>]
+<co-pol.png, id=553, 955.57pt x 633.36626pt>
 File: co-pol.png Graphic file (type png)
 <use co-pol.png>
-Package pdftex.def Info: co-pol.png  used on input line 1746.
+Package pdftex.def Info: co-pol.png  used on input line 2489.
 (pdftex.def)             Requested size: 187.57352pt x 124.32256pt.
-<co-gr.png, id=489, 969.6225pt x 533.995pt>
+<co-gr.png, id=554, 969.6225pt x 533.995pt>
 File: co-gr.png Graphic file (type png)
 <use co-gr.png>
-Package pdftex.def Info: co-gr.png  used on input line 1752.
+Package pdftex.def Info: co-gr.png  used on input line 2495.
 (pdftex.def)             Requested size: 208.41644pt x 114.7741pt.
- [45 <./co-e.png> <./co-kn.png>]
-LaTeX Font Info:    Font shape `T1/plxSans-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 1764.
-
-Underfull \hbox (badness 2600) in paragraph at lines 1768--1769
+ [51 <./co-e.png> <./co-kn.png>]
+Underfull \hbox (badness 2600) in paragraph at lines 2511--2512
 []\T1/plxSans-TLF/m/n/10.95 L'angolo di scat-te-ring se-gue l'an-da-
  []
 
-<ray.png, id=499, 476.78125pt x 378.41376pt>
+<ray.png, id=564, 476.78125pt x 378.41376pt>
 File: ray.png Graphic file (type png)
 <use ray.png>
-Package pdftex.def Info: ray.png  used on input line 1774.
+Package pdftex.def Info: ray.png  used on input line 2517.
 (pdftex.def)             Requested size: 187.57352pt x 148.87416pt.
 
-Overfull \hbox (0.69011pt too wide) in paragraph at lines 1777--1778
+Overfull \hbox (0.69011pt too wide) in paragraph at lines 2520--2521
 \T1/plxSans-TLF/m/n/10.95 La ri-le-van-za del-lo scat-te-ring Ray-lei-gh non ri-guar-da l'e-ner-gia de-po-si-ta-ta, in quan-to ideal-
  []
 
-<coppie.png, id=500, 606.265pt x 366.36874pt>
+<coppie.png, id=565, 606.265pt x 366.36874pt>
 File: coppie.png Graphic file (type png)
 <use coppie.png>
-Package pdftex.def Info: coppie.png  used on input line 1790.
+Package pdftex.def Info: coppie.png  used on input line 2533.
 (pdftex.def)             Requested size: 187.57352pt x 113.34952pt.
-[46 <./co-pol.png> <./co-gr.png> <./ray.png>]
-<pc-diff.png, id=509, 520.94624pt x 392.46625pt>
+[52 <./co-pol.png> <./co-gr.png> <./ray.png>]
+<pc-diff.png, id=574, 520.94624pt x 392.46625pt>
 File: pc-diff.png Graphic file (type png)
 <use pc-diff.png>
-Package pdftex.def Info: pc-diff.png  used on input line 1817.
+Package pdftex.def Info: pc-diff.png  used on input line 2560.
 (pdftex.def)             Requested size: 208.41644pt x 157.01364pt.
-<pc-cpb.png, id=510, 811.03pt x 564.1075pt>
+<pc-cpb.png, id=575, 811.03pt x 564.1075pt>
 File: pc-cpb.png Graphic file (type png)
 <use pc-cpb.png>
-Package pdftex.def Info: pc-cpb.png  used on input line 1824.
+Package pdftex.def Info: pc-cpb.png  used on input line 2567.
 (pdftex.def)             Requested size: 250.10226pt x 173.9591pt.
- [47 <./coppie.png> <./pc-diff.png>]
+ [53 <./coppie.png> <./pc-diff.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 1867--1868
+Underfull \hbox (badness 1043) in paragraph at lines 2610--2611
 \T1/plxSans-TLF/m/n/10.95 fa-sci di fo-to-ni ad al-ta ener-gia, do-ve
  []
 
-<rf.png, id=518, 615.29875pt x 479.7925pt>
+<rf.png, id=583, 615.29875pt x 479.7925pt>
 File: rf.png Graphic file (type png)
 <use rf.png>
-Package pdftex.def Info: rf.png  used on input line 1873.
+Package pdftex.def Info: rf.png  used on input line 2616.
 (pdftex.def)             Requested size: 187.57352pt x 146.25961pt.
-[48 <./pc-cpb.png>]
-<s-c.png, id=525, 746.79pt x 519.9425pt>
+[54 <./pc-cpb.png>]
+<s-c.png, id=590, 746.79pt x 519.9425pt>
 File: s-c.png Graphic file (type png)
 <use s-c.png>
-Package pdftex.def Info: s-c.png  used on input line 1889.
+Package pdftex.def Info: s-c.png  used on input line 2632.
 (pdftex.def)             Requested size: 187.57352pt x 130.59619pt.
-<s-pb.png, id=526, 768.8725pt x 515.9275pt>
+<s-pb.png, id=591, 768.8725pt x 515.9275pt>
 File: s-pb.png Graphic file (type png)
 <use s-pb.png>
-Package pdftex.def Info: s-pb.png  used on input line 1895.
+Package pdftex.def Info: s-pb.png  used on input line 2638.
 (pdftex.def)             Requested size: 187.57352pt x 125.86407pt.
- [49 <./rf.png> <./s-c.png> <./s-pb.png>]
-<atf.png, id=536, 809.0225pt x 861.2175pt>
+ [55 <./rf.png> <./s-c.png> <./s-pb.png>]
+<atf.png, id=601, 809.0225pt x 861.2175pt>
 File: atf.png Graphic file (type png)
 <use atf.png>
-Package pdftex.def Info: atf.png  used on input line 1919.
+Package pdftex.def Info: atf.png  used on input line 2662.
 (pdftex.def)             Requested size: 150.05937pt x 159.73012pt.
-<matt-coeff.png, id=537, 846.16125pt x 429.605pt>
+<matt-coeff.png, id=602, 846.16125pt x 429.605pt>
 File: matt-coeff.png Graphic file (type png)
 <use matt-coeff.png>
-Package pdftex.def Info: matt-coeff.png  used on input line 1938.
+Package pdftex.def Info: matt-coeff.png  used on input line 2681.
 (pdftex.def)             Requested size: 304.28622pt x 154.48724pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50 <./atf.png>] [51 <./matt-coeff.png>]
-<cmass1.png, id=554, 492.84125pt x 342.27875pt>
+[56 <./atf.png>] [57 <./matt-coeff.png>]
+<cmass1.png, id=619, 492.84125pt x 342.27875pt>
 File: cmass1.png Graphic file (type png)
 <use cmass1.png>
-Package pdftex.def Info: cmass1.png  used on input line 1977.
+Package pdftex.def Info: cmass1.png  used on input line 2720.
 (pdftex.def)             Requested size: 187.57352pt x 130.27095pt.
-<cmass2.png, id=555, 709.65125pt x 391.4625pt>
+<cmass2.png, id=620, 709.65125pt x 391.4625pt>
 File: cmass2.png Graphic file (type png)
 <use cmass2.png>
-Package pdftex.def Info: cmass2.png  used on input line 1983.
+Package pdftex.def Info: cmass2.png  used on input line 2726.
 (pdftex.def)             Requested size: 208.41644pt x 114.96674pt.
- [52 <./cmass1.png> <./cmass2.png>]
-Underfull \hbox (badness 1728) in paragraph at lines 2043--2045
+ [58 <./cmass1.png> <./cmass2.png>]
+Underfull \hbox (badness 1728) in paragraph at lines 2786--2788
 \T1/plxSans-TLF/m/n/10.95 ner-gia tra-sfe-ri-ta agli elet-tro-ni, det-ta
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 2043--2045
+Underfull \hbox (badness 1490) in paragraph at lines 2786--2788
 \T1/plxSans-TLF/b/n/10.95 po-te-re fre-nan-te \T1/plxSans-TLF/m/n/10.95 del mez-zo, da una
  []
 
 
-Overfull \hbox (19.86986pt too wide) in paragraph at lines 2069--2070
- [][] 
- []
-
-[53]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2101.
-
-[54] [55]
-Underfull \hbox (badness 6284) in paragraph at lines 2148--2149
-\T1/plxSans-TLF/m/n/10.95 po elet-tro-ma-gne-ti-co ge-ne-ra-to dal-la
- []
-
-<bethe-de.png, id=586, 515.9275pt x 403.5075pt>
-File: bethe-de.png Graphic file (type png)
-<use bethe-de.png>
-Package pdftex.def Info: bethe-de.png  used on input line 2154.
-(pdftex.def)             Requested size: 187.57352pt x 146.69717pt.
-<de-bg.png, id=587, 474.77374pt x 259.97125pt>
-File: de-bg.png Graphic file (type png)
-<use de-bg.png>
-Package pdftex.def Info: de-bg.png  used on input line 2172.
-(pdftex.def)             Requested size: 187.57352pt x 102.70934pt.
-[56 <./bethe-de.png> <./dE-bg.png>]
-<cous-1.png, id=595, 612.2875pt x 453.695pt>
-File: cous-1.png Graphic file (type png)
-<use cous-1.png>
-Package pdftex.def Info: cous-1.png  used on input line 2184.
-(pdftex.def)             Requested size: 187.57352pt x 138.98944pt.
-<cous-2.png, id=596, 630.355pt x 379.4175pt>
-File: cous-2.png Graphic file (type png)
-<use cous-2.png>
-Package pdftex.def Info: cous-2.png  used on input line 2190.
-(pdftex.def)             Requested size: 208.41644pt x 125.44553pt.
-
-Underfull \hbox (badness 2326) in paragraph at lines 2199--2201
-\T1/plxSans-TLF/m/n/10.95 zio-ne lo stop-ping po-wer con la
- []
-
-<bragg-p.png, id=597, 494.84875pt x 335.2525pt>
-File: bragg-p.png Graphic file (type png)
-<use bragg-p.png>
-Package pdftex.def Info: bragg-p.png  used on input line 2206.
-(pdftex.def)             Requested size: 229.25935pt x 155.31786pt.
-[57 <./cous-1.png> <./cous-2.png> <./bragg-p.png>]
-<range1.png, id=606, 1501.61pt x 849.1725pt>
-File: range1.png Graphic file (type png)
-<use range1.png>
-Package pdftex.def Info: range1.png  used on input line 2231.
-(pdftex.def)             Requested size: 208.41644pt x 117.85971pt.
- [58 <./range1.png>]
-Overfull \hbox (5.78418pt too wide) in paragraph at lines 2264--2277
+Overfull \hbox (19.86986pt too wide) in paragraph at lines 2812--2813
  [][] 
  []
 
 [59]
-<bg-scale.png, id=620, 657.45625pt x 463.7325pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2844.
+
+[60] [61]
+Underfull \hbox (badness 6284) in paragraph at lines 2891--2892
+\T1/plxSans-TLF/m/n/10.95 po elet-tro-ma-gne-ti-co ge-ne-ra-to dal-la
+ []
+
+<bethe-de.png, id=652, 515.9275pt x 403.5075pt>
+File: bethe-de.png Graphic file (type png)
+<use bethe-de.png>
+Package pdftex.def Info: bethe-de.png  used on input line 2897.
+(pdftex.def)             Requested size: 187.57352pt x 146.69717pt.
+<de-bg.png, id=653, 474.77374pt x 259.97125pt>
+File: de-bg.png Graphic file (type png)
+<use de-bg.png>
+Package pdftex.def Info: de-bg.png  used on input line 2915.
+(pdftex.def)             Requested size: 187.57352pt x 102.70934pt.
+[62 <./bethe-de.png> <./dE-bg.png>]
+<cous-1.png, id=661, 612.2875pt x 453.695pt>
+File: cous-1.png Graphic file (type png)
+<use cous-1.png>
+Package pdftex.def Info: cous-1.png  used on input line 2927.
+(pdftex.def)             Requested size: 187.57352pt x 138.98944pt.
+<cous-2.png, id=662, 630.355pt x 379.4175pt>
+File: cous-2.png Graphic file (type png)
+<use cous-2.png>
+Package pdftex.def Info: cous-2.png  used on input line 2933.
+(pdftex.def)             Requested size: 208.41644pt x 125.44553pt.
+
+Underfull \hbox (badness 2326) in paragraph at lines 2942--2944
+\T1/plxSans-TLF/m/n/10.95 zio-ne lo stop-ping po-wer con la
+ []
+
+<bragg-p.png, id=663, 494.84875pt x 335.2525pt>
+File: bragg-p.png Graphic file (type png)
+<use bragg-p.png>
+Package pdftex.def Info: bragg-p.png  used on input line 2949.
+(pdftex.def)             Requested size: 229.25935pt x 155.31786pt.
+[63 <./cous-1.png> <./cous-2.png> <./bragg-p.png>]
+<range1.png, id=672, 1501.61pt x 849.1725pt>
+File: range1.png Graphic file (type png)
+<use range1.png>
+Package pdftex.def Info: range1.png  used on input line 2974.
+(pdftex.def)             Requested size: 208.41644pt x 117.85971pt.
+ [64 <./range1.png>]
+Overfull \hbox (5.78418pt too wide) in paragraph at lines 3007--3020
+ [][] 
+ []
+
+[65]
+<bg-scale.png, id=685, 657.45625pt x 463.7325pt>
 File: bg-scale.png Graphic file (type png)
 <use bg-scale.png>
-Package pdftex.def Info: bg-scale.png  used on input line 2325.
+Package pdftex.def Info: bg-scale.png  used on input line 3068.
 (pdftex.def)             Requested size: 208.41644pt x 147.00345pt.
- [60 <./bg-scale.png>]
-<bragg-strag1.png, id=631, 598.235pt x 268.00125pt>
+ [66 <./bg-scale.png>]
+<bragg-strag1.png, id=696, 598.235pt x 268.00125pt>
 File: bragg-strag1.png Graphic file (type png)
 <use bragg-strag1.png>
-Package pdftex.def Info: bragg-strag1.png  used on input line 2347.
+Package pdftex.def Info: bragg-strag1.png  used on input line 3090.
 (pdftex.def)             Requested size: 208.41644pt x 93.36836pt.
-<bragg-strag2.png, id=632, 703.62875pt x 387.4475pt>
+<bragg-strag2.png, id=697, 703.62875pt x 387.4475pt>
 File: bragg-strag2.png Graphic file (type png)
 <use bragg-strag2.png>
-Package pdftex.def Info: bragg-strag2.png  used on input line 2353.
+Package pdftex.def Info: bragg-strag2.png  used on input line 3096.
 (pdftex.def)             Requested size: 187.57352pt x 103.28203pt.
-<strag-rel1.png, id=634, 483.8075pt x 253.94875pt>
+<strag-rel1.png, id=699, 483.8075pt x 253.94875pt>
 File: strag-rel1.png Graphic file (type png)
 <use strag-rel1.png>
-Package pdftex.def Info: strag-rel1.png  used on input line 2372.
+Package pdftex.def Info: strag-rel1.png  used on input line 3115.
 (pdftex.def)             Requested size: 208.41644pt x 109.39732pt.
-<strag-rel2.png, id=635, 476.78125pt x 304.13625pt>
+<strag-rel2.png, id=700, 476.78125pt x 304.13625pt>
 File: strag-rel2.png Graphic file (type png)
 <use strag-rel2.png>
-Package pdftex.def Info: strag-rel2.png  used on input line 2378.
+Package pdftex.def Info: strag-rel2.png  used on input line 3121.
 (pdftex.def)             Requested size: 187.57352pt x 119.65218pt.
- [61 <./bragg-strag1.png> <./bragg-strag2.png> <./strag-rel1.png> <./strag-rel2.png>]
-<mcs.png, id=649, 863.225pt x 559.08875pt>
+ [67 <./bragg-strag1.png> <./bragg-strag2.png> <./strag-rel1.png> <./strag-rel2.png>]
+<mcs.png, id=714, 863.225pt x 559.08875pt>
 File: mcs.png Graphic file (type png)
 <use mcs.png>
-Package pdftex.def Info: mcs.png  used on input line 2420.
+Package pdftex.def Info: mcs.png  used on input line 3163.
 (pdftex.def)             Requested size: 208.41644pt x 134.98595pt.
-<mcs-mat.png, id=650, 718.685pt x 614.295pt>
+<mcs-mat.png, id=715, 718.685pt x 614.295pt>
 File: mcs-mat.png Graphic file (type png)
 <use mcs-mat.png>
-Package pdftex.def Info: mcs-mat.png  used on input line 2433.
+Package pdftex.def Info: mcs-mat.png  used on input line 3176.
 (pdftex.def)             Requested size: 208.41644pt x 178.14098pt.
- [62 <./mcs.png>]
-<abr-abl.png, id=658, 514.92375pt x 172.645pt>
+ [68 <./mcs.png>]
+<abr-abl.png, id=723, 514.92375pt x 172.645pt>
 File: abr-abl.png Graphic file (type png)
 <use abr-abl.png>
-Package pdftex.def Info: abr-abl.png  used on input line 2442.
+Package pdftex.def Info: abr-abl.png  used on input line 3185.
 (pdftex.def)             Requested size: 333.46758pt x 111.80695pt.
- [63 <./mcs-mat.png> <./abr-abl.png>]
-Overfull \hbox (15.67818pt too wide) in paragraph at lines 2457--2459
+ [69 <./mcs-mat.png> <./abr-abl.png>]
+Overfull \hbox (15.67818pt too wide) in paragraph at lines 3200--3202
 \T1/plxSans-TLF/m/n/10.95 Questa for-mu-la-zio-ne, det-ta \T1/plxSans-TLF/b/n/10.95 for-mu-la-zio-ne di Bradt-Peters\T1/plxSans-TLF/m/n/10.95 , è ade-gua-ta per $\OML/cmssm/m/it/10.95 E > \OT1/cmsmf/m/n/10.95 1\OML/cmssm/m/it/10.95 :\OT1/cmsmf/m/n/10.95 5[]\OML/cmssm/m/it/10.95 =n$\T1/plxSans-TLF/m/n/10.95 ;
  []
 
-[64]
-<wat-e_vs_p.png, id=676, 1189.44376pt x 1028.84375pt>
+[70]
+<wat-e_vs_p.png, id=741, 1189.44376pt x 1028.84375pt>
 File: wat-e_vs_p.png Graphic file (type png)
 <use wat-e_vs_p.png>
-Package pdftex.def Info: wat-e_vs_p.png  used on input line 2512.
+Package pdftex.def Info: wat-e_vs_p.png  used on input line 3255.
 (pdftex.def)             Requested size: 250.10226pt x 216.33044pt.
- [65 <./wat-e_vs_p.png>]
-Underfull \hbox (badness 1466) in paragraph at lines 2523--2525
+ [71 <./wat-e_vs_p.png>]
+Underfull \hbox (badness 1466) in paragraph at lines 3266--3268
 \T1/plxSans-TLF/m/n/10.95 del-lo stop-ping po-wer to-ta-le, per un
  []
 
-<sp-e-cu.png, id=685, 483.8075pt x 409.53pt>
+<sp-e-cu.png, id=750, 483.8075pt x 409.53pt>
 File: sp-e-cu.png Graphic file (type png)
 <use sp-e-cu.png>
-Package pdftex.def Info: sp-e-cu.png  used on input line 2534.
+Package pdftex.def Info: sp-e-cu.png  used on input line 3277.
 (pdftex.def)             Requested size: 208.41644pt x 176.4194pt.
-<spme-mats.png, id=686, 495.8525pt x 398.48875pt>
+<spme-mats.png, id=751, 495.8525pt x 398.48875pt>
 File: spme-mats.png Graphic file (type png)
 <use spme-mats.png>
-Package pdftex.def Info: spme-mats.png  used on input line 2546.
+Package pdftex.def Info: spme-mats.png  used on input line 3289.
 (pdftex.def)             Requested size: 208.41644pt x 167.49182pt.
-[66 <./sp-e-cu.png> <./spme-mats.png>]
-<bms-1.png, id=695, 394.47375pt x 406.51875pt>
+[72 <./sp-e-cu.png> <./spme-mats.png>]
+<bms-1.png, id=760, 394.47375pt x 406.51875pt>
 File: bms-1.png Graphic file (type png)
 <use bms-1.png>
-Package pdftex.def Info: bms-1.png  used on input line 2562.
+Package pdftex.def Info: bms-1.png  used on input line 3305.
 (pdftex.def)             Requested size: 166.7306pt x 171.82222pt.
-<bms-2.png, id=696, 697.60625pt x 450.68375pt>
+<bms-2.png, id=761, 697.60625pt x 450.68375pt>
 File: bms-2.png Graphic file (type png)
 <use bms-2.png>
-Package pdftex.def Info: bms-2.png  used on input line 2568.
+Package pdftex.def Info: bms-2.png  used on input line 3311.
 (pdftex.def)             Requested size: 229.25935pt x 148.10716pt.
-<critE.png, id=697, 721.69624pt x 394.47375pt>
+<critE.png, id=762, 721.69624pt x 394.47375pt>
 File: critE.png Graphic file (type png)
 <use critE.png>
-Package pdftex.def Info: critE.png  used on input line 2584.
+Package pdftex.def Info: critE.png  used on input line 3327.
 (pdftex.def)             Requested size: 208.41644pt x 113.91893pt.
- [67 <./bms-1.png> <./bms-2.png> <./critE.png>]
-Underfull \hbox (badness 2547) in paragraph at lines 2614--2616
+ [73 <./bms-1.png> <./bms-2.png> <./critE.png>]
+Underfull \hbox (badness 2547) in paragraph at lines 3357--3359
 []\T1/plxSans-TLF/m/n/10.95 Per esem-pio, una pos-si-bi-le sor-gen-
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 2614--2616
+Underfull \hbox (badness 1946) in paragraph at lines 3357--3359
 \T1/plxSans-TLF/m/n/10.95 te è il tungsteno-185, che pro-du-ce
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 2614--2616
+Underfull \hbox (badness 1072) in paragraph at lines 3357--3359
 \T1/plxSans-TLF/m/n/10.95 par-ti-cel-le $\OML/cmssm/m/it/10.95 ^^L$ \T1/plxSans-TLF/m/n/10.95 con ener-gia mas-si-ma di
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 2614--2616
+Underfull \hbox (badness 2990) in paragraph at lines 3357--3359
 \OT1/cmsmf/m/n/10.95 0\OML/cmssm/m/it/10.95 :\OT1/cmsmf/m/n/10.95 43$ \T1/plxSans-TLF/m/n/10.95 MeV; que-sto, in va-ri ma-te-ria-li,
  []
 
-<w-int.png, id=708, 369.38pt x 350.30875pt>
+<w-int.png, id=773, 369.38pt x 350.30875pt>
 File: w-int.png Graphic file (type png)
 <use w-int.png>
-Package pdftex.def Info: w-int.png  used on input line 2621.
+Package pdftex.def Info: w-int.png  used on input line 3364.
 (pdftex.def)             Requested size: 166.73378pt x 158.1239pt.
-<bk-coeff1.png, id=709, 820.06375pt x 652.4375pt>
+<bk-coeff1.png, id=774, 820.06375pt x 652.4375pt>
 File: bk-coeff1.png Graphic file (type png)
 <use bk-coeff1.png>
-Package pdftex.def Info: bk-coeff1.png  used on input line 2640.
+Package pdftex.def Info: bk-coeff1.png  used on input line 3383.
 (pdftex.def)             Requested size: 208.41644pt x 165.81683pt.
 
-Underfull \hbox (badness 6978) in paragraph at lines 2646--2647
+Underfull \hbox (badness 6978) in paragraph at lines 3389--3390
 []\T1/plxSans-TLF/m/n/10.95 Questo vie-ne fat-to in-tro-du-cen-do il
  []
 
-<bk-coeff2.png, id=710, 808.01875pt x 552.0625pt>
+<bk-coeff2.png, id=775, 808.01875pt x 552.0625pt>
 File: bk-coeff2.png Graphic file (type png)
 <use bk-coeff2.png>
-Package pdftex.def Info: bk-coeff2.png  used on input line 2656.
+Package pdftex.def Info: bk-coeff2.png  used on input line 3399.
 (pdftex.def)             Requested size: 208.41644pt x 142.39565pt.
-[68 <./w-int.png> <./bk-coeff1.png>] [69 <./bk-coeff2.png>]
-<dna.png, id=725, 1111.15125pt x 1426.32875pt>
+[74 <./w-int.png> <./bk-coeff1.png>] [75 <./bk-coeff2.png>]
+<dna.png, id=791, 1111.15125pt x 1426.32875pt>
 File: dna.png Graphic file (type png)
 <use dna.png>
-Package pdftex.def Info: dna.png  used on input line 2694.
+Package pdftex.def Info: dna.png  used on input line 3437.
 (pdftex.def)             Requested size: 208.41644pt x 267.52304pt.
- [70 <./dna.png>] [71]
-<dna-damage.png, id=737, 1505.625pt x 754.82pt>
+ [76 <./dna.png>] [77]
+<dna-damage.png, id=803, 1505.625pt x 754.82pt>
 File: dna-damage.png Graphic file (type png)
 <use dna-damage.png>
-Package pdftex.def Info: dna-damage.png  used on input line 2745.
+Package pdftex.def Info: dna-damage.png  used on input line 3488.
 (pdftex.def)             Requested size: 333.46758pt x 167.17812pt.
- [72 <./dna-damage.png>]
-Overfull \hbox (1.45403pt too wide) in paragraph at lines 2759--2761
+ [78 <./dna-damage.png>]
+Overfull \hbox (1.45403pt too wide) in paragraph at lines 3502--3504
 \T1/plxSans-TLF/m/n/10.95 Inizialmente, è ne-ces-sa-rio va-lu-ta-re l'\T1/plxSans-TLF/b/n/10.95 efficienza di plac-ca-tu-ra\T1/plxSans-TLF/m/n/10.95 , os-sia la ten-den-za a man-
  []
 
 
-Overfull \hbox (20.40477pt too wide) in paragraph at lines 2766--2775
+Overfull \hbox (20.40477pt too wide) in paragraph at lines 3509--3518
  [][] 
  []
 
-<fs.png, id=745, 781.92125pt x 459.7175pt>
+<fs.png, id=811, 781.92125pt x 459.7175pt>
 File: fs.png Graphic file (type png)
 <use fs.png>
-Package pdftex.def Info: fs.png  used on input line 2798.
+Package pdftex.def Info: fs.png  used on input line 3541.
 (pdftex.def)             Requested size: 208.41644pt x 122.53304pt.
-[73 <./fs.png>]
-<fs-t.png, id=758, 549.05125pt x 525.965pt>
+[79 <./fs.png>]
+<fs-t.png, id=824, 549.05125pt x 525.965pt>
 File: fs-t.png Graphic file (type png)
 <use fs-t.png>
-Package pdftex.def Info: fs-t.png  used on input line 2808.
+Package pdftex.def Info: fs-t.png  used on input line 3551.
 (pdftex.def)             Requested size: 145.89404pt x 139.75725pt.
-<fs-l.png, id=759, 858.20625pt x 481.8pt>
+<fs-l.png, id=825, 858.20625pt x 481.8pt>
 File: fs-l.png Graphic file (type png)
 <use fs-l.png>
-Package pdftex.def Info: fs-l.png  used on input line 2814.
+Package pdftex.def Info: fs-l.png  used on input line 3557.
 (pdftex.def)             Requested size: 250.10226pt x 140.40211pt.
-<lr-er.png, id=760, 485.815pt x 495.8525pt>
+<lr-er.png, id=826, 485.815pt x 495.8525pt>
 File: lr-er.png Graphic file (type png)
 <use lr-er.png>
-Package pdftex.def Info: lr-er.png  used on input line 2828.
+Package pdftex.def Info: lr-er.png  used on input line 3571.
 (pdftex.def)             Requested size: 208.41644pt x 212.72061pt.
 LaTeX Font Info:    Font shape `T1/plxSans-TLF/b/it' will be
-(Font)              scaled to size 12.0pt on input line 2832.
-<let1.png, id=761, 629.35126pt x 340.27126pt>
+(Font)              scaled to size 12.0pt on input line 3575.
+<let1.png, id=827, 629.35126pt x 340.27126pt>
 File: let1.png Graphic file (type png)
 <use let1.png>
-Package pdftex.def Info: let1.png  used on input line 2848.
+Package pdftex.def Info: let1.png  used on input line 3591.
 (pdftex.def)             Requested size: 208.41644pt x 112.68445pt.
-<let2.png, id=762, 470.75874pt x 445.665pt>
+<let2.png, id=828, 470.75874pt x 445.665pt>
 File: let2.png Graphic file (type png)
 <use let2.png>
-Package pdftex.def Info: let2.png  used on input line 2861.
+Package pdftex.def Info: let2.png  used on input line 3604.
 (pdftex.def)             Requested size: 208.41644pt x 197.30365pt.
- [74 <./fs-t.png> <./fs-l.png> <./lr-er.png> <./let1.png>]
-<let3.png, id=773, 501.875pt x 439.6425pt>
+ [80 <./fs-t.png> <./fs-l.png> <./lr-er.png> <./let1.png>]
+<let3.png, id=839, 501.875pt x 439.6425pt>
 File: let3.png Graphic file (type png)
 <use let3.png>
-Package pdftex.def Info: let3.png  used on input line 2884.
+Package pdftex.def Info: let3.png  used on input line 3627.
 (pdftex.def)             Requested size: 208.41644pt x 182.57568pt.
- [75 <./let2.png> <./let3.png>]
-<oer.png, id=782, 546.04pt x 534.99875pt>
+ [81 <./let2.png> <./let3.png>]
+<oer.png, id=847, 546.04pt x 534.99875pt>
 File: oer.png Graphic file (type png)
 <use oer.png>
-Package pdftex.def Info: oer.png  used on input line 2903.
+Package pdftex.def Info: oer.png  used on input line 3646.
 (pdftex.def)             Requested size: 250.10226pt x 245.04117pt.
- [76 <./oer.png>]
-<rbe-oer.png, id=790, 713.66624pt x 475.7775pt>
+ [82 <./oer.png>]
+<rbe-oer.png, id=855, 713.66624pt x 475.7775pt>
 File: rbe-oer.png Graphic file (type png)
 <use rbe-oer.png>
-Package pdftex.def Info: rbe-oer.png  used on input line 2917.
+Package pdftex.def Info: rbe-oer.png  used on input line 3660.
 (pdftex.def)             Requested size: 208.41644pt x 138.94475pt.
-<tcp.png, id=791, 752.8125pt x 451.6875pt>
+<tcp.png, id=856, 752.8125pt x 451.6875pt>
 File: tcp.png Graphic file (type png)
 <use tcp.png>
-Package pdftex.def Info: tcp.png  used on input line 2932.
+Package pdftex.def Info: tcp.png  used on input line 3675.
 (pdftex.def)             Requested size: 291.78174pt x 175.07533pt.
- [77 <./rbe-oer.png> <./tcp.png>] (./master.aux)
+ [83 <./rbe-oer.png> <./tcp.png>] (./master.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1988,13 +2243,19 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 48874 strings out of 469504
- 1144430 string characters out of 5470379
- 1802391 words of memory out of 5000000
- 76462 multiletter control sequences out of 15000+600000
- 869349 words of font info for 173 fonts, out of 8000000 for 9000
+ 49455 strings out of 469504
+ 1154365 string characters out of 5470378
+ 1802102 words of memory out of 5000000
+ 77010 multiletter control sequences out of 15000+600000
+ 887412 words of font info for 194 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,29n,121p,11245b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
 
@@ -2022,11 +2283,12 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsmfIPiXi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-BoldItalic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
-Output written on master.pdf (77 pages, 9905226 bytes).
+</usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsmfIPiXi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssex8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy9.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/eczz1440.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-BoldItalic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/ibm/plex/plxSans.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssesint10.pfb></
+usr/share/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10.pfb>
+Output written on master.pdf (83 pages, 10139433 bytes).
 PDF statistics:
- 1208 PDF objects out of 1440 (max. 8388607)
- 917 compressed objects within 10 object streams
- 283 named destinations out of 1000 (max. 500000)
- 983 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1294 PDF objects out of 1440 (max. 8388607)
+ 976 compressed objects within 10 object streams
+ 308 named destinations out of 1000 (max. 500000)
+ 1019 words of extra memory for PDF output out of 10000 (max. 10000000)
 

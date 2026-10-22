@@ -36,6 +36,17 @@
 \usepackage{setspace}
 \setstretch{1.2}
 
+% Colori
+\definecolor{fuoco}{HTML}{D99A35}
+\definecolor{raggi}{HTML}{E49B27}
+\definecolor{oggetto}{HTML}{B64C3F}
+\definecolor{quote}{HTML}{728994}
+\definecolor{penombra}{HTML}{72BEC6}
+\definecolor{ombra}{HTML}{244F60}
+\definecolor{detettore}{HTML}{83939C}
+\definecolor{annotazioni}{HTML}{16858B}
+
+
 % Titles 
 \title{Note di\\ \vspace{.15cm} Fisica medica}
 \author{}
@@ -673,7 +684,9 @@ Per questa ragione, si rimuovono i fotoni di bassa energia tramite appositi filt
 	\includegraphics[width=.8\columnwidth]{xray-filter.png}
 	\end{minipage}
 \end{center}
-Nello spettro finale, per\`o, sono presenti anche i picchi di assorbimento del materiale bersaglio utilizzato (ci si riferir\`a in particolare al tungsteno).
+L'aggiunta di filtri, per\`o, potrebbe comportare la rimozione fotoni utili per l'immagine; per esempio, fotoni a 20 keV sono usati in mammografia e una filtrazione pesante rimuoverebbe fotoni utili per il contrasto.
+
+Lo spettro della radiazione uscente non \`e solo continuo, ma sono presenti anche i picchi di assorbimento del materiale bersaglio utilizzato (ci si riferir\`a in particolare al tungsteno).
 La componente continua del fascio \`e data da $I(E) \propto Z (\text{kVp} - E)$ (nel caso dell'immagine a destra, sono $100$ kV, cio\`e $100$ keV).
 I picchi si osservano per transizioni K$\alpha $, corrispondenti a $59$ keV, e K$\beta $, relativi al picco a $67$ keV.
 \begin{center}
@@ -695,98 +708,828 @@ Si possono utilizzare diversi materiali bersaglio a seconda dell'applicazione, o
 	\item Il \textit{molibdeno} ha energie caratteristiche minori e pu\`o aiutare ad aumentare il contrasto dei tessuti morbidi; \`e, per esempio, utilizzato in mammografia.
 	\item Il \textit{rodio}, similmente al molibdeno, ha energie caratteristiche basse, ma leggermente pi\`u alte del molibdeno, permettendo una migliore analisi di tessuti molli, ma troppo densi per le energie caratteristiche del molibdeno. 
 \end{itemize}
-
-[Immagine slide 21] Modificare i mAs corrisponde ad aumentare la corrente, oppure il tempo di produzione.
-Secondi troppo bassi usurano l'anodo; troppi secondi, per\`o, contribuiscono ad artefatti da movimento.
-All'aumento del mAs migliora la formazione dell'immagine per riduzione del rumore, ma si aumenta la dose al paziente.
-
-[Immagine slide 22] Elevati kVp sono utilizzati per regioni con pi\`u alta densit\`a di tessuto osseo; per esempio, $100\div 120$ kVp sono usati per TAC cranica.
-
-[Immagine slide 23] Modifiche alla filtrazione rimuovono fotoni potenzialmente utili per l'immagine; per esempio, fotoni a 20 keV sono usati in mammografia: un'elevata filtrazione rimuove fotoni utili per la formazione dell'immagine, quindi si vorr\`a abbassare l'effetto complessivo di filtrazione.
-
-[Slide 24] Caratteristiche quantitative e qualitative del fascio sono corrispondenti a regimi di variabili differenti.
-
-La geometria del fascio \`e un altro fattore importante: un fascio pi\`u focalizzato permette un miglioramento del punto focale, ma vi \`e anche un aumento dell'effetto tacco.
-L'intensit\`a del fascio diminuisce con la distanza seguendo una legge del tipo $I_2 = I_1 (d_1 / d_2)^2$ [Immagine slide 26].
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		I mAs determinano quanti elettroni raggiungono l'anodo nel tempo totale di esposizione.
+		Non modificano le energie minima, massima e media, ma si vede che lo spettro scala verticalmente.
+		All'aumentare dei mAs, aumenta anche la dose al paziente.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+		L'energia massima dei fotoni aumenta con l'aumento dei kVp, producendo raggi che penetrano pi\`u in profondit\`a; per esempio, $100\div 120$ kVp sono usati per TAC cranica.
+		Al contempo, aumenta anche il flusso di fotoni, per cui si devono rivedere i tempi di esposizione.
+	\end{minipage}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{xray-ma.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{xray-kvp.png}
+	\end{minipage}
+\end{center}
+Un altro fattore da tenere in considerazione \`e la \textbf{geometria del fascio}.
+Si distinguono:
+\begin{itemize}
+	\item \textbf{fuoco reale}, corrispondente alla superficie dell'anodo colpita dagli elettroni;
+	\item \textbf{fuoco efficace}, corrispondente all'area vista dal fascio di raggi X uscente.
+\end{itemize}
+La superficie dell'anodo colpita dagli elettroni deve essere sufficientemente grande da permettere un'efficiente dissipazione del calore; allo stesso tempo, si vuole un fuoco efficace sufficientemente piccolo in modo che l'immagine risulti pi\`u nitida.
+I due fuochi sono messi in relazione dalla formula
+\begin{equation}
+	f_\text{eff} = f_\text{reale}\sin \theta 
+\end{equation}
+dove $\theta $ \`e l'angolo di inclinazione dell'anodo rispetto alla verticale.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.65\columnwidth]{xray-focal.png}
+\end{figure}
+Nel valutare il miglior valore di $\theta $ per $f_\text{eff}$, \`e necessario tenere anche conto dell'effetto tacco nell'anodo: i fotoni che, all'interno del bersaglio, sono emessi verso il lato anodico devono percorrere una distanza verticale maggiore all'interno del materiale rispetto a quelli prodotti nel lato catodico, per cui verranno attenuati maggiormente. 
+Questo comporta un fascio che ha una maggiore intensit\`a verso il catodo e una minore verso l'anodo.
+Infine, si deve considerare che l'intensit\`a del fascio diminuisce con la distanza seguendo una legge del tipo $I(d) = I(d_0)(d_0/d)^2$.
 
 \subsubsection{Interazione dei raggi X con la materia}
 
 Il range energetico dei raggi X corrisponde ad un intervallo per cui il processo di produzione di coppie \`e trascurabile: le interazioni possibili sono lo scattering coerente, l'effetto fotoelettrico e lo scattering Compton.
 Lo scattering coerente non influenza in modo rilevante la formazione dell'immagine, mentre l'effetto fotoelettrico \`e quello che maggiormente influenza l'intensit\`a del fascio ricevuto.
-L'effetto Compton \`e particolarmente fastidio per il fatto che i fotoni che interagiscono in questo modo escono con una direzione differente da quella iniziale.
+Lo scattering Compton va considerato per il fatto che i fotoni che interagiscono in questo modo escono con una direzione differente da quella iniziale, cio\`e contribuisce ad una diffusione del fascio.
+L'attenuazione del fascio segue l'andamento esponenziale previsto dalla legge
+\begin{equation}
+	N(x) = N_0 e^{-\mu x}
+\end{equation}
+dove $x$ \`e lo spessore attraversato e $\mu $ \`e il coefficiente di attenuazione lineare.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\columnwidth]{xray-int.png}
+	\caption{Coefficiente di attenuazione massico in acqua per i diversi processi al variare dell'energia.}
+\end{figure}
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\hline
+\textbf{Interazione} &
+\textbf{Processo} &
+\textbf{Probabilità} &
+\textbf{Ruolo nell'immagine} \\
+\hline
 
+\textbf{Diffusione coerente (Rayleigh)} &
+Il fotone viene deviato senza perdita di energia; l'atomo non viene ionizzato. &
+Più probabile a basse energie e per elevati numeri atomici $Z$. &
+Contributo minore: produce una leggera diffusione aggiuntiva. \\
+\hline
 
-[Tabella slide 32] L'attenuazione \`e strettamente legata allo spessore attraversato; al numero atomico $Z$ del materiale attraversato, in quanto si ha un aumento dell'effetto fotoelettrico ($\propto Z^3 / E^3$) e del Compton ($\propto Z$); la densit\`a aumenta la probabilit\`a di interazione per un aumento di atomi per unit\`a di volume.
-Visto che il Rayleigh \`e rilevante per alti $Z$, ma i tessuti del corpo umano sono a bassi $Z$, \`e trascurabile.
+\textbf{Effetto fotoelettrico} &
+Il fotone viene completamente assorbito da un elettrone di un guscio interno. &
+$\propto Z^3/E^3$ per unità di massa, con discontinuità in corrispondenza delle soglie di assorbimento. &
+Principale responsabile del contrasto tra i tessuti; contribuisce alla dose assorbita dal paziente. \\
+\hline
+
+\textbf{Diffusione Compton} &
+Diffusione anelastica del fotone da parte di un elettrone di un guscio esterno. &
+$\propto$ densità elettronica; quasi indipendente da $Z$; diminuisce lentamente all'aumentare di $E$. &
+Principale fonte di radiazione diffusa; riduce il contrasto dell'immagine. \\
+\hline
+
+\textbf{Produzione di coppie} &
+Il fotone si converte in una coppia elettrone-positrone ($e^-/e^+$) in prossimità di un nucleo. &
+Energia di soglia pari a $1{,}022\,\mathrm{MeV}$. &
+Non rilevante nella radiografia diagnostica. \\
+\hline
+
+\end{tabular}%
+}
+\end{table}
+
+\noindent L'attenuazione dipende da tre fattori:
+\begin{itemize}
+	\item aumenta all'aumentare dello \textit{spessore} del materiale attraversato, in quanto aumenta la probabilit\`a di interazione;
+	\item aumenta spesso all'aumentare del \textit{numero atomico} del materiale che attraversa, in quanto aumenta la sezione d'urto dell'effetto fotoelettrico;
+	\item aumenta all'aumentare della \textit{densit\`a} del materiale, in quanto aumenta il numero di atomi per unit\`a di volume e, quindi, la probabilit\`a di interazione.
+\end{itemize}
 
 \subsubsection{Parametri di qualit\`a dell'immagine}
-\begin{itemize}
-	\item Contrasto.
+Nel costruire un'immagine radiografica, si devono ottimizzare i seguenti quattro parametri.
+\begin{center}
+	\begin{minipage}[t]
+		{.45\columnwidth}
+		\textbf{Contrasto.} 
 
-		Dipende da differenza di coefficiente di attenuazione, il quale dipende da spessore, densit\`a e $Z$ del tessuto.
-	\item Rumore.
+		\noindent \`E influenzato dalla differenza nei coefficienti di attenuazione delle diverse strutture, dal loro spessore, densit\`a e numero atomico.
+		Anche i kVp e la risposta del rivelatore contribuiscono.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]
+		{.45\columnwidth}
+		\textbf{Risoluzione spaziale.} 
 
-	\`E influenzato dal numero di fotoni ricevuti, quindi dall'efficienza del rivelatore usato e dal processo di scattering, sul quale si pu\`o agire tramite regolazione opportuna di mAs e kVp.
-	\item Risoluzione spaziale.
+		\noindent \`E influenzato dal fuoco efficace, dalla nitidezza, da movimento del paziente e dalla grandezza dei pixel del rivelatore.
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}[t]
+		{.45\columnwidth}
+		\textbf{Rumore.} 
 
-		Influenzata dalla grandezza del punto focale, dalla geometria del fascio, dai movimenti del paziente e dalla grandezza dei pixel del rivelatore.
-	\item Dose.
+		\noindent \`E influenzato principalmente dal numero di fotoni: un numero troppo basso aumenta il rumore quantico; oltre a regolare mAs e kVp, si devono considerare l'efficienza del rivelatore e lo scattering.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]
+		{.45\columnwidth}
+		\textbf{Dose.} 
 
-		Questa dipende dall'aumento di mAs e kVp, diminuendo con la filtrazione e la distanza.
-		Le griglie aumentano la dose.
-\end{itemize}
-[Tabella 38]
+		\noindent La dose rilasciata al paziente aumenta con l'aumentare dei mAs e dei kVp, mentre si pu\`o abbassare tramite filtri e aumento della distanza del paziente dal tubo. 
+		L'uso di griglie per compensare lo scattering aumenta il tempo di acquisizione, quindi la dose.
+	\end{minipage}
+\end{center}
 
-[Slide 39] Effetti sulla nitidezza sono legati alla distanza tra punto focale, oggetto e rivelatore secondo le formule e i valori riportati.
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{5cm}|c|c|c|c|}
+\hline
+\textbf{Variazione (a parità degli altri parametri)} &
+\textbf{Contrasto} &
+\textbf{Rumore} &
+\textbf{Nitidezza} &
+\textbf{Dose in ingresso} \\
+\hline
 
-Si vedr\`a che la radiografia analogica non ha una risposta lineare ai fotoni e non parte da $0$: sotto un certo numero di fotoni, non vi era alcuna formazione dell'immagine; per questa ragione, anche la presenza di scattering Compton, il numero di fotoni ricevuti permetteva la formazione dell'immagine. 
-L'uso di opportune griglie, nonostante l'aumento della dose al paziente, permetteva di avere un'immagine utilizzabile per la diagnostica.
+\textbf{kVp $\uparrow$} &
+$\downarrow$ & $\downarrow$ & -- & $\uparrow$ \\
+\hline
+
+\textbf{mAs $\uparrow$} &
+-- & $\downarrow$ & -- & $\uparrow$ \\
+\hline
+
+\textbf{Filtrazione aggiuntiva $\uparrow$} &
+$\downarrow$ & $\uparrow$ & -- & $\downarrow$ \\
+\hline
+
+\textbf{SID $\uparrow$} &
+-- & $\uparrow$ & $\uparrow$ & $\downarrow$ \\
+\hline
+
+\textbf{OID $\uparrow$ (air gap)} &
+$\uparrow$ & -- & $\downarrow$ & -- \\
+\hline
+
+\textbf{Dimensione della macchia focale $\downarrow$} &
+-- & -- & $\uparrow$ & -- \\
+\hline
+
+\textbf{Dimensione del campo $\downarrow$ (collimazione)} &
+$\uparrow$ & -- & -- & $\downarrow$ \\
+\hline
+
+\end{tabular}%
+}
+
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+$\uparrow$ = aumento; \quad
+$\downarrow$ = diminuzione; \quad
+-- = variazione nulla o trascurabile.
+
+\textit{Nota:} un minor numero di fotoni rilevati comporta
+un aumento del rumore nell'immagine.
+\end{minipage}
+
+\end{table}
+
+\noindent Nelle immagini radiografiche, si deve tenere conto della \textbf{sfocatura geometrica}, cio\`e della perdita di nitidezza relativa alla geometria del sistema.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+		Visto che il fuoco del tubo radiogeno non \`e puntiforme, si ha la formazione di una zona sfocata ai bordi degli oggetti; questo fenomeno \`e detto \textit{penombra geometrica}.
+		I fotoni sono emessi da una regione dell'anodo che \`e chiamata \textit{macchia focale}; non essendo, questa, puntiforme, i fotoni incidenti provengono da punti leggermente diversi.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+\resizebox{\columnwidth}{!}{%
+	\begin{tikzpicture}[
+    x=0.025cm,
+    y=-0.025cm,
+    line cap=round,
+    line join=round
+]
+
+% Fuoco radiogeno
+\fill[fuoco,rounded corners=1pt]
+    (270,28) rectangle (310,37);
+
+\node[anchor=base west,font=\sffamily\small]
+    at (326,37) {Fuoco ($f$)};
+
+% Raggi X estremi
+\draw[raggi,line width=0.8pt]
+    (310,32) -- (260,152) -- (185,332);
+
+\draw[raggi,line width=0.8pt]
+    (270,32) -- (260,152) -- (245,332);
+
+\draw[raggi,line width=0.8pt]
+    (310,32) -- (320,152) -- (335,332);
+
+\draw[raggi,line width=0.8pt]
+    (270,32) -- (320,152) -- (395,332);
+
+% Oggetto
+\fill[oggetto,rounded corners=1pt]
+    (260,145) rectangle (320,159);
+
+\node[anchor=base west,font=\sffamily\small]
+    at (335,156) {Oggetto ($a$)};
+
+% Distanza sorgente-oggetto (SOD)
+\draw[quote,line width=0.65pt]
+    (112,32) -- (125,32)
+    (112,152) -- (125,152)
+    (119,32) -- (119,152);
+
+\node[anchor=east,font=\sffamily\footnotesize]
+    at (106,94) {SOD};
+
+% Distanza oggetto-detettore (OID)
+\draw[quote,line width=0.65pt]
+    (112,152) -- (125,152)
+    (112,332) -- (125,332)
+    (119,152) -- (119,332);
+
+\node[anchor=east,font=\sffamily\footnotesize]
+    at (106,244) {OID};
+
+% Penombra sinistra
+\fill[penombra,opacity=0.85]
+    (185,320) rectangle (245,332);
+
+% Ombra piena
+\fill[ombra,opacity=0.95]
+    (245,320) rectangle (335,332);
+
+% Penombra destra
+\fill[penombra,opacity=0.85]
+    (335,320) rectangle (395,332);
+
+% Detettore
+\fill[detettore,rounded corners=1pt]
+    (158,335) rectangle (422,344);
+
+\node[anchor=base west,font=\sffamily\footnotesize]
+    at (431,344) {Rivelatore};
+
+% Staffa penombra sinistra
+\draw[annotazioni,line width=0.65pt]
+    (185,347) -- (185,353) --
+    (245,353) -- (245,347);
+
+% Staffa penombra destra
+\draw[annotazioni,line width=0.65pt]
+    (335,347) -- (335,353) --
+    (395,353) -- (395,347);
+
+% Etichette
+\node[
+    font=\sffamily\footnotesize\bfseries,
+    text=annotazioni,
+    anchor=base
+] at (215,369) {Penombra};
+
+\node[
+    font=\sffamily\footnotesize,
+    anchor=base
+] at (290,369) {Ombra piena};
+
+\node[
+    font=\sffamily\footnotesize\bfseries,
+    text=annotazioni,
+    anchor=base
+] at (365,369) {Penombra};
+
+\end{tikzpicture}
+}
+	\end{minipage}
+\end{center}
+Ne consegue che ogni punto della macchia focale proietta un'ombra leggermente diversa sull'oggetto; queste ombre si sovrappongono sul rivelatore e i bordi dell'oggetto irradiato risultano meno definiti.
+Si pu\`o quantificare la penombra geometrica con la formula 
+\begin{equation}
+	U_g =f \frac{\text{OID}}{\text{SOD}} = f \frac{\text{OID}}{\text{SID}-\text{OID}}
+\end{equation}
+dove $U_g$ \`e la larghezza della penombra\footnote{In riferimento all'immagine, $U_g$ \`e la larghezza di una sola delle due penombre in verde.}, $f$ \`e la larghezza del fuoco efficace, OID (\textit{Object-to-Image Distance}) \`e la distanza oggetto-rivelatore, SOD (\textit{Source-to-Object Distance}) \`e la distanza sorgente-oggetto e SID (\textit{Source-to-Image Distance}) \`e la distanza sorgente-rivelatore.
+Si ha per definizione che $\text{SOD}= \text{SID}-\text{OID}$, da cui la seconda uguaglianza.
+Si definisce \textit{fattore di ingrandimento} la quantit\`a $M = \frac{\text{SID}}{\text{SOD}}$, che determina quanto pi\`u grandi le dimensioni dell'oggetto irradiato risultano nell'immagine per via della sfocatura geometrica.
+
+Come gi\`a detto, il numero di fotoni che raggiungono il rivelatore \`e correlato con il rumore dell'immagine stessa.
+Questo perch\'e, a parit\`a di esposizione, il ricevimento di fotoni nelle diverse regioni del rivelatore \`e casuale, anche se \`e in media uguale.
+Questo processo \`e idealmente poissoniano, per cui la varianza associata alla media \`e data da $\sigma ^2 = N$.
+La ricezione di un diverso numero di fotoni in diverse regioni comporta la formazione di granulosit\`a nell'immagine; tuttavia, questa si elimina aumentando il numero di fotoni rivelati mediamente, in quanto il rumore relativo $\sigma /\mu = \sqrt{N}  / N \to 0 $, per $N \to  +\infty$.
+Inoltre, si vedr\`a che la radiografia analogica presenta una risposta non lineare all'esposizione, descritta dalla curva caratteristica della pellicola. A basse esposizioni, le differenze di densità ottica sono insufficienti per produrre un'immagine diagnostica utile. La radiazione diffusa, generata principalmente attraverso lo scattering Compton, contribuisce all'esposizione complessiva della pellicola e quindi al suo annerimento, ma riduce il contrasto dell'immagine poiché introduce un segnale che non conserva correttamente l'informazione spaziale.
 
 \subsubsection{Gestione dello scattering Compton}
 
-Visto che l'effetto dello scattering Compton riduce l'energia dei fotoni uscenti, rispetto a quelli che interagiscono per fotoelettrico (???), si potrebbe pensare di rimuovere questi fotoni inserendo una soglia per togliere dal fascio che arriva al rivelatore i fotoni di energia pi\`u bassa.
-Questo sarebbe possibile se il fascio fosse monocromatico, altrimenti non \`e possibile capire quali hanno interagito Compton o meno.
-Per questo motivo, l'uso di una soglia sar\`a scartato per il seguito, in quanto fasci monocromatici non sono utilizzati in diagnostica ufficialmente.
+Lo scattering Compton influenza molto la qualit\`a dell'immagine: la diffusione di fotoni comporta una diminuzione del contrasto, quindi un peggioramento del rapporto segnale-rumore (SNR); per questa ragione, \`e necessario controllare lo scattering.
+Per comprendere quanto questo processo influenzi l'immagine, si definisce il rapporto $\text{SPR}= S / P$ del numero di fotoni diffusi che raggiungono il rivelatore sul numero di fotoni primari che raggiungono il rivelatore senza venire diffusi.
+Direttamente dalla definizione di contrasto, tramite l'SPR, si pu\`o esprimere la frazione di contrasto conservata a seguito della diffusione come
+\begin{equation}
+	\frac{C}{C_0} = \frac{1}{1 + \text{SPR}}
+\end{equation}
+dove $C_0$ \`e il contrasto senza diffusione.
+\begin{osservazione}
+Questa relazione si basa sull'assunzione che la relazione diffusa aggiunga un fondo simile nelle due regioni considerate.
+\end{osservazione}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+\begin{esempio}
+	[Lo scattering riduce il contrasto]
+	Siano $A$ e $B$ due tessuti adiacenti e siano $n_A = 100$, $n_B = 80$ il numero di fotoni rivelati senza diffusione dal tessuto $A$ e dal tessuto $B$. 
+	Il contrasto, allora, si pu\`o esprimere come $C_0 = \frac{100 - 80}{100} = 0.2= 20\%$.
+	Assumendo la rivelazione di $300$ fotoni diffusi, che dall'assunzione sono rivelati sia in $A$ che in $B$, il contrasto diventa $C = \frac{400 - 380}{400} = 5\%$.
+\end{esempio}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{xray-contrast.png}
+	\end{minipage}
+\end{center}
 
-[Immagine slide 42] Visto che i fotoni Compton vengono diffusi, per diminuirne maggiormente il numero rivelato, si potrebbe aumentare la distanza dal paziente, in modo che non incidano sul rivelatore. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si considera un fascio di $N$ fotoni che attraversano un materiale di coefficiente di attenuazione $\mu _1$; una parte di questi $N$ fotoni, all'interno del primo materiale, incontra una regione di un altro materiale con coefficiente di attenuazione $\mu _2$.
+	Siano $t$ ed $s$ gli spessori del materiale circostante e di quello interno rispettivamente.
+	Da definizione, il contrasto \`e $C = \frac{n_1 - n_2}{n_1}$,
+	Si vuole esprimere il contrasto in termini delle differenze di attenuazione, con $\mu _2 > \mu _1$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[
+    >=Latex,
+    line join=round,
+    line cap=round,
+    font=\small
+]
 
-[Slide 46-47] Il contrasto risultante, sostituendo i parametri nell'espressione, \`e dato da 
+%========================
+% Colori definiti nel contesto TikZ
+%========================
+\colorlet{boxedge}{black!55}
+\colorlet{boxfill}{gray!18}
+\colorlet{innerfill}{yellow!35}
+\colorlet{beamcol}{orange!80!yellow}
+\colorlet{detfill}{orange!85!red}
+\colorlet{patchfill}{cyan!55}
+\colorlet{textcol}{black}
+
+%========================
+% Blocco 3D (materiale con mu_1)
+%========================
+% Faccia frontale
+\coordinate (FBL) at (0,2.0);   % front bottom left
+\coordinate (FBR) at (4.0,2.0); % front bottom right
+\coordinate (FTR) at (4.0,4.0); % front top right
+\coordinate (FTL) at (0,4.0);   % front top left
+
+% Offset prospettico
+\coordinate (shift) at (1.0,0.8);
+
+% Faccia posteriore
+\coordinate (BBL) at ($(FBL)+(shift)$);
+\coordinate (BBR) at ($(FBR)+(shift)$);
+\coordinate (BTR) at ($(FTR)+(shift)$);
+\coordinate (BTL) at ($(FTL)+(shift)$);
+
+% Riempimento facce
+\fill[boxfill] (FBL)--(FBR)--(FTR)--(FTL)--cycle; % front
+\fill[gray!12] (FTL)--(FTR)--(BTR)--(BTL)--cycle; % top
+\fill[gray!10] (FBR)--(FTR)--(BTR)--(BBR)--cycle; % side
+
+% Bordi
+\draw[boxedge,thick] (FBL)--(FBR)--(FTR)--(FTL)--cycle;
+\draw[boxedge,thick] (FTL)--(BTL)--(BTR)--(FTR);
+\draw[boxedge,thick] (FBR)--(BBR)--(BTR);
+\draw[boxedge,thick] (FBL)--(BBL)--(BTL);
+\draw[boxedge,thick] (BBL)--(BBR);
+
+% Etichette mu_1
+\node[text=textcol] at (.75,3.0) {$\mu_1$};
+
+%========================
+% Oggetto interno (mu_2)
+%========================
+\coordinate (ibl) at (2.0,2.55);
+\coordinate (ibr) at (2.9,2.55);
+\coordinate (itr) at (2.9,3.35);
+\coordinate (itl) at (2.0,3.35);
+
+\coordinate (ishift) at (0.35,0.28);
+\coordinate (jbl) at ($(ibl)+(ishift)$);
+\coordinate (jbr) at ($(ibr)+(ishift)$);
+\coordinate (jtr) at ($(itr)+(ishift)$);
+\coordinate (jtl) at ($(itl)+(ishift)$);
+
+\fill[innerfill] (ibl)--(ibr)--(itr)--(itl)--cycle; % front
+\fill[yellow!25] (itl)--(itr)--(jtr)--(jtl)--cycle; % top
+\fill[yellow!18] (ibr)--(itr)--(jtr)--(jbr)--cycle; % side
+
+\draw[boxedge,thick] (ibl)--(ibr)--(itr)--(itl)--cycle;
+\draw[boxedge,thick] (itl)--(jtl)--(jtr)--(itr);
+\draw[boxedge,thick] (ibr)--(jbr)--(jtr);
+\draw[boxedge,thick] (ibl)--(jbl)--(jtl);
+\draw[boxedge,thick] (jbr)--(jbl);
+
+\node at (2.6,3) {$\mu_2$};
+
+%========================
+% Fascio incidente (N)
+%========================
+\foreach \x in {0.65,1.0,1.35,1.7,2.05,2.4,2.75,3.1,3.45,3.8,4.15,4.5} {
+    \draw[beamcol,very thick,->] (\x,5.8) -- (\x,4.55);
+}
+\node[color=beamcol] at (5.2,5.75) {$N$};
+
+%========================
+% Spessore totale t
+%========================
+\draw[<->,thick] (5.85,2.0) -- (5.85,4);
+\node[right] at (5.9,3) {$t$};
+
+%========================
+% Spessore oggetto s
+%========================
+\draw[<->,thick] (3.55,2.55) -- (3.55,3.35);
+\node[right] at (3.55,2.95) {$s$};
+
+%========================
+% Etichetta area / oggetto
+%========================
+\node at (2.0,1.45) {$A$};
+
+%========================
+% Rivelatore in basso
+%========================
+% Piano arancione
+\coordinate (DL) at (0,-0.2);
+\coordinate (DR) at (4,-0.2);
+\coordinate (UR) at (5,0.55);
+\coordinate (UL) at (1,0.55);
+
+\fill[detfill] (DL)--(DR)--(UR)--(UL)--cycle;
+\draw[boxedge,thick] (DL)--(DR)--(UR)--(UL)--cycle;
+
+% Patch centrale azzurra
+\coordinate (pDL) at (2,0.02);
+\coordinate (pDR) at (2.9,0.02);
+\coordinate (pUR) at (3.25,0.32);
+\coordinate (pUL) at (2.35,0.32);
+
+\fill[patchfill] (pDL)--(pDR)--(pUR)--(pUL)--cycle;
+\draw[boxedge,thick] (pDL)--(pDR)--(pUR)--(pUL)--cycle;
+
+\node at (1.2,0.18) {\footnotesize$n_1$};
+\node at (2.5,0.18) {\footnotesize$n_2$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+In assenza di diffusione il segnale ricevuto del fascio che non attraversa il secondo materiale sar\`a $p_1 = N e^{-\mu _1 t}$, mentre il segnale del fascio che attraversa anche il secondo \`e dato da $p_2 = N e^{-\mu _1(t-s)}e^{-\mu _2 s}$.
+Ne segue che 
 \[
-C = \frac{1- e^{-\Delta \mu  s}}{1+R}
+p_2 = p_1 e^{-(\mu _2 - \mu _1) s}\equiv p_1 e^{-\Delta_\mu s}
 \] 
-con $\Delta \mu = \mu _1 - \mu _2$ e $R = \text{\# scatterati}/ \text{\# primari}$.
-Questo indica il degrado dell'immagine per via dell'effetto dello scattering.
+con $\Delta _\mu = \mu _2 - \mu _1$.
+Aggiungendo, ora, la componente di fascio diffusa, sia questa $S$ e assunta uguale nelle due regioni, si avr\`a che $n_1 = p_1 + S$ e $n_2 = p_2 + S$.
+Il contrasto, di conseguenza, diventa
+\begin{equation}
+	C = \frac{p_1 - p_2}{ p_1 + S} = \frac{1 - e^{-\Delta _\mu s}}{1+ R}
+\end{equation}
+dove si sono divisi numeratore e denominatore per $p_1$ e si \`e definito $R = S / p_1$ (rapporto tra fotoni diffusi e fotoni primari).
+\begin{osservazione}
+Se i due tessuti hanno coefficienti di attenuazione molto simili, allora $\Delta _\mu  \approx 0$ e $C\approx 0$.
+A fissato $\Delta_ \mu $, invece, un elevato valore relativo di fotoni diffusi $R \gg 1$ implica $C \ll 1$: anche se i due tessuti risulterebbero avere un buon contrasto, un importante fascio diffuso lo riduce notevolmente.
+\end{osservazione}
 
-Per passaggi analoghi nel rapporto segnale-rumore, si ottiene
-\[
-N(k) \approx \frac{k^2 (1+R) e^{\mu _1 t}}{\varepsilon (\Delta \mu )^2x^4}
-\] 
-dove $k \equiv \text{SNR}$.
-In questo modo, si ottiene il numero di fotoni necessari per ottenere un'immagine che non abbia un contributo rilevante all'immagine dovuta allo scattering.
-
-Le strategie per controllare il contrasto sono le seguenti.
+\noindent L'SNR legato al contrasto dei due oggetti \`e dato da 
+\begin{equation}\label{snr-x}
+\text{SNR} = \frac{n_1 - n_2}{ \sqrt{n_1} } = \left(1-e^{-\Delta _\mu  s}\right) \frac{\sqrt{p_1} }{\sqrt{1+R} } = \left(1- e^{-\Delta _\mu s}\right) \sqrt{\frac{NAe^{-\mu _1 t}\varepsilon }{1+R}} 
+\end{equation}
+dove si \`e esplicitato il fatto che $N$ rappresenta il numero di fotoni incidenti per unit\`a di superficie, quindi il numero di fotoni che si sta considerando \`e $N\cdot A$, per $A$ area del rivelatore considerata; inoltre il conteggio effettivamente registrato dal rivelatore sar\`a una frazione di quello reale, data dalla sua \textit{efficienza di rivelazione}.
+Si osservano i seguenti andamenti:
 \begin{itemize}
-	\item  Collimazione prima e dopo il paziente.
-
-		Questo \`e l'unico sistema che non influenza la dose, ma comporta l'acquisizione di una regione limitata.
-		Ottenere l'immagine voluta, quindi, comporterebbe la formazione dell'immagine in pi\`u acquisizioni, aumentando per\`o il tempo necessario e la conseguente formazione dei relativi artefatti. 
-	\item \`E possibile determinare, tramite appositi metodi software, la componente legata allo scattering.
+	\item $\text{SNR}\propto \sqrt{N} $, quindi all'aumentare del numero di fotoni inviati, l'SNR aumenta;
+	\item se aumenta lo spessore $t$ del paziente, l'SNR diminuisce perch\'e i fotoni devono percorrere pi\`u distanza e hanno pi\`u probabilit\`a di essere diffusi;
+	\item all'aumentare dello scattering, l'SNR peggiora perch\'e $\text{SNR} \propto (1+R)^{-2}$.
 \end{itemize}
-[Tabella slide 50]
+Sia, per semplicit\`a, $k\equiv \text{SNR}$.
+Assumendo $\Delta _\mu  \ll 1$\footnote{Questa \`e un'approssimazione ragionevole in particolare quando si vogliono studiare strutture piccole, come lesioni all'interno di tessuti molli.}, allora $\left(1- e^{-\Delta _\mu  s}\right) \simeq \Delta _{\mu }s$; tramite questa approssimazione, invertendo la \ref{snr-x}, si ottiene il numero di fotoni che \`e necessario inviare per ottenere per ottenere un certo $k$:
+\begin{equation}
+	N(k) \simeq \frac{k^2 (1+R) e^{\mu _1 t}}{\varepsilon \Delta _\mu ^2 x^4}
+\end{equation}
+dove $x$ \`e la dimensione caratteristica dell'oggetto su cui si stanno facendo incidere i fotoni, in modo che $x^2 \sim A$ e $x \sim s$.
+Da questa relazione, \`e importante osservare che 
+\begin{equation}
+	N \propto \frac{1}{x^4}
+\end{equation}
 
-[Immagine slide 51-52] Collimazione.
+Visto che l'effetto dello scattering Compton riduce l'energia dei fotoni uscenti, un modo per eliminare questo effetto sarebbe di aggiungere un filtro per bloccarli.
+Tuttavia, questo ragionamento andrebbe bene se il fascio fosse monocromatico, altrimenti non \`e possibile capire quali hanno interagito Compton e quali sono solo fotoni di energia minore.
+Inoltre, la perdita di energia dipende molto dall'angolo di deviazione del fotone, quindi non \`e automatico individuare \textit{tutti} quelli che hanno interagito Compton.
 
-[Immagine 53] Gap, ma non ottenibile in ospedale.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\columnwidth]{xray-comp.png}
+	\caption{I fotoni diffusi per Compton, in realt\`a, perdono pochissima energia, motivo per cui discriminarli per energia non aiuta.}
+\end{figure}
 
-[Slide 54] L'utilizzo di griglie anti-scattering dipende da tre parametri; come da immagine, posizionare differentemente la griglia potrebbe influenzare anche il percorso di fotoni che, invece, non dovrebbero essere attenuati.
-[Immagine slide 55] Nel caso di fasci paralleli, il parametro delle distanze non \`e rilevante.
+\noindent Appurato che l'energia non \`e un buon discriminante, la geometria \`e il fattore che permette di minimizzare al meglio l'effetto Compton.
 
-[Slide 56] Le correzioni computazionali tramite software possono essere ottenuti tramite diversi metodi.
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.5}
 
-L'unico metodo effettivamente importante \`e l'uso di griglie che, per\`o, comporta un aumento di dose al paziente.
+\resizebox{.9\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{4.5cm}|p{3.8cm}|p{4.8cm}|}
+\hline
 
-[Tabella slide 57] Recap.
+\textbf{Metodo} &
+\textbf{Principio fisico} &
+\textbf{Vantaggio} &
+\textbf{Svantaggi e limitazioni} \\
+\hline
 
+\textbf{Collimazione} &
+Riduce il volume irradiato. &
+Riduce la radiazione diffusa e la dose al paziente. &
+Richiede una delimitazione accurata del campo irradiato. \\
+\hline
+
+\textbf{Griglia antidiffusione} &
+Blocca i fotoni diffusi che incidono obliquamente. &
+Miglioramento significativo del contrasto dell'immagine. &
+Richiede una maggiore esposizione ed è sensibile a errori di allineamento. \\
+\hline
+
+\textbf{Air gap (spazio d'aria)} &
+Aumenta la probabilità che i fotoni diffusi non raggiungano il detettore. &
+Riduce la radiazione diffusa senza utilizzare una griglia. &
+Comporta ingrandimento geometrico e vincoli di posizionamento. \\
+\hline
+
+\textbf{Compressione} &
+Riduce lo spessore del tessuto attraversato dai raggi X. &
+Riduce la radiazione diffusa e gli artefatti da movimento. &
+L'applicabilità dipende dal tipo di esame e dalle condizioni del paziente. \\
+\hline
+
+\textbf{Correzione software} &
+Stima e sottrae il contributo della radiazione diffusa. &
+Non richiede l'utilizzo di una griglia fisica. &
+Dipende dall'accuratezza del modello e dalla calibrazione del sistema. \\
+\hline
+
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		Si possono impiegare dei collimatori, in modo che si rilevino fotoni da frazioni pi\`u piccole di paziente.
+		Questo risulta particolarmente utile per schermare il paziente da fotoni che che raggiungerebbero una regione in cui non si ha interesse diagnostico e che, venendo diffusi, influenzerebbero l'immagine.
+		A parit\`a di numero di fotoni primari, questo metodo permette una diminuzione della dose perch\'e, se correttamente regolato, i fotoni che costruiscono la regione di interesse nell'immagine non vengono rimossi.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[font=\sffamily]
+  % Definizioni locali: nessun colore deve essere definito nel preambolo.
+  \definecolor{primary}{HTML}{F2AB23} % arancione: raggi primari
+  \definecolor{scatter}{HTML}{C84E37} % rosso: raggi diffusi
+  \definecolor{dark}{HTML}{102633}    % blu scuro: piombo / rivelatore
+  \definecolor{soft}{HTML}{E4EBF0}    % grigio-azzurro chiaro
+  \definecolor{coll}{HTML}{80CBD3}    % azzurro: apertura / pixel
+  \tikzset{
+    ray/.style={draw=primary,-{Stealth[length=2.3mm]},line width=1.35pt},
+    scattered/.style={draw=scatter,-{Stealth[length=2.2mm]},line width=1.35pt}
+  }
+
+  % Rivelatore.
+  \fill[gray!30] (0,0)--(4.9,0)--(5.8,1.1)--(.9,1.1)--cycle;
+  \draw[gray!70] (0,0)--(4.9,0)--(5.8,1.1)--(.9,1.1)--cycle;
+  \node[below,font=\small] at (2.5,-.15) {Rivelatore};
+  % Paziente.
+  \shade[top color=gray!15,bottom color=gray!55] (1.2,1.95)--(1.2,3.05)
+    arc[start angle=180,end angle=360,x radius=1.7,y radius=.25]--(4.6,1.95)
+    arc[start angle=0,end angle=-180,x radius=1.7,y radius=.25]--cycle;
+  \draw[gray!70] (2.9,3.05) ellipse (1.7 and .25);
+  \node[right,font=\small] at (4.75,2.4) {Paziente};
+  % Piastra collimatrice con apertura.
+  \fill[coll!50] (.15,4.1)--(4.75,4.1)--(5.65,5.05)--(1.05,5.05)--cycle;
+  \draw[teal!70!black] (.15,4.1)--(4.75,4.1)--(5.65,5.05)--(1.05,5.05)--cycle;
+  \fill[white] (1.85,4.47)--(3.05,4.47)--(3.45,4.79)--(2.25,4.79)--cycle;
+  \draw[teal!70!black] (1.85,4.47)--(3.05,4.47)--(3.45,4.79)--(2.25,4.79)--cycle;
+  \node[right,align=left,font=\small] at (5.7,4.62) {Collimatore\\(apertura ridotta)};
+  % Raggio ammesso dall'apertura.
+  \draw[ray] (2.46,6.2)--(2.46,4.78);
+  \draw[ray] (2.46,4.41)--(2.46,3.12);
+  \draw[ray] (2.46,2.91)--(2.46,.4);
+  % Raggio intercettato dal collimatore.
+  \draw[ray] (4.12,6.2)--(4.12,5.04);
+  \fill[scatter] (4.12,5.04) circle (.075);
+  \draw[gray,densely dashed] (4.12,4.05)--(4.12,3.02);
+  % Esempio di radiazione diffusa che non contribuisce all'immagine utile.
+  \draw[gray,densely dashed,-{Stealth[length=2mm]}] (4.12,2.95)--(2.7,.5);
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		L'air gap \`e un metodo tramite cui si elimina una parte dei fotoni diffusi semplicemente aumentano la distanza tra paziente e rivelatore, in modo che quelli che raggiungerebbero il rivelatore seguendo una traiettoria obliqua, vengono esclusi perch\'e il rivelatore finisce fuori dalla loro portata.
+		Aumentano la distanza, aumenta di conseguenza anche l'ingrandimento geometrico e la sfocatura dell'immagine.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Colori definiti localmente
+  \definecolor{primary}{HTML}{F2AB23}
+  \definecolor{scatter}{HTML}{D64541}
+  \definecolor{phantomfill}{HTML}{D9D9D9}
+  \definecolor{detfill}{HTML}{BFD7EA}
+
+  % Stili
+  \tikzset{
+    primaryray/.style={
+      draw=primary,
+      -{Stealth[length=2.5mm]},
+      line width=1.3pt
+    },
+    scatterray/.style={
+      draw=scatter,
+      -{Stealth[length=2.5mm]},
+      line width=1.3pt
+    },
+    phantom/.style={
+      draw=white,
+      fill=phantomfill,
+      line width=0.8pt
+    },
+    detector/.style={
+      draw=white,
+      fill=detfill,
+      line width=0.8pt
+    }
+  }
+  \node[color=primary] at (2, 7) {\tiny Fascio primario};
+  \node[color=scatter] at (2, 6.75) {\tiny Fascio diffuso};
+  % Oggetto/paziente
+  \draw[phantom] (2,4) rectangle (6,6);
+
+  % Punto di interazione
+  \coordinate (S) at (4,4.9);
+
+  % Raggi incidenti
+  \draw[primaryray] (3.8,7.2) -- (3.8,5.2);
+  \draw[primaryray] (4.1,7.5) -- (4.1,5.2);
+
+  % Raggio primario trasmesso
+  \draw[primaryray] (S) -- (4,1.7);
+
+  % Fotoni diffusi evidenziati in rosso
+  \draw[scatterray] (S) -- (2.8,1.2);
+  \draw[scatterray] (S) -- (5.3,1.2);
+
+  % Detector con air gap aumentato
+  \draw[detector] (3.4,1.1) rectangle (4.6,1.3);
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+
+
+\noindent Le griglie anti-scattering permettono di eliminare i fotoni diffusi permettendo il passaggio dei soli fotoni che attraversano perpendicolarmente le lamine (tipicamente di piombo); quelli diffusi, che viaggiano su direzioni oblique rispetto alle griglie, invece, hanno una elevata probabilit\`a di essere assorbiti.
+Visto che anche parte dei fotoni primari viene assorbita, per mantenere lo stesso livello di segnale e rumore nell'immagine, \`e richiesto un aumento del tempo di esposizione, quindi di dose.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+		\centering
+\resizebox{\columnwidth}{!}{%
+	\begin{tikzpicture}[font=\sffamily]
+  % Definizioni locali: nessun colore deve essere definito nel preambolo.
+  \definecolor{primary}{HTML}{F2AB23} % arancione: raggi primari
+  \definecolor{scatter}{HTML}{C84E37} % rosso: raggi diffusi
+  \definecolor{dark}{HTML}{102633}    % blu scuro: piombo / rivelatore
+  \definecolor{soft}{HTML}{E4EBF0}    % grigio-azzurro chiaro
+  \definecolor{coll}{HTML}{80CBD3}    % azzurro: apertura / pixel
+  \tikzset{
+    ray/.style={draw=primary,-{Stealth[length=2.3mm]},line width=1.35pt},
+    scattered/.style={draw=scatter,-{Stealth[length=2.2mm]},line width=1.35pt}
+  }
+
+  % Rivelatore e paziente, rappresentati in prospettiva.
+  \fill[gray!30] (0,0)--(4.6,0)--(5.55,1.1)--(0.9,1.1)--cycle;
+  \draw[gray!75] (0,0)--(4.6,0)--(5.55,1.1)--(0.9,1.1)--cycle;
+  \node[below,font=\small] at (2.5,-0.14) {Rivelatore};
+  \shade[top color=gray!15,bottom color=gray!55] (1.1,3.4) -- (1.1,4.5)
+    arc[start angle=180,end angle=360,x radius=1.65,y radius=.27] -- (4.4,3.4)
+    arc[start angle=0,end angle=-180,x radius=1.65,y radius=.27] -- cycle;
+  \draw[gray!70] (2.75,4.5) ellipse (1.65 and .27);
+  \node[right,font=\small] at (4.55,3.35) {Paziente};
+  % Reticolo anti-scattering, visto obliquamente.
+  \fill[primary!16] (.1,1.7)--(4.95,1.7)--(5.85,2.78)--(1,2.78)--cycle;
+  \begin{scope}
+    \clip (.1,1.7)--(4.95,1.7)--(5.85,2.78)--(1,2.78)--cycle;
+    \foreach \k in {-10,...,35} {
+      \draw[primary!85!black,line width=.75pt] (0.25*\k,1.55)--({0.25*\k+1.25},2.97);
+    }
+    \foreach \k in {0,...,15} {
+      \draw[primary!85!black,line width=.75pt] (-1,{1.68+.079*\k})--(7,{1.68+.079*\k});
+    }
+  \end{scope}
+  \draw[primary!85!black,thick] (.1,1.7)--(4.95,1.7)--(5.85,2.78)--(1,2.78)--cycle;
+  \node[right,align=left,font=\small] at (5.9,2.38) {Griglia\\antidiffusione};
+  % Primario trasmesso (arancione).
+  \draw[ray] (2.15,6.05)--(2.15,4.55);
+  \draw[ray] (2.15,4.22)--(2.15,2.87);
+  \draw[ray] (2.15,1.65)--(2.15,.46);
+  % Secondo primario diffuso, assorbito dalla griglia.
+  \draw[ray] (3.4,6.05)--(3.4,4.55);
+  \draw[scattered] (3.4,4.21)--(2.88,2.78);
+  \fill[scatter] (2.88,2.78) circle (.075);
+  \node[align=left,font=\small] at (6.8,4.8) {Fotone diffuso\\assorbito};
+  \draw[scatter,thin] (5.9,4.45)--(3.02,2.83);
+\end{tikzpicture}
+}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}[font=\sffamily]
+  % Definizioni locali: nessun colore deve essere definito nel preambolo.
+  \definecolor{primary}{HTML}{F2AB23} % arancione: raggi primari
+  \definecolor{scatter}{HTML}{C84E37} % rosso: raggi diffusi
+  \definecolor{dark}{HTML}{102633}    % blu scuro: piombo / rivelatore
+  \definecolor{soft}{HTML}{E4EBF0}    % grigio-azzurro chiaro
+  \definecolor{coll}{HTML}{80CBD3}    % azzurro: apertura / pixel
+  \tikzset{
+    ray/.style={draw=primary,-{Stealth[length=2.3mm]},line width=1.35pt},
+    scattered/.style={draw=scatter,-{Stealth[length=2.2mm]},line width=1.35pt}
+  }
+  % Lamelle in piombo alte h, alternate a interspazi.
+  \foreach \x in {-3,-2,-1,0,1,2,3} {
+    \fill[dark] (\x-.08,1.25) rectangle (\x+.08,3.4);
+  }
+  % Fotoni primari passano negli spazi.
+  \foreach \x in {-2.5,-.5,1.5} {
+    \draw[ray] (\x,4.2)--(\x,.55);
+  }
+  % Fotoni diffusi obliqui assorbiti dalle lamelle.
+  \foreach \x in {-2,-.0,2} {
+    \draw[scattered] ({\x+.74},4.12)--(\x+.07,2.95);
+    \draw[fill,color=scatter] (\x+.07,2.95) circle (.07);
+  }
+  % Piano del rivelatore.
+  \fill[dark!75] (-3.4,.37) rectangle (3.4,.55);
+  \node[below,font=\small] at (0,.3) {Rivelatore};
+  % Quote geometriche h e D: disegno non in scala.
+  \draw[<->,gray!80!black] (3.57,1.25)--(3.57,3.4);
+  \node[right,font=\small] at (3.61,2.3) {$h$};
+  \draw[<->,gray!80!black] (2.08,1.02)--(2.92,1.02);
+  \node[below,font=\small] at (2.5,.98) {$D$};
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Le grandezze principali tramite cui si caratterizzano le griglie sono:
+\begin{itemize}
+	\item il \textit{rapporto della griglia} $r = h / D$, con $h$ altezza delle lamine e $D$ distanza tra una e l'altra;
+	\item il \textit{bucky factor} $B$, che \`e il rapporto tra l'esposizione necessaria con e senza griglia, a parit\`a di esposizione del rivelatore, e quantifica la penalizzazione in termine di dose;
+	\item il rapporto tra contrasto ottenuto con e senza griglia $K$, che quantifica il miglioramento del contrasto.
+\end{itemize}
+Una errata geometria delle griglie provoca il cosiddetto \textit{grid cutoff}, cio\`e la perdita di fotoni primari.
+Il movimento delle griglie comporta una sfocatura della loro ombra nell'immagine.
 
 
 \newpage
