@@ -32,8 +32,6 @@
 \usepackage[italian]{babel}
 
 % Font
-\usepackage[osf,largesc,theoremfont]{newpxtext}
-\usepackage{eulervm}
 
 
 % To reset footnote numbering each page
@@ -161,7 +159,7 @@ title=#1
 \newpage
 \section{Ottica quantistica}
 
-\subsection{Quantizzazione del campo elettromagnetico}
+\subsection{Modi del campo elettromagnetico}
 
 Nel seguito, si considereranno radiazioni elettromagnetiche solamente nel vuoto per parlare della quantizzazione del campo.
 Dalle equazioni di Maxwell, allora, risulta
@@ -192,7 +190,8 @@ In questo modo, per sommare su tutti gli stati, invece di calcolare le somme sui
 \begin{osservazione}
 Il considerare una densit\`a di modi per unit\`a di volume \`e utile per il fatto che, volendo studiare in seguito onde elettromagnetiche che non sono confinate in una regione di spazio, il termine $\rho (\omega ) \dd \omega$ \`e, cos\`i facendo, indipendente dal volume e, quindi, di validit\`a pi\`u generale.
 \end{osservazione}
-Sostituendo le soluzioni oscillanti accennate all'inizio, si osserva che la parte temporale soddisfa 
+
+\noindent Sostituendo le soluzioni oscillanti accennate all'inizio, si osserva che la parte temporale soddisfa 
 \[
 \frac{\partial ^2 \vec{E}}{\partial t^2}  = - \omega ^ 2 \vec{E}(t) \implies \vec{E}(t) = \vec{E}(0) e^{-i\omega t}
 \] 
@@ -237,6 +236,7 @@ Per questa ragione, il numero medio di fotoni nel modo $\hbar \omega$ \`e descri
 				  & = \frac{1}{\exp \left(\frac{\hbar \omega}{\kappa _B T}\right) - 1}
 	\end{split}
 \end{equation}
+Nel seguito, il numero medio di fotoni si indicher\`a con $\langle n \rangle$.
 \subsubsection{Distribuzione di corpo nero}
 La densit\`a di energia (termica) media \`e descritta dalla distribuzione di Plank per il corpo nero:
 \begin{equation}
@@ -281,25 +281,25 @@ Si pu\`o usare questa relazione per concludere che $\langle n^2 \rangle - \langl
 dove $\langle n \rangle^2$ si riconosce essere il contributo ``onda'', mentre $\langle n \rangle$ \`e il contributo ``particella''.
 Di fatto, la varianza segue la parte ondulatoria quando $\langle n \rangle\gg 1$, cio\`e quando mediamente ci sono molte particelle, mentre segue il contributo particellare quando $\langle n \rangle \ll 1$, cio\`e quando la popolazione \`e molto piccola.
 
-\subsubsection{Sistema a due livelli}
+\subsection{Interazioni della radiazione con sistemi a due livelli}
 Si considera un sistema a due livelli, di energie $E_1< E_2$ e popolazioni $N_1, N_2$, con $N = N_1+N_2$.
-Considerando un'interazione generica del sistema con un campo elettromagnetico, senza che campo e sistema a due livelli siano all'equilibrio, che \`e una situazione sperimentale tipica. 
-In questo senso, la densit\`a di energia media si scompone in una parte termica e in un contributo esterno: $\langle w(\omega ) \rangle = \langle w_T (\omega ) \rangle+ \langle w_E(\omega ) \rangle$.
-Si assume, cosa sicuramente verificata per $\langle w_T(\omega ) \rangle$, che $\langle w_E(\omega ) \rangle$ vari molto lentamente con $\omega $ attorno alla frequenza di transizione $\frac{E_2 -E_1}{\hbar }$.
+Si tratta un'interazione generica del sistema con il campo elettromagnetico, senza che questi siano all'equilibrio; questa \`e una situazione sperimentale tipica. 
+In questo caso, la densit\`a di energia spettrale media si scompone in una parte termica e in una parte esterna: $\langle w(\omega ) \rangle = \langle w_T (\omega ) \rangle+ \langle w_E(\omega ) \rangle$.
+Per il seguito, si assume che $\langle w_E(\omega ) \rangle$ vari molto lentamente con $\omega $ attorno alla frequenza di transizione $\frac{E_2 -E_1}{\hbar }$; questa assunzione \`e, in realt\`a, sempre verificata per $\langle w_T(\omega ) \rangle$.
 
-La trattazione di Einstein prevede di considerare tre possibili comportamenti del sistema: emissione spontanea, indicata dal coefficiente $A_{21}$, emissione stimolata, indicata dal coefficiente $B_{21}$, e assorbimento. 
+La trattazione di Einstein prevede di considerare tre possibili comportamenti del sistema: emissione spontanea, indicata dal coefficiente $A_{21}$, emissione stimolata, indicata dal coefficiente $B_{21}$, e assorbimento, indicato a $B_{12}$. 
 Visto che emissione stimolata e assorbimento coinvolgono l'interazione del sistema con un campo elettromagnetico e che l'intensit\`a della radiazione deve aumentare la probabilit\`a di transizione, si moltiplicano i coefficienti $B_{12}$ e $B_{21}$ per la densit\`a spettrale media di energia $w(\omega )$.
-In questo modo, si possono scrivere le \textbf{equazioni di rate}:
+In questo modo, si hanno le \textbf{equazioni di rate}:
 \begin{equation}
 	\frac{d N_1}{d t}  = - \frac{d N_2}{d t}  = N_2 A_{21} - N_1 B_{12} \langle w(\omega ) \rangle + N_2 B_{21} \langle w(\omega ) \rangle
 \end{equation}
-Nel caso stazionario, vale $\dot{N}_1 = \dot{N}_2 = 0$ e all'equilibrio termodinamico, quindi $\langle w_E(\omega ) \rangle = 0$, si ottiene
+Nel caso stazionario, in cui vale $\dot{N}_1 = \dot{N}_2 = 0$, e all'equilibrio termodinamico, quindi $\langle w_E(\omega ) \rangle = 0$, si ottiene
 \begin{equation}
 	\langle w_T(\omega ) \rangle = \frac{A_{21}}{\frac{N_1}{B_2}B_{12} - B_{21}}
 \end{equation}
-Si conosce il rapporto tra le popolazioni all'equilibrio, visto che seguono la distribuzione di Boltzmann; assumendo che il livello $1$ abbia una degenerazione $g_1$ e che il livello $2$ abbia degenerazione $g_2$, si ha
+Essendo all'equilibrio termodinamico, si conosce il rapporto tra le popolazioni, visto che seguono la distribuzione di Boltzmann: assumendo che il livello $1$ abbia una degenerazione $g_1$ e che il livello $2$ abbia degenerazione $g_2$, si ha
 \[
-	\frac{N_1}{N_2} = \frac{g_1}{g_2} \overbracket{\exp \left(- \frac{E_1 - E_2}{\kappa _B T}\right) }^{= \exp \left(\frac{\hbar \omega}{\kappa _BT}\right) } \implies \langle w_T(\omega ) \rangle = \frac{A_{21}}{\displaystyle \frac{g_1}{g_2}\exp\left(\frac{\hbar \omega }{\kappa _B T}\right) B_{12}-B_21}
+	\frac{N_1}{N_2} = \frac{g_1}{g_2} \overbracket{\exp \left(- \frac{E_1 - E_2}{\kappa _B T}\right) }^{= \exp \left(\frac{\hbar \omega}{\kappa _BT}\right) } \implies \langle w_T(\omega ) \rangle = \frac{A_{21}}{\displaystyle \frac{g_1}{g_2}\exp\left(\frac{\hbar \omega }{\kappa _B T}\right) B_{12}-B_{21}}
 \] 
 Per\`o questa deve avere la stessa forma della distribuzione di corpo nero, per cui devono valere le seguenti relazioni per i coefficienti:
 \begin{equation}
@@ -309,6 +309,225 @@ Per\`o questa deve avere la stessa forma della distribuzione di corpo nero, per 
 		\displaystyle A_{21} = \frac{\hbar \omega ^3}{\pi^2 c^3}B_{21}
 	\end{cases}
 \end{equation}
+Sostituendo le relazioni appena trovate in $\langle w_T(\omega ) \rangle$, si trova che
+\begin{equation}
+	\langle w_T(\omega ) \rangle = \frac{A_{21}\langle n \rangle}{B_{21}}
+\end{equation}
+In questo modo, volendo scrivere il rate di emissione totale per unit\`a di tempo, si trova che questo \`e dato da $B_{21} \langle w_T(\omega ) \rangle + A_{21} = A_{21}\left(\langle n \rangle + 1\right) $, dove l'uguaglianza \`e giustificata da quanto appena ricavato.
+Ne segue che:
+\begin{itemize}
+	\item  se $\langle n \rangle\gg 1$, allora prevale l'emissione stimolata;
+	\item se $\langle n \rangle \ll 1$, allora prevale l'emissione spontanea.
+\end{itemize}
+Visto che $\langle n \rangle$ \`e descritto dalla Bose-Einstein, si vede che $\langle n \rangle \sim 1$ quando $\frac{\hbar \omega }{\kappa _B T} \sim 0.7$. 
+L'emissione stimolata sar\`a, allora, maggiormente rilevante a bassa frequenza, mentre a pi\`u alta frequenza prevarr\`a l'emissione spontanea.
+\begin{osservazione}
+A temperatura ambiente, $\kappa _B T \approx 25$ meV, per cui $\langle n \rangle \sim 1$ per $\hbar \omega \sim 10$ meV, corrispondenti ad un lontano infrarosso. 
+\end{osservazione}
+
+\subsubsection{Saturazione e attenuazione}
+
+Si definisce \textbf{densit\`a di energia di saturazione} il coefficiente $w_s = \frac{\hbar \omega ^3}{\pi^2 c^3}$ in modo che $w_s B_{21} = A_{21}$; si osserva, per\`o, che questa \`e una densit\`a spettrale di energia.
+La densit\`a di energia di saturazione, allora, \`e data da $w_s \dd \omega $.
+	Tipicamente, per\`o, negli esperimenti non si usa questa quantit\`a, ma si usa l'intensit\`a (flusso di energia), che si trova essere legata alla densit\`a di energia tramite la relazione $I = c w$; si definisce, di conseguenza, l'\textbf{intensit\`a di saturazione} come $I_S = c w_s$, che, per\`o, \`e un'intensit\`a per unit\`a di frequenza.
+	Integrando rispetto alle frequenze, si ottiene effettivamente l'intensit\`a totale relativa alla densit\`a di energia di saturazione.
+
+\begin{esempio}
+Si prende, come valore d'esempio, $\omega \sim 3 \cdot 10^{15}$ Hz.
+Per queste frequenze, risulta una densit\`a di energia di saturazione dell'ordine di $w_s \dd \omega  \sim 10^{-14} \dd \omega \text{ J}/\text{m}^3$.
+L'intensit\`a, invece, \`e dell'ordine di $I_S \dd \omega  \sim 3 \cdot 10^{-6} \dd \omega  \text{ W}/\text{m}^{-2}$.
+Tenendo conto che, sperimentalmente, si hanno larghezze di riga dell'ordine di $10 ^{10}$ Hz, si ottiene che
+	\[
+	\int I_S \dd \omega \sim 10^{5}\, \frac{\text{W}}{\text{m}^{-2}}
+	\] 
+	In questo calcolo, si \`e usata l'assunzione fatta a inizio sezione, in cui si chiede che le densit\`a di energia varino, con $\omega $, molto lentamente attorno alla frequenza di transizione.
+	In questo modo, l'integrale si pu\`o scrivere come $I_S(\omega _0) \Delta \omega $, dove $\Delta \omega $ \`e la larghezza di riga.
+\end{esempio}
+
+\begin{osservazione}
+La differenza principale tra emissione spontanea e stimolata \`e che i primi sono emessi in modi e direzioni diverse, mentre i fotoni emessi per emissione stimolata mantengono le stesse identiche caratteristiche, direzione inclusa, del fotone che li ha fatti produrre.
+\end{osservazione}
+
+\noindent Si intuisce che l'emissione spontanea gioca un ruolo fondamentale nell'attenuazione di un fascio radiativo; per comprenderlo, si considera di irradiare un gas di atomi che non possono decadere dallo stato eccitato, se non per emissione stimolata e nel caso semplificato in cui $g_1=g_2\Rightarrow B_{12}=B_{21}=B$.
+Assumendo che, nell'istante iniziale, tutti gli atomi siano nel fondamentale, questi inizieranno ad eccitarsi; tuttavia, il processo di assorbimento non smette di essere rilevante finch\'e le due popolazioni non si equivalgono:
+\[
+\dot{N}_1 = N_2 B \langle w(\omega ) \rangle - N_1 B \langle w(\omega ) \rangle \propto N_2 - N_1
+\] 
+Questo vuol dire che il numero di atomi eccitati continua a crescere finch\'e $\dot{N}_1 = 0$, che corrisponde alla condizione di stazionarit\`a: arrivati a questo punto, i due processi si equivalgono e viene emessa tanta radiazione, quanta ne viene assorbita (mediamente).
+Le implicazioni di questo fenomeno stanno nel fatto che, per quanto gi\`a accennato, i fotoni emessi per emissione stimolata mantengono direzione e modo di quelli incidenti, quindi, in condizioni stazionarie, il materiale risulta trasparente.
+In questo modo, se non sono presenti altri meccanismi di diseccitazione se non per emissione spontanea, non vi \`e alcuna attenuazione del fascio incidente.
+Introducendo, invece, l'emissione spontanea, l'equazione in condizioni stazionarie diventa 
+\[
+\dot{N}_1 = 0 = N_2 A + (N_2 -N_1)B\langle w(\omega ) \rangle \implies \frac{N_2}{N_1} = \frac{B\langle w(\omega ) \rangle}{A + B \langle w(\omega ) \rangle} < 1
+\] 
+da cui $N_1 > N_2$ e, cio\`e, l'assorbimento prevale sull'emissione stimolata.
+La frazione di energia persa per assorbimento, invece, si pu\`o ottenere come il numero di atomi che emettono per emissione spontanea, cio\`e $A_{21} N_2$, diviso il numero di atomi che emettono in totale, cio\`e $N_2 A_{21} + N_2 B_{21} \langle w \rangle$, che \`e pari a 
+\[
+\frac{A_{21}}{A_{21}+B_{21} \langle w \rangle} = \frac{1}{1 + \langle w \rangle / w_s}
+\] 
+\begin{osservazione}
+In questo calcolo, si sta trascurando la piccola frazione di atomi che emettono spontaneamente nella direzione di propagazione del fascio.
+\end{osservazione}
+
+\noindent Dal risultato ottenuto, appare anche chiaro perch\'e si parli di densit\`a di energia di saturazione: all'incrementare di $\langle w \rangle$, l'attenuazione diventa un fenomeno trascurabile.
+
+\subsubsection{Evoluzione delle popolazioni}
+
+Per il seguito, si assume per semplicit\`a un sistema di due livelli, in cui quindi gli altri livelli siano molto distanti rispetto ai primi due, e si assume che $g_1 = g_2$ in modo che $B_{12} = B_{21} = B$ e si possano rimuovere gli indici.
+Inoltre, si assume una $\langle w \rangle$ che sia uniforme all'interno della cavit\`a, cio\`e non vi sia attenuazione tale da rendere la distribuzione non-omogenea\footnote{Questa \`e una buona approssimazione nel caso in cui si invii fascio in una cavit\`a e la radiazione rimanga vincolata al suo interno, senza disperdersi.}.
+Le equazioni di rate si scrivono come
+\[
+\frac{d N_1}{d t} = - \frac{d N_2}{d t}  = N_2 A + (N_2 - N_1) B \langle w \rangle
+\] 
+Il punto di stazionariet\`a si trova per $\dot{N}_1 = \dot{N}_2 = 0$, cio\`e 
+\[
+N_2 A + (N_2 - N_1) B \langle w \rangle = N_2 w_s + (N_2-N_1) \langle w \rangle = 0 
+\] 
+dove si \`e utilizzato che $A = w_s B$. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Da questa relazione, usando che $N_1 + N_2 = N$, si hanno le evoluzioni delle due popolazioni al variare di $\langle w \rangle$:
+\[
+\begin{cases}
+	\displaystyle N_1 = \frac{w_s  + \langle w \rangle}{w_s + 2 \langle w \rangle}N\\
+	\\
+	\displaystyle N_2 = \frac{\langle w \rangle}{w_s + 2 \langle w \rangle}N\\
+\end{cases}
+\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	
+\begin{tikzpicture}[y=0.039cm, x=.57cm]
+
+    \def\N{100}
+    \def\ws{1}
+
+    % Assi
+    \draw[->] (0,0) -- (10.5,0)
+        node[right] {\footnotesize$\langle w\rangle$};
+    \draw[->] (0,0) -- (0,110);
+
+    % Riferimenti
+    \draw (-0.1,\N) -- (0.1,\N)
+        node[left] {$N$};
+    \draw[dashed,gray] (0,50) -- (10,50);
+    \node[left] at (0,50) {\footnotesize$N/2$};
+
+    % Curva N_1
+    \draw[cyan!60!black,thick]
+        plot[domain=0:10,samples=200]
+        (\x,{\N*(\ws+\x)/(\ws+2*\x)});
+
+    % Curva N_2
+    \draw[red!60!black,thick]
+        plot[domain=0:10,samples=200]
+        (\x,{\N*\x/(\ws+2*\x)});
+
+        \node[cyan!60!black] at (5,65) {\footnotesize$N_1$};
+        \node[red!60!black] at (5,35) {\footnotesize$N_2$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Si sta considerando di avere una radiazione nel visibile, in modo da trascurare i fotoni termici, e che, in assenza di radiazione, tutti gli atomi siano nel fondamentale.
+Si vede, allora, che all'aumentare della densit\`a di energia della radiazione, le due popolazioni tendono a diventare uguali, con una rapidit\`a che dipende da $w_s$.
+Il massimo che si pu\`o fare, quindi, \`e rendere uguali le due popolazioni, ma non invertirle.
+
+\begin{center}
+	\begin{minipage}
+		{.3\columnwidth}
+\`E possibile, poi, determinare i rate di assorbimento emissione spontanea ed emissione stimolata, per unit\`a di $NA$, in funzione di $\langle w \rangle/w_s$; si nota che, asintoticamente, assorbimento e emissione stimolata sono rette.
+\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.65\columnwidth}
+	\centering
+	\begin{tikzpicture}[
+		scale=0.9,
+    >=Stealth,
+    thick,
+    every node/.style={font=\small}
+]
+
+% Assi cartesiani
+\draw[->] (0,0) -- (7.8,0)
+    node[below right]
+    {$ \langle\omega\rangle / \omega_s$};
+
+\draw[->] (0,0) -- (0,4.2)
+    node[above] {$R / NA$};
+
+% Assorbimento
+\draw[thick,domain=0:6.5,samples=150,smooth]
+    plot (\x,{(\x*(1+\x))/(1+2*\x)})
+    node[right] {Assorbimento};
+
+% Emissione stimolata
+\draw[thick,domain=0:6.5,samples=150,smooth]
+    plot (\x,{(\x*\x)/(1+2*\x)})
+    node[right] {Emissione stimolata};
+
+% Emissione spontanea
+\draw[thick,domain=0:6.5,samples=150,smooth]
+    plot (\x,{\x/(1+2*\x)})
+    node[right] {Emissione spontanea};
+
+% Asintoto dell'emissione spontanea
+\draw[dashed,thin] (0,0.5) -- (6.5,0.5);
+
+\node[left] at (0,0.5) {$\frac12$};
+
+% Differenza tra assorbimento ed emissione stimolata
+\def\xpos{4.2}
+
+\draw[<->,thin]
+    (\xpos,{(\xpos*\xpos)/(1+2*\xpos)})
+    --
+    (\xpos,{(\xpos*(1+\xpos))/(1+2*\xpos)});
+    \node at (4.5,1.7) {$R_{\mathrm{sp}}$};
+    \draw[<->,thin](5,.5) -- (5,0);
+    \node at (5.4,.2) {$R_{\mathrm{sp}}$};
+
+% Origine
+\node[below left] at (0,0) {$0$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+Si osserva, inoltre, che la distanza asintotica tra rate di emissione stimolata e assorbimento \`e pari al valore asintotico dell'emissione spontanea.
+
+Si pu\`o valutare anche l'andamento temporale delle popolazioni, risolvendo l'equazione differenziale con condizioni iniziali $N_2(t=0) = 0$ e $N_1 ( t= 0) = N$; in questo modo, si ottiene
+\[
+	N_2(t) = N \frac{\langle w \rangle}{w_s + 2 \langle w \rangle} \bigg\{ 1 - \exp\Big[ - \big(A + 2 B \langle w \rangle\big) t \Big]  \bigg\} 
+\] 
+Quindi la popolazione $N_2$ raggiunge il valore di stazionariet\`a con una crescita esponenziale e una costante tempo data da $A + 2 B \langle w \rangle$.
+
+Prendendo invece $N_2(t=0) = N$ e $N_1(t=0) = 0$ con $\langle w \rangle=0$, cio\`e in assenza di radiazione, allora si trova una decrescita esponenziale analoga degli atomi eccitati verso gli stati fondamentali per emissione spontanea.
+\begin{osservazione}
+Si nota che, nella trattazione, non solo la densit\`a di energia del campo elettromagnetico \`e media, ma anche i valori delle popolazioni $N_1$ e $N_2$.
+Questi ultimi sono valori medi sia perch\'e varia il campo elettromagnetico, ma anche perch\'e si valutano tramite delle \textit{probabilit\`a di transizione}.
+\end{osservazione}
+\begin{boxenv}[]
+\centering Riprendere dalla lezione 2 -10:30
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

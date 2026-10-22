@@ -596,6 +596,200 @@ Questa sovrapposizione pu\`o avvenire nei seguenti modi.
 \newpage 
 
 
+\section{Imaging radiografico}
+
+\subsection{Formazione di un'immagine radiografica}
+
+L'immagine radiografica \`e una mappa 2D dell'intensit\`a dei raggi X trasmessi.
+La formazione dell'immagine parte da una sorgente di raggi X adatta all'immagine che si vuole ottenere\footnote{Si basa sullo scegliere opportunamente l'energia dei fotoni inviati, in modo che l'immagine prodotta permetta di distinguere correttamente i tessuti.}; i fotoni prodotti sono assorbiti, diffusi o trasmessi dai tessuti su cui incidono.
+I fotoni uscenti (non diffusi), vengono rivelati da un rivelatore, che converte il conteggio dei fotoni in un segnale.
+Questo segnale viene mappato, a seconda della sua intensit\`a, in una scala di grigi e, successivamente, mostrato su schermo.
+
+I raggi X trasmessi sono quelli che effettivamente costituiscono il segnale; i fotoni assorbiti, invece, contribuiscono al contrasto. 
+La presenza di scattering Compton, per\`o, diffonde alcuni fotoni nel fascio, aggiungendo un rumore di fondo nell'immagine.
+La formazione dell'immagine \`e, quindi, basata sulla differenza tra il fascio omogeneo incidente e quello trasmesso al rivelatore.
+Le energie dei fotoni devono essere scelte in modo per cui il fascio incidente non viene n\'e assorbito, n\'e diffuso eccessivamente, altrimenti si finirebbe per avere un'immagine troppo chiara, o una troppo scura, in cui non si riescono a distinguere opportunamente i tessuti.
+
+Oltre a considerare il coefficiente di attenuazione del tessuto per ottenerne un'immagine utilizzabile, si deve anche tenere conto del fatto che il coefficiente di attenuazione dipende dall'energia; per questa ragione, l'uso di fasci monocromatici, permetterebbe di discriminare tessuti diversi a seconda di come i fotoni rispondono, sapendo che un loro diverso comportamento indica, appunto, un tessuto con coefficiente di attenuazione diverso.
+Nella pratica, per\`o, non \`e quasi mai possibile generare fasci veramente monocromatici.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{ulna-rad.png}
+\end{figure}
+La formazione dell'immagine \`e in negativo per motivi chimico-fisici: regioni pi\`u verso il bianco sono raggiunte da fotoni che sono stati minimamente assorbiti rispetto alle regioni pi\`u scure, corrispondenti ad un maggiore assorbimento.
+Un tessuto molle, quindi, corrisponder\`a a regioni pi\`u chiare rispetto a regioni di tessuto osseo.
+Questo processo, caratteristico della radiografia analogica, per cui la visualizzazione \`e in scala di grigi \`e stato mantenuto anche nella radiografia digitale.
+\subsubsection{Formazione del contrasto}
+
+Come anticipato, il contrasto nell'immagine \`e ottenuto dal fenomeno di assorbimento, cio\`e dall'attenuazione del fascio.
+Un fascio di intensit\`a $I_0$ che attraversa uno spessore $x$ di materiale \`e attenuato ad un'intensit\`a $I = I_0 e^{-\mu  x}$, dove $\mu $ \`e il coefficiente di attenuazione lineare.
+In presenza di pi\`u tessuti, si ha $I = I_0 e^{- \sum_{i}^{} \mu _i x_i}$ lungo ciascun raggio.
+Il contrasto tra due regioni adiacenti \`e dato da 
+\begin{equation}
+C = \frac{I_1 - I_2}{I_1}
+\end{equation}
+
+\subsubsection{Produzione di raggi X}
+
+Generare un fascio di raggi X monocromatico comporta necessariamente una riduzione dei fotoni del fascio, portando alla formazione di artefatti nell'immagine.
+Questo si pu\`o compensare allungando il tempo di esposizione al fascio, ma ne conseguirebbero altri artefatti e un aumento di dose al paziente.
+
+La strumentazione utilizzata per la produzione di raggi X \`e il \textit{tubo a raggi X}.
+Nonostante sia il metodo pi\`u largamente utilizzato, meno dell'$1\%$ dell'energia del raggio di elettroni viene effettivamente usata per la produzione di raggi X, mentre $\approx 99\%$ viene dissipato come calore nell'anodo.
+I raggi X sono prevalentemente emessi tramite radiazione di frenamento di un fascio di elettroni generati tramite emissione termoionica: un filamento attraversato da corrente $\sim 1$ mA, la cui intensit\`a determina il numero di elettroni emessi per secondo, che agisce da catodo, \`e posto in un tubo a vuoto, alla cui altra estremit\`a \`e presente un anodo.
+Il vuoto permette di creare un fascio di elettroni dal catodo all'anodo che sia pi\`u rettilineo possibile; l'accelerazione degli elettroni avviene tramite una differenza di potenziale dell'ordine di $1$ kVp, che definisce anche l'energia massima dei fotoni dei fotoni poi emessi.
+Il raggio di elettroni incide su un materiale bersaglio ad alto $Z$ (tipicamente tungsteno), in modo da massimizzare la sezione d'urto della bremsstrahlung, il quale \`e poi collegato all'anodo; questo permette di dissipare il calore generato tramite rotazione.
+
+Lo spettro dei raggi emessi, per\`o, non sar\`a composto solo da una curva continua per via della radiazione di frenamento, ma avr\`a anche dei picchi discreti, legati all'emissione di radiazione caratteristica del materiale bersaglio; in ogni caso, la componente dominante del numero di fotoni del fascio deriva dalla radiazione di frenamento.
+\begin{osservazione}
+L'utilizzo di un monocromatore nel caso di tubo a raggi X \`e sostanzialmente inutilizzabile: gi\`a l'energia che produce radiazione \`e dell'$1\div 2\%$; filtrando la radiazione ottenuta in questo modo, si finisce per ridurre eccessivamente il fascio.
+Le energie per cui questo apparato sarebbe utile sono troppo alte e si avrebbero problemi con la dissipazione del calore prodotto.
+\end{osservazione}
+
+\subsubsection{Caratterizzazione di un fascio di raggi X}
+
+Le variabili che influenzano il fascio prodotto sono:
+\begin{itemize}
+	\item kVp, che definisce l'energia massima e, fortemente, l'energia media;
+	\item mAs, che controlla il numero di fotoni, quindi il rumore quantico nell'immagine;
+	\item $Z$ dell'anodo bersaglio e il suo angolo influenzano la distribuzione spettrale e l'intensit\`a del fascio per via dell'\textit{effetto tacco};
+	\item i filtri utilizzati per rimuovere fotoni di energie troppo basse -- che non danno informazioni in quanto verrebbero assorbiti in regioni superficiali, ma che contribuirebbero alla dose data al paziente -- o per collimare uniformare il fascio per compensare l'effetto tacco;
+	\item la forma d'onda che genera il potenziale tra anodo e catodo, la quale incide sull'accelerazione del fascio di elettroni.
+\end{itemize}
+Le variabili che si possono controllare per modificare il fascio di raggi uscente sono: la corrente che scorre nel filamento; la tensione kVp del tubo; il tempo di esposizione.
+Quest'ultimo, insieme alla corrente del filamento, determina i milliap\'ere e il numero totale di fotoni emesso.
+
+Si pu\`o agire sul fascio anche senza modificare direttamente i parametri di output del tubo a raggi X tramite l'utilizzo di opportuni filtri.
+Lo spettro generato dalla radiazione di frenamento \`e uno \textbf{spettro continuo}, ma la radiazione poco energetica non contribuisce alla formazione dell'immagine perch\'e non riesce a penetrare in profondit\`a, ma contribuisce alla dose al paziente.
+\begin{center}
+	\begin{minipage}
+		{.35\columnwidth}
+Per questa ragione, si rimuovono i fotoni di bassa energia tramite appositi filtri, tipicamente in alluminio, e, oltre a ridurre la dose, si ha anche un conseguente aumento dell'energia media dei fotoni che raggiungono il paziente.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.6\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{xray-filter.png}
+	\end{minipage}
+\end{center}
+Nello spettro finale, per\`o, sono presenti anche i picchi di assorbimento del materiale bersaglio utilizzato (ci si riferir\`a in particolare al tungsteno).
+La componente continua del fascio \`e data da $I(E) \propto Z (\text{kVp} - E)$ (nel caso dell'immagine a destra, sono $100$ kV, cio\`e $100$ keV).
+I picchi si osservano per transizioni K$\alpha $, corrispondenti a $59$ keV, e K$\beta $, relativi al picco a $67$ keV.
+\begin{center}
+	\begin{minipage}
+		{.4\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{xray-spec1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.55\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{xray-spec2.png}
+	\end{minipage}
+\end{center}
+Si possono utilizzare diversi materiali bersaglio a seconda dell'applicazione, o della ragione che si vuole analizzare.
+\begin{itemize}
+	\item Il \textit{tungsteno} \`e il pi\`u tipico: ha un alto numero atomico e un alto punto di fusione, rendendolo adatto in generale a qualunque utilizzo in radiografia.
+	\item Il \textit{molibdeno} ha energie caratteristiche minori e pu\`o aiutare ad aumentare il contrasto dei tessuti morbidi; \`e, per esempio, utilizzato in mammografia.
+	\item Il \textit{rodio}, similmente al molibdeno, ha energie caratteristiche basse, ma leggermente pi\`u alte del molibdeno, permettendo una migliore analisi di tessuti molli, ma troppo densi per le energie caratteristiche del molibdeno. 
+\end{itemize}
+
+[Immagine slide 21] Modificare i mAs corrisponde ad aumentare la corrente, oppure il tempo di produzione.
+Secondi troppo bassi usurano l'anodo; troppi secondi, per\`o, contribuiscono ad artefatti da movimento.
+All'aumento del mAs migliora la formazione dell'immagine per riduzione del rumore, ma si aumenta la dose al paziente.
+
+[Immagine slide 22] Elevati kVp sono utilizzati per regioni con pi\`u alta densit\`a di tessuto osseo; per esempio, $100\div 120$ kVp sono usati per TAC cranica.
+
+[Immagine slide 23] Modifiche alla filtrazione rimuovono fotoni potenzialmente utili per l'immagine; per esempio, fotoni a 20 keV sono usati in mammografia: un'elevata filtrazione rimuove fotoni utili per la formazione dell'immagine, quindi si vorr\`a abbassare l'effetto complessivo di filtrazione.
+
+[Slide 24] Caratteristiche quantitative e qualitative del fascio sono corrispondenti a regimi di variabili differenti.
+
+La geometria del fascio \`e un altro fattore importante: un fascio pi\`u focalizzato permette un miglioramento del punto focale, ma vi \`e anche un aumento dell'effetto tacco.
+L'intensit\`a del fascio diminuisce con la distanza seguendo una legge del tipo $I_2 = I_1 (d_1 / d_2)^2$ [Immagine slide 26].
+
+\subsubsection{Interazione dei raggi X con la materia}
+
+Il range energetico dei raggi X corrisponde ad un intervallo per cui il processo di produzione di coppie \`e trascurabile: le interazioni possibili sono lo scattering coerente, l'effetto fotoelettrico e lo scattering Compton.
+Lo scattering coerente non influenza in modo rilevante la formazione dell'immagine, mentre l'effetto fotoelettrico \`e quello che maggiormente influenza l'intensit\`a del fascio ricevuto.
+L'effetto Compton \`e particolarmente fastidio per il fatto che i fotoni che interagiscono in questo modo escono con una direzione differente da quella iniziale.
+
+
+[Tabella slide 32] L'attenuazione \`e strettamente legata allo spessore attraversato; al numero atomico $Z$ del materiale attraversato, in quanto si ha un aumento dell'effetto fotoelettrico ($\propto Z^3 / E^3$) e del Compton ($\propto Z$); la densit\`a aumenta la probabilit\`a di interazione per un aumento di atomi per unit\`a di volume.
+Visto che il Rayleigh \`e rilevante per alti $Z$, ma i tessuti del corpo umano sono a bassi $Z$, \`e trascurabile.
+
+\subsubsection{Parametri di qualit\`a dell'immagine}
+\begin{itemize}
+	\item Contrasto.
+
+		Dipende da differenza di coefficiente di attenuazione, il quale dipende da spessore, densit\`a e $Z$ del tessuto.
+	\item Rumore.
+
+	\`E influenzato dal numero di fotoni ricevuti, quindi dall'efficienza del rivelatore usato e dal processo di scattering, sul quale si pu\`o agire tramite regolazione opportuna di mAs e kVp.
+	\item Risoluzione spaziale.
+
+		Influenzata dalla grandezza del punto focale, dalla geometria del fascio, dai movimenti del paziente e dalla grandezza dei pixel del rivelatore.
+	\item Dose.
+
+		Questa dipende dall'aumento di mAs e kVp, diminuendo con la filtrazione e la distanza.
+		Le griglie aumentano la dose.
+\end{itemize}
+[Tabella 38]
+
+[Slide 39] Effetti sulla nitidezza sono legati alla distanza tra punto focale, oggetto e rivelatore secondo le formule e i valori riportati.
+
+Si vedr\`a che la radiografia analogica non ha una risposta lineare ai fotoni e non parte da $0$: sotto un certo numero di fotoni, non vi era alcuna formazione dell'immagine; per questa ragione, anche la presenza di scattering Compton, il numero di fotoni ricevuti permetteva la formazione dell'immagine. 
+L'uso di opportune griglie, nonostante l'aumento della dose al paziente, permetteva di avere un'immagine utilizzabile per la diagnostica.
+
+\subsubsection{Gestione dello scattering Compton}
+
+Visto che l'effetto dello scattering Compton riduce l'energia dei fotoni uscenti, rispetto a quelli che interagiscono per fotoelettrico (???), si potrebbe pensare di rimuovere questi fotoni inserendo una soglia per togliere dal fascio che arriva al rivelatore i fotoni di energia pi\`u bassa.
+Questo sarebbe possibile se il fascio fosse monocromatico, altrimenti non \`e possibile capire quali hanno interagito Compton o meno.
+Per questo motivo, l'uso di una soglia sar\`a scartato per il seguito, in quanto fasci monocromatici non sono utilizzati in diagnostica ufficialmente.
+
+[Immagine slide 42] Visto che i fotoni Compton vengono diffusi, per diminuirne maggiormente il numero rivelato, si potrebbe aumentare la distanza dal paziente, in modo che non incidano sul rivelatore. 
+
+[Slide 46-47] Il contrasto risultante, sostituendo i parametri nell'espressione, \`e dato da 
+\[
+C = \frac{1- e^{-\Delta \mu  s}}{1+R}
+\] 
+con $\Delta \mu = \mu _1 - \mu _2$ e $R = \text{\# scatterati}/ \text{\# primari}$.
+Questo indica il degrado dell'immagine per via dell'effetto dello scattering.
+
+Per passaggi analoghi nel rapporto segnale-rumore, si ottiene
+\[
+N(k) \approx \frac{k^2 (1+R) e^{\mu _1 t}}{\varepsilon (\Delta \mu )^2x^4}
+\] 
+dove $k \equiv \text{SNR}$.
+In questo modo, si ottiene il numero di fotoni necessari per ottenere un'immagine che non abbia un contributo rilevante all'immagine dovuta allo scattering.
+
+Le strategie per controllare il contrasto sono le seguenti.
+\begin{itemize}
+	\item  Collimazione prima e dopo il paziente.
+
+		Questo \`e l'unico sistema che non influenza la dose, ma comporta l'acquisizione di una regione limitata.
+		Ottenere l'immagine voluta, quindi, comporterebbe la formazione dell'immagine in pi\`u acquisizioni, aumentando per\`o il tempo necessario e la conseguente formazione dei relativi artefatti. 
+	\item \`E possibile determinare, tramite appositi metodi software, la componente legata allo scattering.
+\end{itemize}
+[Tabella slide 50]
+
+[Immagine slide 51-52] Collimazione.
+
+[Immagine 53] Gap, ma non ottenibile in ospedale.
+
+[Slide 54] L'utilizzo di griglie anti-scattering dipende da tre parametri; come da immagine, posizionare differentemente la griglia potrebbe influenzare anche il percorso di fotoni che, invece, non dovrebbero essere attenuati.
+[Immagine slide 55] Nel caso di fasci paralleli, il parametro delle distanze non \`e rilevante.
+
+[Slide 56] Le correzioni computazionali tramite software possono essere ottenuti tramite diversi metodi.
+
+L'unico metodo effettivamente importante \`e l'uso di griglie che, per\`o, comporta un aumento di dose al paziente.
+
+[Tabella slide 57] Recap.
+
+
+
+\newpage
 
 
 \section{Fondamenti di fisica nucleare}
