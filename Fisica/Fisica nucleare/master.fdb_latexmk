@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex master.idx"] 1791961291.48588 "master.idx" "master.ind" "master" 1792515656.26402 0
-  "master.idx" 1792515651.15578 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1791961291.48588 "master.idx" "master.ind" "master" 1792834161.17267 0
+  "master.idx" 1792834151.53054 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
   (rewritten before read)
-["pdflatex"] 1792515650.62216 "master.tex" "master.pdf" "master" 1792515656.26414 0
+["pdflatex"] 1792834150.70252 "master.tex" "master.pdf" "master" 1792834161.1729 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1775415801 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1775415801 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -22,6 +22,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1775415801 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm" 1775415801 1332 f817c21a1ba54560425663374f1b651a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1775415801 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1775415801 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1775415801 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1775415801 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1775415801 1300 63a6111ee6274895728663cf4b4e7e81 ""
@@ -75,6 +76,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb" 1775415801 36310 f5ddc6715cc60deb16d9db5ded6a9391 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1775415801 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb" 1775415801 30212 b6aafa449db0097a6b9b890f66741063 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1775415801 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1775415801 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1775415801 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1775415801 145929 f25e56369a345c4ff583b067cd87ce8e ""
@@ -120,6 +122,7 @@
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex" 1775415801 321 cdd11262840e01e25374a2d458f15e99 ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex" 1775415801 1319 0b2de5126c6cbc295f0eb77f7344b34d ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex" 1775415801 5287 af1e4ff95a91557ed5a4435303a891cd ""
+  "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex" 1775415801 770 82e332cc9cc48e06b8070d74393a185a ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex" 1775415801 3036 674fecad0a872f955e3a17a315c67783 ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex" 1775415801 325 36322b0789619b270aec5993d5a9ed08 ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex" 1775415801 3937 3f208572dd82c71103831da976d74f1a ""
@@ -131,6 +134,7 @@
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1775415801 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex" 1775415801 85937 c349c2b4a923dd367213cf12546baa15 ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex" 1775415801 44571 38ac24c171fb8fa1a13adc8ce7eb94c5 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex" 1775415801 7936 49e55444d57eb69a380c6baa35094828 ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex" 1775415801 15474 b617114c75a45c2061a2d249f54a2d3e ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1775415801 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex" 1775415801 14526 4bc184b12436aa7f6490b2d2036870ef ""
@@ -294,15 +298,15 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1775415801 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texmf-dist/tex/latex/xpatch/xpatch.sty" 1775415801 8314 7803f78066c4f9d008405191a4b43073 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1789123904 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1789123841 2329481 ca608b7d2916207761a90dba60bb2162 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1792662702 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1792662636 2329487 87f3654b7300203ec5683ba4921667f4 ""
   "BA.jpg" 1789997006.17797 121620 8ab5b87f315c69f81c2f9e4fbb54f1fe ""
   "cd1.jpg" 1789550506.94191 12269 263875ef7d3a1a0573228d0802d52777 ""
   "fission-yield.png" 1790099486.54315 1001253 4f856139d7a2807994671c525f5d647c ""
-  "master.aux" 1792515656.12131 30172 f59ed41f63a884114d8011b51a04a226 "pdflatex"
+  "master.aux" 1792834160.95506 32937 20f8a6b19442ac69d587a091a5ee9e3a "pdflatex"
   "master.ind" 1791961291.56698 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1792515647.34513 131079 31e0434a615cd05e1c06c1116f1de35d ""
-  "master.toc" 1792515656.12931 5468 0c08c4f314807f85046a3c68f82565c4 "pdflatex"
+  "master.tex" 1792834144.73603 145688 5660aa8297f91f48c6588a011222f78a ""
+  "master.toc" 1792834160.96906 5964 1dfebc150c87b5e2a6592a2fad531914 "pdflatex"
   "stab-valley.png" 1790096105.11901 53848 afa3862cfddcc6ac6d01c674456a2d93 ""
   (generated)
   "master.aux"

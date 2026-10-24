@@ -28,7 +28,7 @@
 \usepackage{makecell}
 \usepackage{tikz}
 \usepackage[version=4]{mhchem}
-\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns.meta,intersections}
+\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns,patterns.meta,intersections}
 \usepackage[italian]{babel}
 
 
@@ -2283,7 +2283,7 @@ Ne segue che
 \dd \sigma  = \frac{\vec{j}_\text{scatt} \cdot d\vec{S}}{j_\text{inc}} = \frac{\vec{j}\cdot \hat{n}_r}{j_\text{inc}} r^2 \dd \Omega 
 \end{equation}
 
-\subsection{Scattering con potenziale}
+\subsection{Scattering con potenziale}\label{scn}
 
 Si considera, in generale, un potenziale complesso: $V = V_R + i W$.
 Se $W=0$, si ha uno scattering elastico, mentre il termine complesso \`e responsabile per processi anelastici.
@@ -2322,7 +2322,7 @@ Per questa ragione, \`e comodo passare in coordinate sferiche, per cui $\vec{\na
 Per ottenere la sezione d'urto differenziale del processo, si valuta il comportamento asintotico della funzione d'onda per $r\to +\infty$; questa condizione, per un potenziale a corto raggio come quello nucleare, si traduce in $r \gg r_\text{int}$.
 In questo caso, si vede che 
 \[
-\psi (\vec{r}) \sim A ^{i \vec{k}\cdot \vec{r}} + AF(\Omega ) \frac{e^{ikr}}{r}
+\psi (\vec{r}) \sim A e^{i \vec{k}\cdot \vec{r}} + AF(\Omega ) \frac{e^{ikr}}{r}
 \] 
 dove il termine di onde sferiche descrive le particelle diffuse; il coefficiente di queste particelle diffuse \`e ancora $A$, ad indicare che si tratta di un processo elastico.
 Il termine $F(\Omega )$ \`e detto \textit{ampiezza di scattering} e codifica la distribuzione angolare delle particelle una volta terminata l'interazione.
@@ -2332,14 +2332,355 @@ Si ottiene, quindi, che
 \] 
 Ora si pu\`o calcolare la sezione d'urto del processo:
 \begin{equation}
-\dd \sigma  = \frac{\frac{\hbar k}{m} \frac{\lvert A \rvert ^2 }{r^2} \lvert F(\omega ) \rvert ^2 r^2 \dd \Omega }{\frac{\hbar }{m} k \lvert A \rvert ^2} \implies \frac{d \sigma }{d \Omega } = \lvert F(\Omega ) \rvert ^2
+\dd \sigma  = \frac{\frac{\hbar k}{m} \frac{\lvert A \rvert ^2 }{r^2} \lvert F(\Omega ) \rvert ^2 r^2 \dd \Omega }{\frac{\hbar }{m} k \lvert A \rvert ^2} \implies \frac{d \sigma }{d \Omega } = \lvert F(\Omega ) \rvert ^2
+\end{equation}
+Se il potenziale del processo \`e centrale, allora non vi \`e dipendenza dall'angolo azimutale in coordinate sferiche e $F(\Omega ) \equiv F(\theta )$, per cui, usando lo sviluppo in onde parziali, si ha
+\begin{equation}
+	f(\theta ) = \frac{1}{2 i k} \sum_{\ell =0}^{+\infty} (2\ell +1) \left(e^{2 i \delta _\ell } - 1\right)  P_\ell (\cos \theta )
+\end{equation}
+dove $\delta _\ell = \delta _\ell (E)$ \`e lo sfasamento.
+Inoltre, usando che 
+\[
+\frac{e^{2 i \delta _\ell } -1}{2i} = e^{i \delta _\ell } \frac{e^{i\delta _\ell } - e ^{-i \delta _\ell }}{2 i} = e^{i \delta _\ell } \sin \delta _\ell 
+\] 
+quindi
+\begin{equation}
+	F(\theta ) = \frac{1}{k} \sum_{\ell =0}^{+\infty} (2\ell +1) e^{i \delta _\ell } \sin \delta _\ell  P_\ell (\cos \theta )
 \end{equation}
 
+\subsection{Scattering nucleone-nucleone a bassa energia}
+
+\begin{center}
+	\begin{minipage}
+		{.55\columnwidth}
+	Si considera uno scattering tra due nucleoni e si indica con $\vec{r}$ il raggio vettore che va dal secondo nucleone verso il primo; poi, si indica con $\alpha $ l'angolo tra $\vec{r}$ e la direzione di moto iniziale.
+Nel centro di massa, si indica con $\mu  = \frac{m_1m_2}{m_1+m_2}$ la massa ridotta e con $\vec{v} = \vec{v}_1 - \vec{v}_2$ la velocit\`a relativa tra i due nucleoni, per cui $\vec{p} = \mu  \vec{v}$ la quantit\`a di moto relativa e $E = p^2 / 2 \mu $ l'energia cinetica.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.4\columnwidth}
+	\centering
+	\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\small}
+]
+
+% Dimensioni quasi quadrate
+\useasboundingbox (-2.7,-0.45) rectangle (1.7,3.35);
+
+% Coordinate principali
+\coordinate (O) at (0,0);
+\coordinate (P) at (-1.28,0.95);
 
 
+% Traiettoria della particella
+\draw[orange!85!black, very thick, -{Latex[length=2.5mm]}]
+    (-2.5,0.95) -- (P)
+    .. controls (-0.35,0.95) and (0.55,1.42)
+    .. (1.30,3.0);
+
+% Freccia della direzione incidente
+\draw[orange!85!black, thick, -{Latex[length=2mm]}]
+    (-2.35,0.95) -- (-1.85,0.95);
+
+\node[orange!85!black, above]
+    at (-2.3,1.0) {$E$};
+
+% Parametro d'impatto b
+\draw[cyan!75!black, thick, {Latex}-{Latex}]
+    (-2.25,0.07) -- (-2.25,0.88)
+    node[midway,left=3pt] {$b$};
+
+% Vettore posizione r
+\draw[green!45!black, very thick,
+      -{Latex[length=2.5mm]}]
+    (O) -- (P)
+    node[pos=0.55,above right=.25pt] {$\vec r$};
+
+% Posizione istantanea della particella
+\fill[orange!85!black] (P) circle (1.8pt);
+
+% Angolo alpha fra -x e r
+\draw[green!45!black, thick]
+    (-0.55,0)
+    arc[start angle=180,
+        end angle=143.4,
+        radius=0.55];
+
+\node[green!45!black] at (-0.80,0.22)
+    {$\alpha$};
+
+% Asse di riferimento
+\draw[black!75, thick]
+    (-2.5,0) -- (1.5,0);
+
+% Centro diffusore
+\fill[black] (O) circle (2.3pt);
+\node[below right=2pt] at (O) {$O$};
+
+\end{tikzpicture}
+	\end{minipage}
+\end{center}
+In questo modo, si pu\`o immaginare in generale che uno dei due nucleoni urti contro l'altro che \`e fermo.
+Infine, si indica con $r_0$ il raggio d'azione dell'interazione.
+
+Ora si cerca di stimare una condizione perch\'e i due nucleoni interagiscano e la si lega col momento angolare; per fare questo, si prenderanno i valori classico e quantistico del momento angolare e si eguaglieranno.
+Classicamente, il momento angolare \`e dato da $\vec{\ell } = \vec{r} \times  \vec{p}$, per cui $\lvert \vec{\ell } \rvert = r \mu  v \sin \alpha = \mu  v (r \sin \alpha ) = \mu  v b = p b = \sqrt{2 \mu  E}  b$; quantisticamente, invece, si ha $\lvert \vec{\ell } \rvert = \sqrt{\ell  ( \ell +1) } \hbar $, con $\ell =0,1,2,\ldots$.
+Uguagliando i due valori e considerando che si ha interazione solo se $b < r_0$, allora $\sqrt{\ell (\ell +1)} \hbar < \sqrt{2 \mu  E}  r_0$, si ottiene che
+\[
+\ell  ( \ell  + 1) < \frac{2 \mu  c^2 r_0^2 E}{(\hbar c)^2}
+\] 
+Ora, considerando che $\mu  \sim m_N / 2\Rightarrow 2 \mu c^2 = m_N c^2 = 10^3$ MeV, che $r_0 = 2$ fm e che $\hbar c \approx 200 \text{ MeV}\cdot \text{fm}$, si ottiene la condizione
+\begin{equation}
+	\ell (\ell +1) < \frac{E}{10\text{ MeV}}
+\end{equation}
+Considerando $E =10$ MeV, allora deve valere $\ell (\ell +1) < 1 \Rightarrow \ell =0$.
+
+Assumendo un'interazione centrale, il potenziale di interazione dipende solamente da $\vec{r}$, quindi l'equazione di Schr\"odinger si pu\`o scrivere, al solito, come
+\[
+\frac{d ^2}{d r^2} u_\ell (r)  + \frac{2m}{ \hbar ^2}\left[ E - V - \frac{\ell (\ell +1) \hbar ^2}{2mr^2} \right] u_\ell  = 0
+\] 
+dove $u_\ell (r) = r R_\ell (r)$.
+
+\subsubsection{Interazione attrattiva}
 
 
+Si tratta il problema in due assunzioni:
+\begin{itemize}
+	\item bassa energia, corrispondente alla condizione $\ell =0$;
+	\item potenziale di interazione a buca rettangolare, che vale $-V_0$ per $r\le R$ e $0$ per $r>R$.
+\end{itemize}
+Si divide la risoluzione dell'equazione nelle due regioni del potenziale.
+\begin{enumerate}[(I).]
+	\item Caso $r\le R$.
 
+		Si risolve 
+		\[
+		\frac{d ^2}{d r^2}  u + \frac{2m}{\hbar ^2} \big[ E + V_0 \big]  u = 0
+		\] 
+		Dato $K = \frac{\sqrt{2m (E+V_0)} }{\hbar }$, l'equazione diventa $u'' + K^2 u = 0$, che ha soluzione $u = A \sin(Kr)$.
+	\item Caso $r > R$.
+
+		In questo caso, $V(r) = 0$, quindi si risolve $u'' + k^2 u = 0$, con $k = \frac{\sqrt{2mE} }{\hbar }$.
+		Questa ha soluzione $u(r) =c_1\sin(kr) + c_2 \cos(kr)= C \sin (kr + \delta _0)$, con $c_1 = C \cos \delta _0$ e $c_2 = C \sin \delta _0$.
+Qui, $\delta _0 \equiv \delta _0 (E)$ rappresenta lo sfasamento della funzione d'onda per $\ell =0$.
+\end{enumerate}
+Imponendo la condizione di raccordo delle due soluzioni in $r=R$, si ottiene la condizione
+\[
+K \operatorname{cotg} (KR) = k \operatorname{cotg} (kR + \delta _0)
+\] 
+che permette di legare lo sfasamento $\delta _0$ ai parametri del potenziale: $\delta _0\equiv \delta _0 (E; V_0,R)$.
+
+Per comprendere il significato fisico dello sfasamento si osserva che, nel caso libero ($V(r) = 0, \ \forall r$), la soluzione \`e $u(r) = C \sin (kr)$, con $k = \frac{\sqrt{2 m E} }{\hbar }$; introducendo la buca, si ha ancora una $u(r)$ che, per $r<R$, \`e proporzionale a un seno, ma questo ha argomento $Kr$, con
+\[
+K = \frac{\sqrt{2m(E+V_0)} }{\hbar }> \frac{\sqrt{2mE} }{\hbar }
+\] 
+Questa disuguaglianza si traduce, in termini di lunghezze d'onda, a 
+\[
+\lambda _\text{I} \equiv \frac{1}{K} < \frac{1}{k} \equiv \lambda _\text{II}
+\] 
+In questo senso, la soluzione nel caso di buca di potenziale subisce un \textit{anticipo di fase} rispetto alla funzione d'onda libera; qualitativamente, si pu\`o vedere come se la funzione d'onda fosse ``attratta'' verso la zona interna alla buca.
+Quindi, nel caso di un potenziale attrattivo, si osserva $\delta > 0$.
+\begin{center}
+	\begin{tikzpicture}[
+    x=1.2cm, y=1.25cm, >=Stealth,
+    libera/.style={red!75!black,dashed,thick},
+    onda/.style={green!45!black,very thick},
+    potenziale/.style={blue!65!black,thick}
+]
+% Parametri illustrativi: K > k per una buca attrattiva.
+\def\R{1.4}
+\def\k{1}
+\def\K{1.4}
+
+% Raccordo: K cot(KR) = k cot(kR + delta).
+% PGF usa gradi nelle funzioni trigonometriche.
+\pgfmathsetmacro{\fase}{
+    atan2(\k*sin(deg(\K*\R)),\K*cos(deg(\K*\R)))
+}
+\pgfmathsetmacro{\deltafase}{rad(\fase)-\k*\R}
+\pgfmathsetmacro{\B}{sin(\fase)/sin(deg(\K*\R))}
+
+% Assi
+\draw[->] (-0.3,0) -- (9.5,0) node[right] {$r$};
+\draw[->] (0,-1.7) -- (0,2) node[above] {$u(r)$};
+
+% Buca di potenziale, in scala schematica
+\draw[potenziale]
+    (0,0) -- (0,-1.35) -- (\R,-1.35) -- (\R,0);
+\node[blue!65!black,left] at (0,-1.35) {$-V_0$};
+\node[blue!65!black] at (0.7,-1.65) {$V(r)$};
+
+\draw[gray,dotted] (\R,0) -- (\R,1.3);
+\node[below right] at (\R,0) {$R$};
+
+% Onda libera
+\draw[libera,domain=0:9,samples=220]
+    plot (\x,{sin(deg(\k*\x))});
+
+% Onda nella buca: B sin(Kr)
+\draw[onda,domain=0:\R,samples=70]
+    plot (\x,{\B*sin(deg(\K*\x))});
+
+% Onda esterna: sin(kr + delta)
+\draw[onda,domain=\R:9,samples=220]
+    plot (\x,{sin(deg(\k*\x+\deltafase))});
+
+% Confronto tra due massimi corrispondenti
+\pgfmathsetmacro{\xfree}{5*pi/(2*\k)}
+\pgfmathsetmacro{\xattr}{\xfree-\deltafase/\k}
+
+\draw[gray,dotted] (\xfree,1) -- (\xfree,1.5);
+\draw[gray,dotted] (\xattr,1) -- (\xattr,1.5);
+\draw[->,thick] (\xfree,1.4) -- (\xattr,1.4);
+\node[above] at ({(\xfree+\xattr)/2},1.5)
+    {$\delta_0>0$};
+
+\node at (4.5,2.2)
+    {Buca attrattiva: spostamento verso l'interno};
+
+% Legenda
+\draw[libera] (2,-1.6) -- (2.7,-1.6);
+\node[right] at (2.7,-1.6)
+    {$u_{libera}=\sin(kr)$};
+
+\draw[onda] (2,-2.1) -- (2.7,-2.1);
+\node[right] at (2.7,-2.1)
+    {$u_{esterna}=\sin(kr+\delta_0)$};
+\end{tikzpicture}
+\end{center}
+\subsubsection{Interazione repulsiva}
+Ora si considera un nocciolo repulsivo infinito (\textit{hardcore potential}):
+\[
+V(r) = \begin{cases}
+	+\infty &,\ r\le R\\
+	0 &,\ r > R
+\end{cases}
+\] 
+In questo caso, le soluzioni sono le seguenti:
+\begin{align}
+	&u(r) = 0 \tag{$r\le R$}\\
+	&u(r) \propto \sin(kr + \delta _0) \tag{$r>R$}
+\end{align}
+La condizione di raccordo che impone che le $u(r)$ nelle due regioni siano uguali in $r=R$ impone che $\sin(kR + \delta _0) = 0$, quindi che
+\[
+\delta _0 = - kR = - \frac{\sqrt{2mE} }{\hbar }R < 0 
+\] 
+Nel potenziale repulsivo, quindi, la funzione d'onda subisce un \textit{ritardo di fase} rispetto alla funzione d'onda libera, a indicare un suo qualitativo ``respingimento'' da parte del core repulsivo verso la zona esterna.
+\begin{center}
+	\begin{tikzpicture}[
+    x=1.2cm, y=1.25cm, >=Stealth,
+    libera/.style={red!75!black,dashed,thick},
+    onda/.style={green!45!black,very thick},
+    potenziale/.style={blue!65!black,thick}
+]
+\def\R{1.4}
+\def\k{1}
+
+% Regione impenetrabile
+\fill[
+    pattern=north east lines,
+    pattern color=blue!25
+] (0,0) rectangle (\R,1.8);
+
+% Assi
+\draw[->] (-0.3,0) -- (9.5,0) node[right] {$r$};
+\draw[->] (0,-1.4) -- (0,2) node[above] {$u(r)$};
+
+% Nocciolo repulsivo infinito
+\draw[potenziale,->] (\R,0) -- (\R,1.95);
+\node[blue!65!black,above] at (0.7,1.8)
+    {$V\to+\infty$};
+\node[below] at (\R,0) {$R$};
+
+% Onda libera di riferimento
+\draw[libera,domain=0:9,samples=220]
+    plot (\x,{sin(deg(\k*\x))});
+
+% Onda nulla nel nocciolo
+\draw[onda] (0,0) -- (\R,0);
+
+% Onda esterna: sin[k(r-R)]
+\draw[onda,domain=\R:9,samples=220]
+    plot (\x,{sin(deg(\k*(\x-\R)))});
+
+% Confronto tra due massimi corrispondenti
+\pgfmathsetmacro{\xfree}{pi/(2*\k)}
+\pgfmathsetmacro{\xrep}{\xfree+\R}
+
+\draw[gray,dotted] (\xfree,1) -- (\xfree,1.5);
+\draw[gray,dotted] (\xrep,1) -- (\xrep,1.5);
+\draw[->,thick] (\xfree,1.4) -- (\xrep,1.4);
+\node[above] at ({(\xfree+\xrep)/2},1.5)
+    {$\delta_0=-kR<0$};
+
+\node at (4.5,2.6)
+    {Nocciolo repulsivo: spostamento verso l'esterno};
+
+% Legenda
+\draw[libera] (2,-1.6) -- (2.7,-1.6);
+\node[right] at (2.7,-1.6)
+    {$u_{libera}=\sin(kr)$};
+
+\draw[onda] (2,-2.1) -- (2.7,-2.1);
+\node[right] at (2.7,-2.1)
+    {$u_{esterna}=\sin[k(r-R)]$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Sezione d'urto dello scattering np}
+Si riprendono le assunzioni fatte per lo scattering nucleone-nucleone in precedenza:
+\begin{enumerate}[(a).]
+	\item scattering a bassa energia ($\ell =0$);
+	\item potenziale attrattivo (buca rettangolare).
+\end{enumerate}
+Come visto in sezione \ref{scn}, la funzione d'onda della particella incidente \`e quella di una particella libera, quindi di un'onda piana: $\psi _\text{inc}(\vec{r}) = A e^{i \vec{k}\cdot \vec{r}}$; inserendo la condizione $\ell =0$, si ha 
+\begin{equation}
+\psi _\text{inc} = A j_0 (kr) = A \frac{\sin kr}{kr}= \frac{A}{2ik}\left[ \frac{e^{ikr}}{r}- \frac{e^{-ikr}}{r} \right] 
+\end{equation}
+Dall'equazione di Schr\"odinger $\left[ - \frac{\hbar ^2}{2m}\Delta  + V  \right] \psi = E\psi $ in simmetria sferica, si ha 
+\[
+\psi (\vec{r}) = \sum_{\ell =0}^{+\infty} \sum_{m=-\ell }^{+\ell } R_\ell (r) Y_{\ell m}(\theta ,\varphi )
+\] 
+Visto che $\ell =0$, allora $\psi (\vec{r}) = \frac{1}{\sqrt{4\pi} }\frac{u(r)}{r}$, rinominando $u(r) \equiv u_{\ell =0}(r)$.
+Per $r>R$, si \`e visto che $u(r) = C \sin (kr + \delta _0)$ con $k = \frac{\sqrt{2mE} }{\hbar }$, quindi
+\[
+\psi (r) = \frac{1}{\sqrt{4\pi} } \frac{C}{r} \frac{e^{i(kr + \delta _0) }- e^{-i(kr+\delta _0)}}{2i} = \frac{1}{\sqrt{4\pi} } \frac{C}{2i} e^{- i \delta _0} \left[ \frac{e^{i(kr + 2 \delta _0)}}{r}- \frac{e^{-ikr}}{r} \right] 
+\] 
+Assumendo \textbf{scattering elastico}, deve valere la condizione
+\[
+\frac{A}{2ik} = \frac{1}{\sqrt{4\pi} } \frac{C}{2i}e^{-i\delta _0}\implies  \psi (r) = \frac{A}{2ik } \left[ \frac{e^{i(kr+2\delta _0)}}{r} - \frac{e^{-ikr}}{r} \right] 
+\] 
+In questo modo, si pu\`o determinare la funzione d'onda di scattering:
+\[
+\begin{split}
+\psi _\text{scatt} &= \psi (r) - \psi _\text{inc} = \frac{A}{2ikr}\left[ e^{ikr}e^{i 2 \delta _0}-\cancel{e^{-ikr}} - e^{ikr} + \cancel{e^{-ikr}}\right] \\
+		   &= \frac{A}{2ik}\left(e^{i 2 \delta _0} - 1\right) \frac{e^{ikr}}{r}
+\end{split}
+\] 
+Usando, poi, che
+\[
+\frac{1}{2i} \left(e^{2 i \delta _0} - 1\right)  = e^{i \delta _0} \frac{e^{i \delta _0 }- e^{- i \delta _0}}{2 i } = e^{i \delta _0} \sin\delta _0
+\] 
+si pu\`o scrivere
+\begin{equation}
+\psi _\text{scatt} = \frac{A}{k} e^{i \delta _0} \sin \delta _0 \frac{e^{ ikr}}{r}
+\end{equation}
+In questo modo, visto che $\psi \sim A e^{-i \vec{k}\cdot \vec{r}}+ A F(\Omega ) \frac{e^{ikr}}{r}$ per $r\to +\infty$, si pu\`o ricavare l'\textbf{ampiezza di scattering} per $\ell =0$:
+\begin{equation}
+	F(\Omega ) = \frac{1}{2ik} \left(e^{i 2 \delta _0}- 1\right) =\frac{1}{k} e^{i \delta _0}\sin \delta _0
+\end{equation}
+Conseguentemente, la sezione d'urto differenziale del processo \`e
+\[
+\frac{d \sigma }{d \Omega }  = \lvert F(\Omega ) \rvert ^2 = \frac{1}{k^2} \sin^2 \delta _0
+\] 
+da cui 
+\begin{equation}
+	\sigma _\text{tot} = \int \frac{d \sigma }{d \Omega } \dd \Omega  = \frac{1}{k^2} \sin^2 \delta _0 \int \dd \Omega  = \frac{4\pi}{k^2}\sin^2 \big(\delta _0(k)\big)
+\end{equation}
+dove si \`e esplicitato che $\delta _0 \equiv \delta _0(k)$.
 
 
 \newpage
@@ -2355,7 +2696,21 @@ Si hanno anche le seguenti relazioni:
 \sigma _i \sigma _j = \delta _{ij} + i \varepsilon _{ijk} \sigma _k \hspace{1cm}\sigma _i^2 = \mathrm{Id} \hspace{1cm} \sigma _x\sigma _y = i \sigma _z = - \sigma _y \sigma _x \hspace{1cm} \vec{\sigma}^2 = \sigma _x^2 + \sigma _y^2 + \sigma ^2_z = 3\cdot  \mathrm{Id} 
 \] 
 
+\section{Sviluppo in onde parziali}
 
+Dato $\theta $ angolo tra $\vec{k}$ e $\vec{r}$, si ha
+\[
+e ^{i \vec{k}\cdot \vec{r}}  = e^{i kr \cos \theta } = \sum_{\ell =0}^{+\infty} i^\ell  (2\ell +1) j_\ell (kr) P_\ell (\cos \theta )
+\] 
+dove 
+\[
+P_\ell (x) = \frac{1}{\ell !2^\ell } \frac{d ^\ell }{d x^\ell }  \left(x^2 - 1\right) ^\ell 
+\] 
+sono i \textbf{polinomi di Legendre}, mentre le $j_\ell (kr)$ sono le \textbf{funzioni sferiche di Bessel}:
+\begin{align*}
+	&j_0(x) = \frac{\sin x }{x} &\hspace{.5cm} &j_1(x) = \frac{\sin x}{ x^2} - \frac{\cos x }{x} \\
+	&j_2(x) = \left(\frac{3}{x^2}-1\right) \frac{\sin x}{x}- \frac{3 \cos x}{x^2} & \hspace{.5cm} &j_3(x) = \left(\frac{15}{x^3}-\frac{6}{x}\right) \frac{\sin x}{x} - \left(\frac{15}{x^2}-1\right) \frac{\cos x}{x}
+\end{align*}
 
 
 
