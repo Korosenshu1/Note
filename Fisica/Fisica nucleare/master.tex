@@ -1846,7 +1846,7 @@ Si distinguono diverse grandezze fisiche e come queste si comportano sotto l'azi
 	\item \textit{vettori (polari)}, come $\vec{r}\mapsto -\vec{r}$, $\vec{p}\mapsto - \vec{p}$, oppure il potenziale vettore $\vec{A}\mapsto - \vec{A}$, cambiano segno;
 	\item \textit{pseudo-vettori (vettori assiali)}, come $\vec{\ell }$ o $\vec{S}$, rimangono invariati;
 	\item \textit{scalari}, ottenuti come prodotto scalare di due vettori polari, o di due vettori assiali, rimangono invariati;
-	\item \textit{pseudo-scalari}, ottenuti come prodotto scalare di un vettore assiale e di uno polare, cambiano segno, come $\vec{\ell }\cdot \vec{S}$.
+	\item \textit{pseudo-scalari}, ottenuti come prodotto scalare di un vettore assiale e di uno polare, cambiano segno.
 \end{itemize}
 
 \subsubsection{Momento di quadrupolo elettrico del deutone}
@@ -1885,7 +1885,7 @@ Mettendo insieme queste cose, si arriva a concludere che la funzione d'onda deve
 	\ket{\psi _d} = a_0 \ket{^3S_1} + \sum_{\ell \neq 0}^{} a_\ell  \ket{^{2S+1}\ell _{J+1}} 
 \end{equation}
 dove gli $a_i$ sono i coefficienti il cui modulo quadro indica la probabilit\`a che il sistema si trovi nel relativo stato.
-Si \`e gi\`a accennato al fatto che, sperimentalmente, il deutone ha parti\`a positiva $\pi_d = +1$ e momento angolare totale $J_d= 1$; il fatto che lo stato sia pari implica che $\ell $ sia pari, in quanto $\pi_d=(-1)^\ell $.
+Si \`e gi\`a accennato al fatto che, sperimentalmente, il deutone ha parti\`a positiva $\pi_d = +1$ e momento angolare totale $J_d= 1$; il fatto che lo stato sia pari porta a richiedere che $\ell $ sia pari, visto che $\pi_d=(-1)^\ell $.
 In questo modo, si possono dedurre i membri non nulli della somma in $\ket{\psi _d} $, cio\`e capire quali stati sono ammessi.
 \begin{table}[h!]
 	\centering
@@ -1901,20 +1901,20 @@ In questo modo, si possono dedurre i membri non nulli della somma in $\ket{\psi 
 	\hline
 	\end{tabular}
 \end{table}
-Di tutti questi, solamente $^{3}S_1$ e $^{3}D_1$ soddisfano $J=1$ e hanno $\ell $ pari, quindi la funzione d'onda dello stato fondamentale del deutone deve essere
+Di tutti questi, come da tabella, solamente $^{3}S_1$ e $^{3}D_1$ soddisfano $J=1$ e hanno $\ell $ pari, quindi la funzione d'onda dello stato fondamentale del deutone deve essere
 \begin{equation}
 	\ket{\psi _d}  = a_0 \ket{^{3}S_1}  + a_2 \ket{^{3}D_1} 
 \end{equation}
-dove, assumendo che 
+Avendo che
 \[
 \braket{^{3}S_1|^{3}S_1} =1 \hspace{1cm} \braket{^{3}D_1|^{3}D_1} = 1 \hspace{1cm} \braket{^{3}S_1|^{3}D_1} =0
 \] 
-la condizione di normalizzazione $\braket{\psi _d|\psi _d} =1$ impone che $\lvert a_0 \rvert ^2 + \lvert a_2 \rvert ^2 = 1$.
+dalla condizione di normalizzazione $\braket{\psi _d|\psi _d} =1$, si ottiene che deve valere $\lvert a_0 \rvert ^2 + \lvert a_2 \rvert ^2 = 1$.
 Sempre nel caso del deutone, si vede che $\lvert a_2 \rvert ^2 \simeq 4\div 5 \%$, valore che \`e in accordo col fatto che la distribuzione di carica si discosta poco dalla simmetria sferica.
 
 La presenza della sovrapposizione di uno stato con $\ell \neq 0$ nella funzione d'onda, per\`o, necessita anche di un potenziale non centrale in grado di accoppiare lo stato con $\ell =0$ e quello con $\ell =2$, altrimenti lo stato della sovrapposizione dei due non sarebbe autostato dell'hamiltoniano.
 Questo porta la necessit\`a di introdurre un termine nel potenziale di interazione nucleare che dipenda da $\vec{r}, \vec{s}_1, \vec{s}_2$, ma che abbia anche parit\`a positiva, cio\`e sia invariante sotto parit\`a.
-Essendo lo spin un vettore assiale e dovendo comparire $\vec{r}$ nell'espressione, l'unico modo \`e che l'esponente con cui compare sia pari ; questo esclude tutte le combinazioni del tipo $\vec{s}_i \cdot \vec{r}$, oppure $(\vec{s}_1 \times \vec{s}_2) \cdot \vec{r}$.
+Essendo lo spin un vettore assiale e dovendo comparire $\vec{r}$ nell'espressione, si deve richiedere che l'esponente con cui quest'ultimo compare sia pari; questo esclude tutte le combinazioni del tipo $\vec{s}_i \cdot \vec{r}$, oppure $(\vec{s}_1 \times \vec{s}_2) \cdot \vec{r}$.
 Inoltre, si ha la seguente propriet\`a.
 \begin{prop}\label{prop1}
 Per ogni esponente $k \in \mathbb{N}$, $(\vec{s}\cdot \vec{r})^k$ pu\`o essere ridotto ad un'espressione lineare in $\vec{s}$.
@@ -1923,7 +1923,7 @@ Per ogni esponente $k \in \mathbb{N}$, $(\vec{s}\cdot \vec{r})^k$ pu\`o essere r
 Si considera che
 \[
 \begin{split}
-	&(\vec{s}\cdot \vec{r})^2 = \frac{\hbar ^2}{4} (\vec{\sigma }\cdot \vec{r}) \cdot (\vec{\sigma} \cdot \vec{r}) = \frac{\hbar ^2}{4}r^2\\
+	&(\vec{s}\cdot \vec{r})^2 = \frac{\hbar ^2}{4} (\vec{\sigma }\cdot \vec{r}) (\vec{\sigma} \cdot \vec{r}) = \frac{\hbar ^2}{4}r^2\\
 	&(\vec{s}\cdot \vec{r})^3 = (\vec{s}\cdot \vec{r})^2 (\vec{s}\cdot \vec{r}) = \frac{\hbar ^2}{4}r^2 (\vec{s}\cdot \vec{r})
 \end{split}
 \] 
@@ -1948,7 +1948,7 @@ L'espressione (II) si pu\`o ricondurre all'espressione (I), a meno di un addendo
 \[
 	\begin{split}
 		&\begin{split}
-	(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r}) &= \vec{s}_2 \big[ \vec{r}\times \left(\vec{s}_1 \times \vec{r}\right)  \big] = \vec{s}_2 \cdot \big[r^2 \vec{s}_1 - (\vec{r}\cdot \vec{s}_1) \vec{r}\big]\\
+	(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r}) &= \vec{s}_2 \cdot \big[ \vec{r}\times \left(\vec{s}_1 \times \vec{r}\right)  \big] = \vec{s}_2 \cdot \big[r^2 \vec{s}_1 - (\vec{r}\cdot \vec{s}_1) \vec{r}\big]\\
 								    &= r^2 (\vec{s}_1 \cdot \vec{s}_2) - (\vec{s}_1 \cdot \vec{r}) (\vec{s}_2\cdot \vec{r})
 \end{split}\\
 		&\Rightarrow  \frac{(\vec{s}_1 \times \vec{r}) \cdot (\vec{s}_2 \times \vec{r})}{r^2} = \vec{s}_1 \cdot \vec{s}_2 - \frac{(\vec{s}_1\cdot \vec{r})(\vec{s}_2\cdot \vec{r})}{r^2}
@@ -1957,7 +1957,7 @@ L'espressione (II) si pu\`o ricondurre all'espressione (I), a meno di un addendo
 \end{proof}
 \noindent Inoltre, l'espressione (I) \`e l'unica che ha senso considerare, in quanto ogni sua forma in cui uno dei due prodotti scalari \`e elevato a qualche potenza, per la proposizione \ref{prop1}, \`e al pi\`u lineare in $\vec{s}$, riducendosi, quindi, sempre alla stessa espressione gi\`a riportata.
 
-In letteratura, e storicamente, la forma che si scegliere per il contributo non-centrale nel potenziale \`e 
+In letteratura, e storicamente, la forma che si sceglie per il contributo non-centrale nel potenziale \`e 
 \begin{equation}
 	S_{12} = \frac{3 (\vec{\sigma }_1 \cdot \vec{r}) (\vec{\sigma }_2 \cdot \vec{r})}{r^2} - \vec{\sigma }_1 \cdot \vec{\sigma }_2
 \end{equation}
@@ -2005,7 +2005,7 @@ Queste funzioni d'onda di angolo-spin possono essere espresse come prodotto di a
 \] 
 In rappresentazione delle coordinate, si ha:
 \begin{equation}
-	\mathcal{Y} _{\ell S J J_z} = \sum_{\substack{m, S_z \\ m+S_z = J_z}}^{} \braket{\ell mSS_z|J J_z}  Y_{\ell m} \chi _{SS_z}
+	\mathcal{Y} _{\ell S J J_z} = \sum_{\substack{m, S_z \\ m+S_z = J_z}}^{} \braket{\ell mSS_z|J J_z}  Y_{\ell m}\ \chi _{SS_z}
 \end{equation}
 dove le $Y_{\ell m}$ sono le armoniche sferiche, mentre le $\chi _{S S_z}$ sono funzioni d'onda di spin.
 \begin{prop}
@@ -2111,19 +2111,17 @@ In meccanica quantistica, come gi\`a accennato all'inizio del documento, si defi
 \] 
 con $g_s$ \textit{fattore giromagnetico} e $\mu _N = \frac{e\hbar }{2m_p}$ magnetone nucleare.
 Si nota che, per definizione, vale $[\hat{\vec{\mu }}_s^2 , \hat{\mu }_{s_z}]=0$.
-
 Protoni e neutroni sono particelle a spin $1 / 2$; visto che $[\hat{s}^2 , \hat{s}_z] =0$, gli stati di spin si rappresentano nella forma $\ket{s ,m_s} $.
 I possibili stati per particelle di spin $1 / 2$ sono $\ket{1 / 2 , 1 / 2} \equiv \ket{\uparrow} $ e $\ket{1 / 2 , - 1 / 2 }  \equiv \ket{\downarrow} $.
-Per ottenere il momento di dipolo magnetico intrinseco di una particella, si calcola il valore di aspettazione per lo stato di $m_s$ pi\`u alto, cio\`e si ottiene il valore di aspettazione nello stato orientato verso l'asse di quantizzazione in modo da ottenere il valore intrinseco della particella.
+Per ottenere il momento di dipolo magnetico intrinseco di una particella, si calcola il valore di aspettazione per lo stato di $m_s$ pi\`u alto, cio\`e si ottiene il valore di aspettazione nello stato orientato verso l'asse di quantizzazione.
 Nel caso di particelle a spin $1 / 2$, questo corrisponde calcolare il valore di aspettazione rispetto allo stato $\ket{\uparrow} $:
 \[
 \mu = \braket{\uparrow|\hat{\mu }_{s_z}|\uparrow} = \frac{g_s}{\hbar }\mu _N \braket{\uparrow|\hat{s}_z|\uparrow} =\frac{1}{2}g_s \mu _N
 \] 
-dove si \`e usato direttamente che $\hat{s}_z \ket{\uparrow}  =\frac{\hbar}{2}$ e che $\braket{\uparrow|\uparrow} =1$.
+dove si \`e usato direttamente che $\hat{s}_z \ket{\uparrow}  =\frac{\hbar}{2}\ket{\uparrow} $ e che $\braket{\uparrow|\uparrow} =1$.
 Il fattore giromagnetico dipende dalla particella; a seconda che si abbia a che fare con protoni, neutroni, o elettroni, si specificher\`a con un apice la particella a cui \`e relativo, cio\`e $\mu _p = \frac{1}{2}g_s^p \mu _N$, o $\mu _n = \frac{1}{2} g_s^n \mu _N$.
 Sperimentalmente, si sa che $g_s^p \approx 5.59$, mentre $g_s^n \approx - 3.83$; da questi, si ottiene rispettivamente che $\mu _p \approx 2.29\,  \mu _N$, mentre $\mu _n \approx -1.91 \, \mu _N$ e, quindi, che $\mu _n + \mu _p \approx 0.88\, \mu _N$.
-
-Nel caso dell'elettrone in particolare, per\`o, l'operatore momento di dipolo magnetico \`e definito tramite il magnetone di Bohr $\mu _B = \frac{2 \hbar }{2m_e}$ come $\mu _e = \frac{1}{2}g_s^e \mu _B$.
+Nel caso dell'elettrone in particolare, per\`o, l'operatore momento di dipolo magnetico \`e definito tramite il magnetone di Bohr $\mu _B = \frac{e \hbar }{2m_e}$ come $\mu _e = \frac{1}{2}g_s^e \mu _B$.
 Sperimentalmente si misura $g_s^e = 2.0023$, mentre dall'equazione di Dirac, invece, si prevede $g_s^e = 2$; si pu\`o tenere conto di questa discrepanza tramite le \textit{correzioni radiative} della QED.
 
 Similmente alla parte di spin, gli operatori momento di dipolo magnetico orbitale totale e lungo l'asse di quantizzazione sono definiti come
@@ -2177,9 +2175,9 @@ Mettendo tutto insieme, si trova che
 \[
 \vec{\mu } = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{S} + \frac{1}{2} \vec{\ell } + \frac{1}{2} \left(g_s^n - g_s^p\right)  \left(\vec{s}_ n - \vec{s}_p\right) 
 \] 
-Visto che $\ket{\psi_d } $ \`e uno stato a spin $S = 1$, allora si nota subito che $\braket{S=1|(\hat{\vec{s} }_n- \hat{\vec{s}}_p|S=1} = 0 $, quindi 
+Visto che $\ket{\psi_d } $ \`e uno stato a spin $S = 1$, allora si nota subito che $\braket{S=1|\hat{\vec{s} }_n- \hat{\vec{s}}_p|S=1} = 0 $, quindi 
 \[
-\vec{\mu } = \frac{1}{2} \left(g_s^N + g_s ^p\right)  \vec{J} + \frac{1}{2} \left(1 - g_s^n - g_s^p\right)  \vec{\ell }
+\vec{\mu } = \frac{1}{2} \left(g_s^n + g_s ^p\right)  \vec{J} + \frac{1}{2} \left(1 - g_s^n - g_s^p\right)  \vec{\ell }
 \] 
 Ora si vuole proiettare il secondo termine su $\vec{J}$.
 Visto che $\vec{J} = \vec{\ell } + \vec{S}$, allora $\vec{S} = \vec{J}- \vec{\ell }$, quindi
@@ -2188,18 +2186,18 @@ Visto che $\vec{J} = \vec{\ell } + \vec{S}$, allora $\vec{S} = \vec{J}- \vec{\el
 \] 
 Allora 
 \begin{equation}
-	\vec{\mu }_J = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J} + \frac{1}{2}\left(1 - g_s^n - g_s ^p\right) \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2 \lvert \vec{J} \rvert ^2} \vec{J}
+	\vec{\mu }_J = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J} + \frac{1}{2}\left(1 - g_s^n - g_s ^p\right) \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2 \vec{J} ^2} \vec{J}
 \end{equation}
 Proiettando lungo l'asse $z$, si ottiene 
 \begin{equation}
-	\vec{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J}_z + \frac{1}{2}\left(1 - g_s^n - g_s^p\right)  \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2 \lvert \vec{J} \rvert ^2 } \vec{J}_z
+	\vec{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right)  \vec{J}_z + \frac{1}{2}\left(1 - g_s^n - g_s^p\right)  \frac{\vec{J}^2 + \vec{\ell }^2 - \vec{S}^2}{2  \vec{J}^2 } \vec{J}_z
 \end{equation}
 
 \subsubsection{Probabilit\`a dell'onda D}
 
 Si \`e trovato che 
 \[
-\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z + \frac{1}{2} \left(1 - g_s^n - g_s^p\right) \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \lvert \hat{\vec{J}} \rvert ^2} \hat{J}_z
+	\hat{\mu }_{J_z} = \frac{1}{2} \left(g_s^n + g_s^p\right) \hat{J}_z + \frac{1}{2} \left(1 - g_s^n - g_s^p\right) \frac{\hat{J}^2 + \hat{\ell }^2 - \hat{S}^2}{2 \hat{J} ^2} \hat{J}_z
 \] 
 tramite cui il momento di dipolo del deutone si calcola come
 \[
