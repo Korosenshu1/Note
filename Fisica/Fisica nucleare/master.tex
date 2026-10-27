@@ -2299,6 +2299,11 @@ Si nota che il termine in parantesi quadre si pu\`o scrivere come $\frac{\partia
 \begin{equation}
 	\frac{\partial }{\partial t} \lvert \psi  \rvert ^2 + \vec{\nabla }\cdot \vec{j}=\frac{2}{\hbar } W \lvert \psi  \rvert ^2
 \end{equation}
+dove 
+\[
+\vec{j} = \frac{\hbar }{2mi} \left(\psi ^* \nabla \psi  - \psi  \nabla \psi ^*\right) 
+\] 
+\`e la corrente di probabilit\`a.
 \begin{osservazione}
 Nel caso di scattering elastico ($W=0$), allora, si ritrova l'equazione di conservazione $\partial _t \lvert \psi  \rvert ^2 + \vec{\nabla }\cdot \vec{j} = 0$.
 \end{osservazione}
@@ -2309,12 +2314,12 @@ Allora
 \[
 	\begin{split}
 		&\vec{\nabla }\psi  = i \vec{k}\psi  \implies \psi ^* = - i \vec{k}\psi ^*\\
-		& \vec{j}_\text{inc} = \frac{\hbar }{2m} \lvert \psi  \rvert ^2 \vec{k} = \frac{\hbar }{2m} \lvert A \rvert ^2 \vec{k} = \lvert \psi  \rvert ^2 \vec{v}
+		& \vec{j}_\text{inc} = \frac{\hbar }{m} \lvert \psi  \rvert ^2 \vec{k} = \lvert \psi  \rvert ^2 \vec{v}
 	\end{split}
 \] 
-dove si \`e usato che $\frac{\hbar \vec{k}}{2m} = \frac{\vec{p}}{m} = \vec{v}$.
+dove si \`e usato che $\frac{\hbar \vec{k}}{m} = \frac{\vec{p}}{m} = \vec{v}$.
 
-Per le particelle diffuse, invece, si deve calcolare la componente radiale della corrente di particelle, visto che $\phi _\text{scatt} = \vec{j}_\text{scatt} \cdot \hat{n}_r \equiv j_r$.
+Per quelle diffuse, invece, si deve calcolare la componente radiale della corrente di particelle, visto che $\phi _\text{scatt} = \vec{j}_\text{scatt} \cdot \hat{n}_r \equiv j_r$.
 Per questa ragione, \`e comodo passare in coordinate sferiche, per cui $\vec{\nabla } \cdot \hat{n}_r=\partial _r$.
 
 Per ottenere la sezione d'urto differenziale del processo, si valuta il comportamento asintotico della funzione d'onda per $r\to +\infty$; questa condizione, per un potenziale a corto raggio come quello nucleare, si traduce in $r \gg r_\text{int}$.
