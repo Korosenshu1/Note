@@ -1,0 +1,212 @@
+\documentclass[11pt, a4paper]{scrartcl}
+% Packages
+\usepackage[margin=1.25in]{geometry}
+\usepackage{index}
+\usepackage{amsbsy} % Bold math symbols
+\makeindex
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{amsmath, amssymb}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage[linktocpage]{hyperref}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{import}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{arrows.meta, calc ,positioning, angles,quotes,patterns,patterns.meta,intersections}
+\usepackage[italian]{babel}
+
+
+% Font
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif}
+
+%\usepackage{unicode-math}
+%\setmathfont{Libertinus Math}
+
+
+% To reset footnote numbering each page
+\usepackage[perpage]{footmisc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Titles 
+\title{Note di\\ \vspace{.15cm} Laboratorio di fisica medica}
+\author{}
+\date{}
+
+
+% svolgimento
+\newenvironment{svolgimento}{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Svolgimento]}{\end{proof}}
+
+\newtheoremstyle{style}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{5pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+%{15pt}% measure of space to indent
+{0pt}% measure of space to indent
+{\noindent\bfseries}% name of head font
+{}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}{\thmnote{ (#3)}.\ }}
+
+
+\theoremstyle{style}
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{prop}{Proposizione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[teorema]
+\newtheorem{corollario}{Corollario}[teorema]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{assunzione}{Assunzione}[section]
+\newtheorem{notazione}{Notazione}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+
+%% Generic box
+\newtcolorbox{eqbox}[1][]
+{
+colback=gray!10,
+arc=0pt,
+boxrule=0pt,
+title=#1
+}
+
+ \newenvironment{boxenv}[1][]{
+    \begin{eqbox}[#1]
+    }{
+   \end{eqbox}
+}
+
+%Captions
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize,labelfont=footnotesize}
+%Titlesec
+\titleformat{\section}
+{\fontsize{15}{20}\sffamily\scshape}
+{\normalfont\color{gray}{\fontsize{15}{20}\selectfont\thesection}}
+{0.7em}
+{}
+\hypersetup{colorlinks,breaklinks, linkcolor=[RGB]{74, 122, 164}}
+\definecolor{asdf}{HTML}{4a7aa4}
+% Personalizza la formattazione della subsection
+\titleformat{\subsection}[block]{\fontsize{13}{20}\bfseries}{\normalfont\thesubsection}{.5em}{}
+
+
+% Personalizza la formattazione della subsubsection
+\titleformat{\subsubsection}[block]{\fontsize{12}{20}\bfseries}{\normalfont\thesubsubsection}{.5em}{}
+
+% Maketitle customization
+\renewcommand{\maketitle}{
+\begin{center}
+{\sffamily
+{\fontsize{20}{20}\selectfont\MakeUppercase\thetitle}}
+
+\vspace{0.2in}
+
+{\large\scshape\sffamily\theauthor}
+\end{center}
+}
+
+
+% Differenziale 
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+
+
+
+%Evaluate symbol
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+%%%%%%% Numero delle equazioni in formato a.b
+\numberwithin{equation}{subsection}
+%%%%%
+
+%%%%%%%%%% Personalizzazione numeri lista
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%% Table of contents
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftdot}{}
+\usepackage{titletoc}
+%\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%% Toc style
+
+% Personalizzazione scritta indice
+
+
+%%%% Lambda bar
+\newcommand{\lbar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage
+\section{Rivelatori}
+
+Un rivelatore trasforma l'energia depositata dalla radiazione che lo attraversa in un segnale analogico, elettrico o luminoso, che viene, poi, raccolto ed elaborato da dell'elettronica.
+Il tempo dell'interazione $t_s$ \`e dell'ordine di $1$ ns nei rivelatori a gas, mentre \`e dell'ordine di $1$ ps nei rivelatori a stato solido; il tempo di raccolta $t_c$ dell'energia depositata nel rivelatore a seguito dell'interazione \`e $\sim 1$ ms nei rivelatori a gas, mentre \`e $\sim 1$ ns in quelli a stato solido.
+
+Assumendo di avere un rivelatore nel quale viene prodotto un impulso di corrente, che fluisce nel rivelatore per un tempo pari al tempo di raccolta $t_c$, allora la carica totale depositata nel rivelatore \`e
+\[
+Q = \int _0^{t_c} i(t) \dd t
+\] 
+\subsection{Modo corrente e modo impulsato}
+
+
+Se il rate di interazione (numero di eventi rivelati per unit\`a di tempo) \`e molto pi\`u basso rispetto al tempo di raccolta, il rivelatore \`e in grado di rivelare la singola interazione, caratteristica tipica dei rivelatori che operano in \textbf{regime impulsato}.
+
+Quando non si possono distinguere le singole interazioni, il segnale viene raccolto in \textbf{modo corrente}: un picoamperometro campiona il valore di corrente per un tempo $T$, registrando
+\[
+I(t) = \frac{1}{T} \int_{t-T}^{t} i(t') \dd t'
+\] 
+Nonostante si perda l'informazione sul singolo evento, il segnale raccolto \`e proporzionale al rate delle interazioni e all'energia media per evento:
+\[
+I = rQ = r \frac{E}{w} q
+\] 
+con $r$ rate di eventi, $Q = q E / w$ carica media prodotta per evento, $E$ energia media per evento, $q$ carica elementare e $w$ energia media necessaria per la produzione dell'informazione\footnote{In rivelatori a stato solido, l'informazione \`e data da una coppia elettrone-lacuna; in scintillatori, \`e un fotone luminoso, per esempio.}.
+
+La lettura del segnale in modo impulsato, invece, avviene misurando la differenza di potenziale ai capi della resistenza di un filtro passa alto, dove la capacit\`a $C$ e la resistenza $R$ sono l'equivalente di quelle del rivelatore, dei cavi di connessione e del circuito di misurazione complessivamente.
+Si distinguono diversi casi a seconda del tempo caratteristico $\tau  = RC$.
+\begin{boxenv}[]
+Riprendere da 30:00
+\end{boxenv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
