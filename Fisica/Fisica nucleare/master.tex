@@ -2765,52 +2765,52 @@ Facendone il quadrato, si arriva a
 \begin{equation*}
 	\sin^2 \delta _0 = \frac{\big[\cos (kR) + \alpha  / k \sin(kR)\big]^2}{1 + \alpha ^2 / k^2}
 \end{equation*}
-Sapendo che $\sigma _\text{tot} = \frac{4\pi }{k^2} \sin ^2 \delta _0$, si conclude che
+Sapendo che $\sigma _\text{tot} = \frac{4\pi }{k^2} \sin ^2 \delta _0$, segue che
 \begin{equation}
 	\sigma  = 4 \pi \frac{\big[\cos (kR) + \alpha  / k \sin(kR)\big]^2}{k^2 + \alpha ^2}
 \end{equation}
-Per fare una stima, si danno i valori dei parametri della buca e i valori sperimentali.
-Si prendono $R = 2$ fm, $B = 2.225 $ MeV, $\alpha  = \frac{\sqrt{2mB} }{\hbar }= \frac{\sqrt{2m c^2 B} }{\hbar c} \approx 0.23 \text{ fm}^{-1}$, per cui $\alpha ^2 \approx 0.05 \text{ fm}^{-2}$; per il limite $E\to 0$, si sceglie $E = 10 \text{ keV} =0.01$ MeV e si ha $k = \frac{\sqrt{2 m E} }{\hbar } \approx 0.015\text{ fm}^{-1}$, per cui $k^2 \approx 2.4 \times 10 ^{-4}\text{ fm}^{-2}$ e $kR\approx 0.03 \ll 1$, quindi si possono approssimare $\sin (kR) \simeq kR$ e $\cos (kR) \simeq 1$.
+Per fare una stima, si usano i seguenti valori: $R = 2$ fm, $B = 2.225 $ MeV, $\alpha  = \frac{\sqrt{2mB} }{\hbar }= \frac{\sqrt{2m c^2 B} }{\hbar c} \approx 0.23 \text{ fm}^{-1}$, per cui $\alpha ^2 \approx 0.05 \text{ fm}^{-2}$; per il limite $E\to 0$, si sceglie $E = 10 \text{ keV} =0.01$ MeV e si ha $k = \frac{\sqrt{2 m E} }{\hbar } \approx 0.015\text{ fm}^{-1}$, per cui $k^2 \approx 2.4 \times 10 ^{-4}\text{ fm}^{-2}$ e $kR\approx 0.03 \ll 1$, quindi si possono approssimare $\sin (kR) \simeq kR$ e $\cos (kR) \simeq 1$.
 Mettendo tutto insieme, si ha 
 \[
 \sigma \simeq \frac{4\pi}{\alpha ^2} \Big(1 + \alpha R\Big)^2 \approx 5 \text{ barn}
 \] 
 dove $k\to 0$ quindi sopravvive solo $\alpha^2 $  al denominatore. 
 
-\begin{boxenv}[]
-Grafico sezione d'urto scattering elastico np in funzione dell'energia sperimentale.
-\end{boxenv}
-\noindent Dalla curva, si vede che, a basse energie, si vede che $\sigma $ si attesta sui $20$ barn.
-Per capire perch\'e questa discrepanza, si nota che il deutone \`e l'unico stato legato np, che ha spin totale pari a $1$; la stima, quindi, si riferiva allo scattering np che avviene nel tripletto in particolare.
+Sperimentalmente, per\`o, si osserva che $\sigma \approx 20.4$ barns.
+Per capire il perch\'e di questa discrepanza, si nota che il deutone \`e l'unico stato legato np, che ha spin totale pari a $1$: la stima si riferisce allo scattering np che avviene solo nello stato di tripletto, senza considerare il contributo dello stato di singoletto.
 Questo rafforza il fatto che il potenziale di interazione nucleare dipende dallo spin.
 
-La sezione d'urto corretta, indicando con $\sigma _t$ la sezione d'urto totale nel tripletto di spin ($S=1$) e con $\sigma _s$ la sezione d'urto nel singoletto di spin ($S=0$), \`e una combinazione di $\sigma _t$ e $\sigma _s$, con quella di tripletto che deve avere il peso maggiore, in quanto comprende tre stati al variare di $m_S$:
+La sezione d'urto corretta, indicando con $\sigma _t$ quella del tripletto di spin ($S=1$) e con $\sigma _s$ quella del singoletto di spin ($S=0$), \`e una combinazione di $\sigma _t$ e $\sigma _s$; quella di tripletto deve avere il peso maggiore, in quanto comprende tre stati al variare di $m_S$:
 \[
 \sigma  = \frac{3}{4} \sigma _t + \frac{1}{4} \sigma _s
 \] 
-Visto che $\sigma = 20.4$ barn e $\sigma _t = 5$ barn per quanto stimato, si pu\`o calcolare indirettamente (verificandola anche sperimentalmente) la sezione d'urto totale dello stato di singoletto: $\sigma _s = 66.5$ barn.
-
+Visto che $\sigma = 20.4$ barn e $\sigma _t = 5$ barn per quanto stimato, si pu\`o calcolare indirettamente (verificandola anche sperimentalmente) la sezione d'urto totale dello stato di singoletto, trovando $\sigma _s = 66.5$ barn.
+\begin{osservazione}
+Essendo nel limite di $\ell =0$, lo spin totale si conserva, quindi lo stato finale di spin del sistema \`e uguale a quello iniziale.
+Immaginando di avere un certo numero di coppie che urtano in questo regime, su quattro possibili stati in cui si possono trovare (uno di singoletto e tre di tripletto) si ha, per via della conservazione dello spin, che $3 / 4$ rimangono nel tripletto, mentre $1 / 4$ rimane nel singoletto, da cui i coefficienti di $\sigma _s$ e $\sigma _t$ in $\sigma $.
+Questo assume assenza di polarizzazione e correlazioni tra gli stati iniziali nel preparare le coppie di particelle.
+\end{osservazione}
 \subsection{Scattering nn nel limite di energia nulla}
 
 Si mostra che questo scattering si descrive tramite un singolo parametro $a$ detto \textit{lunghezza di scattering}.
 Si osserver\`a che il segno di $a$ indica l'esistenza (o meno) di stati legati a bassa energia legati all'interazione considerata; in questo caso, si considerer\`a la solita buca di potenziale.
-Si riprende la solita soluzione della funzione d'onda radiale modificata $u(r) = r R(r)$ che, fuori dalla buca ($r>R$), \`e della forma
+Si riprende l'usuale funzione d'onda radiale modificata $u(r) = r R(r)$ che, fuori dalla buca ($r>R$), \`e della forma
 \[
 	\begin{split}
 		u(r) &= C \sin (kr + \delta _0) = C \sin \delta _0 \left[ \sin kr \frac{\cos \delta _0}{\sin \delta _0} + \cos kr \right]  \\
 		     &= C \sin \delta _0 \left[ r \frac{\sin kr}{kr} \frac{k}{\tan \delta _0} + \cos kr \right] 
 	\end{split}
 \] 
-dove si sono usate le regole di addizione/sottrazione del seno e nell'ultima uguaglianza si moltiplica e divide per $r$.
+dove si sono usate le regole di addizione/sottrazione del seno e, nell'ultima uguaglianza, si \`e moltiplicato e diviso per $r$.
 Nel limite $E\to 0$, si ha $k\to 0$; definendo la \textit{lunghezza di scattering} come
 \begin{equation}
 	a = \lim_{k \to 0} \left(- \frac{\tan \delta _0(k)}{k}\right) 
 \end{equation}
-e facendo il limite $k\to 0$ in $u(r)$, si trova che, per $r > R$
+e facendo il limite $E\to 0$ in $u(r)$, quindi, si trova che
 \[
 u(r)  = C \sin \delta _0 \left(1-\frac{r}{a}\right) 
 \] 
-che corrisponde all'equazione di una retta.
+corrispondente all'equazione di una retta.
 \begin{boxenv}[]
 Scrivere audio su andamento di $a$ al variare della profondit\`a della buca.
 \end{boxenv}
@@ -2843,6 +2843,7 @@ e si ha il limite, per $k\to 0$
 visto che $k\to 0$.
 I valori sperimentali che si ottengono sono $a_s = -23.55\pm 0.12$ fm e $a_t = 5.35 \pm 0.06$ fm; per le sezioni d'urto, si ha $\sigma _s \approx 69 . 7$ barn e $\sigma _t \approx 3.6$ barn.
 I valori di $a$ sono in accordo col fatto che lo stato di singoletto non corrisponde ad uno stato legato, da cui il valore negativo di $a$, mentre per il tripletto $a_t > 0$.
+
 
 \newpage
 \appendix
