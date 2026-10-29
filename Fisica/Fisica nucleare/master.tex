@@ -2685,6 +2685,164 @@ da cui
 \end{equation}
 dove si \`e esplicitato che $\delta _0 \equiv \delta _0(k)$.
 
+\subsubsection{Limite di energia nulla}
+
+
+Si considera un potenziale a buca rettangolare di profondit\`a $V_0$ e larghezza $R$.
+Per lo scattering in una buca di potenziale, si ha $E>0$ e si \`e visto che
+\[
+u(r) = \begin{cases}
+	A \sin (Kr) &,\ r\le R\\ 
+	C \sin(k r + \delta _0) &,\ r>R
+\end{cases}
+\] 
+dove 
+\[
+	K = \frac{\sqrt{2mV_0 + E} }{\hbar } \hspace{2cm} k =  \frac{\sqrt{2m E }}{\hbar }
+\] 
+La relazione di raccordo delle due soluzioni \`e 
+\begin{align}
+	K \operatorname{cotg} (KR) = k \operatorname{cotg} (kR + \delta _0)\tag{$\dagger $}
+\end{align}
+Nel caso del deutone, invece, l'energia \`e quella di legame: $E = - B \approx -2.2$ MeV; inoltre, si \`e trovato che
+\[
+u(r) = \begin{cases}
+	\mathcal{A}  \sin ( K_d r )  &,\ r\le R\\
+	\mathcal{B} e^{-\alpha r} &,\ r > R
+\end{cases}
+\] 
+dove\footnote{Si osserva che $V_0 - B > 0$ perch\'e si \`e visto che la profondit\`a della buca relativa alla binding energy \`e sensibilmente maggiore rispetto alla binding energy stessa.}
+\[
+K_d = \frac{\sqrt{2m ( V_0 - B)} }{\hbar } \hspace{2cm} \alpha  = \frac{\sqrt{2 m B} }{\hbar }
+\] 
+La condizione di raccordo, in questo caso, impone la relazione
+\begin{align}
+	K_d \operatorname{cotg}  ( K_d R ) = - \alpha \tag{$\blacksquare$}
+\end{align}
+Il limite di energia nulla corrisponde praticamente a richiedere $E \sim 1\div 10$ keV, contrariamente al limite di ``energia bassa'', che \`e relativo a energie $E\lesssim 10$ MeV per poter considerare $\ell =0$.
+Si sa che $B \ll V_0$, visto che $B\sim 2$ MeV e $V_0 \sim 35$ MeV.
+Nel limite di $E\to 0$, si osserva che 
+\[
+\begin{split}
+	&K \to \frac{\sqrt{2m V_0} }{\hbar } \\ 
+	&K_d \approx \frac{\sqrt{2m V_0} }{\hbar }
+\end{split}\implies K_d \approx K
+\] 
+Quindi, nel limite di energia nulla, lo scattering np si descrive tramite la stessa funzione d'onda che descrive il deutone come stato legato.
+\begin{boxenv}[]
+\centering Grafico quinta slide
+\end{boxenv}
+\noindent Visto che $K \approx K_d$, si ha
+\[
+K \operatorname{cotg}  (K R)\approx K_d \operatorname{cotg} (K_dR)
+\] 
+Si nota, per\`o, che quest'ulteriore step non \`e automaticamente soddisfatto dalla condizione $K \approx K_d$ perch\'e la cotangente \`e molto sensibile.
+Assumendo che la relazione tra le cotangenti sia soddisfatta e riprendendo le relazioni di raccordo $(\dagger )$ e $(\blacksquare)$, si ottiene che 
+\begin{equation}
+	- \alpha  = k \operatorname{cotg} (kR+\delta _0) \tag{$\star$}
+\end{equation}
+Da questa, si riesce a stimare il termine $\sin \delta _0$ e, di conseguenza, la sezione d'urto del processo.
+Usando che
+\[
+\sin \theta  = \frac{1}{\sqrt{1 + \operatorname{cotg}^2 \theta  } } \hspace{1cm} \cos \theta  = \frac{\operatorname{cotg}\theta  }{\sqrt{1 + \operatorname{cotg}^2 \theta  } }
+\] 
+si ha
+\[
+	\begin{split}
+		&\sin (kR +\delta _0) = \frac{1}{\sqrt{1 + \operatorname{cotg}^2 (kR+\delta _0) } } =  \frac{1}{\sqrt{1+ \alpha ^2 / k^2} }\\
+		&\cos (kR +\delta _0) =- \frac{\alpha  / k}{\sqrt{1 + \alpha ^2 / k^2} }
+	\end{split}
+\] 
+Ora, usando $\sin \delta _0 = \sin(kR + \delta _0 - kR)$ e usando la formula di sottrazione del seno, si ha
+\[
+	\begin{split}
+		\sin \delta _0  &= \sin(kR+\delta _0) \cos(kR) - \cos (kR+\delta _0)\sin(kR)\\
+				&= \frac{1}{\sqrt{1+\alpha ^2 / k^2} } \cos(kR) + \frac{\alpha  / k}{\sqrt{1 + \alpha ^2 / k^2} } \sin(kR)\\
+				&= \frac{1}{\sqrt{1 + \alpha ^2 / k^2} } \Big(\cos (kR) + \alpha/k \sin(kR) \Big) 
+	\end{split}
+\] 
+Facendone il quadrato, si arriva a 
+\begin{equation*}
+	\sin^2 \delta _0 = \frac{\big[\cos (kR) + \alpha  / k \sin(kR)\big]^2}{1 + \alpha ^2 / k^2}
+\end{equation*}
+Sapendo che $\sigma _\text{tot} = \frac{4\pi }{k^2} \sin ^2 \delta _0$, si conclude che
+\begin{equation}
+	\sigma  = 4 \pi \frac{\big[\cos (kR) + \alpha  / k \sin(kR)\big]^2}{k^2 + \alpha ^2}
+\end{equation}
+Per fare una stima, si danno i valori dei parametri della buca e i valori sperimentali.
+Si prendono $R = 2$ fm, $B = 2.225 $ MeV, $\alpha  = \frac{\sqrt{2mB} }{\hbar }= \frac{\sqrt{2m c^2 B} }{\hbar c} \approx 0.23 \text{ fm}^{-1}$, per cui $\alpha ^2 \approx 0.05 \text{ fm}^{-2}$; per il limite $E\to 0$, si sceglie $E = 10 \text{ keV} =0.01$ MeV e si ha $k = \frac{\sqrt{2 m E} }{\hbar } \approx 0.015\text{ fm}^{-1}$, per cui $k^2 \approx 2.4 \times 10 ^{-4}\text{ fm}^{-2}$ e $kR\approx 0.03 \ll 1$, quindi si possono approssimare $\sin (kR) \simeq kR$ e $\cos (kR) \simeq 1$.
+Mettendo tutto insieme, si ha 
+\[
+\sigma \simeq \frac{4\pi}{\alpha ^2} \Big(1 + \alpha R\Big)^2 \approx 5 \text{ barn}
+\] 
+dove $k\to 0$ quindi sopravvive solo $\alpha^2 $  al denominatore. 
+
+\begin{boxenv}[]
+Grafico sezione d'urto scattering elastico np in funzione dell'energia sperimentale.
+\end{boxenv}
+\noindent Dalla curva, si vede che, a basse energie, si vede che $\sigma $ si attesta sui $20$ barn.
+Per capire perch\'e questa discrepanza, si nota che il deutone \`e l'unico stato legato np, che ha spin totale pari a $1$; la stima, quindi, si riferiva allo scattering np che avviene nel tripletto in particolare.
+Questo rafforza il fatto che il potenziale di interazione nucleare dipende dallo spin.
+
+La sezione d'urto corretta, indicando con $\sigma _t$ la sezione d'urto totale nel tripletto di spin ($S=1$) e con $\sigma _s$ la sezione d'urto nel singoletto di spin ($S=0$), \`e una combinazione di $\sigma _t$ e $\sigma _s$, con quella di tripletto che deve avere il peso maggiore, in quanto comprende tre stati al variare di $m_S$:
+\[
+\sigma  = \frac{3}{4} \sigma _t + \frac{1}{4} \sigma _s
+\] 
+Visto che $\sigma = 20.4$ barn e $\sigma _t = 5$ barn per quanto stimato, si pu\`o calcolare indirettamente (verificandola anche sperimentalmente) la sezione d'urto totale dello stato di singoletto: $\sigma _s = 66.5$ barn.
+
+\subsection{Scattering nn nel limite di energia nulla}
+
+Si mostra che questo scattering si descrive tramite un singolo parametro $a$ detto \textit{lunghezza di scattering}.
+Si osserver\`a che il segno di $a$ indica l'esistenza (o meno) di stati legati a bassa energia legati all'interazione considerata; in questo caso, si considerer\`a la solita buca di potenziale.
+Si riprende la solita soluzione della funzione d'onda radiale modificata $u(r) = r R(r)$ che, fuori dalla buca ($r>R$), \`e della forma
+\[
+	\begin{split}
+		u(r) &= C \sin (kr + \delta _0) = C \sin \delta _0 \left[ \sin kr \frac{\cos \delta _0}{\sin \delta _0} + \cos kr \right]  \\
+		     &= C \sin \delta _0 \left[ r \frac{\sin kr}{kr} \frac{k}{\tan \delta _0} + \cos kr \right] 
+	\end{split}
+\] 
+dove si sono usate le regole di addizione/sottrazione del seno e nell'ultima uguaglianza si moltiplica e divide per $r$.
+Nel limite $E\to 0$, si ha $k\to 0$; definendo la \textit{lunghezza di scattering} come
+\begin{equation}
+	a = \lim_{k \to 0} \left(- \frac{\tan \delta _0(k)}{k}\right) 
+\end{equation}
+e facendo il limite $k\to 0$ in $u(r)$, si trova che, per $r > R$
+\[
+u(r)  = C \sin \delta _0 \left(1-\frac{r}{a}\right) 
+\] 
+che corrisponde all'equazione di una retta.
+\begin{boxenv}[]
+Scrivere audio su andamento di $a$ al variare della profondit\`a della buca.
+\end{boxenv}
+\begin{itemize}
+	\item \textit{Caso libero $V(r) = 0 , \ \forall r$}.
+
+		Si ha $\delta (k) = 0 $ per ogni $k$, per cui $a = 0$.
+	\item \textit{Caso di buca ``poco profonda''}.
+
+		Questo caso si riferisce ad un valore di profondit\`a della buca tale per cui non si hanno stati legati.
+		\begin{boxenv}[]
+		Disegno
+		\end{boxenv}
+		\noindent Si osserva che $\delta _0 > 0 $ per una buca di potenziale attrattiva, quindi si ha un anticipo di fase.
+		Visto che la profondit\`a \`e piccola tale per cui non si hanno stati legati, allora anche $\delta _0$ \`e ``piccolo'' di conseguenza ed \`e tale per cui $0 < \delta _0 \ll \pi / 2$, per cui $\tan \delta _0 >0$, quindi $a< 0 $; questo significa che, fuori dalla buca, la funzione d'onda in approssimazione $E=0$ \`e una retta crescente con $r$.
+		Aumentando l'attrazione, la pendenza della retta decresce fino a divergere a $- \infty$ e il sistema ha uno stato legato a energia $E=0$ relativo alla retta orizzontale.
+		Aumentando ulteriormente la profondit\`a, si ottiene $a > 0$ e si iniziano ad avere stati legati per bassi valori di energia.
+\end{itemize}
+\begin{osservazione}
+Alzando la buca, invece di abbassarla, si ha $a\to \infty$ nel tenderci da sotto al punto di stato legato $E=0$.
+\end{osservazione}
+\noindent La sezione d'urto totale a energia bassa ($\ell =0$) \`e data da 
+\[
+	\sigma _\text{tot} ( \ell =0)  = \frac{4\pi}{k^2} \sin^2 \delta _0 = \frac{4\pi}{k^2} \frac{\tan \delta _0}{1 + \tan^2 \delta _0}
+\] 
+e si ha il limite, per $k\to 0$
+\[
+ \sigma  _\text{tot} =  4\pi \frac{a^2}{1 + k^2 a^2} \to  4 \pi a^2
+\] 
+visto che $k\to 0$.
+I valori sperimentali che si ottengono sono $a_s = -23.55\pm 0.12$ fm e $a_t = 5.35 \pm 0.06$ fm; per le sezioni d'urto, si ha $\sigma _s \approx 69 . 7$ barn e $\sigma _t \approx 3.6$ barn.
+I valori di $a$ sono in accordo col fatto che lo stato di singoletto non corrisponde ad uno stato legato, da cui il valore negativo di $a$, mentre per il tripletto $a_t > 0$.
 
 \newpage
 \appendix
