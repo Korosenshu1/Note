@@ -168,7 +168,7 @@ title=#1
 Un rivelatore trasforma l'energia depositata dalla radiazione che lo attraversa in un segnale analogico, elettrico o luminoso, che viene, poi, raccolto ed elaborato da dell'elettronica.
 Il tempo dell'interazione $t_s$ \`e dell'ordine di $1$ ns nei rivelatori a gas, mentre \`e dell'ordine di $1$ ps nei rivelatori a stato solido; il tempo di raccolta $t_c$ dell'energia depositata nel rivelatore a seguito dell'interazione \`e $\sim 1$ ms nei rivelatori a gas, mentre \`e $\sim 1$ ns in quelli a stato solido.
 
-Assumendo di avere un rivelatore nel quale viene prodotto un impulso di corrente, che fluisce nel rivelatore per un tempo pari al tempo di raccolta $t_c$, allora la carica totale depositata nel rivelatore \`e
+Assumendo di avere un rivelatore nel quale viene prodotto un impulso di corrente, che fluisce nel rivelatore per un tempo pari al tempo di raccolta $t_c$, la carica totale depositata nel rivelatore \`e
 \[
 Q = \int _0^{t_c} i(t) \dd t
 \] 
@@ -187,11 +187,224 @@ I = rQ = r \frac{E}{w} q
 \] 
 con $r$ rate di eventi, $Q = q E / w$ carica media prodotta per evento, $E$ energia media per evento, $q$ carica elementare e $w$ energia media necessaria per la produzione dell'informazione\footnote{In rivelatori a stato solido, l'informazione \`e data da una coppia elettrone-lacuna; in scintillatori, \`e un fotone luminoso, per esempio.}.
 
-La lettura del segnale in modo impulsato, invece, avviene misurando la differenza di potenziale ai capi della resistenza di un filtro passa alto, dove la capacit\`a $C$ e la resistenza $R$ sono l'equivalente di quelle del rivelatore, dei cavi di connessione e del circuito di misurazione complessivamente.
+La lettura del segnale in \textbf{modo impulsato}, invece, avviene misurando la differenza di potenziale ai capi della resistenza di un filtro passa alto, dove la capacit\`a $C$ e la resistenza $R$ sono l'equivalente di quelle del rivelatore, dei cavi di connessione e del circuito di misurazione complessivamente.
 Si distinguono diversi casi a seconda del tempo caratteristico $\tau  = RC$.
-\begin{boxenv}[]
-Riprendere da 30:00
-\end{boxenv}
+\begin{itemize}
+	\item Se $\tau \ll t_c$, allora la corrente che scorre nel circuito equivale a quella che scorre attraverso la resistenza $R$, per cui $V(t) = Ri(t)$.
+	\item Se $\tau \gg t_c$, invece, la quasi totalit\`a della corrente che scorre nel circuito finisce ad accumulare carica nel condensatore e la tensione massima raggiunta durante il tempo di collezione \`e $V_\text{max} = Q / C$, da cui si ricava la carica depositata nel rivelatore.
+\end{itemize}
+I due modi non sono confrontabili, in quanto servono a scopi e casi diversi.
+Fra i problemi del modo impulsato, vi sono una particolare sensibilit\`a al rumore, al \textit{pile-up} (legato a eventi pi\`u vicini del tempo di scarica del condensatore), oppure a saturazione del condensatore, che impedisce di avere un'opportuna lettura dell'energia depositata dal singolo evento.
+
+\subsection{Spettrometri}
+
+Uno spettrometro \`e un intero sistema che rivela delle interazioni e produce il segnale digitale.
+La catena \`e la seguente:
+\begin{center}
+	\begin{tikzpicture}[box/.style={
+        draw, 
+        thick, 
+        rounded corners, 
+        minimum width=3cm,   % Larghezza minima fissa
+        minimum height=1cm,  % Altezza minima fissa
+        align=center         % Permette di andare a capo con \\ se serve
+    }
+    ]
+		\node[box,fill=blue!10] (n1) at (0,0) {Rivelatore};
+		\node[box,fill=red!10] (O) at (0,2) {Alta tensione};
+		\node[box,fill=blue!10] (n2) at (4,0) {Preamplificatore};
+		\node[box,fill=brown!10] (O1) at (4,2) {Bassa tensione};
+		\node[box,fill=blue!10] (n3) at (8,0) {Amplificatore};
+		\node[box,fill=blue!10] (n4) at (8,-2) {MCA};
+		\node[box,fill=blue!10] (n5) at (4,-2) {PC};
+
+		\draw[thick,->] (n1) -- (n2);
+		\draw[thick,->] (n2) -- (n3);
+		\draw[thick,->] (n3) -- (n4);
+		\draw[thick,->] (n4) -- (n5);
+		\draw[thick,->] (O) -- (n1);
+		\draw[thick,->] (O1) -- (n2);
+
+		\draw[very thick,brown!80] (-2,-1) -- (6,-1) -- (6,3) -- (2,3) -- (2,1)-|(-2,-1);
+		\node[brown!80] at (7,3) { Schermo};
+	\end{tikzpicture}
+\end{center}
+
+\noindent Lo schermo, composto da piombo per esempio, serve ad assorbire la radiazione esterna per minimizzare il rumore.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+\begin{itemize}
+	\item Il preamplificatore converte il segnale in corrente prodotto dal rivelatore in un segnale in tensione $V_o = Q_i / C_r$, dove $Q_i$ \`e la carica depositata nel rivelatore e $C_r$ \`e la capacit\`a di feedback del circuito amplificatore.
+	\item L'amplificatore serve sia ad amplificare i segnali bassissimi ($\sim 1$ mV) uscenti dal preamplificatore, sia a formare il segnale.
+\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{preamp-amp.png}
+	\end{minipage}
+\end{center}
+Infine, il \textit{multichannel analyzer} \`e una componente elettronica composta da due parti: una si occupa di convertire il segnale analogico prodotto in un segnale digitale tramite un ADC; l'altra \`e una memoria composta da una serie di canali, ciascuno dei quali corrisponde ad un valore di energia e contiene il numero di eventi di quella data energia.
+
+Il numero di conteggi di eventi in funzione del canale (dell'energia quindi) \`e chiamato \textbf{spettro di ampiezza di impulso} (\textit{pulse height spectrum}): sull'asse delle $x$, si ha l'ampiezza dell'impulso $H$, mentre sulle $y$ si ha la frequenza di eventi per ampiezza di impulso $\frac{d N}{d H} $.
+Uno spettro del genere \`e detto \textbf{spettro differenziale}; a partire da questo, si pu\`o ricavare lo \textbf{spettro integrale}, che mostra il numero di impulsi che si trovano al di sopra di un certo canale $H$ tramite
+\[
+N(H) = \int _H^{+\infty}\frac{d N(H')}{d H'} \dd H'
+\] 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+I due spettri contengono le stesse informazioni e possono essere ricavati l'uno dall'altro tenendo conto del fatto che lo spettro differenziale grafica $\left\lvert \frac{d N}{d H}  \right\rvert $ rispetto allo spettro integrale.
+Un \textbf{picco} in un determinato punto dello spettro differenziale corrisponde ad un locale aumento/diminuzione di conteggi massimo.
+Un \textbf{plateau} (flesso) nello spettro integrale corrisponde ad un punto di minimo dello spettro differenziale.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{diffintspec.png}
+	\end{minipage}
+\end{center}
+\begin{osservazione}
+Il fatto che nello spettro differenziale si registri un picco, tipicamente relativo all'energia della radiazione emessa dalla sorgente, e non una delta \`e legato alle propriet\`a fisiche della sorgente e al funzionamento del rivelatore.
+\end{osservazione}
+
+\noindent La presenza di conteggi rilevanti prima del picco nello spettro differenziale \`e legata ad una radiazione che ha natura differente da quella della sorgente.
+Tali conteggi possono essere relativi a un fondo costituito, per esempio, da radiazione cosmica/ambientale, oppure dalla radiazione proveniente effettivamente dalla sorgente, ma che produce un deposito parziale di energia nel rivelatore.
+Questa zona di conteggi separata da quelli che caratterizzano strettamente la radiazione della sorgente \`e tipicamente separata da una regione di minimo individuata dal plateau.
+
+\`E opportuno individuare la zona di plateau in modo considerare la regione dello spettro che non \`e influenzata dal fondo e che, quindi, corrisponde alla regione dello spettro pi\`u stabile nel tempo.
+Per individuare questa regione, si pu\`o procedere in due modi; dopo aver introdotto un discriminatore tra l'amplificatore e l'MCA che permette di fissare un valore di threshold $H_d$ e potendo regolare il guadagno $G$ dell'amplificatore, si pu\`o fissare uno dei due e variare l'altro.
+\begin{enumerate}[(a).]
+	\item Fissando $G$ e variando $H_d$, si cerca il plateau nello spettro integrale.
+	\item Fissando $H_d$ e variando $G$, si registra il numero di impulsi in funzione del guadagno: all'aumentare di $G$, lo spettro differenziale viene shiftato verso destra e, nel momento in cui $H_d$ passa per un minimo di $\frac{d N}{d H} $, si osserva un plateau in $N(G)$.
+\end{enumerate}
+
+
+\subsection{Risoluzione energetica e fluttuazioni}
+
+
+La forma dello spettro dell'ampiezza d'impulso dipende sia dalla natura della sorgente, sia dalle propriet\`a del rivelatore: in risposta ad una sorgente monocromatica, un buon rivelatore risponde con un segnale nello spettro differenziale che \`e prossimo ad una delta, mentre un rivelatore meno performante distribuisce la stessa informazione su una FWHM maggiore.
+La qualit\`a di un rivelatore, nel senso appena descritto, \`e misurata tramite la sua \textbf{risoluzione energetica} 
+\begin{equation}
+	R = \frac{\text{FWHM}}{H_0}
+\end{equation}
+dove $H_0$ \`e il canale in corrispondenza del picco.
+Tipicamente, gli spettri si distribuiscono come gaussiane, per cui la $\text{FWHM} = 2.35\sigma $.
+
+Oltre alla risoluzione energetica del rivelatore, il segnale prodotto sar\`a influenzato da diverse sorgenti di rumore, o fluttuazioni; fra queste, un contributo \`e garantito dall'elettronica che elabora il segnale prodotto dal rivelatore.
+Un'altra sorgente di rumore \`e il rivelatore stesso per le sue condizioni di operazione: umidit\`a ambientale, oppure variazioni di temperatura durante l'operazione possono influenzarne le prestazioni e la risoluzione energetica.
+
+Come ultima sorgente di rumore, vi sono le fluttuazioni statistiche legate alla produzione dei portatori di carica per ciascuna interazione; questa segue una statistica poissoniana, la cui deviazione standard \`e data da $\sigma = \sqrt{N} $ e rappresenta le fluttuazioni sul numero medio di portatori prodotti per interazione $N$.
+La probabilit\`a che per un'interazione vengano prodotti $x$ portatori di carica \`e data da 
+\begin{equation}
+	P(x) = \frac{N^xe^{-N}}{x!}
+\end{equation}
+Per valori molto grandi di $N$ (\`e sufficiente $N>20$), cosa tipicamente verificata nei rivelatori a stato solido e meno in quelli a scintillazione, la distribuzione di Poisson tende ad una gaussiana con $\sigma  = \sqrt{N} $; in questo caso, la risoluzione energetica \`e connessa ad $N$ tramite $H_0 = k N$, dove $k$ \`e un apposito fattore di conversione.
+Se la risposta del rivelatore \`e lineare e se l'unica sorgente di rumore sono le fluttuazioni statistiche, allora la risoluzione del rivelatore \`e data dalla distribuzione di Poisson tramite 
+\begin{equation}
+	R = \frac{\text{FWHM}}{H_0} = \frac{2.35 k \sqrt{N} }{k N} = \frac{2.35}{\sqrt{N} }
+\end{equation}
+In un rivelatore in cui vengono prodotti, mediamente, molti portatori di carica per interazione si ha una migliore risoluzione energetica all'aumentare di portatori; per una risoluzione dell'$1\%$, per esempio, sono necessari circa $4 \cdot 10^{4}$ portatori.
+
+Quando le produzioni dei portatori non sono indipendenti l'una dall'altra, come nel caso dei rivelatori a stato solido, si deve correggere la statistica tramite il \textbf{fattore di Fano}:
+\begin{equation}
+	\sigma _N^2 = FN \, , \ F = \frac{\text{varianza osservata per } N \text{ portatori}}{\text{varianza prevista da Poisson}}
+\end{equation}
+In questo modo, la risoluzione si esprime come $R = 2.35 \sqrt{\frac{F}{N}} $.
+Nel caso degli scintillatori, $F\approx 1$, mentre $F<1$ per i rivelatori a semiconduttore.
+
+La distribuzione dei conteggi attorno al picco, come accennato, non \`e di natura esclusivamente statistica e, assumendo che tutte le sorgenti diverse di rumore sono indipendenti, il contributo complessivo \`e la somma in quadratura dei singoli contributi\footnote{Il pedice ``op'' sta ad indicare le fluttuazioni relative al drift nelle condizioni di operazione del rivelatore.}:
+\[
+\left(\text{FWHM}\right) _\text{tot}^2 = \left(\text{FWHM}\right) _\text{stat}^2 + \left(\text{FWHM}\right) ^2 _\text{noise} + \left(\text{FWHM}\right) ^2 _\text{op}
+\] 
+
+
+\subsection{Efficienza di rivelazione}
+Per quantificare la frazione di quanti rivelati \`e intanto necessari considerare l'\textit{accettanza geometrica} relativa al fatto che la sorgente emette isotropicamente, mentre un rivelatore riceve radiazione solo su una frazione angolare $\Omega / 4\pi$.
+Oltre a questo, un rivelatore ha una sua \textbf{efficienza intrinseca} che dipende dalla probabilit\`a di interazione e dalla sua risposta ed \`e data da 
+\[
+\varepsilon _i = \frac{N_\text{rivelati}}{N_\text{incidenti}}
+\] 
+Mettendo insieme questi due contributi, si ottiene l'\textbf{efficienza assoluta}:
+\begin{equation}
+	\varepsilon _\text{abs} = \frac{N_\text{rivelati}}{N_\text{emessi}} = \varepsilon _\text{int} \frac{\Omega }{4\pi}
+\end{equation}
+Tuttavia, la parte dello spettro di interesse \`e quella relativa al \textit{fotopicco}; per questo motivo, si definisce \textbf{fotofrazione} la quantit\`a
+\[
+r = \frac{\varepsilon _\text{peak}}{\varepsilon _\text{tot}}
+\] 
+che coincide col rapporto del numero di eventi sotto al fotopicco con il numero di eventi totali registrati.
+In questo modo, l'\textbf{efficienza intrinseca di picco} \`e data da 
+\begin{equation}
+	\varepsilon _\text{ip}  = r \varepsilon _\text{int}
+\end{equation}
+Un rivelatore del quale sia nota l'efficienza intrinseca di picco pu\`o essere usato per misurare l'attivit\`a assoluta di una sorgente.
+Infatti, tenendo conto del fatto che la sorgente emette isotropicamente e assumendo di registrare $N$ eventi in un tempo di acquisizione $T$ sotto il picco dello spettro, il numero di particelle emesse per unit\`a di tempo dalla sorgente \`e dato da 
+\begin{equation}
+	A = \frac{N}{T} \frac{4\pi}{\varepsilon _\text{ip}\Omega }
+\end{equation}
+dove $\Omega $ \`e l'angolo sotteso dal rivelatore rispetto alla posizione della sorgente.
+Assumendo una sorgente puntiforme e indicando con $r$ la distanza tra la sorgente e un elemento di superficie $\dd A$ del rivelatore e con $\alpha $ l'angolo tra la normale alla superficie e $r$, si ha
+\[
+\Omega  = \int _A \frac{\cos \alpha }{r^2}\dd A
+\] 
+Se la sorgente non fosse puntiforme, si dovrebbe svolgere un secondo integrale sul volume della sorgente; tipicamente, questo non sar\`a necessario.
+
+Un'ulteriore assunzione che si far\`a \`e quella di \textit{buona geometria}: ponendo una sorgente puntiforme sull'asse di un rivelatore cilindrico di raggio $a$ a distanza $d$ da quest'ultimo, l'angolo solido \`e dato da
+\[
+\Omega  = 2\pi \left(1 - \frac{d}{\sqrt{d^2 + a^2} }\right) 
+\] 
+Nel caso di $d \gg a$, per\`o, si pu\`o approssimare questa espressione come 
+\begin{equation}
+	\Omega  \approx \frac{A}{d^2} = \frac{\pi a^2}{d^2}
+\end{equation}
+
+\subsection{Tempo morto}
+Il tempo morto di un rivelatore fa riferimento al tempo che l'elettronica necessita per prepararsi ad elaborare il segnale di una nuova interazione. 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Due eventi rivelati a distanze temporali inferiori al tempo morto comportano la perdita del secondo.
+I rivelatori possono essere \textit{paralizzabili} o \textit{non-paralizzabili} a seconda che un evento non-registrato perch\'e rivelato entro un tempo morto ripristini o meno il tempo necessario per rivelarne uno successivo.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{deadtime.png}
+	\end{minipage}
+\end{center}
+I rivelatori non-paralizzabili si possono modellare facilmente: chiamando $n$ la frequenza reale di interazione, $m$ la frequenza registrata di interazione e $\tau $ il tempo morto, la frazione di tempo morto nell'intervallo complessivo di acquisizione \`e data da $m\tau $, per cui la frequenza di perdita del segnale \`e data da $nm \tau $.
+Ne segue che $n - m = nm\tau $, per cui
+\begin{equation}
+	m = \frac{n}{1 + n\tau }
+\end{equation}
+Per i paralizzabili \`e pi\`u complicato e si ottiene 
+\begin{equation}
+	m = n e^{-n \tau }
+\end{equation}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Per $n \ll 1$, entrambi seguono l'andamento $m \simeq n ( 1 -n\tau )$, mentre \`e problematico l'andamento dei paralizzabili per grandi $n$, in quanto la funzione non \`e pi\`u iniettiva.
+I non-paralizzabili, invece, per grandi $n$, tendono ad $m = 1 / \tau $.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{pnp.png}
+	\end{minipage}
+\end{center}
+Nella catena dell'elettronica dei rivelatori spettroscopici, l'MCA \`e la componente che introduce il contributo pi\`u significativo al tempo morto.
+In ogni caso, gli MCA corregono, tramite algoritmi, il tempo morto, restituendo il cosiddetto \textit{live time}, che corrisponde al tempo effettivo di misurazione, ottenuto togliendo il tempo morto complessivo al tempo di acquisizione.
+
+\begin{osservazione}
+Un problema importante del tempo morto \`e che eliminare la registrazione di un evento che si sovrappone al primo porterebbe la registrazione di un singolo evento relativo ad un valore energetico che \`e la somma dei due avvenuti.
+\end{osservazione}
 
 
 
