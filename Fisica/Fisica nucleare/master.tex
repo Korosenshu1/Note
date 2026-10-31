@@ -2633,7 +2633,7 @@ Nel potenziale repulsivo, quindi, la funzione d'onda subisce un \textit{ritardo 
 \end{tikzpicture}
 \end{center}
 
-\subsection{Sezione d'urto dello scattering np}
+\subsubsection{Sezione d'urto dello scattering np}
 Si riprendono le assunzioni fatte per lo scattering nucleone-nucleone in precedenza:
 \begin{enumerate}[(a).]
 	\item scattering a bassa energia ($\ell =0$);
@@ -2728,10 +2728,82 @@ Nel limite di $E\to 0$, si osserva che
 	&K_d \approx \frac{\sqrt{2m V_0} }{\hbar }
 \end{split}\implies K_d \approx K
 \] 
-Quindi, nel limite di energia nulla, lo scattering np si descrive tramite la stessa funzione d'onda che descrive il deutone come stato legato.
-\begin{boxenv}[]
-\centering Grafico quinta slide
-\end{boxenv}
+Quindi, nel limite di energia nulla, lo scattering np si descrive tramite la stessa funzione d'onda che descrive il deutone come stato legato per $r\le R$.
+\begin{center}
+	\begin{tikzpicture}[
+    x=1cm, y=1cm,
+    >=Stealth,
+    line cap=round, line join=round,
+    onda/.style={line width=1.5pt},
+    every node/.style={font=\small}
+]
+\definecolor{scattering}{RGB}{0,139,62}
+\definecolor{legato}{RGB}{222,35,50}
+\definecolor{potenziale}{RGB}{0,83,140}
+
+% Parametri grafici: schema qualitativo, non in scala fisica.
+\def\R{2.5}
+\def\Vzero{1.85}
+\def\A{1.55}
+\def\K{0.90}
+\def\Kd{0.88}
+\def\k{0.75}
+\def\rmax{11.1}
+
+% Raccordo del seno rosso con l'esponenziale in r=R.
+% Occorre pi/2 < Kd*R < pi per ottenere alpha > 0.
+\pgfmathsetmacro{\decay}{
+    -\Kd*cos(deg(\Kd*\R))/sin(deg(\Kd*\R))
+}
+\pgfmathsetmacro{\uR}{\A*sin(deg(\Kd*\R))}
+
+% Raccordo del seno verde interno con quello esterno.
+% PGF usa gradi: faseR e deltaDeg sono espressi in gradi.
+\pgfmathsetmacro{\faseR}{
+    atan2(\k*sin(deg(\K*\R)), \K*cos(deg(\K*\R)))
+}
+\pgfmathsetmacro{\deltaDeg}{\faseR-deg(\k*\R)}
+\pgfmathsetmacro{\C}{\A*sin(deg(\K*\R))/sin(\faseR)}
+
+% Assi e buca di potenziale.
+% Per r>R il potenziale coincide con l'asse orizzontale.
+
+\draw[potenziale,very thick]
+    (0,-\Vzero) -- (\R,-\Vzero) -- (\R,0);
+
+\node[below left] at (0,0) {$0$};
+\node[potenziale,left] at (0,-\Vzero) {$-V_0$};
+\node[potenziale,above left] at (\R,0) {$R$};
+
+% Verde: seno interno e seno sfasato esterno.
+\draw[onda,scattering,domain=0:\R,samples=100]
+    plot (\x,{\A*sin(deg(\K*\x))});
+
+\draw[onda,scattering,domain=\R:\rmax,samples=240]
+    plot (\x,{\C*sin(deg(\k*\x)+\deltaDeg)});
+
+% Rosso: seno interno e decadimento esponenziale esterno.
+% Il tratteggio distingue i due seni quasi sovrapposti.
+\draw[onda,legato,densely dashed,domain=0:\R,samples=100]
+    plot (\x,{\A*sin(deg(\Kd*\x))});
+
+\draw[onda,legato,domain=\R:\rmax,samples=240]
+    plot (\x,{\uR*exp(-\decay*(\x-\R))});
+
+% Etichette.
+\node[legato,anchor=west] at (0.35,2.40)
+    {$u_d(r)\propto\sin(K_d r)$};
+
+\node[scattering,anchor=west] at (0.35,1.97)
+    {$u_{\mathrm{scatt}}(r)\propto\sin(Kr)$};
+
+
+\draw[->,thick] (-0.45,0) -- (11.55,0)
+    node[right] {$r$};
+\draw[->,thick] (0,-2.25) -- (0,2.45);
+
+\end{tikzpicture}
+\end{center}
 \noindent Visto che $K \approx K_d$, si ha
 \[
 K \operatorname{cotg}  (K R)\approx K_d \operatorname{cotg} (K_dR)
@@ -2776,8 +2848,19 @@ Mettendo tutto insieme, si ha
 \] 
 dove $k\to 0$ quindi sopravvive solo $\alpha^2 $  al denominatore. 
 
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
 Sperimentalmente, per\`o, si osserva che $\sigma \approx 20.4$ barns.
 Per capire il perch\'e di questa discrepanza, si nota che il deutone \`e l'unico stato legato np, che ha spin totale pari a $1$: la stima si riferisce allo scattering np che avviene solo nello stato di tripletto, senza considerare il contributo dello stato di singoletto.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{sigma-np.png}
+	\end{minipage}
+\end{center}
 Questo rafforza il fatto che il potenziale di interazione nucleare dipende dallo spin.
 
 La sezione d'urto corretta, indicando con $\sigma _t$ quella del tripletto di spin ($S=1$) e con $\sigma _s$ quella del singoletto di spin ($S=0$), \`e una combinazione di $\sigma _t$ e $\sigma _s$; quella di tripletto deve avere il peso maggiore, in quanto comprende tre stati al variare di $m_S$:
@@ -2790,9 +2873,12 @@ Essendo nel limite di $\ell =0$, lo spin totale si conserva, quindi lo stato fin
 Immaginando di avere un certo numero di coppie che urtano in questo regime, su quattro possibili stati in cui si possono trovare (uno di singoletto e tre di tripletto) si ha, per via della conservazione dello spin, che $3 / 4$ rimangono nel tripletto, mentre $1 / 4$ rimane nel singoletto, da cui i coefficienti di $\sigma _s$ e $\sigma _t$ in $\sigma $.
 Questo assume assenza di polarizzazione e correlazioni tra gli stati iniziali nel preparare le coppie di particelle.
 \end{osservazione}
-\subsection{Scattering nn nel limite di energia nulla}
 
-Si mostra che questo scattering si descrive tramite un singolo parametro $a$ detto \textit{lunghezza di scattering}.
+\subsubsection{Scattering length nello scattering np}
+
+
+
+Ora si mostra che, nel limite di energia nulla, lo scattering np si descrive tramite un singolo parametro $a$ detto \textit{lunghezza di scattering}.
 Si osserver\`a che il segno di $a$ indica l'esistenza (o meno) di stati legati a bassa energia legati all'interazione considerata; in questo caso, si considerer\`a la solita buca di potenziale.
 Si riprende l'usuale funzione d'onda radiale modificata $u(r) = r R(r)$ che, fuori dalla buca ($r>R$), \`e della forma
 \[
@@ -2811,39 +2897,123 @@ e facendo il limite $E\to 0$ in $u(r)$, quindi, si trova che
 u(r)  = C \sin \delta _0 \left(1-\frac{r}{a}\right) 
 \] 
 corrispondente all'equazione di una retta.
-\begin{boxenv}[]
-Scrivere audio su andamento di $a$ al variare della profondit\`a della buca.
-\end{boxenv}
-\begin{itemize}
-	\item \textit{Caso libero $V(r) = 0 , \ \forall r$}.
+Ora si vuole studiare il segno di $a$.
 
-		Si ha $\delta (k) = 0 $ per ogni $k$, per cui $a = 0$.
-	\item \textit{Caso di buca ``poco profonda''}.
+Nel \textit{caso libero}, si ha $V(r) = 0 , \ \forall r$, per cui $\delta_0 (k) = 0 $ per ogni $k$ e, quindi, $a = 0$.
+Rendendo la buca \textit{poco profonda}, cio\`e considerando profondit\`a tali per cui non si hanno stati legati, si ha $\delta _0 > 0 $ (visto che il potenziale \`e attrattivo), quindi un anticipo di fase.
+		Visto che la profondit\`a \`e piccola, anche $\delta _0$ \`e ``piccolo'' di conseguenza, cio\`e soddisfa $0 < \delta _0 \ll \pi / 2$: per questi valori, $\tan \delta _0 >0$, quindi $a< 0 $.
+		Questo significa che, fuori dalla buca, la funzione d'onda in approssimazione $E=0$ \`e una retta crescente con $r$.
+\begin{center}
+	\begin{tikzpicture}[
+    x=1cm, y=1cm,
+    >=Stealth,
+    line cap=round, line join=round,
+    onda/.style={line width=1.5pt},
+    every node/.style={font=\small}
+]
 
-		Questo caso si riferisce ad un valore di profondit\`a della buca tale per cui non si hanno stati legati.
-		\begin{boxenv}[]
-		Disegno
-		\end{boxenv}
-		\noindent Si osserva che $\delta _0 > 0 $ per una buca di potenziale attrattiva, quindi si ha un anticipo di fase.
-		Visto che la profondit\`a \`e piccola tale per cui non si hanno stati legati, allora anche $\delta _0$ \`e ``piccolo'' di conseguenza ed \`e tale per cui $0 < \delta _0 \ll \pi / 2$, per cui $\tan \delta _0 >0$, quindi $a< 0 $; questo significa che, fuori dalla buca, la funzione d'onda in approssimazione $E=0$ \`e una retta crescente con $r$.
-		Aumentando l'attrazione, la pendenza della retta decresce fino a divergere a $- \infty$ e il sistema ha uno stato legato a energia $E=0$ relativo alla retta orizzontale.
-		Aumentando ulteriormente la profondit\`a, si ottiene $a > 0$ e si iniziano ad avere stati legati per bassi valori di energia.
-\end{itemize}
+\definecolor{interazione}{RGB}{222,35,50}
+\definecolor{energiazero}{RGB}{0,139,62}
+% Parametri: q = sqrt(2mV0)/hbar.
+% Per una buca senza stati legati: qR < pi/2.
+% La profondita' disegnata ha una scala verticale indipendente.
+\def\R{1.35}
+\def\q{0.80}
+\def\k{0.50}
+\def\amp{1.40}
+\def\Vdraw{0.48}
+\def\rmax{10.1}
+
+% Numero d'onda interno e lunghezza di scattering.
+\pgfmathsetmacro{\Kint}{sqrt(\q*\q+\k*\k)}
+\pgfmathsetmacro{\ascatt}{\R-tan(deg(\q*\R))/\q}
+
+% Raccordo della funzione e della derivata in r=R.
+% PGF utilizza angoli espressi in gradi.
+\pgfmathsetmacro{\faseR}{
+    atan2(\k*sin(deg(\Kint*\R)),
+          \Kint*cos(deg(\Kint*\R)))
+}
+\pgfmathsetmacro{\deltaDeg}{\faseR-deg(\k*\R)}
+\pgfmathsetmacro{\ampInt}{
+    \amp*sin(\faseR)/sin(deg(\Kint*\R))
+}
+
+% Retta a energia nulla, proporzionale a (1-r/a).
+% Normalizzazione scelta per incontrare la curva rossa in R.
+\pgfmathsetmacro{\uR}{\amp*sin(\faseR)}
+\pgfmathsetmacro{\pendenza}{\uR/(\R-\ascatt)}
+
+% Assi.
+\draw[->,thick] (-2.4,0) -- (10.6,0)
+    node[right] {$r$};
+\draw[->,thick] (0,-1.85) -- (0,2.65);
+
+% Buca di potenziale.
+\draw[energiazero,very thick]
+    (0,-\Vdraw) -- (\R,-\Vdraw) -- (\R,0);
+
+\node[below left] at (0,0) {$0$};
+\node[energiazero,below left] at (0,-\Vdraw) {$-V_0$};
+\node[energiazero,below right] at (\R,0) {$R$};
+
+% Nero tratteggiato: soluzione libera.
+\draw[onda,black,dashed,domain=0:\rmax,samples=220]
+    plot (\x,{\amp*sin(deg(\k*\x))});
+
+% Rosso: soluzione interna regolare.
+\draw[onda,interazione,domain=0:\R,samples=80]
+    plot (\x,{\ampInt*sin(deg(\Kint*\x))});
+
+% Rosso: seno sfasato fuori dalla buca.
+\draw[onda,interazione,domain=\R:\rmax,samples=220]
+    plot (\x,{\amp*sin(deg(\k*\x)+\deltaDeg)});
+
+% Verde: prolungamento della retta fino all'intercetta a<0.
+\draw[energiazero,very thick,densely dashed]
+    ({\ascatt-0.15},{-0.15*\pendenza}) -- (\R,\uR);
+
+% Verde: soluzione esterna a energia nulla.
+\draw[energiazero,very thick]
+    (\R,\uR) -- (3.75,{\pendenza*(3.75-\ascatt)});
+
+\fill[energiazero] (\ascatt,0) circle (2pt);
+\node[energiazero,above left] at (\ascatt,0) {$a$};
+
+% Etichetta della retta.
+\node[energiazero] (retta) at (5.2,2.35)
+    {\footnotesize$u(r)\propto\left(1-r / a\right)$};
+
+\node[anchor=west] at (10.15,-1.35)
+    {$\sin(kr)$};
+
+% Etichetta della soluzione sfasata.
+\node[interazione] at (7.3,-1.9)
+    {\footnotesize $\sin(kr+\delta_0)$};
+
+\end{tikzpicture}
+\end{center}
+Visto che, a energia nulla, la retta, che \`e la soluzione fuori dalla buca, e la soluzione interna alla buca devono raccordarsi\footnote{\`E importante notare che il raccordo non \`e solo riferito alle soluzioni dentro e fuori la buca, ma riguarda anche le loro derivate.} in $r=R$ e visto che, all'aumentare della profondit\`a della buca, aumenta lo sfasamento, si arriver\`a ad un punto in cui il massimo di $u(r)$ si avr\`a per $r=R$: in questo caso, la derivata del seno \`e nulla perch\'e ha massimo in $r=R$, per cui la retta deve essere orizzontale e, dunque, $a\to -\infty$. 
 \begin{osservazione}
-Alzando la buca, invece di abbassarla, si ha $a\to \infty$ nel tenderci da sotto al punto di stato legato $E=0$.
+	Per la condizione di massimo del seno in $r=R$ si deve avere $\cos(kR + \delta _0) = 1$, cio\`e $\delta _0 = \frac{\pi}{2} - kR$; per $k\to 0$, dunque, si ha $\delta _0 = \frac{\pi}{2}^+\Rightarrow \tan \delta _0 \to +\infty\Rightarrow a \to -\infty $.
+	Si nota, inoltre, che partendo da una buca molto profonda e alzandola fino a questo punto, si avrebbe il limite $\delta _0 \to \frac{\pi}{2}^- \Rightarrow \tan\delta _0 \to -\infty\Rightarrow a \to +\infty$.
 \end{osservazione}
-\noindent La sezione d'urto totale a energia bassa ($\ell =0$) \`e data da 
+\noindent Nel caso in cui la scattering length diverge si dice che il sistema ha uno stato legato a energia zero.
+		Aumentando ulteriormente la profondit\`a, le condizioni di raccordo impongono che valga $a > 0$; a partire da questi valori di profondit\`a \`e possibile avere stati legati anche per valori bassi di energia.
+Si riprende la sezione d'urto totale a energia bassa ($\ell =0$, quindi non solo nel limite $E=0$), che \`e data da 
 \[
-	\sigma _\text{tot} ( \ell =0)  = \frac{4\pi}{k^2} \sin^2 \delta _0 = \frac{4\pi}{k^2} \frac{\tan \delta _0}{1 + \tan^2 \delta _0}
+	\sigma _\text{tot} ( \ell =0)  = \frac{4\pi}{k^2} \sin^2 \delta _0 = \frac{4\pi}{k^2} \frac{\tan^2 \delta _0}{1 + \tan^2 \delta _0}
 \] 
-e si ha il limite, per $k\to 0$
-\[
+dove la riscrittura in termini della tangente si ottiene considerando l'$1$ a denominatore come $1 = \cos^2 \delta _0 + \sin^2 \delta _0$ e dividendo numeratore e denominatore per $\cos^2 \delta _0$.
+Nel limite per $k\to 0$, si ottiene
+\begin{equation}\label{sdnne0}
  \sigma  _\text{tot} =  4\pi \frac{a^2}{1 + k^2 a^2} \to  4 \pi a^2
-\] 
-visto che $k\to 0$.
-I valori sperimentali che si ottengono sono $a_s = -23.55\pm 0.12$ fm e $a_t = 5.35 \pm 0.06$ fm; per le sezioni d'urto, si ha $\sigma _s \approx 69 . 7$ barn e $\sigma _t \approx 3.6$ barn.
-I valori di $a$ sono in accordo col fatto che lo stato di singoletto non corrisponde ad uno stato legato, da cui il valore negativo di $a$, mentre per il tripletto $a_t > 0$.
-
+\end{equation}
+Visto che l'interazione nucleare dipende dallo spin si avranno valori diversi per sezione d'urto e scattering length nel caso dello stato di singoletto e quelli di tripletto.
+I valori sperimentali che si ottengono per le scattreing length sono $a_s = -23.55\pm 0.12$ fm e $a_t = 5.35 \pm 0.06$ fm; da questi, tramite la relazione \ref{sdnne0}, si trovano le sezioni d'urto $\sigma _s \approx 69 . 7$ barn e $\sigma _t \approx 3.6$ barn.
+\begin{osservazione}
+Il fatto che $a_s < 0$ e $a_t > 0$ \`e in accordo con l'interpretazione data prima sugli stati legati; lo stato di singoletto, infatti, non rappresenta uno stato legato del sistema neutrone-protone, mentre il tripletto di spin s\`i.
+\end{osservazione}
 
 \newpage
 \appendix
