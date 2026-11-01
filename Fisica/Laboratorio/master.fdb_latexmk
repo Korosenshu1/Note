@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex master.idx"] 1793296090.07479 "master.idx" "master.ind" "master" 1793484439.70112 0
-  "master.idx" 1793484437.33859 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex master.idx"] 1793296090.07479 "master.idx" "master.ind" "master" 1793568345.86138 0
+  "master.idx" 1793568342.274 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "master.ilg"
   "master.ind"
   (rewritten before read)
-["pdflatex"] 1793484436.47534 "master.tex" "master.pdf" "master" 1793484439.70128 0
+["pdflatex"] 1793568341.32572 "master.tex" "master.pdf" "master" 1793568345.86153 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1775415801 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1775415801 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -54,6 +54,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1775415801 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb" 1775415801 24416 36515493f76659302880e2604105b074 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1775415801 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1775415801 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1775415801 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1775415801 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1775415801 145929 f25e56369a345c4ff583b067cd87ce8e ""
@@ -279,12 +280,26 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1792662636 2329487 87f3654b7300203ec5683ba4921667f4 ""
   "deadtime.png" 1793483619.29682 64211 cd6f37f0adadf89cdc7656dc66b0cf85 ""
   "diffintspec.png" 1793472664.0125 170652 03303dda4d36f7a73ec2ea7a3e993ab8 ""
-  "master.aux" 1793484439.54259 3176 370fd2dab962194174a9db6fdf043480 "pdflatex"
+  "gamma-spec1.png" 1793546948.52232 8506 c30584587190833daad9e7f7e8c17e00 ""
+  "gamma-spec2.png" 1793546956.59231 19812 4651dc0ba772bc81b288ddcb43198264 ""
+  "gamma-spec3.png" 1793546964.0993 15084 26b43faea18b5bfff6450535e2f667ca ""
+  "master.aux" 1793568345.6694 7970 7e944ef5aaab568a4ca9a5e7ffa70d40 "pdflatex"
   "master.ind" 1793296090.18191 0 d41d8cd98f00b204e9800998ecf8427e "makeindex master.idx"
-  "master.tex" 1793484433.56059 21243 6f3102e2199d565135c11637bcc4c8a1 ""
-  "master.toc" 1793484439.54459 653 2d1cb6c59b948e3d05617e4f2d925711 "pdflatex"
+  "master.tex" 1793568336.6554 41666 a6f084d6e882a8c134676bc72f1d4542 ""
+  "master.toc" 1793568345.6734 1545 0dbb9e73fad8b8cbc2f673aa267d48d2 "pdflatex"
+  "med-detector.png" 1793547874.07755 55172 bae830dc7cc31f6534ff900981b5fea8 ""
+  "med-detector1.png" 1793549589.63185 26327 3f0f7e311879484e6d7b9e8091da3101 ""
+  "med-detector2.png" 1793549610.52604 18005 721714b5e0f9ff02026ac58e9360faa1 ""
+  "oscint.png" 1793556976.62587 57185 131d0cecfb1bfd390bb73a149e3fcccd ""
+  "oscint2.png" 1793557331.82417 94376 34b5d58970d395deb790c0554dfe96d5 ""
+  "pmt.png" 1793566106.95302 40628 2197cf030ee05d51d1168dc90bd16503 ""
   "pnp.png" 1793484002.92637 52707 c1415bce679603078fd6a953ac58af52 ""
   "preamp-amp.png" 1793470799.51555 31876 220c90212d5ace66a7e12848cbe6a496 ""
+  "ps-sat.png" 1793563905.15158 42391 32291dd37ba572fc490c831006177530 ""
+  "qecat.png" 1793566361.74512 231031 b1c7c793189ed91016685ae85974451b ""
+  "r-scint.png" 1793568014.46516 34138 2c7015fccf831335917d7416c2404ce8 ""
+  "scint-eff.png" 1793568325.34239 115707 3e4018e0e00dd6d7887ed91a44387ae3 ""
+  "small-detector.png" 1793547629.64375 47846 342e14387058333adeadd957534ef673 ""
   (generated)
   "master.aux"
   "master.idx"

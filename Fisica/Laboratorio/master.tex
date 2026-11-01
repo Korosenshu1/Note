@@ -405,6 +405,320 @@ In ogni caso, gli MCA corregono, tramite algoritmi, il tempo morto, restituendo 
 \begin{osservazione}
 Un problema importante del tempo morto \`e che eliminare la registrazione di un evento che si sovrappone al primo porterebbe la registrazione di un singolo evento relativo ad un valore energetico che \`e la somma dei due avvenuti.
 \end{osservazione}
+\subsection{Spettroscopia gamma}
+Uno spettroscopio per raggi gamma converte i raggi gamma in elettroni secondari, che sono i portatori che vengono rivelati come segnale. 
+Per questa ragione, \`e necessario che il materiale che costituisce i rivelatori degli spettroscopi gamma sia tale da assorbire tutti gli elettroni secondari.
+I rivelatori che si utilizzeranno avranno dimensioni $\sim 1$ cm.
+Le interazioni rilevanti per la spettroscopia gamma sono le seguenti.
+\begin{itemize}
+	\item \textbf{Effetto fotoelettrico:} un fotone di energia $h\nu $ ionizza un atomo, liberando un elettrone che avr\`a energia $E_{e^-} = h\nu  - E_B$, con $E_B$ energia di legame.
+		Visto che il fotone \`e completamente assorbito dal materiale, il deposito di energia \`e totale e uno spettro ideale mostra un picco in $h\nu $.
+	\item \textbf{Effetto Compton:} un fotone cede solo una parte della sua energia ad un elettrone atomico e l'energia depositata \`e un continuo a seconda dell'angolo di scattering $\theta $ del fotone rispetto all'orizzontale; il massimo dell'energia assorbita dall'elettrone $E_C$ si ha in $\theta =  \pi$, corrispondente ad un fotone backscatterato, e questa \`e proprio la separazione dal picco del fotoelettrico, visto che $E_C < h\nu $.
+	\item \textbf{Produzione di coppia:} in campo atomico (o elettronico), un fotone produce una coppia $e^+e^-$, per cui l'energia minima ceduta al materiale \`e $2m_e c^2$.
+		Successivamente, il positrone annichila con un elettrone, producendo, tipicamente, una coppia di fotoni da $511$ keV; a seconda che questi fuggano e vengano riassorbiti, si osservano picchi differenti nello spettro: se entrambi fuggono, si osserva un picco a $h\nu  - 2m_ec^2$; se fugge solo uno, si osserva un picco a $h\nu  - m_ec^2	$; se entrambi vengono assorbiti, si osserva un picco a $h\nu$.
+\end{itemize}
+\begin{center}
+	\begin{minipage}
+		{.3\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{gamma-spec1.png}
+	\captionof{figure}{Effetto fotoelettrico}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.3\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{gamma-spec2.png}
+	\captionof{figure}{Effetto Compton}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.3\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{gamma-spec3.png}
+	\captionof{figure}{Produzione di coppie}
+	\end{minipage}
+\end{center}
+\subsubsection{Grandezza dei rivelatori}
+
+La grandezza dei rivelatori stabilisce tre possibili limiti a seconda di come i prodotti secondari interagiscono con il materiale, quindi a seconda della forma dello spettro osservato.
+\begin{itemize}
+	\item \textbf{Rivelatore piccolo:} ogni fotone interagisce una singola volta nel materiale e i fotoni secondari prodotti fuggono tutti.
+		\begin{figure}[htpb]
+			\centering
+			\includegraphics[width=0.6\textwidth]{small-detector.png}
+		\end{figure}
+	\item \textbf{Rivelatore grande:} ogni fotone, indipendentemente dalla sua interazione, viene completamente assorbito dal materiale. 
+		Per questa ragione, lo spettro mostra sempre un fotopicco. 
+	\item \textbf{Rivelatore intermedio:} questo \`e il caso pi\`u ragionevolmente reale e ciascun fotone secondario pu\`o reagire diverse volte, o fuggire completamente.
+		Per questa ragione, sono visibili dei picchi relativi alla fuga di un singolo fotone della produzione di coppie, oltre a quello della fuga di entrambi; un'altra peculiarit\`a \`e la presenza di un continuo Compton pi\`u esteso per via di scattering Compton multipli.
+		\begin{figure}[htpb]
+			\centering
+			\includegraphics[width=0.6\textwidth]{med-detector.png}
+		\end{figure}
+\end{itemize}
+Oltre alle complicazioni di base dell'avere tipicamente un rivelatore di dimensioni intermedie, si devono aggiungere gli effetti prodotti dal fatto che il rivelatore \`e schermato tramite del piombo: la radiazione secondaria che non viene assorbita nel materiale del rivelatore potrebbe interagire con gli atomi superficiali dello schermo di piombo e tornare nel rivelatore, producendo un segnale.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{med-detector1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{med-detector2.png}
+	\end{minipage}
+\end{center}
+Oltre alla formazione di un \textbf{picco di annichilazione (3)} ottenuto dalla rivelazione di un fotone prodotto dall'annichilazione di un positrone, a sua volta prodotto tramite produzione di coppie da un fotone della sorgente che \`e direzionato direttamente nello schermo, si osservano anche un \textbf{picco di backscattering (2)} e un \textbf{picco caratteristico}.
+Quest'ultimo \`e legato all'assorbimento fotoelettrico nello schermo di un fotone della sorgente; segue l'emissione di raggi caratteristici del materiale: tipicamente, il piombo produce radiazione X.
+Infine, si pu\`o verificare la rivelazione di un fotone che non viene assorbito dal materiale e subisce effetto Compton nello schermo, producendo un continuo di backscattering relativo al fotone che viene rispedito con angoli prossimi a $\pi$ e viene assorbito nel rivelatore.
+L'energia del fotone backscatterato \`e data da 
+\[
+	h \nu ' _{\theta = \pi} = \frac{h\nu }{1 + 2 h\nu  / m_ec^2} \xrightarrow{\ h\nu \gg m_e c^2 / 2 \ } \frac{m_0 c^2}{2} \approx 0.25 \text{ MeV}
+\] 
+Si osserva, di fatto, che il picco di backscattering \`e in prossimit\`a di $0.2$ MeV.
+
+\subsubsection{Area sotto il picco}
+
+Il numero di eventi che creano il picco idealmente gaussiano dalla rivelazione della radiazione di una sorgente monocromatica \`e, realisticamente, composto da un fondo; quest'ultimo \`e dovuto ad una serie di sorgenti radioattive ambientali.
+L'ottenimento del picco effettivamente dovuto alla rivelazione di fotoni provenienti dalla sorgente si pu\`o ottenere, in prima approssimazione, tramite un'interpolazione lineare tra i valori estremi del picco; in questo modo, indicando con $C(A)$ i conteggi all'estremit\`a sinistra del picco (data dal canale $A$) e con $C(B)$ quelli all'estremit\`a destra, il fondo si stima come
+\begin{equation}
+	F = \frac{C(A) + C(B)}{2} N
+\end{equation}
+se $N$ \`e il numero di canali contenuti tra $A$ e $B$.
+Cos\`i facendo, l'area netta, cio\`e l'area sotto al picco al netto del fondo, \`e ottenuta da 
+\begin{equation}
+	A_N = \sum_{i=0}^{N-1} C(A+i) - F = \sum_{i=0}^{N-1} C(A+i) - \frac{C(A) + c(B)}{2}N
+\end{equation}
+La rimozione del fondo introduce un peso statistico: visto che i conteggi seguono una statistica poissoniana, se l'area sotto il picco \`e $S = \sum_{i=0}^{N-1} C(A+i)$, allora $\sigma ^2 = S$.
+Di conseguenza, potendo dimostrare che la varianza del fondo \`e $F \frac{N}{2}$, la varianza dell'area netta \`e
+\begin{equation}
+	\sigma ^2 (A_N) = S+F \frac{N}{2}
+\end{equation}
+Un metodo pi\`u raffinato di stimare il fondo \`e tramite il metodo dei canali adiacenti, in cui il fondo \`e ancora 
+\begin{equation}
+	F = \frac{M_i + M_f}{2}N
+\end{equation}
+ma invece dei valori estremi, si fa una media di $m$ canali attorno ai due:
+\[
+M_i = \frac{1}{m} \sum_{i=0}^{m-1}  C(A-i) \hspace{1cm}M_f = \frac{1}{m} \sum_{i=0}^{m-1} C(B+i)
+\] 
+Tipicamente, un buon valore \`e $5 < m < 10$.
+Con questo metodo, si migliora il peso statistico del fondo:
+\begin{equation}
+	\sigma ^2 (A_N) = S + F \frac{N}{2m}
+\end{equation}
+Ovviamente il valore di $m$ deve essere opportunamente scelto in un intervallo, in quanto i canali attorno ai punti estremi del picco devono comunque essere nei pressi del picco in questione.
+Questo metodo si pu\`o utilizzare anche per la stima del fondo sotto un multipicco.
+
+In ogni caso, pu\`o essere molto complicato distinguere il fondo da un segnale continuo, prodotto per Compton per esempio, nel caso di un picco poco alto.
+In questo caso, si verifica se $A_N$ \`e significativamente diversa da zero nell'intervallo di confidenza stabilito, cio\`e si verifica che
+\begin{equation}
+	A_N > t \sigma (A_N) = t \sqrt{S+ \frac{FN}{2m}} 
+\end{equation}
+dove $t$ \`e la variabile di Student.
+\begin{boxenv}[]
+Un picco che soddisfa tale relazione per un certo livello di confidenza ha una uguale probabilit\`a di essere un \textit{vero} picco.
+Un livello di confidenza ottimale da scegliere \`e il $95\%$.
+\end{boxenv}
+
+\newpage
+
+\section{Scintillatori}
+
+Uno scintillatore converte tutta, o una parte, l'energia di raggi gamma in radiazione visibile principalmente per effetto fotoelettrico.
+
+L'\textbf{efficienza del rivelatore} coincide con la sezione d'urto del processo; l'\textbf{efficienza di scintillazione}, misurata in $\text{fotoni}/\text{MeV}$, invece, determina quanto facilmente il materiale emette fotoni.
+
+Dopo l'emissione di un fotoelettrone, gli atomi del materiale scintillante emettono ultravioletti o radiazione visibile per tornare nel fondamentale; l'emissione \`e isotropa e i fotoni che incidono sul bordo dello scintillatore sono riflessi finch\'e non vengono assorbiti, o finch\'e non fuggono.
+A questo punto, si introduce anche l'\textbf{efficienza di assorbimento luminoso}.
+
+Una frazione dei fotoni di scintillazione raggiunge il dispositivo che converte la radiazione in un segnale elettrico: il \textbf{fotorivelatore}.
+Questo passaggio richiede l'introduzione dell'\textbf{efficienza quantica} come la tendenza del dispositivo a convertire fotoni in elettroni; questa \`e data dal rapporto tra il numero di elettroni prodotti per conversione sul numero di fotoni che lo attraversano.
+
+I punti fondamentali che caratterizzano uno scintillatore buono sono i seguenti.
+\begin{itemize}
+	\item Il \textbf{numero atomico} del materiale, in modo da massimizzare la sezione d'urto del processo e fare in modo che un fotone gamma depositi tutta la sua energia nel rivelatore.
+	\item Tutte le efficienze elencate sopra.
+	\item \`E necessario che la radiazione emessa sia proporzionale all'energia depositata.
+	\item Il materiale scintillante deve essere trasparente rispetto alla sua lunghezza d'onda di emissione, cos\`i da evitare che la radiazione prodotta non venga riassorbita.
+	\item La lunghezza d'onda della radiazione scintillante deve essere appropriata per il fotorivelatore posto in cascata.
+	\item \`E importante che l'indice di rifrazione del materiale scintillante sia quanto pi\`u prossimo a quello del vetro ($n \approx 1.5$): la superficie di separazione col fotorivelatore \`e in vetro, quindi un materiale scintillante con indice di rifrazione prossimo a $1.5$ permette di minimizzare effetti di completa riflessione.
+\end{itemize}
+Il processo di scintillazione descritto \`e un processo di \textbf{luminescenza}.
+A seconda del tempo di emissione della luce dopo l'eccitazione, si parla di \textbf{fluorescenza}, se l'intervallo temporale \`e $\sim 10^{-8}$ s, e di \textbf{fosforescenza}, se l'intervallo temporale \`e $\sim 1$ ms. 
+Nel primo caso, la lunghezza d'onda riemessa \`e dello stesso ordine di grandezza dell'energia dell'eccitazione; nel secondo caso, si ha un'emissione a lunghezza d'onda maggiore.
+
+
+\subsection{Scintillatori organici}
+
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Il processo di scintillazione avviene per transizioni tra livelli energetici degli elettroni di valenza delle molecole dello scintillatore.
+Se le transizioni avvengono tra stati di singoletto di spin, si ha un processo di fluorescenza tipicamente pi\`u rapido del caso in cui si abbiano transizioni dal tripletto al singoletto.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{oscint.png}
+	\end{minipage}
+\end{center}
+Visto che la lunghezza d'onda della radiazione riemessa \`e maggiore di quella assorbita, si riesce a trasformare la radiazione gamma in radiazione visibile, che \`e pi\`u facilmente assorbita dalla maggior parte dei materiali organici.
+Se lo shift in lunghezza d'onda, detto \textbf{shift di Stokes}, non fosse sufficiente, si pu\`o compensare aggiungendo un secondo \textit{fluoroforo} nel materiale scintillante; questo assorbe la radiazione del primo e la riemette ad una lunghezza d'onda maggiore, motivo per cui si definiscono \textit{wave shifters} .
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{oscint2.png}
+\end{figure}
+
+\subsection{Scintillatori plastici}
+
+In questi, la distribuzione dei fotoni emessi nel tempo a seguito dell'assorbimento di energia \`e descritta da 
+\begin{equation}
+	N(t) = N_0 g(\sigma ,t) e^{ - t / \tau _D}
+\end{equation}
+che \`e una distribuzione gaussiana convoluta con un'esponenziale decrescente.
+Il tempo $\tau _D$ \`e il tempo di decadimento, cio\`e il tempo impiegato per scintillare dopo l'eccitazione.
+Tipicamente, per scintillatori plastici, $\tau _D \sim 1$ ns: questa estrema rapidit\`a di scintillazione li rende ideali per applicazioni come la determinazione del tempo di volo, in modo che due scintillatori possano essere utilizzati come trigger di inizio e di fine del volo rispettivamente.
+In ogni caso, sono soggetti a problemi di invecchiamento per la plastica e la radiazione che li attraversa li danneggia.
+
+La risposta di questi rivelatori alla radiazione ionizzante \`e descritta tramite la \textbf{formula di Birks}:
+\begin{equation}
+	\frac{d L}{d x}  = \frac{A \frac{d E}{d x} }{1 + B \frac{d E}{d x} }
+\end{equation}
+dove $\frac{d L}{d x} $ \`e la luce prodotta per unit\`a di lunghezza, $A$ \`e l'\textit{efficienza di produzione di luce} dello scintillatore e $B$ \`e una costante che dipende dal materiale e, in parte, anche dal tipo di radiazione ionizzante.
+Nel caso di perdite di energia piccole, la risposta \`e lineare:
+\begin{equation}
+	\frac{d L}{d x}  = A \frac{d E}{d x} \Rightarrow  \frac{d L}{d E}  = A \implies L = AE
+\end{equation}
+Nel caso di perdite molto grandi, invece, si arriva a saturazione:
+\begin{equation}
+	\frac{d L}{d x}  = \frac{A}{B}
+\end{equation}
+\`e indipendente da $E$.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+La saturazione \`e un fenomeno che richiede particolare attenzione, per esempio, in adroterapia, dove il picco di Bragg deposita un quantitativo di energia che non viene opportunamente convertito dal rivelatore, in quanto arriva a saturazione.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{ps-sat.png}
+	\end{minipage}
+\end{center}
+
+\subsection{Scintillatori inorganici}
+
+Nei materiali inorganici, la scintillazione avviene dopo che, a seguito dell'eccitazione, un elettrone viene promosso dalla banda di valenza alla banda di conduzione; questo crea una coppia elettrone-lacuna, detta \textit{eccitone}, che si muove nel cristallo rilasciando energia.
+L'energia rilasciata viene assorbita da apposite impurit\`a introdotte nel cristallo, che sono dette \textit{attivatori}: a seguito dell'eccitazione, il rilassamento nel fondamentale produce radiazione visibile o ultra-violetta.
+Un esempio tipico \`e lo scintillatore a ioduro di sodio, in cui l'attivatore \`e il tallio (NaI(Tl)).
+Si nota che la diseccitazione dell'attivatore non necessariamente avviene per emissione di radiazione, ma pu\`o anche produrre fononi.
+In alcuni casi, le trappole elettroniche finiscono in stati metastabili, con conseguente emissione di radiazione di fosforescenza.
+
+L'andamento temporale del processo di riemissione a seguito del deposito di energia si pu\`o descrivere tramite
+\[
+\frac{d N}{d t}  = \frac{N_\text{tot}}{\tau _D} e^{- t / \tau _D}
+\] 
+dove $N_\text{tot}$ \`e il numero di fotoni totali emessi e $\tau _D$ \`e la costante di decadimento.
+Nel graficare la luce prodotta nel tempo, la salita della curva avviene con un tempo $\tau _r$ che \`e molto minore del tempo di discesa $\tau _d$.
+I diversi casi, il comportamento di emissione \`e pi\`u complesso, in quanto potrebbero essere introdotte diverse specie di attivatori; in questi casi, l'emissione totale si pu\`o separare nei due contributi, quindi pu\`o essere descritta da una legge del tipo $N(t) = A e^{- t / \tau _f} + B e^{-t / \tau _s}$, dove il primo, per esempio, decade pi\`u rapidamente del secondo.
+I coefficienti $A$ e $B$ dipendono dal materiale.
+
+\subsection{Tubi fotomoltiplicatori}
+
+I tubi fotomoltiplicatori sono utilizzati per convertire un segnale luminoso molto debole in un segnale di svariati ordini di grandezza superiore in corrente.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+La sua struttura \`e fondamentalmente la seguente: il segnale luminoso incide su un fotocatodo, terminale molto sensibile alla radiazione, che emette foto-elettroni.
+Questi elettroni sono accelerati tramite un campo elettrico verso una serie di terminali, detti \textit{dinodi}: l'incidenza di un elettrone su un dinodo provoca la produzione di molti elettroni secondari; accoppiando diversi dinodi in serie, i quali sono tenuti a potenziale elettrico progressivamente maggiore, si ottiene un processo di moltiplicazione.
+Tutta la corrente elettronica prodotta viene raccolta da un anodo alla fine del tubo. 
+Tutto questo sistema \`e racchiuso all'interno di un tubo di vetro sotto vuoto.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{pmt.png}
+	\end{minipage}
+\end{center}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+L'efficienza quantica del fotocatodo, data dal rapporto tra il numero di foto-elettroni emessi sul numero di fotoni incidenti, \`e tipicamente molto bassa, arrivando fino ad un massimo del $30\%$. 
+Questa dipende molto anche dalla lunghezza d'onda della radiazione incidente e decresce molto rapidamente andando verso il rosso, a seconda del materiale di cui \`e composto il fotocatodo.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=.9\columnwidth]{qecat.png}
+	\end{minipage}
+\end{center}
+Questo \`e legato al fatto che i fotoni hanno, via via, sempre meno energia per liberare gli elettroni atomici.
+Tale andamento rende necessario adattare il materiale del fotocatodo con la lunghezza d'onda della radiazione incidente.
+
+Tramite tubi fotomoltiplicatori, \`e possibile ottenere un guadagno dell'ordine di $10^6$, ottenuto tramite diversi dinodi in serie (circa 8/9); in generale, se $N$ \`e il numero di dinodi in serie, il guadagno ottenuto si pu\`o stimare tramite 
+\begin{equation}
+	G = \alpha  \delta ^N
+\end{equation}
+dove $\alpha $ \`e la frazione di foto-elettroni emessi dal fotocatodo ricevuta dal primo dinodo.
+Tipicamente, si ha $\delta =5$ e $\alpha  \simeq 1$.
+
+\subsection{Risoluzione energetica}
+
+Si ricorda che la risoluzione energetica \`e data da 
+\[
+R = \frac{\text{FWHM}}{H_0} = \frac{2.35}{\sqrt{N} }
+\] 
+Nel caso di un rivelatore a scintillazione, $N$ \`e il numero di elettroni prodotti dal fotocatodo ed \`e dato da 
+\[
+N = EY \varepsilon Q_E
+\] 
+dove $E$ \`e l'energia dei fotoni incidenti, $Y$ \`e l'efficienza di scintillazione, $\varepsilon $ \`e l'efficienza di raccolta luminosa e $Q_E$ \`e l'efficienza quantica del fotocatodo.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+Per uno scintillatore NaI(Tl), un fotone da $511$ keV incidente produce, al fotocatodo, circa $3000$ foto-elettroni, per una risoluzione energetica del $4\%$.
+La risoluzione energetica \`e tipicamente riportata all'energia di riferimento del Cs137, che \`e $662$ keV.
+Inoltre, l'andamento della risoluzione energetica con l'energia \`e una retta bilogaritmica:
+\[
+\log R = \log K - \frac{1}{2} \log E
+\] 
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{r-scint.png}
+	\end{minipage}
+\end{center}
+\subsection{Efficienza di rivelazione}
+
+
+Quanto all'efficienza di rivelazione dei fotoni, questa \`e strettamente legata con la sezione d'urto del processo di scattering.
+Nel suo calcolo, si assume che l'intero processo di assorbimento della radiazione nel materiale, indipendentemente dalla natura di tale processo, possa essere riassunta in un \textit{coefficiente di attenuazione totale} $\mu $.
+Nel caso di una carica puntiforme posta sull'asse di uno scintillatore cilindrico, l'efficienza intrinseca si calcola come
+\begin{equation}
+	\varepsilon  = \frac{1}{\Omega _0} \int _{\Omega _0} \left(1- e^{-\mu x}\right) \dd \Omega 
+\end{equation}
+dove $\Omega _0$ \`e l'angolo solido sotteso dal cristallo e misurato dalla posizione della sorgente puntiforme.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{scint-eff.png}
+\end{figure}
+
+
+
+
+
+
+
 
 
 
