@@ -3015,6 +3015,213 @@ I valori sperimentali che si ottengono per le scattreing length sono $a_s = -23.
 Il fatto che $a_s < 0$ e $a_t > 0$ \`e in accordo con l'interpretazione data prima sugli stati legati; lo stato di singoletto, infatti, non rappresenta uno stato legato del sistema neutrone-protone, mentre il tripletto di spin s\`i.
 \end{osservazione}
 
+
+
+\newpage
+
+\section{Lezione 02/11}
+
+Si considera un potenziale a buca rettangolare attrattivo.
+Si riscrive la condizione di raccordo come
+\[
+K \frac{1}{\tan (KR)} = k \frac{1}{\tan(kR +\delta _0)} \implies \tan(kR+\delta _0) = \frac{k}{K} \tan (KR)
+\] 
+Si sa che 
+\[
+\tan (\alpha  + \beta ) = \frac{\tan \alpha  + \tan \beta }{1 - \tan \alpha  \tan \beta }
+\] 
+Usando questa propriet\`a, si ottiene che
+\[
+	\begin{split}
+		&\frac{\tan kR + \tan \delta _0}{1 - \tan kR \tan \delta _0} = \frac{k}{K} \tan KR\\
+		& \tan kR + \tan \delta _0 = \frac{k}{K} \tan KR - \frac{k}{K} \tan KR \tan kR \tan \delta _0\\
+		& \tan \delta _0 \left(1+ \frac{k}{K}\tan KR \tan kR\right) = \frac{k}{K} \tan KR - \tan kR\\
+		& \frac{\tan \delta _0}{k}\left(1 + \frac{1}{K} \tan k R \tan KR \right)  = \frac{1}{K} \tan KR - \frac{\tan kR}{k}\\
+		&\Rightarrow - \frac{\tan \delta _0}{k} = \frac{R\frac{\tan kR}{Rk} - \frac{1}{K} \tan KR}{1 + \frac{k}{R} \tan kR \tan KR}
+	\end{split}
+\] 
+dove si \`e esplicitato un segno negativo davanti $\frac{\tan \delta _0}{k}$ in modo che il limite $k\to 0$ restituisca direttamente $a$.
+Facendo, ora, il limite per $E\to 0$, quindi il limite per $k\to 0$, l'espressione diventa 
+\begin{equation}
+a = R \left(1 - \frac{\tan K_0 R}{ K_0 R}\right) 
+\end{equation}
+con $K = \frac{\sqrt{2m (V_0+E)} }{\hbar } \to \frac{\sqrt{2m V_0} }{\hbar } \equiv K_0$, dove si \`e usato che $\frac{\tan kR}{kR}\to 1$.
+\begin{osservazione}
+Ora $a $ dipende esplicitamente dai parametri della buca $V_0$ e $R$, dove $V_0$ figura implicitamente in $K_0$.
+\end{osservazione}
+
+\noindent Si pu\`o riscrivere la lunghezza di scattering in una quantit\`a adimensionale: definendo $y \equiv a /R$ e $x \equiv K_0 R$, si ottiene direttamente $y = 1 - \frac{\tan x }{ x}$.
+\begin{boxenv}[]
+	\centering \color{red!60!black} Grafico $y(x)$ mettendo in evidenz $\pi / 2, \pi, 3 / 2 \pi, 2\pi, 5 / 2 \pi \ldots$.
+\end{boxenv}
+\begin{osservazione}
+Dall'espressione analitica trovata per $a$ in funzione dei parametri della buca, si evidenzia l'andamento all'aumentare della profondit\`a $V_0$.
+\end{osservazione}
+\noindent All'aumentare di $x$ dopo un asintoto, corrispondente ad uno stato legato a energia zero, questo stato legato va sempre pi\`u dentro la buca, corrispondendo ad uno stato legato per energia di legame via via superiore, diventando, quindi, uno stato legato a energia pi\`u grande; in prossimit\`a di un altro asintoto, lo stato legato precedente rimane, ma si pu\`o avere un secondo stato legato a energia zero.
+
+\subsection{Sezione d'urto nel caso di energia bassa}
+
+Questo limite non \`e relativo a quello di $E\to  0$ (cio\`e di $E \sim 1$  keV), ma si pu\`o considerare $1 \text{ keV} \lesssim E \lesssim 10$ MeV e corrisponde al caso in cui vale $\ell =0$.
+In questo caso, si vedr\`a che la sezione d'urto si potr\`a esprimere in termini di due parametri: la scattering length e l'effective range.
+Si pu\`o dimostrare che la condizione di raccordo si scrive come sviluppo in serie in $k^2$
+\begin{equation}
+	k \operatorname{cotg}( \delta _0(k)) = -\frac{1}{a} + \frac{1}{2} r_0 k^2 + \ldots
+\end{equation}
+Fermandosi al secondo termine, si ha $k \operatorname{cotg} \delta _0(k) = -\frac{1}{a} + \frac{1}{2} r_0 k^2$, dove $r_0$ \`e detto \textbf{effective range}, o \textbf{raggio efficace dell'interazione}.
+Lo sviluppo \`e ricavato nel contesto della \textit{teoria di Bethe dell'effective range}.
+Nel limite di energia nulla, si ritrova il risultato ottenuto precedentemente.
+La sezione d'urto per $\ell =0$ si era trovata essere
+\[
+\sigma (\ell =0) = \frac{4\pi}{k^2} \sin^2 \delta _0 = \frac{4\pi}{k^2} \frac{1}{1+ \operatorname{cotg}^2 \delta _0 }
+\] 
+Sostituendo nella cotangente lo sviluppo di Bethe arrestato al secondo termine dello sviluppo e considerando termini al pi\`u quadratici in $k$, si ottiene che
+\begin{equation}
+	\sigma (\ell =0) = \frac{4\pi a^2}{1 + a ^2 k^2 - a r_0 k ^2}
+\end{equation}
+\begin{osservazione}
+Nel limite $k\to 0$, si ricava il risultato precedente nel limite di energia nulla.
+\end{osservazione}
+
+\noindent Per lo scattering np, si hanno i seguenti valori sperimentali:
+\begin{align}
+		&a _s = - 23.715 \pm 0.015 \text{ fm} &\hspace{1cm} &r_{0,s} = 2.73 \pm 0.03 \text{ fm} \tag*{}\\
+		&a_t = 5.423 \pm 0.005 \text{ fm} &\hspace{1cm} &r_{0,t} = 1.748 \pm 0.006 \text{ fm} \tag*{}
+\end{align}
+\begin{osservazione}
+\`E importante notare il segno delle scattering length nei due casi, visto che il segno di $a$ indica la possibilit\`a di avere stati legati.
+\end{osservazione}
+
+\subsection{Scattering fra particelle identiche}
+
+Nel considerare particelle identiche, nel caso pp \`e necessario tenere conto dell'interazione coulombiana; in entrambi i casi, pp e nn, \`e necessario considerare che si sta facendo scattering con particelle identiche.
+
+Si considera un sistema composto da $N$ particelle identiche nel caso non-relativistico; l'hamiltoniano del sistema \`e, allora, dato da 
+\[
+H = \sum_{i=1}^{N}  \frac{p_i^2}{2m} + \sum_{i<j}^{N}  v_{ij}
+\] 
+dove si suppone di avere solamente interazione a due corpi.
+Si indica ogni particella tramite delle coordinate generalizzate $\xi _i = \left\{ \vec{r}_i , \sigma _i ,\ldots \right\} $; in questo modo, la funzione d'onda del sistema sar\`a funzione di queste coordinate: $\Psi \equiv \Psi (\xi _1,\xi _2,\ldots,\xi _N)$.
+
+Per semplificare la notazione, si considerano solo due particelle identiche, ma la trattazione \`e analoga nel caso generale.
+In questo caso, $\Psi (\xi _1, \xi _2)$ \`e la funzione d'onda del sistema e $\hat{P}_{12}$ \`e l'operatore di permutazione delle due particelle; nel caso di pi\`u particelle, si introdurranno gli operatori di scambio di due particelle $\hat{P}_{ij}$.
+Questo \`e definito come
+\[
+\hat{P}_{12} \Psi(\xi _1, \xi _2) = \Psi(\xi _2,\xi _1)
+\] 
+cio\`e non scambia le due particelle solo spazialmente, ma ne scambia tutte le variabili, come lo spin per esempio.
+Si nota, al solito, che $\hat{P}_{12}^2 \Psi(\xi _1,\xi _2) = \Psi (\xi _1,\xi _2)$, cio\`e $\hat{P}_{12}^2 \equiv \operatorname{Id} $, e che l'equazione agli autovalori per $\hat{P}_{12}$ \`e $\hat{P}_{12} \Psi (\xi _1,\xi _2) = \lambda  \Psi(\xi _1,\xi _2)$ e $\hat{P}_{12}^2 \Psi(\xi _1,\xi _2) = \lambda ^2 \Psi(\xi _1,\xi _2)$, per cui $\lambda ^2 = 1 \implies  \lambda  = \pm 1$.
+\begin{osservazione}
+	Nel considerare particelle identiche \textit{e indistinguibili}, significa che non si deve poter discriminare fra le due particelle e l'hamiltoniano deve poter godere di questa stessa simmetria, cio\`e deve valere $[\hat{H}, \hat{P}_{12}] = 0$, per cui $\lambda $ \`e una costante del moto. 
+\end{osservazione}
+
+\noindent \`E sempre possibile scrivere una combinazione simmetrica e antisimmetrica (sotto l'azione di $\hat{P}_{12}$) con $\Psi (\xi _1,\xi _2)$:
+\begin{align}
+	& \Psi_a(\xi _1,\xi _2) = A \Big[ \Psi(\xi _1,\xi _2) - \Psi (\xi _1,x_2) \Big]  \tag{antisimmetrica}\\
+	& \Psi_s(\xi _1,\xi _2) = B \Big[ \Psi(\xi _1,\xi _2) + \Psi (\xi _1,x_2) \Big]  \tag{simmetrica}
+\end{align}
+
+\subsubsection{Antisimmetria della $\Psi$ per fermioni identici e il principio di Pauli}
+
+In generale, per un sistema di fermioni identici \textit{interagenti}, non \`e possibile descrivere la funzione d'onda $\Psi$ in termini di funzioni d'onda di particela singola, cio\`e non ha senza di parlare di funzioni d'onda (stati) di particella singola: la funzione d'onda $\Psi$ deve descrivere il sistema come un tutt'uno.
+\begin{osservazione}
+\`E possibile descrivere il sistema in termini di funzioni d'onda di singola particella se l'interazione \`e sufficientemente piccola in modo da considerare ciascuna particella come in un campo medio comune a tutte; questo \`e quello che si fa per gli elettroni atomici, in cui si usa l'hamiltoniano di Hartee-Fock.
+\end{osservazione}
+\noindent Nel caso descritto nell'osservazione, si pu\`o scrivere che
+\[
+H \simeq H_0 = \sum_{i=1}^{N} \left[ \frac{p_i^2}{2m} + U_i \right] = \sum_{i=1}^{N} h_i
+\] 
+dove $U_i$ campo medio comune ad ognuna delle $N$ particelle del sistema a $N$ corpi.
+L'equazione di Schr\"odinger ad un corpo restituisce 
+\[
+\begin{split}
+	&h_i \psi _{\alpha _n} (\xi _i) = e_{\alpha _n} \psi _{\alpha _n} (\xi _i)\\
+	& \Psi (\xi _1,\ldots,\xi _N) = \psi _{\alpha _1}(\xi _i) \ldots \psi _{\alpha _N}(\xi _N)
+\end{split}
+\] 
+Tornando al caso di due particelle, si pu\`o costruire una funzione d'onda antisimmetrica del sistema come
+\[
+\begin{split}
+	\Psi _a(\xi _1,\xi _2) &= \frac{1}{\sqrt{2} } \left[ \psi _{\alpha _1}(\xi _1) \psi _{\alpha _2}(\xi _2) - \psi _{\alpha _1}(\xi _2) \psi _{\alpha _2}(\xi _1) \right] \\
+			       &= \frac{1}{\sqrt{2} } \det \begin{pmatrix} \psi _{\alpha _1}(\xi _1) & \psi _{\alpha _1} (\xi _2) \\ \psi _{\alpha _2}(\xi _1) & \psi _{\alpha _2}(\xi _2) \end{pmatrix} 
+\end{split}
+\] 
+che si generalizza a $N$ corpi tramite il determinante di Slater.
+Il principio di Pauli deriva direttamente da questa scrittura perch\'e, se due termini sono uguali, il determinante \`e nullo.
+
+Ora si tratta la simmetria per scambio della posizione spaziale tramite l'operatore $\hat{P}_r$.
+Date due particelle, in cui il vettore $\vec{r}$ punta da $1$ verso $2$, e indicando con $\vec{r}_1$ e $\vec{r}_2$ i raggi vettore delle due particelle, $\vec{r} = \vec{r}_2 - \vec{r}_1$.
+Allora, sotto $\hat{P}_r$, $\vec{r}\mapsto \vec{r}' = - \vec{r}$ e, se $\phi (\vec{r}_1, \vec{r}_2) \equiv \phi (\vec{r})$ funzione d'onda della sola parte spaziale, si ha $\hat{P}_r \phi (\vec{r}) = \phi (-\vec{r})$.
+Considerando, ora, l'operatore di parit\`a $\hat{P}$, si ha 
+\[
+	\begin{split}
+		&\hat{P} \phi (\vec{r}) = \phi (-\vec{r}) \\
+		& \hat{P}_r \phi (\vec{r}) = \phi (-\vec{r})
+	\end{split}
+\] 
+Se $\hat{P} \phi (\vec{r}) = P \phi (\vec{r})$, si pu\`o scrivere $P = P_1P_2 (-1)^\ell $; se le due particelle sono identiche, per\`o, $P_1P_2=1$ sempre, quindi $P = (-1)^\ell $.
+Usando questa osservazione, si pu\`o scrivere che
+\[
+\hat{P}_r \phi (\vec{r}) = (-1)^\ell  \phi (\vec{r})
+\] 
+quindi $\ell $ pari implica $\phi $ simmetrica rispetto allo scambio della posizione delle due particelle, altrimenti, se $\ell $ \`e pari, $\phi $ \`e antisimmetrica rispetto allo scambio della posizione delle due particelle.
+
+\subsubsection{Scattering di due particelle identiche}
+
+Si considera prima lo scattering pp. 
+In base a quanto detto:
+\begin{enumerate}[(a).]
+	\item la funzione d'onda deve essere antisimmetrica per scambio delle due particelle;
+	\item visto che le particelle sono anche indistinguibili, si hanno degli \textit{effetti di scambio}.
+\end{enumerate}
+Si considera lo scattering nel centro di massa: la diffusione porta la particella incidente da sinistra (1) a proseguire verso l'alto, con un angolo $\theta $ rispetto all'orizzontale, mentre la particella incidente da destra (2) viene diffusa verso il basso.
+Questo evento \`e, per\`o, totalmente equivalente a se la particella (1) viene diffusa verso il basso e la (2) verso l'alto, con angolo $\pi- \theta $ per la (1) e $\theta $ per la (2).
+Separando la funzione d'onda del sistema in 
+\[
+\Psi(\xi _1,\xi _2) = \phi (\vec{r}_1, \vec{r}_2) X (\sigma _1,\sigma _2)
+\] 
+e indicando con $s_1 = s_2 = 1 / 2$ gli spin delle singole particelle, si indica con $\chi _\uparrow$ lo sato di spin-up $\ket{1 / 2 , 1 / 2} \equiv \ket{\uparrow} $  per $\ket{s ,m_s} $ e con $\chi _\downarrow$ quello di spin down.
+Allora, lo stato $m_s = 1 $ \`e $X(\sigma _1,\sigma _2) = \chi _\uparrow$, mentre $m_s = -1$ \`e relativo a $X(\sigma _1,\sigma _2) = \chi _\downarrow$.
+Nel caso $m_s = 0$, si ha
+\[
+X = \frac{1}{\sqrt{2} } \left[  \chi _\uparrow(\sigma _1) \chi _\downarrow(\sigma _2) + \chi _\uparrow(\sigma _2) \chi _\downarrow (\sigma _1) \right] 
+\] 
+Nel singoletto di spin, si h
+\[
+X = \frac{1}{\sqrt{2} } \left[  \chi _\uparrow(\sigma _1) \chi _\downarrow(\sigma _2) - \chi _\uparrow(\sigma _2) \chi _\downarrow (\sigma _1) \right] 
+\] 
+Se $S=1$, allora $X$ simmetrica e si deve avere $\phi (\vec{r}_1, \vec{r}_2)$ antisimmetrica, per cui deve valere $\ell =-1$; se $S=0$, invece, $X$ antisimmetrica, $\phi $ simmetrica e, quindi, $\ell $ \`e pari.
+Questo permette di scrivere una tabella degli stati possibili per un sistema pp e nn:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c}
+		$\ell $ & $ S$ & Stati ($^{2S+1}\ell _J$)\\
+	\hline
+		0&0& $^1S_0$\\
+		1 & 1 & $^3 P_2, ^3 P_1, ^3P_0$\\
+		2 & 0 & $^1 D_2$\\
+		3 & 1 & $^3F_4, ^3 F_3, ^3F_2 $\\
+		$\vdots$ & $\vdots$ & $\vdots$\\
+	\hline
+	\end{tabular}
+\end{table}
+Lo scattering a bassa energia, $\ell =0$, pu\`o avvenire solamente nel singoletto di spin, cio\`e nello stato $^1S_0$.
+Per esempio, lo stato $^3S_1$ \`e vietato, contrariamente al caso del deutone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \appendix
 \section{Matrici di Pauli}
