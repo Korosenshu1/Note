@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.22)  2 NOV 2026 10:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.22)  2 NOV 2026 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,18 +1321,18 @@ l.2863 \end{center}
                    ] [58 <./sigma-np.png>] [59] [60] [61] [62]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3123.
+(hyperref)                removing `math shift' on input line 3192.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 3123.
+(hyperref)                removing `\Psi' on input line 3192.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3123.
+(hyperref)                removing `math shift' on input line 3192.
 
 [63] [64] [65]
-Overfull \hbox (0.99184pt too wide) detected at line 3236
+Overfull \hbox (0.99184pt too wide) detected at line 3305
 \OML/cmm/m/it/10.95 ^^[[]^^[[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^N[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 i"[]^^[[] ^^[[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 ^^[[]^^[[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 i^^[[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^[[]^^[[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^[[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^[[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^[[] \OT1/cmr/m/n/10.95 = 3 \OMS/cmsy/m/n/10.95 ^^A []
  []
 
@@ -1348,13 +1348,16 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 49363 strings out of 469504
- 1154288 string characters out of 5470378
- 1766702 words of memory out of 5000000
- 77052 multiletter control sequences out of 15000+600000
+ 52835 strings out of 469504
+ 1226534 string characters out of 5470378
+ 1771702 words of memory out of 5000000
+ 80522 multiletter control sequences out of 15000+600000
  644414 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  124i,27n,121p,11245b,877s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
 
@@ -1384,10 +1387,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on master.pdf (66 pages, 1869389 bytes).
+Output written on master.pdf (66 pages, 1888792 bytes).
 PDF statistics:
- 1044 PDF objects out of 1200 (max. 8388607)
- 890 compressed objects within 9 object streams
- 293 named destinations out of 1000 (max. 500000)
+ 1048 PDF objects out of 1200 (max. 8388607)
+ 894 compressed objects within 9 object streams
+ 295 named destinations out of 1000 (max. 500000)
  562 words of extra memory for PDF output out of 10000 (max. 10000000)
 

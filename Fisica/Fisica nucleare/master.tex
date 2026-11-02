@@ -2351,7 +2351,7 @@ quindi
 	F(\theta ) = \frac{1}{k} \sum_{\ell =0}^{+\infty} (2\ell +1) e^{i \delta _\ell } \sin \delta _\ell  P_\ell (\cos \theta )
 \end{equation}
 
-\subsection{Scattering nucleone-nucleone a bassa energia}
+\subsection{Scattering neutrone-protone a bassa energia}
 
 \begin{center}
 	\begin{minipage}
@@ -2874,7 +2874,7 @@ Immaginando di avere un certo numero di coppie che urtano in questo regime, su q
 Questo assume assenza di polarizzazione e correlazioni tra gli stati iniziali nel preparare le coppie di particelle.
 \end{osservazione}
 
-\subsubsection{Scattering length nello scattering np}
+\subsubsection{Scattering length}
 
 
 
@@ -3015,22 +3015,18 @@ I valori sperimentali che si ottengono per le scattreing length sono $a_s = -23.
 Il fatto che $a_s < 0$ e $a_t > 0$ \`e in accordo con l'interpretazione data prima sugli stati legati; lo stato di singoletto, infatti, non rappresenta uno stato legato del sistema neutrone-protone, mentre il tripletto di spin s\`i.
 \end{osservazione}
 
+\subsubsection{Scattering length in funzione dei parametri della buca}
 
 
-\newpage
-
-\section{Lezione 02/11}
-
-Si considera un potenziale a buca rettangolare attrattivo.
-Si riscrive la condizione di raccordo come
+Riprendendo la condizione di raccordo per la soluzione della funzione radiale modificata nel caso di una buca di profondit\`a $V_0$ e larghezza $R$, questa si pu\`o riscrivere come 
 \[
 K \frac{1}{\tan (KR)} = k \frac{1}{\tan(kR +\delta _0)} \implies \tan(kR+\delta _0) = \frac{k}{K} \tan (KR)
 \] 
-Si sa che 
+Utilizzando la relazione
 \[
 \tan (\alpha  + \beta ) = \frac{\tan \alpha  + \tan \beta }{1 - \tan \alpha  \tan \beta }
 \] 
-Usando questa propriet\`a, si ottiene che
+si ottiene che
 \[
 	\begin{split}
 		&\frac{\tan kR + \tan \delta _0}{1 - \tan kR \tan \delta _0} = \frac{k}{K} \tan KR\\
@@ -3041,7 +3037,7 @@ Usando questa propriet\`a, si ottiene che
 	\end{split}
 \] 
 dove si \`e esplicitato un segno negativo davanti $\frac{\tan \delta _0}{k}$ in modo che il limite $k\to 0$ restituisca direttamente $a$.
-Facendo, ora, il limite per $E\to 0$, quindi il limite per $k\to 0$, l'espressione diventa 
+Nel limite $E\to 0$ ($\Leftrightarrow k\to 0$), allora, l'espressione diventa 
 \begin{equation}
 a = R \left(1 - \frac{\tan K_0 R}{ K_0 R}\right) 
 \end{equation}
@@ -3051,35 +3047,108 @@ Ora $a $ dipende esplicitamente dai parametri della buca $V_0$ e $R$, dove $V_0$
 \end{osservazione}
 
 \noindent Si pu\`o riscrivere la lunghezza di scattering in una quantit\`a adimensionale: definendo $y \equiv a /R$ e $x \equiv K_0 R$, si ottiene direttamente $y = 1 - \frac{\tan x }{ x}$.
-\begin{boxenv}[]
-	\centering \color{red!60!black} Grafico $y(x)$ mettendo in evidenz $\pi / 2, \pi, 3 / 2 \pi, 2\pi, 5 / 2 \pi \ldots$.
-\end{boxenv}
+\begin{center}
+	\begin{tikzpicture}[x=1.2cm, y=0.8cm]
+    \definecolor{curva}{RGB}{30,80,160}
+    \definecolor{asintoti}{RGB}{190,45,45}
+
+    % Grafico ritagliato nella finestra visibile
+    \begin{scope}
+        \clip (0,-4) rectangle (9.6,4);
+
+        % Retta di riferimento y=1
+        \draw[gray, densely dotted] (0,1) -- (9.6,1);
+
+        % Asintoti verticali
+        \foreach \a in {1.570796,4.712389,7.853982}{
+            \draw[asintoti, dashed]
+                (\a,-4) -- (\a,4);
+        }
+
+        % Rami della funzione: y = 1 - tan(x)/x
+        % deg(\x) converte i radianti in gradi.
+        \draw[curva, thick]
+            plot[domain=0.001:1.560796, samples=400]
+            (\x,{1-tan(deg(\x))/\x});
+
+        \draw[curva, thick]
+            plot[domain=1.580796:4.702389, samples=500]
+            (\x,{1-tan(deg(\x))/\x});
+
+        \draw[curva, thick]
+            plot[domain=4.722389:7.843982, samples=500]
+            (\x,{1-tan(deg(\x))/\x});
+
+        \draw[curva, thick]
+            plot[domain=7.863982:9.424778, samples=300]
+            (\x,{1-tan(deg(\x))/\x});
+    \end{scope}
+
+    % Assi cartesiani
+    \draw[->] (-0.25,0) -- (9.85,0)
+        node[right] {$x$};
+    \draw[->] (0,-4.2) -- (0,4.35)
+        node[above] {$y$};
+
+    % Tacche ed etichette sull'asse x
+    \foreach \a/\etichetta in {
+        1.570796/{\frac{\pi}{2}},
+        3.141593/{\pi},
+        4.712389/{\frac{3\pi}{2}},
+        6.283185/{2\pi},
+        7.853982/{\frac{5\pi}{2}},
+        9.424778/{3\pi}
+    }{
+        \draw (\a,0.08) -- (\a,-0.08);
+        \node[below, fill=white, inner sep=2pt]
+            at (\a,-0.12) {$\etichetta$};
+    }
+
+    % Tacche ed etichette sull'asse y
+    \foreach \b in {-3,-2,-1,1,2,3}{
+        \draw (-0.06,\b) -- (0.06,\b);
+        \node[left] at (-0.08,\b) {$\b$};
+    }
+
+    % Punti (n*pi,1)
+    \foreach \a in {3.141593,6.283185,9.424778}{
+        \fill[curva] (\a,1) circle[radius=2pt];
+    }
+
+    % Singolarita' eliminabile nell'origine: limite y=0
+    \draw[curva, thick, fill=white]
+        (0,0) circle[radius=2pt];
+    \node[below left] at (0,0) {$0$};
+\end{tikzpicture}
+\end{center}
 \begin{osservazione}
-Dall'espressione analitica trovata per $a$ in funzione dei parametri della buca, si evidenzia l'andamento all'aumentare della profondit\`a $V_0$.
+Dall'espressione analitica trovata per $a$ in funzione dei parametri della buca, si evidenzia l'andamento all'aumentare della profondit\`a $V_0$ descritto in precedenza.
 \end{osservazione}
-\noindent All'aumentare di $x$ dopo un asintoto, corrispondente ad uno stato legato a energia zero, questo stato legato va sempre pi\`u dentro la buca, corrispondendo ad uno stato legato per energia di legame via via superiore, diventando, quindi, uno stato legato a energia pi\`u grande; in prossimit\`a di un altro asintoto, lo stato legato precedente rimane, ma si pu\`o avere un secondo stato legato a energia zero.
+\noindent All'aumentare di $x$ dopo un asintoto, corrispondente ad uno stato legato a energia zero, questo stato legato va sempre pi\`u dentro la buca, traducendosi in uno stato legato per energia di legame via via superiore; in prossimit\`a dell'asintoto successivo, lo stato legato precedente rimane, ma si pu\`o avere un secondo stato legato a energia zero.
 
-\subsection{Sezione d'urto nel caso di energia bassa}
+\subsubsection{Sezione d'urto a bassa energia tramite effective range}
 
-Questo limite non \`e relativo a quello di $E\to  0$ (cio\`e di $E \sim 1$  keV), ma si pu\`o considerare $1 \text{ keV} \lesssim E \lesssim 10$ MeV e corrisponde al caso in cui vale $\ell =0$.
+Ora ci si mette nel limite pi\`u generale di $10 \text{ keV} \lesssim E \lesssim 10$ MeV, per cui si pu\`o ancora considerare $\ell =0$.
 In questo caso, si vedr\`a che la sezione d'urto si potr\`a esprimere in termini di due parametri: la scattering length e l'effective range.
-Si pu\`o dimostrare che la condizione di raccordo si scrive come sviluppo in serie in $k^2$
+Si pu\`o dimostrare che la condizione di raccordo si scrive come sviluppo in serie\footnote{Questo sviluppo deriva dalla \textit{teoria di Bethe dell'effective range}.} in $k^2$:
 \begin{equation}
-	k \operatorname{cotg}( \delta _0(k)) = -\frac{1}{a} + \frac{1}{2} r_0 k^2 + \ldots
+	k \operatorname{cotg}( \delta _0(k)) = -\frac{1}{a} + \frac{1}{2} r_0 k^2 + O(k^4)
 \end{equation}
-Fermandosi al secondo termine, si ha $k \operatorname{cotg} \delta _0(k) = -\frac{1}{a} + \frac{1}{2} r_0 k^2$, dove $r_0$ \`e detto \textbf{effective range}, o \textbf{raggio efficace dell'interazione}.
-Lo sviluppo \`e ricavato nel contesto della \textit{teoria di Bethe dell'effective range}.
+\begin{osservazione}
 Nel limite di energia nulla, si ritrova il risultato ottenuto precedentemente.
-La sezione d'urto per $\ell =0$ si era trovata essere
+\end{osservazione}
+
+\noindent Fermandosi al secondo termine, si ha $k \operatorname{cotg} \delta _0(k) = -\frac{1}{a} + \frac{1}{2} r_0 k^2$, dove $r_0$ \`e detto \textbf{effective range}, o \textbf{raggio efficace dell'interazione}.
+Si riprende la sezione d'urto calcolata per $\ell =0$ in precedenza:
 \[
 \sigma (\ell =0) = \frac{4\pi}{k^2} \sin^2 \delta _0 = \frac{4\pi}{k^2} \frac{1}{1+ \operatorname{cotg}^2 \delta _0 }
 \] 
-Sostituendo nella cotangente lo sviluppo di Bethe arrestato al secondo termine dello sviluppo e considerando termini al pi\`u quadratici in $k$, si ottiene che
+Sostituendo alla cotangente lo sviluppo di Bethe e lasciando solo i termini al pi\`u quadratici in $k$, si ottiene
 \begin{equation}
 	\sigma (\ell =0) = \frac{4\pi a^2}{1 + a ^2 k^2 - a r_0 k ^2}
 \end{equation}
 \begin{osservazione}
-Nel limite $k\to 0$, si ricava il risultato precedente nel limite di energia nulla.
+Di nuovo, nel limite $k\to 0$, si ricava il risultato della sezione d'urto nel limite di energia nulla ottenuto in precedenza.
 \end{osservazione}
 
 \noindent Per lo scattering np, si hanno i seguenti valori sperimentali:
