@@ -3162,28 +3162,28 @@ Di nuovo, nel limite $k\to 0$, si ricava il risultato della sezione d'urto nel l
 
 \subsection{Scattering fra particelle identiche}
 
-Nel considerare particelle identiche, nel caso pp \`e necessario tenere conto dell'interazione coulombiana; in entrambi i casi, pp e nn, \`e necessario considerare che si sta facendo scattering con particelle identiche.
+Nel considerare particelle identiche, si devono considerare altri tipi di interazione, oltre alla sola forza forte.
+Nel caso protone-protone, per esempio, \`e necessario tenere conto dell'interazione coulombiana; sia nello scattering protone-protone, che nello scattering neutrone-neutrone, \`e necessario tenere conto del principio di esclusione di Pauli, visto che sono particelle identiche.
 
-Si considera un sistema composto da $N$ particelle identiche nel caso non-relativistico; l'hamiltoniano del sistema \`e, allora, dato da 
+Si considera un sistema composto da $N$ particelle identiche nel caso non-relativistico; assumendo di avere un'interazione esclusivamente a due corpi, indicata col potenziale $v_{ij}$, l'hamiltoniano del sistema \`e dato da 
 \[
 H = \sum_{i=1}^{N}  \frac{p_i^2}{2m} + \sum_{i<j}^{N}  v_{ij}
 \] 
-dove si suppone di avere solamente interazione a due corpi.
-Si indica ogni particella tramite delle coordinate generalizzate $\xi _i = \left\{ \vec{r}_i , \sigma _i ,\ldots \right\} $; in questo modo, la funzione d'onda del sistema sar\`a funzione di queste coordinate: $\Psi \equiv \Psi (\xi _1,\xi _2,\ldots,\xi _N)$.
+Si indica ogni particella tramite delle coordinate generalizzate $\xi _i = \left\{ \vec{r}_i , \sigma _i ,\ldots \right\} $ che racchiudono tutte le variabili relative alla particella $i$-esima; in questo modo, la funzione d'onda del sistema sar\`a funzione di queste coordinate: $\Psi \equiv \Psi (\xi _1,\xi _2,\ldots,\xi _N)$.
 
-Per semplificare la notazione, si considerano solo due particelle identiche, ma la trattazione \`e analoga nel caso generale.
-In questo caso, $\Psi (\xi _1, \xi _2)$ \`e la funzione d'onda del sistema e $\hat{P}_{12}$ \`e l'operatore di permutazione delle due particelle; nel caso di pi\`u particelle, si introdurranno gli operatori di scambio di due particelle $\hat{P}_{ij}$.
-Questo \`e definito come
+Ora si considera solo il caso $N=2$; la trattazione \`e analoga nel caso generale.
+Si ha, allora, $\Psi (\xi _1, \xi _2)$ \`e la funzione d'onda del sistema e $\hat{P}_{12}$ \`e l'operatore di permutazione delle due particelle\footnote{Nel caso di pi\`u particelle, si definiscono gli operatori di scambio di due particelle $\hat{P}_{ij}$.}, definito come
 \[
 \hat{P}_{12} \Psi(\xi _1, \xi _2) = \Psi(\xi _2,\xi _1)
 \] 
 cio\`e non scambia le due particelle solo spazialmente, ma ne scambia tutte le variabili, come lo spin per esempio.
 Si nota, al solito, che $\hat{P}_{12}^2 \Psi(\xi _1,\xi _2) = \Psi (\xi _1,\xi _2)$, cio\`e $\hat{P}_{12}^2 \equiv \operatorname{Id} $, e che l'equazione agli autovalori per $\hat{P}_{12}$ \`e $\hat{P}_{12} \Psi (\xi _1,\xi _2) = \lambda  \Psi(\xi _1,\xi _2)$ e $\hat{P}_{12}^2 \Psi(\xi _1,\xi _2) = \lambda ^2 \Psi(\xi _1,\xi _2)$, per cui $\lambda ^2 = 1 \implies  \lambda  = \pm 1$.
 \begin{osservazione}
-	Nel considerare particelle identiche \textit{e indistinguibili}, significa che non si deve poter discriminare fra le due particelle e l'hamiltoniano deve poter godere di questa stessa simmetria, cio\`e deve valere $[\hat{H}, \hat{P}_{12}] = 0$, per cui $\lambda $ \`e una costante del moto. 
+	Nel considerare particelle identiche \textit{e indistinguibili}, non potendo discriminare fra le due, il sistema non pu\`o modificarsi a seguito di un loro scambio. 
+	Per questo motivo, l'hamiltoniano deve soddisfare $[\hat{H}, \hat{P}_{12}] = 0$, per cui $\lambda $ \`e una costante del moto. 
 \end{osservazione}
 
-\noindent \`E sempre possibile scrivere una combinazione simmetrica e antisimmetrica (sotto l'azione di $\hat{P}_{12}$) con $\Psi (\xi _1,\xi _2)$:
+\noindent Si nota che \`e sempre possibile scrivere una combinazione simmetrica e antisimmetrica (sotto l'azione di $\hat{P}_{12}$) con $\Psi (\xi _1,\xi _2)$:
 \begin{align}
 	& \Psi_a(\xi _1,\xi _2) = A \Big[ \Psi(\xi _1,\xi _2) - \Psi (\xi _1,x_2) \Big]  \tag{antisimmetrica}\\
 	& \Psi_s(\xi _1,\xi _2) = B \Big[ \Psi(\xi _1,\xi _2) + \Psi (\xi _1,x_2) \Big]  \tag{simmetrica}

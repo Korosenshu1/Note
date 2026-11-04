@@ -713,7 +713,50 @@ dove $\Omega _0$ \`e l'angolo solido sotteso dal cristallo e misurato dalla posi
 	\includegraphics[width=0.8\textwidth]{scint-eff.png}
 \end{figure}
 
+\newpage
 
+\section{Single photon counting e rivelatori a semiconduttore}
+In un semiconduttore, i livelli energetici occupabili dagli elettroni si raggruppano in due bande: la banda di valenza, in cui gli elettroni fanno parte dei legami atomici, e la banda di conduzione, in cui gli elettroni possono muoversi liberamente nel materiale.
+Il gap fra queste due bande, nel silicio, a temperatura ambiente, \`e di circa $1$ eV.
+
+In un semiconduttore, \`e possibile che un elettrone possa arrivare alla banda di conduzione grazie al solo processo di agitazione termica; questo salto lascia, nella banda di valenza, un sito vuoto, detto \textit{lacuna}.
+La probabilit\`a che si generi una coppia elettrone-lacuna per agitazione termica \`e data da 
+\[
+p(T) = CT^{3 / 2} \exp \left( - \frac{E_g}{2 \kappa _B T}\right) 
+\] 
+dove $C$ \`e una costante caratteristica del materiale e $E_g$ \`e l'energia di gap tra le due bande.
+\begin{osservazione}
+Le variazioni statistiche di questi portatori creano segnali che influenzano i segnali che si vogliono rivelare; per ridurre questo rumore, \`e necessario creare delle zone nel rivelatore in cui si minimizza la presenza di questi portatori.
+\end{osservazione}
+
+\subsection{Drogaggio}
+
+Si possono introdurre nei semiconduttori delle impurit\`a per regolare la concentrazione di portatori.
+L'utilizzo di un drogaggio di \textit{tipo n} prevede l'uso di impurit\`a che possono costruire legami in cui un loro elettrone di valenza non vi partecipa, risultando, cos\`i, pi\`u debolmente legato e pi\`u facilmente promuovibile alla banda di conduzione; l'introduzione di elementi come il fosforo nel silicio aggiunge, infatti, dei livelli energetici nel gap energetico tra banda di valenza e banda di conduzione, molto vicini a quest'ultima.
+Nei semiconduttori drogati di \textit{tipo p}, invece, si usano elementi i cui legami lasciano un legame covalente non-saturato; creando una lacuna ``libera di muoversi''; in questo caso, si formano dei livelli energetici nel gap che sono molto vicini alla banda di valenza.
+I materiali usati per il drogaggio di tipo n si dicono \textbf{donori}; quelli per il drogaggio di tipo p, si dicono \textbf{accettori}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{si-gap.png}
+\end{figure}
+\subsection{Giunzioni p-n}
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	Si possono accostare due semiconduttori drogati di tipi diversi in modo da avere una maggiore concentrazione di portatori diversi nell'uno e nell'altro.
+	L'equazione di Poisson nel materiale \`e
+	\[
+	\frac{d ^2 \phi }{d x^2}  = - \frac{\rho (x)}{\varepsilon }
+	\] 
+	e il campo elettrico generato \`e dato da $E(x) = - \frac{d \phi }{d x} $.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.5\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{giunc.png}
+	\end{minipage}
+\end{center}
 
 
 
