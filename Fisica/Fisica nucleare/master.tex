@@ -3376,20 +3376,199 @@ Dalla tabella, si nota che lo scattering a bassa energia, cio\`e con $\ell =0$, 
 Inoltre, lo stato $^3S_1$ \`e vietato, per cui non pu\`o esistere uno stato legato analogo al deutone.
 \end{osservazione}
 
+\subsubsection{Sezione d'urto differenziale}
+
+In assunzione di scattering centrale, si ricorda che 
+\[
+\sigma (\theta ) \equiv \frac{d \sigma }{d \Omega }  = \lvert F(\theta ) \rvert ^2
+\] 
+Indicando con $\varphi (r,\theta )$ la funzione d'onda del processo, si definiscono
+\begin{align}
+		&\varphi _\text{s} = \varphi (r,\theta ) + \varphi (r,\pi - \theta )\tag{simmetrica}\\
+		&\varphi _\text{a} = \varphi (r,\theta ) - \varphi (r,\pi- \theta ) \tag{antisimmetrica}
+\end{align}
+A seconda della simmetria del sistema, il fattore di forma si scriver\`a come $F(\theta ) \pm F(\pi-\theta )$.
+Per questo motivo, si distinguono i casi di urto nel tripletto e nel singoletto di spin.
+\begin{enumerate}[(a).]
+	\item Tripletto di spin: $S=1$.
+
+		In questo caso, $\varphi $ \`e antisimmetrica, quindi:
+		\[
+		\begin{split}
+			\sigma _t &= \lvert F(\theta  - F(\pi-\theta ) \rvert ^2 \\
+				  &= \lvert F(\theta ) \rvert ^2 + \lvert F(\pi-\theta ) \rvert ^2 - 2 \operatorname{Re} \left\{ F(\theta )F^*(\pi-\theta ) \right\} \\
+				  & = \sigma (\theta ) + \sigma (\pi-\theta ) - 2 \operatorname{Re}  \left\{ F(\theta ) F^*(\pi - \theta ) \right\} 
+		\end{split}
+		\] 
+	Si nota che $\sigma_t (\pi / 2) = 0$.
+\item Singoletto di spin: $S=0$.
 
 
+	In questo caso, $\varphi $ \`e simmetrica e 
+	\[
+	\begin{split}
+		\sigma _s &= \lvert F(\theta ) + F(\pi-\theta ) \rvert ^2 \\
+			  & = \sigma (\theta ) + \sigma (\pi-\theta ) + 2 \operatorname{Re} \left\{ F(\theta ) F^*(\pi-\theta ) \right\} 
+	\end{split}
+	\] 
+	In questo caso, $\sigma _s (\pi / 2) = 4 \sigma  ( \pi / 2)$.
+\end{enumerate}
+Si chiamano $\sigma (\theta )$ \textit{termine diretto}, $\sigma (\pi-\theta )$ \textit{termine di scambio} e $F(\theta )F^*(\pi-\theta )$ \textit{termine di interferenza}.
 
+Nel considerare la possibilit\`a che il fascio incidente sia a energie $E \gtrsim 10$ MeV, si deve tenere conto del fatto che non \`e pi\`u solo l'onda S ad essere ammessa: ipotizzando di avere fascio e bersaglio non polarizzati, la sezione d'urto del processo \`e una miscela statistica:
+\[
+	\begin{split}
+		\sigma _\text{stat} &= \frac{3}{4} \sigma _t (\theta ) + \frac{1}{4} \sigma _s(\theta ) \\
+				    & = \sigma (\theta ) + \sigma (\pi-\theta ) - \operatorname{Re} \left\{ F(\theta ) F^*(\pi-\theta ) \right\} 
+	\end{split}
+\] 
 
+\subsubsection{Scattering protone-protone}
 
+La sezione d'urto per lo scattering protone-protone relativa all'interazione coulombiana \`e ottenuta tramite la formula di Mott:
+\[
+\sigma _\text{stat}^\text{coul}(\theta ) = \left(\frac{e^2}{4\pi \varepsilon _0}\frac{1}{2E}\right) ^2 \left[ \frac{1}{\sin^4 (\theta  / 2)} + \frac{1}{\cos^4 (\theta  / 2)} - \frac{\cos \Big( \eta  \log\big[\tan^2 (\theta  / 2)\big] \Big) }{\sin^2 (\theta  / 2) \cos^2 (\theta  / 2)} \right] 
+\] 
+dove si \`e usato che $\sin \frac{\pi - \theta }{2} = \cos \theta  / 2$ per il termine di scambio e 
+\[
+\eta  = \frac{e^2}{4\pi \varepsilon _0 \hbar  c} \frac{1}{v / c} = \frac{\alpha}{v / c} = \frac{e^2}{4\pi \varepsilon _0}\frac{m}{\hbar ^2 k}
+\] 
+\`e il \textit{parametro di Sommerfeld}, per $v = p / m$.
 
+Nel caso di bassa energia ($E\lesssim 10$ MeV), si pu\`o considerare $\ell  = 0$ e si sa che la sezione d'urto dell'interazione nucleare \`e data da $\sigma ^\text{nucl} = \frac{\sin^2\big( \delta _0(k)\big)}{k^2}$ che \`e isotropa.
+\begin{osservazione}
+Anche a basse energie, visto che l'interazione coulombiana ha raggio infinito, si deve considerare il contributo degli stati con $\ell > 0$.
+Nello scrivere la sezione d'urto comprensiva dell'interazione coulombiana e di quella nucleare, bisogner\`a comunque tenere conto, quindi, degli stati con $S=1$ e con $S=0$.
+Il contributo nucleare per basse energie, invece, \`e di solo singoletto.
+\end{osservazione}
 
+\noindent Mettendo insieme il contributo coulombiano e quello nucleare, si trova che 
+\begin{equation}\label{sigmapp}
+\begin{split}
+	\sigma _\text{stat}(\theta )  ={ } &{ } \sigma _\text{stat}^\text{coul}(\theta ) + \left(\frac{e^2}{4\pi \varepsilon _0}\frac{1}{2E}\right) \Bigg[ \frac{4}{ \eta ^2} \sin^2 \delta _0 - \frac{2}{\eta }\sin \delta _0 \left[ \frac{1}{\sin^2 ( \theta  / 2)} \cos\Big((\delta _0 + \eta \log(\sin^2 \theta  / 2)\Big) \right] + { }   \\
+				       & { } \frac{1}{\cos^2 \theta  / 2} \cos \Big( \delta _0 + \eta  \log (\cos^2 \theta  / 2)\Big)\Bigg]
+\end{split}
+\end{equation}
+Definendo $a = F_C(\theta )$, $b = F_C(\pi-\theta )$ e $g = F_N$, dove $F_C$ \`e il fattore di forma coulombiano e $F_N$ quello nucleare, per quanto detto sopra, la sezione d'urto del tripletto \`e data da $F_t = a - b$, mentre quella del singoletto \`e $F_s = a + b +2g$: nel tripletto, i contributi nucleari sono nulli; nel singoletto, essendo il termine isotropo, compare uguale sia nel termine diretto che in quello inverso. 
+La miscela statistica, allora, \`e
+\[
+\sigma _\text{stat}=\frac{3}{4} \lvert a-b \rvert ^2 + \frac{1}{4}\lvert a+b+2g \rvert ^2
+\] 
+Visto che $\lvert a+ b + 2g \rvert^2 = \lvert a+b \rvert ^2 + 4 \lvert g \rvert ^2 + 4 \operatorname{Re} \big[(a+b)g^*\big] $, si arriva a scrivere che 
+\[
+\sigma _\text{stat} = \sigma _\text{stat}^\text{coul}(\theta ) + \lvert g \rvert ^2 + \operatorname{Re}  \big[ (a+b)g^* \big] 
+\] 
+Questo motiva l'espressione \ref{sigmapp}, dalla quale si evidenzia che la sezione d'urto differenziale si scrive come somma di tre contributi: $\sigma (\theta ) = \sigma ^\text{coul} + \sigma ^\text{nucl}+\sigma ^\text{coul+nucl}$\footnote{Si omette per brevit\`a il pedice ``stat''.}.
 
+Fissando l'energia, da un fit di dati sperimentali per la sezione d'urto differenziale protone-protone tramite l'equazione \ref{sigmapp}, si ricava lo sfasamento $\delta _0(k)$.
+Per energia di protoni incidenti pari a $\approx 3$ MeV, si trova una fase per l'onda S di $\delta _0 \approx 50^\circ$.
+Inoltre, la sezione d'urto per la sola interazione nucleare sarebbe maggiore di quella osservata, a conferma della presenza di interferenza tra l'interazione coulombiana e nucleare.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{shift-swave1.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{shift-swave2.png}
+	\end{minipage}
+	\captionof{figure}{Shift in fase per il canale $^{1}S_0$ dello scattering np, nn e pp.}
+\end{center}
+Anche per lo scattering protone-protone a bassa energia, come per lo scattering np, \`e possibile descrivere il processo in termini della lunghezza di scattering e del raggio efficace tramite una relazione pi\`u generale della formula di Bethe\footnote{La necessit\`a di tale generalizzazione \`e dovuta al fatto che l'interazione coulombiana \`e a raggio infinito, motivo per cui vale la formula di Bethe per il sistema nn.}.
+Dai dati sperimentali, tramite tale formula, si possono ricavare i valori di lunghezza di scattering e raggio efficace:
 
+\begin{align}
+	&\begin{cases}
+		a_s^{pp} = -7.82 \pm 0.01 \text{ fm}\\
+		r_{0,s}^{pp} = 2.79 \pm 0.02 \text{ fm}
+	\end{cases}\tag{nucl+coul}\\
+	&\begin{cases}
+		a_s^{pp} = -17.1 \pm 0.2 \text{ fm}\\
+		r_{0,s}^{pp} = 2.84 \pm 0.03 \text{ fm}
+	\end{cases}\tag{nucl}\\
+\end{align}
+Nel caso del sistema nn, si trovano dei valori molto prossimi a quelli nel caso dei protoni per la sola interazione nucleare:
+\[
+\begin{cases}
+	a^{nn}_s = -16.6 \pm 0.05 \text{ fm}\\
+	r_{0,s}^{nn} = 2.66 \pm 0.15 \text{ fm}
+\end{cases}
+\] 
+Questo suggerisce che, eliminata l'interazione coulombiana, neutroni e protoni si comportano molto similmente dal punto di vista nucleare.
 
+\subsection{Indipendenza dalla carica}
+I risultati sperimentali sullo scattering nn e pp evidenziano parametri di lunghezza di scattering e raggio efficace per l'interazione coulombiana molto simili; questo porta a definire la propriet\`a nota come \textbf{simmetria di carica}: 
+\[
+v_{nn} (\ell , S , J)  = v_{pp} (\ell ,S,J)
+\] 
+L'idea \`e che l'interazione nucleare si comporti approssimativamente allo stesso modo scambiando protoni e neutroni.
+Questa simmetria, per\`o, non permette di fare alcun confronto con i sistemi nn, pp e il sistema np.
+Si ricorda che, per il singoletto del sistema np, si ha
+\[
+\begin{cases}
+	a_s^{np} = - 23.715 \pm 0.015 \text{ fm}\\
+	r_{0,s}^{np} = 2.73 \pm 0.03 \text{ fm}
+\end{cases}
+\] 
+Mentre il raggio efficace \`e ancora compatibile con quelli dei sistemi nn e pp per il singoletto, la lunghezza efficace si discosta maggiormente.
+Tuttavia, si osserva che piccole variazioni nella funzione d'onda nucleone-nucleone attorno a $r = R$ possono comportare differenze notevoli tra le rispettive lunghezze di scattering.
+Per questa motivazione, una grande differenza nelle lunghezze di scattering pu\`o essere associata ad una piccola differenza nei potenziali, permettendo di concludere che i parametri dei sistemi nn, pp e np sono minime e che l'interazione nucleare \`e indipendente dalla carica: $v_{nn}(\ell ,S,J) = v_{pp}(\ell ,S,J) = v_{np}(\ell ,S,J)$.
 
+\begin{center}
+	\begin{tikzpicture}[
+    x=0.28cm,
+    y=1cm,
+    line cap=round,
+    line join=round
+]
 
+% Assi
+\draw[thin] (-25,0) -- (10,0);
+\draw[thin] (0,-0.85) -- (0,2.5);
 
+% Rette estrapolate (lunghezze di scattering)
+\draw[
+    thick,
+    dash pattern=on 7pt off 4pt
+] (-23,0) -- (10,1.452);
 
+\draw[
+    thick,
+    dash pattern=on 9pt off 3pt on 2pt off 3pt
+] (-17,0) -- (10,1.563);
+
+% Funzioni d'onda nella regione interna
+\draw[very thick]
+    (0,0)
+    .. controls (0.3,0.40) and (0.95,1.12) ..
+    (2,1.1);
+
+\draw[thick]
+    (0,0)
+    .. controls (0.6,0.25) and (1.18,1.06) ..
+    (2,1.1);
+
+% Linea verticale in R
+\draw[dashed, thin]
+    (2,0) -- (2,1.4);
+
+% Etichette
+\node[below=4pt, font=\small] at (-23,0)
+    {\footnotesize$a=-23\,\mathrm{fm}$};
+
+\node[below=4pt, font=\small] at (-16,0)
+    {\footnotesize$a=-17\,\mathrm{fm}$};
+
+\node[below right=3pt, font=\small] at (2,0)
+    {\footnotesize$R=2\,\mathrm{fm}$};
+
+\draw[thick] (-17,0) --(-17,.2);
+\draw[thick] (-23,0) --(-23,.2);
+\end{tikzpicture}
+\end{center}
 
 \newpage
 \appendix
