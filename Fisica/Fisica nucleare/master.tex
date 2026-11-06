@@ -3488,7 +3488,7 @@ Dai dati sperimentali, tramite tale formula, si possono ricavare i valori di lun
 	&\begin{cases}
 		a_s^{pp} = -17.1 \pm 0.2 \text{ fm}\\
 		r_{0,s}^{pp} = 2.84 \pm 0.03 \text{ fm}
-	\end{cases}\tag{nucl}\\
+	\end{cases}\tag{nucl}
 \end{align}
 Nel caso del sistema nn, si trovano dei valori molto prossimi a quelli nel caso dei protoni per la sola interazione nucleare:
 \[
@@ -3505,8 +3505,8 @@ I risultati sperimentali sullo scattering nn e pp evidenziano parametri di lungh
 v_{nn} (\ell , S , J)  = v_{pp} (\ell ,S,J)
 \] 
 L'idea \`e che l'interazione nucleare si comporti approssimativamente allo stesso modo scambiando protoni e neutroni.
-Questa simmetria, per\`o, non permette di fare alcun confronto con i sistemi nn, pp e il sistema np.
-Si ricorda che, per il singoletto del sistema np, si ha
+Questa simmetria, per\`o, riguarda esclusivamente il caso dell'interazione nucleare tra due nucleoni identici.
+Si ricorda che, per lo stato $^{1}S_0$ del sistema np, si ha
 \[
 \begin{cases}
 	a_s^{np} = - 23.715 \pm 0.015 \text{ fm}\\
@@ -3514,8 +3514,8 @@ Si ricorda che, per il singoletto del sistema np, si ha
 \end{cases}
 \] 
 Mentre il raggio efficace \`e ancora compatibile con quelli dei sistemi nn e pp per il singoletto, la lunghezza efficace si discosta maggiormente.
-Tuttavia, si osserva che piccole variazioni nella funzione d'onda nucleone-nucleone attorno a $r = R$ possono comportare differenze notevoli tra le rispettive lunghezze di scattering.
-Per questa motivazione, una grande differenza nelle lunghezze di scattering pu\`o essere associata ad una piccola differenza nei potenziali, permettendo di concludere che i parametri dei sistemi nn, pp e np sono minime e che l'interazione nucleare \`e indipendente dalla carica: $v_{nn}(\ell ,S,J) = v_{pp}(\ell ,S,J) = v_{np}(\ell ,S,J)$.
+Tuttavia, si osserva che piccole variazioni nella funzione d'onda nucleone-nucleone attorno a $r = R$ possono comportare differenze notevoli tra le rispettive lunghezze di scattering, come da figura.
+Per questa motivazione, una grande differenza nelle lunghezze di scattering pu\`o essere associata ad una piccola differenza nei potenziali, permettendo di concludere che i parametri dei sistemi nn, pp e np sono minime e che l'interazione nucleare pu\`o risultare indipendente dalla carica: $v_{nn}(\ell ,S,J) = v_{pp}(\ell ,S,J) = v_{np}(\ell ,S,J)$.
 
 \begin{center}
 	\begin{tikzpicture}[
@@ -3569,6 +3569,175 @@ Per questa motivazione, una grande differenza nelle lunghezze di scattering pu\`
 \draw[thick] (-23,0) --(-23,.2);
 \end{tikzpicture}
 \end{center}
+Ora si d\`a una stima quantitativa di quanto siano valide la \textit{charge symmetry} e la \textit{charge independence}.
+Di nuovo, si schematizza l'interazione nucleare tramite una buca di potenziale rettangolare, caso per il quale \`e nota un'espressione analitica per la lunghezza di scattering $a$:
+\[
+\frac{a}{R} = 1 - \frac{\tan(K_0 R)}{K_0 R}\, , \ K_0 = \frac{\sqrt{2m V_0} }{\hbar }
+\] 
+\begin{itemize}
+	\item \textit{Caso 1: scattering n-n.} 
+
+
+		Per il canale $^{1}S_0$ nel caso dello scattering n-n, si \`e visto che $a_{nn} = -16.6$ fm; fissando la larghezza della buca a $R = 2 $ fm, la massa ridotta \`e $m = \frac{1}{2} m_n$, per cui $2m c^2 = m_nc^2 = 939.566$ MeV, $\hbar c = 197.327$ Mev fm, da cui 
+		\[
+		B \equiv \frac{\sqrt{2 m c^2} }{\hbar c}R = 0.31067 \text{ MeV}^{-1 / 2}
+		\] 
+	Inoltre, si ottiene $y = a / R = - 8 .3$. 
+	L'espressione analitica $y(x)$ pu\`o essere risolta numericamente calcolandole gli zeri e i valori relativi di $y$; cos\`i facendo, si ottiene 
+	\[
+	V_0 = 23.282 \text{ MeV} \hspace{1cm}a / R = -8.297
+	\] 
+	Si nota che il valore di $a / R$ \`e molto vicino a quello ottenuto dal valore sperimentale di $a$ per una buca di larghezza $R= 2$ fm.
+\item \textit{Caso 2: scattering p-p.} 
+
+	Questa volta, si ha $a _{pp} = -17.1$ fm (solo contributo nucleare), corrispondente a $y = -8.55$ per la solita larghezza della buca.
+
+	Si vuole mostrare l'effetto della massa ridotta sulla lunghezza di scattering: usando lo stesso valore della buca usando precedentemente, si mostra come varia la lunghezza di scattering per effetto del fatto che $2 m c ^2 = m_p c^2 = 938.273$ MeV.
+	Avendo $B = 0.3105\text{ MeV}^{-1 / 2}$ e visto che $x = B V_0^{1 / 2}$, si ottiene $a_{pp} = -16.36$ fm.
+	Quindi, dall'ipotesi che il potenziale nucleare di protone e neutrone fossero uguali, la massa ridotta produce l'effetto opposto: invece di aumentare (in modulo) la lunghezza di scattering da $-16.6$ fm del neutrone a $-17.1$ fm del protone, la diminuisce (in modulo) portandola da $-16.6$ fm a $-16.36$ fm.
+	Questo suggerisce che, per riprodurre il dato sperimentale di $a_{pp} = -17.1$ fm, bisogni modificare il potenziale nucleare.
+
+	Cos\`i facendo, ripetendo il processo numerico del punto precedente, si ottiene 
+	\[
+	V_0 = 23.374\text{ MeV} \hspace{1cm} a / R = - 8.551
+	\] 
+	con valore di $a / R$ compatibile con quello sperimentale.
+
+	In questo modo, si pu\`o stimare la violazione della \textit{charge symmetry} calcolando il rapporto della differenza dei potenziali sul loro valore medio:
+	\begin{equation}
+		\frac{V_0^{pp} - V_0^{nn}}{\frac{V_0^{pp}+V_0^{nn}}{2}} = 0.0037 = 0.37 \%
+	\end{equation}
+\item \textit{Caso 3: scattering n-p.} 
+
+	Per poter confrontare il valore ottenuto con quello dei casi precedenti, si deve considerare la lunghezza di scattering relativa al solo canale $^{1}S_0$, che risulta pari a $a_{np} = -23.715$ fm.
+	Considerando sempre una larghezza di $R = 2$ fm, per $m = \frac{m_n m_p}{ m_n + m_p}\Rightarrow 2mc^2 = 938.919$ MeV, si ottiene $B = 0.31057 \text{ MeV}^{-1 / 2}$; dal valore sperimentale della lunghezza di scattering, si ha $y = -11.857$, mentre numericamente si ottiene 
+	\[
+	V_0 = 23.938 \text{ MeV} \hspace{1cm} a / R = -11.856
+	\] 
+	Anche in questo caso, $a/R$ ottenuto numericamente \`e compatibile con quello sperimentale.
+
+	Dai valori ottenuti, si pu\`o stimare la \textit{charge independence}.
+	Definendo $\langle V_0^{\tau  \tau } \rangle \equiv \frac{V_0^{nn} + V_0^{pp}}{2} = 23.328$ MeV, la stima si ottiene da
+\begin{equation}
+	\frac{V_0^{np} - \langle V_0^{\tau \tau } \rangle}{\langle V_0^{\tau \tau } \rangle} = 0.026 = 2.6 \%
+\end{equation}	
+Considerando, invece, un valore della larghezza di $R = 1 $ fm, si ottengono $V_0^{np} = 98.943$ MeV e $V_0^{nn} = 97.492$ MeV, da cui 
+\begin{equation}
+	\frac{V_0^{np} - V_0^{nn}}{V_0^{nn}} \approx 1.5 \%
+\end{equation}
+\end{itemize}
+Quanto ottenuto per la charge symmetry evidenzia che la sua violazione \`e ``minima'': propagando gli errori associati ai dati sperimentali riportati, si vede che questa cade entro gli errori di misura, per cui non sussistono indizi per cui vi sia alcuna violazione.
+Al contrario, la violazione della charge independence risulta pi\`u rilevante, essendo un'ordine di grandezza pi\`u alta di quella relativa alla charge symmetry.
+\`E, in ogni caso, una buona approssimazione dell'interazione nucleare.
+Si osserva, infine, che le violazioni dipendono dal modello scelto: variando $R$ da $2$ fm a $1$ fm, si osservata una variazione nella percentuale dello scarto.
+\subsection{Isospin}
+
+Il concetto di isospin deriva dall'osservazione di varie somiglianze tra le caratteristiche dei protoni e quelle dei neutroni, anche per quanto visto nella sezione precedente sul potenziale nucleare.
+\begin{enumerate}[(a).]
+	\item Hanno masse approssimativamente uguali, con uno scarto pari a $2\frac{m_n-m_p}{m_n+m_p} = 1.38 \times 10^{-3}$.
+	\item Hanno uguale spin, essendo entrambi fermioni.
+	\item Possono \textit{trasformarsi} l'uno nell'altro tramite, per esempio, le seguenti reazioni:
+		\[
+			\begin{split}
+				&n \to p + e^\text{-} + \overline{\nu }_e \\
+				& p + e^{\text{-}} \to n +  \nu _e\\
+				& \pi^{\text{-}} + p \to  n + \pi^{0}
+			\end{split}
+		\] 
+	\item Vale in buona approssimazione la charge independence: $v_{nn} = v_{pp} = v_{np}$, a fissati $\ell ,S,J$.	
+\end{enumerate}
+Tutto questo suggerisce l'idea di poter vedere protone e neutrone come due stati diversi della stessa particella: il \textit{nucleone}.
+Matematicamente, il grado di libert\`a ulteriore che si introduce \`e analogo a quello dello spin: gli stati di \textit{isospin} del nucleone formano uno spazio e lo stato di isospin up del nucleone corrisponde, convenzionalmente, al protone, mentre quello di isospin down corrisponde al neutrone.
+
+L'operatore che agisce su questo spazio \`e $\hat{\vec{t}} = (\hat{t}_x,\hat{t}_y, \hat{t}_z)$, dove $x,y,z$ sono pedici per distinguere le dimensioni dello spazio di isospin, ma non hanno nulla a che vedere con lo spazio fisico.
+Esattamente come per lo spin, $\hat{t}^2 = t_x^2 + t_y^2 + t_z^2$ e $[\hat{t}^2 , \hat{t}_z] = 0 $, per cui gli stati di isospin saranno rappresentati tramite $\ket{t,t_z} $, dove 
+\[
+\hat{t}^2 \ket{t,t_z}  = t (t+1) \ket{t,t_z} \hspace{1cm}\hat{t}_z \ket{t,t_z}  = t_z \ket{t,t_z} 
+\] 
+\begin{osservazione}
+Il fattore $\hbar ^2$ non \`e presente in quanto l'isospin non \`e un momento angolare.
+\end{osservazione}
+
+\noindent Volendo individuare neutrone e protone come due stati possibili della stessa particella, la simmetria che permette di fare questo, mantenendo un'algebra analoga a quella dello spin, consiste nel porre $t = 1/2$: in questo modo, $t_z = \pm 1/2$ e 
+\begin{align}
+	&\ket{p} \equiv \Ket{\frac{1}{2}, \frac{1}{2}}  \tag{stato di protone}\\
+	&\ket{n}\equiv \Ket{\frac{1}{2}, -\frac{1}{2}}  \tag{stato di neutrone}
+\end{align}
+
+\subsubsection{Formalismo spinoriale, operatori di proiezione, creazione e distruzione}
+
+Si indica con $\ket{\vartheta } $ un generico stato di isospin del nucleone. 
+Questo si pu\`o scrivere in termini delle proiezioni lungo $\ket{n} $ e $\ket{p} $ come
+\[
+\ket{\vartheta }  = \ket{p} \braket{p|\vartheta }  + \ket{n} \braket{n|\vartheta } \equiv \vartheta _p \ket{p}  + \vartheta _n \ket{n} \equiv \begin{pmatrix} \vartheta _p \\ \vartheta _n\end{pmatrix} 
+\] 
+Il vettore $(\vartheta _p,\vartheta _n)$ \`e detto \textit{spinore} e si vede che, per la convenzione scelta, $\ket{p} = (1,0)$, mentre $\ket{n} = (0,1)$.
+
+Avendo totale analogia con lo spin, anche per l'operatore di isospin si usano le matrici di Pauli, le quali, per evitare ambiguit\`a, si indicano con $\vec{\tau } = (\tau _x, \tau _y,\tau _z)$; allora $\hat{\vec{t}} = \frac{1}{2} \vec{\tau }$.
+
+Si definiscono gli operatori di proiezione sugli stati di neutrone, $\hat{\Lambda }_n$, e di protone, $\hat{\Lambda }_p$, come
+\[
+	\begin{split}
+		&\hat{\Lambda }_p = \frac{1}{2} \left(1 + \tau _z\right) = \begin{pmatrix} 1 & 0 \\ 0 & 0  \end{pmatrix}  \hspace{1cm} \hat{\Lambda }_p \ket{p} = \ket{p}  \hspace{1cm} \hat{\Lambda}_p \ket{n}  = 0 \\
+		& \hat{\Lambda }_n = \frac{1}{2} \left(1 - \tau _z\right)  = \begin{pmatrix} 0 & 0 \\ 0& 1  \end{pmatrix}  \hspace{1cm} \hat{\Lambda }_n \ket{ p}  = 0 \hspace{1cm} \hat{\Lambda }_n \ket{n}  = \ket{n} 
+	\end{split}
+\] 
+\begin{osservazione}
+In notazione spinoriale, $\hat{\Lambda }_p = \ket{p} \bra{p} $ e $\hat{\Lambda }_n = \ket{n} \bra{n} $.
+\end{osservazione}
+
+\noindent Si definiscono gli operatori di \textit{creazione di carica} e di \textit{distruzione di carica} come, rispettivamente 
+\[
+	\hat{\tau} _+ = \tau _x + i \tau _y = \begin{pmatrix} 0 & 1 \\ 0 & 0  \end{pmatrix}  \hspace{2cm} \hat{\tau }_- = \tau _x - i \tau _y = \begin{pmatrix} 0 & 0 \\ 1 &0 \end{pmatrix} 
+\] 
+Questi soddisfano le seguenti relazioni:
+\begin{align*}
+	& \hat{\tau }_+ \ket{ n} = \ket{p}  &\hspace{1cm} & \hat{\tau }_- \ket{p}  = \ket{n} \\
+	& \hat{\tau }_+ \ket{p}  = 0 & \hspace{1cm} & \hat{\tau }_- \ket{n}  = 0 
+\end{align*}
+\begin{osservazione}
+In notazione spinoriale, $\hat{\tau} _+ = \ket{p} \bra{n} $ e $\hat{\tau }_- = \ket{n} \bra{p} $.
+\end{osservazione}
+
+\subsubsection{Funzione d'onda per sistema a due nucleoni}
+
+Per un sistema di due nucleoni identici (e indistinguibili), la funzione d'onda del sistema dovr\`a dipendere dalla posizione, dallo spin e dall'isospin: $\psi \equiv \psi (\vec{r}_1, \sigma _1,\tau _1, \vec{r}_2, \sigma _2,\tau _2)$.
+Pertanto, sar\`a possibile definire l'operatore di scambio $\hat{P}_{12}$ delle due particelle come l'operatore che scambia tutte e tre le variabili: indicando il set delle variabili della prima particella con $\left\{ 1 \right\} $ e quelle della seconda con $\left\{ 2 \right\} $, si potr\`a scrivere che
+\[
+	\hat{P}_{12} \psi (\left\{ 1 \right\} , \left\{ 2 \right\} ) = \psi (\left\{ 2 \right\} ,\left\{ 1 \right\} ) = - \psi (\left\{ 1 \right\} , \left\{ 2 \right\} )
+\] 
+dove l'ultima uguaglianza deriva dal fatto che i due nucleoni sono fermioni.
+Indicando con $\hat{P}_r$ l'operatore di scambio delle posizioni, con $\hat{P}_\sigma $ l'operatore di scambio dello spin e con $\hat{P}_\tau $	l'operatore di scambio dell'isospin\footnote{Questi tre operatori sono noti, rispettivamente, con i nomi di \textit{operatore di scambio di Majorana}, \textit{operatore di scambio di Bartlet} e \textit{operatore di scambio di Heisenerg}.}, essendo che questi operano su spazi diversi, si pu\`o anche scrivere che $\hat{P}_{12} = \hat{P}_r \hat{P}_\sigma  \hat{P}_\tau$; nel caso di due fermioni identici, quindi, $\hat{P}_r \hat{P}_\sigma  \hat{P}_\tau = - \operatorname{Id} $.
+Tutti e tre soddisfano, al solito, $\hat{P}_r^2 = \hat{P}_\sigma ^2 = \hat{P}_\tau ^2 = \operatorname{Id} $, per cui i loro autovalori sono $\pm 1$.
+Nel caso di due fermioni identici, per\`o, essendo che $\hat{P}_{12} = - \operatorname{Id} $, si deve avere $P_rP_\sigma P_\tau = -1$.
+Si osserva, poi, che la relazione $\hat{P}_{12} = -\operatorname{Id} $ permette di esprimere uno dei tre operatore in termini del prodotto degli altri due; per esempio
+\[
+\hat{P}_r \hat{P}_\sigma \hat{P}_\tau ^2 = - \hat{P}_\tau  \implies \hat{P}_r \hat{P}_\sigma\equiv \hat{P}_{r\sigma }  = - \hat{P}_\tau 
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \appendix
