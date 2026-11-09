@@ -24,6 +24,7 @@
 \usepackage{enumerate}
 \usepackage{braket}
 \usepackage{graphicx}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{tikz}
@@ -3334,6 +3335,8 @@ Questo evento \`e, per\`o, totalmente equivalente a se la particella (1) viene d
       {$\pi-\vartheta$};
   \end{scope}
 \end{tikzpicture}
+\captionof{figure}{Simmetria di scambio nello scattering fra due particelle identiche.}
+\label{scatt-scambio}
 \end{center}
 Si separa la funzione d'onda del sistema in 
 \[
@@ -3664,8 +3667,6 @@ Il fattore $\hbar ^2$ non \`e presente in quanto l'isospin non \`e un momento an
 	&\ket{n}\equiv \Ket{\frac{1}{2}, -\frac{1}{2}}  \tag{stato di neutrone}
 \end{align}
 
-\subsubsection{Formalismo spinoriale, operatori di proiezione, creazione e distruzione}
-
 Si indica con $\ket{\vartheta } $ un generico stato di isospin del nucleone. 
 Questo si pu\`o scrivere in termini delle proiezioni lungo $\ket{n} $ e $\ket{p} $ come
 \[
@@ -3699,7 +3700,7 @@ Questi soddisfano le seguenti relazioni:
 In notazione spinoriale, $\hat{\tau} _+ = \ket{p} \bra{n} $ e $\hat{\tau }_- = \ket{n} \bra{p} $.
 \end{osservazione}
 
-\subsubsection{Funzione d'onda per sistema a due nucleoni}
+\subsection{Funzione d'onda per sistema di due nucleoni}
 
 Per un sistema di due nucleoni identici (e indistinguibili), la funzione d'onda del sistema dovr\`a dipendere dalla posizione, dallo spin e dall'isospin: $\psi \equiv \psi (\vec{r}_1, \sigma _1,\tau _1, \vec{r}_2, \sigma _2,\tau _2)$.
 Pertanto, sar\`a possibile definire l'operatore di scambio $\hat{P}_{12}$ delle due particelle come l'operatore che scambia tutte e tre le variabili: indicando il set delle variabili della prima particella con $\left\{ 1 \right\} $ e quelle della seconda con $\left\{ 2 \right\} $, si potr\`a scrivere che
@@ -3714,6 +3715,247 @@ Si osserva, poi, che la relazione $\hat{P}_{12} = -\operatorname{Id} $ permette 
 \[
 \hat{P}_r \hat{P}_\sigma \hat{P}_\tau ^2 = - \hat{P}_\tau  \implies \hat{P}_r \hat{P}_\sigma\equiv \hat{P}_{r\sigma }  = - \hat{P}_\tau 
 \] 
+
+\subsubsection{Operatori di scambio con matrici di Pauli}
+
+Si parte da $\hat{P}_\sigma $.
+Si ha $\hat{P}_\sigma \ket{S,m_S} = \pm\ket{S,m_S} $; si pu\`o verificare che 
+\[
+\hat{P}_\sigma = \frac{1}{2} \left(1 + \vec{\sigma }_1 \cdot \vec{\sigma }_2\right) 
+\] 
+Riprendendo quanto fatto per la dipendenza dell'interazione nucleare dallo spin, si era visto che 
+\[
+\langle \vec{\sigma }_1 \cdot \vec{\sigma }_2  \rangle \equiv \Braket{S,m_S|\vec{\sigma }_1 \cdot \vec{\sigma }_2|S,m_S}  = \begin{cases}
+	1&,\ \text{nel tripletto} \ S=1\\
+	-1 &,\ \text{nel singoletto}\ S=0
+\end{cases}
+\] 
+quindi l'autovalore del operatore si pu\`o scrivere come
+\begin{equation}
+	P_\sigma = (-1)^{S+1} 
+\end{equation}
+Lo stesso si pu\`o scrivere per $\hat{P}_\tau $:
+\[
+\hat{P}_\tau  = \frac{1}{2} \left(1 + \vec{\tau }_1 \cdot \vec{\tau }_{2} \right) \hspace{1cm} P_\tau  = (-1)^{T+1}
+\] 
+con $T$ isospin totale della coppia di particelle.
+Nel caso $T=1$, $T_z=1$, si ha lo stato $\ket{1,1} = \ket{p} \ket{p} $; nel caso $T=1$, $T_z = 0$, si ha lo stato $\ket{1,0} = \frac{1}{\sqrt{2} } \left(\ket{p} \ket{n} + \ket{n} \ket{p} \right) $; nel caso $T=1$, $T_z = -1$, si ha $\ket{1 , -1}  = \ket{n} \ket{n} $.
+Nel caso $T=0$, invece, si deve avere $T_z= 0$ e lo stato di isospin risultante \`e una funzione d'onda antisimmetrica: $\ket{0,0} = \frac{1}{\sqrt{2} } \left(\ket{p} \ket{n} - \ket{n} \ket{p} \right) $.
+Questo \`e in accordo col fatto che $P_\tau  = (-1)^{T+1}$.
+Infine, l'operatore $\hat{P}_r$ ha autovalore che si pu\`o scrivere in termini del momento angolare orbitale: $P_r = (-1)^{\ell}$.
+
+Mettendo tutto insieme, ricordando che per due fermioni identici $\hat{P}_{12}$ deve avere autovalore $-1$, si pu\`o scrivere la relazione 
+\begin{equation}
+	-1 = (-1)^{\ell} (-1)^{S+1 } (-1)^{T+1}= (-1)^{\ell  + T +S}
+\end{equation}
+L'antisimmetria della funzione d'onda, quindi, impone che 
+\[
+\ell  + S + T \not\equiv 0 \pmod{2} 
+\] 
+Ora, utilizzando il fatto che $\hat{P}_r = \hat{P}_\sigma \hat{P}_\tau $, relazione ottenuta dal fatto che $\hat{P}_{12} = - \operatorname{Id} $, permette di scrivere che
+\begin{equation}
+\hat{P}_r = \frac{1}{4} \left(1 + \vec{\sigma }_1 \cdot \vec{\sigma }_2\right) \left(1 + \vec{\tau }_1 \cdot \vec{\tau }_2\right) 
+\end{equation}
+
+\subsubsection{Stati possibili per sistema di due nucleoni}
+Si vogliono elencare gli stati ${}^{2S+1}\ell_J$ accessibili a due nucleoni per ciascun
+valore di $T$. Si usa la base di stati prodotto
+\begin{equation*}
+    \psi(\{1\},\{2\}) = \Phi_\ell(\vec{r}\,)\, X_S(\sigma_1,\sigma_2)\, \Theta_T(\tau_1,\tau_2)
+\end{equation*}
+autostati simultanei di $\hat{P}_r$, $\hat{P}_\sigma$, $\hat{P}_\tau$ con autovalori
+$(-1)^{\ell}$, $(-1)^{S+1}$, $(-1)^{T+1}$.
+
+\begin{osservazione}
+Un autostato dell'hamiltoniano non è in generale un singolo prodotto: il termine
+tensoriale non commuta con $\hat{\ell}^2$ (sez.~2.5.5) e mescola onde con
+$\ell = J \pm 1$, come nel deutone~(2.5.3). Tuttavia l'interazione conserva la parità,
+commuta con $\hat{S}^2$ e, nell'ipotesi di indipendenza dalla carica (sez.~3.5), con
+$\hat{T}^2$. Gli autostati hanno quindi $(-1)^{\ell}$, $S$ e $T$ definiti, e sono
+combinazioni di prodotti con la stessa simmetria di scambio.
+\end{osservazione}
+
+\noindent La condizione $\ell + S + T \not\equiv 0 \pmod{2}$ si può dunque imporre sui singoli
+prodotti. La notazione ${}^{2S+1}\ell_J$ etichetta i canali, che l'interazione può al
+più mescolare a coppie ($S = 1$, $\ell = J \pm 1$).
+Le combinazioni ammesse sono solo quelle dispari, visto che $\ell + S+ T\not\equiv 0 \pmod{2} $; allora si ha la seguente tabella.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c | c c c}
+		$T$& $S$ &$\ell $ & $\Theta $& $X$& $\Phi $\\
+	\hline
+		$1$ & $1$ & disp & simm & simm & antisimm\\
+		$1$ & $0$ & pari & simm & antisimm & simm\\
+		$0$ & $1$ & pari & antisimm & simm & simm\\
+		$0$ & $0$ & disp & antisimm & antisimm & antisimm
+	\end{tabular}
+\end{table}
+
+\noindent Da questa tabella, si ricavano gli stati ammessi, riportati nella tabella \ref{tabbb}.
+\begin{table}[htpb]
+	\centering
+	\begin{tabular}{c c c | c c}
+		$\ell $ & $S$ & $T$ & Stato & $T_z$\\
+	\hline
+		$0$ & $0$ & $1$ & $^{1}S_0$ & $1\, (\text{pp}),0\, (\text{np}),-1\, (\text{nn})$\\
+		$0$ & $1$ & $0$ & $^{3}S_1$ & np\\
+		$1$ & $0$ & $0$ & $^{1}P_1$ & np\\
+		$1$ & $1$ & $1$ & $^{3}P_0,\, ^{3}P_1, \, ^{3}P_2$ & pp, np, nn\\
+		$2$ & $0$ & $1$ & $^{1}D_2$ & pp, np, nn\\
+	\end{tabular}
+	\caption{Tabella degli stati ammessi al variare di $T,\ell ,S$.}
+	\label{tabbb}
+\end{table}
+\subsection{Forze nucleari di scambio}
+Fino ad adesso, l'interazione nucleone-nucleone \`e stata scritta come
+\[
+V_{NN} = V_1(r) + V_2(r) \vec{\sigma }_1\cdot \vec{\sigma }_2 + V_3(r) S_{12} \hspace{1cm} S_{12} = 3 \frac{(\vec{\sigma }_1 \cdot \vec{r} )(\vec{\sigma }_2\cdot \vec{r})}{r^2} - \vec{\sigma }_1 \cdot \vec{\sigma }_2
+\] 
+rispettivamente contributo centrale, contributo centrale di dipendenza dallo spin e contributo non-centrale.
+\begin{center}
+	\begin{minipage}
+		{.5\columnwidth}
+Dati sperimentali mostrano evidenze dell'esistenza di \textit{forze di scambio}.
+La figura rappresenta la sezione d'urto differenziale np a medie energie: il picco a circa $0^\circ$ \`e atteso, ma un picco di altezza equivalente a circa $180^\circ$ \`e un indizio della forza di scambio.
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=.8\columnwidth]{np-cs.png}
+	\end{minipage}
+\end{center}
+Nel centro di massa, lo scattering np ha una simmetria di scambio come quella rappresentata in figura \ref{scatt-scambio}, cio\`e i due nucleoni possono scontrarsi ed essere deflessi, oppure possono essere deviati indietro.
+Nel primo caso, l'interazione vede lo scambio di un $\pi^0$; nel secondo caso, invece, c'\`e uno scambio di carica tramite un $\pi^-$.
+Il tutto si pu\`o rappresentare tramite dei diagrammi di Feynman, immaginando che il tempo scorra andando verso l'alto.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) at (0,0);
+    \vertex (b) at (1.6,0.35);
+    \vertex (i1) at (-0.6,-1.5) {\(n\)};
+    \vertex (f1) at (-0.5,1.5) {\(n\)};
+    \vertex (i2) at (2.2,-1.3) {\(p\)};
+    \vertex (f2) at (2.1,1.7) {\(p\)};
+    \diagram*{
+      (i1) -- [fermion] (a) -- [fermion] (f1),
+      (i2) -- [fermion] (b) -- [fermion] (f2),
+      (a) -- [scalar, edge label=\(\pi^0\)] (b),
+    };
+  \end{feynman}
+  % asse del tempo
+  \draw[thick, -latex] (-2,-0.7) -- node[left] {\(t\)} (-2,0.7);
+\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) at (0,0);
+    \vertex (b) at (1.6,0.35);
+    \vertex (i1) at (-0.6,-1.5) {\(n\)};
+    \vertex (f1) at (-0.5,1.5) {\(p\)};
+    \vertex (i2) at (2.2,-1.3) {\(p\)};
+    \vertex (f2) at (2.1,1.7) {\(n\)};
+    \diagram*{
+      (i1) -- [fermion] (a) -- [fermion] (f1),
+      (i2) -- [fermion] (b) -- [fermion] (f2),
+      (a) -- [scalar, edge label=\(\pi^-\)] (b),
+    };
+  \end{feynman}
+\end{tikzpicture}
+	\end{minipage}
+	\captionof{figure}{Diagrammi di Feynman per i due scenari equivalenti di scattering np come da schema in figura \ref{scatt-scambio}. Il diagramma a sinistra rappresenta lo schema di urto a sinistra e cos\`i quello a destra.}
+\end{center}
+
+\begin{osservazione}
+Le interazioni di scambio prendono gli stessi nomi degli operatori a seconda dello scambio a cui sono relative.
+\end{osservazione}
+
+\subsubsection{Forze centrali di scambio}
+
+Quella per scambio della posizione \`e la forza centrale di scambio di Majorana, indicata con $V_M(r) \hat{P}_r$; analogamente, quelle di Bartlet e Heisenberg sono, rispettivamente, $V_B(r) \hat{P}_\sigma $ e $\hat{V}_H(r) \hat{P}_{r \sigma } $.
+Quella di Heisenberg, a meno di un segno, equivale a scambiare l'isospin.
+
+\subsubsection{Forze di scambio tensoriali}
+Una forza tensoriale di Bartlet sarebbe della forma
+\[
+V'_B(r) \hat{P}_\sigma S_{12}
+\] 
+\begin{prop}
+
+Una forza tensoriale di Bartlet si pu\`o ridurre a una forza tensoriale ordinaria, cio\`e che non ha carattere di scambio.
+\end{prop}
+\begin{proof}
+Si ricorda che $S_{12}$ pu\`o essere espresso in termini dello spin totale come
+\[
+S_{12} = \frac{2}{\hbar ^2} \left[ \frac{3 (\vec{S}\cdot \vec{r})^2}{r^2} - S^2 \right] \implies  S_{12} = \begin{cases}
+	0 &,\ S=0 \Rightarrow \text{forza centrale}\\
+	S_{12}\neq 0 &,\ S=1
+\end{cases}
+\] 
+Inoltre, si ha $\hat{P}_\sigma  = (-1)^{S+1} \operatorname{Id} $; ne segue che 
+\[
+S_{12} \hat{P}_\sigma  = \begin{cases}
+	0 &,\ S=0\\
+	S_{12} &,\ S=1
+\end{cases}
+\] 
+Segue immediatamente che il termine tensoriale $\hat{P}_\sigma S_{12} $ \`e equivalente a $S_{12}$, che \`e una forza tensoriale ordinaria.
+\end{proof}
+
+\noindent Il termine tensoriale di Heisenberg sar\`a della forma 
+\[
+S_{12} \hat{P}_{r\sigma } = S_{12} \hat{P}_r \hat{P}_\sigma = \begin{cases}
+	0 &,\ S=0\\
+	S_{12} \hat{P}_r &,\ S=1
+\end{cases}
+\] 
+visto che $\hat{P}_\sigma  = (-1)^{S+1} \operatorname{Id} $. 
+Da questo, si conclude che il termine tensoriale di Heisenberg si riconduce ad una forza della forma $S_{12} \hat{P}_r$; questo significa che una forza tensoriale di Heisenberg si riconduce ad una forza tensoriale di Majorana.
+Segue che le uniche forze tensoriali di scambio sono quelle di Majorana.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c | c }
+		&  Centrali & Tensoriali\\
+	\hline
+		Ordinarie & $V_W(r)$ & $V_{T,W} S_{12}$\\
+	\hline
+		Scambio & $V_M \hat{P}_r$, $V_B \hat{P}_\sigma $, $V_H \hat{P}_{r\sigma }$  & $V_{T,M} S_{12} \hat{P}_r$\\
+	\end{tabular}
+\end{table}
+\begin{osservazione}
+Il pedice $W$ sta a indicare ``Wigner'' perch\'e quelle ordinarie si chiamano in questo modo; il pedice $T$ indica ``tensoriale''.
+\end{osservazione}
+
+\noindent Mettendo insieme tutti questi sei contributi, il potenziale totale si indica con
+\begin{equation}
+	\begin{split}
+		V_6 = V_W(r) & { } + V_M(r) \hat{P}_r  + V_B (r) \hat{P}_\sigma + V_H (r) \hat{P}_{r\sigma } \\
+						&{ } + V_{T,W}(r) S_{12} + V_{T,M}S_{12} \hat{P}_r
+	\end{split}
+\end{equation}
+Riscrivendo gli operatori di scambio in termini delle matrici di Pauli, il potenziale complessivo si pu\`o scrivere come
+\begin{equation}
+	\begin{split}
+		\begin{split}
+		V_6 = V_C(r) & { } + V_\sigma (r) \vec{\sigma }_1\cdot \vec{\sigma }_2 + V_\tau (r) \vec{\tau }_1 \cdot \vec{\tau }_2\\
+			     &{ } + V_{\tau \sigma} (\vec{\sigma }_1 \cdot \vec{\sigma }_2) (\vec{\tau } _1\cdot \vec{\tau }_2) + V_T(r) S_{12} \\
+			     & { } + V_{T,\tau }(r) S_{12} (\vec{\tau }_1 \cdot \vec{\tau }_2)
+		\end{split}
+	\end{split}
+\end{equation}
+Si vede che questo potenziale \`e invariante per rotazioni nello spazio isotopico; per farlo, si mostrer\`a che $[V_6,T^2] = 0$.
+Visto che $\vec{T} = \vec{t}_1 + \vec{t}_2$, allora si pu\`o scrivere, similmente a quanto fatto per lo spin tramite le propriet\`a delle matrici di Pauli, che
+\[
+	T^2 = \frac{1}{2} \left(3 + \vec{\tau }_1 \cdot \vec{\tau }_2\right) 
+\] 
+Per terminare la dimostrazione, \`e sufficiente mostrare che $[\vec{\tau }_1\cdot \vec{\tau }_2, T^2]=0$ perch\'e tutti gli altri termini di $V_6$ agiscono su spazi distinti; facendo uso della relazione scritta sopra, per\`o, si ha che $\vec{\tau }_1 \cdot \vec{\tau }_2 = 2 T^2 - 3$, da cui segue immediatamente la tesi.
 
 
 
