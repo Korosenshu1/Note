@@ -312,6 +312,8 @@ INPUT /usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
 INPUT /usr/share/texmf-dist/tex/latex/nicematrix/nicematrix.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
@@ -454,6 +456,12 @@ INPUT /usr/share/texmf-dist/tex/latex/esint/uesint.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
+INPUT /usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 OUTPUT master.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
@@ -476,6 +484,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT ./cd1.jpg
 INPUT ./cd1.jpg
 INPUT ./cd1.jpg
@@ -503,6 +513,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
@@ -512,6 +523,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/esint/esint10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
 INPUT ./sigma-np.png
 INPUT ./sigma-np.png
 INPUT ./sigma-np.png
@@ -567,4 +580,5 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb

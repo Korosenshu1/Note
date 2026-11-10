@@ -20,6 +20,7 @@
 \usepackage{cancel}
 \usepackage{caption}
 \usepackage{nicematrix}
+\usepackage{mathrsfs} % mathscr
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{braket}
@@ -3941,7 +3942,7 @@ Il pedice $W$ sta a indicare ``Wigner'' perch\'e quelle ordinarie si chiamano in
 	\end{split}
 \end{equation}
 Riscrivendo gli operatori di scambio in termini delle matrici di Pauli, il potenziale complessivo si pu\`o scrivere come
-\begin{equation}
+\begin{equation}\label{v6}
 	\begin{split}
 		\begin{split}
 		V_6 = V_C(r) & { } + V_\sigma (r) \vec{\sigma }_1\cdot \vec{\sigma }_2 + V_\tau (r) \vec{\tau }_1 \cdot \vec{\tau }_2\\
@@ -3957,17 +3958,127 @@ Visto che $\vec{T} = \vec{t}_1 + \vec{t}_2$, allora si pu\`o scrivere, similment
 \] 
 Per terminare la dimostrazione, \`e sufficiente mostrare che $[\vec{\tau }_1\cdot \vec{\tau }_2, T^2]=0$ perch\'e tutti gli altri termini di $V_6$ agiscono su spazi distinti; facendo uso della relazione scritta sopra, per\`o, si ha che $\vec{\tau }_1 \cdot \vec{\tau }_2 = 2 T^2 - 3$, da cui segue immediatamente la tesi.
 
+\subsection{Isospin per sistema di nucleoni}
+
+Si considera un sistema di $A$ nucleoni; l'isospin totale \`e dato da $\vec{T} = \sum_{i=1}^{A} \vec{t}_i$; ad $A$ fissato:
+\begin{itemize}
+	\item se $A$ \`e pari, allora $T$ \`e intero, per cui $T = 0,1,\ldots,A / 2$;
+	\item se $A$ \`e dispari, allora $T$ \`e semi-intero e $T = 1 / 2, 3 / 2 ,\ldots, A / 2$.
+\end{itemize}
+Fissando, ora, $T$, la proiezione lungo l'asse di quantizzazione assume valori del tipo $T_z = T , (T-1) ,\ldots, -T$, per un totale di $2T + 1$ possibili valori.
+Per singolo nucleone si ha
+\[
+t_{i,z} = \begin{cases}
+	1 / 2 \equiv \ket{p} \\
+	-1  / 2 \equiv \ket{n} 
+\end{cases}
+\] 
+La proiezione lungo $z$ dell'isospin totale, quindi, si scrive come
+\[
+T_z = \sum_{i=1}^{A} t_{i,z} = \frac{1}{2} \left(Z - N\right) = Z - \frac{A}{2}
+\] 
+Per $A$ fissato, il valore di $T_z$ caratterizza la carica elettrica del nucleo, cio\`e conoscendo $T_z$ e $A$, si conosce la carica del nucleo:
+\[
+Z = \frac{Q}{e} = T_z + \frac{A}{2}
+\] 
+Per un dato nucleo, cio\`e a fissati $(A,Z)$, si conosce $T_z = Z - A / 2$ dalla stessa relazione.
+Ancora per dati valori fissati di $(A,Z)$, il valore di isospin totale \`e vincolato da $\left\lvert Z - A / 2 \right\rvert  \le  T \le  A / 2$; per un dato $T$ in questo range, $T_z = T , T-1 ,\ldots,-T$ individua il \textit{multipletto di isospin} di $2T + 1$ stati possibili.
+\begin{osservazione}
+	Trascurando l'interazione coulombiana, la differenza di massa tra protone e neutrone e assumendo la charge independence, ogni stato a $T$ fissato ha degenerazione legata ai $2T+1$ possibili valori che pu\`o assumere $T_z$ e tutti corrispondenti allo stesso valore energetico. 
+\end{osservazione}
+\begin{osservazione}
+La richiesta di charge independence corrisponde a richiedere che il potenziale nucleare sia indipendente dalla carica; pi\`u in particolare, corrisponde a chiedere che il potenziale sia invariante per rotazioni nello spazio dell'isospin, quindi l'interazione pu\`o dipendere da $T^2$, ma non da $T_z$.
+\end{osservazione}
+\begin{esempio}
+Si fissa $A = 6$; allora $0\le T\le 3$. 
+Si distinguono i vari casi a seconda del valore di $T$.
+\begin{itemize}
+	\item $T=0\Rightarrow T_z = 0 \implies Z = T_z + A / 2 = 3$.
+		Questo, quindi, \`e uno stato del nucleo di $\ce{^6Li}$.
+	\item $T = 1\Rightarrow T_z = 1,0,-1\implies Z = 4,3,2$; i nuclei corrispondenti a questi valori di $Z$ sono, rispettivamente, $\ce{^6Be}$, $\ce{^6Li}$ e $\ce{^6He}$.
+	\item $T=2\Rightarrow T_z = 2,1,0,-1,-2\implies Z = 5,4,3,2,1$, corrispondenti, rispettivamente, a $\ce{^6B}$, $\ce{^6Be}$, $\ce{^6Li}$, $\ce{^6He}$ e $\ce{^6H}$.
+	\item $T = 3 \Rightarrow  T_z = 3,2,1,0,-1,-2,-3 \implies Z = 6,5,4,3,2,1,0$, corrispondenti, rispettivamente, a $\ce{^6C}$, $\ce{^6B}$, $\ce{^6Be}$, $\ce{^6Li}$, $\ce{^6He}$, $\ce{^6H}$ e $\ce{^6n}$.
+\end{itemize}
+Si osserva che questa trattazione individua solamente i possibili stati di isospin,
+corrispondenti a stati di nuclei isobari con $A=6$, ma non assicura che siano legati.
+Per il principio di Pauli, ogni livello spaziale pu\`o ospitare al pi\`u due protoni e
+due neutroni (con spin opposti): al crescere dello squilibrio tra $N$ e $Z$, i nucleoni
+della specie in eccesso devono occupare livelli via via pi\`u alti e l'energia del
+sistema aumenta. Questo effetto \`e descritto dal termine di simmetria della formula di
+Weizs\"acker, proporzionale a $(N-Z)^2 = 4T_z^2$: sistemi come ${}^{6}n$ e
+${}^{6}\mathrm{C}$ non sono legati, avendo energia di legame rispettivamente
+$B \simeq -127$~MeV e $B \simeq -139$~MeV, dove la repulsione coulombiana contribuisce
+solo per circa $12$~MeV nel secondo caso.
+\end{esempio}
 
 
+\newpage
 
 
+\section{Modello a gas di Fermi del nucleo}
 
+Una versione semplificata del nucleo si pu\`o rappresentare come gas di fermioni.
+L'hamiltoniano di questo gas si scrive come
+\[
+	H = \sum_{i=1}^{Z} \frac{p_i^2}{2m_p} + \sum_{i=1}^{N} \frac{p_i^2}{2m_n} + \frac{1}{2} \sum_{\substack{i,j \\ i \neq j}}^{A}  v_{ij}
+\] 
+dove si trascurano interazioni a tre corpi (di cui si ha evidenza sperimentale) e si considerano solo quelle a due corpi.
+Il termine di interazione a due corpi ha forma nota dalla relazione \ref{v6}, dove $r$ diventa il raggio $r_{ij}$ che collega il nucleone $i$-esimo, con il $j$-esimo.
+Si deve risolvere l'equazione di Schr\"odinger per questo hamiltoniano: $H \Psi  = E \Psi $, dove la funzione d'onda $\Psi (\xi _1, \ldots, \xi _A)$ dipende dalle coordinate generalizzate dei nucleoni.
+Per nuclei pi\`u pesanti di due nucleoni, si utilizzano altri modelli, in quanto non \`e possibile risolvere il problema numericamente.
+Un modello utilizzabile \`e quello di assumere il potenziale come un campo medio comune a tutti i fermioni, tramite cui si pu\`o approssimare l'hamiltoniano vero come
+\[
+H \simeq H_0 = \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_p} + V(r_i) \right]  + \sum_{i=1}^{N} \left[ \frac{p_i^2}{2m_n} + V(r_i) \right] 
+\] 
+dove $V(r_i)$ sia lo stesso per protoni e neutroni. 
+\begin{osservazione}
+Si sta trascurando l'interazione elettromagnetica.
+\end{osservazione}
 
+\subsection{Soluzione per fermioni in una scatola}
 
+Si risolve l'equazione di Schr\"odinger per questo hamiltoniano, assumendo che il potenziale comune $V(r)$ confina i nucleoni all'interno di una scatola di lato $L $.
+Per $N$ fermioni identici, il potenziale che li colloca in una scatola \`e 
+\[
+V_\infty = \begin{cases}
+	0 &,\ 0<x,y,z<L\\
+	+\infty&,\ \text{altrimenti}
+\end{cases}
+\] 
+con 
+\[
+H = \sum_{i=1}^{N}  \left[ \frac{p_i^2}{2m} + V_\infty(r) \right] = \sum_{i=1}^{N} h_i \hspace{1cm} h_i = \frac{p_i^2}{2m} + V_\infty(r) 
+\] 
+In questo modo, \`e sufficiente risolvere $h_i \psi _{\alpha _i} = e_{\alpha _i}\psi _{\alpha _i}$, dove $\psi _{\alpha _i}(\xi _i) = \braket{\xi _i|\alpha _i} $.
+Risolta l'equazione di Schr\"odinger ad un corpo, si ricostruisce la funzione d'onda del sistema come
+\[
+\Psi  = \mathscr{A}  \prod_{i=1}^N \psi _{\alpha _i}(\xi _i)
+\] 
+dove $\mathscr{A} $ \`e l'\textit{antisimmetrizzatore}, ad indicare che quella produttoria deve essere tale da rendere $\Psi $ anti-simmetrica; nel caso di fermioni, questo coincide col determinante di Slater.
 
+\subsubsection{Equazione a un corpo}
 
-
-
+Visto che $\nabla ^2 = \partial _x^2 + \partial _y^2 + \partial _z^2$, si pu\`o pensare l'hamiltoniano di particella singola $h$ come somma delle componenti assiali: $h = h_x + h_y + h_z$\footnote{Questo perch\'e all'interno della scatola $V_\infty(r)=0$}.
+Allo stesso modo, la funzione d'onda di particella singola si scrive come prodotto delle singole componenti: $\psi (\vec{r}) = \psi _x(x)  \psi _y(y) \psi _z(z)$.
+Si ottiene che
+\[
+\frac{1}{\psi _x(x)} \frac{\partial ^2}{\partial x^2} \psi _x(x) + \frac{1}{\psi _y(y)} \frac{\partial ^2}{\partial y^2} \psi _y(y) +\frac{1}{\psi _z(z)} \frac{\partial ^2}{\partial z^2} \psi _z(z) = - k^2
+\] 
+dove $k^2 = \frac{2m e}{\hbar ^2}$.
+Questa relazione deve essere vera per ogni $x,y,z$ e questo \`e verificato se e solo se 
+\[
+	\begin{split}
+		&\frac{1}{\psi _x(x)} \frac{\partial ^2}{\partial x^2} \psi_x (x) = - k_x^2\\
+		&\frac{1}{\psi _y(y)} \frac{\partial ^2}{\partial y^2} \psi_y (y) = - k_y^2\\
+		&\frac{1}{\psi _z(z)} \frac{\partial ^2}{\partial z^2} \psi_z (z) = - k_z^2
+	\end{split}
+\] 
+dove $\vec{k}=(k_x,k_y,k_z)$ e $k^2 = \frac{2me}{\hbar ^2} = k_x ^2 + k_y^2 + k_z^2$.
+In questo modo, la soluzione del problema \`e ricondotta alla soluzione dell'equazione 
+\begin{equation}
+	\frac{\partial ^2}{\partial x^2} \psi _x(x) + k_x^2 \psi _x(x) = 0
+\end{equation}
+per $0\le x\le L$.
 
 
 
