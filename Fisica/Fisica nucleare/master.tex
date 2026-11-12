@@ -4081,15 +4081,221 @@ In questo modo, la soluzione del problema \`e ricondotta alla soluzione dell'equ
 per $0\le x\le L$.
 
 
+\newpage 
+\section{Lezione}
 
+\subsection{Gas di fermi vincolato in scatola cubica}
 
+Sistema di fermioni identici confinati in una scatola: si vuole caloclare la densit\`a degli stati quantistici.
+Si ipotizza assenza di interazione, a parte potenziale confinante, e l'hamiltoniana \`e data da 
+\[
+H = \sum_{i=1}^{N} \left[ \frac{p_i^2}{2m} + V_{\infty}(r) \right] 
+\] 
+che si scrive come somma di hamiltoniani di singolo corpo. 
+Visto il potenziale, l'equazione di Schrodinger ha espressione
+\[
+	- \frac{\hbar ^2 }{2m} \nabla ^2 \psi (\vec{r}) = e \psi (\vec{r}) 
+\] 
+Visto che $\nabla ^2 = \partial _x^2 + \partial _y^2 + \partial _z^2$, si risolve l'equazione di Schrodinger a un corpo unidimenionale:
+\[
+\frac{\partial ^2}{\partial x^2}  \psi_x(x) + k_x^2 \psi _x(x) = 0 
+\] 
+Le soluzioni di questa equazione sono della forma
+\[
+\psi _x(x) = A \sin (k_x x ) + B \cos(k_x x)  \hspace{1cm} k^2 = \frac{2m_3}{\hbar ^2} \equiv k_x^2 + k_y^2 + k_z^2
+\] 
+Le condizioni al contorno sono che $\psi_x (0)=\psi _x(L) = 0 $, visto che deve essere confinata nella scatola, per cui segue immediatamente che sopravvive solamente il termine con il seno:
+\[
+\begin{cases}
+	\psi _x(0) = 0 \implies B=0\\
+	\psi _x(L) = 0 \Rightarrow  A \sin (k_x L) = 0 \implies k_x L = n_x \pi
+\end{cases}
+\] 
+con $n_x \in \mathbb{N}^{>0}$.
+Soluzioni analoghe si hanno per le altre due componenti, per cui 
+\[
+k^2 = \frac{\pi^2}{L^2} \left(n_x^2 + n_y^2+ n_z^2\right) 
+\] 
+Si pu\`o definire $n^2 = n_x ^2 + n_y^2 + n_z^2$, in modo da poter scrivere che 
+\begin{equation}
+	e = \frac{\hbar ^2}{2m}\frac{\pi^2}{L^2}n^2
+\end{equation}
+Uno stato quantistico \`e individuato dalla terna $(n_x,n_y,n_z)$; si vuole capire quanti stati ci sono tra $n$ e $n+\dd n$\footnote{I numeri $n_x,n_y,n_z$ sono interi; si passa al continuo per calcolare la densit\`a di stati. Si nota, poi, che l'$n$ riportato coincide con $n\equiv \lvert \vec{n} \rvert $. Graficamente, questo consiste nel calcolare il volume compreso tra uno spicchio di sfera (in quanto le componenti di $\vec{n}$ devono essere positive) di raggio $n$ e uno spicchio di raggio $n +\dd n$.}, quindi si vuole calcolare la densit\`a degli stati.
+Indicando il numero di stati in questo intervallo con $\dd \mathcal{N}$, questo \`e pari a 
+\[
+\dd \mathcal{N}  = \nu \frac{1}{8} 4 \pi n^2 \dd n
+\] 
+dove $1 / 8$ corrisponde allo spicchio di sfera e $\nu $ \`e il \textit{parametro di degenerazione}: per elettroni, per esempio, \`e $2$ perch\'e si possono avere uno di spin up e uno di spin down; per nucleoni, si deve contare anche la degenerazione legata all'isospin: in uno stato, si possono avere due protoni di spin opposto e due neutroni di spin opposto, per cui $\nu = 4$.
+Usando che
+\[
+n = \left(\frac{2m}{\hbar ^2} \frac{L^2}{\pi^2}\right)^{1 / 2} e ^{1 / 2} \implies \dd n = \frac{1}{2} \left(\frac{2m}{\hbar ^2} \frac{L^2}{\pi^2}\right) ^{1 / 2} \frac{1}{e^{1 / 2}}\dd e
+\] 
+\begin{boxenv}[]
+\begin{osservazione}
+In questa trattazione, $e$ \`e l'energia!
+Modificarla con $\epsilon$.
+\end{osservazione}
+\end{boxenv}
+\noindent In definitiva, si ha
+\begin{equation}
+	\dd \mathcal{N} = \nu  \frac{L^3}{4\pi ^2} \left(\frac{2m}{\hbar ^2}\right) ^{3 / 2} e^{1 / 2} \dd e
+\end{equation}
+Si definisce, da questo, \textit{densit\`a degli stati} la quantit\`a
+\begin{equation}
+	g(e) \equiv \frac{d \mathcal{N} }{d e}  =\nu  \frac{V}{4\pi ^2} \left(\frac{2m}{\hbar ^2}\right) ^{3 / 2} e^{1 / 2} 
+\end{equation}
+dove si \`e sostituito $V = L^3$.
+A partire dalla relazione
+\[
+e = \frac{\hbar ^2}{2m}k^2\implies \dd e = 2 \frac{\hbar ^2}{2m} k \dd k \hspace{1cm} \dd ^3 k = 4 \pi k^2 \dd k
+\] 
+dove nella seconda relazione (quella di $\dd ^3 k$) si \`e assunto che lo spazio dei vettori d'onda sia isotropo, si pu\`o riscrivere 
+\[
+\dd \mathcal{N} = \nu  \frac{V}{(2\pi)^3} 4 \pi k^2 \dd k
+\] 
+Di conseguenza
+\begin{equation}
+	g(k) \equiv \frac{1}{4\pi k^2} \frac{d \mathcal{N} }{d k} = \nu  \frac{V}{(2\pi)^3}
+\end{equation}
+Visto che $\vec{k} = \vec{p}/\hbar $, \`e comune trovare questa relazione scritta come $g(p)$, che risulta pari a 
+\begin{equation}
+	g(p) = \frac{1}{\hbar ^3} g(k) = \nu  \frac{V}{(2\pi \hbar )^3}
+\end{equation}
 
+\subsubsection{Gas ideale classico}
 
+Si considera un gas senza interazione fra i costituenti e monoatomico.
+L'energia intera del gas si scrive come
+\[
+E = \frac{3}{2} n_M R T
+\] 
+con $n_M$ numero di moli, $R=\kappa _B \mathcal{N}_A$ costante dei gas ideali, dove $\mathcal{N} _A \approx 6.022 \times 10^{23}$ \`e il numero di Avogadro.
+L'equazione di stato \`e 
+\[
+PV = n_M RT
+\] 
+Si ha $n_M R = \kappa _B n_M \mathcal{N} _A = \kappa _B N$, con $N$ numero totale di particelle del gas.
+Se $m_0$ \`e la massa di una particella, allora la massa totale del gas \`e $M = m_0 N$.
+La densit\`a numerica di particelle \`e $n = N / V~[\text{cm}^{-3}]$; la densit\`a del gas \`e $\rho  = M / V=m_0n~[\text{g}/\text{cm}^3]$.
+L'energia interna si pu\`o riscrivere come
+\[
+E = \frac{3}{2} \kappa _B N T \Rightarrow  \frac{E}{N} = \frac{3}{2} \kappa _B T
+\] 
+La densit\`a di energia \`e definita come
+\[
+\varepsilon \equiv \frac{E}{V} = \frac{3}{2} \kappa _B n T = \frac{3}{2} K \rho  T
+\] 
+con $K = \kappa _B / m_0$.
+La pressione si pu\`o riscrivere come 
+\[
+P = \kappa _B \frac{N}{V} T = \kappa _B n T = K \rho  T = \frac{2}{3} \varepsilon 
+\] 
+Nel gas classico, se $T\to 0$, allora $P\to 0$; questo, per\`o, non \`e vero nel gas quantistico.
 
+\subsubsection{Gas di Fermi ideale}
 
+Si considera un gas di fermioni identici senza interazioni.
+Per iniziare, si considera un gas con le seguenti ipotesi:
+\begin{enumerate}[(a).]
+	\item gas non-relativistico;
+	\item $T = 0$, detto gas di Fermi ideale \textit{completamente degenere}.
+\end{enumerate}
+Avendo a che fare con un gas di fermioni identici, per ogni livello energetico, si avr\`a una degenerazione pari a $2$ legata allo spin.
+Il livello energetico pi\`u alto occupato \`e corrispondente all'energia di fermi $e_F$, individuata dal vettore d'onda $k_F$.
+La densit\`a di stati in termini del vettore d'onda $k_i$ dell'$i$-esimo livello \`e data da 
+\[
+f(k_i) = \begin{cases}
+	1 &,\ k_i \le k_F\\
+	0 &,\ k_i > k_F
+\end{cases}
+\] 
+Il numero totale di particelle del sistema si pu\`o scrivere come
+\[
+N = \nu \sum_{k_i}^{+\infty} f(k_i) = \nu \sum_{k_i}^{k_F} f(k_i) 
+\] 
+tenendo conto della degenerazione con il fattore $\nu $.
+\begin{osservazione}
+	{\color{red}Controllare valore iniziale di $k_i$; come varia nella somma?}
+\end{osservazione}
+\noindent Nel limite termodinamico ($N,V\to +\infty$, $N/V$ costante), la densit\`a di stati si scrive come
+\[
+\ldots
+\] 
+tramite cui il numero totale di particelle \`e dato da 
+\[
+	\begin{split}
+		N &= \nu  \frac{V}{(2\pi)^3} \int f(k) \dd ^3 k = \nu  \frac{V}{(2\pi)^3} 4\pi \int_0^{k_F} k^2 f(k) \dd k\\
+		  &= \nu  \frac{V}{2\pi^2} \frac{k_F^3}{3} = \frac{\nu }{6 \pi ^2} V k_F^3
+	\end{split}
+\] 
+dove si assume isotropia dello spazio, per cui $d^3 k = k^2 \dd k \dd \Omega $ ({\color{red}controllare}) e l'integrale sull'angolo solido porta un fattore pari a $4\pi$.
+La densit\`a di particelle, allora, \`e data da 
+\[
+n = \frac{N}{V} = \frac{\nu }{6 \pi ^2} k_F^3
+\] 
+Da questa, si pu\`o trovare un'espressione per $k_F$:
+\[
+k_F = \left(\frac{6\pi^2}{\nu }\right) ^{1 / 3} n ^{1 / 3}
+\] 
+Si passa all'energia interna; l'energia interna di una singola particella nel gas \`e data da
+\[
+e(k) = \frac{p^2}{2m}=\frac{\hbar^2 k^2}{2m_0}
+\] 
+L'energia di Fermi si esprime come
+\[
+e_F \equiv e(k = k_F) = \frac{\hbar ^2}{2m_0} k_F^2 = \left(\frac{6 \pi ^2}{\nu }\right) ^{2 / 3} \frac{\hbar ^2}{2m_0} n^{2 / 3}
+\] 
+L'energia interna \`e data da (scrivendola direttamente nel limite termodinamico)
+\[
+	\begin{split}
+		E &= \nu  \frac{V}{(2\pi)^3} \int e(k) f(k) \dd ^3 k =\nu  \frac{V}{(2\pi)^3} 4\pi \int_0^{k_F} k^2 \frac{\hbar ^2 k^2}{2m_0} \dd k\\
+		  &= \nu  \frac{V}{2\pi^2} \frac{\hbar ^2}{2m_0} \frac{k_F^5}{5}
+	\end{split}
+\] 
+Visto che la densit\`a di particelle $n \sim k_F^3$, si pu\`o accorpare il fattore $k_F^3$ in $k_F^5$ in $n$, tramite un opportuno fattore di proporzionalit\`a; segue che
+\begin{equation}
+	E = \frac{3}{5} V \frac{\hbar ^2}{2m_0} \frac{N}{V}k_F^2 \implies \frac{E}{N} = \frac{3}{5} \frac{\hbar ^2}{2m_0}k_F^2 = \frac{3}{5}e_F \sim n^{2 / 3}
+\end{equation}
+Si pu\`o anche scrivere la densit\`a di energia
+\[
+\varepsilon = \frac{E}{V} = n \frac{E}{N} = \frac{3}{5} \frac{\hbar ^2}{2m_0} \left(\frac{6\pi^2}{\nu }\right) ^{2 / 3} n^{5 / 3} \sim n^{5 / 3}
+\] 
+Ora si passa alla pressione.
+Si pu\`o utilizzare la relazione
+\[
+	P = \Eval{-\frac{\partial E}{\partial V}}{S,N}{} = \Eval{n^2 \frac{\partial (E / N)}{\partial n} }{S , N }{} = \Eval{n \frac{\partial \varepsilon }{\partial n} }{S , N }{} - \varepsilon 
+\] 
+dove si \`e utilizzato che $n = N / V$.
+In questo modo, si hanno diversi modi possibili per determinare $P$; alla fine si ricava che
+\begin{equation}
+	P = \frac{2}{5} \frac{\hbar ^2}{2m_0} \left(\frac{6 \pi ^2}{\nu }\right) ^{2 / 3} n^{5 / 3} \sim n^{5 / 3}
+\end{equation}
+Prendendo le espressioni di $P$ e $\varepsilon $ in funzione di $n$, si trova che 
+\[
+P = \frac{3}{2} \varepsilon 
+\] 
+Nel caso di gas completamente degenere, cio\`e a $T=0$, quindi, si osserva che $P \neq 0$.
+La densit\`a del gas $\rho  = m_0n$; visto che $P = \kappa _{N_R}\rho ^{5 / 3}$, con $k_{N_R} = \frac{1}{5} \left(\frac{6\pi^2}{\nu }\right) ^{ 2 / 3} \frac{\hbar ^2}{m_0^{8 / 3}}$.
 
-
-
+Ora si considera $T>0$.
+Invece della step-function $f(k)$, in questo caso \`e necessario utilizzare la distribuzione di Fermi-Dirac:
+\[
+f(k) = \frac{1}{\exp\left(\frac{e(k) - \mu }{\kappa _BT}\right) +1}
+\] 
+dove $\mu $ \`e il potenziale chimico, definito dalla relazione termodinamica
+\[
+	\mu  = \Eval{\frac{\partial F}{\partial N}}{T,V}{} 
+\] 
+e $F= E - TS$ energia libera di Helmholtz.
+Nel limite $T\to 0$, la distribuzione di Fermi-Dirac tende alla step-function.
+Per temperatura finita, quindi, il numero totale di particelle del sistema \`e dato da 
+\[
+N = \nu  \frac{V}{(2\pi)^3} \int f(k,T) \dd ^3 k
+\] 
+e l'energia interna \`e 
+\[
+E = \nu  \frac{V}{(2\pi)^3} \int e(k) f(k,T) \dd ^3 k 
+\] 
 
 
 \newpage
