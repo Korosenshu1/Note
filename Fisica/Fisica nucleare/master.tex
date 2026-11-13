@@ -229,7 +229,7 @@ Ciononostante, il modello presenta una serie di problemi.
 	\begin{center}
 		\begin{minipage}
 			{.6\columnwidth}
-		Classicamente, la corrente associata al moto orbitale di un elettrone \`e data da $i = e / T = \frac{2}{2\pi r } v$; questa genera un momento magnetico 
+		Classicamente, la corrente associata al moto orbitale di un elettrone \`e data da $i = e / T = \frac{e}{2\pi r } v$; questa genera un momento magnetico 
 		\[
 		\mu  = i S = \frac{e}{2\pi r } v \pi r^2 = \frac{1}{2} e v r
 		\] 
@@ -287,7 +287,8 @@ pc \gtrsim \frac{\hbar c}{d} \approx \frac{200\text{ MeV fm}}{1\text{ fm}} = 200
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
-A questa energia, si pu\`o trascurare la massa a riposo degli elettroni, per cui si tratta di \textit{elettroni ultrarelativistici}; se ne conclude che l'energia necessaria per lo scattering debba essere $E_e \gtrsim 200 \text{ MeV}$, in accordo con il fatto che, sperimentalmente, si usano energie degli elettroni nell'intervallo $200 \div 1000$ MeV.
+Su questa scala energetica, si pu\`o trascurare l'energia a riposo degli elettroni; in questi casi, si parla di \textit{elettroni ultrarelativistici}. 
+L'energia degli elettroni necessaria per lo scattering, quindi, deve essere $E_e \gtrsim 200 \text{ MeV}$, in accordo con il fatto che, sperimentalmente, si usano energie degli elettroni nell'intervallo $200 \div 1000$ MeV.
 	\end{minipage}
 	\hfill
 	\begin{minipage}
@@ -431,18 +432,15 @@ ${}^{238}\mathrm{U}$ & 238 & 1801.69 & 7.570 & 28203 & 0.0639 \\
 \end{tabular}
 \caption{Si elencano le energie di legame per diversi elementi, i rapporti $B / A$ e $B / \mathcal{N} $, dove $\mathcal{N} = \frac{1}{2} A(A-1) $ \`e il \textit{numero di coppie}, cio\`e quante coppie di nucleoni si possono formare a partire da un numero totale di nucleoni $A$.}
 \end{table}
-\begin{osservazione}
-Per nuclei leggeri, $B\sim \mathcal{N}$, mentre per $A$ pi\`u grandi si arriva ad una saturazione. 
-Questo \`e un altro indizio importante per poter concludere che la forza forte \`e una forza a corto raggio, in quanto se i nucleoni non interagissero tutti fra loro, $B / \mathcal{N} $ continuerebbe a crescere.
-\end{osservazione}
-\begin{osservazione}[Collasso del nucleo]
-	Dai dati sperimentali, si pu\`o stimare che il raggio d'azione della forza forte deve essere di circa $1$ fm, visto che da nuclei pi\`u pesanti che hanno raggio di $\sim 2\div 3 $ fm, il rapporto $B / \mathcal{N} $ inizia a diminuire. 
+Chiamando $\mathcal{N} $ il numero di coppie di nucleoni per un atomo di numero di massa $A$, si osserva che $B\sim \mathcal{N}$, mentre per $A$ pi\`u grandi si arriva ad una saturazione. 
+Questo \`e un altro indizio importante per poter concludere che la forza forte \`e una forza a corto raggio, in quanto se i nucleoni interagissero tutti fra loro, $B $ continuerebbe a crescere con $\mathcal{N} $.
+	Dai dati sperimentali, si osserva che il rapporto $B / \mathcal{N} $ inizia a decrescere per nuclei il cui raggio si aggira nell'intervallo $2\div 3$ fm; in base a questa osservazione, si pu\`o stimare che il raggio d'azione della forza forte deve essere di circa $1$ fm.
 
-	Si \`e portati a pensare, a questo punto, alla possibilit\`a di un collasso dei nuclei, in cui questi hanno raggio crescente fino a raggiungere un valore di saturazione coincidente col raggio di interazione della forza forte.
-	Questo, per\`o, \`e in completo disaccordo con le osservazioni: se cos\`i fosse, $B / \mathcal{N} $ dovrebbe essere crescente all'aumentare di $A$, visto che tutti i nucleoni sarebbero nel raggio di interazione, e il raggio nucleare non dovrebbe andare come $A ^{1 / 3}$, ma essere circa costante. 
-	Inoltre, l'andamento della distribuzione di carica in visto precedentemente, ma $\rho _\text{ch}(r)$ dovrebbe aumentare, all'aumentare di $A$, e dovrebbe andare a zero in prossimit\`a dello stesso valore per tutti i nuclei.
-\end{osservazione}
-\noindent Questa osservazione permette di concludere che la forza forte ha anche una componente repulsiva che impedisce collassi, con un'energia potenziale nucleone-nucleone $V_{\text{NN}}(r)$ che ha la forma di un potenziale di Lennard-Jones; questa diventa repulsiva per $r\lesssim 0.5$ fm e assume il suo valore minimo per $r \sim 1$ fm (maggiore attrazione).
+Questo comportamento permette anche di confutare la possibilit\`a di un collasso dei nuclei, in cui questi hanno raggio crescente fino a raggiungere un valore di saturazione coincidente col raggio di interazione della forza forte: se cos\`i fosse, $B / \mathcal{N} $ dovrebbe essere crescente all'aumentare di $A$, visto che tutti i nucleoni sarebbero nel raggio di interazione, e il raggio nucleare non dovrebbe andare come $A ^{1 / 3}$, ma essere circa costante. 
+	Inoltre, l'andamento della distribuzione di carica visto precedentemente dovrebbe aumentare all'aumentare di $A$ e dovrebbe andare a zero in prossimit\`a dello stesso valore per tutti i nuclei.
+
+In conclusione, la forza forte ha anche una componente repulsiva che impedisce collassi, con un'energia potenziale nucleone-nucleone $V_{\text{NN}}(r)$ che ha la forma di un potenziale di Lennard-Jones; questa diventa repulsiva per $r\lesssim 0.5$ fm e assume il suo valore minimo per $r \sim 1$ fm (maggiore attrazione).
+
 \subsection{Formula semi-empirica di massa}
 Avendo osservato che, per $A$ abbastanza grande, quindi per la maggioranza degli elementi, $B / A$ \`e costante, si ha la relazione $B = a_V \, A$; visto anche che $R = r_0 A^{1 / 3}$, si ha che $B \sim A \sim R^3 \sim V$, con $V$ volume del nucleo.
 \subsubsection{Modello a goccia del nucleo}
