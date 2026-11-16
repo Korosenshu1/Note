@@ -4270,6 +4270,165 @@ e l'energia interna \`e
 E = \nu  \frac{V}{(2\pi)^3} \int e(k) f(k,T) \dd ^3 k 
 \] 
 
+\newpage
+\section{Lezione Fisica Nucleare 16/11}
+
+\subsection{Materia nucleare}
+
+Si considera un sistema di $Z$ protoni e $N$ neutroni; si chiama $A = N + Z$ il numero totale di nucleoni.
+Si immagina che questi siano confinati in una scatola di volume $V$ e che interagiscono esclusivamente tramite interazione nucleare (forte), quindi si trascura l'interazione coulombiana tra protoni.
+Da questa assunzione, deriva anche l'assenza di interazione debole, che \`e quella che media il processo di decadimento del neutrone, il quale risulter\`a, conseguentemente, stabile.
+Nel limite termodinamico, si fanno tendere $N,Z,V\to +\infty$, con 
+\[
+n_n = \frac{N}{V} \hspace{1cm} n_p = \frac{Z}{V} \hspace{1cm} n = \frac{A}{V}
+\] 
+che rimangono finiti.
+Questo sistema si definisce \textbf{materia nucleare}; quando $Z\neq N$, si parla di materia nucleare \textit{asimmetrica}; quando $N = Z = A / 2$, si parla di materia nucleare \textit{simmetrica}; infine, nel caso di soli neutroni ($N = A$), si parla di materia \textit{neutronica}.
+
+\subsubsection{Punto di saturazione della materia nucleare}
+
+In questo caso, quindi, $N=Z$, con $n_i \sim k_{F,i}^3$ ($k_F$ \`e il vettore d'onda associato all'energia di Fermi, che \`e diverso per neutroni e protoni, indicizzati da $i$).
+A temperatura nulla, questi nucleoni occupano tutti i livelli fino al rispetto $k_{F,i}$ (che sia $K_{F,p}$, o $k_{F,n}$).
+La densit\`a dei livelli si scrive, in generale, come
+\[
+n = \frac{\nu }{6 \pi ^2} k_F ^3
+\] 
+Nel caso specifico dei nucleoni, la degenerazione \`e $\nu  = 4$: sono fermioni identici, con un'ulteriore grado di degenerazione legato all'isospin, oltre che il fattore di degenerazione dello spin, per cui $n = \frac{2}{3\pi^2}k_F^3$.
+Si abbrevia con SNM (symmetric nuclear matter) la materia nucleare simmetrica; in questo caso specifico, si deve avere $k_{F,p} = k_{F,n} \equiv k_F$.
+\begin{boxenv}[]
+Grafico energia totale per nucleone in funzione della densit\`a $n$, considerando che la forza nucleare \`e short range fino a circa $2$ fm, mentre diventa fortemente repulsiva per $r \lesssim 0.5$ fm.
+\end{boxenv}
+\noindent Il punto di minimo di questa curva, in corrispondenza di $\big(n_0, (E / A)_0\big)$, \`e detto \textit{punto di saturazione della materia nucleare}; il valore di questo punto si pu\`o ottenere da dati sperimentali, ottenendo il punto di saturazione \textit{empirico}.
+Ora si spiega in che modo si possono ricavare.
+Partendo da $n_0$, questo valore di densit\`a di saturazione si pu\`o pensare come il valore che si osserva al centro di nuclei molto pesanti, come il piombo (tramite elettroscattering, assumendo distribuzioni di nucleoni pressoch\'e identiche); questo vale circa $0.16 \pm 0.01~\text{fm}^{-3}$.
+Per il valore di $(E / A)_0$, invece, si fa uso della formula semi-empirica di massa.
+Ricordando che l'energia di legame si pu\`o scrivere come
+\[
+	\begin{split}
+		&B = a_V A - a_S A^{2 / 3} - a_C \frac{Z^2}{A^{1 / 3}} - a_\text{sym} \frac{(N-Z)^2}{A} + \delta \\
+		&\Rightarrow \frac{B}{A} = a_V - \frac{a_S}{A^{1 / 3}} - a_C \frac{Z^2}{A^{4 / 3}} - a_\text{sym} \left(\frac{N-Z}{A}\right) ^2 + \frac{\delta }{A}
+	\end{split}
+\] 
+In questo caso, avendo assunto assenza di interazione coulobmaiana, si elimina il termine coulobmiano.
+Nel limite termodinamico, visto che $A \to +\infty$, il termine di superficie va a $0$ (all'infinito, non si ha superficie); anche il termine di pairing va a $0$.
+Allora, usando $B = -E$, si trova
+\[
+\frac{E}{A} = - a_V + a_\text{sym} \left(\frac{N-Z}{A}\right) ^2
+\] 
+In particolare per materia nucleare simmetrica, anche il termine di simmetria va a $0$ e si rimane con 
+\[
+\frac{E}{A} = - a_V
+\] 
+Si conclude che, nel punto di saturazione, si ha $(E/A)_0 = -a_V \approx - 16$ MeV.
+
+Sempre nel caso di SMN, ma senza interazione nucleare forte, si studia un sistema di un gas di neutroni e protoni che, di conseguenza, non \`e legato.
+Stimando l'andamento di $E / A$ in questo caso, si pu\`o ricavare il comportamento in presenza dell'interazione nucleare facendo uso del punto di saturazione appena trovato.
+In questo caso, si ha
+\[
+n = \frac{2}{3\pi^2} k_F^3 \implies k_F(n=n_0) = k_{F,0} = 1.33~\text{fm}^{-1}
+\] 
+Si era trovato che l'energia di Fermi poteva scriversi come
+\[
+\epsilon _F = \frac{\hbar ^2}{2m_0}k_{F}^2 \implies \epsilon _{F,0} = \frac{\hbar ^2}{2m_0} k_{F,0}^2
+\] 
+e si trova $(E / A)_0 = \frac{3}{5} \epsilon _{F,0} = 22~\text{MeV} > 0$.
+Ma questo, essendo in assenza di interazione, \`e il termine cinetico del valore $(E / A)_0$ ottenuto nel caso della sola interazione forte:
+\[
+\left(\frac{E}{A}\right) _\text{cin} =\left( \frac{E(n_0)}{A}\right) _\text{cin}
+\] 
+A questo punto, il termine potenziale di $(E / A)_\text{pot}$ si pu\`o ricavare come
+\[
+	(E / A)_\text{pot} = (E/A)_0 - (E / A)_\text{cin} \approx - 38~\text{MeV}
+\] 
+\begin{osservazione}
+Si rimarca che questi valori sono riferiti al punto di saturazione empirico individuato da $n_0 \approx 0.16~\text{fm}^{-3}$.
+\end{osservazione}
+\subsubsection{Gas di protoni e neutroni ideale asimmetrico}
+
+Tornando nel caso generico di materia nucleare nel limite termodinamico, si \`e trovato che 
+\[
+\frac{E}{A} = -a_V + a_\text{sym}\left(\frac{N-Z}{A}\right) ^2
+\] 
+Si vuole mostrare che questo termine quadratico nasce naturalmente dalla trattazione di un gas di neutroni e protoni (con $N\neq Z$) in assenza completa di interazione, quindi nel caso ideale.
+In questo caso, i $k_F$ sono distinti, per cui si devono considerare densit\`a diverse:
+\[
+n_i = \frac{1}{3\pi^2} k_{F,i}^3\, , \ i = p,n
+\] 
+Si \`e posto $\nu _i = 2$ per via del fatto che si separano le densit\`a, cio\`e non si parla di densit\`a di nucleoni generici, ma gi\`a di protoni e neutroni distinti.
+Allora l'energia avr\`a dipendenze $E \equiv E(n_n,n_p)$.
+Tramite cambio di variabile, si potr\`a scrivere $E(n,\beta )$, con $n$ densit\`a $n=n_p+n_n$ totale; il termine $\beta $ \`e un termine di asimmetria definito come
+\[
+\beta  = \frac{N-Z}{A} = \frac{n_n - n}{n}
+\] 
+Si vedr\`a comparire, nell'espressione di $E / A$, un termine $\beta ^2$ come termine di asimmetria.
+Il cambio di variabili, allora, \`e
+\[
+\begin{cases}
+	n=n_n + n_p\\
+	\beta  =  \frac{n_n - n}{n}
+\end{cases} \iff \begin{cases}
+	n_n = \frac{1}{2}\left(1 + \beta \right) n\\
+	n_p = \frac{1}{2} \left(1- \beta \right) n
+\end{cases}
+\] 
+In alcune applicazioni, si trova una trattazione espressa in termini di $X = n_p / n$ e $\beta = 1 - 2X$.
+Considerando $m_n = m_p \equiv m$, si ha 
+\[
+\frac{E}{N} = \frac{3}{5} \epsilon _{F,n} \hspace{1cm} \frac{E}{Z} = \frac{3}{5} \epsilon _{F,p}
+\] 
+con 
+\[
+\epsilon _{F,i} = \frac{\hbar^2 }{2m} k_{F,i}^2 = \frac{\hbar ^2}{2m} \left(3\pi ^2\right) ^{2 / 3} n_i^{2 / 3}
+\] 
+L'energia interna si pu\`o scrivere come
+\[
+	\begin{split}
+		E &= E_n + E_p = \frac{3}{5} \epsilon _{F,n}N + \frac{3}{5} \epsilon _{F,p} Z \\
+		  &= \frac{3}{5} \frac{\hbar ^2}{2m}\left(3\pi^2\right) ^{2 / 3} \left[ N n_n^{2 / 3} + Z n_p^{2 / 3} \right] 
+	\end{split}
+\] 
+Si fa il cambiamento di variabili riportato sopra; cos\`i facendo, l'energia interna per nucleone si scrive come
+\[
+	\begin{split}
+		\frac{E}{A} &= \frac{3}{5} \frac{\hbar ^2}{2m} (3\pi^2)^{2/3}\left[ \frac{1}{2} \left(1 + \beta \right) \left(\frac{1}{2}(1+\beta ) n\right) ^{2 / 3} + \frac{1}{2}\left(1-\beta \right) \left(\frac{1}{2}(1-\beta ) n\right) ^{2 / 3}\right] \\
+			    & = \frac{3}{5} \frac{\hbar ^2}{2m} (3 \pi ^2) ^{2 / 3} \left[ \left(\frac{1+\beta }{2}\right) ^{ 5 / 3} + \left(\frac{1-\beta }{2}\right) ^{ 5 / 3}  \right] n^{2 / 3}\\
+			    & = \underbracket{\frac{1}{2} \left[ \left(1+\beta \right) ^{5 / 3} + (1-\beta )^{5 / 3} \right]}_{\text{termine di asimmetria}} \underbracket{\frac{3}{5}\frac{\hbar ^2}{2m} \left(\frac{3\pi^2}{2}\right) ^{ 2 / 3} n^{2 / 3}}_{\text{termine simmetrico}}
+	\end{split}
+\] 
+dove si \`e usato che 
+\[
+\frac{N}{A} = \frac{n_n}{n} = \frac{1}{2} (1+\beta )\hspace{1cm}\frac{Z}{A} = \frac{n_p}{n} = \frac{1}{2} (1-\beta )
+\] 
+Il termine simmetrico si ottiene, infatti, come
+\[
+	\Eval{\frac{E}{A}}{n,\beta = 0}{} = \frac{3}{5} \frac{\hbar ^2}{2m} \left(\frac{3\pi^2}{2}\right) ^{2 /3} n^{2 / 3}
+\] 
+Quindi
+\[
+\frac{E}{A} = \frac{1}{2} \left[ \left(1+\beta \right) ^{5 / 3} + \left(1-\beta \right) ^{5 / 3} \right] \left(\frac{E}{A}\right) _{n,\beta =0}
+\] 
+Ora, nel caso di $\beta \ll 1$, si pu\`o espandere con Taylor il termine asimmetrico:
+\[
+	\begin{split}
+		\frac{E}{A} &= \Eval{\frac{E}{A}}{\beta =0}{} \Bigg[ 1 + \frac{1}{2}\frac{10}{9} \beta ^2 + \underbracket{\frac{1}{4!}\frac{40}{81}}_{5 / 243} \beta ^4 + O\left(\beta ^6\right)  \Bigg] \\
+			    & \simeq \Eval{\frac{E}{A}}{\beta =0}{} + E_\text{sym}(n) \beta ^2
+	\end{split}
+\] 
+dove si \`e chiamato
+\[
+E_\text{sym}(n) \equiv \frac{5}{9} \Eval{\frac{E}{A}}{\beta =0}{} = \frac{5}{9} \left[ \frac{3}{5} \frac{\hbar ^2}{2m} \left(\frac{3\pi^2}{2}\right)^{2 / 3} n^{2 / 3}  \right] 
+\] 
+L'approssimazione al termine $\beta ^2$ \`e data dal fatto che il termine quartico ha un fattore di $5 / 243$, che lo rende trascurabile.
+Si ha
+\[
+E_\text{sym}(n=0) = 12.2~\text{MeV}
+\] 
+da confrontare con il termine di asimmetria $a_\text{sym}=28\div 30~\text{MeV}$.
+La differenza fra i due \`e evidentemente dovuta all'assenza di interazione; come fatto in precedenza per $(E / A)_\text{pot}$, si pu\`o calcolare il contributo dell'interazione forte al termine di simmetria:
+\[
+E_\text{sym}^\text{pot} = E_\text{sym} - E_\text{sym}^\text{cin} \approx 16\div 18~\text{MeV}
+\] 
+Si pu\`o verificare che, nel caso di un sistema asimmetrico di neutroni e protoni in assenza di interazione coulombiana, la pressione totale si scrive in termini di un termine simmetrico e asimmetrico ({\color{red}scrivere da slide!!}).
 
 
 
