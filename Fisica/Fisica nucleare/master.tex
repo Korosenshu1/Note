@@ -4430,6 +4430,165 @@ E_\text{sym}^\text{pot} = E_\text{sym} - E_\text{sym}^\text{cin} \approx 16\div 
 \] 
 Si pu\`o verificare che, nel caso di un sistema asimmetrico di neutroni e protoni in assenza di interazione coulombiana, la pressione totale si scrive in termini di un termine simmetrico e asimmetrico ({\color{red}scrivere da slide!!}).
 
+\newpage
+\section{Lezione Fisica Nucleare 17/11}
+
+\subsection{Gas di Fermi relativistico}
+Si considera ancora $T=0$.
+Si scrive l'energia di singola particella nel caso relativistico:
+\[
+\epsilon (k) = \sqrt{(\hbar c k) + (m_0 c^2)^2} 
+\] 
+dove $m_0$ \`e la massa a riposo del nucleone. 
+Si considerano particelle identiche, quindi hanno tutte stessa massa.
+La densit\`a numerica di particelle \`e sempre la stessa
+\[
+n = \frac{\nu }{6 \pi ^2} k_F^3
+\] 
+In questo caso, l'energia di Fermi \`e legata all'energia di particella singola scritta sopra:
+\[
+\epsilon _F \equiv \epsilon (k_F) = \sqrt{\left(\hbar c k_F\right) ^2 + \left(m_0c^2\right) ^2} 
+\] 
+L'energia interna del sistema, nel limite termodinamico, \`e pari a 
+\[
+E = \frac{\nu }{(2\pi)^3}V \int \epsilon (k) f(k) \dd ^3 k
+\] 
+dove $f(k)$ \`e la Fermi-Dirac a temperatura nulla, quindi \`e una funzione a gradino. 
+Passando in coordinate sferiche, si ha
+\[
+	E = \frac{\nu V}{2\pi^2} \int_0^{k_F} k^2 \sqrt{(\hbar c k )^2 + (m_0c^2)^2}  \dd k
+\] 
+La densit\`a di energia che ne deriva \`e
+\[
+\varepsilon = \frac{E}{V} = \frac{\nu }{2\pi^2}m_0c^2 \int _0^{k_F} k^2 \sqrt{\left(\frac{\hbar k}{m_0c}\right) ^2 + 1} 
+\] 
+Si cambia variabile, definendo $y = \frac{\hbar k}{m_0 c} \equiv \lbar k$ che \`e detta \textit{lunghezza d'onda Compton} ridotta (perch\'e c'\`e $\hbar $); in questo modo:
+\[
+	\varepsilon   = \frac{\nu }{2\pi^2} \frac{m_0 c^2}{\lbar^3} \int _0^{x}y^2 \sqrt{y^2 + 1}  \dd y
+\] 
+con $x= \lbar k_F$.
+L'integrale \`e tabulato e si ottiene
+\[
+\varepsilon = \frac{1}{8} \frac{\nu }{2 \pi^2} \frac{m_0 c^2}{\lbar^3} \chi(x) \equiv \eta \chi (x) \, , \ \eta  = \frac{1}{8} \frac{\nu }{2\pi^2}  \frac{m_0c^2}{\lbar^3}
+\] 
+Ora, la dipendenza da $k_F$ \`e contenuta in $\chi $, vista la dipendenza da $x$.
+La funzione che risolve l'integrale \`e data da 
+\[
+\chi (x) = x (1+x^2)^{1 / 2} \left(1 + 2x^2\right) - \ln\left[x + (1+x^2)^{1 / 2}\right] 
+\] 
+
+\begin{osservazione}
+L'integrale \`e adimensionale, in quanto \`e composto da tutte variabili adimensionali; ne segue che le dimensioni sono date dal coefficiente $m_0c^2 / \lbar^3 = m_0^4 c^5 / \hbar ^3$, che \`e esattamente una densit\`a di energia.
+\end{osservazione}
+\begin{osservazione}
+Mentre nel gas non-relativistico, $\varepsilon \sim n^{5/3}$, in questo caso la densit\`a di energia ha un andamento pi\`u complesso.
+\end{osservazione}
+\begin{boxenv}[]
+Operativamente, la pressione di un gas si trova mettendolo in una superficie immaginaria e la pressione \`e data dalla quantit\`a di moto delle particelle del gas per unit\`a di tempo e unit\`a di superficie.
+\end{boxenv}
+
+\noindent La pressione \`e data da 
+\[
+P = \frac{1}{3} \frac{\nu }{(2\pi)^3} \int \hbar k v f(k) \dd ^3 k
+\] 
+con $v$ velocit\`a delle particelle del gas.
+Usando che $p = m v$ e $\epsilon = mc^2$, con $m = \gamma m_0$ massa relativistica\footnote{Si ricorda che $\gamma = \frac{1}{\sqrt{1 - v^2 / c^2} }$.}, si pu\`o scrivere $v = \frac{pc^2}{\epsilon }\Rightarrow v / c = p c / \epsilon $; allo stesso tempo, $v = \hbar  c k / \epsilon (k)$.
+In questo modo, si arriva a scrivere l'integrale come
+\[
+P = \frac{1}{3} \frac{\nu }{(2\pi)^3} 4\pi \int k^2 \hbar k \frac{\hbar c k }{\epsilon (k)} c f(k) \dd k=\frac{1}{3}\frac{\nu }{2\pi^2} (\hbar c)^2 \int _0^{k_F} \frac{k^4}{\sqrt{(\hbar ck)^2 + (m_0c^2)^2} }  \dd k
+\] 
+Tramite lo stesso cambiamento di variabile fatto prima, si ha
+\[
+	\begin{split}
+		P &= \frac{1}{3} \frac{\nu }{2\pi^2} \frac{m_0c^2}{\lbar} \int _0^x \ldots \\
+		  &= \eta \Phi (x)
+	\end{split}
+\] 
+con 
+\[
+\Phi (x) = x \left(1 + x^2\right) ^{1 / 2}  \left(\frac{2}{3}x^2 - 1\right)  - \ln \left[ x + \left(1+x^2\right) ^{1 / 2} \right] 
+\] 
+\begin{osservazione}
+Si sarebbe potuta ricavare la pressione come derivata di $\varepsilon $, in quanto le due quantit\`a sono proporzionali.
+\end{osservazione}
+
+\noindent Quanto alla densit\`a, questa si scrive come
+\[
+\rho  = \frac{1}{c^2} \varepsilon = \frac{\eta }{c^2} \chi (x)
+\] 
+
+\subsection{Gas di Fermi ideale ultra-relativistico}
+
+Un gas si pu\`o considerare ultra-relativistico se \`e valida la seguente condizione:
+\begin{equation}
+	x \gg 1 \iff \hbar x k_F  \gg m_0 c^2
+\end{equation}
+In questo regime, l'energia di singola particella si pu\`o approssimare come 
+\[
+\epsilon (k) \simeq \hbar  c k
+\] 
+come fosse l'energia di una particella a massa nulla.
+La densit\`a di energia si scrive come
+\[
+	\begin{split}
+		\varepsilon &= \frac{\nu }{(2\pi)^3} \int \hbar  c k f(k) \dd ^3 k=  \frac{\nu }{2\pi^2} \hbar  c \frac{k_F^4}{4} \\
+			    &= \frac{3}{4} \left(\frac{6\pi^2}{\nu }\right) ^{1 / 3} \hbar  c n^{ 4/3}
+	\end{split}
+\] 
+dove si \`e usato che $n = \frac{\nu }{6\pi^2} k_F^3$.
+La pressione si ottiene come
+\[
+		P = n \frac{\partial \varepsilon }{\partial n}  - \varepsilon  = \frac{1}{4} \left(\frac{6\pi^2}{\nu }\right) ^{1 / 3} \hbar c n^{4 / 3}
+\] 
+\begin{osservazione}
+Rispetto al caso non-relativistico, si osserva che $P\sim n^{5 / 3}$ cambia andamento e diventa $P \sim n^{4 / 3}$.
+\end{osservazione}
+
+\noindent Quanto alla densit\`a, si vede che
+\[
+\rho  = \frac{1}{c^2} \varepsilon \sim n^{4 / 3}
+\] 
+
+\subsection{Limite non-relativistico}
+
+Questo limite \`e individuato dalla condizione
+\begin{equation}
+	x \ll 1 \iff \hbar  c k_F \ll m_0c^2
+\end{equation}
+Per trattare questo caso, si parte del caso relativistico e si espandono le espressioni attorno a $x=0$. 
+Partendo dalla densit\`a di energia, si ha
+\[
+\chi (x) \simeq \frac{8}{3} \left( x^3 + \frac{3}{5}x^5 - \frac{3}{56}x^7\right) 
+\] 
+Per la pressione, invece, si ha
+\[
+\Phi (x) \simeq \frac{8}{15} \left(x^5 - \frac{5}{14} x^7+ \frac{5}{24} x^9\right) 
+\] 
+Per il seguito, si considereranno contributi in $x$ fino a $x^5$.
+Partendo dalla pressione:
+\[
+		P = \frac{8}{15} \eta x^5 \frac{2}{5} \frac{\hbar ^2}{2m_0} \left(\frac{6\pi^2}{\nu }\right)  ^{2 / 3} n^{ 5 / 3}
+\] 
+Come nel caso non-relativistico, si trova lo stesso andamento della pressione.
+Per la densit\`a di energia, invece, lo sviluppo consta di un termine $x^3$ e di uno $x^5$:
+\[
+\varepsilon = \frac{8}{3}\eta \left(x^3 + \frac{3}{10}x^5\right) \equiv \varepsilon _0 + \varepsilon _1
+\] 
+dove
+\[
+\varepsilon _0 = nm_0c^2 =\rho_0 c^2 \hspace{1cm} \varepsilon _1 = \frac{3}{5} \frac{\hbar ^2}{2m_0} \left(\frac{6\pi^2}{\nu }\right) ^{2 /3 } n^{5 / 3}
+\] 
+\begin{osservazione}
+Il termine $\varepsilon _0$ \`e fondamentalmente quello non-relativistico, dovuto alla massa a riposo dei costituenti.
+\end{osservazione}
+
+\noindent In questo caso, la densit\`a sar\`a data da
+\[
+\rho  = \frac{\varepsilon }{c^2} = m_0 n + \frac{1}{c^2} \varepsilon _1
+\] 
+
+
+
 
 
 
