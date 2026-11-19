@@ -4374,12 +4374,10 @@ In particolare per materia nucleare simmetrica, anche il termine di simmetria va
 \frac{E}{A} = - a_V
 \] 
 Questo permette di concludere che, nel punto di saturazione, si ha $(E/A)_0 = -a_V \approx - 16$ MeV.
-\begin{center}
-	-------------------------------------------------
-\end{center}
-Sempre nel caso di SMN, ma senza interazione nucleare forte, si studia un sistema di un gas di neutroni e protoni che, di conseguenza, non \`e legato.
-Stimando l'andamento di $E / A$ in questo caso, si pu\`o ricavare il comportamento in presenza dell'interazione nucleare facendo uso del punto di saturazione appena trovato.
-In questo caso, si ha
+
+Ora si considera della materia nucleare simmetrica ideale, quindi si rimuove anche l'interazione forte. 
+Valutando il valore di $(E / A)_0$, il quale \`e determinato tramite il valore di $n_0$ appena ottenuto, in questo caso particolare, si possono ricavare informazioni relative al caso pi\`u generale in cui \`e presente dell'interazione nucleare.
+Intanto, usando subito il valore di $n_0$, si pu\`o stimare $k_{F,0}$:
 \[
 n = \frac{2}{3\pi^2} k_F^3 \implies k_F(n=n_0) = k_{F,0} = 1.33~\text{fm}^{-1}
 \] 
@@ -4387,12 +4385,12 @@ Si era trovato che l'energia di Fermi poteva scriversi come
 \[
 \epsilon _F = \frac{\hbar ^2}{2m_0}k_{F}^2 \implies \epsilon _{F,0} = \frac{\hbar ^2}{2m_0} k_{F,0}^2
 \] 
-e si trova $(E / A)_0 = \frac{3}{5} \epsilon _{F,0} = 22~\text{MeV} > 0$.
-Ma questo, essendo in assenza di interazione, \`e il termine cinetico del valore $(E / A)_0$ ottenuto nel caso della sola interazione forte:
+Allora segue immediatamente che $(E / A)_0 = \frac{3}{5} \epsilon _{F,0} = 22~\text{MeV} > 0$.
+Ma questo, essendo in assenza di interazione, \`e solo il termine cinetico del valore $(E / A)_0$ ottenuto nel caso cui \`e presente l'interazione forte:
 \[
 \left(\frac{E}{A}\right) _\text{cin} =\left( \frac{E(n_0)}{A}\right) _\text{cin}
 \] 
-A questo punto, il termine potenziale di $(E / A)_\text{pot}$ si pu\`o ricavare come
+Per questa ragione, \`e possibile ricavare il contributo potenziale al valore di $(E / A)_0$ ottenuto nel caso dell'interazione forte:
 \[
 	(E / A)_\text{pot} = (E/A)_0 - (E / A)_\text{cin} \approx - 38~\text{MeV}
 \] 
@@ -4401,21 +4399,25 @@ Si rimarca che questi valori sono riferiti al punto di saturazione empirico indi
 \end{osservazione}
 \subsubsection{Gas di protoni e neutroni ideale asimmetrico}
 
-Tornando nel caso generico di materia nucleare nel limite termodinamico, si \`e trovato che 
+Ora si ritorna al caso della materia nucleare generica, dunque si dovr\`a tenere in conto la possibile asimmetria tra le popolazioni di neutroni e protoni.
+Nel limite termodinamico, dalla formula semi-empirica di massa, si era trovato che
 \[
 \frac{E}{A} = -a_V + a_\text{sym}\left(\frac{N-Z}{A}\right) ^2
 \] 
-Si vuole mostrare che questo termine quadratico nasce naturalmente dalla trattazione di un gas di neutroni e protoni (con $N\neq Z$) in assenza completa di interazione, quindi nel caso ideale.
-In questo caso, i $k_F$ sono distinti, per cui si devono considerare densit\`a diverse:
+Si vuole mostrare che questo termine quadratico nasce naturalmente dalla trattazione di un gas di neutroni e protoni (con $N\neq Z$) in assenza completa di interazione.
+Visto che, in generale, $N\neq Z$, i $k_F$ delle due specie sono distinti e cos\`i le loro densit\`a: 
 \[
 n_i = \frac{1}{3\pi^2} k_{F,i}^3\, , \ i = p,n
 \] 
-Si \`e posto $\nu _i = 2$ per via del fatto che si separano le densit\`a, cio\`e non si parla di densit\`a di nucleoni generici, ma gi\`a di protoni e neutroni distinti.
-Allora l'energia avr\`a dipendenze $E \equiv E(n_n,n_p)$.
-Tramite cambio di variabile, si potr\`a scrivere $E(n,\beta )$, con $n$ densit\`a $n=n_p+n_n$ totale; il termine $\beta $ \`e un termine di asimmetria definito come
+\begin{osservazione}
+Si \`e gi\`a semplificato il denominatore con la molteplicit\`a, che \`e pari a $2$ sia per protoni che neutroni, visto che, avendo gi\`a separato le due specie, non vi \`e pi\`u il grado di degenerazione proveniente dall'isospin. 
+\end{osservazione}
+\noindent Di conseguenza, l'energia avr\`a dipender\`a separatamente dalle due densit\`a: $E \equiv E(n_n,n_p)$.
+Tramite cambio di variabile, si potr\`a scrivere $E(n,\beta )$, con $n$ densit\`a $n=n_p+n_n$ totale e 
 \[
 \beta  = \frac{N-Z}{A} = \frac{n_n - n}{n}
 \] 
+\`e un termine di asimmetria.
 Si vedr\`a comparire, nell'espressione di $E / A$, un termine $\beta ^2$ come termine di asimmetria.
 Il cambio di variabili, allora, \`e
 \[
@@ -4427,8 +4429,11 @@ Il cambio di variabili, allora, \`e
 	n_p = \frac{1}{2} \left(1- \beta \right) n
 \end{cases}
 \] 
+\begin{osservazione}
 In alcune applicazioni, si trova una trattazione espressa in termini di $X = n_p / n$ e $\beta = 1 - 2X$.
-Considerando $m_n = m_p \equiv m$, si ha 
+\end{osservazione}
+
+\noindent Considerando $m_n = m_p \equiv m$, si ha 
 \[
 \frac{E}{N} = \frac{3}{5} \epsilon _{F,n} \hspace{1cm} \frac{E}{Z} = \frac{3}{5} \epsilon _{F,p}
 \] 
@@ -4484,14 +4489,23 @@ La differenza fra i due \`e evidentemente dovuta all'assenza di interazione; com
 \[
 E_\text{sym}^\text{pot} = E_\text{sym} - E_\text{sym}^\text{cin} \approx 16\div 18~\text{MeV}
 \] 
-Si pu\`o verificare che, nel caso di un sistema asimmetrico di neutroni e protoni in assenza di interazione coulombiana, la pressione totale si scrive in termini di un termine simmetrico e asimmetrico ({\color{red}scrivere da slide!!}).
-
-\newpage
-\section{Lezione Fisica Nucleare 17/11}
+Anche la pressione, nel caso di materia nucleare asimmetrica, risulta esprimibile in termini di un contributo simmetrico e uno asimmetrico:
+\[
+P(n,\beta ) = P_n + P_p = \frac{2}{5} \frac{\hbar ^2}{2m} (3\pi^2)^{2 / 5} \left[ n_n^{5 / 3} + n_p ^{5 / 3} \right] 
+\] 
+da cui
+\begin{equation}
+	P = \frac{1}{2} \left[ \left(1+\beta \right) ^{5 / 3} + \left(1 - \beta \right) ^{5 / 3} \right] P (n,\beta =0)
+\end{equation}
+dove
+\[
+P(n,\beta =0) = \frac{2}{5} \frac{\hbar ^2}{2m}\left(\frac{3\pi^2}{2}\right) ^{2  /3} n^{5 / 3}
+\] 
+\`e la pressione del gas nel caso $N=Z$ alla densit\`a $n$.
 
 \subsection{Gas di Fermi relativistico}
-Si considera ancora $T=0$.
-Si scrive l'energia di singola particella nel caso relativistico:
+Si descrive un gas di Fermi a temperatura $T=0$.
+Per iniziare, l'energia di singola particella nel caso relativistico \`e data da
 \[
 \epsilon (k) = \sqrt{(\hbar c k) + (m_0 c^2)^2} 
 \] 
@@ -4573,7 +4587,7 @@ Si sarebbe potuta ricavare la pressione come derivata di $\varepsilon $, in quan
 \rho  = \frac{1}{c^2} \varepsilon = \frac{\eta }{c^2} \chi (x)
 \] 
 
-\subsection{Gas di Fermi ideale ultra-relativistico}
+\subsubsection{Gas di Fermi ultra-relativistico}
 
 Un gas si pu\`o considerare ultra-relativistico se \`e valida la seguente condizione:
 \begin{equation}
