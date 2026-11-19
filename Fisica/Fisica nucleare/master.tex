@@ -4270,9 +4270,6 @@ e l'energia interna \`e
 E = \nu  \frac{V}{(2\pi)^3} \int e(k) f(k,T) \dd ^3 k 
 \] 
 
-\newpage
-\section{Lezione Fisica Nucleare 16/11}
-
 \subsection{Materia nucleare}
 
 Si considera un sistema di $Z$ protoni e $N$ neutroni; si chiama $A = N + Z$ il numero totale di nucleoni.
@@ -4287,30 +4284,87 @@ Questo sistema si definisce \textbf{materia nucleare}; quando $Z\neq N$, si parl
 
 \subsubsection{Punto di saturazione della materia nucleare}
 
-In questo caso, quindi, $N=Z$, con $n_i \sim k_{F,i}^3$ ($k_F$ \`e il vettore d'onda associato all'energia di Fermi, che \`e diverso per neutroni e protoni, indicizzati da $i$).
-A temperatura nulla, questi nucleoni occupano tutti i livelli fino al rispetto $k_{F,i}$ (che sia $K_{F,p}$, o $k_{F,n}$).
+Si considera il caso di materia simmetrica, quindi $N=Z$, con, in generale, $n_i \sim k_{F,i}^3$ ($k_F$ \`e il vettore d'onda associato all'energia di Fermi, che \`e diverso per neutroni e protoni, indicizzati da $i$).
+Sempre in generale, a temperatura nulla, i nucleoni occupano tutti i livelli fino al rispettivo $k_{F,i}$ (che sia $k_{F,p}$, o $k_{F,n}$).
 La densit\`a dei livelli si scrive, in generale, come
 \[
 n = \frac{\nu }{6 \pi ^2} k_F ^3
 \] 
 Nel caso specifico dei nucleoni, la degenerazione \`e $\nu  = 4$: sono fermioni identici, con un'ulteriore grado di degenerazione legato all'isospin, oltre che il fattore di degenerazione dello spin, per cui $n = \frac{2}{3\pi^2}k_F^3$.
-Si abbrevia con SNM (symmetric nuclear matter) la materia nucleare simmetrica; in questo caso specifico, si deve avere $k_{F,p} = k_{F,n} \equiv k_F$.
-\begin{boxenv}[]
-Grafico energia totale per nucleone in funzione della densit\`a $n$, considerando che la forza nucleare \`e short range fino a circa $2$ fm, mentre diventa fortemente repulsiva per $r \lesssim 0.5$ fm.
-\end{boxenv}
-\noindent Il punto di minimo di questa curva, in corrispondenza di $\big(n_0, (E / A)_0\big)$, \`e detto \textit{punto di saturazione della materia nucleare}; il valore di questo punto si pu\`o ottenere da dati sperimentali, ottenendo il punto di saturazione \textit{empirico}.
-Ora si spiega in che modo si possono ricavare.
-Partendo da $n_0$, questo valore di densit\`a di saturazione si pu\`o pensare come il valore che si osserva al centro di nuclei molto pesanti, come il piombo (tramite elettroscattering, assumendo distribuzioni di nucleoni pressoch\'e identiche); questo vale circa $0.16 \pm 0.01~\text{fm}^{-3}$.
+Si abbrevia con SNM (symmetric nuclear matter) la materia nucleare simmetrica: in questo caso specifico, risulta $k_{F,p} = k_{F,n} \equiv k_F$.
+\begin{center}
+	\begin{tikzpicture}[
+  declare function={
+    % u = n/n0 ; E/A = cinetica (gas di Fermi) + attrazione + repulsione
+    EA(\u) = 22.1*\u^(2/3) - 104.68*\u + 66.58*\u^(1.351);
+    EF(\u) = 22.1*\u^(2/3);
+  }]
+
+  % --- Colori personalizzati ---
+  \definecolor{curva}{RGB}{0,84,147}
+  \definecolor{satur}{RGB}{200,40,40}
+  \definecolor{fermi}{RGB}{120,120,120}
+  \definecolor{attr}{RGB}{225,240,250}
+  \definecolor{rep}{RGB}{252,232,225}
+
+  % --- Scale: cm per fm^-3 e cm per MeV ---
+  \def\xs{20}
+  \def\ys{0.12}
+
+  % --- Regioni ---
+  \fill[attr] (0,{-20*\ys}) rectangle ({0.16*\xs},{35*\ys});
+  \fill[rep]  ({0.16*\xs},{-20*\ys}) rectangle ({0.5*\xs},{35*\ys});
+  \node[font=\footnotesize, align=center, color=cyan!50!black] at ({0.08*\xs},{31*\ys - 0.2})
+       {attrazione\\ dominante\\($P<0$)};
+  \node[font=\footnotesize, align=center,color=red!60!gray] at ({0.36*\xs+0.25},{31*\ys-0.2})
+       {repulsione dominante\\($P>0$)};
+
+  % --- Assi ---
+  \draw[->] (0,{-20*\ys}) -- ({0.53*\xs},{-20*\ys})
+       node[below right] {$n$ [fm$^{-3}$]};
+  \draw[->] (0,{-20*\ys}) -- (0,{36*\ys})
+       node[above] {$E/A$ [MeV]};
+  \draw[gray!60] (0,0) -- ({0.5*\xs},0);
+
+  \foreach \n in {0.1,0.2,0.3,0.4,0.5}
+    \draw ({\n*\xs},{-20*\ys+0.08}) -- ++(0,-0.16) node[below] {$\n$};
+  \foreach \e in {-20,-10,0,10,20,30}
+    \draw (0.08,{\e*\ys}) -- (-0.08,{\e*\ys}) node[left] {$\e$};
+
+  % --- Gas di Fermi libero (solo termine cinetico) ---
+  \draw[fermi, thick, dashed, smooth, samples=100, domain=0.003:0.31]
+       plot ({\x*\xs},{\ys*EF(\x/0.16)});
+  \node[fermi, font=\footnotesize, left] at (6.2,2.5) 
+       {Gas di Fermi libero};
+
+  % --- Curva SNM ---
+  \draw[curva, very thick, smooth, samples=200, domain=0.003:0.49]
+       plot ({\x*\xs},{\ys*EA(\x/0.16)});
+  \node[curva, right] at ({0.44*\xs},{16.6*\ys}) {SNM};
+
+  % --- Punto di saturazione ---
+  \draw[satur, dashed] ({0.16*\xs},{-20*\ys}) -- ({0.16*\xs},{-16*\ys})
+       -- (0,{-16*\ys});
+  \fill[satur] ({0.16*\xs},{-16*\ys}) circle (2pt)
+	   ++(0,.15) node[above, font=\small] {$\big(n_0,(E/A)_0\big)$};
+  \node[satur, below, font=\small] at ({0.16*\xs},{-20*\ys-0.35}) {$n_0$};
+  \node[satur, left, font=\scriptsize] at (-0.35,{-16*\ys}) {$-16$};
+\end{tikzpicture}
+\end{center}
+Il punto di minimo di questa curva, in corrispondenza di $\big(n_0, (E / A)_0\big)$, \`e detto \textit{punto di saturazione della materia nucleare}; il valore di questo punto si pu\`o ottenere da dati sperimentali ed \`e, pertanto, detto \textit{punto di saturazione empirico}.
+
+Ora si ricavano $n_0$ e $(E / A)_0$.
+Partendo da $n_0$, questo valore di densit\`a di saturazione si pu\`o pensare come il valore che si osserva al centro di nuclei molto pesanti, come il piombo (tramite elettroscattering, assumendo distribuzioni di nucleoni pressoch\'e identiche), che \`e di circa $0.16 \pm 0.01~\text{fm}^{-3}$.
 Per il valore di $(E / A)_0$, invece, si fa uso della formula semi-empirica di massa.
-Ricordando che l'energia di legame si pu\`o scrivere come
+Si ricorda che l'energia di legame si pu\`o scrivere come
 \[
 	\begin{split}
 		&B = a_V A - a_S A^{2 / 3} - a_C \frac{Z^2}{A^{1 / 3}} - a_\text{sym} \frac{(N-Z)^2}{A} + \delta \\
 		&\Rightarrow \frac{B}{A} = a_V - \frac{a_S}{A^{1 / 3}} - a_C \frac{Z^2}{A^{4 / 3}} - a_\text{sym} \left(\frac{N-Z}{A}\right) ^2 + \frac{\delta }{A}
 	\end{split}
 \] 
-In questo caso, avendo assunto assenza di interazione coulobmaiana, si elimina il termine coulobmiano.
-Nel limite termodinamico, visto che $A \to +\infty$, il termine di superficie va a $0$ (all'infinito, non si ha superficie); anche il termine di pairing va a $0$.
+dove il termine coulombiano sparisce perch\'e si \`e assunta assenza di interazione oltre quella forte,
+Nel limite termodinamico, poi, visto che $A \to +\infty$, il termine di superficie va a $0$ (all'infinito, non si ha superficie) e anche il termine di pairing va a $0$, visto che $\delta \sim A^{-3 / 4}$ ed \`e ulteriormente diviso per $A$.
 Allora, usando $B = -E$, si trova
 \[
 \frac{E}{A} = - a_V + a_\text{sym} \left(\frac{N-Z}{A}\right) ^2
@@ -4319,8 +4373,10 @@ In particolare per materia nucleare simmetrica, anche il termine di simmetria va
 \[
 \frac{E}{A} = - a_V
 \] 
-Si conclude che, nel punto di saturazione, si ha $(E/A)_0 = -a_V \approx - 16$ MeV.
-
+Questo permette di concludere che, nel punto di saturazione, si ha $(E/A)_0 = -a_V \approx - 16$ MeV.
+\begin{center}
+	-------------------------------------------------
+\end{center}
 Sempre nel caso di SMN, ma senza interazione nucleare forte, si studia un sistema di un gas di neutroni e protoni che, di conseguenza, non \`e legato.
 Stimando l'andamento di $E / A$ in questo caso, si pu\`o ricavare il comportamento in presenza dell'interazione nucleare facendo uso del punto di saturazione appena trovato.
 In questo caso, si ha
@@ -4587,6 +4643,255 @@ Il termine $\varepsilon _0$ \`e fondamentalmente quello non-relativistico, dovut
 \rho  = \frac{\varepsilon }{c^2} = m_0 n + \frac{1}{c^2} \varepsilon _1
 \] 
 
+
+\newpage
+
+\section{Modello a shell}
+Si parte da 
+\[
+H = \sum_{i=1}^{N}  \frac{p_i^2}{2m_n} + \sum_{i=1}^{Z} \frac{p_i^2}{2m_p} + \sum_{i<j}^{A}  v_{ij}
+\] 
+Si trascurano interazioni a tre corpi e si considera l'interazione nucleare $v_{ij}$ a due corpi descritta finora.
+Il modello a shell si basa sul fatto che il nucleo possa essere descritto, in buona approssimazione, come un sistema di particelle indipendenti che, per\`o, si muovono in un campo comune, un potenziale a un corpo, che dovrebbe rappresentare il contributo principale dell'interazione nucleone-nucleone.
+Si approssima l'hamiltoniano sopra con 
+\[
+H_0 = \sum_{i=1}^{N}  \left[ \frac{p_i^2}{2m_n} + V(r_i) \right]  + \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_p} + V(r_i) \right] 
+\] 
+La differenza tra $H$ e $H_0$ rappresenta un'interazione residua, che si assume trascurabile.
+Questo modello a shell del nucleo si sviluppa in analogia con il modello a shell dell'atomo.
+Di fatto, anche in quello dell'atomo si assume che l'interazione tra gli elettroni sia un'interazione a un corpo che \`e comune a tutti:
+\[
+H = \sum_{i=1}^{Z} \frac{p_i^2}{2m_e} + \sum_{i=1}^{Z}  \left(- \frac{Ze^2}{r_i}\right) +\sum_{i<j}^{Z} \frac{e^2}{r_{ij}}\simeq H_0 = \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_e} + V(r_i) \right] 
+\] 
+dove il termine $-Ze^2 / r_{i}$ \`e l'interazione elettrostatica elettrone-protone, mentre l'ultimo \`e l'interazione elettrostatica elettrone-elettrone.
+Questo si risolve tramite l'hamiltoniano di Hartree-Fock.
+La soluzione, per\`o, \`e differente dal modello a shell del nucleo, in quanto in quello dell'atomo si pu\`o considerare che la massa del nucleo $M$ \`e molto maggiore di quella dell'elettrone $m_e$.
+Il modello a shell dell'atomo permise di capire la struttura della tavola periodica degli elementi.
+La disposizione lungo le righe della tavola corrisponde al riempimento degli orbitali: i gas nobili corrispondono alla situazione in cui fra i livelli energetici si ha un salto di energia considerevole, in quanto si dovrebbe passare al guscio superiore.
+Il raggio atomico in funzione di $Z$ decresce fino ad un minimo, corrispondente ad un gas nobile.
+Al contempo, l'energia di ionizzazione in funzione di $Z$ cresce: i vari punti di massimo corrispondono ad un gas nobile che riempie il guascio pi\`u esterno della riga della tavola periodica.
+
+Sulla base di quello che si verifica per gli atomi, si cerca di trovare evidenze sperimentali per la presenza di gusci.
+Innanzitutto, vi sono alcuni valori di $Z$ o $N$, detti \textit{numeri magici}, per cui il rispettivo nucleo \`e particolarmente stabile: l'energia di estrazione di un neutrone (protone) per il nucleo corrispondente al numero magico considerato \`e molto pi\`u grande rispetto a quella necessaria per l'estrazione nel nucleo con $N+1$ ($Z+1$).
+Questo effetto \`e analogo a quello visto nel caso atomico.
+I numeri magici si hanno in corrispondenza di:
+\[
+N,Z = 2,\,8,\,20,\,28,\,50,\,82,\,126
+\] 
+Quelli che hanno sia $N$ che $Z$ corrispondenti ad un numero magico sono detti \textit{doppiamente magici}, come per esempio elio-4, ossigeno-16, calcio-40, il nichel-56 eccetera.
+All'aumentare, per\`o, si trovano nuclei instabili come il piombo-208 per esempio.
+
+\subsection{Energia di separazione}
+Si parte da quella di un neutrone. 
+Si considera un nucleo $\ce{^{A}_ZX}$:
+\[
+S_n = B(Z,N) - B(Z,N-1) = M_a(Z,N-1) - M_a(Z,N) + m_n
+\] 
+dove, nella seconda uguaglianza, si \`e utilizzata la riscrittura della binding energy in termini della massa atomica.
+Analogamente, nel caso del protone, si ha:
+\[
+	S_p = B(Z,N) - B(Z-1,N) = M_a(Z-1,N) - M_a(Z,N) + M_a(\ce{^{1}H})
+\] 
+\begin{boxenv}[]
+Tabella energie di separazione per: elio-4-5, litio-5, ossigeno-16-17, fluoro-17, calcio-40-41 sc-41, piombo-208-209 bismuto-209.
+Nel caso del litio-5 e elio-5, per\`o, non si riportano $S_n, S_p$ perch\'e non sono stabili.
+\end{boxenv}
+\noindent Considerando l'ossigeno-17, con un neutrone in pi\`u rispetto all'ossigeno-16, rimuovere un protone dagli $8$ dell'ossigeno-17 costa molto, mentre costa poco rimuovere un neutrone dai $9$.
+Considerando il fluoro-17, rimuovere un protone dei $9$ costa molto poco rispetto a rimuovere un neutrone dagli $8$.
+Anche da questa tabella si evidenzia l'effetto analogo della chiusura di shell atomico.
+
+Studiando la curva sperimentale di $B / A$ in funzione di $A$, si vede una curva decrescente, con vari picchi in corrispondenza dei numeri magici appena discussi.
+
+Un'ulteriore prova del modello a shell del nucleo riguarda l'analisi delle abbondanze dei vari elementi nell'universo, in particolare nel sistema solare.
+Si riporta l'abbondanza in scala logaritmica sulle $y$ in funzione del numero atomico: si osservano dei picchi in abbondanza in corrispondenza dei numeri magici.
+Si osserva che, per $Z$ grandi, l'abbondanza decresce notevole (circa $10$ milioni di volte), ma \`e altrettanto notevole il caso del piombo-208 che \`e significativamente pi\`u abbondante (di circa un fattore $10^2$) rispetto ai nuclei vicini.
+
+Studiando il numero di quadrupolo dei vari nuclei\footnote{Nell'approssimare l'hamiltoniano esatto considerando il campo medio, si assume che $V(r_i)$ sia centrale.} in funzione di $Z$ o $N$, si osservano regioni in cui $Q > 0$ (nuclei prolati) e regioni con $Q<0$ (nucleo oblati); osservano i valori di $Q$ per nuclei corrispondenti a numeri magici, si vede che $Q\approx 0$, per cui ha senso nel loro caso assumere un potenziale centrale.
+Per gli altri, per\`o, si utilizza un modello in cui si inseriscono contributi non-centrali nel potenziale comune.
+
+\subsubsection{Equazione di Schr\"odinger a un corpo}
+
+Per risolvere $H_0$, si risolve l'equazione a un corpo
+\[
+	\left[ -\frac{\hbar ^2}{2m} \Delta + V \right]  \psi _\alpha (\vec{r}) = E \psi _\alpha (\vec{r})
+\] 
+con $V(r)$ a simmetria sferica (centrale).
+Si sa che 
+\[
+\psi _\alpha (\vec{r}) = \sum_{\ell }^{} \sum_{m}^{} R_\ell (r) Y_{m\ell } (\theta ,\varphi )
+\] 
+per cui 
+\[
+\frac{d ^2}{d r^2} R_\ell (r) + \frac{2}{r} \frac{d }{d r} R_\ell (r) + \left[ \frac{2m}{\hbar ^2}\left(E - V(r) - \frac{\ell (\ell +1)}{r^2}\right)  \right] R_\ell (r) = 0
+\] 
+Per risolverla, si deve scegliere una forma funzionale per il potenziale $V(r)$; quello che si fa \`e immaginare che i nucleoni siano confinati in una scatola di forma sferica: dentro la sfera, sono un gas di Fermi libero, mentre, al bordo, il potenziale diventa infinito, cio\`e 
+\[
+V(r) = \begin{cases}
+	0 &,\ r\le a\\
+	+\infty &,\ r> a
+\end{cases}
+\] 
+Si cambia variabile: $\rho  = kr = \frac{\sqrt{2mE} }{\hbar }r$; cos\`i facendo:
+\[
+\frac{d ^2}{d \rho ^2}  R_\ell (\rho ) + \frac{2}{\rho } \frac{d }{d \rho }  R_\ell (\rho ) + \left[ 1 - \frac{\ell (\ell +1)}{\rho } \right] R_\ell (\rho ) = 0
+\] 
+dove si trascura la differenza di massa tra protone e neutrone, per cui $m \equiv m_p = m_n$ (si prende una massa media tra i valori delle due).
+Le soluzioni di questa equazione sono le funzioni sferiche di Bessel
+\[
+j_\ell (kr) = \left(-\frac{r}{k}\right) ^{\ell } \left(\frac{1}{r}\frac{d }{d r} \right) ^{\ell } \left(\frac{\sin kr}{kr}\right) 
+\] 
+I valori $\rho _{n,\ell }$ sono gli zeri delle funzioni di Bessel $j_\ell (kr)$ e si trova che
+\[
+\rho _{n,\ell } = k_{n,\ell } a = \frac{\sqrt{2m E_{n,\ell }} }{\hbar }a
+\] 
+e si hanno per il fatto che, ogni volta che $r$ incontra un multipolo di $a$, la funzione deve annullarsi e raccordarsi per soddisfare il potenziale infinito al bordo.
+Da questa condizione, segue la relazione che individua i livelli quantizzati dell'energia:
+\begin{equation}
+	E_{n,\ell } = \frac{\hbar ^2}{2m} \frac{\rho _{n,\ell }^2}{a^2}
+\end{equation}
+Visto che $\rho _{n,\ell } $ \`e adimensionale, si ha
+\[
+e_0 = \frac{\hbar ^2}{2m} \frac{1}{a^2} \sim 1~ \text{MeV}
+\] 
+fissando $a = (5\div 6) \text{ fm}$.
+In questo modo
+\[
+E_{n,\ell } = e_0 \rho _{n,\ell } ^2
+\] 
+\begin{boxenv}[]
+Plot funzioni di Bessel $j_0,j_1,j_2$.
+\end{boxenv}
+\noindent La spaziatura dei livelli energetici dipende dalla spaziatura tra gli zeri delle funzioni di Bessel.
+\begin{boxenv}[]
+Tabella zeri delle funzioni di Bessel per colonne al variare di $\ell $ (con onda relativa) e punto $n$ che individua il numero di zeri: $n=1,2,3,4$.
+\end{boxenv}
+\noindent La degenerazione di ciascun livello \`e pari a $2(2\ell +1)$: $2\ell +1$ per degenerazione relativa alla proiezione del momento angolare, mentre l'ulteriore fattore $2$ \`e relativo allo spin.
+Tramite questo modello, si vede che i primi tre numeri magici tornano, mentre al partire dal quarto vengono meno; per ottenere una previsione pi\`u accurata, si deve cambiare un modello pi\`u preciso basato sull'oscillatore armonico 3D:
+\[
+V(r) = \frac{1}{2 m}\omega ^2 r^2 \implies E_N = \hbar \omega \left(N + \frac{3}{2}\right) 
+\] 
+con $N = 0,1,2,3,\ldots$ e si pu\`o dimostrare che $N = 2 (n-1) + \ell $, dove
+\[
+	\begin{split}
+		&\ell =0,1,2,\ldots\\
+		& n = 1,2,3,\ldots
+	\end{split} \hspace{2cm} \ell =\begin{cases}
+		0,2,4,\ldots &,\ N\text{ pari}\\
+		1,3,5,\ldots &,\ N \text{ dispari}
+	\end{cases}
+\] 
+Qui, $N$ \`e il numero quantico principale, mentre $n$ rappresenta il numero di nodi della funzione d'onda ({\color{red}?}).
+Si osserva che un certo valore di $N$ si pu\`o ottenere per diverse coppie $(n,\ell )$; questa \`e una generazione detta \textit{accidentale}.
+Inoltre, si nota che i livelli sono equidistanti.
+\begin{boxenv}[]
+Tabella $N,\, (n,\ell ),\, \text{stati},\, \mathcal{N} _N, \, \mathcal{N} _\text{tot}$, dove $\mathcal{N}_N $ indica la degenerazione del livello $N$.
+\end{boxenv}
+\noindent Anche in questo caso, a partire dal quarto numero magico, si hanno delle discrepanze con quanto atteso.
+\begin{boxenv}[]
+Schema della separazione dei livelli nel caso di potenziale infinito e oscillatore armonico.
+\end{boxenv}
+\noindent Si potrebbe pensare di usare un potenziale pi\`u realistico, come una distribuzione di Fermi-Dirac ``rovesciata'', detta \textit{funzione di Woods-Saxon}:
+\[
+V(r) = - \frac{V_0}{\exp\big((r - R) / a\big) +1}
+\] 
+Questa si pu\`o risolvere numericamente, ma si possono trovare funzioni analitiche in termini dell'equazione ipergeometrica.
+Anche con questo tipo di potenziale, per\`o, tornano solo i numeri magici fino a $20$.
+
+\subsection{Interazione spin-orbita}
+
+La corretta interazione coinvolge un termine di interazione spin-orbita 
+\[
+V_{\ell ,s} = f(r) \vec{\ell}\cdot \vec{s} 
+\] 
+con $H = \frac{p^2}{2m} + V(r) + V_{\ell ,s}$.
+Si suppone 
+\[
+f(r) = - \frac{2\alpha }{\hbar ^2}
+\] 
+con $\alpha >0$ costante.
+Quindi, per la seguente trattazione, si assume che $f$ sia indipendente da $r$.
+\begin{osservazione}
+Anche nel caso atomico si coinvolge un'interazione spin-orbita, ma ha un'origine puramente elettromagnetica: l'elettrone, ruotando su un'orbita, genera un campo magnetico (associato a $\ell $) e il momento magnetico intrinseco dell'elettrone interagisce con questo campo magnetico.
+Nel caso nucleare, invece, questa interazione nasce dall'interazione nucleare forte.
+\end{osservazione}
+\noindent Nel caso puramente centrale:
+\[
+\begin{split}
+	& \left[ H , \ell ^2 \right] = 0 \hspace{1cm} [H , \ell _z] = 0 \hspace{1cm} [\ell ^2, \ell _z] = 0\\
+	& \left[ H , s ^2 \right] = 0 \hspace{1cm} [H , s_z] = 0 \hspace{1cm} [s^2, s _z] = 0\\
+\end{split}
+\] 
+quindi gli stati si indivuano come $\ket{n ,\ell ,s_z,\ell _z} $, dove $s_z = \pm 1 / 2$.
+Introducendo il potenziale spin-orbita, vengono meno i commutatori
+\[
+	[\vec{\ell }\cdot \vec{s}, \ell _z ] \neq 0 \hspace{1cm} [\vec{\ell }\cdot \vec{s}, s_z] \neq 0 
+\] 
+mentre $[\vec{\ell }\cdot \vec{s}, j^2 ] = 0$ e $[\vec{\ell }\cdot \vec{s},j_z] = 0$, per cui $\ket{n , j(\ell +s),j_z} \to \ket{n,\ell ,j} $.
+
+Si scrive
+\[
+\vec{\ell }\cdot \vec{s} = \ell _x s_x + \ell _ys_y + \ell _zs_z
+\] 
+per cui $[\vec{\ell }\cdot \vec{s},\ell _z]$ pu\`o essere riscritto con la propriet\`a distributiva e, usando $[AB,C] = A[B,C ] + [A,C]B$, si ha
+\[
+	[\vec{\ell }\cdot \vec{s},\ell _z]= i\hbar (\ell _xs _y - \ell _ys_x ) = i\hbar (\vec{\ell }\times \vec{s})_z \neq_0
+\] 
+Visto che $s = 1 / 2$, accoppiando $\vec{j} = \vec{\ell } + \vec{s}$ si hanno due possibilit\`a per la regola di composizione dei momenti angolari:
+\[
+j = \begin{cases}
+	\ell  - \frac{1}{2} \equiv j_-\\
+	\ell +\frac{1}{2} \equiv j_+
+\end{cases}
+\] 
+che implica che un livello a fissati $n,\ell $ \`e diviso per i due valori di $j$.
+Si ha 
+\[
+	\begin{split}
+		&\langle \vec{\ell }\cdot \vec{s} \rangle = \braket{n,\ell ,j|\vec{\ell }\cdot \vec{s}|n,\ell ,j} \\
+		j^2 = (\vec{\ell }+\vec{s})^2 = \ell ^2 + s^2 + 2 \vec{\ell }\cdot \vec{s}
+	\end{split}
+\] 
+Risulta
+\[
+\vec{\ell }\cdot \vec{s} = \begin{cases}
+	-\frac{1}{2} \hbar ^2 (\ell +1) &,\ j = \ell  - 1 / 2\\
+	\frac{1}{2} \hbar ^2 \ell &,\ j = \ell  + 1/2
+\end{cases}
+\] 
+Moltiplicando per $f = -\frac{2 \alpha  }{ \hbar ^2}$, si ha 
+\[
+\varepsilon _{\ell ,s} = - \frac{2\alpha }{\hbar ^2} \langle \vec{\ell }\cdot \vec{s} \rangle = \begin{cases}
+	\alpha  (\ell +1) &,\ j = \ell  - 1  / 2\\
+	-\alpha \ell  &,\ j = \ell + 1 /2
+\end{cases}
+\] 
+Senza spin orbita, i livelli sono indicati da $n,\ell $ con generazione $2(2\ell +1)$; con spin-orbita, il livello \`e diviso in $n \ell _{j_-}$, con degenerazione $2j_- + 1$, e un livello pi\`u basso $n\ell _{j_+}$, con degenerazione $2j_+ +1$.
+Tuttavia, la separazione $\Delta E = \alpha (2\ell +s)$ tra due livelli non \`e simmetrica.
+Senza spin orbita, nel livello $1 p $ si mettono $6$ nucleoni; nello split per spin orbita, si hanno i livelli $1 p_{1 / 2}$ con due nucleoni e $1 p_{3 / 2}$ con quattro nucleoni.
+\begin{boxenv}[]
+Figura splitting $1p$.
+\end{boxenv}
+\begin{boxenv}[]
+Schema separazione livelli con spin orbita a destra e, a sinistra, schema separazione della \textit{forma intermedia}.
+Da questo, si osserva il mescolamento tra livelli dovuto allo splitting, in cui livelli pi\`u sopra si separano in livelli che finiscono pi\`u in basso e quelli pi\`u in basso si separano in livelli con energia maggiore, finendo per fondersi.
+\end{boxenv}
+\begin{osservazione}
+Questo modello \`e detto a \textit{particella singola estrema}, in quanto si trascurano interazioni tra nucleoni.
+\end{osservazione}
+\noindent Per trattare il caso dei nuclei con momento di quadrupolo maggiore di zero, si considera un potenziale elissoidale, con corrispondenti energie che finiscono per mischiarsi a formare nuovi numeri magici.
+
+Con il modello trattato, comunque, si possono fare previsioni per lo stato fondamentale dei nuclei: 
+\begin{itemize}
+	\item per nuclei pari-pari, il nucleo dovrebbe avere $J^\pi=0^+$;
+	\item per nuclei dispari, invece, il modello a shell permette di dire che le propriet\`a del nucleo dipendano dal nucleone spaiato, avendo $J = j$ e $\pi=(-1)^{\ell }$, con $\ell $ momento angolare del nucleone spaiato;
+	\item nel caso dispari-dispari, invece, si deve considerare $\vec{J}= \vec{j_n} + \vec{j}_p$ e considerare $J=(j_p,j_n), \, (j_p,j_n-1),\, \ldots$ ({\color{red} controllare}).
+\end{itemize}
+\begin{boxenv}[]
+Schema popolazioni neutrone e protone ossigeno-16: 2 e 2 in $1 s_{ 1 / 2}$, 4-4 in $1 p _{3 / 2}$, 2-2 in $1 p _{1 / 2}$ e nessuno sopra.
+\end{boxenv}
+\noindent Per tutti i nuclei pari-pari, si ha $J^\pi = 0^+$ senza eccezioni.
+Per l'ossigeno-17, invece, si ha un neutrone in $1 d _{ 5 / 2}$, per cui si ha $j = 5 / 2$, $\ell = 2 $ e parit\`a $\pi = (-1)^\ell  = (-1)^2 = +1$ e torna con le osservazioni.
+Nell'ossigeno-15, si hanno due protoni in $1 p _{ 1 /2}$, ma un neutrone in $1p_{1/2}$, da cui risulta una parit\`a negativa.
 
 
 
