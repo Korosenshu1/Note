@@ -4507,28 +4507,28 @@ P(n,\beta =0) = \frac{2}{5} \frac{\hbar ^2}{2m}\left(\frac{3\pi^2}{2}\right) ^{2
 Si descrive un gas di Fermi a temperatura $T=0$.
 Per iniziare, l'energia di singola particella nel caso relativistico \`e data da
 \[
-\epsilon (k) = \sqrt{(\hbar c k) + (m_0 c^2)^2} 
+\epsilon (k) = \sqrt{(\hbar c k)^2 + (m_0 c^2)^2} 
 \] 
 dove $m_0$ \`e la massa a riposo del nucleone. 
-Si considerano particelle identiche, quindi hanno tutte stessa massa.
+Si considerano particelle identiche, quindi non si fanno distinzioni di massa.
 La densit\`a numerica di particelle \`e sempre la stessa
 \[
 n = \frac{\nu }{6 \pi ^2} k_F^3
 \] 
-In questo caso, l'energia di Fermi \`e legata all'energia di particella singola scritta sopra:
+L'energia di Fermi, nel caso relativistico, risulta pari a 
 \[
 \epsilon _F \equiv \epsilon (k_F) = \sqrt{\left(\hbar c k_F\right) ^2 + \left(m_0c^2\right) ^2} 
 \] 
-L'energia interna del sistema, nel limite termodinamico, \`e pari a 
+Passando nel limite termodinamico, l'energia interna del sistema si esprime come 
 \[
 E = \frac{\nu }{(2\pi)^3}V \int \epsilon (k) f(k) \dd ^3 k
 \] 
-dove $f(k)$ \`e la Fermi-Dirac a temperatura nulla, quindi \`e una funzione a gradino. 
-Passando in coordinate sferiche, si ha
+dove $f(k)$ \`e la Fermi-Dirac che, essendo a temperatura nulla, \`e una funzione a gradino. 
+In coordinate sferiche, si ha
 \[
 	E = \frac{\nu V}{2\pi^2} \int_0^{k_F} k^2 \sqrt{(\hbar c k )^2 + (m_0c^2)^2}  \dd k
 \] 
-La densit\`a di energia che ne deriva \`e
+Da questa espressione dell'energia interna, si ricava che la densit\`a di energia \`e pari a 
 \[
 \varepsilon = \frac{E}{V} = \frac{\nu }{2\pi^2}m_0c^2 \int _0^{k_F} k^2 \sqrt{\left(\frac{\hbar k}{m_0c}\right) ^2 + 1} 
 \] 
@@ -4539,29 +4539,35 @@ Si cambia variabile, definendo $y = \frac{\hbar k}{m_0 c} \equiv \lbar k$ che \`
 con $x= \lbar k_F$.
 L'integrale \`e tabulato e si ottiene
 \[
-\varepsilon = \frac{1}{8} \frac{\nu }{2 \pi^2} \frac{m_0 c^2}{\lbar^3} \chi(x) \equiv \eta \chi (x) \, , \ \eta  = \frac{1}{8} \frac{\nu }{2\pi^2}  \frac{m_0c^2}{\lbar^3}
-\] 
-Ora, la dipendenza da $k_F$ \`e contenuta in $\chi $, vista la dipendenza da $x$.
+\varepsilon = \frac{1}{8} \frac{\nu }{2 \pi^2} \frac{m_0 c^2}{\lbar^3} \chi(x) \equiv \eta \chi (x) 
+\]
+con $\eta  = \frac{1}{8} \frac{\nu }{2\pi^2}  \frac{m_0c^2}{\lbar^3}$.
+Ora, la dipendenza da $k_F$ \`e contenuta in $\chi $ tramite $x$.
 La funzione che risolve l'integrale \`e data da 
 \[
 \chi (x) = x (1+x^2)^{1 / 2} \left(1 + 2x^2\right) - \ln\left[x + (1+x^2)^{1 / 2}\right] 
 \] 
 
 \begin{osservazione}
-L'integrale \`e adimensionale, in quanto \`e composto da tutte variabili adimensionali; ne segue che le dimensioni sono date dal coefficiente $m_0c^2 / \lbar^3 = m_0^4 c^5 / \hbar ^3$, che \`e esattamente una densit\`a di energia.
-\end{osservazione}
-\begin{osservazione}
 Mentre nel gas non-relativistico, $\varepsilon \sim n^{5/3}$, in questo caso la densit\`a di energia ha un andamento pi\`u complesso.
 \end{osservazione}
-\begin{boxenv}[]
-Operativamente, la pressione di un gas si trova mettendolo in una superficie immaginaria e la pressione \`e data dalla quantit\`a di moto delle particelle del gas per unit\`a di tempo e unit\`a di superficie.
-\end{boxenv}
 
-\noindent La pressione \`e data da 
+\noindent Per scrivere la pressione \`e necessario ricorrere alla sua definizione teorica: la pressione \`e la densit\`a di flusso che attraversa una superficie infinitesima $\dd A$ posta all'interno del gas.
+Fissato un elemento di superficie $\dd A$ con normale $\hat{x}$, delle particelle con una determinata velocit\`a $\vec{v}$ soltanto quelle contenute in un cilindro di base $\dd A$ e altezza $v_x\dd t$ attraversano la superficie in un tempo $\dd t$.
+Se la densit\`a numerica di queste particelle \`e $\dd n$, il numero di quelle che attraversano la superficie \`e $\dd N = \dd n \cdot v_x\dd t \dd A$, per cui
+\[
+\frac{\dd  N}{\dd A \dd t} = v_x \dd n
+\] 
+Allora, dalla definizione, si ha $\dd P = v_x p_x \dd n$.
+Ora, chiamando $\theta $ l'angolo che soddisfa $p_x = p \cos \theta $ e $v_x = v \cos \theta $ e visto che pressione e velocit\`a sono quantit\`a \textit{medie}, nella pressione figura un termine $\langle \cos^2 \theta  \rangle = \frac{1}{3}$ per isotropia della distribuzione nello spazio dei vettori d'onda.
+In questo modo, $\dd P =\frac{1}{3} pv \dd n$, con
+\[
+\dd n = \frac{\nu }{(2\pi)^3}f(k)\dd ^3k
+\] 
+per cui
 \[
 P = \frac{1}{3} \frac{\nu }{(2\pi)^3} \int \hbar k v f(k) \dd ^3 k
 \] 
-con $v$ velocit\`a delle particelle del gas.
 Usando che $p = m v$ e $\epsilon = mc^2$, con $m = \gamma m_0$ massa relativistica\footnote{Si ricorda che $\gamma = \frac{1}{\sqrt{1 - v^2 / c^2} }$.}, si pu\`o scrivere $v = \frac{pc^2}{\epsilon }\Rightarrow v / c = p c / \epsilon $; allo stesso tempo, $v = \hbar  c k / \epsilon (k)$.
 In questo modo, si arriva a scrivere l'integrale come
 \[
