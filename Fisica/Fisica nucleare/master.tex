@@ -4674,39 +4674,47 @@ Il termine $\varepsilon _0$ \`e quello non-relativistico, dovuto alla massa a ri
 
 \newpage
 
-\section{Modello a shell}
-Si parte da 
+\section{Modello a shell del nucleo}
+L'hamiltoniano completo che descrive il nucleo come sistema \`e
 \[
 H = \sum_{i=1}^{N}  \frac{p_i^2}{2m_n} + \sum_{i=1}^{Z} \frac{p_i^2}{2m_p} + \sum_{i<j}^{A}  v_{ij}
 \] 
-Si trascurano interazioni a tre corpi e si considera l'interazione nucleare $v_{ij}$ a due corpi descritta finora.
-Il modello a shell si basa sul fatto che il nucleo possa essere descritto, in buona approssimazione, come un sistema di particelle indipendenti che, per\`o, si muovono in un campo comune, un potenziale a un corpo, che dovrebbe rappresentare il contributo principale dell'interazione nucleone-nucleone.
-Si approssima l'hamiltoniano sopra con 
+Per il modello a shell, per\`o, si trascura la possibilit\`a di avere interazioni a tre corpi, per cui il potenziale $v_{ij}$ \`e il potenziale nucleare studiato finora.
+Il modello a shell si basa sul fatto che il nucleo possa essere descritto, in buona approssimazione, come un sistema di particelle indipendenti che, per\`o, si muovono in un campo comune, un potenziale a un corpo, corrispondente, in prima approssimazione, al contributo principale dell'interazione nucleone-nucleone.
+L'idea, quindi, si basa sulla seguente approssimazione:
 \[
-H_0 = \sum_{i=1}^{N}  \left[ \frac{p_i^2}{2m_n} + V(r_i) \right]  + \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_p} + V(r_i) \right] 
+H\simeq H_0 = \sum_{i=1}^{N}  \left[ \frac{p_i^2}{2m_n} + V(r_i) \right]  + \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_p} + V(r_i) \right] 
 \] 
 La differenza tra $H$ e $H_0$ rappresenta un'interazione residua, che si assume trascurabile.
-Questo modello a shell del nucleo si sviluppa in analogia con il modello a shell dell'atomo.
-Di fatto, anche in quello dell'atomo si assume che l'interazione tra gli elettroni sia un'interazione a un corpo che \`e comune a tutti:
+Questo modello si sviluppa in analogia con il modello a shell dell'atomo; in quest'ultimo, infatti, si assume che l'interazione tra gli elettroni sia un'interazione a un corpo che \`e comune a tutti, il che permette di approssimare l'hamiltoniano del sistema nella somma di hamiltoniani di singola particella:
 \[
 H = \sum_{i=1}^{Z} \frac{p_i^2}{2m_e} + \sum_{i=1}^{Z}  \left(- \frac{Ze^2}{r_i}\right) +\sum_{i<j}^{Z} \frac{e^2}{r_{ij}}\simeq H_0 = \sum_{i=1}^{Z} \left[ \frac{p_i^2}{2m_e} + V(r_i) \right] 
 \] 
-dove il termine $-Ze^2 / r_{i}$ \`e l'interazione elettrostatica elettrone-protone, mentre l'ultimo \`e l'interazione elettrostatica elettrone-elettrone.
-Questo si risolve tramite l'hamiltoniano di Hartree-Fock.
-La soluzione, per\`o, \`e differente dal modello a shell del nucleo, in quanto in quello dell'atomo si pu\`o considerare che la massa del nucleo $M$ \`e molto maggiore di quella dell'elettrone $m_e$.
-Il modello a shell dell'atomo permise di capire la struttura della tavola periodica degli elementi.
-La disposizione lungo le righe della tavola corrisponde al riempimento degli orbitali: i gas nobili corrispondono alla situazione in cui fra i livelli energetici si ha un salto di energia considerevole, in quanto si dovrebbe passare al guscio superiore.
-Il raggio atomico in funzione di $Z$ decresce fino ad un minimo, corrispondente ad un gas nobile.
-Al contempo, l'energia di ionizzazione in funzione di $Z$ cresce: i vari punti di massimo corrispondono ad un gas nobile che riempie il guascio pi\`u esterno della riga della tavola periodica.
-
-Sulla base di quello che si verifica per gli atomi, si cerca di trovare evidenze sperimentali per la presenza di gusci.
+dove il termine $-Ze^2 / r_{i}$ \`e l'interazione elettrostatica elettrone-protone, mentre $e^2 / r_{ij}$ descrive l'interazione elettrostatica elettrone-elettrone.
+Tramite il modello a shell dell'atomo fu possibile comprendere meglio il fatto che i gas nobili corrispondono alla situazione in cui fra i livelli energetici si ha un salto di energia considerevole per via del fatto che l'aggiunta di un ulteriore elettrone comporterebbe il passaggio al guscio superiore.
+Sperimentalmente, come riportato nelle immagini, si osserva che il raggio atomico in funzione di $Z$ decresce fino ad un minimo, corrispondente ad un gas nobile.
+Al contempo, si pu\`o verificare che l'energia di ionizzazione in funzione di $Z$ cresce: i vari punti di massimo corrispondono ad un gas nobile che riempie il guascio pi\`u esterno della riga della tavola periodica.
+\begin{center}
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{ra-z.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}
+		{.45\columnwidth}
+	\centering
+	\includegraphics[width=\columnwidth]{ion-z.jpg}
+	\end{minipage}
+\end{center}
+Per validare il modello a shell del nucleo si devono cercare evidenze sperimentali di comportamenti simili a quanto osservato per gli atomi.
 Innanzitutto, vi sono alcuni valori di $Z$ o $N$, detti \textit{numeri magici}, per cui il rispettivo nucleo \`e particolarmente stabile: l'energia di estrazione di un neutrone (protone) per il nucleo corrispondente al numero magico considerato \`e molto pi\`u grande rispetto a quella necessaria per l'estrazione nel nucleo con $N+1$ ($Z+1$).
 Questo effetto \`e analogo a quello visto nel caso atomico.
 I numeri magici si hanno in corrispondenza di:
 \[
-N,Z = 2,\,8,\,20,\,28,\,50,\,82,\,126
+N,Z = 2,\,8,\,20,\,28,\,50,\,82,\,126\, \ldots
 \] 
-Quelli che hanno sia $N$ che $Z$ corrispondenti ad un numero magico sono detti \textit{doppiamente magici}, come per esempio elio-4, ossigeno-16, calcio-40, il nichel-56 eccetera.
+I nuclei che hanno sia $N$ che $Z$ corrispondenti ad un numero magico sono detti \textit{doppiamente magici}, come per esempio elio-4, ossigeno-16, calcio-40, il nichel-56, eccetera.
 All'aumentare, per\`o, si trovano nuclei instabili come il piombo-208 per esempio.
 
 \subsection{Energia di separazione}
