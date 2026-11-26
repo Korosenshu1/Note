@@ -1076,7 +1076,7 @@ Nel caso specifico in cui $N_{B,0} = 0$, si ottiene
 N_B(t) = \frac{\lambda _A}{ \lambda _B - \lambda _A}N_{A,0} \left[ e^{-\lambda _A t }  - e^{-\lambda _B t }  \right] 
 \] 
 
-\subsubsection{Istante di massima attivit\`a}
+\subsubsection{Massima attivit\`a e equilibrio ideale}
 
 Si cerca il tempo $t_m$ per cui $\mathcal{A} _B(t)$ \`e massima, il che equivale a cercare il punto in cui il numero di nuclei $N_B(t) = \mathcal{A} _B(t) / \lambda_B $ \`e massimo.
 Imponendo $\mathcal{A} _B \stackrel{!}{=} 0$, si ottiene la relazione $\lambda _B e^{-\lambda _B t_m} = \lambda _A e^{-\lambda _A t_m}$, da cui 
@@ -1085,13 +1085,11 @@ Imponendo $\mathcal{A} _B \stackrel{!}{=} 0$, si ottiene la relazione $\lambda _
 \end{equation}
 Si nota che $t_m$ \`e sempre positivo: se $\tau _A > \tau _B$, allora anche il logaritmo della frazione lo \`e; viceversa, se $\tau _A < \tau _B$, allora il coefficiente \`e negativo, ma la frazione \`e minore di $1$, quindi anche il logaritmo \`e negativo.
 
-\subsubsection{Equilibrio ideale}
-
-Riprendendo la relazione differenziale $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t$ e usando che, per definizione, $\dot{N}_B(t_m) = 0$, si ha $\lambda _A N_A(t_m) = \lambda _B N_B(t_m)$, da cui si ottiene la relazione
+Riprendendo la relazione differenziale $\dd N_B = \lambda _A N_A \dd t - \lambda _B N_B \dd t$ e usando che, per definizione, $\dot{N}_B(t_m) = 0$, si ottiene la relazione $\lambda _A N_A(t_m) = \lambda _B N_B(t_m)$, da cui deriva
 \begin{equation}
 	\mathcal{A} _A (t_m) = \mathcal{A} _B (t_m)	
 \end{equation}
-che individua la condizione di \textbf{equilibrio ideale}.
+Questa \`e chiamata \textbf{condizione di equilibrio ideale}.
 
 \subsubsection{Equilibrio secolare}
 
@@ -1108,7 +1106,7 @@ Considerando, pi\`u in particolare, istanti temporali per cui vale $\tau _B \ll 
 dove il ``per ogni $t$'' \`e da intendersi per gli istanti che soddisfano $\tau _B \ll t \ll \tau _A$ e $\mathcal{A} _A (t) \simeq \mathcal{A} _{A,0}$ perch\'e $t \ll\tau _A$.
 Questa relazione indica la condizione di \textbf{equilibrio secolare}.
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\draw[->, thick] (-0.35,0) -- (10,0) node[below right] {$t$};
 
 	\draw[->, thick] (0,-0.25) -- (0,5.35)
@@ -1159,7 +1157,7 @@ Per regioni temporali in cui $(\lambda _B - \lambda _A ) t \gg 1$, cio\`e $t \gg
 \end{equation}
 Questa corrisponde alla condizione di \textbf{equilibrio transiente}.
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\draw[
 	    very thick,
 	    domain=0:9,
@@ -1185,7 +1183,7 @@ Questa corrisponde alla condizione di \textbf{equilibrio transiente}.
 	    node[above left] {$\log \mathcal{A} (t) /a_0$};
 
    	\node[color=orange] at (9.5,1.5) {$\log \mathcal{A} _B(t) / a_0$};
-   	\node[color=green!70!black] at (1.5,4.5) {$\log \mathcal{A} _B(t) / a_0$};
+   	\node[color=green!70!black] at (1.75,4.65) {$\log \mathcal{A} _B(t) / a_0$};
 	\end{tikzpicture}
 \end{center}
 Nel grafico, si specifica $a_0$ costante generica per assicurare che l'argomento del logaritmo sia adimensionale (per esempio, $a_0 = 1 \text{ Bq}$).
@@ -1213,10 +1211,8 @@ Nel caso in cui $N_{B,0} = 0$, invece, si rimane con
 \end{equation}
 In questo caso, l'istante in cui si realizza il massimo dell'attivit\`a \`e ottenuto per $t_m = 1 / \lambda _A = \tau _A$, corrispondente a $N_B (t_m) = N_A(\tau ) = N_{A,0} / e$.
 Inoltre, per $\lambda _A = \lambda _B = \lambda $, si ha $N_B(t) = \lambda N_{A,0}t e^{-\lambda t} = \lambda t N_A(t)$, quindi $N_B(t_m) = N_A(t_m)$.
-
-
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\draw[
 	    very thick,
 	    domain=0:10,
@@ -1331,9 +1327,9 @@ Particolare attenzione va prestata ad una parte della serie dell'uranio, in cui
 \[
 	\ce{^{238}U} \to  \ldots \to  {\color{green!50!black}\ce{^{226}Ra} \to  \ce{^{222}Rn}} \to  \ldots \ce{^{206}Pb}
 \] 
-Le rocce presenti naturalmente in natura contengono uranio (in concentrazione variabile), portando alla produzione di radon-222 instabile ad un certo punto della serie, dove il suo tempo di dimezzamento \`e $\tau _{1 / 2} \approx 4$ giorni.
+Le rocce presenti naturalmente in natura contengono uranio (in concentrazione variabile), portando alla produzione di radon-222, instabile, ad un certo punto della serie, dove il suo tempo di dimezzamento \`e $\tau _{1 / 2} \approx 4$ giorni.
 Il fatto \`e che il radon, essendo un gas nobile, si lega difficilmente ad altri elementi ed \`e presente in forma gassosa: quello che emerge dalle rocce per decadimento di nuclei precedenti nella serie si pu\`o accumulare nelle zone chiuse a diretto contatto con il terreno, come cantine, a seconda di diverse condizioni atmosferiche e del terreno attraverso cui deve passare.
-Questo pu\`o portare ad un aumento della concentrazione in tali zone chiuse, in quanto emerge continuamente dal terreno, ma viene disperso pi\`u difficilmente dall'aria in tali ambienti.
+Essendo, queste, zone particolarmente chiuse e poco arieggiate, se ne pu\`o accumulare una concentrazione rilevante.
 Di per s\'e, il radon non \`e dannoso, ma lo sono i suoi prodotti; infatti, il radon inspirato viene naturalmente rimosso, visto che non interagisce con gli altri elementi, ma il discorso cambia quando questo decade: i nuclei prodotti a partire dal suo decadimento possono depositarsi sulle superfici delle vie respiratorie e continuare il ciclo di decadimento, emettendo particelle $\alpha $, che hanno un elevato potere ionizzante e un percorso di vita molto breve. 
 Questo vuol dire che, a seguito dei decadimenti, viene trasferita molta energia in un piccolo volume di tessuto, il che pu\`o provocare danni/rotture al DNA, o altre alterazioni molecolari.
 
@@ -1347,7 +1343,7 @@ Le possibili reazioni in cui compare sono:
 \end{align}
 Nella seconda, segue l'emissione di radiazione elettromagnetica per la diseccitazione dell'argon: $\ce{^{40}Ar^*} \to \ce{^{40}Ar} + \gamma$.
 
-Visto che si ha $Z=19$ e $N=21$, quindi con $A= 40$ pari, significa che questo \`e un nucleo del caso dispari-dispari per la teoria sviluppata con la formula semi-empirica di massa e, nel piano $(M_a(Z),Z)$, saranno presenti due parabole lungo cui avvengono i decadimenti.
+Visto che si ha $Z=19$ e $N=21$, quindi con $A= 40$ pari, significa che questo \`e un nucleo del caso dispari-dispari per la teoria sviluppata con la formula semi-empirica di massa e, nel piano $\big(Z,M_a(Z)\big)$, saranno presenti due parabole lungo cui avvengono i decadimenti.
 Si pu\`o osservare che l'argon-40 ($Z=18$) \`e quello pi\`u vicino al minimo della parabola rispetto al calcio-40, quindi, mentre il potassio-40 decade nell'uno o nell'altro, la configurazione dell'argon per cattura elettronica \`e quella preferibile; di fatto, nonostante sia un processo estremamente raro, si pu\`o osservare una doppia cattura elettronica che porta il calcio in argon:
 \[
 	\ce{^{40}Ca + 2e-} \to  \ce{^{40}Ar + 2\nu _e}
@@ -1391,7 +1387,7 @@ Quelli di interesse, per\`o, sono i neutroni termalizzati, cio\`e quelli la cui 
 con una sezione d'urto di $\sigma \sim 2$ b.
 Il carbonio-14 prodotto in atmosfera si comporta, chimicamente, come ogni altro isotopo di carbonio, per cui si lega a formare $\ce{^{14}CO_2}$ e, cadendo verso la superficie terrestre, entra nei cicli degli organismi, come quelli di fotosintesi delle piante.
 
-La concentrazione di carbonio-14 in atmosfera si mantiene circa costante per il fatto che la frazione di carbonio-14 che viene tolto (per suo decadimento, o per utilizzato da parte dell'ambiente sotto forma di $\ce{^{14}CO_2}$), si forma dall'interazione tra raggi cosmici secondari e azoto-14; al contempo, il carbonio-14 precedentemente rilasciato torna ad azoto-14, reintroducendo materiale per la sua produzione.
+La concentrazione di carbonio-14 in atmosfera si mantiene circa costante per il fatto che la frazione di carbonio-14 che viene tolta (per suo decadimento, o per utilizzato da parte dell'ambiente sotto forma di $\ce{^{14}CO_2}$), si forma dall'interazione tra raggi cosmici secondari e azoto-14; al contempo, il carbonio-14 precedentemente rilasciato torna ad azoto-14, reintroducendo materiale per la sua produzione.
 Cos\`i facendo, si pu\`o considerare la frazione $x_{14} / x_{12}$ circa costante e approssimativamente uguale sia in atmosfera, sia negli esseri viventi che scambiano carbonio con l'esterno.
 
 \subsubsection{Decadimenti con termine di sorgente}
@@ -1646,7 +1642,7 @@ Questo indica che, nonostante il potenziale di interazione tra protone e neutron
 In ogni caso, questo \`e in accordo col fatto che lo stato fondamentale \`e l'unico stato legato osservato.
 \end{osservazione}
 \subsection{Raggio quadratico medio di carica del deutone}
-Ora si impone la condizione sul raggio quadratico medio di carica, misurato essere pari a $\langle R_d^2 \rangle^{1/2} = 2.1$ fm.
+Ora si impone la condizione di carica sul raggio quadratico medio, misurato essere pari a $\langle R_d^2 \rangle^{1/2} = 2.1$ fm.
 \begin{center}
 	\begin{minipage}
 		{.45\columnwidth}
@@ -4929,7 +4925,581 @@ Schema popolazioni neutrone e protone ossigeno-16: 2 e 2 in $1 s_{ 1 / 2}$, 4-4 
 Per l'ossigeno-17, invece, si ha un neutrone in $1 d _{ 5 / 2}$, per cui si ha $j = 5 / 2$, $\ell = 2 $ e parit\`a $\pi = (-1)^\ell  = (-1)^2 = +1$ e torna con le osservazioni.
 Nell'ossigeno-15, si hanno due protoni in $1 p _{ 1 /2}$, ma un neutrone in $1p_{1/2}$, da cui risulta una parit\`a negativa.
 
+\newpage
 
+\section{Lezione 23/11}
+
+
+
+\subsection{Decadimento $\alpha $ dei nuclei}
+
+Si considera la reazione
+\[
+	\ce{^{A}_Z X _N} \to  \ce{^{A-4}_{Z-2}Y_{N-2}} + \alpha 
+\] 
+Ponendo $c =1$, si ha
+\[
+Q = M_X - M_Y - M_\alpha 
+\] 
+(prima slide) \ldots
+
+
+Si vuole capire perch\'e venga emessa proprio una particella $\alpha $ e non si verifichi un altro processo 
+\[
+	\ce{_Z^A X}\to \ce{Y + b}
+\] 
+con $b$ neutrone, protone, oppure emissione di trizio, deutone, eccetera.
+Si verifica calcolando il $Q$ valore delle reazioni con questi altri prodotti. 
+\begin{boxenv}[]
+Tabella dei $Q$ valori per uranio-232. Dei vari prodotti possibili, solo la reazione con produzione di elio-4 si ha un $Q$-valore positivo.
+\end{boxenv}
+
+\noindent Questo \`e conseguenza del fatto che l'elio-4 ha un'elevata binding energy.
+Possono, per\`o, esserci delle eccezioni: nel caso dello stesso uranio-232 (isotopo pi\`u abbondante), si considera il decadimento 
+\[
+	\ce{^{232}U} \to  \ce{^{220}Rn + ^{12}C}
+\] 
+con un $Q = 24.15$ MeV; questo non solo \`e energeticamente possibile, ma \`e anche osservato. 
+Si discuter\`a in seguito.
+
+Si confronta la vita media per decadimento per due isotopi del torio: il torio-232 e il torio-218.
+Entrambi decadono per emissione di particella $\alpha $, i cui $Q$-valori sono rispettivamente $4.08$ MeV e $9.85$ MeV.
+I loro tempi di vita medi sono, per\`o, di $\tau  = 1.4 \times 10^{10}$ yr e $\tau = 10^{-7}$ yr: il $Q$-valore delle reazioni ha una variazione relativamente piccola, mentre il loro tempo di vita medio ha moltissimi ordini di grandezza di differenza.
+\begin{boxenv}[]
+Grafico della relazione di Geiger-Nuttal.
+Si plottano $Q$-valore su $x$ e tempi di vita medi sulle $y$.
+\end{boxenv}
+
+\noindent Ogni curva rappresenta il tempo di vita medio per tutta una erie di isotopi.
+Dalla relazione, si osserva che una piccola variazione nel $Q$-valore comporta un'enorme variazione nel tempo di vita medio del nucleo.
+La relazione empirica trovata \`e 
+\[
+\log_{10} T_{1 / 2} = \frac{A}{\sqrt{Q} } + B
+\] 
+con $A,B$ costanti e vale per una catena di isotopi, quindi per elementi a $Z$ fissato.
+Questa \`e nota come \textit{relazione di Geiger-Nuttal} ed \`e costruita empiricamente.
+
+
+Si stima la sogli aid instabilit\`a per decadimento $\alpha $ tramite il modello a goccia del nucleo, cio\`e per quali valori di $Z$ e $A$ il $Q$-valore per il decadimento $\alpha $ \`e rende la reazione possibile.
+Si considera $X \to  Y + \alpha $, con 
+\[
+\begin{split}
+	&Q = M_X - M_Y - M_\alpha \\
+	& M_X = Zm_p + N m_n - B(A,Z)\\
+	& M_Y = (Z-2)m_p + (N-2) m_n - B(A-4,Z-2)\\
+	& M_\alpha  = 2m_p + 2m_n - B_\alpha 
+\end{split}
+\] 
+con $B_\alpha  = 28.3$ MeV.
+In questo modo
+\[
+Q = B_\alpha  + B(Z-2,A-4) - B(Z,A)
+\] 
+Usando il modello a goccia, tramite la formula semi-empirica di massa, si espandono le energie di legame tramite i termini di volume, superficie, eccetera.
+Sostituendo e raggruppando i termini, il coefficiente del termine di superficie, per esempio, \`e
+\[
+	\begin{split}
+		a_s \left[ A^{2 /3 } - (A-4)^{2/3} \right] &= a_S A^{2 / 3} \left[ 1 - \left(1 - \frac{4}{A}\right) ^{2 / 3} \right] \\
+							   &\simeq \frac{8}{3} a_S a ^{- 1/3}
+	\end{split}
+\] 
+dove si \`e usato lo sviluppo troncato al primo ordine
+\[
+	(1+x)^n = 1+ nx + \frac{n (n-1)}{2!}x^2 + \ldots
+\] 
+che converge per $\lvert x \rvert <1$, che \`e assicurato nel caso trattato perch\'e si avrebbe $x = - 4 / A$.
+Il termine coulombiano \`e 
+\[
+a_c \left[ Z^2 A^{- 1 / 3} - (Z-2)^2 (A-4)^{ -1  /3} \right] \simeq 4 a_C \frac{Z}{A^{1 / 3}} \left[ 1 - \frac{Z}{3A} \right] 
+\] 
+dove si sono eliminati anche i termini misti.
+Ragionamenti analoghi si possono fare anche per gli altri termini.
+Si ottiene
+\begin{equation}
+	\begin{split}
+		Q \simeq{ } & B_\alpha  - 4 a_V + \frac{8}{3} a_S A^{- 1 / 3} + 4 a_C Z A^{-1 / 3} \left(1 - \frac{Z}{3A}\right) \\
+			    & { } + 4 a_\text{sym} \left(1 - 2 \frac{Z}{A}\right) ^2 \pm 3 a_p A^{- 3 / 4}
+	\end{split}
+\end{equation}
+\begin{boxenv}[]
+Grafico qualitativo del luogo dei punti $(Z,A)$ per $Q=0$ secondo la formula sopra in modo da delimitare la regione dei nuclei per cui \`e energeticamente possibile e quelli per cui non lo \`e.
+
+Si aggiungono le curve per $Q = 4,8$ MeV e la riga che rappresenta la valle di stabilit\`a.
+Questa interseca la curva $Q = 0$ per $A = 140$, mentre incontra $Q=8$ per $A = 240$ circa.
+\end{boxenv}
+
+\subsection{Modello di Gamow-Gurney-Condon}
+Questo modello permette di spiegare perch\'e piccole differenze di $Q$ portano grandissime differenze di $\tau $.
+Questo si basa sull'effetto tunnel.
+
+Si immagina che la particella $\alpha $ sia soggetta ad un potenziale del tipo 
+\[
+V(r) = \begin{cases}
+	-V_0 &,\ r\le a\\
+	\frac{e^2 }{4\pi \varepsilon _0} \frac{Z_\alpha Z_r}{r} &,\ r> a
+\end{cases}
+\] 
+con $r$ distanza relativa tra i due nuclei, dovuto al fatto che, nel nucleo padre $X$, esistano gi\`a la particella $\alpha $ e il figlio $Y$ che interagiscono col potenziale descritto.
+Si ha $a = R_Y + R_\alpha  = 6\div 8$ fm e $V_0 = 35\div 40$ MeV.
+L'altezza massima della barriera coulombiana \`e 
+\[
+B = \frac{e^2}{4\pi \varepsilon _0} \frac{Z_\alpha  Z_r}{a} = \alpha \hbar c \frac{Z_\alpha Z_r}{a}
+\] 
+Si assume $Z_r = 90$ e $a = 7$ fm, per cui $B \approx 37.5$ MeV.
+Per $B = 40 \div 40$ MeV, si ha $Q = 4 \div 8$ MeV, per cui $Q < B$.
+Il decadimento pu\`o avvenire solo per effetto tunnel.
+
+La costante del decadimento si indica con $\lambda  = 1 / \tau  = f P$, con $f = v_ \alpha  / a$ e $P$ penetrabilit\`a della barriera. 
+Vale 
+\[
+\frac{1}{2} m_\alpha  v_\alpha ^2 - V_0 = Q \implies v_\alpha = \sqrt{\frac{2 (Q+V_0)}{m_\alpha c^2}} c
+\] 
+Si pu\`o usare una trattazione classica perch\'e la massa a riposo della particella $\alpha $ ($\approx 4$ GeV) \`e molto maggiore delle energie in gioco.
+Si ha 
+\[
+f = \left[ \frac{2 (Q+V_0)}{m_\alpha c^2} \right] ^{1 / 2} \frac{c}{a}
+\] 
+Con $Q = 5$ MeV $V_0 = 35$ MeV e $a= 7$ fm, si ha $v_ \alpha  \approx 0.15 c$ e $f = \ldots 10^{21} \text{ s}^{-1}$.
+
+Si cerca il valore $b$ che rappresenta il raggio per cui $V(r)$ interseca $Q$, cio\`e $V(b) = Q$.
+In questo modo 
+\[
+b = \alpha  \hbar  c \frac{Z_\alpha  Z_r}{Q}
+\] 
+per $Q = 6$ MeV $Z_r= 90$ per cui $b\approx 44$ fm e $b-a \approx 37 $ fm.
+La zona tra $a$ e $b$ sarebbe quella classicamente proibita.
+
+Manca da calcolare $P$. Per farlo, si approssima il potenziale come nulla ovunque tranne che in una regione di larghezza $\Delta r$ in cui \`e costante e vale l'altezza massima della barriera coulombiana.
+Allora 
+\[
+P = \left\{ 1 + \frac{1}{4} \frac{V^2}{E(V-E)} \operatorname{sinh} (k_b\Delta r)  \right\} ^{-1}
+\] 
+con $k_b = \frac{\sqrt{2m (V-E)} }{\hbar }$.
+Si trova dalla trattazione dell'effetto tunnel quantistico.
+Approssimando $m \sim m_\alpha = 3727$ MeV, considerando $V = 35$ MeV e $E = 5$ MeV (questo rappresenterebbe il $Q$-valore); poi, per $\Delta r = 30$ fm, si ha  $k_b \approx 2.4 \text{ fm}^{-1}$, si trova $k_b\Delta r \approx 72 \gg 1$, per cui si pu\`o vedere 
+\[
+P \sim e^{-2 k_b \Delta r} = e^{-2 \frac{\sqrt{2 m (V-E)} }{\hbar }\Delta r} 
+\] 
+trascurando i coefficienti di proporzionalit\`a e scrivendo il seno iperbolico con esponenziali per fare uso diretto del fatto che $k_b \Delta$ si pu\`o considerare molto maggiore di $1$.
+In questo modo, ricordando che $V$ \`e l'altezza massima della buca e $E$ \`e il $Q$-valore, si ritrova la \textit{legge di Geiger-Nuttal} nel caso della barriera semplificata trovata.
+
+\subsubsection{Barriera 3D realistica}
+Si usa il metodo di WKB per approssimare il problema, tramite cui
+\[
+P = \frac{4 \sqrt{(B-Q)(Q+V_0)}}{B+V_0} e^{- 2 G}
+\] 
+con 
+\[
+G = \sqrt{\frac{2m}{ \hbar ^2}}  \int _a^b \left[ V(r) - Q \right]  ^{1 / 2} \dd r
+\] 
+noto col nome di \textit{fattore di Gamow}.
+L'integrale si risolve riscrivendo
+\[
+\begin{split}
+	V(r) - Q & = \alpha  \hbar  c \frac{Z_\alpha Z_r}{r} - Q \\
+		 & = Q \left[ \frac{\alpha  \hbar  c Z_\alpha  Z_r}{ Q} \frac{1}{r} - 1 \right]  = Q \left[ \frac{b}{r} -1 \right] = Q \left[ \frac{1}{x} - 1 \right]  
+\end{split}
+\] 
+con $x \equiv r / b$, quindi $\dd r = b \dd x$.
+Con questo cambio di variabile:
+\[
+G = \frac{\sqrt{2m Q} }{\hbar } b \int _{x_0}^1 \left[ \frac{1}{x} - 1 \right] ^{1 / 2} \dd x
+\] 
+con $x_0 = a / b = Q / B$.
+Ora si cambia variabile nuovamente: $x = \cos ^2 \phi $, per cui $x^{1 / 2} = \cos \phi $ e $\dd x = -2 \cos \phi  \sin \phi  \dd \phi $.
+In $x=x_0$, si ha $x_0^{1  / 2} = \cos \phi _0$ e $\phi _0 = \operatorname{arccos}( x_0^{1 / 2})$; in $x=1$, si ha $\cos \phi_b = 1 $, per cui $\phi _b = 0 $.
+Svolgendo i passaggi, si ha
+\[
+	\begin{split}
+		\int _{x_0}^1 \left[ \frac{1}{x} - 1 \right] \dd x &= -2 \int _{\phi _0}^ 0 \sin^2 \phi  \dd \phi  = -2 \left[ \frac{\phi }{2} - \frac{\sin 2\phi }{4} \right] _{\phi _0}^0 = \phi _0 - \sin \phi _0 \cos \phi _0\\
+								  &= \operatorname{arccos} x_0^{1 / 2}- x_0 ^{1 / 2} \left(1 - x_0\right) ^{ 1 / 2}
+	\end{split} 
+\] 
+Usando 
+\[
+\sin \phi  _0 = (1 - \cos^2\phi _0)^{1 / 2} = (1 - x_0)^{1 / 2}
+\] 
+In definitiva
+\[
+f(x_0) \equiv \int_{x_0}^{1 } \left[ \frac{1}{x} - 1 \right]  \dd x = \operatorname{arccos} x_0^{1 / 2} - x_0^{1 / 2} \left(1 - x_0^{1 / 2}\right) 
+\] 
+Usando $x_0 = a / b = Q / B$ si ha $x_0 = 0.12 \div 0.15$ si pu\`o considerare $x_0 \ll 1$, tramite cui si approssima 
+\[
+f(x_0) \simeq \frac{\pi}{2} - 2 \sqrt{\frac{Q}{B}} 
+\] 
+Mettendo tutto insieme, si ricava 
+\[
+		\lambda = \tau ^{-1} = f p = \frac{c}{a} \sqrt{\frac{2 (Q+V_0)}{mc^2}}  e^{- 2 G}\\
+\] 
+Per trovarne l'espressione, si ha
+\[
+	\begin{split}
+		\ln \tau  &= -\ln \left[ \frac{c}{a} \sqrt{\frac{2(Q+V_0)}{mc^2}}  \right]  + 2 G\\
+			  & = \ln \left[ \frac{a}{c} \sqrt{\frac{mc^2}{2(Q+V_0)}}  \right] + 2 \alpha  Z_\alpha  Z_r \ldots 
+	\end{split}
+\] 
+\subsubsection{Decadimento del torio}
+
+Si usa il risultato trovato per spiegare le evidenze sui decadimenti.
+Si considera che:
+\[
+\begin{split}
+	& \ce{^{220}Th} \to  \ce{^{216}_{88}Ra + \alpha }\\
+	& \ce{^{220}Th} \to \ce{^{208}Po + ^{12} C}
+\end{split} 
+\] 
+con $\tau _\alpha  = 9.7 ~\mu s$, mentre $\tau _C = 3 \times 10^{6}$ s.
+Si vuole capire perch\'e il decadimento $\alpha $ \`e favorito.
+La barriera si trova essere $B_\alpha = 176$ e $B_C = 504$, quindi $B_C \sim 3 B_\alpha $.
+Un ulteriore effetto che favorisce il decadimento $\alpha $ \`e legato al fatto che, nel modello di Gamow, si \`e ipotizzato che la particella $\alpha $ fosse pronta nel nucleo per attraversare la barriera coulombiana.
+In questo senso, si introduce una probabilit\`a $w$ che questo cluster di particelle prodotto sia gi\`a pronto:
+\[
+\lambda  = w f P
+\] 
+con $0\le w \le  1$. 
+In maniera approssimativa, visti gli elementi di cui sono prodotti, si considera $w(\ce{^{12}C}) \sim \left[ w(\alpha ) \right] ^3$.
+
+
+\subsection{Struttura fine degli spettri $\alpha $}
+
+Visto che il decadimento $\alpha $ consiste nel prodotto di due corpi, le particelle $\alpha $ emesse hanno sempre stessa energia nello stesso decadimento, al contrario dei decadimenti $\beta $ in cui la presenza del neutrino porta uno spettro continuo.
+Riportando $\log \mathcal{N} _\alpha $ in funzione di $E_\alpha $ si osservano righe continue. 
+
+La spiegazione della popolazione di queste righe si pu\`o spiegare facendo uso delle regole di selezione del decadimento $\alpha $.
+\subsubsection{Regole di selezione per il decadimento $\alpha $}
+\begin{enumerate}[(a).]
+	\item Conservazione del momento angolare.
+	\[
+	\vec{I}_i = \vec{I}_f + \vec{I}_\alpha  + \vec{\ell }
+	\] 
+	Per la particella $\alpha $ si ha $I_\alpha = 0 $, quindi si ha $\vec{I}_i = \vec{I}_f + \vec{\ell }$; allora
+	\[
+	\ell  = (I_f + I_i) , \, (I_f + I_i - 1) ,\, \ldots , \, \lvert I_f - I_i \rvert 
+	\] 
+con $\ell $ momento angolare orbitale che la particella $\alpha $ si porta via. 
+Se $I_i = 0$, allora $\ell = I_f$.
+\item Conservazione della parit\`a.
+
+	Si deve avere
+	\[
+	\pi_i = \pi_f \pi_\alpha  \left(-1\right) ^{\ell }
+	\] 
+con $\pi _ \alpha  = 1$	, per cui $\pi_i = \pi_f \left(-1\right) ^{\ell }$.
+Allora, quando $\ell $ \`e pari, padre e figlio hanno stessa parit\`a, altrimenti hanno parit\`a opposta.
+\end{enumerate}
+
+\newpage
+
+\section{Lezione 24/11}
+
+Le reazioni termonucleari avvengono a tempearture alte per cui la materia \`e nello stato di plasma.
+L'energia termica che si osserva \`e $E = \kappa _B T = 1$ keV, con $T \sim 10^7$ K; per\`o perch\'e la D-D possa avvenire, sono necessarie energie di $360$ keV, ma si deve considerare anche la possibilit\`a di effetto tunnel; per questa, sarebbero necessarie temperature di circa $10^9$ K.
+La temperatura del Sole \`e circa $10^7$ K.
+
+L'energia termica tipica di un plasma in un reattore a fusione nucleare comprende energie $1\div 10$ keV.
+
+\subsection{Fusione}
+
+Si considera $a +X \to  Y + b$; la sezione d'urto di fusione si scrive come $\sigma _\text{fus} = \sigma _\text{nuc} P$, visto che, in base alle temperature osservate, questa pu\`o avvenire solamente per effetto tunenell.
+
+Per comprendere come descrivere la sezione d'urto nucleare, si considera quanto visto per lo scattering NN a bassa energia ($E\to 0$):
+\[
+	\begin{split}
+		&\sigma _{N N} (\ell =0) = \frac{4\pi}{k^2} \sin^2 \delta _0\\
+		& \Rightarrow \sigma _{\text{nuc}}\sim \frac{1}{k^2} \sim \frac{1}{v^2} \sim \frac{1}{E}\\
+		&\Rightarrow \sigma _\text{nuc} \equiv \frac{S(E)}{E}
+	\end{split}
+\] 
+dove $S(E)$ \`e una funzione debolmente dipendente dall'energia ed \`e detta \textbf{fattore astrofisico}.
+Allora
+\begin{equation}
+	\sigma _\text{fus} = \frac{S(E)}{E} e^{-2G}, \, G \simeq  \frac{\sqrt{2mE} }{\hbar } b \left(\frac{\pi}{2} - 2\sqrt{\frac{E}{B}} \right)
+\end{equation}
+dove la $E$ nel fattore di Gamow \`e il corrispondente del Q-valore della reazione.
+Le barriere nelle fusioni nucleari e le energie sono 
+\[
+B_{p p} = 900~\text{keV} \\ B_{D D} = 360~\text{keV} \hspace{1cm} \langle E \rangle _\odot = 1.35~\text{keV}
+\] 
+Visto che $\langle E \rangle_\odot  \ll B_{p p}$, risulta $\sqrt{E / B}  =0.03\div 0.05 \ll \pi / 2$, allora si pu\`o approssimare
+\[
+	G \simeq \frac{\sqrt{2mE}}{\hbar } b \frac{\pi }{2}
+\] 
+con $b = \alpha \hbar c \frac{Z_\alpha Z_X}{E}$ e $E = \frac{1}{2} mv^2$.
+Quindi
+\[
+G \simeq \pi \alpha  \frac{Z_a Z_X}{v / c}
+\] 
+e la sezione d'urto di fusione si pu\`o scrivere come
+\[
+	\sigma = \frac{S(E)}{E} e^{- \beta /\sqrt{E} } \, , \ \beta  = \pi \alpha  \sqrt{2 m c^2 } Z_a Z_X
+\] 
+L'andamento ottenuto \`e proprio quello tipico osservato nelle sezioni d'urto delle reazioni D-D, T-D, eccetera.
+
+Considerando un plasma di due specie nucleari, \`e importante il valore della sezione d'urto nucleare, ma \`e altrettanto importante il reaction rate 
+\begin{equation}
+	E = \frac{\text{numero reazioni fusione}}{\text{Volume}\times \text{Tempo}}
+\end{equation}
+relativamente ad un certo processo $a + X \to  Y+b$.
+Si vuole schematizzare quello che succede, considerando due pitture differenti.
+\begin{enumerate}[(a).]
+	\item Situazione ideale.
+
+		Si indica con $\mathcal{N} = S vt$, $n_a = N_a / V$ e $n_X = N_X / V$; segue che 
+		\[
+		R = n_X \sigma \Phi _a
+		\] 
+	dove $\Phi _a$ \`e il flusso di particelle $A$ che attraversano la superficie $S$ in un certo tempo $t$, quindi
+	\[
+	\Phi _a = \frac{n_a \mathcal{N} }{St} = \frac{n_a vtS}{st} = n_a v
+	\] 
+per cui
+\[
+R = n_a n_X \sigma v
+\] 
+dove si \`e espresso $V$ come $S vt$ in quanto il volume considerato \`e quello delle particelle che incidono nel tempo $t$ e che hanno una velocit\`a $v$, per cui la lunghezza del cilindro da considerare \`e $vt$.
+
+\item Situazione reale.
+
+	Sia le particelle a che le X sono in moto nel plasma con velocit\`a diverse: sono alla stessa temperatura, quindi avranno diversa velocit\`a.
+	La distribuzione delle loro velocit\`a si descrive tramite la distribuzione di Maxwell Boltzmann
+	\[
+	f_\text{mb} (v) = 4\pi \left(\frac{m}{2\pi \kappa _B T }\right) ^{3 / 2} v^2 e^{ - \frac{mv^2}{2\kappa _B T}} \, , \ \int _0^{+\infty} f_\text{mb}(v) \dd v = 1
+	\] 
+	dove $v$ \`e la velocit\`a relativa tra i due costituenti del plasma.
+	In questo caso
+	\[
+	\langle R \rangle = n_a n_X \langle \sigma v \rangle= n_a n_X \int _0^{+\infty} \sigma v f_\text{mb} (v) \dd v
+	\] 
+	per a e X specie differenti.
+	Se $a = X$, invece, si ha 
+	\[
+	\langle R \rangle = \frac{1}{2} n_a ^2 \langle \sigma v \rangle
+	\] 
+	dove il fattore $1 / 2$ \`e per evitare il doppio conteggio.
+	Si pu\`o scrivere 
+	\[
+		\sigma = \frac{S(E)}{E} e^{- \beta  / \sqrt{E}}
+	\] 
+	con $\beta $ che si pu\`o riscrivere come
+	\[
+	\beta = \pi \alpha  \sqrt{2 m c^2 }  Z_a Z_X = 31.29 \text{ keV}^{1/2} \left(\frac{m}{m_a}\right) ^{1 / 2} Z_a Z_X
+	\] 
+	In alternativa, la sezione d'urto si pu\`o scrivere come
+	\[
+	\sigma = \frac{S(E)}{E} e^{- 2 \pi \eta (E)}
+	\] 
+	dove si \`e definito $\eta (E) = \frac{\alpha  Z_a Z_X}{v / c}$, chiamato \textit{parametro di Sommerfeld}.
+\end{enumerate}
+Separare i contributi derivanti da $f_\text{mb}$ e da $\sigma v$ nell'integrale, comporta due funzioni che, rispettivamente, \`e piccata per basse velocit\`a e cresce per energie pi\`u alte.
+La loro convoluzione, invece, permette di indivudare il \textit{picco di Gamow} in corrispondenza della loro intersezione.
+Le particelle che permettono i processi di fusione sono proprio quelle attorno a questo valore energetico $E_0$ del picco del reaction rate.
+Queste corrispondono alle particelle che si trovano nella coda di Maxwell-Boltzmann, e non quelle attorno al suo picco.
+Nel Sole, per $\kappa _B T_\odot  = 1.35$ keV, si trova $E_0 = 10 \div 30$ keV.
+
+Per studiare il processo, \`e necessario conoscere la sezione d'urto per energie molto basse $E \sim E_0$; in questo range, per\`o, la sezione d'urto di fusione \`e molto piccola e difficile da misurare. 
+Ci sono due possibili metodi:
+\begin{itemize}
+	\item estrapolare la sezione d'urto misurata, o meglio il fattore astrofisico, visto che quest'ultimo ha un andamento pi\`u controllato con l'energia, al range energetico del picco di Gamow, rispetto alla sezione d'urto che varia di ordini di grandezza;
+	\item fare misure di sezione d'urto in laboratori sotterranei per ridurre la radiazione di fondo.
+\end{itemize}
+
+\subsubsection{Picco di Gamow}
+
+Si cerca un'espressione analitica del picco di Gamow.
+Si riporta $f_\text{mb}$ in termine dell'energia: 
+\[
+v^2 \exp \left(- \frac{mv^2}{2\kappa _B T }\right)  \to E e^{- E / \kappa _ BT }
+\] 
+equivalente a $\dd v = \frac{1}{\sqrt{2m} }\frac{1}{\sqrt{E} } \dd E$; quindi
+\[
+\langle \sigma  v \rangle = \left(\frac{8}{\pi m}\right)  ^{ 1 / 2} \frac{1}{\left(\kappa _B T \right) ^{3 / 2}} \int _0^{+\infty} S(E) \exp\left( - \frac{E}{\kappa _B T } - \frac{\beta }{\sqrt{E} }\right)  \dd E
+\] 
+dove si definisce $f(E) \equiv \frac{E}{\kappa _B T } + \frac{\beta }{\sqrt{E} }$.
+Per farlo, si usa il \textit{method of the steepest descent}: data
+\[
+I = \int g(x) e^{-f(x)} \dd x
+\] 
+con $g(x)$ che \`e debolmente dipendente da $x$, mentre $f(x)$ ha un estremo (minimo o massimo) in un certo punto $x_0$, si pu\`o espandere in serie
+\[
+	f(x) \simeq f(x_0) + \cancel{f'(x_0) (x-x_0)} + \frac{1}{2} f''(x_0) (x-x_0)^2
+\] 
+per scrivere che 
+\[
+I \simeq g(x_0) e^{-f(x_0)} \int \exp \left[ - f''(x_0) \frac{(x-x_0)^2}{2} \right] \dd x
+\] 
+Nel caso specifico del picco si Gamow, applicando questo metodo su $f(E) = \frac{E}{\kappa _B T } + \frac{\beta }{\sqrt{E} }$, cercandone il minimo 
+\[
+\frac{d }{d E} f(E) = 0 \implies E_0 = \left(\frac{\beta \kappa _B T}{2}\right) ^{2 / 3}
+\] 
+Espandendo $\beta $, si ha
+\[
+E_0 = 1.220\left(Z_a^2 Z_X^2 \frac{m}{m_X} T_6^2\right) ^{1 / 3} \text{ keV}
+\] 
+con $T_6 = T ~ 10^{-6}$ keV.
+
+\newpage
+
+
+\section{Lezione 26/11}
+
+\subsection{Teoria gravitazionale e meteoritica}
+
+L'energia gravitazionale di una sfera uniforme \`e 
+\[
+U_ G= - \frac{3}{5} G \frac{M_\odot ^2}{R_\odot }
+\] 
+Per stimarla, \`e necessario conoscere $G$; questo fu stimato da Cavendish.
+Il valore di massa e raggio del sole \`e 
+\[
+M_\odot  = 1.95 \times 10^{33} \text{ g} \hspace{1cm} R_\odot  = 6.96 \times 10^{8} \text{ cm}
+\] 
+Si ottiene 
+\[
+\lvert U_G \rvert  = 2.3 \times 10^{48} \text{ erg} \implies t_\odot  = \frac{\lvert U_G \rvert }{L_\odot } = 1.9 \times 10^{7} \text{ yr}
+\] 
+quindi circa 20 milioni di anni.
+
+Il valore della massa del Sole si pu\`o ricavare dalla terza legge di Keplero:
+\[
+\frac{d^3}{T^2} = \frac{GM_\odot }{(2\pi)^2} \implies M_\odot  = \frac{d(2\pi)^2}{G} \frac{d^3}{T^2}
+\] 
+Per il raggio, invece, si considera l'apertura angolare $\alpha $, che \`e molto piccolo, per cui $2R_\odot  \simeq \alpha  d_\text{TS}$, dove questa \`e la distanza Terra-Sole.
+Per il calcolo, quindi, \`e necessario conoscere la distanza Terra-Sole.
+La prima misura pi\`u accurata risale al 1672 da Cassini, ottenuta sfruttando una posizione favorevole tra Terra-Sole-Marte.
+Quando questi sono sulla stessa linea e Marte si trova alla pi\`u piccola distanza della Terra (dietro di essa sulla stessa congiungente Terra-Sole), si dice che sono in co-posizione; si misur\`o la parallasse di Marte usando come base Parigi e Cayenne, da cui la distanza minima Terra-Marte risult\`o di circa $70$ milioni di chilometri.
+Il piano orbitale di Marte \`e inclinato di soli $1.85^\circ$ rispetto al piano dell'eclittica, per cui in buona approssimazione si possono considerare co-planari.
+Per la terza legge di Keplero $d^3 = KT^2$, con $K = \frac{GM_\odot }{(2\pi)^2}$ e 
+\[
+	\begin{cases}
+		d_\text{MS} = \left(\frac{T_M}{T_T}\right) ^{2 / 3} d_\text{TS}\\
+		d_\text{MS} = d_\text{TS} + (d_\text{TM}) _\text{oppos}
+	\end{cases} \implies d_\text{TS} 138.370 \times 10^{6} \text{ km}
+\] 
+visto che sono noti $T_T = 365.5 \text{ giorni} \hspace{1cm} T_M = 686.98 \text{ giorni terrestri}$, valore vicino alla misura moderna $1 \text{ UA} \approx 149 \times {10}^{6}$ km.
+Allora si pu\`o ottenere il valore di vita complessiva del Sole riportato sopra.
+
+Darwin, per\`o, stim\`o che l'et\`a della Terra dovesse necessariamente essere circa $300$ milioni di anni, tempo necessario perch\'e il meccanismo della selezione naturale fosse verificato, basato su dati geofisici riguardanti l'erosione di una valle in Inghilterra.
+Questo, per\`o, \`e in forte contrasto con l'et\`a stimata dall'et\`a del Sole basata sul fatto che la sola fonte energetica fosse quella gravitazionale.
+Di seguito, si elencano i successivi eventi fondamentali.
+\begin{itemize}
+	\item Nel 1868, dallo studio degli spettri solari durante un'eclisse venne scoperto l'elio.
+	\item Nel 1903-1904, venne ipotizzato che la sorgente energetica del Sole fosse legata al decadimento di atomi radioattivi (si parla di atomi perch\'e il nucleo fu scoperto una decina di anni dopo).
+	\item Nel 1920, Eddington ipotizz\`o che la sorgente potesse essere la conversione di idrogeno in elio; in quello stesso ano, Aston misur\`o il difetto di massa del nucleo di elio-4.
+	\item Nel 1938, Landau riprende l'idea del modello gravitazionale ed ipotizz\`o che la sorgente di energia del Sole possa essere legata all'energia gravitazionale rilasciata dall'accrescimento del materiale solare su un nocciolo (core) di materia neutronica situato nella regione centrale del Sole.
+	\item Nel 1938-1939, Bethe e Weizs\"acker ricavano le reazioni di fusione nucleare della catena protone-protone e del ciclo CNO.
+\end{itemize}
+\begin{boxenv}[]
+Tabella composizione elementi presenti nel Sole. 
+
+\noindent Elemento | percentuale numerica | massa in percenutale.
+
+Idrogeno, elio, carbonio, azoto, ossigeno, neon, magnesio, silicone, zolfo e ferro.
+\end{boxenv}
+\noindent Gli elementi che costituiscono il Sole non provengono dal Big Bang, ma furono sintetizzati da altre stelle pi\`u giovani durante la loro morte.
+
+\subsection{Processi di fusione}
+\subsubsection{Catena protone-protone}
+Si basa sulla reazione 
+\[
+	\ce{^1H + ^1H} \to  \ce{^2H + e+ + \nu_e}
+\] 
+con $Q = 0.42$ MeV.
+Usando $\kappa _B T \approx 1.35$ keV, la sezione d'urto \`e $\sigma _{p p } = 10^{-33}$ barn, che \`e molto piccola perch\'e mediata dall'interazione debole.
+Il rate \`e 
+\[
+\frac{\langle R_{ p p} \rangle }{n_p} = \frac{1}{2} n_p \langle \sigma _{ p p} v \rangle \approx 5 \times 10^{-18}~ \frac{\text{reazioni}}{\text{secondo} \cdot  \text{protone}}
+\] 
+Per stimare quante reazioni avvengono per secondo, si deve stimare il numero di protoni presenti nel Sole, tenendo conto che non tutti possono contribuire perch\'e si sta usando la temperatura centrale.
+Si assume che i protoni utili siano soltano $1 / 10$ di quelli totali presenti nel Sole.
+Si stima il numero totale come
+\[
+\mathcal{N} _p = \frac{M_\odot }{m_p} = \frac{2\times 10^{33} \text{ g}}{1.67\times 10^{-24} \text{ g} } \sim 10^{57}
+\] 
+trascurando l'effetto di legame; quindi $\mathcal{N_p}  (\text{core}) \sim 10^{56}$, per cui il numero di reazioni che avvengono per secondo \`e 
+\[
+\mathcal{N} _\text{reaz}\sim 5\times 10^{-18} \cdot 10^{56} \sim 10^{38} ~ \frac{\text{reazioni}}{\text{s}}
+\] 
+Il quantitativo di idrogeno consumato \`e 
+\[
+\frac{\text{massa idrogeno bruciato}}{\text{s}} = m_p \times 10^{38} ~ \frac{\text{reazioni}}{\text{s}} \sim 10^{8}~ \text{ton}/\text{s}
+\] 
+Il prossimo step della catena \`e la seguente reazione:
+\[
+	\ce{^2H + ^1H} \to \ce{^3He + \gamma}
+\] 
+che libera $Q = 5.49$ MeV.
+Vi possono essere altri processi, ma questo \`e quello pi\`u frequente.
+Esempi di altri processi sono
+\[
+\begin{split}
+	&\ce{^2H + ^1H} \to \ce{^3H + e+ + \nu _e}\\
+	& \ce{^2H + ^2H} \to  \ldots 
+\end{split} 
+\] 
+il primo \`e sfavorito perch\'e coinvolge l'interazione debole, mentre quelle che coinvolgono la reazione di due atomi di deuterio \`e sfavorita per la concentrazione di deuterio, che \`e sempre molto minore di quella dell'idrogeno.
+Un altro processo \`e la reazione hep $\ce{^3He + ^1H}\to \ce{^4He + e+ + \nu _e}$ che libera $Q=19.28$ MeV, ma ha sezione d'urto piccola per interazione debole; in ogni caso, \`e importante perch\'e \`e la reazione che produce i neutrini pi\`u energetici di tutte le altre nel Sole (di energia $18.77$ MeV).
+
+L'elio-3 formato nello step precedente \`e la seguente reazione:
+\[
+	\ce{^3He + ^1H} \to  \ce{^4He + 2^1H}
+\] 
+con $Q = 12.86$ MeV.
+In sostanza, sommando quello che entra e quello che esce, la catena consuma 4 protoni (primo step 2; uno nel secondo step e tre nell'ultimo, ma ne vengono riemessi 2) e restituisce $\ce{^4He + e+ + \nu _e}$.
+In energia, viene prodotto un totale di $26.72$ MeV.
+Questo appena discusso \`e uno dei possibili rami della catena protone protone, detto ramo p-p 1, che si verifica per il $69\%$ circa.
+Per il $31\%$, invece, si pu\`o avere 
+\[
+	\ce{^{3}He + ^4He} \to  \ce{^7Be + \gamma}
+\] 
+che si divide ancora e, per il $99\%$ circa, termina con 
+\[
+	\begin{split}
+		&\ce{^7Be + e-} \to \ce{^7Li +\nu _e}\\
+		& \ce{^7Li + ^1H} \to 2\ce{^4He}
+	\end{split} 
+\] 
+detta catena p-p 2.
+\begin{boxenv}[]
+Inserire p-p 3.
+\end{boxenv}
+\noindent Si pu\`o calcolare il $Q$-valore efficace che tiene conto della perdita di energia per via dei neutrini in base alla percenutale persa dalle varie catene.
+\begin{boxenv}[]
+Spettro dei neutrini.
+\end{boxenv}
+\subsubsection{Stima del tempo di vita del Sole}
+
+Considerando che
+\[
+	\begin{split}
+		&L_\odot = 3.846 \times 10^{33} \text{ erg} / \text{s}\\
+		&M_\odot  = 2 \times 10^{33} \text{ g}
+	\end{split}
+\] 
+poi che $4p \implies \ce{^4He + 2e+ + 2\nu_e}$ con $Q = 26.7$ MeV e che il numero di processi $\mathcal{N} _\text{reaz} \sim 10^{56}$, si ha $E_\odot \simeq 10^{51}$ erg, da cui
+\[
+t_\odot = \frac{E_\text{tot}}{L_\odot } \sim 2.6 \times 10^{17} \text{ s} \sim 8\times 10^{9} \text{ anni}
+\] 
+che \`e una stima coerente con quanto effettivamente verificato.
+
+\subsubsection{Ciclo CNO}
+\begin{boxenv}[]
+Reazioni \ldots
+\end{boxenv}
+\noindent Sia la catena p-p che il CNO possono avvenire nel Sole, ma la catena p-p \`e di gran lunga il pi\`u dominante; il ciclo CNO, invece, \`e molto pi\`u rilevante per stelle poco pi\`u massicce del Sole che, avendo una temperatura maggiore, aumentano significativamente il rate del CNO.
+\begin{boxenv}[]
+Grafico curve energia liberata dai due cicli in funzione della temperatura.
+\end{boxenv}
+
+\subsubsection{Stima neutrini solari che arrivano sulla Terra}
+Si stima
+\[
+\frac{d \mathcal{N} _\odot }{d t}  = 2 \frac{L_\odot }{Q} \sim 2 \times 10^{38}~ \frac{\text{neutrini}}{\text{s}}
+\] 
+dove il fattore $2$ \`e legato al fatto che, ogni volta, sono prodotti due neutrini.
+Allora
+\[
+\phi _\odot  = \frac{1}{4\pi d^2} \frac{d \mathcal{N} _\odot }{d t}  \sim 10^{11} ~ \frac{\text{neutrini}}{\text{cm}^2 \cdot \text{s}}
+\] 
 
 
 
@@ -4973,11 +5543,6 @@ sono i \textbf{polinomi di Legendre}, mentre le $j_\ell (kr)$ sono le \textbf{fu
 	&j_0(x) = \frac{\sin x }{x} &\hspace{.5cm} &j_1(x) = \frac{\sin x}{ x^2} - \frac{\cos x }{x} \\
 	&j_2(x) = \left(\frac{3}{x^2}-1\right) \frac{\sin x}{x}- \frac{3 \cos x}{x^2} & \hspace{.5cm} &j_3(x) = \left(\frac{15}{x^3}-\frac{6}{x}\right) \frac{\sin x}{x} - \left(\frac{15}{x^2}-1\right) \frac{\cos x}{x}
 \end{align*}
-
-
-
-
-
 
 
 \end{document}
